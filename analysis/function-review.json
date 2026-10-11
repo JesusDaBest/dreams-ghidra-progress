@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "58 previously unnamed functions reviewed; 54 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "59 previously unnamed functions reviewed; 55 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9341,
-    "other_names": 210,
+    "default_fun_names": 9340,
+    "other_names": 211,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1064,6 +1064,27 @@
         "Capacity validity and sentinel-key exclusions are caller preconditions; this helper does not validate them.",
         "No signatures, types, layout, or calling convention edits.",
         "Model examples do not execute original game code."
+      ]
+    },
+    {
+      "address": "140912670",
+      "original_name": "FUN_140912670",
+      "applied_name": "SortU16IndicesByDescendingI32Keys",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete cached body and all 478 assembly instructions reviewed. The routine rearranges unsigned 16-bit indices using signed 32-bit keys through an external key-array pointer.",
+        "Signed JG/JLE comparisons in pivot selection, partitioning, heap fallback and insertion establish descending key order.",
+        "All 1735 recognized instruction bytes audited; 84 direct branch targets present; 15 listing gaps follow unconditional jumps and are not fallthrough gaps.",
+        "Both external callers are in the game merge routine. The caller initializes consecutive U16 indices and supplies the address of its key-array pointer.",
+        "The insertion-path call resolves through the local loader NID +P6FRGH4LfA; shadPS4 primary registration source identifies memmove, matching the observed overlapping two-byte right shift."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst descriptive name, not a recovered original symbol.",
+        "No claim of sort stability, original library/compiler identity or native execution validation.",
+        "No signature, type, byte, or calling-convention changes."
       ]
     }
   ],

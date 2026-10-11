@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c458ce6e079c46de4dda91b3020495e02411aadc/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=9546248a252a)
 
 <!-- status-summary:start -->
-**54 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**55 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c458ce6e079c46de4dda91b3020495e02411aadc/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=3d6d187da19a)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 48 of the 54 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 49 of the 55 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -34,9 +34,9 @@ Green means the function's role and descriptive name have been checked; amber me
 | Rendering & lighting | 274 | 0 / 274 (0.0%) |
 | Editor & interface | 313 | 0 / 313 (0.0%) |
 | Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 118 | 10 / 118 (8.5%) |
+| Shared engine & object data | 119 | 11 / 119 (9.2%) |
 
-**1,552 of 9,551 discovered functions are mapped; 7,999 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,553 of 9,551 discovered functions are mapped; 7,998 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -429,21 +429,21 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Camera Blender / Camera Status** - 0/1 names checked
   - **Visibility** - 0/4 names checked
     - **Label Visible** - 0/4 names checked
-- **Shared engine & object data** - 10/118 names checked
-  - **Debugging & diagnostics** - 0/18 names checked
-    - **Debug Draw Render** - 0/8 names checked
-    - **Debug Screen** - 0/4 names checked
-    - **Comparison Image** - 0/2 names checked
-    - **Debug Camera Image** - 0/2 names checked
-    - **Debug Text** - 0/2 names checked
-  - **Game state & runtime** - 5/18 names checked
-    - **Game contexts & runtime support** - 5/6 names checked
+- **Shared engine & object data** - 11/119 names checked
+  - **Game state & runtime** - 6/19 names checked
+    - **Game contexts & runtime support** - 6/7 names checked
     - **Game Events** - 0/3 names checked
     - **Game Base** - 0/3 names checked
     - **Gameupdater** - 0/3 names checked
     - **Game Type** - 0/1 names checked
     - **Game Update Thread** - 0/1 names checked
     - **Gamemerger** - 0/1 names checked
+  - **Debugging & diagnostics** - 0/18 names checked
+    - **Debug Draw Render** - 0/8 names checked
+    - **Debug Screen** - 0/4 names checked
+    - **Comparison Image** - 0/2 names checked
+    - **Debug Camera Image** - 0/2 names checked
+    - **Debug Text** - 0/2 names checked
   - **Objects & references** - 0/13 names checked
     - **Thing Type** - 0/5 names checked
     - **Group** - 0/2 names checked

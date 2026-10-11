@@ -35902,6 +35902,30 @@
       ],
       "code_sha256": "9ecd3a94e946aebf71b6ae0281aed4a5f4b4f4bb520cfddb157bc6f64919bee2",
       "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140912670": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_merge_helper",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_merge_callers",
+          "name": "SortU16IndicesByDescendingI32Keys",
+          "support": [
+            "Complete cached body and all 478 assembly instructions reviewed. The routine rearranges unsigned 16-bit indices using signed 32-bit keys through an external key-array pointer.",
+            "Signed JG/JLE comparisons in pivot selection, partitioning, heap fallback and insertion establish descending key order.",
+            "All 1735 recognized instruction bytes audited; 84 direct branch targets present; 15 listing gaps follow unconditional jumps and are not fallthrough gaps.",
+            "Both external callers are in the game merge routine. The caller initializes consecutive U16 indices and supplies the address of its key-array pointer.",
+            "The insertion-path call resolves through the local loader NID +P6FRGH4LfA; shadPS4 primary registration source identifies memmove, matching the observed overlapping two-byte right shift."
+          ]
+        }
+      ],
+      "code_sha256": "35310ea396c234a4b79f8ead4bbb389e6b692b97cdf28b63f672f551db091708",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
   "hierarchy": [

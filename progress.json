@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-11",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 48,
+    "done": 49,
     "todo": 1504,
-    "total": 1552,
-    "percent": 3.09,
+    "total": 1553,
+    "percent": 3.16,
     "groups": [
       {
         "name": "gadgets-logic",
@@ -12543,10 +12543,10 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 10,
+        "done": 11,
         "todo": 108,
-        "total": 118,
-        "percent": 8.47,
+        "total": 119,
+        "percent": 9.24,
         "done_names": [
           "VisitPosProperties",
           "VisitVariantProperties",
@@ -12556,6 +12556,7 @@
           "AcquireUnusedGamePoolContext",
           "RetainCurrentGamePoolContext",
           "ReleaseGamePoolContextReference",
+          "SortU16IndicesByDescendingI32Keys",
           "LookupU32HashTableValue",
           "RegisterVariantFieldOffset"
         ],
@@ -12678,6 +12679,7 @@
           "14090e110",
           "14090e280",
           "14090e300",
+          "140912670",
           "140913a90",
           "140cfda40"
         ],
@@ -12798,6 +12800,215 @@
           "140490040"
         ],
         "groups": [
+          {
+            "name": "shared/runtime",
+            "label": "Game state & runtime",
+            "done": 6,
+            "todo": 13,
+            "total": 19,
+            "percent": 31.58,
+            "done_names": [
+              "InitializeGamePoolContext",
+              "AcquireUnusedGamePoolContext",
+              "RetainCurrentGamePoolContext",
+              "ReleaseGamePoolContextReference",
+              "SortU16IndicesByDescendingI32Keys",
+              "LookupU32HashTableValue"
+            ],
+            "todo_names": [
+              "0x1401115f0",
+              "0x14090dde0",
+              "0x14090e6f0",
+              "0x1409345c0",
+              "0x140956a10",
+              "0x140958760",
+              "0x140abba30",
+              "0x140c871f0",
+              "0x140cc3dc0",
+              "0x140cc58c0",
+              "0x140ccf9b0",
+              "0x140ce7280",
+              "0x140cea620"
+            ],
+            "done_addresses": [
+              "140904120",
+              "14090e110",
+              "14090e280",
+              "14090e300",
+              "140912670",
+              "140913a90"
+            ],
+            "todo_addresses": [
+              "1401115f0",
+              "14090dde0",
+              "14090e6f0",
+              "1409345c0",
+              "140956a10",
+              "140958760",
+              "140abba30",
+              "140c871f0",
+              "140cc3dc0",
+              "140cc58c0",
+              "140ccf9b0",
+              "140ce7280",
+              "140cea620"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/runtime/common-routines",
+                "label": "Game contexts & runtime support",
+                "done": 6,
+                "todo": 1,
+                "total": 7,
+                "percent": 85.71,
+                "done_names": [
+                  "InitializeGamePoolContext",
+                  "AcquireUnusedGamePoolContext",
+                  "RetainCurrentGamePoolContext",
+                  "ReleaseGamePoolContextReference",
+                  "SortU16IndicesByDescendingI32Keys",
+                  "LookupU32HashTableValue"
+                ],
+                "todo_names": [
+                  "0x140abba30"
+                ],
+                "done_addresses": [
+                  "140904120",
+                  "14090e110",
+                  "14090e280",
+                  "14090e300",
+                  "140912670",
+                  "140913a90"
+                ],
+                "todo_addresses": [
+                  "140abba30"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/runtime/egameevents",
+                "label": "Game Events",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "percent": 0.0,
+                "done_names": [],
+                "todo_names": [
+                  "0x1401115f0",
+                  "0x140cc3dc0",
+                  "0x140cc58c0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1401115f0",
+                  "140cc3dc0",
+                  "140cc58c0"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/runtime/gamebase",
+                "label": "Game Base",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "percent": 0.0,
+                "done_names": [],
+                "todo_names": [
+                  "0x140ccf9b0",
+                  "0x140ce7280",
+                  "0x140cea620"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140ccf9b0",
+                  "140ce7280",
+                  "140cea620"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/runtime/gameupdater",
+                "label": "Gameupdater",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "percent": 0.0,
+                "done_names": [],
+                "todo_names": [
+                  "0x1409345c0",
+                  "0x140956a10",
+                  "0x140958760"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1409345c0",
+                  "140956a10",
+                  "140958760"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/runtime/egametype",
+                "label": "Game Type",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "percent": 0.0,
+                "done_names": [],
+                "todo_names": [
+                  "0x140c871f0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140c871f0"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/runtime/game-update-thread",
+                "label": "Game Update Thread",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "percent": 0.0,
+                "done_names": [],
+                "todo_names": [
+                  "0x14090dde0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14090dde0"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/runtime/gamemerger",
+                "label": "Gamemerger",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "percent": 0.0,
+                "done_names": [],
+                "todo_names": [
+                  "0x14090e6f0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14090e6f0"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              }
+            ]
+          },
           {
             "name": "shared/diagnostics",
             "label": "Debugging & diagnostics",
@@ -12961,211 +13172,6 @@
                 "todo_addresses": [
                   "140176430",
                   "1401767d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              }
-            ]
-          },
-          {
-            "name": "shared/runtime",
-            "label": "Game state & runtime",
-            "done": 5,
-            "todo": 13,
-            "total": 18,
-            "percent": 27.78,
-            "done_names": [
-              "InitializeGamePoolContext",
-              "AcquireUnusedGamePoolContext",
-              "RetainCurrentGamePoolContext",
-              "ReleaseGamePoolContextReference",
-              "LookupU32HashTableValue"
-            ],
-            "todo_names": [
-              "0x1401115f0",
-              "0x14090dde0",
-              "0x14090e6f0",
-              "0x1409345c0",
-              "0x140956a10",
-              "0x140958760",
-              "0x140abba30",
-              "0x140c871f0",
-              "0x140cc3dc0",
-              "0x140cc58c0",
-              "0x140ccf9b0",
-              "0x140ce7280",
-              "0x140cea620"
-            ],
-            "done_addresses": [
-              "140904120",
-              "14090e110",
-              "14090e280",
-              "14090e300",
-              "140913a90"
-            ],
-            "todo_addresses": [
-              "1401115f0",
-              "14090dde0",
-              "14090e6f0",
-              "1409345c0",
-              "140956a10",
-              "140958760",
-              "140abba30",
-              "140c871f0",
-              "140cc3dc0",
-              "140cc58c0",
-              "140ccf9b0",
-              "140ce7280",
-              "140cea620"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/runtime/common-routines",
-                "label": "Game contexts & runtime support",
-                "done": 5,
-                "todo": 1,
-                "total": 6,
-                "percent": 83.33,
-                "done_names": [
-                  "InitializeGamePoolContext",
-                  "AcquireUnusedGamePoolContext",
-                  "RetainCurrentGamePoolContext",
-                  "ReleaseGamePoolContextReference",
-                  "LookupU32HashTableValue"
-                ],
-                "todo_names": [
-                  "0x140abba30"
-                ],
-                "done_addresses": [
-                  "140904120",
-                  "14090e110",
-                  "14090e280",
-                  "14090e300",
-                  "140913a90"
-                ],
-                "todo_addresses": [
-                  "140abba30"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/runtime/egameevents",
-                "label": "Game Events",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "percent": 0.0,
-                "done_names": [],
-                "todo_names": [
-                  "0x1401115f0",
-                  "0x140cc3dc0",
-                  "0x140cc58c0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1401115f0",
-                  "140cc3dc0",
-                  "140cc58c0"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/runtime/gamebase",
-                "label": "Game Base",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "percent": 0.0,
-                "done_names": [],
-                "todo_names": [
-                  "0x140ccf9b0",
-                  "0x140ce7280",
-                  "0x140cea620"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140ccf9b0",
-                  "140ce7280",
-                  "140cea620"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/runtime/gameupdater",
-                "label": "Gameupdater",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "percent": 0.0,
-                "done_names": [],
-                "todo_names": [
-                  "0x1409345c0",
-                  "0x140956a10",
-                  "0x140958760"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1409345c0",
-                  "140956a10",
-                  "140958760"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/runtime/egametype",
-                "label": "Game Type",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "percent": 0.0,
-                "done_names": [],
-                "todo_names": [
-                  "0x140c871f0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140c871f0"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/runtime/game-update-thread",
-                "label": "Game Update Thread",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "percent": 0.0,
-                "done_names": [],
-                "todo_names": [
-                  "0x14090dde0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14090dde0"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/runtime/gamemerger",
-                "label": "Gamemerger",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "percent": 0.0,
-                "done_names": [],
-                "todo_names": [
-                  "0x14090e6f0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14090e6f0"
                 ],
                 "unresolved_addresses": [],
                 "groups": []
@@ -19704,5 +19710,5 @@
       }
     ]
   },
-  "unmapped": 7999
+  "unmapped": 7998
 }
