@@ -250,3 +250,7 @@ The system → subsystem → component → code-role hierarchy keeps each native
 ## Contiguous subsystem layout
 
 Replaced the strip-quantization layout with recursive contiguous partitions of the shared square lattice. The inspected result moves the main systems and their nested components into new regions; it preserves all function assignments and review states. Main system labels use 16 pixels, component labels 14 pixels, and counts 12 pixels. All nine system labels must appear, each system must remain connected, and label boxes must remain inside the graph without overlap. This corrects the layout; full system mapping and completion remain incomplete.
+
+## Compact front-page map
+
+After inspecting the actual GitHub page in the browser, reduced the graph from 914 to 484 pixels high. The 64-column lattice preserves all 1,558 real, equal-square cells and all review states. Narrow sections prefer a horizontal split to accommodate readable words. No code mapping or semantic-review count increased in this layout change.

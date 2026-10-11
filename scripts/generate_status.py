@@ -301,7 +301,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     """Partition a single square lattice: no stretched cells or empty slots."""
     x0,y0,width,height=bounds
     count=sum(len(n['rows']) for n in nodes)
-    columns=44
+    columns=64
     # Preserve equal squares for arbitrary evidence-backed inventory sizes.
     # A partial final row contains no fake functions or completion padding.
     grid_rows=math.ceil(count/columns)
@@ -321,6 +321,10 @@ def render_hierarchy(nodes, bounds, depth=0):
             choices.append((abs(total-2*running),cut,running))
         _,cut,amount=min(choices)
         vertical=width>=height
+        # Prefer a wide, shallow section to a narrow column that cannot fit
+        # even a single word of its system heading at readable size.
+        if vertical and width>=7 and min(amount,total-amount)/height<7:
+            vertical=False
         ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
         first=set(ordered[:amount]);second=positions-first
         return divide(items[:cut],first)+divide(items[cut:],second)
@@ -361,7 +365,7 @@ def render_hierarchy(nodes, bounds, depth=0):
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<5:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
-        size=16 if level==0 else 14
+        size=15 if level==0 else 14
         placed=None;root_placements=[]
         # Major headings belong at the start of their own section. Children
         # find room below them rather than displacing the parent into the middle.
@@ -463,21 +467,21 @@ def render(status, applied, mapping):
                    'Every cell is a real function. Every section is filled using the same fixed square lattice and mapped-count area scale. Labels overlay cells; there are no reserved header bands. '
                    'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="914" viewBox="0 0 1000 914" role="img" aria-labelledby="status-title status-desc">',
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="484" viewBox="0 0 1000 484" role="img" aria-labelledby="status-title status-desc">',
            '<title id="status-title">Dreams function review by game system</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 914, "background"),
+           rect(0, 0, 1000, 484, "background"),
            text(4, 21, f'Dreams code review | {mapped:,} mapped functions', 16),
            text(996, 21, 'Section counts = checked names / identified functions', 12, 'muted', extra=' text-anchor="end"'),
            '<g data-panel="review">']
-    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,820)))
+    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,391)))
     out.extend(['</g>',
-                legend(4, 878, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
-                legend(250, 878, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
-                legend(520, 878, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
-                legend(700, 878, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
-    out.append(text(4, 904, f'{unassigned:,} functions still unmapped. Names checked includes properties/types; this is not whole-system completion.', 12, 'muted'))
+                legend(4, 450, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
+                legend(250, 450, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
+                legend(520, 450, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
+                legend(700, 450, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
+    out.append(text(4, 476, f'{unassigned:,} functions still unmapped. Names checked includes properties/types; this is not whole-system completion.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
