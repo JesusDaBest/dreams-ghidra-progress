@@ -18,6 +18,7 @@ import math
 from pathlib import Path
 import re
 import subprocess
+import textwrap
 
 
 SCHEMA_VERSION = 1
@@ -30,32 +31,12 @@ CONVENTION = {"direct_sysv", "inherited_sysv", "other", "unknown"}
 COLORS = {
     "background": "#0d1117", "panel": "#131b26", "border": "#263344",
     "text": "#f0f6fc", "muted": "#97a8bc",
-    "green": "#3fb950", "blue": "#58a6ff", "gray": "#687c94",
+    "green": "#3fb950", "blue": "#58a6ff", "gray": "#484f58",
     "amber": "#d29922",
 }
 
-# Address assignments supported by the recorded property/registration evidence
-# in analysis/function-review.json. Ownership and name-review status are separate:
-# a function retains its area if its review status changes. No names are matched
-# by keywords and no space is reserved for areas without assigned functions.
-RESEARCH_AREAS = (
-    ("sculpting-creation", "Sculpting & creation", "", ()),
-    ("gadgets-logic", "Gadgets & logic", "Property and registration routines", (
-        "1404d6660", "1404d7480", "1404d7ef0", "1404d83d0", "1404d87a0",
-        "1404d8bf0", "1404d9c10", "1404da460", "1404dabe0", "1404db190",
-        "140d57980", "140d57a50", "140d57b20", "140d57bf0", "140d57cc0",
-        "140d57d90", "140d6dbd0", "140d6ddf0", "140d6e010", "140d6e2b0",
-        "140d6e570", "140d6e850",
-    )),
-    ("rendering-lighting", "Rendering & lighting", "", ()),
-    ("physics-movement", "Physics & movement", "", ()),
-    ("sound-music", "Sound & music", "", ()),
-    ("puppets-animation", "Puppets & animation", "", ()),
-    ("interface-controls", "Interface & controls", "", ()),
-    ("shared-object-data", "Shared object data", "Shared property helpers", (
-        "1404f68b0", "1404f7a20", "1404f70b0", "1404f8350", "140cfda40",
-    )),
-)
+# Mapping is independently evidenced in analysis/system-map.json. Discovering
+# ownership never changes a function's semantic-review state.
 
 def address(value):
     text = str(value).lower().removeprefix("0x")
@@ -219,30 +200,25 @@ def legend(x, y, color, label, stroke=None):
     return rect(x, y-9, 8, 8, color, 1, stroke) + text(x+15, y, label, 11, "muted")
 
 
-def research_area_rows(rows):
-    """Partition the entire inventory by evidenced ownership, including unknowns."""
+def research_area_rows(rows, mapping):
+    """Group mapped functions; unknown ownership is reported outside the map."""
     by_address = {row["address"]: row for row in rows}
     if len(by_address) != len(rows):
         raise ValueError("Research-area input contains duplicate addresses")
-    assigned = set()
-    area_ids = set()
-    result = []
-    for area_id, title, role, known_addresses in RESEARCH_AREAS:
-        if area_id in area_ids:
-            raise ValueError("Research areas must have distinct IDs")
-        area_ids.add(area_id)
-        selected = []
-        for addr in known_addresses:
-            if address(addr) != addr or addr in assigned:
-                raise ValueError("Research-area allowlists contain an invalid or repeated address")
-            if addr not in by_address:
-                raise ValueError("A reviewed research-area address is missing from the inventory")
-            assigned.add(addr)
-            selected.append(by_address[addr])
-        result.append((area_id, title, role, sorted(selected, key=lambda row: int(row["address"], 16))))
-    unassigned = [row for row in rows if row['address'] not in assigned]
-    result.append(('unassigned', 'Unassigned', 'System not yet established', unassigned))
-    return result
+    if mapping['schema_version'] != 1:
+        raise ValueError('Unsupported system-map schema')
+    systems = mapping['systems']
+    if not systems or 'unassigned' in systems:
+        raise ValueError('The map must contain evidenced systems')
+    grouped = {system: [] for system in systems}
+    for addr, assignment in mapping['assignments'].items():
+        if address(addr) != addr or addr not in by_address:
+            raise ValueError('Mapped address is missing from the inventory')
+        if assignment['system'] not in systems or not assignment['evidence']:
+            raise ValueError('Every system assignment requires evidence')
+        grouped[assignment['system']].append(by_address[addr])
+    return [(system, label, '', sorted(grouped[system], key=lambda row: int(row['address'],16)))
+            for system, label in systems.items()]
 
 
 def packed_regions(entries, bounds):
@@ -305,61 +281,66 @@ def function_cells(rows, bounds):
     return out
 
 
-def render(status, applied):
+def render(status, applied, mapping):
     total = status["inventory_total"]
     review = status["metrics"]["review"]
     assert len(applied) == review["verified_names"]
     assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
     rows = status["rows"]
     assert len(rows) == total and len({row["address"] for row in rows}) == total
-    areas = research_area_rows(rows)
-    unassigned = len(next(items for area_id, _, _, items in areas if area_id == 'unassigned'))
-    mapped = total - unassigned
+    areas = research_area_rows(rows, mapping)
+    mapped = sum(len(items) for _, _, _, items in areas)
+    unassigned = total - mapped
+    mapped_review = Counter(row['review'] for _, _, _, items in areas for row in items)
     description = (f'{review["verified_names"]} of {total} function names checked. '
                    f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
-                   'These research areas are not proven module boundaries. '
+                   'Sections show evidence-backed associations with parts of Dreams. '
                    'Every cell is a real function. Every section area is proportional to its function count. '
                    'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" role="img" aria-labelledby="status-title status-desc">',
-           '<title id="status-title">Dreams research areas and checked function names</title>',
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="486" viewBox="0 0 1000 486" role="img" aria-labelledby="status-title status-desc">',
+           '<title id="status-title">Dreams function review by game system</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 380, "background"),
-           text(4, 21, f'Names checked: {review["verified_names"]:,} / {total:,} ({100 * review["verified_names"] / total:.2f}%)', 16),
+           rect(0, 0, 1000, 486, "background"),
+           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams · {mapped_review["verified_name"]:,} names checked', 16),
            '<g data-panel="review">']
-    for (area_id, title, _, selected), bounds in packed_regions(areas, (0, 30, 1000, 300)):
+    for (area_id, title, _, selected), bounds in packed_regions(areas, (0, 34, 1000, 392)):
         x, y, width, height = bounds
         checked = sum(row['review'] == 'verified_name' for row in selected)
         out.append(f'<g data-area="{area_id}" data-count="{len(selected)}"><title>{escape(title)}: {len(selected):,} functions in this section; {checked} names checked.</title>')
         out.extend(function_cells(selected, bounds))
         out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{width:.6f}" height="{height:.6f}" fill="none" stroke="#0d1117" stroke-width="{min(2, width / 20):.6f}"/>')
-        if width >= 160 and height >= 40:
-            outline = ' stroke="#0d1117" stroke-width="3" paint-order="stroke"'
-            out.append(text(round(x+5, 3), round(y+17, 3), f'{title} · {len(selected):,} functions', 13, extra=outline))
+        outline = ' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
+        label_lines = textwrap.wrap(title, width=max(12, int((width-12)/7.6)), break_long_words=False)
+        for line_number, label in enumerate(label_lines):
+            out.append(text(round(x+6, 3), round(y+17+16*line_number, 3), label, 13, weight=600, extra=outline))
+        out.append(text(round(x+6, 3), round(y+19+16*len(label_lines), 3),
+                        f'{checked}/{len(selected):,} ({100*checked/len(selected):.1f}%)', 11, extra=outline))
         out.append('</g>')
     out.extend(['</g>',
-                legend(4, 349, 'green', f'{review["verified_names"]:,} names checked'),
-                legend(230, 349, 'amber', f'{review["deferred"]:,} reviewed, unresolved'),
-                legend(490, 349, 'gray', f'{review["unreviewed"]:,} not reviewed')])
-    located = '; '.join(f'{title}: {len(items):,}' for area_id, title, _, items in areas if area_id != 'unassigned' and items)
-    out.append(text(4, 373, f'Functions assigned so far — {located}. Unassigned: {unassigned:,}.', 11, 'muted'))
+                legend(4, 450, 'green', f'{mapped_review["verified_name"]:,} names checked'),
+                legend(220, 450, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
+                legend(470, 450, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
+                text(996, 450, 'One cell = one mapped function', 11, 'muted', extra=' text-anchor="end"')])
+    out.append(text(4, 475, f'{unassigned:,} more functions still need system mapping. Section sizes and percentages use mapped functions only.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
 
-def render_area_table(status):
-    areas = research_area_rows(status['rows'])
-    lines = ['| Part of Dreams | Functions assigned so far | Names checked | System completion |',
-             '| --- | ---: | ---: | --- |']
+def render_area_table(status, mapping):
+    areas = research_area_rows(status['rows'], mapping)
+    lines = ['| Part of Dreams | Functions mapped | Names checked |',
+             '| --- | ---: | ---: |']
     for area_id, title, _, rows in areas:
-        if area_id == 'unassigned':
-            continue
         checked = sum(row['review'] == 'verified_name' for row in rows)
-        lines.append(f'| {title} | {len(rows):,} | {checked:,} | Unknown |')
-    unassigned = len(areas[-1][3])
-    lines.extend(['', f'**{unassigned:,} of {status["inventory_total"]:,} functions have no verified system assignment yet.** '
-                  'A zero above means none assigned so far; the system\'s actual function count is unknown.'])
+        progress = f'{checked:,} / {len(rows):,} ({100*checked/len(rows):.1f}%)' if rows else 'No functions mapped yet'
+        lines.append(f'| {title} | {len(rows):,} | {progress} |')
+    mapped = sum(len(rows) for _,_,_,rows in areas)
+    unassigned = status['inventory_total'] - mapped
+    lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
+                  'Percentages measure checked names among the functions mapped to that section. '
+                  'The complete size of each system is still unknown; these are not whole-game completion percentages.'])
     return '\n'.join(lines)
 
 
@@ -419,6 +400,7 @@ def main(argv=None):
     repo = Path(__file__).resolve().parent.parent
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--status", type=Path, default=repo / "analysis" / "status.json", help="Public sanitized status input; rewritten canonically")
+    parser.add_argument("--system-map", type=Path, default=repo / "analysis" / "system-map.json", help="Evidenced code-to-system assignments")
     parser.add_argument("--output", type=Path, default=repo / "assets" / "status.svg")
     parser.add_argument("--badges-output", type=Path, default=repo / "assets" / "status-badges.svg")
     parser.add_argument("--inventory", type=Path, help="Local inventory: copies only addresses; names and all other fields discarded")
@@ -427,20 +409,21 @@ def main(argv=None):
     parser.add_argument("--asset-revision", help="Pin README images to a committed revision containing the generated assets")
     args = parser.parse_args(argv)
     status = sanitize(read_json(args.status), args.inventory, args.cache_index)
+    mapping = read_json(args.system_map)
     # Compact rows keep the public inventory small and reviewable; the header is pretty printed.
     header = dict(status)
     rows = header.pop("rows")
     content = json.dumps(header, indent=2)[:-2] + ',\n  "rows": [\n'
     content += ",\n".join("    " + json.dumps(row, separators=(",", ":")) for row in rows)
     content += "\n  ]\n}\n"
-    svg = render(status, read_json(repo / "analysis" / "function-review.json")["applied"])
+    svg = render(status, read_json(repo / "analysis" / "function-review.json")["applied"], mapping)
     badges_svg = render_badges(status)
     readme_path = repo / 'README.md'
     readme = readme_path.read_text(encoding='utf-8')
     expected_readme = readme
     summary = (f'**{status["metrics"]["review"]["verified_names"]:,} of {status["inventory_total"]:,} '
                'functions named and checked.** A function is one piece of the game\'s code.')
-    for marker, replacement in (('status-summary', summary), ('area-status', render_area_table(status))):
+    for marker, replacement in (('status-summary', summary), ('area-status', render_area_table(status, mapping))):
         pattern = rf'(<!-- {marker}:start -->).*?(<!-- {marker}:end -->)'
         expected_readme, count = re.subn(pattern, lambda m: m[1] + '\n' + replacement + '\n' + m[2],
                                         expected_readme, flags=re.S)
