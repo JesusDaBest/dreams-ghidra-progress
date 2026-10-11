@@ -371,14 +371,14 @@ def render(status, applied, mapping):
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
            rect(0, 0, 1000, 710, "background"),
-           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams Â· {mapped_review["verified_name"]:,} names checked', 16),
+           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams | {mapped_review["verified_name"]:,} names checked', 16),
            '<g data-panel="review">']
     out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,616)))
     out.extend(['</g>',
                 legend(4, 675, 'green', f'{mapped_review["verified_name"]:,} names checked'),
                 legend(220, 675, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
                 legend(470, 675, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
-                text(996, 675, 'System â†’ component â†’ code unit', 11, 'muted', extra=' text-anchor="end"')])
+                text(996, 675, 'System / component / code unit', 11, 'muted', extra=' text-anchor="end"')])
     out.append(text(4, 700, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
@@ -403,7 +403,7 @@ def render_area_table(status, mapping):
             if not node['rows']:
                 continue
             checked=sum(r['review']=='verified_name' for r in node['rows'])
-            lines.append('  '*depth+f'- **{node["label"]}** â€” {checked}/{len(node["rows"]):,} names checked')
+            lines.append('  '*depth+f'- **{node["label"]}** - {checked}/{len(node["rows"]):,} names checked')
             list_nodes(node['children'],depth+1)
     list_nodes(hierarchy_rows(status['rows'],mapping))
     lines.extend(['','</details>'])
