@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "50 previously unnamed functions reviewed; 46 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "51 previously unnamed functions reviewed; 47 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9349,
-    "other_names": 202,
+    "default_fun_names": 9348,
+    "other_names": 203,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -904,6 +904,25 @@
         "Static lookup behavior only; does not establish tool implementation, gameplay execution, or telemetry transport.",
         "Finite enumeration covers the observed tag range and two out-of-range representatives; unsigned dispatch guards provide the fallback for other out-of-range values.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "140944f20",
+      "original_name": "FUN_140944f20",
+      "applied_name": "InitializeVariableGadgetDefaults",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete assembly covers 33 instructions/229 bytes. The function writes defaults to the RDI object without calls or conditionals.",
+        "Independent EThingType registration identifies VariableGadget as 0x58. Directly read signed-relative tables in callers 14093be60 and 140df1ce0 resolve index 0x58 to zero-fill branches followed by this initializer at 14093e0f0 and 140df3c7d.",
+        "Writes at +0xe8,+0xec,+0xf0 establish InitialValue=0, MinLength=-1000 and MaxLength=1000, matching independently reviewed field registrar 140d6a700. Little-endian dword 0x010001ff at +0x10d sets VariableValueShouldBePreserved+0x10f=0 and RestoreVariableOnLevelRewind+0x110=1."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Stored defaults only; exact preservation/rewind lifecycle is still being traced.",
+        "Callers zero the object before this initializer; the initializer alone does not overwrite every object byte.",
+        "No parameter types, prototype, calling convention or datatype changes proposed."
       ]
     }
   ],
