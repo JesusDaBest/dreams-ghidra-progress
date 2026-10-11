@@ -52,11 +52,11 @@ A bounded native pass against the immutable, validated snapshot produced these r
 | Cache state | Functions |
 | --- | ---: |
 | Complete pseudocode cached | 2,122 |
-| Bounded timeout failures | 11 |
+| Decompilation failures | 11 |
 | Pending | 7,418 |
 | Total discovered | 9,551 |
 
-The 15 external functions are recorded separately. Cache completion does not mark a function as semantically reviewed. The pass is resumable and retains failures for deliberate retries. [The front-page status](README.md#status) is generated from sanitized address/status rows.
+The 11 failures comprise 10 timeouts and one decompiler flow-instruction limit. All 2,122 cache hashes passed verification, and all 19 thunks have cached output. The 15 external functions are recorded separately. Cache completion does not mark a function as semantically reviewed. The pass is resumable and retains failures for deliberate retries. [The front-page status](README.md#status) is generated from sanitized address/status rows.
 
 ## Next work
 
