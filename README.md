@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/009875ecf5792c64f0ed26b44e47fa3aa65364d3/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=fdb5848607ac)
 
 <!-- status-summary:start -->
-**45 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**46 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/009875ecf5792c64f0ed26b44e47fa3aa65364d3/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=61c49fa4e670)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 36 of the 45 checked names; 9 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 36 of the 46 checked names; 10 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -703,7 +703,7 @@ So far, checked names cover gadget property readers and registrations plus share
 
 ## Latest progress
 
-- **45 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **46 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
 - **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
 - **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.

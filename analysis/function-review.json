@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "49 previously unnamed functions reviewed; 45 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "50 previously unnamed functions reviewed; 46 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9350,
-    "other_names": 201,
+    "default_fun_names": 9349,
+    "other_names": 202,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -885,6 +885,25 @@
         "Property visitation/registration only; runtime value evaluation, player-index semantics and persistence are not established.",
         "Older-format behavior is described by observed state comparisons; exact version numbering remains unverified.",
         "No parameter, prototype, calling convention or datatype changes proposed."
+      ]
+    },
+    {
+      "address": "140646860",
+      "original_name": "FUN_140646860",
+      "applied_name": "GetToolTagName",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete captured assembly covers 687 instructions and 2777 bytes. The function takes EDI, dispatches through five bounded signed-relative jump tables, and returns static string pointers in RAX without calls or writes.",
+        "Static interpretation of all observed instruction forms and directly read table bytes resolves all 837 input IDs from 0 through 0x344: 326 named entries, 511 notag results. Checks include InventoryVariableGadget at 0x264, InventoryNetworkVariableGadget at 0x2ec, ImportExportMode at 0x344, and notag for 0x345 and 0xffffffff.",
+        "Direct caller 14018dee0 passes the returned string under tool_tag to 14017f380. Direct caller 140634730 compares returned names against text input. Independent descriptor 140d25180 names EToolTag and uses the tooltag field, with corresponding enum registrations in 140d25430."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Static lookup behavior only; does not establish tool implementation, gameplay execution, or telemetry transport.",
+        "Finite enumeration covers the observed tag range and two out-of-range representatives; unsigned dispatch guards provide the fallback for other out-of-range values.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
       ]
     }
   ],
