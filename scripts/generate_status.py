@@ -258,8 +258,8 @@ def packed_regions(entries, bounds):
     return result
 
 
-CELL_SIZE = 6
-CELL_PITCH = 7
+CELL_SIZE = 12
+CELL_PITCH = 13
 
 
 def function_cells(rows, bounds):
@@ -316,58 +316,78 @@ def hierarchy_rows(rows, mapping):
     return tree
 
 
-def component_layout(nodes, width=1000):
-    """Reserve space for every label; cell counts, rather than box area, show scale."""
-    card_width, gap, padding = 492, 16, 12
-    columns = int((card_width-2*padding)//CELL_PITCH)
-    bottoms = [42, 42]
-    placed = []
-    for node in sorted(nodes, key=lambda n: (-len(n['rows']), n['id'])):
-        components = sorted((n for n in node['children'] if n['rows']), key=lambda n: (-len(n['rows']),n['id'])) or [node]
-        component_heights = [31 + math.ceil(len(n['rows'])/columns)*CELL_PITCH for n in components]
-        height = 48 + sum(component_heights) + 8
-        column = min(range(2),key=lambda i: bottoms[i])
-        placed.append((node, components, component_heights, column*(card_width+gap), bottoms[column], card_width,height))
-        bottoms[column] += height + gap
-    return placed, max(bottoms)+60
+def packed_component_layout(nodes):
+    """Pack nested sections, reserving measurable space for labels and square grids."""
+    ordered = sorted(nodes, key=lambda n: (-len(n['rows']), n['id']))
+    weights = {}
+    for node in ordered:
+        for child in node['children'] or [node]:
+            weights[child['path']] = 1400 + len(child['rows']) * CELL_PITCH ** 2
+    height = 650
+    for attempt in range(100):
+        roots = [(n['id'],n['label'],n,range(math.ceil(sum(weights[c['path']] for c in n['children'] or [n])))) for n in ordered]
+        layout, failed = [], []
+        for (_,_,node,_),(x,y,w,h) in packed_regions(roots,(0,42,1000,height)):
+            components = [c for c in node['children'] if c['rows']] or [node]
+            entries = [(c['id'],c['label'],c,range(math.ceil(weights[c['path']]))) for c in components]
+            children=[]
+            for (_,_,c,_),bounds in packed_regions(entries,(x+3,y+42,w-6,h-45)):
+                cx,cy,cw,ch = bounds
+                lines=textwrap.wrap(c['label'],width=max(1,int((cw-12)/6.2)),break_long_words=False)
+                header=18+len(lines)*13
+                columns=max(1,int((cw-12)//CELL_PITCH))
+                needed=header+math.ceil(len(c['rows'])/columns)*CELL_PITCH+6
+                if cw < 102 or ch < needed or any(len(line)*6.2>cw-12 for line in lines):
+                    failed.append(c['path'])
+                children.append((c,bounds,lines,header))
+            layout.append((node,(x,y,w,h),children))
+        if not failed:
+            return layout,height+110
+        for path in failed:
+            weights[path]*=1.15
+        height+=8
+    raise ValueError('Cannot fit every component label and fixed-size square; refusing to hide labels')
 
 
 def render(status, applied, mapping):
-    review = status['metrics']['review']
     assert {r['address'] for r in applied} == {r['address'] for r in status['rows'] if r['review']=='verified_name'}
-    tree = hierarchy_rows(status['rows'],mapping)
-    placed,height = component_layout(tree)
-    mapped = sum(len(n['rows']) for n in tree)
-    states = Counter(r['review'] for n in tree for r in n['rows'])
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{height}" viewBox="0 0 1000 {height}" role="img" aria-labelledby="status-title status-desc">',
-           '<title id="status-title">Dreams progress by system and component</title>',
-           '<desc id="status-desc">Every function square is the same size. Every system and component has a visible name and checked-versus-mapped count. Green means name checked; amber means review unresolved; gray means unreviewed. Blank space is layout space, not progress. Full system sizes remain unknown.</desc>',
-           '<g font-family="Segoe UI,Arial,sans-serif">',rect(0,0,1000,height,'background'),
-           text(4,20,f'{mapped:,} functions mapped to Dreams systems | {states["verified_name"]} names checked',16),
-           text(4,36,'Each square is one function. Counts show checked names / identified functions.',12,'muted'),
-           '<g data-panel="review">']
-    for node,components,heights,x,y,w,h in placed:
-        checked = sum(r['review']=='verified_name' for r in node['rows'])
+    tree=hierarchy_rows(status['rows'],mapping)
+    layout,height=packed_component_layout(tree)
+    mapped=sum(len(n['rows']) for n in tree)
+    states=Counter(r['review'] for n in tree for r in n['rows'])
+    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{height}" viewBox="0 0 1000 {height}" role="img" aria-labelledby="status-title status-desc">',
+         '<title id="status-title">Dreams progress: packed systems and components</title>',
+         '<desc id="status-desc">Nested system and component map. Every function is one identical square. Every displayed component has its full label and checked/identified count. Container space includes label padding and does not measure system size. Full code-unit names are listed in the breakdown below.</desc>',
+         '<g font-family="Segoe UI,Arial,sans-serif">',rect(0,0,1000,height,'background'),
+         text(4,20,f'{mapped:,} functions mapped to parts of Dreams | {states["verified_name"]} names checked',16),
+         text(4,36,'One square = one function. Green: checked name. Amber: unresolved review. Gray: not reviewed.',12,'muted'),
+         '<g data-panel="review">']
+    for node,(x,y,w,h),children in layout:
+        checked=sum(r['review']=='verified_name' for r in node['rows'])
         out.append(f'<g data-area="{node["id"]}" data-count="{len(node["rows"])}">')
-        out.append(rect(x,y,w,h,'panel',4,'border'))
-        out.append(text(x+12,y+22,node['label'],16,weight=600))
-        out.append(text(x+12,y+40,f'{checked:,} / {len(node["rows"]):,} names checked',12,'muted'))
-        cy=y+48
-        for component,ch in zip(components,heights):
-            count=sum(r['review']=='verified_name' for r in component['rows'])
-            path='/'.join(component['path'])
-            out.append(f'<g data-component="{path}" data-count="{len(component["rows"])}">')
-            out.append(text(x+12,cy+14,component['label'],12,weight=600))
-            out.append(text(x+w-12,cy+14,f'{count}/{len(component["rows"])} checked',11,'muted',extra=' text-anchor="end"'))
-            out.extend(function_cells(component['rows'],(x+12,cy+21,w-24,ch-21)))
+        out.append(rect(x,y,w,h,'panel',0,'background'))
+        root_lines=textwrap.wrap(node['label'],width=max(12,int((w-12)/7)),break_long_words=False)
+        if len(root_lines)>2:
+            raise ValueError('System label does not fit its reserved header')
+        for index,line in enumerate(root_lines):
+            out.append(text(x+6,y+14+index*12,line,12,weight=600))
+        out.append(text(x+6,y+14+len(root_lines)*12,f'{checked}/{len(node["rows"])} names checked',11,'muted'))
+        for c,(cx,cy,cw,ch),lines,header in children:
+            count=sum(r['review']=='verified_name' for r in c['rows'])
+            path='/'.join(c['path'])
+            out.append(f'<g data-component="{path}" data-count="{len(c["rows"])}">')
+            out.append(rect(cx,cy,cw,ch,'background',0,'border'))
+            for index,line in enumerate(lines):
+                out.append(text(cx+6,cy+14+index*13,line,11,weight=600))
+            out.append(text(cx+6,cy+header-3,f'{count}/{len(c["rows"])} checked',10,'muted'))
+            out.extend(function_cells(c['rows'],(cx+6,cy+header,cw-12,ch-header-6)))
             out.append('</g>')
-            cy+=ch
         out.append('</g>')
     out.extend(['</g>',legend(4,height-47,'green',f'{states["verified_name"]} names checked'),
                 legend(225,height-47,'amber',f'{states["deferred"]} reviewed, unresolved'),
                 legend(485,height-47,'gray',f'{states["unreviewed"]:,} not reviewed'),
                 text(4,height-26,f'{status["inventory_total"]-mapped:,} functions still need system mapping. Full system sizes and completion remain unknown.',12,'muted'),
-                text(4,height-8,'Squares are comparable across all groups. Box space is reserved for labels; box area does not measure system size.',12,'muted'),
+                text(4,height-8,'Compare identical squares and counts. Section space includes readable labels; empty space carries no progress status.',12,'muted'),
                 '</g></svg>'])
     return '\n'.join(out)+'\n'
 
