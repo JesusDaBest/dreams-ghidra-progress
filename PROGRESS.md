@@ -93,6 +93,8 @@ The supplied packed-program archive and its input copy still match their pre-ana
 
 ## Next work
 
+The first code-to-system mapping pass associated 1,540 functions with nine Dreams systems using native source-string references, registered type descriptors, field and enum builders, and the object-type dispatcher. All 120 dispatcher branches were resolved; 119 received system assignments. Four typed wrappers were linked to their exact descriptor schemas. Conflicting ownership was excluded. The remaining 8,011 functions are reported outside the system map. This did not add semantic-review credit: 27 names remain checked and 4 reviews remain deferred. See [mapping evidence](MAPPING.md) and the per-address [system map](analysis/system-map.json).
+
 1. Investigate the recorded extraction failures with targeted assembly and metadata checks.
 2. Review coherent clusters, beginning with calculator registration and shared property visitors.
 3. Reconcile preserved explicit signatures, SIMD inputs, and indirect-call arguments with assembly evidence.
