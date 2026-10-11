@@ -11,11 +11,11 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](assets/status-badges.svg?v=a7a248b0fd3a)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/3bac5130ebed0df3b5bb34ea62fe2e82ba31bf1a/assets/status-badges.svg)
 
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 
-![Dreams research by game system](assets/status.svg?v=a30bf222c397)
+![Dreams research by game system](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/3bac5130ebed0df3b5bb34ea62fe2e82ba31bf1a/assets/status.svg)
 
 **Green square = one checked function name. Gray grid = unmapped research space.** All gadget families stay together in the right-hand map. Checked names currently describe properties and registration; no whole gadget or system is marked finished.
 
