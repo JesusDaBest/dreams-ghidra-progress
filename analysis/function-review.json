@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "45 previously unnamed functions reviewed; 41 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "49 previously unnamed functions reviewed; 45 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9354,
-    "other_names": 197,
+    "default_fun_names": 9350,
+    "other_names": 201,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -807,6 +807,84 @@
         "These functions visit named properties through callbacks; runtime wireless transmission and variable evaluation algorithms remain unreviewed.",
         "Version/state thresholds and path filters gate some fields. No assertion about serialization direction or exact parameter types. No signatures changed.",
         "Preservation and level-rewind fields are gated by state +0x1c >=0x5ff. Final indirect callback has a decompiler jump-table warning; direct assembly was checked, without assuming a switch table."
+      ]
+    },
+    {
+      "address": "1404f9650",
+      "original_name": "FUN_1404f9650",
+      "applied_name": "VisitPlayerValueProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "The independently named PlayerValue descriptor initializer 140d1b0c0 installs literal PlayerValue on 14586d3a0, then registers non_player at offset 0 and values at +4. This visitor reads non_player as a scalar float and traverses four floats at +4,+8,+0xc,+0x10 under values.",
+        "VariableGadget calls it for object+0xf4 at 1404e3824; the matching registrar uses RegisterPlayerValueFieldOffset for VariableValue+0xf4. Other callers include the generic property dispatcher and PadRumble visitor.",
+        "Visitor state +0x18 must be zero for the player array branch. Modern state >=0x4ef enters a values scope and restores prior path state afterward. Older state uses four legacy callbacks and emits valid_bits=0. No mutation of the input float object was found in the full assembly."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst descriptive name, not recovered original symbol.",
+        "Property visitation/registration only; runtime value evaluation, player-index semantics and persistence are not established.",
+        "Older-format behavior is described by observed state comparisons; exact version numbering remains unverified.",
+        "No parameter, prototype, calling convention or datatype changes proposed."
+      ]
+    },
+    {
+      "address": "1404f9b20",
+      "original_name": "FUN_1404f9b20",
+      "applied_name": "VisitPlayerValueBoolProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Literal PlayerValueBool is installed on descriptor 14586d650 by 140d1b1c0; it registers one PlayerBits field at offset zero using RegisterNumberFieldOffset. The matching field helper 140d68880 binds the same descriptor.",
+        "This visitor preserves incoming ESI in R14D, zero-extends its low byte into ESI and dispatches PlayerBits through callback +0x848 at 1404f9bc0. VariableGadget passes its increase/decrease bytes at +0x10b/+0x10c to this helper.",
+        "When visitor state +0x18 equals zero and +0x1c <=0x4ee, it also emits valid_bits=0, subject to the path filter. Its last indirect jump is a tail callback loaded from vtable+0x848, not a proven switch table."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst descriptive name, not recovered original symbol.",
+        "Property visitation/registration only; runtime value evaluation, player-index semantics and persistence are not established.",
+        "Older-format behavior is described by observed state comparisons; exact version numbering remains unverified.",
+        "No parameter, prototype, calling convention or datatype changes proposed."
+      ]
+    },
+    {
+      "address": "140d68880",
+      "original_name": "FUN_140d68880",
+      "applied_name": "RegisterPlayerValueBoolFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete registrar assembly preserves RDI registry in R13, RSI property name in R14 and EDX object offset in R15D. It appends a 0x90-byte field record, stores name/hash/offset, initializes 140d1b1c0 and installs descriptor 14586d650 on the record.",
+        "The descriptor initializer explicitly names PlayerValueBool and registers PlayerBits. VariableGadget uses this helper for VariableIncreasedOutput+0x10b and VariableDecreasedOutput+0x10c."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst descriptive name, not recovered original symbol.",
+        "Property visitation/registration only; runtime value evaluation, player-index semantics and persistence are not established.",
+        "Older-format behavior is described by observed state comparisons; exact version numbering remains unverified.",
+        "No parameter, prototype, calling convention or datatype changes proposed."
+      ]
+    },
+    {
+      "address": "140d1b1c0",
+      "original_name": "FUN_140d1b1c0",
+      "applied_name": "RegisterPlayerValueBoolTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete guarded initializer loads NUL-terminated PlayerValueBool at 141710c85, stores it on descriptor 14586d650 at 140d1b1fe and installs two operation pointers.",
+        "It tail-calls RegisterNumberFieldOffset with RDI=14586d650, RSI=PlayerBits literal141710c95 and EDX=0. Field registrar140d68880 initializes and binds this exact descriptor."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst descriptive name, not recovered original symbol.",
+        "Property visitation/registration only; runtime value evaluation, player-index semantics and persistence are not established.",
+        "Older-format behavior is described by observed state comparisons; exact version numbering remains unverified.",
+        "No parameter, prototype, calling convention or datatype changes proposed."
       ]
     }
   ],
