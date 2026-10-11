@@ -8,7 +8,7 @@ Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains part
 - The supplied Ghidra packed-program archive was imported into a persistent working project with auto-analysis disabled to preserve existing analysis.
 - Function inventory, decompilation, and cross-reference queries were verified.
 - Original inputs and a separate preexisting project are retained outside this progress repository.
-- Both applied names persisted after a clean service stop and reopening of the saved project. The supplied original archive and its imported input copy retained their original hashes.
+- All applied names persisted after a clean service stop and reopening of the saved project. The supplied original archive and its imported input copy retained their original hashes.
 
 ## Baseline inventory
 
@@ -20,20 +20,29 @@ Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains part
 
 The 156 other names include existing annotations or symbols; they are not 156 independently verified findings from this work. Inventory size does not establish complete function discovery or decompilation coverage.
 
-After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,393 default `FUN_` names, and 158 other names. The baseline above remains unchanged.
+After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,386 default `FUN_` names, and 165 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
 
-## Documented naming batch
+## Documented naming batches
 
-Eight previously unnamed functions were inspected in and around the property-visitor cluster. Two descriptive renames were applied through MCP and verified by read-back both immediately and after reopening; six functions remain deferred because their precise roles are not sufficiently established.
+13 previously unnamed functions have documented review outcomes: 9 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
 
 | Address | Original name | Applied name | Recorded state |
 | --- | --- | --- | --- |
-| `1404d7ef0` | `FUN_1404d7ef0` | `VisitCalculatorProperties` | Applied; verified immediately and after reopening |
-| `1404d6660` | `FUN_1404d6660` | `VisitFogProperties` | Applied; verified immediately and after reopening |
+| `1404d7ef0` | `FUN_1404d7ef0` | `VisitCalculatorProperties` | Verified after reopening |
+| `1404d6660` | `FUN_1404d6660` | `VisitFogProperties` | Verified after reopening |
+| `1404f68b0` | `FUN_1404f68b0` | `VisitPosProperties` | Verified after reopening |
+| `1404f7a20` | `FUN_1404f7a20` | `VisitCanvasProperties` | Verified after reopening |
+| `1404f70b0` | `FUN_1404f70b0` | `VisitVariantProperties` | Verified after reopening |
+| `1404f8350` | `FUN_1404f8350` | `VisitGadgetNameProperties` | Verified after reopening |
+| `140cfda40` | `FUN_140cfda40` | `RegisterVariantFieldOffset` | Verified after reopening |
+| `1404d7480` | `FUN_1404d7480` | `VisitAutoGuidesGadgetProperties` | Verified after reopening |
+| `1404d83d0` | `FUN_1404d83d0` | `VisitSplitterProperties` | Verified after reopening |
 
-The calculator visitor references `CalculatorOp`, `CalculatorUnits`, `OperandA`, and `OperandB`. The fog visitor references `FogShapeType`. Both are called by the existing Thing property dispatcher and follow its property-callback pattern. These are analyst-assigned behavior names, not recovered original source names. Detailed evidence, original names, and verification status are in `analysis/function-review.json`.
+The shared visitors are identified by matching caller offsets with field registrations, explicit type literals, and body behavior. In particular, Calculator OperandA/OperandB register as Variant and its Name field registers as GadgetName. These are analyst-assigned function names; original function symbols and complete type layouts are not claimed.
 
-For this documented batch: 8 reviewed, 2 renamed and verified after reopening, 6 deferred, and 0 decompilation failures observed. The eight saved candidate decompilations were untruncated. A complete per-address coverage report does not yet exist; global reviewed, unresolved, failed, and pending totals must not be inferred from these batch counts.
+The initial eight-function review used the starting convention. The later shared-property review uses the validated PS4_SYSV correction and assembly evidence. Names, reasons, and caveats are recorded in `analysis/function-review.json`; unrelated signatures and data types were not changed in these batches.
+
+The status data contains all 9,551 discovered addresses, with decompilation and semantic-review states tracked separately. Unreviewed functions are explicitly distinguished from reviewed-but-deferred functions.
 
 ## ABI and mapping limitation
 
@@ -43,20 +52,24 @@ The starting Windows calling convention was unsuitable for the embedded PS4 func
 
 All function names, body sizes, saved parameter names/types/storage, the symbol and datatype inventories, and memory contents were preserved. Five representative decompilations matched the validation copy after the working project reopened. Registry, label, and offset inputs now recover from RDI, RSI, and EDX where observed in assembly.
 
-This is a calling-convention improvement, not completed signature recovery. SIMD inputs and indirect callbacks still need work. The global Windows data organization remains unchanged, so native PS4 type sizes and layouts must be independently checked. The two verified names rely on explicit labels and control-flow relationships.
+This is a calling-convention improvement, not completed signature recovery. SIMD inputs and indirect callbacks still need work. The global Windows data organization remains unchanged, so native PS4 type sizes and layouts must be independently checked. Verified descriptive names rely on explicit labels, registrations, and control-flow relationships.
 
 ## Decompilation snapshot
 
-A bounded native pass against the immutable, validated snapshot produced these results:
+The immutable, validated snapshot currently records:
 
 | Cache state | Functions |
 | --- | ---: |
-| Complete pseudocode cached | 2,122 |
-| Decompilation failures | 11 |
-| Pending | 7,418 |
+| Complete pseudocode cached | 9,482 |
+| Decompilation failures | 69 |
+| Pending | 0 |
 | Total discovered | 9,551 |
 
-The 11 failures comprise 10 timeouts and one decompiler flow-instruction limit. All 2,122 cache hashes passed verification, and all 19 thunks have cached output. The 15 external functions are recorded separately. Cache completion does not mark a function as semantically reviewed. The pass is resumable and retains failures for deliberate retries. [The front-page status](README.md#status) is generated from sanitized address/status rows.
+All 19 thunks are included; 15 external functions are recorded separately. Cache completion does not mark a function as semantically reviewed. Failures and attempts are retained locally for deliberate retries. [The front-page status](README.md#status) is generated from sanitized address/status rows.
+
+The extraction revision is a frozen snapshot from before the latest naming batches. The working project has the verified names listed above; cached pseudocode retains its own coherent snapshot names. Coverage accounting does not imply updated pseudocode or complete function discovery.
+
+The supplied packed-program archive and its input copy still match their pre-analysis hashes. A current whole-file hash was also recorded for the original SELF reference; no pre-analysis whole-SELF hash was available, so historical whole-file invariance is not claimed for that file.
 
 ## Next work
 

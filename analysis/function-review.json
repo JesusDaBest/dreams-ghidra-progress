@@ -2,10 +2,19 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-10",
   "status": "applied_verified_after_reopening",
-  "review_scope": "Eight previously unnamed functions adjoining existing property visitors were reviewed. Two descriptive renames were applied through MCP and verified immediately and after reopening; six functions remain deferred.",
-  "abi_caveat": "This initial naming review used the starting Windows convention, which obscured PS4 arguments. A later selective PS4_SYSV update improved recovery; see PROGRESS.md. Applied names describe observed behavior only; no prototype or type changes were made in this naming batch.",
-  "baseline_inventory": {"total":9551,"default_fun_names":9395,"other_names":156},
-  "current_inventory": {"total":9551,"default_fun_names":9393,"other_names":158,"verification":"complete_paginated_inventory_after_reopening"},
+  "review_scope": "13 previously unnamed functions reviewed; 9 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
+  "baseline_inventory": {
+    "total": 9551,
+    "default_fun_names": 9395,
+    "other_names": 156
+  },
+  "current_inventory": {
+    "total": 9551,
+    "default_fun_names": 9386,
+    "other_names": 165,
+    "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
+  },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
     {
@@ -19,7 +28,7 @@
         "Directly called by DispatchThingTypePropertyVisitor at 14048cadc.",
         "Complete untruncated decompilation uses CalculatorOp and CalculatorUnits as property labels in visitor callbacks.",
         "Visits OperandA and OperandB through the same helper and includes TweakProps, IsGluedGadget, and the existing prop_Thing_Name symbol.",
-        "Control flow follows the version-gated, path-filtered property visitor pattern of adjacent already named gadget visitors."
+        "Control flow matches the version-gated, path-filtered property visitor pattern of adjacent already named gadget visitors."
       ],
       "caveats": [
         "Descriptive analyst name, not recovered original source name.",
@@ -35,22 +44,180 @@
       "confidence": "high",
       "evidence": [
         "Directly called by DispatchThingTypePropertyVisitor at 14048caaf.",
-        "Complete untruncated decompilation visits the explicit FogShapeType property through a visitor callback.",
-        "Includes TweakProps, IsGluedGadget, additional version-gated property callbacks, and the existing prop_Thing_Name symbol.",
-        "Function follows the path-filtered per-Thing property visitor pattern of adjacent already named visitors."
+        "Complete untruncated decompilation visits the explicit FogShapeType property via a visitor callback.",
+        "Includes TweakProps, IsGluedGadget, multiple additional version-gated numeric/vector property callbacks, and the existing prop_Thing_Name symbol.",
+        "Function implements the same path-filtered per-Thing property visitor pattern as adjacent already named visitors."
       ],
       "caveats": [
-        "Descriptive analyst name, not recovered original source name; exact fog object class remains unverified.",
+        "Descriptive analyst name, not recovered original source name; exact fog object class is unverified.",
         "No assertion about parameters, return value, exact field types, or serialization direction."
+      ]
+    },
+    {
+      "address": "1404f68b0",
+      "original_name": "FUN_1404f68b0",
+      "applied_name": "VisitPosProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "VisitCalculatorProperties calls this helper at 1404d7f10 after moving the object field at +0x40 to RSI and literal Pos at 14171ab86 to RDX; RDI remains the visitor.",
+        "RegisterCalculatorFieldOffsets calls RegisterPosFieldOffset at 140d6ef19 with RDI = type_Calculator and ESI = 0x40.",
+        "RegisterPosFieldOffset stores the same Pos property label and a 0x20-byte property extent.",
+        "The helper visits body_from_model, world_from_model, prev_world_from_model, grip_from_thing, ballidx, bodyidx, relative_to_thingidx, flags, wobblyness, and lifetime under version conditions.",
+        "121 direct caller sites were returned, including VisitThingProperties, VisitSculptProperties, VisitFogProperties, and DispatchThingTypePropertyVisitor; dispatcher case 9 passes a 0x20-byte value."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Do not call this a pure position-vector visitor: it includes transforms and legacy physics fields.",
+        "No parameter types, prototype, or data layout changes proposed."
+      ]
+    },
+    {
+      "address": "1404f7a20",
+      "original_name": "FUN_1404f7a20",
+      "applied_name": "VisitCanvasProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "VisitCalculatorProperties calls this helper at 1404d80fe with RDI = visitor, RSI = object + 0x90, and RDX = TweakProps at 14171abaa.",
+        "RegisterCalculatorFieldOffsets calls RegisterCanvasPropertiesFieldOffset at 140d6ef69 with the same TweakProps label in RSI and EDX = 0x90.",
+        "RegisterCanvasPropertiesFieldOffset attaches type_CanvasProperties and a 0x40-byte property extent.",
+        "RegisterCanvasPropertiesTypeDescriptor at 140d1b290 sets the literal type name CanvasProperties and registers MinPos at +0, MaxPos at +8, PackedData at +0x10, and a transform at +0x20.",
+        "The helper visits SavedThingFromCanvas, ChartFromCanvas, HalfSize, MinPos, MaxPos, and PackedData according to version; direct loads for MinPos and MaxPos use RSI-relative offsets 0 and 8 in the decompiled storage model.",
+        "125 direct caller sites were returned, including Thing, Sculpt, Calculator, and Fog property visitors; dispatcher case 0x11 passes a 0x40-byte value."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Shared helper, not specific to Calculator or TweakProps.",
+        "No parameter types, prototype, or data layout changes proposed."
+      ]
+    },
+    {
+      "address": "1404f70b0",
+      "original_name": "FUN_1404f70b0",
+      "applied_name": "VisitVariantProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "VisitCalculatorProperties calls this helper at 1404d8376 for OperandA (object + 0xd8) and at 1404d8395 for OperandB (object + 0x100). Assembly passes visitor RDI, field pointer RSI, property key RDX.",
+        "RegisterCalculatorFieldOffsets calls 140cfda40 at 140d6f0e2 and 140d6f0f6 with the same OperandA/OperandB keys and offsets 0xd8/0x100.",
+        "140cfda40 initializes the descriptor at 145861a30 with the explicit literal Variant, calls 140cfe020 to register its fields, and attaches that descriptor to the supplied field record.",
+        "The field extent constant at 141656128 is 0x28, read directly from program memory. Generic dispatcher case 0xd also copies a 0x28-byte value before calling this visitor.",
+        "This visitor dispatches on a byte at value + 0x24, visits alpha at +0x20, and has version-dependent signallyness_bitmask handling. The Variant field registrar 140cfe020 registers a field at +0x24, a float at +0x20, and overlapping value_float1/2/3/4/5, raw_dream_id, raw_version_id, wavehash, and bitfield payload fields."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Variant is the explicit game type name; individual tag names and full union layout are not yet established.",
+        "Do not infer a calculator-only role or equate every payload with a numeric signal."
+      ]
+    },
+    {
+      "address": "1404f8350",
+      "original_name": "FUN_1404f8350",
+      "applied_name": "VisitGadgetNameProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "VisitCalculatorProperties calls this helper at 1404d83b7 with RSI = object + 0x128 and RDX = the Name property key.",
+        "RegisterCalculatorFieldOffsets ends with a tail jump at 140d6f114 to RegisterGadgetNameFieldOffset (140cdca90), with the same Name key and offset +0x128.",
+        "RegisterGadgetNameFieldOffset attaches type_GadgetName at 14582d570, with an 8-byte field extent.",
+        "RegisterGadgetNameTypeDescriptor at 140c83f70 explicitly sets the literal GadgetName and invokes 140c83d20 to install type operations.",
+        "The visitor has 136 caller sites, includes version-dependent lams_id and legacy_hash handling, calls string/identifier conversion helpers, and operates on the supplied 8-byte field."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "The name follows an explicit registered type rather than assuming all callers are calculator or gadget display names.",
+        "Do not assign a pointer/string typedef or claim the identifier encoding is known from the 8-byte extent alone."
+      ]
+    },
+    {
+      "address": "140cfda40",
+      "original_name": "FUN_140cfda40",
+      "applied_name": "RegisterVariantFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Assembly saves registry RDI, property label RSI, and object offset EDX at entry.",
+        "The function appends a 0x90-byte descriptor record to the registry's field collection, stores the supplied name at record +8, its hash at +0x10, and supplied object offset at +0x20.",
+        "It explicitly initializes the Variant type descriptor at 145861a30, attaches it at field record +0x18, and stores a 0x28-byte field extent.",
+        "Calculator field registration uses this helper for OperandA at +0xd8 and OperandB at +0x100; other callers show the helper is shared."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "No parameter names, types, prototype, storage, or convention changes are part of this rename proposal."
+      ]
+    },
+    {
+      "address": "1404d7480",
+      "original_name": "FUN_1404d7480",
+      "applied_name": "VisitAutoGuidesGadgetProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57710 sets the explicit type name AutoGuidesGadget on descriptor 1458add90, registers Thing base properties, and calls field registrar 140d6f3a0.",
+        "The visitor uses Pos at +0x40, TweakProps at +0x80, Halfsize at +0xc0, GridMultiplierLog2 at +0xcc, MinScale at +0xd4, MaxScale at +0xd8, ScaleWhenStamped at +0xdc, and Name at +0xe0. Those offsets match the AutoGuidesGadget registrar.",
+        "The body also visits GridSnap, Upright, AutoGlue, SurfaceSnapMode, ApplyToAllParents, LabelUnlabelled, LabelAnyOrAll and QueryLabelBitmask; the registrar includes SurfaceSnapMode at +0xd1 and trailing Boolean/label fields.",
+        "DispatchThingTypePropertyVisitor selects this function in type case 0x45, immediately before Calculator case 0x46; type initializer ordering alone is not the naming evidence."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "1404d83d0",
+      "original_name": "FUN_1404d83d0",
+      "applied_name": "VisitSplitterProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d578b0 sets the explicit type name Splitter on descriptor 1458ae2f0, registers Thing base properties, and calls field registrar 140d6ed00.",
+        "The visitor uses Pos +0x40, Power +0x80, Halfsize +0x88, TweakProps +0x90, Variant InputA +0xd8, and GadgetName Name +0x100. These match the Splitter registrar.",
+        "The Splitter registrar attaches RotationRepresentation at +0x108 through 140d6e910, whose descriptor literal is ERotationRepresentation; this is the visitor's final version-dependent property.",
+        "The adjacent Combiner type 140d57980 uses a different descriptor and field registrar 140d6e850: FatWireType at +0xd1, Name at +0xd8 and RotationRepresentation at +0xe0. It does not match this visitor's InputA/Name layout.",
+        "DispatchThingTypePropertyVisitor selects this function in case 0x47, distinct from Combiner-like adjacent case 0x48."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
       ]
     }
   ],
   "deferred": [
-    {"address":"14048b5e0","original_name":"FUN_14048b5e0","status":"deferred","reason":"Resolves a Thing identifier and conditionally dispatches a visitor, but ABI and traversal-mode semantics are unresolved; duplicate-like helper at 140490040."},
-    {"address":"14048fa90","original_name":"FUN_14048fa90","status":"deferred","reason":"Index-like reference resolution is evident, but packed reference semantics and traversal contract remain uncertain."},
-    {"address":"14048fc40","original_name":"FUN_14048fc40","status":"deferred","reason":"Called with pos2d and visits rawang, but remaining labels and precise position/transform object scope are obscured by the wrong ABI."},
-    {"address":"140490040","original_name":"FUN_140490040","status":"deferred","reason":"Near-identical identifier-resolution helper to 14048b5e0; role distinction remains unverified."},
-    {"address":"1404d7480","original_name":"FUN_1404d7480","status":"deferred","reason":"Placement/snap and label-query properties are evident, but exact gadget/type identity is not established."},
-    {"address":"1404d83d0","original_name":"FUN_1404d83d0","status":"deferred","reason":"InputA and RotationRepresentation identify some fields, but exact gadget/type identity is not established."}
+    {
+      "address": "14048b5e0",
+      "original_name": "FUN_14048b5e0",
+      "status": "deferred",
+      "reason": "Looks up a Thing by 32-bit sequence/identifier when a nested path is present, otherwise emits through visitor slot +0x910. Callers include gadget_seq, spawnplace_gadget_seq, seq_in_map, level_seq and moved_by_seq. Exact registered type or distinction from related helpers still needs confirming.",
+      "review_basis": "Rechecked against PS4_SYSV cached output; exact type or role distinction remains unresolved."
+    },
+    {
+      "address": "14048fa90",
+      "original_name": "FUN_14048fa90",
+      "status": "deferred",
+      "reason": "First interprets its 32-bit value as a signed packed index, extracts/validates a Thing table slot, reads the object's sequence identifier, and conditionally follows a nested property path. This differs from the direct sequence lookup helpers. Used for parent and another Thing field; the generic property dispatcher uses case 0xb. Exact registered type or distinction from related helpers still needs confirming.",
+      "review_basis": "Rechecked against PS4_SYSV cached output; exact type or role distinction remains unresolved."
+    },
+    {
+      "address": "14048fc40",
+      "original_name": "FUN_14048fc40",
+      "status": "deferred",
+      "reason": "Visits a 2D transform-like value: rawpos uses the first 8 bytes (VMOVSD at 14048fd45), rawscale is a scalar float at +8 (VMOVSS at 14048ff6c), and rawang is a 32-bit integer-like value at +0xc (MOV R15D at 14048ff9a), with legacy rawpos_z handling below version 0x34. Callers label it pos2d (Thing +0x30) and ChartFromCanvas (temporary value). Exact registered type or distinction from related helpers still needs confirming.",
+      "review_basis": "Rechecked against PS4_SYSV cached output; exact type or role distinction remains unresolved."
+    },
+    {
+      "address": "140490040",
+      "original_name": "FUN_140490040",
+      "status": "deferred",
+      "reason": "Same cached algorithm as 14048b5e0, but callers include reference_seq, WipeTrackObject, GoalId, DreamiverseSeq and Variant tag branches. Generic dispatcher uses case 0x10. Exact registered type or distinction from related helpers still needs confirming.",
+      "review_basis": "Rechecked against PS4_SYSV cached output; exact type or role distinction remains unresolved."
+    }
   ]
 }

@@ -217,6 +217,25 @@ def legend(x, y, color, label):
     return rect(x, y-9, 8, 8, color, 1) + text(x+15, y, label, 11, "muted")
 
 
+def grouped_height(groups, columns):
+    return sum(48 + math.ceil(len(items) / columns) * 4 for _, _, items in groups) + 12 * (len(groups)-1)
+
+
+def grouped_mosaic(groups, key, x, y, columns):
+    """Keep each status in its own labeled block; addresses order only within it."""
+    out = []
+    for label, color, items in groups:
+        grid_height = math.ceil(len(items) / columns) * 4
+        height = 48 + grid_height
+        out.extend([rect(x-10, y, columns*4+20, height, "background", 6, "border"),
+                    rect(x, y+13, 3, 13, color, 1),
+                    text(x+12, y+24, label, 12, "muted", 600),
+                    text(x+columns*4, y+24, f"{len(items):,}", 14, "text", 700, ' text-anchor="end"'),
+                    mosaic(items, key, x, y+35, columns, lambda _: color)])
+        y += height + 12
+    return "".join(out)
+
+
 def render(status):
     rows = status["rows"]
     total = len(rows)
@@ -224,10 +243,30 @@ def render(status):
     decomp = status["metrics"]["decompilation"]
     review = status["metrics"]["review"]
     columns = 118
-    grid_height = math.ceil(total / columns) * 4
+    decomp_groups = [
+        ("Pseudocode cached", "green", [r for r in rows if r['decompilation'] == 'complete']),
+        ("Needs follow-up", "amber", [r for r in rows if r['decompilation'] in {'failed', 'truncated', 'blocked_abi'}]),
+        ("Waiting to decompile", "gray", [r for r in rows if r['decompilation'] in {'pending', 'not_reported'}]),
+    ]
+    running = [r for r in rows if r['decompilation'] == 'running']
+    if running:
+        decomp_groups.insert(2, ("Running", "cyan", running))
+    separate = [r for r in rows if r['decompilation'] in {'known_thunk', 'known_external'}]
+    if separate:
+        decomp_groups.append(("Separately accounted", "accounted", separate))
+    review_groups = [
+        ("Names verified", "green", [r for r in rows if r['review'] == 'verified_name']),
+        ("Reviewed, still unresolved", "amber", [r for r in rows if r['review'] == 'deferred']),
+        ("Awaiting semantic review", "gray", [r for r in rows if r['review'] == 'unreviewed']),
+    ]
+    for groups in (decomp_groups, review_groups):
+        grouped_addresses = [r['address'] for _, _, items in groups for r in items]
+        if len(grouped_addresses) != total or set(grouped_addresses) != {r['address'] for r in rows}:
+            raise ValueError('Grouped graphic must represent every discovered function exactly once')
+    grid_height = max(grouped_height(decomp_groups, columns), grouped_height(review_groups, columns))
     panel_top = 280
-    grid_top = panel_top + 91
-    panel_height = 91 + grid_height + 66
+    grid_top = panel_top + 82
+    panel_height = 82 + grid_height + 20
     footer_top = panel_top + panel_height + 28
     height = footer_top + 72
     unresolved = decomp["failed"] + decomp["truncated"] + decomp["blocked_abi"]
@@ -244,7 +283,7 @@ def render(status):
            rect(32, 32, 4, 44, "cyan", 2),
            text(50, 54, "DREAMS", 27, "text", 750), text(50, 77, "Reverse engineering progress", 16, "muted"),
            rect(883, 37, 205, 27, "panel", 13, "border"),
-           text(900, 55, "DISCOVERED FUNCTION MAP", 10, "cyan", 650),
+           text(900, 55, "FUNCTION STATUS BLOCKS", 10, "cyan", 650),
            text(32, 112, f"{n(total)} functions in the current inventory", 14, "muted"),
            text(1088, 112, f"Snapshot {status['snapshot_date']}", 12, "dim", extra=' text-anchor="end"')]
     card_y, card_h, card_w = 134, 118, 344
@@ -273,26 +312,13 @@ def render(status):
         out.append(rect(x, panel_top, 512, panel_height, "panel", 10, "border"))
     out.extend([text(52, panel_top+29, "Decompilation coverage", 18, "text", 650),
                 text(52, panel_top+52, "Cached output, independent of semantic review", 12, "muted"),
-                text(52, panel_top+73, f"{n(decomp['reported'])} / {n(total)} cache states reported", 11, "dim"),
                 text(596, panel_top+29, "Review coverage", 18, "text", 650),
-                text(596, panel_top+52, "Verified naming and explicitly deferred reviews", 12, "muted"),
-                text(596, panel_top+73, f"{n(review['unreviewed'])} functions remain unreviewed", 11, "dim")])
-    def decomp_color(state):
-        return ("green" if state == "complete" else "cyan" if state == "running" else
-                "amber" if state in {"failed", "truncated", "blocked_abi"} else
-                "accounted" if state in {"known_thunk", "known_external"} else "gray")
-    def review_color(state):
-        return "green" if state == "verified_name" else "amber" if state == "deferred" else "gray"
-    out.extend([mosaic(rows, "decompilation", 52, grid_top, columns, decomp_color),
-                mosaic(rows, "review", 596, grid_top, columns, review_color)])
-    legend_y = grid_top + grid_height + 25
-    out.extend([legend(52, legend_y, "green", "Cached"), legend(139, legend_y, "cyan", "Running"),
-                legend(236, legend_y, "amber", "Unresolved"), legend(354, legend_y, "accounted", "Accounted"),
-                legend(52, legend_y+21, "gray", "Pending / not reported"),
-                legend(596, legend_y, "green", "Name verified"), legend(742, legend_y, "amber", "Reviewed, deferred"),
-                legend(596, legend_y+21, "gray", "Unreviewed"),
+                text(596, panel_top+52, "Verified naming and explicitly deferred reviews", 12, "muted")])
+    out.extend([grouped_mosaic(decomp_groups, "decompilation", 52, grid_top, columns),
+                grouped_mosaic(review_groups, "review", 596, grid_top, columns)])
+    out.extend([
                 text(32, footer_top, "ONE SQUARE = ONE DISCOVERED FUNCTION", 11, "cyan", 650),
-                text(32, footer_top+20, f"Both maps use the same ascending address order: 0x{rows[0]['address']} → 0x{rows[-1]['address']}.", 12, "muted"),
+                text(32, footer_top+20, "Squares are grouped by status, then ordered by address inside each labeled block.", 12, "muted"),
                 text(32, footer_top+42, "Inventory coverage is not full binary completeness. Convention assignments and cached output are not correctness claims.", 11, "dim"),
                 '</g></svg>'])
     return "\n".join(out) + "\n"
