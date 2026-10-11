@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-from functools import lru_cache
 from collections import Counter
 from datetime import date
 from html import escape
@@ -259,9 +258,6 @@ def packed_regions(entries, bounds):
     return result
 
 
-CELL_SIZE = 17
-CELL_PITCH = 18
-
 
 def hierarchy_rows(rows, mapping):
     """Build and validate the nested inventory independently of review status."""
@@ -299,121 +295,98 @@ def hierarchy_rows(rows, mapping):
     return tree
 
 
-def display_components(node):
-    children=[c for c in node['children'] if c['rows']] or [node]
-    large=[c for c in children if len(c['rows'])>=6]
-    small=[c for c in children if len(c['rows'])<6]
-    if small:
-        large.append({'id':'other','label':'Other','path':node['path']+('other',),
-                      'rows':[r for c in small for r in c['rows']], 'members':[c['label'] for c in small]})
-    return sorted(large,key=lambda c:(-len(c['rows']),c['id']))
+def dense_cells(rows, bounds):
+    """Reference-style near-square rows that tile the section without blank slots."""
+    x,y,w,h=bounds
+    count=len(rows)
+    lines=max(1,min(count,round(math.sqrt(count*h/w))))
+    priority={'verified_name':0,'deferred':1,'unreviewed':2}
+    colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
+    ordered=sorted(rows,key=lambda r:(priority[r['review']],int(r['address'],16)))
+    result=[];cursor=0
+    for line in range(lines):
+        columns=count//lines+(line<count%lines)
+        cw,ch=w/columns,h/lines
+        for column in range(columns):
+            row=ordered[cursor];cursor+=1
+            result.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" x="{x+column*cw:.6f}" y="{y+line*ch:.6f}" width="{cw:.6f}" height="{ch:.6f}" fill="{COLORS[colors[row["review"]]]}" stroke="#0d1117" stroke-width="0.5"/>')
+    return result
 
 
 def packed_component_layout(nodes):
-    """Partition an integer tile grid; labels overlay cells as in a dense treemap."""
-    pitch=CELL_PITCH
-    ordered=sorted(nodes,key=lambda n:(-len(n['rows']),n['id']))
-    components={n['id']:display_components(n) for n in ordered}
-    def fit(children,width,height):
-        counts=tuple(len(c['rows']) for c in children)
-        @lru_cache(None)
-        def split(lo,hi,w,h):
-            if w<=0 or h<=0 or w*h<sum(counts[lo:hi]):
-                return None
-            if hi-lo==1:
-                label=children[lo]['label']
-                lines=textwrap.wrap(label,width=max(1,int((w*pitch-8)/5.6)),break_long_words=False)
-                if w<3 or any(len(line)*5.6>w*pitch-8 for line in lines):
-                    return None
-                if len(lines)*11+13>h*pitch:
-                    return None
-                return [(lo,0,0,w,h,lines)]
-            ks=sorted(range(lo+1,hi),key=lambda k:abs(sum(counts[lo:k])-sum(counts[k:hi])))
-            for k in ks[:3]:
-                left=sum(counts[lo:k]);right=sum(counts[k:hi])
-                axes=sorted([0,1],key=lambda axis:-(w if axis==0 else h))
-                for axis in axes:
-                    length,other=(w,h) if axis==0 else (h,w)
-                    lower=max(1,math.ceil(left/other));upper=min(length-1,length-math.ceil(right/other))
-                    cuts=sorted(range(lower,upper+1),key=lambda cut:abs(cut/length-left/(left+right)))
-                    for cut in cuts:
-                        a=split(lo,k,cut,h) if axis==0 else split(lo,k,w,cut)
-                        if a is None: continue
-                        b=split(k,hi,w-cut,h) if axis==0 else split(k,hi,w,h-cut)
-                        if b is None: continue
-                        shifted=[(i,x+(cut if axis==0 else 0),y+(cut if axis else 0),cw,ch,lines) for i,x,y,cw,ch,lines in b]
-                        return a+shifted
-            return None
-        return split(0,len(children),width,height)
-    # Root allocation uses function counts plus a small heading allowance. All cells use whole grid tiles.
-    entries=[(n['id'],n['label'],n,range(len(n['rows'])+math.ceil(math.sqrt(len(n['rows']))))) for n in ordered]
-    for grid_h in range(30,75):
-        layout=[]
-        for (_,_,node,_),(x,y,w,h) in packed_regions(entries,(0,0,55,grid_h)):
-            ix,iy=round(x),round(y);iw,ih=round(x+w)-ix,round(y+h)-iy
-            children=components[node['id']]
-            result=fit(children,iw,ih-1)
-            if result is None: break
-            boxes=[]
-            for index,cx,cy,cw,ch,lines in result:
-                boxes.append((children[index],((ix+cx)*pitch,42+(iy+1+cy)*pitch,cw*pitch,ch*pitch),lines,0))
-            layout.append((node,(ix*pitch,42+iy*pitch,iw*pitch,ih*pitch),boxes))
-        if len(layout)==len(ordered):
-            return layout,grid_h*pitch+110
-    raise ValueError('Dense integer-grid map could not fit readable labels')
+    entries=[(n['id'],n['label'],n,n['rows']) for n in nodes]
+    layout=[];code=1
+    for (_,_,node,_),box in packed_regions(entries,(0,42,1000,560)):
+        x,y,w,h=box
+        children=[c for c in node['children'] if c['rows']] or [node]
+        entries=[(c['id'],c['label'],c,c['rows']) for c in children]
+        parts=[]
+        for (_,_,child,_),bounds in packed_regions(entries,(x,y+28,w,h-28)):
+            parts.append((child,bounds,f'{code:02d}'));code+=1
+        layout.append((node,box,parts))
+    # The full-name key is outside the map; it never enlarges a code section.
+    columns=[652,652,652];keys=[]
+    for node,box,children in sorted(layout,key=lambda item:-len(item[2])):
+        col=min(range(3),key=lambda i:columns[i])
+        keys.append((node,children,col*336,columns[col]))
+        columns[col]+=24+len(children)*17+14
+    return layout,keys,max(columns)+12
 
 
 def render(status, applied, mapping):
-    assert {r['address'] for r in applied} == {r['address'] for r in status['rows'] if r['review']=='verified_name'}
+    assert {r['address'] for r in applied}=={r['address'] for r in status['rows'] if r['review']=='verified_name'}
     tree=hierarchy_rows(status['rows'],mapping)
-    layout,height=packed_component_layout(tree)
+    layout,keys,height=packed_component_layout(tree)
     mapped=sum(len(n['rows']) for n in tree)
     states=Counter(r['review'] for n in tree for r in n['rows'])
+    short={'gadgets-logic':'Gadgets & logic','interface':'Editor & interface','rendering':'Rendering & lighting','sculpting-painting':'Sculpting & painting','shared':'Shared engine data','dreamiverse':'Dreamiverse','audio':'Sound & music','physics':'Physics','animation':'Animation & puppets'}
+    outline=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'
     out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{height}" viewBox="0 0 1000 {height}" role="img" aria-labelledby="status-title status-desc">',
-         '<title id="status-title">Dreams progress: packed systems and components</title>',
-         '<desc id="status-desc">Nested system and component map. Every function is one identical square. Displayed components have readable labels and checked/identified counts. Tiny components are combined as Other within their actual system; the breakdown retains all individual names. Section allocation follows function counts with a small allowance for system headings and integer tile rounding. Full code-unit names are listed in the breakdown below.</desc>',
+         '<title id="status-title">Dreams progress by system and component</title>',
+         '<desc id="status-desc">Dense nested treemap. Every cell is one function. Sections are sized only by mapped function counts. Cells fill their sections with near-square rows and slight rounding differences. Short in-map labels link to the full-name key and exact review counts below. No Other categories or empty function slots.</desc>',
          '<g font-family="Segoe UI,Arial,sans-serif">',rect(0,0,1000,height,'background'),
          text(4,20,f'{mapped:,} functions mapped to parts of Dreams | {states["verified_name"]} names checked',16),
-         text(4,36,'One square = one function. Green: checked name. Amber: unresolved review. Gray: not reviewed.',12,'muted'),
+         text(4,36,'Each cell is one function. Section numbers match the full names and checked counts below.',12,'muted'),
          '<g data-panel="review">']
     for node,(x,y,w,h),children in layout:
         checked=sum(r['review']=='verified_name' for r in node['rows'])
         out.append(f'<g data-area="{node["id"]}" data-count="{len(node["rows"])}">')
-        out.append(rect(x,y,w,h,'panel',0,'background'))
-        summary=f'{checked}/{len(node["rows"])} checked'
-        if len(node['label'])*5.6+len(summary)*5+16<w:
-            out.append(text(x+4,y+12,node['label'],10,weight=600))
-            out.append(text(x+w-4,y+12,summary,9,'muted',extra=' text-anchor="end"'))
-        else:
-            root_lines=textwrap.wrap(node['label'],width=max(1,int((w-8)/6)),break_long_words=False)
-            if len(root_lines)>2:
-                raise ValueError('System label does not fit')
-            for index,line in enumerate(root_lines):
-                out.append(text(x+4,y+9+index*8,line,10,weight=600))
-        for c,(cx,cy,cw,ch),lines,header in children:
+        out.append(rect(x,y,w,h,'panel'))
+        label=short[node['id']]
+        # All system labels have a readable header; abbreviate only within narrow roots.
+        aliases={'Sculpting & painting':'Sculpting','Animation & puppets':'Animation','Shared engine data':'Engine data','Sound & music':'Audio'}
+        if len(label)*6>w-8:label=aliases.get(label,label)
+        out.append(text(x+4,y+12,label,11,weight=600))
+        out.append(text(x+4,y+24,f'{checked}/{len(node["rows"])} checked',10,'muted'))
+        for c,(cx,cy,cw,ch),code in children:
             count=sum(r['review']=='verified_name' for r in c['rows'])
-            path='/'.join(c['path'])
-            out.append(f'<g data-component="{path}" data-count="{len(c["rows"])}">')
-            out.append(rect(cx,cy,cw,ch,'background',0,'border'))
-            if c.get('members'):
-                out.append('<title>'+escape('Other: '+', '.join(c['members']))+'</title>')
-            priority={'verified_name':0,'deferred':1,'unreviewed':2}
-            colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
-            columns=round(cw/CELL_PITCH)
-            for index,row in enumerate(sorted(c['rows'],key=lambda r:(priority[r['review']],int(r['address'],16)))):
-                out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" x="{cx+(index%columns)*CELL_PITCH+0.5}" y="{cy+(index//columns)*CELL_PITCH+0.5}" width="{CELL_SIZE}" height="{CELL_SIZE}" fill="{COLORS[colors[row["review"]]]}"/>')
-            outline=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'
-            for index,line in enumerate(lines):
-                out.append(text(cx+4,cy+11+index*11,line,10,weight=600,extra=outline))
-            out.append(text(cx+4,cy+11+len(lines)*11,f'{count}/{len(c["rows"])} checked',9,extra=outline))
+            out.append(f'<g data-component="{"/".join(c["path"])}" data-code="{code}" data-count="{len(c["rows"])}"><title>{escape(c["label"])}: {count}/{len(c["rows"])} checked</title>')
+            out.extend(dense_cells(c['rows'],(cx,cy,cw,ch)))
+            out.append(f'<rect x="{cx:.6f}" y="{cy:.6f}" width="{cw:.6f}" height="{ch:.6f}" fill="none" stroke="#0d1117" stroke-width="1.5"/>')
+            label=code+' '+c['label']
+            if len(label)*5.5<=cw-8 and ch>=15:
+                out.append(text(cx+3,cy+12,label,10,weight=600,extra=outline))
+            elif cw>=76 and ch>=32:
+                lines=textwrap.wrap(label,width=max(8,int((cw-6)/5.5)),break_long_words=False)
+                if len(lines)*11+2<=ch:
+                    for i,line in enumerate(lines):out.append(text(cx+3,cy+11+i*11,line,10,weight=600,extra=outline))
+                else:out.append(text(cx+2,cy+min(11,ch-1),code,10,weight=600,extra=outline))
+            else:
+                size=max(1,min(10,ch-1,(cw-4)/1.3))
+                out.append(text(cx+2,cy+min(size+1,ch-0.5),code,size,weight=600,extra=outline))
             out.append('</g>')
+        out.append(f'<rect x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="3"/>')
         out.append('</g>')
-    out.extend(['</g>',legend(4,height-47,'green',f'{states["verified_name"]} names checked'),
-                legend(225,height-47,'amber',f'{states["deferred"]} reviewed, unresolved'),
-                legend(485,height-47,'gray',f'{states["unreviewed"]:,} not reviewed'),
-                text(4,height-26,f'{status["inventory_total"]-mapped:,} functions still need system mapping. Full system sizes and completion remain unknown.',12,'muted'),
-                text(4,height-8,'Same-size squares throughout. Tiny subdivisions are combined as Other; the full breakdown below keeps their names.',12,'muted'),
-                '</g></svg>'])
+    out.extend(['</g>',legend(4,621,'green',f'{states["verified_name"]} names checked'),legend(225,621,'amber',f'{states["deferred"]} reviewed, unresolved'),legend(485,621,'gray',f'{states["unreviewed"]:,} not reviewed'),text(4,641,f'{status["inventory_total"]-mapped:,} functions still need system mapping. Full system sizes and completion remain unknown.',12,'muted')])
+    for node,children,x,y in keys:
+        out.append(text(x+4,y+14,node['label'],12,weight=600))
+        for i,(c,box,code) in enumerate(children):
+            checked=sum(r['review']=='verified_name' for r in c['rows'])
+            out.append(f'<g data-key="{code}">')
+            out.append(text(x+4,y+34+i*17,code+' '+c['label'],10.5))
+            out.append(text(x+323,y+34+i*17,f'{checked}/{len(c["rows"])}',10,'muted',extra=' text-anchor="end"'))
+            out.append('</g>')
+    out.append('</g></svg>')
     return '\n'.join(out)+'\n'
 
 
