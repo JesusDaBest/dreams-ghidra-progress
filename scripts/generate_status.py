@@ -313,81 +313,93 @@ def dense_cells(rows, bounds):
     return result
 
 
-def packed_component_layout(nodes):
-    entries=[(n['id'],n['label'],n,n['rows']) for n in nodes]
-    layout=[];code=1
-    for (_,_,node,_),box in packed_regions(entries,(0,42,1000,560)):
-        x,y,w,h=box
-        children=[c for c in node['children'] if c['rows']] or [node]
-        entries=[(c['id'],c['label'],c,c['rows']) for c in children]
-        parts=[]
-        for (_,_,child,_),bounds in packed_regions(entries,(x,y+28,w,h-28)):
-            parts.append((child,bounds,f'{code:02d}'));code+=1
-        layout.append((node,box,parts))
-    # The full-name key is outside the map; it never enlarges a code section.
-    columns=[652,652,652];keys=[]
-    for node,box,children in sorted(layout,key=lambda item:-len(item[2])):
-        col=min(range(3),key=lambda i:columns[i])
-        keys.append((node,children,col*336,columns[col]))
-        columns[col]+=24+len(children)*17+14
-    return layout,keys,max(columns)+12
+def render_hierarchy(nodes, bounds, depth=0):
+    out = []
+    entries = [(node['id'],node['label'],node,node['rows']) for node in nodes]
+    for (key,label,node,selected),box in packed_regions(entries,bounds):
+        x,y,w,h = box
+        checked = sum(r['review']=='verified_name' for r in selected)
+        path = '/'.join(node['path'])
+        attribute = f'data-area="{key}"' if depth == 0 else f'data-component="{path}"'
+        out.append(f'<g {attribute} data-count="{len(selected)}" data-depth="{depth}">')
+        out.append(f'<title>{escape(" / ".join(node["path"]))}: {escape(label)}; {checked}/{len(selected)} names checked</title>')
+        show_label = w >= (76 if depth else 95) and h >= (34 if depth else 55)
+        label_lines = textwrap.wrap(label,width=max(8,int((w-10)/(7.3 if depth==0 else 6))),break_long_words=False)[:2]
+        header = (len(label_lines)*14+19) if show_label else 0
+        if h < header + (24 if node['children'] else 0):
+            show_label,header = False,0
+        children = node['children']
+        if children and depth >= 1:
+            entries = [(c['id'],c['label'],c,c['rows']) for c in children if c['rows']]
+            nested = packed_regions(entries,(x,y+header,w,h-header))
+            fits = any(cw >= 76 and ch >= 46 for _,(_,_,cw,ch) in nested)
+            if not fits:
+                children = []
+        if children:
+            # Header space separates hierarchy levels; sibling rectangles still
+            # use their real function counts, without minimum/invented weights.
+            out.append(rect(x,y,w,h,'panel'))
+            out.extend(render_hierarchy(children,(x,y+header,w,h-header),depth+1))
+        else:
+            out.append(rect(x,y,w,h,'panel'))
+            grid=(x,y+header,w,h-header) if show_label and h-header>0 else box
+            out.extend(dense_cells(selected,grid))
+        out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="{3 if depth==0 else 1.5 if show_label else 0}"/>')
+        if show_label:
+            outline=' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
+            for n,line in enumerate(label_lines):
+                out.append(text(round(x+5,3),round(y+14+n*14,3),line,13 if depth==0 else 11,weight=600,extra=outline))
+            out.append(text(round(x+5,3),round(y+14+len(label_lines)*14,3),f'{checked}/{len(selected):,} checked',10,extra=outline))
+        if not show_label and depth == 1:
+            size=min(10,max(6,min(w/4,h-2)))
+            limit=max(2,int((w-4)/(size*0.52)))
+            aliases={'Common system routines':'Common','Types & settings':'Settings','Numbers & transforms':'Transforms','Properties & variants':'Properties','Shared property helpers':'Property helpers','Identifiers & assets':'Assets','Serialization & upgrades':'Serialization','Game state & runtime':'Runtime','Shared signal data':'Signals','Shared messages':'Messages','Errors & diagnostics':'Errors','Creation references':'Creations','Players & sessions':'Players','Musical timing & pitch':'Timing & pitch','Synthesis & modulation':'Synthesis','Animation & keyframes':'Keyframes','Puppet animation':'Puppets'}
+            compact=aliases.get(label,label)
+            lines=textwrap.wrap(compact,width=limit,break_long_words=False)
+            if any(len(line)>limit for line in lines):
+                lines=[compact[:max(1,limit-1)]+'.']
+            max_lines=max(1,int((h-2)/(size+1)))
+            lines=lines[:max_lines]
+            outline=' stroke="#0d1117" stroke-width="2" paint-order="stroke"'
+            for i,line in enumerate(lines):
+                out.append(text(x+2,y+size+i*(size+1),line,size,weight=600,extra=outline))
+        out.append('</g>')
+    return out
 
 
 def render(status, applied, mapping):
-    assert {r['address'] for r in applied}=={r['address'] for r in status['rows'] if r['review']=='verified_name'}
-    tree=hierarchy_rows(status['rows'],mapping)
-    layout,keys,height=packed_component_layout(tree)
-    mapped=sum(len(n['rows']) for n in tree)
-    states=Counter(r['review'] for n in tree for r in n['rows'])
-    short={'gadgets-logic':'Gadgets & logic','interface':'Editor & interface','rendering':'Rendering & lighting','sculpting-painting':'Sculpting & painting','shared':'Shared engine data','dreamiverse':'Dreamiverse','audio':'Sound & music','physics':'Physics','animation':'Animation & puppets'}
-    outline=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'
-    out=[f'<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{height}" viewBox="0 0 1000 {height}" role="img" aria-labelledby="status-title status-desc">',
-         '<title id="status-title">Dreams progress by system and component</title>',
-         '<desc id="status-desc">Dense nested treemap. Every cell is one function. Sections are sized only by mapped function counts. Cells fill their sections with near-square rows and slight rounding differences. Short in-map labels link to the full-name key and exact review counts below. No Other categories or empty function slots.</desc>',
-         '<g font-family="Segoe UI,Arial,sans-serif">',rect(0,0,1000,height,'background'),
-         text(4,20,f'{mapped:,} functions mapped to parts of Dreams | {states["verified_name"]} names checked',16),
-         text(4,36,'Each cell is one function. Section numbers match the full names and checked counts below.',12,'muted'),
-         '<g data-panel="review">']
-    for node,(x,y,w,h),children in layout:
-        checked=sum(r['review']=='verified_name' for r in node['rows'])
-        out.append(f'<g data-area="{node["id"]}" data-count="{len(node["rows"])}">')
-        out.append(rect(x,y,w,h,'panel'))
-        label=short[node['id']]
-        # All system labels have a readable header; abbreviate only within narrow roots.
-        aliases={'Sculpting & painting':'Sculpting','Animation & puppets':'Animation','Shared engine data':'Engine data','Sound & music':'Audio'}
-        if len(label)*6>w-8:label=aliases.get(label,label)
-        out.append(text(x+4,y+12,label,11,weight=600))
-        out.append(text(x+4,y+24,f'{checked}/{len(node["rows"])} checked',10,'muted'))
-        for c,(cx,cy,cw,ch),code in children:
-            count=sum(r['review']=='verified_name' for r in c['rows'])
-            out.append(f'<g data-component="{"/".join(c["path"])}" data-code="{code}" data-count="{len(c["rows"])}"><title>{escape(c["label"])}: {count}/{len(c["rows"])} checked</title>')
-            out.extend(dense_cells(c['rows'],(cx,cy,cw,ch)))
-            out.append(f'<rect x="{cx:.6f}" y="{cy:.6f}" width="{cw:.6f}" height="{ch:.6f}" fill="none" stroke="#0d1117" stroke-width="1.5"/>')
-            label=code+' '+c['label']
-            if len(label)*5.5<=cw-8 and ch>=15:
-                out.append(text(cx+3,cy+12,label,10,weight=600,extra=outline))
-            elif cw>=76 and ch>=32:
-                lines=textwrap.wrap(label,width=max(8,int((cw-6)/5.5)),break_long_words=False)
-                if len(lines)*11+2<=ch:
-                    for i,line in enumerate(lines):out.append(text(cx+3,cy+11+i*11,line,10,weight=600,extra=outline))
-                else:out.append(text(cx+2,cy+min(11,ch-1),code,10,weight=600,extra=outline))
-            else:
-                size=max(1,min(10,ch-1,(cw-4)/1.3))
-                out.append(text(cx+2,cy+min(size+1,ch-0.5),code,size,weight=600,extra=outline))
-            out.append('</g>')
-        out.append(f'<rect x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="3"/>')
-        out.append('</g>')
-    out.extend(['</g>',legend(4,621,'green',f'{states["verified_name"]} names checked'),legend(225,621,'amber',f'{states["deferred"]} reviewed, unresolved'),legend(485,621,'gray',f'{states["unreviewed"]:,} not reviewed'),text(4,641,f'{status["inventory_total"]-mapped:,} functions still need system mapping. Full system sizes and completion remain unknown.',12,'muted')])
-    for node,children,x,y in keys:
-        out.append(text(x+4,y+14,node['label'],12,weight=600))
-        for i,(c,box,code) in enumerate(children):
-            checked=sum(r['review']=='verified_name' for r in c['rows'])
-            out.append(f'<g data-key="{code}">')
-            out.append(text(x+4,y+34+i*17,code+' '+c['label'],10.5))
-            out.append(text(x+323,y+34+i*17,f'{checked}/{len(c["rows"])}',10,'muted',extra=' text-anchor="end"'))
-            out.append('</g>')
+    total = status["inventory_total"]
+    review = status["metrics"]["review"]
+    assert len(applied) == review["verified_names"]
+    assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
+    rows = status["rows"]
+    assert len(rows) == total and len({row["address"] for row in rows}) == total
+    areas = research_area_rows(rows, mapping)
+    mapped = sum(len(items) for _, _, _, items in areas)
+    unassigned = total - mapped
+    mapped_review = Counter(row['review'] for _, _, _, items in areas for row in items)
+    description = (f'{review["verified_names"]} of {total} function names checked. '
+                   f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
+                   'Sections show evidence-backed associations with parts of Dreams. '
+                   'Every cell is a real function. Sections follow their mapped function counts. Dense near-square rows fill the available grid area; headings separate hierarchy levels. '
+                   'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
+                   'Assignments are incomplete; full system totals and completion are unknown.')
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="710" viewBox="0 0 1000 710" role="img" aria-labelledby="status-title status-desc">',
+           '<title id="status-title">Dreams function review by game system</title>',
+           f'<desc id="status-desc">{escape(description)}</desc>',
+           '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
+           rect(0, 0, 1000, 710, "background"),
+           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams | {mapped_review["verified_name"]:,} names checked', 16),
+           '<g data-panel="review">']
+    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,616)))
+    out.extend(['</g>',
+                legend(4, 675, 'green', f'{mapped_review["verified_name"]:,} names checked'),
+                legend(220, 675, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
+                legend(470, 675, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
+                text(996, 675, 'System / component / code unit', 11, 'muted', extra=' text-anchor="end"')])
+    out.append(text(4, 700, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
     out.append('</g></svg>')
-    return '\n'.join(out)+'\n'
+    return "\n".join(out) + "\n"
 
 
 def render_area_table(status, mapping):

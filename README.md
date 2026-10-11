@@ -17,11 +17,11 @@ Working out how Dreams works, one piece of code at a time
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c943be296df9876cc6b0b30698b8ee5961f7e426/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=ab9c57bb4b28)
 
-**The packed map groups Dreams systems and their components. Each cell is one actual function.** Near-square rows fill each section without empty function slots. Labels sit over the cells; small sections use numbers linked to the full-name key and checked/identified counts immediately below the map.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Names and checked/identified counts appear inside the sections. Smaller components use compact names; the expandable breakdown below retains every full name and count.
 
-Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Section areas use mapped function counts, with narrow system heading strips. All 70 components stay separate. The full size and completion of each system remain unknown; the expandable breakdown retains the underlying code units.
+Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Grids use near-square rows. Tiny internal units share their labeled component's grid when separate boxes would be unreadable. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |
