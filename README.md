@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/3217cde4c680cf7e9b321b123ccd8fd9c269a5e0/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/430a2c3ef962392e673b0f7cff6a3ddad09fe6db/assets/status-badges.svg)
 
 <!-- status-summary:start -->
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](assets/status.svg?v=94c0cd569b52)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/430a2c3ef962392e673b0f7cff6a3ddad09fe6db/assets/status.svg)
 
 **Read from the outside inward: major system → subsystem → smaller component → function.** For example, Rendering & lighting contains Lighting & shadows, which contains sun-shadow and spotlight-shadow code. Gadgets & logic contains logic, sensors, movement, and other gadget families. Each rectangle's size comes from the number of mapped functions it contains; larger groups appear first at each level.
 
