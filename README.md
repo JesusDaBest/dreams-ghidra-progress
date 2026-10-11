@@ -13,13 +13,28 @@ Working out how Dreams works, one piece of code at a time
 
 ![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/3bac5130ebed0df3b5bb34ea62fe2e82ba31bf1a/assets/status-badges.svg)
 
+<!-- status-summary:start -->
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
+<!-- status-summary:end -->
 
-![Dreams research by game system](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/3bac5130ebed0df3b5bb34ea62fe2e82ba31bf1a/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=e55b3a4cf236)
 
-**Green square = one checked function name. Gray grid = unmapped research space.** All gadget families stay together in the right-hand map. Checked names currently describe properties and registration; no whole gadget or system is marked finished.
+**Each cell represents one discovered function.** Green means its name has been checked; amber means reviewed but unresolved; gray means not reviewed. Every section's area comes from the number of functions assigned to it. Functions without an established system belong to **Unassigned**.
 
-**9,524 functions still need an area assignment.** System totals are unknown, so the maps show checked counts, not completion percentages. Section sizes are layout choices; gray squares do not stand for a measured number of remaining functions.
+<!-- area-status:start -->
+| Part of Dreams | Functions assigned so far | Names checked | System completion |
+| --- | ---: | ---: | --- |
+| Sculpting & creation | 0 | 0 | Unknown |
+| Gadgets & logic | 22 | 22 | Unknown |
+| Rendering & lighting | 0 | 0 | Unknown |
+| Physics & movement | 0 | 0 | Unknown |
+| Sound & music | 0 | 0 | Unknown |
+| Puppets & animation | 0 | 0 | Unknown |
+| Interface & controls | 0 | 0 | Unknown |
+| Shared object data | 5 | 5 | Unknown |
+
+**9,524 of 9,551 functions have no verified system assignment yet.** A zero above means none assigned so far; the system's actual function count is unknown.
+<!-- area-status:end -->
 
 <sub>Automatic extraction has produced code for 9,508 functions in the previous analysis snapshot; 43 still need fixes. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
 
