@@ -384,6 +384,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     def overlaps(a,b):
         return a[0]<b[0]+b[2]+2 and a[0]+a[2]+2>b[0] and a[1]<b[1]+b[3]+2 and a[1]+a[3]+2>b[1]
     for node,owned,level in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path'])):
+        if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<10:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
         size=14 if level==0 else 12
@@ -393,11 +394,13 @@ def render_hierarchy(nodes, bounds, depth=0):
         for child,child_cells,child_level in regions:
             if child_level==level+1 and child['path'][:len(node['path'])]==node['path'] and len(child_cells)>=10:
                 cx,cy=min(child_cells,key=lambda p:(p[1],p[0]))
-                protected.append((x0+cx*side+3,y0+cy*side+3,110,38))
+                protected.append((x0+cx*side+3,y0+cy*side+3,150,100))
         for wrap in range(32,8,-1):
             lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
-            values=lines+[f'{checked}/{len(owned)} checked']
-            sizes=[size]*len(lines)+[12]
+            behavior=sum(r.get('reviewed_scope')=='behavior_or_helper' for r in node['rows'])
+            properties=sum(r.get('reviewed_scope')=='properties_or_type_registration' for r in node['rows'])
+            values=lines+[f'Behavior: {behavior}',f'Types: {properties}']
+            sizes=[size]*len(lines)+[12,12]
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
             bh=sum(fs+3 for fs in sizes)+4
             candidates=[]
@@ -432,13 +435,16 @@ def progress_data(status, applied, mapping):
     recovered original source, or a complete game feature.
     """
     names = {row['address']: row['applied_name'] for row in applied}
+    scopes = {row['address']: row['reviewed_scope'] for row in applied}
     def group(node):
         done = sorted(r['address'] for r in node['rows'] if r['review']=='verified_name')
         todo = sorted(r['address'] for r in node['rows'] if r['review']!='verified_name')
         total = len(done)+len(todo)
         return {'name':'/'.join(node['path']), 'label':node['label'],
                 'done':len(done), 'todo':len(todo), 'total':total,
-                'percent':round(100*len(done)/total,2) if total else 0,
+                'behavior_or_helpers_reviewed':sum(scopes.get(a)=='behavior_or_helper' for a in done),
+                'properties_or_types_reviewed':sum(scopes.get(a)=='properties_or_type_registration' for a in done),
+                'whole_feature_completion':None,
                 'done_names':[names[a] for a in done],
                 'todo_names':['0x'+a for a in todo],
                 'done_addresses':done, 'todo_addresses':todo,
@@ -450,7 +456,9 @@ def progress_data(status, applied, mapping):
     return {'schema_version':1, 'snapshot_date':status['snapshot_date'],
             'meaning':'Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.',
             'systems':{'done':done,'todo':total-done,'total':total,
-                       'percent':round(100*done/total,2) if total else 0,'groups':groups},
+                       'behavior_or_helpers_reviewed':sum(scopes.get(a)=='behavior_or_helper' for a in mapping['assignments']),
+                       'properties_or_types_reviewed':sum(scopes.get(a)=='properties_or_type_registration' for a in mapping['assignments']),
+                       'whole_feature_completion':None,'groups':groups},
             'unmapped':status['inventory_total']-total}
 
 
@@ -478,7 +486,7 @@ def render(status, applied, mapping):
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
            rect(0, 0, 1000, 714, "background"),
            text(4, 21, f'Code mapped to Dreams systems | {mapped:,} functions identified', 16),
-           text(996, 21, 'Counts: checked names / mapped functions', 12, 'muted', extra=' text-anchor="end"'),
+           text(996, 21, 'Behavior review is separate from property/type review', 12, 'muted', extra=' text-anchor="end"'),
            '<g data-panel="review">']
     out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,620)))
     out.extend(['</g>',
@@ -493,16 +501,20 @@ def render(status, applied, mapping):
 
 def render_area_table(status, mapping):
     areas = research_area_rows(status['rows'], mapping)
-    lines = ['| Part of Dreams | Functions mapped | Names checked |',
-             '| --- | ---: | ---: |']
+    applied=read_json(Path(__file__).resolve().parent.parent/'analysis/function-review.json')['applied']
+    scopes={r['address']:r['reviewed_scope'] for r in applied}
+    lines = ['| Part of Dreams | Functions mapped | Behavior/helpers reviewed | Properties/types reviewed |',
+             '| --- | ---: | ---: | ---: |']
     for area_id, title, _, rows in areas:
         checked = sum(row['review'] == 'verified_name' for row in rows)
         progress = f'{checked:,}' if rows else 'No functions mapped yet'
-        lines.append(f'| {title} | {len(rows):,} | {progress} |')
+        behavior=sum(scopes.get(r['address'])=='behavior_or_helper' for r in rows)
+        properties=sum(scopes.get(r['address'])=='properties_or_type_registration' for r in rows)
+        lines.append(f'| {title} | {len(rows):,} | {behavior} | {properties} |')
     mapped = sum(len(rows) for _,_,_,rows in areas)
     unassigned = status['inventory_total'] - mapped
     lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
-                  'Section area counts mapped functions; green counts checked names. '
+                  'Section area counts mapped functions. Property/type reviews do not count as behavior reviews. '
                   'Whole-system coverage and completion remain unknown.'])
     lines.extend(['','<details>','<summary>Explore the systems and their components</summary>',''])
     def list_nodes(nodes,depth=0):
@@ -510,7 +522,9 @@ def render_area_table(status, mapping):
             if not node['rows']:
                 continue
             checked=sum(r['review']=='verified_name' for r in node['rows'])
-            lines.append('  '*depth+f'- **{node["label"]}** - {checked}/{len(node["rows"]):,} names checked')
+            behavior=sum(scopes.get(r['address'])=='behavior_or_helper' for r in node['rows'])
+            properties=sum(scopes.get(r['address'])=='properties_or_type_registration' for r in node['rows'])
+            lines.append('  '*depth+f'- **{node["label"]}** - {len(node["rows"]):,} functions identified; {behavior} behavior/helper reviews; {properties} property/type reviews')
             list_nodes(node['children'],depth+1)
     list_nodes(hierarchy_rows(status['rows'],mapping))
     lines.extend(['','</details>'])

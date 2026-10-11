@@ -17,673 +17,762 @@ Working out how Dreams works, one piece of code at a time
 **56 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f4ca36d93b27d09766d58babd0a09136b966aa8f/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=1d1acc0399dd)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 50 of the 56 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**Read the two counts inside each section separately:** “Behavior” counts reviewed runtime/helper functions; “Types” counts reviewed property handling or type definitions. For example, Gadgets & logic has **2 behavior/helper reviews and 36 property/type reviews**, not 38 reviewed gadget implementations.
 
-Green means behavior or helper code has been reviewed; blue means property handling or type registration has been reviewed. Both have checked descriptive names. Amber means unresolved; gray means unreviewed. A reviewed registration does not establish how its gadget behaves. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
+Each equal square is one identified function. Within each feature, the underlying breakdown separates properties/type definitions from runtime/implementation and code whose role remains unresolved. Green, blue, amber and gray retain their existing meanings in the legend. No extraction result counts as a review.
+
+**The full size and completion of every game system are still unknown.** These are provisional feature associations supported by registered types, embedded source references, or reviewed bodies. Section areas measure the code identified so far, so a smaller sculpting section does not mean sculpting is smaller or simpler. Most discovered functions still need mapping. The expandable breakdown gives every component’s separate review counts.
 
 <!-- area-status:start -->
-| Part of Dreams | Functions mapped | Names checked |
-| --- | ---: | ---: |
-| Sculpting & painting | 117 | 0 |
-| Gadgets & logic | 459 | 38 |
-| Physics & collision | 60 | 0 |
-| Sound & music | 62 | 0 |
-| Animation & puppets | 46 | 0 |
-| Rendering & lighting | 274 | 0 |
-| Editor & interface | 313 | 0 |
-| Dreamiverse & networking | 103 | 0 |
-| Shared engine & object data | 120 | 12 |
+| Part of Dreams | Functions mapped | Behavior/helpers reviewed | Properties/types reviewed |
+| --- | ---: | ---: | ---: |
+| Sculpting & painting | 117 | 0 | 0 |
+| Gadgets & logic | 459 | 2 | 36 |
+| Physics & collision | 60 | 0 | 0 |
+| Sound & music | 62 | 0 | 0 |
+| Animation & puppets | 46 | 0 | 0 |
+| Rendering & lighting | 274 | 0 | 0 |
+| Editor & interface | 313 | 0 | 0 |
+| Dreamiverse & networking | 103 | 0 | 0 |
+| Shared engine & object data | 120 | 7 | 5 |
 
-**1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Section area counts mapped functions; green counts checked names. Whole-system coverage and completion remain unknown.
+**1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 38/459 names checked
-  - **Online & multiplayer gadgets** - 3/95 names checked
-    - **Magic Door Type** - 0/4 names checked
-    - **PUMap Gadget** - 0/4 names checked
-    - **Dreamiverse Reference Gadget** - 0/3 names checked
-    - **Dreamiverse Reference Gadget Mode** - 0/3 names checked
-    - **Dreamiverse Text Gadget Mode** - 0/3 names checked
-    - **Magic Door UIType** - 0/3 names checked
-    - **Map Marker Icon** - 0/3 names checked
-    - **Map Marker Visibility** - 0/3 names checked
-    - **Map Show Players** - 0/3 names checked
-    - **Metagame Gadget Mode** - 0/3 names checked
-    - **Portal Type** - 0/3 names checked
-    - **Scoreboard Mode** - 0/3 names checked
-    - **Scoreboard Ordering** - 0/3 names checked
-    - **Scoreboard Player Setting** - 0/3 names checked
-    - **Scoreboard Scope** - 0/3 names checked
-    - **Scoreboard Unit** - 0/3 names checked
-    - **Search Gadget Mode** - 0/3 names checked
-    - **Social Gadget Mode** - 0/3 names checked
-    - **Spawnplace Gadget Mode** - 0/3 names checked
-    - **Magic Door** - 3/3 names checked
-    - **Metagame Gadget** - 0/3 names checked
-    - **Network Variable Gadget** - 0/3 names checked
-    - **Portal Gadget** - 0/3 names checked
-    - **PUMagic Door** - 0/3 names checked
-    - **PUMap Marker** - 0/3 names checked
-    - **Scoreboard Display Gadget** - 0/3 names checked
-    - **Search Gadget** - 0/3 names checked
-    - **Social Gadget** - 0/3 names checked
-    - **Spawnplace Gadget** - 0/3 names checked
-    - **Multiplayer Session Gadget** - 0/2 names checked
-    - **Network Signal Gadget** - 0/2 names checked
-    - **Network Spawner Gadget** - 0/2 names checked
-  - **Logic & signals** - 17/86 names checked
-    - **Calculator Op** - 0/4 names checked
-    - **Delay Select** - 0/4 names checked
-    - **Label Any Or All** - 0/4 names checked
-    - **Calculator** - 1/3 names checked
-    - **Combiner** - 3/3 names checked
-    - **Calculator Units** - 0/3 names checked
-    - **Gate Reset Mode** - 0/3 names checked
-    - **Random Mode** - 0/3 names checked
-    - **Remapper Curve** - 0/3 names checked
-    - **Remapper Edge Mode** - 0/3 names checked
-    - **Remapper Preset** - 0/3 names checked
-    - **Timer Input Mode** - 0/3 names checked
-    - **Wire Blend Op** - 0/3 names checked
-    - **Randomiser** - 0/3 names checked
-    - **Remapper** - 0/3 names checked
-    - **Signal Generator** - 3/3 names checked
-    - **Signal Inspector** - 3/3 names checked
-    - **Timer** - 0/3 names checked
-    - **Wireless Receiver** - 3/3 names checked
-    - **Wireless Transmitter** - 3/3 names checked
-    - **Counter** - 0/2 names checked
-    - **Delay Gadget** - 0/2 names checked
-    - **Inverter** - 0/2 names checked
-    - **Microchip** - 0/2 names checked
-    - **Selector** - 0/2 names checked
-    - **Splitter** - 1/2 names checked
-    - **Time Gadget** - 0/2 names checked
-    - **Wide Calculator** - 0/2 names checked
-    - **And** - 0/1 names checked
-    - **Break Logic Cycles** - 0/1 names checked
-    - **Timer State** - 0/1 names checked
-    - **Gate** - 0/1 names checked
-    - **Or** - 0/1 names checked
-    - **Remapper State** - 0/1 names checked
-    - **Xor** - 0/1 names checked
-  - **Creation & display gadgets** - 6/70 names checked
-    - **Text Gadget** - 0/6 names checked
-    - **Text Gadget Type** - 0/4 names checked
-    - **Timeline gadget & playback** - 0/4 names checked
-    - **DEPRECATE Dream Bubble** - 0/3 names checked
-    - **Dev Gadget** - 0/3 names checked
-    - **Dev Gadget Mode** - 0/3 names checked
-    - **Photo Gadget Mode** - 0/3 names checked
-    - **Text Gadget Format** - 0/3 names checked
-    - **Text Gadget Mode** - 0/3 names checked
-    - **Text Gadget Prompt Type** - 0/3 names checked
-    - **Text Number Format** - 0/3 names checked
-    - **Reporter Sculpt** - 2/3 names checked
-    - **Reporter Telemetry** - 3/3 names checked
-    - **Scripter** - 0/3 names checked
-    - **Auto Guides Gadget** - 1/2 names checked
-    - **Button Gadget** - 0/2 names checked
-    - **Dummy** - 0/2 names checked
-    - **Record Mode** - 0/2 names checked
-    - **Imp Quest Gadget** - 0/2 names checked
-    - **Photo Gadget** - 0/2 names checked
-    - **Reporter** - 0/2 names checked
-    - **Slider Gadget** - 0/2 names checked
-    - **Stamping Enabler** - 0/2 names checked
-    - **Legacy Photo Gadget** - 0/1 names checked
-    - **Node** - 0/1 names checked
-    - **Snap Point** - 0/1 names checked
-    - **Timeline Lane Data** - 0/1 names checked
-    - **Tumbler** - 0/1 names checked
-  - **Movement & possession** - 0/67 names checked
-    - **Controlinator** - 0/4 names checked
-    - **Follow Imp Mode** - 0/4 names checked
-    - **Hand Gadget Controller Type** - 0/4 names checked
-    - **Rotation Representation** - 0/4 names checked
-    - **Controlinator State** - 0/3 names checked
-    - **Controlinator View Type** - 0/3 names checked
-    - **Controllinator Mode** - 0/3 names checked
-    - **Controllinator Move Mode** - 0/3 names checked
-    - **Controllinator Stick Space** - 0/3 names checked
-    - **Follow Or Flee** - 0/3 names checked
-    - **Hand Gadget Widget Type** - 0/3 names checked
-    - **Follower** - 0/3 names checked
-    - **Hand Gadget** - 0/3 names checked
-    - **Advanced Mover** - 0/2 names checked
-    - **Advanced Rotator** - 0/2 names checked
-    - **Gyroscope** - 0/2 names checked
-    - **Head Gadget** - 0/2 names checked
-    - **Imp Animation Gadget** - 0/2 names checked
-    - **Imp Gadget** - 0/2 names checked
-    - **Look At Rotator** - 0/2 names checked
-    - **Mover** - 0/2 names checked
-    - **Puppet Controls** - 0/2 names checked
-    - **Rocket Rotator** - 0/2 names checked
-    - **Rotator** - 0/2 names checked
-    - **Teleporter** - 0/2 names checked
-  - **Gameplay & scoring** - 5/64 names checked
-    - **Variable Gadget** - 5/5 names checked
-    - **Variable Operation** - 0/4 names checked
-    - **Variable Update Mode** - 0/4 names checked
-    - **Coin Dispenser** - 0/3 names checked
-    - **Emitter Playback Mode** - 0/3 names checked
-    - **Force Type** - 0/3 names checked
-    - **Health Mod Mode** - 0/3 names checked
-    - **Health Mod Type** - 0/3 names checked
-    - **Emitter** - 0/3 names checked
-    - **Force Repulse Gadget** - 0/3 names checked
-    - **Health Modifier** - 0/3 names checked
-    - **Score Gadget** - 0/3 names checked
-    - **Checkpoint** - 0/2 names checked
-    - **Coin Consumer** - 0/2 names checked
-    - **Collectabubble** - 0/2 names checked
-    - **Destroyer** - 0/2 names checked
-    - **Emit Or Delete** - 0/2 names checked
-    - **Global Settings** - 0/2 names checked
-    - **Health Gadget** - 0/2 names checked
-    - **Inventory Reset** - 0/2 names checked
-    - **Prize Bubble** - 0/2 names checked
-    - **Score Modifier Gadget** - 0/2 names checked
-    - **Unlockables Gadget** - 0/2 names checked
-    - **Variable Modifier Gadget** - 0/2 names checked
-  - **Sensors & detection** - 0/38 names checked
-    - **Detect Scope** - 0/4 names checked
-    - **Gadget Zone Type** - 0/4 names checked
-    - **Detect Mode** - 0/3 names checked
-    - **Detect Type** - 0/3 names checked
-    - **Scope Type** - 0/3 names checked
-    - **Trigger Zone** - 0/3 names checked
-    - **Angle Sensor** - 0/2 names checked
-    - **Grab Sensor** - 0/2 names checked
-    - **Impact Sensor** - 0/2 names checked
-    - **Inventory Sensor** - 0/2 names checked
-    - **Movement Sensor** - 0/2 names checked
-    - **Raycast Gadget** - 0/2 names checked
-    - **Rotation Sensor** - 0/2 names checked
-    - **Ruler** - 0/2 names checked
-    - **VRCursor Sensor** - 0/2 names checked
-  - **Cameras, lights & effects** - 7/31 names checked
-    - **Grade gadget & color processing** - 0/4 names checked
-    - **Camera Shaker** - 3/3 names checked
-    - **Effect Field** - 0/3 names checked
-    - **Fog Shape Type** - 0/3 names checked
-    - **Fog Gadget** - 1/3 names checked
-    - **Light** - 0/3 names checked
-    - **Pad Rumble** - 3/3 names checked
-    - **Camera Gadget** - 0/2 names checked
-    - **Colour Gadget** - 0/2 names checked
-    - **Sky And Sun** - 0/2 names checked
-    - **Sun Deprecated** - 0/2 names checked
-    - **Wipe** - 0/1 names checked
-  - **Sound gadgets** - 0/7 names checked
-    - **Sound** - 0/5 names checked
-    - **Speaker** - 0/2 names checked
-  - **Shared gadget property dispatch** - 0/1 names checked
-- **Editor & interface** - 0/313 names checked
-  - **UI drawing & interaction** - 0/101 names checked
-    - **Interface primitives** - 0/23 names checked
-    - **Transition** - 0/18 names checked
-    - **Prim Alpha** - 0/12 names checked
-    - **Prim Glass** - 0/8 names checked
-    - **Prim Imp** - 0/8 names checked
-    - **Prim Max Object** - 0/8 names checked
-    - **Focus** - 0/5 names checked
-    - **Screen Corner** - 0/3 names checked
-    - **UIFeedback Level** - 0/2 names checked
-    - **UISize** - 0/2 names checked
-    - **Overlay** - 0/2 names checked
-    - **Phone** - 0/2 names checked
-    - **Prim Fat Wire** - 0/2 names checked
-    - **Thermometer** - 0/2 names checked
-    - **Video Player** - 0/2 names checked
-    - **Tip Style** - 0/1 names checked
-    - **Loading Screen** - 0/1 names checked
-  - **Text & fonts** - 0/54 names checked
-    - **Text drawing** - 0/13 names checked
-    - **Language** - 0/4 names checked
-    - **Font** - 0/3 names checked
-    - **Font Family** - 0/3 names checked
-    - **Text Align Horz** - 0/3 names checked
-    - **Text Align Vert** - 0/3 names checked
-    - **Text Back Align Horz** - 0/3 names checked
-    - **Text Back Align Vert** - 0/3 names checked
-    - **Text Background** - 0/3 names checked
-    - **Text Back Tail Type** - 0/3 names checked
-    - **Text Highlight Mode** - 0/3 names checked
-    - **Text Texture Mode** - 0/3 names checked
-    - **Set Text Gadget Comment Message** - 0/2 names checked
-    - **Text Edit Message** - 0/2 names checked
-    - **Set Text Gadget Loc State Message** - 0/1 names checked
-    - **Set Text Input Focus On Script** - 0/1 names checked
-    - **Set Text Lams IDMessage** - 0/1 names checked
-  - **Editing & tools** - 0/43 names checked
-    - **Change** - 0/3 names checked
-    - **Edit Op** - 0/3 names checked
-    - **Lock Mode** - 0/3 names checked
-    - **Tool** - 0/3 names checked
-    - **Tool Tag** - 0/3 names checked
-    - **Col Swatch** - 0/2 names checked
-    - **Edit Stack Return Type** - 0/2 names checked
-    - **Prim Gizmo Component** - 0/2 names checked
-    - **Ignore Selected Updates Message** - 0/2 names checked
-    - **Map Stack** - 0/2 names checked
-    - **Clean Up Snap Points Message** - 0/1 names checked
-    - **Confirm Big Delete Message** - 0/1 names checked
-    - **Delete Stamped Objects Message** - 0/1 names checked
-    - **Delete Thing Message** - 0/1 names checked
-    - **Editor Default Settings** - 0/1 names checked
-    - **Edit Stack Entry** - 0/1 names checked
-    - **Tweak Info Flags** - 0/1 names checked
-    - **Undo Redo** - 0/1 names checked
-    - **Request Tool Tag Message** - 0/1 names checked
-    - **Select Things By Dream Ref Message** - 0/1 names checked
-    - **Set Editor Default Settings Message** - 0/1 names checked
-    - **Set Gadget Name Loc State Message** - 0/1 names checked
-    - **Set Property Message** - 0/1 names checked
-    - **Set Thing Pos2 DMessage** - 0/1 names checked
-    - **Switch To Edit Mode Message** - 0/1 names checked
-    - **Toggle Auto Update Message** - 0/1 names checked
-    - **Toggle Ignore Update Message** - 0/1 names checked
-    - **Undo Redo Message** - 0/1 names checked
-  - **Controls & input** - 0/32 names checked
-    - **Controller Type Filter** - 0/3 names checked
-    - **Imp Dock Visual** - 0/3 names checked
-    - **Imp Interaction** - 0/3 names checked
-    - **Button Hint Type** - 0/2 names checked
-    - **Controller Type** - 0/2 names checked
-    - **Control Scheme** - 0/2 names checked
-    - **Grab Status** - 0/2 names checked
-    - **Stick Cam Scheme** - 0/2 names checked
-    - **Touch Mode** - 0/2 names checked
-    - **Twist Dial** - 0/2 names checked
-    - **Imp Selected** - 0/2 names checked
-    - **Set Button Toggle Message** - 0/2 names checked
-    - **Controller State** - 0/1 names checked
-    - **Dpad Navigation Message** - 0/1 names checked
-    - **Controller Class** - 0/1 names checked
-    - **Grip Data** - 0/1 names checked
-    - **Subtitle Import Message** - 0/1 names checked
-  - **Canvases & wires** - 0/19 names checked
-    - **Node Custom Icon** - 0/4 names checked
-    - **Node Type** - 0/4 names checked
-    - **Canvas State** - 0/2 names checked
-    - **Canvas Type** - 0/2 names checked
-    - **Canvas Seq** - 0/1 names checked
-    - **Canvas Wire Id** - 0/1 names checked
-    - **Canvas Wire Node** - 0/1 names checked
-    - **Create Wire Node Message** - 0/1 names checked
-    - **Delete All Wire Nodes Message** - 0/1 names checked
-    - **Delete Wire Nodes Message** - 0/1 names checked
-    - **Rewire Redundant Node Message** - 0/1 names checked
-  - **Palette & menus** - 0/16 names checked
-    - **Page Stack** - 0/3 names checked
-    - **Palette Menu** - 0/3 names checked
-    - **Palette Mode** - 0/3 names checked
-    - **Palette Position** - 0/2 names checked
-    - **Clicked Palette Button Message** - 0/1 names checked
-    - **Close Popit Message** - 0/1 names checked
-    - **Open Menu Message** - 0/1 names checked
-    - **Open Palette Message** - 0/1 names checked
-    - **Set Menu Camera Message** - 0/1 names checked
-  - **Paint editing** - 0/8 names checked
-    - **Stroke Widget** - 0/2 names checked
-    - **Performed Strokes Message** - 0/2 names checked
-    - **Bake Down Sprite Density Reduction Message** - 0/1 names checked
-    - **Make Sprite One Stroke Message** - 0/1 names checked
-    - **Optimise Sprites Message** - 0/1 names checked
-    - **Reduce Sprite LODMessage** - 0/1 names checked
-  - **Avatar interface** - 0/7 names checked
-    - **Avatar Wheel State** - 0/2 names checked
-    - **PUAvatar Settings** - 0/2 names checked
-    - **PUAvatar Wheel State** - 0/2 names checked
-    - **Avatar Wheel Mode** - 0/1 names checked
-  - **Subtitles** - 0/7 names checked
-    - **Create Subtitle Message** - 0/1 names checked
-    - **Set Speaker Name Message** - 0/1 names checked
-    - **Set Subtitle Mode Message** - 0/1 names checked
-    - **Set Subtitle Timing Message** - 0/1 names checked
-    - **Set Subtitle Timings Message** - 0/1 names checked
-    - **Snap Subtitle Message** - 0/1 names checked
-    - **Subtitle Timing** - 0/1 names checked
-  - **Bookmarks** - 0/6 names checked
-    - **Editor Bookmark Thumbnail Message** - 0/2 names checked
-    - **Editor Bookmark Operation** - 0/2 names checked
-    - **Editor Bookmark** - 0/1 names checked
-    - **Editor Bookmark Message** - 0/1 names checked
-  - **Thermometer & limits** - 0/6 names checked
-    - **Thermometer Limit Type** - 0/4 names checked
-    - **Thermometer Timing Type** - 0/2 names checked
-  - **Editor camera** - 0/5 names checked
-    - **Camera Arrow** - 0/2 names checked
-    - **Move Camera To Canvas Message** - 0/1 names checked
-    - **Set Camera Transform Message** - 0/1 names checked
-    - **Teleport Gecko Camera To Object Message** - 0/1 names checked
-  - **VR controls & comfort** - 0/4 names checked
-    - **VRComfort Transition Type** - 0/2 names checked
-    - **Vr Tracker Offset Message** - 0/1 names checked
-    - **Vr Warning Message** - 0/1 names checked
-  - **Photos & video** - 0/3 names checked
-    - **Request Video Library Message** - 0/1 names checked
-    - **Select Photo Message** - 0/1 names checked
-    - **Taking Photo Message** - 0/1 names checked
-  - **Shared interface routines** - 0/2 names checked
-- **Rendering & lighting** - 0/274 names checked
-  - **Lighting & shadows** - 0/95 names checked
-    - **Sun Shadow** - 0/22 names checked
-    - **Spot Shadow** - 0/20 names checked
-    - **Shading** - 0/17 names checked
-    - **Sky** - 0/11 names checked
-    - **Ortho Shadow** - 0/10 names checked
-    - **Object Emit Light From Glow** - 0/4 names checked
-    - **Light Type** - 0/3 names checked
-    - **Object Cast Shadows** - 0/3 names checked
-    - **Cone Trace** - 0/2 names checked
-    - **Spot Light** - 0/2 names checked
-    - **Shading Query** - 0/1 names checked
-  - **Image effects** - 0/86 names checked
-    - **Bokeh rendering** - 0/24 names checked
-    - **Occlusion** - 0/15 names checked
-    - **Post** - 0/8 names checked
-    - **Bokeh Bloom** - 0/7 names checked
-    - **Portal Effect** - 0/7 names checked
-    - **Selection Effect** - 0/5 names checked
-    - **Wipe Style** - 0/4 names checked
-    - **Blend Type** - 0/3 names checked
-    - **Grade FXGlitch Style** - 0/3 names checked
-    - **Motion Blur** - 0/3 names checked
-    - **Taa** - 0/3 names checked
-    - **Video Imposter** - 0/2 names checked
-    - **Bokeh** - 0/1 names checked
-    - **Wipe Effect** - 0/1 names checked
-  - **Scene drawing** - 0/66 names checked
-    - **Scene hulls** - 0/20 names checked
-    - **Brushstroke** - 0/14 names checked
-    - **Volume** - 0/11 names checked
-    - **Model Brushstroke** - 0/6 names checked
-    - **Renderer** - 0/3 names checked
-    - **Mips** - 0/2 names checked
-    - **Noisy** - 0/2 names checked
-    - **Photo** - 0/2 names checked
-    - **Pixel Check** - 0/2 names checked
-    - **Projection** - 0/2 names checked
-    - **Sticker** - 0/2 names checked
-  - **Graphics infrastructure** - 0/12 names checked
-    - **Toolkit** - 0/4 names checked
-    - **Display** - 0/3 names checked
-    - **Sync** - 0/2 names checked
-    - **Frame Constants** - 0/1 names checked
-    - **Frame Graph** - 0/1 names checked
-    - **Gfx Context** - 0/1 names checked
-  - **VR rendering** - 0/6 names checked
-    - **Vr Layers** - 0/4 names checked
-    - **Vr Cursor** - 0/2 names checked
-  - **Camera blending** - 0/5 names checked
-    - **Camera Blender / Persistent Data** - 0/2 names checked
-    - **Camera Blender / Active Camera Data** - 0/1 names checked
-    - **Camera Blender / Camera Space** - 0/1 names checked
-    - **Camera Blender / Camera Status** - 0/1 names checked
-  - **Visibility** - 0/4 names checked
-    - **Label Visible** - 0/4 names checked
-- **Shared engine & object data** - 12/120 names checked
-  - **Game state & runtime** - 7/20 names checked
-    - **Game contexts & runtime support** - 7/8 names checked
-    - **Game Events** - 0/3 names checked
-    - **Game Base** - 0/3 names checked
-    - **Gameupdater** - 0/3 names checked
-    - **Game Type** - 0/1 names checked
-    - **Game Update Thread** - 0/1 names checked
-    - **Gamemerger** - 0/1 names checked
-  - **Debugging & diagnostics** - 0/18 names checked
-    - **Debug Draw Render** - 0/8 names checked
-    - **Debug Screen** - 0/4 names checked
-    - **Comparison Image** - 0/2 names checked
-    - **Debug Camera Image** - 0/2 names checked
-    - **Debug Text** - 0/2 names checked
-  - **Objects & references** - 0/13 names checked
-    - **Thing Type** - 0/5 names checked
-    - **Group** - 0/2 names checked
-    - **Thing Ref** - 0/2 names checked
-    - **Persistent Object Data** - 0/1 names checked
-    - **Thing** - 0/1 names checked
-    - **Thing Pos** - 0/1 names checked
-    - **Thing Pos2 D** - 0/1 names checked
-  - **Numbers & transforms** - 0/12 names checked
-    - **float** - 0/4 names checked
-    - **double** - 0/2 names checked
-    - **float3x3 packed** - 0/2 names checked
-    - **float2 packed** - 0/1 names checked
-    - **float3 packed** - 0/1 names checked
-    - **float4 packed** - 0/1 names checked
-    - **Trans packed** - 0/1 names checked
-  - **Properties & variants** - 1/9 names checked
-    - **Variant Type** - 0/4 names checked
-    - **Variant** - 1/3 names checked
-    - **Tweak Info** - 0/2 names checked
-  - **Shared property helpers** - 4/8 names checked
-  - **Identifiers & assets** - 0/8 names checked
-    - **Base Id** - 0/2 names checked
-    - **Timestamp** - 0/2 names checked
-    - **Asset** - 0/1 names checked
-    - **Base Id Seq Number Trio** - 0/1 names checked
-    - **Photo Id** - 0/1 names checked
-    - **Version Id** - 0/1 names checked
-  - **Serialization & upgrades** - 0/8 names checked
-    - **Serialise** - 0/4 names checked
-    - **Serialization implementation** - 0/1 names checked
-    - **Sanitise** - 0/1 names checked
-    - **Serialise Upgrade** - 0/1 names checked
-    - **Serialise1** - 0/1 names checked
-  - **Errors & diagnostics** - 0/5 names checked
-    - **Error Code / Code** - 0/2 names checked
-    - **Error Code Message** - 0/2 names checked
-    - **Error Code** - 0/1 names checked
-  - **Strings** - 0/5 names checked
-    - **Small String** - 0/2 names checked
-    - **Serialised String Id** - 0/1 names checked
-    - **string** - 0/1 names checked
-    - **wchar t** - 0/1 names checked
-  - **Engine support** - 0/5 names checked
-    - **Support implementation** - 0/1 names checked
-    - **Game** - 0/1 names checked
-    - **Sillyrender** - 0/1 names checked
-    - **Tweak** - 0/1 names checked
-    - **Widgets** - 0/1 names checked
-  - **Shared signal data** - 0/4 names checked
-    - **Wire Header** - 0/2 names checked
-    - **Packed Signal** - 0/1 names checked
-    - **Wire Seq** - 0/1 names checked
-  - **Shared messages** - 0/3 names checked
-    - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 0/1 names checked
-    - **Input Message Buffer** - 0/1 names checked
-    - **Input Message Header** - 0/1 names checked
-  - **Shared object routines** - 0/1 names checked
-  - **Script data** - 0/1 names checked
-    - **Script Contents** - 0/1 names checked
-- **Sculpting & painting** - 0/117 names checked
-  - **Sculpt geometry** - 0/78 names checked
-    - **Sculpt bricks** - 0/29 names checked
-    - **Chunk** - 0/26 names checked
-    - **Sweep** - 0/9 names checked
-    - **Inertia** - 0/2 names checked
-    - **Pipe** - 0/2 names checked
-    - **Slot Debug** - 0/2 names checked
-    - **Sculpt blend & looseness registration** - 0/1 names checked
-    - **CSGEdit Mirror Flags** - 0/1 names checked
-    - **CSGEdit Op Flags** - 0/1 names checked
-    - **CSGEdit Prim Flags** - 0/1 names checked
-    - **Csg Blend Mode** - 0/1 names checked
-    - **Csg Looseness Mode** - 0/1 names checked
-    - **Element Picker** - 0/1 names checked
-    - **Hasher** - 0/1 names checked
-  - **Paint & strokes** - 0/20 names checked
-    - **Sprite** - 0/9 names checked
-    - **Sprite Duplicate** - 0/3 names checked
-    - **Sprite Duplicate Position** - 0/3 names checked
-    - **Sprite Duplicate Rotation** - 0/3 names checked
-    - **Light Paint** - 0/2 names checked
-  - **Surfaces & placement** - 0/12 names checked
-    - **Spawn Shape Type** - 0/4 names checked
-    - **Surface Snap** - 0/4 names checked
-    - **Surface Type** - 0/4 names checked
-  - **Sculpt objects** - 0/4 names checked
-    - **Sculpt** - 0/4 names checked
-  - **Brush settings** - 0/3 names checked
-    - **Combing Volume** - 0/2 names checked
-    - **Bubbles Brushing** - 0/1 names checked
-- **Dreamiverse & networking** - 0/103 names checked
-  - **Network state** - 0/29 names checked
-    - **Net Thing** - 0/4 names checked
-    - **Net Sync Mode** - 0/3 names checked
-    - **Network Variable Mode** - 0/3 names checked
-    - **Client Conn State** - 0/2 names checked
-    - **Net Thing Type** - 0/2 names checked
-    - **Net Player Id** - 0/2 names checked
-    - **Net Thing Table Entry** - 0/2 names checked
-    - **Network Variable** - 0/2 names checked
-    - **Network Variable Type** - 0/1 names checked
-    - **Net Emit Data** - 0/1 names checked
-    - **Net Imp Data** - 0/1 names checked
-    - **Other User Editing Message** - 0/1 names checked
-    - **Remote Signal Message** - 0/1 names checked
-    - **Unique Net Id** - 0/1 names checked
-    - **Unique Net Id Range** - 0/1 names checked
-    - **Update Persistent Objects Message** - 0/1 names checked
-    - **User Went Online For First Time Message** - 0/1 names checked
-  - **Creation browsing & pages** - 0/28 names checked
-    - **Bokeh Widgets** - 0/7 names checked
-    - **Search Creations Page** - 0/6 names checked
-    - **Dream Details Page** - 0/3 names checked
-    - **Dream Ui** - 0/2 names checked
-    - **Moderation Pages** - 0/2 names checked
-    - **Profiles Page** - 0/2 names checked
-    - **Challenge Pages** - 0/1 names checked
-    - **Demo Pages** - 0/1 names checked
-    - **Dream Ui Pages** - 0/1 names checked
-    - **Dreamstone Pages** - 0/1 names checked
-    - **Tutorials Pages** - 0/1 names checked
-    - **Uibubbles** - 0/1 names checked
-  - **Players & sessions** - 0/23 names checked
-    - **Player** - 0/4 names checked
-    - **Lobby Type** - 0/2 names checked
-    - **Player Idx** - 0/2 names checked
-    - **Room Player Idx** - 0/2 names checked
-    - **User Id** - 0/2 names checked
-    - **Machine** - 0/1 names checked
-    - **Machine Cinema Mode Message** - 0/1 names checked
-    - **Machine Id** - 0/1 names checked
-    - **Machine Joined Multiplayer Message** - 0/1 names checked
-    - **Machine Request VRFramerate Screen** - 0/1 names checked
-    - **Player Hello Message** - 0/1 names checked
-    - **Player Id** - 0/1 names checked
-    - **Player Preload Status Message** - 0/1 names checked
-    - **Player Session Id Manager** - 0/1 names checked
-    - **Set Machine Comfort Mode Override** - 0/1 names checked
-    - **Set Player Settings Message** - 0/1 names checked
-  - **Creation references** - 0/19 names checked
-    - **Dreamstone Type** - 0/3 names checked
-    - **Dream UIPage** - 0/3 names checked
-    - **Preload Dream Mode** - 0/3 names checked
-    - **Dream Id** - 0/2 names checked
-    - **Dream Version Id** - 0/2 names checked
-    - **Preload Dream Message** - 0/2 names checked
-    - **Almost Dream Id In Map** - 0/1 names checked
-    - **Dream Id In Map** - 0/1 names checked
-    - **Game Preload Status Message** - 0/1 names checked
-    - **Publish Finished Message** - 0/1 names checked
-  - **Text chat** - 0/4 names checked
-    - **Text Chat Line** - 0/3 names checked
-    - **Text Chat Channel** - 0/1 names checked
-- **Sound & music** - 0/62 names checked
-  - **Sound editing** - 0/18 names checked
-    - **Audio UISpreadsheet** - 0/5 names checked
-    - **Audio UISpreadsheet Row** - 0/2 names checked
-    - **Audio UICurve Source** - 0/2 names checked
-    - **MIDIMessage** - 0/2 names checked
-    - **Activate Audio Preview Message** - 0/1 names checked
-    - **Audio Import Message** - 0/1 names checked
-    - **Audio UICurve Remap** - 0/1 names checked
-    - **Audio Update Checked Message** - 0/1 names checked
-    - **Audio Update Message** - 0/1 names checked
-    - **Stop Audio Recording Message** - 0/1 names checked
-    - **Voice Over Import Message** - 0/1 names checked
-  - **Mixing** - 0/16 names checked
-    - **Pan Style** - 0/4 names checked
-    - **Reverb Select** - 0/4 names checked
-    - **Audio Category Mix** - 0/3 names checked
-    - **Sidechain Select** - 0/3 names checked
-    - **Audio Master Mix** - 0/2 names checked
-  - **Musical timing & pitch** - 0/10 names checked
-    - **Time Signature Denominator** - 0/4 names checked
-    - **Legato Mode** - 0/3 names checked
-    - **Music Scale** - 0/3 names checked
-  - **Sound settings** - 0/8 names checked
-    - **Sound Type** - 0/4 names checked
-    - **Sound Icons** - 0/3 names checked
-    - **Audio Number** - 0/1 names checked
-  - **Synthesis & modulation** - 0/6 names checked
-    - **LFOShape** - 0/3 names checked
-    - **Osc Mode** - 0/3 names checked
-  - **Samples & MIDI** - 0/2 names checked
-    - **Wave Slice** - 0/2 names checked
-  - **Sound strokes** - 0/2 names checked
-    - **Sound Stroke Frame** - 0/1 names checked
-    - **Sound Stroke Frame With Stroke Idx** - 0/1 names checked
-- **Physics & collision** - 0/60 names checked
-  - **Physics simulation** - 0/29 names checked
-    - **Ballmaker** - 0/7 names checked
-    - **Mankinigpu** - 0/6 names checked
-    - **Label Collidable** - 0/4 names checked
-    - **Physics Quality** - 0/4 names checked
-    - **Mankini Contact** - 0/4 names checked
-    - **Mankini** - 0/3 names checked
-    - **Gameupdater Physics** - 0/1 names checked
-  - **Collision queries** - 0/25 names checked
-    - **Region Query** - 0/5 names checked
-    - **Hit Type** - 0/3 names checked
-    - **Ray Hit Id** - 0/3 names checked
-    - **Game Raycast Phase** - 0/2 names checked
-    - **Shapecast Thing Type Filter** - 0/2 names checked
-    - **Ray Hit Id Seq** - 0/2 names checked
-    - **Ray Hit Seq** - 0/2 names checked
-    - **Bvh Condition Mask** - 0/1 names checked
-    - **Model Raycast** - 0/1 names checked
-    - **Point Query** - 0/1 names checked
-    - **Ray Hit** - 0/1 names checked
-    - **Ray Hit Id / Hit Data** - 0/1 names checked
-    - **Ray Hit Id Seq / Hit Data** - 0/1 names checked
-  - **Joints** - 0/6 names checked
-    - **Joint Type** - 0/4 names checked
-    - **Joint** - 0/2 names checked
-- **Animation & puppets** - 0/46 names checked
-  - **Avatars** - 0/30 names checked
-    - **Prim Avatar Style Customisation** - 0/6 names checked
-    - **Avatar Anim** - 0/4 names checked
-    - **Prim Avatar Customisation** - 0/3 names checked
-    - **E PU Avatar Anim Net Sync Mode** - 0/2 names checked
-    - **Prim Avatar Animation Set** - 0/2 names checked
-    - **Prim Avatar Costume Type** - 0/2 names checked
-    - **Prim Avatar Pet Type** - 0/2 names checked
-    - **Do Avatar Anim Message** - 0/1 names checked
-    - **Prim Avatar Eyebrow Type** - 0/1 names checked
-    - **Prim Avatar Eye Type** - 0/1 names checked
-    - **Prim Avatar Mouth Type** - 0/1 names checked
-    - **Prim Avatar Pupil Type** - 0/1 names checked
-    - **Prim Avatar Custom Mesh** - 0/1 names checked
-    - **Prim Avatar Puppet Tweaks** - 0/1 names checked
-    - **Prim Avatar Substance Data** - 0/1 names checked
-    - **Set Puppet Avatar Animation Set Message** - 0/1 names checked
-  - **Animation & keyframes** - 0/9 names checked
-    - **Animation** - 0/3 names checked
-    - **Sprite Stop Motion Animation** - 0/3 names checked
-    - **Stroke Keyframe** - 0/2 names checked
-    - **Confirm Retake Animation Message** - 0/1 names checked
-  - **Puppet animation** - 0/7 names checked
-    - **Puppet Heart** - 0/7 names checked
+- **Gadgets & logic** - 459 functions identified; 2 behavior/helper reviews; 36 property/type reviews
+  - **Online & multiplayer gadgets** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Properties & type definitions** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Magic Door Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **PUMap Gadget** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dreamiverse Reference Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dreamiverse Reference Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dreamiverse Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Magic Door UIType** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Map Marker Icon** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Map Marker Visibility** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Map Show Players** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Metagame Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Portal Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scoreboard Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scoreboard Ordering** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scoreboard Player Setting** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scoreboard Scope** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scoreboard Unit** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Search Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Social Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Spawnplace Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Magic Door** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Metagame Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Network Variable Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Portal Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **PUMagic Door** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **PUMap Marker** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scoreboard Display Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Search Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Social Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Spawnplace Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Multiplayer Session Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Network Signal Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Network Spawner Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Logic & signals** - 86 functions identified; 0 behavior/helper reviews; 17 property/type reviews
+    - **Properties & type definitions** - 85 functions identified; 0 behavior/helper reviews; 17 property/type reviews
+      - **Calculator Op** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Delay Select** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Label Any Or All** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Calculator** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Combiner** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Calculator Units** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gate Reset Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Random Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Remapper Curve** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Remapper Edge Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Remapper Preset** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Timer Input Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wire Blend Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Randomiser** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Remapper** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Signal Generator** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Signal Inspector** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Timer** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wireless Receiver** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Wireless Transmitter** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Counter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Delay Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Inverter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Microchip** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Selector** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Splitter** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Time Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wide Calculator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **And** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Timer State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gate** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Or** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Remapper State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Xor** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Break Logic Cycles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Creation & display gadgets** - 70 functions identified; 0 behavior/helper reviews; 6 property/type reviews
+    - **Properties & type definitions** - 69 functions identified; 0 behavior/helper reviews; 6 property/type reviews
+      - **Text Gadget** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Gadget Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **DEPRECATE Dream Bubble** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dev Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dev Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Photo Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Gadget Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Gadget Prompt Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Number Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Reporter Sculpt** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Reporter Telemetry** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Scripter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Timeline gadget & playback** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Auto Guides Gadget** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Button Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dummy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Record Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Imp Quest Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Photo Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Reporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Slider Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Stamping Enabler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Legacy Photo Gadget** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Snap Point** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Timeline Lane Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Timeline gadget & playback** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Movement & possession** - 67 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 67 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controlinator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Follow Imp Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Hand Gadget Controller Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Rotation Representation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controlinator State** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controlinator View Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controllinator Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controllinator Move Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controllinator Stick Space** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Follow Or Flee** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Hand Gadget Widget Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Follower** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Hand Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Advanced Mover** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Advanced Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gyroscope** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Head Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Imp Animation Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Imp Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Look At Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Mover** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Puppet Controls** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Rocket Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Teleporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Gameplay & scoring** - 64 functions identified; 2 behavior/helper reviews; 3 property/type reviews
+    - **Properties & type definitions** - 62 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Variable Operation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Variable Update Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Coin Dispenser** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Emitter Playback Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Force Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Health Mod Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Health Mod Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Emitter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Force Repulse Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Health Modifier** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Score Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Variable Gadget** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Checkpoint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Coin Consumer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Collectabubble** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Destroyer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Emit Or Delete** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Global Settings** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Health Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Inventory Reset** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prize Bubble** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Score Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Unlockables Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Variable Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Variable Gadget** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+  - **Sensors & detection** - 38 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 38 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Detect Scope** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gadget Zone Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Detect Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Detect Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scope Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Trigger Zone** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Angle Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Grab Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Impact Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Inventory Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Movement Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Raycast Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Rotation Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ruler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **VRCursor Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Cameras, lights & effects** - 31 functions identified; 0 behavior/helper reviews; 7 property/type reviews
+    - **Properties & type definitions** - 30 functions identified; 0 behavior/helper reviews; 7 property/type reviews
+      - **Camera Shaker** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Effect Field** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Fog Shape Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Fog Gadget** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Grade gadget & color processing** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Light** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Pad Rumble** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Camera Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Colour Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sky And Sun** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sun Deprecated** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wipe** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Grade gadget & color processing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Sound gadgets** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sound** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared gadget property dispatch** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Editor & interface** - 313 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **UI drawing & interaction** - 101 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 93 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Interface primitives** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Transition** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Alpha** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Glass** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Imp** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Max Object** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Focus** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Overlay** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Phone** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Fat Wire** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thermometer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Video Player** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Loading Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Screen Corner** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **UIFeedback Level** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **UISize** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tip Style** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Text & fonts** - 54 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 41 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Language** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Font** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Font Family** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Back Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Back Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Background** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Back Tail Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Highlight Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Texture Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Text Gadget Comment Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Edit Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Text Gadget Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Text Input Focus On Script** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Text Lams IDMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Editing & tools** - 43 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 43 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Change** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Edit Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Lock Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tool** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tool Tag** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Col Swatch** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Edit Stack Return Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Gizmo Component** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ignore Selected Updates Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Map Stack** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Clean Up Snap Points Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Confirm Big Delete Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Delete Stamped Objects Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Delete Thing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Editor Default Settings** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Edit Stack Entry** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tweak Info Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Undo Redo** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Request Tool Tag Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Select Things By Dream Ref Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Editor Default Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Gadget Name Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Property Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Thing Pos2 DMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Switch To Edit Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Toggle Auto Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Toggle Ignore Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Undo Redo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Controls & input** - 32 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 32 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controller Type Filter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Imp Dock Visual** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Imp Interaction** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Button Hint Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controller Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Control Scheme** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Grab Status** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Stick Cam Scheme** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Touch Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Twist Dial** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Imp Selected** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Button Toggle Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controller State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dpad Navigation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Controller Class** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Grip Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Subtitle Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Canvases & wires** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Node Custom Icon** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Node Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Canvas State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Canvas Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Canvas Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Canvas Wire Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Canvas Wire Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Create Wire Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Delete All Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Delete Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Rewire Redundant Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Palette & menus** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Page Stack** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Palette Menu** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Palette Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Palette Position** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Clicked Palette Button Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Close Popit Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Open Menu Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Open Palette Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Menu Camera Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Paint editing** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Stroke Widget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Performed Strokes Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bake Down Sprite Density Reduction Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Make Sprite One Stroke Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Optimise Sprites Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Reduce Sprite LODMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Avatar interface** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Avatar Wheel State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **PUAvatar Settings** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **PUAvatar Wheel State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Avatar Wheel Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Subtitles** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Create Subtitle Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Speaker Name Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Subtitle Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Subtitle Timing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Subtitle Timings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Snap Subtitle Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Subtitle Timing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Bookmarks** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Editor Bookmark Thumbnail Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Editor Bookmark Operation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Editor Bookmark** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Editor Bookmark Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Thermometer & limits** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thermometer Limit Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thermometer Timing Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Editor camera** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Camera Arrow** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Move Camera To Canvas Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Camera Transform Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Teleport Gecko Camera To Object Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **VR controls & comfort** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **VRComfort Transition Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Vr Tracker Offset Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Vr Warning Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Photos & video** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Request Video Library Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Select Photo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Taking Photo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Rendering & lighting** - 274 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Lighting & shadows** - 95 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 85 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sun Shadow** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Spot Shadow** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Shading** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sky** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ortho Shadow** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Cone Trace** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Spot Light** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Shading Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Object Emit Light From Glow** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Light Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Object Cast Shadows** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Image effects** - 86 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 76 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bokeh rendering** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Occlusion** - 15 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Post** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bokeh Bloom** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Portal Effect** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Selection Effect** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Motion Blur** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Taa** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Video Imposter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bokeh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wipe Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Blend Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Grade FXGlitch Style** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Scene drawing** - 66 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 66 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Volume** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Model Brushstroke** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Renderer** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Mips** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Noisy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Photo** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Pixel Check** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Projection** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sticker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Graphics infrastructure** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Toolkit** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Display** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sync** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Frame Constants** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Frame Graph** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gfx Context** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **VR rendering** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Vr Layers** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Vr Cursor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Camera blending** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Camera Blender / Persistent Data** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Camera Blender / Active Camera Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Camera Blender / Camera Space** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Camera Blender / Camera Status** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 120 functions identified; 7 behavior/helper reviews; 5 property/type reviews
+  - **Game state & runtime** - 20 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 13 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+      - **Game contexts & runtime support** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+      - **Gameupdater** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game Update Thread** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gamemerger** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Debugging & diagnostics** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Debug Draw Render** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Debug Screen** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Comparison Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Debug Camera Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Objects & references** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thing Type** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Group** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thing Ref** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Persistent Object Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thing Pos** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Numbers & transforms** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Properties & variants** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Properties & type definitions** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared property helpers** - 8 functions identified; 0 behavior/helper reviews; 4 property/type reviews
+    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 4 property/type reviews
+    - **Code role still unresolved** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Identifiers & assets** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Timestamp** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Asset** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Base Id Seq Number Trio** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Photo Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Version Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Serialization & upgrades** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Serialise** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Serialization implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Errors & diagnostics** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Error Code / Code** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Error Code Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Error Code** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Strings** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Small String** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Serialised String Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **string** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **wchar t** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Engine support** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Support implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sillyrender** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tweak** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Widgets** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared signal data** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared messages** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Input Message Buffer** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Input Message Header** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared object routines** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Sculpting & painting** - 117 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Sculpt geometry** - 78 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 72 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sculpt bricks** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Chunk** - 26 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sweep** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Inertia** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Pipe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Slot Debug** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Element Picker** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Hasher** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sculpt blend & looseness registration** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **CSGEdit Mirror Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **CSGEdit Op Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **CSGEdit Prim Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Csg Blend Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Csg Looseness Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Paint & strokes** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sprite Duplicate** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sprite Duplicate Position** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sprite Duplicate Rotation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sprite** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Light Paint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sprite** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Surfaces & placement** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Spawn Shape Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Surface Snap** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Surface Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Sculpt objects** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sculpt** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Brush settings** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Combing Volume** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bubbles Brushing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Dreamiverse & networking** - 103 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Network state** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Thing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Sync Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Network Variable Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Client Conn State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Thing Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Player Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Thing Table Entry** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Network Variable** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Network Variable Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Emit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Net Imp Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Other User Editing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Remote Signal Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Unique Net Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Unique Net Id Range** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Update Persistent Objects Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **User Went Online For First Time Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Creation browsing & pages** - 28 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 28 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bokeh Widgets** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Search Creations Page** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream Details Page** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream Ui** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Moderation Pages** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Profiles Page** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Challenge Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Demo Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream Ui Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dreamstone Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Tutorials Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Uibubbles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Players & sessions** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Player** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Lobby Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Room Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **User Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Machine** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Machine Cinema Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Machine Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Machine Joined Multiplayer Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Machine Request VRFramerate Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Player Hello Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Player Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Player Preload Status Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Player Session Id Manager** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Machine Comfort Mode Override** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Player Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Creation references** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dreamstone Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream UIPage** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Preload Dream Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream Version Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Preload Dream Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Almost Dream Id In Map** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Dream Id In Map** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game Preload Status Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Publish Finished Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Text chat** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Chat Line** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Text Chat Channel** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Sound & music** - 62 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Sound editing** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio UISpreadsheet Row** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio UICurve Source** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **MIDIMessage** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Activate Audio Preview Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio UICurve Remap** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio Update Checked Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Stop Audio Recording Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Voice Over Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Mixing** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Pan Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Reverb Select** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio Category Mix** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sidechain Select** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio Master Mix** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Musical timing & pitch** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Time Signature Denominator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Legato Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Music Scale** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Sound settings** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sound Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sound Icons** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Audio Number** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Synthesis & modulation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **LFOShape** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Osc Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Samples & MIDI** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Wave Slice** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Sound strokes** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sound Stroke Frame** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Physics & collision** - 60 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Physics simulation** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 21 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ballmaker** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Mankinigpu** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Mankini Contact** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Mankini** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Gameupdater Physics** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Label Collidable** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Physics Quality** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Collision queries** - 25 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Hit Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ray Hit Id** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Game Raycast Phase** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Shapecast Thing Type Filter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ray Hit Id Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ray Hit Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Bvh Condition Mask** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ray Hit** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ray Hit Id / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Ray Hit Id Seq / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Region Query** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Model Raycast** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Point Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Joints** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Joint Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Animation & puppets** - 46 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Avatar Anim** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Customisation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **E PU Avatar Anim Net Sync Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Animation Set** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Costume Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Pet Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Do Avatar Anim Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Eyebrow Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Eye Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Mouth Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Pupil Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Custom Mesh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Puppet Tweaks** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Prim Avatar Substance Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Animation & keyframes** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Puppet animation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Puppet Heart** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 
 </details>
 <!-- area-status:end -->

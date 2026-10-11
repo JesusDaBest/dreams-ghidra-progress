@@ -56,3 +56,5 @@ Mapped seven independently reviewed functions to their confirmed gadget types: R
 Timeline definition and playback-associated code share one Timeline group; Grade definition and color-processing-associated code share one Grade group. Source associations remain recorded per function. These presentation groups do not claim exclusive engine ownership. Each function address occurs once in the map, and parent totals include their children rather than adding another copy.
 
 
+
+The hierarchy separates property/type definitions, runtime/implementation, and unresolved code roles inside existing feature associations. This split does not change system ownership. Review counts distinguish behavior/helpers from property/type handling. Neither count establishes whole-feature completion; no such percentage is exported.
