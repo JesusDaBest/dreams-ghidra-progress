@@ -2,7 +2,7 @@
 
 Status snapshot: 2026-10-11. Setup is verified; reverse engineering remains partial.
 
-See [decompilation results and findings](ANALYSIS.md) for the consolidated analysis, including the later six-function signature promotion, the verified v2 snapshot and its separate extraction in progress, ReporterTelemetry's three applied and reopen-verified names, and the copy-only extraction experiments. The [research data](analysis/research-details.json) lists their recorded states, matched fields, and all 43 frozen-cache failure addresses. The older extraction and ABI counts below describe their specified v1 snapshot.
+See [decompilation results and findings](ANALYSIS.md) for the consolidated analysis, including the later six-function signature promotion, the verified v2 snapshot and its completed, audited extraction, ReporterTelemetry's three applied and reopen-verified names, and the copy-only extraction experiments. The [research data](analysis/research-details.json) lists their recorded states, matched fields, and all 43 frozen-cache failure addresses. The older extraction and ABI counts below describe their specified v1 snapshot.
 
 ## Verified setup
 
@@ -115,3 +115,9 @@ The first code-to-system mapping pass associated 1,540 functions with nine Dream
 4. Journal and verify further justified changes, save checkpoints, and recheck original input hashes.
 
 Setup, a small naming batch, and generated pseudocode do not satisfy the full reverse engineering goal.
+
+## Final v2 extraction checkpoint
+
+All 9,551 discovered functions are accounted for: 9,513 complete cached outputs and 38 failures (36 timeouts, one flow-limit failure, one forced-merge failure). The immutable snapshot has 9,532 code functions and 19 thunks; 15 external functions are recorded outside that denominator. All 59 initial timeouts received one 60-second retry. The audit checked all 9,513 cache hashes and all 9,610 attempt records; no previously successful output was re-decompiled.
+
+All cached outputs also received a mechanical quality scan with a per-address local result and next step. This grants no semantic-review credit: 30 names are checked, 4 naming reviews are deferred, and 9,517 functions await semantic naming review. The 39 preserved explicit signatures and all final extraction failures have address-specific unresolved records. Original binary inputs, both caches, checkpoints, and raw evidence remain local.

@@ -41,7 +41,7 @@ Green is assigned to the checked functions inside their own units and totals are
 
 ## Verification and reproduction
 
-The mapping used an immutable program snapshot. All 9,551 function addresses and body sizes were matched to its exported native references, and all 9,508 available pseudocode files passed their recorded SHA-256 checks. The snapshot's modification time was unchanged. The program identity, evidence digests, instruction addresses, descriptor addresses, and applicable cache hashes are recorded in the public mapping metadata. Evidence JSON digests use UTF-8 text with LF newlines.
+The mapping used an immutable program snapshot. Its native memory, body boundaries, and type evidence remain unchanged in v2; the latest saved-project audit confirms that continuity. Current extraction status now comes from the separately audited v2 cache. All 9,551 function addresses and body sizes were matched to its exported native references, and all 9,508 available pseudocode files passed their recorded SHA-256 checks. The snapshot's modification time was unchanged. The program identity, evidence digests, instruction addresses, descriptor addresses, and applicable cache hashes are recorded in the public mapping metadata. Evidence JSON digests use UTF-8 text with LF newlines.
 
 Public evidence contains identifiers and structural links; local paths, raw strings from source-file diagnostics, game code, binaries, and Ghidra databases remain outside the repository. A researcher with the same program can follow the recorded addresses. The private source evidence is required to independently re-establish the mapping; rendering the existing map requires only the public JSON files.
 

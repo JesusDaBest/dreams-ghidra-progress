@@ -691,11 +691,11 @@ Green means the function's role and descriptive name have been checked; amber me
 </details>
 <!-- area-status:end -->
 
-<sub>Automatic extraction has produced code for 9,508 functions in the previous analysis snapshot; 43 still need fixes. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
+<sub>The audited v2 snapshot has cached output for 9,513 functions; 38 extraction failures remain. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
 
 ## What we know so far
 
-**The full written findings are in [Dreams: decompilation results and findings](ANALYSIS.md).** They cover the executable and calling convention, shared property types, gadget field matches, object dispatch, saved signature corrections, proposed names, and extraction experiments. The [supporting research data](analysis/research-details.json) retains the v1 and v2 failure lists separately, plus 77 matched property fields.
+**The full written findings are in [Dreams: decompilation results and findings](ANALYSIS.md).** They cover the executable and calling convention, shared property types, gadget field matches, object dispatch, saved signature corrections, proposed names, and extraction experiments. The [supporting research data](analysis/research-details.json) retains the v1 and v2 failure lists separately, the 39 deferred explicit signatures, and 77 matched property fields.
 
 The map connects code to sculpting and painting, gadgets, physics, audio, animation, rendering, the editor, the Dreamiverse, and shared engine data. Assignments come from references in the machine code, registered types, and the game's object-type dispatcher. Every assignment has an address and supporting evidence in the [system map](analysis/system-map.json).
 
@@ -704,9 +704,9 @@ So far, checked names cover gadget property readers and registrations plus share
 ## Latest progress
 
 - **30 functions named and checked.** Another 4 have been reviewed but remain unclear.
-- **The earlier v1 snapshot has 9,508 cached outputs.** Generating that code is preparation; it does not mean we understand it yet.
-- **The v1 snapshot records 43 extraction failures.** The newer v2 first pass was separately audited: 9,490 outputs and 61 failures across all 9,551 functions; longer timeout retries are continuing.
-- **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is in progress. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.
+- **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
+- **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
+- **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.
 - **Three ReporterTelemetry names were applied and verified after reopening, bringing the total to 30.** A copy-only flow-limit experiment also produced pseudocode, then was rolled back because its switch domain still needs proof. These outcomes are documented separately from completed work in the [findings](ANALYSIS.md).
 
 Next: extend the system mapping and review the functions within each section. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
