@@ -39,12 +39,30 @@ For this documented batch: 8 reviewed, 2 renamed and verified after reopening, 6
 
 The supplied analysis reports a Windows PE wrapper containing `.elf` sections. A sample of 1,664 code bytes matched the PS4 SELF reference with a PE address mapping offset of `0x140010000`. This is sampled evidence, not a full-binary equivalence proof.
 
-The active Windows ABI is unsuitable for the embedded PS4 functions: decompilation shows unrecovered `RDI`/`RSI` inputs. This can distort parameter lists, return values, call arguments, and inferred types. No broad prototype or calling-convention correction is claimed here. The two applied names rely on explicit labels and control-flow relationships instead of inferred signatures.
+The starting Windows calling convention was unsuitable for the embedded PS4 functions. An additive `PS4_SYSV` model was validated on a saved project copy, then applied to 9,486 game functions with unknown conventions and no saved parameters. Another 19 thunks inherit their targets' convention, giving 9,505 functions with that effective model. The 45 existing explicit signatures and the Windows wrapper were not directly reassigned.
+
+All function names, body sizes, saved parameter names/types/storage, the symbol and datatype inventories, and memory contents were preserved. Five representative decompilations matched the validation copy after the working project reopened. Registry, label, and offset inputs now recover from RDI, RSI, and EDX where observed in assembly.
+
+This is a calling-convention improvement, not completed signature recovery. SIMD inputs and indirect callbacks still need work. The global Windows data organization remains unchanged, so native PS4 type sizes and layouts must be independently checked. The two verified names rely on explicit labels and control-flow relationships.
+
+## Decompilation snapshot
+
+A bounded native pass against the immutable, validated snapshot produced these results:
+
+| Cache state | Functions |
+| --- | ---: |
+| Complete pseudocode cached | 2,122 |
+| Bounded timeout failures | 11 |
+| Pending | 7,418 |
+| Total discovered | 9,551 |
+
+The 15 external functions are recorded separately. Cache completion does not mark a function as semantically reviewed. The pass is resumable and retains failures for deliberate retries. [The front-page status](README.md#status) is generated from sanitized address/status rows.
 
 ## Next work
 
-1. Establish and validate ABI treatment for representative embedded PS4 functions while distinguishing wrapper code.
-2. Build an address-based coverage index and process coherent function clusters with cached evidence.
-3. Journal and verify further justified changes, save checkpoints, and recheck original input hashes.
+1. Complete the resumable per-function decompilation cache and record bounded failures.
+2. Review coherent clusters, beginning with calculator registration and shared property visitors.
+3. Reconcile preserved explicit signatures, SIMD inputs, and indirect-call arguments with assembly evidence.
+4. Journal and verify further justified changes, save checkpoints, and recheck original input hashes.
 
 Setup, a small naming batch, and generated pseudocode do not satisfy the full reverse engineering goal.

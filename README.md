@@ -1,16 +1,32 @@
-# Dreams reverse engineering progress
+<div align="center">
 
-This private repository records sanitized progress from a local Ghidra analysis of Dreams. Setup is verified and analysis is partial. The game has not been fully decompiled or reconstructed.
+# DREAMS
+### Reverse engineering progress
 
-The imported starting analysis contains **9,551 functions**: **9,395** have default `FUN_` names and **156** have other names. These are baseline inventory counts, not a measure of verified understanding.
+Function discovery · Decompilation · Verified naming
 
-- [Progress and limitations](PROGRESS.md)
-- [Function review and rename record](analysis/function-review.json)
+![Analysis status](assets/status-badges.svg)
 
-The current naming batch contains two applied descriptive renames and six deferred functions. Both names were verified immediately through MCP and again after a clean stop and reopening of the saved project. A refreshed inventory contains 9,551 functions, including 9,393 default `FUN_` names. Existing meaningful names are preserved.
+[Progress log](PROGRESS.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
 
-The input uses a PE wrapper around embedded PS4 code. The current Windows calling convention produces misleading parameter recovery for that code. Correct ABI handling must be established before broad signature, type, or interpretation changes.
+</div>
 
-This repository contains progress notes and analyst reasoning only. Game binaries, Ghidra databases, decompiled game code, raw dumps, private paths, personal identifiers, credentials, and authentication configuration remain outside it. The local MCP is restricted to loopback. Assistant-assisted analysis still involves model processing and is not described as fully offline.
+## Status
 
-Future updates should distinguish proposed changes from applied and verified changes, refresh coverage counts from the working project, and retain evidence and uncertainty for each conclusion.
+![Dreams function coverage: cached pseudocode, semantic review, and calling conventions](assets/status.svg)
+
+Each square represents **one of the 9,551 functions currently discovered**, ordered by address. The grids show a measured snapshot of this analysis, not a percentage of the entire game recovered. Cached pseudocode and verified understanding are counted separately.
+
+## Latest checkpoint
+
+- **Two names verified:** `VisitCalculatorProperties` and `VisitFogProperties`, saved and checked after reopening. Six other reviewed functions remain unresolved.
+- **PS4 calling conventions:** 9,486 direct assignments plus 19 inherited thunk conventions, validated on a copy before updating the working project. Existing explicit signatures and the Windows wrapper are preserved.
+- **Coverage pass:** resumable decompilation runs against an immutable project snapshot. Cache results feed the status graphic; generated code remains local.
+
+## What comes next
+
+Complete the decompilation cache, review the calculator registration and property-visitor clusters, then resolve the remaining signature and type questions with assembly evidence. Existing names are starting evidence, not automatically verified findings.
+
+## Repository scope
+
+This private repository contains sanitized progress, review metadata, and status graphics. Game binaries, Ghidra databases, decompiled game code, local paths, credentials, and logs remain outside it. The analysis is incomplete; full source reconstruction is not claimed.

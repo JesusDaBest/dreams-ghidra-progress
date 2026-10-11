@@ -3,7 +3,7 @@
   "snapshot_date": "2026-10-10",
   "status": "applied_verified_after_reopening",
   "review_scope": "Eight previously unnamed functions adjoining existing property visitors were reviewed. Two descriptive renames were applied through MCP and verified immediately and after reopening; six functions remain deferred.",
-  "abi_caveat": "The current Windows calling convention obscures PS4 RDI/RSI arguments and some string arguments. Applied names describe observed behavior only; no prototype or type changes were made in this batch.",
+  "abi_caveat": "This initial naming review used the starting Windows convention, which obscured PS4 arguments. A later selective PS4_SYSV update improved recovery; see PROGRESS.md. Applied names describe observed behavior only; no prototype or type changes were made in this naming batch.",
   "baseline_inventory": {"total":9551,"default_fun_names":9395,"other_names":156},
   "current_inventory": {"total":9551,"default_fun_names":9393,"other_names":158,"verification":"complete_paginated_inventory_after_reopening"},
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
