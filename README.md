@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0f24478a3b0fbb0a594e491dd1c2405122ae58d5/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/849aab02327a879efbb8044710bf02abd17ab1de/assets/status-badges.svg)
 
 <!-- status-summary:start -->
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](assets/status.svg?v=985bd24d7250)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/849aab02327a879efbb8044710bf02abd17ab1de/assets/status.svg)
 
 **Read the map from systems to components to code units.** Each square is an actual function assigned by code evidence. Green means its role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Progress belongs to the specific code unit, then adds up to its parent sections.
 
