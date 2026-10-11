@@ -2,6 +2,8 @@
 
 Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains partial.
 
+See [decompilation results and findings](ANALYSIS.md) for the consolidated analysis, including the later six-function signature promotion, the verified v2 snapshot without a new cache, ReporterTelemetry's three unapplied proposals, and the copy-only extraction experiments. The [research data](analysis/research-details.json) lists their recorded states, matched fields, and all 43 frozen-cache failure addresses. The older extraction and ABI counts below describe their specified v1 snapshot.
+
 ## Verified setup
 
 - GhidraMCP 2.0 is available through a local, loopback-only MCP endpoint.

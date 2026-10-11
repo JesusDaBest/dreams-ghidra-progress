@@ -5,7 +5,7 @@
 
 Working out how Dreams works, one piece of code at a time
 
-[Progress log](PROGRESS.md) · [Mapping evidence](MAPPING.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
+[Research findings](ANALYSIS.md) · [Progress log](PROGRESS.md) · [Mapping evidence](MAPPING.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
 
 </div>
 
@@ -41,6 +41,8 @@ Working out how Dreams works, one piece of code at a time
 
 ## What we know so far
 
+**The full written findings are in [Dreams: decompilation results and findings](ANALYSIS.md).** They cover the executable and calling convention, shared property types, gadget field matches, object dispatch, saved signature corrections, proposed names, and extraction experiments. The [supporting research data](analysis/research-details.json) includes all 43 failed addresses and 77 matched property fields.
+
 The map connects code to sculpting and painting, gadgets, physics, audio, animation, rendering, the editor, the Dreamiverse, and shared engine data. Assignments come from references in the machine code, registered types, and the game's object-type dispatcher. Every assignment has an address and supporting evidence in the [system map](analysis/system-map.json).
 
 So far, checked names cover gadget property readers and registrations plus shared object helpers. Mapping a function to a system is a separate step from understanding its behavior and checking its name. See [how the mapping is established](MAPPING.md).
@@ -50,6 +52,8 @@ So far, checked names cover gadget property readers and registrations plus share
 - **27 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,508 functions have computer-generated code ready to study.** Generating that code is preparation; it does not mean we understand it yet.
 - **43 functions need extraction fixes.** Every one of the 9,551 functions found so far received an attempt.
+- **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its extraction cache has not been started. Separate live MCP verification remains pending.
+- **Three ReporterTelemetry names have supporting reviews but have not been applied.** A copy-only flow-limit experiment also produced pseudocode, then was rolled back because its switch domain still needs proof. These outcomes are documented separately from completed work in the [findings](ANALYSIS.md).
 
 Next: extend the system mapping and review the functions within each section. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
 
