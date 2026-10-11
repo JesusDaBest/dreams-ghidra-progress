@@ -1,0 +1,56 @@
+{
+  "schema_version": 2,
+  "snapshot_date": "2026-10-10",
+  "status": "applied_verified_after_reopening",
+  "review_scope": "Eight previously unnamed functions adjoining existing property visitors were reviewed. Two descriptive renames were applied through MCP and verified immediately and after reopening; six functions remain deferred.",
+  "abi_caveat": "The current Windows calling convention obscures PS4 RDI/RSI arguments and some string arguments. Applied names describe observed behavior only; no prototype or type changes were made in this batch.",
+  "baseline_inventory": {"total":9551,"default_fun_names":9395,"other_names":156},
+  "current_inventory": {"total":9551,"default_fun_names":9393,"other_names":158,"verification":"complete_paginated_inventory_after_reopening"},
+  "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
+  "applied": [
+    {
+      "address": "1404d7ef0",
+      "original_name": "FUN_1404d7ef0",
+      "applied_name": "VisitCalculatorProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Directly called by DispatchThingTypePropertyVisitor at 14048cadc.",
+        "Complete untruncated decompilation uses CalculatorOp and CalculatorUnits as property labels in visitor callbacks.",
+        "Visits OperandA and OperandB through the same helper and includes TweakProps, IsGluedGadget, and the existing prop_Thing_Name symbol.",
+        "Control flow follows the version-gated, path-filtered property visitor pattern of adjacent already named gadget visitors."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original source name.",
+        "No assertion about parameters, return value, exact field types, or serialization direction."
+      ]
+    },
+    {
+      "address": "1404d6660",
+      "original_name": "FUN_1404d6660",
+      "applied_name": "VisitFogProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Directly called by DispatchThingTypePropertyVisitor at 14048caaf.",
+        "Complete untruncated decompilation visits the explicit FogShapeType property through a visitor callback.",
+        "Includes TweakProps, IsGluedGadget, additional version-gated property callbacks, and the existing prop_Thing_Name symbol.",
+        "Function follows the path-filtered per-Thing property visitor pattern of adjacent already named visitors."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original source name; exact fog object class remains unverified.",
+        "No assertion about parameters, return value, exact field types, or serialization direction."
+      ]
+    }
+  ],
+  "deferred": [
+    {"address":"14048b5e0","original_name":"FUN_14048b5e0","status":"deferred","reason":"Resolves a Thing identifier and conditionally dispatches a visitor, but ABI and traversal-mode semantics are unresolved; duplicate-like helper at 140490040."},
+    {"address":"14048fa90","original_name":"FUN_14048fa90","status":"deferred","reason":"Index-like reference resolution is evident, but packed reference semantics and traversal contract remain uncertain."},
+    {"address":"14048fc40","original_name":"FUN_14048fc40","status":"deferred","reason":"Called with pos2d and visits rawang, but remaining labels and precise position/transform object scope are obscured by the wrong ABI."},
+    {"address":"140490040","original_name":"FUN_140490040","status":"deferred","reason":"Near-identical identifier-resolution helper to 14048b5e0; role distinction remains unverified."},
+    {"address":"1404d7480","original_name":"FUN_1404d7480","status":"deferred","reason":"Placement/snap and label-query properties are evident, but exact gadget/type identity is not established."},
+    {"address":"1404d83d0","original_name":"FUN_1404d83d0","status":"deferred","reason":"InputA and RotationRepresentation identify some fields, but exact gadget/type identity is not established."}
+  ]
+}
