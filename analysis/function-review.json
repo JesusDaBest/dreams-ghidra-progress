@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "57 previously unnamed functions reviewed; 53 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "58 previously unnamed functions reviewed; 54 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9342,
-    "other_names": 209,
+    "default_fun_names": 9341,
+    "other_names": 210,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1043,6 +1043,27 @@
         "Exact synchronization import identities and two metadata fields remain unknown.",
         "The separate equivalent release function14090e380 retains its original name pending caller-lifetime review.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "140913a90",
+      "original_name": "FUN_140913a90",
+      "applied_name": "LookupU32HashTableValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "All324 assembly instructions and complete cached C reviewed: eight-byte entries contain a32-bit key and value; capacity is read at table+0x20000.",
+        "Sixteen unrolled probes repeatedly hash the previous full hash, mask by capacity-1, compare keys, and return value+4 on match; an empty key or probe exhaustion returns0xffffffff. No memory writes or calls.",
+        "Four direct callers are within the game-merge routine; captured caller assembly translates three endpoint values before emitting a merged relationship. Full merge semantics remain under review.",
+        "All987 instruction bytes contiguous; all direct branch targets present;16 key comparisons and16 hash multiplications audited."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Generic descriptive helper name, not a recovered original symbol.",
+        "Capacity validity and sentinel-key exclusions are caller preconditions; this helper does not validate them.",
+        "No signatures, types, layout, or calling convention edits.",
+        "Model examples do not execute original game code."
       ]
     }
   ],

@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a51f28aaa90adf3b34ca41acce27522a016f3d22/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=6c432e9c07d7)
 
 <!-- status-summary:start -->
-**53 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**54 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a51f28aaa90adf3b34ca41acce27522a016f3d22/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=0fe1b49fc8c8)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 47 of the 53 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 48 of the 54 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -34,9 +34,9 @@ Green means the function's role and descriptive name have been checked; amber me
 | Rendering & lighting | 274 | 0 / 274 (0.0%) |
 | Editor & interface | 313 | 0 / 313 (0.0%) |
 | Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 117 | 9 / 117 (7.7%) |
+| Shared engine & object data | 118 | 10 / 118 (8.5%) |
 
-**1,551 of 9,551 discovered functions are mapped; 8,000 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,552 of 9,551 discovered functions are mapped; 7,999 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -429,46 +429,15 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Camera Blender / Camera Status** - 0/1 names checked
   - **Visibility** - 0/4 names checked
     - **Label Visible** - 0/4 names checked
-- **Sculpting & painting** - 0/117 names checked
-  - **Sculpt geometry** - 0/78 names checked
-    - **Sculpt bricks** - 0/29 names checked
-    - **Chunk** - 0/26 names checked
-    - **Sweep** - 0/9 names checked
-    - **Inertia** - 0/2 names checked
-    - **Pipe** - 0/2 names checked
-    - **Slot Debug** - 0/2 names checked
-    - **Sculpt blend & looseness registration** - 0/1 names checked
-    - **CSGEdit Mirror Flags** - 0/1 names checked
-    - **CSGEdit Op Flags** - 0/1 names checked
-    - **CSGEdit Prim Flags** - 0/1 names checked
-    - **Csg Blend Mode** - 0/1 names checked
-    - **Csg Looseness Mode** - 0/1 names checked
-    - **Element Picker** - 0/1 names checked
-    - **Hasher** - 0/1 names checked
-  - **Paint & strokes** - 0/20 names checked
-    - **Sprite** - 0/9 names checked
-    - **Sprite Duplicate** - 0/3 names checked
-    - **Sprite Duplicate Position** - 0/3 names checked
-    - **Sprite Duplicate Rotation** - 0/3 names checked
-    - **Light Paint** - 0/2 names checked
-  - **Surfaces & placement** - 0/12 names checked
-    - **Spawn Shape Type** - 0/4 names checked
-    - **Surface Snap** - 0/4 names checked
-    - **Surface Type** - 0/4 names checked
-  - **Sculpt objects** - 0/4 names checked
-    - **Sculpt** - 0/4 names checked
-  - **Brush settings** - 0/3 names checked
-    - **Combing Volume** - 0/2 names checked
-    - **Bubbles Brushing** - 0/1 names checked
-- **Shared engine & object data** - 9/117 names checked
+- **Shared engine & object data** - 10/118 names checked
   - **Debugging & diagnostics** - 0/18 names checked
     - **Debug Draw Render** - 0/8 names checked
     - **Debug Screen** - 0/4 names checked
     - **Comparison Image** - 0/2 names checked
     - **Debug Camera Image** - 0/2 names checked
     - **Debug Text** - 0/2 names checked
-  - **Game state & runtime** - 4/17 names checked
-    - **Game contexts & runtime support** - 4/5 names checked
+  - **Game state & runtime** - 5/18 names checked
+    - **Game contexts & runtime support** - 5/6 names checked
     - **Game Events** - 0/3 names checked
     - **Game Base** - 0/3 names checked
     - **Gameupdater** - 0/3 names checked
@@ -535,6 +504,37 @@ Green means the function's role and descriptive name have been checked; amber me
   - **Shared object routines** - 0/1 names checked
   - **Script data** - 0/1 names checked
     - **Script Contents** - 0/1 names checked
+- **Sculpting & painting** - 0/117 names checked
+  - **Sculpt geometry** - 0/78 names checked
+    - **Sculpt bricks** - 0/29 names checked
+    - **Chunk** - 0/26 names checked
+    - **Sweep** - 0/9 names checked
+    - **Inertia** - 0/2 names checked
+    - **Pipe** - 0/2 names checked
+    - **Slot Debug** - 0/2 names checked
+    - **Sculpt blend & looseness registration** - 0/1 names checked
+    - **CSGEdit Mirror Flags** - 0/1 names checked
+    - **CSGEdit Op Flags** - 0/1 names checked
+    - **CSGEdit Prim Flags** - 0/1 names checked
+    - **Csg Blend Mode** - 0/1 names checked
+    - **Csg Looseness Mode** - 0/1 names checked
+    - **Element Picker** - 0/1 names checked
+    - **Hasher** - 0/1 names checked
+  - **Paint & strokes** - 0/20 names checked
+    - **Sprite** - 0/9 names checked
+    - **Sprite Duplicate** - 0/3 names checked
+    - **Sprite Duplicate Position** - 0/3 names checked
+    - **Sprite Duplicate Rotation** - 0/3 names checked
+    - **Light Paint** - 0/2 names checked
+  - **Surfaces & placement** - 0/12 names checked
+    - **Spawn Shape Type** - 0/4 names checked
+    - **Surface Snap** - 0/4 names checked
+    - **Surface Type** - 0/4 names checked
+  - **Sculpt objects** - 0/4 names checked
+    - **Sculpt** - 0/4 names checked
+  - **Brush settings** - 0/3 names checked
+    - **Combing Volume** - 0/2 names checked
+    - **Bubbles Brushing** - 0/1 names checked
 - **Dreamiverse & networking** - 0/103 names checked
   - **Network state** - 0/29 names checked
     - **Net Thing** - 0/4 names checked
@@ -700,7 +700,7 @@ So far, checked names cover gadget property readers and registrations plus share
 
 ## Latest progress
 
-- **53 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **54 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
 - **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
 - **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1551,
-  "unmapped_total": 8000,
+  "mapped_total": 1552,
+  "unmapped_total": 7999,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -35878,6 +35878,29 @@
         }
       ],
       "code_sha256": "776101e37cecd9725bfb38944a95c205dfa0be3ae5d47f7e16beb9a19eade2af",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140913a90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_merge_helper",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_merge_callers",
+          "name": "LookupU32HashTableValue",
+          "support": [
+            "All324 assembly instructions and complete cached C reviewed: eight-byte entries contain a32-bit key and value; capacity is read at table+0x20000.",
+            "Sixteen unrolled probes repeatedly hash the previous full hash, mask by capacity-1, compare keys, and return value+4 on match; an empty key or probe exhaustion returns0xffffffff. No memory writes or calls.",
+            "Four direct callers are within the game-merge routine; captured caller assembly translates three endpoint values before emitting a merged relationship. Full merge semantics remain under review.",
+            "All987 instruction bytes contiguous; all direct branch targets present;16 key comparisons and16 hash multiplications audited."
+          ]
+        }
+      ],
+      "code_sha256": "9ecd3a94e946aebf71b6ae0281aed4a5f4b4f4bb520cfddb157bc6f64919bee2",
       "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
