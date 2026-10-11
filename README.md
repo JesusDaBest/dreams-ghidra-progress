@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d6357b872e277ad24e97a79168e3e5b0d0f0cc51/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=ff49064e043b)
 
 <!-- status-summary:start -->
-**49 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**51 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d6357b872e277ad24e97a79168e3e5b0d0f0cc51/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=464454d6214c)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 43 of the 49 checked names; 6 checked functions still lack a supported system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 45 of the 51 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -34,9 +34,9 @@ Green means the function's role and descriptive name have been checked; amber me
 | Rendering & lighting | 275 | 0 / 275 (0.0%) |
 | Editor & interface | 313 | 0 / 313 (0.0%) |
 | Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 113 | 5 / 113 (4.4%) |
+| Shared engine & object data | 115 | 7 / 115 (6.1%) |
 
-**1,547 of 9,551 discovered functions are mapped; 8,004 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,549 of 9,551 discovered functions are mapped; 8,002 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -461,13 +461,21 @@ Green means the function's role and descriptive name have been checked; amber me
   - **Brush settings** - 0/3 names checked
     - **Combing Volume** - 0/2 names checked
     - **Bubbles Brushing** - 0/1 names checked
-- **Shared engine & object data** - 5/113 names checked
+- **Shared engine & object data** - 7/115 names checked
   - **Debugging & diagnostics** - 0/18 names checked
     - **Debug Draw Render** - 0/8 names checked
     - **Debug Screen** - 0/4 names checked
     - **Comparison Image** - 0/2 names checked
     - **Debug Camera Image** - 0/2 names checked
     - **Debug Text** - 0/2 names checked
+  - **Game state & runtime** - 2/15 names checked
+    - **Common routines** - 2/3 names checked
+    - **Game Events** - 0/3 names checked
+    - **Game Base** - 0/3 names checked
+    - **Gameupdater** - 0/3 names checked
+    - **Game Type** - 0/1 names checked
+    - **Game Update Thread** - 0/1 names checked
+    - **Gamemerger** - 0/1 names checked
   - **Objects & references** - 0/13 names checked
     - **Thing Type** - 0/5 names checked
     - **Group** - 0/2 names checked
@@ -476,14 +484,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Thing** - 0/1 names checked
     - **Thing Pos** - 0/1 names checked
     - **Thing Pos2 D** - 0/1 names checked
-  - **Game state & runtime** - 0/13 names checked
-    - **Game Events** - 0/3 names checked
-    - **Game Base** - 0/3 names checked
-    - **Gameupdater** - 0/3 names checked
-    - **Common routines** - 0/1 names checked
-    - **Game Type** - 0/1 names checked
-    - **Game Update Thread** - 0/1 names checked
-    - **Gamemerger** - 0/1 names checked
   - **Numbers & transforms** - 0/12 names checked
     - **float** - 0/4 names checked
     - **double** - 0/2 names checked
@@ -703,7 +703,7 @@ So far, checked names cover gadget property readers and registrations plus share
 
 ## Latest progress
 
-- **49 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **51 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
 - **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
 - **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.

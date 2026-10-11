@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1547,
-  "unmapped_total": 8004,
+  "mapped_total": 1549,
+  "unmapped_total": 8002,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -35787,6 +35787,50 @@
         }
       ],
       "code_sha256": "1d36881a92c4440ff9bce2271b0a590254617bd0376711654248307ff43b5fa5"
+    },
+    "140904120": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_game_pool_runtime",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_pool_creation",
+          "name": "InitializeGamePoolContext",
+          "support": [
+            "All 554 assembly instructions establish context defaults, internal arena pointers/capacities, sentinels, list anchors and atomic counters; same routine is used on all seven freshly allocated game-pool contexts and before reuse.",
+            "Pool-creation assembly at140a7b0bc..10a initializes seven contexts at stride0x1c8d680, with 28 bytes of usage counters. At140a7b10f the literal main game pool is used during synchronization setup; at140a7b16d the same pool structure is stored in global145168bf8 used by acquisition.",
+            "Direct control-flow audit found every internal branch target and no missing fallthrough instructions. Runtime variable preservation and simulation preparation use the same selected contexts."
+          ]
+        }
+      ],
+      "code_sha256": "c6c9978fa000b1c44a3f909a3ba2253248dac61219cbdd866b6678443f9d2341",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "14090e110": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_game_pool_runtime",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_pool_creation",
+          "name": "AcquireUnusedGamePoolContext",
+          "support": [
+            "All 93 assembly instructions scan seven fixed-size pool contexts for a zero usage counter and exclusion from the current context, wait/retry when unavailable, set counter1, write the selected output pointer and initialize it.",
+            "Pool-creation assembly at140a7b0bc..10a initializes seven contexts at stride0x1c8d680, with 28 bytes of usage counters. At140a7b10f the literal main game pool is used during synchronization setup; at140a7b16d the same pool structure is stored in global145168bf8 used by acquisition.",
+            "Direct control-flow audit found every internal branch target and no missing fallthrough instructions. Runtime variable preservation and simulation preparation use the same selected contexts."
+          ]
+        }
+      ],
+      "code_sha256": "9dcd4a6d3202933343481b60d32a1066514e094a57af996645cf9c195d5380c7",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
   "hierarchy": [

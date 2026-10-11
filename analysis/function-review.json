@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "53 previously unnamed functions reviewed; 49 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "55 previously unnamed functions reviewed; 51 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9346,
-    "other_names": 205,
+    "default_fun_names": 9344,
+    "other_names": 207,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -962,6 +962,44 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "Descriptive generic helper name; original library or symbol provenance is unproven.",
         "The gadget key at offset0xe0 and full enclosing lifecycle remain unresolved.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "140904120",
+      "original_name": "FUN_140904120",
+      "applied_name": "InitializeGamePoolContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "All 554 assembly instructions establish context defaults, internal arena pointers/capacities, sentinels, list anchors and atomic counters; same routine is used on all seven freshly allocated game-pool contexts and before reuse.",
+        "Pool-creation assembly at140a7b0bc..10a initializes seven contexts at stride0x1c8d680, with 28 bytes of usage counters. At140a7b10f the literal main game pool is used during synchronization setup; at140a7b16d the same pool structure is stored in global145168bf8 used by acquisition.",
+        "Direct control-flow audit found every internal branch target and no missing fallthrough instructions. Runtime variable preservation and simulation preparation use the same selected contexts."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not original source symbol.",
+        "Exact synchronization imports and full context datatype remain unresolved.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "14090e110",
+      "original_name": "FUN_14090e110",
+      "applied_name": "AcquireUnusedGamePoolContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "All 93 assembly instructions scan seven fixed-size pool contexts for a zero usage counter and exclusion from the current context, wait/retry when unavailable, set counter1, write the selected output pointer and initialize it.",
+        "Pool-creation assembly at140a7b0bc..10a initializes seven contexts at stride0x1c8d680, with 28 bytes of usage counters. At140a7b10f the literal main game pool is used during synchronization setup; at140a7b16d the same pool structure is stored in global145168bf8 used by acquisition.",
+        "Direct control-flow audit found every internal branch target and no missing fallthrough instructions. Runtime variable preservation and simulation preparation use the same selected contexts."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not original source symbol.",
+        "Exact synchronization imports and full context datatype remain unresolved.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
       ]
     }
