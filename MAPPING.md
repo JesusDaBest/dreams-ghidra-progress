@@ -46,3 +46,7 @@ The mapping used an immutable program snapshot. Its native memory, body boundari
 Public evidence contains identifiers and structural links; local paths, raw strings from source-file diagnostics, game code, binaries, and Ghidra databases remain outside the repository. A researcher with the same program can follow the recorded addresses. The private source evidence is required to independently re-establish the mapping; rendering the existing map requires only the public JSON files.
 
 Regenerate the front-page assets with `python scripts/generate_status.py`, then validate them with `python scripts/generate_status.py --check`. Ownership comes from the mapping file; review colors come from the status rows. Changing a review state cannot move a function into a different system.
+
+## Verified status map update
+
+Mapped seven independently reviewed functions to their confirmed gadget types: Reporter Sculpt, Reporter Telemetry, Wireless Receiver, Wireless Transmitter and Variable Gadget. The map now contains 1,547 functions, with 43 checked, 4 unresolved and 1,500 awaiting review. Six other checked functions remain outside the map pending supported ownership. Equal square cells now support arbitrary mapped counts; no invented functions pad the last row. Counts measure identified code, not full subsystem completion.

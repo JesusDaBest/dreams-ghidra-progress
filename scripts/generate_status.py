@@ -302,9 +302,11 @@ def render_hierarchy(nodes, bounds, depth=0):
     x0,y0,width,height=bounds
     count=sum(len(n['rows']) for n in nodes)
     columns=35
-    assert count % columns == 0
-    side=width/columns
-    cells={(x,y) for y in range(count//columns) for x in range(columns)}
+    # Preserve equal squares for arbitrary evidence-backed inventory sizes.
+    # A partial final row contains no fake functions or completion padding.
+    grid_rows=math.ceil(count/columns)
+    side=min(width/columns,height/grid_rows)
+    cells={(i%columns,i//columns) for i in range(count)}
     regions=[];out=[]
     def divide(items,positions):
         if len(items)==1:return [(items[0],positions)]

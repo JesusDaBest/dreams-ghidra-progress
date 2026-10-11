@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1540,
-  "unmapped_total": 8011,
+  "mapped_total": 1547,
+  "unmapped_total": 8004,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -35634,6 +35634,159 @@
         "double"
       ],
       "component_basis": "registered_type"
+    },
+    "140d6c700": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "authoring",
+        "reportertelemetry"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterReporterTelemetryFieldOffsets",
+          "support": [
+            "Initializer 140d580d0 loads the directly verified NUL-terminated literal ReporterTelemetry at 14172006c, stores it on descriptor 1458afdd0 at 140d5810c, calls the Thing base-descriptor helper at 140d58141 and tail-jumps to field registrar 140d6c700 at 140d5814c.",
+            "All 63 instructions / 292 body bytes were inspected. The routine loads descriptor 1458afdd0 at 140d6c706 and passes it to 14 field registrations. Thirteen labels are explicit; Pos is supplied by its existing specialized helper.",
+            "All 14 registered labels and field offsets match visitor 1404de8c0. The distinctive fields are TelemetryKey1..6 at +0xe0, +0xe8, +0xf0, +0xf8, +0x100 and +0x108, and TimeSinceSend at +0x110. Halfsize is +0xd8; Name remains +0xc8.",
+            "Each direct label and offset was checked from RSI/EDX assignments. The final TimeSinceSend field is a tail registration at 140d6c81f."
+          ]
+        }
+      ],
+      "code_sha256": "c5427fcb631013de546050062f24b151c900fa1d55b232dba54fb11c7f97a404"
+    },
+    "140d6c900": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "authoring",
+        "reportersculpt"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterReporterSculptFieldOffsets",
+          "support": [
+            "140d58000 loads the verified literal ReporterSculpt at 14172005d, stores it on descriptor 1458afb20, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c900. The registrar uses that same descriptor.",
+            "Complete assembly verifies 6 field registrations: Pos@0x40, ParentFromModel@0x60, TweakProps@0x80, Power@0xc0, Name@0xc8, IsGluedGadget@0xd0.",
+            "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+            "Full 31-instruction, 132-byte assembly and hash-verified v2 pseudocode read."
+          ]
+        }
+      ],
+      "code_sha256": "9b0fc742684bbef5af92de09811d2c22abe7586fa0ab2cf47b3e8aca87ac6dac"
+    },
+    "140d6c4b0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "wirelessreceiver"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterWirelessReceiverFieldOffsets",
+          "support": [
+            "140d581a0 loads the verified literal WirelessReceiver at 14172007e, stores it on descriptor 1458b0080, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c4b0. The registrar uses that same descriptor.",
+            "Complete assembly verifies 16 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, Transmit@0x90, Receive@0xb8, TweakProps@0xe0, ZoneType@0x120, PosOffset@0x130, ZoneSize@0x150, ZoneOffset@0x160, FalloffSize@0x170, FalloffOffset@0x180, Name@0x190, DetectName@0x198, IsGluedGadget@0x1a0, Halfsize@0x1a8.",
+            "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+            "Full 71-instruction, 332-byte assembly and hash-verified v2 pseudocode read."
+          ]
+        }
+      ],
+      "code_sha256": "8ac0a1d24e02b8408c394b67873c86279000eaed6370c9c3b1a58df8d997b75d"
+    },
+    "140d6c220": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "wirelesstransmitter"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterWirelessTransmitterFieldOffsets",
+          "support": [
+            "140d58270 loads the verified literal WirelessTransmitter at 14172008f, stores it on descriptor 1458b0330, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c220. The registrar uses that same descriptor.",
+            "Complete assembly verifies 12 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, Transmit@0x90, Receive@0xb8, TweakProps@0xe0, ZoneType@0x120, Name@0x128, IsGluedGadget@0x130, Halfsize@0x138, DetectScope@0x140, PosOffset@0x150.",
+            "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+            "Full 55-instruction, 252-byte assembly and hash-verified v2 pseudocode read."
+          ]
+        }
+      ],
+      "code_sha256": "a6dfeee3de4833a46e31bbd317bc38e80a96ade4222b42e88790ab5741aa5083"
+    },
+    "140d6a700": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "gameplay",
+        "variablegadget"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterVariableGadgetFieldOffsets",
+          "support": [
+            "140d58680 loads the verified literal VariableGadget at 1417200c6, stores it on descriptor 1458b10a0, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6a700. The registrar uses that same descriptor.",
+            "Complete assembly verifies 20 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, TweakProps@0x90, Halfsize@0xd0, IsGluedGadget@0xd8, Name@0xe0, InitialValue@0xe8, MinLength@0xec, MaxLength@0xf0, VariableValue@0xf4, IsMultiplayer@0x108, IsPersistentInMap@0x109, ForceResetVariable@0x10a, VariableIncreasedOutput@0x10b, VariableDecreasedOutput@0x10c, CheckWiresDueToPlayer@0x10d, ForceUpdateDueToWires@0x10e, VariableValueShouldBePreserved@0x10f, RestoreVariableOnLevelRewind@0x110.",
+            "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+            "Full 87-instruction, 412-byte assembly and hash-verified v2 pseudocode read."
+          ]
+        }
+      ],
+      "code_sha256": "6e66c74f026640807ade1cb06d5e19189adbcfcc0126c5a2abbda7bc057cbca8"
+    },
+    "140944f20": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "gameplay",
+        "variablegadget"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeVariableGadgetDefaults",
+          "support": [
+            "Complete assembly covers 33 instructions/229 bytes. The function writes defaults to the RDI object without calls or conditionals.",
+            "Independent EThingType registration identifies VariableGadget as 0x58. Directly read signed-relative tables in callers 14093be60 and 140df1ce0 resolve index 0x58 to zero-fill branches followed by this initializer at 14093e0f0 and 140df3c7d.",
+            "Writes at +0xe8,+0xec,+0xf0 establish InitialValue=0, MinLength=-1000 and MaxLength=1000, matching independently reviewed field registrar 140d6a700. Little-endian dword 0x010001ff at +0x10d sets VariableValueShouldBePreserved+0x10f=0 and RestoreVariableOnLevelRewind+0x110=1."
+          ]
+        }
+      ],
+      "code_sha256": "abb7887edd7eb43d2ca8396d43e78ebcec7c97dd25b659445b8c2e36a1c7452f"
+    },
+    "1408e4bb0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "gameplay",
+        "variablegadget"
+      ],
+      "component_basis": "independently_reviewed_type_and_runtime",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateVariableGadgetValues",
+          "support": [
+            "Complete body contains 518 instructions/2452 bytes, all inspected. Direct caller 140ab4b50 masks object header type to seven bits and dispatches type 0x58 through table 1416b56d0 index 0x57 to branch 140ab7f63, passing the VariableGadget object in RSI at call 140ab7f7e.",
+            "The function gates five-float initialization on VariableValueShouldBePreserved+0x10f, broadcasts InitialValue+0xe8 to +0xf4 through +0x104, applies lower/upper limits, and processes linked type-0x59 VariableModifierGadget objects.",
+            "Modifier field +0x118 is OperationType, registered by 140d68c70 and matched to directly read enum literals in 140ca9f10: 0 Set, 1 Get, 2 Add, 3 Reset. Assembly performs replacement/addition/InitialValue restoration for 0/2/3; Get produces no write in these branches.",
+            "The tail constructs strict ordered increase/decrease masks at +0x10b/+0x10c: bits0..3 correspond to the four player floats +0xf8..+0x104; bit4 corresponds to non-player +0xf4. Missing comparison object exits without updating the masks."
+          ]
+        }
+      ],
+      "code_sha256": "1d36881a92c4440ff9bce2271b0a590254617bd0376711654248307ff43b5fa5"
     }
   },
   "hierarchy": [

@@ -17,9 +17,9 @@ Working out how Dreams works, one piece of code at a time
 **49 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/7987e79c066c7a8b9f5941a10188d07a13450624/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=f9966776970d)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 36 of the 49 checked names; 13 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 43 of the 49 checked names; 6 checked functions still lack a supported system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -27,7 +27,7 @@ Green means the function's role and descriptive name have been checked; amber me
 | Part of Dreams | Functions mapped | Names checked |
 | --- | ---: | ---: |
 | Sculpting & painting | 117 | 0 / 117 (0.0%) |
-| Gadgets & logic | 450 | 31 / 450 (6.9%) |
+| Gadgets & logic | 457 | 38 / 457 (8.3%) |
 | Physics & collision | 60 | 0 / 60 (0.0%) |
 | Sound & music | 62 | 0 / 62 (0.0%) |
 | Animation & puppets | 47 | 0 / 47 (0.0%) |
@@ -36,12 +36,12 @@ Green means the function's role and descriptive name have been checked; amber me
 | Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
 | Shared engine & object data | 113 | 5 / 113 (4.4%) |
 
-**1,540 of 9,551 discovered functions are mapped; 8,011 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,547 of 9,551 discovered functions are mapped; 8,004 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 31/450 names checked
+- **Gadgets & logic** - 38/457 names checked
   - **Online & multiplayer gadgets** - 3/95 names checked
     - **Magic Door Type** - 0/4 names checked
     - **PUMap Gadget** - 0/4 names checked
@@ -75,7 +75,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Multiplayer Session Gadget** - 0/2 names checked
     - **Network Signal Gadget** - 0/2 names checked
     - **Network Spawner Gadget** - 0/2 names checked
-  - **Logic & signals** - 15/84 names checked
+  - **Logic & signals** - 17/86 names checked
     - **Calculator Op** - 0/4 names checked
     - **Delay Select** - 0/4 names checked
     - **Label Any Or All** - 0/4 names checked
@@ -94,6 +94,8 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Signal Generator** - 3/3 names checked
     - **Signal Inspector** - 3/3 names checked
     - **Timer** - 0/3 names checked
+    - **Wireless Receiver** - 3/3 names checked
+    - **Wireless Transmitter** - 3/3 names checked
     - **Counter** - 0/2 names checked
     - **Delay Gadget** - 0/2 names checked
     - **Inverter** - 0/2 names checked
@@ -102,8 +104,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Splitter** - 1/2 names checked
     - **Time Gadget** - 0/2 names checked
     - **Wide Calculator** - 0/2 names checked
-    - **Wireless Receiver** - 2/2 names checked
-    - **Wireless Transmitter** - 2/2 names checked
     - **And** - 0/1 names checked
     - **Break Logic Cycles** - 0/1 names checked
     - **Timer State** - 0/1 names checked
@@ -111,7 +111,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Or** - 0/1 names checked
     - **Remapper State** - 0/1 names checked
     - **Xor** - 0/1 names checked
-  - **Creation & display gadgets** - 4/67 names checked
+  - **Creation & display gadgets** - 6/69 names checked
     - **Text Gadget** - 0/6 names checked
     - **Text Gadget Type** - 0/4 names checked
     - **DEPRECATE Dream Bubble** - 0/3 names checked
@@ -122,6 +122,8 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Text Gadget Mode** - 0/3 names checked
     - **Text Gadget Prompt Type** - 0/3 names checked
     - **Text Number Format** - 0/3 names checked
+    - **Reporter Sculpt** - 2/3 names checked
+    - **Reporter Telemetry** - 3/3 names checked
     - **Scripter** - 0/3 names checked
     - **Timeline** - 0/3 names checked
     - **Auto Guides Gadget** - 1/2 names checked
@@ -131,8 +133,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Imp Quest Gadget** - 0/2 names checked
     - **Photo Gadget** - 0/2 names checked
     - **Reporter** - 0/2 names checked
-    - **Reporter Sculpt** - 1/2 names checked
-    - **Reporter Telemetry** - 2/2 names checked
     - **Slider Gadget** - 0/2 names checked
     - **Stamping Enabler** - 0/2 names checked
     - **Legacy Photo Gadget** - 0/1 names checked
@@ -166,7 +166,8 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Rocket Rotator** - 0/2 names checked
     - **Rotator** - 0/2 names checked
     - **Teleporter** - 0/2 names checked
-  - **Gameplay & scoring** - 2/61 names checked
+  - **Gameplay & scoring** - 5/64 names checked
+    - **Variable Gadget** - 5/5 names checked
     - **Variable Operation** - 0/4 names checked
     - **Variable Update Mode** - 0/4 names checked
     - **Coin Dispenser** - 0/3 names checked
@@ -189,7 +190,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Prize Bubble** - 0/2 names checked
     - **Score Modifier Gadget** - 0/2 names checked
     - **Unlockables Gadget** - 0/2 names checked
-    - **Variable Gadget** - 2/2 names checked
     - **Variable Modifier Gadget** - 0/2 names checked
   - **Sensors & detection** - 0/38 names checked
     - **Detect Scope** - 0/4 names checked
