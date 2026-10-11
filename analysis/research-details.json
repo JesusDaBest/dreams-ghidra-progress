@@ -325,7 +325,517 @@
       "pending": 6543,
       "inventory": 9551,
       "extraction_finished": false
-    }
+    },
+    "initial_pass_audit": {
+      "verified_at": "2026-10-11T11:54:00.494841+00:00",
+      "inventory_functions": 9551,
+      "status_counts": {
+        "complete": 9490,
+        "failed": 61
+      },
+      "completed_cache_hashes_verified": 9490,
+      "all_inventory_addresses_match_baseline": true,
+      "all_functions_attempted": true,
+      "all_terminal_attempts_match_status": true,
+      "previous_successes_redecompiled": [],
+      "attempt_count": 9551,
+      "failure_categories": {
+        "timeout": 59,
+        "flow_instruction_limit": 1,
+        "forced_merge_intersection": 1
+      }
+    },
+    "initial_pass_failures": [
+      {
+        "address": "1400a2d80",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1400d5050",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1401180e0",
+        "kind": "flow_instruction_limit",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140194b60",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14019f400",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140262600",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1403b5f90",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1403c7e50",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14049b410",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1405394d0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14055bdc0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1405dd1d0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14065fde0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14067bab0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140686420",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1406afdd0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1406c6c00",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140742d00",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140782fc0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1407ba820",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14092a2f0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140958760",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1409a28d0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1409badd0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140a0baa0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140a58290",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140a693e0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140a7a550",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140ab4b50",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140abba30",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140b80d60",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140ba3420",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140c03540",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140c15eb0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140c29f60",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140c563e0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140c5e6c0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140ccfd90",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140ceda40",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140d37410",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140da0600",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140e02f20",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140e6dfd0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "140e900e0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1410b49d0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1410c9720",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141118500",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141142310",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141154890",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14124f9d0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1412d0a80",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141352190",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1413a19c0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1413aadf0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14146b220",
+        "kind": "forced_merge_intersection",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "1415139f0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141566ba0",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141571c90",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14157d530",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "141586070",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      },
+      {
+        "address": "14ba65000",
+        "kind": "timeout",
+        "attempts": 1,
+        "timeout_history": [
+          20
+        ]
+      }
+    ],
+    "longer_timeout_retries_started": true
   },
   "proposed_not_applied": [],
   "matched_property_fields": [

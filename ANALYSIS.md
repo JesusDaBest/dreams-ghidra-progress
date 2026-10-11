@@ -13,7 +13,7 @@ This is the written account behind the status map. The [research data](analysis/
 | ReporterTelemetry names | Three applied and verified after reopening |
 | System mapping | 1,540 functions associated with nine systems; 8,011 still unclassified |
 | Saved signature corrections | Six field-registration helpers; native reopen checks passed |
-| Newer v2 snapshot | Verified copy with the six corrections and all 27 names; separate extraction is in progress |
+| Newer v2 snapshot | Verified copy with the six corrections and all 27 names; initial extraction audited; timeout retries in progress |
 
 These are separate stages. Extracting pseudocode gives us code to inspect. Mapping establishes its association with a part of Dreams. Checking a descriptive name requires evidence for that function's particular role. The status map tracks the applied naming reviews within the mapped inventory.
 
@@ -40,7 +40,7 @@ Native instructions and callers establish a registry in RDI, a property key in R
 
 The promotion was tested on a copy, saved to the working project, and checked after reopening through the native Ghidra API. Metadata and selected decompilations matched the recorded post-change state, and all 27 checked names were preserved. The live MCP readback now confirms all six corrected signatures, four caller signatures, body sizes, conventions, and all 27 applied names. All ten MCP decompilations match native Ghidra using the same default options. The other 39 explicit signatures remain deferred.
 
-The newer verified snapshot contains these changes. Its separate v2 cache is now being extracted in resumable, read-only batches. The first completed batch recorded 2,994 complete outputs, 14 failures, and 6,543 pending functions; later batches are continuing. The 9,508 cached outputs and the system map still refer to the coherent older v1 snapshot, rather than mixing results from the two versions.
+The newer verified snapshot contains these changes. Its separate v2 initial pass is complete and audited: all 9,551 functions were attempted, 9,490 complete output hashes were verified, and 61 failures were recorded (59 timeouts, one flow-limit failure, and one forced-merge failure). Every address and terminal attempt matched the inventory, and no successful output was re-decompiled. A single longer, 60-second retry is now being attempted for each eligible timeout. The initial-pass failure list is retained separately from later retry outcomes. The 9,508 cached outputs and the system map still refer to the coherent older v1 snapshot, rather than mixing results from the two versions.
 
 The MCP server uses a default DecompInterface, whereas native cache extraction loads the saved program's decompiler options. Seven of ten sampled outputs differed between these configurations, including whether constant data was folded into literal values. All ten outputs matched exactly when native Ghidra used the MCP defaults. This is an options comparison, not evidence of a program change or additional semantic-review progress. Original archive, imported-copy, and SELF-reference hashes were rechecked unchanged.
 
