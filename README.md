@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c5e085685978ca146250ce758207c179c81ae749/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d2b436cc58aa5619ae81be3e7927c3f9cff9b9f4/assets/status-badges.svg)
 
 <!-- status-summary:start -->
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](assets/status.svg?v=a8c5c0a1d526)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d2b436cc58aa5619ae81be3e7927c3f9cff9b9f4/assets/status.svg)
 
 **The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Names and checked/identified counts appear inside the sections. Smaller components use compact names; the expandable breakdown below retains every full name and count.
 
