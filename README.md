@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/dd1064ad107da4583dbdecdd3eab1f73a642fe21/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=292b82a43889)
 
 <!-- status-summary:start -->
-**55 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**56 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/dd1064ad107da4583dbdecdd3eab1f73a642fe21/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=cb504c9e8452)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 49 of the 55 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 50 of the 56 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -34,9 +34,9 @@ Green means the function's role and descriptive name have been checked; amber me
 | Rendering & lighting | 274 | 0 / 274 (0.0%) |
 | Editor & interface | 313 | 0 / 313 (0.0%) |
 | Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 119 | 11 / 119 (9.2%) |
+| Shared engine & object data | 120 | 12 / 120 (10.0%) |
 
-**1,553 of 9,551 discovered functions are mapped; 7,998 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -429,9 +429,9 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Camera Blender / Camera Status** - 0/1 names checked
   - **Visibility** - 0/4 names checked
     - **Label Visible** - 0/4 names checked
-- **Shared engine & object data** - 11/119 names checked
-  - **Game state & runtime** - 6/19 names checked
-    - **Game contexts & runtime support** - 6/7 names checked
+- **Shared engine & object data** - 12/120 names checked
+  - **Game state & runtime** - 7/20 names checked
+    - **Game contexts & runtime support** - 7/8 names checked
     - **Game Events** - 0/3 names checked
     - **Game Base** - 0/3 names checked
     - **Gameupdater** - 0/3 names checked

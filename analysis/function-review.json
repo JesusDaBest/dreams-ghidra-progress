@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "59 previously unnamed functions reviewed; 55 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "60 previously unnamed functions reviewed; 56 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9340,
-    "other_names": 211,
+    "default_fun_names": 9339,
+    "other_names": 212,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1085,6 +1085,27 @@
         "Analyst descriptive name, not a recovered original symbol.",
         "No claim of sort stability, original library/compiler identity or native execution validation.",
         "No signature, type, byte, or calling-convention changes."
+      ]
+    },
+    {
+      "address": "140769150",
+      "original_name": "FUN_140769150",
+      "applied_name": "AdvanceFilteredObjectGraphIterator",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Full cached C and all212 assembly instructions reviewed;57 direct branch targets checked.",
+        "Leaf routine advances persistent state through packed graph adjacency with explicit node/cursor stack, node-indexed visited sets and numeric category filters; returns boolean AL and writes yielded object index through RSI.",
+        "Emitter dispatcher1408fa380 uses returned indices to access object pointer and activity tables, then deduplicates corresponding physics body indices.",
+        "Independent caller140768af0 uses results for object-index membership. Its inlined initialization at140768e19..140768f30 binds context+11028, start index+11010, mask+11030, cursor and stack state to the exact iterator argument base.",
+        "Helper140768850 merely selects the starting object index; it is not an iterator constructor."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name; native class and edge enum names unknown.",
+        "Static analysis only.",
+        "No prototype, types, bytes, calling convention or function boundaries changed."
       ]
     }
   ],

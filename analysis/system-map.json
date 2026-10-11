@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1552,
-  "unmapped_total": 7999,
+  "mapped_total": 1554,
+  "unmapped_total": 7997,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -35925,6 +35925,30 @@
         }
       ],
       "code_sha256": "35310ea396c234a4b79f8ead4bbb389e6b692b97cdf28b63f672f551db091708",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140769150": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_object_graph_iterator",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_independent_callers",
+          "name": "AdvanceFilteredObjectGraphIterator",
+          "support": [
+            "Full cached C and all212 assembly instructions reviewed;57 direct branch targets checked.",
+            "Leaf routine advances persistent state through packed graph adjacency with explicit node/cursor stack, node-indexed visited sets and numeric category filters; returns boolean AL and writes yielded object index through RSI.",
+            "Emitter dispatcher1408fa380 uses returned indices to access object pointer and activity tables, then deduplicates corresponding physics body indices.",
+            "Independent caller140768af0 uses results for object-index membership. Its inlined initialization at140768e19..140768f30 binds context+11028, start index+11010, mask+11030, cursor and stack state to the exact iterator argument base.",
+            "Helper140768850 merely selects the starting object index; it is not an iterator constructor."
+          ]
+        }
+      ],
+      "code_sha256": "f810683d15c39e66a8eb6276ca8a55ecd79e488123edde24c27b9567634e92be",
       "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
