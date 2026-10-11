@@ -1,10 +1,6 @@
 # Code-to-system mapping
 
-The front-page map groups actual function addresses in a hierarchy: major Dreams systems, their subsystems, then smaller components such as an exact registered type or an implementation unit. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,540 functions across nine systems; another 8,011 discovered functions still need classification and are counted below the map.
-
-For example, Rendering & lighting contains Lighting & shadows, which contains sun-shadow and spotlight-shadow code. Sculpting & painting contains Sculpt geometry, which contains sculpt-brick processing and other CSG units. Gadgets & logic contains Logic & signals, Sensors & detection, Movement & possession, and other gadget families, with individual registered types inside them.
-
-The hierarchy is a research taxonomy based on the existing source-family and registered-type evidence. It describes functional containment for reading progress; it does not establish recovered class inheritance or exact source-directory containment. Each assignment carries its component path and the basis for that refinement. Functions whose finer ownership remains ambiguous stay in a common-routines leaf inside their established system or subsystem.
+The front-page map groups actual function addresses by the part of Dreams they support. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,540 functions across nine systems; another 8,011 discovered functions still need classification and are counted below the map.
 
 Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. This mapping pass added no checked names: 27 remain checked and 4 remain reviewed but unresolved.
 
@@ -26,7 +22,7 @@ Assignments are joined by function address. Function names, address proximity, a
 
 ## How sections are counted
 
-- Each function appears in one leaf and occupies one cell. Parent counts are the sum of their descendants. At every level, sibling rectangles are sized by their actual mapped function counts and arranged largest first. Header space separates levels; function cells have equal area within their leaf, while their pixel size can differ between leaves.
+- Each function appears in one section and occupies one cell. Section area is proportional to its mapped function count.
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.
@@ -41,4 +37,4 @@ The mapping used an immutable program snapshot. All 9,551 function addresses and
 
 Public evidence contains identifiers and structural links; local paths, raw strings from source-file diagnostics, game code, binaries, and Ghidra databases remain outside the repository. A researcher with the same program can follow the recorded addresses. The private source evidence is required to independently re-establish the mapping; rendering the existing map requires only the public JSON files.
 
-Regenerate the front-page assets with `python scripts/generate_status.py`, then validate them with `python scripts/generate_status.py --check`. Ownership and component paths come from the mapping file; review colors come from the status rows. Changing a review state cannot move a function into a different system or component. The expandable tree beneath the chart exposes the complete hierarchy and every progress count, including components too small to label inside the image.
+Regenerate the front-page assets with `python scripts/generate_status.py`, then validate them with `python scripts/generate_status.py --check`. Ownership comes from the mapping file; review colors come from the status rows. Changing a review state cannot move a function into a different system.

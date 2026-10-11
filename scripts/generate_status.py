@@ -281,74 +281,6 @@ def function_cells(rows, bounds):
     return out
 
 
-def hierarchy_rows(rows, mapping):
-    """Build and validate the nested inventory independently of review status."""
-    by_address = {row['address']: row for row in rows}
-    paths = {}
-    def build(nodes, prefix=()):
-        result = []
-        seen = set()
-        for node in nodes:
-            key, label = node['id'], node['label']
-            if key in seen or not re.fullmatch(r'[a-z0-9-]+', key):
-                raise ValueError('Hierarchy node IDs must be unique within their parent')
-            seen.add(key)
-            path = prefix + (key,)
-            paths[path] = node
-            children = build(node['children'], path)
-            selected = [by_address[a] for a,item in mapping['assignments'].items()
-                        if tuple(item['component_path'][:len(path)]) == path]
-            direct = [by_address[a] for a,item in mapping['assignments'].items()
-                      if tuple(item['component_path']) == path]
-            if direct and children:
-                raise ValueError('Functions must have a leaf component path')
-            result.append({'id':key,'label':label,'path':path,'children':children,
-                           'rows':sorted(selected,key=lambda r:int(r['address'],16))})
-        return result
-    tree = build(mapping['hierarchy'])
-    for addr,item in mapping['assignments'].items():
-        path = tuple(item['component_path'])
-        if addr not in by_address or path not in paths or path[0] != item['system']:
-            raise ValueError('Invalid component path or system ownership')
-        if paths[path]['children']:
-            raise ValueError('Assigned component must be a leaf')
-    if {node['id']:node['label'] for node in tree} != mapping['systems']:
-        raise ValueError('Hierarchy roots must match the major systems')
-    return tree
-
-
-def render_hierarchy(nodes, bounds, depth=0):
-    out = []
-    entries = [(node['id'],node['label'],node,node['rows']) for node in nodes]
-    for (key,label,node,selected),box in packed_regions(entries,bounds):
-        x,y,w,h = box
-        checked = sum(r['review']=='verified_name' for r in selected)
-        path = '/'.join(node['path'])
-        attribute = f'data-area="{key}"' if depth == 0 else f'data-component="{path}"'
-        out.append(f'<g {attribute} data-count="{len(selected)}" data-depth="{depth}">')
-        out.append(f'<title>{escape(" / ".join(node["path"]))}: {escape(label)}; {checked}/{len(selected)} names checked</title>')
-        show_label = w >= (76 if depth else 95) and h >= (34 if depth else 55)
-        label_lines = textwrap.wrap(label,width=max(8,int((w-10)/(7.3 if depth==0 else 6))),break_long_words=False)[:2]
-        header = (len(label_lines)*14+19) if show_label else 0
-        if h < header + (24 if node['children'] else 0):
-            show_label,header = False,0
-        if node['children']:
-            # Header space separates hierarchy levels; sibling rectangles still
-            # use their real function counts, without minimum/invented weights.
-            out.append(rect(x,y,w,h,'panel'))
-            out.extend(render_hierarchy(node['children'],(x,y+header,w,h-header),depth+1))
-        else:
-            out.extend(function_cells(selected,box))
-        out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="{3 if depth==0 else 1.5}"/>')
-        if show_label:
-            outline=' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
-            for n,line in enumerate(label_lines):
-                out.append(text(round(x+5,3),round(y+14+n*14,3),line,13 if depth==0 else 11,weight=600,extra=outline))
-            out.append(text(round(x+5,3),round(y+14+len(label_lines)*14,3),f'{checked}/{len(selected):,} ({100*checked/len(selected):.1f}%)',10,extra=outline))
-        out.append('</g>')
-    return out
-
-
 def render(status, applied, mapping):
     total = status["inventory_total"]
     review = status["metrics"]["review"]
@@ -366,20 +298,32 @@ def render(status, applied, mapping):
                    'Every cell is a real function. Every section area is proportional to its function count. '
                    'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="790" viewBox="0 0 1000 790" role="img" aria-labelledby="status-title status-desc">',
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="486" viewBox="0 0 1000 486" role="img" aria-labelledby="status-title status-desc">',
            '<title id="status-title">Dreams function review by game system</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 790, "background"),
+           rect(0, 0, 1000, 486, "background"),
            text(4, 21, f'{mapped:,} functions mapped to parts of Dreams · {mapped_review["verified_name"]:,} names checked', 16),
            '<g data-panel="review">']
-    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,696)))
+    for (area_id, title, _, selected), bounds in packed_regions(areas, (0, 34, 1000, 392)):
+        x, y, width, height = bounds
+        checked = sum(row['review'] == 'verified_name' for row in selected)
+        out.append(f'<g data-area="{area_id}" data-count="{len(selected)}"><title>{escape(title)}: {len(selected):,} functions in this section; {checked} names checked.</title>')
+        out.extend(function_cells(selected, bounds))
+        out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{width:.6f}" height="{height:.6f}" fill="none" stroke="#0d1117" stroke-width="{min(2, width / 20):.6f}"/>')
+        outline = ' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
+        label_lines = textwrap.wrap(title, width=max(12, int((width-12)/7.6)), break_long_words=False)
+        for line_number, label in enumerate(label_lines):
+            out.append(text(round(x+6, 3), round(y+17+16*line_number, 3), label, 13, weight=600, extra=outline))
+        out.append(text(round(x+6, 3), round(y+19+16*len(label_lines), 3),
+                        f'{checked}/{len(selected):,} ({100*checked/len(selected):.1f}%)', 11, extra=outline))
+        out.append('</g>')
     out.extend(['</g>',
-                legend(4, 755, 'green', f'{mapped_review["verified_name"]:,} names checked'),
-                legend(220, 755, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
-                legend(470, 755, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
-                text(996, 755, 'System → component → code unit', 11, 'muted', extra=' text-anchor="end"')])
-    out.append(text(4, 780, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; percentages use checked names.', 12, 'muted'))
+                legend(4, 450, 'green', f'{mapped_review["verified_name"]:,} names checked'),
+                legend(220, 450, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
+                legend(470, 450, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
+                text(996, 450, 'One cell = one mapped function', 11, 'muted', extra=' text-anchor="end"')])
+    out.append(text(4, 475, f'{unassigned:,} more functions still need system mapping. Section sizes and percentages use mapped functions only.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
@@ -397,16 +341,6 @@ def render_area_table(status, mapping):
     lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
                   'Percentages measure checked names among the functions mapped to that section. '
                   'The complete size of each system is still unknown; these are not whole-game completion percentages.'])
-    lines.extend(['','<details>','<summary>Explore the systems and their components</summary>',''])
-    def list_nodes(nodes,depth=0):
-        for node in sorted(nodes,key=lambda n:(-len(n['rows']),n['id'])):
-            if not node['rows']:
-                continue
-            checked=sum(r['review']=='verified_name' for r in node['rows'])
-            lines.append('  '*depth+f'- **{node["label"]}** — {checked}/{len(node["rows"]):,} names checked')
-            list_nodes(node['children'],depth+1)
-    list_nodes(hierarchy_rows(status['rows'],mapping))
-    lines.extend(['','</details>'])
     return '\n'.join(lines)
 
 
