@@ -221,9 +221,11 @@ def research_area_rows(rows, mapping):
             for system, label in systems.items()]
 
 
-def packed_regions(entries, bounds):
+def packed_regions(entries, bounds, preserve_order=False):
     """Area is proportional ONLY to the number of real functions in each group."""
-    entries = sorted((item for item in entries if item[3]), key=lambda item: (-len(item[3]), item[0]))
+    entries = [item for item in entries if item[3]]
+    if not preserve_order:
+        entries.sort(key=lambda item: (-len(item[3]), item[0]))
     if not entries:
         raise ValueError("A status map needs a nonempty function inventory")
     x, y, width, height = bounds
@@ -295,74 +297,115 @@ def hierarchy_rows(rows, mapping):
     return tree
 
 
+def cell_layout(count, bounds):
+    """Equal-area rows; choose the row count with the least cell distortion."""
+    x,y,w,h=bounds
+    def quality(lines):
+        return max(max((w/c)/(h*c/count),(h*c/count)/(w/c))
+                   for c in {count//lines,math.ceil(count/lines)})
+    ideal=math.sqrt(count*h/w)
+    candidates={max(1,min(count,n)) for n in range(max(1,int(ideal)-3),int(ideal)+5)}
+    lines=min(candidates,key=lambda n:(quality(n),n))
+    result=[];cy=y
+    for line in range(lines):
+        columns=count//lines+(line<count%lines)
+        cw,ch=w/columns,h*columns/count
+        result.extend((x+column*cw,cy,cw,ch) for column in range(columns))
+        cy+=ch
+    return result
+
+
+def component_regions(entries,bounds):
+    """Choose a dense ordering that avoids skinny cells in small components."""
+    ordered=sorted((e for e in entries if e[3]),key=lambda e:(-len(e[3]),e[0]))
+    layouts=[]
+    for sequence in (ordered,list(reversed(ordered))):
+        for offset in range(len(sequence)):
+            layout=packed_regions(sequence[offset:]+sequence[:offset],bounds,True)
+            ratios=[max(w/h,h/w) for entry,box in layout
+                    for _,_,w,h in cell_layout(len(entry[3]),box)]
+            layouts.append(((max(ratios),sum((r-1)**2 for r in ratios)),layout))
+    return min(layouts,key=lambda item:item[0])[1]
+
+
 def dense_cells(rows, bounds):
     """Reference-style near-square rows that tile the section without blank slots."""
-    x,y,w,h=bounds
-    count=len(rows)
-    lines=max(1,min(count,round(math.sqrt(count*h/w))))
     priority={'verified_name':0,'deferred':1,'unreviewed':2}
     colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
     ordered=sorted(rows,key=lambda r:(priority[r['review']],int(r['address'],16)))
-    result=[];cursor=0
-    for line in range(lines):
-        columns=count//lines+(line<count%lines)
-        cw,ch=w/columns,h/lines
-        for column in range(columns):
-            row=ordered[cursor];cursor+=1
-            result.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" x="{x+column*cw:.6f}" y="{y+line*ch:.6f}" width="{cw:.6f}" height="{ch:.6f}" fill="{COLORS[colors[row["review"]]]}" stroke="#0d1117" stroke-width="0.5"/>')
+    result=[]
+    for row,(x,y,w,h) in zip(ordered,cell_layout(len(rows),bounds)):
+        result.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="{COLORS[colors[row["review"]]]}" stroke="#0d1117" stroke-width="0.5"/>')
     return result
 
 
 def render_hierarchy(nodes, bounds, depth=0):
-    out = []
-    entries = [(node['id'],node['label'],node,node['rows']) for node in nodes]
-    for (key,label,node,selected),box in packed_regions(entries,bounds):
-        x,y,w,h = box
-        checked = sum(r['review']=='verified_name' for r in selected)
-        path = '/'.join(node['path'])
-        attribute = f'data-area="{key}"' if depth == 0 else f'data-component="{path}"'
-        out.append(f'<g {attribute} data-count="{len(selected)}" data-depth="{depth}">')
-        out.append(f'<title>{escape(" / ".join(node["path"]))}: {escape(label)}; {checked}/{len(selected)} names checked</title>')
-        show_label = w >= (76 if depth else 95) and h >= (34 if depth else 55)
-        label_lines = textwrap.wrap(label,width=max(8,int((w-10)/(7.3 if depth==0 else 6))),break_long_words=False)[:2]
-        header = (len(label_lines)*14+19) if show_label else 0
-        if h < header + (24 if node['children'] else 0):
-            show_label,header = False,0
-        children = node['children']
-        if children and depth >= 1:
-            entries = [(c['id'],c['label'],c,c['rows']) for c in children if c['rows']]
-            nested = packed_regions(entries,(x,y+header,w,h-header))
-            fits = any(cw >= 76 and ch >= 46 for _,(_,_,cw,ch) in nested)
-            if not fits:
-                children = []
-        if children:
-            # Header space separates hierarchy levels; sibling rectangles still
-            # use their real function counts, without minimum/invented weights.
-            out.append(rect(x,y,w,h,'panel'))
-            out.extend(render_hierarchy(children,(x,y+header,w,h-header),depth+1))
-        else:
-            out.append(rect(x,y,w,h,'panel'))
-            grid=(x,y+header,w,h-header) if show_label and h-header>0 else box
-            out.extend(dense_cells(selected,grid))
-        out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="{3 if depth==0 else 1.5 if show_label else 0}"/>')
-        if show_label:
-            outline=' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
-            for n,line in enumerate(label_lines):
-                out.append(text(round(x+5,3),round(y+14+n*14,3),line,13 if depth==0 else 11,weight=600,extra=outline))
-            out.append(text(round(x+5,3),round(y+14+len(label_lines)*14,3),f'{checked}/{len(selected):,} checked',10,extra=outline))
-        if not show_label and depth == 1:
-            size=min(10,max(6,min(w/4,h-2)))
-            limit=max(2,int((w-4)/(size*0.52)))
-            aliases={'Common system routines':'Common','Types & settings':'Settings','Numbers & transforms':'Transforms','Properties & variants':'Properties','Shared property helpers':'Property helpers','Identifiers & assets':'Assets','Serialization & upgrades':'Serialization','Game state & runtime':'Runtime','Shared signal data':'Signals','Shared messages':'Messages','Errors & diagnostics':'Errors','Creation references':'Creations','Players & sessions':'Players','Musical timing & pitch':'Timing & pitch','Synthesis & modulation':'Synthesis','Animation & keyframes':'Keyframes','Puppet animation':'Puppets'}
-            compact=aliases.get(label,label)
-            lines=textwrap.wrap(compact,width=limit,break_long_words=False)
-            if any(len(line)>limit for line in lines):
-                lines=[compact[:max(1,limit-1)]+'.']
-            max_lines=max(1,int((h-2)/(size+1)))
-            lines=lines[:max_lines]
-            outline=' stroke="#0d1117" stroke-width="2" paint-order="stroke"'
-            for i,line in enumerate(lines):
-                out.append(text(x+2,y+size+i*(size+1),line,size,weight=600,extra=outline))
+    """Fill the map first, then place labels without carving out header bands."""
+    boxes=[];out=[]
+    def draw(nodes,bounds,level):
+        entries=[(n['id'],n['label'],n,n['rows']) for n in nodes if n['rows']]
+        for (_,_,node,selected),box in (packed_regions(entries,bounds) if level==0 else component_regions(entries,bounds)):
+            x,y,w,h=box
+            attr=f'data-area="{node["id"]}"' if level==0 else f'data-component="{"/".join(node["path"])}"'
+            out.append(f'<g {attr} data-depth="{level}" data-count="{len(selected)}"><title>{escape(node["label"])}: {sum(r["review"]=="verified_name" for r in selected)}/{len(selected)} checked</title>')
+            children=node['children']
+            if children and level>=1:
+                candidates=component_regions([(c['id'],c['label'],c,c['rows']) for c in children if c['rows']],box)
+                if (not any(cw>=76 and ch>=46 for _,(_,_,cw,ch) in candidates)
+                    or (node["label"] not in {"Lighting & shadows","Sculpt geometry"} and any(max(cw/ch,ch/cw)>1.8 for (_,_,_,rs),cb in candidates
+                           for _,_,cw,ch in cell_layout(len(rs),cb)))):children=[]
+            if children:draw(children,box,level+1)
+            else:out.extend(dense_cells(selected,box))
+            out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="{2.5 if level==0 else 1.2}"/>')
+            out.append('</g>')
+            boxes.append((node,box,level))
+    draw(nodes,bounds,depth)
+    occupied=[]
+    aliases={'Common system routines':'Common','Types & settings':'Settings','Numbers & transforms':'Transforms','Properties & variants':'Properties','Shared property helpers':'Property helpers','Identifiers & assets':'Assets','Serialization & upgrades':'Serialization','Game state & runtime':'Runtime','Shared signal data':'Signals','Shared messages':'Messages','Errors & diagnostics':'Errors','Creation references':'Creations','Players & sessions':'Players','Musical timing & pitch':'Timing & pitch','Synthesis & modulation':'Synthesis','Animation & keyframes':'Keyframes','Puppet animation':'Puppets','Sculpt geometry':'Geometry','Sculpt bricks':'Sculpt bricks','Interface primitives':'UI primitives','Lighting & shadows':'Lighting & shadows','Sculpting & painting':'Sculpting & painting','Animation & puppets':'Animation','Shared engine & object data':'Shared engine','Dreamiverse & networking':'Dreamiverse'}
+    def intersects(a,b):
+        return a[0]<b[0]+b[2]+1 and a[0]+a[2]+1>b[0] and a[1]<b[1]+b[3]+1 and a[1]+a[3]+1>b[1]
+    for node,(x,y,w,h),level in sorted(boxes,key=lambda item:(item[2],-len(item[0]['rows']),item[0]['path'])):
+        if level>2 and (w<70 or h<40):continue
+        full=node['label'];checked=sum(r['review']=='verified_name' for r in node['rows'])
+        placed=None
+        for size in ([12,11] if level==0 else [11,10,9,8,7]):
+            for label in dict.fromkeys([full,aliases.get(full,full)]):
+                limit=max(1,int((w-8)/(size*0.56)))
+                lines=textwrap.wrap(label,width=limit,break_long_words=False)
+                if any(len(line)>limit for line in lines):continue
+                for include_count in ([True,False] if level>0 and len(node['rows'])<10 else [True]):
+                    values=lines+([f'{checked}/{len(node["rows"])} checked'] if include_count else [])
+                    sizes=[size]*len(lines)+([min(9,size)] if include_count else [])
+                    bw=max(len(line)*fs*0.56 for line,fs in zip(values,sizes))+5
+                    bh=sum(fs+2 for fs in sizes)+2
+                    if bw>w-4 or bh>h-4:continue
+                    for cy in range(math.ceil(y+2),math.floor(y+h-bh-1)+1,4):
+                        for cx in [x+2,x+w-bw-2]:
+                            candidate=(cx,cy,bw,bh)
+                            if not any(intersects(candidate,old) for old in occupied):
+                                placed=(candidate,values,sizes);break
+                        if placed:break
+                    if placed:break
+                if placed:break
+            if placed:break
+        if placed is None:
+            # Tiny sections use short in-map abbreviations, with full names in the breakdown.
+            size=min(8,max(3,min(h-2,w/3)))
+            limit=max(1,int((w-4)/(size*0.56)))
+            label=aliases.get(full,full)
+            label=label if len(label)<=limit else label[:max(1,limit-1)]+'.'
+            bw=len(label)*size*0.56+2;bh=size+2
+            candidate=(x+1,y+1,bw,bh)
+            if any(intersects(candidate,old) for old in occupied):continue
+            placed=(candidate,[label],[size])
+        (tx,ty,bw,bh),values,sizes=placed
+        occupied.append((tx,ty,bw,bh))
+        out.append(f'<g data-label="{"/".join(node["path"])}" data-label-box="{tx:.6f},{ty:.6f},{bw:.6f},{bh:.6f}">')
+        baseline=ty
+        for label,size in zip(values,sizes):
+            baseline+=size
+            out.append(text(round(tx+1,3),round(baseline,3),label,size,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
+            baseline+=2
         out.append('</g>')
     return out
 
@@ -381,7 +424,7 @@ def render(status, applied, mapping):
     description = (f'{review["verified_names"]} of {total} function names checked. '
                    f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
                    'Sections show evidence-backed associations with parts of Dreams. '
-                   'Every cell is a real function. Sections follow their mapped function counts. Dense near-square rows fill the available grid area; headings separate hierarchy levels. '
+                   'Every cell is a real function. Every section is filled using the same mapped-count area scale, with near-square row rounding. Labels overlay cells; there are no reserved header bands. '
                    'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
     out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="710" viewBox="0 0 1000 710" role="img" aria-labelledby="status-title status-desc">',

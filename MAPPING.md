@@ -22,7 +22,7 @@ Assignments are joined by function address. Function names, address proximity, a
 
 ## How sections are counted
 
-- Each function appears once in its evidenced system and component. The major system rectangles retain their mapped-count layout. Dense near-square rows fill each available grid area, allowing small dimension differences from row rounding and nested heading space. Tiny internal units share their component's grid when their own labels would not fit; the evidence hierarchy is unchanged.
+- Each function appears once in its evidenced system and component. The major system rectangles retain their mapped-count layout. Dense near-square rows fill each available grid area, using equal-area cells and overlaid labels without reserved heading space. Tiny internal units share their component's grid when their own labels would not fit; the evidence hierarchy is unchanged.
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.
