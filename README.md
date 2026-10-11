@@ -5,19 +5,23 @@
 
 Working out how Dreams works, one piece of code at a time
 
-![Analysis status](assets/status-badges.svg?v=ba5973a02e75)
-
 [Progress log](PROGRESS.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
 
 </div>
 
 ## Status
 
-![Dreams progress: identified functions and work still to review](assets/status.svg?v=97df6acfb290)
+![Analysis status](assets/status-badges.svg?v=fce322abf665)
 
-**Green means we have identified what a function does, given it a descriptive name, and checked that the saved name is correct.** Amber means we have reviewed it but still have questions. Gray means it has not been reviewed. A function is one piece of the game's code.
+**12 of 9,551 functions named and checked.** A function is one piece of the game's code.
 
-These figures track our work on the functions found so far. They do not measure how much of the entire game has been rebuilt.
+![Dreams progress: identified functions and work still to review](assets/status.svg?v=50d0b8151bed)
+
+**Green:** name checked. **Amber:** reviewed, still unclear. **Gray:** not reviewed yet.
+
+The left map groups code by the labels already in the analysis project. Those labels still need checking. The right map contains code without descriptive labels. Every discovered function appears once; the two maps use different scales.
+
+Code extraction produces computer-generated code to study. It does not mean that code has been understood or rebuilt.
 
 ## What we know so far
 

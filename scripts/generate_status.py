@@ -26,12 +26,50 @@ DECOMPILATION = {
 }
 REVIEW = {"unreviewed", "verified_name", "deferred"}
 CONVENTION = {"direct_sysv", "inherited_sysv", "other", "unknown"}
+# Labels are navigation hints inherited from the analysis, never review evidence.
+# Specific named types precede broad property/helper roles. Unnamed functions
+# are never assigned to a topic based on address proximity or a guessed subsystem.
+TOPIC_RULES = (
+    ("Logic tools", ("Calculator", "Splitter", "Combiner", "SignalInspector", "SignalGenerator")),
+    ("Puppets", ("Puppet", "Limb")),
+    ("Health", ("Health",)),
+    ("Rotation", ("Rotator", "Gyroscope")),
+    ("Movement", ("Mover", "Follower")),
+    ("Variables / scores", ("Variable", "Score")),
+    ("Emitters", ("Emitter",)),
+    ("Sculpts", ("Sculpt",)),
+    ("Sprites", ("Sprite",)),
+    ("Physics", ("Physics", "Joint", "Raycast", "Shapecast")),
+    ("Impact", ("Impact",)),
+    ("Sound", ("AudioNumber", "SoundCategory")),
+    ("Settings", ("GlobalSettings",)),
+    ("Graphics", ("Shader",)),
+    ("Fog", ("Fog",)),
+    ("Guides", ("AutoGuides",)),
+    ("Doorways", ("MagicDoor",)),
+    ("Data fields", ("Properties", "FieldOffset", "TypeDescriptor", "RegisterEnumValue")),
+    ("Object updates", ("Thing", "GameUpdate")),
+)
+GROUPS = {label for label, _ in TOPIC_RULES} | {"Startup", "Other labels", "Unidentified"}
 COLORS = {
     "background": "#0d1117", "panel": "#131b26", "border": "#263344",
     "text": "#f0f6fc", "muted": "#97a8bc", "dim": "#6e829a",
     "green": "#3fb950", "cyan": "#39d5ff", "blue": "#58a6ff", "gray": "#283747",
     "amber": "#d29922", "accounted": "#687c94",
 }
+
+
+def group_for_name(name):
+    if not isinstance(name, str) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]{0,119}", name):
+        return "Unidentified"
+    if re.fullmatch(r"(?:thunk_)*FUN_[0-9a-fA-F]+", name):
+        return "Unidentified"
+    if name in {"entry", "RunRuntimeCallbackTables"}:
+        return "Startup"
+    for label, tokens in TOPIC_RULES:
+        if any(token in name for token in tokens):
+            return label
+    return "Other labels"
 
 
 def address(value):
@@ -101,8 +139,9 @@ def sanitize(raw, inventory=None, cache_index=None):
             "convention": item.get("convention", "unknown"),
             "decompilation": item.get("decompilation", "not_reported"),
             "review": item.get("review", "unreviewed"),
+            "group": item.get("group", "Unidentified"),
         }
-        for key, allowed in (("convention", CONVENTION), ("decompilation", DECOMPILATION), ("review", REVIEW)):
+        for key, allowed in (("convention", CONVENTION), ("decompilation", DECOMPILATION), ("review", REVIEW), ("group", GROUPS)):
             if row[key] not in allowed:
                 raise ValueError(f"Unknown {key} status at {addr}")
         existing[addr] = row
@@ -110,11 +149,15 @@ def sanitize(raw, inventory=None, cache_index=None):
     if not addresses:
         raise ValueError("A nonempty discovered-function inventory is required")
     rows = [existing.get(addr, {"address": addr, "convention": "unknown",
-                               "decompilation": "not_reported", "review": "unreviewed"}) for addr in addresses]
+                               "decompilation": "not_reported", "review": "unreviewed", "group": "Unidentified"}) for addr in addresses]
     declared_total = raw.get("inventory_total")
     if inventory is None and declared_total != len(rows):
         raise ValueError("inventory_total does not match the complete status row inventory")
     by_address = {row["address"]: row for row in rows}
+    if inventory:
+        for item in read_list(inventory):
+            if isinstance(item, dict) and item.get("present", 1):
+                by_address[address(item["address"])]["group"] = group_for_name(item.get("name"))
     if cache_index:
         # A supplied snapshot replaces the old cache snapshot rather than mixing runs.
         for row in rows:
@@ -158,6 +201,7 @@ def sanitize(raw, inventory=None, cache_index=None):
         "analysis_revision": revision,
         "inventory_total": total,
         "scope": "Currently discovered functions; not full binary completeness.",
+        "grouping_basis": "Presentation groups inferred from existing function labels, not verified subsystem boundaries. Unnamed code remains unidentified. Review states are independent of labels.",
         "metrics": {
             "convention": {
                 "effective_sysv": direct + inherited, "direct_sysv": direct,
@@ -200,6 +244,8 @@ def region_tiles(items, bounds):
     x, y, width, height = bounds
     # Distribute exactly count cells across near-square rows, with no filler cells.
     count = len(items)
+    if not count:
+        return ""
     row_count = max(1, min(count, int(math.sqrt(count * height / width) + 0.5)))
     base, remainder = divmod(count, row_count)
     colors = {"verified_name": "green", "deferred": "amber", "unreviewed": "accounted"}
@@ -220,24 +266,80 @@ def region_tiles(items, bounds):
     return "".join(out)
 
 
-def identified_topics(applied):
-    topics = defaultdict(int)
-    for row in applied:
-        name = row["applied_name"]
-        if any(part in name for part in ("Calculator", "Splitter", "Combiner", "SignalInspector", "SignalGenerator")):
-            topic = "Math and logic tools"
-        elif "Fog" in name:
-            topic = "Fog effects"
-        elif "AutoGuides" in name:
-            topic = "Object placement guides"
-        elif "MagicDoor" in name:
-            topic = "Doorways"
-        elif any(part in name for part in ("Variant", "GadgetName", "CanvasProperties", "PosProperties")):
-            topic = "Shared object data"
+def group_rectangles(groups, bounds):
+    """Pack count-weighted areas into strips chosen for near-square rectangles."""
+    if not groups:
+        return []
+    x, y, width, height = bounds
+    area_per_function = width * height / sum(len(items) for _, items in groups)
+    areas = [len(items) * area_per_function for _, items in groups]
+    result, cursor = [], 0
+    while cursor < len(groups):
+        short_side = min(width, height)
+        def distortion(end):
+            values = areas[cursor:end]
+            strip_width = sum(values) / short_side
+            return max(max(value / (strip_width * strip_width),
+                           strip_width * strip_width / value) for value in values)
+        end = cursor + 1
+        while end < len(groups) and distortion(end + 1) <= distortion(end):
+            end += 1
+        thickness = sum(areas[cursor:end]) / short_side
+        offset = 0
+        vertical = width >= height
+        for index in range(cursor, end):
+            length = areas[index] / thickness
+            cell = ((x, y + offset, thickness, length) if vertical
+                    else (x + offset, y, length, thickness))
+            result.append((groups[index], cell))
+            offset += length
+        if vertical:
+            x, width = x + thickness, width - thickness
         else:
-            topic = "Other code"
-        topics[topic] += 1
-    return sorted(topics.items(), key=lambda item: (-item[1], item[0]))
+            y, height = y + thickness, height - thickness
+        cursor = end
+    return result
+
+
+def grouped_map(rows, bounds):
+    groups = defaultdict(list)
+    priority = {"verified_name": 0, "deferred": 1, "unreviewed": 2}
+    for row in rows:
+        groups[row["group"]].append(row)
+    ordered = sorted(groups.items(), key=lambda item: (-len(item[1]), item[0]))
+    out = []
+    for (label, items), (x, y, width, height) in group_rectangles(ordered, bounds):
+        items = sorted(items, key=lambda row: (priority[row["review"]], int(row["address"], 16)))
+        checked = sum(row["review"] == "verified_name" for row in items)
+        out.extend([f'<g data-group="{escape(label)}"><title>{escape(label)}: {checked} checked / {len(items)} labeled functions</title>',
+                    region_tiles(items, (x + 1, y + 1, width - 2, height - 2)),
+                    rect(x, y, width, height, "none", stroke="background")])
+        # Put each label on the group itself, like a map legend, with a dark outline.
+        words, lines, line = label.split(), [], ""
+        size = min(13, max(9, (width - 8) / (max(map(len, words)) * 0.57)))
+        limit = max(3, int((width - 8) / (size * 0.57)))
+        for word in words:
+            if line and len(line) + 1 + len(word) > limit:
+                lines.append(line)
+                line = word
+            else:
+                line = (line + " " + word).strip()
+        lines.append(line)
+        label_count = 0
+        for index, line in enumerate(lines):
+            if len(line) <= limit and 20 + index * 15 < height:
+                out.append(text(round(x + 4, 3), round(y + 16 + index * 15, 3), line, round(size, 2), "text", 500,
+                                ' stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
+                label_count += 1
+        if not label_count and height > width:
+            size = min(12, (height - 8) / (len(label) * 0.57), width - 8)
+            if size >= 9:
+                cx, cy = round(x + width / 2, 3), round(y + height / 2, 3)
+                out.append(text(cx, cy, label, round(size, 2), "text", 500,
+                                f' text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 {cx} {cy})"'
+                                ' stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
+        out.append('</g>')
+    return "\n".join(out)
 
 
 def render(status, applied):
@@ -245,38 +347,30 @@ def render(status, applied):
     review = status["metrics"]["review"]
     assert len(applied) == review["verified_names"]
     assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
-    priority = {"verified_name": 0, "deferred": 1, "unreviewed": 2}
-    rows = sorted(status["rows"], key=lambda r: (priority[r["review"]], int(r["address"], 16)))
-    topics = identified_topics(applied)
-    percent = 100 * review["verified_names"] / total
-    title = f'{review["verified_names"]:,} functions named and checked'
-    description = (f'Early-stage Dreams research. {title} out of {total:,} code functions found so far. '
-                   f'{review["deferred"]:,} reviewed functions still need an explanation; {review["unreviewed"]:,} have not been reviewed. '
-                   'Each square is one piece of code. Computer-generated code does not count as identified.')
-    height = max(485, 175 + len(topics) * 55)
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="{height}" viewBox="0 0 1120 {height}" role="img" aria-labelledby="status-title status-desc">',
-           f'<title id="status-title">Dreams: {escape(title)}</title>',
+    labeled = [row for row in status["rows"] if row["group"] != "Unidentified"]
+    unknown = sorted((row for row in status["rows"] if row["group"] == "Unidentified"),
+                     key=lambda row: (row["review"] != "deferred", int(row["address"], 16)))
+    checked_labeled = sum(row["review"] == "verified_name" for row in labeled)
+    description = (f'{review["verified_names"]} of {total} functions named and checked. '
+                   f'{len(labeled)} functions grouped by existing labels; {len(unknown)} still unidentified. '
+                   'Each square is one function. Panels use different scales. Existing labels remain gray until checked.')
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="424" viewBox="0 0 1120 424" role="img" aria-labelledby="status-title status-desc">',
+           '<title id="status-title">Dreams function review progress</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1120, height, "background"),
-           text(12, 31, title, 25, "text", 650),
-           text(1108, 30, "EARLY STAGE", 13, "amber", 650, ' text-anchor="end"'),
-           text(12, 56, f'{percent:.2f}% of the {total:,} code functions found so far', 15, "muted"),
-           text(12, 94, "Most code still needs review", 17, "text", 600),
-           region_tiles(rows, (12, 111, 732, 300)),
-           text(774, 94, "What we have identified", 17, "text", 600),
-           text(774, 115, "Parts of these systems — work is ongoing", 12, "muted")]
-    for index, (topic, count) in enumerate(topics):
-        y = 135 + index * 55
-        out.extend([rect(774, y, 334, 46, "panel", 5, "border"),
-                    text(786, y + 19, topic, 14, "text", 600),
-                    text(786, y + 37, f'{count} function' + ('s' if count != 1 else '') + ' named and checked', 12, "muted")])
-    out.extend([legend(12, 436, "green", f'Named and checked: {review["verified_names"]:,}'),
-                legend(256, 436, "amber", f'Still unclear: {review["deferred"]:,}'),
-                legend(460, 436, "accounted", f'Not reviewed: {review["unreviewed"]:,}'),
-                text(12, 460, 'Each square is one function (a piece of code). Generated code still needs someone to work out what it does.', 12, "muted"),
-                text(12, 479, 'This tracks the functions found so far. It is not a percentage of the whole game rebuilt or fully understood.', 11, "dim"),
-                '</g></svg>'])
+           rect(0, 0, 1120, 424, "background"),
+           text(4, 21, f'Labeled code: {checked_labeled:,} checked / {len(labeled):,}', 17),
+           text(574, 21, f'Code still to identify: {len(unknown):,}', 17),
+           text(4, 43, 'Grouped by existing labels', 13, "muted"),
+           text(574, 43, 'The purpose of this code is still being investigated', 13, "muted"),
+           grouped_map(labeled, (0, 54, 550, 310)),
+           region_tiles(unknown, (571, 55, 548, 308)),
+           rect(570, 54, 550, 310, "none", stroke="background"),
+           legend(4, 386, "green", f'Name checked: {review["verified_names"]:,}'),
+           legend(234, 386, "amber", f'Still unclear: {review["deferred"]:,}'),
+           legend(453, 386, "accounted", f'Not reviewed: {review["unreviewed"]:,}'),
+           text(4, 411, 'One square = one function. Panels use different scales. Existing labels stay gray until checked.', 13, "muted"),
+           '</g></svg>']
     return "\n".join(out) + "\n"
 
 
@@ -284,12 +378,9 @@ def render_badges(status):
     total = status["inventory_total"]
     metrics = status["metrics"]
     decomp = metrics["decompilation"]
-    reviewed = metrics["review"]["reviewed"]
     badges = [
-        ("checked", f"{reviewed:,} / {total:,}", "accounted"),
-        ("identified", str(metrics["review"]["verified_names"]), "green"),
-        ("ready to review", f"{decomp['complete']:,}", "blue"),
-        ("status", "in progress", "amber"),
+        ("names checked", f"{100 * metrics['review']['verified_names'] / total:.2f}%", "green"),
+        ("code extracted", f"{100 * decomp['complete'] / total:.2f}%", "blue"),
     ]
     widths = [(round(len(label) * 6.5 + 20), round(len(value) * 6.5 + 20)) for label, value, _ in badges]
     width = sum(left + right for left, right in widths) + 10 * (len(badges)-1)
@@ -322,7 +413,7 @@ def main(argv=None):
     parser.add_argument("--status", type=Path, default=repo / "analysis" / "status.json", help="Public sanitized status input; rewritten canonically")
     parser.add_argument("--output", type=Path, default=repo / "assets" / "status.svg")
     parser.add_argument("--badges-output", type=Path, default=repo / "assets" / "status-badges.svg")
-    parser.add_argument("--inventory", type=Path, help="Optional local inventory: list of addresses or address objects; other fields discarded")
+    parser.add_argument("--inventory", type=Path, help="Local inventory: copy addresses and derive allowlisted groups from names; names and all other fields discarded")
     parser.add_argument("--cache-index", type=Path, help="Optional local cache function-index.json; copies only address/status")
     parser.add_argument("--check", action="store_true", help="Validate canonical JSON and SVG without writing")
     args = parser.parse_args(argv)
