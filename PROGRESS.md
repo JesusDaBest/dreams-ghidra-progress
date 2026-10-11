@@ -226,3 +226,9 @@ Separated property/type code from runtime/implementation within the existing fea
 ### Graph readability and denominators
 
 Anchored main system headings at section starts and increased the packed lattice height so labels can fit without shrinking text. Labels now show separate reviewed/identified counts for runtime/helpers and properties/types. Missing role mappings are shown as a dash, rather than a zero completion claim. Exported component counts and the README table use the same denominators. Function colors, ownership, evidence and review states are unchanged.
+
+## Object hierarchy transform name verified
+
+`140903590` is now `ComputeObjectHierarchyTransform`. All 210 assembly instructions and the complete cached body establish parent-chain traversal and composition of a 32-byte position/scale plus quaternion result. An independent caller's complete 136-instruction body confirms its input/output use. Symbolic evaluation checks quaternion multiplication order, and the loader import ID plus recomputed hash identifies its infinity guard.
+
+The name is descriptive. Native category meanings, cache invariants, external handedness and runtime validation remain unresolved; NaN sanitization is not established. A cold project backup preceded the edit. A clean restart verified all 57 names, the full 9,551-function inventory, unchanged metadata for this routine, and unchanged original archive hashes. No datatype, signature, calling convention, bytes or boundaries were edited. There are 57 verified names, 4 deferred reviews and 9,490 unreviewed functions. The map now contains 1,555 assigned functions, including 10 runtime/helper reviews and 41 property/type reviews.

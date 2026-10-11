@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "60 previously unnamed functions reviewed; 56 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "61 previously unnamed functions reviewed; 57 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9339,
-    "other_names": 212,
+    "default_fun_names": 9338,
+    "other_names": 213,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1161,6 +1161,30 @@
         "Descriptive analyst name; native class and edge enum names unknown.",
         "Static analysis only.",
         "No prototype, types, bytes, calling convention or function boundaries changed."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140903590",
+      "original_name": "FUN_140903590",
+      "applied_name": "ComputeObjectHierarchyTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete cached C and all 210 assembly instructions reviewed; every direct branch target checked.",
+        "Initializes a 32-byte output to zero translation, unit scale and identity quaternion; selects an object from its index and follows parent+4 until -1.",
+        "Uses per-type transform offsets at descriptor+0 for roots and descriptor+462 for nonroots, then composes translation, scale and rotation at each ancestor.",
+        "Symbolic polynomial evaluation of 20 quaternion instructions proves current quaternion Hamilton-multiplies accumulated quaternion in xyzw lanes, before normalization.",
+        "Imported guard is __isinff: native loader NID rDMyAf1Jhug writes slot141c66f00; independently recomputed symbol hash and pinned GhidraOrbis entry agree.",
+        "Complete independent caller1408f1dc0 (136 instructions) passes object index/context/output and consumes the 32-byte position-scale/quaternion result. Emitter dispatcher1408fa380 uses the same helper for parent-relative transform processing."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "Native category names, hierarchy-cache invariants, external coordinate handedness and runtime validation remain unresolved.",
+        "NaN values are not guaranteed sanitized; static exceptional-path findings are recorded separately.",
+        "No signature, datatype, calling convention, byte or function-boundary edits."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

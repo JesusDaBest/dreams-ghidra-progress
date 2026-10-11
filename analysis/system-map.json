@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1554,
-  "unmapped_total": 7997,
+  "mapped_total": 1555,
+  "unmapped_total": 7996,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -40612,6 +40612,34 @@
       "code_hash_basis": "concatenated_original_instruction_bytes",
       "code_role": "runtime-implementation",
       "code_role_basis": "reviewed_body"
+    },
+    "140903590": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "math",
+        "runtime-implementation",
+        "object-hierarchy-transform"
+      ],
+      "component_basis": "verified_hierarchy_transform_body_and_callers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "reviewed_body",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_independent_caller",
+          "name": "ComputeObjectHierarchyTransform",
+          "support": [
+            "Complete cached C and all 210 assembly instructions reviewed; every direct branch target checked.",
+            "Initializes a 32-byte output to zero translation, unit scale and identity quaternion; selects an object from its index and follows parent+4 until -1.",
+            "Uses per-type transform offsets at descriptor+0 for roots and descriptor+462 for nonroots, then composes translation, scale and rotation at each ancestor.",
+            "Symbolic polynomial evaluation of 20 quaternion instructions proves current quaternion Hamilton-multiplies accumulated quaternion in xyzw lanes, before normalization.",
+            "Imported guard is __isinff: native loader NID rDMyAf1Jhug writes slot141c66f00; independently recomputed symbol hash and pinned GhidraOrbis entry agree.",
+            "Complete independent caller1408f1dc0 (136 instructions) passes object index/context/output and consumes the 32-byte position-scale/quaternion result. Emitter dispatcher1408fa380 uses the same helper for parent-relative transform processing."
+          ]
+        }
+      ],
+      "code_sha256": "f1293cb9af933e8b1f1a6ae4fd6eebd5f23086c201fd45bb90084871a6ef518a",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
   "hierarchy": [
@@ -40692,6 +40720,17 @@
                 {
                   "id": "float3x3-packed",
                   "label": "float3x3 packed",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "runtime-implementation",
+              "label": "Runtime & implementation",
+              "children": [
+                {
+                  "id": "object-hierarchy-transform",
+                  "label": "Object hierarchy transforms",
                   "children": []
                 }
               ]

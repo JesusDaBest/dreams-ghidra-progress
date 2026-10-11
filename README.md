@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d05341c816f043fb29d8fbe3911225c6f54dc6b4/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=a3aa68a234f9)
 
 <!-- status-summary:start -->
-**56 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**57 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d05341c816f043fb29d8fbe3911225c6f54dc6b4/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=ce0f8013f76c)
 
 **Inside each section, counts mean reviewed functions / identified functions.** Runtime covers behavior and helpers; Data covers property handling and type definitions. A dash means no code of that role has been mapped yet. For example, Sculpting & painting has 78 identified runtime functions and none reviewed; Gadgets & logic has 5 identified runtime functions, of which 2 have been reviewed. Neither figure estimates a whole feature's completion.
 
@@ -36,9 +36,9 @@ Every square is one actual function and has the same size. Main headings sit at 
 | Rendering & lighting | 274 | 0/245 | 0/29 |
 | Editor & interface | 313 | 0/106 | 0/205 |
 | Dreamiverse & networking | 103 | 0/28 | 0/75 |
-| Shared engine & object data | 120 | 7/44 | 5/71 |
+| Shared engine & object data | 121 | 8/45 | 5/71 |
 
-**1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,555 of 9,551 discovered functions are mapped; 7,996 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -473,7 +473,7 @@ Every square is one actual function and has the same size. Main headings sit at 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 120 functions identified; 7 behavior/helper reviews; 5 property/type reviews
+- **Shared engine & object data** - 121 functions identified; 8 behavior/helper reviews; 5 property/type reviews
   - **Game state & runtime** - 20 functions identified; 7 behavior/helper reviews; 0 property/type reviews
     - **Runtime & implementation** - 13 functions identified; 7 behavior/helper reviews; 0 property/type reviews
       - **Game contexts & runtime support** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
@@ -491,6 +491,17 @@ Every square is one actual function and has the same size. Main headings sit at 
       - **Comparison Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Debug Camera Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Numbers & transforms** - 13 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Properties & type definitions** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Object hierarchy transforms** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
   - **Objects & references** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Properties & type definitions** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Thing Type** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -500,15 +511,6 @@ Every square is one actual function and has the same size. Main headings sit at 
       - **Thing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Thing Pos** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Numbers & transforms** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Properties & variants** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
     - **Properties & type definitions** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
       - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
