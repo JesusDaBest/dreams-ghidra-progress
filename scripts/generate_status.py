@@ -9,6 +9,7 @@ paths, signatures, decompiled text, metadata, and errors are never copied.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from collections import Counter, defaultdict
 from datetime import date
 from html import escape
@@ -380,16 +381,27 @@ def main(argv=None):
     content += "\n  ]\n}\n"
     svg = render(status)
     badges_svg = render_badges(status)
+    readme_path = repo / 'README.md'
+    readme = readme_path.read_text(encoding='utf-8')
+    expected_readme = readme
+    for name, asset in (('status.svg', svg), ('status-badges.svg', badges_svg)):
+        version = hashlib.sha256(asset.encode('utf-8')).hexdigest()[:12]
+        pattern = r'\]\(assets/' + re.escape(name) + r'(?:\?v=[a-zA-Z0-9_-]+)?\)'
+        expected_readme, count = re.subn(pattern, f'](assets/{name}?v={version})', expected_readme)
+        if count != 1:
+            raise ValueError(f'Expected exactly one README image link for {name}')
     if args.check:
         if (args.status.read_text(encoding="utf-8") != content or not args.output.is_file()
                 or args.output.read_text(encoding="utf-8") != svg or not args.badges_output.is_file()
-                or args.badges_output.read_text(encoding="utf-8") != badges_svg):
+                or args.badges_output.read_text(encoding="utf-8") != badges_svg
+                or readme != expected_readme):
             raise SystemExit("Status assets are valid but not current; regenerate them")
         print("Status assets are valid and current")
     else:
         write_atomic(args.status, content)
         write_atomic(args.output, svg)
         write_atomic(args.badges_output, badges_svg)
+        write_atomic(readme_path, expected_readme)
         print(f"Generated public status for {len(rows):,} discovered functions")
 
 

@@ -5,7 +5,7 @@
 
 Function discovery · Decompilation · Verified naming
 
-![Analysis status](assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=6dd0adde6dd8)
 
 [Progress log](PROGRESS.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
 
@@ -13,7 +13,7 @@ Function discovery · Decompilation · Verified naming
 
 ## Status
 
-![Dreams function coverage: cached pseudocode, semantic review, and calling conventions](assets/status.svg)
+![Dreams function coverage: cached pseudocode, semantic review, and calling conventions](assets/status.svg?v=c2984731fbf3)
 
 Each square represents **one of the 9,551 functions currently discovered**. Squares with the same status sit together in labeled blocks, with an exact count above each block. The grids show a measured snapshot of this analysis, not a percentage of the entire game recovered. Cached pseudocode and verified understanding are counted separately.
 
