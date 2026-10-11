@@ -27,13 +27,62 @@ DECOMPILATION = {
 }
 REVIEW = {"unreviewed", "verified_name", "deferred"}
 CONVENTION = {"direct_sysv", "inherited_sysv", "other", "unknown"}
-EXTRACTION_ATTENTION = {"failed", "truncated", "blocked_abi"}
 COLORS = {
     "background": "#0d1117", "panel": "#131b26", "border": "#263344",
     "text": "#f0f6fc", "muted": "#97a8bc",
     "green": "#3fb950", "blue": "#58a6ff", "gray": "#687c94",
     "amber": "#d29922",
 }
+
+# Explicit, reviewed research-area assignments. These are not recovered modules,
+# and future verified names remain unassigned until their evidence is reviewed.
+RESEARCH_AREAS = (
+    ("sculpting-creation", "Sculpting & creation", "", ()),
+    ("gadgets-logic", "Gadgets & logic", "Property and registration routines", (
+        "1404d6660", "1404d7480", "1404d7ef0", "1404d83d0", "1404d87a0",
+        "1404d8bf0", "1404d9c10", "1404da460", "1404dabe0", "1404db190",
+        "140d57980", "140d57a50", "140d57b20", "140d57bf0", "140d57cc0",
+        "140d57d90", "140d6dbd0", "140d6ddf0", "140d6e010", "140d6e2b0",
+        "140d6e570", "140d6e850",
+    )),
+    ("rendering-lighting", "Rendering & lighting", "", ()),
+    ("physics-movement", "Physics & movement", "", ()),
+    ("sound-music", "Sound & music", "", ()),
+    ("puppets-animation", "Puppets & animation", "", ()),
+    ("interface-controls", "Interface & controls", "", ()),
+    ("shared-object-data", "Shared object data", "Shared property helpers", (
+        "1404f68b0", "1404f7a20", "1404f70b0", "1404f8350", "140cfda40",
+    )),
+)
+
+# Display weights create readable, packed sections. They are deliberately separate
+# from function counts: the number of functions in each system is still unknown.
+SYSTEM_LAYOUT = (
+    ("sculpting-creation", 38), ("rendering-lighting", 24),
+    ("sound-music", 16), ("physics-movement", 14),
+    ("puppets-animation", 12), ("interface-controls", 10),
+    ("shared-object-data", 8),
+)
+
+# Families stay inside Gadgets & logic. Membership uses reviewed addresses,
+# never a keyword match against a name or a guess about a routine's callers.
+GADGET_LAYOUT = (
+    ("signals", "Signals & calculation", 40, (
+        ("combiner", "Combiner", 3, ("1404d87a0", "140d57980", "140d6e850")),
+        ("signal-generator", "Signal generator", 3, ("1404da460", "140d57bf0", "140d6e010")),
+        ("signal-inspector", "Signal inspector", 3, ("1404d9c10", "140d57b20", "140d6e2b0")),
+        ("calculator", "Calculator", 2, ("1404d7ef0",)),
+        ("splitter", "Splitter", 2, ("1404d83d0",)),
+    )),
+    ("effects", "Camera & effects", 20, (
+        ("camera-shake", "Camera shake", 3, ("1404dabe0", "140d57cc0", "140d6ddf0")),
+        ("fog", "Fog", 2, ("1404d6660",)),
+    )),
+    ("other-gadgets", "Other gadgets", 18, ()),
+    ("doorway", "Doorways", 14, ("1404d8bf0", "140d57a50", "140d6e570")),
+    ("rumble", "Controller rumble", 12, ("1404db190", "140d57d90", "140d6dbd0")),
+    ("guides", "Placement guides", 10, ("1404d7480",)),
+)
 
 
 def address(value):
@@ -194,104 +243,214 @@ def rect(x, y, width, height, fill, radius=0, stroke=None):
     return f'<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="{radius}" fill="{COLORS.get(fill, fill)}"{border}/>'
 
 
-def legend(x, y, color, label):
-    return rect(x, y-9, 8, 8, color, 1) + text(x+15, y, label, 11, "muted")
+def legend(x, y, color, label, stroke=None):
+    return rect(x, y-9, 8, 8, color, 1, stroke) + text(x+15, y, label, 11, "muted")
 
 
-def function_tiles(rows, bounds, panel):
-    """Use one equal square per address, with the same geometry in both panels."""
+def research_area_rows(rows):
+    """Assign verified rows by reviewed address allowlists, never by names."""
+    by_address = {row["address"]: row for row in rows}
+    if len(by_address) != len(rows):
+        raise ValueError("Research-area input contains duplicate addresses")
+    assigned = set()
+    area_ids = set()
+    result = []
+    for area_id, title, role, known_addresses in RESEARCH_AREAS:
+        if area_id in area_ids:
+            raise ValueError("Research areas must have distinct IDs")
+        area_ids.add(area_id)
+        selected = []
+        for addr in known_addresses:
+            if address(addr) != addr or addr in assigned:
+                raise ValueError("Research-area allowlists contain an invalid or repeated address")
+            if addr not in by_address:
+                raise ValueError("A reviewed research-area address is missing from the inventory")
+            assigned.add(addr)
+            row = by_address[addr]
+            if row["review"] == "verified_name":
+                selected.append(row)
+        result.append((area_id, title, role, sorted(selected, key=lambda row: int(row["address"], 16))))
+    return result
+
+
+def packed_regions(entries, bounds):
+    """Squarify positive display weights, independently of measured progress."""
+    entries = sorted(entries, key=lambda item: -item[2])
+    if not entries or any(item[2] <= 0 for item in entries):
+        raise ValueError("A packed map needs positive layout weights")
     x, y, width, height = bounds
-    count = len(rows)
-    if not count:
-        return ""
-    columns = max(1, min(count, math.ceil(math.sqrt(count * width / height))))
-    row_count = math.ceil(count / columns)
-    step = min(width / columns, height / row_count)
-    cell_size = step * 0.88
-    out = []
-    for index, item in enumerate(rows):
-        if panel == "review":
-            state = item["review"]
-            color = {"verified_name": "green", "deferred": "amber", "unreviewed": "gray"}[state]
+    scale = width * height / sum(item[2] for item in entries)
+    areas = [item[2] * scale for item in entries]
+    result, cursor = [], 0
+    while cursor < len(entries):
+        side = min(width, height)
+
+        def distortion(end):
+            strip = sum(areas[cursor:end]) / side
+            return max(max(area / strip ** 2, strip ** 2 / area)
+                       for area in areas[cursor:end])
+
+        end = cursor + 1
+        while end < len(entries) and distortion(end + 1) <= distortion(end):
+            end += 1
+        thickness = sum(areas[cursor:end]) / side
+        offset = 0
+        vertical = width >= height
+        for index in range(cursor, end):
+            length = areas[index] / thickness
+            region = ((x, y + offset, thickness, length) if vertical
+                      else (x + offset, y, length, thickness))
+            result.append((entries[index], region))
+            offset += length
+        if vertical:
+            x, width = x + thickness, width - thickness
         else:
-            state = item["decompilation"]
-            color = "blue" if state == "complete" else "amber" if state in EXTRACTION_ATTENTION else "gray"
-        px = x + (index % columns) * step
-        py = y + (index // columns) * step
-        out.append(f'<rect data-function="{item["address"]}" data-status="{state}" '
-                   f'x="{px:.3f}" y="{py:.3f}" width="{cell_size:.3f}" height="{cell_size:.3f}" '
-                   f'fill="{COLORS[color]}"/>')
-    return "".join(out)
+            y, height = y + thickness, height - thickness
+        cursor = end
+    return result
+
+
+def region_frame(bounds):
+    x, y, width, height = bounds
+    position = f'x="{x:.3f}" y="{y:.3f}" width="{width:.3f}" height="{height:.3f}"'
+    return [f'<rect data-unmapped-texture="true" {position} fill="url(#unmapped-grid)"/>',
+            f'<rect data-region-border="true" {position} fill="none" stroke="#0d1117" stroke-width="3"/>']
+
+
+def region_label(title, bounds, count=None):
+    x, y, width, height = bounds
+    limit = max(8, int((width - 10) / 6.4))
+    lines, line = [], ""
+    for word in title.split():
+        if line and len(line) + len(word) + 1 > limit:
+            lines.append(line)
+            line = word
+        else:
+            line = (line + " " + word).strip()
+    lines.append(line)
+    outline = ' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
+    out = [text(round(x + 5, 3), round(y + 15 + 14 * i, 3), label, 12, extra=outline)
+           for i, label in enumerate(lines)]
+    if count is not None:
+        label = f'{count} checked' if count else 'Unmapped'
+        out.append(text(round(x + 5, 3), round(y + 16 + 14 * len(lines), 3),
+                        label, 10, "muted", extra=outline))
+    return out
+
+
+def checked_tiles(rows, bounds):
+    """Overlay exactly one green cell per checked name on the unknown texture."""
+    x, y, width, height = bounds
+    start_x = math.ceil((x + 4 - 0.5) / 7) * 7 + 0.5
+    columns = max(1, int((x + width - 4 - start_x + 1) // 7))
+    tile_rows = (len(rows) + columns - 1) // columns
+    last_y = math.floor((y + height - 10 - 0.5) / 7) * 7 + 0.5
+    start_y = last_y - (tile_rows - 1) * 7
+    if tile_rows and start_y < y + 34:
+        raise ValueError("Checked names need more display space in this region")
+    out = []
+    for index, row in enumerate(rows):
+        if row["review"] != "verified_name":
+            raise ValueError("Only verified names may appear in a research area")
+        out.append(f'<rect data-function="{row["address"]}" data-status="verified_name" '
+                   f'x="{start_x + (index % columns) * 7:.3f}" y="{start_y + (index // columns) * 7:.3f}" '
+                   f'width="6" height="6" fill="{COLORS["green"]}"/>')
+    return out
+
+
+def gadget_regions(entries, bounds, by_address, assigned):
+    out = []
+    for (family_id, label, _, contents), region in packed_regions(entries, bounds):
+        out.append(f'<g data-family="{family_id}">')
+        out.extend(region_frame(region))
+        if contents and isinstance(contents[0], tuple):
+            out.extend(region_label(label, region))
+            x, y, width, height = region
+            out.extend(gadget_regions(contents, (x + 1, y + 23, width - 2, height - 24),
+                                      by_address, assigned))
+        else:
+            selected = []
+            for addr in contents:
+                if addr in assigned or addr not in by_address:
+                    raise ValueError("Gadget family assignments must be unique and reviewed")
+                assigned.add(addr)
+                selected.append(by_address[addr])
+            out.append(f'<title>{escape(label)}: {len(selected)} checked property or registration names; total unknown.</title>')
+            out.extend(region_label(label, region, len(selected)))
+            out.extend(checked_tiles(selected, region))
+        out.append('</g>')
+    return out
 
 
 def render(status, applied):
     total = status["inventory_total"]
     review = status["metrics"]["review"]
-    decomp = status["metrics"]["decompilation"]
     assert len(applied) == review["verified_names"]
     assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
-    review_order = {"verified_name": 0, "deferred": 1, "unreviewed": 2}
-    rows = sorted(status["rows"], key=lambda row: (
-        review_order[row["review"]],
-        0 if row["decompilation"] == "complete" else 1 if row["decompilation"] in EXTRACTION_ATTENTION else 2,
-        int(row["address"], 16),
-    ))
+    rows = status["rows"]
     assert len(rows) == total and len({row["address"] for row in rows}) == total
-    attention = sum(decomp[state] for state in EXTRACTION_ATTENTION)
-    other = total - decomp["complete"] - attention
-    description = (f'{review["verified_names"]} of {total} function names checked; '
-                   f'code extracted for {decomp["complete"]} of {total} functions. '
-                   'Both panels show every discovered function once in the same order. '
-                   'Each square is one function, with identical cell size and scale. '
-                   'Cached pseudocode does not verify behavior.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="424" viewBox="0 0 1120 424" role="img" aria-labelledby="status-title status-desc">',
-           '<title id="status-title">Dreams name review and code extraction</title>',
+    areas = research_area_rows(rows)
+    mapped = sum(len(area_rows) for _, _, _, area_rows in areas)
+    unassigned = total - mapped
+    description = (f'{review["verified_names"]} of {total} function names checked. '
+                   f'{mapped} verified names have explicit research-area assignments; {unassigned} functions do not. '
+                   'These research areas are not proven module boundaries. '
+                   'Green tiles show checked names only. Area totals are unknown. '
+                   'The gray outline grid is an unmeasured background, not a function count. '
+                   'Region sizes are layout choices, not code size or complexity.')
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img" aria-labelledby="status-title status-desc">',
+           '<title id="status-title">Dreams research areas and checked function names</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
+           '<defs><pattern id="unmapped-grid" width="7" height="7" patternUnits="userSpaceOnUse">'
+           '<rect width="7" height="7" fill="#0d1117"/>'
+           '<rect x="0.5" y="0.5" width="6" height="6" fill="none" stroke="#414b57" stroke-width="0.7"/>'
+           '</pattern></defs>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1120, 424, "background"),
-           '<g data-panel="review">',
-           text(4, 21, f'Names checked: {review["verified_names"]:,} / {total:,} ({100 * review["verified_names"] / total:.2f}%)', 17),
-           text(4, 43, 'Names checked, unclear cases and code still to review', 12, "muted"),
-           rect(0, 54, 550, 310, "panel", stroke="border"),
-           function_tiles(rows, (1, 55, 548, 308), "review"),
-           legend(4, 386, "green", f'{review["verified_names"]:,} checked'),
-           legend(184, 386, "amber", f'{review["deferred"]:,} still unclear'),
-           legend(354, 386, "gray", f'{review["unreviewed"]:,} unreviewed'),
-           '</g>',
-           '<g data-panel="extraction">',
-           text(574, 21, f'Code extracted: {decomp["complete"]:,} / {total:,} ({100 * decomp["complete"] / total:.2f}%)', 17),
-           text(574, 43, 'Computer-generated code ready to study', 12, "muted"),
-           rect(570, 54, 550, 310, "panel", stroke="border"),
-           function_tiles(rows, (571, 55, 548, 308), "extraction"),
-           legend(574, 386, "blue", f'{decomp["complete"]:,} extracted'),
-           legend(754, 386, "amber", f'{attention:,} need attention'),
-           legend(954, 386, "gray", f'{other:,} unfinished'),
-           '</g>',
-           text(4, 411, 'Each square = one function. Both panels use the same order and scale.', 13, "muted"),
-           '</g></svg>']
+           rect(0, 0, 1000, 310, "background")]
+    area_by_id = {area[0]: area for area in areas}
+    systems = [(area_id, area_by_id[area_id][1], weight, area_by_id[area_id][3])
+               for area_id, weight in SYSTEM_LAYOUT]
+    system_count = sum(len(entry[3]) for entry in systems)
+    out.extend(['<g data-panel="systems">',
+                text(4, 21, f'Dreams systems · {system_count} names checked', 16)])
+    for (area_id, title, _, selected), bounds in packed_regions(systems, (0, 30, 495, 280)):
+        out.append(f'<g data-area="{area_id}"><title>{escape(title)}: {len(selected)} checked names; total unknown.</title>')
+        out.extend(region_frame(bounds))
+        out.extend(region_label(title, bounds, len(selected)))
+        out.extend(checked_tiles(selected, bounds))
+        out.append('</g>')
+    gadget_rows = area_by_id['gadgets-logic'][3]
+    gadget_by_address = {row['address']: row for row in gadget_rows}
+    out.extend(['</g><g data-panel="gadgets">',
+                text(509, 21, f'Gadgets & logic · {len(gadget_rows)} names checked', 16),
+                '<g data-area="gadgets-logic">'])
+    out.extend(region_frame((505, 30, 495, 280)))
+    assigned = set()
+    out.extend(gadget_regions(GADGET_LAYOUT, (505, 30, 495, 280), gadget_by_address, assigned))
+    if assigned != set(gadget_by_address):
+        raise ValueError("Every reviewed gadget assignment must appear exactly once")
+    out.extend(['</g></g></g></svg>'])
     return "\n".join(out) + "\n"
 
 
 def render_badges(status):
     total = status["inventory_total"]
     metrics = status["metrics"]
-    decomp = metrics["decompilation"]
     badges = [
         ("names checked", f"{100 * metrics['review']['verified_names'] / total:.2f}%", "green"),
-        ("code extracted", f"{100 * decomp['complete'] / total:.2f}%", "blue"),
     ]
     widths = [(round(len(label) * 6.5 + 20), round(len(value) * 6.5 + 20)) for label, value, _ in badges]
     width = sum(left + right for left, right in widths) + 10 * (len(badges)-1)
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="26" viewBox="0 0 {width} 26" role="img" aria-labelledby="badges-title badges-desc">',
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="20" viewBox="0 0 {width} 20" role="img" aria-labelledby="badges-title badges-desc">',
            '<title id="badges-title">Dreams analysis status badges</title>',
-           '<desc id="badges-desc">Counts cover discovered functions. Generated pseudocode still needs review; verified names do not imply complete behavioral understanding. Analysis is in progress.</desc>',
+           '<desc id="badges-desc">Share of discovered function names checked. Analysis is in progress.</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11">']
     x = 0
     for (label, value, color), (left, right) in zip(badges, widths):
-        out.extend([rect(x, 1, left+right, 24, "panel", 4, "border"),
-                    rect(x+left, 1, right, 24, color, 4), rect(x+left, 1, 4, 24, color),
-                    text(x+left/2, 17, label, 11, "muted", 550, ' text-anchor="middle"'),
-                    text(x+left+right/2, 17, value, 11, "background", 700, ' text-anchor="middle"')])
+        out.extend([rect(x, 0, left, 20, "#555"),
+                    rect(x+left, 0, right, 20, color),
+                    text(x+left/2, 14, label, 11, "text", 500, ' text-anchor="middle"'),
+                    text(x+left+right/2, 14, value, 11, "background", 700, ' text-anchor="middle"')])
         x += left+right+10
     out.append('</g></svg>')
     return "\n".join(out) + "\n"

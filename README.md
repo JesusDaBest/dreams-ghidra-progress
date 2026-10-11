@@ -11,17 +11,17 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/099e6c8121efc8a61616c0e4dbe2cd6bd98af5fd/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=a7a248b0fd3a)
 
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 
-![Dreams progress: function names checked and code extraction](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/099e6c8121efc8a61616c0e4dbe2cd6bd98af5fd/assets/status.svg)
+![Dreams research by game system](assets/status.svg?v=a30bf222c397)
 
-**Left:** green means a function's name has been checked; amber means its role is still unclear. **Right:** blue means computer-generated code is available to study; amber means extraction needs work. Gray means that step is unfinished.
+**Green square = one checked function name. Gray grid = unmapped research space.** All gadget families stay together in the right-hand map. Checked names currently describe properties and registration; no whole gadget or system is marked finished.
 
-Both maps show all 9,551 discovered functions in the same order and at the same scale. Each square is one function. System boundaries are still being investigated, so these maps do not estimate the size, complexity, or completion of individual game systems.
+**9,524 functions still need an area assignment.** System totals are unknown, so the maps show checked counts, not completion percentages. Section sizes are layout choices; gray squares do not stand for a measured number of remaining functions.
 
-Code extraction produces computer-generated code to study. It does not mean that code has been understood or rebuilt.
+<sub>Automatic extraction has produced code for 9,508 functions in the previous analysis snapshot; 43 still need fixes. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
 
 ## What we know so far
 
