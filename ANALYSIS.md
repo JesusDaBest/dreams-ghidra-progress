@@ -13,7 +13,7 @@ This is the written account behind the status map. The [research data](analysis/
 | Additional naming proposals | 3 ReporterTelemetry names; reviewed but not applied |
 | System mapping | 1,540 functions associated with nine systems; 8,011 still unclassified |
 | Saved signature corrections | Six field-registration helpers; native reopen checks passed |
-| Newer v2 snapshot | Verified copy with the six corrections and all 27 names; extraction has not started |
+| Newer v2 snapshot | Verified copy with the six corrections and all 27 names; separate extraction is in progress |
 
 These are separate stages. Extracting pseudocode gives us code to inspect. Mapping establishes its association with a part of Dreams. Checking a descriptive name requires evidence for that function's particular role. The status map tracks the applied naming reviews within the mapped inventory.
 
@@ -38,9 +38,11 @@ Later work corrected the inputs of these six explicit field-registration helpers
 
 Native instructions and callers establish a registry in RDI, a property key in RSI, and the object's field byte offset in EDX. The saved corrections recover the missing input while preserving the existing offset's meaningful name, width, and EDX storage. Return types were preserved; return contracts still need separate review.
 
-The promotion was tested on a copy, saved to the working project, and checked after reopening through the native Ghidra API. Metadata and selected decompilations matched the recorded post-change state, and all 27 checked names were preserved. The separate live MCP reopen-verification step has no completed verification record and remains pending. The other 39 explicit signatures remain deferred.
+The promotion was tested on a copy, saved to the working project, and checked after reopening through the native Ghidra API. Metadata and selected decompilations matched the recorded post-change state, and all 27 checked names were preserved. The live MCP readback now confirms all six corrected signatures, four caller signatures, body sizes, conventions, and all 27 applied names. All ten MCP decompilations match native Ghidra using the same default options. The other 39 explicit signatures remain deferred.
 
-The newer verified snapshot contains these changes. It has no new extraction cache yet. The 9,508 cached outputs and the system map still refer to the coherent older v1 snapshot, rather than mixing results from the two versions.
+The newer verified snapshot contains these changes. Its separate v2 cache is now being extracted in resumable, read-only batches. The first completed batch recorded 2,994 complete outputs, 14 failures, and 6,543 pending functions; later batches are continuing. The 9,508 cached outputs and the system map still refer to the coherent older v1 snapshot, rather than mixing results from the two versions.
+
+The MCP server uses a default DecompInterface, whereas native cache extraction loads the saved program's decompiler options. Seven of ten sampled outputs differed between these configurations, including whether constant data was folded into literal values. All ten outputs matched exactly when native Ghidra used the MCP defaults. This is an options comparison, not evidence of a program change or additional semantic-review progress. Original archive, imported-copy, and SELF-reference hashes were rechecked unchanged.
 
 Global Windows data organization has not been replaced. SIMD arguments, indirect callbacks, return contracts, native type sizes, and complete layouts still need checking against instructions.
 
@@ -104,6 +106,6 @@ An earlier mechanical quality scan inspected 9,482 outputs while extraction was 
 
 ## Remaining work
 
-The main open work is to extract a coherent cache from the newer signature-corrected snapshot, finish the pending MCP verification, resolve the recorded extraction failures, extend the code-to-system map, and review the functions within those systems. Proposed names must be applied and checked after reopening before they receive applied-name credit. Full signatures, layouts, and algorithms need their own evidence.
+The main open work is to finish the coherent cache from the newer signature-corrected snapshot, resolve the recorded extraction failures, extend the code-to-system map, and review the functions within those systems. Proposed names must be applied and checked after reopening before they receive applied-name credit. Full signatures, layouts, and algorithms need their own evidence.
 
 The public files contain findings and structural evidence. Raw pseudocode, binary inputs, Ghidra projects, and unfiltered local reports are retained separately. That separation does not reduce the extraction counts or mean the locally saved work was undone.
