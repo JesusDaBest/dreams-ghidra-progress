@@ -5,7 +5,7 @@
 
 Working out how Dreams works, one piece of code at a time
 
-[Progress log](PROGRESS.md) · [Mapping evidence](MAPPING.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
+[Progress log](PROGRESS.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
 
 </div>
 
@@ -17,33 +17,30 @@ Working out how Dreams works, one piece of code at a time
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](assets/status.svg?v=6a4dcf97d9b0)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/97d363d9e0093f7a0b7044626006066e7bc96e87/assets/status.svg)
 
-**Each cell is one function mapped to that part of Dreams.** Green means its name has been checked; amber means reviewed but unresolved; gray means not reviewed. Section sizes come from actual mapped function counts. More complex systems may still have fewer mapped functions while their code is being identified.
+**Each cell represents one discovered function.** Green means its name has been checked; amber means reviewed but unresolved; gray means not reviewed. Every section's area comes from the number of functions assigned to it. Functions without an established system belong to **Unassigned**.
 
 <!-- area-status:start -->
-| Part of Dreams | Functions mapped | Names checked |
-| --- | ---: | ---: |
-| Sculpting & painting | 117 | 0 / 117 (0.0%) |
-| Gadgets & logic | 450 | 22 / 450 (4.9%) |
-| Physics & collision | 60 | 0 / 60 (0.0%) |
-| Sound & music | 62 | 0 / 62 (0.0%) |
-| Animation & puppets | 47 | 0 / 47 (0.0%) |
-| Rendering & lighting | 275 | 0 / 275 (0.0%) |
-| Editor & interface | 313 | 0 / 313 (0.0%) |
-| Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 113 | 5 / 113 (4.4%) |
+| Part of Dreams | Functions assigned so far | Names checked | System completion |
+| --- | ---: | ---: | --- |
+| Sculpting & creation | 0 | 0 | Unknown |
+| Gadgets & logic | 22 | 22 | Unknown |
+| Rendering & lighting | 0 | 0 | Unknown |
+| Physics & movement | 0 | 0 | Unknown |
+| Sound & music | 0 | 0 | Unknown |
+| Puppets & animation | 0 | 0 | Unknown |
+| Interface & controls | 0 | 0 | Unknown |
+| Shared object data | 5 | 5 | Unknown |
 
-**1,540 of 9,551 discovered functions are mapped; 8,011 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**9,524 of 9,551 functions have no verified system assignment yet.** A zero above means none assigned so far; the system's actual function count is unknown.
 <!-- area-status:end -->
 
 <sub>Automatic extraction has produced code for 9,508 functions in the previous analysis snapshot; 43 still need fixes. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
 
 ## What we know so far
 
-The map connects code to sculpting and painting, gadgets, physics, audio, animation, rendering, the editor, the Dreamiverse, and shared engine data. Assignments come from references in the machine code, registered types, and the game's object-type dispatcher. Every assignment has an address and supporting evidence in the [system map](analysis/system-map.json).
-
-So far, checked names cover gadget property readers and registrations plus shared object helpers. Mapping a function to a system is a separate step from understanding its behavior and checking its name. See [how the mapping is established](MAPPING.md).
+We have identified routines that describe and read properties for calculator, splitter, combiner and signal gadgets, doorways, camera shake, controller rumble, fog, placement guides, and shared object data. The code that drives these systems is still being investigated.
 
 ## Latest progress
 
@@ -51,7 +48,7 @@ So far, checked names cover gadget property readers and registrations plus share
 - **9,508 functions have computer-generated code ready to study.** Generating that code is preparation; it does not mean we understand it yet.
 - **43 functions need extraction fixes.** Every one of the 9,551 functions found so far received an attempt.
 
-Next: extend the system mapping and review the functions within each section. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
+Next: study related functions together, identify their roles, and investigate the extraction failures. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
 
 ## Repository scope
 
