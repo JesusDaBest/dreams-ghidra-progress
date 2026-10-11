@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "52 previously unnamed functions reviewed; 48 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "53 previously unnamed functions reviewed; 49 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9347,
-    "other_names": 204,
+    "default_fun_names": 9346,
+    "other_names": 205,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -942,6 +942,26 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "Static behavior only; gameplay execution has not been observed.",
         "Context double at +0x27aec0, global mode gates, earlier-object snapshot semantics, and external player numbering remain unresolved.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "1409af070",
+      "original_name": "FUN_1409af070",
+      "applied_name": "SortU64I16Entries",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "All cached C and all 877 recognized assembly instructions inspected. Direct-branch targets and fallthrough audited: all 26 gaps follow unconditional jumps, unlike the independently discovered caller decoding defect.",
+        "Sorts 16-byte records lexicographically by unsigned 64-bit key and signed 16-bit tie-break at offset8; assembly distinguishes JC/JA key tests from JL/JG word tests. Only these ten payload bytes are moved.",
+        "Large ranges partition around selected pivots and recurse on the smaller side with budget reduced to (budget>>2)+(budget>>1). Exhaustion uses heap sort; small ranges use insertion sort.",
+        "Only external direct caller builds VariableGadget lookup records from confirmed type0x58 objects; the helper itself performs no object-type-dependent work."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive generic helper name; original library or symbol provenance is unproven.",
+        "The gadget key at offset0xe0 and full enclosing lifecycle remain unresolved.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
       ]
     }
