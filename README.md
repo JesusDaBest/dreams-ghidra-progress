@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](assets/status-badges.svg?v=6ade5d09bdb5)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/969001e253ea4d4752665d630c8ef9863c1097cf/assets/status-badges.svg)
 
 <!-- status-summary:start -->
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams code extraction and name checking by system](assets/status.svg?v=91f0395de753)
+![Dreams code extraction and name checking by system](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/969001e253ea4d4752665d630c8ef9863c1097cf/assets/status.svg)
 
 **Left: code extracted. Right: names checked.** Both maps show the same functions grouped by the part of Dreams they support. Blue means computer-generated code is available to study; green means a descriptive name has been checked. Amber needs follow-up; gray means that step is unfinished.
 
