@@ -17,7 +17,7 @@ Working out how Dreams works, one piece of code at a time
 
 **Green means we have identified what a function does, given it a descriptive name, and checked that the saved name is correct.** Amber means we have reviewed it but still have questions. Gray means it has not been reviewed. A function is one piece of the game's code.
 
-The square-based display takes inspiration from [AnyPS5's progress map](https://github.com/boykopovar/AnyPS5/blob/main/tools/progress.py). Our figures measure work on the functions found so far—not how much of the entire game has been rebuilt.
+These figures track our work on the functions found so far. They do not measure how much of the entire game has been rebuilt.
 
 ## What we know so far
 
