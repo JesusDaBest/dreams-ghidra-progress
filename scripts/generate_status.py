@@ -17,6 +17,7 @@ import json
 import math
 from pathlib import Path
 import re
+import subprocess
 
 
 SCHEMA_VERSION = 1
@@ -407,6 +408,27 @@ def write_atomic(path, content):
     temporary.replace(path)
 
 
+def asset_link(repo, name, asset, readme, revision=None):
+    """Pin committed images to immutable URLs; branch-based raw images can lag."""
+    raw_base = 'https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/'
+    requested = revision is not None
+    if revision is not None and not re.fullmatch(r'[0-9a-f]{40}', revision):
+        raise ValueError('Asset revision must be a full Git commit ID')
+    if revision is None:
+        match = re.search(re.escape(raw_base) + r'([0-9a-f]{40})/assets/' + re.escape(name), readme)
+        revision = match.group(1) if match else None
+    if revision is not None:
+        committed = subprocess.run(['git', '-C', str(repo), 'show', f'{revision}:assets/{name}'],
+                                   capture_output=True, check=False)
+        if committed.returncode == 0 and committed.stdout.replace(b'\r\n', b'\n') == asset.encode('utf-8'):
+            return f'{raw_base}{revision}/assets/{name}'
+        if requested:
+            raise ValueError(f'Requested revision does not contain the current {name}; commit the generated assets first')
+        # Never retain an immutable link to an older rendering after data changes.
+    version = hashlib.sha256(asset.encode('utf-8')).hexdigest()[:12]
+    return f'assets/{name}?v={version}'
+
+
 def main(argv=None):
     repo = Path(__file__).resolve().parent.parent
     parser = argparse.ArgumentParser(description=__doc__)
@@ -416,6 +438,7 @@ def main(argv=None):
     parser.add_argument("--inventory", type=Path, help="Local inventory: copy addresses and derive allowlisted groups from names; names and all other fields discarded")
     parser.add_argument("--cache-index", type=Path, help="Optional local cache function-index.json; copies only address/status")
     parser.add_argument("--check", action="store_true", help="Validate canonical JSON and SVG without writing")
+    parser.add_argument("--asset-revision", help="Pin README images to a committed revision containing the generated assets")
     args = parser.parse_args(argv)
     status = sanitize(read_json(args.status), args.inventory, args.cache_index)
     # Compact rows keep the public inventory small and reviewable; the header is pretty printed.
@@ -430,9 +453,10 @@ def main(argv=None):
     readme = readme_path.read_text(encoding='utf-8')
     expected_readme = readme
     for name, asset in (('status.svg', svg), ('status-badges.svg', badges_svg)):
-        version = hashlib.sha256(asset.encode('utf-8')).hexdigest()[:12]
-        pattern = r'\]\(assets/' + re.escape(name) + r'(?:\?v=[a-zA-Z0-9_-]+)?\)'
-        expected_readme, count = re.subn(pattern, f'](assets/{name}?v={version})', expected_readme)
+        link = asset_link(repo, name, asset, readme, args.asset_revision)
+        pattern = (r'\]\((?:assets/|https://raw\.githubusercontent\.com/JesusDaBest/dreams-ghidra-progress/[0-9a-f]{40}/assets/)'
+                   + re.escape(name) + r'(?:\?v=[a-zA-Z0-9_-]+)?\)')
+        expected_readme, count = re.subn(pattern, f']({link})', expected_readme)
         if count != 1:
             raise ValueError(f'Expected exactly one README image link for {name}')
     if args.check:

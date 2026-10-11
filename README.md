@@ -11,11 +11,11 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](assets/status-badges.svg?v=fce322abf665)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e8c7643d6b0be52c9cf4d2d8deaf633d83d6fb8a/assets/status-badges.svg)
 
 **12 of 9,551 functions named and checked.** A function is one piece of the game's code.
 
-![Dreams progress: identified functions and work still to review](assets/status.svg?v=50d0b8151bed)
+![Dreams progress: identified functions and work still to review](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e8c7643d6b0be52c9cf4d2d8deaf633d83d6fb8a/assets/status.svg)
 
 **Green:** name checked. **Amber:** reviewed, still unclear. **Gray:** not reviewed yet.
 
