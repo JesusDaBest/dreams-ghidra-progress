@@ -17,11 +17,11 @@ Working out how Dreams works, one piece of code at a time
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2ca052d34043aeb3f53e2deb3099074f878db1e4/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=423942a5c565)
 
-**The packed map groups Dreams systems and their components. Every square has the same size and represents one actual function.** Each system and component has a visible name and a checked/identified count. Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review.
+**The packed map groups Dreams systems and their components. Each equal-size square is one actual function.** Labels and checked/identified counts sit inside the sections. Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review.
 
-Space is reserved for readable labels, so compare square counts rather than box sizes. These counts cover identified code; each system's full size and completion remain unknown. The expandable breakdown below lists every code unit and its progress.
+Subdivisions with fewer than six mapped functions are combined as **Other within their own system** to keep the map compact. The expandable breakdown below retains every individual name and count. Root allocation follows mapped counts with a small heading allowance and whole-square rounding. No blank space counts as progress, and each system's full size and completion remain unknown.
 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |
