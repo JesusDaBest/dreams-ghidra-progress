@@ -17,11 +17,11 @@ Working out how Dreams works, one piece of code at a time
 **62 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/fda3a0d9845986de80aa93b7b984b20dbf9976d0/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=9af4882628ca)
 
 **Inside each section, counts mean checked names / identified functions.** Green marks reviewed behavior or helpers; blue marks reviewed properties or type definitions. The table below separates these kinds of review. Neither establishes that an entire game feature is understood or complete.
 
-Every square is one actual function and has the same size. Main headings sit at the start of their sections, with nested parts labeled inside. The expandable breakdown retains smaller components whose labels cannot fit at readable size.
+Every square is one actual function and has the same size. Major systems occupy separate packed blocks, with labeled subdivisions and their checked/identified counts inside. A short final row is unused space, not additional functions. The expandable breakdown retains smaller components whose labels cannot fit at readable size.
 
 **Full system sizes and completion remain unknown.** Section areas measure mapped code, so a smaller sculpting section does not imply a smaller or simpler system. Most discovered functions still need mapping. Property/type review and extracted pseudocode do not establish that a gadget's behavior is understood.
 

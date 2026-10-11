@@ -301,7 +301,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     """Partition a single square lattice: no stretched cells or empty slots."""
     x0,y0,width,height=bounds
     count=sum(len(n['rows']) for n in nodes)
-    columns=64
+    columns=54
     # Preserve equal squares for arbitrary evidence-backed inventory sizes.
     # A partial final row contains no fake functions or completion padding.
     grid_rows=math.ceil(count/columns)
@@ -309,9 +309,8 @@ def render_hierarchy(nodes, bounds, depth=0):
     cells={(i%columns,i//columns) for i in range(count)}
     regions=[];out=[]
     def divide(items,positions):
-        # Split contiguous lattice strips recursively. Each split keeps sibling
-        # systems together rather than interleaving cells across a squarified
-        # strip whose quantized edges no longer match its child rectangles.
+        # Keep child inventories in contiguous horizontal strips so each part
+        # has room for a readable name and count.
         if len(items)==1:return [(items[0],positions)]
         width=max(x for x,y in positions)-min(x for x,y in positions)+1
         height=max(y for x,y in positions)-min(y for x,y in positions)+1
@@ -320,17 +319,34 @@ def render_hierarchy(nodes, bounds, depth=0):
             running+=len(items[cut-1]['rows'])
             choices.append((abs(total-2*running),cut,running))
         _,cut,amount=min(choices)
-        vertical=width>=height
-        # Prefer a wide, shallow section to a narrow column that cannot fit
-        # even a single word of its system heading at readable size.
-        if vertical and width>=7 and min(amount,total-amount)/height<7:
-            vertical=False
+        vertical=False
         ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
         first=set(ordered[:amount]);second=positions-first
         return divide(items[:cut],first)+divide(items[cut:],second)
     def draw(items,positions,level):
         items=sorted((n for n in items if n['rows']),key=lambda n:(-len(n['rows']),n['id']))
-        for node,owned in divide(items,positions):
+        if level==0:
+            # Keep major systems in compact, separate rectangles. Round only
+            # the final row; unused slots are never drawn as functions.
+            import itertools
+            span=columns//3
+            sizes=[math.ceil(len(node['rows'])/span) for node in items]
+            candidates=[]
+            for allocation in itertools.product(range(3),repeat=len(items)-1):
+                allocation=(0,)+allocation
+                totals=[sum(size for size,col in zip(sizes,allocation) if col==c) for c in range(3)]
+                candidates.append(((max(totals),max(totals)-min(totals),allocation),allocation))
+            allocation=min(candidates)[1]
+            stacks=[[],[],[]]; heights=[0,0,0]
+            for node,col in zip(items,allocation):
+                start=heights[col]
+                owned={(col*span+i%span,start+i//span) for i in range(len(node['rows']))}
+                stacks[col].append((node,owned))
+                heights[col]+=math.ceil(len(owned)/span)
+            partitions=[pair for stack in stacks for pair in stack]
+        else:
+            partitions=divide(items,positions)
+        for node,owned in partitions:
             regions.append((node,owned,level))
             attr=f'data-area="{node["id"]}"' if level==0 else f'data-component="{"/".join(node["path"])}"'
             out.append(f'<g {attr} data-depth="{level}" data-count="{len(owned)}"><title>{escape(node["label"])}</title>')
@@ -360,7 +376,7 @@ def render_hierarchy(nodes, bounds, depth=0):
         borders.append((node['path'],f'<path data-region-border="true" d="{" ".join(edges)}" fill="none" stroke="#0d1117" stroke-width="{3 if level==0 else 1.8}"/>'))
     labels=[];labeled=set();occupied=[]
     def overlaps(a,b):
-        return a[0]<b[0]+b[2]+2 and a[0]+a[2]+2>b[0] and a[1]<b[1]+b[3]+2 and a[1]+a[3]+2>b[1]
+        return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
     for node,owned,level in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path'])):
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<5:continue
@@ -369,28 +385,19 @@ def render_hierarchy(nodes, bounds, depth=0):
         placed=None;root_placements=[]
         # Major headings belong at the start of their own section. Children
         # find room below them rather than displacing the parent into the middle.
-        protected=[]
-        for child,child_cells,child_level in ([] if level==0 else regions):
-            if child_level==level+1 and child['path'][:len(node['path'])]==node['path'] and len(child_cells)>=10:
-                cx,cy=min(child_cells,key=lambda p:(p[1],p[0]))
-                protected.append((x0+cx*side+3,y0+cy*side+3,150,100))
         for wrap in range(32,8,-1):
             lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
-            behavior=sum(r.get('reviewed_scope')=='behavior_or_helper' for r in node['rows'])
-            properties=sum(r.get('reviewed_scope')=='properties_or_type_registration' for r in node['rows'])
-            runtime_total=sum(r.get('code_role')=='runtime-implementation' for r in node['rows'])
-            property_total=sum(r.get('code_role')=='properties-types' for r in node['rows'])
-            values=lines+[f'{checked}/{len(owned)}']
-            sizes=[size]*len(lines)+[12]
+            lines=textwrap.wrap(f"{node['label']}  {checked}/{len(owned)}",width=wrap,break_long_words=False)
+            values=lines; sizes=[size]*len(lines)
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
-            bh=sum(fs+3 for fs in sizes)+4
+            bh=sum(fs+2 for fs in sizes)
             candidates=[]
             for gx,gy in sorted(owned,key=lambda p:(p[1],p[0])):
-                tx=x0+gx*side+3;ty=y0+gy*side+3
+                tx=x0+gx*side+2;ty=y0+gy*side+1
                 box=(tx,ty,bw,bh)
                 covered={(cx,cy) for cy in range(gy,math.ceil((ty+bh-y0)/side)) for cx in range(gx,math.ceil((tx+bw-x0)/side))}
                 if covered<=owned and not any(overlaps(box,b) for b in occupied):
-                    candidates.append((sum(overlaps(box,b) for b in protected),box))
+                    candidates.append((0,box))
             if candidates:
                 _,box=min(candidates,key=lambda item:item[0])
                 placed=(box,values,sizes)
@@ -401,11 +408,12 @@ def render_hierarchy(nodes, bounds, depth=0):
         if placed is None:continue
         (tx,ty,bw,bh),values,sizes=placed;occupied.append((tx,ty,bw,bh));labeled.add(node['path'])
         labels.append(f'<g data-label="{"/".join(node["path"])}" data-label-box="{tx:.6f},{ty:.6f},{bw:.6f},{bh:.6f}">')
+        labels.append(rect(tx-2,ty-1,bw+2,bh,"#0d1117"))
         baseline=ty
         for label,size in zip(values,sizes):
             baseline+=size
             labels.append(text(round(tx,3),round(baseline,3),label,size,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
-            baseline+=3
+            baseline+=2
         labels.append('</g>')
     out.extend(border for path,border in borders if path in labeled)
     out.extend(labels)
@@ -467,21 +475,21 @@ def render(status, applied, mapping):
                    'Every cell is a real function. Every section is filled using the same fixed square lattice and mapped-count area scale. Labels overlay cells; there are no reserved header bands. '
                    'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="484" viewBox="0 0 1000 484" role="img" aria-labelledby="status-title status-desc">',
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="675" viewBox="0 0 1000 675" role="img" aria-labelledby="status-title status-desc">',
            '<title id="status-title">Dreams function review by game system</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 484, "background"),
+           rect(0, 0, 1000, 675, "background"),
            text(4, 21, f'Dreams code review | {mapped:,} mapped functions', 16),
            text(996, 21, 'Section counts = checked names / identified functions', 12, 'muted', extra=' text-anchor="end"'),
            '<g data-panel="review">']
-    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,391)))
+    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,600)))
     out.extend(['</g>',
-                legend(4, 450, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
-                legend(250, 450, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
-                legend(520, 450, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
-                legend(700, 450, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
-    out.append(text(4, 476, f'{unassigned:,} functions still unmapped. Names checked includes properties/types; this is not whole-system completion.', 12, 'muted'))
+                legend(4, 640, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
+                legend(250, 640, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
+                legend(520, 640, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
+                legend(700, 640, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
+    out.append(text(4, 665, f'{unassigned:,} functions still unmapped. Names checked includes properties/types; this is not whole-system completion.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
