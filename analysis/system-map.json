@@ -40686,26 +40686,35 @@
         "teleporter",
         "runtime-implementation"
       ],
-      "component_basis": "direct_object_type_guard",
+      "component_basis": "complete_body_type_guard_and_compiled_property_offset_assignment",
       "code_role": "runtime-implementation",
-      "code_role_basis": "complete_body_and_native_type_evidence",
+      "code_role_basis": "reviewed_teleporter_transform_payload_submission",
       "evidence": [
         {
-          "kind": "native_object_type_enum",
+          "kind": "native_type_guard",
           "tag": 31,
-          "type_name": "Teleporter",
-          "enum_site": "140c8bc2c",
-          "literal": "14171fe2e"
+          "guard": "1408f21f6"
         },
         {
-          "kind": "direct_object_type_guard",
-          "descriptor": "1458a7770",
-          "type_name": "Teleporter"
+          "kind": "compiled_command_field_assignment",
+          "command": "10a",
+          "type_tag": 31,
+          "table_base": "149f39f90",
+          "type_stride": "b02",
+          "slot": "149f4f6e2",
+          "store_site": "140a83034",
+          "offset": "f0",
+          "field_label": "PosOffset",
+          "registrar": "140d78870",
+          "registrar_site": "140d78948"
         },
         {
-          "kind": "direct_type_guard",
-          "site": "1408f21f6",
-          "unresolved": "Property write helper and mapping semantics still under review; no descriptive name applied."
+          "kind": "complete_native_body_and_submission_call",
+          "reviewed_instructions": 121,
+          "body_bytes": 513,
+          "call_site": "1408f235e",
+          "target": "140b325f0",
+          "payload_bytes": 32
         }
       ],
       "code_sha256": "080cc02d9238c80d3286da9d0606a2dcc83028936a583b0d289a4f0d9d8acb19",

@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a7c2dc1aafb982eea2754074d8f4247acf7e7078/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=5cda29353a52)
 
 <!-- status-summary:start -->
-**62 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**63 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a7c2dc1aafb982eea2754074d8f4247acf7e7078/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=4e9f6dee8faa)
 
 **Inside each section, counts mean checked names / identified functions.** Green marks reviewed behavior or helpers; blue marks reviewed properties or type definitions. The table below separates these kinds of review. Neither establishes that an entire game feature is understood or complete.
 
@@ -29,7 +29,7 @@ Every square is one actual function and has the same size. Major systems occupy 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 117 | 0/78 | 0/39 |
-| Gadgets & logic | 462 | 3/7 | 38/454 |
+| Gadgets & logic | 462 | 4/7 | 38/454 |
 | Physics & collision | 60 | 0/28 | 0/32 |
 | Sound & music | 62 | None mapped | 0/62 |
 | Animation & puppets | 46 | None mapped | 0/46 |
@@ -43,7 +43,7 @@ Every square is one actual function and has the same size. Major systems occupy 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 462 functions identified; 3 behavior/helper reviews; 38 property/type reviews
+- **Gadgets & logic** - 462 functions identified; 4 behavior/helper reviews; 38 property/type reviews
   - **Online & multiplayer gadgets** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Magic Door Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -238,10 +238,10 @@ Every square is one actual function and has the same size. Major systems occupy 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Movement & possession** - 70 functions identified; 1 behavior/helper reviews; 2 property/type reviews
-    - **Teleporter** - 5 functions identified; 1 behavior/helper reviews; 2 property/type reviews
+  - **Movement & possession** - 70 functions identified; 2 behavior/helper reviews; 2 property/type reviews
+    - **Teleporter** - 5 functions identified; 2 behavior/helper reviews; 2 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Controlinator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Follow Imp Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews

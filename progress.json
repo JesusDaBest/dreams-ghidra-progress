@@ -3,20 +3,20 @@
   "snapshot_date": "2026-10-11",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 56,
-    "todo": 1504,
+    "done": 57,
+    "todo": 1503,
     "total": 1560,
-    "behavior_or_helpers_reviewed": 13,
+    "behavior_or_helpers_reviewed": 14,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 41,
-        "todo": 421,
+        "done": 42,
+        "todo": 420,
         "total": 462,
-        "behavior_or_helpers_reviewed": 3,
+        "behavior_or_helpers_reviewed": 4,
         "properties_or_types_reviewed": 38,
         "runtime_functions_identified": 7,
         "property_type_functions_identified": 454,
@@ -39,6 +39,7 @@
           "VisitVariableGadgetProperties",
           "UpdateVariableGadgetValues",
           "ComputeTeleporterTransformWithOffset",
+          "SubmitTeleporterPositionOffsetCommand",
           "InitializeVariableGadgetDefaults",
           "RegisterTeleporterTypeDescriptor",
           "RegisterCombinerTypeDescriptor",
@@ -163,7 +164,6 @@
           "0x140502070",
           "0x14050a300",
           "0x14073de90",
-          "0x1408f2180",
           "0x140c8d950",
           "0x140c8da00",
           "0x140c8da40",
@@ -505,6 +505,7 @@
           "1404e33a0",
           "1408e4bb0",
           "1408f1dc0",
+          "1408f2180",
           "140944f20",
           "140d55830",
           "140d57980",
@@ -629,7 +630,6 @@
           "140502070",
           "14050a300",
           "14073de90",
-          "1408f2180",
           "140c8d950",
           "140c8da00",
           "140c8da40",
@@ -6659,10 +6659,10 @@
           {
             "name": "gadgets-logic/motion",
             "label": "Movement & possession",
-            "done": 3,
-            "todo": 67,
+            "done": 4,
+            "todo": 66,
             "total": 70,
-            "behavior_or_helpers_reviewed": 1,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 2,
             "runtime_functions_identified": 2,
             "property_type_functions_identified": 68,
@@ -6670,6 +6670,7 @@
             "whole_feature_completion": null,
             "done_names": [
               "ComputeTeleporterTransformWithOffset",
+              "SubmitTeleporterPositionOffsetCommand",
               "RegisterTeleporterTypeDescriptor",
               "RegisterTeleporterFieldOffsets"
             ],
@@ -6690,7 +6691,6 @@
               "0x1404e73e0",
               "0x1404efa20",
               "0x140502070",
-              "0x1408f2180",
               "0x140c9d2f0",
               "0x140c9d3a0",
               "0x140c9d400",
@@ -6744,6 +6744,7 @@
             ],
             "done_addresses": [
               "1408f1dc0",
+              "1408f2180",
               "140d55830",
               "140d78870"
             ],
@@ -6764,7 +6765,6 @@
               "1404e73e0",
               "1404efa20",
               "140502070",
-              "1408f2180",
               "140c9d2f0",
               "140c9d3a0",
               "140c9d400",
@@ -6821,10 +6821,10 @@
               {
                 "name": "gadgets-logic/motion/teleporter",
                 "label": "Teleporter",
-                "done": 3,
-                "todo": 2,
+                "done": 4,
+                "todo": 1,
                 "total": 5,
-                "behavior_or_helpers_reviewed": 1,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 2,
                 "runtime_functions_identified": 2,
                 "property_type_functions_identified": 3,
@@ -6832,21 +6832,21 @@
                 "whole_feature_completion": null,
                 "done_names": [
                   "ComputeTeleporterTransformWithOffset",
+                  "SubmitTeleporterPositionOffsetCommand",
                   "RegisterTeleporterTypeDescriptor",
                   "RegisterTeleporterFieldOffsets"
                 ],
                 "todo_names": [
-                  "0x1404bbc50",
-                  "0x1408f2180"
+                  "0x1404bbc50"
                 ],
                 "done_addresses": [
                   "1408f1dc0",
+                  "1408f2180",
                   "140d55830",
                   "140d78870"
                 ],
                 "todo_addresses": [
-                  "1404bbc50",
-                  "1408f2180"
+                  "1404bbc50"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
@@ -6882,27 +6882,25 @@
                   {
                     "name": "gadgets-logic/motion/teleporter/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 1,
+                    "done": 2,
+                    "todo": 0,
                     "total": 2,
-                    "behavior_or_helpers_reviewed": 1,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
                     "runtime_functions_identified": 2,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
-                      "ComputeTeleporterTransformWithOffset"
+                      "ComputeTeleporterTransformWithOffset",
+                      "SubmitTeleporterPositionOffsetCommand"
                     ],
-                    "todo_names": [
-                      "0x1408f2180"
-                    ],
+                    "todo_names": [],
                     "done_addresses": [
-                      "1408f1dc0"
-                    ],
-                    "todo_addresses": [
+                      "1408f1dc0",
                       "1408f2180"
                     ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

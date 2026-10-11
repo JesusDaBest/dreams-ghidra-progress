@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "66 previously unnamed functions reviewed; 62 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "67 previously unnamed functions reviewed; 63 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9333,
-    "other_names": 218,
+    "default_fun_names": 9332,
+    "other_names": 219,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1292,6 +1292,27 @@
         "Static analysis, no runtime validation.",
         "Generic shared helper; does not prove Teleporter command10a is PosOffset or that Teleporter is fully understood.",
         "No signature, datatype, calling convention, byte or boundary changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1408f2180",
+      "original_name": "FUN_1408f2180",
+      "applied_name": "SubmitTeleporterPositionOffsetCommand",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 121-instruction, 513-byte body and all direct branch targets reviewed. A low-seven-bit object tag 1f guard limits submission to Teleporter objects.",
+        "The call at 1408f235e submits command 10a with a 32-byte constructed transform payload. The compiled table initializer at 140a83034 assigns type1f/command10a to f0, which the independently reviewed Teleporter registrar labels PosOffset.",
+        "The mapped-source path reads active-body or cached position, transforms a displacement using the third argument hierarchy index, sets scale1 and identity quaternion; missing-source and zero-xyz sentinel paths are recorded separately."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not a recovered symbol.",
+        "No running-game validation; editing/undo semantics and tiny nonzero sentinel intent remain unresolved.",
+        "Submission is proven; successful field update in every runtime mode is not claimed.",
+        "No types, prototypes, calling conventions, bytes or function boundaries changed."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
