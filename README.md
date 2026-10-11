@@ -17,26 +17,26 @@ Working out how Dreams works, one piece of code at a time
 **56 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0e0717ae303a7192ebe2b1ab5c91c101719353c9/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=5ba62c2803bd)
 
-**Read the two counts inside each section separately:** “Behavior” counts reviewed runtime/helper functions; “Types” counts reviewed property handling or type definitions. For example, Gadgets & logic has **2 behavior/helper reviews and 36 property/type reviews**, not 38 reviewed gadget implementations.
+**Inside each section, counts mean reviewed functions / identified functions.** Runtime covers behavior and helpers; Data covers property handling and type definitions. A dash means no code of that role has been mapped yet. For example, Sculpting & painting has 78 identified runtime functions and none reviewed; Gadgets & logic has 5 identified runtime functions, of which 2 have been reviewed. Neither figure estimates a whole feature's completion.
 
-Each equal square is one identified function. Within each feature, the underlying breakdown separates properties/type definitions from runtime/implementation and code whose role remains unresolved. Green, blue, amber and gray retain their existing meanings in the legend. No extraction result counts as a review.
+Every square is one actual function and has the same size. Main headings sit at the start of their sections, with nested parts labeled inside. The expandable breakdown retains smaller components whose labels cannot fit at readable size.
 
-**The full size and completion of every game system are still unknown.** These are provisional feature associations supported by registered types, embedded source references, or reviewed bodies. Section areas measure the code identified so far, so a smaller sculpting section does not mean sculpting is smaller or simpler. Most discovered functions still need mapping. The expandable breakdown gives every component’s separate review counts.
+**Full system sizes and completion remain unknown.** Section areas measure mapped code, so a smaller sculpting section does not imply a smaller or simpler system. Most discovered functions still need mapping. Property/type review and extracted pseudocode do not establish that a gadget's behavior is understood.
 
 <!-- area-status:start -->
-| Part of Dreams | Functions mapped | Behavior/helpers reviewed | Properties/types reviewed |
+| Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
-| Sculpting & painting | 117 | 0 | 0 |
-| Gadgets & logic | 459 | 2 | 36 |
-| Physics & collision | 60 | 0 | 0 |
-| Sound & music | 62 | 0 | 0 |
-| Animation & puppets | 46 | 0 | 0 |
-| Rendering & lighting | 274 | 0 | 0 |
-| Editor & interface | 313 | 0 | 0 |
-| Dreamiverse & networking | 103 | 0 | 0 |
-| Shared engine & object data | 120 | 7 | 5 |
+| Sculpting & painting | 117 | 0/78 | 0/39 |
+| Gadgets & logic | 459 | 2/5 | 36/453 |
+| Physics & collision | 60 | 0/28 | 0/32 |
+| Sound & music | 62 | None mapped | 0/62 |
+| Animation & puppets | 46 | None mapped | 0/46 |
+| Rendering & lighting | 274 | 0/245 | 0/29 |
+| Editor & interface | 313 | 0/106 | 0/205 |
+| Dreamiverse & networking | 103 | 0/28 | 0/75 |
+| Shared engine & object data | 120 | 7/44 | 5/71 |
 
 **1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 

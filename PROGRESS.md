@@ -222,3 +222,7 @@ Caller assembly confirms inline initialization that the cached pseudocode omitte
 ### Status measurement correction
 
 Separated property/type code from runtime/implementation within the existing feature hierarchy. System ownership and all 1,554 mapped addresses remain unchanged. The graph and component breakdown report behavior/helper reviews separately from property/type reviews; progress data no longer exports checked-name percentages as feature completion. There are 9 mapped behavior/helper reviews and 41 mapped property/type reviews. Full feature completion is unknown. No new functions were named in this correction.
+
+### Graph readability and denominators
+
+Anchored main system headings at section starts and increased the packed lattice height so labels can fit without shrinking text. Labels now show separate reviewed/identified counts for runtime/helpers and properties/types. Missing role mappings are shown as a dash, rather than a zero completion claim. Exported component counts and the README table use the same denominators. Function colors, ownership, evidence and review states are unchanged.

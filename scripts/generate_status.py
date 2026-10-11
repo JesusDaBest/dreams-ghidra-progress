@@ -276,7 +276,7 @@ def hierarchy_rows(rows, mapping):
             path = prefix + (key,)
             paths[path] = node
             children = build(node['children'], path)
-            selected = [by_address[a] for a,item in mapping['assignments'].items()
+            selected = [dict(by_address[a],code_role=item.get('code_role','role-unresolved')) for a,item in mapping['assignments'].items()
                         if tuple(item['component_path'][:len(path)]) == path]
             direct = [by_address[a] for a,item in mapping['assignments'].items()
                       if tuple(item['component_path']) == path]
@@ -301,7 +301,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     """Partition a single square lattice: no stretched cells or empty slots."""
     x0,y0,width,height=bounds
     count=sum(len(n['rows']) for n in nodes)
-    columns=50
+    columns=44
     # Preserve equal squares for arbitrary evidence-backed inventory sizes.
     # A partial final row contains no fake functions or completion padding.
     grid_rows=math.ceil(count/columns)
@@ -389,9 +389,10 @@ def render_hierarchy(nodes, bounds, depth=0):
         checked=sum(r['review']=='verified_name' for r in node['rows'])
         size=14 if level==0 else 12
         placed=None
-        # Keep parent headings away from the preferred corners of child labels.
+        # Major headings belong at the start of their own section. Children
+        # find room below them rather than displacing the parent into the middle.
         protected=[]
-        for child,child_cells,child_level in regions:
+        for child,child_cells,child_level in ([] if level==0 else regions):
             if child_level==level+1 and child['path'][:len(node['path'])]==node['path'] and len(child_cells)>=10:
                 cx,cy=min(child_cells,key=lambda p:(p[1],p[0]))
                 protected.append((x0+cx*side+3,y0+cy*side+3,150,100))
@@ -399,7 +400,10 @@ def render_hierarchy(nodes, bounds, depth=0):
             lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
             behavior=sum(r.get('reviewed_scope')=='behavior_or_helper' for r in node['rows'])
             properties=sum(r.get('reviewed_scope')=='properties_or_type_registration' for r in node['rows'])
-            values=lines+[f'Behavior: {behavior}',f'Types: {properties}']
+            runtime_total=sum(r.get('code_role')=='runtime-implementation' for r in node['rows'])
+            property_total=sum(r.get('code_role')=='properties-types' for r in node['rows'])
+            values=lines+[f'Runtime: {behavior}/{runtime_total}' if runtime_total else 'Runtime: —',
+                          f'Data: {properties}/{property_total}' if property_total else 'Data: —']
             sizes=[size]*len(lines)+[12,12]
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
             bh=sum(fs+3 for fs in sizes)+4
@@ -444,6 +448,9 @@ def progress_data(status, applied, mapping):
                 'done':len(done), 'todo':len(todo), 'total':total,
                 'behavior_or_helpers_reviewed':sum(scopes.get(a)=='behavior_or_helper' for a in done),
                 'properties_or_types_reviewed':sum(scopes.get(a)=='properties_or_type_registration' for a in done),
+                'runtime_functions_identified':sum(r.get('code_role')=='runtime-implementation' for r in node['rows']),
+                'property_type_functions_identified':sum(r.get('code_role')=='properties-types' for r in node['rows']),
+                'code_role_unresolved':sum(r.get('code_role')=='role-unresolved' for r in node['rows']),
                 'whole_feature_completion':None,
                 'done_names':[names[a] for a in done],
                 'todo_names':['0x'+a for a in todo],
@@ -480,21 +487,21 @@ def render(status, applied, mapping):
                    'Every cell is a real function. Every section is filled using the same fixed square lattice and mapped-count area scale. Labels overlay cells; there are no reserved header bands. '
                    'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="714" viewBox="0 0 1000 714" role="img" aria-labelledby="status-title status-desc">',
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="914" viewBox="0 0 1000 914" role="img" aria-labelledby="status-title status-desc">',
            '<title id="status-title">Dreams function review by game system</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 714, "background"),
-           text(4, 21, f'Code mapped to Dreams systems | {mapped:,} functions identified', 16),
-           text(996, 21, 'Behavior review is separate from property/type review', 12, 'muted', extra=' text-anchor="end"'),
+           rect(0, 0, 1000, 914, "background"),
+           text(4, 21, f'Dreams code review | {mapped:,} mapped functions', 16),
+           text(996, 21, 'Runtime = behavior/helpers · Data = properties/types', 12, 'muted', extra=' text-anchor="end"'),
            '<g data-panel="review">']
-    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,620)))
+    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,820)))
     out.extend(['</g>',
-                legend(4, 678, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
-                legend(250, 678, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
-                legend(520, 678, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
-                legend(700, 678, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
-    out.append(text(4, 704, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
+                legend(4, 878, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
+                legend(250, 878, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
+                legend(520, 878, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
+                legend(700, 878, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
+    out.append(text(4, 904, f'Counts = reviewed / identified. — = none mapped. {unassigned:,} functions still unmapped; full system completion unknown.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
@@ -503,14 +510,18 @@ def render_area_table(status, mapping):
     areas = research_area_rows(status['rows'], mapping)
     applied=read_json(Path(__file__).resolve().parent.parent/'analysis/function-review.json')['applied']
     scopes={r['address']:r['reviewed_scope'] for r in applied}
-    lines = ['| Part of Dreams | Functions mapped | Behavior/helpers reviewed | Properties/types reviewed |',
+    lines = ['| Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |',
              '| --- | ---: | ---: | ---: |']
     for area_id, title, _, rows in areas:
         checked = sum(row['review'] == 'verified_name' for row in rows)
         progress = f'{checked:,}' if rows else 'No functions mapped yet'
         behavior=sum(scopes.get(r['address'])=='behavior_or_helper' for r in rows)
         properties=sum(scopes.get(r['address'])=='properties_or_type_registration' for r in rows)
-        lines.append(f'| {title} | {len(rows):,} | {behavior} | {properties} |')
+        runtime_total=sum(mapping['assignments'][r['address']].get('code_role')=='runtime-implementation' for r in rows)
+        property_total=sum(mapping['assignments'][r['address']].get('code_role')=='properties-types' for r in rows)
+        runtime_count=f'{behavior}/{runtime_total}' if runtime_total else 'None mapped'
+        property_count=f'{properties}/{property_total}' if property_total else 'None mapped'
+        lines.append(f'| {title} | {len(rows):,} | {runtime_count} | {property_count} |')
     mapped = sum(len(rows) for _,_,_,rows in areas)
     unassigned = status['inventory_total'] - mapped
     lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
