@@ -309,47 +309,21 @@ def render_hierarchy(nodes, bounds, depth=0):
     cells={(i%columns,i//columns) for i in range(count)}
     regions=[];out=[]
     def divide(items,positions):
-        # Continuous count-based squarified layout, following the linked
-        # tools/progress.py worst-aspect-ratio strip method. Then quantize onto
-        # one fixed lattice because the user's cells must be equal squares.
+        # Split contiguous lattice strips recursively. Each split keeps sibling
+        # systems together rather than interleaving cells across a squarified
+        # strip whose quantized edges no longer match its child rectangles.
         if len(items)==1:return [(items[0],positions)]
-        left=min(x for x,y in positions);top=min(y for x,y in positions)
-        width=max(x for x,y in positions)-left+1
-        height=max(y for x,y in positions)-top+1
-        scale=width*height/sum(len(n['rows']) for n in items)
-        remaining=[len(n['rows'])*scale for n in items]
-        ideals=[];strips=[]
-        while remaining:
-            short=min(width,height)
-            def score(row):
-                area=sum(row)
-                return max(short*short*max(row)/(area*area),area*area/(short*short*min(row)))
-            row=[remaining.pop(0)]
-            while remaining and score(row+[remaining[0]])<=score(row):
-                row.append(remaining.pop(0))
-            strips.append((len(row),width>=height))
-            thickness=sum(row)/short
-            offset=0
-            for area in row:
-                length=area/thickness
-                if width>=height:ideals.append((left,top+offset,thickness,length))
-                else:ideals.append((left+offset,top,length,thickness))
-                offset+=length
-            if width>=height:left+=thickness;width=max(0,width-thickness)
-            else:top+=thickness;height=max(0,height-thickness)
-        available=set(positions);result=[];index=0
-        for length,vertical in strips:
-            batch=items[index:index+length];index+=length
-            ordered=sorted(available,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
-            strip=set(ordered[:sum(len(n['rows']) for n in batch)])
-            available-=strip
-            ordered=sorted(strip,key=(lambda p:(p[1],p[0])) if vertical else (lambda p:(p[0],p[1])))
-            cursor=0
-            for node in batch:
-                count=len(node['rows'])
-                result.append((node,set(ordered[cursor:cursor+count])));cursor+=count
-        assert not available
-        return result
+        width=max(x for x,y in positions)-min(x for x,y in positions)+1
+        height=max(y for x,y in positions)-min(y for x,y in positions)+1
+        total=len(positions);running=0;choices=[]
+        for cut in range(1,len(items)):
+            running+=len(items[cut-1]['rows'])
+            choices.append((abs(total-2*running),cut,running))
+        _,cut,amount=min(choices)
+        vertical=width>=height
+        ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
+        first=set(ordered[:amount]);second=positions-first
+        return divide(items[:cut],first)+divide(items[cut:],second)
     def draw(items,positions,level):
         items=sorted((n for n in items if n['rows']),key=lambda n:(-len(n['rows']),n['id']))
         for node,owned in divide(items,positions):
@@ -387,8 +361,8 @@ def render_hierarchy(nodes, bounds, depth=0):
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<5:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
-        size=14
-        placed=None
+        size=16 if level==0 else 14
+        placed=None;root_placements=[]
         # Major headings belong at the start of their own section. Children
         # find room below them rather than displacing the parent into the middle.
         protected=[]
@@ -416,7 +390,10 @@ def render_hierarchy(nodes, bounds, depth=0):
             if candidates:
                 _,box=min(candidates,key=lambda item:item[0])
                 placed=(box,values,sizes)
-            if placed:break
+                if level==0:root_placements.append(placed)
+            if placed and level>0:break
+        if root_placements:
+            placed=min(root_placements,key=lambda p:(p[0][1],p[0][0],p[0][3]))
         if placed is None:continue
         (tx,ty,bw,bh),values,sizes=placed;occupied.append((tx,ty,bw,bh));labeled.add(node['path'])
         labels.append(f'<g data-label="{"/".join(node["path"])}" data-label-box="{tx:.6f},{ty:.6f},{bw:.6f},{bh:.6f}">')

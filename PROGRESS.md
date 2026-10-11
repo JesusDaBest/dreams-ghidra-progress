@@ -246,3 +246,7 @@ There are 60 verified names, 4 deferred reviews and 9,487 unreviewed functions. 
 ## Packed status label verification
 
 The system → subsystem → component → code-role hierarchy keeps each native component together instead of repeating it beneath analysis stages. Section names are 14 pixels, with compact checked-name/identified-function counts at 12 pixels. The inspected render has all nine main system headings and 48 nonoverlapping section labels, compared with 29 in the previous published render. All 1,558 function cells retain identical square dimensions. The table separates behavior/helper review from property/type review. Small components remain in the expanded breakdown; the graph does not claim full-system completion.
+
+## Contiguous subsystem layout
+
+Replaced the strip-quantization layout with recursive contiguous partitions of the shared square lattice. The inspected result moves the main systems and their nested components into new regions; it preserves all function assignments and review states. Main system labels use 16 pixels, component labels 14 pixels, and counts 12 pixels. All nine system labels must appear, each system must remain connected, and label boxes must remain inside the graph without overlap. This corrects the layout; full system mapping and completion remain incomplete.
