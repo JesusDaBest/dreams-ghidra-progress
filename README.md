@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](assets/status-badges.svg?v=a3aa68a234f9)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/5a8ee9f643681c66e5f7ae6d8c5ccf9c48a309b0/assets/status-badges.svg)
 
 <!-- status-summary:start -->
 **57 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](assets/status.svg?v=ce0f8013f76c)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/5a8ee9f643681c66e5f7ae6d8c5ccf9c48a309b0/assets/status.svg)
 
 **Inside each section, counts mean reviewed functions / identified functions.** Runtime covers behavior and helpers; Data covers property handling and type definitions. A dash means no code of that role has been mapped yet. For example, Sculpting & painting has 78 identified runtime functions and none reviewed; Gadgets & logic has 5 identified runtime functions, of which 2 have been reviewed. Neither figure estimates a whole feature's completion.
 
