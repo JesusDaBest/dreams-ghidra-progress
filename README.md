@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/5a8ee9f643681c66e5f7ae6d8c5ccf9c48a309b0/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=644890a3c662)
 
 <!-- status-summary:start -->
-**57 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**60 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/5a8ee9f643681c66e5f7ae6d8c5ccf9c48a309b0/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=6341f88e6896)
 
-**Inside each section, counts mean reviewed functions / identified functions.** Runtime covers behavior and helpers; Data covers property handling and type definitions. A dash means no code of that role has been mapped yet. For example, Sculpting & painting has 78 identified runtime functions and none reviewed; Gadgets & logic has 5 identified runtime functions, of which 2 have been reviewed. Neither figure estimates a whole feature's completion.
+**Inside each section, counts mean checked names / identified functions.** Green marks reviewed behavior or helpers; blue marks reviewed properties or type definitions. The table below separates these kinds of review. Neither establishes that an entire game feature is understood or complete.
 
 Every square is one actual function and has the same size. Main headings sit at the start of their sections, with nested parts labeled inside. The expandable breakdown retains smaller components whose labels cannot fit at readable size.
 
@@ -29,7 +29,7 @@ Every square is one actual function and has the same size. Main headings sit at 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 117 | 0/78 | 0/39 |
-| Gadgets & logic | 459 | 2/5 | 36/453 |
+| Gadgets & logic | 462 | 3/7 | 38/454 |
 | Physics & collision | 60 | 0/28 | 0/32 |
 | Sound & music | 62 | None mapped | 0/62 |
 | Animation & puppets | 46 | None mapped | 0/46 |
@@ -38,743 +38,1231 @@ Every square is one actual function and has the same size. Main headings sit at 
 | Dreamiverse & networking | 103 | 0/28 | 0/75 |
 | Shared engine & object data | 121 | 8/45 | 5/71 |
 
-**1,555 of 9,551 discovered functions are mapped; 7,996 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,558 of 9,551 discovered functions are mapped; 7,993 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 459 functions identified; 2 behavior/helper reviews; 36 property/type reviews
+- **Gadgets & logic** - 462 functions identified; 3 behavior/helper reviews; 38 property/type reviews
   - **Online & multiplayer gadgets** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-    - **Properties & type definitions** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Magic Door Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **PUMap Gadget** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dreamiverse Reference Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dreamiverse Reference Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dreamiverse Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Magic Door UIType** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Map Marker Icon** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Map Marker Visibility** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Map Show Players** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Metagame Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Portal Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scoreboard Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scoreboard Ordering** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scoreboard Player Setting** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scoreboard Scope** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scoreboard Unit** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Search Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Social Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Spawnplace Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Magic Door** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Metagame Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Network Variable Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Portal Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **PUMagic Door** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **PUMap Marker** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scoreboard Display Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Search Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Social Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Spawnplace Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Multiplayer Session Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Network Signal Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Network Spawner Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Magic Door Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **PUMap Gadget** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dreamiverse Reference Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dreamiverse Reference Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dreamiverse Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Magic Door UIType** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Map Marker Icon** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Map Marker Visibility** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Map Show Players** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Metagame Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Portal Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scoreboard Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scoreboard Ordering** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scoreboard Player Setting** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scoreboard Scope** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scoreboard Unit** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Search Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Social Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spawnplace Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Magic Door** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Metagame Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Network Variable Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Portal Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **PUMagic Door** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **PUMap Marker** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scoreboard Display Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Search Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Social Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spawnplace Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Multiplayer Session Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Network Signal Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Network Spawner Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Logic & signals** - 86 functions identified; 0 behavior/helper reviews; 17 property/type reviews
-    - **Properties & type definitions** - 85 functions identified; 0 behavior/helper reviews; 17 property/type reviews
-      - **Calculator Op** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Delay Select** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Label Any Or All** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Calculator** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Combiner** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Calculator Units** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gate Reset Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Random Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Remapper Curve** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Remapper Edge Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Remapper Preset** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Timer Input Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wire Blend Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Randomiser** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Remapper** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Signal Generator** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Signal Inspector** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Timer** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wireless Receiver** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Wireless Transmitter** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Counter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Delay Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Inverter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Microchip** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Selector** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Splitter** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Time Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wide Calculator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **And** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Timer State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gate** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Or** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Remapper State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Xor** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Break Logic Cycles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Calculator Op** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Delay Select** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Label Any Or All** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Calculator** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Combiner** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Calculator Units** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gate Reset Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Random Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Remapper Curve** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Remapper Edge Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Remapper Preset** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timer Input Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wire Blend Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Randomiser** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Remapper** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Signal Generator** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Signal Inspector** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Timer** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wireless Receiver** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Wireless Transmitter** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Counter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Delay Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Inverter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Microchip** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Selector** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Splitter** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Time Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wide Calculator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **And** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Break Logic Cycles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timer State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gate** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Or** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Remapper State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Xor** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Creation & display gadgets** - 70 functions identified; 0 behavior/helper reviews; 6 property/type reviews
-    - **Properties & type definitions** - 69 functions identified; 0 behavior/helper reviews; 6 property/type reviews
-      - **Text Gadget** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Gadget Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **DEPRECATE Dream Bubble** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dev Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dev Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Photo Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Gadget Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Gadget Prompt Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Number Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Reporter Sculpt** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-      - **Reporter Telemetry** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Scripter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Timeline gadget & playback** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Auto Guides Gadget** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Button Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dummy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Record Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Imp Quest Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Photo Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Reporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Slider Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Stamping Enabler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Legacy Photo Gadget** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Snap Point** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Timeline Lane Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Timeline gadget & playback** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Movement & possession** - 67 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 67 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controlinator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Follow Imp Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Hand Gadget Controller Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Rotation Representation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controlinator State** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controlinator View Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controllinator Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controllinator Move Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controllinator Stick Space** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Follow Or Flee** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Hand Gadget Widget Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Follower** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Hand Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Advanced Mover** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Advanced Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gyroscope** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Head Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Imp Animation Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Imp Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Look At Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Mover** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Puppet Controls** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Rocket Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Teleporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timeline gadget & playback** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **DEPRECATE Dream Bubble** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dev Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dev Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Prompt Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Number Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Reporter Sculpt** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+    - **Reporter Telemetry** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Scripter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Auto Guides Gadget** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Button Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dummy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Record Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Quest Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Reporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Slider Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stamping Enabler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Legacy Photo Gadget** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Snap Point** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timeline Lane Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Movement & possession** - 70 functions identified; 1 behavior/helper reviews; 2 property/type reviews
+    - **Teleporter** - 5 functions identified; 1 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Controlinator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Follow Imp Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Hand Gadget Controller Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Rotation Representation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controlinator State** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controlinator View Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controllinator Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controllinator Move Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controllinator Stick Space** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Follow Or Flee** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Hand Gadget Widget Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Follower** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Hand Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Advanced Mover** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Advanced Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gyroscope** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Head Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Animation Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Look At Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mover** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Puppet Controls** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Rocket Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Gameplay & scoring** - 64 functions identified; 2 behavior/helper reviews; 3 property/type reviews
-    - **Properties & type definitions** - 62 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Variable Operation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Variable Update Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Coin Dispenser** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Emitter Playback Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Force Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Health Mod Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Health Mod Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Emitter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Force Repulse Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Health Modifier** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Score Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Variable Gadget** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Checkpoint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Coin Consumer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Collectabubble** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Destroyer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Emit Or Delete** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Global Settings** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Health Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Inventory Reset** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prize Bubble** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Score Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Unlockables Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Variable Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Variable Gadget** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Variable Gadget** - 5 functions identified; 2 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Variable Operation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Variable Update Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Coin Dispenser** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Emitter Playback Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Force Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Health Mod Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Health Mod Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Emitter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Force Repulse Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Health Modifier** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Score Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Checkpoint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Coin Consumer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Collectabubble** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Destroyer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Emit Or Delete** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Global Settings** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Health Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Inventory Reset** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prize Bubble** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Score Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Unlockables Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Variable Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sensors & detection** - 38 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 38 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Detect Scope** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gadget Zone Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Detect Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Detect Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scope Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Trigger Zone** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Angle Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Grab Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Impact Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Inventory Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Movement Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Raycast Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Rotation Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ruler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **VRCursor Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Detect Scope** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gadget Zone Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Detect Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Detect Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scope Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Trigger Zone** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Angle Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Grab Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Impact Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Inventory Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Movement Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Raycast Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Rotation Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ruler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **VRCursor Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Cameras, lights & effects** - 31 functions identified; 0 behavior/helper reviews; 7 property/type reviews
-    - **Properties & type definitions** - 30 functions identified; 0 behavior/helper reviews; 7 property/type reviews
-      - **Camera Shaker** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Effect Field** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Fog Shape Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Fog Gadget** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Grade gadget & color processing** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Light** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Pad Rumble** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Camera Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Colour Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sky And Sun** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sun Deprecated** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wipe** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Grade gadget & color processing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Grade gadget & color processing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Shaker** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Effect Field** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Fog Shape Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Fog Gadget** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Light** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Pad Rumble** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Camera Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Colour Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sky And Sun** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sun Deprecated** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wipe** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sound gadgets** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sound** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sound** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared gadget property dispatch** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Editor & interface** - 313 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **UI drawing & interaction** - 101 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 93 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Interface primitives** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Transition** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Alpha** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Glass** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Imp** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Max Object** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Focus** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Overlay** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Phone** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Fat Wire** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thermometer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Video Player** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Loading Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Screen Corner** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **UIFeedback Level** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **UISize** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tip Style** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Interface primitives** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Transition** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Alpha** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Glass** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Imp** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Max Object** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Focus** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Screen Corner** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **UIFeedback Level** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **UISize** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Overlay** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Phone** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Fat Wire** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thermometer** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Video Player** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tip Style** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Loading Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Text & fonts** - 54 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 41 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Language** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Font** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Font Family** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Back Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Back Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Background** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Back Tail Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Highlight Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Texture Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Text Gadget Comment Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Edit Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Text Gadget Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Text Input Focus On Script** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Text Lams IDMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Language** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Font** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Font Family** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Back Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Back Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Background** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Back Tail Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Highlight Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Texture Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Gadget Comment Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Edit Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Gadget Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Input Focus On Script** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Lams IDMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Editing & tools** - 43 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 43 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Change** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Edit Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Lock Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tool** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tool Tag** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Col Swatch** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Edit Stack Return Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Gizmo Component** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ignore Selected Updates Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Map Stack** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Clean Up Snap Points Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Confirm Big Delete Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Delete Stamped Objects Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Delete Thing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Editor Default Settings** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Edit Stack Entry** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tweak Info Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Undo Redo** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Request Tool Tag Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Select Things By Dream Ref Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Editor Default Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Gadget Name Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Property Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Thing Pos2 DMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Switch To Edit Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Toggle Auto Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Toggle Ignore Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Undo Redo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Change** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Edit Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Lock Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tool** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tool Tag** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Col Swatch** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Edit Stack Return Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Gizmo Component** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ignore Selected Updates Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Map Stack** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Clean Up Snap Points Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Confirm Big Delete Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Delete Stamped Objects Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Delete Thing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Editor Default Settings** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Edit Stack Entry** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tweak Info Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Undo Redo** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Request Tool Tag Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Select Things By Dream Ref Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Editor Default Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Gadget Name Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Property Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Thing Pos2 DMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Switch To Edit Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Toggle Auto Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Toggle Ignore Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Undo Redo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Controls & input** - 32 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 32 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controller Type Filter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Imp Dock Visual** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Imp Interaction** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Button Hint Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controller Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Control Scheme** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Grab Status** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Stick Cam Scheme** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Touch Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Twist Dial** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Imp Selected** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Button Toggle Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controller State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dpad Navigation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Controller Class** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Grip Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Subtitle Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controller Type Filter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Dock Visual** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Interaction** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Button Hint Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controller Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Control Scheme** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Grab Status** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stick Cam Scheme** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Touch Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Twist Dial** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Selected** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Button Toggle Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controller State** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dpad Navigation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Controller Class** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Grip Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Subtitle Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Canvases & wires** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Node Custom Icon** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Node Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Canvas State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Canvas Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Canvas Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Canvas Wire Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Canvas Wire Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Create Wire Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Delete All Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Delete Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Rewire Redundant Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Node Custom Icon** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Node Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Canvas State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Canvas Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Canvas Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Canvas Wire Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Canvas Wire Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Create Wire Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Delete All Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Delete Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Rewire Redundant Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Palette & menus** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Page Stack** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Palette Menu** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Palette Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Palette Position** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Clicked Palette Button Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Close Popit Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Open Menu Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Open Palette Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Menu Camera Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Page Stack** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Palette Menu** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Palette Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Palette Position** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Clicked Palette Button Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Close Popit Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Open Menu Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Open Palette Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Menu Camera Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Paint editing** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Stroke Widget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Performed Strokes Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bake Down Sprite Density Reduction Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Make Sprite One Stroke Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Optimise Sprites Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Reduce Sprite LODMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stroke Widget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Performed Strokes Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bake Down Sprite Density Reduction Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Make Sprite One Stroke Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Optimise Sprites Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Reduce Sprite LODMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Avatar interface** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Avatar Wheel State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **PUAvatar Settings** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **PUAvatar Wheel State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Avatar Wheel Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Avatar Wheel State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **PUAvatar Settings** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **PUAvatar Wheel State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Avatar Wheel Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Subtitles** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Create Subtitle Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Speaker Name Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Subtitle Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Subtitle Timing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Subtitle Timings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Snap Subtitle Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Subtitle Timing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Create Subtitle Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Speaker Name Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Subtitle Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Subtitle Timing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Subtitle Timings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Snap Subtitle Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Subtitle Timing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Bookmarks** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Editor Bookmark Thumbnail Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Editor Bookmark Operation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Editor Bookmark** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Editor Bookmark Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Editor Bookmark Thumbnail Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Editor Bookmark Operation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Editor Bookmark** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Editor Bookmark Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Thermometer & limits** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thermometer Limit Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thermometer Timing Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thermometer Limit Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thermometer Timing Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Editor camera** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Camera Arrow** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Move Camera To Canvas Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Camera Transform Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Teleport Gecko Camera To Object Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Arrow** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Move Camera To Canvas Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Camera Transform Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Teleport Gecko Camera To Object Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **VR controls & comfort** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **VRComfort Transition Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Vr Tracker Offset Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Vr Warning Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **VRComfort Transition Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Vr Tracker Offset Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Vr Warning Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Photos & video** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Request Video Library Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Select Photo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Taking Photo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Request Video Library Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Select Photo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Taking Photo Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Rendering & lighting** - 274 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Lighting & shadows** - 95 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 85 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sun Shadow** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Spot Shadow** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Shading** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sky** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ortho Shadow** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Cone Trace** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Spot Light** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Shading Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Object Emit Light From Glow** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Light Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Object Cast Shadows** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sun Shadow** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spot Shadow** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Shading** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sky** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ortho Shadow** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object Emit Light From Glow** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Light Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object Cast Shadows** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Cone Trace** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spot Light** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Shading Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Image effects** - 86 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 76 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bokeh rendering** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Occlusion** - 15 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Post** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bokeh Bloom** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Portal Effect** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Selection Effect** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Motion Blur** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Taa** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Video Imposter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bokeh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wipe Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Blend Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Grade FXGlitch Style** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh rendering** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Occlusion** - 15 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 15 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Post** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh Bloom** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Portal Effect** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Selection Effect** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wipe Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Blend Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Grade FXGlitch Style** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Motion Blur** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Taa** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Video Imposter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Scene drawing** - 66 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 66 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Volume** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Model Brushstroke** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Renderer** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Mips** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Noisy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Photo** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Pixel Check** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Projection** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sticker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Volume** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Model Brushstroke** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Renderer** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mips** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Noisy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Pixel Check** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Projection** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sticker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Graphics infrastructure** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Toolkit** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Display** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sync** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Frame Constants** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Frame Graph** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gfx Context** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Toolkit** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Display** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sync** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Frame Constants** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Frame Graph** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gfx Context** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **VR rendering** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Vr Layers** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Vr Cursor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Vr Layers** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Vr Cursor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Camera blending** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Camera Blender / Persistent Data** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Camera Blender / Active Camera Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Camera Blender / Camera Space** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Camera Blender / Camera Status** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Persistent Data** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Active Camera Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Camera Space** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Camera Status** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Shared engine & object data** - 121 functions identified; 8 behavior/helper reviews; 5 property/type reviews
   - **Game state & runtime** - 20 functions identified; 7 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 13 functions identified; 7 behavior/helper reviews; 0 property/type reviews
-      - **Game contexts & runtime support** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
-      - **Gameupdater** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game Update Thread** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gamemerger** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game contexts & runtime support** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+    - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gameupdater** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Update Thread** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gamemerger** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Debugging & diagnostics** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Debug Draw Render** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Debug Screen** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Comparison Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Debug Camera Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Draw Render** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Screen** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Comparison Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Camera Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Numbers & transforms** - 13 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Object hierarchy transforms** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object hierarchy transforms** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Objects & references** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thing Type** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Group** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thing Ref** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Persistent Object Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thing Pos** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing Type** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Group** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing Ref** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Persistent Object Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing Pos** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Properties & variants** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Properties & type definitions** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared property helpers** - 8 functions identified; 0 behavior/helper reviews; 4 property/type reviews
     - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 4 property/type reviews
     - **Code role still unresolved** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Identifiers & assets** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Timestamp** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Asset** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Base Id Seq Number Trio** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Photo Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Version Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timestamp** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Asset** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Base Id Seq Number Trio** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Version Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Serialization & upgrades** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Serialise** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Serialization implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialization implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Errors & diagnostics** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Error Code / Code** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Error Code Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Error Code** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Error Code / Code** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Error Code Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Error Code** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Strings** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Small String** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Serialised String Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **string** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **wchar t** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Small String** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialised String Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **string** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **wchar t** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Engine support** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Support implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sillyrender** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tweak** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Widgets** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Support implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sillyrender** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tweak** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Widgets** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared signal data** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared messages** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Input Message Buffer** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Input Message Header** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Input Message Buffer** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Input Message Header** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared object routines** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Sculpting & painting** - 117 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sculpt geometry** - 78 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 72 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sculpt bricks** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Chunk** - 26 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sweep** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Inertia** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Pipe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Slot Debug** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Element Picker** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Hasher** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sculpt blend & looseness registration** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **CSGEdit Mirror Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **CSGEdit Op Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **CSGEdit Prim Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Csg Blend Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Csg Looseness Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sculpt bricks** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Chunk** - 26 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 26 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sweep** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Inertia** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Pipe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Slot Debug** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sculpt blend & looseness registration** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **CSGEdit Mirror Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **CSGEdit Op Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **CSGEdit Prim Flags** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Csg Blend Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Csg Looseness Mode** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Element Picker** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Hasher** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Paint & strokes** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sprite Duplicate** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sprite Duplicate Position** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sprite Duplicate Rotation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sprite** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Light Paint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sprite** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sprite** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sprite Duplicate** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sprite Duplicate Position** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sprite Duplicate Rotation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Light Paint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Surfaces & placement** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 12 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Spawn Shape Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Surface Snap** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Surface Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spawn Shape Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Surface Snap** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Surface Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sculpt objects** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sculpt** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sculpt** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Brush settings** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Combing Volume** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bubbles Brushing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Combing Volume** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bubbles Brushing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Dreamiverse & networking** - 103 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Network state** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Thing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Sync Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Network Variable Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Client Conn State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Thing Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Player Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Thing Table Entry** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Network Variable** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Network Variable Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Emit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Net Imp Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Other User Editing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Remote Signal Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Unique Net Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Unique Net Id Range** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Update Persistent Objects Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **User Went Online For First Time Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Thing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Sync Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Network Variable Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Client Conn State** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Thing Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Player Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Thing Table Entry** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Network Variable** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Network Variable Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Emit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Net Imp Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Other User Editing Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Remote Signal Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Unique Net Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Unique Net Id Range** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Update Persistent Objects Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **User Went Online For First Time Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Creation browsing & pages** - 28 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 28 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bokeh Widgets** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Search Creations Page** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream Details Page** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream Ui** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Moderation Pages** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Profiles Page** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Challenge Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Demo Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream Ui Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dreamstone Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Tutorials Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Uibubbles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh Widgets** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Search Creations Page** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream Details Page** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream Ui** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Moderation Pages** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Profiles Page** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Challenge Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Demo Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream Ui Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dreamstone Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tutorials Pages** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Uibubbles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Players & sessions** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Player** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Lobby Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Room Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **User Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Machine** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Machine Cinema Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Machine Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Machine Joined Multiplayer Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Machine Request VRFramerate Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Player Hello Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Player Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Player Preload Status Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Player Session Id Manager** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Machine Comfort Mode Override** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Player Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Lobby Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Room Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **User Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Machine** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Machine Cinema Mode Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Machine Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Machine Joined Multiplayer Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Machine Request VRFramerate Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player Hello Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player Preload Status Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player Session Id Manager** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Machine Comfort Mode Override** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Player Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Creation references** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dreamstone Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream UIPage** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Preload Dream Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream Version Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Preload Dream Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Almost Dream Id In Map** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Dream Id In Map** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game Preload Status Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Publish Finished Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dreamstone Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream UIPage** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Preload Dream Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream Version Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Preload Dream Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Almost Dream Id In Map** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dream Id In Map** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Preload Status Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Publish Finished Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Text chat** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Chat Line** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Text Chat Channel** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Chat Line** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Chat Channel** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Sound & music** - 62 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sound editing** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio UISpreadsheet Row** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio UICurve Source** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **MIDIMessage** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Activate Audio Preview Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio UICurve Remap** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio Update Checked Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Stop Audio Recording Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Voice Over Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio UISpreadsheet Row** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio UICurve Source** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **MIDIMessage** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Activate Audio Preview Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio UICurve Remap** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio Update Checked Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio Update Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stop Audio Recording Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Voice Over Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Mixing** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 16 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Pan Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Reverb Select** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio Category Mix** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sidechain Select** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio Master Mix** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Pan Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Reverb Select** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio Category Mix** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sidechain Select** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio Master Mix** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Musical timing & pitch** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Time Signature Denominator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Legato Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Music Scale** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Time Signature Denominator** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Legato Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Music Scale** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sound settings** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sound Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sound Icons** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Audio Number** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sound Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sound Icons** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Audio Number** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Synthesis & modulation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **LFOShape** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Osc Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **LFOShape** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Osc Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Samples & MIDI** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Wave Slice** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wave Slice** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sound strokes** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sound Stroke Frame** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sound Stroke Frame** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Physics & collision** - 60 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Physics simulation** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 21 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ballmaker** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Mankinigpu** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Mankini Contact** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Mankini** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Gameupdater Physics** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Label Collidable** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Physics Quality** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ballmaker** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mankinigpu** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Label Collidable** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Physics Quality** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mankini Contact** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mankini** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gameupdater Physics** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Collision queries** - 25 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Hit Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ray Hit Id** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Game Raycast Phase** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Shapecast Thing Type Filter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ray Hit Id Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ray Hit Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Bvh Condition Mask** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ray Hit** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ray Hit Id / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Ray Hit Id Seq / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Region Query** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Model Raycast** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Point Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Region Query** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Hit Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ray Hit Id** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Raycast Phase** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Shapecast Thing Type Filter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ray Hit Id Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ray Hit Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bvh Condition Mask** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Model Raycast** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Point Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ray Hit** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ray Hit Id / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ray Hit Id Seq / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Joints** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Joint Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Joint Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Animation & puppets** - 46 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Avatar Anim** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Customisation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **E PU Avatar Anim Net Sync Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Animation Set** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Costume Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Pet Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Do Avatar Anim Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Eyebrow Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Eye Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Mouth Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Pupil Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Custom Mesh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Puppet Tweaks** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Prim Avatar Substance Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Avatar Anim** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Customisation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **E PU Avatar Anim Net Sync Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Animation Set** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Costume Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Pet Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Do Avatar Anim Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Eyebrow Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Eye Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Mouth Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Pupil Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Custom Mesh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Puppet Tweaks** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Substance Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Animation & keyframes** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 9 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Puppet animation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Puppet Heart** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Puppet Heart** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 
 </details>
 <!-- area-status:end -->

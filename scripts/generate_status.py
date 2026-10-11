@@ -385,9 +385,9 @@ def render_hierarchy(nodes, bounds, depth=0):
         return a[0]<b[0]+b[2]+2 and a[0]+a[2]+2>b[0] and a[1]<b[1]+b[3]+2 and a[1]+a[3]+2>b[1]
     for node,owned,level in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path'])):
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
-        if level>0 and len(owned)<10:continue
+        if level>0 and len(owned)<5:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
-        size=14 if level==0 else 12
+        size=14
         placed=None
         # Major headings belong at the start of their own section. Children
         # find room below them rather than displacing the parent into the middle.
@@ -402,9 +402,8 @@ def render_hierarchy(nodes, bounds, depth=0):
             properties=sum(r.get('reviewed_scope')=='properties_or_type_registration' for r in node['rows'])
             runtime_total=sum(r.get('code_role')=='runtime-implementation' for r in node['rows'])
             property_total=sum(r.get('code_role')=='properties-types' for r in node['rows'])
-            values=lines+[f'Runtime: {behavior}/{runtime_total}' if runtime_total else 'Runtime: —',
-                          f'Data: {properties}/{property_total}' if property_total else 'Data: —']
-            sizes=[size]*len(lines)+[12,12]
+            values=lines+[f'{checked}/{len(owned)}']
+            sizes=[size]*len(lines)+[12]
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
             bh=sum(fs+3 for fs in sizes)+4
             candidates=[]
@@ -493,7 +492,7 @@ def render(status, applied, mapping):
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
            rect(0, 0, 1000, 914, "background"),
            text(4, 21, f'Dreams code review | {mapped:,} mapped functions', 16),
-           text(996, 21, 'Runtime = behavior/helpers · Data = properties/types', 12, 'muted', extra=' text-anchor="end"'),
+           text(996, 21, 'Section counts = checked names / identified functions', 12, 'muted', extra=' text-anchor="end"'),
            '<g data-panel="review">']
     out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,820)))
     out.extend(['</g>',
@@ -501,7 +500,7 @@ def render(status, applied, mapping):
                 legend(250, 878, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
                 legend(520, 878, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
                 legend(700, 878, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
-    out.append(text(4, 904, f'Counts = reviewed / identified. — = none mapped. {unassigned:,} functions still unmapped; full system completion unknown.', 12, 'muted'))
+    out.append(text(4, 904, f'{unassigned:,} functions still unmapped. Names checked includes properties/types; this is not whole-system completion.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 

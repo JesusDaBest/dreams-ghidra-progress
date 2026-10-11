@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "61 previously unnamed functions reviewed; 57 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "64 previously unnamed functions reviewed; 60 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9338,
-    "other_names": 213,
+    "default_fun_names": 9335,
+    "other_names": 216,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1187,6 +1187,72 @@
         "No signature, datatype, calling convention, byte or function-boundary edits."
       ],
       "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1408f1dc0",
+      "original_name": "FUN_1408f1dc0",
+      "applied_name": "ComputeTeleporterTransformWithOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 136-instruction body reads registered PosOffset at+f0/+100, combines it with the named object hierarchy transform, and uses active body/cached object translation when offset xyz is zero.",
+        "Native enum registration binds31 to Teleporter; both type initializer and field registrar bind exact descriptor1458a7770.",
+        "Caller141269ba0 checks low7 type bits equal31 before passing the same object pointer to1408f1dc0; second runtime helper1408f2180 independently guards31.",
+        "All direct branch targets in the three proposed routines checked; complete assembly and cached bodies read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered native symbol.",
+        "No claim that the complete Teleporter behavior, fades or arbitration is understood.",
+        "No signature, datatype, calling convention, byte or function-boundary changes.",
+        "Static analysis; no runtime validation."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140d78870",
+      "original_name": "FUN_140d78870",
+      "applied_name": "RegisterTeleporterFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete71-instruction body passes descriptor1458a7770, literal field names and exact offsets to field registration helpers, ending in DetectScope registration.",
+        "Native enum registration binds31 to Teleporter; both type initializer and field registrar bind exact descriptor1458a7770.",
+        "Caller141269ba0 checks low7 type bits equal31 before passing the same object pointer to1408f1dc0; second runtime helper1408f2180 independently guards31.",
+        "All direct branch targets in the three proposed routines checked; complete assembly and cached bodies read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered native symbol.",
+        "No claim that the complete Teleporter behavior, fades or arbitration is understood.",
+        "No signature, datatype, calling convention, byte or function-boundary changes.",
+        "Static analysis; no runtime validation."
+      ],
+      "reviewed_scope": "properties_or_type_registration"
+    },
+    {
+      "address": "140d55830",
+      "original_name": "FUN_140d55830",
+      "applied_name": "RegisterTeleporterTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete42-instruction body writes literal Teleporter and descriptor metadata at1458a7770, calls base registration, then tail-jumps to its verified field registrar.",
+        "Native enum registration binds31 to Teleporter; both type initializer and field registrar bind exact descriptor1458a7770.",
+        "Caller141269ba0 checks low7 type bits equal31 before passing the same object pointer to1408f1dc0; second runtime helper1408f2180 independently guards31.",
+        "All direct branch targets in the three proposed routines checked; complete assembly and cached bodies read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered native symbol.",
+        "No claim that the complete Teleporter behavior, fades or arbitration is understood.",
+        "No signature, datatype, calling convention, byte or function-boundary changes.",
+        "Static analysis; no runtime validation."
+      ],
+      "reviewed_scope": "properties_or_type_registration"
     }
   ],
   "deferred": [

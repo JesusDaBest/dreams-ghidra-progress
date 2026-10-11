@@ -1,8 +1,8 @@
 # Code-to-system mapping
 
-The front-page map groups actual function addresses by the part of Dreams they support. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,555 functions across nine systems; another 7,996 discovered functions still need classification and are counted below the map.
+The front-page map groups actual function addresses by the part of Dreams they support. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,558 functions across nine systems; another 7,993 discovered functions still need classification and are counted below the map.
 
-Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. The mapping pass itself added no checked names. Subsequent naming reviews bring the total to 57 checked names, of which 51 are in this map; 4 remain reviewed but unresolved.
+Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. The mapping pass itself added no checked names. Subsequent naming reviews bring the total to 60 checked names, of which 54 are in this map; 4 remain reviewed but unresolved.
 
 ## Evidence used
 
@@ -22,12 +22,12 @@ Assignments are joined by function address. Function names, address proximity, a
 
 ## How sections are counted
 
-- Each function appears once in its evidenced system and component. A single 44-column square lattice holds all 1,555 mapped functions without empty slots. All cells have identical width and height. Hierarchical sections partition those cells in proportion to their actual counts; boundaries can be stepped rather than stretching cells. Labels overlay cells at 12 pixels or larger. Small internal units share their labeled parent when a readable label would not fit; the evidence hierarchy is unchanged.
+- Each function appears once in its evidenced system and component. A single 44-column square lattice holds all 1,558 mapped functions without empty slots. All cells have identical width and height. Hierarchical sections partition those cells in proportion to their actual counts; boundaries can be stepped rather than stretching cells. Section names overlay cells at 14 pixels, with counts at 12 pixels. Small internal units share their labeled parent when a readable label would not fit; the evidence hierarchy is unchanged.
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.
 - Green identifies reviewed behavior/helpers; blue identifies reviewed property/type registration. Both require independently checked names from the review ledger. Amber means reviewed but unresolved; gray means not yet reviewed. Cached pseudocode does not make a cell green.
-- Section labels separately show reviewed runtime/helpers divided by identified runtime/helpers, and reviewed property/type functions divided by identified property/type functions. A dash means none of that role is mapped; no subsystem completion percentage is displayed. The total code size of each system is still unknown. Counts can grow or assignments can be corrected as research finds more evidence.
+- Section labels show checked names divided by identified functions. The adjacent table separately counts runtime/helper review and property/type review; no subsystem completion percentage is displayed. The total code size of each system is still unknown. Counts can grow or assignments can be corrected as research finds more evidence.
 
 These are research classifications, not a recovered source-module layout or a measure of game-system complexity. Unclassified functions remain in the full inventory and are reported separately below the map.
 
@@ -35,7 +35,7 @@ These are research classifications, not a recovered source-module layout or a me
 
 The map now retains the code-unit boundaries inside each system rather than combining every function into one system-wide grid. Components use exact registered type identities and implementation-file evidence already supporting those functions. Type identities are grouped under readable categories such as logic and signals, sensors, sculpt geometry, paint strokes, and collision queries. These category names are research organization, not recovered original source directories.
 
-Every assignment records its `component_path` and `component_basis`. A function supported by multiple components stays in their common parent; it is not duplicated or forced into one child. Shared property helpers retain their shared ownership. The graph retains the major system and component hierarchy. Readable internal units such as Sculpt bricks, Chunk, Sun Shadow, and Spot Shadow remain nested inside their parent components. Small units remain within a labeled parent section rather than receiving tiny abbreviated labels or separate unlabeled outlines. The expanded tree retains every full component and code-unit name and its exact checked/identified count. There are no display-only Other categories.
+Every assignment records its `component_path` and `component_basis`. The hierarchy is system → subsystem → native component → code role: a component appears once, with runtime and property code grouped beneath it rather than repeating the component under separate analysis stages. A function supported by multiple components stays in their common parent; it is not duplicated or forced into one child. Shared property helpers retain their shared ownership. The graph retains the major system and component hierarchy. Readable internal units such as Sculpt bricks, Chunk, Sun Shadow, and Spot Shadow remain nested inside their parent components. Small units remain within a labeled parent section rather than receiving tiny abbreviated labels or separate unlabeled outlines. The expanded tree retains every full component and code-unit name and its exact checked/identified count. There are no display-only Other categories.
 
 Green is assigned to the checked functions inside their own units and totals are then added to the parent components and systems. Discovering a type, matching a source reference, or generating pseudocode does not turn its functions green. No new reviewed functions or larger system totals were invented for this change.
 
