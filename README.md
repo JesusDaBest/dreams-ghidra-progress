@@ -5,23 +5,23 @@
 
 Working out how Dreams works, one piece of code at a time
 
-[Research findings](ANALYSIS.md) Â· [Progress log](PROGRESS.md) Â· [Mapping evidence](MAPPING.md) Â· [Function review](analysis/function-review.json) Â· [Status data](analysis/status.json)
+[Research findings](ANALYSIS.md) | [Progress log](PROGRESS.md) | [Mapping evidence](MAPPING.md) | [Function review](analysis/function-review.json) | [Status data](analysis/status.json)
 
 </div>
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d2b436cc58aa5619ae81be3e7927c3f9cff9b9f4/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=a7a248b0fd3a)
 
 <!-- status-summary:start -->
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d2b436cc58aa5619ae81be3e7927c3f9cff9b9f4/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=f7a3ec28b841)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Names and checked/identified counts appear inside the sections. Smaller components use compact names; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
-Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Grids use near-square rows. Tiny internal units share their labeled component's grid when separate boxes would be unreadable. System areas follow mapped function counts; each system's full size and completion remain unknown.
+Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |
