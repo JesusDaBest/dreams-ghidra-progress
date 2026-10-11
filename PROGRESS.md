@@ -20,11 +20,11 @@ Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains part
 
 The 156 other names include existing annotations or symbols; they are not 156 independently verified findings from this work. Inventory size does not establish complete function discovery or decompilation coverage.
 
-After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,386 default `FUN_` names, and 165 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
+After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,383 default `FUN_` names, and 168 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
 
 ## Documented naming batches
 
-13 previously unnamed functions have documented review outcomes: 9 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
+16 previously unnamed functions have documented review outcomes: 12 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
 
 | Address | Original name | Applied name | Recorded state |
 | --- | --- | --- | --- |
@@ -37,8 +37,11 @@ After a clean stop and reopening, a fresh complete paginated inventory confirmed
 | `140cfda40` | `FUN_140cfda40` | `RegisterVariantFieldOffset` | Verified after reopening |
 | `1404d7480` | `FUN_1404d7480` | `VisitAutoGuidesGadgetProperties` | Verified after reopening |
 | `1404d83d0` | `FUN_1404d83d0` | `VisitSplitterProperties` | Verified after reopening |
+| `1404d87a0` | `FUN_1404d87a0` | `VisitCombinerProperties` | Verified after reopening |
+| `140d6e850` | `FUN_140d6e850` | `RegisterCombinerFieldOffsets` | Verified after reopening |
+| `140d57980` | `FUN_140d57980` | `RegisterCombinerTypeDescriptor` | Verified after reopening |
 
-The shared visitors are identified by matching caller offsets with field registrations, explicit type literals, and body behavior. In particular, Calculator OperandA/OperandB register as Variant and its Name field registers as GadgetName. These are analyst-assigned function names; original function symbols and complete type layouts are not claimed.
+The shared visitors are identified by matching caller offsets with field registrations, explicit type literals, and body behavior. In particular, Calculator OperandA/OperandB register as Variant and its Name field registers as GadgetName. The Combiner cluster has matching FatWireType, Name and RotationRepresentation offsets across its visitor and registration routines. These are analyst-assigned function names; original function symbols and complete type layouts are not claimed.
 
 The initial eight-function review used the starting convention. The later shared-property review uses the validated PS4_SYSV correction and assembly evidence. Names, reasons, and caveats are recorded in `analysis/function-review.json`; unrelated signatures and data types were not changed in these batches.
 
@@ -60,12 +63,14 @@ The immutable, validated snapshot currently records:
 
 | Cache state | Functions |
 | --- | ---: |
-| Complete pseudocode cached | 9,482 |
-| Decompilation failures | 69 |
+| Complete pseudocode cached | 9,508 |
+| Decompilation failures | 43 |
 | Pending | 0 |
 | Total discovered | 9,551 |
 
 All 19 thunks are included; 15 external functions are recorded separately. Cache completion does not mark a function as semantically reviewed. Failures and attempts are retained locally for deliberate retries. [The front-page status](README.md#status) is generated from sanitized address/status rows.
+
+The completed extraction audit matched every baseline address and verified all 9,508 cached file hashes, exported metadata and final attempt states. There were 9,551 initial 20-second attempts and 67 bounded 60-second retries; 26 retries recovered output. No successful function was decompiled again in this revision. The 43 unresolved failures consist of 41 timeouts, 1 flow-limit failure, and 1 forced-merge failure; each address and attempt is retained locally.
 
 The extraction revision is a frozen snapshot from before the latest naming batches. The working project has the verified names listed above; cached pseudocode retains its own coherent snapshot names. Coverage accounting does not imply updated pseudocode or complete function discovery.
 
@@ -73,7 +78,7 @@ The supplied packed-program archive and its input copy still match their pre-ana
 
 ## Next work
 
-1. Complete the resumable per-function decompilation cache and record bounded failures.
+1. Investigate the recorded extraction failures with targeted assembly and metadata checks.
 2. Review coherent clusters, beginning with calculator registration and shared property visitors.
 3. Reconcile preserved explicit signatures, SIMD inputs, and indirect-call arguments with assembly evidence.
 4. Journal and verify further justified changes, save checkpoints, and recheck original input hashes.

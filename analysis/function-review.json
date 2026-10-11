@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-10",
   "status": "applied_verified_after_reopening",
-  "review_scope": "13 previously unnamed functions reviewed; 9 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "16 previously unnamed functions reviewed; 12 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9386,
-    "other_names": 165,
+    "default_fun_names": 9383,
+    "other_names": 168,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -187,6 +187,62 @@
       "caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "1404d87a0",
+      "original_name": "FUN_1404d87a0",
+      "applied_name": "VisitCombinerProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "The type initializer at 140d57980 installs the explicit literal Combiner on descriptor 1458ae5a0, registers Thing base properties, and tail-calls field registrar 140d6e850.",
+        "The visitor and field registrar agree on Pos +0x40, ParentFromModel +0x60, Power +0x80, Halfsize +0x88, TweakProps +0x90, IsGluedGadget +0xd0, FatWireType +0xd1, Name +0xd8 and RotationRepresentation +0xe0.",
+        "Complete visitor assembly preserves object RSI in R14 and reads FatWireType from [R14+0xd1] at 1404d8b04, passes Name at [R14+0xd8] to the GadgetName visitor at 1404d8b33, and reads RotationRepresentation from [R14+0xe0] at 1404d8bc5. Literal memory reads confirm the matching property labels.",
+        "DispatchThingTypePropertyVisitor calls this function at 14048cb0c; its cached switch maps that call to type case 0x48. The distinct Splitter visitor uses InputA +0xd8, Name +0x100 and RotationRepresentation +0x108."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Describes the property visitation role; complete serialization semantics and version gates remain partly unresolved.",
+        "Indirect method signatures and SIMD arguments remain unresolved; this rename changes no prototype, convention, or datatype."
+      ]
+    },
+    {
+      "address": "140d6e850",
+      "original_name": "FUN_140d6e850",
+      "applied_name": "RegisterCombinerFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "The Combiner type initializer tail-calls this function at 140d579fc after naming descriptor 1458ae5a0 and registering its Thing base properties.",
+        "All 42 instructions were inspected. It loads descriptor 1458ae5a0 into RBX, then passes it in RDI to nine field registrations. Seven property labels are passed directly; Pos and RotationRepresentation are supplied by specialized helpers.",
+        "Its distinctive fields include FatWireType at +0xd1 through 1401123b0, GadgetName Name at +0xd8 through 140cdca90, and RotationRepresentation at +0xe0 through tail jump 140d6e904. Those offsets match visitor 1404d87a0.",
+        "RDI, RSI and EDX assignments were verified from assembly because several saved callee prototypes still suppress property labels in cached pseudocode. Pos and RotationRepresentation use their own two-input helper forms."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "This names the field-registration role only; complete field extents and object layout are not claimed.",
+        "No parameter names, prototype, convention, or datatype are changed in this naming batch."
+      ]
+    },
+    {
+      "address": "140d57980",
+      "original_name": "FUN_140d57980",
+      "applied_name": "RegisterCombinerTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 42-instruction assembly loads literal 14171ffff and stores it at descriptor 1458ae5a0. A direct memory read confirms the null-terminated literal Combiner.",
+        "The function checks initialization state, initializes the static descriptor when needed, installs descriptor operation pointers, then calls RegisterThingBaseProperties at 140d579f1.",
+        "It tail-calls 140d6e850 at 140d579fc, which registers the same descriptor's nine Combiner fields. These are matched to visitor 1404d87a0 independently by labels and offsets."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "The name describes a type-descriptor registration routine; it is not evidence of an original symbol or a runtime Combiner object constructor.",
+        "No signature or datatype changes are part of this rename."
       ]
     }
   ],

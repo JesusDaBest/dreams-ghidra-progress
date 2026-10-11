@@ -29,7 +29,7 @@ CONVENTION = {"direct_sysv", "inherited_sysv", "other", "unknown"}
 COLORS = {
     "background": "#0d1117", "panel": "#131b26", "border": "#263344",
     "text": "#f0f6fc", "muted": "#97a8bc", "dim": "#6e829a",
-    "green": "#3fb950", "cyan": "#39d5ff", "gray": "#283747",
+    "green": "#3fb950", "cyan": "#39d5ff", "blue": "#58a6ff", "gray": "#283747",
     "amber": "#d29922", "accounted": "#687c94",
 }
 
@@ -192,135 +192,105 @@ def rect(x, y, width, height, fill, radius=0, stroke=None):
     return f'<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="{radius}" fill="{COLORS.get(fill, fill)}"{border}/>'
 
 
-def progress(x, y, width, total, segments):
-    parts = [rect(x, y, width, 5, "gray", 2)]
-    cursor = x
-    for count, color in segments:
-        length = width * count / total
-        if length:
-            parts.append(rect(f"{cursor:.3f}", y, f"{length:.3f}", 5, color))
-            cursor += length
-    return "".join(parts)
-
-
-def mosaic(rows, key, x, y, columns, color_for):
-    # One 3x3 square per function, 1px separation. Grouping paths by color keeps
-    # the SVG substantially smaller than thousands of separate rect/title nodes.
-    paths = defaultdict(list)
-    for index, row in enumerate(rows):
-        px = x + (index % columns) * 4
-        py = y + (index // columns) * 4
-        paths[color_for(row[key])].append(f"M{px} {py}h3v3h-3z")
-    return "".join(f'<path fill="{COLORS[color]}" d="{"".join(paths[color])}"/>' for color in sorted(paths))
-
-
 def legend(x, y, color, label):
     return rect(x, y-9, 8, 8, color, 1) + text(x+15, y, label, 11, "muted")
 
 
-def grouped_height(groups, columns):
-    return sum(48 + math.ceil(len(items) / columns) * 4 for _, _, items in groups) + 12 * (len(groups)-1)
+def address_regions(rows):
+    """Use fixed 1 MiB address regions until semantic module ownership is known."""
+    groups = defaultdict(list)
+    for row in rows:
+        groups[int(row["address"], 16) // 0x100000].append(row)
+    priority = {"verified_name": 0, "deferred": 1, "unreviewed": 2}
+    return [(region, sorted(items, key=lambda r: (priority[r["review"]], int(r["address"], 16))))
+            for region, items in sorted(groups.items(), key=lambda item: (-len(item[1]), item[0]))]
 
 
-def grouped_mosaic(groups, key, x, y, columns):
-    """Keep each status in its own labeled block; addresses order only within it."""
+def partition_regions(groups, bounds):
+    """Independent balanced-bisection treemap, with area proportional to count."""
+    x, y, width, height = bounds
+    if len(groups) == 1:
+        return [(groups[0], bounds)]
+    total = sum(len(items) for _, items in groups)
+    prefix = 0
+    choices = []
+    for index, (_, items) in enumerate(groups[:-1], 1):
+        prefix += len(items)
+        choices.append((abs(total - 2 * prefix), index, prefix))
+    _, split, first_count = min(choices)
+    fraction = first_count / total
+    if width >= height:
+        cut = width * fraction
+        first = (x, y, cut, height)
+        second = (x + cut, y, width - cut, height)
+    else:
+        cut = height * fraction
+        first = (x, y, width, cut)
+        second = (x, y + cut, width, height - cut)
+    return partition_regions(groups[:split], first) + partition_regions(groups[split:], second)
+
+
+def region_tiles(items, bounds):
+    x, y, width, height = bounds
+    # Distribute exactly count cells across near-square rows, with no filler cells.
+    count = len(items)
+    row_count = max(1, min(count, int(math.sqrt(count * height / width) + 0.5)))
+    base, remainder = divmod(count, row_count)
+    colors = {"verified_name": "green", "deferred": "amber", "unreviewed": "accounted"}
     out = []
-    for label, color, items in groups:
-        grid_height = math.ceil(len(items) / columns) * 4
-        height = 48 + grid_height
-        out.extend([rect(x-10, y, columns*4+20, height, "background", 6, "border"),
-                    rect(x, y+13, 3, 13, color, 1),
-                    text(x+12, y+24, label, 12, "muted", 600),
-                    text(x+columns*4, y+24, f"{len(items):,}", 14, "text", 700, ' text-anchor="end"'),
-                    mosaic(items, key, x, y+35, columns, lambda _: color)])
-        y += height + 12
+    cursor = 0
+    for row_index in range(row_count):
+        columns = base + (1 if row_index < remainder else 0)
+        for column in range(columns):
+            item = items[cursor]
+            px = x + width * column / columns
+            py = y + height * row_index / row_count
+            cell_width, cell_height = width / columns, height / row_count
+            out.append(f'<rect data-function="{item["address"]}" x="{px:.3f}" y="{py:.3f}" '
+                       f'width="{cell_width:.3f}" height="{cell_height:.3f}" '
+                       f'fill="{COLORS[colors[item["review"]]]}" stroke="{COLORS["background"]}" stroke-width="0.65"/>')
+            cursor += 1
+    assert cursor == count
     return "".join(out)
 
 
 def render(status):
-    rows = status["rows"]
-    total = len(rows)
-    conv = status["metrics"]["convention"]
-    decomp = status["metrics"]["decompilation"]
+    total = status["inventory_total"]
     review = status["metrics"]["review"]
-    columns = 118
-    decomp_groups = [
-        ("Pseudocode cached", "green", [r for r in rows if r['decompilation'] == 'complete']),
-        ("Needs follow-up", "amber", [r for r in rows if r['decompilation'] in {'failed', 'truncated', 'blocked_abi'}]),
-        ("Waiting to decompile", "gray", [r for r in rows if r['decompilation'] in {'pending', 'not_reported'}]),
-    ]
-    running = [r for r in rows if r['decompilation'] == 'running']
-    if running:
-        decomp_groups.insert(2, ("Running", "cyan", running))
-    separate = [r for r in rows if r['decompilation'] in {'known_thunk', 'known_external'}]
-    if separate:
-        decomp_groups.append(("Separately accounted", "accounted", separate))
-    review_groups = [
-        ("Names verified", "green", [r for r in rows if r['review'] == 'verified_name']),
-        ("Reviewed, still unresolved", "amber", [r for r in rows if r['review'] == 'deferred']),
-        ("Awaiting semantic review", "gray", [r for r in rows if r['review'] == 'unreviewed']),
-    ]
-    for groups in (decomp_groups, review_groups):
-        grouped_addresses = [r['address'] for _, _, items in groups for r in items]
-        if len(grouped_addresses) != total or set(grouped_addresses) != {r['address'] for r in rows}:
-            raise ValueError('Grouped graphic must represent every discovered function exactly once')
-    grid_height = max(grouped_height(decomp_groups, columns), grouped_height(review_groups, columns))
-    panel_top = 280
-    grid_top = panel_top + 82
-    panel_height = 82 + grid_height + 20
-    footer_top = panel_top + panel_height + 28
-    height = footer_top + 72
-    unresolved = decomp["failed"] + decomp["truncated"] + decomp["blocked_abi"]
-    accounted = decomp["known_thunk"] + decomp["known_external"]
-    n = lambda value: f"{value:,}"
-    description = (f"Status for {n(total)} discovered functions. {n(conv['effective_sysv'])} have an effective SysV calling convention assigned. "
-                   f"{n(decomp['complete'])} cached decompilations from {n(decomp['reported'])} reported cache states. "
-                   f"{n(review['reviewed'])} reviewed: {n(review['verified_names'])} verified names and {n(review['deferred'])} deferred. "
-                   "These counts do not measure full binary completeness.")
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="{height}" viewBox="0 0 1120 {height}" role="img" aria-labelledby="status-title status-desc">',
-           '<title id="status-title">Dreams analysis status</title>', f'<desc id="status-desc">{escape(description)}</desc>',
+    groups = address_regions(status["rows"])
+    addresses = [r["address"] for _, items in groups for r in items]
+    assert len(addresses) == total and len(set(addresses)) == total
+    percent = 100 * review["verified_names"] / total
+    title = f'Verified names: {percent:.2f}% ({review["verified_names"]:,}/{total:,})'
+    description = (f'{total:,} discovered functions grouped in fixed 1 MiB address regions. '
+                   f'{review["verified_names"]:,} verified names are green; {review["deferred"]:,} reviewed but unresolved are amber; '
+                   f'{review["unreviewed"]:,} unreviewed functions are gray. Regions are not identified subsystems. '
+                   'Pseudocode generation does not count as a verified name or complete function correctness.')
+    width, height = 1120, 450
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="status-title status-desc">',
+           f'<title id="status-title">Dreams function review: {escape(title)}</title>',
+           f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1120, height, "background", 18),
-           rect(32, 32, 4, 44, "cyan", 2),
-           text(50, 54, "DREAMS", 27, "text", 750), text(50, 77, "Reverse engineering progress", 16, "muted"),
-           rect(883, 37, 205, 27, "panel", 13, "border"),
-           text(900, 55, "FUNCTION STATUS BLOCKS", 10, "cyan", 650),
-           text(32, 112, f"{n(total)} functions in the current inventory", 14, "muted"),
-           text(1088, 112, f"Snapshot {status['snapshot_date']}", 12, "dim", extra=' text-anchor="end"')]
-    card_y, card_h, card_w = 134, 118, 344
-    for x in (32, 388, 744):
-        out.append(rect(x, card_y, card_w, card_h, "panel", 10, "border"))
-    out.extend([text(50, 158, "EFFECTIVE SYSV ASSIGNMENT", 11, "cyan", 650),
-                text(50, 196, n(conv["effective_sysv"]), 32, "text", 700),
-                text(172, 194, f"/ {n(total)}", 17, "muted"),
-                text(50, 218, f"{n(conv['direct_sysv'])} direct + {n(conv['inherited_sysv'])} inherited", 12, "muted"),
-                progress(50, 231, 308, total, [(conv["effective_sysv"], "cyan")]),
-                text(406, 158, "DECOMPILATION CACHE", 11, "green", 650)])
-    if decomp["reported"]:
-        out.extend([text(406, 196, n(decomp["complete"]), 32, "text", 700),
-                    text(528, 194, f"/ {n(total)}", 17, "muted"),
-                    text(406, 218, f"{n(unresolved)} unresolved · {n(accounted)} separately accounted", 12, "muted")])
-    else:
-        out.extend([text(406, 194, "Awaiting data", 25, "text", 650),
-                    text(406, 218, "No local cache snapshot reported yet", 12, "muted")])
-    out.extend([progress(406, 231, 308, total, [(decomp["complete"], "green"), (decomp["running"], "cyan"), (unresolved, "amber"), (accounted, "accounted")]),
-                text(762, 158, "REVIEWED FUNCTIONS", 11, "green", 650),
-                text(762, 196, n(review["reviewed"]), 32, "text", 700),
-                text(884, 194, f"/ {n(total)}", 17, "muted"),
-                text(762, 218, f"{n(review['verified_names'])} names verified · {n(review['deferred'])} deferred", 12, "muted"),
-                progress(762, 231, 308, total, [(review["verified_names"], "green"), (review["deferred"], "amber")])])
-    for x in (32, 576):
-        out.append(rect(x, panel_top, 512, panel_height, "panel", 10, "border"))
-    out.extend([text(52, panel_top+29, "Decompilation coverage", 18, "text", 650),
-                text(52, panel_top+52, "Cached output, independent of semantic review", 12, "muted"),
-                text(596, panel_top+29, "Review coverage", 18, "text", 650),
-                text(596, panel_top+52, "Verified naming and explicitly deferred reviews", 12, "muted")])
-    out.extend([grouped_mosaic(decomp_groups, "decompilation", 52, grid_top, columns),
-                grouped_mosaic(review_groups, "review", 596, grid_top, columns)])
-    out.extend([
-                text(32, footer_top, "ONE SQUARE = ONE DISCOVERED FUNCTION", 11, "cyan", 650),
-                text(32, footer_top+20, "Squares are grouped by status, then ordered by address inside each labeled block.", 12, "muted"),
-                text(32, footer_top+42, "Inventory coverage is not full binary completeness. Convention assignments and cached output are not correctness claims.", 11, "dim"),
+           rect(0, 0, width, height, "background"),
+           text(10, 25, title, 19, "text", 600),
+           text(1110, 25, f'{review["unreviewed"]:,} still unreviewed', 15, "muted", extra=' text-anchor="end"')]
+    for (region, items), bounds in partition_regions(groups, (8, 42, 1104, 334)):
+        x, y, w, h = bounds
+        counts = Counter(r["review"] for r in items)
+        label = f'{region:x}xxxxx'
+        detail = f'0x{region * 0x100000:x}–0x{(region + 1) * 0x100000 - 1:x}: {len(items)} functions; {counts["verified_name"]} named, {counts["deferred"]} deferred, {counts["unreviewed"]} unreviewed'
+        out.extend(['<g>', f'<title>{escape(detail)}</title>', region_tiles(items, bounds),
+                    f'<rect x="{x:.3f}" y="{y:.3f}" width="{w:.3f}" height="{h:.3f}" fill="none" stroke="{COLORS["background"]}" stroke-width="3"/>'])
+        if w >= len(label) * 7 + 8 and h >= 22:
+            out.append(text(round(x + 5, 3), round(y + 16, 3), label, 12, "text", 600,
+                            f' stroke="{COLORS["background"]}" stroke-width="3" paint-order="stroke"'))
+        out.append('</g>')
+    out.extend([legend(12, 400, "green", f'Name verified ({review["verified_names"]:,})'),
+                legend(244, 400, "amber", f'Reviewed, unresolved ({review["deferred"]:,})'),
+                legend(548, 400, "accounted", f'Unreviewed ({review["unreviewed"]:,})'),
+                text(1108, 400, f'Snapshot {status["snapshot_date"]}', 11, "dim", extra=' text-anchor="end"'),
+                text(12, 425, 'One tile = one discovered function. Block size = function count in that address region.', 12, "muted"),
+                text(12, 444, 'Green verifies a descriptive name; it does not mean original source recovery or complete behavioral understanding.', 11, "dim"),
                 '</g></svg>'])
     return "\n".join(out) + "\n"
 
@@ -330,18 +300,18 @@ def render_badges(status):
     metrics = status["metrics"]
     decomp = metrics["decompilation"]
     reviewed = metrics["review"]["reviewed"]
-    pseudocode = f"{100 * decomp['complete'] / total:.1f}%" if decomp["reported"] else "awaiting data"
+    pseudocode = f"{decomp['complete']:,} generated" if decomp["reported"] else "awaiting data"
     badges = [
-        ("pseudocode", pseudocode, "green"),
-        ("reviewed", f"{100 * reviewed / total:.2f}%", "cyan"),
+        ("reviewed", f"{reviewed:,} / {total:,}", "accounted"),
         ("verified names", str(metrics["review"]["verified_names"]), "green"),
+        ("pseudocode", pseudocode, "blue"),
         ("status", "in progress", "amber"),
     ]
     widths = [(round(len(label) * 6.5 + 20), round(len(value) * 6.5 + 20)) for label, value, _ in badges]
     width = sum(left + right for left, right in widths) + 10 * (len(badges)-1)
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="26" viewBox="0 0 {width} 26" role="img" aria-labelledby="badges-title badges-desc">',
            '<title id="badges-title">Dreams analysis status badges</title>',
-           '<desc id="badges-desc">Percentages use discovered functions, not full binary completeness. Cached pseudocode is not verified source. Status is in progress.</desc>',
+           '<desc id="badges-desc">Counts cover discovered functions. Generated pseudocode still needs review; verified names do not imply complete behavioral understanding. Analysis is in progress.</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11">']
     x = 0
     for (label, value, color), (left, right) in zip(badges, widths):
