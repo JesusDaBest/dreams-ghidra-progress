@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "51 previously unnamed functions reviewed; 47 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "52 previously unnamed functions reviewed; 48 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9348,
-    "other_names": 203,
+    "default_fun_names": 9347,
+    "other_names": 204,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -923,6 +923,26 @@
         "Stored defaults only; exact preservation/rewind lifecycle is still being traced.",
         "Callers zero the object before this initializer; the initializer alone does not overwrite every object byte.",
         "No parameter types, prototype, calling convention or datatype changes proposed."
+      ]
+    },
+    {
+      "address": "1408e4bb0",
+      "original_name": "FUN_1408e4bb0",
+      "applied_name": "UpdateVariableGadgetValues",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete body contains 518 instructions/2452 bytes, all inspected. Direct caller 140ab4b50 masks object header type to seven bits and dispatches type 0x58 through table 1416b56d0 index 0x57 to branch 140ab7f63, passing the VariableGadget object in RSI at call 140ab7f7e.",
+        "The function gates five-float initialization on VariableValueShouldBePreserved+0x10f, broadcasts InitialValue+0xe8 to +0xf4 through +0x104, applies lower/upper limits, and processes linked type-0x59 VariableModifierGadget objects.",
+        "Modifier field +0x118 is OperationType, registered by 140d68c70 and matched to directly read enum literals in 140ca9f10: 0 Set, 1 Get, 2 Add, 3 Reset. Assembly performs replacement/addition/InitialValue restoration for 0/2/3; Get produces no write in these branches.",
+        "The tail constructs strict ordered increase/decrease masks at +0x10b/+0x10c: bits0..3 correspond to the four player floats +0xf8..+0x104; bit4 corresponds to non-player +0xf4. Missing comparison object exits without updating the masks."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Static behavior only; gameplay execution has not been observed.",
+        "Context double at +0x27aec0, global mode gates, earlier-object snapshot semantics, and external player numbering remain unresolved.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
       ]
     }
   ],
