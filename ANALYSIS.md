@@ -8,9 +8,9 @@ This is the written account behind the status map. The [research data](analysis/
 | --- | --- |
 | Function inventory | 9,551 discovered functions |
 | Frozen v1 extraction | 9,508 functions with cached C-like pseudocode; 43 failures |
-| Applied descriptive names | 27, verified after reopening the project |
+| Applied descriptive names | 30, verified after reopening the project |
 | Deferred naming reviews | 4 |
-| Additional naming proposals | 3 ReporterTelemetry names; reviewed but not applied |
+| ReporterTelemetry names | Three applied and verified after reopening |
 | System mapping | 1,540 functions associated with nine systems; 8,011 still unclassified |
 | Saved signature corrections | Six field-registration helpers; native reopen checks passed |
 | Newer v2 snapshot | Verified copy with the six corrections and all 27 names; separate extraction is in progress |
@@ -82,17 +82,17 @@ Examples include Sculpt at tag `1`, SignalInspector at `0x4a`, PuppetControls at
 
 The complete per-address assignments and evidence are in [system-map.json](analysis/system-map.json). These associations are incomplete research classifications. They do not establish the complete size or complexity of each game system.
 
-## ReporterTelemetry: reviewed proposals
+## ReporterTelemetry: applied descriptive names
 
-| Address | Proposed name | State |
+| Address | Applied name | State |
 | --- | --- | --- |
-| `1404de8c0` | `VisitReporterTelemetryProperties` | Not applied |
-| `140d6c700` | `RegisterReporterTelemetryFieldOffsets` | Not applied |
-| `140d580d0` | `RegisterReporterTelemetryTypeDescriptor` | Not applied |
+| `1404de8c0` | `VisitReporterTelemetryProperties` | Applied; verified after reopening |
+| `140d6c700` | `RegisterReporterTelemetryFieldOffsets` | Applied; verified after reopening |
+| `140d580d0` | `RegisterReporterTelemetryTypeDescriptor` | Applied; verified after reopening |
 
 An exact ReporterTelemetry literal is installed on descriptor `1458afdd0`. The initializer links the Thing base descriptor and transfers to the field registrar. All 14 registered fields match the independently inspected visitor, including six TelemetryKey fields at `+0xe0` through `+0x108`, and TimeSinceSend at `+0x110`. Dispatcher tag `0x51` corroborates the identity.
 
-The extension fields are guarded by a visitor-state value of at least `0x1869f` (99,999), with additional filtering conditions. The meaning and normal reachability of that threshold are unresolved. This review establishes property roles; it does not establish transmission behavior, recipients, payloads, or a reporting algorithm. The three proposals are not counted among the 27 applied, reopen-verified names.
+The extension fields are guarded by a visitor-state value of at least `0x1869f` (99,999), with additional filtering conditions. The meaning and normal reachability of that threshold are unresolved. This review establishes property roles; it does not establish transmission behavior, recipients, payloads, or a reporting algorithm. The three descriptive names were applied with reversible journals and a cold backup, then verified after reopening. They bring the applied-name total to 30. The frozen v2 extraction still uses its earlier 27-name snapshot; no cached output or snapshot was rewritten.
 
 ## Extraction failures and experiments
 
@@ -106,6 +106,6 @@ An earlier mechanical quality scan inspected 9,482 outputs while extraction was 
 
 ## Remaining work
 
-The main open work is to finish the coherent cache from the newer signature-corrected snapshot, resolve the recorded extraction failures, extend the code-to-system map, and review the functions within those systems. Proposed names must be applied and checked after reopening before they receive applied-name credit. Full signatures, layouts, and algorithms need their own evidence.
+The main open work is to finish the coherent cache from the newer signature-corrected snapshot, resolve the recorded extraction failures, extend the code-to-system map, and review the functions within those systems. Further proposed names must be applied and checked after reopening before they receive applied-name credit. Full signatures, layouts, and algorithms need their own evidence.
 
 The public files contain findings and structural evidence. Raw pseudocode, binary inputs, Ghidra projects, and unfiltered local reports are retained separately. That separation does not reduce the extraction counts or mean the locally saved work was undone.

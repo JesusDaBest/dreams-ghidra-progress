@@ -1,8 +1,8 @@
 # Progress
 
-Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains partial.
+Status snapshot: 2026-10-11. Setup is verified; reverse engineering remains partial.
 
-See [decompilation results and findings](ANALYSIS.md) for the consolidated analysis, including the later six-function signature promotion, the verified v2 snapshot and its separate extraction in progress, ReporterTelemetry's three unapplied proposals, and the copy-only extraction experiments. The [research data](analysis/research-details.json) lists their recorded states, matched fields, and all 43 frozen-cache failure addresses. The older extraction and ABI counts below describe their specified v1 snapshot.
+See [decompilation results and findings](ANALYSIS.md) for the consolidated analysis, including the later six-function signature promotion, the verified v2 snapshot and its separate extraction in progress, ReporterTelemetry's three applied and reopen-verified names, and the copy-only extraction experiments. The [research data](analysis/research-details.json) lists their recorded states, matched fields, and all 43 frozen-cache failure addresses. The older extraction and ABI counts below describe their specified v1 snapshot.
 
 ## Verified setup
 
@@ -22,11 +22,11 @@ See [decompilation results and findings](ANALYSIS.md) for the consolidated analy
 
 The 156 other names include existing annotations or symbols; they are not 156 independently verified findings from this work. Inventory size does not establish complete function discovery or decompilation coverage.
 
-After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,368 default `FUN_` names, and 183 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
+After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,365 default `FUN_` names, and 186 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
 
 ## Documented naming batches
 
-31 previously unnamed functions have documented review outcomes: 27 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
+34 previously unnamed functions have documented review outcomes: 30 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
 
 | Address | Original name | Applied name | Recorded state |
 | --- | --- | --- | --- |
@@ -64,6 +64,18 @@ The initial eight-function review used the starting convention. The later shared
 
 The status data contains all 9,551 discovered addresses, with decompilation and semantic-review states tracked separately. Unreviewed functions are explicitly distinguished from reviewed-but-deferred functions.
 
+## ReporterTelemetry naming checkpoint
+
+Three additional descriptive names were applied with a cold project backup and reversible before/after journal records, then checked after a clean save, stop, and reopening. All 30 applied names and the complete 9,551-address inventory matched the baseline plus journaled changes. The three functions retained their prior signatures, conventions, body sizes, and namespaces.
+
+| Address | Original name | Applied name | Recorded state |
+| --- | --- | --- | --- |
+| `1404de8c0` | `FUN_1404de8c0` | `VisitReporterTelemetryProperties` | Verified after reopening |
+| `140d6c700` | `FUN_140d6c700` | `RegisterReporterTelemetryFieldOffsets` | Verified after reopening |
+| `140d580d0` | `FUN_140d580d0` | `RegisterReporterTelemetryTypeDescriptor` | Verified after reopening |
+
+The names identify property and metadata roles; they do not establish telemetry transmission behavior or the meaning of the unusually high visitor-state threshold. The frozen v2 extraction retains its own earlier 27-name snapshot identity.
+
 ## ABI and mapping limitation
 
 The supplied analysis reports a Windows PE wrapper containing `.elf` sections. A sample of 1,664 code bytes matched the PS4 SELF reference with a PE address mapping offset of `0x140010000`. This is sampled evidence, not a full-binary equivalence proof.
@@ -95,7 +107,7 @@ The supplied packed-program archive and its input copy still match their pre-ana
 
 ## Next work
 
-The first code-to-system mapping pass associated 1,540 functions with nine Dreams systems using native source-string references, registered type descriptors, field and enum builders, and the object-type dispatcher. All 120 dispatcher branches were resolved; 119 received system assignments. Four typed wrappers were linked to their exact descriptor schemas. Conflicting ownership was excluded. The remaining 8,011 functions are reported outside the system map. This did not add semantic-review credit: 27 names remain checked and 4 reviews remain deferred. See [mapping evidence](MAPPING.md) and the per-address [system map](analysis/system-map.json).
+The first code-to-system mapping pass associated 1,540 functions with nine Dreams systems using native source-string references, registered type descriptors, field and enum builders, and the object-type dispatcher. All 120 dispatcher branches were resolved; 119 received system assignments. Four typed wrappers were linked to their exact descriptor schemas. Conflicting ownership was excluded. The remaining 8,011 functions are reported outside the system map. That mapping checkpoint added no semantic-review credit: at the time, 27 names were checked and 4 reviews remained deferred. See [mapping evidence](MAPPING.md) and the per-address [system map](analysis/system-map.json).
 
 1. Investigate the recorded extraction failures with targeted assembly and metadata checks.
 2. Review coherent clusters, beginning with calculator registration and shared property visitors.

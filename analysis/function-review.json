@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "snapshot_date": "2026-10-10",
+  "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "31 previously unnamed functions reviewed; 27 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "34 previously unnamed functions reviewed; 30 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9368,
-    "other_names": 183,
+    "default_fun_names": 9365,
+    "other_names": 186,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -525,6 +525,69 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "This is a static type-descriptor registration routine; it is not an original recovered symbol or a runtime gadget object constructor.",
         "No signature, calling convention, datatype or parameter changes are proposed."
+      ]
+    },
+    {
+      "address": "1404de8c0",
+      "original_name": "FUN_1404de8c0",
+      "applied_name": "VisitReporterTelemetryProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d580d0 loads the directly verified NUL-terminated literal ReporterTelemetry at 14172006c, stores it on descriptor 1458afdd0 at 140d5810c, calls the Thing base-descriptor helper at 140d58141 and tail-jumps to field registrar 140d6c700 at 140d5814c.",
+        "All 14 registered labels and field offsets match visitor 1404de8c0. The distinctive fields are TelemetryKey1..6 at +0xe0, +0xe8, +0xf0, +0xf8, +0x100 and +0x108, and TimeSinceSend at +0x110. Halfsize is +0xd8; Name remains +0xc8.",
+        "Complete 269-instruction / 1,249-byte assembly preserves the object in R14, constructs the six key addresses for the GadgetName property visitor and reads TimeSinceSend from object +0x110 at 1404ded8c. Register assignments, rather than suppressed cached prototype arguments, establish the matches.",
+        "The known Thing type property dispatcher calls this visitor at 14048cbe4; its existing cached switch case 0x51 corroborates the independent field match. The adjacent shorter visitor 1404de660 lacks the telemetry extension fields."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "The names describe property/metadata roles, not original recovered symbols.",
+        "The eight extension fields (Halfsize, six telemetry keys and TimeSinceSend) are gated by visitor state +0x1c >= 0x1869f (99,999), with additional property-filter conditions. Whether this path is used by normal game data is unestablished.",
+        "This evidence does not establish network transmission, recipients, telemetry payloads or the runtime reporting algorithm.",
+        "No signature, datatype, calling convention, parameter or variable changes are proposed."
+      ]
+    },
+    {
+      "address": "140d6c700",
+      "original_name": "FUN_140d6c700",
+      "applied_name": "RegisterReporterTelemetryFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d580d0 loads the directly verified NUL-terminated literal ReporterTelemetry at 14172006c, stores it on descriptor 1458afdd0 at 140d5810c, calls the Thing base-descriptor helper at 140d58141 and tail-jumps to field registrar 140d6c700 at 140d5814c.",
+        "All 63 instructions / 292 body bytes were inspected. The routine loads descriptor 1458afdd0 at 140d6c706 and passes it to 14 field registrations. Thirteen labels are explicit; Pos is supplied by its existing specialized helper.",
+        "All 14 registered labels and field offsets match visitor 1404de8c0. The distinctive fields are TelemetryKey1..6 at +0xe0, +0xe8, +0xf0, +0xf8, +0x100 and +0x108, and TimeSinceSend at +0x110. Halfsize is +0xd8; Name remains +0xc8.",
+        "Each direct label and offset was checked from RSI/EDX assignments. The final TimeSinceSend field is a tail registration at 140d6c81f."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "The names describe property/metadata roles, not original recovered symbols.",
+        "The eight extension fields (Halfsize, six telemetry keys and TimeSinceSend) are gated by visitor state +0x1c >= 0x1869f (99,999), with additional property-filter conditions. Whether this path is used by normal game data is unestablished.",
+        "This evidence does not establish network transmission, recipients, telemetry payloads or the runtime reporting algorithm.",
+        "No signature, datatype, calling convention, parameter or variable changes are proposed."
+      ]
+    },
+    {
+      "address": "140d580d0",
+      "original_name": "FUN_140d580d0",
+      "applied_name": "RegisterReporterTelemetryTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d580d0 loads the directly verified NUL-terminated literal ReporterTelemetry at 14172006c, stores it on descriptor 1458afdd0 at 140d5810c, calls the Thing base-descriptor helper at 140d58141 and tail-jumps to field registrar 140d6c700 at 140d5814c.",
+        "Complete 42-instruction / 203-byte assembly has guarded static descriptor initialization, operation pointer installation, a Thing base-descriptor link and the field registrar tail call.",
+        "All 14 registered labels and field offsets match visitor 1404de8c0. The distinctive fields are TelemetryKey1..6 at +0xe0, +0xe8, +0xf0, +0xf8, +0x100 and +0x108, and TimeSinceSend at +0x110. Halfsize is +0xd8; Name remains +0xc8.",
+        "This is the type descriptor registration role; the routine is not identified as construction of a runtime ReporterTelemetry object."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "The names describe property/metadata roles, not original recovered symbols.",
+        "The eight extension fields (Halfsize, six telemetry keys and TimeSinceSend) are gated by visitor state +0x1c >= 0x1869f (99,999), with additional property-filter conditions. Whether this path is used by normal game data is unestablished.",
+        "This evidence does not establish network transmission, recipients, telemetry payloads or the runtime reporting algorithm.",
+        "No signature, datatype, calling convention, parameter or variable changes are proposed."
       ]
     }
   ],

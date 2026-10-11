@@ -2,7 +2,7 @@
 
 The front-page map groups actual function addresses by the part of Dreams they support. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,540 functions across nine systems; another 8,011 discovered functions still need classification and are counted below the map.
 
-Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. This mapping pass added no checked names: 27 remain checked and 4 remain reviewed but unresolved.
+Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. The mapping pass itself added no checked names. Subsequent naming reviews bring the total to 30 checked names, of which 29 are in this map; 4 remain reviewed but unresolved.
 
 ## Evidence used
 
