@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f4ca36d93b27d09766d58babd0a09136b966aa8f/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0e0717ae303a7192ebe2b1ab5c91c101719353c9/assets/status-badges.svg)
 
 <!-- status-summary:start -->
 **56 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](assets/status.svg?v=1d1acc0399dd)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0e0717ae303a7192ebe2b1ab5c91c101719353c9/assets/status.svg)
 
 **Read the two counts inside each section separately:** “Behavior” counts reviewed runtime/helper functions; “Types” counts reviewed property handling or type definitions. For example, Gadgets & logic has **2 behavior/helper reviews and 36 property/type reviews**, not 38 reviewed gadget implementations.
 
