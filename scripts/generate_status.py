@@ -301,7 +301,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     """Partition a single square lattice: no stretched cells or empty slots."""
     x0,y0,width,height=bounds
     count=sum(len(n['rows']) for n in nodes)
-    columns=35
+    columns=50
     # Preserve equal squares for arbitrary evidence-backed inventory sizes.
     # A partial final row contains no fake functions or completion padding.
     grid_rows=math.ceil(count/columns)
@@ -309,14 +309,28 @@ def render_hierarchy(nodes, bounds, depth=0):
     cells={(i%columns,i//columns) for i in range(count)}
     regions=[];out=[]
     def divide(items,positions):
+        # Squarified strips, quantized onto the common square lattice.
+        # Same count-based strip scoring as the reference treemap algorithm.
         if len(items)==1:return [(items[0],positions)]
-        total=sum(len(n['rows']) for n in items)
-        split=min(range(1,len(items)),key=lambda i:abs(sum(len(n['rows']) for n in items[:i])-total/2))
-        left=sum(len(n['rows']) for n in items[:split])
         xs=[p[0] for p in positions];ys=[p[1] for p in positions]
-        horizontal=max(xs)-min(xs)>=max(ys)-min(ys)
-        ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if horizontal else (lambda p:(p[1],p[0])))
-        return divide(items[:split],set(ordered[:left]))+divide(items[split:],set(ordered[left:]))
+        w=max(xs)-min(xs)+1;h=max(ys)-min(ys)+1
+        side=min(w,h)
+        counts=[len(n['rows']) for n in items]
+        def worst(row):
+            area=sum(row)
+            return max(max(side*side*r/(area*area),area*area/(side*side*r)) for r in row)
+        end=1
+        while end<len(items) and worst(counts[:end+1])<=worst(counts[:end]):end+=1
+        vertical=w>=h
+        ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
+        cut=sum(counts[:end]);strip=set(ordered[:cut]);rest=set(ordered[cut:])
+        # Fill each strip across its short axis, preserving exact group counts.
+        strip_order=sorted(strip,key=(lambda p:(p[1],p[0])) if vertical else (lambda p:(p[0],p[1])))
+        result=[];cursor=0
+        for node,count in zip(items[:end],counts[:end]):
+            result.append((node,set(strip_order[cursor:cursor+count])));cursor+=count
+        if end<len(items):result+=divide(items[end:],rest)
+        return result
     def draw(items,positions,level):
         items=sorted((n for n in items if n['rows']),key=lambda n:(-len(n['rows']),n['id']))
         for node,owned in divide(items,positions):
@@ -348,7 +362,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     labels=[];labeled=set();occupied=[]
     def overlaps(a,b):
         return a[0]<b[0]+b[2]+2 and a[0]+a[2]+2>b[0] and a[1]<b[1]+b[3]+2 and a[1]+a[3]+2>b[1]
-    for node,owned,level in sorted(regions,key=lambda r:(-r[2],-len(r[1]),r[0]['path'])):
+    for node,owned,level in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path'])):
         if level>0 and len(owned)<10:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
         size=14 if level==0 else 12
@@ -407,20 +421,20 @@ def render(status, applied, mapping):
                    'Every cell is a real function. Every section is filled using the same fixed square lattice and mapped-count area scale. Labels overlay cells; there are no reserved header bands. '
                    'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1350" viewBox="0 0 1000 1350" role="img" aria-labelledby="status-title status-desc">',
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="714" viewBox="0 0 1000 714" role="img" aria-labelledby="status-title status-desc">',
            '<title id="status-title">Dreams function review by game system</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 1350, "background"),
+           rect(0, 0, 1000, 714, "background"),
            text(4, 21, f'{mapped:,} functions mapped to parts of Dreams | {mapped_review["verified_name"]:,} names checked', 16),
            '<g data-panel="review">']
-    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,1257.142857)))
+    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,620)))
     out.extend(['</g>',
-                legend(4, 1315, 'green', f'{mapped_review["verified_name"]:,} names checked'),
-                legend(220, 1315, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
-                legend(470, 1315, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
-                text(996, 1315, 'System / component / code unit', 11, 'muted', extra=' text-anchor="end"')])
-    out.append(text(4, 1340, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
+                legend(4, 678, 'green', f'{mapped_review["verified_name"]:,} names checked'),
+                legend(220, 678, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
+                legend(470, 678, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
+                text(996, 678, 'System / component / code unit', 11, 'muted', extra=' text-anchor="end"')])
+    out.append(text(4, 704, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
@@ -560,3 +574,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     main()
+
