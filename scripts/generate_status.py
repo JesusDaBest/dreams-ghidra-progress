@@ -375,7 +375,7 @@ def render_hierarchy(nodes, bounds, depth=0):
                 protected.append((x0+cx*side+3,y0+cy*side+3,110,38))
         for wrap in range(32,8,-1):
             lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
-            values=lines+[f'{checked}/{len(owned)} checked']
+            values=lines+[f'{checked}/{len(owned)} ({100*checked/len(owned):.1f}%)']
             sizes=[size]*len(lines)+[12]
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
             bh=sum(fs+3 for fs in sizes)+4
@@ -402,6 +402,34 @@ def render_hierarchy(nodes, bounds, depth=0):
     out.extend(border for path,border in borders if path in labeled)
     out.extend(labels)
     return out
+
+
+def progress_data(status, applied, mapping):
+    """Export measured done/todo groups with the same semantics as the map.
+
+    Done means verified descriptive naming here; it does not mean implemented,
+    recovered original source, or a complete game feature.
+    """
+    names = {row['address']: row['applied_name'] for row in applied}
+    def group(node):
+        done = sorted(r['address'] for r in node['rows'] if r['review']=='verified_name')
+        todo = sorted(r['address'] for r in node['rows'] if r['review']!='verified_name')
+        total = len(done)+len(todo)
+        return {'name':'/'.join(node['path']), 'label':node['label'],
+                'done':len(done), 'todo':len(todo), 'total':total,
+                'percent':round(100*len(done)/total,2) if total else 0,
+                'done_names':[names[a] for a in done],
+                'done_addresses':done, 'todo_addresses':todo,
+                'unresolved_addresses':sorted(r['address'] for r in node['rows'] if r['review']=='deferred'),
+                'groups':[group(c) for c in sorted(node['children'],key=lambda c:(-len(c['rows']),c['id'])) if c['rows']]}
+    groups=[group(n) for n in sorted(hierarchy_rows(status['rows'],mapping),key=lambda n:(-len(n['rows']),n['id'])) if n['rows']]
+    done=sum(g['done'] for g in groups)
+    total=sum(g['total'] for g in groups)
+    return {'schema_version':1, 'snapshot_date':status['snapshot_date'],
+            'meaning':'Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.',
+            'systems':{'done':done,'todo':total-done,'total':total,
+                       'percent':round(100*done/total,2) if total else 0,'groups':groups},
+            'unmapped':status['inventory_total']-total}
 
 
 def render(status, applied, mapping):
@@ -537,7 +565,10 @@ def main(argv=None):
     content = json.dumps(header, indent=2)[:-2] + ',\n  "rows": [\n'
     content += ",\n".join("    " + json.dumps(row, separators=(",", ":")) for row in rows)
     content += "\n  ]\n}\n"
-    svg = render(status, read_json(repo / "analysis" / "function-review.json")["applied"], mapping)
+    applied = read_json(repo / 'analysis' / 'function-review.json')['applied']
+    progress_path = repo / 'progress.json'
+    progress_content = json.dumps(progress_data(status, applied, mapping), indent=2) + '\n'
+    svg = render(status, applied, mapping)
     badges_svg = render_badges(status)
     readme_path = repo / 'README.md'
     readme = readme_path.read_text(encoding='utf-8')
@@ -561,10 +592,12 @@ def main(argv=None):
         if (args.status.read_text(encoding="utf-8") != content or not args.output.is_file()
                 or args.output.read_text(encoding="utf-8") != svg or not args.badges_output.is_file()
                 or args.badges_output.read_text(encoding="utf-8") != badges_svg
-                or readme != expected_readme):
+                or readme != expected_readme
+                or not progress_path.is_file() or progress_path.read_text(encoding="utf-8") != progress_content):
             raise SystemExit("Status assets are valid but not current; regenerate them")
         print("Status assets are valid and current")
     else:
+        write_atomic(progress_path, progress_content)
         write_atomic(args.status, content)
         write_atomic(args.output, svg)
         write_atomic(args.badges_output, badges_svg)
