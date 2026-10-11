@@ -17,11 +17,11 @@ Working out how Dreams works, one piece of code at a time
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/849aab02327a879efbb8044710bf02abd17ab1de/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=f4b65741c342)
 
-**Read the map from systems to components to code units.** Each square is an actual function assigned by code evidence. Green means its role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Progress belongs to the specific code unit, then adds up to its parent sections.
+**Every square has the same size and represents one actual function.** Each system and component has a visible name and a checked/identified count. Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review.
 
-**These are identified-code counts, not percentages of a finished Dreams rebuild.** Section sizes reflect the functions mapped so far. The full size of Sculpting—or any other system—is still unknown.
+Space is reserved for readable labels, so compare square counts rather than box sizes. These counts cover identified code; each system's full size and completion remain unknown. The expandable breakdown below lists every code unit and its progress.
 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |

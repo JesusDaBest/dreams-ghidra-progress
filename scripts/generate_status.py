@@ -258,26 +258,25 @@ def packed_regions(entries, bounds):
     return result
 
 
+CELL_SIZE = 6
+CELL_PITCH = 7
+
+
 def function_cells(rows, bounds):
-    """One equal-area cell per address. No texture or placeholder cells."""
+    """Fixed-size squares; empty background is never a function or a status."""
     x, y, width, height = bounds
-    count = len(rows)
-    grid_rows = max(1, min(count, round(math.sqrt(count * height / width))))
+    columns = max(1, int(width // CELL_PITCH))
+    needed = math.ceil(len(rows) / columns) * CELL_PITCH
+    if needed > height + 0.001:
+        raise ValueError('Function grid does not fit its labeled component')
     priority = {'verified_name': 0, 'deferred': 1, 'unreviewed': 2}
     colors = {'verified_name': 'green', 'deferred': 'amber', 'unreviewed': 'gray'}
     ordered = sorted(rows, key=lambda row: (priority[row['review']], int(row['address'], 16)))
-    out, cursor, offset_y = [], 0, 0
-    for line in range(grid_rows):
-        columns = count // grid_rows + (line < count % grid_rows)
-        cell_width, cell_height = width / columns, height * columns / count
-        for column in range(columns):
-            row = ordered[cursor]
-            out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" '
-                       f'x="{x + column * cell_width:.6f}" y="{y + offset_y:.6f}" '
-                       f'width="{cell_width:.6f}" height="{cell_height:.6f}" '
-                       f'fill="{COLORS[colors[row["review"]]]}" stroke="#0d1117" stroke-width="0.5"/>')
-            cursor += 1
-        offset_y += cell_height
+    out = []
+    for index, row in enumerate(ordered):
+        out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" '
+                   f'x="{x + (index % columns) * CELL_PITCH:.3f}" y="{y + (index // columns) * CELL_PITCH:.3f}" '
+                   f'width="{CELL_SIZE}" height="{CELL_SIZE}" fill="{COLORS[colors[row["review"]]]}"/>')
     return out
 
 
@@ -317,71 +316,60 @@ def hierarchy_rows(rows, mapping):
     return tree
 
 
-def render_hierarchy(nodes, bounds, depth=0):
-    out = []
-    entries = [(node['id'],node['label'],node,node['rows']) for node in nodes]
-    for (key,label,node,selected),box in packed_regions(entries,bounds):
-        x,y,w,h = box
-        checked = sum(r['review']=='verified_name' for r in selected)
-        path = '/'.join(node['path'])
-        attribute = f'data-area="{key}"' if depth == 0 else f'data-component="{path}"'
-        out.append(f'<g {attribute} data-count="{len(selected)}" data-depth="{depth}">')
-        out.append(f'<title>{escape(" / ".join(node["path"]))}: {escape(label)}; {checked}/{len(selected)} names checked</title>')
-        show_label = w >= (76 if depth else 95) and h >= (34 if depth else 55)
-        label_lines = textwrap.wrap(label,width=max(8,int((w-10)/(7.3 if depth==0 else 6))),break_long_words=False)[:2]
-        header = (len(label_lines)*14+19) if show_label else 0
-        if h < header + (24 if node['children'] else 0):
-            show_label,header = False,0
-        if node['children']:
-            # Header space separates hierarchy levels; sibling rectangles still
-            # use their real function counts, without minimum/invented weights.
-            out.append(rect(x,y,w,h,'panel'))
-            out.extend(render_hierarchy(node['children'],(x,y+header,w,h-header),depth+1))
-        else:
-            out.extend(function_cells(selected,box))
-        out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="{3 if depth==0 else 1.5}"/>')
-        if show_label:
-            outline=' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
-            for n,line in enumerate(label_lines):
-                out.append(text(round(x+5,3),round(y+14+n*14,3),line,13 if depth==0 else 11,weight=600,extra=outline))
-            out.append(text(round(x+5,3),round(y+14+len(label_lines)*14,3),f'{checked}/{len(selected):,} checked',10,extra=outline))
-        out.append('</g>')
-    return out
+def component_layout(nodes, width=1000):
+    """Reserve space for every label; cell counts, rather than box area, show scale."""
+    card_width, gap, padding = 492, 16, 12
+    columns = int((card_width-2*padding)//CELL_PITCH)
+    bottoms = [42, 42]
+    placed = []
+    for node in sorted(nodes, key=lambda n: (-len(n['rows']), n['id'])):
+        components = sorted((n for n in node['children'] if n['rows']), key=lambda n: (-len(n['rows']),n['id'])) or [node]
+        component_heights = [31 + math.ceil(len(n['rows'])/columns)*CELL_PITCH for n in components]
+        height = 48 + sum(component_heights) + 8
+        column = min(range(2),key=lambda i: bottoms[i])
+        placed.append((node, components, component_heights, column*(card_width+gap), bottoms[column], card_width,height))
+        bottoms[column] += height + gap
+    return placed, max(bottoms)+60
 
 
 def render(status, applied, mapping):
-    total = status["inventory_total"]
-    review = status["metrics"]["review"]
-    assert len(applied) == review["verified_names"]
-    assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
-    rows = status["rows"]
-    assert len(rows) == total and len({row["address"] for row in rows}) == total
-    areas = research_area_rows(rows, mapping)
-    mapped = sum(len(items) for _, _, _, items in areas)
-    unassigned = total - mapped
-    mapped_review = Counter(row['review'] for _, _, _, items in areas for row in items)
-    description = (f'{review["verified_names"]} of {total} function names checked. '
-                   f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
-                   'Sections show evidence-backed associations with parts of Dreams. '
-                   'Every cell is a real function. Sibling section areas are proportional to their mapped function counts; headers separate hierarchy levels. '
-                   'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
-                   'Assignments are incomplete; full system totals and completion are unknown.')
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="710" viewBox="0 0 1000 710" role="img" aria-labelledby="status-title status-desc">',
-           '<title id="status-title">Dreams function review by game system</title>',
-           f'<desc id="status-desc">{escape(description)}</desc>',
-           '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, 1000, 710, "background"),
-           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams | {mapped_review["verified_name"]:,} names checked', 16),
+    review = status['metrics']['review']
+    assert {r['address'] for r in applied} == {r['address'] for r in status['rows'] if r['review']=='verified_name'}
+    tree = hierarchy_rows(status['rows'],mapping)
+    placed,height = component_layout(tree)
+    mapped = sum(len(n['rows']) for n in tree)
+    states = Counter(r['review'] for n in tree for r in n['rows'])
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{height}" viewBox="0 0 1000 {height}" role="img" aria-labelledby="status-title status-desc">',
+           '<title id="status-title">Dreams progress by system and component</title>',
+           '<desc id="status-desc">Every function square is the same size. Every system and component has a visible name and checked-versus-mapped count. Green means name checked; amber means review unresolved; gray means unreviewed. Blank space is layout space, not progress. Full system sizes remain unknown.</desc>',
+           '<g font-family="Segoe UI,Arial,sans-serif">',rect(0,0,1000,height,'background'),
+           text(4,20,f'{mapped:,} functions mapped to Dreams systems | {states["verified_name"]} names checked',16),
+           text(4,36,'Each square is one function. Counts show checked names / identified functions.',12,'muted'),
            '<g data-panel="review">']
-    out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,616)))
-    out.extend(['</g>',
-                legend(4, 675, 'green', f'{mapped_review["verified_name"]:,} names checked'),
-                legend(220, 675, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
-                legend(470, 675, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
-                text(996, 675, 'System / component / code unit', 11, 'muted', extra=' text-anchor="end"')])
-    out.append(text(4, 700, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
-    out.append('</g></svg>')
-    return "\n".join(out) + "\n"
+    for node,components,heights,x,y,w,h in placed:
+        checked = sum(r['review']=='verified_name' for r in node['rows'])
+        out.append(f'<g data-area="{node["id"]}" data-count="{len(node["rows"])}">')
+        out.append(rect(x,y,w,h,'panel',4,'border'))
+        out.append(text(x+12,y+22,node['label'],16,weight=600))
+        out.append(text(x+12,y+40,f'{checked:,} / {len(node["rows"]):,} names checked',12,'muted'))
+        cy=y+48
+        for component,ch in zip(components,heights):
+            count=sum(r['review']=='verified_name' for r in component['rows'])
+            path='/'.join(component['path'])
+            out.append(f'<g data-component="{path}" data-count="{len(component["rows"])}">')
+            out.append(text(x+12,cy+14,component['label'],12,weight=600))
+            out.append(text(x+w-12,cy+14,f'{count}/{len(component["rows"])} checked',11,'muted',extra=' text-anchor="end"'))
+            out.extend(function_cells(component['rows'],(x+12,cy+21,w-24,ch-21)))
+            out.append('</g>')
+            cy+=ch
+        out.append('</g>')
+    out.extend(['</g>',legend(4,height-47,'green',f'{states["verified_name"]} names checked'),
+                legend(225,height-47,'amber',f'{states["deferred"]} reviewed, unresolved'),
+                legend(485,height-47,'gray',f'{states["unreviewed"]:,} not reviewed'),
+                text(4,height-26,f'{status["inventory_total"]-mapped:,} functions still need system mapping. Full system sizes and completion remain unknown.',12,'muted'),
+                text(4,height-8,'Squares are comparable across all groups. Box space is reserved for labels; box area does not measure system size.',12,'muted'),
+                '</g></svg>'])
+    return '\n'.join(out)+'\n'
 
 
 def render_area_table(status, mapping):
