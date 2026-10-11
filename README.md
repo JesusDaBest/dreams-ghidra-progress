@@ -17,11 +17,11 @@ Working out how Dreams works, one piece of code at a time
 **56 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/101251458b17b2510ffa73cb679c0cc0949bc342/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=094c25181327)
 
 **The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 50 of the 56 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
-Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
+Green means behavior or helper code has been reviewed; blue means property handling or type registration has been reviewed. Both have checked descriptive names. Amber means unresolved; gray means unreviewed. A reviewed registration does not establish how its gadget behaves. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |
@@ -711,4 +711,5 @@ Next: trace runtime value evaluation, extend the system mapping, and match devel
 ## Repository scope
 
 This public repository contains sanitized progress, review metadata, and status graphics. Game binaries, Ghidra databases, decompiled game code, local paths, credentials, and logs remain outside it. The analysis is incomplete; full source reconstruction is not claimed.
+
 

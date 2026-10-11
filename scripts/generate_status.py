@@ -365,7 +365,9 @@ def render_hierarchy(nodes, bounds, depth=0):
                 colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
                 rows=sorted(node['rows'],key=lambda r:(priority[r['review']],int(r['address'],16)))
                 for row,(gx,gy) in zip(rows,sorted(owned,key=lambda p:(p[1],p[0]))):
-                    out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" x="{x0+gx*side:.6f}" y="{y0+gy*side:.6f}" width="{side:.6f}" height="{side:.6f}" fill="{COLORS[colors[row["review"]]]}" stroke="#0d1117" stroke-width="0.6"/>')
+                    scope=row.get('reviewed_scope','unreviewed')
+                    color='blue' if row['review']=='verified_name' and scope=='properties_or_type_registration' else colors[row['review']]
+                    out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{x0+gx*side:.6f}" y="{y0+gy*side:.6f}" width="{side:.6f}" height="{side:.6f}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"/>')
             out.append('</g>')
     draw(nodes,cells,depth)
     # Draw section outlines along lattice edges, including stepped boundaries.
@@ -457,7 +459,8 @@ def render(status, applied, mapping):
     review = status["metrics"]["review"]
     assert len(applied) == review["verified_names"]
     assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
-    rows = status["rows"]
+    scopes={r['address']:r['reviewed_scope'] for r in applied}
+    rows = [dict(r,reviewed_scope=scopes.get(r['address'],'unreviewed')) for r in status["rows"]]
     assert len(rows) == total and len({row["address"] for row in rows}) == total
     areas = research_area_rows(rows, mapping)
     mapped = sum(len(items) for _, _, _, items in areas)
@@ -467,7 +470,7 @@ def render(status, applied, mapping):
                    f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
                    'Sections show evidence-backed associations with parts of Dreams. '
                    'Every cell is a real function. Every section is filled using the same fixed square lattice and mapped-count area scale. Labels overlay cells; there are no reserved header bands. '
-                   'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
+                   'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
     out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="714" viewBox="0 0 1000 714" role="img" aria-labelledby="status-title status-desc">',
            '<title id="status-title">Dreams function review by game system</title>',
@@ -479,10 +482,10 @@ def render(status, applied, mapping):
            '<g data-panel="review">']
     out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,620)))
     out.extend(['</g>',
-                legend(4, 678, 'green', f'{mapped_review["verified_name"]:,} names checked'),
-                legend(220, 678, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
-                legend(470, 678, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
-                text(996, 678, 'System / component / code unit', 11, 'muted', extra=' text-anchor="end"')])
+                legend(4, 678, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
+                legend(250, 678, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
+                legend(520, 678, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
+                legend(700, 678, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
     out.append(text(4, 704, f'{unassigned:,} more functions still need system mapping. One cell = one mapped function; counts cover identified code only.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"

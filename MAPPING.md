@@ -26,7 +26,7 @@ Assignments are joined by function address. Function names, address proximity, a
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.
-- Green counts only independently checked names from the review ledger. Amber means reviewed but unresolved; gray means not yet reviewed. Cached pseudocode does not make a cell green.
+- Green identifies reviewed behavior/helpers; blue identifies reviewed property/type registration. Both require independently checked names from the review ledger. Amber means reviewed but unresolved; gray means not yet reviewed. Cached pseudocode does not make a cell green.
 - Section labels show checked names divided by mapped functions; no subsystem completion percentage is displayed. The total code size of each system is still unknown. Counts can grow or assignments can be corrected as research finds more evidence.
 
 These are research classifications, not a recovered source-module layout or a measure of game-system complexity. Unclassified functions remain in the full inventory and are reported separately below the map.
@@ -54,4 +54,5 @@ Mapped seven independently reviewed functions to their confirmed gadget types: R
 ## One feature, one progress group
 
 Timeline definition and playback-associated code share one Timeline group; Grade definition and color-processing-associated code share one Grade group. Source associations remain recorded per function. These presentation groups do not claim exclusive engine ownership. Each function address occurs once in the map, and parent totals include their children rather than adding another copy.
+
 
