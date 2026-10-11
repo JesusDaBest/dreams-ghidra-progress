@@ -5,7 +5,6 @@ This private repository records sanitized progress from a local Ghidra analysis 
 The imported starting analysis contains **9,551 functions**: **9,395** have default `FUN_` names and **156** have other names. These are baseline inventory counts, not a measure of verified understanding.
 
 - [Progress and limitations](PROGRESS.md)
-- [Goal prompt](docs/goal-prompt.txt)
 - [Function review and rename record](analysis/function-review.json)
 
 The current naming batch contains two applied descriptive renames and six deferred functions. Both names were verified immediately through MCP and again after a clean stop and reopening of the saved project. A refreshed inventory contains 9,551 functions, including 9,393 default `FUN_` names. Existing meaningful names are preserved.

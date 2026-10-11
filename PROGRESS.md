@@ -7,7 +7,6 @@ Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains part
 - GhidraMCP 2.0 is available through a local, loopback-only MCP endpoint.
 - The supplied Ghidra packed-program archive was imported into a persistent working project with auto-analysis disabled to preserve existing analysis.
 - Function inventory, decompilation, and cross-reference queries were verified.
-- A goal prompt defines the intended analysis and completion criteria.
 - Original inputs and a separate preexisting project are retained outside this progress repository.
 - Both applied names persisted after a clean service stop and reopening of the saved project. The supplied original archive and its imported input copy retained their original hashes.
 
