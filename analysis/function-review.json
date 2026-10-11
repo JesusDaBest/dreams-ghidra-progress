@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-10",
   "status": "applied_verified_after_reopening",
-  "review_scope": "16 previously unnamed functions reviewed; 12 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "31 previously unnamed functions reviewed; 27 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9383,
-    "other_names": 168,
+    "default_fun_names": 9368,
+    "other_names": 183,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -243,6 +243,288 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "The name describes a type-descriptor registration routine; it is not evidence of an original symbol or a runtime Combiner object constructor.",
         "No signature or datatype changes are part of this rename."
+      ]
+    },
+    {
+      "address": "1404d8bf0",
+      "original_name": "FUN_1404d8bf0",
+      "applied_name": "VisitMagicDoorProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57a50 loads the directly verified NUL-terminated literal MagicDoor at 140d57a70 from 141720008, stores it at descriptor 1458ae850 at 140d57a8c, calls the helper that ensures and links the Thing base descriptor at 140d57ac1, and tail-jumps to 140d6e570 at 140d57acc.",
+        "All 23 registered field labels and object-relative offsets match visitor 1404d8bf0; distinctive matches include MagicDoorType +0x119, MagicDoorShowCloseUI +0x11c, MagicDoorOpenUI +0x124, MagicDoorUseLobby +0x12d and MagicDoorUseSpawnTrans +0x151. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json.",
+        "Complete assembly contains 906 instructions and 4111 body bytes. Object RSI is preserved in R14; offsets were tracked through aliases and stack temporaries.",
+        "DispatchThingTypePropertyVisitor calls this function at 14048cb24; the cached dispatcher associates the call with case 0x49. This supports the independent literal/field match."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Names the property visitation role; version gates, historical fields and complete serialization semantics remain partly unresolved.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "140d6e570",
+      "original_name": "FUN_140d6e570",
+      "applied_name": "RegisterMagicDoorFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57a50 loads the directly verified NUL-terminated literal MagicDoor at 140d57a70 from 141720008, stores it at descriptor 1458ae850 at 140d57a8c, calls the helper that ensures and links the Thing base descriptor at 140d57ac1, and tail-jumps to 140d6e570 at 140d57acc.",
+        "Complete assembly loads descriptor 1458ae850 into RBX at 140d6e576 and passes it to 23 registrations. There are 21 direct property-label arguments. Pos and BaseIdSeqNumberTrio are supplied by specialized helpers.",
+        "All 23 registered field labels and object-relative offsets match visitor 1404d8bf0; distinctive matches include MagicDoorType +0x119, MagicDoorShowCloseUI +0x11c, MagicDoorOpenUI +0x124, MagicDoorUseLobby +0x12d and MagicDoorUseSpawnTrans +0x151. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json.",
+        "RDI, RSI and EDX assignments were inspected in assembly. Some saved callee prototypes omit arguments in cached pseudocode, so names do not rely on those prototypes."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Names the field registration role; full field extents, object layout and helper prototypes are not established.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "140d57a50",
+      "original_name": "FUN_140d57a50",
+      "applied_name": "RegisterMagicDoorTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57a50 loads the directly verified NUL-terminated literal MagicDoor at 140d57a70 from 141720008, stores it at descriptor 1458ae850 at 140d57a8c, calls the helper that ensures and links the Thing base descriptor at 140d57ac1, and tail-jumps to 140d6e570 at 140d57acc.",
+        "All 42 instructions were inspected. The routine guards initialization, installs descriptor operation pointers, links the Thing base descriptor and then registers the matching fields.",
+        "All 23 registered field labels and object-relative offsets match visitor 1404d8bf0; distinctive matches include MagicDoorType +0x119, MagicDoorShowCloseUI +0x11c, MagicDoorOpenUI +0x124, MagicDoorUseLobby +0x12d and MagicDoorUseSpawnTrans +0x151. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Describes a static type-descriptor registration routine; it does not identify an original symbol or a runtime object constructor.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "1404d9c10",
+      "original_name": "FUN_1404d9c10",
+      "applied_name": "VisitSignalInspectorProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57b20 loads the directly verified NUL-terminated literal SignalInspector at 140d57b40 from 141720012, stores it at descriptor 1458aeb00 at 140d57b5c, calls the helper that ensures and links the Thing base descriptor at 140d57b91, and tail-jumps to 140d6e2b0 at 140d57b9c.",
+        "All 16 registered field labels and object-relative offsets match visitor 1404d9c10; distinctive matches include TextWorldOffset +0x90, FaceCamera +0xed, AlwaysOnTop +0x110, InputA +0x118, TimeSinceChange +0x140 and BrightnessOnChange +0x141. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json.",
+        "Complete assembly contains 505 instructions and 2128 body bytes. Object RSI is preserved in R14; offsets were tracked through aliases and stack temporaries.",
+        "DispatchThingTypePropertyVisitor calls this function at 14048cb3c; the cached dispatcher associates the call with case 0x4a. This supports the independent literal/field match."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Names the property visitation role; version gates, historical fields and complete serialization semantics remain partly unresolved.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "140d6e2b0",
+      "original_name": "FUN_140d6e2b0",
+      "applied_name": "RegisterSignalInspectorFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57b20 loads the directly verified NUL-terminated literal SignalInspector at 140d57b40 from 141720012, stores it at descriptor 1458aeb00 at 140d57b5c, calls the helper that ensures and links the Thing base descriptor at 140d57b91, and tail-jumps to 140d6e2b0 at 140d57b9c.",
+        "Complete assembly loads descriptor 1458aeb00 into RBX at 140d6e2b6 and passes it to 16 registrations. There are 15 direct property-label arguments. Pos is supplied by a specialized helper.",
+        "All 16 registered field labels and object-relative offsets match visitor 1404d9c10; distinctive matches include TextWorldOffset +0x90, FaceCamera +0xed, AlwaysOnTop +0x110, InputA +0x118, TimeSinceChange +0x140 and BrightnessOnChange +0x141. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json.",
+        "RDI, RSI and EDX assignments were inspected in assembly. Some saved callee prototypes omit arguments in cached pseudocode, so names do not rely on those prototypes."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Names the field registration role; full field extents, object layout and helper prototypes are not established.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "140d57b20",
+      "original_name": "FUN_140d57b20",
+      "applied_name": "RegisterSignalInspectorTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57b20 loads the directly verified NUL-terminated literal SignalInspector at 140d57b40 from 141720012, stores it at descriptor 1458aeb00 at 140d57b5c, calls the helper that ensures and links the Thing base descriptor at 140d57b91, and tail-jumps to 140d6e2b0 at 140d57b9c.",
+        "All 42 instructions were inspected. The routine guards initialization, installs descriptor operation pointers, links the Thing base descriptor and then registers the matching fields.",
+        "All 16 registered field labels and object-relative offsets match visitor 1404d9c10; distinctive matches include TextWorldOffset +0x90, FaceCamera +0xed, AlwaysOnTop +0x110, InputA +0x118, TimeSinceChange +0x140 and BrightnessOnChange +0x141. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Describes a static type-descriptor registration routine; it does not identify an original symbol or a runtime object constructor.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "1404da460",
+      "original_name": "FUN_1404da460",
+      "applied_name": "VisitSignalGeneratorProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57bf0 loads the directly verified NUL-terminated literal SignalGenerator at 140d57c10 from 141720022, stores it at descriptor 1458aedb0 at 140d57c2c, calls the helper that ensures and links the Thing base descriptor at 140d57c61, and tail-jumps to 140d6e010 at 140d57c6c.",
+        "All 14 registered field labels and object-relative offsets match visitor 1404da460; distinctive matches include SweepSeconds +0xd8, PauseSeconds +0xe0, PhaseOffset +0xe8, OutputNormalised +0xec, Magnitude +0xf0, RandomTime +0x108 and RandomMag +0x110. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json.",
+        "Complete assembly contains 459 instructions and 1911 body bytes. Object RSI is preserved in R14; offsets were tracked through aliases and stack temporaries.",
+        "DispatchThingTypePropertyVisitor calls this function at 14048cb54; the cached dispatcher associates the call with case 0x4b. This supports the independent literal/field match."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Names the property visitation role; version gates, historical fields and complete serialization semantics remain partly unresolved.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "140d6e010",
+      "original_name": "FUN_140d6e010",
+      "applied_name": "RegisterSignalGeneratorFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57bf0 loads the directly verified NUL-terminated literal SignalGenerator at 140d57c10 from 141720022, stores it at descriptor 1458aedb0 at 140d57c2c, calls the helper that ensures and links the Thing base descriptor at 140d57c61, and tail-jumps to 140d6e010 at 140d57c6c.",
+        "Complete assembly loads descriptor 1458aedb0 into RBX at 140d6e016 and passes it to 14 registrations. There are 13 direct property-label arguments. Pos is supplied by a specialized helper.",
+        "All 14 registered field labels and object-relative offsets match visitor 1404da460; distinctive matches include SweepSeconds +0xd8, PauseSeconds +0xe0, PhaseOffset +0xe8, OutputNormalised +0xec, Magnitude +0xf0, RandomTime +0x108 and RandomMag +0x110. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json.",
+        "RDI, RSI and EDX assignments were inspected in assembly. Some saved callee prototypes omit arguments in cached pseudocode, so names do not rely on those prototypes."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Names the field registration role; full field extents, object layout and helper prototypes are not established.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "140d57bf0",
+      "original_name": "FUN_140d57bf0",
+      "applied_name": "RegisterSignalGeneratorTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57bf0 loads the directly verified NUL-terminated literal SignalGenerator at 140d57c10 from 141720022, stores it at descriptor 1458aedb0 at 140d57c2c, calls the helper that ensures and links the Thing base descriptor at 140d57c61, and tail-jumps to 140d6e010 at 140d57c6c.",
+        "All 42 instructions were inspected. The routine guards initialization, installs descriptor operation pointers, links the Thing base descriptor and then registers the matching fields.",
+        "All 14 registered field labels and object-relative offsets match visitor 1404da460; distinctive matches include SweepSeconds +0xd8, PauseSeconds +0xe0, PhaseOffset +0xe8, OutputNormalised +0xec, Magnitude +0xf0, RandomTime +0x108 and RandomMag +0x110. The exact registration instructions and visitor reads/address constructions are saved in field-matches.json."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Describes a static type-descriptor registration routine; it does not identify an original symbol or a runtime object constructor.",
+        "No signature, calling convention, datatype or parameter change is proposed."
+      ]
+    },
+    {
+      "address": "1404dabe0",
+      "original_name": "FUN_1404dabe0",
+      "applied_name": "VisitCameraShakerProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57cc0 loads the verified NUL-terminated literal CameraShaker from 141720032 at 140d57ce0 and stores it on descriptor 1458af060 at 140d57cfc. It calls the shared Thing base-descriptor helper at 140d57d31 and tail-jumps to field registrar 140d6ddf0 at 140d57d3c.",
+        "All 11 field labels and offsets agree with visitor 1404dabe0. Distinctive matches are CameraShakiness +0xd4, CameraShakeSpeed +0xd8, Name +0xe0, FadeIn +0xe8 and FadeOut +0xec.",
+        "Complete 353-instruction assembly preserves the object in R14 and makes property visitor calls through explicit labels and matching object-relative offsets. The dispatcher calls it at 14048cb6c; cached case 0x4c corroborates the match.",
+        "FadeOut reads [R14] only after R14 is adjusted by 0xec. This was traced rather than treated as object offset zero."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Version and property-filter gates mean the complete set of matched fields need not be visited on every call.",
+        "This identifies a property visitor, not the camera-shake or controller-motor execution algorithm.",
+        "No signature, calling convention, datatype or parameter changes are proposed."
+      ]
+    },
+    {
+      "address": "140d6ddf0",
+      "original_name": "FUN_140d6ddf0",
+      "applied_name": "RegisterCameraShakerFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57cc0 loads the verified NUL-terminated literal CameraShaker from 141720032 at 140d57ce0 and stores it on descriptor 1458af060 at 140d57cfc. It calls the shared Thing base-descriptor helper at 140d57d31 and tail-jumps to field registrar 140d6ddf0 at 140d57d3c.",
+        "Complete 51-instruction assembly loads descriptor 1458af060 at 140d6ddf6 and issues 11 field registrations. 10 labels are passed directly; Pos is supplied by its specialized helper.",
+        "All 11 field labels and offsets agree with visitor 1404dabe0. Distinctive matches are CameraShakiness +0xd4, CameraShakeSpeed +0xd8, Name +0xe0, FadeIn +0xe8 and FadeOut +0xec.",
+        "RDI/RSI/EDX register assignments establish descriptor, label and offset arguments; cached callee prototypes still omit some of those arguments."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Field start offsets and registration roles are supported; complete type definitions, extents and helper prototypes remain unresolved.",
+        "No signature, calling convention, datatype or parameter changes are proposed."
+      ]
+    },
+    {
+      "address": "140d57cc0",
+      "original_name": "FUN_140d57cc0",
+      "applied_name": "RegisterCameraShakerTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57cc0 loads the verified NUL-terminated literal CameraShaker from 141720032 at 140d57ce0 and stores it on descriptor 1458af060 at 140d57cfc. It calls the shared Thing base-descriptor helper at 140d57d31 and tail-jumps to field registrar 140d6ddf0 at 140d57d3c.",
+        "All 42 instructions were reviewed: guarded descriptor initialization installs operation pointers, ensures/links the Thing base descriptor, then registers the matching fields.",
+        "All 11 field labels and offsets agree with visitor 1404dabe0. Distinctive matches are CameraShakiness +0xd4, CameraShakeSpeed +0xd8, Name +0xe0, FadeIn +0xe8 and FadeOut +0xec."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "This is a static type-descriptor registration routine; it is not an original recovered symbol or a runtime gadget object constructor.",
+        "No signature, calling convention, datatype or parameter changes are proposed."
+      ]
+    },
+    {
+      "address": "1404db190",
+      "original_name": "FUN_1404db190",
+      "applied_name": "VisitPadRumbleProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57d90 loads the verified NUL-terminated literal PadRumble from 14172003f at 140d57db0 and stores it on descriptor 1458af310 at 140d57dcc. It calls the shared Thing base-descriptor helper at 140d57e01 and tail-jumps to field registrar 140d6dbd0 at 140d57e0c.",
+        "Twelve field label/offset pairs match visitor 1404db190. The thirteenth registered field, PowerPlayerValue +0xd4, matches a nested helper call at that offset; its parent label is not directly referenced by the visitor. Distinctive matches are RumbleLargeMotor +0xe8, RumbleSmallMotor +0xec, HandGadgetControllerType +0xf0, Name +0xf8 and FadeOut +0x104.",
+        "Complete 396-instruction assembly preserves the object in R14 and makes property visitor calls through explicit labels and matching object-relative offsets. The dispatcher calls it at 14048cb84; cached case 0x4d corroborates the match.",
+        "FadeOut reads [R14] only after R14 is adjusted by 0x104. This was traced rather than treated as object offset zero."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Version and property-filter gates mean the complete set of matched fields need not be visited on every call.",
+        "This identifies a property visitor, not the camera-shake or controller-motor execution algorithm.",
+        "No signature, calling convention, datatype or parameter changes are proposed."
+      ]
+    },
+    {
+      "address": "140d6dbd0",
+      "original_name": "FUN_140d6dbd0",
+      "applied_name": "RegisterPadRumbleFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57d90 loads the verified NUL-terminated literal PadRumble from 14172003f at 140d57db0 and stores it on descriptor 1458af310 at 140d57dcc. It calls the shared Thing base-descriptor helper at 140d57e01 and tail-jumps to field registrar 140d6dbd0 at 140d57e0c.",
+        "Complete 58-instruction assembly loads descriptor 1458af310 at 140d6dbd6 and issues 13 field registrations. 11 labels are passed directly; Pos is supplied by its specialized helper. HandGadgetControllerType is supplied by helper 140d66c30, whose literal and offset stores are independently saved.",
+        "Twelve field label/offset pairs match visitor 1404db190. The thirteenth registered field, PowerPlayerValue +0xd4, matches a nested helper call at that offset; its parent label is not directly referenced by the visitor. Distinctive matches are RumbleLargeMotor +0xe8, RumbleSmallMotor +0xec, HandGadgetControllerType +0xf0, Name +0xf8 and FadeOut +0x104.",
+        "RDI/RSI/EDX register assignments establish descriptor, label and offset arguments; cached callee prototypes still omit some of those arguments."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Field start offsets and registration roles are supported; complete type definitions, extents and helper prototypes remain unresolved.",
+        "No signature, calling convention, datatype or parameter changes are proposed."
+      ]
+    },
+    {
+      "address": "140d57d90",
+      "original_name": "FUN_140d57d90",
+      "applied_name": "RegisterPadRumbleTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Initializer 140d57d90 loads the verified NUL-terminated literal PadRumble from 14172003f at 140d57db0 and stores it on descriptor 1458af310 at 140d57dcc. It calls the shared Thing base-descriptor helper at 140d57e01 and tail-jumps to field registrar 140d6dbd0 at 140d57e0c.",
+        "All 42 instructions were reviewed: guarded descriptor initialization installs operation pointers, ensures/links the Thing base descriptor, then registers the matching fields.",
+        "Twelve field label/offset pairs match visitor 1404db190. The thirteenth registered field, PowerPlayerValue +0xd4, matches a nested helper call at that offset; its parent label is not directly referenced by the visitor. Distinctive matches are RumbleLargeMotor +0xe8, RumbleSmallMotor +0xec, HandGadgetControllerType +0xf0, Name +0xf8 and FadeOut +0x104."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "This is a static type-descriptor registration routine; it is not an original recovered symbol or a runtime gadget object constructor.",
+        "No signature, calling convention, datatype or parameter changes are proposed."
       ]
     }
   ],

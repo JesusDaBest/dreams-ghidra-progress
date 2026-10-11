@@ -20,11 +20,11 @@ Status snapshot: 2026-10-10. Setup is verified; reverse engineering remains part
 
 The 156 other names include existing annotations or symbols; they are not 156 independently verified findings from this work. Inventory size does not establish complete function discovery or decompilation coverage.
 
-After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,383 default `FUN_` names, and 168 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
+After a clean stop and reopening, a fresh complete paginated inventory confirmed 9,551 functions, 9,368 default `FUN_` names, and 183 other names. Every address and name matches the baseline plus the journaled renames. The baseline above remains unchanged.
 
 ## Documented naming batches
 
-16 previously unnamed functions have documented review outcomes: 12 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
+31 previously unnamed functions have documented review outcomes: 27 descriptive names applied and verified after reopening, and 4 deferred. The local journal retains each original name and supporting evidence.
 
 | Address | Original name | Applied name | Recorded state |
 | --- | --- | --- | --- |
@@ -40,8 +40,23 @@ After a clean stop and reopening, a fresh complete paginated inventory confirmed
 | `1404d87a0` | `FUN_1404d87a0` | `VisitCombinerProperties` | Verified after reopening |
 | `140d6e850` | `FUN_140d6e850` | `RegisterCombinerFieldOffsets` | Verified after reopening |
 | `140d57980` | `FUN_140d57980` | `RegisterCombinerTypeDescriptor` | Verified after reopening |
+| `1404d8bf0` | `FUN_1404d8bf0` | `VisitMagicDoorProperties` | Verified after reopening |
+| `140d6e570` | `FUN_140d6e570` | `RegisterMagicDoorFieldOffsets` | Verified after reopening |
+| `140d57a50` | `FUN_140d57a50` | `RegisterMagicDoorTypeDescriptor` | Verified after reopening |
+| `1404d9c10` | `FUN_1404d9c10` | `VisitSignalInspectorProperties` | Verified after reopening |
+| `140d6e2b0` | `FUN_140d6e2b0` | `RegisterSignalInspectorFieldOffsets` | Verified after reopening |
+| `140d57b20` | `FUN_140d57b20` | `RegisterSignalInspectorTypeDescriptor` | Verified after reopening |
+| `1404da460` | `FUN_1404da460` | `VisitSignalGeneratorProperties` | Verified after reopening |
+| `140d6e010` | `FUN_140d6e010` | `RegisterSignalGeneratorFieldOffsets` | Verified after reopening |
+| `140d57bf0` | `FUN_140d57bf0` | `RegisterSignalGeneratorTypeDescriptor` | Verified after reopening |
+| `1404dabe0` | `FUN_1404dabe0` | `VisitCameraShakerProperties` | Verified after reopening |
+| `140d6ddf0` | `FUN_140d6ddf0` | `RegisterCameraShakerFieldOffsets` | Verified after reopening |
+| `140d57cc0` | `FUN_140d57cc0` | `RegisterCameraShakerTypeDescriptor` | Verified after reopening |
+| `1404db190` | `FUN_1404db190` | `VisitPadRumbleProperties` | Verified after reopening |
+| `140d6dbd0` | `FUN_140d6dbd0` | `RegisterPadRumbleFieldOffsets` | Verified after reopening |
+| `140d57d90` | `FUN_140d57d90` | `RegisterPadRumbleTypeDescriptor` | Verified after reopening |
 
-The shared visitors are identified by matching caller offsets with field registrations, explicit type literals, and body behavior. In particular, Calculator OperandA/OperandB register as Variant and its Name field registers as GadgetName. The Combiner cluster has matching FatWireType, Name and RotationRepresentation offsets across its visitor and registration routines. These are analyst-assigned function names; original function symbols and complete type layouts are not claimed.
+The shared visitors are identified by matching caller offsets with field registrations, explicit type literals, and body behavior. In particular, Calculator OperandA/OperandB register as Variant and its Name field registers as GadgetName. The Combiner cluster has matching FatWireType, Name and RotationRepresentation offsets across its visitor and registration routines. The MagicDoor, SignalInspector and SignalGenerator clusters add nine names supported by explicit registered type names and 53 matching field labels and offsets. Their initializers link the Thing base descriptor; this does not mean each visitor directly visits all inherited Thing properties. CameraShaker and PadRumble add six names supported by their registered type literals and matching visitor/registration offsets. These identify property and registration routines, not the algorithms that drive camera motion or controller motors. These are analyst-assigned function names; original function symbols and complete type layouts are not claimed.
 
 The initial eight-function review used the starting convention. The later shared-property review uses the validated PS4_SYSV correction and assembly evidence. Names, reasons, and caveats are recorded in `analysis/function-review.json`; unrelated signatures and data types were not changed in these batches.
 
