@@ -22,7 +22,7 @@ Assignments are joined by function address. Function names, address proximity, a
 
 ## How sections are counted
 
-- Each function appears in one section and occupies one cell. Section area is proportional to its mapped function count.
+- Each function appears once, in its evidenced system, component, and code unit. Sibling sections are sized by their mapped function counts. Header space separates hierarchy levels; individual cell dimensions can differ between units.
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.
@@ -30,6 +30,14 @@ Assignments are joined by function address. Function names, address proximity, a
 - A percentage is checked names divided by mapped functions in that section. The total code size of each system is still unknown. Counts can grow or assignments can be corrected as research finds more evidence.
 
 These are research classifications, not a recovered source-module layout or a measure of game-system complexity. Unclassified functions remain in the full inventory and are reported separately below the map.
+
+## Components within each system
+
+The map now retains the code-unit boundaries inside each system rather than combining every function into one system-wide grid. Components use exact registered type identities and implementation-file evidence already supporting those functions. Type identities are grouped under readable categories such as logic and signals, sensors, sculpt geometry, paint strokes, and collision queries. These category names are research organization, not recovered original source directories.
+
+Every assignment records its `component_path` and `component_basis`. A function supported by multiple components stays in their common parent; it is not duplicated or forced into one child. Shared property helpers retain their shared ownership. The expanded tree on the front page lists every component, including units too small to label in the image.
+
+Green is assigned to the checked functions inside their own units and totals are then added to the parent components and systems. Discovering a type, matching a source reference, or generating pseudocode does not turn its functions green. No new reviewed functions or larger system totals were invented for this change.
 
 ## Verification and reproduction
 

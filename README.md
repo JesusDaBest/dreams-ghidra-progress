@@ -5,7 +5,7 @@
 
 Working out how Dreams works, one piece of code at a time
 
-[Research findings](ANALYSIS.md) · [Progress log](PROGRESS.md) · [Mapping evidence](MAPPING.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
+[Research findings](ANALYSIS.md) Â· [Progress log](PROGRESS.md) Â· [Mapping evidence](MAPPING.md) Â· [Function review](analysis/function-review.json) Â· [Status data](analysis/status.json)
 
 </div>
 
@@ -17,9 +17,11 @@ Working out how Dreams works, one piece of code at a time
 **27 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/3217cde4c680cf7e9b321b123ccd8fd9c269a5e0/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=699ff6577f49)
 
-**Each cell is one function mapped to that part of Dreams.** Green means its name has been checked; amber means reviewed but unresolved; gray means not reviewed. Section sizes come from actual mapped function counts. More complex systems may still have fewer mapped functions while their code is being identified.
+**Read the map from systems to components to code units.** Each square is an actual function assigned by code evidence. Green means its role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Progress belongs to the specific code unit, then adds up to its parent sections.
+
+**These are identified-code counts, not percentages of a finished Dreams rebuild.** Section sizes reflect the functions mapped so far. The full size of Sculpting—or any other system—is still unknown.
 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |
@@ -35,6 +37,658 @@ Working out how Dreams works, one piece of code at a time
 | Shared engine & object data | 113 | 5 / 113 (4.4%) |
 
 **1,540 of 9,551 discovered functions are mapped; 8,011 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+
+<details>
+<summary>Explore the systems and their components</summary>
+
+- **Gadgets & logic** â€” 22/450 names checked
+  - **Online & multiplayer gadgets** â€” 3/95 names checked
+    - **Magic Door Type** â€” 0/4 names checked
+    - **PUMap Gadget** â€” 0/4 names checked
+    - **Dreamiverse Reference Gadget** â€” 0/3 names checked
+    - **Dreamiverse Reference Gadget Mode** â€” 0/3 names checked
+    - **Dreamiverse Text Gadget Mode** â€” 0/3 names checked
+    - **Magic Door UIType** â€” 0/3 names checked
+    - **Map Marker Icon** â€” 0/3 names checked
+    - **Map Marker Visibility** â€” 0/3 names checked
+    - **Map Show Players** â€” 0/3 names checked
+    - **Metagame Gadget Mode** â€” 0/3 names checked
+    - **Portal Type** â€” 0/3 names checked
+    - **Scoreboard Mode** â€” 0/3 names checked
+    - **Scoreboard Ordering** â€” 0/3 names checked
+    - **Scoreboard Player Setting** â€” 0/3 names checked
+    - **Scoreboard Scope** â€” 0/3 names checked
+    - **Scoreboard Unit** â€” 0/3 names checked
+    - **Search Gadget Mode** â€” 0/3 names checked
+    - **Social Gadget Mode** â€” 0/3 names checked
+    - **Spawnplace Gadget Mode** â€” 0/3 names checked
+    - **Magic Door** â€” 3/3 names checked
+    - **Metagame Gadget** â€” 0/3 names checked
+    - **Network Variable Gadget** â€” 0/3 names checked
+    - **Portal Gadget** â€” 0/3 names checked
+    - **PUMagic Door** â€” 0/3 names checked
+    - **PUMap Marker** â€” 0/3 names checked
+    - **Scoreboard Display Gadget** â€” 0/3 names checked
+    - **Search Gadget** â€” 0/3 names checked
+    - **Social Gadget** â€” 0/3 names checked
+    - **Spawnplace Gadget** â€” 0/3 names checked
+    - **Multiplayer Session Gadget** â€” 0/2 names checked
+    - **Network Signal Gadget** â€” 0/2 names checked
+    - **Network Spawner Gadget** â€” 0/2 names checked
+  - **Logic & signals** â€” 11/84 names checked
+    - **Calculator Op** â€” 0/4 names checked
+    - **Delay Select** â€” 0/4 names checked
+    - **Label Any Or All** â€” 0/4 names checked
+    - **Calculator** â€” 1/3 names checked
+    - **Combiner** â€” 3/3 names checked
+    - **Calculator Units** â€” 0/3 names checked
+    - **Gate Reset Mode** â€” 0/3 names checked
+    - **Random Mode** â€” 0/3 names checked
+    - **Remapper Curve** â€” 0/3 names checked
+    - **Remapper Edge Mode** â€” 0/3 names checked
+    - **Remapper Preset** â€” 0/3 names checked
+    - **Timer Input Mode** â€” 0/3 names checked
+    - **Wire Blend Op** â€” 0/3 names checked
+    - **Randomiser** â€” 0/3 names checked
+    - **Remapper** â€” 0/3 names checked
+    - **Signal Generator** â€” 3/3 names checked
+    - **Signal Inspector** â€” 3/3 names checked
+    - **Timer** â€” 0/3 names checked
+    - **Counter** â€” 0/2 names checked
+    - **Delay Gadget** â€” 0/2 names checked
+    - **Inverter** â€” 0/2 names checked
+    - **Microchip** â€” 0/2 names checked
+    - **Selector** â€” 0/2 names checked
+    - **Splitter** â€” 1/2 names checked
+    - **Time Gadget** â€” 0/2 names checked
+    - **Wide Calculator** â€” 0/2 names checked
+    - **Wireless Receiver** â€” 0/2 names checked
+    - **Wireless Transmitter** â€” 0/2 names checked
+    - **And** â€” 0/1 names checked
+    - **Break Logic Cycles** â€” 0/1 names checked
+    - **Timer State** â€” 0/1 names checked
+    - **Gate** â€” 0/1 names checked
+    - **Or** â€” 0/1 names checked
+    - **Remapper State** â€” 0/1 names checked
+    - **Xor** â€” 0/1 names checked
+  - **Creation & display gadgets** â€” 1/67 names checked
+    - **Text Gadget** â€” 0/6 names checked
+    - **Text Gadget Type** â€” 0/4 names checked
+    - **DEPRECATE Dream Bubble** â€” 0/3 names checked
+    - **Dev Gadget** â€” 0/3 names checked
+    - **Dev Gadget Mode** â€” 0/3 names checked
+    - **Photo Gadget Mode** â€” 0/3 names checked
+    - **Text Gadget Format** â€” 0/3 names checked
+    - **Text Gadget Mode** â€” 0/3 names checked
+    - **Text Gadget Prompt Type** â€” 0/3 names checked
+    - **Text Number Format** â€” 0/3 names checked
+    - **Scripter** â€” 0/3 names checked
+    - **Timeline** â€” 0/3 names checked
+    - **Auto Guides Gadget** â€” 1/2 names checked
+    - **Button Gadget** â€” 0/2 names checked
+    - **Dummy** â€” 0/2 names checked
+    - **Record Mode** â€” 0/2 names checked
+    - **Imp Quest Gadget** â€” 0/2 names checked
+    - **Photo Gadget** â€” 0/2 names checked
+    - **Reporter** â€” 0/2 names checked
+    - **Reporter Sculpt** â€” 0/2 names checked
+    - **Reporter Telemetry** â€” 0/2 names checked
+    - **Slider Gadget** â€” 0/2 names checked
+    - **Stamping Enabler** â€” 0/2 names checked
+    - **Legacy Photo Gadget** â€” 0/1 names checked
+    - **Node** â€” 0/1 names checked
+    - **Snap Point** â€” 0/1 names checked
+    - **Timeline Lane Data** â€” 0/1 names checked
+    - **Tumbler** â€” 0/1 names checked
+  - **Movement & possession** â€” 0/67 names checked
+    - **Controlinator** â€” 0/4 names checked
+    - **Follow Imp Mode** â€” 0/4 names checked
+    - **Hand Gadget Controller Type** â€” 0/4 names checked
+    - **Rotation Representation** â€” 0/4 names checked
+    - **Controlinator State** â€” 0/3 names checked
+    - **Controlinator View Type** â€” 0/3 names checked
+    - **Controllinator Mode** â€” 0/3 names checked
+    - **Controllinator Move Mode** â€” 0/3 names checked
+    - **Controllinator Stick Space** â€” 0/3 names checked
+    - **Follow Or Flee** â€” 0/3 names checked
+    - **Hand Gadget Widget Type** â€” 0/3 names checked
+    - **Follower** â€” 0/3 names checked
+    - **Hand Gadget** â€” 0/3 names checked
+    - **Advanced Mover** â€” 0/2 names checked
+    - **Advanced Rotator** â€” 0/2 names checked
+    - **Gyroscope** â€” 0/2 names checked
+    - **Head Gadget** â€” 0/2 names checked
+    - **Imp Animation Gadget** â€” 0/2 names checked
+    - **Imp Gadget** â€” 0/2 names checked
+    - **Look At Rotator** â€” 0/2 names checked
+    - **Mover** â€” 0/2 names checked
+    - **Puppet Controls** â€” 0/2 names checked
+    - **Rocket Rotator** â€” 0/2 names checked
+    - **Rotator** â€” 0/2 names checked
+    - **Teleporter** â€” 0/2 names checked
+  - **Gameplay & scoring** â€” 0/61 names checked
+    - **Variable Operation** â€” 0/4 names checked
+    - **Variable Update Mode** â€” 0/4 names checked
+    - **Coin Dispenser** â€” 0/3 names checked
+    - **Emitter Playback Mode** â€” 0/3 names checked
+    - **Force Type** â€” 0/3 names checked
+    - **Health Mod Mode** â€” 0/3 names checked
+    - **Health Mod Type** â€” 0/3 names checked
+    - **Emitter** â€” 0/3 names checked
+    - **Force Repulse Gadget** â€” 0/3 names checked
+    - **Health Modifier** â€” 0/3 names checked
+    - **Score Gadget** â€” 0/3 names checked
+    - **Checkpoint** â€” 0/2 names checked
+    - **Coin Consumer** â€” 0/2 names checked
+    - **Collectabubble** â€” 0/2 names checked
+    - **Destroyer** â€” 0/2 names checked
+    - **Emit Or Delete** â€” 0/2 names checked
+    - **Global Settings** â€” 0/2 names checked
+    - **Health Gadget** â€” 0/2 names checked
+    - **Inventory Reset** â€” 0/2 names checked
+    - **Prize Bubble** â€” 0/2 names checked
+    - **Score Modifier Gadget** â€” 0/2 names checked
+    - **Unlockables Gadget** â€” 0/2 names checked
+    - **Variable Gadget** â€” 0/2 names checked
+    - **Variable Modifier Gadget** â€” 0/2 names checked
+  - **Sensors & detection** â€” 0/38 names checked
+    - **Detect Scope** â€” 0/4 names checked
+    - **Gadget Zone Type** â€” 0/4 names checked
+    - **Detect Mode** â€” 0/3 names checked
+    - **Detect Type** â€” 0/3 names checked
+    - **Scope Type** â€” 0/3 names checked
+    - **Trigger Zone** â€” 0/3 names checked
+    - **Angle Sensor** â€” 0/2 names checked
+    - **Grab Sensor** â€” 0/2 names checked
+    - **Impact Sensor** â€” 0/2 names checked
+    - **Inventory Sensor** â€” 0/2 names checked
+    - **Movement Sensor** â€” 0/2 names checked
+    - **Raycast Gadget** â€” 0/2 names checked
+    - **Rotation Sensor** â€” 0/2 names checked
+    - **Ruler** â€” 0/2 names checked
+    - **VRCursor Sensor** â€” 0/2 names checked
+  - **Cameras, lights & effects** â€” 7/30 names checked
+    - **Camera Shaker** â€” 3/3 names checked
+    - **Effect Field** â€” 0/3 names checked
+    - **Fog Shape Type** â€” 0/3 names checked
+    - **Fog Gadget** â€” 1/3 names checked
+    - **Grade** â€” 0/3 names checked
+    - **Light** â€” 0/3 names checked
+    - **Pad Rumble** â€” 3/3 names checked
+    - **Camera Gadget** â€” 0/2 names checked
+    - **Colour Gadget** â€” 0/2 names checked
+    - **Sky And Sun** â€” 0/2 names checked
+    - **Sun Deprecated** â€” 0/2 names checked
+    - **Wipe** â€” 0/1 names checked
+  - **Sound gadgets** â€” 0/7 names checked
+    - **Sound** â€” 0/5 names checked
+    - **Speaker** â€” 0/2 names checked
+  - **Common system routines** â€” 0/1 names checked
+- **Editor & interface** â€” 0/313 names checked
+  - **UI drawing & interaction** â€” 0/101 names checked
+    - **Interface primitives** â€” 0/23 names checked
+    - **Transition** â€” 0/18 names checked
+    - **Prim Alpha** â€” 0/12 names checked
+    - **Prim Glass** â€” 0/8 names checked
+    - **Prim Imp** â€” 0/8 names checked
+    - **Prim Max Object** â€” 0/8 names checked
+    - **Focus** â€” 0/5 names checked
+    - **Screen Corner** â€” 0/3 names checked
+    - **UIFeedback Level** â€” 0/2 names checked
+    - **UISize** â€” 0/2 names checked
+    - **Overlay** â€” 0/2 names checked
+    - **Phone** â€” 0/2 names checked
+    - **Prim Fat Wire** â€” 0/2 names checked
+    - **Thermometer** â€” 0/2 names checked
+    - **Video Player** â€” 0/2 names checked
+    - **Tip Style** â€” 0/1 names checked
+    - **Loading Screen** â€” 0/1 names checked
+  - **Text & fonts** â€” 0/54 names checked
+    - **Text drawing** â€” 0/13 names checked
+    - **Language** â€” 0/4 names checked
+    - **Font** â€” 0/3 names checked
+    - **Font Family** â€” 0/3 names checked
+    - **Text Align Horz** â€” 0/3 names checked
+    - **Text Align Vert** â€” 0/3 names checked
+    - **Text Back Align Horz** â€” 0/3 names checked
+    - **Text Back Align Vert** â€” 0/3 names checked
+    - **Text Background** â€” 0/3 names checked
+    - **Text Back Tail Type** â€” 0/3 names checked
+    - **Text Highlight Mode** â€” 0/3 names checked
+    - **Text Texture Mode** â€” 0/3 names checked
+    - **Set Text Gadget Comment Message** â€” 0/2 names checked
+    - **Text Edit Message** â€” 0/2 names checked
+    - **Set Text Gadget Loc State Message** â€” 0/1 names checked
+    - **Set Text Input Focus On Script** â€” 0/1 names checked
+    - **Set Text Lams IDMessage** â€” 0/1 names checked
+  - **Editing & tools** â€” 0/43 names checked
+    - **Change** â€” 0/3 names checked
+    - **Edit Op** â€” 0/3 names checked
+    - **Lock Mode** â€” 0/3 names checked
+    - **Tool** â€” 0/3 names checked
+    - **Tool Tag** â€” 0/3 names checked
+    - **Col Swatch** â€” 0/2 names checked
+    - **Edit Stack Return Type** â€” 0/2 names checked
+    - **Prim Gizmo Component** â€” 0/2 names checked
+    - **Ignore Selected Updates Message** â€” 0/2 names checked
+    - **Map Stack** â€” 0/2 names checked
+    - **Clean Up Snap Points Message** â€” 0/1 names checked
+    - **Confirm Big Delete Message** â€” 0/1 names checked
+    - **Delete Stamped Objects Message** â€” 0/1 names checked
+    - **Delete Thing Message** â€” 0/1 names checked
+    - **Editor Default Settings** â€” 0/1 names checked
+    - **Edit Stack Entry** â€” 0/1 names checked
+    - **Tweak Info Flags** â€” 0/1 names checked
+    - **Undo Redo** â€” 0/1 names checked
+    - **Request Tool Tag Message** â€” 0/1 names checked
+    - **Select Things By Dream Ref Message** â€” 0/1 names checked
+    - **Set Editor Default Settings Message** â€” 0/1 names checked
+    - **Set Gadget Name Loc State Message** â€” 0/1 names checked
+    - **Set Property Message** â€” 0/1 names checked
+    - **Set Thing Pos2 DMessage** â€” 0/1 names checked
+    - **Switch To Edit Mode Message** â€” 0/1 names checked
+    - **Toggle Auto Update Message** â€” 0/1 names checked
+    - **Toggle Ignore Update Message** â€” 0/1 names checked
+    - **Undo Redo Message** â€” 0/1 names checked
+  - **Controls & input** â€” 0/32 names checked
+    - **Controller Type Filter** â€” 0/3 names checked
+    - **Imp Dock Visual** â€” 0/3 names checked
+    - **Imp Interaction** â€” 0/3 names checked
+    - **Button Hint Type** â€” 0/2 names checked
+    - **Controller Type** â€” 0/2 names checked
+    - **Control Scheme** â€” 0/2 names checked
+    - **Grab Status** â€” 0/2 names checked
+    - **Stick Cam Scheme** â€” 0/2 names checked
+    - **Touch Mode** â€” 0/2 names checked
+    - **Twist Dial** â€” 0/2 names checked
+    - **Imp Selected** â€” 0/2 names checked
+    - **Set Button Toggle Message** â€” 0/2 names checked
+    - **Controller State** â€” 0/1 names checked
+    - **Dpad Navigation Message** â€” 0/1 names checked
+    - **Controller Class** â€” 0/1 names checked
+    - **Grip Data** â€” 0/1 names checked
+    - **Subtitle Import Message** â€” 0/1 names checked
+  - **Canvases & wires** â€” 0/19 names checked
+    - **Node Custom Icon** â€” 0/4 names checked
+    - **Node Type** â€” 0/4 names checked
+    - **Canvas State** â€” 0/2 names checked
+    - **Canvas Type** â€” 0/2 names checked
+    - **Canvas Seq** â€” 0/1 names checked
+    - **Canvas Wire Id** â€” 0/1 names checked
+    - **Canvas Wire Node** â€” 0/1 names checked
+    - **Create Wire Node Message** â€” 0/1 names checked
+    - **Delete All Wire Nodes Message** â€” 0/1 names checked
+    - **Delete Wire Nodes Message** â€” 0/1 names checked
+    - **Rewire Redundant Node Message** â€” 0/1 names checked
+  - **Palette & menus** â€” 0/16 names checked
+    - **Page Stack** â€” 0/3 names checked
+    - **Palette Menu** â€” 0/3 names checked
+    - **Palette Mode** â€” 0/3 names checked
+    - **Palette Position** â€” 0/2 names checked
+    - **Clicked Palette Button Message** â€” 0/1 names checked
+    - **Close Popit Message** â€” 0/1 names checked
+    - **Open Menu Message** â€” 0/1 names checked
+    - **Open Palette Message** â€” 0/1 names checked
+    - **Set Menu Camera Message** â€” 0/1 names checked
+  - **Paint editing** â€” 0/8 names checked
+    - **Stroke Widget** â€” 0/2 names checked
+    - **Performed Strokes Message** â€” 0/2 names checked
+    - **Bake Down Sprite Density Reduction Message** â€” 0/1 names checked
+    - **Make Sprite One Stroke Message** â€” 0/1 names checked
+    - **Optimise Sprites Message** â€” 0/1 names checked
+    - **Reduce Sprite LODMessage** â€” 0/1 names checked
+  - **Avatar interface** â€” 0/7 names checked
+    - **Avatar Wheel State** â€” 0/2 names checked
+    - **PUAvatar Settings** â€” 0/2 names checked
+    - **PUAvatar Wheel State** â€” 0/2 names checked
+    - **Avatar Wheel Mode** â€” 0/1 names checked
+  - **Subtitles** â€” 0/7 names checked
+    - **Create Subtitle Message** â€” 0/1 names checked
+    - **Set Speaker Name Message** â€” 0/1 names checked
+    - **Set Subtitle Mode Message** â€” 0/1 names checked
+    - **Set Subtitle Timing Message** â€” 0/1 names checked
+    - **Set Subtitle Timings Message** â€” 0/1 names checked
+    - **Snap Subtitle Message** â€” 0/1 names checked
+    - **Subtitle Timing** â€” 0/1 names checked
+  - **Bookmarks** â€” 0/6 names checked
+    - **Editor Bookmark Thumbnail Message** â€” 0/2 names checked
+    - **Editor Bookmark Operation** â€” 0/2 names checked
+    - **Editor Bookmark** â€” 0/1 names checked
+    - **Editor Bookmark Message** â€” 0/1 names checked
+  - **Thermometer & limits** â€” 0/6 names checked
+    - **Thermometer Limit Type** â€” 0/4 names checked
+    - **Thermometer Timing Type** â€” 0/2 names checked
+  - **Editor camera** â€” 0/5 names checked
+    - **Camera Arrow** â€” 0/2 names checked
+    - **Move Camera To Canvas Message** â€” 0/1 names checked
+    - **Set Camera Transform Message** â€” 0/1 names checked
+    - **Teleport Gecko Camera To Object Message** â€” 0/1 names checked
+  - **VR controls & comfort** â€” 0/4 names checked
+    - **VRComfort Transition Type** â€” 0/2 names checked
+    - **Vr Tracker Offset Message** â€” 0/1 names checked
+    - **Vr Warning Message** â€” 0/1 names checked
+  - **Photos & video** â€” 0/3 names checked
+    - **Request Video Library Message** â€” 0/1 names checked
+    - **Select Photo Message** â€” 0/1 names checked
+    - **Taking Photo Message** â€” 0/1 names checked
+  - **Common system routines** â€” 0/2 names checked
+- **Rendering & lighting** â€” 0/275 names checked
+  - **Lighting & shadows** â€” 0/95 names checked
+    - **Sun Shadow** â€” 0/22 names checked
+    - **Spot Shadow** â€” 0/20 names checked
+    - **Shading** â€” 0/17 names checked
+    - **Sky** â€” 0/11 names checked
+    - **Ortho Shadow** â€” 0/10 names checked
+    - **Object Emit Light From Glow** â€” 0/4 names checked
+    - **Light Type** â€” 0/3 names checked
+    - **Object Cast Shadows** â€” 0/3 names checked
+    - **Cone Trace** â€” 0/2 names checked
+    - **Spot Light** â€” 0/2 names checked
+    - **Shading Query** â€” 0/1 names checked
+  - **Image effects** â€” 0/87 names checked
+    - **Bokeh rendering** â€” 0/24 names checked
+    - **Occlusion** â€” 0/15 names checked
+    - **Post** â€” 0/8 names checked
+    - **Bokeh Bloom** â€” 0/7 names checked
+    - **Portal Effect** â€” 0/7 names checked
+    - **Selection Effect** â€” 0/5 names checked
+    - **Wipe Style** â€” 0/4 names checked
+    - **Blend Type** â€” 0/3 names checked
+    - **Grade FXGlitch Style** â€” 0/3 names checked
+    - **Motion Blur** â€” 0/3 names checked
+    - **Taa** â€” 0/3 names checked
+    - **Video Imposter** â€” 0/2 names checked
+    - **Bokeh** â€” 0/1 names checked
+    - **Grade** â€” 0/1 names checked
+    - **Wipe Effect** â€” 0/1 names checked
+  - **Scene drawing** â€” 0/66 names checked
+    - **Scene hulls** â€” 0/20 names checked
+    - **Brushstroke** â€” 0/14 names checked
+    - **Volume** â€” 0/11 names checked
+    - **Model Brushstroke** â€” 0/6 names checked
+    - **Renderer** â€” 0/3 names checked
+    - **Mips** â€” 0/2 names checked
+    - **Noisy** â€” 0/2 names checked
+    - **Photo** â€” 0/2 names checked
+    - **Pixel Check** â€” 0/2 names checked
+    - **Projection** â€” 0/2 names checked
+    - **Sticker** â€” 0/2 names checked
+  - **Graphics infrastructure** â€” 0/12 names checked
+    - **Toolkit** â€” 0/4 names checked
+    - **Display** â€” 0/3 names checked
+    - **Sync** â€” 0/2 names checked
+    - **Frame Constants** â€” 0/1 names checked
+    - **Frame Graph** â€” 0/1 names checked
+    - **Gfx Context** â€” 0/1 names checked
+  - **VR rendering** â€” 0/6 names checked
+    - **Vr Layers** â€” 0/4 names checked
+    - **Vr Cursor** â€” 0/2 names checked
+  - **Camera blending** â€” 0/5 names checked
+    - **Camera Blender / Persistent Data** â€” 0/2 names checked
+    - **Camera Blender / Active Camera Data** â€” 0/1 names checked
+    - **Camera Blender / Camera Space** â€” 0/1 names checked
+    - **Camera Blender / Camera Status** â€” 0/1 names checked
+  - **Visibility** â€” 0/4 names checked
+    - **Label Visible** â€” 0/4 names checked
+- **Sculpting & painting** â€” 0/117 names checked
+  - **Sculpt geometry** â€” 0/78 names checked
+    - **Sculpt bricks** â€” 0/29 names checked
+    - **Chunk** â€” 0/26 names checked
+    - **Sweep** â€” 0/9 names checked
+    - **Inertia** â€” 0/2 names checked
+    - **Pipe** â€” 0/2 names checked
+    - **Slot Debug** â€” 0/2 names checked
+    - **Common routines** â€” 0/1 names checked
+    - **CSGEdit Mirror Flags** â€” 0/1 names checked
+    - **CSGEdit Op Flags** â€” 0/1 names checked
+    - **CSGEdit Prim Flags** â€” 0/1 names checked
+    - **Csg Blend Mode** â€” 0/1 names checked
+    - **Csg Looseness Mode** â€” 0/1 names checked
+    - **Element Picker** â€” 0/1 names checked
+    - **Hasher** â€” 0/1 names checked
+  - **Paint & strokes** â€” 0/20 names checked
+    - **Sprite** â€” 0/9 names checked
+    - **Sprite Duplicate** â€” 0/3 names checked
+    - **Sprite Duplicate Position** â€” 0/3 names checked
+    - **Sprite Duplicate Rotation** â€” 0/3 names checked
+    - **Light Paint** â€” 0/2 names checked
+  - **Surfaces & placement** â€” 0/12 names checked
+    - **Spawn Shape Type** â€” 0/4 names checked
+    - **Surface Snap** â€” 0/4 names checked
+    - **Surface Type** â€” 0/4 names checked
+  - **Sculpt objects** â€” 0/4 names checked
+    - **Sculpt** â€” 0/4 names checked
+  - **Brush settings** â€” 0/3 names checked
+    - **Combing Volume** â€” 0/2 names checked
+    - **Bubbles Brushing** â€” 0/1 names checked
+- **Shared engine & object data** â€” 5/113 names checked
+  - **Debugging & diagnostics** â€” 0/18 names checked
+    - **Debug Draw Render** â€” 0/8 names checked
+    - **Debug Screen** â€” 0/4 names checked
+    - **Comparison Image** â€” 0/2 names checked
+    - **Debug Camera Image** â€” 0/2 names checked
+    - **Debug Text** â€” 0/2 names checked
+  - **Objects & references** â€” 0/13 names checked
+    - **Thing Type** â€” 0/5 names checked
+    - **Group** â€” 0/2 names checked
+    - **Thing Ref** â€” 0/2 names checked
+    - **Persistent Object Data** â€” 0/1 names checked
+    - **Thing** â€” 0/1 names checked
+    - **Thing Pos** â€” 0/1 names checked
+    - **Thing Pos2 D** â€” 0/1 names checked
+  - **Game state & runtime** â€” 0/13 names checked
+    - **Game Events** â€” 0/3 names checked
+    - **Game Base** â€” 0/3 names checked
+    - **Gameupdater** â€” 0/3 names checked
+    - **Common routines** â€” 0/1 names checked
+    - **Game Type** â€” 0/1 names checked
+    - **Game Update Thread** â€” 0/1 names checked
+    - **Gamemerger** â€” 0/1 names checked
+  - **Numbers & transforms** â€” 0/12 names checked
+    - **float** â€” 0/4 names checked
+    - **double** â€” 0/2 names checked
+    - **float3x3 packed** â€” 0/2 names checked
+    - **float2 packed** â€” 0/1 names checked
+    - **float3 packed** â€” 0/1 names checked
+    - **float4 packed** â€” 0/1 names checked
+    - **Trans packed** â€” 0/1 names checked
+  - **Properties & variants** â€” 1/9 names checked
+    - **Variant Type** â€” 0/4 names checked
+    - **Variant** â€” 1/3 names checked
+    - **Tweak Info** â€” 0/2 names checked
+  - **Shared property helpers** â€” 4/8 names checked
+  - **Identifiers & assets** â€” 0/8 names checked
+    - **Base Id** â€” 0/2 names checked
+    - **Timestamp** â€” 0/2 names checked
+    - **Asset** â€” 0/1 names checked
+    - **Base Id Seq Number Trio** â€” 0/1 names checked
+    - **Photo Id** â€” 0/1 names checked
+    - **Version Id** â€” 0/1 names checked
+  - **Serialization & upgrades** â€” 0/8 names checked
+    - **Serialise** â€” 0/4 names checked
+    - **Common routines** â€” 0/1 names checked
+    - **Sanitise** â€” 0/1 names checked
+    - **Serialise Upgrade** â€” 0/1 names checked
+    - **Serialise1** â€” 0/1 names checked
+  - **Errors & diagnostics** â€” 0/5 names checked
+    - **Error Code / Code** â€” 0/2 names checked
+    - **Error Code Message** â€” 0/2 names checked
+    - **Error Code** â€” 0/1 names checked
+  - **Strings** â€” 0/5 names checked
+    - **Small String** â€” 0/2 names checked
+    - **Serialised String Id** â€” 0/1 names checked
+    - **string** â€” 0/1 names checked
+    - **wchar t** â€” 0/1 names checked
+  - **Engine support** â€” 0/5 names checked
+    - **Common routines** â€” 0/1 names checked
+    - **Game** â€” 0/1 names checked
+    - **Sillyrender** â€” 0/1 names checked
+    - **Tweak** â€” 0/1 names checked
+    - **Widgets** â€” 0/1 names checked
+  - **Shared signal data** â€” 0/4 names checked
+    - **Wire Header** â€” 0/2 names checked
+    - **Packed Signal** â€” 0/1 names checked
+    - **Wire Seq** â€” 0/1 names checked
+  - **Shared messages** â€” 0/3 names checked
+    - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** â€” 0/1 names checked
+    - **Input Message Buffer** â€” 0/1 names checked
+    - **Input Message Header** â€” 0/1 names checked
+  - **Common system routines** â€” 0/1 names checked
+  - **Script data** â€” 0/1 names checked
+    - **Script Contents** â€” 0/1 names checked
+- **Dreamiverse & networking** â€” 0/103 names checked
+  - **Network state** â€” 0/29 names checked
+    - **Net Thing** â€” 0/4 names checked
+    - **Net Sync Mode** â€” 0/3 names checked
+    - **Network Variable Mode** â€” 0/3 names checked
+    - **Client Conn State** â€” 0/2 names checked
+    - **Net Thing Type** â€” 0/2 names checked
+    - **Net Player Id** â€” 0/2 names checked
+    - **Net Thing Table Entry** â€” 0/2 names checked
+    - **Network Variable** â€” 0/2 names checked
+    - **Network Variable Type** â€” 0/1 names checked
+    - **Net Emit Data** â€” 0/1 names checked
+    - **Net Imp Data** â€” 0/1 names checked
+    - **Other User Editing Message** â€” 0/1 names checked
+    - **Remote Signal Message** â€” 0/1 names checked
+    - **Unique Net Id** â€” 0/1 names checked
+    - **Unique Net Id Range** â€” 0/1 names checked
+    - **Update Persistent Objects Message** â€” 0/1 names checked
+    - **User Went Online For First Time Message** â€” 0/1 names checked
+  - **Creation browsing & pages** â€” 0/28 names checked
+    - **Bokeh Widgets** â€” 0/7 names checked
+    - **Search Creations Page** â€” 0/6 names checked
+    - **Dream Details Page** â€” 0/3 names checked
+    - **Dream Ui** â€” 0/2 names checked
+    - **Moderation Pages** â€” 0/2 names checked
+    - **Profiles Page** â€” 0/2 names checked
+    - **Challenge Pages** â€” 0/1 names checked
+    - **Demo Pages** â€” 0/1 names checked
+    - **Dream Ui Pages** â€” 0/1 names checked
+    - **Dreamstone Pages** â€” 0/1 names checked
+    - **Tutorials Pages** â€” 0/1 names checked
+    - **Uibubbles** â€” 0/1 names checked
+  - **Players & sessions** â€” 0/23 names checked
+    - **Player** â€” 0/4 names checked
+    - **Lobby Type** â€” 0/2 names checked
+    - **Player Idx** â€” 0/2 names checked
+    - **Room Player Idx** â€” 0/2 names checked
+    - **User Id** â€” 0/2 names checked
+    - **Machine** â€” 0/1 names checked
+    - **Machine Cinema Mode Message** â€” 0/1 names checked
+    - **Machine Id** â€” 0/1 names checked
+    - **Machine Joined Multiplayer Message** â€” 0/1 names checked
+    - **Machine Request VRFramerate Screen** â€” 0/1 names checked
+    - **Player Hello Message** â€” 0/1 names checked
+    - **Player Id** â€” 0/1 names checked
+    - **Player Preload Status Message** â€” 0/1 names checked
+    - **Player Session Id Manager** â€” 0/1 names checked
+    - **Set Machine Comfort Mode Override** â€” 0/1 names checked
+    - **Set Player Settings Message** â€” 0/1 names checked
+  - **Creation references** â€” 0/19 names checked
+    - **Dreamstone Type** â€” 0/3 names checked
+    - **Dream UIPage** â€” 0/3 names checked
+    - **Preload Dream Mode** â€” 0/3 names checked
+    - **Dream Id** â€” 0/2 names checked
+    - **Dream Version Id** â€” 0/2 names checked
+    - **Preload Dream Message** â€” 0/2 names checked
+    - **Almost Dream Id In Map** â€” 0/1 names checked
+    - **Dream Id In Map** â€” 0/1 names checked
+    - **Game Preload Status Message** â€” 0/1 names checked
+    - **Publish Finished Message** â€” 0/1 names checked
+  - **Text chat** â€” 0/4 names checked
+    - **Text Chat Line** â€” 0/3 names checked
+    - **Text Chat Channel** â€” 0/1 names checked
+- **Sound & music** â€” 0/62 names checked
+  - **Sound editing** â€” 0/18 names checked
+    - **Audio UISpreadsheet** â€” 0/5 names checked
+    - **Audio UISpreadsheet Row** â€” 0/2 names checked
+    - **Audio UICurve Source** â€” 0/2 names checked
+    - **MIDIMessage** â€” 0/2 names checked
+    - **Activate Audio Preview Message** â€” 0/1 names checked
+    - **Audio Import Message** â€” 0/1 names checked
+    - **Audio UICurve Remap** â€” 0/1 names checked
+    - **Audio Update Checked Message** â€” 0/1 names checked
+    - **Audio Update Message** â€” 0/1 names checked
+    - **Stop Audio Recording Message** â€” 0/1 names checked
+    - **Voice Over Import Message** â€” 0/1 names checked
+  - **Mixing** â€” 0/16 names checked
+    - **Pan Style** â€” 0/4 names checked
+    - **Reverb Select** â€” 0/4 names checked
+    - **Audio Category Mix** â€” 0/3 names checked
+    - **Sidechain Select** â€” 0/3 names checked
+    - **Audio Master Mix** â€” 0/2 names checked
+  - **Musical timing & pitch** â€” 0/10 names checked
+    - **Time Signature Denominator** â€” 0/4 names checked
+    - **Legato Mode** â€” 0/3 names checked
+    - **Music Scale** â€” 0/3 names checked
+  - **Sound settings** â€” 0/8 names checked
+    - **Sound Type** â€” 0/4 names checked
+    - **Sound Icons** â€” 0/3 names checked
+    - **Audio Number** â€” 0/1 names checked
+  - **Synthesis & modulation** â€” 0/6 names checked
+    - **LFOShape** â€” 0/3 names checked
+    - **Osc Mode** â€” 0/3 names checked
+  - **Samples & MIDI** â€” 0/2 names checked
+    - **Wave Slice** â€” 0/2 names checked
+  - **Sound strokes** â€” 0/2 names checked
+    - **Sound Stroke Frame** â€” 0/1 names checked
+    - **Sound Stroke Frame With Stroke Idx** â€” 0/1 names checked
+- **Physics & collision** â€” 0/60 names checked
+  - **Physics simulation** â€” 0/29 names checked
+    - **Ballmaker** â€” 0/7 names checked
+    - **Mankinigpu** â€” 0/6 names checked
+    - **Label Collidable** â€” 0/4 names checked
+    - **Physics Quality** â€” 0/4 names checked
+    - **Mankini Contact** â€” 0/4 names checked
+    - **Mankini** â€” 0/3 names checked
+    - **Gameupdater Physics** â€” 0/1 names checked
+  - **Collision queries** â€” 0/25 names checked
+    - **Region Query** â€” 0/5 names checked
+    - **Hit Type** â€” 0/3 names checked
+    - **Ray Hit Id** â€” 0/3 names checked
+    - **Game Raycast Phase** â€” 0/2 names checked
+    - **Shapecast Thing Type Filter** â€” 0/2 names checked
+    - **Ray Hit Id Seq** â€” 0/2 names checked
+    - **Ray Hit Seq** â€” 0/2 names checked
+    - **Bvh Condition Mask** â€” 0/1 names checked
+    - **Model Raycast** â€” 0/1 names checked
+    - **Point Query** â€” 0/1 names checked
+    - **Ray Hit** â€” 0/1 names checked
+    - **Ray Hit Id / Hit Data** â€” 0/1 names checked
+    - **Ray Hit Id Seq / Hit Data** â€” 0/1 names checked
+  - **Joints** â€” 0/6 names checked
+    - **Joint Type** â€” 0/4 names checked
+    - **Joint** â€” 0/2 names checked
+- **Animation & puppets** â€” 0/47 names checked
+  - **Avatars** â€” 0/30 names checked
+    - **Prim Avatar Style Customisation** â€” 0/6 names checked
+    - **Avatar Anim** â€” 0/4 names checked
+    - **Prim Avatar Customisation** â€” 0/3 names checked
+    - **E PU Avatar Anim Net Sync Mode** â€” 0/2 names checked
+    - **Prim Avatar Animation Set** â€” 0/2 names checked
+    - **Prim Avatar Costume Type** â€” 0/2 names checked
+    - **Prim Avatar Pet Type** â€” 0/2 names checked
+    - **Do Avatar Anim Message** â€” 0/1 names checked
+    - **Prim Avatar Eyebrow Type** â€” 0/1 names checked
+    - **Prim Avatar Eye Type** â€” 0/1 names checked
+    - **Prim Avatar Mouth Type** â€” 0/1 names checked
+    - **Prim Avatar Pupil Type** â€” 0/1 names checked
+    - **Prim Avatar Custom Mesh** â€” 0/1 names checked
+    - **Prim Avatar Puppet Tweaks** â€” 0/1 names checked
+    - **Prim Avatar Substance Data** â€” 0/1 names checked
+    - **Set Puppet Avatar Animation Set Message** â€” 0/1 names checked
+  - **Animation & keyframes** â€” 0/9 names checked
+    - **Animation** â€” 0/3 names checked
+    - **Sprite Stop Motion Animation** â€” 0/3 names checked
+    - **Stroke Keyframe** â€” 0/2 names checked
+    - **Confirm Retake Animation Message** â€” 0/1 names checked
+  - **Puppet animation** â€” 0/7 names checked
+    - **Puppet Heart** â€” 0/7 names checked
+  - **Timeline playback** â€” 0/1 names checked
+    - **Timeline** â€” 0/1 names checked
+
+</details>
 <!-- area-status:end -->
 
 <sub>Automatic extraction has produced code for 9,508 functions in the previous analysis snapshot; 43 still need fixes. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
