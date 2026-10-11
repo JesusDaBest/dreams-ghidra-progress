@@ -258,84 +258,84 @@ def packed_regions(entries, bounds):
     return result
 
 
-def function_cells(rows, bounds, metric="review"):
+def function_cells(rows, bounds):
     """One equal-area cell per address. No texture or placeholder cells."""
     x, y, width, height = bounds
     count = len(rows)
     grid_rows = max(1, min(count, round(math.sqrt(count * height / width))))
     priority = {'verified_name': 0, 'deferred': 1, 'unreviewed': 2}
     colors = {'verified_name': 'green', 'deferred': 'amber', 'unreviewed': 'gray'}
-    if metric == "decompilation":
-        colors = {state: ('blue' if state == 'complete' else 'amber' if state in {'failed', 'truncated', 'blocked_abi'} else 'gray') for state in DECOMPILATION}
-        priority = {state: (0 if colors[state] == 'blue' else 1 if colors[state] == 'amber' else 2) for state in DECOMPILATION}
-    ordered = sorted(rows, key=lambda row: (priority[row[metric]], int(row['address'], 16)))
+    ordered = sorted(rows, key=lambda row: (priority[row['review']], int(row['address'], 16)))
     out, cursor, offset_y = [], 0, 0
     for line in range(grid_rows):
         columns = count // grid_rows + (line < count % grid_rows)
         cell_width, cell_height = width / columns, height * columns / count
         for column in range(columns):
             row = ordered[cursor]
-            out.append(f'<rect data-function="{row["address"]}" data-status="{row[metric]}" '
+            out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" '
                        f'x="{x + column * cell_width:.6f}" y="{y + offset_y:.6f}" '
                        f'width="{cell_width:.6f}" height="{cell_height:.6f}" '
-                       f'fill="{COLORS[colors[row[metric]]]}" stroke="#0d1117" stroke-width="0.5"/>')
+                       f'fill="{COLORS[colors[row["review"]]]}" stroke="#0d1117" stroke-width="0.5"/>')
             cursor += 1
         offset_y += cell_height
     return out
 
 
 def render(status, applied, mapping):
-    total = status['inventory_total']
-    review = status['metrics']['review']
-    assert {r['address'] for r in applied} == {r['address'] for r in status['rows'] if r['review'] == 'verified_name'}
-    areas = research_area_rows(status['rows'], mapping)
+    total = status["inventory_total"]
+    review = status["metrics"]["review"]
+    assert len(applied) == review["verified_names"]
+    assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
+    rows = status["rows"]
+    assert len(rows) == total and len({row["address"] for row in rows}) == total
+    areas = research_area_rows(rows, mapping)
     mapped = sum(len(items) for _, _, _, items in areas)
-    selected_rows = [row for _, _, _, items in areas for row in items]
-    short = {
-        'Sculpting & painting': 'Sculpting', 'Gadgets & logic': 'Gadgets & logic',
-        'Physics & collision': 'Physics', 'Sound & music': 'Audio',
-        'Animation & puppets': 'Animation', 'Rendering & lighting': 'Rendering',
-        'Editor & interface': 'Editor', 'Dreamiverse & networking': 'Dreamiverse',
-        'Shared engine & object data': 'Shared engine',
-    }
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="398" viewBox="0 0 1000 398" role="img" aria-labelledby="status-title status-desc">',
-           '<title id="status-title">Dreams: code extraction and name checking by system</title>',
-           '<desc id="status-desc">Two maps of the same mapped functions. Blue means decompiled output exists; green means name checked. Gray means unfinished; amber needs follow-up. System sizes represent only identified functions, not complete system sizes.</desc>',
-           '<g font-family="Segoe UI,Arial,sans-serif">', rect(0,0,1000,398,'background')]
-    outline = ' stroke="#0d1117" stroke-width="3" paint-order="stroke"'
-    for metric, left, heading, state in [('decompilation',0,'Code extracted','complete'), ('review',505,'Names checked','verified_name')]:
-        done = sum(row[metric] == state for row in selected_rows)
-        out.append(text(left+4,20,f'{heading}: {done:,}/{mapped:,} ({100*done/mapped:.1f}%)',15))
-        out.append(f'<g data-panel="{metric}">')
-        for (area_id,title,_,selected), bounds in packed_regions(areas,(left,32,495,280)):
-            x,y,w,h = bounds
-            count = sum(row[metric] == state for row in selected)
-            out.append(f'<g data-area="{area_id}" data-count="{len(selected)}"><title>{escape(title)}: {heading.lower()} {count}/{len(selected)} mapped functions. Whole-system completion unknown.</title>')
-            out.extend(function_cells(selected,bounds,metric))
-            out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{w:.6f}" height="{h:.6f}" fill="none" stroke="#0d1117" stroke-width="2"/>')
-            label = short.get(title,title)
-            # Keep narrow labels readable without crossing into another system.
-            for line,label_line in enumerate(textwrap.wrap(label,width=max(6,int((w-10)/6.4)),break_long_words=False)):
-                out.append(text(round(x+4,3),round(y+14+13*line,3),label_line,11,weight=600,extra=outline))
-            out.append('</g>')
+    unassigned = total - mapped
+    mapped_review = Counter(row['review'] for _, _, _, items in areas for row in items)
+    description = (f'{review["verified_names"]} of {total} function names checked. '
+                   f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
+                   'Sections show evidence-backed associations with parts of Dreams. '
+                   'Every cell is a real function. Every section area is proportional to its function count. '
+                   'Green means name checked; amber means reviewed but unresolved; gray means not reviewed. '
+                   'Assignments are incomplete; full system totals and completion are unknown.')
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="486" viewBox="0 0 1000 486" role="img" aria-labelledby="status-title status-desc">',
+           '<title id="status-title">Dreams function review by game system</title>',
+           f'<desc id="status-desc">{escape(description)}</desc>',
+           '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
+           rect(0, 0, 1000, 486, "background"),
+           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams · {mapped_review["verified_name"]:,} names checked', 16),
+           '<g data-panel="review">']
+    for (area_id, title, _, selected), bounds in packed_regions(areas, (0, 34, 1000, 392)):
+        x, y, width, height = bounds
+        checked = sum(row['review'] == 'verified_name' for row in selected)
+        out.append(f'<g data-area="{area_id}" data-count="{len(selected)}"><title>{escape(title)}: {len(selected):,} functions in this section; {checked} names checked.</title>')
+        out.extend(function_cells(selected, bounds))
+        out.append(f'<rect data-region-border="true" x="{x:.6f}" y="{y:.6f}" width="{width:.6f}" height="{height:.6f}" fill="none" stroke="#0d1117" stroke-width="{min(2, width / 20):.6f}"/>')
+        outline = ' stroke="#0d1117" stroke-width="3" stroke-linejoin="round" paint-order="stroke"'
+        label_lines = textwrap.wrap(title, width=max(12, int((width-12)/7.6)), break_long_words=False)
+        for line_number, label in enumerate(label_lines):
+            out.append(text(round(x+6, 3), round(y+17+16*line_number, 3), label, 13, weight=600, extra=outline))
+        out.append(text(round(x+6, 3), round(y+19+16*len(label_lines), 3),
+                        f'{checked}/{len(selected):,} ({100*checked/len(selected):.1f}%)', 11, extra=outline))
         out.append('</g>')
-    out.extend([legend(4,334,'blue','Decompiler output available'),legend(505,334,'green','Name checked'),
-                legend(4,354,'amber','Extraction needs follow-up'),legend(505,354,'amber','Reviewed, still unclear'),
-                legend(260,334,'gray','No output yet'),legend(765,334,'gray','Not reviewed'),
-                text(4,378,f'Same {mapped:,} functions in both maps. One square = one function; {total-mapped:,} still need a system assignment.',12,'muted'),
-                text(4,394,'Section sizes count identified code only. Full system sizes and completion are unknown.',12,'muted'),'</g></svg>'])
-    return '\n'.join(out)+'\n'
+    out.extend(['</g>',
+                legend(4, 450, 'green', f'{mapped_review["verified_name"]:,} names checked'),
+                legend(220, 450, 'amber', f'{mapped_review["deferred"]:,} reviewed, unresolved'),
+                legend(470, 450, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed'),
+                text(996, 450, 'One cell = one mapped function', 11, 'muted', extra=' text-anchor="end"')])
+    out.append(text(4, 475, f'{unassigned:,} more functions still need system mapping. Section sizes and percentages use mapped functions only.', 12, 'muted'))
+    out.append('</g></svg>')
+    return "\n".join(out) + "\n"
 
 
 def render_area_table(status, mapping):
     areas = research_area_rows(status['rows'], mapping)
-    lines = ['| Part of Dreams | Functions mapped | Code extracted | Names checked |',
-             '| --- | ---: | ---: | ---: |']
+    lines = ['| Part of Dreams | Functions mapped | Names checked |',
+             '| --- | ---: | ---: |']
     for area_id, title, _, rows in areas:
         checked = sum(row['review'] == 'verified_name' for row in rows)
         progress = f'{checked:,} / {len(rows):,} ({100*checked/len(rows):.1f}%)' if rows else 'No functions mapped yet'
-        extracted = sum(row['decompilation'] == 'complete' for row in rows)
-        lines.append(f'| {title} | {len(rows):,} | {extracted:,} / {len(rows):,} | {progress} |')
+        lines.append(f'| {title} | {len(rows):,} | {progress} |')
     mapped = sum(len(rows) for _,_,_,rows in areas)
     unassigned = status['inventory_total'] - mapped
     lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
@@ -348,7 +348,6 @@ def render_badges(status):
     total = status["inventory_total"]
     metrics = status["metrics"]
     badges = [
-        ("code extracted", f"{100 * metrics['decompilation']['complete'] / total:.2f}%", "blue"),
         ("names checked", f"{100 * metrics['review']['verified_names'] / total:.2f}%", "green"),
     ]
     widths = [(round(len(label) * 6.5 + 20), round(len(value) * 6.5 + 20)) for label, value, _ in badges]

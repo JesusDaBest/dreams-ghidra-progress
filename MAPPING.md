@@ -26,7 +26,7 @@ Assignments are joined by function address. Function names, address proximity, a
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.
-- Both maps use the same system layout and addresses. The extraction map uses blue for cached pseudocode, amber for extraction failures, and gray for unavailable output. The name-checking map uses green for checked names, amber for unresolved reviews, and gray for unreviewed functions. Cached pseudocode does not make a name checked.
+- Green counts only independently checked names from the review ledger. Amber means reviewed but unresolved; gray means not yet reviewed. Cached pseudocode does not make a cell green.
 - A percentage is checked names divided by mapped functions in that section. The total code size of each system is still unknown. Counts can grow or assignments can be corrected as research finds more evidence.
 
 These are research classifications, not a recovered source-module layout or a measure of game-system complexity. Unclassified functions remain in the full inventory and are reported separately below the map.
