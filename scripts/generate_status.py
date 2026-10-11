@@ -196,40 +196,6 @@ def legend(x, y, color, label):
     return rect(x, y-9, 8, 8, color, 1) + text(x+15, y, label, 11, "muted")
 
 
-def address_regions(rows):
-    """Use fixed 1 MiB address regions until semantic module ownership is known."""
-    groups = defaultdict(list)
-    for row in rows:
-        groups[int(row["address"], 16) // 0x100000].append(row)
-    priority = {"verified_name": 0, "deferred": 1, "unreviewed": 2}
-    return [(region, sorted(items, key=lambda r: (priority[r["review"]], int(r["address"], 16))))
-            for region, items in sorted(groups.items(), key=lambda item: (-len(item[1]), item[0]))]
-
-
-def partition_regions(groups, bounds):
-    """Independent balanced-bisection treemap, with area proportional to count."""
-    x, y, width, height = bounds
-    if len(groups) == 1:
-        return [(groups[0], bounds)]
-    total = sum(len(items) for _, items in groups)
-    prefix = 0
-    choices = []
-    for index, (_, items) in enumerate(groups[:-1], 1):
-        prefix += len(items)
-        choices.append((abs(total - 2 * prefix), index, prefix))
-    _, split, first_count = min(choices)
-    fraction = first_count / total
-    if width >= height:
-        cut = width * fraction
-        first = (x, y, cut, height)
-        second = (x + cut, y, width - cut, height)
-    else:
-        cut = height * fraction
-        first = (x, y, width, cut)
-        second = (x, y + cut, width, height - cut)
-    return partition_regions(groups[:split], first) + partition_regions(groups[split:], second)
-
-
 def region_tiles(items, bounds):
     x, y, width, height = bounds
     # Distribute exactly count cells across near-square rows, with no filler cells.
@@ -254,43 +220,62 @@ def region_tiles(items, bounds):
     return "".join(out)
 
 
-def render(status):
+def identified_topics(applied):
+    topics = defaultdict(int)
+    for row in applied:
+        name = row["applied_name"]
+        if any(part in name for part in ("Calculator", "Splitter", "Combiner", "SignalInspector", "SignalGenerator")):
+            topic = "Math and logic tools"
+        elif "Fog" in name:
+            topic = "Fog effects"
+        elif "AutoGuides" in name:
+            topic = "Object placement guides"
+        elif "MagicDoor" in name:
+            topic = "Doorways"
+        elif any(part in name for part in ("Variant", "GadgetName", "CanvasProperties", "PosProperties")):
+            topic = "Shared object data"
+        else:
+            topic = "Other code"
+        topics[topic] += 1
+    return sorted(topics.items(), key=lambda item: (-item[1], item[0]))
+
+
+def render(status, applied):
     total = status["inventory_total"]
     review = status["metrics"]["review"]
-    groups = address_regions(status["rows"])
-    addresses = [r["address"] for _, items in groups for r in items]
-    assert len(addresses) == total and len(set(addresses)) == total
+    assert len(applied) == review["verified_names"]
+    assert {r["address"] for r in applied} == {r["address"] for r in status["rows"] if r["review"] == "verified_name"}
+    priority = {"verified_name": 0, "deferred": 1, "unreviewed": 2}
+    rows = sorted(status["rows"], key=lambda r: (priority[r["review"]], int(r["address"], 16)))
+    topics = identified_topics(applied)
     percent = 100 * review["verified_names"] / total
-    title = f'Verified names: {percent:.2f}% ({review["verified_names"]:,}/{total:,})'
-    description = (f'{total:,} discovered functions grouped in fixed 1 MiB address regions. '
-                   f'{review["verified_names"]:,} verified names are green; {review["deferred"]:,} reviewed but unresolved are amber; '
-                   f'{review["unreviewed"]:,} unreviewed functions are gray. Regions are not identified subsystems. '
-                   'Pseudocode generation does not count as a verified name or complete function correctness.')
-    width, height = 1120, 450
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="status-title status-desc">',
-           f'<title id="status-title">Dreams function review: {escape(title)}</title>',
+    title = f'{review["verified_names"]:,} functions named and checked'
+    description = (f'Early-stage Dreams research. {title} out of {total:,} code functions found so far. '
+                   f'{review["deferred"]:,} reviewed functions still need an explanation; {review["unreviewed"]:,} have not been reviewed. '
+                   'Each square is one piece of code. Computer-generated code does not count as identified.')
+    height = max(485, 175 + len(topics) * 55)
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="{height}" viewBox="0 0 1120 {height}" role="img" aria-labelledby="status-title status-desc">',
+           f'<title id="status-title">Dreams: {escape(title)}</title>',
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
-           rect(0, 0, width, height, "background"),
-           text(10, 25, title, 19, "text", 600),
-           text(1110, 25, f'{review["unreviewed"]:,} still unreviewed', 15, "muted", extra=' text-anchor="end"')]
-    for (region, items), bounds in partition_regions(groups, (8, 42, 1104, 334)):
-        x, y, w, h = bounds
-        counts = Counter(r["review"] for r in items)
-        label = f'{region:x}xxxxx'
-        detail = f'0x{region * 0x100000:x}–0x{(region + 1) * 0x100000 - 1:x}: {len(items)} functions; {counts["verified_name"]} named, {counts["deferred"]} deferred, {counts["unreviewed"]} unreviewed'
-        out.extend(['<g>', f'<title>{escape(detail)}</title>', region_tiles(items, bounds),
-                    f'<rect x="{x:.3f}" y="{y:.3f}" width="{w:.3f}" height="{h:.3f}" fill="none" stroke="{COLORS["background"]}" stroke-width="3"/>'])
-        if w >= len(label) * 7 + 8 and h >= 22:
-            out.append(text(round(x + 5, 3), round(y + 16, 3), label, 12, "text", 600,
-                            f' stroke="{COLORS["background"]}" stroke-width="3" paint-order="stroke"'))
-        out.append('</g>')
-    out.extend([legend(12, 400, "green", f'Name verified ({review["verified_names"]:,})'),
-                legend(244, 400, "amber", f'Reviewed, unresolved ({review["deferred"]:,})'),
-                legend(548, 400, "accounted", f'Unreviewed ({review["unreviewed"]:,})'),
-                text(1108, 400, f'Snapshot {status["snapshot_date"]}', 11, "dim", extra=' text-anchor="end"'),
-                text(12, 425, 'One tile = one discovered function. Block size = function count in that address region.', 12, "muted"),
-                text(12, 444, 'Green verifies a descriptive name; it does not mean original source recovery or complete behavioral understanding.', 11, "dim"),
+           rect(0, 0, 1120, height, "background"),
+           text(12, 31, title, 25, "text", 650),
+           text(1108, 30, "EARLY STAGE", 13, "amber", 650, ' text-anchor="end"'),
+           text(12, 56, f'{percent:.2f}% of the {total:,} code functions found so far', 15, "muted"),
+           text(12, 94, "Most code still needs review", 17, "text", 600),
+           region_tiles(rows, (12, 111, 732, 300)),
+           text(774, 94, "What we have identified", 17, "text", 600),
+           text(774, 115, "Parts of these systems — work is ongoing", 12, "muted")]
+    for index, (topic, count) in enumerate(topics):
+        y = 135 + index * 55
+        out.extend([rect(774, y, 334, 46, "panel", 5, "border"),
+                    text(786, y + 19, topic, 14, "text", 600),
+                    text(786, y + 37, f'{count} function' + ('s' if count != 1 else '') + ' named and checked', 12, "muted")])
+    out.extend([legend(12, 436, "green", f'Named and checked: {review["verified_names"]:,}'),
+                legend(256, 436, "amber", f'Still unclear: {review["deferred"]:,}'),
+                legend(460, 436, "accounted", f'Not reviewed: {review["unreviewed"]:,}'),
+                text(12, 460, 'Each square is one function (a piece of code). Generated code still needs someone to work out what it does.', 12, "muted"),
+                text(12, 479, 'This tracks the functions found so far. It is not a percentage of the whole game rebuilt or fully understood.', 11, "dim"),
                 '</g></svg>'])
     return "\n".join(out) + "\n"
 
@@ -300,11 +285,10 @@ def render_badges(status):
     metrics = status["metrics"]
     decomp = metrics["decompilation"]
     reviewed = metrics["review"]["reviewed"]
-    pseudocode = f"{decomp['complete']:,} generated" if decomp["reported"] else "awaiting data"
     badges = [
-        ("reviewed", f"{reviewed:,} / {total:,}", "accounted"),
-        ("verified names", str(metrics["review"]["verified_names"]), "green"),
-        ("pseudocode", pseudocode, "blue"),
+        ("checked", f"{reviewed:,} / {total:,}", "accounted"),
+        ("identified", str(metrics["review"]["verified_names"]), "green"),
+        ("ready to review", f"{decomp['complete']:,}", "blue"),
         ("status", "in progress", "amber"),
     ]
     widths = [(round(len(label) * 6.5 + 20), round(len(value) * 6.5 + 20)) for label, value, _ in badges]
@@ -349,7 +333,7 @@ def main(argv=None):
     content = json.dumps(header, indent=2)[:-2] + ',\n  "rows": [\n'
     content += ",\n".join("    " + json.dumps(row, separators=(",", ":")) for row in rows)
     content += "\n  ]\n}\n"
-    svg = render(status)
+    svg = render(status, read_json(repo / "analysis" / "function-review.json")["applied"])
     badges_svg = render_badges(status)
     readme_path = repo / 'README.md'
     readme = readme_path.read_text(encoding='utf-8')

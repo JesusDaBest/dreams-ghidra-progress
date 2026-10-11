@@ -3,9 +3,9 @@
 # DREAMS
 ### Reverse engineering progress
 
-Function discovery · Decompilation · Verified naming
+Working out how Dreams works, one piece of code at a time
 
-![Analysis status](assets/status-badges.svg?v=015f859d7b4c)
+![Analysis status](assets/status-badges.svg?v=ba5973a02e75)
 
 [Progress log](PROGRESS.md) · [Function review](analysis/function-review.json) · [Status data](analysis/status.json)
 
@@ -13,27 +13,23 @@ Function discovery · Decompilation · Verified naming
 
 ## Status
 
-![Dreams verified function names by address region](assets/status.svg?v=37a4b32760b0)
+![Dreams progress: identified functions and work still to review](assets/status.svg?v=97df6acfb290)
 
-Each tile represents **one of the 9,551 discovered functions**. Green means its descriptive name is supported by evidence and verified after reopening; amber means a reviewed function remains unresolved; gray means unreviewed. Generating pseudocode does **not** turn a tile green.
+**Green means we have identified what a function does, given it a descriptive name, and checked that the saved name is correct.** Amber means we have reviewed it but still have questions. Gray means it has not been reviewed. A function is one piece of the game's code.
 
-Blocks group fixed **1 MiB address ranges**, with area proportional to function count. Labels such as `1404xxxxx` mean `0x140400000–0x1404fffff`; these are address regions, not identified game subsystems. Verified and deferred tiles come first within each region, followed by unreviewed addresses. The layout follows the [AnyPS5 progress-map approach](https://github.com/boykopovar/AnyPS5/blob/main/tools/progress.py), with an independently written generator and counting rules for this analysis.
+The square-based display takes inspiration from [AnyPS5's progress map](https://github.com/boykopovar/AnyPS5/blob/main/tools/progress.py). Our figures measure work on the functions found so far—not how much of the entire game has been rebuilt.
 
-The percentage measures verified naming among discovered functions. It does not measure whole-game completion, recovered original source, or complete behavioral understanding.
+## What we know so far
 
-## Latest checkpoint
+We have identified parts of the calculator, splitter and combiner tools, fog effects, object placement guides, and shared object data. These are early findings; the systems are still being investigated.
 
-- **12 names verified** after saving and reopening. The documented batches cover property visitors and type/field registration routines. 4 other reviewed functions remain unresolved.
-- **PS4 calling conventions:** 9,486 direct assignments plus 19 inherited thunk conventions, validated on a copy before updating the working project. Existing explicit signatures and the Windows wrapper are preserved.
-- **Coverage pass:** 9,508 cached, 43 failed, and 0 pending out of 9,551 discovered functions. Extraction runs against an immutable snapshot; generated code remains local.
+## Latest progress
 
-The cache retains its frozen analysis revision and original snapshot names. Verified naming reflects the saved working project. These are separate checkpoints; the status does not imply cached pseudocode contains every later rename.
+- **12 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **9,508 functions have computer-generated code ready to study.** Generating that code is preparation; it does not mean we understand it yet.
+- **43 functions need extraction fixes.** Every one of the 9,551 functions found so far received an attempt.
 
-Every discovered function received an extraction attempt. Bounded retries recovered 26 additional functions; remaining failures are 41 timeouts, 1 flow-limit failure, and 1 forced-merge failure. Successful cached outputs were not reprocessed, and all cached file hashes were checked.
-
-## What comes next
-
-Resolve remaining extraction failures, review coherent function clusters, and check signature and type questions against assembly. Existing annotations and decompiler output still require validation.
+Next: study related functions together, identify their roles, and investigate the extraction failures. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
 
 ## Repository scope
 
