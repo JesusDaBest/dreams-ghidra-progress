@@ -394,7 +394,7 @@ def render_hierarchy(nodes, bounds, depth=0):
                 protected.append((x0+cx*side+3,y0+cy*side+3,110,38))
         for wrap in range(32,8,-1):
             lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
-            values=lines+[f'{checked}/{len(owned)} ({100*checked/len(owned):.1f}%)']
+            values=lines+[f'{checked}/{len(owned)} checked']
             sizes=[size]*len(lines)+[12]
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
             bh=sum(fs+3 for fs in sizes)+4
@@ -474,7 +474,8 @@ def render(status, applied, mapping):
            f'<desc id="status-desc">{escape(description)}</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">',
            rect(0, 0, 1000, 714, "background"),
-           text(4, 21, f'{mapped:,} functions mapped to parts of Dreams | {mapped_review["verified_name"]:,} names checked', 16),
+           text(4, 21, f'Code mapped to Dreams systems | {mapped:,} functions identified', 16),
+           text(996, 21, 'Counts: checked names / mapped functions', 12, 'muted', extra=' text-anchor="end"'),
            '<g data-panel="review">']
     out.extend(render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,620)))
     out.extend(['</g>',
@@ -493,13 +494,13 @@ def render_area_table(status, mapping):
              '| --- | ---: | ---: |']
     for area_id, title, _, rows in areas:
         checked = sum(row['review'] == 'verified_name' for row in rows)
-        progress = f'{checked:,} / {len(rows):,} ({100*checked/len(rows):.1f}%)' if rows else 'No functions mapped yet'
+        progress = f'{checked:,}' if rows else 'No functions mapped yet'
         lines.append(f'| {title} | {len(rows):,} | {progress} |')
     mapped = sum(len(rows) for _,_,_,rows in areas)
     unassigned = status['inventory_total'] - mapped
     lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
-                  'Percentages measure checked names among the functions mapped to that section. '
-                  'The complete size of each system is still unknown; these are not whole-game completion percentages.'])
+                  'Section area counts mapped functions; green counts checked names. '
+                  'Whole-system coverage and completion remain unknown.'])
     lines.extend(['','<details>','<summary>Explore the systems and their components</summary>',''])
     def list_nodes(nodes,depth=0):
         for node in sorted(nodes,key=lambda n:(-len(n['rows']),n['id'])):
@@ -627,4 +628,6 @@ def main(argv=None):
 
 if __name__ == "__main__":
     main()
+
+
 

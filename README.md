@@ -17,7 +17,7 @@ Working out how Dreams works, one piece of code at a time
 **56 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/810112d86d2ad0626a973d564652d2295ce2fa8a/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=8c9a4f62c810)
 
 **The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 50 of the 56 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
@@ -26,17 +26,17 @@ Green means the function's role and descriptive name have been checked; amber me
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Names checked |
 | --- | ---: | ---: |
-| Sculpting & painting | 117 | 0 / 117 (0.0%) |
-| Gadgets & logic | 459 | 38 / 459 (8.3%) |
-| Physics & collision | 60 | 0 / 60 (0.0%) |
-| Sound & music | 62 | 0 / 62 (0.0%) |
-| Animation & puppets | 46 | 0 / 46 (0.0%) |
-| Rendering & lighting | 274 | 0 / 274 (0.0%) |
-| Editor & interface | 313 | 0 / 313 (0.0%) |
-| Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 120 | 12 / 120 (10.0%) |
+| Sculpting & painting | 117 | 0 |
+| Gadgets & logic | 459 | 38 |
+| Physics & collision | 60 | 0 |
+| Sound & music | 62 | 0 |
+| Animation & puppets | 46 | 0 |
+| Rendering & lighting | 274 | 0 |
+| Editor & interface | 313 | 0 |
+| Dreamiverse & networking | 103 | 0 |
+| Shared engine & object data | 120 | 12 |
 
-**1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,554 of 9,551 discovered functions are mapped; 7,997 still need a system assignment.** Section area counts mapped functions; green counts checked names. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
