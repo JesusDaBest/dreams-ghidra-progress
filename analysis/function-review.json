@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "34 previously unnamed functions reviewed; 30 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "45 previously unnamed functions reviewed; 41 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9365,
-    "other_names": 186,
+    "default_fun_names": 9354,
+    "other_names": 197,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -588,6 +588,225 @@
         "The eight extension fields (Halfsize, six telemetry keys and TimeSinceSend) are gated by visitor state +0x1c >= 0x1869f (99,999), with additional property-filter conditions. Whether this path is used by normal game data is unestablished.",
         "This evidence does not establish network transmission, recipients, telemetry payloads or the runtime reporting algorithm.",
         "No signature, datatype, calling convention, parameter or variable changes are proposed."
+      ]
+    },
+    {
+      "address": "140d58000",
+      "original_name": "FUN_140d58000",
+      "applied_name": "RegisterReporterSculptTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d58000 loads the verified literal ReporterSculpt at 14172005d, stores it on descriptor 1458afb20, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c900. The registrar uses that same descriptor.",
+        "Complete assembly verifies 6 field registrations: Pos@0x40, ParentFromModel@0x60, TweakProps@0x80, Power@0xc0, Name@0xc8, IsGluedGadget@0xd0.",
+        "Guarded static type-descriptor initialization and field-registration dispatch; not runtime object construction.",
+        "Full 42-instruction, 203-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d6c900",
+      "original_name": "FUN_140d6c900",
+      "applied_name": "RegisterReporterSculptFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d58000 loads the verified literal ReporterSculpt at 14172005d, stores it on descriptor 1458afb20, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c900. The registrar uses that same descriptor.",
+        "Complete assembly verifies 6 field registrations: Pos@0x40, ParentFromModel@0x60, TweakProps@0x80, Power@0xc0, Name@0xc8, IsGluedGadget@0xd0.",
+        "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+        "Full 31-instruction, 132-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d581a0",
+      "original_name": "FUN_140d581a0",
+      "applied_name": "RegisterWirelessReceiverTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d581a0 loads the verified literal WirelessReceiver at 14172007e, stores it on descriptor 1458b0080, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c4b0. The registrar uses that same descriptor.",
+        "Complete assembly verifies 16 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, Transmit@0x90, Receive@0xb8, TweakProps@0xe0, ZoneType@0x120, PosOffset@0x130, ZoneSize@0x150, ZoneOffset@0x160, FalloffSize@0x170, FalloffOffset@0x180, Name@0x190, DetectName@0x198, IsGluedGadget@0x1a0, Halfsize@0x1a8.",
+        "Guarded static type-descriptor initialization and field-registration dispatch; not runtime object construction.",
+        "Full 42-instruction, 203-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d6c4b0",
+      "original_name": "FUN_140d6c4b0",
+      "applied_name": "RegisterWirelessReceiverFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d581a0 loads the verified literal WirelessReceiver at 14172007e, stores it on descriptor 1458b0080, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c4b0. The registrar uses that same descriptor.",
+        "Complete assembly verifies 16 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, Transmit@0x90, Receive@0xb8, TweakProps@0xe0, ZoneType@0x120, PosOffset@0x130, ZoneSize@0x150, ZoneOffset@0x160, FalloffSize@0x170, FalloffOffset@0x180, Name@0x190, DetectName@0x198, IsGluedGadget@0x1a0, Halfsize@0x1a8.",
+        "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+        "Full 71-instruction, 332-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d58270",
+      "original_name": "FUN_140d58270",
+      "applied_name": "RegisterWirelessTransmitterTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d58270 loads the verified literal WirelessTransmitter at 14172008f, stores it on descriptor 1458b0330, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c220. The registrar uses that same descriptor.",
+        "Complete assembly verifies 12 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, Transmit@0x90, Receive@0xb8, TweakProps@0xe0, ZoneType@0x120, Name@0x128, IsGluedGadget@0x130, Halfsize@0x138, DetectScope@0x140, PosOffset@0x150.",
+        "Guarded static type-descriptor initialization and field-registration dispatch; not runtime object construction.",
+        "Full 42-instruction, 203-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d6c220",
+      "original_name": "FUN_140d6c220",
+      "applied_name": "RegisterWirelessTransmitterFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d58270 loads the verified literal WirelessTransmitter at 14172008f, stores it on descriptor 1458b0330, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6c220. The registrar uses that same descriptor.",
+        "Complete assembly verifies 12 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, Transmit@0x90, Receive@0xb8, TweakProps@0xe0, ZoneType@0x120, Name@0x128, IsGluedGadget@0x130, Halfsize@0x138, DetectScope@0x140, PosOffset@0x150.",
+        "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+        "Full 55-instruction, 252-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d58680",
+      "original_name": "FUN_140d58680",
+      "applied_name": "RegisterVariableGadgetTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d58680 loads the verified literal VariableGadget at 1417200c6, stores it on descriptor 1458b10a0, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6a700. The registrar uses that same descriptor.",
+        "Complete assembly verifies 20 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, TweakProps@0x90, Halfsize@0xd0, IsGluedGadget@0xd8, Name@0xe0, InitialValue@0xe8, MinLength@0xec, MaxLength@0xf0, VariableValue@0xf4, IsMultiplayer@0x108, IsPersistentInMap@0x109, ForceResetVariable@0x10a, VariableIncreasedOutput@0x10b, VariableDecreasedOutput@0x10c, CheckWiresDueToPlayer@0x10d, ForceUpdateDueToWires@0x10e, VariableValueShouldBePreserved@0x10f, RestoreVariableOnLevelRewind@0x110.",
+        "Guarded static type-descriptor initialization and field-registration dispatch; not runtime object construction.",
+        "Full 42-instruction, 203-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "140d6a700",
+      "original_name": "FUN_140d6a700",
+      "applied_name": "RegisterVariableGadgetFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "140d58680 loads the verified literal VariableGadget at 1417200c6, stores it on descriptor 1458b10a0, links the Thing base descriptor through 140d5ed90 and tail-calls 140d6a700. The registrar uses that same descriptor.",
+        "Complete assembly verifies 20 field registrations: Power@0x40, Pos@0x50, ParentFromModel@0x70, TweakProps@0x90, Halfsize@0xd0, IsGluedGadget@0xd8, Name@0xe0, InitialValue@0xe8, MinLength@0xec, MaxLength@0xf0, VariableValue@0xf4, IsMultiplayer@0x108, IsPersistentInMap@0x109, ForceResetVariable@0x10a, VariableIncreasedOutput@0x10b, VariableDecreasedOutput@0x10c, CheckWiresDueToPlayer@0x10d, ForceUpdateDueToWires@0x10e, VariableValueShouldBePreserved@0x10f, RestoreVariableOnLevelRewind@0x110.",
+        "Named property labels and byte offsets are passed to field registration helpers using RDI/RSI/EDX; Pos uses its specialized helper with ESI offset.",
+        "Full 87-instruction, 412-byte assembly and hash-verified v2 pseudocode read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Registration metadata does not establish runtime behavior, persistence semantics or network communication.",
+        "Uncorrected callee prototypes suppress some C arguments; direct assembly establishes labels and offsets. No prototype or datatype edits."
+      ]
+    },
+    {
+      "address": "1404dedb0",
+      "original_name": "FUN_1404dedb0",
+      "applied_name": "VisitWirelessReceiverProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Type identity independently established by literal WirelessReceiver on descriptor 1458b0080, initializer 140d581a0 and registrar 140d6c4b0.",
+        "All 16 registered object byte offsets match this visitor. Explicit labels match except three VariableGadget nested fields: VariableValue calls unresolved helper 1404f9650 at +0xf4; the increase/decrease outputs load bytes at +0x10b/+0x10c and call shared helper 1404f9b20 without outer labels. Pos uses the already verified nested Pos visitor. Direct assembly preserves object in R14 and visitor in RBX. Receiver zone/falloff fields distinguish it from the transmitter; variable fields include InitialValue and RestoreVariableOnLevelRewind.",
+        "The Thing property dispatcher calls this function at 14048cbfc. Full 447-instruction / 1911-byte assembly and hash-verified v2 C output were read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "These functions visit named properties through callbacks; runtime wireless transmission and variable evaluation algorithms remain unreviewed.",
+        "Version/state thresholds and path filters gate some fields. No assertion about serialization direction or exact parameter types. No signatures changed."
+      ]
+    },
+    {
+      "address": "1404df530",
+      "original_name": "FUN_1404df530",
+      "applied_name": "VisitWirelessTransmitterProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Type identity independently established by literal WirelessTransmitter on descriptor 1458b0330, initializer 140d58270 and registrar 140d6c220.",
+        "All 12 registered object byte offsets match this visitor. Explicit labels match except three VariableGadget nested fields: VariableValue calls unresolved helper 1404f9650 at +0xf4; the increase/decrease outputs load bytes at +0x10b/+0x10c and call shared helper 1404f9b20 without outer labels. Pos uses the already verified nested Pos visitor. Direct assembly preserves object in R14 and visitor in RBX. Receiver zone/falloff fields distinguish it from the transmitter; variable fields include InitialValue and RestoreVariableOnLevelRewind.",
+        "The Thing property dispatcher calls this function at 14048cc14. Full 329-instruction / 1335-byte assembly and hash-verified v2 C output were read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "These functions visit named properties through callbacks; runtime wireless transmission and variable evaluation algorithms remain unreviewed.",
+        "Version/state thresholds and path filters gate some fields. No assertion about serialization direction or exact parameter types. No signatures changed.",
+        "PosOffset is gated by state +0x1c >= 0x1869f; DetectScope by >=0x689. The meaning and normal reachability of the high threshold remain unresolved."
+      ]
+    },
+    {
+      "address": "1404e33a0",
+      "original_name": "FUN_1404e33a0",
+      "applied_name": "VisitVariableGadgetProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Type identity independently established by literal VariableGadget on descriptor 1458b10a0, initializer 140d58680 and registrar 140d6a700.",
+        "All 20 registered object byte offsets match this visitor. Explicit labels match except three VariableGadget nested fields: VariableValue calls unresolved helper 1404f9650 at +0xf4; the increase/decrease outputs load bytes at +0x10b/+0x10c and call shared helper 1404f9b20 without outer labels. Pos uses the already verified nested Pos visitor. Direct assembly preserves object in R14 and visitor in RBX. Receiver zone/falloff fields distinguish it from the transmitter; variable fields include InitialValue and RestoreVariableOnLevelRewind.",
+        "The Thing property dispatcher calls this function at 14048cc8c. Full 572-instruction / 2301-byte assembly and hash-verified v2 C output were read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source symbol.",
+        "These functions visit named properties through callbacks; runtime wireless transmission and variable evaluation algorithms remain unreviewed.",
+        "Version/state thresholds and path filters gate some fields. No assertion about serialization direction or exact parameter types. No signatures changed.",
+        "Preservation and level-rewind fields are gated by state +0x1c >=0x5ff. Final indirect callback has a decompiler jump-table warning; direct assembly was checked, without assuming a switch table."
       ]
     }
   ],

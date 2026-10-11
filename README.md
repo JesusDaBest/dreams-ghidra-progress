@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d9aa0a2650f2e77f5546111bec1de974d327063a/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=6f67ba603a57)
 
 <!-- status-summary:start -->
-**30 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**41 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d9aa0a2650f2e77f5546111bec1de974d327063a/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=a6cfce3f779a)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 29 of the 30 checked names; one checked function still lacks a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 36 of the 41 checked names; 5 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -27,7 +27,7 @@ Green means the function's role and descriptive name have been checked; amber me
 | Part of Dreams | Functions mapped | Names checked |
 | --- | ---: | ---: |
 | Sculpting & painting | 117 | 0 / 117 (0.0%) |
-| Gadgets & logic | 450 | 24 / 450 (5.3%) |
+| Gadgets & logic | 450 | 31 / 450 (6.9%) |
 | Physics & collision | 60 | 0 / 60 (0.0%) |
 | Sound & music | 62 | 0 / 62 (0.0%) |
 | Animation & puppets | 47 | 0 / 47 (0.0%) |
@@ -41,7 +41,7 @@ Green means the function's role and descriptive name have been checked; amber me
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 24/450 names checked
+- **Gadgets & logic** - 31/450 names checked
   - **Online & multiplayer gadgets** - 3/95 names checked
     - **Magic Door Type** - 0/4 names checked
     - **PUMap Gadget** - 0/4 names checked
@@ -75,7 +75,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Multiplayer Session Gadget** - 0/2 names checked
     - **Network Signal Gadget** - 0/2 names checked
     - **Network Spawner Gadget** - 0/2 names checked
-  - **Logic & signals** - 11/84 names checked
+  - **Logic & signals** - 15/84 names checked
     - **Calculator Op** - 0/4 names checked
     - **Delay Select** - 0/4 names checked
     - **Label Any Or All** - 0/4 names checked
@@ -102,8 +102,8 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Splitter** - 1/2 names checked
     - **Time Gadget** - 0/2 names checked
     - **Wide Calculator** - 0/2 names checked
-    - **Wireless Receiver** - 0/2 names checked
-    - **Wireless Transmitter** - 0/2 names checked
+    - **Wireless Receiver** - 2/2 names checked
+    - **Wireless Transmitter** - 2/2 names checked
     - **And** - 0/1 names checked
     - **Break Logic Cycles** - 0/1 names checked
     - **Timer State** - 0/1 names checked
@@ -111,7 +111,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Or** - 0/1 names checked
     - **Remapper State** - 0/1 names checked
     - **Xor** - 0/1 names checked
-  - **Creation & display gadgets** - 3/67 names checked
+  - **Creation & display gadgets** - 4/67 names checked
     - **Text Gadget** - 0/6 names checked
     - **Text Gadget Type** - 0/4 names checked
     - **DEPRECATE Dream Bubble** - 0/3 names checked
@@ -131,7 +131,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Imp Quest Gadget** - 0/2 names checked
     - **Photo Gadget** - 0/2 names checked
     - **Reporter** - 0/2 names checked
-    - **Reporter Sculpt** - 0/2 names checked
+    - **Reporter Sculpt** - 1/2 names checked
     - **Reporter Telemetry** - 2/2 names checked
     - **Slider Gadget** - 0/2 names checked
     - **Stamping Enabler** - 0/2 names checked
@@ -166,7 +166,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Rocket Rotator** - 0/2 names checked
     - **Rotator** - 0/2 names checked
     - **Teleporter** - 0/2 names checked
-  - **Gameplay & scoring** - 0/61 names checked
+  - **Gameplay & scoring** - 2/61 names checked
     - **Variable Operation** - 0/4 names checked
     - **Variable Update Mode** - 0/4 names checked
     - **Coin Dispenser** - 0/3 names checked
@@ -189,7 +189,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Prize Bubble** - 0/2 names checked
     - **Score Modifier Gadget** - 0/2 names checked
     - **Unlockables Gadget** - 0/2 names checked
-    - **Variable Gadget** - 0/2 names checked
+    - **Variable Gadget** - 2/2 names checked
     - **Variable Modifier Gadget** - 0/2 names checked
   - **Sensors & detection** - 0/38 names checked
     - **Detect Scope** - 0/4 names checked
@@ -703,14 +703,15 @@ So far, checked names cover gadget property readers and registrations plus share
 
 ## Latest progress
 
-- **30 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **41 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
 - **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
 - **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.
-- **Three ReporterTelemetry names were applied and verified after reopening, bringing the total to 30.** A copy-only flow-limit experiment also produced pseudocode, then was rolled back because its switch domain still needs proof. These outcomes are documented separately from completed work in the [findings](ANALYSIS.md).
+- **Eleven additional names were applied and verified after reopening, bringing the total to 41.** These identify wireless receiver/transmitter and variable-gadget property visitors and registrations, plus ReporterSculpt registrations. A copy-only flow-limit experiment also produced pseudocode, then was rolled back because its switch domain still needs proof. These outcomes are documented separately from completed work in the [findings](ANALYSIS.md).
 
 Next: extend the system mapping and review the functions within each section. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
 
 ## Repository scope
 
 This public repository contains sanitized progress, review metadata, and status graphics. Game binaries, Ghidra databases, decompiled game code, local paths, credentials, and logs remain outside it. The analysis is incomplete; full source reconstruction is not claimed.
+

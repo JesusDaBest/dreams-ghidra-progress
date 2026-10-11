@@ -121,3 +121,19 @@ Setup, a small naming batch, and generated pseudocode do not satisfy the full re
 All 9,551 discovered functions are accounted for: 9,513 complete cached outputs and 38 failures (36 timeouts, one flow-limit failure, one forced-merge failure). The immutable snapshot has 9,532 code functions and 19 thunks; 15 external functions are recorded outside that denominator. All 59 initial timeouts received one 60-second retry. The audit checked all 9,513 cache hashes and all 9,610 attempt records; no previously successful output was re-decompiled.
 
 All cached outputs also received a mechanical quality scan with a per-address local result and next step. This grants no semantic-review credit: 30 names are checked, 4 naming reviews are deferred, and 9,517 functions await semantic naming review. The 39 preserved explicit signatures and all final extraction failures have address-specific unresolved records. Original binary inputs, both caches, checkpoints, and raw evidence remain local.
+
+## Continued semantic review: wireless and variables
+
+Eleven more descriptive names were applied and survived a clean saved-project reopening: **41 names checked; 4 deferred; 9,506 still unreviewed**. The original archive and input copy hashes remain unchanged. This is ongoing reverse engineering; successful extraction does not complete it.
+
+- WirelessReceiver and WirelessTransmitter: their literal type names identify separate descriptors. Each initializer links the Thing base descriptor and invokes its own field registrar. The visitors match all 16 receiver and 12 transmitter object offsets. Receiver-specific ZoneSize, ZoneOffset, FalloffSize, FalloffOffset and DetectName distinguish it from the transmitter, which has DetectScope. These are property visitors, not identified wireless signal-processing algorithms.
+- VariableGadget: the descriptor, registrar and visitor agree on 20 field offsets. Explicit fields include InitialValue (+0xe8), IsMultiplayer (+0x108), IsPersistentInMap (+0x109), ForceResetVariable (+0x10a), VariableValueShouldBePreserved (+0x10f), and RestoreVariableOnLevelRewind (+0x110). Three nested fields use shared helpers without outer labels; their exact helper roles remain unresolved. The last two flags are gated by visitor state +0x1c >= 0x5ff. Actual variable update, persistence and rewind behavior still need tracing.
+- ReporterSculpt: only its type-descriptor initializer and six-field registrar were named. The generic neighboring visitor is still unassigned because the type identity is not proven by adjacency.
+
+Every new function was read as cached v2 C and checked against complete assembly and direct literal reads. Changes are names only, journaled with old names, backed up before application and verified against the complete 9,551-function inventory after reopening. No new extraction run or prototype changes were needed.
+
+### Developer coding streams: research leads
+
+[Media Molecule's programming-stream announcement](https://www.mediamolecule.com/blog/article/this_weeks_live_stream_the_tech_behind_the_magic) identifies Alex Evans and Mark Zarb-Adami demonstrating live code and particle features in April 2016. The official recording is [Dreams PS4 - The Tech Behind The Magic](https://www.youtube.com/watch?v=yZM_Ij9aeOA), whose description identifies wave-shader work. The recording has been located, but its frames and transcript have not yet been analyzed; it supports no function rename in this batch. Pre-release examples must be matched against this executable before treating them as implementation evidence.
+
+Next: inspect source visible in the developer recordings, trace the wireless/variable runtime callers and nested helpers, and continue mapping verified functions to Dreams systems. Metadata registration and property visitation are only part of those systems.
