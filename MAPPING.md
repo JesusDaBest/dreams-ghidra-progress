@@ -50,3 +50,7 @@ Regenerate the front-page assets with `python scripts/generate_status.py`, then 
 ## Verified status map update
 
 Mapped seven independently reviewed functions to their confirmed gadget types: Reporter Sculpt, Reporter Telemetry, Wireless Receiver, Wireless Transmitter and Variable Gadget. The map now contains 1,547 functions, with 43 checked, 4 unresolved and 1,500 awaiting review. Six other checked functions remain outside the map pending supported ownership. Equal square cells now support arbitrary mapped counts; no invented functions pad the last row. Counts measure identified code, not full subsystem completion.
+
+## One feature, one progress group
+
+Timeline definition and playback-associated code share one Timeline group; Grade definition and color-processing-associated code share one Grade group. Source associations remain recorded per function. These presentation groups do not claim exclusive engine ownership. Each function address occurs once in the map, and parent totals include their children rather than adding another copy.

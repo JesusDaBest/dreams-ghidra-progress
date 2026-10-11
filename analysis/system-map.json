@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1549,
-  "unmapped_total": 8002,
+  "mapped_total": 1551,
+  "unmapped_total": 8000,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -23489,7 +23489,7 @@
       "component_basis": "implementation_source"
     },
     "1410c0660": {
-      "system": "animation",
+      "system": "gadgets-logic",
       "evidence": [
         {
           "kind": "source_reference",
@@ -23500,11 +23500,12 @@
       ],
       "code_sha256": "7dd13e1816cd09ff8d9e16c12b1a2a84907d6fe831cc709f2cc1272424c57a99",
       "component_path": [
-        "animation",
-        "timelines",
+        "gadgets-logic",
+        "authoring",
         "timeline"
       ],
-      "component_basis": "implementation_source"
+      "component_basis": "implementation_source",
+      "presentation_note": "Grouped with the matching feature definition for one feature progress total; source-reference evidence identifies implementation association, not exclusive subsystem ownership."
     },
     "1410c9720": {
       "system": "shared",
@@ -26775,7 +26776,7 @@
       "component_basis": "implementation_source"
     },
     "141300eb0": {
-      "system": "rendering",
+      "system": "gadgets-logic",
       "evidence": [
         {
           "kind": "source_reference",
@@ -26792,11 +26793,12 @@
       ],
       "code_sha256": "d04966ce605ef0fbec79f070f7919fcbc0e21071ed205100092e993ec790a933",
       "component_path": [
-        "rendering",
-        "effects",
+        "gadgets-logic",
+        "presentation",
         "grade"
       ],
-      "component_basis": "implementation_source"
+      "component_basis": "implementation_source",
+      "presentation_note": "Grouped with the matching feature definition for one feature progress total; source-reference evidence identifies implementation association, not exclusive subsystem ownership."
     },
     "1413028c0": {
       "system": "rendering",
@@ -35831,6 +35833,52 @@
       ],
       "code_sha256": "9dcd4a6d3202933343481b60d32a1066514e094a57af996645cf9c195d5380c7",
       "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "14090e280": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_game_pool_runtime",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_pool_creation",
+          "name": "RetainCurrentGamePoolContext",
+          "support": [
+            "All36 assembly instructions copy the current pool context into a16-byte handle and increment its usage counter if non-null; associated metadata words are copied without claiming their meanings.",
+            "Counter indexing independently evaluated for all seven context strides: offsets0,4,8,12,16,20,24. These are the same usage counters tested by AcquireUnusedGamePoolContext.",
+            "Caller1411c08c0 retains at1411c0dc7 into RBP-0x38, uses the resulting context only if non-null, and releases the same handle at1411c0e44 on both branches while preserving the result. Relevant original assembly and cached C agree.",
+            "Direct branch targets and fallthrough gaps audited against captured instruction bytes."
+          ]
+        }
+      ],
+      "code_sha256": "5c2486085c3a19d0237d88e1a6989fbce56f27307500e55a9bf79b4343e30649",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "14090e300": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines"
+      ],
+      "component_basis": "verified_game_pool_runtime",
+      "evidence": [
+        {
+          "kind": "complete_assembly_and_pool_creation",
+          "name": "ReleaseGamePoolContextReference",
+          "support": [
+            "All39 assembly instructions no-op for a null handle context, otherwise decrement its usage counter and invoke the retry mechanism when the count reaches zero. The handle is not cleared and the context is not directly freed.",
+            "Counter indexing independently evaluated for all seven context strides: offsets0,4,8,12,16,20,24. These are the same usage counters tested by AcquireUnusedGamePoolContext.",
+            "Caller1411c08c0 retains at1411c0dc7 into RBP-0x38, uses the resulting context only if non-null, and releases the same handle at1411c0e44 on both branches while preserving the result. Relevant original assembly and cached C agree.",
+            "Direct branch targets and fallthrough gaps audited against captured instruction bytes."
+          ]
+        }
+      ],
+      "code_sha256": "776101e37cecd9725bfb38944a95c205dfa0be3ae5d47f7e16beb9a19eade2af",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
   "hierarchy": [
@@ -35972,7 +36020,7 @@
             },
             {
               "id": "common-routines",
-              "label": "Common routines",
+              "label": "Sculpt blend & looseness registration",
               "children": []
             }
           ]
@@ -36025,7 +36073,7 @@
             },
             {
               "id": "grade",
-              "label": "Grade",
+              "label": "Grade gadget & color processing",
               "children": []
             },
             {
@@ -36157,7 +36205,7 @@
             },
             {
               "id": "timeline",
-              "label": "Timeline",
+              "label": "Timeline gadget & playback",
               "children": []
             },
             {
@@ -36914,7 +36962,7 @@
         },
         {
           "id": "common",
-          "label": "Common system routines",
+          "label": "Shared gadget property dispatch",
           "children": []
         }
       ]
@@ -37366,13 +37414,7 @@
         {
           "id": "timelines",
           "label": "Timeline playback",
-          "children": [
-            {
-              "id": "timeline",
-              "label": "Timeline",
-              "children": []
-            }
-          ]
+          "children": []
         }
       ]
     },
@@ -37473,11 +37515,6 @@
             {
               "id": "bokeh-render",
               "label": "Bokeh rendering",
-              "children": []
-            },
-            {
-              "id": "grade",
-              "label": "Grade",
               "children": []
             },
             {
@@ -38362,7 +38399,7 @@
         },
         {
           "id": "common",
-          "label": "Common system routines",
+          "label": "Shared interface routines",
           "children": []
         },
         {
@@ -38857,7 +38894,7 @@
             },
             {
               "id": "common-routines",
-              "label": "Common routines",
+              "label": "Game contexts & runtime support",
               "children": []
             }
           ]
@@ -38986,7 +39023,7 @@
             },
             {
               "id": "common-routines",
-              "label": "Common routines",
+              "label": "Support implementation",
               "children": []
             }
           ]
@@ -39017,7 +39054,7 @@
             },
             {
               "id": "common-routines",
-              "label": "Common routines",
+              "label": "Serialization implementation",
               "children": []
             }
           ]
@@ -39134,7 +39171,7 @@
         },
         {
           "id": "common",
-          "label": "Common system routines",
+          "label": "Shared object routines",
           "children": []
         }
       ]

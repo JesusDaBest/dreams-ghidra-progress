@@ -11,15 +11,15 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/246229ccc515c5aefd8d7a9fc652425aafff492b/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=a827ea5e5f45)
 
 <!-- status-summary:start -->
-**51 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**53 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/246229ccc515c5aefd8d7a9fc652425aafff492b/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=c6dc25ea8b29)
 
-**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 45 of the 51 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
+**The map keeps Dreams systems and their nested code components together. Each cell is one actual function.** Labels and checked/identified counts appear inside their sections at a minimum of 12 pixels. The map currently includes 47 of the 53 checked names; 6 checked functions still lack a system assignment. Smaller code units share their labeled parent section; the expandable breakdown below retains every full name and count.
 
 Green means the function's role and descriptive name have been checked; amber means reviewed but unresolved; gray means it still needs review. Every cell has exactly the same width and height throughout the map. Section boundaries follow the square grid, so some edges are stepped. Small internal units share their parent section when a readable label would not fit. System areas follow mapped function counts; each system's full size and completion remain unknown.
 
@@ -27,21 +27,21 @@ Green means the function's role and descriptive name have been checked; amber me
 | Part of Dreams | Functions mapped | Names checked |
 | --- | ---: | ---: |
 | Sculpting & painting | 117 | 0 / 117 (0.0%) |
-| Gadgets & logic | 457 | 38 / 457 (8.3%) |
+| Gadgets & logic | 459 | 38 / 459 (8.3%) |
 | Physics & collision | 60 | 0 / 60 (0.0%) |
 | Sound & music | 62 | 0 / 62 (0.0%) |
-| Animation & puppets | 47 | 0 / 47 (0.0%) |
-| Rendering & lighting | 275 | 0 / 275 (0.0%) |
+| Animation & puppets | 46 | 0 / 46 (0.0%) |
+| Rendering & lighting | 274 | 0 / 274 (0.0%) |
 | Editor & interface | 313 | 0 / 313 (0.0%) |
 | Dreamiverse & networking | 103 | 0 / 103 (0.0%) |
-| Shared engine & object data | 115 | 7 / 115 (6.1%) |
+| Shared engine & object data | 117 | 9 / 117 (7.7%) |
 
-**1,549 of 9,551 discovered functions are mapped; 8,002 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
+**1,551 of 9,551 discovered functions are mapped; 8,000 still need a system assignment.** Percentages measure checked names among the functions mapped to that section. The complete size of each system is still unknown; these are not whole-game completion percentages.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 38/457 names checked
+- **Gadgets & logic** - 38/459 names checked
   - **Online & multiplayer gadgets** - 3/95 names checked
     - **Magic Door Type** - 0/4 names checked
     - **PUMap Gadget** - 0/4 names checked
@@ -111,9 +111,10 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Or** - 0/1 names checked
     - **Remapper State** - 0/1 names checked
     - **Xor** - 0/1 names checked
-  - **Creation & display gadgets** - 6/69 names checked
+  - **Creation & display gadgets** - 6/70 names checked
     - **Text Gadget** - 0/6 names checked
     - **Text Gadget Type** - 0/4 names checked
+    - **Timeline gadget & playback** - 0/4 names checked
     - **DEPRECATE Dream Bubble** - 0/3 names checked
     - **Dev Gadget** - 0/3 names checked
     - **Dev Gadget Mode** - 0/3 names checked
@@ -125,7 +126,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Reporter Sculpt** - 2/3 names checked
     - **Reporter Telemetry** - 3/3 names checked
     - **Scripter** - 0/3 names checked
-    - **Timeline** - 0/3 names checked
     - **Auto Guides Gadget** - 1/2 names checked
     - **Button Gadget** - 0/2 names checked
     - **Dummy** - 0/2 names checked
@@ -207,12 +207,12 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Rotation Sensor** - 0/2 names checked
     - **Ruler** - 0/2 names checked
     - **VRCursor Sensor** - 0/2 names checked
-  - **Cameras, lights & effects** - 7/30 names checked
+  - **Cameras, lights & effects** - 7/31 names checked
+    - **Grade gadget & color processing** - 0/4 names checked
     - **Camera Shaker** - 3/3 names checked
     - **Effect Field** - 0/3 names checked
     - **Fog Shape Type** - 0/3 names checked
     - **Fog Gadget** - 1/3 names checked
-    - **Grade** - 0/3 names checked
     - **Light** - 0/3 names checked
     - **Pad Rumble** - 3/3 names checked
     - **Camera Gadget** - 0/2 names checked
@@ -223,7 +223,7 @@ Green means the function's role and descriptive name have been checked; amber me
   - **Sound gadgets** - 0/7 names checked
     - **Sound** - 0/5 names checked
     - **Speaker** - 0/2 names checked
-  - **Common system routines** - 0/1 names checked
+  - **Shared gadget property dispatch** - 0/1 names checked
 - **Editor & interface** - 0/313 names checked
   - **UI drawing & interaction** - 0/101 names checked
     - **Interface primitives** - 0/23 names checked
@@ -371,8 +371,8 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Request Video Library Message** - 0/1 names checked
     - **Select Photo Message** - 0/1 names checked
     - **Taking Photo Message** - 0/1 names checked
-  - **Common system routines** - 0/2 names checked
-- **Rendering & lighting** - 0/275 names checked
+  - **Shared interface routines** - 0/2 names checked
+- **Rendering & lighting** - 0/274 names checked
   - **Lighting & shadows** - 0/95 names checked
     - **Sun Shadow** - 0/22 names checked
     - **Spot Shadow** - 0/20 names checked
@@ -385,7 +385,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Cone Trace** - 0/2 names checked
     - **Spot Light** - 0/2 names checked
     - **Shading Query** - 0/1 names checked
-  - **Image effects** - 0/87 names checked
+  - **Image effects** - 0/86 names checked
     - **Bokeh rendering** - 0/24 names checked
     - **Occlusion** - 0/15 names checked
     - **Post** - 0/8 names checked
@@ -399,7 +399,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Taa** - 0/3 names checked
     - **Video Imposter** - 0/2 names checked
     - **Bokeh** - 0/1 names checked
-    - **Grade** - 0/1 names checked
     - **Wipe Effect** - 0/1 names checked
   - **Scene drawing** - 0/66 names checked
     - **Scene hulls** - 0/20 names checked
@@ -438,7 +437,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Inertia** - 0/2 names checked
     - **Pipe** - 0/2 names checked
     - **Slot Debug** - 0/2 names checked
-    - **Common routines** - 0/1 names checked
+    - **Sculpt blend & looseness registration** - 0/1 names checked
     - **CSGEdit Mirror Flags** - 0/1 names checked
     - **CSGEdit Op Flags** - 0/1 names checked
     - **CSGEdit Prim Flags** - 0/1 names checked
@@ -461,15 +460,15 @@ Green means the function's role and descriptive name have been checked; amber me
   - **Brush settings** - 0/3 names checked
     - **Combing Volume** - 0/2 names checked
     - **Bubbles Brushing** - 0/1 names checked
-- **Shared engine & object data** - 7/115 names checked
+- **Shared engine & object data** - 9/117 names checked
   - **Debugging & diagnostics** - 0/18 names checked
     - **Debug Draw Render** - 0/8 names checked
     - **Debug Screen** - 0/4 names checked
     - **Comparison Image** - 0/2 names checked
     - **Debug Camera Image** - 0/2 names checked
     - **Debug Text** - 0/2 names checked
-  - **Game state & runtime** - 2/15 names checked
-    - **Common routines** - 2/3 names checked
+  - **Game state & runtime** - 4/17 names checked
+    - **Game contexts & runtime support** - 4/5 names checked
     - **Game Events** - 0/3 names checked
     - **Game Base** - 0/3 names checked
     - **Gameupdater** - 0/3 names checked
@@ -506,7 +505,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Version Id** - 0/1 names checked
   - **Serialization & upgrades** - 0/8 names checked
     - **Serialise** - 0/4 names checked
-    - **Common routines** - 0/1 names checked
+    - **Serialization implementation** - 0/1 names checked
     - **Sanitise** - 0/1 names checked
     - **Serialise Upgrade** - 0/1 names checked
     - **Serialise1** - 0/1 names checked
@@ -520,7 +519,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **string** - 0/1 names checked
     - **wchar t** - 0/1 names checked
   - **Engine support** - 0/5 names checked
-    - **Common routines** - 0/1 names checked
+    - **Support implementation** - 0/1 names checked
     - **Game** - 0/1 names checked
     - **Sillyrender** - 0/1 names checked
     - **Tweak** - 0/1 names checked
@@ -533,7 +532,7 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 0/1 names checked
     - **Input Message Buffer** - 0/1 names checked
     - **Input Message Header** - 0/1 names checked
-  - **Common system routines** - 0/1 names checked
+  - **Shared object routines** - 0/1 names checked
   - **Script data** - 0/1 names checked
     - **Script Contents** - 0/1 names checked
 - **Dreamiverse & networking** - 0/103 names checked
@@ -660,7 +659,7 @@ Green means the function's role and descriptive name have been checked; amber me
   - **Joints** - 0/6 names checked
     - **Joint Type** - 0/4 names checked
     - **Joint** - 0/2 names checked
-- **Animation & puppets** - 0/47 names checked
+- **Animation & puppets** - 0/46 names checked
   - **Avatars** - 0/30 names checked
     - **Prim Avatar Style Customisation** - 0/6 names checked
     - **Avatar Anim** - 0/4 names checked
@@ -685,8 +684,6 @@ Green means the function's role and descriptive name have been checked; amber me
     - **Confirm Retake Animation Message** - 0/1 names checked
   - **Puppet animation** - 0/7 names checked
     - **Puppet Heart** - 0/7 names checked
-  - **Timeline playback** - 0/1 names checked
-    - **Timeline** - 0/1 names checked
 
 </details>
 <!-- area-status:end -->
@@ -703,7 +700,7 @@ So far, checked names cover gadget property readers and registrations plus share
 
 ## Latest progress
 
-- **51 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **53 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
 - **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
 - **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.

@@ -309,27 +309,46 @@ def render_hierarchy(nodes, bounds, depth=0):
     cells={(i%columns,i//columns) for i in range(count)}
     regions=[];out=[]
     def divide(items,positions):
-        # Squarified strips, quantized onto the common square lattice.
-        # Same count-based strip scoring as the reference treemap algorithm.
+        # Continuous count-based squarified layout, following the linked
+        # tools/progress.py worst-aspect-ratio strip method. Then quantize onto
+        # one fixed lattice because the user's cells must be equal squares.
         if len(items)==1:return [(items[0],positions)]
-        xs=[p[0] for p in positions];ys=[p[1] for p in positions]
-        w=max(xs)-min(xs)+1;h=max(ys)-min(ys)+1
-        side=min(w,h)
-        counts=[len(n['rows']) for n in items]
-        def worst(row):
-            area=sum(row)
-            return max(max(side*side*r/(area*area),area*area/(side*side*r)) for r in row)
-        end=1
-        while end<len(items) and worst(counts[:end+1])<=worst(counts[:end]):end+=1
-        vertical=w>=h
-        ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
-        cut=sum(counts[:end]);strip=set(ordered[:cut]);rest=set(ordered[cut:])
-        # Fill each strip across its short axis, preserving exact group counts.
-        strip_order=sorted(strip,key=(lambda p:(p[1],p[0])) if vertical else (lambda p:(p[0],p[1])))
-        result=[];cursor=0
-        for node,count in zip(items[:end],counts[:end]):
-            result.append((node,set(strip_order[cursor:cursor+count])));cursor+=count
-        if end<len(items):result+=divide(items[end:],rest)
+        left=min(x for x,y in positions);top=min(y for x,y in positions)
+        width=max(x for x,y in positions)-left+1
+        height=max(y for x,y in positions)-top+1
+        scale=width*height/sum(len(n['rows']) for n in items)
+        remaining=[len(n['rows'])*scale for n in items]
+        ideals=[];strips=[]
+        while remaining:
+            short=min(width,height)
+            def score(row):
+                area=sum(row)
+                return max(short*short*max(row)/(area*area),area*area/(short*short*min(row)))
+            row=[remaining.pop(0)]
+            while remaining and score(row+[remaining[0]])<=score(row):
+                row.append(remaining.pop(0))
+            strips.append((len(row),width>=height))
+            thickness=sum(row)/short
+            offset=0
+            for area in row:
+                length=area/thickness
+                if width>=height:ideals.append((left,top+offset,thickness,length))
+                else:ideals.append((left+offset,top,length,thickness))
+                offset+=length
+            if width>=height:left+=thickness;width=max(0,width-thickness)
+            else:top+=thickness;height=max(0,height-thickness)
+        available=set(positions);result=[];index=0
+        for length,vertical in strips:
+            batch=items[index:index+length];index+=length
+            ordered=sorted(available,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
+            strip=set(ordered[:sum(len(n['rows']) for n in batch)])
+            available-=strip
+            ordered=sorted(strip,key=(lambda p:(p[1],p[0])) if vertical else (lambda p:(p[0],p[1])))
+            cursor=0
+            for node in batch:
+                count=len(node['rows'])
+                result.append((node,set(ordered[cursor:cursor+count])));cursor+=count
+        assert not available
         return result
     def draw(items,positions,level):
         items=sorted((n for n in items if n['rows']),key=lambda n:(-len(n['rows']),n['id']))
@@ -419,6 +438,7 @@ def progress_data(status, applied, mapping):
                 'done':len(done), 'todo':len(todo), 'total':total,
                 'percent':round(100*len(done)/total,2) if total else 0,
                 'done_names':[names[a] for a in done],
+                'todo_names':['0x'+a for a in todo],
                 'done_addresses':done, 'todo_addresses':todo,
                 'unresolved_addresses':sorted(r['address'] for r in node['rows'] if r['review']=='deferred'),
                 'groups':[group(c) for c in sorted(node['children'],key=lambda c:(-len(c['rows']),c['id'])) if c['rows']]}

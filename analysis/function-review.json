@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "55 previously unnamed functions reviewed; 51 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "57 previously unnamed functions reviewed; 53 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9344,
-    "other_names": 207,
+    "default_fun_names": 9342,
+    "other_names": 209,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1000,6 +1000,48 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "Descriptive analyst name, not original source symbol.",
         "Exact synchronization imports and full context datatype remain unresolved.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "14090e280",
+      "original_name": "FUN_14090e280",
+      "applied_name": "RetainCurrentGamePoolContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "All36 assembly instructions copy the current pool context into a16-byte handle and increment its usage counter if non-null; associated metadata words are copied without claiming their meanings.",
+        "Counter indexing independently evaluated for all seven context strides: offsets0,4,8,12,16,20,24. These are the same usage counters tested by AcquireUnusedGamePoolContext.",
+        "Caller1411c08c0 retains at1411c0dc7 into RBP-0x38, uses the resulting context only if non-null, and releases the same handle at1411c0e44 on both branches while preserving the result. Relevant original assembly and cached C agree.",
+        "Direct branch targets and fallthrough gaps audited against captured instruction bytes."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst names, not original symbols.",
+        "Exact synchronization import identities and two metadata fields remain unknown.",
+        "The separate equivalent release function14090e380 retains its original name pending caller-lifetime review.",
+        "No parameter types, prototype, data layout, or calling convention changes proposed."
+      ]
+    },
+    {
+      "address": "14090e300",
+      "original_name": "FUN_14090e300",
+      "applied_name": "ReleaseGamePoolContextReference",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "All39 assembly instructions no-op for a null handle context, otherwise decrement its usage counter and invoke the retry mechanism when the count reaches zero. The handle is not cleared and the context is not directly freed.",
+        "Counter indexing independently evaluated for all seven context strides: offsets0,4,8,12,16,20,24. These are the same usage counters tested by AcquireUnusedGamePoolContext.",
+        "Caller1411c08c0 retains at1411c0dc7 into RBP-0x38, uses the resulting context only if non-null, and releases the same handle at1411c0e44 on both branches while preserving the result. Relevant original assembly and cached C agree.",
+        "Direct branch targets and fallthrough gaps audited against captured instruction bytes."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst names, not original symbols.",
+        "Exact synchronization import identities and two metadata fields remain unknown.",
+        "The separate equivalent release function14090e380 retains its original name pending caller-lifetime review.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
       ]
     }
