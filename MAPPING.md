@@ -1,8 +1,8 @@
 # Code-to-system mapping
 
-The front-page map groups actual function addresses by the part of Dreams they support. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,558 functions across nine systems; another 7,993 discovered functions still need classification and are counted below the map.
+The front-page map groups actual function addresses by the part of Dreams they support. Its input is [system-map.json](analysis/system-map.json). The map currently contains 1,560 functions across nine systems; another 7,991 discovered functions still need classification and are counted below the map.
 
-Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. The mapping pass itself added no checked names. Subsequent naming reviews bring the total to 60 checked names, of which 54 are in this map; 4 remain reviewed but unresolved.
+Mapping establishes a function's association with a system. The independent [review ledger](analysis/function-review.json) determines whether its name has been checked. The mapping pass itself added no checked names. Subsequent naming reviews bring the total to 62 checked names, of which 56 are in this map; 4 remain reviewed but unresolved.
 
 ## Evidence used
 
@@ -22,7 +22,7 @@ Assignments are joined by function address. Function names, address proximity, a
 
 ## How sections are counted
 
-- Each function appears once in its evidenced system and component. A single 64-column square lattice holds all 1,558 mapped functions without empty slots. All cells have identical width and height. Hierarchical sections partition those cells in proportion to their actual counts; boundaries can be stepped rather than stretching cells. Main system names overlay cells at 15 pixels, component names at 14 pixels, and counts at 12 pixels. Contiguous recursive partitions keep sibling components together on the lattice. Small internal units share their labeled parent when a readable label would not fit; the evidence hierarchy is unchanged.
+- Each function appears once in its evidenced system and component. A single 64-column square lattice holds all 1,560 mapped functions without empty slots. All cells have identical width and height. Hierarchical sections partition those cells in proportion to their actual counts; boundaries can be stepped rather than stretching cells. Main system names overlay cells at 15 pixels, component names at 14 pixels, and counts at 12 pixels. Contiguous recursive partitions keep sibling components together on the lattice. Small internal units share their labeled parent when a readable label would not fit; the evidence hierarchy is unchanged.
 - Sculpting and painting includes CSG, sprites, and sculpt property code. Rendering includes draw routines, lighting, and graphics infrastructure. Physics includes collision and ray-query code.
 - Gadget object schemas and their related property routines stay in Gadgets & logic, including motion, camera, signal, and sound gadget settings. Core audio and animation data have separate sections.
 - Editor & interface covers editing tools, UI, and interaction data. Dreamiverse & networking covers creation browsing and multiplayer/network data. Shared engine & object data covers common objects, serialization, and support routines.

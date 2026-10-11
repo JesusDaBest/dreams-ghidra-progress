@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "64 previously unnamed functions reviewed; 60 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "66 previously unnamed functions reviewed; 62 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9335,
-    "other_names": 216,
+    "default_fun_names": 9333,
+    "other_names": 218,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1253,6 +1253,47 @@
         "Static analysis; no runtime validation."
       ],
       "reviewed_scope": "properties_or_type_registration"
+    },
+    {
+      "address": "140705a90",
+      "original_name": "FUN_140705a90",
+      "applied_name": "FindPackedObjectPropertyPayload",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete22-instruction68-byte body reads object+18 list pointer, tests16-bit field IDs, skips2-byte headers plus per-ID payload size, returns payload pointer or null atffff sentinel.",
+        "Native command10a dispatcher calls this with matching ID; independent byte-size table entry14181768a is32."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered native symbol.",
+        "Static analysis, no runtime validation.",
+        "Generic shared helper; does not prove Teleporter command10a is PosOffset or that Teleporter is fully understood.",
+        "No signature, datatype, calling convention, byte or boundary changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140ad5f90",
+      "original_name": "FUN_140ad5f90",
+      "applied_name": "TransferTransformPropertyPayload",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete62-instruction267-byte body copies32-byte stream payload into destination in mode0; mode1 writes translation/scale and normalized quaternion from destination into stream; other modes only advance stream by32.",
+        "All8 direct branch targets checked, and __isinff import identity already independently established; zero/infinity and near-unit/unordered paths are explicitly recorded.",
+        "Native command10a dispatcher calls this helper with payload cursor, packed/inline property destination and mode byte."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered native symbol.",
+        "Static analysis, no runtime validation.",
+        "Generic shared helper; does not prove Teleporter command10a is PosOffset or that Teleporter is fully understood.",
+        "No signature, datatype, calling convention, byte or boundary changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
     }
   ],
   "deferred": [

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9551,
-  "mapped_total": 1558,
-  "unmapped_total": 7993,
+  "mapped_total": 1560,
+  "unmapped_total": 7991,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -40743,6 +40743,69 @@
       ],
       "code_sha256": "1ebe4e5363959d3d89d257859cf9f165b689cb2658000441c434f6beb455561b",
       "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140705a90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "complete_native_body_and_shared_dispatch_call",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "reviewed_body_transfers_or_locates_property_payload",
+      "evidence": [
+        {
+          "kind": "reviewed_shared_property_helper",
+          "reviewed_instructions": 22,
+          "body_bytes": 68,
+          "caller": "140ad6a80",
+          "command": "10a",
+          "dispatch_branch": "140ae49d3"
+        },
+        {
+          "kind": "packed_property_list_lookup",
+          "list_pointer_offset": "18",
+          "call_site": "140ae49e4",
+          "size_table": "141817580",
+          "terminator": "ffff"
+        }
+      ],
+      "code_sha256": "eff33556e16992341e91dd293b025661acad224f4069a22f23a5ebdea810e887",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140ad5f90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "complete_native_body_and_shared_dispatch_call",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "reviewed_body_transfers_or_locates_property_payload",
+      "evidence": [
+        {
+          "kind": "reviewed_shared_property_helper",
+          "reviewed_instructions": 62,
+          "body_bytes": 267,
+          "caller": "140ad6a80",
+          "command": "10a",
+          "dispatch_branch": "140ae49d3"
+        },
+        {
+          "kind": "transform_payload_transfer",
+          "call_site": "140b14690",
+          "payload_bytes": 32,
+          "stream_advance_site": "140ad6090",
+          "write_copy_site": "140ad6075",
+          "read_normalization_site": "140ad6003"
+        }
+      ],
+      "code_sha256": "7691b1c1e416852b1d81f5759705a59c4949e8528be92bea1214ddcaa284696f",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
   "hierarchy": [
@@ -41093,6 +41156,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "property-payloads",
+              "label": "Property payloads",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

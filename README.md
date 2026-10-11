@@ -11,13 +11,13 @@ Working out how Dreams works, one piece of code at a time
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/577a11cab5ef66e10b6342ea8fda12315b323ac4/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=47b659940402)
 
 <!-- status-summary:start -->
-**60 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**62 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/577a11cab5ef66e10b6342ea8fda12315b323ac4/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=bd7180c09c6c)
 
 **Inside each section, counts mean checked names / identified functions.** Green marks reviewed behavior or helpers; blue marks reviewed properties or type definitions. The table below separates these kinds of review. Neither establishes that an entire game feature is understood or complete.
 
@@ -36,9 +36,9 @@ Every square is one actual function and has the same size. Main headings sit at 
 | Rendering & lighting | 274 | 0/245 | 0/29 |
 | Editor & interface | 313 | 0/106 | 0/205 |
 | Dreamiverse & networking | 103 | 0/28 | 0/75 |
-| Shared engine & object data | 121 | 8/45 | 5/71 |
+| Shared engine & object data | 123 | 10/47 | 5/71 |
 
-**1,558 of 9,551 discovered functions are mapped; 7,993 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,560 of 9,551 discovered functions are mapped; 7,991 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -791,7 +791,7 @@ Every square is one actual function and has the same size. Main headings sit at 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 121 functions identified; 8 behavior/helper reviews; 5 property/type reviews
+- **Shared engine & object data** - 123 functions identified; 10 behavior/helper reviews; 5 property/type reviews
   - **Game state & runtime** - 20 functions identified; 7 behavior/helper reviews; 0 property/type reviews
     - **Game contexts & runtime support** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 8 functions identified; 7 behavior/helper reviews; 0 property/type reviews
@@ -850,11 +850,13 @@ Every square is one actual function and has the same size. Main headings sit at 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Properties & variants** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+  - **Properties & variants** - 11 functions identified; 2 behavior/helper reviews; 1 property/type reviews
     - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Property payloads** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared property helpers** - 8 functions identified; 0 behavior/helper reviews; 4 property/type reviews
@@ -1279,7 +1281,7 @@ So far, checked names cover gadget property readers and registrations plus share
 
 ## Latest progress
 
-- **54 functions named and checked.** Another 4 have been reviewed but remain unclear.
+- **62 functions named and checked.** Another 4 have been reviewed but remain unclear.
 - **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
 - **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
 - **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.

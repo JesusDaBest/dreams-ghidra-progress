@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-11",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 54,
+    "done": 56,
     "todo": 1504,
-    "total": 1558,
-    "behavior_or_helpers_reviewed": 11,
+    "total": 1560,
+    "behavior_or_helpers_reviewed": 13,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24535,12 +24535,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 13,
+        "done": 15,
         "todo": 108,
-        "total": 121,
-        "behavior_or_helpers_reviewed": 8,
+        "total": 123,
+        "behavior_or_helpers_reviewed": 10,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 45,
+        "runtime_functions_identified": 47,
         "property_type_functions_identified": 71,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24549,6 +24549,7 @@
           "VisitVariantProperties",
           "VisitCanvasProperties",
           "VisitGadgetNameProperties",
+          "FindPackedObjectPropertyPayload",
           "AdvanceFilteredObjectGraphIterator",
           "ComputeObjectHierarchyTransform",
           "InitializeGamePoolContext",
@@ -24557,6 +24558,7 @@
           "ReleaseGamePoolContextReference",
           "SortU16IndicesByDescendingI32Keys",
           "LookupU32HashTableValue",
+          "TransferTransformPropertyPayload",
           "RegisterVariantFieldOffset"
         ],
         "todo_names": [
@@ -24674,6 +24676,7 @@
           "1404f70b0",
           "1404f7a20",
           "1404f8350",
+          "140705a90",
           "140769150",
           "140903590",
           "140904120",
@@ -24682,6 +24685,7 @@
           "14090e300",
           "140912670",
           "140913a90",
+          "140ad5f90",
           "140cfda40"
         ],
         "todo_addresses": [
@@ -26445,16 +26449,18 @@
           {
             "name": "shared/properties",
             "label": "Properties & variants",
-            "done": 1,
+            "done": 3,
             "todo": 8,
-            "total": 9,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 11,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 1,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 2,
             "property_type_functions_identified": 9,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "FindPackedObjectPropertyPayload",
+              "TransferTransformPropertyPayload",
               "RegisterVariantFieldOffset"
             ],
             "todo_names": [
@@ -26468,6 +26474,8 @@
               "0x140d1aa00"
             ],
             "done_addresses": [
+              "140705a90",
+              "140ad5f90",
               "140cfda40"
             ],
             "todo_addresses": [
@@ -26595,6 +26603,57 @@
                       "140cfe020",
                       "140d1aa00"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/property-payloads",
+                "label": "Property payloads",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindPackedObjectPropertyPayload",
+                  "TransferTransformPropertyPayload"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140705a90",
+                  "140ad5f90"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/property-payloads/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindPackedObjectPropertyPayload",
+                      "TransferTransformPropertyPayload"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140705a90",
+                      "140ad5f90"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -38789,5 +38848,5 @@
       }
     ]
   },
-  "unmapped": 7993
+  "unmapped": 7991
 }
