@@ -985,3 +985,11 @@ A later, optional stage in the 20-byte sampler calls shared helper `1411c1590`. 
 For two Quaternion inputs, the helper preserves the type and loads both four-component payloads. It can flip every sign bit of the first input when their dot product is strictly below approximately `-0.01`, then forms a weighted sum. The threshold differs from the zero threshold often assumed for quaternion sign correction. The reviewed path uses normalized linear blending, not spherical interpolation.
 
 The result is scaled using a refined reciprocal-square-root estimate when its squared norm is ordered greater than approximately `1.421e-14`. Smaller or unordered norms select the identity Quaternion `[0, 0, 0, 1]`. Earlier large-weight copy shortcuts can bypass this math. Mixed-type conversion, other value types, overflow behavior, and further sampler stages remain unresolved. The findings come from current native instructions, dispatch tables, constants, and the caller's argument/result flow; no new name or full-behavior completion credit was added.
+
+### Animation strength uses a separate interpolation stage
+
+The registered `AnimStrength` setting controls a later stage of the reviewed 20-byte sampler. A strength exactly equal to 1 bypasses it. Other values must also pass an integer gate and a value-type exclusion mask; the integer's provenance across all sampler routes remains unresolved. The caller supplies the sampled value, an endpoint-derived value, and strength to helper `1411dd230`.
+
+For two Quaternion values, this helper uses strength to interpolate from the endpoint-derived value toward the sample. It corrects a negative dot product by reversing the base Quaternion's sign. When the absolute dot is greater than approximately `0.99999`, it uses a linear blend without an explicit normalization in that branch. Otherwise it uses the spherical formula with `acosf` and `sinf`; the executable's loader and import trampoline independently establish the `sinf` identity.
+
+This is a separate stage from the normalized weighted blend above. Both can occur along the reviewed sampler route, so identifying one does not describe all rotation processing. Endpoint construction, valid input ranges, mixed-type behavior, and the complete sampler remain unresolved. No additional names or full-behavior completion credit were added.
