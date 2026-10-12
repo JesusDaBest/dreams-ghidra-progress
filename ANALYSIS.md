@@ -1097,3 +1097,13 @@ Native caller and jump-table review now ties a 12-byte timed-record writer to An
 At one near-equal timestamp boundary (strictly less than approximately 1/60 second), native masks preserve the existing record's easing-strength bits while conditionally combining lower control flags with the incoming record. A separate boundary path can select control nibble 9 or clear the low nibble under reviewed flag conditions. This establishes control modification during merging; it does not yet identify where the incoming controls were originally generated.
 
 The full 194-instruction parent and selected writer regions were read. The writer's captured 1,081 instructions are not counted as fully understood. Remaining prefix/suffix paths, ownership, failure behavior and the source-buffer producer are unresolved. No speculative name, mapping increase, runtime validation claim or full-behavior credit was added.
+
+### Signed-byte Animation sample controls traced to conversion
+
+The upstream buffer builder and numeric dispatch now identify a signed-byte sample conversion path feeding Animation record merging. Native jump-table reads connect numeric representation class 23 to the converter. Its packed branch forms 12-byte timestamp/payload/control records; the separate flag-zero path keeps an 8-byte source representation. Reviewed comparisons use signed-byte values scaled by approximately 0.01.
+
+Packed controls start with `0x700`, supplying strength nibble 7 in bits 8-11. Recording configuration adds low control flags; the single-sample branch also adds a mode-dependent bit 5. This identifies a source of the previously observed default strength, rather than treating it as recovered from the Animation gadget's separate easing-strength properties. It does not establish identical behavior across every recording representation.
+
+Several branch and helper bodies were absent from Ghidra's defined-function output. Temporary disassembly in an isolated project copy recovered their native instructions; the transaction was rolled back and bytes were checked against live program memory. The converter and 12-byte append helper were read, including duplicate filtering and capacity checks. Capacity exhaustion can leave a partial append; caller capacity guarantees and the intended output-time contract remain unresolved.
+
+No new function definitions, names, types, mapping counts or full-behavior credit were added. Raw code and detailed branch evidence remain local.
