@@ -17,7 +17,7 @@ Working out how Dreams works, one piece of code at a time
 **63 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/afcb264c9d6b1feecd40ebdc9495aa1beb5e28ee/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=2b707ac445be)
 
 **Inside each section, counts mean checked names / identified functions.** Green marks reviewed behavior or helpers; blue marks reviewed properties or type definitions. The table below separates these kinds of review. Neither establishes that an entire game feature is understood or complete.
 

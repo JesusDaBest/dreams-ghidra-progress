@@ -373,7 +373,7 @@ def render_hierarchy(nodes, bounds, depth=0):
             for neighbor,edge in [((gx-1,gy),(x,y,x,y+side)),((gx+1,gy),(x+side,y,x+side,y+side)),((gx,gy-1),(x,y,x+side,y)),((gx,gy+1),(x,y+side,x+side,y+side))]:
                 if neighbor not in owned:
                     ax,ay,bx,by=edge;edges.append(f'M{ax:.4f},{ay:.4f}L{bx:.4f},{by:.4f}')
-        borders.append((node['path'],f'<path data-region-border="true" d="{" ".join(edges)}" fill="none" stroke="#0d1117" stroke-width="{3 if level==0 else 1.8}"/>'))
+        borders.append((node['path'],f'<path data-region-border="true" d="{" ".join(edges)}" fill="none" stroke="{"#c9d1d9" if level==0 else "#97a8bc"}" stroke-width="{2.8 if level==0 else 1.4}"/>'))
     labels=[];labeled=set();occupied=[]
     def overlaps(a,b):
         return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
