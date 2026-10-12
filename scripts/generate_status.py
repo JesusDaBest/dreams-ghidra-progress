@@ -298,77 +298,105 @@ def hierarchy_rows(rows, mapping):
 
 
 def render_hierarchy(nodes, bounds, depth=0):
-    """Quantized nested treemap: rectangular ownership, one fixed square size."""
-    from functools import lru_cache
-    side=18; columns=55
-    def children(node):
-        src=[c for c in node['children'] if c['rows']]
-        big=[dict(c) for c in src if len(c['rows'])>=20]
-        small=[c for c in src if len(c['rows'])<20]
-        if small:
-            big.append(dict(label='Other components',path=node['path']+('other-components',),
-                            rows=[r for c in small for r in c['rows']]))
-        return sorted(big,key=lambda n:-len(n['rows']))
-    roots=sorted((dict(n) for n in nodes),key=lambda n:-len(n['rows']))
-    for n in roots:
-        n['display_children']=children(n)
-        n['weight']=sum(max(24,len(c['rows'])) for c in n['display_children']) or len(n['rows'])
-    @lru_cache(None)
-    def split(weights,w,h,minwidth=1):
-        if sum(weights)>w*h:return None
-        if len(weights)==1:return [(0,0,w,h)] if w>=minwidth else None
-        choices=[]
-        for k in range(1,len(weights)):
-            first=sum(weights[:k]);second=sum(weights[k:])
-            for vertical in (True,False):
-                length,other=(w,h) if vertical else (h,w)
-                for cut in range(1,length):
-                    if cut*other<first or (length-cut)*other<second:continue
-                    score=abs(cut/length-first/(first+second))+0.06*max(cut/other,other/cut,(length-cut)/other,other/(length-cut))
-                    choices.append((score,k,vertical,cut))
-        for _,k,vertical,cut in sorted(choices):
-            aw,ah=(cut,h) if vertical else (w,cut)
-            bw,bh=(w-cut,h) if vertical else (w,h-cut)
-            aa=split(weights[:k],aw,ah,minwidth);bb=split(weights[k:],bw,bh,minwidth)
-            if aa is not None and bb is not None:
-                return aa+[(x+(cut if vertical else 0),y+(0 if vertical else cut),ww,hh) for x,y,ww,hh in bb]
-        return None
-    height=math.ceil(sum(n['weight'] for n in roots)/columns)
-    while True:
-        regions=split(tuple(n['weight'] for n in roots),columns,height,10)
-        if regions is not None:
-            subdivisions=[split(tuple(max(24,len(c['rows'])) for c in n['display_children']),w,h) for n,(x,y,w,h) in zip(roots,regions)]
-            if all(v is not None for v in subdivisions):break
-        height+=1
-    out=[];labels=[];borders=[]
-    colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
-    for n,(gx,gy,w,h),parts in zip(roots,regions,subdivisions):
-        x=gx*side;y=34+gy*side
-        root_done=sum(r['review']=='verified_name' for r in n['rows'])
-        root_lines=textwrap.wrap(f"{n['label']} {root_done}/{len(n['rows'])}",width=max(10,int(w*side/8)),break_long_words=False)
-        root_header=len(root_lines)*16
-        out.append(f'<g data-area="{n["id"]}" data-count="{len(n["rows"])}">')
-        for child,(cx,cy,cw,ch) in zip(n['display_children'],parts):
-            px=x+cx*side;py=y+cy*side
-            out.append(f'<g data-component="{"/".join(child["path"])}" data-count="{len(child["rows"])}">')
-            rows=sorted(child['rows'],key=lambda r:({'verified_name':0,'deferred':1,'unreviewed':2}[r['review']],int(r['address'],16)))
-            for i,row in enumerate(rows):
-                scope=row.get('reviewed_scope','unreviewed')
-                color='blue' if row['review']=='verified_name' and scope=='properties_or_type_registration' else colors[row['review']]
-                out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{px+i%cw*side}" y="{py+i//cw*side}" width="{side}" height="{side}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"/>')
+    """Partition a single square lattice: no stretched cells or empty slots."""
+    x0,y0,width,height=bounds
+    count=sum(len(n['rows']) for n in nodes)
+    columns=54
+    # Preserve equal squares for arbitrary evidence-backed inventory sizes.
+    # A partial final row contains no fake functions or completion padding.
+    grid_rows=math.ceil(count/columns)
+    side=min(width/columns,height/grid_rows)
+    cells={(i%columns,i//columns) for i in range(count)}
+    regions=[];out=[]
+    def divide(items,positions):
+        # Keep child inventories in contiguous horizontal strips so each part
+        # has room for a readable name and count.
+        if len(items)==1:return [(items[0],positions)]
+        width=max(x for x,y in positions)-min(x for x,y in positions)+1
+        height=max(y for x,y in positions)-min(y for x,y in positions)+1
+        total=len(positions);running=0;choices=[]
+        for cut in range(1,len(items)):
+            running+=len(items[cut-1]['rows'])
+            choices.append((abs(total-2*running),cut,running))
+        _,cut,amount=min(choices)
+        vertical=width>=height
+        ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
+        first=set(ordered[:amount]);second=positions-first
+        return divide(items[:cut],first)+divide(items[cut:],second)
+    def draw(items,positions,level):
+        items=sorted((n for n in items if n['rows']),key=lambda n:(-len(n['rows']),n['id']))
+        partitions=divide(items,positions)
+        for node,owned in partitions:
+            regions.append((node,owned,level))
+            attr=f'data-area="{node["id"]}"' if level==0 else f'data-component="{"/".join(node["path"])}"'
+            out.append(f'<g {attr} data-depth="{level}" data-count="{len(owned)}"><title>{escape(node["label"])}</title>')
+            # Keep small code units in their named component; the full tree remains below.
+            children=[c for c in node['children'] if c['rows']]
+            if children and (level==0 or (len(owned)>=60 and any(len(c['rows'])>=15 for c in children))):
+                draw(children,owned,level+1)
+            else:
+                priority={'verified_name':0,'deferred':1,'unreviewed':2}
+                colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
+                rows=sorted(node['rows'],key=lambda r:(priority[r['review']],int(r['address'],16)))
+                for row,(gx,gy) in zip(rows,sorted(owned,key=lambda p:(p[1],p[0]))):
+                    scope=row.get('reviewed_scope','unreviewed')
+                    color='blue' if row['review']=='verified_name' and scope=='properties_or_type_registration' else colors[row['review']]
+                    out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{x0+gx*side:.6f}" y="{y0+gy*side:.6f}" width="{side:.6f}" height="{side:.6f}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"/>')
             out.append('</g>')
-            borders.append(f'<rect x="{px}" y="{py}" width="{cw*side}" height="{ch*side}" fill="none" stroke="#97a8bc" stroke-width="1.6"/>')
-            done=sum(r['review']=='verified_name' for r in rows)
-            shift=root_header if cy==0 else 0
-            content=f"{child['label']} {done}/{len(rows)}"
-            for j,line in enumerate(textwrap.wrap(content,width=max(9,int(cw*side/7)),break_long_words=False)):
-                labels.append(text(px+3,py+shift+14+j*15,line,12,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
-        out.append('</g>')
-        borders.append(f'<rect x="{x}" y="{y}" width="{w*side}" height="{h*side}" fill="none" stroke="#f0f6fc" stroke-width="3"/>')
-        done=sum(r['review']=='verified_name' for r in n['rows'])
-        for j,line in enumerate(root_lines):
-            labels.append(text(x+3,y+15+j*16,line,14,weight=700,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
-    return out+borders+labels,34+height*side
+    draw(nodes,cells,depth)
+    # Draw section outlines along lattice edges, including stepped boundaries.
+    borders=[]
+    for node,owned,level in reversed(regions):
+        edges=[]
+        for gx,gy in owned:
+            x=x0+gx*side;y=y0+gy*side
+            for neighbor,edge in [((gx-1,gy),(x,y,x,y+side)),((gx+1,gy),(x+side,y,x+side,y+side)),((gx,gy-1),(x,y,x+side,y)),((gx,gy+1),(x,y+side,x+side,y+side))]:
+                if neighbor not in owned:
+                    ax,ay,bx,by=edge;edges.append(f'M{ax:.4f},{ay:.4f}L{bx:.4f},{by:.4f}')
+        borders.append((node['path'],f'<path data-region-border="true" d="{" ".join(edges)}" fill="none" stroke="{"#c9d1d9" if level==0 else "#97a8bc"}" stroke-width="{2.8 if level==0 else 1.4}"/>'))
+    labels=[];labeled=set();occupied=[]
+    def overlaps(a,b):
+        return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
+    for node,owned,level in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path'])):
+        if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
+        if level>0 and len(owned)<5:continue
+        checked=sum(r['review']=='verified_name' for r in node['rows'])
+        size=15 if level==0 else 14
+        placed=None;root_placements=[]
+        # Major headings belong at the start of their own section. Children
+        # find room below them rather than displacing the parent into the middle.
+        for wrap in range(32,8,-1):
+            lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
+            lines=textwrap.wrap(f"{node['label']}  {checked}/{len(owned)}",width=wrap,break_long_words=False)
+            values=lines; sizes=[size]*len(lines)
+            bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
+            bh=sum(fs+2 for fs in sizes)
+            candidates=[]
+            for gx,gy in sorted(owned,key=lambda p:(p[1],p[0])):
+                tx=x0+gx*side+2;ty=y0+gy*side+1
+                box=(tx,ty,bw,bh)
+                covered={(cx,cy) for cy in range(gy,math.ceil((ty+bh-y0)/side)) for cx in range(gx,math.ceil((tx+bw-x0)/side))}
+                if covered<=owned and not any(overlaps(box,b) for b in occupied):
+                    candidates.append((0,box))
+            if candidates:
+                _,box=min(candidates,key=lambda item:item[0])
+                placed=(box,values,sizes)
+                if level==0:root_placements.append(placed)
+            if placed and level>0:break
+        if root_placements:
+            placed=min(root_placements,key=lambda p:(p[0][1],p[0][0],p[0][3]))
+        if placed is None:continue
+        (tx,ty,bw,bh),values,sizes=placed;occupied.append((tx,ty,bw,bh));labeled.add(node['path'])
+        labels.append(f'<g data-label="{"/".join(node["path"])}" data-label-box="{tx:.6f},{ty:.6f},{bw:.6f},{bh:.6f}">')
+        baseline=ty
+        for label,size in zip(values,sizes):
+            baseline+=size
+            labels.append(text(round(tx,3),round(baseline,3),label,size,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
+            baseline+=2
+        labels.append('</g>')
+    out.extend(border for path,border in borders if path in labeled)
+    out.extend(labels)
+    return out,y0+grid_rows*side
 
 
 def progress_data(status, applied, mapping):
@@ -423,7 +451,7 @@ def render(status, applied, mapping):
     description = (f'{review["verified_names"]} of {total} function names checked. '
                    f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
                    'Sections show evidence-backed associations with parts of Dreams. '
-                   'Every square is a real function. Each labeled component owns a rectangular block in the packed map. Small components are explicitly grouped under Other within their own system. Labels overlay their own block; unused final-row space is not functions. '
+                   'Every square is a real function. All function squares share one continuous lattice. Nested section outlines identify ownership. Labels overlay their own cells; only the final row may be incomplete. '
                    'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
     hierarchy, bottom = render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,600))
