@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "141 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "142 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9254,
-    "other_names": 299,
-    "verification": "complete_inventory_matches_baseline_plus_141_renames_and_two_created_functions"
+    "default_fun_names": 9253,
+    "other_names": 300,
+    "verification": "complete_inventory_matches_baseline_plus_142_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2849,6 +2849,27 @@
         "Negative ordinal, resource-pool capacity and iterator-depth invariants require caller/producer analysis.",
         "The null pool test occurs after initial header traversal; no comprehensive input-safety guarantee is claimed.",
         "No prototype change or whole-function behavior completion credit proposed."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "141215810",
+      "original_name": "FUN_141215810",
+      "applied_name": "EvaluateAnimationDeltaOnBaseValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role_with_bounded_branch_review",
+      "evidence": [
+        "Two timestamp-relative Animation evaluations feed a type-dependent delta and a supplied base value.",
+        "Native scalar, vector and quaternion difference/application paths reviewed.",
+        "Both direct caller argument/result neighborhoods reviewed; intermediate result feeds the subsequent base argument.",
+        "All 1663 native instructions freshly matched the prior capture; this is a staleness check, not full behavior review."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered source symbol.",
+        "Concrete prototype and original tagged-value type names remain unresolved.",
+        "Reviewed scalar, vector, paired four-lane and quaternion paths establish the role; remaining source-tag conversions and transform paths are not fully understood.",
+        "Static evidence only; no runtime or full-function completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

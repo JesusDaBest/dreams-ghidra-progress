@@ -910,3 +910,9 @@ Live field registration now identifies 33 Animation properties used to interpret
 This resolves previously unnamed branches: PLAYONCE with `PlayingInternally` overrides effective power to 1; PINGPONG expands the upper playback window to twice the maximum minus the minimum. In the reviewed later branch, an ordered playhead beyond the maximum is reflected about that maximum when the input and object identifiers differ. `Reverse` can then reflect the position about the interval midpoint under the identifier condition. Native floating-point branch behavior remains authoritative, including unordered comparisons.
 
 These are property-registration and bounded runtime findings, not full Animation completion. Record types, producer invariants and the remaining evaluation branches still need review. No additional names, concrete structure types or full-behavior completion credit were added.
+
+### Animation delta helper named and saved
+
+`EvaluateAnimationDeltaOnBaseValue` now describes the helper that samples a record twice, computes a type-dependent difference, and applies it to a supplied base value. The scalar, two-, three-, and four-component paths and the quaternion path were reviewed in native code. Both direct call sites are in the Animation property evaluator; a conditional first result can become the base input to the second call. Its route uses `PlayheadDelta` and a successful base-property read. Complete loop-boundary behavior and remaining conversions are still unresolved.
+
+The descriptive name survived a clean reopening, all 1,663 native instructions and both direct references were unchanged, and the full name inventory matched the baseline plus recorded changes. The prototype remains uncorrected. This adds one checked name and one evidence-supported Animation mapping: 144 checked descriptive names overall, with 1,601 mapped functions and 7,952 still unmapped. It adds no full-function behavior completion credit.
