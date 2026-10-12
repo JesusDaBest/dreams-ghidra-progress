@@ -36,13 +36,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/6af94e33355af3426f0913321640bbc6dd7970a4/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=c921496c2047)
 
 <!-- status-summary:start -->
-**78 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**81 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/6af94e33355af3426f0913321640bbc6dd7970a4/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=3de2f55ffc0b)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 

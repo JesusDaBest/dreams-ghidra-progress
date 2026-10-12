@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "82 previously unnamed functions reviewed; 78 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "85 previously unnamed functions reviewed; 81 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9317,
-    "other_names": 234,
+    "default_fun_names": 9314,
+    "other_names": 237,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1608,6 +1608,60 @@
         "Descriptive analyst name, not recovered original symbol.",
         "Static verification; growth callback and GPU runtime behavior remain unverified.",
         "No types, calling conventions, boundaries or bytes changed."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14003c0a0",
+      "original_name": "FUN_14003c0a0",
+      "applied_name": "AppendGnmComputeWaitOnAddress",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 43-instruction body verifies 14-DWORD capacity, resolved sceGnmComputeWaitOnAddress import, forwarded address/mask/comparison/reference, and 56-byte cursor advance only on success."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "Command construction only; runtime GPU ordering, growth failure and error recovery remain unverified.",
+        "No type, convention, boundary or byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14003c1e0",
+      "original_name": "FUN_14003c1e0",
+      "applied_name": "AppendAcquireMemoryPacket",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 42-instruction body verifies seven-DWORD capacity, ACQUIRE_MEM opcode 0x58, masked control fields, zero size/base words, poll interval ten and 28-byte cursor advance."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "Command construction only; runtime GPU ordering, growth failure and error recovery remain unverified.",
+        "No type, convention, boundary or byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1412989d0",
+      "original_name": "FUN_1412989d0",
+      "applied_name": "AppendComputeDispatchBarrier",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 51-instruction body joins an aligned zero token, 64-bit release write of one, equality wait on the token, acquire packet and conditional state reset; all direct branches read."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "Command construction only; runtime GPU ordering, growth failure and error recovery remain unverified.",
+        "No type, convention, boundary or byte changes."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
