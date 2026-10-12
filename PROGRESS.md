@@ -710,3 +710,11 @@ The thermometer's `ScopeSculptPrimitives` metric sums weights from the effective
 Another worker branch maps to physics joints, collectabubbles, prizes and portals. The prize path compares 128-bit identifiers but retains at most 150 distinct identifiers for comparison. Repeats of identifiers first encountered after that capacity can count again in the translated algorithm. Runtime occurrence and producer constraints remain unverified; this is not an observed game bug.
 
 There are now 106 checked descriptive names among 9,552 discovered functions. No full-behavior completion credit or new subsystem assignment is claimed for this batch. Raw code and detailed native traces remain local.
+
+### Decoded resource transforms and compressed rotation
+
+`TransformDecodedPackedResourceRecord` is now a checked descriptive name, verified after saving and reopening. Its 504-instruction body transforms four- and five-point records, applies scale to associated scalar fields, and combines and repacks compressed rotations on other paths. Four native call sites establish the mutable decoded record and the 32-byte transform argument. All 2,397 function bytes remain unchanged.
+
+The rotation format stores three 15-bit components and a two-bit omitted-component index. The encoder chooses the largest absolute component, canonicalizes its sign, and the decoder reconstructs it from the remaining squared length. A deterministic scalar float32 model exercised 10,010 finite unit inputs, covering all four layouts; the largest observed rotation error was approximately 0.0081 degrees. This is a model result, not native execution or an error bound for every input. The normalization helper import resolves to `__isinff`; it must not be described as general NaN rejection. Actual linked-library behavior and exceptional inputs remain unverified.
+
+There are now 107 checked descriptive names among 9,552 discovered functions. This adds a verified naming review, not whole-function behavior completion credit. Precise subsystem placement remains under investigation, so no new graph assignment is guessed. Raw code and detailed traces remain local.
