@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1586,
-  "unmapped_total": 7966,
+  "mapped_total": 1587,
+  "unmapped_total": 7965,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41381,6 +41381,25 @@
           "kind": "verified_semantic_review",
           "name": "EvaluateSoundPlaybackPositionFromControls",
           "support": "Full native wrapper normalizes packed controls and invokes the verified sample-position helper; Sound field labels and caller base adjustment are verified."
+        }
+      ]
+    },
+    "1400c79a0": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "playback",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_sound_envelope_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "3cf7520588a9663e416c26e4ab70ad70719116136e618deadbef4b1874f54939",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeSoundPlaybackEnvelopeAmplitude",
+          "support": "Complete native scalar body combines selection bounds, signed Volume, Power, VolumeADSR01 timing and interpolated resource peak data; registered labels and caller use verified."
         }
       ]
     }
