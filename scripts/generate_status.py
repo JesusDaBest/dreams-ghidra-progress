@@ -340,7 +340,7 @@ def render_hierarchy(nodes, bounds, depth=0):
                 rows=sorted(node['rows'],key=lambda r:(priority[r['review']],int(r['address'],16)))
                 for row,(gx,gy) in zip(rows,sorted(owned,key=lambda p:(p[1],p[0]))):
                     scope=row.get('reviewed_scope','unreviewed')
-                    color='blue' if row['review']=='verified_name' and scope=='properties_or_type_registration' else colors[row['review']]
+                    color=colors[row['review']]
                     out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{x0+gx*side:.6f}" y="{y0+gy*side:.6f}" width="{side:.6f}" height="{side:.6f}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"/>')
             out.append('</g>')
     draw(nodes,cells,depth)
@@ -452,7 +452,7 @@ def render(status, applied, mapping):
                    f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
                    'Sections show evidence-backed associations with parts of Dreams. '
                    'Every square is a real function. All function squares share one continuous lattice. Nested section outlines identify ownership. Labels overlay their own cells; only the final row may be incomplete. '
-                   'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
+                   'Green means an evidence-supported descriptive name checked against static code; amber means reviewed but unclear; gray means not reviewed. This does not measure runtime testing or feature completion. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
     hierarchy, bottom = render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,600))
     canvas_height=bottom+58
@@ -466,11 +466,10 @@ def render(status, applied, mapping):
            '<g data-panel="review">']
     out.extend(hierarchy)
     out.extend(['</g>',
-                legend(4, bottom+20, 'green', f'{sum(r["reviewed_scope"]=="behavior_or_helper" for _,_,_,rs in areas for r in rs)} behavior / helpers reviewed'),
-                legend(250, bottom+20, 'blue', f'{sum(r["reviewed_scope"]=="properties_or_type_registration" for _,_,_,rs in areas for r in rs)} properties / types reviewed'),
-                legend(520, bottom+20, 'amber', f'{mapped_review["deferred"]:,} unresolved'),
+                legend(4, bottom+20, 'green', f'{mapped_review["verified_name"]:,} names checked against code'),
+                legend(360, bottom+20, 'amber', f'{mapped_review["deferred"]:,} reviewed, still unclear'),
                 legend(700, bottom+20, 'gray', f'{mapped_review["unreviewed"]:,} not reviewed')])
-    out.append(text(4, bottom+45, f'{unassigned:,} functions still unmapped. Names checked includes properties/types; this is not whole-system completion.', 12, 'muted'))
+    out.append(text(4, bottom+45, f'Static code review only: no in-game verification claimed. {unassigned:,} functions still unmapped.', 12, 'muted'))
     out.append('</g></svg>')
     return "\n".join(out) + "\n"
 
