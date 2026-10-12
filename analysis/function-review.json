@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "69 previously unnamed functions reviewed; 65 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "71 previously unnamed functions reviewed; 67 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9330,
-    "other_names": 221,
+    "default_fun_names": 9328,
+    "other_names": 223,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1359,6 +1359,48 @@
         "No parameter types, prototype, calling convention, bytes or function boundaries changed."
       ],
       "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140d88790",
+      "original_name": "FUN_140d88790",
+      "applied_name": "RegisterKeyFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete43-instruction192-byte field registration reviewed, including tail registration. Nine fields mapped to offsets; native visitor and Teleporter target reads independently match Name+f8, Power+40, Pos+50 and PosOffset+110.",
+        "All native direct branches checked; descriptor branches stay within its body or tail-call the independently captured field registrar.",
+        "Numeric type and field identity are executable evidence, not inferred from external documentation."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "Key to user-facing Tag remains an inference.",
+        "Registration establishes data layout, not complete runtime gadget behavior.",
+        "No runtime validation or prototype, type, boundary or byte changes."
+      ],
+      "reviewed_scope": "property_or_type"
+    },
+    {
+      "address": "140d54160",
+      "original_name": "FUN_140d54160",
+      "applied_name": "RegisterKeyTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete42-instruction203-byte descriptor initialization reviewed. Guard paths, Key literal, base registration and tail call to140d88790 checked. Enum registration independently binds Key to type3.",
+        "All native direct branches checked; descriptor branches stay within its body or tail-call the independently captured field registrar.",
+        "Numeric type and field identity are executable evidence, not inferred from external documentation."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "Key to user-facing Tag remains an inference.",
+        "Registration establishes data layout, not complete runtime gadget behavior.",
+        "No runtime validation or prototype, type, boundary or byte changes."
+      ],
+      "reviewed_scope": "property_or_type"
     }
   ],
   "deferred": [

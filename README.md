@@ -22,7 +22,8 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Part | What has been established | What remains |
 | --- | --- | --- |
 | Teleporter: scheduling | Pair queue, priority filtering, and previous-frame flag updates traced in native code. | Complete enclosing update routine and all scheduling conditions. |
-| Teleporter: target selection | DetectName comparison, candidate filtering, distance comparison, and selected-target transform call traced. | Independent identity of candidate type 3 and all membership filters. |
+| Teleporter: target selection | DetectName comparison, candidate filtering, distance comparison, and selected-target transform call traced. | Internal type Key and Name field confirmed; UI Tag binding and ancestry details remain. |
+| Teleporter: scope | All/Me/Others enum and ancestry-filter branches traced; IsGluedGadget lookup independently bound. | Scope-anchor flags, cached-path equivalence, and runtime tests. |
 | Teleporter: movement | Position/orientation flags feed weighted accumulators; resulting transforms reach object and physics-record writes. | All exceptional cases, mode meanings, callback side effects, and runtime tests. |
 | Shared transforms | Exact symbolic assembly checks support quaternion composition and rotated/scaled translation; full movement-helper body read. | Parent-relative conversion proof, additional vector-field meanings, and runtime tests. |
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
@@ -32,13 +33,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/dd1507b7c4cf9fe1bc1a87eb79b42a114d581571/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=dadb63b18048)
 
 <!-- status-summary:start -->
-**65 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**67 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/dd1507b7c4cf9fe1bc1a87eb79b42a114d581571/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=c2bf9e498ab9)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
