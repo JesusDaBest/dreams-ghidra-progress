@@ -1083,3 +1083,9 @@ Native review verified all 98 instructions of a shared property lookup and 89 in
 Registration matches the property, kind and variant byte, while lookup compares property and kind after hashing the variant. Table population and collision invariants remain unresolved, so this difference is not presented as a defect. The callback entry is referenced by a function pointer but has no defined function in the current project; it has not been created or named from a guessed boundary.
 
 A separate property visitor reads the three signed easing-strength bytes and forwards converted values through an indirect visitor call. Neither path establishes how packed Animation sample controls are generated. No names, subsystem mapping counts or full-behavior coverage were increased for this investigation. Raw native evidence remains local.
+
+### Shared property lookup named after native review
+
+`FindThingPropertyMetadata` now describes the 98-instruction lookup reviewed in the preceding checkpoint. Its complete native body, all six specialized object-kind dispatch paths and static sentinel records were verified. Related registration code establishes the shared key and record layout. The name identifies its descriptive role; it does not assert an original symbol, full table-population correctness or a packed Animation sample writer.
+
+A cold backup preceded this name-only change. Clean reopening verified the unchanged 324 body bytes, 17 reference addresses and prototype. The full inventory now contains 153 checked descriptive names, including 112 among 1,608 mapped functions. Original archive hashes are unchanged. No full-behavior completion credit was added; the variant matching difference and sample-control producer remain unresolved.

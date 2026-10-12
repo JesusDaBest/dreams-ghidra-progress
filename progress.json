@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 111,
+    "done": 112,
     "todo": 1496,
-    "total": 1607,
-    "behavior_or_helpers_reviewed": 62,
+    "total": 1608,
+    "behavior_or_helpers_reviewed": 63,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24503,12 +24503,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 36,
+        "done": 37,
         "todo": 113,
-        "total": 149,
-        "behavior_or_helpers_reviewed": 31,
+        "total": 150,
+        "behavior_or_helpers_reviewed": 32,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 70,
+        "runtime_functions_identified": 71,
         "property_type_functions_identified": 74,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24548,6 +24548,7 @@
           "MarkPackedResourceTreeReachable",
           "FinalizePackedResourceTreeWriter",
           "AppendSizedRecordToThreadBuffer",
+          "FindThingPropertyMetadata",
           "ConvertTaggedValueToTwoFloat4Blocks"
         ],
         "todo_names": [
@@ -24701,6 +24702,7 @@
           "1410614b0",
           "141061af0",
           "1410aa730",
+          "14114db10",
           "1411c0830"
         ],
         "todo_addresses": [
@@ -25840,12 +25842,12 @@
           {
             "name": "shared/properties",
             "label": "Properties & variants",
-            "done": 4,
+            "done": 5,
             "todo": 11,
-            "total": 15,
-            "behavior_or_helpers_reviewed": 3,
+            "total": 16,
+            "behavior_or_helpers_reviewed": 4,
             "properties_or_types_reviewed": 1,
-            "runtime_functions_identified": 3,
+            "runtime_functions_identified": 4,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25853,6 +25855,7 @@
               "FindPackedObjectPropertyPayload",
               "TransferTransformPropertyPayload",
               "RegisterVariantFieldOffset",
+              "FindThingPropertyMetadata",
               "ConvertTaggedValueToTwoFloat4Blocks"
             ],
             "todo_names": [
@@ -25872,6 +25875,7 @@
               "140705a90",
               "140ad5f90",
               "140cfda40",
+              "14114db10",
               "1411c0830"
             ],
             "todo_addresses": [
@@ -26163,6 +26167,53 @@
                       "140cfd6f0",
                       "140cfdd20"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/property-metadata",
+                "label": "Property metadata",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindThingPropertyMetadata"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14114db10"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/property-metadata/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindThingPropertyMetadata"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14114db10"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39608,5 +39659,5 @@
       }
     ]
   },
-  "unmapped": 7946
+  "unmapped": 7945
 }

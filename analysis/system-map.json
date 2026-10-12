@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1607,
-  "unmapped_total": 7946,
+  "mapped_total": 1608,
+  "unmapped_total": 7945,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41827,6 +41827,26 @@
           "support": "Native LZ4 token layout, checked-mode serializer call, short-offset expansion and copy paths reviewed; full malformed-input correctness remains unresolved."
         }
       ]
+    },
+    "14114db10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-metadata",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared Thing property metadata lookup, including kind-specific Animation blend mode",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native hash-table lookup returning matching property metadata record",
+      "code_sha256": "050640349fbe6b97b5ba5933a0cc96a1bc5ffa683cced576f6c86e49dfbd00cf",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindThingPropertyMetadata",
+          "support": "Complete native body, dispatch table and related registration callback reviewed. Population/collision invariants remain unresolved."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -42221,6 +42241,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "property-metadata",
+              "label": "Property metadata",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

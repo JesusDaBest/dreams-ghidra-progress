@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "150 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "151 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9245,
-    "other_names": 308,
-    "verification": "complete_inventory_matches_baseline_plus_150_renames_and_two_created_functions"
+    "default_fun_names": 9244,
+    "other_names": 309,
+    "verification": "complete_inventory_matches_baseline_plus_151_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3057,6 +3057,27 @@
         "Malformed input, offset0, full dictionary/mode variants and integer boundary safety remain unresolved.",
         "No parameter/type or convention changes.",
         "No runtime execution or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14114db10",
+      "original_name": "FUN_14114db10",
+      "applied_name": "FindThingPropertyMetadata",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete 98-instruction native body reviewed and all instruction bytes checked against live memory.",
+        "Reads Thing kind from masked object+0xc and a kind-specific variant; Animation kind9 reads BlendType at +0x148. Independently read jump table verifies six specialized kind paths.",
+        "Hashes property, kind and variant into 8192 records of12 bytes, follows collision sequence, returns matching metadata record or null at sentinels.",
+        "Independent registration callback native review confirms record key layout and same mixer. Direct consumers inspect returned byte+4 to govern tagged-property representation."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not an original recovered symbol.",
+        "Registration compares variant explicitly while lookup does not; population/collision invariants and complete record-field meanings remain unresolved.",
+        "No runtime validation or full-behavior completion credit.",
+        "No prototype, convention or data-type changes. Not a packed Animation sample producer."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
