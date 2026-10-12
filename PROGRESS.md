@@ -922,3 +922,9 @@ The descriptive name survived a clean reopening, all 1,663 native instructions a
 `ConvertTaggedValueToTwoFloat4Blocks` is now named after reviewing its complete 32-instruction body and all 13 direct caller argument/result neighborhoods. Callers copy its 32-byte output, use both blocks in Animation sampling and blend math, compare them with reference values, or unpack eight components for a callback. The name describes the observed conversion; original structure names and complete caller behavior remain unresolved.
 
 After a cold backup, only the name changed. A clean reopening verified that name, all native instructions, and the full direct-reference list. The prototype remains unchanged. The function is mapped to shared property data rather than credited exclusively to Animation. There are now 145 checked descriptive names and 1,602 mapped functions; no full-behavior completion credit was added.
+
+### Animation strength interpolation helper named
+
+`InterpolateTaggedValueFromBase` now names the shared strength helper at `1411dd230`. Its 302-instruction body and all 26 direct argument/result neighborhoods across 21 sampler functions support this role. The strength input was traced to the registered `AnimStrength` field, including nine predecessor paths outside the original inspection windows. Quaternion and Position paths have dedicated rotation interpolation; other tags delegate to weighted tagged-value blending and restore the target metadata.
+
+The change affects only the name. A cold backup preceded it, and a clean reopening verified the name, unchanged instructions, all direct references, and unchanged prototype. The complete function-name inventory and both original archive hashes were also checked. There are now 146 checked descriptive names and 1,603 mapped functions. Mixed-type conversions, input ranges, and complete sampler behavior remain unresolved; no full-behavior completion credit was added.

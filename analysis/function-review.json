@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "143 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "144 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9252,
-    "other_names": 301,
-    "verification": "complete_inventory_matches_baseline_plus_143_renames_and_two_created_functions"
+    "default_fun_names": 9251,
+    "other_names": 302,
+    "verification": "complete_inventory_matches_baseline_plus_144_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2891,6 +2891,28 @@
         "Original tagged-value and output structure names remain unresolved.",
         "All13 direct argument/result neighborhoods reviewed; complete large caller behavior is not claimed.",
         "No prototype or datatype change, runtime validation, or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1411dd230",
+      "original_name": "FUN_1411dd230",
+      "applied_name": "InterpolateTaggedValueFromBase",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete302-instruction native body read; Quaternion, Position and delegated generic paths identify interpolation from second base value toward first target by incoming float.",
+        "All26 direct argument/result neighborhoods across21 sampler functions reviewed; registered AnimStrength source traced.",
+        "Current native instructions and complete direct-reference list match saved evidence.",
+        "Original archive files remain immutable; name-only change with cold backup and clean-reopen verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "No prototype, datatype or calling-convention change.",
+        "Mixed-type conversion details, valid input ranges, numerical exceptional cases and complete caller behavior remain unresolved.",
+        "All26 direct argument/result neighborhoods and strength origins reviewed; bounded paths do not imply full runtime validation.",
+        "No full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

@@ -1001,3 +1001,9 @@ On the reviewed contiguous record routes, the strength blend's base comes from t
 The 24-byte format reaches the same strength helper with the same setting and type-exclusion mask as the 20-byte format. Its additional integer gate uses 48 where the 20-byte route uses 40. These thresholds match two entry sizes, but that correspondence alone does not prove the integer's meaning across every route.
 
 Current memory checks cover 158 instructions across six bounded regions. Cross-leaf reconstruction and alternate paths still need tracing before this base interpretation can be generalized. No additional names or full-behavior completion credit were added.
+
+### Animation strength interpolation helper named
+
+`InterpolateTaggedValueFromBase` now names the shared strength helper at `1411dd230`. Its 302-instruction body and all 26 direct argument/result neighborhoods across 21 sampler functions support this role. The strength input was traced to the registered `AnimStrength` field, including nine predecessor paths outside the original inspection windows. Quaternion and Position paths have dedicated rotation interpolation; other tags delegate to weighted tagged-value blending and restore the target metadata.
+
+The change affects only the name. A cold backup preceded it, and a clean reopening verified the name, unchanged instructions, all direct references, and unchanged prototype. The complete function-name inventory and both original archive hashes were also checked. There are now 146 checked descriptive names and 1,603 mapped functions. Mixed-type conversions, input ranges, and complete sampler behavior remain unresolved; no full-behavior completion credit was added.

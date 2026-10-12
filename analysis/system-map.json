@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1602,
-  "unmapped_total": 7951,
+  "mapped_total": 1603,
+  "unmapped_total": 7950,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41695,6 +41695,26 @@
           "kind": "verified_semantic_review",
           "name": "ConvertTaggedValueToTwoFloat4Blocks",
           "support": "Tag-dispatched conversion of property payloads into two float4 blocks, used by property handling, Animation sampling, comparisons and callback formatting. All13 direct argument/result neighborhoods inspected."
+        }
+      ]
+    },
+    "1411dd230": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "registered_AnimStrength_sources_and_26_sampler_argument_result_neighborhoods",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "tagged_value_interpolation_for_animation_strength",
+      "code_sha256": "eefb219e9ddf5b99d3b7ca4ab79d9fd41d8c2e51229c939557b6f398cb974701",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InterpolateTaggedValueFromBase",
+          "support": "Interpolates from second base tagged value toward first target using the Animation strength input; Quaternion, Position and generic delegated branches inspected, with26 direct argument/result neighborhoods across21 samplers. Mixed-type numerical details remain unresolved."
         }
       ]
     }
