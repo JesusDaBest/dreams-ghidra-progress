@@ -30,6 +30,7 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Sculpt GPU transforms | Embedded job label linked to callback; native body read; both forward-transform paths and fallback inverse matrix checked symbolically; resource scale import and buffer setup traced. | Singular transforms, descriptor field semantics, output consumers and runtime tests. |
 | Physics contact compute | Two shaders matched; transform reads and one matrix calculation checked; texture creation traced to a 2048 x 2048 x 128 8-bit UNORM 3D resource. | Uploaded texture contents, complete bindings and shader behavior, runtime tests. |
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
+| Physics sphere grid | Filtered sphere samples traced into enclosing bounds, line/sphere roots and cell-bit masks; grid sizing import resolved. | Valid-input reachability of a mask edge case, full consumer behavior and runtime tests. |
 | Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
 
 [Detailed findings and limitations](ANALYSIS.md). Square counts below measure function review only; they are not the completion percentage of these behaviors.
