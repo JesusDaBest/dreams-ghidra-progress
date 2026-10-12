@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "68 previously unnamed functions reviewed; 64 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "69 previously unnamed functions reviewed; 65 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9331,
-    "other_names": 220,
+    "default_fun_names": 9330,
+    "other_names": 221,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1335,6 +1335,28 @@
         "Shared helper: name does not claim a Teleporter-only role or actual teleport execution.",
         "Cached decompiler undefined8 return is incomplete; native XMM0 is 16 bytes. No prototype, type, calling convention, boundary or byte changes applied.",
         "No running-game validation; invalid index bounds are not checked within this helper."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1408f9b50",
+      "original_name": "FUN_1408f9b50",
+      "applied_name": "ComputeObjectTransformWithPositionOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 168-instruction, 766-byte body reviewed; all 13 direct branch targets checked.",
+        "Resolves base transform via type table slot zero after optional parent walk; optional command10a offset is read from the original object. Null/missing-base paths initialize identity; absent offset preserves the copied base transform.",
+        "Exact symbolic evaluation of 37 assembly instructions proves base * offset quaternion multiplication, rotated/scaled offset translation plus base translation, and multiplication of scales. Identity and normalization constants were read from executable memory.",
+        "Direct Teleporter target-selection caller at 1409c0265 and multiple independent shared callers establish a general object-transform role."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original symbol.",
+        "No runtime validation, external handedness, malformed-chain safety or complete native meaning of object+2e claimed.",
+        "Polynomial equivalence does not validate floating-point rounding.",
+        "No parameter types, prototype, calling convention, bytes or function boundaries changed."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
