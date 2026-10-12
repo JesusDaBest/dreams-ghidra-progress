@@ -666,3 +666,14 @@ Related assembly analysis identifies 80-byte cache entries, 4,096 hash slots, pa
 Eviction samples eight occupied entries and compares normalized age; samples need not be distinct. A synthetic model of hash removal found a wraparound case needing further investigation. Accepted key-domain reachability and game-runtime reproduction have not been established, so this is not reported as a confirmed game defect.
 
 There are now 100 checked descriptive names among 9,552 discovered functions. The new name's 436-byte span, complete inventory, and original archives passed persistence verification. Its precise game-system assignment remains unresolved, so it is not placed into an invented subsystem. No complete-behavior coverage credit was added.
+
+
+### Comment record cache analysis
+
+`CacheCommentRecord` (`1403b2710`) now has a checked descriptive name, verified after saving and reopening the project. The complete native body and three observed caller sites support its role: it accepts a K/k identifier and caches either the complete record with status 2 or an empty payload with status 7, depending on a record flag. Both paths pass a deadline 600 seconds ahead. The parser's hashed `comment` key matches the dispatch value; this supports the association but does not recover an original source symbol.
+
+Before caching, it computes a predominant right-to-left text flag. Native character tables distinguish left-to-right and right-to-left classes; the routine compares their counts after formatting/token filtering. This is a direction heuristic, not a complete Unicode bidirectional algorithm. The formatting helpers, fallback direction source, and meaning of the flag selecting status 7 remain under investigation.
+
+Related response analysis distinguishes status handling, deferred parsing and cache consumption. Static evidence identifies a queue whose worker publishes parsed records and whose consumer matches them against requested identifiers. A zero parsed-record count also serves as a readiness condition; whether an empty parse can remain queued requires further investigation. No runtime failure is claimed.
+
+There are now 101 checked descriptive names among 9,552 discovered functions. Original archives, function bytes, calling conventions and the complete inventory passed persistence checks. No complete-behavior coverage credit was added; the precise subsystem assignment of this cache helper remains unresolved.
