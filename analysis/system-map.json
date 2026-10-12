@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1604,
-  "unmapped_total": 7949,
+  "mapped_total": 1605,
+  "unmapped_total": 7948,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41767,6 +41767,26 @@
           "support": "Complete66-instruction body implements Linear/EaseIn/EaseOut/EaseBoth and zero fallback from registered Animation fields; both caller argument/result neighborhoods reviewed. Input-range and broader caller invariants remain unresolved."
         }
       ]
+    },
+    "140d92000": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "shared serializer buffer transfer and Animation field serialization caller chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete native buffer service body",
+      "code_sha256": "c0dff57e31f1f7f5d46dab3b312cf73910295bad99700db1ef9c3bb0b09fde98",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ServiceSerializerBuffer",
+          "support": "Complete81-instruction buffer service body; direction-dependent service gates, callback argument registers, success reset and failure cleanup verified in native code."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -42002,6 +42022,17 @@
             {
               "id": "packed-resource-pages",
               "label": "Resource pages",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "serialization",
+              "label": "Saving & loading",
               "children": [
                 {
                   "id": "runtime-implementation",

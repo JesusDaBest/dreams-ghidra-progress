@@ -958,3 +958,11 @@ A cold backup preceded the name-only change. Clean reopening verified all 332 bo
 `EvaluateAnimationEasingCurve` now has the verified signature `float (void * animation, float fraction)` using PS4 System V register storage: the object pointer is in RDI, the fraction and result use the low float lane of XMM0. The pointer remains opaque because a complete Animation structure has not been reconstructed.
 
 An isolated project trial compared the helper and its enclosing caller before and after the correction. Both direct call sites now pass the object pointer and scalar fraction correctly, removing misleading integer argument and result casts. A fresh cold backup preceded promotion. Only this function's signature changed; all 332 native body bytes remained unchanged, and clean reopening verified the saved signature. Checked-name counts and full-behavior coverage are unchanged. Runtime validation and the settings-to-packed-sample producer connection remain unresolved.
+
+### Animation serialization and shared buffer service traced
+
+Animation's serializer transfers BlendType and all three easing-strength fields as raw bytes, under internal format-version checks: BlendType at version 255 or later, strengths at 1081 or later. Native kind 9 dispatch links the routine to Animation. These field transfers do not establish how the runtime 12/24-byte sample controls are generated.
+
+`ServiceSerializerBuffer` now names the complete 81-instruction shared buffer helper. It services exhausted read buffers or pending writes through a callback receiving context, callback data and an operation flag. Success resets cursor/checkpoint state; failure retains an error, invokes cleanup and clears callback resources. The original callback types, individual error-code meanings and secondary-context path remain unresolved.
+
+A cold backup preceded the name-only change. Reopening verified its 343 body bytes, references and unchanged prototype; the complete name inventory and original archives also passed checks. There are now 150 checked descriptive names, 109 among 1,605 mapped functions. No runtime-validation or full-behavior completion credit was added.

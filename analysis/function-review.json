@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "147 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "148 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9248,
-    "other_names": 305,
-    "verification": "complete_inventory_matches_baseline_plus_147_renames_and_two_created_functions"
+    "default_fun_names": 9247,
+    "other_names": 306,
+    "verification": "complete_inventory_matches_baseline_plus_148_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2995,6 +2995,29 @@
         "validation": "isolated before/after helper and enclosing caller decompilation; cold backup; main-project single-signature change; clean reopen and unchanged native bytes",
         "limits": "Opaque context pointer, not a reconstructed full Animation type; no runtime-validation or full-behavior completion credit"
       }
+    },
+    {
+      "address": "140d92000",
+      "original_name": "FUN_140d92000",
+      "applied_name": "ServiceSerializerBuffer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete81-instruction343-byte buffer service at140d92000 uses RDI context and returns packed32-bit status in EAX. Existing low16 error!=0 returns immediately.",
+        "Write direction+b0!=0 invokes service only when cursor88!=buffer_starta0. Read direction+b0==0 invokes service only when cursor88==read_end90. No-op returns zero.",
+        "Callback+e0 is called with RDI=context, RSI=callback_data+b8, EDX=0. Low16 of callback result determines success. Success resets cursor88 and checkpoint98 to buffer_starta0; write mode additionally sets end90 to allocation_enda8; returns zero.",
+        "Missing callback sets status+10 to0x210001. Nonzero callback result is stored only when context low16 error is stillzero. That store path calls141608440(basea0,0,uint32(allocation_enda8-basea0)); independent import binding is not claimed here.",
+        "Failure cleanup calls callback(context,data,1) if stillpresent, invokes141608300 on nonnull fields58/60 and141607ea0 on nonnull68, clearing each field. Clears callbacke0 anddata b8, returns current packedstatus. Meaning of individual statuscodes and cleanup imports remains unresolved.",
+        "Read-context setup in140d97090 stores callback140d91c30 at RSP+520 and zero direction at RSP+4f0, corresponding to context baseRSP+440. This supports callback binding independently of old pseudocode. Secondarycontext+e8 comes from the initialization vector copy and its wider purpose remains unresolved."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "No prototype, datatype or calling convention change.",
+        "Secondary context, callback implementations and error code meanings remain unresolved.",
+        "No runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
     }
   ],
   "deferred": [

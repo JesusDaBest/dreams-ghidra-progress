@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 108,
+    "done": 109,
     "todo": 1496,
-    "total": 1604,
-    "behavior_or_helpers_reviewed": 59,
+    "total": 1605,
+    "behavior_or_helpers_reviewed": 60,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24503,12 +24503,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 33,
+        "done": 34,
         "todo": 113,
-        "total": 146,
-        "behavior_or_helpers_reviewed": 28,
+        "total": 147,
+        "behavior_or_helpers_reviewed": 29,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 67,
+        "runtime_functions_identified": 68,
         "property_type_functions_identified": 74,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24538,6 +24538,7 @@
           "ProcessMainThingUpdateWorker",
           "TransferTransformPropertyPayload",
           "RegisterVariantFieldOffset",
+          "ServiceSerializerBuffer",
           "GetCurrentThreadBufferWritePointer",
           "MarkObjectPackedResourceRoots",
           "MarkContainerPackedResourceRoots",
@@ -24688,6 +24689,7 @@
           "140abb470",
           "140ad5f90",
           "140cfda40",
+          "140d92000",
           "140e38710",
           "141060410",
           "141060640",
@@ -24822,12 +24824,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 24,
+            "done": 25,
             "todo": 15,
-            "total": 39,
-            "behavior_or_helpers_reviewed": 24,
+            "total": 40,
+            "behavior_or_helpers_reviewed": 25,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 32,
+            "runtime_functions_identified": 33,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24849,6 +24851,7 @@
               "SortU16IndicesByDescendingI32Keys",
               "LookupU32HashTableValue",
               "ProcessMainThingUpdateWorker",
+              "ServiceSerializerBuffer",
               "GetCurrentThreadBufferWritePointer",
               "MarkObjectPackedResourceRoots",
               "MarkContainerPackedResourceRoots",
@@ -24892,6 +24895,7 @@
               "140912670",
               "140913a90",
               "140abb470",
+              "140d92000",
               "140e38710",
               "141060410",
               "141060640",
@@ -25418,6 +25422,53 @@
                     "todo_addresses": [
                       "14090e6f0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/runtime/serialization",
+                "label": "Saving & loading",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ServiceSerializerBuffer"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140d92000"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/serialization/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ServiceSerializerBuffer"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140d92000"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39541,5 +39592,5 @@
       }
     ]
   },
-  "unmapped": 7949
+  "unmapped": 7948
 }
