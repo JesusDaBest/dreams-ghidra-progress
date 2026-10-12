@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "106 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "108 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9289,
-    "other_names": 263,
-    "verification": "complete_inventory_matches_baseline_plus_106_renames_and_one_created_function"
+    "default_fun_names": 9287,
+    "other_names": 265,
+    "verification": "complete_inventory_matches_baseline_plus_108_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2138,6 +2138,44 @@
         "Analyst descriptive name, not recovered original symbol.",
         "Name-only; no prototype, type or calling-convention changes.",
         "Scalar round-trip model is not native execution or complete behavior validation."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c6b330",
+      "original_name": "FUN_140c6b330",
+      "applied_name": "AccumulateExpandedResourceRecordBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Consumes 96-byte expanded records and accumulates bounds by union or intersection, plus independently gated signed-minimum metadata.",
+        "Complete 336-instruction native body read; all 1521 bytes unchanged after saving and reopening.",
+        "Native callers corroborate expanded-record stride and dataflow."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "No prototype, datatype or calling-convention changes.",
+        "No runtime testing or complete-behavior credit; exact shape names remain unresolved."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c6a650",
+      "original_name": "FUN_140c6a650",
+      "applied_name": "ExpandDecodedResourceRecord",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Expands decoded record state into 96-byte geometry records with shape-dependent point or basis layouts, repetition and mirror variants.",
+        "Complete 742-instruction native body read; all 3296 bytes unchanged after saving and reopening.",
+        "Native callers corroborate expanded-record stride and dataflow."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "No prototype, datatype or calling-convention changes.",
+        "No runtime testing or complete-behavior credit; exact shape names remain unresolved."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
