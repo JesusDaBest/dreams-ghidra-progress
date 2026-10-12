@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 93,
+    "done": 95,
     "todo": 1496,
-    "total": 1589,
-    "behavior_or_helpers_reviewed": 46,
+    "total": 1591,
+    "behavior_or_helpers_reviewed": 48,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -34509,21 +34509,23 @@
       {
         "name": "audio",
         "label": "Sound & music",
-        "done": 7,
+        "done": 9,
         "todo": 62,
-        "total": 69,
-        "behavior_or_helpers_reviewed": 7,
+        "total": 71,
+        "behavior_or_helpers_reviewed": 9,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 7,
+        "runtime_functions_identified": 9,
         "property_type_functions_identified": 62,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
+          "CopySoundSampleRecordsFromResourceTree",
           "SelectSoundSampleRecordByTag",
           "SelectSoundSampleRecordByPlaybackExtent",
           "ComputeAudioPlaybackSamplePosition",
           "EvaluateSoundPlaybackPositionFromControls",
           "ComputeSoundPlaybackEnvelopeAmplitude",
+          "ComputeSoundHueFromSampleKey",
           "InitializeAudioFileImportContext",
           "ProcessAudioFileImportContext"
         ],
@@ -34592,11 +34594,13 @@
           "0x140d83560"
         ],
         "done_addresses": [
+          "1400c1010",
           "1400c1260",
           "1400c1450",
           "1400c7580",
           "1400c7760",
           "1400c79a0",
+          "1400c81c0",
           "140119510",
           "140119b30"
         ],
@@ -35816,16 +35820,18 @@
           {
             "name": "audio/sounds",
             "label": "Sound settings",
-            "done": 0,
+            "done": 1,
             "todo": 8,
-            "total": 8,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 9,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 1,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "ComputeSoundHueFromSampleKey"
+            ],
             "todo_names": [
               "0x140cb36b0",
               "0x140cb3760",
@@ -35836,7 +35842,9 @@
               "0x140cf56d0",
               "0x140d1af20"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1400c81c0"
+            ],
             "todo_addresses": [
               "140cb36b0",
               "140cb3760",
@@ -36009,6 +36017,29 @@
                     "groups": []
                   }
                 ]
+              },
+              {
+                "name": "audio/sounds/runtime-implementation",
+                "label": "Sound appearance",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ComputeSoundHueFromSampleKey"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1400c81c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
               }
             ]
           },
@@ -36220,74 +36251,27 @@
             ]
           },
           {
-            "name": "audio/file-import",
-            "label": "Audio file import",
-            "done": 2,
-            "todo": 0,
-            "total": 2,
-            "behavior_or_helpers_reviewed": 2,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 2,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "InitializeAudioFileImportContext",
-              "ProcessAudioFileImportContext"
-            ],
-            "todo_names": [],
-            "done_addresses": [
-              "140119510",
-              "140119b30"
-            ],
-            "todo_addresses": [],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "audio/file-import/runtime-implementation",
-                "label": "Import processing",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "InitializeAudioFileImportContext",
-                  "ProcessAudioFileImportContext"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140119510",
-                  "140119b30"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": []
-              }
-            ]
-          },
-          {
             "name": "audio/samples",
             "label": "Samples & MIDI",
-            "done": 0,
+            "done": 1,
             "todo": 2,
-            "total": 2,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 3,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 1,
             "property_type_functions_identified": 2,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "CopySoundSampleRecordsFromResourceTree"
+            ],
             "todo_names": [
               "0x140cf6bb0",
               "0x140d1aac0"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1400c1010"
+            ],
             "todo_addresses": [
               "140cf6bb0",
               "140d1aac0"
@@ -36344,6 +36328,80 @@
                     "groups": []
                   }
                 ]
+              },
+              {
+                "name": "audio/samples/runtime-implementation",
+                "label": "Sample record handling",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CopySoundSampleRecordsFromResourceTree"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1400c1010"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
+              }
+            ]
+          },
+          {
+            "name": "audio/file-import",
+            "label": "Audio file import",
+            "done": 2,
+            "todo": 0,
+            "total": 2,
+            "behavior_or_helpers_reviewed": 2,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 2,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "InitializeAudioFileImportContext",
+              "ProcessAudioFileImportContext"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "140119510",
+              "140119b30"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "audio/file-import/runtime-implementation",
+                "label": "Import processing",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializeAudioFileImportContext",
+                  "ProcessAudioFileImportContext"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140119510",
+                  "140119b30"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
               }
             ]
           },
@@ -39352,5 +39410,5 @@
       }
     ]
   },
-  "unmapped": 7963
+  "unmapped": 7961
 }

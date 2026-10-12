@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1589,
-  "unmapped_total": 7963,
+  "mapped_total": 1591,
+  "unmapped_total": 7961,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41440,6 +41440,44 @@
           "support": "Complete native body selects a Sound sample record from registered SausagePage; LocalisedSound selects the tag-based path, otherwise playback extent. Caller converges on envelope evaluation."
         }
       ]
+    },
+    "1400c81c0": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "sounds",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_sound_sample_record_and_hue_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "a04829d8431d679136f0fb64bb983a4c1315a65d7a35d44db42a375767a5e597",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeSoundHueFromSampleKey",
+          "support": "Complete native body and direct caller dataflow verified; SoundHue field registration or 40-byte sample record copy modes establish subsystem role."
+        }
+      ]
+    },
+    "1400c1010": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "samples",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_sound_sample_record_and_hue_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "af40ac50f263ad0e19968a2575a71f124736f91f723f2f07e6a68f1d680227e5",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopySoundSampleRecordsFromResourceTree",
+          "support": "Complete native body and direct caller dataflow verified; SoundHue field registration or 40-byte sample record copy modes establish subsystem role."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -42503,6 +42541,11 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "id": "runtime-implementation",
+              "label": "Sound appearance",
+              "children": []
             }
           ]
         },
@@ -42548,6 +42591,11 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "id": "runtime-implementation",
+              "label": "Sample record handling",
+              "children": []
             }
           ]
         },
