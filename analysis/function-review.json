@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "90 previously unnamed functions reviewed;86 descriptive names applied and verified after reopening;4 remain deferred.",
+  "review_scope": "93 previously unnamed functions reviewed;89 descriptive names applied and verified after reopening;4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9309,
-    "other_names": 242,
+    "default_fun_names": 9306,
+    "other_names": 245,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1756,6 +1756,57 @@
         "No signature change or complete-behavior credit."
       ],
       "reviewed_scope": "property_registration"
+    },
+    {
+      "address": "140d54090",
+      "original_name": "FUN_140d54090",
+      "applied_name": "RegisterLightTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Full native initializer sets Light descriptor, callbacks and invokes base/Light property registration."
+      ],
+      "caveats": [
+        "Analyst name, not recovered original source symbol.",
+        "No signature change or whole-behavior completion credit.",
+        "Malformed overlength reference decoding and final runtime type write remain unresolved."
+      ],
+      "reviewed_scope": "property_registration"
+    },
+    {
+      "address": "140d88a00",
+      "original_name": "FUN_140d88a00",
+      "applied_name": "RegisterLightFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Full native registrar matches named Light properties and ELightType enumeration with explicit field offsets."
+      ],
+      "caveats": [
+        "Analyst name, not recovered original source symbol.",
+        "No signature change or whole-behavior completion credit.",
+        "Malformed overlength reference decoding and final runtime type write remain unresolved."
+      ],
+      "reviewed_scope": "property_registration"
+    },
+    {
+      "address": "141601ca0",
+      "original_name": "FUN_141601ca0",
+      "applied_name": "DeserializeObjectReference",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Full body reads compact reference tokens, reuses cached pointer/descriptor entries or creates objects via descriptor callbacks and caches the results."
+      ],
+      "caveats": [
+        "Analyst name, not recovered original source symbol.",
+        "No signature change or whole-behavior completion credit.",
+        "Malformed overlength reference decoding and final runtime type write remain unresolved."
+      ],
+      "reviewed_scope": "behavior_or_helper"
     }
   ],
   "deferred": [

@@ -3,8 +3,8 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 61,
-    "todo": 1499,
+    "done": 63,
+    "todo": 1497,
     "total": 1560,
     "behavior_or_helpers_reviewed": 16,
     "properties_or_types_reviewed": 43,
@@ -13,8 +13,8 @@
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 44,
-        "todo": 418,
+        "done": 46,
+        "todo": 416,
         "total": 462,
         "behavior_or_helpers_reviewed": 4,
         "properties_or_types_reviewed": 38,
@@ -41,6 +41,7 @@
           "ComputeTeleporterTransformWithOffset",
           "SubmitTeleporterPositionOffsetCommand",
           "InitializeVariableGadgetDefaults",
+          "RegisterLightTypeDescriptor",
           "RegisterTeleporterTypeDescriptor",
           "RegisterForceRepulseGadgetTypeDescriptor",
           "RegisterCombinerTypeDescriptor",
@@ -66,7 +67,8 @@
           "RegisterMagicDoorFieldOffsets",
           "RegisterCombinerFieldOffsets",
           "RegisterForceRepulseGadgetFieldOffsets",
-          "RegisterTeleporterFieldOffsets"
+          "RegisterTeleporterFieldOffsets",
+          "RegisterLightFieldOffsets"
         ],
         "todo_names": [
           "0x140491770",
@@ -347,7 +349,6 @@
           "0x140cf5c90",
           "0x140d18580",
           "0x140d1b4e0",
-          "0x140d54090",
           "0x140d54230",
           "0x140d543d0",
           "0x140d544b0",
@@ -482,7 +483,6 @@
           "0x140d83100",
           "0x140d83a50",
           "0x140d88020",
-          "0x140d88a00",
           "0x1410c0660",
           "0x141300eb0",
           "0x1414dcb90",
@@ -507,6 +507,7 @@
           "1408f1dc0",
           "1408f2180",
           "140944f20",
+          "140d54090",
           "140d55830",
           "140d56fc0",
           "140d57980",
@@ -532,7 +533,8 @@
           "140d6e570",
           "140d6e850",
           "140d71ed0",
-          "140d78870"
+          "140d78870",
+          "140d88a00"
         ],
         "todo_addresses": [
           "140491770",
@@ -813,7 +815,6 @@
           "140cf5c90",
           "140d18580",
           "140d1b4e0",
-          "140d54090",
           "140d54230",
           "140d543d0",
           "140d544b0",
@@ -948,7 +949,6 @@
           "140d83100",
           "140d83a50",
           "140d88020",
-          "140d88a00",
           "1410c0660",
           "141300eb0",
           "1414dcb90",
@@ -10563,8 +10563,8 @@
           {
             "name": "gadgets-logic/presentation",
             "label": "Cameras, lights & effects",
-            "done": 7,
-            "todo": 24,
+            "done": 9,
+            "todo": 22,
             "total": 31,
             "behavior_or_helpers_reviewed": 0,
             "properties_or_types_reviewed": 7,
@@ -10576,10 +10576,12 @@
               "VisitFogProperties",
               "VisitCameraShakerProperties",
               "VisitPadRumbleProperties",
+              "RegisterLightTypeDescriptor",
               "RegisterCameraShakerTypeDescriptor",
               "RegisterPadRumbleTypeDescriptor",
               "RegisterPadRumbleFieldOffsets",
-              "RegisterCameraShakerFieldOffsets"
+              "RegisterCameraShakerFieldOffsets",
+              "RegisterLightFieldOffsets"
             ],
             "todo_names": [
               "0x140491770",
@@ -10593,7 +10595,6 @@
               "0x140cb4800",
               "0x140cb48b0",
               "0x140cb4900",
-              "0x140d54090",
               "0x140d544b0",
               "0x140d54580",
               "0x140d548c0",
@@ -10604,17 +10605,18 @@
               "0x140d6f6a0",
               "0x140d78e40",
               "0x140d7f7b0",
-              "0x140d88a00",
               "0x141300eb0"
             ],
             "done_addresses": [
               "1404d6660",
               "1404dabe0",
               "1404db190",
+              "140d54090",
               "140d57cc0",
               "140d57d90",
               "140d6dbd0",
-              "140d6ddf0"
+              "140d6ddf0",
+              "140d88a00"
             ],
             "todo_addresses": [
               "140491770",
@@ -10628,7 +10630,6 @@
               "140cb4800",
               "140cb48b0",
               "140cb4900",
-              "140d54090",
               "140d544b0",
               "140d54580",
               "140d548c0",
@@ -10639,7 +10640,6 @@
               "140d6f6a0",
               "140d78e40",
               "140d7f7b0",
-              "140d88a00",
               "141300eb0"
             ],
             "unresolved_addresses": [],
@@ -10951,8 +10951,8 @@
               {
                 "name": "gadgets-logic/presentation/light",
                 "label": "Light",
-                "done": 0,
-                "todo": 3,
+                "done": 2,
+                "todo": 1,
                 "total": 3,
                 "behavior_or_helpers_reviewed": 0,
                 "properties_or_types_reviewed": 0,
@@ -10960,25 +10960,27 @@
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140491770",
-                  "0x140d54090",
-                  "0x140d88a00"
+                "done_names": [
+                  "RegisterLightTypeDescriptor",
+                  "RegisterLightFieldOffsets"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140491770",
+                "todo_names": [
+                  "0x140491770"
+                ],
+                "done_addresses": [
                   "140d54090",
                   "140d88a00"
+                ],
+                "todo_addresses": [
+                  "140491770"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "gadgets-logic/presentation/light/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
+                    "done": 2,
+                    "todo": 1,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
                     "properties_or_types_reviewed": 0,
@@ -10986,17 +10988,19 @@
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140491770",
-                      "0x140d54090",
-                      "0x140d88a00"
+                    "done_names": [
+                      "RegisterLightTypeDescriptor",
+                      "RegisterLightFieldOffsets"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140491770",
+                    "todo_names": [
+                      "0x140491770"
+                    ],
+                    "done_addresses": [
                       "140d54090",
                       "140d88a00"
+                    ],
+                    "todo_addresses": [
+                      "140491770"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
