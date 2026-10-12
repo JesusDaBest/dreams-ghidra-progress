@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1587,
-  "unmapped_total": 7965,
+  "mapped_total": 1589,
+  "unmapped_total": 7963,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41400,6 +41400,44 @@
           "kind": "verified_semantic_review",
           "name": "ComputeSoundPlaybackEnvelopeAmplitude",
           "support": "Complete native scalar body combines selection bounds, signed Volume, Power, VolumeADSR01 timing and interpolated resource peak data; registered labels and caller use verified."
+        }
+      ]
+    },
+    "1400c1450": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "playback",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_sound_sample_selection_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "a3fdb43f65feb603b8181881e3f8ea9a2d6ef779275249a9bd19cff8a1a09e2d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectSoundSampleRecordByPlaybackExtent",
+          "support": "Complete native body selects a Sound sample record from registered SausagePage; LocalisedSound selects the tag-based path, otherwise playback extent. Caller converges on envelope evaluation."
+        }
+      ]
+    },
+    "1400c1260": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "playback",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_sound_sample_selection_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "2cffc6106e7a8c31f510239851e26c902a7c1401b85d51420de6ea790d82276e",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectSoundSampleRecordByTag",
+          "support": "Complete native body selects a Sound sample record from registered SausagePage; LocalisedSound selects the tag-based path, otherwise playback extent. Caller converges on envelope evaluation."
         }
       ]
     }
