@@ -902,3 +902,11 @@ Simulation preparation builds that table from the same records, with separate in
 The name describes verified mechanics, not a recovered source symbol. Negative-ordinal, resource-capacity and iterator-depth assumptions remain unresolved. The record's full layout and source type are unproven, so no concrete types or full-behavior completion credit were added. There are 143 checked descriptive names among 9,553 discovered functions. This helper remains outside the subsystem map until its broader ownership is established.
 
 A separate 76-instruction review of the Animation evaluation entry verified predicate bypasses for power and time-window gates. Native unordered floating-point comparisons can pass these gates where an ordinary pseudocode comparison would suggest otherwise. Later evaluation paths remain under investigation.
+
+### Animation playback modes linked to runtime gates
+
+Live field registration now identifies 33 Animation properties used to interpret the evaluation path, including `HeaderAndDataPages`, `Playhead`, `PlaybackMode`, `Reverse`, `Relative`, `PlayheadDelta`, and `LoopOverlapFraction`. The playback enum registration links values 0–3 to `PLAYONCE`, `SUSTAIN`, `LOOP`, and `PINGPONG`.
+
+This resolves previously unnamed branches: PLAYONCE with `PlayingInternally` overrides effective power to 1; PINGPONG expands the upper playback window to twice the maximum minus the minimum. In the reviewed later branch, an ordered playhead beyond the maximum is reflected about that maximum when the input and object identifiers differ. `Reverse` can then reflect the position about the interval midpoint under the identifier condition. Native floating-point branch behavior remains authoritative, including unordered comparisons.
+
+These are property-registration and bounded runtime findings, not full Animation completion. Record types, producer invariants and the remaining evaluation branches still need review. No additional names, concrete structure types or full-behavior completion credit were added.
