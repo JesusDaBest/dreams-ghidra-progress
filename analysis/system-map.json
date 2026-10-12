@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1572,
-  "unmapped_total": 7980,
+  "mapped_total": 1575,
+  "unmapped_total": 7977,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41105,6 +41105,66 @@
           "category_label": "CSG",
           "summary_category_test": "141061b74",
           "support": "Initializer explicitly selects CSG category1; append and delta helpers process that writer; summary runs only for CSG category. Finalization and release remain shared across categories."
+        }
+      ]
+    },
+    "141060410": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "b7dd8f23d0cebe41c3ac5cb95dcefebeb4fd49f638eeadbb54b05b2f5f405b13",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MarkObjectPackedResourceRoots",
+          "support": "Root visitors atomically publish resource-page references; recursive marker follows resource tree child indices and category-specific external references. Native collector call chain corroborates shared ownership."
+        }
+      ]
+    },
+    "141060640": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "848dcb7d932154811452b9b9d70af68132ff136ba4a2a87faf1a1ad4f7816241",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MarkContainerPackedResourceRoots",
+          "support": "Root visitors atomically publish resource-page references; recursive marker follows resource tree child indices and category-specific external references. Native collector call chain corroborates shared ownership."
+        }
+      ]
+    },
+    "1410614b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "317a8f8464787d1598f00f1d48bd662aaad272a437056c4e25e183aa81e65c8d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MarkPackedResourceTreeReachable",
+          "support": "Root visitors atomically publish resource-page references; recursive marker follows resource tree child indices and category-specific external references. Native collector call chain corroborates shared ownership."
         }
       ]
     }

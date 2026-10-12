@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "115 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "118 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9280,
-    "other_names": 272,
-    "verification": "complete_inventory_matches_baseline_plus_115_renames_and_one_created_function"
+    "default_fun_names": 9277,
+    "other_names": 275,
+    "verification": "complete_inventory_matches_baseline_plus_118_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2308,6 +2308,66 @@
         "packed-csg-metadata-rebuild-audit.json",
         "packed-resource-finalization-release-audit.json",
         "Full native span matches live SHA256 bbded4eaddf1fa2eac9885739df16497d33715dd3dc2f1fa5f7c0a1f8f6f732c"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "141060410",
+      "original_name": "FUN_141060410",
+      "applied_name": "MarkObjectPackedResourceRoots",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-resource-root-visitors-audit.json",
+        "packed-resource-mark-sweep-audit.json",
+        "packed-resource-collection-barrier-audit.json",
+        "Full native span matches live SHA256 388e5d127780ea6076b17c38b3ebd6f62a6ab6958d120d7a2a8a16ee461f8bea"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "141060640",
+      "original_name": "FUN_141060640",
+      "applied_name": "MarkContainerPackedResourceRoots",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-resource-root-visitors-audit.json",
+        "packed-resource-mark-sweep-audit.json",
+        "packed-resource-collection-barrier-audit.json",
+        "Full native span matches live SHA256 c42d48696d9a3553991dec6e4f932d60fe621ad77713629955844e7eef04254f"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1410614b0",
+      "original_name": "FUN_1410614b0",
+      "applied_name": "MarkPackedResourceTreeReachable",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-resource-root-visitors-audit.json",
+        "packed-resource-mark-sweep-audit.json",
+        "packed-resource-collection-barrier-audit.json",
+        "Full native span matches live SHA256 dd61d87c1dd63ca227116312d9d402684b3957b858faff49ed26b1273ea8d624"
       ],
       "caveats": [
         "Descriptive analyst name, not recovered original symbol.",

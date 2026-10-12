@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 76,
+    "done": 79,
     "todo": 1496,
-    "total": 1572,
-    "behavior_or_helpers_reviewed": 29,
+    "total": 1575,
+    "behavior_or_helpers_reviewed": 32,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24570,12 +24570,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 17,
+        "done": 20,
         "todo": 108,
-        "total": 125,
-        "behavior_or_helpers_reviewed": 12,
+        "total": 128,
+        "behavior_or_helpers_reviewed": 15,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 49,
+        "runtime_functions_identified": 52,
         "property_type_functions_identified": 71,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24595,7 +24595,10 @@
           "LookupU32HashTableValue",
           "TransferTransformPropertyPayload",
           "RegisterVariantFieldOffset",
+          "MarkObjectPackedResourceRoots",
+          "MarkContainerPackedResourceRoots",
           "ReleasePackedResourcePage",
+          "MarkPackedResourceTreeReachable",
           "FinalizePackedResourceTreeWriter"
         ],
         "todo_names": [
@@ -24724,7 +24727,10 @@
           "140913a90",
           "140ad5f90",
           "140cfda40",
+          "141060410",
+          "141060640",
           "141060f40",
+          "1410614b0",
           "141061af0"
         ],
         "todo_addresses": [
@@ -24847,12 +24853,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 9,
+            "done": 12,
             "todo": 13,
-            "total": 22,
-            "behavior_or_helpers_reviewed": 9,
+            "total": 25,
+            "behavior_or_helpers_reviewed": 12,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 15,
+            "runtime_functions_identified": 18,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24864,7 +24870,10 @@
               "ReleaseGamePoolContextReference",
               "SortU16IndicesByDescendingI32Keys",
               "LookupU32HashTableValue",
+              "MarkObjectPackedResourceRoots",
+              "MarkContainerPackedResourceRoots",
               "ReleasePackedResourcePage",
+              "MarkPackedResourceTreeReachable",
               "FinalizePackedResourceTreeWriter"
             ],
             "todo_names": [
@@ -24890,7 +24899,10 @@
               "14090e300",
               "140912670",
               "140913a90",
+              "141060410",
+              "141060640",
               "141060f40",
+              "1410614b0",
               "141061af0"
             ],
             "todo_addresses": [
@@ -24984,6 +24996,69 @@
                     "todo_addresses": [
                       "140abba30"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/runtime/packed-resource-pages",
+                "label": "Resource pages",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "MarkObjectPackedResourceRoots",
+                  "MarkContainerPackedResourceRoots",
+                  "ReleasePackedResourcePage",
+                  "MarkPackedResourceTreeReachable",
+                  "FinalizePackedResourceTreeWriter"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141060410",
+                  "141060640",
+                  "141060f40",
+                  "1410614b0",
+                  "141061af0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/packed-resource-pages/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "MarkObjectPackedResourceRoots",
+                      "MarkContainerPackedResourceRoots",
+                      "ReleasePackedResourcePage",
+                      "MarkPackedResourceTreeReachable",
+                      "FinalizePackedResourceTreeWriter"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141060410",
+                      "141060640",
+                      "141060f40",
+                      "1410614b0",
+                      "141061af0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -25149,57 +25224,6 @@
                       "140956a10",
                       "140958760"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/packed-resource-pages",
-                "label": "Resource pages",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ReleasePackedResourcePage",
-                  "FinalizePackedResourceTreeWriter"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141060f40",
-                  "141061af0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/packed-resource-pages/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ReleasePackedResourcePage",
-                      "FinalizePackedResourceTreeWriter"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141060f40",
-                      "141061af0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39142,5 +39166,5 @@
       }
     ]
   },
-  "unmapped": 7980
+  "unmapped": 7977
 }
