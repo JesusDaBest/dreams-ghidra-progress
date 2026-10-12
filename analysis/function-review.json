@@ -2975,7 +2975,26 @@
         "Complete enclosing runtime caller and record producers remain unresolved.",
         "No prototype or datatype change; no full-behavior completion credit."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "verified_signature": "float EvaluateAnimationEasingCurve(void * animation, float fraction)",
+      "signature_evidence": {
+        "calling_convention": "PS4_SYSV",
+        "parameters": [
+          {
+            "name": "animation",
+            "type": "void *",
+            "storage": "RDI:8"
+          },
+          {
+            "name": "fraction",
+            "type": "float",
+            "storage": "XMM0_Da:4"
+          }
+        ],
+        "return_storage": "XMM0_Da:4",
+        "validation": "isolated before/after helper and enclosing caller decompilation; cold backup; main-project single-signature change; clean reopen and unchanged native bytes",
+        "limits": "Opaque context pointer, not a reconstructed full Animation type; no runtime-validation or full-behavior completion credit"
+      }
     }
   ],
   "deferred": [

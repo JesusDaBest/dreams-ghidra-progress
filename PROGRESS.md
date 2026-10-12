@@ -952,3 +952,9 @@ Reading the three complete enum registration/append bodies and their descriptor 
 Both direct calls occur in the same runtime routine. Their reviewed neighborhoods compute timeline fractions, clamp them to 0…1, and select an object checked against Animation kind 9; one complements the curve result afterward. This connects the curve to timeline weighting, but earlier object-validity invariants and the complete enclosing routine remain unresolved. Matching the packed-record sampler formulas does not prove direct copying of the enum into sample bits.
 
 A cold backup preceded the name-only change. Clean reopening verified all 332 body bytes, reference addresses and the unchanged prototype. The complete function-name inventory and original archive hashes also passed verification. There are now 149 checked descriptive names, with 108 among 1,604 mapped functions. No full-behavior completion credit was added.
+
+### Animation easing signature corrected
+
+`EvaluateAnimationEasingCurve` now has the verified signature `float (void * animation, float fraction)` using PS4 System V register storage: the object pointer is in RDI, the fraction and result use the low float lane of XMM0. The pointer remains opaque because a complete Animation structure has not been reconstructed.
+
+An isolated project trial compared the helper and its enclosing caller before and after the correction. Both direct call sites now pass the object pointer and scalar fraction correctly, removing misleading integer argument and result casts. A fresh cold backup preceded promotion. Only this function's signature changed; all 332 native body bytes remained unchanged, and clean reopening verified the saved signature. Checked-name counts and full-behavior coverage are unchanged. Runtime validation and the settings-to-packed-sample producer connection remain unresolved.
