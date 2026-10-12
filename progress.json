@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 69,
+    "done": 76,
     "todo": 1496,
-    "total": 1565,
-    "behavior_or_helpers_reviewed": 22,
+    "total": 1572,
+    "behavior_or_helpers_reviewed": 29,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24570,12 +24570,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 15,
+        "done": 17,
         "todo": 108,
-        "total": 123,
-        "behavior_or_helpers_reviewed": 10,
+        "total": 125,
+        "behavior_or_helpers_reviewed": 12,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 47,
+        "runtime_functions_identified": 49,
         "property_type_functions_identified": 71,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24594,7 +24594,9 @@
           "SortU16IndicesByDescendingI32Keys",
           "LookupU32HashTableValue",
           "TransferTransformPropertyPayload",
-          "RegisterVariantFieldOffset"
+          "RegisterVariantFieldOffset",
+          "ReleasePackedResourcePage",
+          "FinalizePackedResourceTreeWriter"
         ],
         "todo_names": [
           "0x14010cf30",
@@ -24721,7 +24723,9 @@
           "140912670",
           "140913a90",
           "140ad5f90",
-          "140cfda40"
+          "140cfda40",
+          "141060f40",
+          "141061af0"
         ],
         "todo_addresses": [
           "14010cf30",
@@ -24843,12 +24847,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 7,
+            "done": 9,
             "todo": 13,
-            "total": 20,
-            "behavior_or_helpers_reviewed": 7,
+            "total": 22,
+            "behavior_or_helpers_reviewed": 9,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 13,
+            "runtime_functions_identified": 15,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24859,7 +24863,9 @@
               "RetainCurrentGamePoolContext",
               "ReleaseGamePoolContextReference",
               "SortU16IndicesByDescendingI32Keys",
-              "LookupU32HashTableValue"
+              "LookupU32HashTableValue",
+              "ReleasePackedResourcePage",
+              "FinalizePackedResourceTreeWriter"
             ],
             "todo_names": [
               "0x1401115f0",
@@ -24883,7 +24889,9 @@
               "14090e280",
               "14090e300",
               "140912670",
-              "140913a90"
+              "140913a90",
+              "141060f40",
+              "141061af0"
             ],
             "todo_addresses": [
               "1401115f0",
@@ -25141,6 +25149,57 @@
                       "140956a10",
                       "140958760"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/runtime/packed-resource-pages",
+                "label": "Resource pages",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ReleasePackedResourcePage",
+                  "FinalizePackedResourceTreeWriter"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141060f40",
+                  "141061af0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/packed-resource-pages/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReleasePackedResourcePage",
+                      "FinalizePackedResourceTreeWriter"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141060f40",
+                      "141061af0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -28607,16 +28666,22 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 0,
+        "done": 5,
         "todo": 117,
-        "total": 117,
-        "behavior_or_helpers_reviewed": 0,
+        "total": 122,
+        "behavior_or_helpers_reviewed": 5,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 78,
+        "runtime_functions_identified": 83,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
-        "done_names": [],
+        "done_names": [
+          "InitializePackedCSGRecordWriter",
+          "AppendPackedResourceRecord",
+          "TryAppendPackedResourceRecordDelta",
+          "RebuildPackedCSGRecordsWithMetadataOffset",
+          "RecomputePackedResourceNodeSummary"
+        ],
         "todo_names": [
           "0x140491730",
           "0x14049b020",
@@ -28736,7 +28801,13 @@
           "0x1413dda80",
           "0x1413e75e0"
         ],
-        "done_addresses": [],
+        "done_addresses": [
+          "140c67ab0",
+          "140c67d90",
+          "140c68080",
+          "140c6a1e0",
+          "140c6b930"
+        ],
         "todo_addresses": [
           "140491730",
           "14049b020",
@@ -28861,16 +28932,22 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 0,
+            "done": 5,
             "todo": 78,
-            "total": 78,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 83,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 72,
+            "runtime_functions_identified": 77,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "InitializePackedCSGRecordWriter",
+              "AppendPackedResourceRecord",
+              "TryAppendPackedResourceRecordDelta",
+              "RebuildPackedCSGRecordsWithMetadataOffset",
+              "RecomputePackedResourceNodeSummary"
+            ],
             "todo_names": [
               "0x140cb01c0",
               "0x140cb04f0",
@@ -28951,7 +29028,13 @@
               "0x1412a1290",
               "0x1412a1620"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "140c67ab0",
+              "140c67d90",
+              "140c68080",
+              "140c6a1e0",
+              "140c6b930"
+            ],
             "todo_addresses": [
               "140cb01c0",
               "140cb04f0",
@@ -29414,6 +29497,69 @@
                       "1412a1290",
                       "1412a1620"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "sculpting-painting/csg/packed-csg-records",
+                "label": "CSG record storage",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializePackedCSGRecordWriter",
+                  "AppendPackedResourceRecord",
+                  "TryAppendPackedResourceRecordDelta",
+                  "RebuildPackedCSGRecordsWithMetadataOffset",
+                  "RecomputePackedResourceNodeSummary"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140c67ab0",
+                  "140c67d90",
+                  "140c68080",
+                  "140c6a1e0",
+                  "140c6b930"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "sculpting-painting/csg/packed-csg-records/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "InitializePackedCSGRecordWriter",
+                      "AppendPackedResourceRecord",
+                      "TryAppendPackedResourceRecordDelta",
+                      "RebuildPackedCSGRecordsWithMetadataOffset",
+                      "RecomputePackedResourceNodeSummary"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140c67ab0",
+                      "140c67d90",
+                      "140c68080",
+                      "140c6a1e0",
+                      "140c6b930"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -38996,5 +39142,5 @@
       }
     ]
   },
-  "unmapped": 7987
+  "unmapped": 7980
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "111 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "115 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9284,
-    "other_names": 268,
-    "verification": "complete_inventory_matches_baseline_plus_111_renames_and_one_created_function"
+    "default_fun_names": 9280,
+    "other_names": 272,
+    "verification": "complete_inventory_matches_baseline_plus_115_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2233,6 +2233,86 @@
         "Analyst descriptive name, not recovered original symbol.",
         "No datatype, prototype or calling-convention changes.",
         "Allocation failure, malformed inputs and runtime equivalence remain unverified; no complete-behavior credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c67ab0",
+      "original_name": "FUN_140c67ab0",
+      "applied_name": "InitializePackedCSGRecordWriter",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-csg-writer-category-binding-audit.json",
+        "packed-csg-metadata-rebuild-audit.json",
+        "packed-resource-finalization-release-audit.json",
+        "Full native span matches live SHA256 eef94444c34fbcbcb7cde4699959194fddd2a3874f2f3533276dd73ba54de30f"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c6a1e0",
+      "original_name": "FUN_140c6a1e0",
+      "applied_name": "RebuildPackedCSGRecordsWithMetadataOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-csg-writer-category-binding-audit.json",
+        "packed-csg-metadata-rebuild-audit.json",
+        "packed-resource-finalization-release-audit.json",
+        "Full native span matches live SHA256 c978ca35c600158df1c76ddf5c78d7544650106c8ecb1968481d573a32d419f5"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "141061af0",
+      "original_name": "FUN_141061af0",
+      "applied_name": "FinalizePackedResourceTreeWriter",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-csg-writer-category-binding-audit.json",
+        "packed-csg-metadata-rebuild-audit.json",
+        "packed-resource-finalization-release-audit.json",
+        "Full native span matches live SHA256 59485b7e0886d7fb2b62aa0649d0781e1d9afde5842bb69a44f3cc8329a8d8dc"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "141060f40",
+      "original_name": "FUN_141060f40",
+      "applied_name": "ReleasePackedResourcePage",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "packed-csg-writer-category-binding-audit.json",
+        "packed-csg-metadata-rebuild-audit.json",
+        "packed-resource-finalization-release-audit.json",
+        "Full native span matches live SHA256 bbded4eaddf1fa2eac9885739df16497d33715dd3dc2f1fa5f7c0a1f8f6f732c"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
