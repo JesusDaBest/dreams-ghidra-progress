@@ -37,13 +37,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/30bd6a429ee034851b73d87a46c3a9de17eb1545/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/7cc1ef010981ab5d551016f6dd06ba617085471a/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**96 of 9,552 functions named and checked.** A function is one piece of the game's code.
+**99 of 9,552 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/30bd6a429ee034851b73d87a46c3a9de17eb1545/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/7cc1ef010981ab5d551016f6dd06ba617085471a/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -61,10 +61,10 @@ Every square is one actual function and has the same size. All function squares 
 | Animation & puppets | 46 | None mapped | 0/46 |
 | Rendering & lighting | 274 | 0/245 | 0/29 |
 | Editor & interface | 313 | 0/106 | 0/205 |
-| Dreamiverse & networking | 105 | 2/30 | 0/75 |
+| Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 123 | 10/47 | 5/71 |
 
-**1,563 of 9,552 discovered functions are mapped; 7,989 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,565 of 9,552 discovered functions are mapped; 7,987 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1016,7 +1016,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Bubbles Brushing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Dreamiverse & networking** - 105 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+- **Dreamiverse & networking** - 107 functions identified; 5 behavior/helper reviews; 0 property/type reviews
   - **Network state** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Net Thing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1110,9 +1110,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Set Player Settings Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Creation references** - 19 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Dreamstone Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Creation references** - 20 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Dreamstone Type** - 4 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Dream UIPage** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Preload Dream Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1136,9 +1136,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Text Chat Channel** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Player identity** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Level & recent records** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+  - **Player identity** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Level & recent records** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
 - **Sound & music** - 62 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Sound editing** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
