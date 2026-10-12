@@ -969,3 +969,11 @@ A separate before-first branch reads the registered Animation field `AnimUseNewB
 The extra word in the reviewed 24-byte path carries interpolation controls. Its low three bits select a mode; modes 1–4 respectively preserve linear alpha, ease in, ease out, or ease in/out. Four bits supply strength. Native calls were linked through the executable's loader to `powf`, supporting the decoded power-curve formulas. Nonzero bits 6–7 can quantize elapsed sample time downward in steps of approximately 2/30, 3/30, or 4/30 before alpha is calculated.
 
 The 24-byte path also differs at larger time gaps: a nonzero curve mode can force interpolation depending on another control bit and the entry count. Endpoint bit 4 changes whether payloads blend or an endpoint is copied with adjusted output metadata. These are decoded mechanics, not recovered UI names or proof of which editor settings produced the records. Record producers, other type branches, resource reconstruction, and later blending remain unresolved. No additional names or full-behavior completion credit were added.
+
+### Animation value types and intermediate representation
+
+The executable's `EVariantType` registry explicitly names tag 6 `Float4`, tag 15 `AudioNumber`, and tag 16 `Quaternion`. Rechecking all 32 registered literals and 227 instructions against the live project confirms the earlier registry evidence; this is not counted as a new discovery of those names.
+
+Tracing that registry into six reviewed output neighborhoods clarifies the common sampler path. Both formats save the input record's type byte, compare it with 16, and write a result tag of 16 when equal or 6 otherwise. Thus these Quaternion paths preserve their tag, while the AudioNumber common path produces a Float4-tagged intermediate. The representation change does not establish equivalent behavior for the two types.
+
+The four-lane blends described above are not evidence of quaternion spherical interpolation or a complete AudioNumber implementation. Other dispatch branches, later processing, and record producers still require analysis. This checkpoint adds evidence and clarification, with no new names, prototype changes, or full-behavior completion credit.
