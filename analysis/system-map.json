@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1561,
-  "unmapped_total": 7991,
+  "mapped_total": 1563,
+  "unmapped_total": 7989,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -40838,6 +40838,76 @@
       "component_basis": "registered_type",
       "code_role": "runtime-implementation",
       "code_role_basis": "native_allocation_and_default_field_initialization"
+    },
+    "140412a70": {
+      "system": "dreamiverse",
+      "component_path": [
+        "dreamiverse",
+        "player-identity",
+        "level-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "native_caller_field_labels_and_record_layout",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native_record_parsing_or_serialization",
+      "code_sha256": "034eb8b65c2d59c2d909e338fa17d0a096091a75b7c9440453e9c5617db499e8",
+      "evidence": [
+        {
+          "kind": "native_caller_and_record_layout",
+          "serializer": "140413970",
+          "parser": "140412a70",
+          "field_labels": [
+            "level",
+            "recent"
+          ],
+          "identity_fields": [
+            "persona",
+            "subpersona"
+          ],
+          "record_stride": 12,
+          "caller": "140536d00",
+          "sites": [
+            "140536faf",
+            "140536fce"
+          ],
+          "limits": "Static ownership of identified records; no whole feature completion or runtime verification."
+        }
+      ]
+    },
+    "140413970": {
+      "system": "dreamiverse",
+      "component_path": [
+        "dreamiverse",
+        "player-identity",
+        "level-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "native_caller_field_labels_and_record_layout",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native_record_parsing_or_serialization",
+      "code_sha256": "1dbdc2dd4802245d253977b4790910d71f8162efbb3a008ed07462ad06b305af",
+      "evidence": [
+        {
+          "kind": "native_caller_and_record_layout",
+          "serializer": "140413970",
+          "parser": "140412a70",
+          "field_labels": [
+            "level",
+            "recent"
+          ],
+          "identity_fields": [
+            "persona",
+            "subpersona"
+          ],
+          "record_stride": 12,
+          "caller": "140536d00",
+          "sites": [
+            "140536faf",
+            "140536fce"
+          ],
+          "limits": "Static ownership of identified records; no whole feature completion or runtime verification."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -44442,6 +44512,23 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "player-identity",
+          "label": "Player identity",
+          "children": [
+            {
+              "id": "level-records",
+              "label": "Level & recent records",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]
