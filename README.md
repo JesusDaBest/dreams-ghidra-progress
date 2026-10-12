@@ -37,13 +37,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/416d54769b3a7ad2a21fd6cbf30848a17bad2708/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/42af795b3a2d8e3f7cbbaa701e5c79b67a5029c9/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**89 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**90 of 9,552 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/416d54769b3a7ad2a21fd6cbf30848a17bad2708/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/42af795b3a2d8e3f7cbbaa701e5c79b67a5029c9/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -55,7 +55,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 117 | 0/78 | 0/39 |
-| Gadgets & logic | 462 | 4/7 | 38/454 |
+| Gadgets & logic | 463 | 5/8 | 38/454 |
 | Physics & collision | 60 | 2/28 | 0/32 |
 | Sound & music | 62 | None mapped | 0/62 |
 | Animation & puppets | 46 | None mapped | 0/46 |
@@ -64,12 +64,12 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 103 | 0/28 | 0/75 |
 | Shared engine & object data | 123 | 10/47 | 5/71 |
 
-**1,560 of 9,551 discovered functions are mapped; 7,991 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,561 of 9,552 discovered functions are mapped; 7,991 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 462 functions identified; 4 behavior/helper reviews; 38 property/type reviews
+- **Gadgets & logic** - 463 functions identified; 5 behavior/helper reviews; 38 property/type reviews
   - **Online & multiplayer gadgets** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Magic Door Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -397,10 +397,13 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **VRCursor Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Cameras, lights & effects** - 31 functions identified; 0 behavior/helper reviews; 7 property/type reviews
+  - **Cameras, lights & effects** - 32 functions identified; 1 behavior/helper reviews; 7 property/type reviews
     - **Grade gadget & color processing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Light** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Default allocation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Camera Shaker** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Effect Field** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -409,8 +412,6 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Fog Gadget** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Light** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Pad Rumble** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Camera Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
