@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 97,
+    "done": 100,
     "todo": 1496,
-    "total": 1593,
-    "behavior_or_helpers_reviewed": 50,
+    "total": 1596,
+    "behavior_or_helpers_reviewed": 53,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24570,12 +24570,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 28,
+        "done": 31,
         "todo": 108,
-        "total": 136,
-        "behavior_or_helpers_reviewed": 23,
+        "total": 139,
+        "behavior_or_helpers_reviewed": 26,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 60,
+        "runtime_functions_identified": 63,
         "property_type_functions_identified": 71,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24593,6 +24593,7 @@
           "VisitGadgetNameProperties",
           "FindPackedObjectPropertyPayload",
           "AdvanceFilteredObjectGraphIterator",
+          "AcquireLeastUsedThreadBufferLane",
           "ComputeObjectHierarchyTransform",
           "InitializeGamePoolContext",
           "AcquireUnusedGamePoolContext",
@@ -24603,11 +24604,13 @@
           "ProcessMainThingUpdateWorker",
           "TransferTransformPropertyPayload",
           "RegisterVariantFieldOffset",
+          "GetCurrentThreadBufferWritePointer",
           "MarkObjectPackedResourceRoots",
           "MarkContainerPackedResourceRoots",
           "ReleasePackedResourcePage",
           "MarkPackedResourceTreeReachable",
-          "FinalizePackedResourceTreeWriter"
+          "FinalizePackedResourceTreeWriter",
+          "AppendSizedRecordToThreadBuffer"
         ],
         "todo_names": [
           "0x14010cf30",
@@ -24733,6 +24736,7 @@
           "1404f8350",
           "140705a90",
           "140769150",
+          "1408c6390",
           "140903590",
           "140904120",
           "14090e110",
@@ -24743,11 +24747,13 @@
           "140abb470",
           "140ad5f90",
           "140cfda40",
+          "140e38710",
           "141060410",
           "141060640",
           "141060f40",
           "1410614b0",
-          "141061af0"
+          "141061af0",
+          "1410aa730"
         ],
         "todo_addresses": [
           "14010cf30",
@@ -24869,12 +24875,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 20,
+            "done": 23,
             "todo": 13,
-            "total": 33,
-            "behavior_or_helpers_reviewed": 20,
+            "total": 36,
+            "behavior_or_helpers_reviewed": 23,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 26,
+            "runtime_functions_identified": 29,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24887,6 +24893,7 @@
               "FindBestFitKeyedResourceBlockRun",
               "AllocateKeyedResourceBlocks",
               "AdvanceFilteredObjectGraphIterator",
+              "AcquireLeastUsedThreadBufferLane",
               "InitializeGamePoolContext",
               "AcquireUnusedGamePoolContext",
               "RetainCurrentGamePoolContext",
@@ -24894,11 +24901,13 @@
               "SortU16IndicesByDescendingI32Keys",
               "LookupU32HashTableValue",
               "ProcessMainThingUpdateWorker",
+              "GetCurrentThreadBufferWritePointer",
               "MarkObjectPackedResourceRoots",
               "MarkContainerPackedResourceRoots",
               "ReleasePackedResourcePage",
               "MarkPackedResourceTreeReachable",
-              "FinalizePackedResourceTreeWriter"
+              "FinalizePackedResourceTreeWriter",
+              "AppendSizedRecordToThreadBuffer"
             ],
             "todo_names": [
               "0x1401115f0",
@@ -24924,6 +24933,7 @@
               "140119390",
               "1401194d0",
               "140769150",
+              "1408c6390",
               "140904120",
               "14090e110",
               "14090e280",
@@ -24931,11 +24941,13 @@
               "140912670",
               "140913a90",
               "140abb470",
+              "140e38710",
               "141060410",
               "141060640",
               "141060f40",
               "1410614b0",
-              "141061af0"
+              "141061af0",
+              "1410aa730"
             ],
             "todo_addresses": [
               "1401115f0",
@@ -24954,6 +24966,101 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "shared/runtime/common-routines",
+                "label": "Game contexts & runtime support",
+                "done": 11,
+                "todo": 1,
+                "total": 12,
+                "behavior_or_helpers_reviewed": 11,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 12,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AdvanceFilteredObjectGraphIterator",
+                  "AcquireLeastUsedThreadBufferLane",
+                  "InitializeGamePoolContext",
+                  "AcquireUnusedGamePoolContext",
+                  "RetainCurrentGamePoolContext",
+                  "ReleaseGamePoolContextReference",
+                  "SortU16IndicesByDescendingI32Keys",
+                  "LookupU32HashTableValue",
+                  "ProcessMainThingUpdateWorker",
+                  "GetCurrentThreadBufferWritePointer",
+                  "AppendSizedRecordToThreadBuffer"
+                ],
+                "todo_names": [
+                  "0x140abba30"
+                ],
+                "done_addresses": [
+                  "140769150",
+                  "1408c6390",
+                  "140904120",
+                  "14090e110",
+                  "14090e280",
+                  "14090e300",
+                  "140912670",
+                  "140913a90",
+                  "140abb470",
+                  "140e38710",
+                  "1410aa730"
+                ],
+                "todo_addresses": [
+                  "140abba30"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/common-routines/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 11,
+                    "todo": 1,
+                    "total": 12,
+                    "behavior_or_helpers_reviewed": 11,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 12,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AdvanceFilteredObjectGraphIterator",
+                      "AcquireLeastUsedThreadBufferLane",
+                      "InitializeGamePoolContext",
+                      "AcquireUnusedGamePoolContext",
+                      "RetainCurrentGamePoolContext",
+                      "ReleaseGamePoolContextReference",
+                      "SortU16IndicesByDescendingI32Keys",
+                      "LookupU32HashTableValue",
+                      "ProcessMainThingUpdateWorker",
+                      "GetCurrentThreadBufferWritePointer",
+                      "AppendSizedRecordToThreadBuffer"
+                    ],
+                    "todo_names": [
+                      "0x140abba30"
+                    ],
+                    "done_addresses": [
+                      "140769150",
+                      "1408c6390",
+                      "140904120",
+                      "14090e110",
+                      "14090e280",
+                      "14090e300",
+                      "140912670",
+                      "140913a90",
+                      "140abb470",
+                      "140e38710",
+                      "1410aa730"
+                    ],
+                    "todo_addresses": [
+                      "140abba30"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "shared/runtime/packed-resource-pages",
                 "label": "Resource pages",
@@ -25040,89 +25147,6 @@
                       "141061af0"
                     ],
                     "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/common-routines",
-                "label": "Game contexts & runtime support",
-                "done": 8,
-                "todo": 1,
-                "total": 9,
-                "behavior_or_helpers_reviewed": 8,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 9,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AdvanceFilteredObjectGraphIterator",
-                  "InitializeGamePoolContext",
-                  "AcquireUnusedGamePoolContext",
-                  "RetainCurrentGamePoolContext",
-                  "ReleaseGamePoolContextReference",
-                  "SortU16IndicesByDescendingI32Keys",
-                  "LookupU32HashTableValue",
-                  "ProcessMainThingUpdateWorker"
-                ],
-                "todo_names": [
-                  "0x140abba30"
-                ],
-                "done_addresses": [
-                  "140769150",
-                  "140904120",
-                  "14090e110",
-                  "14090e280",
-                  "14090e300",
-                  "140912670",
-                  "140913a90",
-                  "140abb470"
-                ],
-                "todo_addresses": [
-                  "140abba30"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/common-routines/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 8,
-                    "todo": 1,
-                    "total": 9,
-                    "behavior_or_helpers_reviewed": 8,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 9,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AdvanceFilteredObjectGraphIterator",
-                      "InitializeGamePoolContext",
-                      "AcquireUnusedGamePoolContext",
-                      "RetainCurrentGamePoolContext",
-                      "ReleaseGamePoolContextReference",
-                      "SortU16IndicesByDescendingI32Keys",
-                      "LookupU32HashTableValue",
-                      "ProcessMainThingUpdateWorker"
-                    ],
-                    "todo_names": [
-                      "0x140abba30"
-                    ],
-                    "done_addresses": [
-                      "140769150",
-                      "140904120",
-                      "14090e110",
-                      "14090e280",
-                      "14090e300",
-                      "140912670",
-                      "140913a90",
-                      "140abb470"
-                    ],
-                    "todo_addresses": [
-                      "140abba30"
-                    ],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39424,5 +39448,5 @@
       }
     ]
   },
-  "unmapped": 7960
+  "unmapped": 7957
 }

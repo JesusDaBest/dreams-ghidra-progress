@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "135 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "138 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9260,
-    "other_names": 293,
-    "verification": "complete_inventory_matches_baseline_plus_135_renames_and_two_created_functions"
+    "default_fun_names": 9257,
+    "other_names": 296,
+    "verification": "complete_inventory_matches_baseline_plus_138_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2726,6 +2726,66 @@
       "caveats": [
         "Descriptive analyst name; original source symbol not recovered.",
         "Precise context types, return contract, synchronization invariants and old/new state ownership remain unresolved.",
+        "No full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1408c6390",
+      "original_name": "FUN_1408c6390",
+      "applied_name": "AcquireLeastUsedThreadBufferLane",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "main-worker-buffer-lane-audit.json",
+        "main-worker-buffer-lane-lifecycle-audit.json",
+        "82 native instructions read and matched against live bytes; SHA256 741a16db8678d1bac15269b5ac3b7222d4008483e114cc029802b08c4aa325d5"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No signature, datatype or convention changes in this batch.",
+        "Exhaustion, concurrency invariants and complete caller behavior remain unresolved.",
+        "No full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140e38710",
+      "original_name": "FUN_140e38710",
+      "applied_name": "GetCurrentThreadBufferWritePointer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "main-worker-buffer-lane-audit.json",
+        "main-worker-buffer-lane-lifecycle-audit.json",
+        "19 native instructions read and matched against live bytes; SHA256 b7f813e3a6b966ace3be68a8708c714d9a643b4882ec6b7e8de094e33c9ab45c"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No signature, datatype or convention changes in this batch.",
+        "Exhaustion, concurrency invariants and complete caller behavior remain unresolved.",
+        "No full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1410aa730",
+      "original_name": "FUN_1410aa730",
+      "applied_name": "AppendSizedRecordToThreadBuffer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "main-worker-buffer-lane-audit.json",
+        "main-worker-buffer-lane-lifecycle-audit.json",
+        "103 native instructions read and matched against live bytes; SHA256 0640621e7db81ace647209c63884c89ba375ac2e2c6613986de5993e992d65d9"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No signature, datatype or convention changes in this batch.",
+        "Exhaustion, concurrency invariants and complete caller behavior remain unresolved.",
         "No full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"

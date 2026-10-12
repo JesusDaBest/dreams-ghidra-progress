@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1593,
-  "unmapped_total": 7960,
+  "mapped_total": 1596,
+  "unmapped_total": 7957,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41515,6 +41515,66 @@
           "kind": "verified_semantic_review",
           "name": "ProcessMainThingUpdateWorker",
           "support": "MainThingUpdate callback dispatch, full native work-claim/dependency body, and exact thread-local import bindings inspected."
+        }
+      ]
+    },
+    "1408c6390": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_main_update_buffer_lane_helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "ca3bf7b9f2dfac79e07847b472d78c69a7ebbc8ebe591d9add35506055162b19",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AcquireLeastUsedThreadBufferLane",
+          "support": "Complete native helper body, buffer descriptor initialization, worker release and record-appending caller neighborhoods inspected."
+        }
+      ]
+    },
+    "140e38710": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_main_update_buffer_lane_helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "dacc40e946441b826d0f9be991303e19b3f4298ff0b7b5fe6fec37490838f24e",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetCurrentThreadBufferWritePointer",
+          "support": "Complete native helper body, buffer descriptor initialization, worker release and record-appending caller neighborhoods inspected."
+        }
+      ]
+    },
+    "1410aa730": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_main_update_buffer_lane_helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "c0e8c43a737e77bbc4c201ca2bedd62b1e02a8169023e05131728cff371d1b1d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendSizedRecordToThreadBuffer",
+          "support": "Complete native helper body, buffer descriptor initialization, worker release and record-appending caller neighborhoods inspected."
         }
       ]
     }
