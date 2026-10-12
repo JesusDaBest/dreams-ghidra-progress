@@ -1089,3 +1089,11 @@ A separate property visitor reads the three signed easing-strength bytes and for
 `FindThingPropertyMetadata` now describes the 98-instruction lookup reviewed in the preceding checkpoint. Its complete native body, all six specialized object-kind dispatch paths and static sentinel records were verified. Related registration code establishes the shared key and record layout. The name identifies its descriptive role; it does not assert an original symbol, full table-population correctness or a packed Animation sample writer.
 
 A cold backup preceded this name-only change. Clean reopening verified the unchanged 324 body bytes, 17 reference addresses and prototype. The full inventory now contains 153 checked descriptive names, including 112 among 1,608 mapped functions. Original archive hashes are unchanged. No full-behavior completion credit was added; the variant matching difference and sample-control producer remain unresolved.
+
+### Animation timed-record merge path traced
+
+Native caller and jump-table review now ties a 12-byte timed-record writer to Animation descriptors. The parent selects Animation objects, walks their descriptor resource tree and dispatches four record-type cases to this writer. Reviewed write paths copy timestamp, payload and control data into resource pages while applying a time offset and updating used-byte counts.
+
+At one near-equal timestamp boundary (strictly less than approximately 1/60 second), native masks preserve the existing record's easing-strength bits while conditionally combining lower control flags with the incoming record. A separate boundary path can select control nibble 9 or clear the low nibble under reviewed flag conditions. This establishes control modification during merging; it does not yet identify where the incoming controls were originally generated.
+
+The full 194-instruction parent and selected writer regions were read. The writer's captured 1,081 instructions are not counted as fully understood. Remaining prefix/suffix paths, ownership, failure behavior and the source-buffer producer are unresolved. No speculative name, mapping increase, runtime validation claim or full-behavior credit was added.
