@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "102 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "105 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9293,
-    "other_names": 259,
-    "verification": "complete_inventory_matches_baseline_plus_102_renames_and_one_created_function"
+    "default_fun_names": 9290,
+    "other_names": 262,
+    "verification": "complete_inventory_matches_baseline_plus_105_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2060,6 +2060,60 @@
         "Complete 43-instruction native body examined; advances a resource-tree leaf iterator by popping exhausted parents and descending the next child.",
         "Shared callers support a general resource-tree role rather than a sculpt-only role.",
         "Full 162-byte span unchanged after saving and reopening."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only; no prototype, type or calling-convention changes.",
+        "No complete-behavior credit or runtime validation."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c6a060",
+      "original_name": "FUN_140c6a060",
+      "applied_name": "InitializePackedResourceRecordIterator",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete 101-instruction initializer follows resource-tree leaves, skips empty leaves and initializes decoded record state.",
+        "Complete native byte span unchanged after saving and reopening; known callers include the thermometer sculpt-primitive accounting path."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only; no prototype, type or calling-convention changes.",
+        "No complete-behavior credit or runtime validation."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c69060",
+      "original_name": "FUN_140c69060",
+      "applied_name": "AdvancePackedResourceRecordIterator",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete 60-instruction advance helper preserves decoded state within a leaf and resets it when moving to a new leaf.",
+        "Complete native byte span unchanged after saving and reopening; known callers include the thermometer sculpt-primitive accounting path."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only; no prototype, type or calling-convention changes.",
+        "No complete-behavior credit or runtime validation."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140c69140",
+      "original_name": "FUN_140c69140",
+      "applied_name": "DecodePackedResourceRecordDelta",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete 100-instruction decoder applies optional field updates and reads payload variants selected by effective state; absent fields carry forward.",
+        "Complete native byte span unchanged after saving and reopening; known callers include the thermometer sculpt-primitive accounting path."
       ],
       "caveats": [
         "Analyst descriptive name, not recovered original symbol.",

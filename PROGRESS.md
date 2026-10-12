@@ -699,3 +699,14 @@ Native code connects a worker callback to the internal label `Thermometer`. Its 
 The resource-count helper returns two distinct values: accepted iterator entries and a sum derived from record lengths divided by 40. Both the thermometer's current `SculptsSprites` contribution and a separate candidate-budget path use the length-derived second output. The candidate path scales it by 1/524,288 and adds it to the current normalized sprite metric before a limit comparison. The first output feeds a separate conditional worker counter whose final metric remains unresolved. Correction: an earlier explanation reversed the thermometer's output pointers; tracing the native call arguments and accumulation instructions resolved that error. This is static code evidence, not a claim that every counted entry is a rendered sprite or that a game defect has been demonstrated.
 
 There are now 103 checked descriptive names among 9,552 discovered functions. This batch adds no complete-behavior credit or provisional subsystem mapping. Internal game-resource budgets are separate from progress in understanding Dreams.
+
+
+### Packed resource records and sculpt accounting
+
+Three descriptive names are now verified after reopening: `InitializePackedResourceRecordIterator`, `AdvancePackedResourceRecordIterator` and `DecodePackedResourceRecordDelta`. Their complete native bodies total 261 instructions and 895 bytes, all unchanged by the name-only edits. The iterator traverses resource-tree leaves; the decoder updates selected fields while retaining others. State is carried between records within a leaf and reset when advancing to another leaf. Original record type names remain unresolved.
+
+The thermometer's `ScopeSculptPrimitives` metric sums weights from the effective decoded state, divides by 120,000 and caps the result at 1 before later filtering. Its `ThingWires` metric counts records subject to endpoint filters and divides by 16,383. Both divisors were checked against executable memory. These are game resource measurements, not reverse-engineering percentages.
+
+Another worker branch maps to physics joints, collectabubbles, prizes and portals. The prize path compares 128-bit identifiers but retains at most 150 distinct identifiers for comparison. Repeats of identifiers first encountered after that capacity can count again in the translated algorithm. Runtime occurrence and producer constraints remain unverified; this is not an observed game bug.
+
+There are now 106 checked descriptive names among 9,552 discovered functions. No full-behavior completion credit or new subsystem assignment is claimed for this batch. Raw code and detailed native traces remain local.
