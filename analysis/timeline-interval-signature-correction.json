@@ -1,0 +1,19 @@
+{
+  "address": "14075f200",
+  "name": "ComputeThingTimelineInterval",
+  "signature": "void PS4_SYSV ComputeThingTimelineInterval(void *input_thing, void *timeline_context, float *interval_first, float *interval_second, float input_minimum, float input_maximum)",
+  "direct_call_sites_reviewed": 18,
+  "status": "verified_after_reopening",
+  "validation": [
+    "Integer and floating-point native input registers traced at all 18 discovered direct calls",
+    "Isolated cold-copy trial before live promotion",
+    "Only the intended function signature changed",
+    "Native instruction bytes unchanged",
+    "Full name inventory and original archive integrity verified after reopening"
+  ],
+  "limits": [
+    "Concrete context structure remains unresolved",
+    "Caller review covers argument setup, not complete caller behavior",
+    "No runtime or whole-subsystem completion credit"
+  ]
+}

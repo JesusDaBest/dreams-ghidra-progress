@@ -855,3 +855,11 @@ The selected playback position reaches Sound's registered `Playhead` field. Norm
 `GetThingTimeBounds` had an incorrect two-argument calling convention and signature. Its native body and all 50 statically referenced direct call setups support four arguments: object, minimum float output, maximum float output, and trim flag. A cold backup and isolated trial preceded correction to `PS4_SYSV`; the corrected signature and function inventory were verified after reopening. Only that function's signature changed, and its instruction bytes and original archives were preserved. The trial also exposed downstream signatures that remain unresolved.
 
 [Media Molecule developer Bogdan Vera’s 2020 audio presentation](https://www.youtube.com/watch?v=-UyiXUJcIQ0&t=3046s) describes Power as both a volume input and a trigger-edge input. The static trace supports that direction of investigation, but the presentation is a lead rather than proof of this executable's complete behavior. No additional checked names, runtime validation, full-function behavior credit or whole-game completion percentage was added for this partial trace.
+
+### Shared timeline timing helpers
+
+`GetThingTimeBounds`, `ComputeThingTimelineInterval`, and the newly named `ComputeThingTimelineIntervalFromTimeBounds` are mapped to shared runtime code. They handle timing across object kinds, rather than belonging exclusively to sound or one gadget family.
+
+The interval helper now has a corrected six-argument PS4 calling convention: object, context, two output pointers, and two floating-point bounds. All 18 discovered direct call argument setups were inspected. A cold-copy trial preceded the live correction; reopening confirmed persistence and unchanged instruction bytes. The context term uses the Timeline CanvasProps origin and zoom field, not the Playhead field. Concrete context types and complete caller behavior remain unresolved.
+
+The wrapper's complete 38-instruction body obtains time bounds and forwards them to the interval helper. All three direct callers were inspected. Its descriptive name was verified after reopening; its prototype remains unchanged. There are now 141 checked descriptive names among 9,553 discovered functions. These changes add no full-behavior completion credit.

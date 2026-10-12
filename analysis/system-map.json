@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1596,
-  "unmapped_total": 7957,
+  "mapped_total": 1599,
+  "unmapped_total": 7954,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41575,6 +41575,66 @@
           "kind": "verified_semantic_review",
           "name": "AppendSizedRecordToThreadBuffer",
           "support": "Complete native helper body, buffer descriptor initialization, worker release and record-appending caller neighborhoods inspected."
+        }
+      ]
+    },
+    "14075e580": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_cross_kind_timeline_timing_helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native_body_and_direct_call_argument_review",
+      "code_sha256": "7247bdf111ce4235fd9277db5c3c569231071492e631ec9d29cf214ab489075a",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetThingTimeBounds",
+          "support": "Native timing body and direct caller argument setups reviewed; handles multiple object kinds. Cached pseudocode hash is provenance only; live corrected signatures and native instructions are authoritative."
+        }
+      ]
+    },
+    "14075f200": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_cross_kind_timeline_timing_helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native_body_and_direct_call_argument_review",
+      "code_sha256": "8f0d3c124b56a95b45200be1b8f2a4492e88d8e01a380261591349cda23f33ac",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeThingTimelineInterval",
+          "support": "Native timing body and direct caller argument setups reviewed; handles multiple object kinds. Cached pseudocode hash is provenance only; live corrected signatures and native instructions are authoritative."
+        }
+      ]
+    },
+    "14075f490": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_cross_kind_timeline_timing_helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native_body_and_direct_call_argument_review",
+      "code_sha256": "4d57d5db5f0db5af19b637bb4ccaaf2b0e3327e6009491b3b972cdeb26384f98",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeThingTimelineIntervalFromTimeBounds",
+          "support": "Native timing body and direct caller argument setups reviewed; handles multiple object kinds. Cached pseudocode hash is provenance only; live corrected signatures and native instructions are authoritative."
         }
       ]
     }

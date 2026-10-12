@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "138 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "139 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9257,
-    "other_names": 296,
-    "verification": "complete_inventory_matches_baseline_plus_138_renames_and_two_created_functions"
+    "default_fun_names": 9256,
+    "other_names": 297,
+    "verification": "complete_inventory_matches_baseline_plus_139_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2787,6 +2787,26 @@
         "No signature, datatype or convention changes in this batch.",
         "Exhaustion, concurrency invariants and complete caller behavior remain unresolved.",
         "No full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14075f490",
+      "original_name": "FUN_14075f490",
+      "applied_name": "ComputeThingTimelineIntervalFromTimeBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Full native wrapper body: obtains minimum and maximum from GetThingTimeBounds, forwards original object/context/output pointers and those floats into ComputeThingTimelineInterval.",
+        "All3 direct callers checked: each validates containing object kind14 Timeline; trim argument values0,1,0.",
+        "Both callee signatures corrected and verified after reopening; isolated trial decompilation shows complete wrapper dataflow.",
+        "38 native instructions and117 bytes matched live; SHA256 a5ab7002e3468a4624436de6288a4a8d969c161fa56547432df32010d621cd5e"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "Naming only: no wrapper signature or body changes.",
+        "No whole-caller or subsystem completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

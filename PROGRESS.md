@@ -842,3 +842,11 @@ Exhaustion, nested caller behavior and concurrency invariants remain unresolved.
 ### Sound playback trace and time-bounds signature correction
 
 Traced Power comparisons through registered trigger-state fields and Playhead writes. Corrected `GetThingTimeBounds` to four arguments with the verified calling convention after reviewing 50 direct call setups, running an isolated trial, and checking persistence after reopening. Original archives and instruction bytes were preserved. Previous-frame context identity and complete Sound update behavior remain unresolved. Counts and full-behavior coverage are unchanged; see [research findings](ANALYSIS.md#sound-power-triggering-and-playhead).
+
+### Shared timeline timing helpers
+
+`GetThingTimeBounds`, `ComputeThingTimelineInterval`, and the newly named `ComputeThingTimelineIntervalFromTimeBounds` are mapped to shared runtime code. They handle timing across object kinds, rather than belonging exclusively to sound or one gadget family.
+
+The interval helper now has a corrected six-argument PS4 calling convention: object, context, two output pointers, and two floating-point bounds. All 18 discovered direct call argument setups were inspected. A cold-copy trial preceded the live correction; reopening confirmed persistence and unchanged instruction bytes. The context term uses the Timeline CanvasProps origin and zoom field, not the Playhead field. Concrete context types and complete caller behavior remain unresolved.
+
+The wrapper's complete 38-instruction body obtains time bounds and forwards them to the interval helper. All three direct callers were inspected. Its descriptive name was verified after reopening; its prototype remains unchanged. There are now 141 checked descriptive names among 9,553 discovered functions. These changes add no full-behavior completion credit.
