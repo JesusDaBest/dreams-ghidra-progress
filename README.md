@@ -37,13 +37,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/726c1a7390cf2022ef1f4d5ad8e395931f594485/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/cae5ab2f23d4fa635371bd733fe0f0a82934aff8/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**135 of 9,552 functions named and checked.** A function is one piece of the game's code.
+**136 of 9,552 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/726c1a7390cf2022ef1f4d5ad8e395931f594485/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/cae5ab2f23d4fa635371bd733fe0f0a82934aff8/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -57,14 +57,14 @@ Every square is one actual function and has the same size. All function squares 
 | Sculpting & painting | 122 | 5/83 | 0/39 |
 | Gadgets & logic | 463 | 5/8 | 38/454 |
 | Physics & collision | 60 | 2/28 | 0/32 |
-| Sound & music | 71 | 9/9 | 0/62 |
+| Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 46 | None mapped | 0/46 |
 | Rendering & lighting | 274 | 0/245 | 0/29 |
 | Editor & interface | 313 | 0/106 | 0/205 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 135 | 22/59 | 5/71 |
 
-**1,591 of 9,552 discovered functions are mapped; 7,961 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,592 of 9,552 discovered functions are mapped; 7,960 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1143,7 +1143,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Player identity** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Level & recent records** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-- **Sound & music** - 71 functions identified; 9 behavior/helper reviews; 0 property/type reviews
+- **Sound & music** - 72 functions identified; 10 behavior/helper reviews; 0 property/type reviews
   - **Sound editing** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1193,13 +1193,13 @@ Every square is one actual function and has the same size. All function squares 
     - **Audio Number** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sound appearance** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+  - **Sample playback** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+    - **Playback positioning** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
   - **Synthesis & modulation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **LFOShape** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Osc Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Sample playback** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
-    - **Playback positioning** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
   - **Samples & MIDI** - 3 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Wave Slice** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
