@@ -677,3 +677,14 @@ Before caching, it computes a predominant right-to-left text flag. Native charac
 Related response analysis distinguishes status handling, deferred parsing and cache consumption. Static evidence identifies a queue whose worker publishes parsed records and whose consumer matches them against requested identifiers. A zero parsed-record count also serves as a readiness condition; whether an empty parse can remain queued requires further investigation. No runtime failure is claimed.
 
 There are now 101 checked descriptive names among 9,552 discovered functions. Original archives, function bytes, calling conventions and the complete inventory passed persistence checks. No complete-behavior coverage credit was added; the precise subsystem assignment of this cache helper remains unresolved.
+
+
+### Version record and resource summaries
+
+`ResolveAndCacheVersionRecord` (`1403b2030`) now has a descriptive name verified after saving and reopening. When handling a root version record, it resolves selected creation references through the cache. A missing dependency triggers a waiting cache status rather than normal payload storage. Normal records store a payload or status 7 according to a record flag; its precise meaning remains unresolved.
+
+Startup assembly reconstructs 59 resource-metric entries whose stored table is initially zero. Member names support three summary categories: gameplay resources, graphics resources and audio resources. A producer examines indices 0 through 57 and admits 17 metrics from those categories, multiplies their values by 255, stores floats without clamping, and computes category maxima. These are internal game-resource summaries, not reverse-engineering completion percentages. Upstream metric calculations remain under review.
+
+Zero identifiers in another record array receive eight random bytes through an import matched to `sceRandomGetRandomNumber` in [pinned shadPS4 source](https://github.com/shadps4-emu/shadPS4/blob/e0a466753a1aacbc8db8253be685bf7ab4d9daae/src/core/libraries/random/random.cpp). The native caller ignores its result and does not retry zero identifiers. This is static analysis, not an observed runtime failure or a claim about console random quality.
+
+The dispatcher consumes two output registers from the version helper; saved pseudocode omits one. That contract is documented locally, with no speculative prototype change. There are now 102 checked descriptive names among 9,552 discovered functions. The 1,159-byte function span, complete inventory and original archives passed persistence checks. No complete-behavior coverage credit or provisional subsystem assignment was added.
