@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 79,
+    "done": 83,
     "todo": 1496,
-    "total": 1575,
-    "behavior_or_helpers_reviewed": 32,
+    "total": 1579,
+    "behavior_or_helpers_reviewed": 36,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24570,16 +24570,20 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 20,
+        "done": 24,
         "todo": 108,
-        "total": 128,
-        "behavior_or_helpers_reviewed": 15,
+        "total": 132,
+        "behavior_or_helpers_reviewed": 19,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 52,
+        "runtime_functions_identified": 56,
         "property_type_functions_identified": 71,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
         "done_names": [
+          "TouchKeyedResourceLastUseCounter",
+          "CopyKeyedResourceDescriptorOrDefault",
+          "QueryKeyedResourceMetadataWithFallback",
+          "EvictOldestEligibleKeyedResource",
           "VisitPosProperties",
           "VisitVariantProperties",
           "VisitCanvasProperties",
@@ -24712,6 +24716,10 @@
           "0x141606ff0"
         ],
         "done_addresses": [
+          "140118620",
+          "1401186d0",
+          "1401187e0",
+          "140118a00",
           "1404f68b0",
           "1404f70b0",
           "1404f7a20",
@@ -24853,16 +24861,20 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 12,
+            "done": 16,
             "todo": 13,
-            "total": 25,
-            "behavior_or_helpers_reviewed": 12,
+            "total": 29,
+            "behavior_or_helpers_reviewed": 16,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 18,
+            "runtime_functions_identified": 22,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "TouchKeyedResourceLastUseCounter",
+              "CopyKeyedResourceDescriptorOrDefault",
+              "QueryKeyedResourceMetadataWithFallback",
+              "EvictOldestEligibleKeyedResource",
               "AdvanceFilteredObjectGraphIterator",
               "InitializeGamePoolContext",
               "AcquireUnusedGamePoolContext",
@@ -24892,6 +24904,10 @@
               "0x140cea620"
             ],
             "done_addresses": [
+              "140118620",
+              "1401186d0",
+              "1401187e0",
+              "140118a00",
               "140769150",
               "140904120",
               "14090e110",
@@ -24922,6 +24938,85 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "shared/runtime/packed-resource-pages",
+                "label": "Resource pages",
+                "done": 9,
+                "todo": 0,
+                "total": 9,
+                "behavior_or_helpers_reviewed": 9,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 9,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "TouchKeyedResourceLastUseCounter",
+                  "CopyKeyedResourceDescriptorOrDefault",
+                  "QueryKeyedResourceMetadataWithFallback",
+                  "EvictOldestEligibleKeyedResource",
+                  "MarkObjectPackedResourceRoots",
+                  "MarkContainerPackedResourceRoots",
+                  "ReleasePackedResourcePage",
+                  "MarkPackedResourceTreeReachable",
+                  "FinalizePackedResourceTreeWriter"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140118620",
+                  "1401186d0",
+                  "1401187e0",
+                  "140118a00",
+                  "141060410",
+                  "141060640",
+                  "141060f40",
+                  "1410614b0",
+                  "141061af0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/packed-resource-pages/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 9,
+                    "todo": 0,
+                    "total": 9,
+                    "behavior_or_helpers_reviewed": 9,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 9,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "TouchKeyedResourceLastUseCounter",
+                      "CopyKeyedResourceDescriptorOrDefault",
+                      "QueryKeyedResourceMetadataWithFallback",
+                      "EvictOldestEligibleKeyedResource",
+                      "MarkObjectPackedResourceRoots",
+                      "MarkContainerPackedResourceRoots",
+                      "ReleasePackedResourcePage",
+                      "MarkPackedResourceTreeReachable",
+                      "FinalizePackedResourceTreeWriter"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140118620",
+                      "1401186d0",
+                      "1401187e0",
+                      "140118a00",
+                      "141060410",
+                      "141060640",
+                      "141060f40",
+                      "1410614b0",
+                      "141061af0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "shared/runtime/common-routines",
                 "label": "Game contexts & runtime support",
@@ -24996,69 +25091,6 @@
                     "todo_addresses": [
                       "140abba30"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/packed-resource-pages",
-                "label": "Resource pages",
-                "done": 5,
-                "todo": 0,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "MarkObjectPackedResourceRoots",
-                  "MarkContainerPackedResourceRoots",
-                  "ReleasePackedResourcePage",
-                  "MarkPackedResourceTreeReachable",
-                  "FinalizePackedResourceTreeWriter"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141060410",
-                  "141060640",
-                  "141060f40",
-                  "1410614b0",
-                  "141061af0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/packed-resource-pages/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 5,
-                    "todo": 0,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 5,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 5,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "MarkObjectPackedResourceRoots",
-                      "MarkContainerPackedResourceRoots",
-                      "ReleasePackedResourcePage",
-                      "MarkPackedResourceTreeReachable",
-                      "FinalizePackedResourceTreeWriter"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141060410",
-                      "141060640",
-                      "141060f40",
-                      "1410614b0",
-                      "141061af0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39166,5 +39198,5 @@
       }
     ]
   },
-  "unmapped": 7977
+  "unmapped": 7973
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1575,
-  "unmapped_total": 7977,
+  "mapped_total": 1579,
+  "unmapped_total": 7973,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41165,6 +41165,86 @@
           "kind": "verified_semantic_review",
           "name": "MarkPackedResourceTreeReachable",
           "support": "Root visitors atomically publish resource-page references; recursive marker follows resource tree child indices and category-specific external references. Native collector call chain corroborates shared ownership."
+        }
+      ]
+    },
+    "140118620": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "e86aa6daef1b7ec59320938ac2d7a88e1a256a6a5955f994d5f11b82d338d62f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TouchKeyedResourceLastUseCounter",
+          "support": "Same initialized8192-slot keyed resource table is used by lookup, timestamp touch and eviction; sound root references and shared collector counter establish cross-subsystem storage support."
+        }
+      ]
+    },
+    "1401186d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "7f6a32bd34ec583dc23f24d8b47a02db2a0ba79273a3784ecc1df9b5084adddc",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopyKeyedResourceDescriptorOrDefault",
+          "support": "Same initialized8192-slot keyed resource table is used by lookup, timestamp touch and eviction; sound root references and shared collector counter establish cross-subsystem storage support."
+        }
+      ]
+    },
+    "1401187e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "f030a314f89c3535b63ecbe191e188ae6e5fcd9037cf98f891f49697ccc9eb7e",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueryKeyedResourceMetadataWithFallback",
+          "support": "Same initialized8192-slot keyed resource table is used by lookup, timestamp touch and eviction; sound root references and shared collector counter establish cross-subsystem storage support."
+        }
+      ]
+    },
+    "140118a00": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "adb3f1880d1c46fb5363326bf9a8978da9b45563d3e100b00f6cd0af94b58d53",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvictOldestEligibleKeyedResource",
+          "support": "Same initialized8192-slot keyed resource table is used by lookup, timestamp touch and eviction; sound root references and shared collector counter establish cross-subsystem storage support."
         }
       ]
     }
