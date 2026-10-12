@@ -907,3 +907,11 @@ The source frame at 20:41 of Media Molecule's [Liam coding stream](https://www.y
 The mask-clearing gate is now linked to its prepared reference lookup: 80 current consumer instructions and 55 producer instructions were reviewed. A nonzero object mask is retained for mode 0; other modes require a valid referenced identifier and a matching prepared entry. Mode 1 uses a presence field, while other modes use a one-based record index and verify that record's mode byte. References outside the lookup-table range fall back to a scan matching the full identifier and mode; exhaustion clears the object byte.
 
 Simulation preparation builds that table from the same records, with separate index fields for mode-1 and other records. Another record byte controls two packed flags; it is not conflated with the mode byte. Original mode/record names, index-capacity invariants and runtime implications remain unresolved. This is bounded static behavior evidence, with no new checked names or full-function completion credit.
+
+### Indexed resource records used by Animation
+
+`GetResourceTreeRecord72ByOrdinal` is named and verified after reopening. Its full 100-instruction, 339-byte native body walks resource-tree leaves and selects a 72-byte record by ordinal. All three direct caller argument/result neighborhoods were reviewed; they use an object resource index and a descriptor ordinal, then inspect record type, flags or timing data. The leaf-count arithmetic was checked for every possible 16-bit header value.
+
+The name describes verified mechanics, not a recovered source symbol. Negative-ordinal, resource-capacity and iterator-depth assumptions remain unresolved. The record's full layout and source type are unproven, so no concrete types or full-behavior completion credit were added. There are 143 checked descriptive names among 9,553 discovered functions. This helper remains outside the subsystem map until its broader ownership is established.
+
+A separate 76-instruction review of the Animation evaluation entry verified predicate bypasses for power and time-window gates. Native unordered floating-point comparisons can pass these gates where an ordinary pseudocode comparison would suggest otherwise. Later evaluation paths remain under investigation.

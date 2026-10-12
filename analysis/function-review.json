@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "140 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "141 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9255,
-    "other_names": 298,
-    "verification": "complete_inventory_matches_baseline_plus_140_renames_and_two_created_functions"
+    "default_fun_names": 9254,
+    "other_names": 299,
+    "verification": "complete_inventory_matches_baseline_plus_141_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2828,6 +2828,27 @@
         "Descriptive analyst name; mask and mode enum meanings remain unresolved.",
         "No prototype or type changes; full caller behavior and runtime invariants are not claimed.",
         "No whole-function behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14106fed0",
+      "original_name": "FUN_14106fed0",
+      "applied_name": "GetResourceTreeRecord72ByOrdinal",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_native_mechanics",
+      "evidence": [
+        "Full100-instruction339-byte contiguous native body reviewed; SHA256 7de715a5a7cc3bfa5db2f4a05e7931a8c95ba4e65607550ae7ff49d2cd83d355",
+        "All three direct caller argument/result neighborhoods reviewed.",
+        "Resource leaves use512-byte stride; records have72-byte stride; ordinal traversal matches native signed comparisons.",
+        "Reciprocal leaf count identity verified for all65536 unsigned16 headers."
+      ],
+      "caveats": [
+        "Record source-level name and complete layout are unproven; candidate describes mechanics only.",
+        "Negative ordinal, resource-pool capacity and iterator-depth invariants require caller/producer analysis.",
+        "The null pool test occurs after initial header traversal; no comprehensive input-safety guarantee is claimed.",
+        "No prototype change or whole-function behavior completion credit proposed."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
