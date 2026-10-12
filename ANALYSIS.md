@@ -955,3 +955,11 @@ These findings cover specific dispatch, layout, and comparison paths. The large 
 `ConvertTaggedValueToTwoFloat4Blocks` is now named after reviewing its complete 32-instruction body and all 13 direct caller argument/result neighborhoods. Callers copy its 32-byte output, use both blocks in Animation sampling and blend math, compare them with reference values, or unpack eight components for a callback. The name describes the observed conversion; original structure names and complete caller behavior remain unresolved.
 
 After a cold backup, only the name changed. A clean reopening verified that name, all native instructions, and the full direct-reference list. The prototype remains unchanged. The function is mapped to shared property data rather than credited exclusively to Animation. There are now 145 checked descriptive names and 1,602 mapped functions; no full-behavior completion credit was added.
+
+### Animation time snapping and gap-dependent sampling
+
+The common 20-byte sampler path snaps a query to nearby timestamps using a strict tolerance of approximately `0.0001`. Its interior search adjusts neighboring record indices using the midpoint timestamp minus that tolerance. The selected timestamps receive another snapping check before the payload operation.
+
+The payload operation is not always interpolation. When the native comparison finds `lower_time + 0.05000000447 > upper_time`, it forms a linear blend of the four-component payloads. The alternative path chooses the lower or upper sample, switching on an ordered query greater than approximately `upper_time - 0.03333333507 + 0.0001`. Native unordered comparisons follow the selection branch; duplicate/unsorted timestamps and nonfinite inputs are not assumed valid.
+
+A separate before-first branch reads the registered Animation field `AnimUseNewBehavior`. Under its ordered time conditions, that field can zero output metadata and set an optional flag. It is distinct from the record flag that selects 20-byte versus 24-byte layouts. These are bounded native findings; cross-leaf reconstruction, later blending, and complete sampler behavior remain unresolved. No additional names or completion credit were added.
