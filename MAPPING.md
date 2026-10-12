@@ -166,3 +166,11 @@ Exhaustion, nested caller behavior and concurrency invariants remain unresolved.
 The interval helper now has a corrected six-argument PS4 calling convention: object, context, two output pointers, and two floating-point bounds. All 18 discovered direct call argument setups were inspected. A cold-copy trial preceded the live correction; reopening confirmed persistence and unchanged instruction bytes. The context term uses the Timeline CanvasProps origin and zoom field, not the Playhead field. Concrete context types and complete caller behavior remain unresolved.
 
 The wrapper's complete 38-instruction body obtains time bounds and forwards them to the interval helper. All three direct callers were inspected. Its descriptive name was verified after reopening; its prototype remains unchanged. There are now 141 checked descriptive names among 9,553 discovered functions. These changes add no full-behavior completion credit.
+
+### Animation keyframe and input predicate
+
+`HasAnimationKeyframeMaskOrEligibleInput` is now named and verified after reopening. Its complete 58-instruction body returns false for null or non-Animation objects. For keyframes it tests object mask bits excluded by a referenced object's mask, then scans input records that can set the boolean result. All six discovered direct argument/result neighborhoods were inspected, spanning update, dependency marking and animation evaluation. Live enum/type registration identifies Animation kind 9, and live field registration identifies `IsKeyframe` at `+0x134`.
+
+Only the descriptive name changed. Mask enum meanings, input-record mode semantics, concrete types and complete caller behavior remain unresolved. There are 142 checked descriptive names among 9,553 discovered functions; no full-behavior completion credit was added.
+
+The earlier Timeline-chain divisor is now linked through live offset initializers and field registration to `PlaybackSpeed` for Sound and Timeline. A second chain producer and an adjacent bit-6/7 producer were also checked against 111 native instructions. Surrounding record selection, flag resets and other object-kind bindings remain unresolved.

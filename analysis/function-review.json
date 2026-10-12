@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "139 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "140 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9256,
-    "other_names": 297,
-    "verification": "complete_inventory_matches_baseline_plus_139_renames_and_two_created_functions"
+    "default_fun_names": 9255,
+    "other_names": 298,
+    "verification": "complete_inventory_matches_baseline_plus_140_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2807,6 +2807,27 @@
         "Descriptive analyst name, not recovered original symbol.",
         "Naming only: no wrapper signature or body changes.",
         "No whole-caller or subsystem completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1407032a0",
+      "original_name": "FUN_1407032a0",
+      "applied_name": "HasAnimationKeyframeMaskOrEligibleInput",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_native_predicate",
+      "evidence": [
+        "Complete 58-instruction native body reviewed; null or non-Animation objects return false.",
+        "Live enum and type descriptor identify kind9 as Animation; live registered field +0x134 is IsKeyframe.",
+        "Initial candidate uses nonzero keyframe mask bits excluded by the referenced object mask; matching eligible input records can only set the candidate.",
+        "All six discovered direct call argument and result neighborhoods reviewed across update, dependency marking and animation evaluation paths.",
+        "214 defined instruction bytes (excluding 8 bytes of alignment padding) SHA256 d12e7c0a7da4c61cb7e1640e179441a004eb76ea9555d697068e79ff6bbcfaa6"
+      ],
+      "caveats": [
+        "Descriptive analyst name; mask and mode enum meanings remain unresolved.",
+        "No prototype or type changes; full caller behavior and runtime invariants are not claimed.",
+        "No whole-function behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
