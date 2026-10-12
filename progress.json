@@ -3,8 +3,8 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 59,
-    "todo": 1501,
+    "done": 61,
+    "todo": 1499,
     "total": 1560,
     "behavior_or_helpers_reviewed": 16,
     "properties_or_types_reviewed": 43,
@@ -13,8 +13,8 @@
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 42,
-        "todo": 420,
+        "done": 44,
+        "todo": 418,
         "total": 462,
         "behavior_or_helpers_reviewed": 4,
         "properties_or_types_reviewed": 38,
@@ -42,6 +42,7 @@
           "SubmitTeleporterPositionOffsetCommand",
           "InitializeVariableGadgetDefaults",
           "RegisterTeleporterTypeDescriptor",
+          "RegisterForceRepulseGadgetTypeDescriptor",
           "RegisterCombinerTypeDescriptor",
           "RegisterMagicDoorTypeDescriptor",
           "RegisterSignalInspectorTypeDescriptor",
@@ -64,6 +65,7 @@
           "RegisterSignalInspectorFieldOffsets",
           "RegisterMagicDoorFieldOffsets",
           "RegisterCombinerFieldOffsets",
+          "RegisterForceRepulseGadgetFieldOffsets",
           "RegisterTeleporterFieldOffsets"
         ],
         "todo_names": [
@@ -390,7 +392,6 @@
           "0x140d56d50",
           "0x140d56e20",
           "0x140d56ef0",
-          "0x140d56fc0",
           "0x140d57160",
           "0x140d57230",
           "0x140d57300",
@@ -464,7 +465,6 @@
           "0x140d6ef00",
           "0x140d6f6a0",
           "0x140d6fca0",
-          "0x140d71ed0",
           "0x140d728d0",
           "0x140d743c0",
           "0x140d752a0",
@@ -508,6 +508,7 @@
           "1408f2180",
           "140944f20",
           "140d55830",
+          "140d56fc0",
           "140d57980",
           "140d57a50",
           "140d57b20",
@@ -530,6 +531,7 @@
           "140d6e2b0",
           "140d6e570",
           "140d6e850",
+          "140d71ed0",
           "140d78870"
         ],
         "todo_addresses": [
@@ -856,7 +858,6 @@
           "140d56d50",
           "140d56e20",
           "140d56ef0",
-          "140d56fc0",
           "140d57160",
           "140d57230",
           "140d57300",
@@ -930,7 +931,6 @@
           "140d6ef00",
           "140d6f6a0",
           "140d6fca0",
-          "140d71ed0",
           "140d728d0",
           "140d743c0",
           "140d752a0",
@@ -8203,8 +8203,8 @@
           {
             "name": "gadgets-logic/gameplay",
             "label": "Gameplay & scoring",
-            "done": 5,
-            "todo": 59,
+            "done": 7,
+            "todo": 57,
             "total": 64,
             "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 3,
@@ -8216,8 +8216,10 @@
               "VisitVariableGadgetProperties",
               "UpdateVariableGadgetValues",
               "InitializeVariableGadgetDefaults",
+              "RegisterForceRepulseGadgetTypeDescriptor",
               "RegisterVariableGadgetTypeDescriptor",
-              "RegisterVariableGadgetFieldOffsets"
+              "RegisterVariableGadgetFieldOffsets",
+              "RegisterForceRepulseGadgetFieldOffsets"
             ],
             "todo_names": [
               "0x1404c2640",
@@ -8259,7 +8261,6 @@
               "0x140d562c0",
               "0x140d566d0",
               "0x140d56c80",
-              "0x140d56fc0",
               "0x140d57300",
               "0x140d573d0",
               "0x140d574a0",
@@ -8275,7 +8276,6 @@
               "0x140d68f60",
               "0x140d69370",
               "0x140d6fca0",
-              "0x140d71ed0",
               "0x140d752a0",
               "0x1414dcb90",
               "0x1414dd260"
@@ -8284,8 +8284,10 @@
               "1404e33a0",
               "1408e4bb0",
               "140944f20",
+              "140d56fc0",
               "140d58680",
-              "140d6a700"
+              "140d6a700",
+              "140d71ed0"
             ],
             "todo_addresses": [
               "1404c2640",
@@ -8327,7 +8329,6 @@
               "140d562c0",
               "140d566d0",
               "140d56c80",
-              "140d56fc0",
               "140d57300",
               "140d573d0",
               "140d574a0",
@@ -8343,7 +8344,6 @@
               "140d68f60",
               "140d69370",
               "140d6fca0",
-              "140d71ed0",
               "140d752a0",
               "1414dcb90",
               "1414dd260"
@@ -8885,8 +8885,8 @@
               {
                 "name": "gadgets-logic/gameplay/forcerepulsegadget",
                 "label": "Force Repulse Gadget",
-                "done": 0,
-                "todo": 3,
+                "done": 2,
+                "todo": 1,
                 "total": 3,
                 "behavior_or_helpers_reviewed": 0,
                 "properties_or_types_reviewed": 0,
@@ -8894,25 +8894,27 @@
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404ceba0",
-                  "0x140d56fc0",
-                  "0x140d71ed0"
+                "done_names": [
+                  "RegisterForceRepulseGadgetTypeDescriptor",
+                  "RegisterForceRepulseGadgetFieldOffsets"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404ceba0",
+                "todo_names": [
+                  "0x1404ceba0"
+                ],
+                "done_addresses": [
                   "140d56fc0",
                   "140d71ed0"
+                ],
+                "todo_addresses": [
+                  "1404ceba0"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "gadgets-logic/gameplay/forcerepulsegadget/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
+                    "done": 2,
+                    "todo": 1,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
                     "properties_or_types_reviewed": 0,
@@ -8920,17 +8922,19 @@
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404ceba0",
-                      "0x140d56fc0",
-                      "0x140d71ed0"
+                    "done_names": [
+                      "RegisterForceRepulseGadgetTypeDescriptor",
+                      "RegisterForceRepulseGadgetFieldOffsets"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404ceba0",
+                    "todo_names": [
+                      "0x1404ceba0"
+                    ],
+                    "done_addresses": [
                       "140d56fc0",
                       "140d71ed0"
+                    ],
+                    "todo_addresses": [
+                      "1404ceba0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []

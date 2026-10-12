@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "87 previously unnamed functions reviewed;83 descriptive names applied and verified after reopening;4 remain deferred.",
+  "review_scope": "90 previously unnamed functions reviewed;86 descriptive names applied and verified after reopening;4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9312,
-    "other_names": 239,
+    "default_fun_names": 9309,
+    "other_names": 242,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1702,6 +1702,60 @@
         "Signature unchanged; no full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1408e3e10",
+      "original_name": "FUN_1408e3e10",
+      "applied_name": "ComputeForceGadgetDirection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Native schema and strings confirm ForceRepulseGadget descriptor and ForceType/ForcePushPull fields.",
+        "Runtime direction helper reads the same offsets and computes normalized directional or radial vector with sign inversion."
+      ],
+      "caveats": [
+        "Analyst name, not original symbol.",
+        "Transform helper, generic direction lookup and exceptional values remain unresolved.",
+        "No signature change or complete-behavior credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140d71ed0",
+      "original_name": "FUN_140d71ed0",
+      "applied_name": "RegisterForceRepulseGadgetFieldOffsets",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Native schema and strings confirm ForceRepulseGadget descriptor and ForceType/ForcePushPull fields.",
+        "Runtime direction helper reads the same offsets and computes normalized directional or radial vector with sign inversion."
+      ],
+      "caveats": [
+        "Analyst name, not original symbol.",
+        "Transform helper, generic direction lookup and exceptional values remain unresolved.",
+        "No signature change or complete-behavior credit."
+      ],
+      "reviewed_scope": "property_registration"
+    },
+    {
+      "address": "140d56fc0",
+      "original_name": "FUN_140d56fc0",
+      "applied_name": "RegisterForceRepulseGadgetTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Native schema and strings confirm ForceRepulseGadget descriptor and ForceType/ForcePushPull fields.",
+        "Runtime direction helper reads the same offsets and computes normalized directional or radial vector with sign inversion."
+      ],
+      "caveats": [
+        "Analyst name, not original symbol.",
+        "Transform helper, generic direction lookup and exceptional values remain unresolved.",
+        "No signature change or complete-behavior credit."
+      ],
+      "reviewed_scope": "property_registration"
     }
   ],
   "deferred": [
