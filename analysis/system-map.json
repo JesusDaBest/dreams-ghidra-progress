@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1584,
-  "unmapped_total": 7968,
+  "mapped_total": 1585,
+  "unmapped_total": 7967,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41345,6 +41345,25 @@
           "support": "Native review connects file parsing, PCM buffering, peak-envelope generation and the exactly identified sceAt9EncEncode import. No runtime correctness claim."
         }
       ]
+    },
+    "1400c7580": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "playback",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_playback_position_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "8d1bc0356b9531bbd6845857b9c99606095ca3b74ce7f917ba9c71c4038cc7c1",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeAudioPlaybackSamplePosition",
+          "support": "Complete native body computes sample position using signed rate, pitch conversion, selection bounds and loop modes; exact exp2f/log2f loader bindings and constants verified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -42491,6 +42510,17 @@
             {
               "id": "runtime-implementation",
               "label": "Import processing",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "playback",
+          "label": "Sample playback",
+          "children": [
+            {
+              "id": "runtime-implementation",
+              "label": "Playback positioning",
               "children": []
             }
           ]

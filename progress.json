@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 88,
+    "done": 89,
     "todo": 1496,
-    "total": 1584,
-    "behavior_or_helpers_reviewed": 41,
+    "total": 1585,
+    "behavior_or_helpers_reviewed": 42,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -34509,16 +34509,17 @@
       {
         "name": "audio",
         "label": "Sound & music",
-        "done": 2,
+        "done": 3,
         "todo": 62,
-        "total": 64,
-        "behavior_or_helpers_reviewed": 2,
+        "total": 65,
+        "behavior_or_helpers_reviewed": 3,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 2,
+        "runtime_functions_identified": 3,
         "property_type_functions_identified": 62,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
+          "ComputeAudioPlaybackSamplePosition",
           "InitializeAudioFileImportContext",
           "ProcessAudioFileImportContext"
         ],
@@ -34587,6 +34588,7 @@
           "0x140d83560"
         ],
         "done_addresses": [
+          "1400c7580",
           "140119510",
           "140119b30"
         ],
@@ -36391,6 +36393,53 @@
                     "groups": []
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "name": "audio/playback",
+            "label": "Sample playback",
+            "done": 1,
+            "todo": 0,
+            "total": 1,
+            "behavior_or_helpers_reviewed": 1,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 1,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "ComputeAudioPlaybackSamplePosition"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "1400c7580"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "audio/playback/runtime-implementation",
+                "label": "Playback positioning",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ComputeAudioPlaybackSamplePosition"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1400c7580"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
               }
             ]
           }
@@ -39279,5 +39328,5 @@
       }
     ]
   },
-  "unmapped": 7968
+  "unmapped": 7967
 }
