@@ -37,13 +37,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/077c499c8314565c58f4571d26f0641915647694/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/fea4ca307641ce12958996a8a0bc2bffc5612fda/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**126 of 9,552 functions named and checked.** A function is one piece of the game's code.
+**128 of 9,552 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/077c499c8314565c58f4571d26f0641915647694/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/fea4ca307641ce12958996a8a0bc2bffc5612fda/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -57,14 +57,14 @@ Every square is one actual function and has the same size. All function squares 
 | Sculpting & painting | 122 | 5/83 | 0/39 |
 | Gadgets & logic | 463 | 5/8 | 38/454 |
 | Physics & collision | 60 | 2/28 | 0/32 |
-| Sound & music | 62 | None mapped | 0/62 |
+| Sound & music | 64 | 2/2 | 0/62 |
 | Animation & puppets | 46 | None mapped | 0/46 |
 | Rendering & lighting | 274 | 0/245 | 0/29 |
 | Editor & interface | 313 | 0/106 | 0/205 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 135 | 22/59 | 5/71 |
 
-**1,582 of 9,552 discovered functions are mapped; 7,970 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,584 of 9,552 discovered functions are mapped; 7,968 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1143,7 +1143,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Player identity** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Level & recent records** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-- **Sound & music** - 62 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Sound & music** - 64 functions identified; 2 behavior/helper reviews; 0 property/type reviews
   - **Sound editing** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1197,6 +1197,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Osc Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Audio file import** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Import processing** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
   - **Samples & MIDI** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Wave Slice** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
