@@ -27,7 +27,7 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Teleporter: movement | Position/orientation flags feed weighted accumulators; resulting transforms reach object and physics-record writes. | All exceptional cases, mode meanings, callback side effects, and runtime tests. |
 | Shared transforms | Exact symbolic assembly checks support quaternion composition and rotated/scaled translation; full movement-helper body read. | Complete parent-relative conversion proof, remaining field semantics, and runtime tests. |
 | Physics motion | Emitter callback identifies linear/angular vectors; alternate pair selection, integration, copying and writeback traced. | Why the alternate pair is selected, intervening processing, and runtime tests. |
-| Sculpt GPU transforms | Embedded job label linked to callback; native body read; both forward-transform paths and fallback inverse matrix checked symbolically. | Resource conversion, singular transforms, output consumers and runtime tests. |
+| Sculpt GPU transforms | Embedded job label linked to callback; native body read; both forward-transform paths and fallback inverse matrix checked symbolically; resource scale import and buffer setup traced. | Singular transforms, descriptor field semantics, output consumers and runtime tests. |
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
 | Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
 
@@ -35,13 +35,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/21ab3cee9b88a370555b531a8744cbb960a54b2a/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=250f3360d28d)
 
 <!-- status-summary:start -->
-**67 of 9,551 functions named and checked.** A function is one piece of the game's code.
+**69 of 9,551 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/21ab3cee9b88a370555b531a8744cbb960a54b2a/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=92514dfddd69)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 

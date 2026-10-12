@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "71 previously unnamed functions reviewed; 67 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "73 previously unnamed functions reviewed; 69 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9328,
-    "other_names": 223,
+    "default_fun_names": 9326,
+    "other_names": 225,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1401,6 +1401,40 @@
         "No runtime validation or prototype, type, boundary or byte changes."
       ],
       "reviewed_scope": "property_or_type"
+    },
+    {
+      "address": "14001eb20",
+      "original_name": "FUN_14001eb20",
+      "applied_name": "PackMaskedFormatFields",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 17-instruction body read. Six masks and shifts exhaustively describe the arithmetic contract; no calls or branches."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst name, not original symbol.",
+        "No runtime validation or prototype/type/boundary/byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14001d7e0",
+      "original_name": "FUN_14001d7e0",
+      "applied_name": "SetPackedBufferDescriptorFlags",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 18-instruction body read. Exact masked replacement of descriptor words +4 and +c; no calls or branches. Independent buffer callers captured."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst name, not original symbol.",
+        "No runtime validation or prototype/type/boundary/byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
     }
   ],
   "deferred": [
