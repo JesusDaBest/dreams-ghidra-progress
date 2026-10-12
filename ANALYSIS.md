@@ -993,3 +993,11 @@ The registered `AnimStrength` setting controls a later stage of the reviewed 20-
 For two Quaternion values, this helper uses strength to interpolate from the endpoint-derived value toward the sample. It corrects a negative dot product by reversing the base Quaternion's sign. When the absolute dot is greater than approximately `0.99999`, it uses a linear blend without an explicit normalization in that branch. Otherwise it uses the spherical formula with `acosf` and `sinf`; the executable's loader and import trampoline independently establish the `sinf` identity.
 
 This is a separate stage from the normalized weighted blend above. Both can occur along the reviewed sampler route, so identifying one does not describe all rotation processing. Endpoint construction, valid input ranges, mixed-type behavior, and the complete sampler remain unresolved. No additional names or full-behavior completion credit were added.
+
+### Strength base traced in both record formats
+
+On the reviewed contiguous record routes, the strength blend's base comes from the initial 16-byte payload read. Both samplers save two eight-byte halves and later reassemble them as the second tagged argument to `1411dd230`; the sampled output is the first argument. This connects the blend to saved record data, rather than assuming its base is the current neighboring sample or the identity Quaternion.
+
+The 24-byte format reaches the same strength helper with the same setting and type-exclusion mask as the 20-byte format. Its additional integer gate uses 48 where the 20-byte route uses 40. These thresholds match two entry sizes, but that correspondence alone does not prove the integer's meaning across every route.
+
+Current memory checks cover 158 instructions across six bounded regions. Cross-leaf reconstruction and alternate paths still need tracing before this base interpretation can be generalized. No additional names or full-behavior completion credit were added.
