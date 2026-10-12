@@ -27,6 +27,7 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Teleporter: movement | Position/orientation flags feed weighted accumulators; resulting transforms reach object and physics-record writes. | All exceptional cases, mode meanings, callback side effects, and runtime tests. |
 | Shared transforms | Exact symbolic assembly checks support quaternion composition and rotated/scaled translation; full movement-helper body read. | Complete parent-relative conversion proof, remaining field semantics, and runtime tests. |
 | Physics motion | Emitter callback identifies linear/angular vectors; alternate pair selection, integration, copying and writeback traced. | Why the alternate pair is selected, intervening processing, and runtime tests. |
+| Sculpt GPU transforms | Embedded job label linked to callback; native body read; both forward-transform paths and fallback inverse matrix checked symbolically. | Resource conversion, singular transforms, output consumers and runtime tests. |
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
 | Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
 
