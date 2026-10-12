@@ -2,18 +2,18 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "135 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
-  "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
+  "review_scope": "135 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
     "default_fun_names": 9395,
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9552,
+    "total": 9553,
     "default_fun_names": 9260,
-    "other_names": 292,
-    "verification": "complete_inventory_matches_baseline_plus_135_renames_and_one_created_function"
+    "other_names": 293,
+    "verification": "complete_inventory_matches_baseline_plus_135_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2707,6 +2707,26 @@
         "Object fields and caller invariants remain unresolved.",
         "No types, prototypes or calling conventions changed.",
         "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140abb470",
+      "original_name": null,
+      "applied_name": "ProcessMainThingUpdateWorker",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 382-instruction native body and callback dispatch reviewed; explicit nonoverlapping function definition checked in an isolated project first.",
+        "Claims object updates atomically, waits for dependency completion, calls the per-object update, and marks completion.",
+        "Thread-specific getter/setter imports confirmed by exact symbol-name hashes and loader writes.",
+        "Context pointer and worker index match RDI and ESI in the native entry."
+      ],
+      "caveats": [
+        "Descriptive analyst name; original source symbol not recovered.",
+        "Precise context types, return contract, synchronization invariants and old/new state ownership remain unresolved.",
+        "No full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9552,
-  "mapped_total": 1592,
+  "inventory_total": 9553,
+  "mapped_total": 1593,
   "unmapped_total": 7960,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -41495,6 +41495,26 @@
           "kind": "verified_semantic_review",
           "name": "SelectSoundPlaybackSampleIndex",
           "support": "Complete 791-instruction native body and all three direct caller neighborhoods inspected: filters sample records, applies solo/disable masks and weighted selection, optionally updates selection history."
+        }
+      ]
+    },
+    "140abb470": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_main_update_callback_dispatch",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "b371bf486bf386ab3b57099eb7d0bb76edbe0cc51b10b22e0ab66adaa2787368",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ProcessMainThingUpdateWorker",
+          "support": "MainThingUpdate callback dispatch, full native work-claim/dependency body, and exact thread-local import bindings inspected."
         }
       ]
     }
