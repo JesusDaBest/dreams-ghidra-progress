@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1585,
-  "unmapped_total": 7967,
+  "mapped_total": 1586,
+  "unmapped_total": 7966,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41362,6 +41362,25 @@
           "kind": "verified_semantic_review",
           "name": "ComputeAudioPlaybackSamplePosition",
           "support": "Complete native body computes sample position using signed rate, pitch conversion, selection bounds and loop modes; exact exp2f/log2f loader bindings and constants verified."
+        }
+      ]
+    },
+    "1400c7760": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "playback",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_sound_control_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "d236125489a58716f1edce85651eb30b566595f7ed455c59d94d3a9006daf713",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateSoundPlaybackPositionFromControls",
+          "support": "Full native wrapper normalizes packed controls and invokes the verified sample-position helper; Sound field labels and caller base adjustment are verified."
         }
       ]
     }

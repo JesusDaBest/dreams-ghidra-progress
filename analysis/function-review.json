@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "128 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "129 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9267,
-    "other_names": 285,
-    "verification": "complete_inventory_matches_baseline_plus_128_renames_and_one_created_function"
+    "default_fun_names": 9266,
+    "other_names": 286,
+    "verification": "complete_inventory_matches_baseline_plus_129_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2564,6 +2564,28 @@
         "audio-sample-position-audit.json",
         "audio-position-math-import-audit.json",
         "All 113 native instructions read; live bytes SHA256 c1cb1fde2ecc51b2ba2922e9178cbdbe86e35bf801ebd7f8f73da9b36b287d62"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "Object fields and caller invariants remain unresolved.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1400c7760",
+      "original_name": "FUN_1400c7760",
+      "applied_name": "EvaluateSoundPlaybackPositionFromControls",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "audio-sample-position-audit.json",
+        "audio-position-math-import-audit.json",
+        "audio-playback-speed-field-proof.json",
+        "audio-slice-playback-mode-field-proof.json",
+        "All 110 native instructions read; live bytes SHA256 5a6484c35f4a4f7c564215d4bae7ff4e9b5dc387cc675934b74f92d0e94fcec4"
       ],
       "caveats": [
         "Descriptive analyst name, not recovered original symbol.",
