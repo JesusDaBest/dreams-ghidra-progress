@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1579,
-  "unmapped_total": 7973,
+  "mapped_total": 1582,
+  "unmapped_total": 7970,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41245,6 +41245,66 @@
           "kind": "verified_semantic_review",
           "name": "EvictOldestEligibleKeyedResource",
           "support": "Same initialized8192-slot keyed resource table is used by lookup, timestamp touch and eviction; sound root references and shared collector counter establish cross-subsystem storage support."
+        }
+      ]
+    },
+    "140119260": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "8975895756e983c3de85f01b6f882d5a1bba06f9c6b27dbf36e9d5814eff33d8",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateKeyedResourceBlocksWithEviction",
+          "support": "Native bitmap allocator and locked wrapper supply contiguous auxiliary resource blocks to serialization and use the shared keyed-resource eviction helper."
+        }
+      ]
+    },
+    "140119390": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "3e2f529a197c1e0e29248675294946b6d5aa4acf6c92e757b062d8ef5b8d4da4",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindBestFitKeyedResourceBlockRun",
+          "support": "Native bitmap allocator and locked wrapper supply contiguous auxiliary resource blocks to serialization and use the shared keyed-resource eviction helper."
+        }
+      ]
+    },
+    "1401194d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_resource_reference_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "63580886046391fab0519fd80949ed73a2f1d11d734cc5c18fed7be20708d29f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateKeyedResourceBlocks",
+          "support": "Native bitmap allocator and locked wrapper supply contiguous auxiliary resource blocks to serialization and use the shared keyed-resource eviction helper."
         }
       ]
     }

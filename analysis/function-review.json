@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "122 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "125 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9273,
-    "other_names": 279,
-    "verification": "complete_inventory_matches_baseline_plus_122_renames_and_one_created_function"
+    "default_fun_names": 9270,
+    "other_names": 282,
+    "verification": "complete_inventory_matches_baseline_plus_125_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2448,6 +2448,63 @@
         "keyed-resource-lookup-eviction-audit.json",
         "keyed-resource-table-init-audit.json",
         "Full native span matches live SHA256 65c6f894776b94a4cefede1c80d3bd4a0ad63199e1734febb97ed75041ca22f2"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140119260",
+      "original_name": "FUN_140119260",
+      "applied_name": "AllocateKeyedResourceBlocksWithEviction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "keyed-resource-block-allocation-audit.json",
+        "keyed-descriptor-callbacks-audit.json",
+        "Full native span matches live SHA256 cf6111c496726a2e5368f072026b9b612ba7e2d2f9cf2699b253fcde6d58cc38"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140119390",
+      "original_name": "FUN_140119390",
+      "applied_name": "FindBestFitKeyedResourceBlockRun",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "keyed-resource-block-allocation-audit.json",
+        "keyed-descriptor-callbacks-audit.json",
+        "Full native span matches live SHA256 9ac77af5433ffe5c2ee4445d5e3792004ef7fa4438f5bd1bbc0e9b8dfe40a13c"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1401194d0",
+      "original_name": "FUN_1401194d0",
+      "applied_name": "AllocateKeyedResourceBlocks",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "keyed-resource-block-allocation-audit.json",
+        "keyed-descriptor-callbacks-audit.json",
+        "Full native span matches live SHA256 ee136e357264ad663ef554db382a9f45c0c66b6eff3e7eafdab1bd9bf066ae20"
       ],
       "caveats": [
         "Descriptive analyst name, not recovered original symbol.",
