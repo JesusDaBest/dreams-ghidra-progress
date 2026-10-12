@@ -871,3 +871,11 @@ A further 49 current native instructions were matched against the executable in 
 When forced-playhead handling is enabled, the updated Sound's Power and the paired Sound object's force flag affect the playing candidate. A nonzero or unordered Power comparison can force both that candidate and the trigger discriminator to one when the paired force flag is clear. The common downstream stores have additional gates; this does not establish that the final playing byte always changes.
 
 The upstream flags' meanings and the paired object's temporal role remain unresolved. Stack storage is reused across branches, so no global stack-slot types are inferred. This adds bounded behavior evidence, with no new checked names, runtime validation, or full-function completion credit.
+
+### Timeline flags linked to Sound playback
+
+Live instruction review now links the Sound playback gates to their context flags array: two-byte entries at context offset `+0x210c54`. Sound `ForcePreview` receives bit 0 of a selected entry. Live field registration also confirms `UseLiveNoteData`; one update path clears that field before joining the forced-playhead branch. The provenance review matched 566 native instructions and both field-name literals.
+
+A further 98 native instructions establish one producer path. The main update loop follows object references through Timeline objects, calculates intervals, and sets bits 3 and 5 on each working object. This supplies a concrete producer for the bit-5 gate used by Sound forced-playhead handling. After a successful traversal, it appends a record containing two object identifiers and an accumulated timing float, increments the record count, and sets bit 4. The playback consumer's bit-4 path scans these records for a matching identifier and reads the timing float.
+
+These are bounded static findings. Other producers, flag resets, selection gates and the temporal relationship between paired object contexts remain unresolved. No original enum names, new checked-function credit, runtime verification, or whole-function completion credit are claimed.
