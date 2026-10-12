@@ -1075,3 +1075,11 @@ A cold backup preceded the cleanup helper's name-only change. Reopening verified
 Animation loading selects the input-sized checked mode, supplying the output base and no earlier external dictionary. The two short-offset tables were verified against native constants; symbolic comparison with independent byte-by-byte expansion passed for offsets 1–7 and lengths 4–256. Remaining vector and byte-copy paths were read, with conditional buffer-slack reasoning recorded locally. These model checks do not execute the binary or prove safety for all malformed inputs. Zero offsets, alternative dictionary/mode variants and arithmetic extremes remain unresolved.
 
 A cold backup preceded the name-only change. Clean reopening verified all 2,254 body bytes, nine reference addresses and the unchanged prototype; all 152 descriptive names and original archive hashes passed verification. There are 111 checked names among 1,607 mapped functions. Full-behavior coverage is unchanged. This serialized-block decoder does not identify how Animation's packed sample controls are generated.
+
+### Animation property metadata lookup and registration
+
+Native review verified all 98 instructions of a shared property lookup and 89 instructions of its table-registration callback. The lookup includes Animation blend mode in its hash, along with the object kind and property identifier. The same mixer addresses 8,192 records of 12 bytes each; static sentinel records were independently read back. These are executable-image observations, not a runtime table snapshot.
+
+Registration matches the property, kind and variant byte, while lookup compares property and kind after hashing the variant. Table population and collision invariants remain unresolved, so this difference is not presented as a defect. The callback entry is referenced by a function pointer but has no defined function in the current project; it has not been created or named from a guessed boundary.
+
+A separate property visitor reads the three signed easing-strength bytes and forwards converted values through an indirect visitor call. Neither path establishes how packed Animation sample controls are generated. No names, subsystem mapping counts or full-behavior coverage were increased for this investigation. Raw native evidence remains local.
