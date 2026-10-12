@@ -874,3 +874,11 @@ These are bounded static findings. Other producers, flag resets, selection gates
 Only the descriptive name changed. Mask enum meanings, input-record mode semantics, concrete types and complete caller behavior remain unresolved. There are 142 checked descriptive names among 9,553 discovered functions; no full-behavior completion credit was added.
 
 The earlier Timeline-chain divisor is now linked through live offset initializers and field registration to `PlaybackSpeed` for Sound and Timeline. A second chain producer and an adjacent bit-6/7 producer were also checked against 111 native instructions. Surrounding record selection, flag resets and other object-kind bindings remain unresolved.
+
+### Animation predicate prototype and mask inheritance
+
+The predicate now has a verified boolean return and three native arguments: two opaque context pointers in RDI/RSI and a packed integer identifier in EDX. A cold-copy trial preceded the live correction. Only this signature changed among 9,553 functions, its 58 native instructions remained unchanged, and reopening confirmed the saved signature. The trial caller now expresses the result as a boolean; concrete context structures remain unresolved.
+
+Simulation preparation builds the mask array from each object's byte at `+0x22`. Mode-0 objects with a valid `+4` reference also inherit that referenced entry's mask. The keyframe predicate tests for bits absent from the referenced mask, connecting its test to the inheritance mechanism. The reviewed loop initializes entry zero and processes the remaining entries in ascending order. The original meaning of the mask bits and a guarantee that referenced entries precede dependents remain unproven. Other mask producers still need review.
+
+This adds a justified prototype and bounded behavior evidence, with no new checked names, runtime validation or full-function completion credit.

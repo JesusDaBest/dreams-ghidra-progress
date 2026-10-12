@@ -1,0 +1,21 @@
+{
+  "address": "1407032a0",
+  "name": "HasAnimationKeyframeMaskOrEligibleInput",
+  "signature": "bool PS4_SYSV HasAnimationKeyframeMaskOrEligibleInput(void *lookup_context, void *input_records_context, int packed_identifier)",
+  "status": "verified_after_reopening",
+  "direct_call_sites_reviewed": 6,
+  "validation": [
+    "Complete native predicate body",
+    "All six discovered direct argument/result neighborhoods",
+    "Isolated cold-copy prototype trial",
+    "Only intended signature changed among9553 functions",
+    "Input registers RDI/RSI/EDX matched",
+    "Native bytes and original archives unchanged",
+    "Saved signature read back after reopening"
+  ],
+  "limits": [
+    "Context pointers remain opaque",
+    "Mask-bit and input-mode meanings unresolved",
+    "No additional full-behavior completion credit"
+  ]
+}
