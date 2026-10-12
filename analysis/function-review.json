@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "89 existing-function renames and 1 newly defined descriptive function verified after reopening;4 reviews remain deferred.",
+  "review_scope": "90 existing-function renames and1 newly defined descriptive function verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9306,
-    "other_names": 246,
-    "verification": "complete_inventory_matches_baseline_plus_89_renames_and_one_created_function"
+    "default_fun_names": 9305,
+    "other_names": 247,
+    "verification": "complete_inventory_matches_baseline_plus_90_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1823,6 +1823,24 @@
       "caveats": [
         "New function definition, not a rename or recovered original symbol.",
         "Allocation-failure contract and later runtime type restoration remain unresolved.",
+        "No complete-behavior coverage credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "141607680",
+      "original_name": "FUN_141607680",
+      "applied_name": "FindTypeFieldByIdentifier",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete78-instruction body matches field identifiers and alternate identifiers, recurses through parent types and accumulates inherited byte offsets.",
+        "Used by schema load-plan builder; all247 code bytes unchanged after naming."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not original symbol.",
+        "Malformed descriptors and identifier collisions remain unresolved.",
         "No complete-behavior coverage credit."
       ],
       "reviewed_scope": "behavior_or_helper"
