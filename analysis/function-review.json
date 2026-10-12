@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "73 previously unnamed functions reviewed; 69 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "76 previously unnamed functions reviewed; 72 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9326,
-    "other_names": 225,
+    "default_fun_names": 9323,
+    "other_names": 228,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1433,6 +1433,60 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "Analyst name, not original symbol.",
         "No runtime validation or prototype/type/boundary/byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140011fb0",
+      "original_name": "FUN_140011fb0",
+      "applied_name": "ExtractShaderBinarySections",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 13-instruction, 43-byte body computes metadata pointer, code pointer and copy size; independently checked against both matched shader payloads."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst name, not an original symbol.",
+        "Growth callback and runtime behavior remain independently unresolved.",
+        "No prototype, type, convention, boundary or byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14003ade0",
+      "original_name": "FUN_14003ade0",
+      "applied_name": "AppendGnmDispatchDirect",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 39-instruction, 111-byte body checks command capacity, calls the resolved sceGnmDispatchDirect import, and advances its cursor by 36 bytes only on zero return."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst name, not an original symbol.",
+        "Growth callback and runtime behavior remain independently unresolved.",
+        "No prototype, type, convention, boundary or byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14003ae50",
+      "original_name": "FUN_14003ae50",
+      "applied_name": "AppendGnmDispatchDirectWithMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 45-instruction, 125-byte body has the same dispatch contract plus mode-derived flags; both direct branch sets checked."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Analyst name, not an original symbol.",
+        "Growth callback and runtime behavior remain independently unresolved.",
+        "No prototype, type, convention, boundary or byte changes."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
