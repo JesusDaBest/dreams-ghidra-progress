@@ -695,3 +695,14 @@ Startup assembly reconstructs 59 resource-metric entries whose stored table is i
 Zero identifiers in another record array receive eight random bytes through an import matched to `sceRandomGetRandomNumber` in [pinned shadPS4 source](https://github.com/shadps4-emu/shadPS4/blob/e0a466753a1aacbc8db8253be685bf7ab4d9daae/src/core/libraries/random/random.cpp). The native caller ignores its result and does not retry zero identifiers. This is static analysis, not an observed runtime failure or a claim about console random quality.
 
 The dispatcher consumes two output registers from the version helper; saved pseudocode omits one. That contract is documented locally, with no speculative prototype change. There are now 102 checked descriptive names among 9,552 discovered functions. The 1,159-byte function span, complete inventory and original archives passed persistence checks. No complete-behavior coverage credit or provisional subsystem assignment was added.
+
+
+### Resource traversal and thermometer accounting
+
+`AdvanceResourceTreeLeafIterator` (`1410607f0`) is now a checked descriptive name. Its complete native body advances through resource-tree leaves, popping exhausted parents and descending the next child. Shared callers support this general role. The 162-byte span and name were verified after saving and reopening; no prototype or type changes were made.
+
+Native code connects a worker callback to the internal label `Thermometer`. Its sculpt-cost path deduplicates resource identifiers across two object lists before accumulating model, brick and ball costs. Another path uses a four-bit membership filter for resource pairs; this is not an exact set and its runtime collision frequency has not been measured.
+
+The resource-count helper returns two distinct values: accepted iterator entries and a sum derived from record lengths divided by 40. The thermometer's current `SculptsSprites` contribution uses the first output. A separate candidate-budget path uses the second output, scales it by 1/524,288 and adds it to the current normalized sprite metric before a limit comparison. Why these paths use different outputs remains unresolved. This is static code evidence, not a claim that every counted entry is a rendered sprite or that a game defect has been demonstrated.
+
+There are now 103 checked descriptive names among 9,552 discovered functions. This batch adds no complete-behavior credit or provisional subsystem mapping. Internal game-resource budgets are separate from progress in understanding Dreams.
