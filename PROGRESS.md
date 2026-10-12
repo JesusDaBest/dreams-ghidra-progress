@@ -928,3 +928,13 @@ After a cold backup, only the name changed. A clean reopening verified that name
 `InterpolateTaggedValueFromBase` now names the shared strength helper at `1411dd230`. Its 302-instruction body and all 26 direct argument/result neighborhoods across 21 sampler functions support this role. The strength input was traced to the registered `AnimStrength` field, including nine predecessor paths outside the original inspection windows. Quaternion and Position paths have dedicated rotation interpolation; other tags delegate to weighted tagged-value blending and restore the target metadata.
 
 The change affects only the name. A cold backup preceded it, and a clean reopening verified the name, unchanged instructions, all direct references, and unchanged prototype. The complete function-name inventory and both original archive hashes were also checked. There are now 146 checked descriptive names and 1,603 mapped functions. Mixed-type conversions, input ranges, and complete sampler behavior remain unresolved; no full-behavior completion credit was added.
+
+### Animation registration names and property IDs
+
+The 42-instruction `RegisterAnimationTypeDescriptor` and 307-instruction `RegisterAnimationFieldOffsets` now have checked descriptive names. The initializer binds the executable's `Animation` literal to its descriptor, installs callbacks, links its base, and invokes the field registrar. The registrar supplies the named field offsets and constructs its blend-type field record. Both changes are names only, backed up before application and verified after a clean reopening; native instructions, prototypes and reference addresses are unchanged.
+
+The startup property-offset matrix independently links 27 Animation property IDs to registered field names. For example, `0x238` maps to AnimStrength at object offset `0x14c`, `0x2e4` and `0x2e5` map to Reverse and Relative, and `0x4b` through `0x4e` map to Playhead, StartTime, EndTime and PlaybackSpeed. The last four share a packed constant store whose register provenance was traced through an uninterrupted native sequence.
+
+The three easing-strength properties (`0x32d` through `0x32f`) use class 23 in the shared property metadata table. That connects their registered fields to the scaled signed-byte storage selector audited above. It does not prove that every property has animation records or that every sampler route is understood. IsKeyframe, PlayheadDelta and remaining property links still need tracing.
+
+There are now 148 checked descriptive names, with 107 among the 1,603 mapped functions. Original archive hashes and the complete function-name inventory passed verification. No full-behavior completion credit was added.

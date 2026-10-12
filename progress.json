@@ -3,8 +3,8 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 105,
-    "todo": 1498,
+    "done": 107,
+    "todo": 1496,
     "total": 1603,
     "behavior_or_helpers_reviewed": 58,
     "properties_or_types_reviewed": 43,
@@ -38122,8 +38122,8 @@
       {
         "name": "animation",
         "label": "Animation & puppets",
-        "done": 3,
-        "todo": 46,
+        "done": 5,
+        "todo": 44,
         "total": 49,
         "behavior_or_helpers_reviewed": 3,
         "properties_or_types_reviewed": 0,
@@ -38133,6 +38133,8 @@
         "whole_feature_completion": null,
         "done_names": [
           "HasAnimationKeyframeMaskOrEligibleInput",
+          "RegisterAnimationTypeDescriptor",
+          "RegisterAnimationFieldOffsets",
           "InterpolateTaggedValueFromBase",
           "EvaluateAnimationDeltaOnBaseValue"
         ],
@@ -38154,14 +38156,12 @@
           "0x140d2ebc0",
           "0x140d30a40",
           "0x140d30d80",
-          "0x140d54650",
           "0x140d547f0",
           "0x140d84300",
           "0x140d85f70",
           "0x140d86230",
           "0x140d865d0",
           "0x140d86730",
-          "0x140d86c30",
           "0x1414e1820",
           "0x1414e2800",
           "0x1414e2ac0",
@@ -38186,6 +38186,8 @@
         ],
         "done_addresses": [
           "1407032a0",
+          "140d54650",
+          "140d86c30",
           "1411dd230",
           "141215810"
         ],
@@ -38207,14 +38209,12 @@
           "140d2ebc0",
           "140d30a40",
           "140d30d80",
-          "140d54650",
           "140d547f0",
           "140d84300",
           "140d85f70",
           "140d86230",
           "140d865d0",
           "140d86730",
-          "140d86c30",
           "1414e1820",
           "1414e2800",
           "1414e2ac0",
@@ -39132,8 +39132,8 @@
           {
             "name": "animation/keyframes",
             "label": "Animation & keyframes",
-            "done": 3,
-            "todo": 9,
+            "done": 5,
+            "todo": 7,
             "total": 12,
             "behavior_or_helpers_reviewed": 3,
             "properties_or_types_reviewed": 0,
@@ -39143,6 +39143,8 @@
             "whole_feature_completion": null,
             "done_names": [
               "HasAnimationKeyframeMaskOrEligibleInput",
+              "RegisterAnimationTypeDescriptor",
+              "RegisterAnimationFieldOffsets",
               "InterpolateTaggedValueFromBase",
               "EvaluateAnimationDeltaOnBaseValue"
             ],
@@ -39153,12 +39155,12 @@
               "0x140cb5190",
               "0x140cf85c0",
               "0x140cf8980",
-              "0x140d2ebc0",
-              "0x140d54650",
-              "0x140d86c30"
+              "0x140d2ebc0"
             ],
             "done_addresses": [
               "1407032a0",
+              "140d54650",
+              "140d86c30",
               "1411dd230",
               "141215810"
             ],
@@ -39169,17 +39171,15 @@
               "140cb5190",
               "140cf85c0",
               "140cf8980",
-              "140d2ebc0",
-              "140d54650",
-              "140d86c30"
+              "140d2ebc0"
             ],
             "unresolved_addresses": [],
             "groups": [
               {
                 "name": "animation/keyframes/animation",
                 "label": "Animation",
-                "done": 3,
-                "todo": 3,
+                "done": 5,
+                "todo": 1,
                 "total": 6,
                 "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 0,
@@ -39189,31 +39189,31 @@
                 "whole_feature_completion": null,
                 "done_names": [
                   "HasAnimationKeyframeMaskOrEligibleInput",
+                  "RegisterAnimationTypeDescriptor",
+                  "RegisterAnimationFieldOffsets",
                   "InterpolateTaggedValueFromBase",
                   "EvaluateAnimationDeltaOnBaseValue"
                 ],
                 "todo_names": [
-                  "0x1404984f0",
-                  "0x140d54650",
-                  "0x140d86c30"
+                  "0x1404984f0"
                 ],
                 "done_addresses": [
                   "1407032a0",
+                  "140d54650",
+                  "140d86c30",
                   "1411dd230",
                   "141215810"
                 ],
                 "todo_addresses": [
-                  "1404984f0",
-                  "140d54650",
-                  "140d86c30"
+                  "1404984f0"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "animation/keyframes/animation/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
+                    "done": 2,
+                    "todo": 1,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
                     "properties_or_types_reviewed": 0,
@@ -39221,17 +39221,19 @@
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404984f0",
-                      "0x140d54650",
-                      "0x140d86c30"
+                    "done_names": [
+                      "RegisterAnimationTypeDescriptor",
+                      "RegisterAnimationFieldOffsets"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404984f0",
+                    "todo_names": [
+                      "0x1404984f0"
+                    ],
+                    "done_addresses": [
                       "140d54650",
                       "140d86c30"
+                    ],
+                    "todo_addresses": [
+                      "1404984f0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []

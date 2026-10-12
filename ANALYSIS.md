@@ -1019,3 +1019,13 @@ These paths produce Number-tagged sampled values, but their quantization differs
 In the reviewed byte path, endpoint control bit 4 governs contribution: two participating endpoints interpolate, one participating endpoint retains its value with a scaled contribution, and neither participating produces zero contribution metadata. This is more than a storage conversion and does not establish an original flag name.
 
 Three local audits matched 1,138 native instruction observations against current memory, with overlapping regions counted separately. This evidence covers selected dispatch, storage and interpolation paths, not complete sampler bodies. Exceptional values, cross-leaf reconstruction and later blending remain under investigation. No new names or full-behavior completion credit were added.
+
+### Animation registration names and property IDs
+
+The 42-instruction `RegisterAnimationTypeDescriptor` and 307-instruction `RegisterAnimationFieldOffsets` now have checked descriptive names. The initializer binds the executable's `Animation` literal to its descriptor, installs callbacks, links its base, and invokes the field registrar. The registrar supplies the named field offsets and constructs its blend-type field record. Both changes are names only, backed up before application and verified after a clean reopening; native instructions, prototypes and reference addresses are unchanged.
+
+The startup property-offset matrix independently links 27 Animation property IDs to registered field names. For example, `0x238` maps to AnimStrength at object offset `0x14c`, `0x2e4` and `0x2e5` map to Reverse and Relative, and `0x4b` through `0x4e` map to Playhead, StartTime, EndTime and PlaybackSpeed. The last four share a packed constant store whose register provenance was traced through an uninterrupted native sequence.
+
+The three easing-strength properties (`0x32d` through `0x32f`) use class 23 in the shared property metadata table. That connects their registered fields to the scaled signed-byte storage selector audited above. It does not prove that every property has animation records or that every sampler route is understood. IsKeyframe, PlayheadDelta and remaining property links still need tracing.
+
+There are now 148 checked descriptive names, with 107 among the 1,603 mapped functions. Original archive hashes and the complete function-name inventory passed verification. No full-behavior completion credit was added.
