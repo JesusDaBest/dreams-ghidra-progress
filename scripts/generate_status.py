@@ -408,7 +408,6 @@ def render_hierarchy(nodes, bounds, depth=0):
         if placed is None:continue
         (tx,ty,bw,bh),values,sizes=placed;occupied.append((tx,ty,bw,bh));labeled.add(node['path'])
         labels.append(f'<g data-label="{"/".join(node["path"])}" data-label-box="{tx:.6f},{ty:.6f},{bw:.6f},{bh:.6f}">')
-        labels.append(rect(tx-2,ty-1,bw+2,bh,"#0d1117"))
         baseline=ty
         for label,size in zip(values,sizes):
             baseline+=size
