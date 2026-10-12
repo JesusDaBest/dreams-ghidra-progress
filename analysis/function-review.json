@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "67 previously unnamed functions reviewed; 63 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "68 previously unnamed functions reviewed; 64 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9332,
-    "other_names": 219,
+    "default_fun_names": 9331,
+    "other_names": 220,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1313,6 +1313,28 @@
         "No running-game validation; editing/undo semantics and tiny nonzero sentinel intent remain unresolved.",
         "Submission is proven; successful field update in every runtime mode is not claimed.",
         "No types, prototypes, calling conventions, bytes or function boundaries changed."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1408f2110",
+      "original_name": "FUN_1408f2110",
+      "applied_name": "ReadObjectPhysicsOrCachedPosition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 22-instruction 97-byte native body reviewed; all four direct branch destinations are instruction starts.",
+        "Returns full 16-byte XMM0 vector from active physics-body record when flag bit 1 is set and body index is not -1; otherwise reads cached position float4 and returns zero for ordered-zero w.",
+        "Sole direct caller 140b335d0 at 140b337c2 subtracts the independently reviewed hierarchy translation from the returned vector. Native VSUBPS at 140b337c7 consumes all four lanes; same object index is passed to both helpers.",
+        "Same physics/cached position arrays are independently used by ComputeTeleporterTransformWithOffset and SubmitTeleporterPositionOffsetCommand."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Shared helper: name does not claim a Teleporter-only role or actual teleport execution.",
+        "Cached decompiler undefined8 return is incomplete; native XMM0 is 16 bytes. No prototype, type, calling convention, boundary or byte changes applied.",
+        "No running-game validation; invalid index bounds are not checked within this helper."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

@@ -298,42 +298,77 @@ def hierarchy_rows(rows, mapping):
 
 
 def render_hierarchy(nodes, bounds, depth=0):
-    """Packed equal-square grids; component boundaries align to complete rows."""
-    side=18;span=18;panel_width=324
-    columns=[34,34,34];out=[]
-    priority={'verified_name':0,'deferred':1,'unreviewed':2}
-    colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
-    for node in sorted(nodes,key=lambda n:-len(n['rows'])):
-        col=min(range(3),key=lambda c:columns[c]);x=col*panel_width;y=columns[col]
-        children=[c for c in node['children'] if c['rows']] or [node]
-        large=[c for c in children if len(c['rows'])>=20]
-        small=[c for c in children if len(c['rows'])<20]
+    """Quantized nested treemap: rectangular ownership, one fixed square size."""
+    from functools import lru_cache
+    side=18; columns=55
+    def children(node):
+        src=[c for c in node['children'] if c['rows']]
+        big=[dict(c) for c in src if len(c['rows'])>=20]
+        small=[c for c in src if len(c['rows'])<20]
         if small:
-            large.append({'label':'Other '+node['label'].lower(),'path':node['path']+('other-components',),
-                          'rows':[r for c in small for r in c['rows']]})
-        checked=sum(r['review']=='verified_name' for r in node['rows'])
-        top=y
-        out.append(f'<g data-area="{node["id"]}" data-count="{len(node["rows"])}">')
-        out.append(text(x+3,y+16,f"{node['label']}  {checked}/{len(node['rows'])}",14,weight=700))
-        y+=24
-        for child in sorted(large,key=lambda n:-len(n['rows'])):
-            rows=sorted(child['rows'],key=lambda r:(priority[r['review']],int(r['address'],16)))
-            grid_height=max(2,math.ceil(len(rows)/span))*side
-            out.append(f'<g data-component="{"/".join(child["path"])}" data-count="{len(rows)}">')
+            big.append(dict(label='Other components',path=node['path']+('other-components',),
+                            rows=[r for c in small for r in c['rows']]))
+        return sorted(big,key=lambda n:-len(n['rows']))
+    roots=sorted((dict(n) for n in nodes),key=lambda n:-len(n['rows']))
+    for n in roots:
+        n['display_children']=children(n)
+        n['weight']=sum(max(24,len(c['rows'])) for c in n['display_children']) or len(n['rows'])
+    @lru_cache(None)
+    def split(weights,w,h,minwidth=1):
+        if sum(weights)>w*h:return None
+        if len(weights)==1:return [(0,0,w,h)] if w>=minwidth else None
+        choices=[]
+        for k in range(1,len(weights)):
+            first=sum(weights[:k]);second=sum(weights[k:])
+            for vertical in (True,False):
+                length,other=(w,h) if vertical else (h,w)
+                for cut in range(1,length):
+                    if cut*other<first or (length-cut)*other<second:continue
+                    score=abs(cut/length-first/(first+second))+0.06*max(cut/other,other/cut,(length-cut)/other,other/(length-cut))
+                    choices.append((score,k,vertical,cut))
+        for _,k,vertical,cut in sorted(choices):
+            aw,ah=(cut,h) if vertical else (w,cut)
+            bw,bh=(w-cut,h) if vertical else (w,h-cut)
+            aa=split(weights[:k],aw,ah,minwidth);bb=split(weights[k:],bw,bh,minwidth)
+            if aa is not None and bb is not None:
+                return aa+[(x+(cut if vertical else 0),y+(0 if vertical else cut),ww,hh) for x,y,ww,hh in bb]
+        return None
+    height=math.ceil(sum(n['weight'] for n in roots)/columns)
+    while True:
+        regions=split(tuple(n['weight'] for n in roots),columns,height,10)
+        if regions is not None:
+            subdivisions=[split(tuple(max(24,len(c['rows'])) for c in n['display_children']),w,h) for n,(x,y,w,h) in zip(roots,regions)]
+            if all(v is not None for v in subdivisions):break
+        height+=1
+    out=[];labels=[];borders=[]
+    colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
+    for n,(gx,gy,w,h),parts in zip(roots,regions,subdivisions):
+        x=gx*side;y=34+gy*side
+        root_done=sum(r['review']=='verified_name' for r in n['rows'])
+        root_lines=textwrap.wrap(f"{n['label']} {root_done}/{len(n['rows'])}",width=max(10,int(w*side/8)),break_long_words=False)
+        root_header=len(root_lines)*16
+        out.append(f'<g data-area="{n["id"]}" data-count="{len(n["rows"])}">')
+        for child,(cx,cy,cw,ch) in zip(n['display_children'],parts):
+            px=x+cx*side;py=y+cy*side
+            out.append(f'<g data-component="{"/".join(child["path"])}" data-count="{len(child["rows"])}">')
+            rows=sorted(child['rows'],key=lambda r:({'verified_name':0,'deferred':1,'unreviewed':2}[r['review']],int(r['address'],16)))
             for i,row in enumerate(rows):
                 scope=row.get('reviewed_scope','unreviewed')
                 color='blue' if row['review']=='verified_name' and scope=='properties_or_type_registration' else colors[row['review']]
-                out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{x+i%span*side}" y="{y+i//span*side}" width="{side}" height="{side}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"><title>{escape(child["label"])}</title></rect>')
-            out.append(f'<rect x="{x}" y="{y}" width="{panel_width}" height="{grid_height}" fill="none" stroke="#97a8bc" stroke-width="1.6"/>')
+                out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{px+i%cw*side}" y="{py+i//cw*side}" width="{side}" height="{side}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"/>')
+            out.append('</g>')
+            borders.append(f'<rect x="{px}" y="{py}" width="{cw*side}" height="{ch*side}" fill="none" stroke="#97a8bc" stroke-width="1.6"/>')
             done=sum(r['review']=='verified_name' for r in rows)
-            label=f"{child['label']}  {done}/{len(rows)}"
-            lines=textwrap.wrap(label,width=39,break_long_words=False)
-            for j,line in enumerate(lines):
-                out.append(text(x+3,y+15+j*16,line,13,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
-            y+=grid_height;out.append('</g>')
-        out.append(f'<rect x="{x}" y="{top}" width="{panel_width}" height="{y-top}" fill="none" stroke="#f0f6fc" stroke-width="3"/>')
-        out.append('</g>');columns[col]=y
-    return out,max(columns)
+            shift=root_header if cy==0 else 0
+            content=f"{child['label']} {done}/{len(rows)}"
+            for j,line in enumerate(textwrap.wrap(content,width=max(9,int(cw*side/7)),break_long_words=False)):
+                labels.append(text(px+3,py+shift+14+j*15,line,12,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
+        out.append('</g>')
+        borders.append(f'<rect x="{x}" y="{y}" width="{w*side}" height="{h*side}" fill="none" stroke="#f0f6fc" stroke-width="3"/>')
+        done=sum(r['review']=='verified_name' for r in n['rows'])
+        for j,line in enumerate(root_lines):
+            labels.append(text(x+3,y+15+j*16,line,14,weight=700,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke"'))
+    return out+borders+labels,34+height*side
 
 
 def progress_data(status, applied, mapping):
