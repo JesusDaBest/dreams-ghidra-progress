@@ -1,0 +1,21 @@
+{
+  "address": "14075e580",
+  "name": "GetThingTimeBounds",
+  "signature": "void PS4_SYSV GetThingTimeBounds(void *input_thing, float *bounds_minimum, float *bounds_maximum, unsigned char trim_enabled)",
+  "direct_call_sites_reviewed": 50,
+  "status": "verified_after_reopening",
+  "validation": [
+    "native register arguments and output writes",
+    "all statically referenced direct call argument setups",
+    "isolated cold-copy trial",
+    "single function signature changed",
+    "instruction bytes unchanged",
+    "complete function-name inventory checked",
+    "original archives unchanged"
+  ],
+  "limits": [
+    "Indirect calls outside discovered references are not excluded.",
+    "This correction is not a complete behavior audit of every supported object kind.",
+    "No additional naming or behavior-completion credit."
+  ]
+}

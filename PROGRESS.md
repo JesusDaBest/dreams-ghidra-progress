@@ -838,3 +838,7 @@ Three helpers are verified after reopening: `AcquireLeastUsedThreadBufferLane`, 
 The buffer arena has a shared mode and six contiguous thread lanes. The selector atomically claims the least-used available lane and records its index in thread-local storage. The pointer helper returns that lane's base plus used bytes. The append helper reserves a tagged, size-table-driven payload and writes a terminating sentinel, enforcing the selected mode's capacity. Descriptor initialization and the main worker's release path were inspected, together with all 15 direct append call neighborhoods.
 
 Exhaustion, nested caller behavior and concurrency invariants remain unresolved. These are descriptive analyst names; no additional types, runtime validation or full-behavior completion credit were added. There are now 140 checked descriptive names among 9,553 discovered functions.
+
+### Sound playback trace and time-bounds signature correction
+
+Traced Power comparisons through registered trigger-state fields and Playhead writes. Corrected `GetThingTimeBounds` to four arguments with the verified calling convention after reviewing 50 direct call setups, running an isolated trial, and checking persistence after reopening. Original archives and instruction bytes were preserved. Previous-frame context identity and complete Sound update behavior remain unresolved. Counts and full-behavior coverage are unchanged; see [research findings](ANALYSIS.md#sound-power-triggering-and-playhead).
