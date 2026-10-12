@@ -1007,3 +1007,15 @@ Current memory checks cover 158 instructions across six bounded regions. Cross-l
 `InterpolateTaggedValueFromBase` now names the shared strength helper at `1411dd230`. Its 302-instruction body and all 26 direct argument/result neighborhoods across 21 sampler functions support this role. The strength input was traced to the registered `AnimStrength` field, including nine predecessor paths outside the original inspection windows. Quaternion and Position paths have dedicated rotation interpolation; other tags delegate to weighted tagged-value blending and restore the target metadata.
 
 The change affects only the name. A cold backup preceded it, and a clean reopening verified the name, unchanged instructions, all direct references, and unchanged prototype. The complete function-name inventory and both original archive hashes were also checked. There are now 146 checked descriptive names and 1,603 mapped functions. Mixed-type conversions, input ranges, and complete sampler behavior remain unresolved; no full-behavior completion credit was added.
+
+### Numeric animation storage and quantization
+
+The Number record dispatcher selects numeric samplers through property metadata. Six traced selectors lead to unsigned 8-, 16-, 32- and 64-bit storage, signed 32-bit storage, and scaled signed-byte storage. Enum records also reach the unsigned-byte sampler directly. Original selector names and descriptor-index bounds remain unresolved.
+
+The reviewed contiguous entries use 12 bytes for the smaller formats: a float timestamp, a payload field, and a control word. Unsigned 64-bit entries use 24 bytes, with the payload at entry offset 8 and control word at 16. Padding and alternate resource-tree routes are not fully characterized.
+
+These paths produce Number-tagged sampled values, but their quantization differs. The unsigned byte and word paths truncate the interpolated float and retain its low 8 or 16 bits. Unsigned 32-bit storage uses a wider conversion before retaining 32 bits. Signed 32-bit interpolation quantizes through signed integers. The scaled signed-byte path converts stored units by approximately 0.01, clamps the blend to −1…1, then rounds and stores hundredths. The unsigned 64-bit path uses separate handling for values with the high bit set; its conversion has not been exhaustively proved for all floating-point inputs.
+
+In the reviewed byte path, endpoint control bit 4 governs contribution: two participating endpoints interpolate, one participating endpoint retains its value with a scaled contribution, and neither participating produces zero contribution metadata. This is more than a storage conversion and does not establish an original flag name.
+
+Three local audits matched 1,138 native instruction observations against current memory, with overlapping regions counted separately. This evidence covers selected dispatch, storage and interpolation paths, not complete sampler bodies. Exceptional values, cross-leaf reconstruction and later blending remain under investigation. No new names or full-behavior completion credit were added.
