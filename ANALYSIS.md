@@ -662,3 +662,14 @@ The expanded level and recent records feed the player-identity update encoder. I
 Connection/shutdown and client-rate-limit statuses map to numeric 503. The queued-error consumer reaches a concrete identity callback, which forwards the special zero/-1 pending key. For the inspected constructor-installed owner vtable, failure processing proceeds only when state is neither zero nor finished state six. The handler retains an earlier nonzero/non-200 result. Subclass overrides, full retry behavior, and all finalization side effects remain unresolved.
 
 There are now 99 checked descriptive names among 9,552 discovered functions. All three new names persisted after a clean save and reopening; their combined 5,608-byte spans and the original archives are unchanged. No complete-behavior coverage credit was added.
+
+
+### Keyed object cache analysis
+
+`AdjustObjectCacheKeyReferenceCount` (`1403a49a0`) is now verified after reopening. Its two observed callers add a reference on cache insertion and remove one on cache deletion. The helper tracks a 64-bit/32-bit key pair in 16-byte records, removes zero-count records, and grows its backing array when needed. This is an analyst descriptive name, not an original source symbol.
+
+Related assembly analysis identifies 80-byte cache entries, 4,096 hash slots, payload blocks with 24-byte headers, and a deadline checked during payload-space reclamation. A caller supplies a deadline 600 seconds ahead. Counter and frequency import identifiers match the process-time APIs in [pinned shadPS4 source](https://github.com/shadps4-emu/shadPS4/blob/e0a466753a1aacbc8db8253be685bf7ab4d9daae/src/core/libraries/kernel/time.cpp). This is static evidence, not runtime validation.
+
+Eviction samples eight occupied entries and compares normalized age; samples need not be distinct. A synthetic model of hash removal found a wraparound case needing further investigation. Accepted key-domain reachability and game-runtime reproduction have not been established, so this is not reported as a confirmed game defect.
+
+There are now 100 checked descriptive names among 9,552 discovered functions. The new name's 436-byte span, complete inventory, and original archives passed persistence verification. Its precise game-system assignment remains unresolved, so it is not placed into an invented subsystem. No complete-behavior coverage credit was added.
