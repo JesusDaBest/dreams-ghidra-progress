@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "78 previously unnamed functions reviewed; 74 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "81 previously unnamed functions reviewed; 77 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9321,
-    "other_names": 230,
+    "default_fun_names": 9318,
+    "other_names": 233,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1528,6 +1528,67 @@
         "The fourth scalar is not yet established as a radius or other named domain quantity.",
         "No prototype, layout, calling convention or bytes changed.",
         "Not a claim of complete runtime behavior, numerical validity or whole-game completion."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1414f2fd0",
+      "original_name": "FUN_1414f2fd0",
+      "applied_name": "GetTestSpheresAgainstSdfComputeShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 205-instruction loader body reviewed: initialization guard, cached return, file/archive loading and null return on unavailable resource.",
+        "Embedded shader identifier TestSpheresAgainstSDF, source path src/physics/ballmaker.cpp, and matching local shader archive hash identify the requested compute resource.",
+        "Caller 1414f3710 loads the returned shader object and binds its compute metadata before dispatch."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive loader name; not recovered original function symbol.",
+        "Shader behavior and valid-input contracts are not fully reviewed.",
+        "No prototype, types, bytes or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1414f3370",
+      "original_name": "FUN_1414f3370",
+      "applied_name": "GetSphereVsSphereCheckComputeShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 205-instruction loader body reviewed: initialization guard, cached return, file/archive loading and null return on unavailable resource.",
+        "Embedded shader identifier SphereVsSphereCheck, source path src/physics/ballmaker.cpp, and matching local shader archive hash identify the requested compute resource.",
+        "Caller 1414f3710 loads the returned shader object and binds its compute metadata before dispatch."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive loader name; not recovered original function symbol.",
+        "Shader behavior and valid-input contracts are not fully reviewed.",
+        "No prototype, types, bytes or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1414f3710",
+      "original_name": "FUN_1414f3710",
+      "applied_name": "FilterSphereSamplesWithGpuTests",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 435-instruction native body reviewed: copies input 16-byte samples to two working arrays, binds parameters, runs TestSpheresAgainstSDF and five SphereVsSphereCheck passes.",
+        "Final loop copies records whose fourth float compares above zero into caller array and overwrites caller count with retained count.",
+        "Embedded shader identifiers and archive matches corroborate sphere-sample test pipeline."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name; shader rejection rules are not fully decoded.",
+        "Graphics submission/synchronization helpers and invalid-input contracts remain partially reviewed.",
+        "No assertion that the scalar has only radius semantics.",
+        "No types, bytes, function boundaries or complete-behavior coverage change."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
