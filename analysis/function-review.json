@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "149 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "150 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9246,
-    "other_names": 307,
-    "verification": "complete_inventory_matches_baseline_plus_149_renames_and_two_created_functions"
+    "default_fun_names": 9245,
+    "other_names": 308,
+    "verification": "complete_inventory_matches_baseline_plus_150_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3036,6 +3036,27 @@
         "No prototype, datatype or calling convention change.",
         "Full ownership, recursion/concurrency invariants and final release import identity remain unresolved.",
         "No runtime fault reproduced or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14015e8c0",
+      "original_name": "FUN_14015e8c0",
+      "applied_name": "DecodeLz4Block",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Native token parsing matches LZ4 literal and match-length nibbles, extension bytes and16-bit backward offsets; compared with upstream block format.",
+        "Complete556-instruction body read across token parsing, literal/match vector loops, byte tails, return paths and alternate mode branches.",
+        "Short offsets1..7 checked using derived native tables against independent symbolic byte expansion for lengths4..256.",
+        "Animation block callback supplies input-sized checked mode, destination base and zero dictionary extension."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not an original recovered symbol or exact library-version claim.",
+        "Malformed input, offset0, full dictionary/mode variants and integer boundary safety remain unresolved.",
+        "No parameter/type or convention changes.",
+        "No runtime execution or full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

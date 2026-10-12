@@ -976,3 +976,11 @@ The serializer callback was read through its two read paths and write path. Exte
 The allocator import was independently identified as calloc through its calculated PS4 NID, loader assignment and thunk. Under the explicit condition that the callback allocation returns null, native control flow reaches an unguarded low-address read after cleanup. This is a conditional static finding; no runtime crash was reproduced and no game code was patched.
 
 A cold backup preceded the cleanup helper's name-only change. Reopening verified its body bytes, all 105 reference addresses and unchanged prototype. All 151 descriptive names and the original archives passed verification. There are 110 checked names among 1,606 mapped functions; no full-behavior completion credit was added.
+
+### Serialized-block LZ4 decoder identified
+
+`DecodeLz4Block` now names the 556-instruction decoder used by the serializer block callback. Its token nibbles, extended lengths, 16-bit backward offsets and match lengths agree with the upstream [LZ4 block format](https://github.com/lz4/lz4/blob/dev/doc/lz4_Block_format.md). This identifies a format and descriptive role, not an exact original symbol or library version.
+
+Animation loading selects the input-sized checked mode, supplying the output base and no earlier external dictionary. The two short-offset tables were verified against native constants; symbolic comparison with independent byte-by-byte expansion passed for offsets 1–7 and lengths 4–256. Remaining vector and byte-copy paths were read, with conditional buffer-slack reasoning recorded locally. These model checks do not execute the binary or prove safety for all malformed inputs. Zero offsets, alternative dictionary/mode variants and arithmetic extremes remain unresolved.
+
+A cold backup preceded the name-only change. Clean reopening verified all 2,254 body bytes, nine reference addresses and the unchanged prototype; all 152 descriptive names and original archive hashes passed verification. There are 111 checked names among 1,607 mapped functions. Full-behavior coverage is unchanged. This serialized-block decoder does not identify how Animation's packed sample controls are generated.

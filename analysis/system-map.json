@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1606,
-  "unmapped_total": 7947,
+  "mapped_total": 1607,
+  "unmapped_total": 7946,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41805,6 +41805,26 @@
           "kind": "verified_semantic_review",
           "name": "ReleaseRefCountedBlockHandle",
           "support": "Complete23-instruction handle release body; null guard, atomic decrement, nested release, allocation counters and handle clearing verified in native code."
+        }
+      ]
+    },
+    "14015e8c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "LZ4-format decoder called by serializer block callback",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native LZ4 token decoder and copy paths",
+      "code_sha256": "1026d31aaa28c696271f9bbb4f188d84d8888ce000ed4ffbc1343b1023195439",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodeLz4Block",
+          "support": "Native LZ4 token layout, checked-mode serializer call, short-offset expansion and copy paths reviewed; full malformed-input correctness remains unresolved."
         }
       ]
     }
