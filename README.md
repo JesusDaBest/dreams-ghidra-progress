@@ -9,6 +9,21 @@ Working out how Dreams works, one piece of code at a time
 
 </div>
 
+## Behavior findings
+
+These findings describe reverse-engineering progress beyond function names. “Traced” means supported by static executable evidence; it does not mean tested in the running game or a complete subsystem.
+
+| Part | What has been established | What remains |
+| --- | --- | --- |
+| Teleporter: scheduling | Pair queue, priority filtering, and previous-frame flag updates traced in native code. | Complete enclosing update routine and all scheduling conditions. |
+| Teleporter: target selection | DetectName comparison, candidate filtering, distance comparison, and selected-target transform call traced. | Independent identity of candidate type 3 and all membership filters. |
+| Teleporter: movement | Position/orientation flags feed weighted accumulators; resulting transforms reach object and physics-record writes. | All exceptional cases, mode meanings, callback side effects, and runtime tests. |
+| Shared transforms | Exact symbolic assembly checks support quaternion composition and rotated/scaled translation; full movement-helper body read. | Parent-relative conversion proof, additional vector-field meanings, and runtime tests. |
+| Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
+| Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
+
+[Detailed findings and limitations](ANALYSIS.md). Square counts below measure function review only; they are not the completion percentage of these behaviors.
+
 ## Status
 
 ![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9789650295d0e03d7b9ba0ce7fb82eef2d0ea551/assets/status-badges.svg)
