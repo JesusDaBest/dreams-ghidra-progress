@@ -1035,3 +1035,11 @@ There are now 148 checked descriptive names, with 107 among the 1,603 mapped fun
 The executable registers `EBlendType` as None (0), Linear (1), EaseIn (2), EaseOut (3), EaseBoth (4), and LAST (5). Animation's BlendType field at offset `0x148` binds this descriptor; its adjacent boolean at `0x149` is a separate field. The descriptor is also referenced by shared Thing property registration.
 
 Reading the three complete enum registration/append bodies and their descriptor references exposed an earlier classification error: the type name had placed these three functions under rendering. They now sit under shared property data as interpolation modes. This corrects ownership only; none is newly counted as understood or named. The relationship between these enum values, Animation's runtime reads and packed sample curve bits remains unproven.
+
+### Animation easing curve helper named
+
+`EvaluateAnimationEasingCurve` now names the complete 66-instruction helper at `140705ae0`. It reads Animation's BlendType and three easing-strength fields. Linear returns its input; None and values outside the four recognized modes return zero. EaseIn returns `x^p`, EaseOut returns `1-(1-x)^p`, and EaseBoth uses the corresponding two-sided curve, where `p = 1 + 7 * strength^2.807354927` and the stored signed-byte strength is scaled by approximately 0.01.
+
+Both direct calls occur in the same runtime routine. Their reviewed neighborhoods compute timeline fractions, clamp them to 0…1, and select an object checked against Animation kind 9; one complements the curve result afterward. This connects the curve to timeline weighting, but earlier object-validity invariants and the complete enclosing routine remain unresolved. Matching the packed-record sampler formulas does not prove direct copying of the enum into sample bits.
+
+A cold backup preceded the name-only change. Clean reopening verified all 332 body bytes, reference addresses and the unchanged prototype. The complete function-name inventory and original archive hashes also passed verification. There are now 149 checked descriptive names, with 108 among 1,604 mapped functions. No full-behavior completion credit was added.

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 107,
+    "done": 108,
     "todo": 1496,
-    "total": 1603,
-    "behavior_or_helpers_reviewed": 58,
+    "total": 1604,
+    "behavior_or_helpers_reviewed": 59,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -38122,17 +38122,18 @@
       {
         "name": "animation",
         "label": "Animation & puppets",
-        "done": 5,
+        "done": 6,
         "todo": 44,
-        "total": 49,
-        "behavior_or_helpers_reviewed": 3,
+        "total": 50,
+        "behavior_or_helpers_reviewed": 4,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 3,
+        "runtime_functions_identified": 4,
         "property_type_functions_identified": 46,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "HasAnimationKeyframeMaskOrEligibleInput",
+          "EvaluateAnimationEasingCurve",
           "RegisterAnimationTypeDescriptor",
           "RegisterAnimationFieldOffsets",
           "InterpolateTaggedValueFromBase",
@@ -38186,6 +38187,7 @@
         ],
         "done_addresses": [
           "1407032a0",
+          "140705ae0",
           "140d54650",
           "140d86c30",
           "1411dd230",
@@ -39132,17 +39134,18 @@
           {
             "name": "animation/keyframes",
             "label": "Animation & keyframes",
-            "done": 5,
+            "done": 6,
             "todo": 7,
-            "total": 12,
-            "behavior_or_helpers_reviewed": 3,
+            "total": 13,
+            "behavior_or_helpers_reviewed": 4,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 3,
+            "runtime_functions_identified": 4,
             "property_type_functions_identified": 9,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "HasAnimationKeyframeMaskOrEligibleInput",
+              "EvaluateAnimationEasingCurve",
               "RegisterAnimationTypeDescriptor",
               "RegisterAnimationFieldOffsets",
               "InterpolateTaggedValueFromBase",
@@ -39159,6 +39162,7 @@
             ],
             "done_addresses": [
               "1407032a0",
+              "140705ae0",
               "140d54650",
               "140d86c30",
               "1411dd230",
@@ -39178,17 +39182,18 @@
               {
                 "name": "animation/keyframes/animation",
                 "label": "Animation",
-                "done": 5,
+                "done": 6,
                 "todo": 1,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 3,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 4,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
+                "runtime_functions_identified": 4,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "HasAnimationKeyframeMaskOrEligibleInput",
+                  "EvaluateAnimationEasingCurve",
                   "RegisterAnimationTypeDescriptor",
                   "RegisterAnimationFieldOffsets",
                   "InterpolateTaggedValueFromBase",
@@ -39199,6 +39204,7 @@
                 ],
                 "done_addresses": [
                   "1407032a0",
+                  "140705ae0",
                   "140d54650",
                   "140d86c30",
                   "1411dd230",
@@ -39209,6 +39215,35 @@
                 ],
                 "unresolved_addresses": [],
                 "groups": [
+                  {
+                    "name": "animation/keyframes/animation/runtime-implementation",
+                    "label": "Runtime code",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "HasAnimationKeyframeMaskOrEligibleInput",
+                      "EvaluateAnimationEasingCurve",
+                      "InterpolateTaggedValueFromBase",
+                      "EvaluateAnimationDeltaOnBaseValue"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407032a0",
+                      "140705ae0",
+                      "1411dd230",
+                      "141215810"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
                   {
                     "name": "animation/keyframes/animation/properties-types",
                     "label": "Properties & type definitions",
@@ -39235,33 +39270,6 @@
                     "todo_addresses": [
                       "1404984f0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "animation/keyframes/animation/runtime-implementation",
-                    "label": "Runtime code",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "HasAnimationKeyframeMaskOrEligibleInput",
-                      "InterpolateTaggedValueFromBase",
-                      "EvaluateAnimationDeltaOnBaseValue"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1407032a0",
-                      "1411dd230",
-                      "141215810"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39533,5 +39541,5 @@
       }
     ]
   },
-  "unmapped": 7950
+  "unmapped": 7949
 }

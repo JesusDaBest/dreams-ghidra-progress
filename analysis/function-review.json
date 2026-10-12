@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "146 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "147 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9249,
-    "other_names": 304,
-    "verification": "complete_inventory_matches_baseline_plus_146_renames_and_two_created_functions"
+    "default_fun_names": 9248,
+    "other_names": 305,
+    "verification": "complete_inventory_matches_baseline_plus_147_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2957,6 +2957,25 @@
         "No full-behavior completion credit."
       ],
       "reviewed_scope": "property_or_type_registration"
+    },
+    {
+      "address": "140705ae0",
+      "original_name": "FUN_140705ae0",
+      "applied_name": "EvaluateAnimationEasingCurve",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete native body and dispatch table read; registered Animation BlendType and three named strength fields matched.",
+        "Two live caller argument/result neighborhoods trace timeline fractions, clamp and Animation kind9 selection.",
+        "Constants and native bytes matched live memory; powf import identity independently established by prior loader audit."
+      ],
+      "caveats": [
+        "Negative easing strength, nonfinite inputs, and caller nullability invariants need further validation.",
+        "Complete enclosing runtime caller and record producers remain unresolved.",
+        "No prototype or datatype change; no full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
     }
   ],
   "deferred": [

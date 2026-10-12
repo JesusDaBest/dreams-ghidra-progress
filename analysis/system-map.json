@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1603,
-  "unmapped_total": 7950,
+  "mapped_total": 1604,
+  "unmapped_total": 7949,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41745,6 +41745,26 @@
           "kind": "verified_semantic_review",
           "name": "InterpolateTaggedValueFromBase",
           "support": "Interpolates from second base tagged value toward first target using the Animation strength input; Quaternion, Position and generic delegated branches inspected, with26 direct argument/result neighborhoods across21 samplers. Mixed-type numerical details remain unresolved."
+        }
+      ]
+    },
+    "140705ae0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "registered_Animation_BlendType_and_easing_strength_fields_with_two_caller_neighborhoods",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_easing_curve_body",
+      "code_sha256": "bce7d09d5cda1737333783499c71cacec05fbd2ce533f0158efff29219b98f4b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateAnimationEasingCurve",
+          "support": "Complete66-instruction body implements Linear/EaseIn/EaseOut/EaseBoth and zero fallback from registered Animation fields; both caller argument/result neighborhoods reviewed. Input-range and broader caller invariants remain unresolved."
         }
       ]
     }
