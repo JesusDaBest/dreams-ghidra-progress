@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "86 previously unnamed functions reviewed;82 descriptive names applied and verified after reopening;4 remain deferred.",
+  "review_scope": "87 previously unnamed functions reviewed;83 descriptive names applied and verified after reopening;4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9313,
-    "other_names": 238,
+    "default_fun_names": 9312,
+    "other_names": 239,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1681,6 +1681,25 @@
         "Descriptive analyst name, not recovered original symbol.",
         "Native float exceptional behavior and degenerate axes remain unresolved.",
         "SIMD prototype remains uncorrected; no types, conventions, boundaries or bytes changed."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140e852e0",
+      "original_name": "FUN_140e852e0",
+      "applied_name": "EvaluatePairedPrimitiveFields",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_paired_primitive_field_evaluation",
+      "evidence": [
+        "681-instruction native capture and independently decoded dispatch table.",
+        "Box, sphere, cylinder, capped cone and ellipsoid-helper branches identified from equations.",
+        "Both native consumers use two scalar output lanes."
+      ],
+      "caveats": [
+        "Analyst name, not original symbol.",
+        "Mixed metrics, cone candidate fallbacks and exceptional inputs remain unresolved.",
+        "Signature unchanged; no full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
