@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1605,
-  "unmapped_total": 7948,
+  "mapped_total": 1606,
+  "unmapped_total": 7947,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41785,6 +41785,26 @@
           "kind": "verified_semantic_review",
           "name": "ServiceSerializerBuffer",
           "support": "Complete81-instruction buffer service body; direction-dependent service gates, callback argument registers, success reset and failure cleanup verified in native code."
+        }
+      ]
+    },
+    "14038bed0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "reference-counted blocks shared by serializer callback and block writer",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete native refcounted block handle release body",
+      "code_sha256": "55f65a59023921ae558f9ee9f1fcfaf03ae54e05c46b1da7627ae2c4549b9aab",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseRefCountedBlockHandle",
+          "support": "Complete23-instruction handle release body; null guard, atomic decrement, nested release, allocation counters and handle clearing verified in native code."
         }
       ]
     }

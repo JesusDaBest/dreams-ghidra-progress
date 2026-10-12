@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 109,
+    "done": 110,
     "todo": 1496,
-    "total": 1605,
-    "behavior_or_helpers_reviewed": 60,
+    "total": 1606,
+    "behavior_or_helpers_reviewed": 61,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -24503,12 +24503,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 34,
+        "done": 35,
         "todo": 113,
-        "total": 147,
-        "behavior_or_helpers_reviewed": 29,
+        "total": 148,
+        "behavior_or_helpers_reviewed": 30,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 68,
+        "runtime_functions_identified": 69,
         "property_type_functions_identified": 74,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24520,6 +24520,7 @@
           "AllocateKeyedResourceBlocksWithEviction",
           "FindBestFitKeyedResourceBlockRun",
           "AllocateKeyedResourceBlocks",
+          "ReleaseRefCountedBlockHandle",
           "VisitPosProperties",
           "VisitVariantProperties",
           "VisitCanvasProperties",
@@ -24671,6 +24672,7 @@
           "140119260",
           "140119390",
           "1401194d0",
+          "14038bed0",
           "1404f68b0",
           "1404f70b0",
           "1404f7a20",
@@ -24824,12 +24826,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 25,
+            "done": 26,
             "todo": 15,
-            "total": 40,
-            "behavior_or_helpers_reviewed": 25,
+            "total": 41,
+            "behavior_or_helpers_reviewed": 26,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 33,
+            "runtime_functions_identified": 34,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24841,6 +24843,7 @@
               "AllocateKeyedResourceBlocksWithEviction",
               "FindBestFitKeyedResourceBlockRun",
               "AllocateKeyedResourceBlocks",
+              "ReleaseRefCountedBlockHandle",
               "ComputeThingTimelineIntervalFromTimeBounds",
               "AdvanceFilteredObjectGraphIterator",
               "AcquireLeastUsedThreadBufferLane",
@@ -24885,6 +24888,7 @@
               "140119260",
               "140119390",
               "1401194d0",
+              "14038bed0",
               "14075f490",
               "140769150",
               "1408c6390",
@@ -25287,6 +25291,57 @@
                 ]
               },
               {
+                "name": "shared/runtime/serialization",
+                "label": "Saving & loading",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ReleaseRefCountedBlockHandle",
+                  "ServiceSerializerBuffer"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14038bed0",
+                  "140d92000"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/serialization/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReleaseRefCountedBlockHandle",
+                      "ServiceSerializerBuffer"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14038bed0",
+                      "140d92000"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/runtime/egametype",
                 "label": "Game Type",
                 "done": 0,
@@ -25422,53 +25477,6 @@
                     "todo_addresses": [
                       "14090e6f0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/serialization",
-                "label": "Saving & loading",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ServiceSerializerBuffer"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140d92000"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/serialization/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ServiceSerializerBuffer"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140d92000"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -39592,5 +39600,5 @@
       }
     ]
   },
-  "unmapped": 7948
+  "unmapped": 7947
 }

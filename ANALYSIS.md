@@ -1057,3 +1057,13 @@ Animation's serializer transfers BlendType and all three easing-strength fields 
 `ServiceSerializerBuffer` now names the complete 81-instruction shared buffer helper. It services exhausted read buffers or pending writes through a callback receiving context, callback data and an operation flag. Success resets cursor/checkpoint state; failure retains an error, invokes cleanup and clears callback resources. The original callback types, individual error-code meanings and secondary-context path remain unresolved.
 
 A cold backup preceded the name-only change. Reopening verified its 343 body bytes, references and unchanged prototype; the complete name inventory and original archives also passed checks. There are now 150 checked descriptive names, 109 among 1,605 mapped functions. No runtime-validation or full-behavior completion credit was added.
+
+### Shared block lifetime and serializer block callback traced
+
+`ReleaseRefCountedBlockHandle` now names the 23-instruction shared block-handle cleanup helper. It clears a null handle normally; otherwise it atomically decrements the block reference count and, when that reaches zero, releases a nested handle, adjusts allocation counters and calls the final release routine. Original symbols and complete ownership/concurrency invariants remain unresolved.
+
+The serializer callback was read through its two read paths and write path. External reads require a four-byte length and an exact payload read; block-list reads fetch a recorded entry. Positive decode results establish the readable buffer end. Native checks and nine observed status paths are documented locally. The codec implementation and original error-enum names are not fully recovered.
+
+The allocator import was independently identified as calloc through its calculated PS4 NID, loader assignment and thunk. Under the explicit condition that the callback allocation returns null, native control flow reaches an unguarded low-address read after cleanup. This is a conditional static finding; no runtime crash was reproduced and no game code was patched.
+
+A cold backup preceded the cleanup helper's name-only change. Reopening verified its body bytes, all 105 reference addresses and unchanged prototype. All 151 descriptive names and the original archives passed verification. There are 110 checked names among 1,606 mapped functions; no full-behavior completion credit was added.

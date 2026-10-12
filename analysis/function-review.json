@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "148 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "149 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9247,
-    "other_names": 306,
-    "verification": "complete_inventory_matches_baseline_plus_148_renames_and_two_created_functions"
+    "default_fun_names": 9246,
+    "other_names": 307,
+    "verification": "complete_inventory_matches_baseline_plus_149_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3016,6 +3016,26 @@
         "No prototype, datatype or calling convention change.",
         "Secondary context, callback implementations and error code meanings remain unresolved.",
         "No runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14038bed0",
+      "original_name": "FUN_14038bed0",
+      "applied_name": "ReleaseRefCountedBlockHandle",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete23-instruction native body and live bytes verified: null guard, atomic refcount decrement, nested handle release, allocation counters, release call and caller handle clearing.",
+        "Animation block callback and writer use this helper on their shared32-byte-header block allocations.",
+        "Null-handle path returns normally and preserves RBX, proving the block-loader conditional null-read path under zero calloc return."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not original symbol.",
+        "No prototype, datatype or calling convention change.",
+        "Full ownership, recursion/concurrency invariants and final release import identity remain unresolved.",
+        "No runtime fault reproduced or full-behavior completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
