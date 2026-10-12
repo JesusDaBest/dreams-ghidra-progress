@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 86,
+    "done": 88,
     "todo": 1496,
-    "total": 1582,
-    "behavior_or_helpers_reviewed": 39,
+    "total": 1584,
+    "behavior_or_helpers_reviewed": 41,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -34509,16 +34509,19 @@
       {
         "name": "audio",
         "label": "Sound & music",
-        "done": 0,
+        "done": 2,
         "todo": 62,
-        "total": 62,
-        "behavior_or_helpers_reviewed": 0,
+        "total": 64,
+        "behavior_or_helpers_reviewed": 2,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 0,
+        "runtime_functions_identified": 2,
         "property_type_functions_identified": 62,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
-        "done_names": [],
+        "done_names": [
+          "InitializeAudioFileImportContext",
+          "ProcessAudioFileImportContext"
+        ],
         "todo_names": [
           "0x14010ede0",
           "0x14010f0e0",
@@ -34583,7 +34586,10 @@
           "0x140d76b20",
           "0x140d83560"
         ],
-        "done_addresses": [],
+        "done_addresses": [
+          "140119510",
+          "140119b30"
+        ],
         "todo_addresses": [
           "14010ede0",
           "14010f0e0",
@@ -36137,6 +36143,57 @@
                     "groups": []
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "name": "audio/file-import",
+            "label": "Audio file import",
+            "done": 2,
+            "todo": 0,
+            "total": 2,
+            "behavior_or_helpers_reviewed": 2,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 2,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "InitializeAudioFileImportContext",
+              "ProcessAudioFileImportContext"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "140119510",
+              "140119b30"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "audio/file-import/runtime-implementation",
+                "label": "Import processing",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializeAudioFileImportContext",
+                  "ProcessAudioFileImportContext"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140119510",
+                  "140119b30"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
               }
             ]
           },
@@ -39222,5 +39279,5 @@
       }
     ]
   },
-  "unmapped": 7970
+  "unmapped": 7968
 }

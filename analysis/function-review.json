@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "125 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "127 existing-function renames and 1 newly defined descriptive function verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9552,
-    "default_fun_names": 9270,
-    "other_names": 282,
-    "verification": "complete_inventory_matches_baseline_plus_125_renames_and_one_created_function"
+    "default_fun_names": 9268,
+    "other_names": 284,
+    "verification": "complete_inventory_matches_baseline_plus_127_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2505,6 +2505,46 @@
         "keyed-resource-block-allocation-audit.json",
         "keyed-descriptor-callbacks-audit.json",
         "Full native span matches live SHA256 ee136e357264ad663ef554db382a9f45c0c66b6eff3e7eafdab1bd9bf066ae20"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140119510",
+      "original_name": "FUN_140119510",
+      "applied_name": "InitializeAudioFileImportContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "keyed-resource-audio-file-initializer-audit.json",
+        "audio-file-processing-audit.json",
+        "audio-codec-import-audit.json",
+        "Full native span matches live SHA256 c92bba91b116733e7cf8ac371a4475debc91f570e514ed60bc1c4b7a50e7f519"
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "No types, prototypes or calling conventions changed.",
+        "No native runtime validation or full-behavior completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140119b30",
+      "original_name": "FUN_140119b30",
+      "applied_name": "ProcessAudioFileImportContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "keyed-resource-audio-file-initializer-audit.json",
+        "audio-file-processing-audit.json",
+        "audio-codec-import-audit.json",
+        "Full native span matches live SHA256 a384ecec7e7fc1f60e4fef28d3fdc23e3c1ca032e084d381fcfdeb4312b67a62"
       ],
       "caveats": [
         "Descriptive analyst name, not recovered original symbol.",

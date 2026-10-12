@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1582,
-  "unmapped_total": 7970,
+  "mapped_total": 1584,
+  "unmapped_total": 7968,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41307,6 +41307,44 @@
           "support": "Native bitmap allocator and locked wrapper supply contiguous auxiliary resource blocks to serialization and use the shared keyed-resource eviction helper."
         }
       ]
+    },
+    "140119510": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "file-import",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_audio_import_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "5c9c29eb487d327a8added71a6abeed921368131e4165745415591a71743b6ab",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeAudioFileImportContext",
+          "support": "Native review connects file parsing, PCM buffering, peak-envelope generation and the exactly identified sceAt9EncEncode import. No runtime correctness claim."
+        }
+      ]
+    },
+    "140119b30": {
+      "system": "audio",
+      "component_path": [
+        "audio",
+        "file-import",
+        "runtime-implementation"
+      ],
+      "component_basis": "verified_audio_import_dataflow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "7eb9e0b963d2cc28a388d54245230b5d3e6091654ca7fef00ac70eab667e5600",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ProcessAudioFileImportContext",
+          "support": "Native review connects file parsing, PCM buffering, peak-envelope generation and the exactly identified sceAt9EncEncode import. No runtime correctness claim."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -42443,6 +42481,17 @@
                   "children": []
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "file-import",
+          "label": "Audio file import",
+          "children": [
+            {
+              "id": "runtime-implementation",
+              "label": "Import processing",
+              "children": []
             }
           ]
         }
