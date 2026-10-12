@@ -14189,7 +14189,7 @@
       "code_role_basis": "registered_type_association"
     },
     "140cc7ab0": {
-      "system": "rendering",
+      "system": "shared",
       "evidence": [
         {
           "kind": "type_registration",
@@ -14197,21 +14197,27 @@
           "type_name": "EBlendType",
           "site": "140cc7ade",
           "target": "14170a67b"
+        },
+        {
+          "kind": "verified_semantic_mapping_correction",
+          "descriptor": "145833790",
+          "type_name": "EBlendType",
+          "support": "Explicit None/Linear/EaseIn/EaseOut/EaseBoth/LAST values and shared descriptor use by RegisterThingProperties and RegisterAnimationFieldOffsets. Prior rendering-only classification from the type name was unsupported."
         }
       ],
       "code_sha256": "ccef4e64cec1ca3910dccefff75a5b12606a931b825fa3225bcb65f70a1d5fe7",
       "component_path": [
-        "rendering",
-        "effects",
+        "shared",
+        "properties",
         "eblendtype",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "shared_enum_descriptor_referenced_by_Thing_and_Animation_registration",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "complete_enum_registration_and_append_bodies"
     },
     "140cc7b60": {
-      "system": "rendering",
+      "system": "shared",
       "evidence": [
         {
           "kind": "enum_registration_bridge",
@@ -14221,21 +14227,27 @@
           "incoming_site": "140cc7b07",
           "append_function": "140cc7bd0",
           "site": "140cc7b6d"
+        },
+        {
+          "kind": "verified_semantic_mapping_correction",
+          "descriptor": "145833790",
+          "type_name": "EBlendType",
+          "support": "Explicit None/Linear/EaseIn/EaseOut/EaseBoth/LAST values and shared descriptor use by RegisterThingProperties and RegisterAnimationFieldOffsets. Prior rendering-only classification from the type name was unsupported."
         }
       ],
       "code_sha256": "54bfb22ea801d0b55143ba0518024d952643b3f35f7777ed8dce4b281aa8311f",
       "component_path": [
-        "rendering",
-        "effects",
+        "shared",
+        "properties",
         "eblendtype",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "shared_enum_descriptor_referenced_by_Thing_and_Animation_registration",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "complete_enum_registration_and_append_bodies"
     },
     "140cc7bd0": {
-      "system": "rendering",
+      "system": "shared",
       "evidence": [
         {
           "kind": "descriptor_enum_values",
@@ -14247,18 +14259,24 @@
           ],
           "site": "140cc7d4a",
           "counter": "1458338d0"
+        },
+        {
+          "kind": "verified_semantic_mapping_correction",
+          "descriptor": "145833790",
+          "type_name": "EBlendType",
+          "support": "Explicit None/Linear/EaseIn/EaseOut/EaseBoth/LAST values and shared descriptor use by RegisterThingProperties and RegisterAnimationFieldOffsets. Prior rendering-only classification from the type name was unsupported."
         }
       ],
       "code_sha256": "09817d0fc688827c1462bf6daabad0302b8aff6bc1ce1e55bb226088b59167a4",
       "component_path": [
-        "rendering",
-        "effects",
+        "shared",
+        "properties",
         "eblendtype",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "shared_enum_descriptor_referenced_by_Thing_and_Animation_registration",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "complete_enum_registration_and_append_bodies"
     },
     "140cc7f10": {
       "system": "interface",
@@ -42104,6 +42122,17 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "id": "eblendtype",
+              "label": "Interpolation modes",
+              "children": [
+                {
+                  "id": "properties-types",
+                  "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
             }
           ]
         },
@@ -48130,17 +48159,6 @@
             {
               "id": "egradefxglitchstyle",
               "label": "Grade FXGlitch Style",
-              "children": [
-                {
-                  "id": "properties-types",
-                  "label": "Properties & type definitions",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "id": "eblendtype",
-              "label": "Blend Type",
               "children": [
                 {
                   "id": "properties-types",

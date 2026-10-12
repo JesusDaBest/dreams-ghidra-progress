@@ -1029,3 +1029,9 @@ The startup property-offset matrix independently links 27 Animation property IDs
 The three easing-strength properties (`0x32d` through `0x32f`) use class 23 in the shared property metadata table. That connects their registered fields to the scaled signed-byte storage selector audited above. It does not prove that every property has animation records or that every sampler route is understood. IsKeyframe, PlayheadDelta and remaining property links still need tracing.
 
 There are now 148 checked descriptive names, with 107 among the 1,603 mapped functions. Original archive hashes and the complete function-name inventory passed verification. No full-behavior completion credit was added.
+
+### Shared interpolation enum corrected
+
+The executable registers `EBlendType` as None (0), Linear (1), EaseIn (2), EaseOut (3), EaseBoth (4), and LAST (5). Animation's BlendType field at offset `0x148` binds this descriptor; its adjacent boolean at `0x149` is a separate field. The descriptor is also referenced by shared Thing property registration.
+
+Reading the three complete enum registration/append bodies and their descriptor references exposed an earlier classification error: the type name had placed these three functions under rendering. They now sit under shared property data as interpolation modes. This corrects ownership only; none is newly counted as understood or named. The relationship between these enum values, Animation's runtime reads and packed sample curve bits remains unproven.
