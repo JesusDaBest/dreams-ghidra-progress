@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "76 previously unnamed functions reviewed; 72 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "77 previously unnamed functions reviewed; 73 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9323,
-    "other_names": 228,
+    "default_fun_names": 9322,
+    "other_names": 229,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1487,6 +1487,25 @@
         "Analyst name, not an original symbol.",
         "Growth callback and runtime behavior remain independently unresolved.",
         "No prototype, type, convention, boundary or byte changes."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1412776e0",
+      "original_name": "FUN_1412776e0",
+      "applied_name": "CopyAndPackGpuVolumeResource",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Complete 141-instruction, 730-byte body copies 0x120 source bytes to an indexed CPU record, computes resource-scale and offset/bounds fields, and writes matching 0xa8-byte packed records to two indexed arrays.",
+        "Both destination record stores and source +0xd8 to destination +0x50 transfers are checked; setup independently identifies the GPU backing buffer and 0xa8 stride."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered original source.",
+        "Individual packed field meanings, valid input ranges and floating-point exceptional behavior remain unresolved.",
+        "No prototype, type, convention, boundary or byte changes; no whole-function completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
