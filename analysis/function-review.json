@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "93 previously unnamed functions reviewed;89 descriptive names applied and verified after reopening;4 remain deferred.",
+  "review_scope": "89 existing-function renames and 1 newly defined descriptive function verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9551,
+    "total": 9552,
     "default_fun_names": 9306,
-    "other_names": 245,
-    "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
+    "other_names": 246,
+    "verification": "complete_inventory_matches_baseline_plus_89_renames_and_one_created_function"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1805,6 +1805,25 @@
         "Analyst name, not recovered original source symbol.",
         "No signature change or whole-behavior completion credit.",
         "Malformed overlength reference decoding and final runtime type write remain unresolved."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "140d88850",
+      "original_name": null,
+      "applied_name": "AllocateDefaultLight",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete 401-byte, 58-instruction straight-line allocator body; Light descriptor callback; property-matched default fields; operator new import.",
+        "Isolated definition and pointer-return signature decompiled; main promotion followed cold backup; live bytes match baseline after restart."
+      ],
+      "caveats": [
+        "New function definition, not a rename or recovered original symbol.",
+        "Allocation-failure contract and later runtime type restoration remain unresolved.",
+        "No complete-behavior coverage credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
