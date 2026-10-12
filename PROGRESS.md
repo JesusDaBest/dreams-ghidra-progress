@@ -642,3 +642,16 @@ Both inspected float-conversion branches accept spans up to 127 bytes containing
 The subcategory writer preserves 19 lowercase letter codes and emits `"0"` for unsupported codes. Static parser-table correspondence, conditional on the checked one-byte hash model, maps that sentinel to NUL. This is not an end-to-end runtime round-trip test, and most letter meanings remain unresolved.
 
 A verified cold backup preceded the name-only edits. Independent reopening checked all 95 renames and the previously defined allocator. The two new functions' complete 4,798-byte spans match the immutable baseline; original archive hashes are unchanged. There are now 96 checked descriptive names among 9,552 discovered functions. No complete-behavior coverage credit was added.
+
+
+### Creator records and Dreamstone identifiers
+
+Three more descriptive names are verified after reopening: `AppendExpandedCreatorLevelRecords` (`140209490`), `GetDreamstoneTypeName` (`140252190`), and `RegisterDreamstoneTypeValues` (`140c841a0`). The expansion converts 12-byte category records into 16-byte records, mapping category bytes to numeric values and copying the integer and float bits. The destination capacity contract remains unresolved.
+
+All 125 registered nonzero Dreamstone identifiers match the lookup's returned name pointers in a static instruction model. Registration includes zero as Invalid, while the lookup returns an empty name for zero. These are descriptive analyst names, not recovered source symbols.
+
+The expanded level and recent records feed the player-identity update encoder. Its native calls target `/puserver.v1.IdentityService/UpdatePlayerIdentity`. Each record carries category, subcategory, a sign-extended integer varint, and raw float32 bits. Independent length calculations passed 343 boundary-value combinations; this is a static model, not game execution or proof of server acceptance.
+
+Connection/shutdown and client-rate-limit statuses map to numeric 503. The queued-error consumer reaches a concrete identity callback, which forwards the special zero/-1 pending key. For the inspected constructor-installed owner vtable, failure processing proceeds only when state is neither zero nor finished state six. The handler retains an earlier nonzero/non-200 result. Subclass overrides, full retry behavior, and all finalization side effects remain unresolved.
+
+There are now 99 checked descriptive names among 9,552 discovered functions. All three new names persisted after a clean save and reopening; their combined 5,608-byte spans and the original archives are unchanged. No complete-behavior coverage credit was added.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9552,
-  "mapped_total": 1563,
-  "unmapped_total": 7989,
+  "mapped_total": 1565,
+  "unmapped_total": 7987,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -6339,7 +6339,7 @@
           "site": "140c841ad"
         }
       ],
-      "code_sha256": "6f2630eacb548422fd274838a85d2e364018312cb3121bd52a3861c350fa09ff",
+      "code_sha256": "da1e215467dbf548cc99a02433f3fbdb5a0b8ea1219c7b5c47e7474d27ee180c",
       "component_path": [
         "dreamiverse",
         "creations",
@@ -40908,6 +40908,44 @@
           "limits": "Static ownership of identified records; no whole feature completion or runtime verification."
         }
       ]
+    },
+    "140209490": {
+      "system": "dreamiverse",
+      "component_path": [
+        "dreamiverse",
+        "player-identity",
+        "level-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "native_level_record_expansion_and_identity_update_consumer",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "native_record_parsing_or_serialization",
+      "code_sha256": "bdc2197b52505471581157ccfc656b308f70c81a82723febc6b5b2b42b148d93",
+      "evidence": [
+        {
+          "kind": "native_level_record_expansion_and_identity_update_consumer",
+          "limits": "Identified implementation scope only; not complete feature coverage."
+        }
+      ]
+    },
+    "140252190": {
+      "system": "dreamiverse",
+      "evidence": [
+        {
+          "kind": "native_enum_lookup_matches_registered_value_names",
+          "limits": "Identified implementation scope only; not complete feature coverage."
+        }
+      ],
+      "code_sha256": "d41c80d5aaf1a3304048077b929332999626cf96b46b349ce4b8beec7a049621",
+      "component_path": [
+        "dreamiverse",
+        "creations",
+        "edreamstonetype",
+        "properties-types"
+      ],
+      "component_basis": "native_enum_lookup_matches_registered_value_names",
+      "code_role": "properties-types",
+      "code_role_basis": "registered_type_association"
     }
   },
   "hierarchy": [
