@@ -895,3 +895,9 @@ The predicate now has a verified boolean return and three native arguments: two 
 Simulation preparation builds the mask array from each object's byte at `+0x22`. Mode-0 objects with a valid `+4` reference also inherit that referenced entry's mask. The keyframe predicate tests for bits absent from the referenced mask, connecting its test to the inheritance mechanism. The reviewed loop initializes entry zero and processes the remaining entries in ascending order. The original meaning of the mask bits and a guarantee that referenced entries precede dependents remain unproven. Other mask producers still need review.
 
 This adds a justified prototype and bounded behavior evidence, with no new checked names, runtime validation or full-function completion credit.
+
+### Main-loop mask update and developer-source lead
+
+A further 102 live native instructions verify the main loop's mask inheritance path. It reads object byte `+0x22`, optionally combines the referenced mask for mode-0 objects, and stores the resulting context mask separately. A later gate can clear the object's byte before storing the already computed context mask. The neighboring byte `+0x23` uses a different owner array and separate combination logic; it is not treated as the Animation predicate's mask. Gate meanings, entry conditions and runtime consequences remain unresolved.
+
+The source frame at 20:41 of Media Molecule's [Liam coding stream](https://www.youtube.com/watch?v=IvGbhvZsTa8&t=1241s) was visually inspected. It shows an unfinished physics-tool update body and a hovered-object helper. Searches of cached decompilation found no matching source labels. This is a research lead, not a verified function match: the cache and historical stream cannot establish the current executable's source identity. No streamed names or additional completion credit were applied.
