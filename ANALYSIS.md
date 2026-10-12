@@ -977,3 +977,11 @@ The executable's `EVariantType` registry explicitly names tag 6 `Float4`, tag 15
 Tracing that registry into six reviewed output neighborhoods clarifies the common sampler path. Both formats save the input record's type byte, compare it with 16, and write a result tag of 16 when equal or 6 otherwise. Thus these Quaternion paths preserve their tag, while the AudioNumber common path produces a Float4-tagged intermediate. The representation change does not establish equivalent behavior for the two types.
 
 The four-lane blends described above are not evidence of quaternion spherical interpolation or a complete AudioNumber implementation. Other dispatch branches, later processing, and record producers still require analysis. This checkpoint adds evidence and clarification, with no new names, prototype changes, or full-behavior completion credit.
+
+### Conditional Quaternion blending after sampling
+
+A later, optional stage in the 20-byte sampler calls shared helper `1411c1590`. An ordered zero control value bypasses this stage; nonzero or unordered values enter it. The caller supplies two tagged values and requests weight normalization, then copies the result back and restores earlier output metadata. This stage therefore does not normalize every sampler result.
+
+For two Quaternion inputs, the helper preserves the type and loads both four-component payloads. It can flip every sign bit of the first input when their dot product is strictly below approximately `-0.01`, then forms a weighted sum. The threshold differs from the zero threshold often assumed for quaternion sign correction. The reviewed path uses normalized linear blending, not spherical interpolation.
+
+The result is scaled using a refined reciprocal-square-root estimate when its squared norm is ordered greater than approximately `1.421e-14`. Smaller or unordered norms select the identity Quaternion `[0, 0, 0, 1]`. Earlier large-weight copy shortcuts can bypass this math. Mixed-type conversion, other value types, overflow behavior, and further sampler stages remain unresolved. The findings come from current native instructions, dispatch tables, constants, and the caller's argument/result flow; no new name or full-behavior completion credit was added.
