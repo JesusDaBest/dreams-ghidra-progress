@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 95,
+    "done": 96,
     "todo": 1496,
-    "total": 1591,
-    "behavior_or_helpers_reviewed": 48,
+    "total": 1592,
+    "behavior_or_helpers_reviewed": 49,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -34509,12 +34509,12 @@
       {
         "name": "audio",
         "label": "Sound & music",
-        "done": 9,
+        "done": 10,
         "todo": 62,
-        "total": 71,
-        "behavior_or_helpers_reviewed": 9,
+        "total": 72,
+        "behavior_or_helpers_reviewed": 10,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 9,
+        "runtime_functions_identified": 10,
         "property_type_functions_identified": 62,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -34526,6 +34526,7 @@
           "EvaluateSoundPlaybackPositionFromControls",
           "ComputeSoundPlaybackEnvelopeAmplitude",
           "ComputeSoundHueFromSampleKey",
+          "SelectSoundPlaybackSampleIndex",
           "InitializeAudioFileImportContext",
           "ProcessAudioFileImportContext"
         ],
@@ -34601,6 +34602,7 @@
           "1400c7760",
           "1400c79a0",
           "1400c81c0",
+          "140107bb0",
           "140119510",
           "140119b30"
         ],
@@ -36044,6 +36046,73 @@
             ]
           },
           {
+            "name": "audio/playback",
+            "label": "Sample playback",
+            "done": 6,
+            "todo": 0,
+            "total": 6,
+            "behavior_or_helpers_reviewed": 6,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 6,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "SelectSoundSampleRecordByTag",
+              "SelectSoundSampleRecordByPlaybackExtent",
+              "ComputeAudioPlaybackSamplePosition",
+              "EvaluateSoundPlaybackPositionFromControls",
+              "ComputeSoundPlaybackEnvelopeAmplitude",
+              "SelectSoundPlaybackSampleIndex"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "1400c1260",
+              "1400c1450",
+              "1400c7580",
+              "1400c7760",
+              "1400c79a0",
+              "140107bb0"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "audio/playback/runtime-implementation",
+                "label": "Playback positioning",
+                "done": 6,
+                "todo": 0,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 6,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 6,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SelectSoundSampleRecordByTag",
+                  "SelectSoundSampleRecordByPlaybackExtent",
+                  "ComputeAudioPlaybackSamplePosition",
+                  "EvaluateSoundPlaybackPositionFromControls",
+                  "ComputeSoundPlaybackEnvelopeAmplitude",
+                  "SelectSoundPlaybackSampleIndex"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1400c1260",
+                  "1400c1450",
+                  "1400c7580",
+                  "1400c7760",
+                  "1400c79a0",
+                  "140107bb0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
+              }
+            ]
+          },
+          {
             "name": "audio/synthesis",
             "label": "Synthesis & modulation",
             "done": 0,
@@ -36184,69 +36253,6 @@
                     "groups": []
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "name": "audio/playback",
-            "label": "Sample playback",
-            "done": 5,
-            "todo": 0,
-            "total": 5,
-            "behavior_or_helpers_reviewed": 5,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 5,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "SelectSoundSampleRecordByTag",
-              "SelectSoundSampleRecordByPlaybackExtent",
-              "ComputeAudioPlaybackSamplePosition",
-              "EvaluateSoundPlaybackPositionFromControls",
-              "ComputeSoundPlaybackEnvelopeAmplitude"
-            ],
-            "todo_names": [],
-            "done_addresses": [
-              "1400c1260",
-              "1400c1450",
-              "1400c7580",
-              "1400c7760",
-              "1400c79a0"
-            ],
-            "todo_addresses": [],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "audio/playback/runtime-implementation",
-                "label": "Playback positioning",
-                "done": 5,
-                "todo": 0,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "SelectSoundSampleRecordByTag",
-                  "SelectSoundSampleRecordByPlaybackExtent",
-                  "ComputeAudioPlaybackSamplePosition",
-                  "EvaluateSoundPlaybackPositionFromControls",
-                  "ComputeSoundPlaybackEnvelopeAmplitude"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1400c1260",
-                  "1400c1450",
-                  "1400c7580",
-                  "1400c7760",
-                  "1400c79a0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": []
               }
             ]
           },
@@ -39410,5 +39416,5 @@
       }
     ]
   },
-  "unmapped": 7961
+  "unmapped": 7960
 }
