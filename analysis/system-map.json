@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1601,
-  "unmapped_total": 7952,
+  "mapped_total": 1602,
+  "unmapped_total": 7951,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41675,6 +41675,26 @@
           "kind": "verified_semantic_review",
           "name": "EvaluateAnimationDeltaOnBaseValue",
           "support": "Two Animation record samples, scalar/vector/quaternion delta application, and both direct references in the Animation property evaluator. Original types and remaining conversion branches unresolved."
+        }
+      ]
+    },
+    "1411c0830": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "complete_tagged_payload_conversion_and_thirteen_direct_caller_neighborhoods",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_and_argument_result_uses",
+      "code_sha256": "df01599690b92cfe622ab154bff64337c49de6238d1650531882a553e66494d0",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertTaggedValueToTwoFloat4Blocks",
+          "support": "Tag-dispatched conversion of property payloads into two float4 blocks, used by property handling, Animation sampling, comparisons and callback formatting. All13 direct argument/result neighborhoods inspected."
         }
       ]
     }
