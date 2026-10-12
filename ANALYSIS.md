@@ -735,3 +735,13 @@ Native callers establish different scratch capacities: one allows 64 expanded re
 The expanded layout depends on its variant. One offset holds a reciprocal basis norm on a basis path and a radius-like extent on a point path, so it cannot be assigned a universal field meaning. The reciprocal calculation is compatible with max-norm change-of-basis correction discussed in Alex Evans's [2015 Media Molecule presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), but its evaluator consumers still need tracing. Historical material is a lead, not proof of this build's original shape names or exact behavior.
 
 There are now 109 checked descriptive names among 9,552 discovered functions. Complete behavior coverage remains unchanged. No new subsystem assignment is guessed; raw code, native traces and project backups remain local.
+
+### Packed record writing and resource-page summaries
+
+Three more descriptive names are verified after saving and reopening: `AppendPackedResourceRecord`, `TryAppendPackedResourceRecordDelta`, and `RecomputePackedResourceNodeSummary`. Their complete native bodies contain 506 instructions and 1,874 bytes, unchanged by the name-only edits. The append wrapper handles resource-tree continuation and restores the delta baseline by replaying the selected leaf. The summary helper computes metadata ranges and counts; it does not normalize geometry.
+
+The delta writer's presence masks and payload sizes match the decoder. It updates the published leaf length and cached state on success. A failed attempt may leave tentative bytes beyond the previously published length, so the operation must not be described as rolling back all writes. A local scalar format model passed 8,224 round-trip cases across variant and optional-field combinations, but does not execute the native implementation or validate capacity failures. The compared floating-point field treats signed zeros as equal, so bitwise preservation is not promised.
+
+The resource-page allocator's native diagnostics identify categories for CSG, animation, light and sprite strokes, sound, JPEG images, and script data. This supports shared storage infrastructure rather than a sculpt-only allocator. Allocation exhaustion, tree-depth bounds, hash collisions, concurrency and actual runtime behavior remain unverified.
+
+There are now 112 checked descriptive names among 9,552 discovered functions. Full-behavior coverage remains unchanged, and no subsystem assignment is guessed for these helpers. Raw code and detailed evidence remain local.
