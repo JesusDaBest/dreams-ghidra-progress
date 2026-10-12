@@ -551,3 +551,9 @@ Helper `140e86000`, called by encoded shape 2 and other classifier branches, rec
 ### Persisted ellipsoid helper name: 82 verified names
 
 `140e86000` now has the descriptive analyst name `EvaluateEllipsoidLInfField`. A cold project backup was copied after graceful shutdown and verified file-by-file by SHA-256 before this name-only edit. A subsequent clean restart verified all 82 journaled names and the full inventory against the baseline plus recorded renames; original/input archive hashes remain unchanged. The helper’s misleading cached prototype has not been changed. Its full runtime behavior remains unverified, so complete-behavior coverage is unchanged. Subsystem ownership remains separate from this naming review.
+
+### Paired primitive fields: dispatch and consumer evidence
+
+Native dispatch-table bytes for `140e852e0` establish selectors 0 (box), 1 (sphere), 2 (cylinder field), and 4 (paired ellipsoid helper calls). The two point/dimension pairs arrive in SIMD registers; the results occupy the first two lanes of the returned vector. Sphere lane routing was checked in 500 deterministic real-arithmetic cases. Both native consumers compare these results to thresholds and form their difference on the inspected paths; their broader runtime purposes remain unresolved.
+
+For selector 2, the unequal-axis XY candidate agrees with independent signed L-infinity ellipse-distance bisection in 2,000 finite positive-axis cases (largest difference about `1.39e-13`). The equal-axis shortcut instead uses Euclidean radial distance. The native branch combines its radial field with `abs(z)-height`, taking the maximum inside and the length of positive terms outside. This mixed metric must not be described as an exact Euclidean distance for every cylinder. Selector 3, invalid inputs, native float32 exceptional behavior, calling-convention types and full consumer semantics remain open. These checks add no whole-function completion credit or new applied name.
