@@ -298,39 +298,41 @@ def hierarchy_rows(rows, mapping):
 
 
 def render_hierarchy(nodes, bounds, depth=0):
-    """Each component owns a separate rectangular grid under its own heading."""
-    side=18; span=18; gap=10; panel_width=span*side
-    columns=[34,34,34]; out=[]
+    """Packed equal-square grids; component boundaries align to complete rows."""
+    side=18;span=18;panel_width=324
+    columns=[34,34,34];out=[]
     priority={'verified_name':0,'deferred':1,'unreviewed':2}
     colors={'verified_name':'green','deferred':'amber','unreviewed':'gray'}
     for node in sorted(nodes,key=lambda n:-len(n['rows'])):
-        col=min(range(3),key=lambda c:columns[c]); x=col*(panel_width+gap); y=columns[col]
+        col=min(range(3),key=lambda c:columns[c]);x=col*panel_width;y=columns[col]
         children=[c for c in node['children'] if c['rows']] or [node]
+        large=[c for c in children if len(c['rows'])>=20]
+        small=[c for c in children if len(c['rows'])<20]
+        if small:
+            large.append({'label':'Other '+node['label'].lower(),'path':node['path']+('other-components',),
+                          'rows':[r for c in small for r in c['rows']]})
         checked=sum(r['review']=='verified_name' for r in node['rows'])
+        top=y
         out.append(f'<g data-area="{node["id"]}" data-count="{len(node["rows"])}">')
-        out.append(text(x+4,y+17,node['label'],16,weight=700))
-        out.append(text(x+4,y+34,f"{checked}/{len(node['rows'])} names checked",12,'muted'))
-        top=y; y+=42
-        for child in sorted(children,key=lambda n:-len(n['rows'])):
-            # Heading belongs to this grid alone, never to overlapping descendants.
-            lines=textwrap.wrap(child['label'],width=34,break_long_words=False)
-            header=18*len(lines)+17
+        out.append(text(x+3,y+16,f"{node['label']}  {checked}/{len(node['rows'])}",14,weight=700))
+        y+=24
+        for child in sorted(large,key=lambda n:-len(n['rows'])):
             rows=sorted(child['rows'],key=lambda r:(priority[r['review']],int(r['address'],16)))
-            grid_height=math.ceil(len(rows)/span)*side
+            grid_height=max(2,math.ceil(len(rows)/span))*side
             out.append(f'<g data-component="{"/".join(child["path"])}" data-count="{len(rows)}">')
-            out.append(rect(x+2,y,panel_width-4,header+grid_height,'background',stroke='#97a8bc'))
-            for line in lines:
-                out.append(text(x+6,y+16,line,14,weight=600));y+=18
-            done=sum(r['review']=='verified_name' for r in rows)
-            out.append(text(x+6,y+12,f'{done}/{len(rows)} names checked',11,'muted'));y+=17
             for i,row in enumerate(rows):
                 scope=row.get('reviewed_scope','unreviewed')
                 color='blue' if row['review']=='verified_name' and scope=='properties_or_type_registration' else colors[row['review']]
                 out.append(f'<rect data-function="{row["address"]}" data-status="{row["review"]}" data-reviewed-scope="{scope}" x="{x+i%span*side}" y="{y+i//span*side}" width="{side}" height="{side}" fill="{COLORS[color]}" stroke="#0d1117" stroke-width="0.6"><title>{escape(child["label"])}</title></rect>')
-            y+=grid_height+5
-            out.append('</g>')
-        out.append(f'<rect x="{x}" y="{top}" width="{panel_width}" height="{y-top}" fill="none" stroke="#c9d1d9" stroke-width="2"/>')
-        out.append('</g>');columns[col]=y+12
+            out.append(f'<rect x="{x}" y="{y}" width="{panel_width}" height="{grid_height}" fill="none" stroke="#97a8bc" stroke-width="1.6"/>')
+            done=sum(r['review']=='verified_name' for r in rows)
+            label=f"{child['label']}  {done}/{len(rows)}"
+            lines=textwrap.wrap(label,width=39,break_long_words=False)
+            for j,line in enumerate(lines):
+                out.append(text(x+3,y+15+j*16,line,13,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
+            y+=grid_height;out.append('</g>')
+        out.append(f'<rect x="{x}" y="{top}" width="{panel_width}" height="{y-top}" fill="none" stroke="#f0f6fc" stroke-width="3"/>')
+        out.append('</g>');columns[col]=y
     return out,max(columns)
 
 
@@ -386,7 +388,7 @@ def render(status, applied, mapping):
     description = (f'{review["verified_names"]} of {total} function names checked. '
                    f'{mapped} functions have evidence-backed system assignments; {unassigned} functions do not. '
                    'Sections show evidence-backed associations with parts of Dreams. '
-                   'Every square is a real function. Each labeled component owns a separate equal-square grid below its heading. Headers and unused final-row space are not functions. '
+                   'Every square is a real function. Each labeled component owns a rectangular block in the packed map. Small components are explicitly grouped under Other within their own system. Labels overlay their own block; unused final-row space is not functions. '
                    'Green means behavior or helper code reviewed; blue means property or type registration code reviewed; amber means unresolved; gray means unreviewed. '
                    'Assignments are incomplete; full system totals and completion are unknown.')
     hierarchy, bottom = render_hierarchy(hierarchy_rows(rows,mapping),(0,34,1000,600))
