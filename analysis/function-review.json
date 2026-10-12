@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-11",
   "status": "applied_verified_after_reopening",
-  "review_scope": "77 previously unnamed functions reviewed; 73 descriptive names applied and verified after reopening; 4 remain deferred.",
+  "review_scope": "78 previously unnamed functions reviewed; 74 descriptive names applied and verified after reopening; 4 remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,8 +11,8 @@
   },
   "current_inventory": {
     "total": 9551,
-    "default_fun_names": 9322,
-    "other_names": 229,
+    "default_fun_names": 9321,
+    "other_names": 230,
     "verification": "complete_paginated_inventory_after_reopening_matches_baseline_plus_journaled_renames"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
@@ -1506,6 +1506,28 @@
         "Descriptive analyst name, not recovered original source.",
         "Individual packed field meanings, valid input ranges and floating-point exceptional behavior remain unresolved.",
         "No prototype, type, convention, boundary or byte changes; no whole-function completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "1414f3e20",
+      "original_name": "FUN_1414f3e20",
+      "applied_name": "AppendTransformedBoxSamples",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high",
+      "evidence": [
+        "Native body generates a count-limited xyz grid from supplied extents, with optional edge samples and eight corner samples.",
+        "All three emission paths transform coordinates by three supplied axes and translation, store 16-byte records in the shared sample array and accumulate the number appended through the count pointer.",
+        "Primary fourth-lane scalar and edge/corner factors are checked against native instructions and binary constants; capacity gates precede writes.",
+        "Constructor kind-1 caller independently supplies identity axes, center and extents."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Descriptive analyst name, not recovered source symbol.",
+        "The fourth scalar is not yet established as a radius or other named domain quantity.",
+        "No prototype, layout, calling convention or bytes changed.",
+        "Not a claim of complete runtime behavior, numerical validity or whole-game completion."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
