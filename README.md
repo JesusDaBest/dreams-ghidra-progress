@@ -9,6 +9,12 @@ Working out how Dreams works, one piece of code at a time
 
 </div>
 
+## Overall reverse-engineering coverage
+
+**At least 0.0037% of the imported executable’s code has separately audited behavior** — 1,084 / 28,940,288 executable bytes. This denominator includes unmapped code. It counts complete function behavior audits, not names or extracted pseudocode.
+
+This is a conservative minimum while earlier work is re-audited, not a claim that the remaining code is entirely unexplored. It covers this main executable; other modules and game assets are outside this byte measure. Runtime testing is tracked separately. [Calculation and evidence](analysis/reverse-engineering-coverage.json).
+
 ## Behavior findings
 
 These findings describe reverse-engineering progress beyond function names. “Traced” means supported by static executable evidence; it does not mean tested in the running game or a complete subsystem.
@@ -26,7 +32,7 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9789650295d0e03d7b9ba0ce7fb82eef2d0ea551/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=8a4db21dfa34)
 
 <!-- status-summary:start -->
 **65 of 9,551 functions named and checked.** A function is one piece of the game's code.

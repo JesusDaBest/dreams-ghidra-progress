@@ -513,14 +513,18 @@ def render_area_table(status, mapping):
 def render_badges(status):
     total = status["inventory_total"]
     metrics = status["metrics"]
+    coverage = json.loads((Path(__file__).resolve().parent.parent / "analysis/reverse-engineering-coverage.json").read_text())
+    assert coverage["understood_bytes"] == sum(r["bytes"] for r in coverage["counted_functions"])
+    assert coverage["percent"] == 100 * coverage["understood_bytes"] / coverage["executable_bytes"]
     badges = [
+        ("RE coverage (minimum)", f"{coverage['percent']:.4f}%", "green"),
         ("names checked", f"{100 * metrics['review']['verified_names'] / total:.2f}%", "green"),
     ]
     widths = [(round(len(label) * 6.5 + 20), round(len(value) * 6.5 + 20)) for label, value, _ in badges]
     width = sum(left + right for left, right in widths) + 10 * (len(badges)-1)
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="20" viewBox="0 0 {width} 20" role="img" aria-labelledby="badges-title badges-desc">',
            '<title id="badges-title">Dreams analysis status badges</title>',
-           '<desc id="badges-desc">Share of discovered function names checked. Analysis is in progress.</desc>',
+           '<desc id="badges-desc">Minimum audited static behavior coverage of imported executable bytes, followed by separate function-name review coverage.</desc>',
            '<g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11">']
     x = 0
     for (label, value, color), (left, right) in zip(badges, widths):
