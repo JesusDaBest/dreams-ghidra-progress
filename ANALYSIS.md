@@ -1389,3 +1389,9 @@ The primitive skip dispatch table was captured directly from the executable: cat
 Remaining gaps include indirect hook and stream contracts, allocation failure, related-type cache invariants, and malformed input. The composite skipper narrows its field-element count to32bits; not every count-decoding path has the same explicit bound check. A trailing-chunk path reaches zero status after a short header or payload read. Caller constraints and actual runtime consequences remain unproved; these are static observations, not reproduced defects.
 
 Totals are182 checked names,1,634 mapped functions and7,919 unmapped functions. Audited-byte coverage remains1,495 /28,940,288 (about0.0052%); these role reviews do not add whole-function completion or runtime scene-round-trip credit.
+
+### Composite-reader working signature
+
+`ReadReflectedCompositeFields` now has a verified working signature returning an unsigned byte and accepting four opaque pointers: context, source schema, destination type descriptor and destination storage. The native body and all six recorded call locations support RDI/RSI/RDX/RCX arguments and AL status. Upper return-register bits are not consistently normalized.
+
+An isolated project trial and the promoted project both decompiled the loader and its three containing caller functions successfully. Fresh reopening preserved the signature, native instructions and recorded references. The complete function-name inventory and original archive hashes also passed verification. This improves call reconstruction; it does not recover original declarations, prove undiscovered indirect callers, validate runtime behavior or increase audited-byte coverage. Totals remain 182 checked names and 1,634 mapped functions.

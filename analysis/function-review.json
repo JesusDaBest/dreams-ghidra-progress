@@ -3560,11 +3560,12 @@
       ],
       "caveats": [
         "Analyst descriptive role, not recovered original symbol.",
-        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Working opaque-pointer signature; no runtime validation or additional audited static-coverage credit.",
         "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
       ],
       "calling_convention": "PS4_SYSV",
-      "prototype_preserved": true
+      "saved_working_signature": "uchar ReadReflectedCompositeFields(void * context, void * source_schema, void * destination_type, void * destination)",
+      "signature_basis": "Complete callee and six recorded calls reviewed; four pointer registers and AL status; isolated trial and promoted decompilation of loader and three caller functions; fresh-reopen metadata, native-byte and reference verification."
     },
     {
       "address": "141604e80",

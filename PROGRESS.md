@@ -1173,3 +1173,7 @@ Fresh reopening preserved 3,565 instruction bytes and 207 recorded references. T
 ### Composite loading and skipping
 
 Seven descriptive names saved and verified after clean reopening. Field matching, inherited offsets, auxiliary objects, callback order and unknown-data consumption traced. Totals:182 checked names,1,634 mapped functions,7,919 unmapped. Types and native bytes preserved; audited-byte coverage unchanged. [Findings and open contracts](ANALYSIS.md#reflected-field-loading-and-unknown-data-consumption).
+
+### Composite-reader signature verified
+
+Applied the native-supported four-pointer, byte-status working signature after an isolated trial. The loader and three caller functions decompile successfully. Fresh reopening, full name inventory, native bytes, references and original archives checked. No additional names or completion credit. [Signature evidence and limits](ANALYSIS.md#composite-reader-working-signature).
