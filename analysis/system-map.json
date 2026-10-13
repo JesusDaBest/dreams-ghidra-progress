@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9556,
-  "mapped_total": 1645,
-  "unmapped_total": 7911,
+  "mapped_total": 1646,
+  "unmapped_total": 7910,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42604,6 +42604,26 @@
           "kind": "verified_semantic_review",
           "name": "ReleaseReflectedSourceSchemaResources",
           "support": "Complete body reviewed; saved name verified after reopening with bytes, types and references unchanged. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "14010d370": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native field-name and tag identifier helper",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native name-hash arithmetic and length-path model review",
+      "code_sha256": "2fefc9214aa9b57baeaa87daaed4d26b4d5c6cff8a955f5027be42cce0f2be98",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "HashNameBytes32",
+          "support": "Native arithmetic paths and independent model checked; name verified after reopening. Runtime and complete ABI/caller contracts remain open."
         }
       ]
     }

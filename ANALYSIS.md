@@ -1433,3 +1433,11 @@ Full-body role review supports this descriptive name, while schema replacement, 
 Descriptor callbacks at outer-reader exit remain distinct from auxiliary-instance destruction. Only schema pointers currently in the table are visited here, so overwritten-slot ownership remains unresolved. Partial contexts, repeated teardown, indirect callback effects and allocator guarantees need more analysis. No runtime or audited-byte credit is added.
 
 A hash-verified cold backup preceded naming. Fresh reopening preserved native bytes, types, references, full function inventory and original archives. Totals: 193 checked names, 1,645 mapped functions and 7,911 unmapped.
+
+### Name identifier hash
+
+`HashNameBytes32` names the shared 32-bit identifier helper used for reflected field names and other name/tag lookups. The reviewed model combines signed-byte polynomial-27 sums for two space-padded 32-byte blocks, multiplying the second by 0xdeadbeef, modulo 2^32. Input after the first 64 bytes does not enter the reviewed model. Hash matches do not uniquely recover names.
+
+970 deterministic cases cover every length 0–96 and signed high-byte inputs, matching captured-instruction interpretation against an independent arithmetic model. They exercise 1,103 of 1,104 instructions; the remaining branch lies outside the reviewed valid-length partition. This is not target execution or complete ABI/invalid-length validation.
+
+Fresh reopening preserved the name, existing prototype, native bytes and references; full inventory and archive checks passed. Totals: 194 checked names, 1,646 mapped functions and 7,910 unmapped. Audited-byte coverage remains unchanged.

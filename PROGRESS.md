@@ -1193,3 +1193,7 @@ Saved and freshly verified `ReadReflectedStreamRecords` after full native role r
 ### Read-resource cleanup named
 
 Two cleanup roles saved and freshly verified, preserving types, code and references. Totals: 193 checked names and 1,645 mapped functions. [Resource lifecycle and remaining ownership contracts](ANALYSIS.md#reflected-read-resource-teardown). Audited-byte coverage remains unchanged.
+
+### Name hash named
+
+Saved and verified the shared name-ID helper after 970 arithmetic-model cases covering lengths 0–96. Totals: 194 checked names and 1,646 mapped functions. [Algorithm and validation limits](ANALYSIS.md#name-identifier-hash). No runtime or audited-byte credit added.

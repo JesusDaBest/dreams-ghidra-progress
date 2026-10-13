@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "188 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "189 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9556,
-    "default_fun_names": 9207,
-    "other_names": 349,
-    "verification": "complete_inventory_matches_baseline_plus_188_renames_and_five_created_functions"
+    "default_fun_names": 9206,
+    "other_names": 350,
+    "verification": "complete_inventory_matches_baseline_plus_189_renames_and_five_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3890,6 +3890,28 @@
         "Descriptive role, not original symbol; prototype preserved.",
         "Indirect callbacks, allocation, ownership and partial-state contracts remain open.",
         "No runtime or additional audited-byte credit."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "14010d370",
+      "original_name": "FUN_14010d370",
+      "applied_name": "HashNameBytes32",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete1104-instruction body captured and matched to live memory.",
+        "Independent two-block polynomial model matched970 instruction-interpreted cases across lengths0..96;1103 instructions exercised, remaining branch excluded by valid-length partition.",
+        "Caller tracing binds results to reflected field IDs; earlier callers also bind name/tag identifiers."
+      ],
+      "caveats": [
+        "Descriptive name, not recovered original symbol; prototype preserved.",
+        "Uses signed bytes and space padding; at most64input bytes enter the reviewed model. Hash matches are not unique source-name recovery.",
+        "Instruction interpretation is not target execution; caller storage, invalid lengths and complete ABI/flag contracts remain open.",
+        "No additional audited-byte coverage credit."
       ],
       "prototype_preserved": true,
       "calling_convention": "PS4_SYSV"
