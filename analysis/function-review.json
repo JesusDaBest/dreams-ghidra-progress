@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "160 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "164 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9235,
-    "other_names": 318,
-    "verification": "complete_inventory_matches_baseline_plus_160_renames_and_two_created_functions"
+    "default_fun_names": 9231,
+    "other_names": 322,
+    "verification": "complete_inventory_matches_baseline_plus_164_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3226,7 +3226,13 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "Initializes fixed fields without allocating or clearing all storage. Loader clears storage first; all other caller preconditions and intervening helper effects remain unresolved.",
         "No runtime validation or whole-subsystem completion."
-      ]
+      ],
+      "subsequent_signature_review": {
+        "signature": "void InitializeAnimationObjectDefaults(void *animation)",
+        "calling_convention": "PS4_SYSV",
+        "basis": "Complete native destination writes; all4 discovered callers pass cleared448-byte storage and overwrite RAX after the call. Isolated trial and fresh-reopen verification succeeded.",
+        "limits": "Opaque pointer; full object layout and runtime behavior not asserted."
+      }
     },
     {
       "address": "140d92160",
@@ -3263,6 +3269,84 @@
         "Descriptive analyst name, not a recovered original symbol.",
         "All3723 incoming references are enumerated for preservation, not semantically audited; caller buffer and secondary-length invariants remain unproved.",
         "Secondary context purpose and behavior of all callers' callbacks remain unresolved. Name-only change, preserving the existing prototype.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "140d91c30",
+      "original_name": "FUN_140d91c30",
+      "applied_name": "ServiceEncodedSerializerBlock",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 234-instruction/974-byte body reviewed and matched to native memory.",
+        "Direction and external-handle branches transfer encoded blocks; operation nonzero is a no-op; native input setup selects this callback."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only change preserves existing prototype; no automatic completion credit.",
+        "Exact codec version, external-handle imports, allocator contracts, full stream framing and runtime round trip remain unproved.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "140d91900",
+      "original_name": "FUN_140d91900",
+      "applied_name": "PrepareEncodedSerializerBlock",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 193-instruction/802-byte body reviewed and matched to native memory.",
+        "Prepares a bounded encoded payload, constructs a 16-byte descriptor, attempts to append it and updates cumulative byte count."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only change preserves existing prototype; no automatic completion credit.",
+        "Encoder internals and allocation-failure reachability remain unproved; no reproduced runtime defect claimed.",
+        "No runtime validation or whole-subsystem completion.",
+        "Descriptor-vector allocation failure may skip append while the helper still reports success for nonzero encoded length; runtime reachability is unresolved."
+      ]
+    },
+    {
+      "address": "140dc2a50",
+      "original_name": "FUN_140dc2a50",
+      "applied_name": "SerializeSceneObjectList",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 144-instruction/619-byte body reviewed and matched to native memory.",
+        "Transfers counted scene object-pointer list through generic object serializer, with count bound, status propagation, checksum checkpoint and marker processing."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only change preserves existing prototype; no automatic completion credit.",
+        "Generic object serializer internals and all intervening flag effects are not completely understood.",
+        "The sequence counter increments after optional marker transfer even if that transfer sets an error; marker equality is not checked here.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "14039b4a0",
+      "original_name": "FUN_14039b4a0",
+      "applied_name": "TransferSerializerByte",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 16-instruction/70-byte body reviewed and matched to native memory.",
+        "Transfers one raw byte directly when buffer and secondary-context conditions permit, otherwise tail-calls TransferSerializerBytes with length 1."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered original symbol.",
+        "Name-only change preserves existing prototype; no automatic completion credit.",
+        "Transfers the raw byte without Boolean normalization; valid-buffer and fallback contracts remain caller dependencies.",
         "No runtime validation or whole-subsystem completion."
       ]
     }

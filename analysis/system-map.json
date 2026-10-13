@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1615,
-  "unmapped_total": 7938,
+  "mapped_total": 1618,
+  "unmapped_total": 7935,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -26071,6 +26071,12 @@
           "site": "140d91cac",
           "target": "14171a46a",
           "anchor_sha256": "bd35730a9500453d27549ebf084fbb9a486763bc22d1c27e56e5bc485ba80a93"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "ServiceEncodedSerializerBlock",
+          "native_body_sha256": "737a7135214401224531bd7c8c30acb8626f76030375ed7cc450dd1cf2f83914",
+          "support": "Complete native helper body reviewed; name persisted after observed fresh reopening. All enumerated references preserved, not all callers semantically audited."
         }
       ],
       "code_sha256": "4e268a903810f1b94b8d368176b9ff590fa1f45d128479a4845767b2d993ef29",
@@ -41995,6 +42001,69 @@
           "kind": "verified_semantic_review",
           "name": "TransferSerializerBytes",
           "support": "Native body and relevant data-flow reviewed; name persisted after observed fresh-process reopening. Enumerated references preserved; not every caller semantically audited."
+        }
+      ]
+    },
+    "140d91900": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native shared serializer data-flow and complete helper body review",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native serializer helper body",
+      "code_sha256": "9411cf066da00dd65affecadeffcacabd7cc461d53c9432bc4abafef3a82fcc6",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareEncodedSerializerBlock",
+          "native_body_sha256": "9411cf066da00dd65affecadeffcacabd7cc461d53c9432bc4abafef3a82fcc6",
+          "support": "Complete native helper body reviewed; name persisted after observed fresh reopening. All enumerated references preserved, not all callers semantically audited."
+        }
+      ]
+    },
+    "140dc2a50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native shared serializer data-flow and complete helper body review",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native serializer helper body",
+      "code_sha256": "2cd7e0edf485145134cbe72353463e056fafa2f848a0aff31ddaa85d9fe7e571",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeSceneObjectList",
+          "native_body_sha256": "2cd7e0edf485145134cbe72353463e056fafa2f848a0aff31ddaa85d9fe7e571",
+          "support": "Complete native helper body reviewed; name persisted after observed fresh reopening. All enumerated references preserved, not all callers semantically audited."
+        }
+      ]
+    },
+    "14039b4a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native shared serializer data-flow and complete helper body review",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native serializer helper body",
+      "code_sha256": "a79b411a15a9cea304827a7b346614b204e1361271da8d0289daab9059bef6d7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferSerializerByte",
+          "native_body_sha256": "a79b411a15a9cea304827a7b346614b204e1361271da8d0289daab9059bef6d7",
+          "support": "Complete native helper body reviewed; name persisted after observed fresh reopening. All enumerated references preserved, not all callers semantically audited."
         }
       ]
     }

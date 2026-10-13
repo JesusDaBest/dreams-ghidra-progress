@@ -1132,3 +1132,19 @@ Native review identified the builder's extra slot byte as `recording_possession`
 The checksum-enabled scene input context is now restricted to its actual non-99999 format branch. A different output context explicitly disables checksums, but its connection to main scene saving remains unproved. This corrects the scope of the earlier policy finding without changing completion counts.
 
 [Defaults, branch conditions and remaining work](ANALYSIS.md#recording-flags-construction-defaults-and-serializer-selection). Totals remain 162 checked names and 1,615 mapped functions; no runtime validation or additional completion credit.
+
+### Four serializer names and a complete initializer contract
+
+Saved four descriptive serializer-helper names and corrected the Animation initializer's opaque-pointer signature after native/caller review and an isolated trial. One cold backup covered the batch; fresh reopening preserved all 2,876 affected instruction bytes and 329 enumerated references. The original archives and full function inventory were checked.
+
+The initializer's complete static contract adds 411 audited bytes independently of naming: conservative coverage is now **0.0052% (1,495 / 28,940,288 executable bytes)**. Totals are **166 checked names, 1,618 mapped functions and 7,935 unmapped functions**. No running-game or complete scene-save validation is claimed.
+
+[Contract scope, names and evidence](ANALYSIS.md#animation-initialization-contract-and-serializer-helper-review).
+
+
+
+### Version-record and alternate-stream trace
+
+Traced the checksum-disabled inner payload to a version record, distinguished it from the associated Dream record and followed its copy into save/publish preparation. Separately identified the 99999-format branch's matching input/output streams and selected binary metadata operations. The nearby reference collector is now distinguished from the byte-stream writer.
+
+[Evidence, corrected marker semantics and remaining format gaps](ANALYSIS.md#version-record-ownership-and-the-alternate-scene-stream). No runtime validation or extra whole-behavior coverage was added for these partial traces.

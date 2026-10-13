@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "metric": "minimum_static_code_understanding_coverage",
-  "understood_bytes": 1084,
+  "understood_bytes": 1495,
   "executable_bytes": 28940288,
-  "percent": 0.0037456434434930295,
+  "percent": 0.005165808992640295,
   "program_sha256": "009588c7d00b66a430bad0ec4aa731901821e3b7ce4ac637c1c23a2d2a3fa18f",
   "definition": "Bytes in complete functions with separately audited inputs, outputs, side effects and control-flow behavior, divided by all executable memory bytes in the imported Dreams executable.",
   "scope": "Entire imported main executable, including unmapped executable memory and any executable import/loader regions. Does not cover other modules or game assets.",
@@ -26,6 +26,13 @@
       "bytes": 987,
       "contract_sha256": "37f7b353cda5627fd280d427b414e8e5e80c69d3b7d5ffaa01ce90b772ccbaed",
       "behavior": "Complete static lookup behavior; prior full-body review, layout, caller and probe audit reconciled.",
+      "runtime_validated": false
+    },
+    {
+      "address": "14093f9d0",
+      "bytes": 411,
+      "contract_sha256": "4ba74dc7efa848834421673410ac6322b7ed37ab9cf5f8c6f17e208b3dee275a",
+      "behavior": "Complete normal-return initialization memory/register contract: six global reads, 41 stores, 408 distinct output bytes and 40 preserved bytes, under explicit nonalias, valid-memory and AVX preconditions. Mutable global data remains symbolic.",
       "runtime_validated": false
     }
   ]

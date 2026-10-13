@@ -1248,8 +1248,48 @@ The Animation initializer's native stores and registered field offsets establish
 
 These are constructor outputs, not a claim about every editor-created or loaded object: later property copies and deserialization can overwrite them. The full 411-byte initializer and selected registration regions and literals were checked against current memory. The constructor does not initialize every byte of object storage.
 
-Scene input also has a format-selection branch. The previously described checksum-enabled binary context is selected when the source record's discriminator is not 99999. Equality instead begins a different stream construction using table `141c37950`. This value is not established as a shipping build number, and the alternate stream grammar remains untraced.
+Scene input also has a format-selection branch. The previously described checksum-enabled binary context is selected when the source record's discriminator is not 99999. Equality instead begins a different stream construction using table `141c37950`. This value is not established as a shipping build number, and the alternate stream grammar was still untraced at that stage; the later alternate-stream findings below narrow this gap.
 
-A separate native output chain, `14039d770` to `140399260`, explicitly selects output mode and callback `140d91c30` with null external data, but disables checksum checkpoints. Thus the callback's presence alone does not determine checksum policy. This chain has not yet been attributed to the main scene-save operation. Its next producer and destination ownership, the alternate stream writer, complete buffer invariants and runtime round trips remain open.
+A separate native output chain, `14039d770` to `140399260`, explicitly selects output mode and callback `140d91c30` with null external data, but disables checksum checkpoints. Thus the callback's presence alone does not determine checksum policy. This chain has not yet been attributed to the main scene-save operation. The follow-up below establishes version-record ownership and the counterpart alternate writer; complete buffer invariants and runtime round trips remain open.
 
 These findings leave the totals at 162 checked names and 1,615 mapped functions. No whole-behavior completion or runtime-validation credit was added.
+
+### Animation initialization contract and serializer helper review
+
+The complete 411-byte body of `InitializeAnimationObjectDefaults` (`14093f9d0`) now has an independently checked static contract. All 53 instructions are accounted for: six global reads, 41 stores touching 408 distinct bytes within a 448-byte object span, and 40 bytes left unchanged. The 16-byte mutable global input remains symbolic. The contract explicitly requires accessible memory, nonoverlap with the source blocks/code/return slot, stable source data and the applicable AVX environment. It covers normal return, not faults, races, full object semantics or in-game behavior.
+
+All four discovered calls clear the 448-byte destination before invoking this initializer. Their continuations overwrite `RAX` before using it. An isolated project trial therefore supported the working opaque-pointer signature `void InitializeAnimationObjectDefaults(void *animation)` with the existing `PS4_SYSV` calling convention. The saved signature was verified after a fresh process reopened the project; all 411 native bytes and four references remained unchanged. This is a supported working signature, not a recovered original declaration; the complete Animation structure remains unresolved.
+
+This separately audited contract adds 411 bytes to the conservative static-coverage measure: **1,495 / 28,940,288 executable bytes (0.0052%)** across three complete function contracts. Name-only changes below add no coverage. Runtime validation remains separate and has not been performed.
+
+| Address | Saved descriptive name | Native role |
+| --- | --- | --- |
+| `140d91c30` | `ServiceEncodedSerializerBlock` | Services input/output encoded blocks through the selected buffer or external-handle route. |
+| `140d91900` | `PrepareEncodedSerializerBlock` | Prepares an encoded block, its descriptor and accounting. |
+| `140dc2a50` | `SerializeSceneObjectList` | Transfers the counted object list through the generic object serializer, with status/checkpoint handling. |
+| `14039b4a0` | `TransferSerializerByte` | Transfers one raw byte directly or delegates to the general byte-transfer helper; it does not normalize Boolean values. |
+
+These four analyst names preserve their prior prototypes. A hash-verified cold backup preceded the changes. Fresh-reopen checks preserved 2,465 native bytes and all 325 enumerated references for the four names; the complete 9,553-function name inventory and original archive hashes also matched. Reference preservation is not an audit of every caller. There are now **166 checked descriptive names**, including 125 among 1,618 mapped functions; 7,935 functions remain unmapped.
+
+### Version-record ownership and the alternate scene stream
+
+The previously traced output serializer is now tied to a **version-record subpayload**. The producer selects the controller's current element and invokes the serializer for destination record `+0x120` when source `+0xa8` is nonzero; otherwise it clears that 16-byte pair. It checks the returned status and writes discriminator 99999 on its successful path. The downstream consumer `140469a90` pairs this record's leading value with the literal `version_id`; a separate record is paired with `dream_id`. Copy instructions carry the version record's `+0x120` pair into operation context `+0x620`, and `publish_type` supplies a save/publish-preparation connection. The exact subfield meaning, subsequent persistence, and source descriptor's original type name remain unresolved.
+
+The inner subpayload serializer transfers marker `0x53637262` and explicitly disables the legacy checksum checkpoints. That fact belongs to this subpayload. It does not establish the policy or complete format of the main scene stream.
+
+The scene loader's **99999 branch** has now been traced to its actual counterpart writer:
+
+| Route | Native connection | Established behavior |
+| --- | --- | --- |
+| Alternate input | `140d97090` selects stream table `141c37950`, mode 0, then `140c74040` / `140c74670`. | Descriptor-backed blocks feed the already identified LZ4 decoder, then the stream supplies bytes to the reflected reader. |
+| Alternate output | `140d94880` selects table `141c32cb8`, mode 1, then the same setup/engine. | Buffered output is encoded into blocks, given descriptors and handed to backing storage. |
+| Reflected content | Output engine reaches `140116eb0`; input reaches `1415fea20`. | Selected output regions emit initial marker bytes, seven-bit continuation integers and descriptor-backed metadata/byte strings. The complete field grammar is still open. |
+| Visitor callbacks | Two reviewed callbacks per visitor table reach stream method `+0x18`. | Input returns zero; output may request a block boundary based on span and hash conditions. The precise reflected events triggering these calls remain untraced. |
+
+The nearby table `141c37930` is a separate reference collector. It gathers/deduplicates 16-byte reference entries; it is not the output byte-stream implementation. This distinction prevents mixing the reference list with serialized scene content.
+
+Two native counter details remain important for future validation: one output multi-copy loop adds the original request length each iteration, and one input consume method may return the requested amount after an incomplete consume. Neither observation is a reproduced runtime defect; callers and interface contracts must be established first. The exact encoder implementation, full reader/writer grammar, descriptor algorithm, backing-store guarantees and runtime round trip remain open.
+
+Independent naming review also corrected the object-list marker description: its low-word error check occurs **before** the optional sequence-marker transfer. The sequence counter increments afterward even if the fallback transfer sets an error, and this body does not compare the transferred marker for equality.
+
+These bounded ownership and format findings add no complete-function coverage. Only the separately audited Animation initializer contract contributes the 411 new bytes reported above.

@@ -11,7 +11,7 @@ Working out how Dreams works, one piece of code at a time
 
 ## Overall reverse-engineering coverage
 
-**At least 0.0037% of the imported executable’s code has separately audited behavior** — 1,084 / 28,940,288 executable bytes. This denominator includes unmapped code. It counts complete function behavior audits, not names or extracted pseudocode.
+**About 0.0052% of the imported executable’s code has separately audited behavior** — 1,495 / 28,940,288 executable bytes. This denominator includes unmapped code. It counts complete function behavior audits, not names or extracted pseudocode.
 
 This is a conservative minimum while earlier work is re-audited, not a claim that the remaining code is entirely unexplored. It covers this main executable; other modules and game assets are outside this byte measure. Runtime testing is tracked separately. [Calculation and evidence](analysis/reverse-engineering-coverage.json).
 
@@ -32,6 +32,7 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
 | Physics sphere grid | Filtered sphere samples traced into enclosing bounds, line/sphere roots and cell-bit masks; grid sizing import resolved. | Valid-input reachability of a mask edge case, full consumer behavior and runtime tests. |
 | Sound: triggering and Playhead | Power comparison traced through trigger flags, playback-speed handling and Playhead writes; time-bounds signature corrected against all 50 direct call sites. | Previous-frame context identity, complete enclosing update behavior and runtime tests. |
+| Animation: initialization | Complete static memory/register contract for the 411-byte initializer; all four discovered caller arguments and return-use paths checked. | Full object field meanings, caller lifetime/race guarantees and runtime tests. |
 | Animation: property recording | Recording modes and gate fields identified; selected float paths traced through sample conversion, resource merging, property storage and Header/Data page serialization. | Other merge branches, complete mode transitions, outer scene-file framing, buffer invariants and runtime tests. |
 | Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
 
@@ -39,13 +40,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8795b6f2dc134c8232dd4c23e022fb8fc308f8f0/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=9aad78aeca4e)
 
 <!-- status-summary:start -->
-**162 of 9,553 functions named and checked.** A function is one piece of the game's code.
+**166 of 9,553 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8795b6f2dc134c8232dd4c23e022fb8fc308f8f0/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=220ed63bbdc9)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -64,9 +65,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 315 | 0/106 | 2/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 152 | 34/73 | 5/74 |
+| Shared engine & object data | 155 | 38/76 | 5/74 |
 
-**1,615 of 9,553 discovered functions are mapped; 7,938 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,618 of 9,553 discovered functions are mapped; 7,935 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -818,14 +819,14 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 152 functions identified; 34 behavior/helper reviews; 5 property/type reviews
-  - **Game state & runtime** - 44 functions identified; 29 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 155 functions identified; 38 behavior/helper reviews; 5 property/type reviews
+  - **Game state & runtime** - 47 functions identified; 32 behavior/helper reviews; 0 property/type reviews
     - **Game contexts & runtime support** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Resource pages** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
-    - **Saving & loading** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+    - **Saving & loading** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
     - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -910,9 +911,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Version Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Serialization & upgrades** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Serialise** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Serialization & upgrades** - 8 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Serialise** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Serialization implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1330,11 +1331,11 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **162 of 9,553 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
-- **1,615 functions mapped to parts of Dreams; 7,938 still unmapped.** Of the mapped functions, 121 have checked names.
+- **166 of 9,553 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **1,618 functions mapped to parts of Dreams; 7,935 still unmapped.** Of the mapped functions, 125 have checked names.
 - **9,515 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
-- **The latest batch named the Animation initializer and two shared serializer helpers.** Fresh-reopen checks confirmed the three names with 1,280 native bytes and all 3,835 enumerated references unchanged. Existing prototypes were preserved.
-- **AutoKeyframe sample conversion and scene input are now linked to the trace.** The reviewed path upgrades eight-byte samples to twelve-byte records with control data. The traced binary scene-input branch enables checksums; another format branch and a different output policy are now distinguished. The recording flag is identified, with restored-state assumptions still open.
+- **The latest batch added four serializer-helper names and corrected the Animation initializer’s signature.** Fresh-reopen checks preserved 2,876 native bytes and all 329 enumerated references. The initializer’s complete static contract adds 411 audited bytes; the new names add no completion credit.
+- **The trace now distinguishes a version-record payload from the alternate scene stream.** Native code links the payload to save/publish preparation and identifies matching input/output streams for the 99999 format branch. Complete format details and a working save/load round trip remain unverified.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
 
