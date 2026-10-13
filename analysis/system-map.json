@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1610,
-  "unmapped_total": 7943,
+  "mapped_total": 1611,
+  "unmapped_total": 7942,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41885,6 +41885,26 @@
           "kind": "verified_semantic_review",
           "name": "SelectGreatestMagnitudeOfFiveFloats",
           "support": "Complete 26-instruction body, absolute-value mask and both recording caller windows verified. Channel domain meanings unresolved."
+        }
+      ]
+    },
+    "14076cdf0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "property-recording",
+        "runtime-implementation"
+      ],
+      "component_basis": "Timed property-recording pipeline shared with the reviewed byte writer and five-float selector",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Appends or replaces timestamped float property records",
+      "code_sha256": "d259c0b0eafb2485753e0b1f1320f705d44957338abf8e330863f48d27b72b34",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RecordTimedFloatProperty",
+          "support": "Entire native body and ten callers checked. Record layout and conditional replacement traced; mode meanings and runtime behavior remain unresolved."
         }
       ]
     }

@@ -2,8 +2,8 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "153 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
-  "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
+  "review_scope": "154 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
     "default_fun_names": 9395,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9242,
-    "other_names": 311,
-    "verification": "complete_inventory_matches_baseline_plus_153_renames_and_two_created_functions"
+    "default_fun_names": 9241,
+    "other_names": 312,
+    "verification": "complete_inventory_matches_baseline_plus_154_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3118,9 +3118,38 @@
         "Descriptive role, not original symbol.",
         "Five-channel domain meanings unresolved.",
         "NaN and zero handling recorded in native audit; no runtime validation.",
-        "Name-only proposal; no completion credit."
+        "The original naming review changed only the name; the separate signature review is recorded below. No completion credit."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "signature_review": {
+        "signature": "float SelectGreatestMagnitudeOfFiveFloats(float * values)",
+        "calling_convention": "PS4_SYSV",
+        "evidence": "Five float32 loads within a 20-byte input extent, pointer in RDI and float result in XMM0; isolated rollback trial and fresh-process persistence verified.",
+        "limits": "Input validity is assumed; the meanings of the five channels remain unresolved."
+      }
+    },
+    {
+      "address": "14076cdf0",
+      "original_name": "FUN_14076cdf0",
+      "applied_name": "RecordTimedFloatProperty",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 167-instruction native body and all ten direct call sites checked against current program memory.",
+        "Stores 18-byte records containing an object handle, property identifier, payload length, timestamp and float value.",
+        "Mode 2 uses timestamp zero and replaces the first matching record; mode 5 replaces with calculated time. Other permitted modes append.",
+        "The existing PS4_SYSV signature matches all seven inputs, including the float value in XMM0.",
+        "Fresh process, saved-program reload, unchanged native bytes and references, and complete name inventory verified."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Capacity checks occur before replacement and assume an intact used extent; compatible record widths are assumed.",
+        "Mode meanings, gate side effects, property meanings and nonfinite or overflowing timestamp cases remain unresolved.",
+        "The 0xff sanitizer dispatch does not validate the float payload.",
+        "No running-game validation or whole-subsystem completion credit."
+      ]
     }
   ],
   "deferred": [

@@ -32,19 +32,20 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
 | Physics sphere grid | Filtered sphere samples traced into enclosing bounds, line/sphere roots and cell-bit masks; grid sizing import resolved. | Valid-input reachability of a mask edge case, full consumer behavior and runtime tests. |
 | Sound: triggering and Playhead | Power comparison traced through trigger flags, playback-speed handling and Playhead writes; time-bounds signature corrected against all 50 direct call sites. | Previous-frame context identity, complete enclosing update behavior and runtime tests. |
+| Animation: property recording | Byte and float record writers traced; float record layout, conditional replacement and five-value selection checked against native code. | Complete mode and gate meanings, buffer invariants, numeric edge cases and runtime tests. |
 | Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
 
 [Detailed findings and limitations](ANALYSIS.md). Square counts below measure function review only; they are not the completion percentage of these behaviors.
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/b2d5357f9965a04928e18352be8c021baa02cc5e/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=0f4265902a42)
 
 <!-- status-summary:start -->
-**155 of 9,553 functions named and checked.** A function is one piece of the game's code.
+**156 of 9,553 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/b2d5357f9965a04928e18352be8c021baa02cc5e/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=04b86cf319e7)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -59,13 +60,13 @@ Every square is one actual function and has the same size. All function squares 
 | Gadgets & logic | 463 | 5/8 | 38/454 |
 | Physics & collision | 60 | 2/28 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
-| Animation & puppets | 52 | 6/6 | 0/46 |
+| Animation & puppets | 53 | 7/7 | 0/46 |
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 313 | 0/106 | 0/205 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 150 | 32/71 | 5/74 |
 
-**1,610 of 9,553 discovered functions are mapped; 7,943 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,611 of 9,553 discovered functions are mapped; 7,942 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1264,7 +1265,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Animation & puppets** - 52 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+- **Animation & puppets** - 53 functions identified; 7 behavior/helper reviews; 0 property/type reviews
   - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1298,14 +1299,14 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Animation & keyframes** - 15 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+  - **Animation & keyframes** - 16 functions identified; 7 behavior/helper reviews; 0 property/type reviews
     - **Animation** - 7 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Runtime code** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Property recording** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime code** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Property recording** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime code** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
