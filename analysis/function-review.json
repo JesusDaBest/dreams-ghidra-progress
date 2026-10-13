@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "170 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "173 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9225,
-    "other_names": 328,
-    "verification": "complete_inventory_matches_baseline_plus_170_renames_and_two_created_functions"
+    "default_fun_names": 9222,
+    "other_names": 331,
+    "verification": "complete_inventory_matches_baseline_plus_173_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3415,11 +3415,12 @@
         "Analyst descriptive names, not recovered original symbols.",
         "No runtime validation, complete reader grammar or additional static-coverage credit.",
         "Working opaque-pointer signature returns low-byte status0/7; upper EAX bits are not always normalized.",
-        "Supported writes ignore the stream reported byte count; Kind10 is bound to float by prior registration evidence; kind11 semantic type remains unbound."
+        "Supported writes ignore the stream reported byte count; Kind10 is bound to float by prior registration evidence; kind11 was unbound at that stage and is now tied to float64 by native reader conversions."
       ],
       "calling_convention": "PS4_SYSV",
       "saved_working_signature": "uchar WriteReflectedPrimitiveValue(void * stream, uint type_code, void * value)",
-      "signature_basis": "Complete primitive body, both recorded caller interfaces, isolated trial and unchanged bytes/references after fresh reopening."
+      "signature_basis": "Complete primitive body, both recorded caller interfaces, isolated trial and unchanged bytes/references after fresh reopening.",
+      "subsequent_reader_type_binding": "The later native reader conversion review establishes operational float64 semantics for destination kind11; the writer copies its eight raw bytes. Original type declarations remain unrecovered."
     },
     {
       "address": "141603710",
@@ -3477,6 +3478,71 @@
         "Analyst descriptive names, not recovered original symbols.",
         "No runtime validation, complete reader grammar or additional static-coverage credit.",
         "Original prototype preserved; container callback contracts, dynamic count-field bindings and enclosing error propagation remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "1416003a0",
+      "original_name": "FUN_1416003a0",
+      "applied_name": "ReadReflectedPrimitiveValues",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 623-instruction / 2539-byte body read and matched to current memory.",
+        "All source/destination dispatch and range tables captured; six recorded callers establish integer-register arguments and low-byte status usage.",
+        "Traces range checks, integer and floating conversion families, Boolean normalization, short reads and custom-reader context restoration."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete scene decoder or additional static-coverage credit.",
+        "Working opaque-pointer signature returns low-byte status; upper EAX bits are not consistently normalized.",
+        "Count/stride/buffer invariants, overlong varints, exceptional floating conversions, MXCSR state and custom callback contracts remain unresolved.",
+        "Numerical conversion models are conditional on round-to-nearest ties-to-even and do not execute the game."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar ReadReflectedPrimitiveValues(void * context, uint source_category, void * destination_type, void * destination, ulonglong stride, ulonglong count)",
+      "signature_basis": "Complete primitive reader body and six recorded caller argument/result windows; isolated trial; unchanged bytes and references after fresh reopening."
+    },
+    {
+      "address": "1416019f0",
+      "original_name": "FUN_1416019f0",
+      "applied_name": "ReadReflectedPairEntries",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 178-instruction / 632-owned-byte body read and matched to current memory.",
+        "Requires paired source/destination records and traverses iterator-provided first/second values using primitive, composite or reference readers."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete scene decoder or additional static-coverage credit.",
+        "Original prototype preserved; iterator ownership, original container type and full surrounding schema construction remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141602aa0",
+      "original_name": "FUN_141602aa0",
+      "applied_name": "ReadReflectedTypedValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 118-instruction / 394-byte body read and matched to current memory.",
+        "Uses expected primitive class directly or validates a compact composite schema ID against the context table before delegation."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete scene decoder or additional static-coverage credit.",
+        "Original prototype preserved; all200 recorded references are preserved, not all semantically audited.",
+        "Type-ID framing, overlong input and schema table construction remain unresolved."
       ],
       "calling_convention": "PS4_SYSV",
       "prototype_preserved": true

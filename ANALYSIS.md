@@ -1328,7 +1328,7 @@ The primitive dispatch table establishes these payload operations:
 | 2–5 | Unsigned 8/16/32/64-bit value, using seven-bit groups with a continuation bit |
 | 6–9 | Signed 8/16/32/64-bit value, sign-extended and transformed with `(x << 1) XOR (x >> 63)` before the same compact encoding |
 | 10 | Four raw bytes; previously established float registration binds this kind to scalar float |
-| 11 | Eight raw bytes; semantic type binding remains open in this pass |
+| 11 | Eight raw bytes; the subsequent reader review below establishes float64 interpretation |
 
 These numbers are descriptor kinds used to choose an encoding. They are not assumed to be literal type tags in a saved file. The prior float-field registration was checked against current native stores, its `float` literal and four-byte stride; that existing result adds no repeat completion credit.
 
@@ -1346,3 +1346,32 @@ The output visitor callbacks previously left unexplained are now bound to concre
 Thus these callbacks request possible block boundaries at those array/container traversal points. They do not establish per-field checksum words or callbacks after every field. Complete input-event timing, the reader's conversion grammar, custom callbacks, reference-table invariants and a runtime save/load round trip remain unfinished.
 
 A verified cold backup preceded promotion. The isolated trial and fresh-process reopening preserved all **3,900 owned instruction bytes and 13 recorded references**; the complete function-name inventory and original archives also matched. Totals are now **172 checked names**, **1,624 mapped functions**, and **7,929 unmapped functions**. The conservative audited-byte coverage remains **1,495 / 28,940,288 (about 0.0052%)**; no new complete-function coverage or runtime validation is claimed for these findings.
+
+### Reflected primitive reading and conversion
+
+Saved three more descriptive names: `ReadReflectedPrimitiveValues` (`1416003a0`), `ReadReflectedPairEntries` (`1416019f0`), and `ReadReflectedTypedValue` (`141602aa0`). Their complete owned bodies total **919 instructions / 3,565 bytes**. The primitive reader now has a tested six-argument working signature with opaque context/type/destination pointers, a source category, stride and count, and low-byte status. The pair and typed-entry helpers retain their previous prototypes.
+
+The source category and destination kind serve different purposes:
+
+| Generic source category | Verified reader path |
+| --- | --- |
+| 1 | Reads compact unsigned integers and checks destination bounds; destination kind 1 instead uses the Boolean bulk path below |
+| 2 | Reads the compact integer, reverses the signed transform, then checks signed destination bounds |
+| 3 | Reads binary32 values; matching float kind 10 with stride 4 uses a checked bulk read, otherwise scalar conversions |
+| 4 | Reads binary64 values; matching kind 11 with stride 8 uses a checked bulk read, otherwise scalar conversions |
+| 0 or 5 | Returns low-byte status 2 on the generic path |
+| Above 5 | Returns low-byte status 7 on the generic path |
+
+A custom descriptor reader overrides this generic dispatch. Its callbacks and optional interface processing remain dependencies. Source category numbers are not interchangeable with the output writer's destination-kind numbers.
+
+The captured range tables establish the integer limits used before ordinary conversion: unsigned input must fit the configured maximum, and signed input must fit the configured minimum/maximum. Negative signed integer values cannot enter an unsigned destination through this path. The reader reports short reads with low-byte status 1 and range failures with status 2. It may have written earlier elements before a later failure; no transactional rollback is established.
+
+The native conversion branches treat destination kind 11 as **64-bit floating point**, closing the writer-only pass's raw-eight-byte type question. Integer-to-float, float widening/narrowing and truncating float-to-integer paths are visible. Numerical models for the unsigned-64-to-float32 sticky-half algorithm and unsigned-64-to-float64 split algorithm matched **3,565 deterministic boundary/random cases** under round-to-nearest ties-to-even. These models do not execute the target instructions or establish the game's MXCSR rounding/exception state. NaNs, infinities, out-of-range float casts, traps and all floating side effects still need further validation.
+
+For destination kind 1 with source category 1, the reader consumes `count` contiguous bytes, checks the returned count and converts every nonzero byte to one. Scalar, 16-byte and 128-byte normalization paths agree with that operation. This path does not check for stride 1 or honor an arbitrary larger stride; caller storage requirements remain important. Float/double bulk paths explicitly check their expected strides. Count-shift overflow and complete buffer/lifetime guarantees remain open.
+
+Malformed integer framing remains an explicit gap. The observed varint loops continue until the continuation bit clears and do not reject the eleventh byte locally. They retain only the first ten bytes, while reconstruction uses the consumed count. The typed-entry helper has the same pattern for schema IDs. Caller/framing constraints and actual effects of overlong input are not validated; this is a conditional static observation, not a reproduced runtime defect.
+
+The pair helper requires two source and two destination field records, obtains storage through an iterator and dispatches each side through primitive, composite or the already named object-reference reader. The typed-entry helper uses an expected primitive class directly or validates a compact composite schema ID, table entry and stored ID before delegation. Its 200 recorded references are preserved; they have not all been semantically audited. Original container classes, iterator ownership and complete schema construction remain unresolved.
+
+A hash-verified cold backup and isolated signature trial preceded promotion. Fresh-process reopening preserved all **3,565 owned instruction bytes and 207 recorded references**, the complete function-name inventory and original archives. Totals are now **175 checked names**, **1,627 mapped functions**, and **7,926 unmapped functions**. Audited-byte coverage remains **1,495 / 28,940,288 (about 0.0052%)**. These findings add no complete-function coverage or runtime scene-round-trip claim.

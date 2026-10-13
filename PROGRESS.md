@@ -1162,3 +1162,10 @@ Read the complete block-loader and block-flush bodies, checked their method-tabl
 Saved four descriptive output-helper names and the primitive writer's low-byte status signature after complete owned-body review and an isolated trial. Native dispatch establishes unsigned/signed compact encodings and raw-width cases. The two output boundary callbacks are now tied to specific completed array/container traversals. Earlier float and composite-filter findings were reconciled rather than counted again.
 
 Fresh reopening preserved 3,900 instruction bytes and 13 recorded references. Totals: 172 checked names, 1,624 mapped functions and 7,929 unmapped functions. [Encoding table, callback conditions and limits](ANALYSIS.md#reflected-value-encodings-and-array-boundary-events). Audited-byte coverage remains about 0.0052%; no runtime round trip is claimed.
+
+
+### Reflected readers and conversion rules
+
+Saved three reader-helper names and the primitive reader's tested six-argument, low-byte-status signature. Native tables and code establish integer range checks, numeric conversion families, Boolean normalization, checked reads and a float64 destination binding. Selected conversion models pass 3,565 cases under nearest-even rounding; target runtime state remains unverified. Overlong integer framing, stride/count guarantees and custom callbacks remain explicit gaps.
+
+Fresh reopening preserved 3,565 instruction bytes and 207 recorded references. Totals: 175 checked names, 1,627 mapped functions and 7,926 unmapped functions. [Reader paths, models and limits](ANALYSIS.md#reflected-primitive-reading-and-conversion). Audited-byte coverage remains about 0.0052%; no runtime scene round trip is claimed.

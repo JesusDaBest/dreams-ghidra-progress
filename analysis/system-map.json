@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1624,
-  "unmapped_total": 7929,
+  "mapped_total": 1627,
+  "unmapped_total": 7926,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42184,6 +42184,66 @@
           "kind": "verified_semantic_review",
           "name": "WriteReflectedFieldValue",
           "support": "Complete native body, dispatch data and relevant callers reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "1416003a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected scene-reading call chain and descriptor/iterator dispatch",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "d547b8f6fcafd755f0e5ddcd309dc9a18838057b14987e96ca35d95085dde5be",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadReflectedPrimitiveValues",
+          "support": "Complete native body and relevant dispatch/caller data reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "1416019f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected scene-reading call chain and descriptor/iterator dispatch",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "4df9ade51cdcd8db4bf0aefd2e90aca1d04e9117d8d55f18de7ea7cb5b462d34",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadReflectedPairEntries",
+          "support": "Complete native body and relevant dispatch/caller data reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "141602aa0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected scene-reading call chain and descriptor/iterator dispatch",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "0f9737ce5ec75786b98941c2961aeb25da89fc1a55d71983c54316217fe8aff5",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadReflectedTypedValue",
+          "support": "Complete native body and relevant dispatch/caller data reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
         }
       ]
     }
