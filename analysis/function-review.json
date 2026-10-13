@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "152 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "153 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9243,
-    "other_names": 310,
-    "verification": "complete_inventory_matches_baseline_plus_152_renames_and_two_created_functions"
+    "default_fun_names": 9242,
+    "other_names": 311,
+    "verification": "complete_inventory_matches_baseline_plus_153_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3099,6 +3099,26 @@
         "Byte signedness and all16 callers not established; not claimed as signed-strength producer.",
         "Gate helpers, time conversion constants and full runtime behavior remain unresolved.",
         "Only function name changes; no prototype or behavior-completion credit."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14076cd70",
+      "original_name": "FUN_14076cd70",
+      "applied_name": "SelectGreatestMagnitudeOfFiveFloats",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "RDI points to five consecutive float32 values. The returned low lane of XMM0 selects the signed input with greatest absolute magnitude, considering offsets 4,8,12,16,0 in that order. Strict comparisons preserve the earlier candidate on equal magnitudes.",
+        "Initial ordered nonzero comparison masks zero or NaN at offset4 to positive zero. Later NaN candidates do not win ordered comparisons. Infinities participate by magnitude; no arithmetic rescaling is performed.",
+        "Two previously verified caller windows pass object+0x1c0 for property0xc5 and object+0x1d4 for property0xbc, forwarding XMM0 to the timed float writer. Original names and the meaning of the five channels remain unresolved."
+      ],
+      "caveats": [
+        "Descriptive role, not original symbol.",
+        "Five-channel domain meanings unresolved.",
+        "NaN and zero handling recorded in native audit; no runtime validation.",
+        "Name-only proposal; no completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }

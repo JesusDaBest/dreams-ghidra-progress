@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1609,
-  "unmapped_total": 7944,
+  "mapped_total": 1610,
+  "unmapped_total": 7943,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41865,6 +41865,26 @@
           "kind": "verified_semantic_review",
           "name": "RecordTimedByteProperty",
           "support": "Complete native body and two Boolean caller sites reviewed; all16 caller sites and gate/time helpers remain incomplete."
+        }
+      ]
+    },
+    "14076cd70": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "property-recording",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both direct references select a value for the timed float property recording pipeline",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Greatest magnitude selection of five signed float values before recording",
+      "code_sha256": "2bd8a3f879d490784476236cd1985c9ef6bbb359045054713a13053c9b575481",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectGreatestMagnitudeOfFiveFloats",
+          "support": "Complete 26-instruction body, absolute-value mask and both recording caller windows verified. Channel domain meanings unresolved."
         }
       ]
     }

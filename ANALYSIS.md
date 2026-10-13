@@ -1133,3 +1133,9 @@ The neighboring timed-property writer now has a corrected seven-argument signatu
 Two callers first use a fully reviewed 26-instruction helper to select the signed value with greatest absolute magnitude from five consecutive float channels. Strict comparisons retain the earlier candidate on ties. The initial ordered comparison masks an initial NaN or zero to positive zero; later NaN candidates do not win. The five channels' original meaning and the property names remain unresolved.
 
 An isolated signature trial preceded the working-project change. A hash-verified cold backup and clean reopening confirmed that the corrected signature persisted, all 726 body bytes and ten references remained unchanged, and decompilation succeeded. The complete name inventory and original-file checks passed. No additional descriptive names, subsystem assignments, runtime validation or completed-behavior credit were added.
+
+### Five float recording value selector named
+
+`SelectGreatestMagnitudeOfFiveFloats` describes a fully reviewed 26-instruction helper used by two timed float recording callers. It preserves the sign of the strongest input, visits channels in the order 1, 2, 3, 4, 0, and retains the earlier candidate on equal magnitudes. The native audit records the initial zero and NaN handling and the ordered comparisons. The meanings of the five channels remain unresolved; this is a descriptive name, not an original symbol.
+
+A hash-verified cold backup preceded this name-only change. Clean reopening verified the unchanged 122 body bytes, two references and signature. The full inventory and both original archive hashes passed verification. There are now 155 checked descriptive names, including 114 among 1,610 mapped functions; 7,943 functions remain unmapped. This helper review adds no whole-game behavior completion credit.
