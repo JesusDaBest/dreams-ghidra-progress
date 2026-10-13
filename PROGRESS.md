@@ -1189,3 +1189,7 @@ Five verified descriptive names added for schema allocation, raw name bytes, com
 ### Outer record reader named
 
 Saved and freshly verified `ReadReflectedStreamRecords` after full native role review. Totals: 191 checked names and 1,643 mapped functions. [Scope and open format contracts](ANALYSIS.md#outer-reflected-record-reader-named). No runtime or additional audited-byte credit.
+
+### Read-resource cleanup named
+
+Two cleanup roles saved and freshly verified, preserving types, code and references. Totals: 193 checked names and 1,645 mapped functions. [Resource lifecycle and remaining ownership contracts](ANALYSIS.md#reflected-read-resource-teardown). Audited-byte coverage remains unchanged.

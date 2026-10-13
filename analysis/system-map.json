@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9556,
-  "mapped_total": 1643,
-  "unmapped_total": 7913,
+  "mapped_total": 1645,
+  "unmapped_total": 7911,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42564,6 +42564,46 @@
           "kind": "verified_semantic_review",
           "name": "ReadReflectedStreamRecords",
           "support": "Full native body and selector table reviewed; name verified after reopening. Dependencies and complete format/runtime behavior remain open."
+        }
+      ]
+    },
+    "1415fe800": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected read-context and source-schema cleanup chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "f6c36fa6ca34ce804da6d917094a60d14a0ff757f5bbcd49b8b954f8d26d6f7b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseReflectedReadContextResources",
+          "support": "Complete body reviewed; saved name verified after reopening with bytes, types and references unchanged. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141604bf0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected read-context and source-schema cleanup chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "cf453d07f62619e32b6f1f4623d3f9a294fff77ba6ce084d029cef810ba2f113",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseReflectedSourceSchemaResources",
+          "support": "Complete body reviewed; saved name verified after reopening with bytes, types and references unchanged. Runtime and indirect contracts remain open."
         }
       ]
     }

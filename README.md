@@ -41,13 +41,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a2bb54129f413caaccd5ddb18b81d2569c68233a/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=054f490587f6)
 
 <!-- status-summary:start -->
-**191 of 9,556 functions named and checked.** A function is one piece of the game's code.
+**193 of 9,556 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a2bb54129f413caaccd5ddb18b81d2569c68233a/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=861ef6ba1e61)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,9 +66,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 315 | 0/106 | 2/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 180 | 63/101 | 5/74 |
+| Shared engine & object data | 182 | 65/103 | 5/74 |
 
-**1,643 of 9,556 discovered functions are mapped; 7,913 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,645 of 9,556 discovered functions are mapped; 7,911 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -820,10 +820,10 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 180 functions identified; 63 behavior/helper reviews; 5 property/type reviews
-  - **Game state & runtime** - 72 functions identified; 57 behavior/helper reviews; 0 property/type reviews
-    - **Saving & loading** - 33 functions identified; 33 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 33 functions identified; 33 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 182 functions identified; 65 behavior/helper reviews; 5 property/type reviews
+  - **Game state & runtime** - 74 functions identified; 59 behavior/helper reviews; 0 property/type reviews
+    - **Saving & loading** - 35 functions identified; 35 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 35 functions identified; 35 behavior/helper reviews; 0 property/type reviews
     - **Game contexts & runtime support** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Resource pages** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
@@ -1332,10 +1332,10 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **191 of 9,556 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
-- **1,643 functions mapped to parts of Dreams; 7,913 still unmapped.** Of the mapped functions, 150 have checked names.
+- **193 of 9,556 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **1,645 functions mapped to parts of Dreams; 7,911 still unmapped.** Of the mapped functions, 152 have checked names.
 - **9,518 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
-- **The outer reflected record reader now has a verified descriptive name.** Full native review traces schema, object and parsing-state records. Fresh-reopen checks preserve code, types and references; audited-byte coverage is unchanged.
+- **Two reflected read-resource cleanup roles now have verified names.** Native review traces draining, callback handling and resource release. Fresh-reopen checks preserve code, types and references; audited-byte coverage is unchanged.
 - **The trace now distinguishes a version-record payload from the alternate scene stream.** Native code links the payload to save/publish preparation and identifies matching input/output streams for the 99999 format branch. Complete format details and a working save/load round trip remain unverified.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.

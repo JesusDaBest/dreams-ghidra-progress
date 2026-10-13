@@ -1425,3 +1425,11 @@ Totals are190 checked names across9,556 functions,1,642 mapped and7,914 unmapped
 `ReadReflectedStreamRecords` now names the complete 1,157-instruction outer reader. Native selectors route to schema definitions, object payloads, parsing-state updates and terminal handling. The object path populates registered destinations or skips their source payloads. The parsing-state handler stores a checked 32-bit value; its original meaning is still unbound.
 
 Full-body role review supports this descriptive name, while schema replacement, special-field initialization, factories, callback ownership, status9, malformed framing and a working runtime round trip remain open. Fresh reopening preserved the existing prototype, native bytes and references; full inventory and archive checks passed. Totals: 191 checked names, 1,643 mapped functions and 7,913 unmapped. Audited-byte coverage is unchanged.
+
+### Reflected read-resource teardown
+
+`ReleaseReflectedReadContextResources` and `ReleaseReflectedSourceSchemaResources` now name two fully reviewed cleanup roles, covering 274 native instructions. Context teardown may drain unread records in skip mode before terminal processing. It conditionally releases an owned stream, tracked raw-name allocations, current schema entries and table storage. Schema teardown separately destroys auxiliary instances and hook callables and releases its vectors; its caller releases the enclosing allocation.
+
+Descriptor callbacks at outer-reader exit remain distinct from auxiliary-instance destruction. Only schema pointers currently in the table are visited here, so overwritten-slot ownership remains unresolved. Partial contexts, repeated teardown, indirect callback effects and allocator guarantees need more analysis. No runtime or audited-byte credit is added.
+
+A hash-verified cold backup preceded naming. Fresh reopening preserved native bytes, types, references, full function inventory and original archives. Totals: 193 checked names, 1,645 mapped functions and 7,911 unmapped.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "186 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "188 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9556,
-    "default_fun_names": 9209,
-    "other_names": 347,
-    "verification": "complete_inventory_matches_baseline_plus_186_renames_and_five_created_functions"
+    "default_fun_names": 9207,
+    "other_names": 349,
+    "verification": "complete_inventory_matches_baseline_plus_188_renames_and_five_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3852,6 +3852,44 @@
         "Analyst descriptive role; original prototype preserved.",
         "Schema replacement, special identifiers, callback/factory contracts, allocation failure, malformed framing and full runtime round trip remain unresolved.",
         "No additional audited-byte or whole-format completion credit."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "1415fe800",
+      "original_name": "FUN_1415fe800",
+      "applied_name": "ReleaseReflectedReadContextResources",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete147-instruction native body reviewed: conditional draining, descriptor callbacks and release of owned stream and tracked name/schema/table storage."
+      ],
+      "caveats": [
+        "Descriptive role, not original symbol; prototype preserved.",
+        "Indirect callbacks, allocation, ownership and partial-state contracts remain open.",
+        "No runtime or additional audited-byte credit."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "141604bf0",
+      "original_name": "FUN_141604bf0",
+      "applied_name": "ReleaseReflectedSourceSchemaResources",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete127-instruction native body reviewed: auxiliary instance and callable destruction, schema vector release separate from enclosing allocation."
+      ],
+      "caveats": [
+        "Descriptive role, not original symbol; prototype preserved.",
+        "Indirect callbacks, allocation, ownership and partial-state contracts remain open.",
+        "No runtime or additional audited-byte credit."
       ],
       "prototype_preserved": true,
       "calling_convention": "PS4_SYSV"
