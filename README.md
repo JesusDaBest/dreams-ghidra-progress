@@ -32,20 +32,20 @@ These findings describe reverse-engineering progress beyond function names. “T
 | Teleporter: callback | Adapter and captured callback traced to setting an object status bit when the previous-frame accumulator permits it. | Meaning and downstream consumers of that bit. |
 | Physics sphere grid | Filtered sphere samples traced into enclosing bounds, line/sphere roots and cell-bit masks; grid sizing import resolved. | Valid-input reachability of a mask edge case, full consumer behavior and runtime tests. |
 | Sound: triggering and Playhead | Power comparison traced through trigger flags, playback-speed handling and Playhead writes; time-bounds signature corrected against all 50 direct call sites. | Previous-frame context identity, complete enclosing update behavior and runtime tests. |
-| Animation: property recording | Byte and float record writers traced; float record layout, conditional replacement and five-value selection checked against native code. | Complete mode and gate meanings, buffer invariants, numeric edge cases and runtime tests. |
+| Animation: property recording | Recording modes and gate fields identified; selected float paths traced through sample conversion, resource merging, property storage and Header/Data page serialization. | Other merge branches, complete mode transitions, outer scene-file framing, buffer invariants and runtime tests. |
 | Other systems | Mapping and reviewed functions are listed below and in the research findings. | No whole-system completion or running-game verification established. |
 
 [Detailed findings and limitations](ANALYSIS.md). Square counts below measure function review only; they are not the completion percentage of these behaviors.
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f2d17e14b4c89a751f2536994909b576677d125c/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=db6bfd0068c8)
 
 <!-- status-summary:start -->
-**156 of 9,553 functions named and checked.** A function is one piece of the game's code.
+**159 of 9,553 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f2d17e14b4c89a751f2536994909b576677d125c/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=95c27905c898)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -57,21 +57,21 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
-| Gadgets & logic | 463 | 5/8 | 38/454 |
+| Gadgets & logic | 461 | 5/8 | 38/452 |
 | Physics & collision | 60 | 2/28 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
-| Animation & puppets | 53 | 7/7 | 0/46 |
+| Animation & puppets | 54 | 8/8 | 0/46 |
 | Rendering & lighting | 271 | 0/245 | 0/26 |
-| Editor & interface | 313 | 0/106 | 0/205 |
+| Editor & interface | 315 | 0/106 | 2/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 150 | 32/71 | 5/74 |
 
-**1,611 of 9,553 discovered functions are mapped; 7,942 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,612 of 9,553 discovered functions are mapped; 7,941 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 463 functions identified; 5 behavior/helper reviews; 38 property/type reviews
+- **Gadgets & logic** - 461 functions identified; 5 behavior/helper reviews; 38 property/type reviews
   - **Online & multiplayer gadgets** - 95 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Magic Door Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -208,64 +208,6 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Xor** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Creation & display gadgets** - 70 functions identified; 0 behavior/helper reviews; 6 property/type reviews
-    - **Text Gadget** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Gadget Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Timeline gadget & playback** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **DEPRECATE Dream Bubble** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Dev Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Dev Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Photo Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Gadget Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Gadget Prompt Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Number Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Reporter Sculpt** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-    - **Reporter Telemetry** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-    - **Scripter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Auto Guides Gadget** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Button Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Dummy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Record Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Imp Quest Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Photo Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Reporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Slider Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Stamping Enabler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Legacy Photo Gadget** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Snap Point** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Timeline Lane Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Movement & possession** - 70 functions identified; 2 behavior/helper reviews; 2 property/type reviews
     - **Teleporter** - 5 functions identified; 2 behavior/helper reviews; 2 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
@@ -318,6 +260,62 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Rotator** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Creation & display gadgets** - 68 functions identified; 0 behavior/helper reviews; 6 property/type reviews
+    - **Text Gadget** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timeline gadget & playback** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **DEPRECATE Dream Bubble** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dev Gadget** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dev Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Gadget Prompt Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Number Format** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Reporter Sculpt** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+    - **Reporter Telemetry** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Scripter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Auto Guides Gadget** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Button Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Dummy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Imp Quest Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Reporter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Slider Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stamping Enabler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Legacy Photo Gadget** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Node** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Snap Point** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timeline Lane Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Gameplay & scoring** - 64 functions identified; 2 behavior/helper reviews; 3 property/type reviews
     - **Variable Gadget** - 5 functions identified; 2 behavior/helper reviews; 3 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
@@ -433,7 +431,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared gadget property dispatch** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 313 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Editor & interface** - 315 functions identified; 0 behavior/helper reviews; 2 property/type reviews
   - **UI drawing & interaction** - 101 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Interface primitives** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -504,7 +502,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Set Text Lams IDMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Editing & tools** - 43 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Editing & tools** - 45 functions identified; 0 behavior/helper reviews; 2 property/type reviews
     - **Change** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Edit Op** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -525,6 +523,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Map Stack** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Recording controls** - 2 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 2 property/type reviews
     - **Clean Up Snap Points Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Confirm Big Delete Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1265,7 +1265,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Animation & puppets** - 53 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+- **Animation & puppets** - 54 functions identified; 8 behavior/helper reviews; 0 property/type reviews
   - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1299,14 +1299,14 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Animation & keyframes** - 16 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+  - **Animation & keyframes** - 17 functions identified; 8 behavior/helper reviews; 0 property/type reviews
     - **Animation** - 7 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Runtime code** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Property recording** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+      - **Runtime code** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
     - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Property recording** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime code** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1318,7 +1318,7 @@ Every square is one actual function and has the same size. All function squares 
 </details>
 <!-- area-status:end -->
 
-<sub>The audited v2 snapshot has cached output for 9,513 functions; 38 extraction failures remain. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
+<sub>The current inventory has cached output for 9,515 functions; 38 extraction failures remain. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
 
 ## What we know so far
 
@@ -1326,17 +1326,17 @@ Every square is one actual function and has the same size. All function squares 
 
 The map connects code to sculpting and painting, gadgets, physics, audio, animation, rendering, the editor, the Dreamiverse, and shared engine data. Assignments come from references in the machine code, registered types, and the game's object-type dispatcher. Every assignment has an address and supporting evidence in the [system map](analysis/system-map.json).
 
-So far, checked names cover gadget property readers and registrations plus shared object helpers. Mapping a function to a system is a separate step from understanding its behavior and checking its name. See [how the mapping is established](MAPPING.md).
+Checked names cover reviewed functions across the systems listed above, including behavior helpers and property registrations. Mapping a function to a system is a separate step from understanding its behavior and checking its name. See [how the mapping is established](MAPPING.md).
 
 ## Latest progress
 
-- **62 functions named and checked.** Another 4 have been reviewed but remain unclear.
-- **9,513 functions have cached computer-generated code in the newer v2 snapshot.** The full cache was hash-checked. Generated code is preparation; it does not mean we understand it yet.
-- **38 functions still need extraction fixes.** All 9,551 discovered functions were attempted; all 59 initial timeouts received one longer retry. The older v1 cache and its 43 failures remain separately recorded.
-- **Six field-registration signatures were corrected, saved, and verified through native reopen checks.** A newer snapshot preserves those corrections and all 27 names; its separate extraction cache is complete and audited. Live MCP metadata readback passed, and all ten sampled outputs matched native Ghidra with the same default options.
-- **Eleven additional names were applied and verified after reopening, bringing the total to 41.** These identify wireless receiver/transmitter and variable-gadget property visitors and registrations, plus ReporterSculpt registrations. A copy-only flow-limit experiment also produced pseudocode, then was rolled back because its switch domain still needs proof. These outcomes are documented separately from completed work in the [findings](ANALYSIS.md).
+- **159 of 9,553 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **1,612 functions mapped to parts of Dreams; 7,941 still unmapped.** Of the mapped functions, 118 have checked names.
+- **9,515 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
+- **The latest batch added three descriptive names for recording controls.** Native review established recording-mode names and gate fields, and traced the reviewed sample merge into Animation resource pages and a property command. Fresh-reopen checks confirmed the three names with 1,997 native bytes and 26 references unchanged.
+- **The follow-up connects selected float samples to stored Animation resources.** The trace now includes property installation and versioned serialization of Header and Data pages. These findings add understanding without increasing the name count or claiming a complete working save path.
 
-Next: trace runtime value evaluation, extend the system mapping, and match developer-stream source leads against the executable. The [progress log](PROGRESS.md) holds the technical evidence and limitations.
+Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
 
 ## Repository scope
 

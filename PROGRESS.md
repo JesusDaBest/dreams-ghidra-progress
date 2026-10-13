@@ -1058,3 +1058,40 @@ A hash-verified cold backup preceded this name-only change. Clean reopening veri
 The persistence checks now require an observed stopped process, closed service listeners, a newly created process with a distinct run ID, the expected loaded program hash, and matching process/listener identity before and after the metadata reads. Without this evidence the general verifier reports current metadata only. Nine focused failure-path tests passed. This addresses a provenance gap in the prior verifier, whose clean-reopen assertion relied on separate external observations.
 
 There are now 156 checked descriptive names, including 115 among 1,611 mapped functions; 7,942 functions remain unmapped. These changes add no whole-game behavior completion credit or runtime validation.
+
+### Recording modes, eligibility and stored Animation data
+
+The executable's `ERecordMode` registration identifies 0 None, 1 Animation, 2 Keyframe, 3 Microphone, 4 Sound, 5 AutoKeyframe, 6 Possess, 7 Simulation and 8 LAST. Native field registrations bind this enum to `Machine.record_mode` and `Player.last_used_record_mode`. The reviewed caller carries that exact Machine field into the byte and float writers. This resolves the earlier unknown names for numeric modes 2 and 5; it does not establish every mode transition or caller.
+
+| Mode in the reviewed property-recording path | Established behavior |
+| --- | --- |
+| Keyframe | Replace the first matching object/property record at timestamp zero, or append if no match exists. |
+| AutoKeyframe | Replace the first match using the calculated recording timestamp, or append if absent. |
+| Animation, Possess, Simulation | Use the stateful eligibility gate and append when the writer permits it. |
+
+These results concern the reviewed writers and caller path. Their buffer header value 2 is a separate format discriminator, not the Keyframe mode number. Microphone and Sound processing are outside this traced property-recording path.
+
+`PreparePropertyRecordingIfEligible` names the 160-instruction gate. Its threshold field corresponds to the game's `AnimPageData` thermometer category, and its timer is registered as `possess_countin`. The gate can request `force_tick_sim_next_frame_due_to_recording`, clear a flag that suppresses audio-ring processing, and initialize `recording_start_time` from the Animation playhead or parent timeline. All six direct callers immediately test AL and skip recording on zero. Native floating-point comparisons retain their ordered/unordered distinction; threshold calculation, translated notification text, tick-flag lifecycle and the physical audio source remain unresolved.
+
+The downstream trace follows the reviewed sample merge into page types explicitly labeled `ANIMATION` and `ANIMATION_HEADER`. It finalizes both resource trees, returns their updated roots and a descriptor ordinal, and reaches submission of the two resource identities through property `0x2fe`. The existing `FinalizePackedResourceTreeWriter` name is retained. The follow-up below traces selected float source conversions, property installation and resource serialization; complete merge correctness, the outer scene-save path and runtime behavior remain unresolved.
+
+`RegisterRecordModeFieldOffset` and `AddRecordModeEnumValue` name the two fully reviewed registration helpers. The map places these shared recording controls under Editor & interface / Editing & tools, preserving their Properties & type definitions role. This classification follows the Machine and Player field uses; it does not claim that the helpers draw UI or run exclusively in the editor.
+
+The three names were applied in one backed-up batch. Fresh-process verification checked 1,997 unchanged native instruction bytes, 26 references, unchanged signatures apart from the names, the complete 9,553-function inventory and both archive hashes. There are now 159 checked descriptive names, including 118 among 1,612 mapped functions; 7,941 functions remain unmapped. No whole-game completion or runtime-validation credit was added.
+
+
+### Float samples, property installation and resource serialization
+
+The float path is now traced independently of byte recording. Seven reviewed property IDs reach the native float converter through their recorded type and numeric-class tables on the ordinary conversion branch. An earlier special conversion branch remains untraced. It consumes timestamp/float pairs, preserves the stored float bits, and can produce either 8-byte samples or 12-byte samples with control data. Equal intermediate values can be suppressed while endpoints and unordered NaN comparisons follow the native branches. This is not a claim that every float buffer reaches the same merge routine: the resource router selects among several writers according to descriptor and mode flags.
+
+A later filter applies to properties `0xbc` and `0xc5`. It inspects float words at offsets `4 + 8*i` and can clear the output length when every inspected value compares equal to zero. Since conversion also supports 12-byte records, the eight-byte scan must not be described as a universal test of every converted sample without proving the format invariant.
+
+The resource-pair command is connected to property storage. Its `0x2fe` dispatch-table entry leads to native code omitted from Ghidra's recovered function body. That branch transfers two 64-bit resource fingerprints into two local 32-bit page handles. With an explicit stored property, it updates the inline object field only when its value before conversion equals the old stored pair; a differing inline value is preserved. Without an explicit property payload, the offset-mapped inline field is the destination. The transfer helper assumes valid pointers, initialized resource tables, and sufficient buffer capacity; it is not a checked parser for arbitrary input.
+
+Native initialization binds Animation property `0x2fe` to `HeaderAndDataPages` at offset `0x110`. The registered pair type identifies `Header` at relative offset zero and `Data` at four. For serialization versions at least `0x3a7`, the reviewed binary serializer processes Header and then Data through the same resource helper, with error checks between operations.
+
+The output path writes the root fingerprint, visits resource pages while avoiding repeats, writes children before their parent, and ends a nonempty resource sequence with a zero byte. Leaf pages contribute 512 bytes; internal pages contribute their header and child fingerprints. Calls into stream servicing remain part of this path, so these observations are not a complete contiguous file grammar. The input path interns pages and resolves the root fingerprint to a local handle. A zero input fingerprint returns without assigning that handle; the required destination initialization remains to be proved. Historical-format migration, outer scene containers, framing, compression and runtime round trips remain incomplete.
+
+[Media Molecule's audio-tools talk](https://www.youtube.com/watch?v=-UyiXUJcIQ0&t=2963s) supplies a separate lead about animation-driven parameters participating in dependency ordering. It does not identify this binary's resource representation. The installation branch reviewed here does not establish how those dependency links are created or updated.
+
+These are additional static data-flow findings. No additional function names, whole-behavior completion credit or runtime-validation credit were added in this follow-up.

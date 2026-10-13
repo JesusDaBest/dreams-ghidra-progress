@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "154 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "157 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9241,
-    "other_names": 312,
-    "verification": "complete_inventory_matches_baseline_plus_154_renames_and_two_created_functions"
+    "default_fun_names": 9238,
+    "other_names": 315,
+    "verification": "complete_inventory_matches_baseline_plus_157_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3097,10 +3097,11 @@
       "caveats": [
         "Descriptive name, not recovered original symbol.",
         "Byte signedness and all16 callers not established; not claimed as signed-strength producer.",
-        "Gate helpers, time conversion constants and full runtime behavior remain unresolved.",
+        "The recording gate's role and fields are identified; its remaining lifecycle and dependencies, time conversion constants and full runtime behavior remain unresolved.",
         "Only function name changes; no prototype or behavior-completion credit."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "recording_mode_followup": "Machine.record_mode is ERecordMode: Keyframe=2 and AutoKeyframe=5 in the reviewed caller path. Earlier uncertainty about numeric mode names is resolved; complete mode transitions and all producers remain unproved."
     },
     {
       "address": "14076cd70",
@@ -3146,9 +3147,67 @@
       "caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
         "Capacity checks occur before replacement and assume an intact used extent; compatible record widths are assumed.",
-        "Mode meanings, gate side effects, property meanings and nonfinite or overflowing timestamp cases remain unresolved.",
+        "Complete mode transitions, gate lifecycle, property meanings and nonfinite or overflowing timestamp cases remain unresolved.",
         "The 0xff sanitizer dispatch does not validate the float payload.",
         "No running-game validation or whole-subsystem completion credit."
+      ],
+      "recording_mode_followup": "Machine.record_mode is ERecordMode: Keyframe=2 and AutoKeyframe=5 in the reviewed caller path. Earlier uncertainty about numeric mode names is resolved; complete mode transitions and all producers remain unproved."
+    },
+    {
+      "address": "140cb3d40",
+      "original_name": "FUN_140cb3d40",
+      "applied_name": "AddRecordModeEnumValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "evidence": [
+        "Complete 91-instruction body reviewed; appends byte-valued enumeration entries, label pointers and computed label hashes to the ERecordMode descriptor.",
+        "Nine explicit numeric/name pairs verified; 18 total incoming references enumerated, including nine in uncontained code."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not an original symbol.",
+        "Allocation and label-lifetime preconditions remain; all callers and complete mode transitions are not proved.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "140cf47a0",
+      "original_name": "FUN_140cf47a0",
+      "applied_name": "RegisterRecordModeFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "evidence": [
+        "Complete 165-instruction body reviewed; registers a named field and its offset using the ERecordMode descriptor.",
+        "Both field-registration callers checked: Machine record_mode at0xb4 and another descriptor last_used_record_mode at0x195.",
+        "Original enum literals and Machine layout connect Keyframe and AutoKeyframe values to the reviewed native recording path."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not an original symbol.",
+        "This is field/type registration, not execution of the recording modes. Allocation failure and complete schema lifecycle remain unresolved.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "1410a4e20",
+      "original_name": "FUN_1410a4e20",
+      "applied_name": "PreparePropertyRecordingIfEligible",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 160-instruction body and all six immediate AL-consuming callers checked against current native bytes.",
+        "Checks the AnimPageData category threshold and possess_countin, conditionally requests the next simulation tick, clears an audio capture hold, and initializes recording_start_time.",
+        "The mode mask selects Animation, AutoKeyframe, Possess and Simulation; other modes return true without these checks."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not an original symbol.",
+        "Original ordered/unordered floating-point comparisons retained; NaN does not behave like an ordered <=0 expression.",
+        "Threshold computation, translated notice text, tick-flag lifecycle, audio source and all mode transitions remain unresolved.",
+        "No runtime validation or whole-subsystem completion."
       ]
     }
   ],

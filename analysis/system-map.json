@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1611,
-  "unmapped_total": 7942,
+  "mapped_total": 1612,
+  "unmapped_total": 7941,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -11038,7 +11038,7 @@
       "code_role_basis": "registered_type_association"
     },
     "140cb3d40": {
-      "system": "gadgets-logic",
+      "system": "interface",
       "evidence": [
         {
           "kind": "descriptor_enum_values",
@@ -11049,18 +11049,23 @@
           ],
           "site": "140cb3eba",
           "counter": "14583dcc0"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "AddRecordModeEnumValue",
+          "support": "Complete native body and relevant field/caller bindings checked; descriptive name persisted after fresh-process reopening."
         }
       ],
-      "code_sha256": "822136145bbded71f925f0b570be285f07f1df890d6a40122be212507e9b2e41",
+      "code_sha256": "2453f087c9ac6e95a67d9f88a5090ca3082992ff9ef0ca83d76ca5334bddd0bc",
       "component_path": [
-        "gadgets-logic",
-        "authoring",
-        "erecordmode",
+        "interface",
+        "editing",
+        "recording-controls",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "Shared recording-mode metadata used by Machine.record_mode and Player.last_used_record_mode; spans several creation tools",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "Complete native review of enum-value or field registration; not recording execution"
     },
     "140cb43d0": {
       "system": "sculpting-painting",
@@ -17089,7 +17094,7 @@
       "code_role_basis": "registered_type_association"
     },
     "140cf47a0": {
-      "system": "gadgets-logic",
+      "system": "interface",
       "evidence": [
         {
           "kind": "type_registration",
@@ -17097,18 +17102,23 @@
           "type_name": "ERecordMode",
           "site": "140cf491b",
           "target": "14170b2bc"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterRecordModeFieldOffset",
+          "support": "Complete native body and relevant field/caller bindings checked; descriptive name persisted after fresh-process reopening."
         }
       ],
-      "code_sha256": "b44d926a12045797901c0a8d2c7b890a1e6a8c4f550cba65b98a4f85d4272217",
+      "code_sha256": "75fafe4089c197800cd7fe2f979c0f8e29b7b04c03a40a179a7f3683926568c1",
       "component_path": [
-        "gadgets-logic",
-        "authoring",
-        "erecordmode",
+        "interface",
+        "editing",
+        "recording-controls",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "Shared recording-mode metadata used by Machine.record_mode and Player.last_used_record_mode; spans several creation tools",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "Complete native review of enum-value or field registration; not recording execution"
     },
     "140cf4af0": {
       "system": "dreamiverse",
@@ -41904,9 +41914,29 @@
         {
           "kind": "verified_semantic_review",
           "name": "RecordTimedFloatProperty",
-          "support": "Entire native body and ten callers checked. Record layout and conditional replacement traced; mode meanings and runtime behavior remain unresolved."
+          "support": "Entire native body and ten callers checked. Record layout and conditional replacement traced; enum bindings identify Keyframe and AutoKeyframe. Complete mode transitions and runtime behavior remain unresolved."
         }
       ]
+    },
+    "1410a4e20": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "property-recording",
+        "runtime-implementation"
+      ],
+      "component_basis": "Six direct property recording callers and initialization from Animation playhead/timeline state",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Stateful eligibility and timing preparation for property recording",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PreparePropertyRecordingIfEligible",
+          "support": "Complete native body and relevant field/caller bindings checked; descriptive name persisted after fresh-process reopening."
+        }
+      ],
+      "code_sha256": "a7f10c468ec16d25f771806135863daa8b93e23a90cd83ffa1533cb8c3d93b5b"
     }
   },
   "hierarchy": [
@@ -43687,6 +43717,17 @@
             {
               "id": "cleanupsnappointsmessage",
               "label": "Clean Up Snap Points Message",
+              "children": [
+                {
+                  "id": "properties-types",
+                  "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "recording-controls",
+              "label": "Recording controls",
               "children": [
                 {
                   "id": "properties-types",
@@ -46483,17 +46524,6 @@
             {
               "id": "etextgadgetformat",
               "label": "Text Gadget Format",
-              "children": [
-                {
-                  "id": "properties-types",
-                  "label": "Properties & type definitions",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "id": "erecordmode",
-              "label": "Record Mode",
               "children": [
                 {
                   "id": "properties-types",
