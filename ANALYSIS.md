@@ -1125,3 +1125,11 @@ Native timing instructions show that the byte writer separately quantizes the cu
 Jump-table reads also show that the byte writer's filter type 255 and the three easing-strength properties' representation class 23 select a zero-return path without reading or modifying the payload, after an instrumentation call. This does not prove that every producer accepts unrestricted values or that the instrumentation has no side effects. The actual signed-strength recording producer remains unidentified.
 
 These findings improve the recording model without adding completed behavior. Counts remain 154 checked descriptive names, 113 checked among 1,609 mapped functions, and 7,944 functions awaiting subsystem mapping. Raw code, local paths and detailed native evidence remain local.
+
+### Float recording arguments and channel selection verified
+
+The neighboring timed-property writer now has a corrected seven-argument signature, including its float value in the first floating-point argument register. All ten direct caller windows were checked against live bytes. The complete 167-instruction writer stores an 18-byte record containing the object handle, property, timestamp and four-byte value. It shares the separately quantized 30 Hz clock conversion previously verified for byte recording.
+
+Two callers first use a fully reviewed 26-instruction helper to select the signed value with greatest absolute magnitude from five consecutive float channels. Strict comparisons retain the earlier candidate on ties. The initial ordered comparison masks an initial NaN or zero to positive zero; later NaN candidates do not win. The five channels' original meaning and the property names remain unresolved.
+
+An isolated signature trial preceded the working-project change. A hash-verified cold backup and clean reopening confirmed that the corrected signature persisted, all 726 body bytes and ten references remained unchanged, and decompilation succeeded. The complete name inventory and original-file checks passed. No additional descriptive names, subsystem assignments, runtime validation or completed-behavior credit were added.
