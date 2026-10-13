@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "164 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "166 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9231,
-    "other_names": 322,
-    "verification": "complete_inventory_matches_baseline_plus_164_renames_and_two_created_functions"
+    "default_fun_names": 9229,
+    "other_names": 324,
+    "verification": "complete_inventory_matches_baseline_plus_166_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3349,6 +3349,55 @@
         "Transfers the raw byte without Boolean normalization; valid-buffer and fallback contracts remain caller dependencies.",
         "No runtime validation or whole-subsystem completion."
       ]
+    },
+    {
+      "address": "140c73ef0",
+      "original_name": "FUN_140c73ef0",
+      "applied_name": "LoadDescriptorInputBlock",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role_and_working_register_signature",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 80-instruction / 272-byte body read and matched to current program memory.",
+        "Three discovered direct callers pass stream in RDI and descriptor halves in RSI/RDX, then test AL; the body sets the low-byte success result from a positive decoded length.",
+        "Descriptor-backed resource acquisition reaches the previously identified LZ4 decoder; success installs input cursor/end and updates encoded/decoded counters."
+      ],
+      "caveats": [
+        "Analyst names and working machine-level signatures, not recovered original declarations.",
+        "Opaque stream pointer; descriptor halves do not assert a complete original descriptor type.",
+        "No runtime validation, whole scene-format completion or new static-coverage credit.",
+        "AL is the reviewed success result; the full EAX value is not normalized to zero/one on every path.",
+        "Valid resource, buffer, length, lifetime and decoder contracts remain dependencies."
+      ],
+      "saved_working_signature": "bool LoadDescriptorInputBlock(void * stream, ulonglong descriptor_low, ulonglong descriptor_high)",
+      "calling_convention": "PS4_SYSV",
+      "signature_basis": "Complete body and discovered caller register/return-use review; isolated project trial; unchanged native bytes and references after fresh reopening."
+    },
+    {
+      "address": "140c737c0",
+      "original_name": "FUN_140c737c0",
+      "applied_name": "FlushDescriptorOutputBlock",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role_and_working_register_signature",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 225-instruction / 913-byte body read and matched to current program memory.",
+        "Output table slot +0x28 and its buffered writer establish the capacity-returning flush role; direct cleanup and scene-output references preserve the same stream ownership.",
+        "Encodes pending bytes, constructs a descriptor, attempts vector append and storage handoff, records errors and resets the buffer."
+      ],
+      "caveats": [
+        "Analyst names and working machine-level signatures, not recovered original declarations.",
+        "Opaque stream pointer; descriptor halves do not assert a complete original descriptor type.",
+        "No runtime validation, whole scene-format completion or new static-coverage credit.",
+        "Return value is capacity after a nonempty attempted flush, including reviewed error paths; it is not a success flag.",
+        "Descriptor-vector allocation failure can skip append before the storage handoff.",
+        "Exact encoder/descriptor algorithms, allocation failure reachability and storage guarantees remain unresolved."
+      ],
+      "saved_working_signature": "ulonglong FlushDescriptorOutputBlock(void * stream)",
+      "calling_convention": "PS4_SYSV",
+      "signature_basis": "Complete body and discovered caller register/return-use review; isolated project trial; unchanged native bytes and references after fresh reopening."
     }
   ],
   "deferred": [

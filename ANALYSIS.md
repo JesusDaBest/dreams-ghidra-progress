@@ -1293,3 +1293,24 @@ Two native counter details remain important for future validation: one output mu
 Independent naming review also corrected the object-list marker description: its low-word error check occurs **before** the optional sequence-marker transfer. The sequence counter increments afterward even if the fallback transfer sets an error, and this body does not compare the transferred marker for equality.
 
 These bounded ownership and format findings add no complete-function coverage. Only the separately audited Animation initializer contract contributes the 411 new bytes reported above.
+
+### Descriptor block reading, flushing and return values
+
+Two more shared saving/loading helpers now have evidence-supported descriptive names and working signatures:
+
+| Address | Name | Observed interface |
+| --- | --- | --- |
+| `140c73ef0` | `LoadDescriptorInputBlock` | Stream pointer, two 64-bit descriptor halves; Boolean result in `AL`. |
+| `140c737c0` | `FlushDescriptorOutputBlock` | Stream pointer; 64-bit available-capacity result in `RAX`. |
+
+The complete native bodies—305 instructions / 1,185 bytes—were read and matched to the current program. All three recorded reader calls load a 16-byte descriptor from the input list and immediately test `AL`. The body sets that low byte to zero or one; its other return bits are not consistently normalized. This supports a working Boolean return in the decompiler. The original source declaration and descriptor structure remain unrecovered, so the two observed descriptor halves and an opaque stream pointer are retained.
+
+The reader acquires the descriptor-backed resource, invokes the already identified LZ4 decoder, and on positive output installs the decoded buffer's cursor and end. It updates separate encoded and decoded byte counters. Missing resources or nonpositive decoding record errors and clear cursor/end, with local resource ownership released afterward. Valid pointer extents, low-32-bit length arithmetic, lifetimes and decoder contracts still require validation.
+
+The writer encodes pending input, builds a descriptor, attempts to append it and hands the encoded payload to backing storage. A failed descriptor-vector allocation can skip append while continuing to the handoff; encoded-byte accounting happens before storage success. These are conditional native findings, not proof that a save succeeds or a reproduced runtime defect.
+
+**The writer's return is capacity, not a success flag.** Prior error or empty input returns zero. After a nonempty attempted flush, the reviewed paths reset the buffer and return its capacity even when they recorded an allocation, encoding or storage error. The buffered caller tests that capacity and can copy additional input after such an error before reaching another boundary. Complete enclosing error propagation, failure reachability and runtime effects remain open.
+
+Both working signatures were tested in an isolated project copy before promotion. Only these two function signatures/names changed. A hash-verified cold backup and fresh-process reopening confirmed all 1,185 bytes and seven recorded references unchanged, plus the complete function-name inventory and original archives. The signatures express the checked machine interface; they are not recovered original declarations.
+
+Totals are now **168 checked descriptive names**, with **127 checked among 1,620 mapped functions** and **7,933 functions still unmapped**. No new complete-function coverage was added: the conservative audited-byte measure remains **1,495 / 28,940,288 (about 0.0052%)**. Linked dependency contracts, complete scene-field grammar and runtime save/load validation remain unfinished.

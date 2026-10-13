@@ -1148,3 +1148,10 @@ The initializer's complete static contract adds 411 audited bytes independently 
 Traced the checksum-disabled inner payload to a version record, distinguished it from the associated Dream record and followed its copy into save/publish preparation. Separately identified the 99999-format branch's matching input/output streams and selected binary metadata operations. The nearby reference collector is now distinguished from the byte-stream writer.
 
 [Evidence, corrected marker semantics and remaining format gaps](ANALYSIS.md#version-record-ownership-and-the-alternate-scene-stream). No runtime validation or extra whole-behavior coverage was added for these partial traces.
+
+
+### Descriptor block helpers named and typed
+
+Read the complete block-loader and block-flush bodies, checked their method-table ownership and caller register usage, and saved `LoadDescriptorInputBlock` / `FlushDescriptorOutputBlock` with tested working signatures. Fresh reopening preserved 1,185 native bytes and seven recorded references. The reader's low-byte success result and writer's capacity return are now distinguished explicitly.
+
+[Findings, error-path limits and verification](ANALYSIS.md#descriptor-block-reading-flushing-and-return-values). Totals: 168 checked names, 1,620 mapped functions and 7,933 unmapped functions. Audited-byte coverage remains about 0.0052%; no runtime validation or additional completion credit.

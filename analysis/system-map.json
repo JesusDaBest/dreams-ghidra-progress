@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1618,
-  "unmapped_total": 7935,
+  "mapped_total": 1620,
+  "unmapped_total": 7933,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42064,6 +42064,46 @@
           "name": "TransferSerializerByte",
           "native_body_sha256": "a79b411a15a9cea304827a7b346614b204e1361271da8d0289daab9059bef6d7",
           "support": "Complete native helper body reviewed; name persisted after observed fresh reopening. All enumerated references preserved, not all callers semantically audited."
+        }
+      ]
+    },
+    "140c73ef0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Matched input/output method tables and alternate scene serializer data-flow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native block-reader or block-flush role review",
+      "code_sha256": "07a5ee7c953b1922ab4213243a6f3d4ceadf4f1af69ac486db6342719f89c040",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "LoadDescriptorInputBlock",
+          "support": "Complete native body, method-table ownership and discovered callers reviewed; name and working signature verified after clean reopening. Runtime contracts remain open."
+        }
+      ]
+    },
+    "140c737c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Matched input/output method tables and alternate scene serializer data-flow",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native block-reader or block-flush role review",
+      "code_sha256": "14bd2f9473e7f746067caf62c585af56f6958afc96b67cc9fcd5706dbdf3bc40",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FlushDescriptorOutputBlock",
+          "support": "Complete native body, method-table ownership and discovered callers reviewed; name and working signature verified after clean reopening. Runtime contracts remain open."
         }
       ]
     }
