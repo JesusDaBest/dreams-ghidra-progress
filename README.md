@@ -1334,7 +1334,7 @@ Checked names cover reviewed functions across the systems listed above, includin
 - **1,615 functions mapped to parts of Dreams; 7,938 still unmapped.** Of the mapped functions, 121 have checked names.
 - **9,515 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
 - **The latest batch named the Animation initializer and two shared serializer helpers.** Fresh-reopen checks confirmed the three names with 1,280 native bytes and all 3,835 enumerated references unchanged. Existing prototypes were preserved.
-- **AutoKeyframe sample conversion and scene input are now linked to the trace.** The reviewed path upgrades eight-byte samples to twelve-byte records with control data. Scene input explicitly enables checksum checkpoints and selects the block-list callback route. Remaining flag, format and runtime assumptions are recorded in the research findings.
+- **AutoKeyframe sample conversion and scene input are now linked to the trace.** The reviewed path upgrades eight-byte samples to twelve-byte records with control data. The traced binary scene-input branch enables checksums; another format branch and a different output policy are now distinguished. The recording flag is identified, with restored-state assumptions still open.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
 

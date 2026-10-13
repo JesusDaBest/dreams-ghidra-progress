@@ -1121,6 +1121,14 @@ There are now 162 checked descriptive names, including 121 among 1,615 mapped fu
 
 The alternate scalar writer now has a native trace showing eight-byte old samples becoming twelve-byte records with control data. Caller flags connect that route to AutoKeyframe in the reviewed ordinary conversion branch. Separate slot flags, special conversion paths, one timestamp-origin assumption and runtime playback remain unresolved.
 
-The scene input setup explicitly enables checksum checkpoints and selects the block-descriptor-list callback route. The same context is forwarded through the object list to the generic loader and established Animation path. This extends earlier callback and LZ4 findings; it does not count repeated analysis as new completion. Output setup, the complete container and runtime round trips remain open.
+The reviewed binary scene-input branch explicitly enables checksum checkpoints and selects the block-descriptor-list callback route. The same context is forwarded through the object list to the generic loader and established Animation path. This extends earlier callback and LZ4 findings; it does not count repeated analysis as new completion. Output setup, the complete container and runtime round trips remain open.
 
 See [the detailed route table and conditions](ANALYSIS.md#autokeyframe-conversion-and-scene-input-policy). Checked names remain 162. No further naming or whole-behavior credit was added for these traces.
+
+### Recording flags and serialization policy narrowed
+
+Native review identified the builder's extra slot byte as `recording_possession`. The reviewed runtime writers constrain it to 0 or 1; raw-byte deserialization prevents extending that guarantee to all restored state. Twelve Animation constructor defaults were matched to registered fields.
+
+The checksum-enabled scene input context is now restricted to its actual non-99999 format branch. A different output context explicitly disables checksums, but its connection to main scene saving remains unproved. This corrects the scope of the earlier policy finding without changing completion counts.
+
+[Defaults, branch conditions and remaining work](ANALYSIS.md#recording-flags-construction-defaults-and-serializer-selection). Totals remain 162 checked names and 1,615 mapped functions; no runtime validation or additional completion credit.

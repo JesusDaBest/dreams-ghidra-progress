@@ -1226,8 +1226,30 @@ The table applies to the reviewed ordinary conversion branch with its earlier bu
 
 One AutoKeyframe boundary check compares an old stored timestamp with an already rebased incoming timestamp. The old origin adjustment is absent from that particular comparison; whether surrounding state always makes it zero remains unresolved. Empty-input safety, tree ownership and allocation contracts, other dispatcher types, new tracks and runtime playback also remain open. The complete writer body and selected dispatcher/caller regions were checked against current native bytes; not every dispatcher case was semantically reviewed.
 
-The scene input setup at `140d97090` explicitly enables checksum checkpoints, selects callback `140d91c30`, sets input direction, and passes null external data. That selects the callback's block-descriptor-list input route. Native argument forwarding reaches the object-list bridge (`140dc2a50`) and generic object loader, connecting this setup to the previously traced Animation construction and serialization path.
+The reviewed binary scene-input branch at `140d97090` explicitly enables checksum checkpoints, selects callback `140d91c30`, sets input direction, and passes null external data. That selects the callback's block-descriptor-list input route. Native argument forwarding reaches the object-list bridge (`140dc2a50`) and generic object loader, connecting this setup to the previously traced Animation construction and serialization path.
 
 The object-list bridge transfers the count and objects, checks serializer errors and invokes the checksum helper after the list. A separate optional object marker is distinct from checksum policy. Earlier work identified the block decoder as LZ4; this follow-up establishes the scene input setup and context route rather than claiming the codec was newly identified. Save-side initialization, preservation of policy fields across every intervening helper, the complete outer container and runtime round trips remain unresolved.
 
 These traces add no further names beyond the three above and no whole-behavior or runtime-validation credit. Raw native captures and local audit records remain outside the public repository.
+
+### Recording flags, construction defaults, and serializer selection
+
+The extra per-slot flag used by the recording builder is now tied to the reflected `recording_possession` byte. The reviewed slot initializer clears it, and the corresponding runtime start/stop paths write 1 or 0. Snapshot reset copies the initialized zero value; the copy import was independently bound to `memcpy`. Those values cannot set sample-format bit 2. However, the versioned serializer transfers this field as an unnormalized byte, and complete live-state-to-snapshot propagation remains untraced. Arbitrary restored values are not proven to be Boolean. This narrows the earlier format concern without asserting a universal buffer-format invariant.
+
+The Animation initializer's native stores and registered field offsets establish these values at construction:
+
+| Fields | Initial value |
+| --- | --- |
+| Playhead, StartTime | 0 |
+| EndTime, PlaybackSpeed, Power, AnimStrength | 1 |
+| PlaybackMode | LOOP (2) |
+| Reverse, Relative | False |
+| EaseInStrength, EaseOutStrength, EaseBothStrength | Stored byte 50, interpreted as 0.5 by the reviewed reader |
+
+These are constructor outputs, not a claim about every editor-created or loaded object: later property copies and deserialization can overwrite them. The full 411-byte initializer and selected registration regions and literals were checked against current memory. The constructor does not initialize every byte of object storage.
+
+Scene input also has a format-selection branch. The previously described checksum-enabled binary context is selected when the source record's discriminator is not 99999. Equality instead begins a different stream construction using table `141c37950`. This value is not established as a shipping build number, and the alternate stream grammar remains untraced.
+
+A separate native output chain, `14039d770` to `140399260`, explicitly selects output mode and callback `140d91c30` with null external data, but disables checksum checkpoints. Thus the callback's presence alone does not determine checksum policy. This chain has not yet been attributed to the main scene-save operation. Its next producer and destination ownership, the alternate stream writer, complete buffer invariants and runtime round trips remain open.
+
+These findings leave the totals at 162 checked names and 1,615 mapped functions. No whole-behavior completion or runtime-validation credit was added.
