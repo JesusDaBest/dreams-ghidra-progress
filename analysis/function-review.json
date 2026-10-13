@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "166 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "170 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9229,
-    "other_names": 324,
-    "verification": "complete_inventory_matches_baseline_plus_166_renames_and_two_created_functions"
+    "default_fun_names": 9225,
+    "other_names": 328,
+    "verification": "complete_inventory_matches_baseline_plus_170_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3398,6 +3398,88 @@
       "saved_working_signature": "ulonglong FlushDescriptorOutputBlock(void * stream)",
       "calling_convention": "PS4_SYSV",
       "signature_basis": "Complete body and discovered caller register/return-use review; isolated project trial; unchanged native bytes and references after fresh reopening."
+    },
+    {
+      "address": "141603480",
+      "original_name": "FUN_141603480",
+      "applied_name": "WriteReflectedPrimitiveValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 189-instruction/643-byte primitive dispatch body and all 12 jump-table entries read and byte-matched.",
+        "Unsigned and signed seven-bit encodings and raw-width writes traced; both recorded callers pass RDI/ESI/RDX and the enclosing caller tests AL."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete reader grammar or additional static-coverage credit.",
+        "Working opaque-pointer signature returns low-byte status0/7; upper EAX bits are not always normalized.",
+        "Supported writes ignore the stream reported byte count; Kind10 is bound to float by prior registration evidence; kind11 semantic type remains unbound."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar WriteReflectedPrimitiveValue(void * stream, uint type_code, void * value)",
+      "signature_basis": "Complete primitive body, both recorded caller interfaces, isolated trial and unchanged bytes/references after fresh reopening."
+    },
+    {
+      "address": "141603710",
+      "original_name": "FUN_141603710",
+      "applied_name": "ResolveReflectedTypeId",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 91-instruction/324-byte body read and byte-matched.",
+        "Returns a builtin descriptor ID or resolves a descriptor pointer through the supplied hash table; missing lookup returns0."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete reader grammar or additional static-coverage credit.",
+        "Original prototype preserved; hash-table invariants and valid descriptor domains remain caller requirements."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141603860",
+      "original_name": "FUN_141603860",
+      "applied_name": "WriteReflectedValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 436-instruction/1641-owned-byte body read and byte-matched; 10 unowned gap bytes excluded.",
+        "Traces primitive/composite/custom-callback and object-reference output paths, including recursive field traversal and checked reference-token writes."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete reader grammar or additional static-coverage credit.",
+        "Original prototype preserved; custom/interface callbacks, object-ID allocation and mask meanings remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141603fe0",
+      "original_name": "FUN_141603fe0",
+      "applied_name": "WriteReflectedFieldValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 352-instruction/1292-byte body read and byte-matched.",
+        "Traces single fields, fixed arrays, dynamic count selection and container traversal; binds two output visitor events to completed array branches."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "No runtime validation, complete reader grammar or additional static-coverage credit.",
+        "Original prototype preserved; container callback contracts, dynamic count-field bindings and enclosing error propagation remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
     }
   ],
   "deferred": [

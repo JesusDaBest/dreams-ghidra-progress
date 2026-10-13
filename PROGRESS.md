@@ -1155,3 +1155,10 @@ Traced the checksum-disabled inner payload to a version record, distinguished it
 Read the complete block-loader and block-flush bodies, checked their method-table ownership and caller register usage, and saved `LoadDescriptorInputBlock` / `FlushDescriptorOutputBlock` with tested working signatures. Fresh reopening preserved 1,185 native bytes and seven recorded references. The reader's low-byte success result and writer's capacity return are now distinguished explicitly.
 
 [Findings, error-path limits and verification](ANALYSIS.md#descriptor-block-reading-flushing-and-return-values). Totals: 168 checked names, 1,620 mapped functions and 7,933 unmapped functions. Audited-byte coverage remains about 0.0052%; no runtime validation or additional completion credit.
+
+
+### Reflected output helpers and array events
+
+Saved four descriptive output-helper names and the primitive writer's low-byte status signature after complete owned-body review and an isolated trial. Native dispatch establishes unsigned/signed compact encodings and raw-width cases. The two output boundary callbacks are now tied to specific completed array/container traversals. Earlier float and composite-filter findings were reconciled rather than counted again.
+
+Fresh reopening preserved 3,900 instruction bytes and 13 recorded references. Totals: 172 checked names, 1,624 mapped functions and 7,929 unmapped functions. [Encoding table, callback conditions and limits](ANALYSIS.md#reflected-value-encodings-and-array-boundary-events). Audited-byte coverage remains about 0.0052%; no runtime round trip is claimed.

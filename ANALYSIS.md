@@ -1284,7 +1284,7 @@ The scene loader's **99999 branch** has now been traced to its actual counterpar
 | Alternate input | `140d97090` selects stream table `141c37950`, mode 0, then `140c74040` / `140c74670`. | Descriptor-backed blocks feed the already identified LZ4 decoder, then the stream supplies bytes to the reflected reader. |
 | Alternate output | `140d94880` selects table `141c32cb8`, mode 1, then the same setup/engine. | Buffered output is encoded into blocks, given descriptors and handed to backing storage. |
 | Reflected content | Output engine reaches `140116eb0`; input reaches `1415fea20`. | Selected output regions emit initial marker bytes, seven-bit continuation integers and descriptor-backed metadata/byte strings. The complete field grammar is still open. |
-| Visitor callbacks | Two reviewed callbacks per visitor table reach stream method `+0x18`. | Input returns zero; output may request a block boundary based on span and hash conditions. The precise reflected events triggering these calls remain untraced. |
+| Visitor callbacks | Two reviewed callbacks per visitor table reach stream method `+0x18`. | Input returns zero; output may request a block boundary based on span and hash conditions. The output events were still untraced at that stage; the later reflected-writer findings below identify two array/container paths. Input-event timing remains open. |
 
 The nearby table `141c37930` is a separate reference collector. It gathers/deduplicates 16-byte reference entries; it is not the output byte-stream implementation. This distinction prevents mixing the reference list with serialized scene content.
 
@@ -1314,3 +1314,35 @@ The writer encodes pending input, builds a descriptor, attempts to append it and
 Both working signatures were tested in an isolated project copy before promotion. Only these two function signatures/names changed. A hash-verified cold backup and fresh-process reopening confirmed all 1,185 bytes and seven recorded references unchanged, plus the complete function-name inventory and original archives. The signatures express the checked machine interface; they are not recovered original declarations.
 
 Totals are now **168 checked descriptive names**, with **127 checked among 1,620 mapped functions** and **7,933 functions still unmapped**. No new complete-function coverage was added: the conservative audited-byte measure remains **1,495 / 28,940,288 (about 0.0052%)**. Linked dependency contracts, complete scene-field grammar and runtime save/load validation remain unfinished.
+
+### Reflected value encodings and array boundary events
+
+Four output helpers now have saved descriptive names: `WriteReflectedPrimitiveValue` (`141603480`), `ResolveReflectedTypeId` (`141603710`), `WriteReflectedValue` (`141603860`), and `WriteReflectedFieldValue` (`141603fe0`). Their complete owned bodies total **1,068 instructions / 3,900 bytes**. The ten unowned bytes inside the value writer's address span are excluded from that total.
+
+The primitive dispatch table establishes these payload operations:
+
+| Descriptor kind | Payload encoding |
+| --- | --- |
+| 0 | No payload bytes |
+| 1 | One raw byte, without Boolean normalization |
+| 2–5 | Unsigned 8/16/32/64-bit value, using seven-bit groups with a continuation bit |
+| 6–9 | Signed 8/16/32/64-bit value, sign-extended and transformed with `(x << 1) XOR (x >> 63)` before the same compact encoding |
+| 10 | Four raw bytes; previously established float registration binds this kind to scalar float |
+| 11 | Eight raw bytes; semantic type binding remains open in this pass |
+
+These numbers are descriptor kinds used to choose an encoding. They are not assumed to be literal type tags in a saved file. The prior float-field registration was checked against current native stores, its `float` literal and four-byte stride; that existing result adds no repeat completion credit.
+
+The primitive writer returns low-byte status zero for supported kinds and seven for an unsupported kind. Upper return bits are not consistently normalized on the unsupported path. Both recorded callers establish the stream/type-code/value register interface, so an isolated trial supported the working signature `uchar WriteReflectedPrimitiveValue(void *stream, uint type_code, void *value)`. The other three functions retain their previous prototypes. As already established for float output, supported primitive writes discard the stream's reported byte count; the extended dispatch review confirms the same local behavior across the other emitting cases. Complete enclosing error propagation remains unresolved.
+
+The value writer handles custom callbacks, primitive values, filtered composite fields and object-reference IDs. The field writer delegates single fields and traverses fixed arrays or callback-provided containers. Fixed arrays use their descriptor count directly unless the optional count flag is set; that flag emits a selected count prefix after resolving/clamping its associated integer field. Container callbacks and mask meanings still need further tracing.
+
+The output visitor callbacks previously left unexplained are now bound to concrete paths:
+
+| Visitor slot | Verified writer event | Result |
+| --- | --- | --- |
+| `+0x38` | After the reviewed fixed-array traversal finishes, including zero-count arrays; an element error skips it | If its stream is present, calls the output boundary-request method with mode 1 |
+| `+0x48` | After the reviewed nonempty contiguous container traversal with valid data; its error and iterator paths skip it | If its stream is present, calls the same boundary-request method with mode 1 |
+
+Thus these callbacks request possible block boundaries at those array/container traversal points. They do not establish per-field checksum words or callbacks after every field. Complete input-event timing, the reader's conversion grammar, custom callbacks, reference-table invariants and a runtime save/load round trip remain unfinished.
+
+A verified cold backup preceded promotion. The isolated trial and fresh-process reopening preserved all **3,900 owned instruction bytes and 13 recorded references**; the complete function-name inventory and original archives also matched. Totals are now **172 checked names**, **1,624 mapped functions**, and **7,929 unmapped functions**. The conservative audited-byte coverage remains **1,495 / 28,940,288 (about 0.0052%)**; no new complete-function coverage or runtime validation is claimed for these findings.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1620,
-  "unmapped_total": 7933,
+  "mapped_total": 1624,
+  "unmapped_total": 7929,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42104,6 +42104,86 @@
           "kind": "verified_semantic_review",
           "name": "FlushDescriptorOutputBlock",
           "support": "Complete native body, method-table ownership and discovered callers reviewed; name and working signature verified after clean reopening. Runtime contracts remain open."
+        }
+      ]
+    },
+    "141603480": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected output call chain reaches primitive, field and reference serialization helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "a8ecc5b6349be2bf8e5c62444ecf5a3b7b4ccffc2aefc2db783c7fd88745c66b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteReflectedPrimitiveValue",
+          "support": "Complete native body, dispatch data and relevant callers reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "141603710": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected output call chain reaches primitive, field and reference serialization helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "a5e12aab2b5ce798288cc012fd13c346f1664e64d2c5bf5383b288caf33b73d8",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolveReflectedTypeId",
+          "support": "Complete native body, dispatch data and relevant callers reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "141603860": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected output call chain reaches primitive, field and reference serialization helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "8b558e7b090f2c7586bab5fc620b9f5f21a2f039604e2a38802f131b99e409fb",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteReflectedValue",
+          "support": "Complete native body, dispatch data and relevant callers reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "141603fe0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected output call chain reaches primitive, field and reference serialization helpers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete owned instruction role review",
+      "code_sha256": "9f69a464af9ec97ca8dd624d740e4e5d21e55fdf1ee827fb92f71947ac437732",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteReflectedFieldValue",
+          "support": "Complete native body, dispatch data and relevant callers reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
         }
       ]
     }

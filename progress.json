@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 127,
+    "done": 131,
     "todo": 1493,
-    "total": 1620,
-    "behavior_or_helpers_reviewed": 76,
+    "total": 1624,
+    "behavior_or_helpers_reviewed": 80,
     "properties_or_types_reviewed": 45,
     "whole_feature_completion": null,
     "groups": [
@@ -24507,12 +24507,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 45,
+        "done": 49,
         "todo": 112,
-        "total": 157,
-        "behavior_or_helpers_reviewed": 40,
+        "total": 161,
+        "behavior_or_helpers_reviewed": 44,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 78,
+        "runtime_functions_identified": 82,
         "property_type_functions_identified": 74,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24561,7 +24561,11 @@
           "FinalizePackedResourceTreeWriter",
           "AppendSizedRecordToThreadBuffer",
           "FindThingPropertyMetadata",
-          "ConvertTaggedValueToTwoFloat4Blocks"
+          "ConvertTaggedValueToTwoFloat4Blocks",
+          "WriteReflectedPrimitiveValue",
+          "ResolveReflectedTypeId",
+          "WriteReflectedValue",
+          "WriteReflectedFieldValue"
         ],
         "todo_names": [
           "0x14010cf30",
@@ -24722,7 +24726,11 @@
           "141061af0",
           "1410aa730",
           "14114db10",
-          "1411c0830"
+          "1411c0830",
+          "141603480",
+          "141603710",
+          "141603860",
+          "141603fe0"
         ],
         "todo_addresses": [
           "14010cf30",
@@ -24848,12 +24856,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 34,
+            "done": 38,
             "todo": 15,
-            "total": 49,
-            "behavior_or_helpers_reviewed": 34,
+            "total": 53,
+            "behavior_or_helpers_reviewed": 38,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 42,
+            "runtime_functions_identified": 46,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24891,7 +24899,11 @@
               "ReleasePackedResourcePage",
               "MarkPackedResourceTreeReachable",
               "FinalizePackedResourceTreeWriter",
-              "AppendSizedRecordToThreadBuffer"
+              "AppendSizedRecordToThreadBuffer",
+              "WriteReflectedPrimitiveValue",
+              "ResolveReflectedTypeId",
+              "WriteReflectedValue",
+              "WriteReflectedFieldValue"
             ],
             "todo_names": [
               "0x1401115f0",
@@ -24944,7 +24956,11 @@
               "141060f40",
               "1410614b0",
               "141061af0",
-              "1410aa730"
+              "1410aa730",
+              "141603480",
+              "141603710",
+              "141603860",
+              "141603fe0"
             ],
             "todo_addresses": [
               "1401115f0",
@@ -25073,6 +25089,105 @@
                 ]
               },
               {
+                "name": "shared/runtime/serialization",
+                "label": "Saving & loading",
+                "done": 14,
+                "todo": 0,
+                "total": 14,
+                "behavior_or_helpers_reviewed": 14,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 14,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "DecodeLz4Block",
+                  "ReleaseRefCountedBlockHandle",
+                  "TransferSerializerByte",
+                  "FlushDescriptorOutputBlock",
+                  "LoadDescriptorInputBlock",
+                  "PrepareEncodedSerializerBlock",
+                  "ServiceSerializerBuffer",
+                  "ProcessSerializerChecksumCheckpoint",
+                  "TransferSerializerBytes",
+                  "SerializeSceneObjectList",
+                  "WriteReflectedPrimitiveValue",
+                  "ResolveReflectedTypeId",
+                  "WriteReflectedValue",
+                  "WriteReflectedFieldValue"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14015e8c0",
+                  "14038bed0",
+                  "14039b4a0",
+                  "140c737c0",
+                  "140c73ef0",
+                  "140d91900",
+                  "140d92000",
+                  "140d92160",
+                  "140d923e0",
+                  "140dc2a50",
+                  "141603480",
+                  "141603710",
+                  "141603860",
+                  "141603fe0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/serialization/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 14,
+                    "todo": 0,
+                    "total": 14,
+                    "behavior_or_helpers_reviewed": 14,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 14,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "DecodeLz4Block",
+                      "ReleaseRefCountedBlockHandle",
+                      "TransferSerializerByte",
+                      "FlushDescriptorOutputBlock",
+                      "LoadDescriptorInputBlock",
+                      "PrepareEncodedSerializerBlock",
+                      "ServiceSerializerBuffer",
+                      "ProcessSerializerChecksumCheckpoint",
+                      "TransferSerializerBytes",
+                      "SerializeSceneObjectList",
+                      "WriteReflectedPrimitiveValue",
+                      "ResolveReflectedTypeId",
+                      "WriteReflectedValue",
+                      "WriteReflectedFieldValue"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14015e8c0",
+                      "14038bed0",
+                      "14039b4a0",
+                      "140c737c0",
+                      "140c73ef0",
+                      "140d91900",
+                      "140d92000",
+                      "140d92160",
+                      "140d923e0",
+                      "140dc2a50",
+                      "141603480",
+                      "141603710",
+                      "141603860",
+                      "141603fe0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/runtime/packed-resource-pages",
                 "label": "Resource pages",
                 "done": 12,
@@ -25156,89 +25271,6 @@
                       "141060f40",
                       "1410614b0",
                       "141061af0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/serialization",
-                "label": "Saving & loading",
-                "done": 10,
-                "todo": 0,
-                "total": 10,
-                "behavior_or_helpers_reviewed": 10,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 10,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "DecodeLz4Block",
-                  "ReleaseRefCountedBlockHandle",
-                  "TransferSerializerByte",
-                  "FlushDescriptorOutputBlock",
-                  "LoadDescriptorInputBlock",
-                  "PrepareEncodedSerializerBlock",
-                  "ServiceSerializerBuffer",
-                  "ProcessSerializerChecksumCheckpoint",
-                  "TransferSerializerBytes",
-                  "SerializeSceneObjectList"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14015e8c0",
-                  "14038bed0",
-                  "14039b4a0",
-                  "140c737c0",
-                  "140c73ef0",
-                  "140d91900",
-                  "140d92000",
-                  "140d92160",
-                  "140d923e0",
-                  "140dc2a50"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/serialization/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 10,
-                    "todo": 0,
-                    "total": 10,
-                    "behavior_or_helpers_reviewed": 10,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 10,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "DecodeLz4Block",
-                      "ReleaseRefCountedBlockHandle",
-                      "TransferSerializerByte",
-                      "FlushDescriptorOutputBlock",
-                      "LoadDescriptorInputBlock",
-                      "PrepareEncodedSerializerBlock",
-                      "ServiceSerializerBuffer",
-                      "ProcessSerializerChecksumCheckpoint",
-                      "TransferSerializerBytes",
-                      "SerializeSceneObjectList"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14015e8c0",
-                      "14038bed0",
-                      "14039b4a0",
-                      "140c737c0",
-                      "140c73ef0",
-                      "140d91900",
-                      "140d92000",
-                      "140d92160",
-                      "140d923e0",
-                      "140dc2a50"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -39808,5 +39840,5 @@
       }
     ]
   },
-  "unmapped": 7933
+  "unmapped": 7929
 }
