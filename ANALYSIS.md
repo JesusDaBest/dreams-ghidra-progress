@@ -1419,3 +1419,9 @@ Schema fields derive identifiers from saved name bytes, carry type/flag/mask/cou
 The outer reader also invokes descriptor callbacks on completion and several error paths. These are not yet established as destructors or success-only finalizers. A child status9 receives special zero conversion; its origin and meaning remain open.
 
 Totals are190 checked names across9,556 functions,1,642 mapped and7,914 unmapped. Audited-byte coverage remains about0.0052%. These findings do not establish a complete scene decoder, recovered original source or runtime validation.
+
+### Outer reflected record reader named
+
+`ReadReflectedStreamRecords` now names the complete 1,157-instruction outer reader. Native selectors route to schema definitions, object payloads, parsing-state updates and terminal handling. The object path populates registered destinations or skips their source payloads. The parsing-state handler stores a checked 32-bit value; its original meaning is still unbound.
+
+Full-body role review supports this descriptive name, while schema replacement, special-field initialization, factories, callback ownership, status9, malformed framing and a working runtime round trip remain open. Fresh reopening preserved the existing prototype, native bytes and references; full inventory and archive checks passed. Totals: 191 checked names, 1,643 mapped functions and 7,913 unmapped. Audited-byte coverage is unchanged.

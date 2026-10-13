@@ -1185,3 +1185,7 @@ Three native callbacks now have verified function definitions and descriptive na
 ### Schema metadata helpers named
 
 Five verified descriptive names added for schema allocation, raw name bytes, compact integers and read-hook cleanup. Native tracing distinguishes object registration from later field population and corrects schema reuse assumptions. Totals:190 checked names,1,642 mapped functions. [Evidence and remaining format contracts](ANALYSIS.md#schema-metadata-and-object-population). Byte coverage is unchanged.
+
+### Outer record reader named
+
+Saved and freshly verified `ReadReflectedStreamRecords` after full native role review. Totals: 191 checked names and 1,643 mapped functions. [Scope and open format contracts](ANALYSIS.md#outer-reflected-record-reader-named). No runtime or additional audited-byte credit.
