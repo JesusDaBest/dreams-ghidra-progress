@@ -1334,7 +1334,7 @@ Checked names cover reviewed functions across the systems listed above, includin
 - **1,612 functions mapped to parts of Dreams; 7,941 still unmapped.** Of the mapped functions, 118 have checked names.
 - **9,515 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
 - **The latest batch added three descriptive names for recording controls.** Native review established recording-mode names and gate fields, and traced the reviewed sample merge into Animation resource pages and a property command. Fresh-reopen checks confirmed the three names with 1,997 native bytes and 26 references unchanged.
-- **The follow-up connects selected float samples to stored Animation resources.** The trace now includes property installation and versioned serialization of Header and Data pages. These findings add understanding without increasing the name count or claiming a complete working save path.
+- **The follow-up connects selected float samples to stored Animation resources.** The trace now includes property installation, a second existing-track merge path, handle initialization, and versioned Header/Data serialization with optional checksum checkpoints. These findings add understanding without increasing the name count or claiming a complete working save path.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
 
