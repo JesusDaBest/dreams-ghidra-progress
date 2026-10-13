@@ -1177,3 +1177,7 @@ Seven descriptive names saved and verified after clean reopening. Field matching
 ### Composite-reader signature verified
 
 Applied the native-supported four-pointer, byte-status working signature after an isolated trial. The loader and three caller functions decompile successfully. Fresh reopening, full name inventory, native bytes, references and original archives checked. No additional names or completion credit. [Signature evidence and limits](ANALYSIS.md#composite-reader-working-signature).
+
+### Chunk-stream callbacks defined
+
+Three native callbacks now have verified function definitions and descriptive names. The span reader and skip adapters share chunk refill and actual-byte-count handling. Fresh reopening preserved489 native bytes,3 references and the full existing inventory. Totals:185 checked names across9,556 functions;1,637 mapped. [Behavior and limits](ANALYSIS.md#inline-chunk-stream-callbacks). Audited-byte coverage remains unchanged.

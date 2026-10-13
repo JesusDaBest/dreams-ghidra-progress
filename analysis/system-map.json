@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9553,
-  "mapped_total": 1634,
+  "inventory_total": 9556,
+  "mapped_total": 1637,
   "unmapped_total": 7919,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -42384,6 +42384,66 @@
           "kind": "verified_semantic_review",
           "name": "SkipReflectedCompositeValue",
           "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1415fe600": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native scene context installs table pointing to reviewed chunk-read/skip callbacks",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callback role review",
+      "code_sha256": "01b1622553e8c7b6d63db04e5f8e4f54f28b9f9e86381dd557e9865d182e7546",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadReflectedChunkSpans",
+          "support": "Native body, table and context initialization reviewed; new definition verified after fresh reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1415fe7a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native scene context installs table pointing to reviewed chunk-read/skip callbacks",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callback role review",
+      "code_sha256": "397a15e627c4e1864ba4a9e714b93b8b838895cc255c14971c706578da57c059",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SkipReflectedChunkBytes",
+          "support": "Native body, table and context initialization reviewed; new definition verified after fresh reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1415fe7f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native scene context installs table pointing to reviewed chunk-read/skip callbacks",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callback role review",
+      "code_sha256": "6ce09838105942745cd5956c6a64285426df0f417ef8b3be59b494eac664d5e7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ForwardReflectedChunkSkip",
+          "support": "Native body, table and context initialization reviewed; new definition verified after fresh reopening. Runtime and indirect contracts remain open."
         }
       ]
     }

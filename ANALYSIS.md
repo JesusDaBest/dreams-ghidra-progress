@@ -1395,3 +1395,13 @@ Totals are182 checked names,1,634 mapped functions and7,919 unmapped functions. 
 `ReadReflectedCompositeFields` now has a verified working signature returning an unsigned byte and accepting four opaque pointers: context, source schema, destination type descriptor and destination storage. The native body and all six recorded call locations support RDI/RSI/RDX/RCX arguments and AL status. Upper return-register bits are not consistently normalized.
 
 An isolated project trial and the promoted project both decompiled the loader and its three containing caller functions successfully. Fresh reopening preserved the signature, native instructions and recorded references. The complete function-name inventory and original archive hashes also passed verification. This improves call reconstruction; it does not recover original declarations, prove undiscovered indirect callers, validate runtime behavior or increase audited-byte coverage. Totals remain 182 checked names and 1,634 mapped functions.
+
+### Inline chunk stream callbacks
+
+Defined and named three previously unrecognized functions: `ReadReflectedChunkSpans`, `SkipReflectedChunkBytes`, and `ForwardReflectedChunkSkip`. Their130 instructions occupy489 bytes, excluding trailing alignment. Native scene-reader initialization installs their table at context+0xe8; the table points to the reviewed entry addresses.
+
+The span reader fills an array of destination-pointer/length spans from chunk-buffered data. A null destination consumes bytes without copying. Refills read a16-bit header, treat reserved values as markers, and load ordinary payload lengths. Short underlying reads or an empty payload return the accumulated byte count. The two skip adapters route a null-destination span through this same reader, retaining the actual-consumed-count result.
+
+The earlier hook-cleanup helper reads another header/payload before restoring state. Its caller preserves the hook's status, while cleanup ignores its own payload-read count. This differs from callers that explicitly compare the stream callback's returned byte count. Full framing, caller invariants and malformed-input runtime effects remain open.
+
+An isolated function-definition trial checked ownership, instruction boundaries and decompilation. Promotion followed a hash-verified cold backup. Fresh reopening preserved489 native bytes and3 recorded table references, all existing names, and original archive hashes. There are now185 checked names across9,556 discovered functions;1,637 are mapped and7,919 remain unmapped. Prototypes remain provisional. Audited-byte coverage is unchanged at about0.0052%; no runtime validation or original-source recovery is claimed.
