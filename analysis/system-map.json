@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1608,
-  "unmapped_total": 7945,
+  "mapped_total": 1609,
+  "unmapped_total": 7944,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41847,6 +41847,26 @@
           "support": "Complete native body, dispatch table and related registration callback reviewed. Population/collision invariants remain unresolved."
         }
       ]
+    },
+    "14076ca60": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "property-recording",
+        "runtime-implementation"
+      ],
+      "component_basis": "Timed property recording buffer consumed by Animation sample conversion and merge pipeline",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native byte property record append and replacement with timestamp",
+      "code_sha256": "5ab4f24f85c2f9fbef997d0dfa86e5a577eb71fa59fc415a947c073d8b2a6472",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RecordTimedByteProperty",
+          "support": "Complete native body and two Boolean caller sites reviewed; all16 caller sites and gate/time helpers remain incomplete."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -47925,6 +47945,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "property-recording",
+              "label": "Property recording",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime code",
                   "children": []
                 }
               ]

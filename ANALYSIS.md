@@ -1107,3 +1107,11 @@ Packed controls start with `0x700`, supplying strength nibble 7 in bits 8-11. Re
 Several branch and helper bodies were absent from Ghidra's defined-function output. Temporary disassembly in an isolated project copy recovered their native instructions; the transaction was rolled back and bytes were checked against live program memory. The converter and 12-byte append helper were read, including duplicate filtering and capacity checks. Capacity exhaustion can leave a partial append; caller capacity guarantees and the intended output-time contract remain unresolved.
 
 No new function definitions, names, types, mapping counts or full-behavior credit were added. Raw code and detailed branch evidence remain local.
+
+### Timed byte recording writer named
+
+`RecordTimedByteProperty` now describes a reviewed 170-instruction recording helper. It initializes the recording header, appends timestamp-plus-byte records, replaces matching records in selected modes, and marks the recording slot when its capacity guard rejects an append. Two checked callers supply Boolean values. This name does not assert that the helper produces signed strength samples.
+
+A hash-verified cold backup preceded the name-only change. Clean reopening verified all 737 body bytes, 16 references and the unchanged signature. The inventory now contains 154 checked descriptive names, including 113 among 1,609 mapped functions. Original archives are unchanged; no full-behavior completion credit was added.
+
+Related local analysis recovered signed-byte conversion and eight-/twelve-byte append helpers in an isolated copy. Correct PS4 argument storage restores control writes omitted by default pseudocode. Raw recording headers consume ten bytes per sample: under a valid 512 KiB extent, at most 29,126 eight-byte samples produce 349,512 converted bytes. This is conditional arithmetic, not proof of every producer invariant. The separately reviewed generic producer's sole direct caller records property 0x231 with a 36-byte payload; it is not evidence for the signed-strength writer. Producer-wide limits, gate helpers, time conversion details and runtime validation remain open.

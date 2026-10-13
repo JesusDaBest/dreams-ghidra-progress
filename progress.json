@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 112,
+    "done": 113,
     "todo": 1496,
-    "total": 1608,
-    "behavior_or_helpers_reviewed": 63,
+    "total": 1609,
+    "behavior_or_helpers_reviewed": 64,
     "properties_or_types_reviewed": 43,
     "whole_feature_completion": null,
     "groups": [
@@ -38240,18 +38240,19 @@
       {
         "name": "animation",
         "label": "Animation & puppets",
-        "done": 6,
+        "done": 7,
         "todo": 44,
-        "total": 50,
-        "behavior_or_helpers_reviewed": 4,
+        "total": 51,
+        "behavior_or_helpers_reviewed": 5,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 4,
+        "runtime_functions_identified": 5,
         "property_type_functions_identified": 46,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "HasAnimationKeyframeMaskOrEligibleInput",
           "EvaluateAnimationEasingCurve",
+          "RecordTimedByteProperty",
           "RegisterAnimationTypeDescriptor",
           "RegisterAnimationFieldOffsets",
           "InterpolateTaggedValueFromBase",
@@ -38306,6 +38307,7 @@
         "done_addresses": [
           "1407032a0",
           "140705ae0",
+          "14076ca60",
           "140d54650",
           "140d86c30",
           "1411dd230",
@@ -39252,18 +39254,19 @@
           {
             "name": "animation/keyframes",
             "label": "Animation & keyframes",
-            "done": 6,
+            "done": 7,
             "todo": 7,
-            "total": 13,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 14,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 4,
+            "runtime_functions_identified": 5,
             "property_type_functions_identified": 9,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "HasAnimationKeyframeMaskOrEligibleInput",
               "EvaluateAnimationEasingCurve",
+              "RecordTimedByteProperty",
               "RegisterAnimationTypeDescriptor",
               "RegisterAnimationFieldOffsets",
               "InterpolateTaggedValueFromBase",
@@ -39281,6 +39284,7 @@
             "done_addresses": [
               "1407032a0",
               "140705ae0",
+              "14076ca60",
               "140d54650",
               "140d86c30",
               "1411dd230",
@@ -39545,6 +39549,53 @@
                     "groups": []
                   }
                 ]
+              },
+              {
+                "name": "animation/keyframes/property-recording",
+                "label": "Property recording",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RecordTimedByteProperty"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14076ca60"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/keyframes/property-recording/runtime-implementation",
+                    "label": "Runtime code",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RecordTimedByteProperty"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14076ca60"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
               }
             ]
           },
@@ -39659,5 +39710,5 @@
       }
     ]
   },
-  "unmapped": 7945
+  "unmapped": 7944
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "151 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "152 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. No signature or datatype edits are part of these naming batches. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9244,
-    "other_names": 309,
-    "verification": "complete_inventory_matches_baseline_plus_151_renames_and_two_created_functions"
+    "default_fun_names": 9243,
+    "other_names": 310,
+    "verification": "complete_inventory_matches_baseline_plus_152_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3078,6 +3078,27 @@
         "Registration compares variant explicitly while lookup does not; population/collision invariants and complete record-field meanings remain unresolved.",
         "No runtime validation or full-behavior completion credit.",
         "No prototype, convention or data-type changes. Not a packed Animation sample producer."
+      ],
+      "reviewed_scope": "behavior_or_helper"
+    },
+    {
+      "address": "14076ca60",
+      "original_name": "FUN_14076ca60",
+      "applied_name": "RecordTimedByteProperty",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "evidence": [
+        "Complete170-instruction native body read and bytes independently verified against live executable.",
+        "Initializes mode2 recording header, writes object handle/property/length8 with timestamp and byte payload; new record consumes18 bytes.",
+        "Modes2 and5 support matching-record replacement; capacity guards and slot flag behavior reviewed.",
+        "Two native caller sites explicitly normalize object bytes through SETNZ before recording properties0xbb and0xba."
+      ],
+      "caveats": [
+        "Descriptive name, not recovered original symbol.",
+        "Byte signedness and all16 callers not established; not claimed as signed-strength producer.",
+        "Gate helpers, time conversion constants and full runtime behavior remain unresolved.",
+        "Only function name changes; no prototype or behavior-completion credit."
       ],
       "reviewed_scope": "behavior_or_helper"
     }
