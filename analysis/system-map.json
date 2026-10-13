@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1627,
-  "unmapped_total": 7926,
+  "mapped_total": 1634,
+  "unmapped_total": 7919,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42244,6 +42244,146 @@
           "kind": "verified_semantic_review",
           "name": "ReadReflectedTypedValue",
           "support": "Complete native body and relevant dispatch/caller data reviewed; saved name verified after clean reopening. Runtime and indirect dependency contracts remain open."
+        }
+      ]
+    },
+    "141600d90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "dd1c30a66a407cd8e3b93f8b504bbba04a057f42f1203a9d1e24e7f04641fb1d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadReflectedCompositeFields",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141604e80": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "1b151d75ddb765327099752777bd2432b4d1508119f1b66a749f922c57c3383a",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareReflectedFieldLoadPlan",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1416020f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "1425f1c2433ef48313355642b5197d279b203ef04826447f3d27acdafd99bc81",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SkipReflectedFieldElements",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141605910": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "c3ca900f99e5d82d69509c69c595e52a6dc2b088ed42837b60d609d016f637a1",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InvokeReflectedPostLoadCallbacks",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1416059f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "2e72cab9aa35b664a5b54ef800437aac341fad74ddb4fdc2b3e489b3e258fbc7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InvokeReflectedReadHooks",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141601620": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "d7a1e0acb8bceac7fc90dcdc2afd9fa2a1ff262d816696196b73d205a1daa6ea",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SkipReflectedPrimitiveValues",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1415ffd60": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected field loading and skip call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "151336db4a1539876c074531b42819ec7a993b23dd8728df3e01410d1f36026b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SkipReflectedCompositeValue",
+          "support": "Complete native body reviewed; saved name, bytes, references and preserved types verified after clean reopening. Runtime and indirect contracts remain open."
         }
       ]
     }

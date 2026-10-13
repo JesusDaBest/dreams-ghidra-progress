@@ -1375,3 +1375,17 @@ Malformed integer framing remains an explicit gap. The observed varint loops con
 The pair helper requires two source and two destination field records, obtains storage through an iterator and dispatches each side through primitive, composite or the already named object-reference reader. The typed-entry helper uses an expected primitive class directly or validates a compact composite schema ID, table entry and stored ID before delegation. Its 200 recorded references are preserved; they have not all been semantically audited. Original container classes, iterator ownership and complete schema construction remain unresolved.
 
 A hash-verified cold backup and isolated signature trial preceded promotion. Fresh-process reopening preserved all **3,565 owned instruction bytes and 207 recorded references**, the complete function-name inventory and original archives. Totals are now **175 checked names**, **1,627 mapped functions**, and **7,926 unmapped functions**. Audited-byte coverage remains **1,495 / 28,940,288 (about 0.0052%)**. These findings add no complete-function coverage or runtime scene-round-trip claim.
+
+### Reflected field loading and unknown-data consumption
+
+Seven descriptive names now cover composite field reads, field-load plans, field-element and primitive/composite skipping, and two registered callback phases. All existing prototypes are preserved. Fresh reopening verifies the complete function inventory, unchanged native bytes and references, and unchanged original archives.
+
+The load-plan builder matches saved field identifiers to current descriptor records, including inherited offsets and supplementary objects. It caches auxiliary instances and prepares two reverse-traversed callback lists. Related target descriptors can reuse a prior plan; this is observed cache behavior, not proof of general migration correctness.
+
+The composite reader loads the portion fitting destination storage and consumes surplus or unmapped source elements afterward. Its array callbacks occur after the mapped portion but before surplus consumption. The standalone composite skipper instead runs its after-array callback after skipping the whole field. Reference skipping validates represented object IDs rather than creating new objects.
+
+The primitive skip dispatch table was captured directly from the executable: categories1/2 consume compact integers,3/4 skip four/eight bytes per element, and5 consumes length-prefixed payloads. Category0 returns status2; categories above5 return7. These are source categories, not output destination-kind numbers.
+
+Remaining gaps include indirect hook and stream contracts, allocation failure, related-type cache invariants, and malformed input. The composite skipper narrows its field-element count to32bits; not every count-decoding path has the same explicit bound check. A trailing-chunk path reaches zero status after a short header or payload read. Caller constraints and actual runtime consequences remain unproved; these are static observations, not reproduced defects.
+
+Totals are182 checked names,1,634 mapped functions and7,919 unmapped functions. Audited-byte coverage remains1,495 /28,940,288 (about0.0052%); these role reviews do not add whole-function completion or runtime scene-round-trip credit.

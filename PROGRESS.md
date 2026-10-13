@@ -1169,3 +1169,7 @@ Fresh reopening preserved 3,900 instruction bytes and 13 recorded references. To
 Saved three reader-helper names and the primitive reader's tested six-argument, low-byte-status signature. Native tables and code establish integer range checks, numeric conversion families, Boolean normalization, checked reads and a float64 destination binding. Selected conversion models pass 3,565 cases under nearest-even rounding; target runtime state remains unverified. Overlong integer framing, stride/count guarantees and custom callbacks remain explicit gaps.
 
 Fresh reopening preserved 3,565 instruction bytes and 207 recorded references. Totals: 175 checked names, 1,627 mapped functions and 7,926 unmapped functions. [Reader paths, models and limits](ANALYSIS.md#reflected-primitive-reading-and-conversion). Audited-byte coverage remains about 0.0052%; no runtime scene round trip is claimed.
+
+### Composite loading and skipping
+
+Seven descriptive names saved and verified after clean reopening. Field matching, inherited offsets, auxiliary objects, callback order and unknown-data consumption traced. Totals:182 checked names,1,634 mapped functions,7,919 unmapped. Types and native bytes preserved; audited-byte coverage unchanged. [Findings and open contracts](ANALYSIS.md#reflected-field-loading-and-unknown-data-consumption).

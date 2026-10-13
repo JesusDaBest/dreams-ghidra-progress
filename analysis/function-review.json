@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "173 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "180 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9222,
-    "other_names": 331,
-    "verification": "complete_inventory_matches_baseline_plus_173_renames_and_two_created_functions"
+    "default_fun_names": 9215,
+    "other_names": 338,
+    "verification": "complete_inventory_matches_baseline_plus_180_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3543,6 +3543,139 @@
         "No runtime validation, complete scene decoder or additional static-coverage credit.",
         "Original prototype preserved; all200 recorded references are preserved, not all semantically audited.",
         "Type-ID framing, overlong input and schema table construction remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141600d90",
+      "original_name": "FUN_141600d90",
+      "applied_name": "ReadReflectedCompositeFields",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete native body reviewed: maps saved fields, reads destination capacity, skips surplus/unmapped elements, then runs registered load hooks."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141604e80",
+      "original_name": "FUN_141604e80",
+      "applied_name": "PrepareReflectedFieldLoadPlan",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete630-instruction native body reviewed: matches saved field IDs, inherited offsets and supplementary instances; prepares two callback lists and related-type cache reuse."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "1416020f0",
+      "original_name": "FUN_1416020f0",
+      "applied_name": "SkipReflectedFieldElements",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete194-instruction native body reviewed: validates compact reference IDs or delegates primitive/composite element consumption."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141605910",
+      "original_name": "FUN_141605910",
+      "applied_name": "InvokeReflectedPostLoadCallbacks",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete60-instruction body reviewed: reverse traversal of registered callbacks after field reads, with adjusted destination and metadata."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "1416059f0",
+      "original_name": "FUN_1416059f0",
+      "applied_name": "InvokeReflectedReadHooks",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete62-instruction body reviewed: reverse traversal of registered read hooks, context descriptor update and low-byte error propagation."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "141601620",
+      "original_name": "FUN_141601620",
+      "applied_name": "SkipReflectedPrimitiveValues",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete195-instruction body and live dispatch table reviewed: compact integers, fixed-width float payloads and length-prefixed payload skipping."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
+      ],
+      "calling_convention": "PS4_SYSV",
+      "prototype_preserved": true
+    },
+    {
+      "address": "1415ffd60",
+      "original_name": "FUN_1415ffd60",
+      "applied_name": "SkipReflectedCompositeValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete390-instruction body reviewed: source field masks/counts, field-element skip dispatch, array visitor phases and trailing chunk consumption."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Indirect callbacks, malformed-input reachability and surrounding contracts remain unresolved."
       ],
       "calling_convention": "PS4_SYSV",
       "prototype_preserved": true
