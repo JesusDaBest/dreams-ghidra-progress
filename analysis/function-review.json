@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "157 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
+  "review_scope": "160 existing-function renames and 2 newly defined descriptive functions verified after reopening; 4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9553,
-    "default_fun_names": 9238,
-    "other_names": 315,
-    "verification": "complete_inventory_matches_baseline_plus_157_renames_and_two_created_functions"
+    "default_fun_names": 9235,
+    "other_names": 318,
+    "verification": "complete_inventory_matches_baseline_plus_160_renames_and_two_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3207,6 +3207,62 @@
         "Descriptive analyst name, not an original symbol.",
         "Original ordered/unordered floating-point comparisons retained; NaN does not behave like an ordered <=0 expression.",
         "Threshold computation, translated notice text, tick-flag lifecycle, audio source and all mode transitions remain unresolved.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "14093f9d0",
+      "original_name": "FUN_14093f9d0",
+      "applied_name": "InitializeAnimationObjectDefaults",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete 53-instruction initializer reviewed with all411 instruction bytes matched to program memory.",
+        "Independent Animation input-dispatch audit connects object-kind9 through its constructor and type-specific serializer; initializer sets HeaderAndDataPages to the empty pair."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Initializes fixed fields without allocating or clearing all storage. Loader clears storage first; all other caller preconditions and intervening helper effects remain unresolved.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "140d92160",
+      "original_name": "FUN_140d92160",
+      "applied_name": "ProcessSerializerChecksumCheckpoint",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete142-instruction,626-byte body matched to program memory; caller page serialization and XXH32 dependency checked.",
+        "Conditional versioned16-bit checksum processing, counter updates, comparison errors and buffer service traced; pow import resolved through native loader binding."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "Scene input checkpoint setup and its block-list callback are traced separately. Save-side policy, full intervening flag preservation, complete outer framing and runtime round trips remain unresolved.",
+        "Name-only change; no prototype propagation or new completion credit.",
+        "No runtime validation or whole-subsystem completion."
+      ]
+    },
+    {
+      "address": "140d923e0",
+      "original_name": "FUN_140d923e0",
+      "applied_name": "TransferSerializerBytes",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete71-instruction,243-byte body matched to program memory; read/write direction and chunked transfer loop reviewed.",
+        "Calls the already reviewed buffer-service helper on empty buffer and can recursively transfer through a secondary context using the signed low32 bits of original requested length."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not a recovered original symbol.",
+        "All3723 incoming references are enumerated for preservation, not semantically audited; caller buffer and secondary-length invariants remain unproved.",
+        "Secondary context purpose and behavior of all callers' callbacks remain unresolved. Name-only change, preserving the existing prototype.",
         "No runtime validation or whole-subsystem completion."
       ]
     }

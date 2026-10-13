@@ -1099,12 +1099,28 @@ These are additional static data-flow findings. No additional function names, wh
 
 The alternate existing-track path is now traced for compatible eight-byte scalar samples. It preserves old samples before the incoming range, emits the incoming timestamp/value pairs, removes covered old samples, and retains the old suffix. It rebases timestamps to a common origin while preserving value bits. The boundary tolerance is approximately 1/60 second; this does not establish the engine's update rate. Native equality and unordered-comparison branches are recorded separately in the local evidence.
 
-The writer finalizes both resource roots, appends a 72-byte descriptor, and returns its ordinal. Its input-count calculation can select a 12-byte divisor while its incoming loads still use an eight-byte stride, so compatibility of mixed-format calls remains an upstream invariant to prove. The separate alternate-mode writer and new-track paths remain incomplete.
+The writer finalizes both resource roots, appends a 72-byte descriptor, and returns its ordinal. Its input-count calculation can select a 12-byte divisor while its incoming loads still use an eight-byte stride, so compatibility of mixed-format calls remains an upstream invariant to prove. The follow-up below traces the scalar alternate-mode writer; new-track paths remain incomplete.
 
 The generic binary object's Animation input branch clears newly allocated object storage and calls its initializer before selecting the Animation serializer. Two independently decoded type-table entries establish that route. The initializer explicitly sets both Header and Data handles to `0xffffffff`; the type factory uses the same empty pair. This establishes initialization at construction. Preservation across every intervening common-field helper and every reload path remains unverified, so it does not establish a universal result for zero fingerprints applied to arbitrary existing objects.
 
 Resource serialization also has optional checksum checkpoints. For eligible spans from 4,096 through 720,896 bytes, the reviewed helper computes a zero-seed XXH32 hash and increments a counter. Versions at least `0x3d8` transfer a 16-bit checkpoint word; versions below `0x59a` mix the counter into that word. From version `0x649`, the next checksum span starts after the checkpoint word. A mismatching input checkpoint reports an error. These conditional words can occur between resource page transfers and must be accounted for in any reconstruction of the stream.
 
-The generic byte-transfer helper copies across buffer boundaries. Its optional secondary transfer uses the signed low 32 bits of the original requested length, so bounded nonnegative lengths are a caller requirement. It adds no framing of its own; the service callbacks may do so. Checkpoint enablement, the secondary context's purpose, the exact scene callbacks, outer containers, compression and runtime round trips remain unresolved.
+The generic byte-transfer helper copies across buffer boundaries. Its optional secondary transfer uses the signed low 32 bits of the original requested length, so bounded nonnegative lengths are a caller requirement. It adds no framing of its own; the service callbacks may do so. The follow-up below establishes scene input checkpoint setup and its callback route. Save-side policy, the secondary context's purpose, complete outer containers and runtime round trips remain unresolved.
 
-This follow-up adds native behavior evidence without applying additional names or increasing whole-game completion credit. There are still 159 checked descriptive names; no in-game verification is claimed.
+This follow-up adds native behavior evidence without applying additional names or increasing whole-game completion credit. That trace follow-up left 159 checked descriptive names; no in-game verification is claimed.
+
+### Animation initialization and serializer helper names
+
+Three additional descriptive names are saved and verified: `InitializeAnimationObjectDefaults` (`14093f9d0`), `ProcessSerializerChecksumCheckpoint` (`140d92160`), and `TransferSerializerBytes` (`140d923e0`). Their complete native bodies establish the roles described above. The first initializes Animation object fields, including the empty resource-handle pair; the others process versioned checksum checkpoints and move bytes through serializer buffers.
+
+These are name-only changes. Existing prototypes are preserved; a guessed shared prototype could affect many callers. A hash-verified cold backup preceded promotion. After a clean stop and fresh-process reopening, checks confirmed 1,280 unchanged native bytes, all 3,835 enumerated references, unchanged function metadata apart from names, the complete 9,553-function inventory, and unchanged original archive hashes. Enumerating references for preservation does not mean all those callers were semantically reviewed.
+
+There are now 162 checked descriptive names, including 121 among 1,615 mapped functions; 7,938 functions remain unmapped. The initializer belongs to Animation and the two serializer helpers to shared engine serialization. No whole-game completion or runtime-validation credit was added.
+
+### AutoKeyframe conversion and scene input policy
+
+The alternate scalar writer now has a native trace showing eight-byte old samples becoming twelve-byte records with control data. Caller flags connect that route to AutoKeyframe in the reviewed ordinary conversion branch. Separate slot flags, special conversion paths, one timestamp-origin assumption and runtime playback remain unresolved.
+
+The scene input setup explicitly enables checksum checkpoints and selects the block-descriptor-list callback route. The same context is forwarded through the object list to the generic loader and established Animation path. This extends earlier callback and LZ4 findings; it does not count repeated analysis as new completion. Output setup, the complete container and runtime round trips remain open.
+
+See [the detailed route table and conditions](ANALYSIS.md#autokeyframe-conversion-and-scene-input-policy). Checked names remain 162. No further naming or whole-behavior credit was added for these traces.

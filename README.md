@@ -39,17 +39,17 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/145bcf276f539f08be4739baf4cdcce6623a313d/assets/status-badges.svg)
+![Analysis status](assets/status-badges.svg?v=5e8eb4d3d1dc)
 
 <!-- status-summary:start -->
-**159 of 9,553 functions named and checked.** A function is one piece of the game's code.
+**162 of 9,553 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/145bcf276f539f08be4739baf4cdcce6623a313d/assets/status.svg)
+![Dreams function review by verified system assignment](assets/status.svg?v=0aebd55abd7f)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
-Every square is one actual function and has the same size. All function squares share one continuous packed map with no padding between systems. Nested outlines identify the cubes belonging to each label. The full breakdown below retains smaller components whose labels cannot fit at readable size. A short final row is unused space, not additional functions. The expandable breakdown retains smaller components whose labels cannot fit at readable size.
+Every square is one actual function and has the same size. All function squares share one continuous packed map with no padding between systems. Nested outlines identify the cubes belonging to each label. A short final row is unused space, not additional functions. The expandable breakdown retains smaller components whose labels cannot fit at readable size.
 
 **Full system sizes and completion remain unknown.** Section areas measure mapped code, so a smaller sculpting section does not imply a smaller or simpler system. Most discovered functions still need mapping. Property/type review and extracted pseudocode do not establish that a gadget's behavior is understood.
 
@@ -60,13 +60,13 @@ Every square is one actual function and has the same size. All function squares 
 | Gadgets & logic | 461 | 5/8 | 38/452 |
 | Physics & collision | 60 | 2/28 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
-| Animation & puppets | 54 | 8/8 | 0/46 |
+| Animation & puppets | 55 | 9/9 | 0/46 |
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 315 | 0/106 | 2/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 150 | 32/71 | 5/74 |
+| Shared engine & object data | 152 | 34/73 | 5/74 |
 
-**1,612 of 9,553 discovered functions are mapped; 7,941 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,615 of 9,553 discovered functions are mapped; 7,938 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -818,20 +818,20 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 150 functions identified; 32 behavior/helper reviews; 5 property/type reviews
-  - **Game state & runtime** - 42 functions identified; 27 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 152 functions identified; 34 behavior/helper reviews; 5 property/type reviews
+  - **Game state & runtime** - 44 functions identified; 29 behavior/helper reviews; 0 property/type reviews
     - **Game contexts & runtime support** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Resource pages** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
+    - **Saving & loading** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
     - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Gameupdater** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Saving & loading** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Game Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Game Update Thread** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1265,7 +1265,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Animation & puppets** - 54 functions identified; 8 behavior/helper reviews; 0 property/type reviews
+- **Animation & puppets** - 55 functions identified; 9 behavior/helper reviews; 0 property/type reviews
   - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1299,9 +1299,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Animation & keyframes** - 17 functions identified; 8 behavior/helper reviews; 0 property/type reviews
-    - **Animation** - 7 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-      - **Runtime code** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+  - **Animation & keyframes** - 18 functions identified; 9 behavior/helper reviews; 0 property/type reviews
+    - **Animation** - 8 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+      - **Runtime code** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Property recording** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Runtime code** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
@@ -1330,11 +1330,11 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **159 of 9,553 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
-- **1,612 functions mapped to parts of Dreams; 7,941 still unmapped.** Of the mapped functions, 118 have checked names.
+- **162 of 9,553 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **1,615 functions mapped to parts of Dreams; 7,938 still unmapped.** Of the mapped functions, 121 have checked names.
 - **9,515 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
-- **The latest batch added three descriptive names for recording controls.** Native review established recording-mode names and gate fields, and traced the reviewed sample merge into Animation resource pages and a property command. Fresh-reopen checks confirmed the three names with 1,997 native bytes and 26 references unchanged.
-- **The follow-up connects selected float samples to stored Animation resources.** The trace now includes property installation, a second existing-track merge path, handle initialization, and versioned Header/Data serialization with optional checksum checkpoints. These findings add understanding without increasing the name count or claiming a complete working save path.
+- **The latest batch named the Animation initializer and two shared serializer helpers.** Fresh-reopen checks confirmed the three names with 1,280 native bytes and all 3,835 enumerated references unchanged. Existing prototypes were preserved.
+- **AutoKeyframe sample conversion and scene input are now linked to the trace.** The reviewed path upgrades eight-byte samples to twelve-byte records with control data. Scene input explicitly enables checksum checkpoints and selects the block-list callback route. Remaining flag, format and runtime assumptions are recorded in the research findings.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
 

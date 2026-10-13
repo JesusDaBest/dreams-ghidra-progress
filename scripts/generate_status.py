@@ -357,7 +357,10 @@ def render_hierarchy(nodes, bounds, depth=0):
     labels=[];labeled=set();occupied=[]
     def overlaps(a,b):
         return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
-    for node,owned,level in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path'])):
+    # Preserve existing placements, then retry missing labels against stepped
+    # line footprints without moving a heading that already fits.
+    pending=[(*region,False) for region in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path']))]
+    for node,owned,level,stepped in pending:
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<5:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
@@ -366,7 +369,6 @@ def render_hierarchy(nodes, bounds, depth=0):
         # Major headings belong at the start of their own section. Children
         # find room below them rather than displacing the parent into the middle.
         for wrap in range(32,8,-1):
-            lines=textwrap.wrap(node['label'],width=wrap,break_long_words=False)
             lines=textwrap.wrap(f"{node['label']}  {checked}/{len(owned)}",width=wrap,break_long_words=False)
             values=lines; sizes=[size]*len(lines)
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
@@ -375,23 +377,37 @@ def render_hierarchy(nodes, bounds, depth=0):
             for gx,gy in sorted(owned,key=lambda p:(p[1],p[0])):
                 tx=x0+gx*side+2;ty=y0+gy*side+1
                 box=(tx,ty,bw,bh)
-                covered={(cx,cy) for cy in range(gy,math.ceil((ty+bh-y0)/side)) for cx in range(gx,math.ceil((tx+bw-x0)/side))}
-                if covered<=owned and not any(overlaps(box,b) for b in occupied):
-                    candidates.append((0,box))
+                if not stepped:
+                    covered={(cx,cy) for cy in range(gy,math.ceil((ty+bh-y0)/side)) for cx in range(gx,math.ceil((tx+bw-x0)/side))}
+                    if not covered<=owned or any(overlaps(box,b) for b in occupied):continue
+                # A short line can fit the narrower part of a stepped section.
+                # Check each line's footprint instead of the widest line's box.
+                line_boxes=[];line_y=ty
+                for line,fs in zip(values,sizes):
+                    line_box=(tx,line_y,len(line)*fs*.58+6,fs+2)
+                    covered={(cx,cy) for cy in range(math.floor((line_y-y0)/side),math.ceil((line_y+fs+2-y0)/side)) for cx in range(gx,math.ceil((tx+line_box[2]-x0)/side))}
+                    if not covered<=owned or any(overlaps(line_box,b) for b in occupied):break
+                    line_boxes.append(line_box);line_y+=fs+2
+                if len(line_boxes)==len(values):
+                    candidates.append((0,box,line_boxes))
             if candidates:
-                _,box=min(candidates,key=lambda item:item[0])
-                placed=(box,values,sizes)
+                _,box,line_boxes=min(candidates,key=lambda item:item[0])
+                placed=(box,values,sizes,line_boxes)
                 if level==0:root_placements.append(placed)
             if placed and level>0:break
         if root_placements:
             placed=min(root_placements,key=lambda p:(p[0][1],p[0][0],p[0][3]))
-        if placed is None:continue
-        (tx,ty,bw,bh),values,sizes=placed;occupied.append((tx,ty,bw,bh));labeled.add(node['path'])
+        if placed is None:
+            if not stepped:pending.append((node,owned,level,True))
+            continue
+        (tx,ty,bw,bh),values,sizes,line_boxes=placed
+        occupied.extend(line_boxes if stepped else [(tx,ty,bw,bh)]);labeled.add(node['path'])
         labels.append(f'<g data-label="{"/".join(node["path"])}" data-label-box="{tx:.6f},{ty:.6f},{bw:.6f},{bh:.6f}">')
         baseline=ty
-        for label,size in zip(values,sizes):
+        for label,size,line_box in zip(values,sizes,line_boxes):
             baseline+=size
-            labels.append(text(round(tx,3),round(baseline,3),label,size,weight=600,extra=' stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
+            footprint=','.join(f'{v:.6f}' for v in line_box)
+            labels.append(text(round(tx,3),round(baseline,3),label,size,weight=600,extra=f' data-label-line-box="{footprint}" stroke="#0d1117" stroke-width="3" paint-order="stroke" stroke-linejoin="round"'))
             baseline+=2
         labels.append('</g>')
     out.extend(border for path,border in borders if path in labeled)

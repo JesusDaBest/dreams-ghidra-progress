@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-12",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 118,
+    "done": 121,
     "todo": 1494,
-    "total": 1612,
-    "behavior_or_helpers_reviewed": 67,
+    "total": 1615,
+    "behavior_or_helpers_reviewed": 70,
     "properties_or_types_reviewed": 45,
     "whole_feature_completion": null,
     "groups": [
@@ -24507,12 +24507,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 37,
+        "done": 39,
         "todo": 113,
-        "total": 150,
-        "behavior_or_helpers_reviewed": 32,
+        "total": 152,
+        "behavior_or_helpers_reviewed": 34,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 71,
+        "runtime_functions_identified": 73,
         "property_type_functions_identified": 74,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24545,6 +24545,8 @@
           "TransferTransformPropertyPayload",
           "RegisterVariantFieldOffset",
           "ServiceSerializerBuffer",
+          "ProcessSerializerChecksumCheckpoint",
+          "TransferSerializerBytes",
           "GetCurrentThreadBufferWritePointer",
           "MarkObjectPackedResourceRoots",
           "MarkContainerPackedResourceRoots",
@@ -24699,6 +24701,8 @@
           "140ad5f90",
           "140cfda40",
           "140d92000",
+          "140d92160",
+          "140d923e0",
           "140e38710",
           "141060410",
           "141060640",
@@ -24834,12 +24838,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 27,
+            "done": 29,
             "todo": 15,
-            "total": 42,
-            "behavior_or_helpers_reviewed": 27,
+            "total": 44,
+            "behavior_or_helpers_reviewed": 29,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 35,
+            "runtime_functions_identified": 37,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24864,6 +24868,8 @@
               "LookupU32HashTableValue",
               "ProcessMainThingUpdateWorker",
               "ServiceSerializerBuffer",
+              "ProcessSerializerChecksumCheckpoint",
+              "TransferSerializerBytes",
               "GetCurrentThreadBufferWritePointer",
               "MarkObjectPackedResourceRoots",
               "MarkContainerPackedResourceRoots",
@@ -24910,6 +24916,8 @@
               "140913a90",
               "140abb470",
               "140d92000",
+              "140d92160",
+              "140d923e0",
               "140e38710",
               "141060410",
               "141060640",
@@ -25136,6 +25144,69 @@
                 ]
               },
               {
+                "name": "shared/runtime/serialization",
+                "label": "Saving & loading",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "DecodeLz4Block",
+                  "ReleaseRefCountedBlockHandle",
+                  "ServiceSerializerBuffer",
+                  "ProcessSerializerChecksumCheckpoint",
+                  "TransferSerializerBytes"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14015e8c0",
+                  "14038bed0",
+                  "140d92000",
+                  "140d92160",
+                  "140d923e0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/serialization/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "DecodeLz4Block",
+                      "ReleaseRefCountedBlockHandle",
+                      "ServiceSerializerBuffer",
+                      "ProcessSerializerChecksumCheckpoint",
+                      "TransferSerializerBytes"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14015e8c0",
+                      "14038bed0",
+                      "140d92000",
+                      "140d92160",
+                      "140d923e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/runtime/egameevents",
                 "label": "Game Events",
                 "done": 0,
@@ -25295,61 +25366,6 @@
                       "140956a10",
                       "140958760"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/serialization",
-                "label": "Saving & loading",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "DecodeLz4Block",
-                  "ReleaseRefCountedBlockHandle",
-                  "ServiceSerializerBuffer"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14015e8c0",
-                  "14038bed0",
-                  "140d92000"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/serialization/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "DecodeLz4Block",
-                      "ReleaseRefCountedBlockHandle",
-                      "ServiceSerializerBuffer"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14015e8c0",
-                      "14038bed0",
-                      "140d92000"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -38244,12 +38260,12 @@
       {
         "name": "animation",
         "label": "Animation & puppets",
-        "done": 10,
+        "done": 11,
         "todo": 44,
-        "total": 54,
-        "behavior_or_helpers_reviewed": 8,
+        "total": 55,
+        "behavior_or_helpers_reviewed": 9,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 8,
+        "runtime_functions_identified": 9,
         "property_type_functions_identified": 46,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -38259,6 +38275,7 @@
           "RecordTimedByteProperty",
           "SelectGreatestMagnitudeOfFiveFloats",
           "RecordTimedFloatProperty",
+          "InitializeAnimationObjectDefaults",
           "RegisterAnimationTypeDescriptor",
           "RegisterAnimationFieldOffsets",
           "PreparePropertyRecordingIfEligible",
@@ -38317,6 +38334,7 @@
           "14076ca60",
           "14076cd70",
           "14076cdf0",
+          "14093f9d0",
           "140d54650",
           "140d86c30",
           "1410a4e20",
@@ -39264,12 +39282,12 @@
           {
             "name": "animation/keyframes",
             "label": "Animation & keyframes",
-            "done": 10,
+            "done": 11,
             "todo": 7,
-            "total": 17,
-            "behavior_or_helpers_reviewed": 8,
+            "total": 18,
+            "behavior_or_helpers_reviewed": 9,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 8,
+            "runtime_functions_identified": 9,
             "property_type_functions_identified": 9,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -39279,6 +39297,7 @@
               "RecordTimedByteProperty",
               "SelectGreatestMagnitudeOfFiveFloats",
               "RecordTimedFloatProperty",
+              "InitializeAnimationObjectDefaults",
               "RegisterAnimationTypeDescriptor",
               "RegisterAnimationFieldOffsets",
               "PreparePropertyRecordingIfEligible",
@@ -39300,6 +39319,7 @@
               "14076ca60",
               "14076cd70",
               "14076cdf0",
+              "14093f9d0",
               "140d54650",
               "140d86c30",
               "1410a4e20",
@@ -39320,18 +39340,19 @@
               {
                 "name": "animation/keyframes/animation",
                 "label": "Animation",
-                "done": 6,
+                "done": 7,
                 "todo": 1,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 4,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 5,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
+                "runtime_functions_identified": 5,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "HasAnimationKeyframeMaskOrEligibleInput",
                   "EvaluateAnimationEasingCurve",
+                  "InitializeAnimationObjectDefaults",
                   "RegisterAnimationTypeDescriptor",
                   "RegisterAnimationFieldOffsets",
                   "InterpolateTaggedValueFromBase",
@@ -39343,6 +39364,7 @@
                 "done_addresses": [
                   "1407032a0",
                   "140705ae0",
+                  "14093f9d0",
                   "140d54650",
                   "140d86c30",
                   "1411dd230",
@@ -39356,18 +39378,19 @@
                   {
                     "name": "animation/keyframes/animation/runtime-implementation",
                     "label": "Runtime code",
-                    "done": 4,
+                    "done": 5,
                     "todo": 0,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 4,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
+                    "runtime_functions_identified": 5,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "HasAnimationKeyframeMaskOrEligibleInput",
                       "EvaluateAnimationEasingCurve",
+                      "InitializeAnimationObjectDefaults",
                       "InterpolateTaggedValueFromBase",
                       "EvaluateAnimationDeltaOnBaseValue"
                     ],
@@ -39375,6 +39398,7 @@
                     "done_addresses": [
                       "1407032a0",
                       "140705ae0",
+                      "14093f9d0",
                       "1411dd230",
                       "141215810"
                     ],
@@ -39738,5 +39762,5 @@
       }
     ]
   },
-  "unmapped": 7941
+  "unmapped": 7938
 }

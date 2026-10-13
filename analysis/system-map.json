@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9553,
-  "mapped_total": 1612,
-  "unmapped_total": 7941,
+  "mapped_total": 1615,
+  "unmapped_total": 7938,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -41937,6 +41937,66 @@
         }
       ],
       "code_sha256": "a7f10c468ec16d25f771806135863daa8b93e23a90cd83ffa1533cb8c3d93b5b"
+    },
+    "14093f9d0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native object-kind9 construction followed by Animation serializer dispatch",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native initializer body",
+      "code_sha256": "346c65b15ce8f21659936778a202722383da7d37aac5319a63926388b44796ca",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeAnimationObjectDefaults",
+          "support": "Native body and relevant data-flow reviewed; name persisted after observed fresh-process reopening. Enumerated references preserved; not every caller semantically audited."
+        }
+      ]
+    },
+    "140d92160": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared serializer helpers used by resource pages and other binary fields",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native byte-transfer or checkpoint body",
+      "code_sha256": "6e94daf49f6f6ccfdc8c8772e0e2e47801da610c22e34b11c5a60cc6ebec9b01",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ProcessSerializerChecksumCheckpoint",
+          "support": "Native body and relevant data-flow reviewed; name persisted after observed fresh-process reopening. Enumerated references preserved; not every caller semantically audited."
+        }
+      ]
+    },
+    "140d923e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared serializer helpers used by resource pages and other binary fields",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native byte-transfer or checkpoint body",
+      "code_sha256": "31dc5c1532cf58f65552f74370e5d3a002ce0c79bb089f9bc56d78ec9508fa44",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferSerializerBytes",
+          "support": "Native body and relevant data-flow reviewed; name persisted after observed fresh-process reopening. Enumerated references preserved; not every caller semantically audited."
+        }
+      ]
     }
   },
   "hierarchy": [
