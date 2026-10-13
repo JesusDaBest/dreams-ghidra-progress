@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9556,
-  "mapped_total": 1637,
-  "unmapped_total": 7919,
+  "mapped_total": 1642,
+  "unmapped_total": 7914,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42444,6 +42444,106 @@
           "kind": "verified_semantic_review",
           "name": "ForwardReflectedChunkSkip",
           "support": "Native body, table and context initialization reviewed; new definition verified after fresh reopening. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141601900": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema, metadata and read-hook chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "5aee80bff4b593870227dcecf12426face341824268865581cd0e4d505d318f3",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FinishReflectedReadHookScope",
+          "support": "Complete body reviewed and saved name verified after fresh reopening; runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1415ffc30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema, metadata and read-hook chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "e085bfb0db89f51f17c98ec0a4e4f78d2cb61acce4a7a6b93602f8f8dfc0f159",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateReflectedSourceSchema",
+          "support": "Complete body reviewed and saved name verified after fresh reopening; runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "1416024d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema, metadata and read-hook chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "ac447b71835beb776a07ad43140fbf18e8a1349e85bb347e2a0856f962dbbba0",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadReflectedNameBytes",
+          "support": "Complete body reviewed and saved name verified after fresh reopening; runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141602890": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema, metadata and read-hook chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "15097f782bd546c9924c93f12155548bb83d5866bb77ff95bc0dd83e98d8fddc",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadCompactUnsigned32",
+          "support": "Complete body reviewed and saved name verified after fresh reopening; runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141607c40": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema, metadata and read-hook chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "b97168d59f4ed035815f48a6aae96841ad4878e48b08a404e7268d4f4ce96f5c",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadCompactUnsigned64",
+          "support": "Complete body reviewed and saved name verified after fresh reopening; runtime and indirect contracts remain open."
         }
       ]
     }

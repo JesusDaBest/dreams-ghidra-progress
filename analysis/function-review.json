@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "180 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "185 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9556,
-    "default_fun_names": 9215,
-    "other_names": 341,
-    "verification": "complete_inventory_matches_baseline_plus_180_renames_and_five_created_functions"
+    "default_fun_names": 9210,
+    "other_names": 346,
+    "verification": "complete_inventory_matches_baseline_plus_185_renames_and_five_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3740,6 +3740,101 @@
       ],
       "reviewed_scope": "behavior_or_helper",
       "saved_working_signature": "undefined ForwardReflectedChunkSkip(void)"
+    },
+    {
+      "address": "141601900",
+      "original_name": "FUN_141601900",
+      "applied_name": "FinishReflectedReadHookScope",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete57-instruction native body: consumes trailing hook chunk data and conditionally restores stream and descriptor context; single caller preserves hook status across cleanup."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "1415ffc30",
+      "original_name": "FUN_1415ffc30",
+      "applied_name": "AllocateReflectedSourceSchema",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete80-instruction native body: expands schema pointer table, allocates and initializes a0xc8-byte entry, replaces the ID slot and returns embedded schema."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "1416024d0",
+      "original_name": "FUN_1416024d0",
+      "applied_name": "ReadReflectedNameBytes",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete173-instruction native body: compact-length raw byte span, arena/fallback storage, exact payload read and begin/end publication."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "141602890",
+      "original_name": "FUN_141602890",
+      "applied_name": "ReadCompactUnsigned32",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete86-instruction native body: compact integer decode, high32bit check and success-only output store."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "141607c40",
+      "original_name": "FUN_141607c40",
+      "applied_name": "ReadCompactUnsigned64",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete84-instruction native body: compact64-bit integer reconstruction, exact byte reads and output store; short reads return full status2."
+      ],
+      "caveats": [
+        "Analyst descriptive role, not recovered original symbol.",
+        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
     }
   ],
   "deferred": [

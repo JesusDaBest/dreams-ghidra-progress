@@ -1405,3 +1405,17 @@ The span reader fills an array of destination-pointer/length spans from chunk-bu
 The earlier hook-cleanup helper reads another header/payload before restoring state. Its caller preserves the hook's status, while cleanup ignores its own payload-read count. This differs from callers that explicitly compare the stream callback's returned byte count. Full framing, caller invariants and malformed-input runtime effects remain open.
 
 An isolated function-definition trial checked ownership, instruction boundaries and decompilation. Promotion followed a hash-verified cold backup. Fresh reopening preserved489 native bytes and3 recorded table references, all existing names, and original archive hashes. There are now185 checked names across9,556 discovered functions;1,637 are mapped and7,919 remain unmapped. Prototypes remain provisional. Audited-byte coverage is unchanged at about0.0052%; no runtime validation or original-source recovery is claimed.
+
+### Schema metadata and object population
+
+Five further descriptive names cover hook-scope cleanup, source-schema allocation, raw name-byte reading, and compact unsigned32/64-bit readers. All previous prototypes are preserved. Full native bodies and caller relationships support these roles; fresh reopening, the complete inventory and original archives were verified.
+
+The name reader produces a raw begin/end byte span with no enforced terminator or encoding. The32-bit integer reader rejects decoded values above its range; its short-read code is1, while the64-bit reader uses2. Overlong continuation framing, allocation and ownership contracts remain unresolved.
+
+The outer stream reader has a five-entry dispatch table. Its object-payload handler resolves a source schema and an already registered destination object, then delegates to primitive/composite readers or consumes the payload through skip helpers. Reference loading separately creates/registers missing objects; it does not populate their fields in that helper. Pointer stores may precede later marker-validation failure, so rollback is not established.
+
+Schema fields derive identifiers from saved name bytes, carry type/flag/mask/count data and child schema pointers, and undergo normalization before destination mapping. The schema allocator always creates a new entry and writes its ID slot; it does not return an existing entry. Missing-entry placeholders are observed, but repeated IDs, replacement and child-pointer continuity remain open. No general forward/cyclic-schema correctness is claimed. A special field identifier and alternate field list still need semantic binding.
+
+The outer reader also invokes descriptor callbacks on completion and several error paths. These are not yet established as destructors or success-only finalizers. A child status9 receives special zero conversion; its origin and meaning remain open.
+
+Totals are190 checked names across9,556 functions,1,642 mapped and7,914 unmapped. Audited-byte coverage remains about0.0052%. These findings do not establish a complete scene decoder, recovered original source or runtime validation.

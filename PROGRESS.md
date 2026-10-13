@@ -1181,3 +1181,7 @@ Applied the native-supported four-pointer, byte-status working signature after a
 ### Chunk-stream callbacks defined
 
 Three native callbacks now have verified function definitions and descriptive names. The span reader and skip adapters share chunk refill and actual-byte-count handling. Fresh reopening preserved489 native bytes,3 references and the full existing inventory. Totals:185 checked names across9,556 functions;1,637 mapped. [Behavior and limits](ANALYSIS.md#inline-chunk-stream-callbacks). Audited-byte coverage remains unchanged.
+
+### Schema metadata helpers named
+
+Five verified descriptive names added for schema allocation, raw name bytes, compact integers and read-hook cleanup. Native tracing distinguishes object registration from later field population and corrects schema reuse assumptions. Totals:190 checked names,1,642 mapped functions. [Evidence and remaining format contracts](ANALYSIS.md#schema-metadata-and-object-population). Byte coverage is unchanged.
