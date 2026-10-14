@@ -1529,3 +1529,11 @@ The native field lookup passed 84 descriptor/alias/inheritance cases. It scans f
 The composite reader was connected to that actual native load-plan builder and lookup, removing prefilled destination mappings from the test. All 1,548 connected writer/mapping/reader cases passed across primary IDs, aliases, unknown fields, two initial lookup cursor positions and destination capacities of 0, 2 and 16. Unknown and surplus values were skipped before the following field, whose expected value confirmed alignment. Element bytes, padding and untouched tails matched expectations.
 
 Source schemas and destination descriptors are still synthetic. Root schema parsing, supplementary types, allocator paths, nonempty read/postload callbacks, object references, compression/storage and running-game behavior remain unverified. Boolean fixtures are canonical and avoid the unverified SIMD path. No new names or completion credit are claimed.
+
+### Concrete buffered output failure contract
+
+The captured primitive encoder was connected to the concrete buffered output-write method, with controlled memory-copy and block-flush dependencies. All 252 cases passed, including 52 reached flush-failure cases. The buffered method refuses writes with a preexisting error, stops copying on a zero flush result, and returns the copied prefix length. The primitive encoder still reports success in these checked error cases because it discards that count. The stream retains its error for possible higher-level handling.
+
+Selected save return paths were checked against live memory. Serializer success combines its context error word and status byte. The concrete stream's error storage is separate in the captured caller. The selected common cleanup performs a final flush without directly replacing the saved return code with its result. This bounded trace does not prove that every helper omits propagation.
+
+Actual compression/storage failure execution, propagation through other helpers and real save-operation reachability remain unresolved. No game defect, whole-save validation or completion credit is claimed.

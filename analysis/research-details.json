@@ -2406,5 +2406,30 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "buffered_output_error_contract": {
+    "scope": "Captured native primitive encoder connected to captured concrete buffered output write method. Memory copy and block flush are controlled stubs.",
+    "cases": 252,
+    "flush_failure_cases_reached": 52,
+    "findings": [
+      "Concrete buffered method refuses writes with a preexisting low-word error.",
+      "Flush failure stops copying and retains the copied prefix.",
+      "Primitive encoder still returns success across all checked initial-error and flush-failure fixtures.",
+      "Stream error state remains available for a higher-level check; this harness does not prove that every caller checks it."
+    ],
+    "limits": [
+      "Flush callback explicitly models failure; actual compression/storage failure paths are not executed.",
+      "No whole-scene or game-runtime defect claimed.",
+      "No automatic completion credit."
+    ],
+    "selected_caller_flow": [
+      "Serializer success tests its own context error word and status byte.",
+      "Concrete stream error storage is separate in the captured save caller.",
+      "Selected final cleanup flush result does not directly replace the saved return code."
+    ],
+    "remaining": "Propagation through other helpers and real compression/storage failure reachability remain unresolved.",
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }

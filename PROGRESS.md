@@ -1237,3 +1237,7 @@ Passed 83 matching-array cases, 430 schema-mismatch/unmapped cases, 980 truncati
 ### Native schema matching connected
 
 Passed 1,548 connected writer/field-mapping/reader cases, plus 84 identifier-lookup cases and a 14-field load-plan fixture. Mappings now come from captured native lookup/build code in this test, including aliases and unknown fields. [Scope and remaining gaps](ANALYSIS.md#native-field-matching-connected-to-decoding). Real root schema parsing remains open; completion counts are unchanged.
+
+### Concrete output stream errors traced
+
+Checked 252 native encoder/buffered-stream cases, including 52 modeled flush failures, and live-verified selected save return paths. Stream errors and serializer status are separate; complete higher-level propagation remains open. [Verified behavior and limits](ANALYSIS.md#concrete-buffered-output-failure-contract). No game defect or added completion credit claimed.
