@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9556,
-  "mapped_total": 1646,
-  "unmapped_total": 7910,
+  "mapped_total": 1648,
+  "unmapped_total": 7908,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -42624,6 +42624,46 @@
           "kind": "verified_semantic_review",
           "name": "HashNameBytes32",
           "support": "Native arithmetic paths and independent model checked; name verified after reopening. Runtime and complete ABI/caller contracts remain open."
+        }
+      ]
+    },
+    "1416044f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema dependency collection and object-record writing",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "870c0ca2b933d66a326c1964e24666f4a5b6527f62e819214d90cfcdf111bbaa",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CollectReflectedSchemaDependencies",
+          "support": "Complete body reviewed; saved name verified after reopening with bytes, types and references unchanged. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "140116eb0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native reflected schema dependency collection and object-record writing",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body role review",
+      "code_sha256": "a6c12205f8dfda65433fec63f97e882dc18f8643859233dca9cfa733dd25ed9b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteReflectedObjectRecords",
+          "support": "Complete body reviewed; saved name verified after reopening with bytes, types and references unchanged. Runtime and indirect contracts remain open."
         }
       ]
     }

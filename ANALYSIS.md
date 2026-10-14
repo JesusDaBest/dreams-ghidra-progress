@@ -1449,3 +1449,11 @@ Six existing helpers now have native-supported working signatures. The raw-name 
 The chunk-span reader takes stream, span-begin and span-end pointers and returns a64-bit consumed-byte count. Both skip adapters take stream and64-bit count and preserve that full byte-count result. Opaque pointers avoid inventing original class declarations.
 
 An isolated trial and promoted project decompiled all six helpers plus the outer record reader, composite loader and object-reference reader. Exact parameter/return register storage was checked. Fresh reopening preserved native bytes and references, and full inventory/archive checks passed. Virtual replacement tables, undiscovered callers and runtime behavior remain open. Counts remain194 checked names and1,646 mapped functions; audited-byte coverage is unchanged.
+
+### Schema collection and object-record writing named
+
+Saved `CollectReflectedSchemaDependencies` and `WriteReflectedObjectRecords` after reviewing their complete 939 native instructions. The collector registers IDs before dependency traversal but appends descriptors after recursion. The writer consumes that list forward, so ordinary acyclic dependencies precede their parent even though assigned IDs need not ascend. Recursive schemas, lookup internals and placeholder continuity remain open.
+
+The writer emits schema headers, raw names, field metadata and object payload records. Observed field inclusion/exclusion masks match between collection and emission. Named-alternative metadata binds to the reader’s category-1/flag-0x20 list path. Original source-type semantics are not inferred solely from that shape. Stream writes generally check returned lengths; allocation failures, callbacks and full framing still require analysis.
+
+Fresh reopening preserved both names, previous types, native bytes and references; full inventory and original archives passed checks. Totals: 196 checked names across 9,556 functions, 1,648 mapped and 7,908 unmapped. No runtime round trip or audited-byte credit was added.

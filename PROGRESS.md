@@ -1201,3 +1201,7 @@ Saved and verified the shared name-ID helper after 970 arithmetic-model cases co
 ### Six helper signatures verified
 
 Applied and freshly verified native-supported types for name spans, compact integers and chunk read/skip callbacks. All six helpers and three callers decompile successfully. [Contracts and limits](ANALYSIS.md#reflected-helper-signatures-verified). No new names or completion credit.
+
+### Schema writer roles named
+
+Two verified names added for dependency collection and object-record writing. Traced emitted schema order, field filters, metadata and object payload records. Totals: 196 checked names and 1,648 mapped functions. [Evidence and remaining format contracts](ANALYSIS.md#schema-collection-and-object-record-writing-named). Audited-byte coverage remains unchanged.
