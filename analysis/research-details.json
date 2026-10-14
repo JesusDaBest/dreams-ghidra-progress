@@ -2014,5 +2014,60 @@
     "runtime_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "descriptor_map_instruction_emulation": {
+    "lookup_and_insertion": {
+      "emulator": "unicorn 2.1.2",
+      "scope": "Executes captured x86-64 lookup/insertion bytes in isolated synthetic memory; no game process or service requests.",
+      "scenarios": 9,
+      "native_calls": 4629,
+      "capacities": [
+        16,
+        32,
+        64
+      ],
+      "collision_wraparound_and_duplicate_updates": true,
+      "reference_dictionary_matches": true,
+      "callee_saved_registers_and_stack_preserved": true,
+      "mutable_input_pair_cases": 8,
+      "code_sha256": {
+        "1416046f0": "7c6fd60b1fd40e0016d61548728d1eebc0316ff420fa19e6146eefaabc915a89",
+        "1416049b0": "3e8a49cb623b37dd4fc4b2b9e2a8c034ea62c337b655fc9bdf5091b1f9a1e2eb"
+      },
+      "limits": [
+        "Synthetic valid tables and nonzero keys at half capacity.",
+        "Growth/allocators and invalid/full tables are not executed.",
+        "This is instruction emulation, not the running Dreams game or complete formal proof.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    "growth_and_rehash": {
+      "scope": "Captured native growth, reinsertion and lookup with explicit successful-allocation/free stubs; synthetic valid memory only.",
+      "inserted_entries": 300,
+      "growth_calls": 300,
+      "lookup_checks": 6621,
+      "capacities": [
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "allocations": 7,
+      "old_allocations_freed": 6,
+      "all_registered_ids_preserved": true,
+      "power_of_two_capacities": true,
+      "stack_and_callee_saved_registers_preserved": true,
+      "limits": [
+        "Real allocator implementation, allocation failure and overflow are not executed.",
+        "No running-game validation or full formal proof.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }

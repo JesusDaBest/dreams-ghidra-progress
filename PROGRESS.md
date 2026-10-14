@@ -1209,3 +1209,7 @@ Two verified names added for dependency collection and object-record writing. Tr
 ### Descriptor map helpers named
 
 Three verified roles added for descriptor lookup, growth and ID insertion. Traced exact-pointer traversal suppression and shared probe rules. Totals: 199 checked names and 1,651 mapped functions. [Evidence and limits](ANALYSIS.md#descriptor-map-roles-named). Audited-byte coverage is unchanged.
+
+### Descriptor map emulation checked
+
+Captured lookup/insertion instructions passed 4,629 calls with reference-dictionary comparisons. Native growth/rehash preserved 300 entries across capacities 16–1,024 and 6,621 lookup checks with controlled allocation/free stubs. [Validation scope and limits](ANALYSIS.md#descriptor-map-instruction-emulation). This is instruction emulation, not running-game validation; no names or audited-byte credit added.

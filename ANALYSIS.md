@@ -1465,3 +1465,11 @@ Saved `FindReflectedDescriptorSlot`, `EnsureReflectedDescriptorMapCapacity`, and
 The collector registers a new descriptor before recursing. Repeated lookup of that same pointer can therefore suppress repeated traversal. This establishes the observed collection mechanism, not complete recursive-schema correctness in the reader. Zero keys, invalid/full tables, overflow, allocation failures and full ownership contracts remain open.
 
 Fresh reopening preserved names, previous types, native bytes and references; full inventory and original archives passed verification. Totals: 199 checked names, 1,651 mapped functions and 7,905 unmapped. No runtime or audited-byte credit was added.
+
+### Descriptor map instruction emulation
+
+Captured x86-64 lookup and insertion bytes ran under Unicorn 2.1.2 in isolated synthetic memory. Nine scenarios at capacities 16, 32 and 64 produced 4,629 native-function calls matching a reference dictionary, including deliberate collisions, wraparound and duplicate-ID updates. Stack balance and callee-saved registers were checked. Eight insertion cases changed the mutable incoming pair, confirming the observed displacement side effect.
+
+The captured growth routine then ran with explicit successful allocation/free stubs. Across 300 inserted entries and 300 growth calls, capacities progressed from 16 to 1,024. All registered IDs survived 6,621 lookup checks; seven allocations and six old-allocation releases were observed. Stack and callee-saved register checks also passed.
+
+These execute the captured instruction bytes rather than merely reimplementing the table algorithm, but still use synthetic valid tables and controlled dependencies. Real allocators, allocation failures, overflow, invalid/full tables, complete formal correctness and the running Dreams game remain unverified. Counts and audited-byte coverage are unchanged.
