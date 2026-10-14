@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1671,
-  "unmapped_total": 7899,
+  "mapped_total": 1673,
+  "unmapped_total": 7897,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43154,6 +43154,46 @@
           "support": "Native role and working type verified after clean reopening; validation is scoped to normalization or isolated DFS, not complete graph/game runtime."
         }
       ]
+    },
+    "1411bfe20": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native typed signal reduction or connected Wire blend-mode accumulator",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "c9b69b6448094c6648d58b5a5483977b8f7061288e53e8c89529d53ec93f035f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReduceTypedSignalToScalar",
+          "support": "Descriptive name/type persisted after reopening; float reducer ABI supported by native caller and scoped synthetic checks. Full typed arithmetic/runtime unverified."
+        }
+      ]
+    },
+    "141218d80": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "wire-blending",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native typed signal reduction or connected Wire blend-mode accumulator",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native role review",
+      "code_sha256": "20c507ec64370d47a014d941ed3a27c9d7142eb8ba276e33f05cd0caf15636a7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AccumulateWireSignalByBlendMode",
+          "support": "Descriptive name/type persisted after reopening; float reducer ABI supported by native caller and scoped synthetic checks. Full typed arithmetic/runtime unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -43869,6 +43909,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "signal-values",
+              "label": "Signal values",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]
@@ -48213,6 +48264,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "wire-blending",
+              "label": "Wire blending",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

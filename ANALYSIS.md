@@ -1569,3 +1569,9 @@ Three connected routines now have checked descriptive names and working types: b
 The isolated native DFS block passed2048 cases covering all512 directed graphs on three vertices, two traversal orders and premarked-edge handling. It marks Wire flag0x04 on back edges to active vertices. These cases supply prebuilt adjacency and do not validate graph construction, vertex ordering, allocation or the flag's effect on signal evaluation. Full runtime signal arithmetic remains untraced.
 
 Cold backup, isolated trial and fresh reopening verified all three names/types with unchanged native bytes and original archives. Totals:225 checked names,9,570 discovered functions,1,671 mapped and7,899 unmapped. Audited-byte coverage is unchanged.
+
+### Typed signal reduction and Wire blend accumulator
+
+Named `ReduceTypedSignalToScalar` and `AccumulateWireSignalByBlendMode` with conservative working types. The reducer returns a float in XMM0; correcting its inferred integer return removes misleading casts in the connected caller.1360 captured native direct-scalar/default-zero cases passed, including arbitrary NaN, infinity, signed-zero and subnormal payload bits. This does not validate other reductions or broad SIMD behavior.
+
+The property updater supplies Wire blend-mode byte+0x31 to the accumulator for property-source wires. Its mode branches scale/reduce typed inputs and delegate maximum/weighted combination to other helpers; those helpers and base-property application remain incomplete. One weighted helper still needs its stack-passed value arguments reconstructed. No running-game signal correctness is claimed. Cold backup, isolated trial and clean reopening preserved native bytes and original archives. Totals:227 checked names,9,570 discovered functions,1,673 mapped and7,897 unmapped. Audited-byte coverage is unchanged.

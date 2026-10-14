@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "206 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "208 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9189,
-    "other_names": 381,
-    "verification": "complete_inventory_matches_baseline_plus_206_renames_and_19_created_functions"
+    "default_fun_names": 9187,
+    "other_names": 383,
+    "verification": "complete_inventory_matches_baseline_plus_208_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4575,6 +4575,48 @@
         "Descriptive roles and opaque working pointers; original declarations not recovered.",
         "Graph construction/order, linked-Game contracts and signal arithmetic remain unresolved.",
         "No audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411bfe20",
+      "original_name": "FUN_1411bfe20",
+      "applied_name": "ReduceTypedSignalToScalar",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float ReduceTypedSignalToScalar(void * signal)",
+      "evidence": [
+        "Complete scalar reducer and blend accumulator native bodies reviewed; connected property-updater callsite uses Wire blend-mode byte.",
+        "Reducer return is float in low32 XMM0;1360 direct/default native cases passed. Other typed reduction paths are static findings only.",
+        "Cold backup, isolated trial, caller decompilation and fresh-reopen inventory/archive checks passed."
+      ],
+      "caveats": [
+        "Descriptive names and opaque working pointers.",
+        "Other scalar reductions, typed maximum/weighted helpers and real-game signal behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "141218d80",
+      "original_name": "FUN_141218d80",
+      "applied_name": "AccumulateWireSignalByBlendMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void AccumulateWireSignalByBlendMode(void * accumulator, void * signal, uchar blend_mode)",
+      "evidence": [
+        "Complete scalar reducer and blend accumulator native bodies reviewed; connected property-updater callsite uses Wire blend-mode byte.",
+        "Reducer return is float in low32 XMM0;1360 direct/default native cases passed. Other typed reduction paths are static findings only.",
+        "Cold backup, isolated trial, caller decompilation and fresh-reopen inventory/archive checks passed."
+      ],
+      "caveats": [
+        "Descriptive names and opaque working pointers.",
+        "Other scalar reductions, typed maximum/weighted helpers and real-game signal behavior remain unverified.",
+        "No automatic audited-byte credit."
       ]
     }
   ],
