@@ -41,13 +41,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a6604be435311cf3277c940933e34b0e7d9aa9d7/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/dcafa998fb2287c140bb06d57d739d953cf08e88/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**227 of 9,570 functions named and checked.** A function is one piece of the game's code.
+**230 of 9,570 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a6604be435311cf3277c940933e34b0e7d9aa9d7/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/dcafa998fb2287c140bb06d57d739d953cf08e88/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,9 +66,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 315 | 0/106 | 2/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 209 | 92/128 | 5/76 |
+| Shared engine & object data | 212 | 95/131 | 5/76 |
 
-**1,673 of 9,570 discovered functions are mapped; 7,897 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,676 of 9,570 discovered functions are mapped; 7,894 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -822,7 +822,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 209 functions identified; 92 behavior/helper reviews; 5 property/type reviews
+- **Shared engine & object data** - 212 functions identified; 95 behavior/helper reviews; 5 property/type reviews
   - **Game state & runtime** - 98 functions identified; 85 behavior/helper reviews; 0 property/type reviews
     - **Saving & loading** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
@@ -925,21 +925,21 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared signal data** - 8 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+    - **Signal values** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+    - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Errors & diagnostics** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Error Code / Code** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Error Code Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Error Code** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Shared signal data** - 5 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Signal values** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Strings** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Small String** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1336,10 +1336,10 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **227 of 9,570 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
-- **1,673 functions mapped to parts of Dreams; 7,897 still unmapped.** Of the mapped functions, 186 have checked names.
+- **230 of 9,570 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **1,676 functions mapped to parts of Dreams; 7,894 still unmapped.** Of the mapped functions, 189 have checked names.
 - **9,532 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
-- **The typed scalar reducer and Wire blend accumulator now have checked names and working types.** A verified float-return repair fixes misleading caller output;1360 direct/default native cases passed. Other typed arithmetic and game execution remain unverified. Audited-byte coverage is unchanged.
+- **Connected signal conversion, maximum selection and weighted blending now have checked descriptive names.** Working arguments were repaired and scoped native cases checked. Most type-specific math and game execution remain unverified; audited-byte coverage is unchanged.
 - **The trace now distinguishes a version-record payload from the alternate scene stream.** Native code links the payload to save/publish preparation and identifies matching input/output streams for the 99999 format branch. Complete format details and a working save/load round trip remain unverified.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
