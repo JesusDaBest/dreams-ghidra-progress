@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9556,
-  "mapped_total": 1651,
+  "inventory_total": 9558,
+  "mapped_total": 1653,
   "unmapped_total": 7905,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -42724,6 +42724,46 @@
           "kind": "verified_semantic_review",
           "name": "InsertReflectedDescriptorId",
           "support": "Complete body reviewed; saved name verified after reopening with bytes, types and references unchanged. Runtime and indirect contracts remain open."
+        }
+      ]
+    },
+    "141604dd0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Source-schema vtable and native saved-field lookup predicate",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native predicate body role review",
+      "code_sha256": "ba59dff5d74fccc2552a247353d76df2d0bbe0fef46d72116c03f425d8a42376",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "HasAuxiliaryMappedReflectedSourceField",
+          "support": "Native body and vtable reviewed; typed definition persisted after clean reopening. Synthetic instruction checks passed; game runtime unverified."
+        }
+      ]
+    },
+    "141604e30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Source-schema vtable and native saved-field lookup predicate",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native predicate body role review",
+      "code_sha256": "0b0ec103effdf03643cb9cba0f9dd76d760aaee8994bf72ffc8ccb055f3c9453",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "HasReflectedSourceField",
+          "support": "Native body and vtable reviewed; typed definition persisted after clean reopening. Synthetic instruction checks passed; game runtime unverified."
         }
       ]
     }

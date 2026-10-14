@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 199,
+    "checked_and_applied_names": 201,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,16 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 199,
-    "function_count": 9556,
+    "verified_names": 201,
+    "function_count": 9558,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
-      "1416046f0",
-      "141604820",
-      "1416049b0"
+      "141604dd0",
+      "141604e30"
     ],
-    "scope": "Three prototype-preserving descriptor-map renames;194 renames and5 created functions overall.",
+    "scope": "Two typed source-schema predicates created;194 renames and7 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2430,6 +2429,25 @@
     "remaining": "Propagation through other helpers and real compression/storage failure reachability remain unresolved.",
     "runtime_game_verified": false,
     "name_credit_added": 0,
+    "audited_byte_credit_added": 0
+  },
+  "source_schema_predicate_validation": {
+    "scope": "Captured source-schema vtable predicate instructions with synthetic field lists.",
+    "cases": 504,
+    "predicates": {
+      "141604dd0": "First matching saved field ID has both nonnull destination mapping+0x40 and nonnull auxiliary base+0x50.",
+      "141604e30": "Saved field list contains requested ID."
+    },
+    "candidate_names": {
+      "141604dd0": "HasAuxiliaryMappedReflectedSourceField",
+      "141604e30": "HasReflectedSourceField"
+    },
+    "limits": [
+      "Empty lists, counts1..8, all pointer-state combinations and absent IDs checked.",
+      "Duplicate-ID precedence, invalid pointers and full caller usage remain open.",
+      "No original symbols, game runtime or completion credit."
+    ],
+    "typed_definitions_verified_after_clean_reopen": true,
     "audited_byte_credit_added": 0
   }
 }

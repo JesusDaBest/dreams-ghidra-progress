@@ -1241,3 +1241,7 @@ Passed 1,548 connected writer/field-mapping/reader cases, plus 84 identifier-loo
 ### Concrete output stream errors traced
 
 Checked 252 native encoder/buffered-stream cases, including 52 modeled flush failures, and live-verified selected save return paths. Stream errors and serializer status are separate; complete higher-level propagation remains open. [Verified behavior and limits](ANALYSIS.md#concrete-buffered-output-failure-contract). No game defect or added completion credit claimed.
+
+### Two schema predicates saved
+
+Two previously undefined source-schema predicates now have verified names and working signatures. Fresh reopening preserved their 152 bytes and the complete inventory; 504 synthetic predicate checks passed. Totals: 201 checked names across 9,558 functions; 1,653 mapped. [Behavior and limits](ANALYSIS.md#source-schema-predicates-defined). Audited-byte coverage is unchanged.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "194 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "194 existing-function renames and7 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9556,
+    "total": 9558,
     "default_fun_names": 9201,
-    "other_names": 355,
-    "verification": "complete_inventory_matches_baseline_plus_194_renames_and_five_created_functions"
+    "other_names": 357,
+    "verification": "complete_inventory_matches_baseline_plus_194_renames_and_seven_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4016,6 +4016,50 @@
       ],
       "prototype_preserved": true,
       "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "141604dd0",
+      "original_name": null,
+      "applied_name": "HasAuxiliaryMappedReflectedSourceField",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uchar HasAuxiliaryMappedReflectedSourceField(void * schema, uint field_identifier)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete vtable-anchored native body and branch boundaries reviewed.",
+        "504 combined predicate cases checked with captured instructions and synthetic field lists.",
+        "Hash-verified cold backup, isolated creation/decompilation trial, promotion, fresh-reopen full inventory and original archive verification."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working opaque-pointer signature, not recovered original declaration.",
+        "Synthetic cases do not establish every caller or game runtime behavior.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "141604e30",
+      "original_name": null,
+      "applied_name": "HasReflectedSourceField",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uchar HasReflectedSourceField(void * schema, uint field_identifier)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete vtable-anchored native body and branch boundaries reviewed.",
+        "504 combined predicate cases checked with captured instructions and synthetic field lists.",
+        "Hash-verified cold backup, isolated creation/decompilation trial, promotion, fresh-reopen full inventory and original archive verification."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working opaque-pointer signature, not recovered original declaration.",
+        "Synthetic cases do not establish every caller or game runtime behavior.",
+        "No automatic audited-byte credit."
+      ]
     }
   ],
   "deferred": [

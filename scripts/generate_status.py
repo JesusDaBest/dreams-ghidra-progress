@@ -301,7 +301,7 @@ def render_hierarchy(nodes, bounds, depth=0):
     """Partition a single square lattice: no stretched cells or empty slots."""
     x0,y0,width,height=bounds
     count=sum(len(n['rows']) for n in nodes)
-    columns=54
+    columns=52
     # Preserve equal squares for arbitrary evidence-backed inventory sizes.
     # A partial final row contains no fake functions or completion padding.
     grid_rows=math.ceil(count/columns)
@@ -319,7 +319,7 @@ def render_hierarchy(nodes, bounds, depth=0):
             running+=len(items[cut-1]['rows'])
             choices.append((abs(total-2*running),cut,running))
         _,cut,amount=min(choices)
-        vertical=width>=height
+        vertical=width>height
         ordered=sorted(positions,key=(lambda p:(p[0],p[1])) if vertical else (lambda p:(p[1],p[0])))
         first=set(ordered[:amount]);second=positions-first
         return divide(items[:cut],first)+divide(items[cut:],second)
@@ -371,7 +371,7 @@ def render_hierarchy(nodes, bounds, depth=0):
         for wrap in range(32,8,-1):
             lines=textwrap.wrap(f"{node['label']}  {checked}/{len(owned)}",width=wrap,break_long_words=False)
             values=lines; sizes=[size]*len(lines)
-            bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+6
+            bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+4
             bh=sum(fs+2 for fs in sizes)
             candidates=[]
             for gx,gy in sorted(owned,key=lambda p:(p[1],p[0])):
@@ -384,7 +384,7 @@ def render_hierarchy(nodes, bounds, depth=0):
                 # Check each line's footprint instead of the widest line's box.
                 line_boxes=[];line_y=ty
                 for line,fs in zip(values,sizes):
-                    line_box=(tx,line_y,len(line)*fs*.58+6,fs+2)
+                    line_box=(tx,line_y,len(line)*fs*.58+4,fs+2)
                     covered={(cx,cy) for cy in range(math.floor((line_y-y0)/side),math.ceil((line_y+fs+2-y0)/side)) for cx in range(gx,math.ceil((tx+line_box[2]-x0)/side))}
                     if not covered<=owned or any(overlaps(line_box,b) for b in occupied):break
                     line_boxes.append(line_box);line_y+=fs+2

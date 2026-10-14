@@ -1537,3 +1537,9 @@ The captured primitive encoder was connected to the concrete buffered output-wri
 Selected save return paths were checked against live memory. Serializer success combines its context error word and status byte. The concrete stream's error storage is separate in the captured caller. The selected common cleanup performs a final flush without directly replacing the saved return code with its result. This bounded trace does not prove that every helper omits propagation.
 
 Actual compression/storage failure execution, propagation through other helpers and real save-operation reachability remain unresolved. No game defect, whole-save validation or completion credit is claimed.
+
+### Source-schema predicates defined
+
+Defined `HasReflectedSourceField` and `HasAuxiliaryMappedReflectedSourceField` from source-schema vtable entries. The first tests for a saved field identifier. The second requires the first matching field to have both a destination mapping and an auxiliary base. Their 45 native instructions occupy 152 bytes, including internal alignment and excluding trailing padding. Combined synthetic instruction checks passed 504 empty-list, present/absent ID and pointer-state cases.
+
+Both now have working PS4_SYSV signatures with an opaque schema pointer, unsigned field ID and byte return. A hash-verified cold backup and isolated decompilation trial preceded promotion. Fresh reopening verified both definitions/signatures, unchanged native bytes, all 9,558 inventory entries and original archives. Totals: 201 checked names, 1,653 mapped functions and 7,905 unmapped. Duplicate-ID invariants, all caller usage and running-game behavior remain open. Audited-byte coverage is unchanged.
