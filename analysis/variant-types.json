@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "original_enum_name": "EVariantType",
+  "evidence_chain": [
+    "Original enum descriptor initialized and all32 numeric/string append sites read",
+    "Variant registration uses the enum field registrar at offset36 and registers float alpha at32",
+    "Connected native signal helpers read those same offsets"
+  ],
+  "values": [
+    {
+      "value": 0,
+      "name": "NONE"
+    },
+    {
+      "value": 1,
+      "name": "Bool"
+    },
+    {
+      "value": 2,
+      "name": "Number"
+    },
+    {
+      "value": 3,
+      "name": "Colour"
+    },
+    {
+      "value": 4,
+      "name": "Position"
+    },
+    {
+      "value": 5,
+      "name": "Signal"
+    },
+    {
+      "value": 6,
+      "name": "Float4"
+    },
+    {
+      "value": 7,
+      "name": "Float3"
+    },
+    {
+      "value": 8,
+      "name": "Float2"
+    },
+    {
+      "value": 9,
+      "name": "DreamVersion"
+    },
+    {
+      "value": 10,
+      "name": "WaveHash"
+    },
+    {
+      "value": 11,
+      "name": "Enum"
+    },
+    {
+      "value": 12,
+      "name": "ThingSeq"
+    },
+    {
+      "value": 13,
+      "name": "AudioNumberPair"
+    },
+    {
+      "value": 14,
+      "name": "Dream"
+    },
+    {
+      "value": 15,
+      "name": "AudioNumber"
+    },
+    {
+      "value": 16,
+      "name": "Quaternion"
+    },
+    {
+      "value": 17,
+      "name": "AxisAngleRotation"
+    },
+    {
+      "value": 18,
+      "name": "Float8"
+    },
+    {
+      "value": 19,
+      "name": "BaseId"
+    },
+    {
+      "value": 20,
+      "name": "Impact"
+    },
+    {
+      "value": 21,
+      "name": "AnalogueStick"
+    },
+    {
+      "value": 22,
+      "name": "Note"
+    },
+    {
+      "value": 23,
+      "name": "Bitfield"
+    },
+    {
+      "value": 24,
+      "name": "PlayerValue"
+    },
+    {
+      "value": 25,
+      "name": "Rotation2D"
+    },
+    {
+      "value": 26,
+      "name": "PhotoId"
+    },
+    {
+      "value": 27,
+      "name": "UserId"
+    },
+    {
+      "value": 28,
+      "name": "BaseIdSeqNumberTrio"
+    },
+    {
+      "value": 29,
+      "name": "Timestamp"
+    },
+    {
+      "value": 30,
+      "name": "PU_OnlinePlayerValue"
+    },
+    {
+      "value": 31,
+      "name": "LAST"
+    }
+  ],
+  "working_layout": {
+    "size": 40,
+    "fields": [
+      {
+        "offset": 0,
+        "size": 32,
+        "name": "opaque_payload"
+      },
+      {
+        "offset": 32,
+        "size": 4,
+        "name": "alpha",
+        "type": "float",
+        "name_basis": "original registration"
+      },
+      {
+        "offset": 36,
+        "size": 1,
+        "name": "type",
+        "type": "EVariantType"
+      },
+      {
+        "offset": 37,
+        "size": 3,
+        "name": "opaque_tail"
+      }
+    ]
+  },
+  "limits": [
+    "Working layout, not recovered original C++ declaration",
+    "NONE and LAST are registered enum labels; registration does not prove all values are runtime data",
+    "Opaque payload and trailing bytes retained without invented meanings"
+  ],
+  "runtime_verified": false
+}
