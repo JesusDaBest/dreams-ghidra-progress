@@ -3,9 +3,9 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 172,
-    "todo": 1493,
-    "total": 1665,
+    "done": 177,
+    "todo": 1490,
+    "total": 1667,
     "behavior_or_helpers_reviewed": 121,
     "properties_or_types_reviewed": 45,
     "whole_feature_completion": null,
@@ -11487,8 +11487,8 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 2,
-        "todo": 313,
+        "done": 3,
+        "todo": 312,
         "total": 315,
         "behavior_or_helpers_reviewed": 0,
         "properties_or_types_reviewed": 2,
@@ -11498,6 +11498,7 @@
         "whole_feature_completion": null,
         "done_names": [
           "AddRecordModeEnumValue",
+          "RegisterEditOpFieldOffset",
           "RegisterRecordModeFieldOffset"
         ],
         "todo_names": [
@@ -11610,7 +11611,6 @@
           "0x140cddc00",
           "0x140cdf2f0",
           "0x140cdf670",
-          "0x140cdfdb0",
           "0x140ce2760",
           "0x140ce9cc0",
           "0x140cea2d0",
@@ -11817,6 +11817,7 @@
         ],
         "done_addresses": [
           "140cb3d40",
+          "140cdfdb0",
           "140cf47a0"
         ],
         "todo_addresses": [
@@ -11929,7 +11930,6 @@
           "140cddc00",
           "140cdf2f0",
           "140cdf670",
-          "140cdfdb0",
           "140ce2760",
           "140ce9cc0",
           "140cea2d0",
@@ -14575,8 +14575,8 @@
           {
             "name": "interface/editing",
             "label": "Editing & tools",
-            "done": 2,
-            "todo": 43,
+            "done": 3,
+            "todo": 42,
             "total": 45,
             "behavior_or_helpers_reviewed": 0,
             "properties_or_types_reviewed": 2,
@@ -14586,6 +14586,7 @@
             "whole_feature_completion": null,
             "done_names": [
               "AddRecordModeEnumValue",
+              "RegisterEditOpFieldOffset",
               "RegisterRecordModeFieldOffset"
             ],
             "todo_names": [
@@ -14606,7 +14607,6 @@
               "0x140cc1120",
               "0x140cc1ed0",
               "0x140cd8dc0",
-              "0x140cdfdb0",
               "0x140ce2760",
               "0x140ce9cc0",
               "0x140cea2d0",
@@ -14635,6 +14635,7 @@
             ],
             "done_addresses": [
               "140cb3d40",
+              "140cdfdb0",
               "140cf47a0"
             ],
             "todo_addresses": [
@@ -14655,7 +14656,6 @@
               "140cc1120",
               "140cc1ed0",
               "140cd8dc0",
-              "140cdfdb0",
               "140ce2760",
               "140ce9cc0",
               "140cea2d0",
@@ -14742,8 +14742,8 @@
               {
                 "name": "interface/editing/editop",
                 "label": "Edit Op",
-                "done": 0,
-                "todo": 3,
+                "done": 1,
+                "todo": 2,
                 "total": 3,
                 "behavior_or_helpers_reviewed": 0,
                 "properties_or_types_reviewed": 0,
@@ -14751,25 +14751,27 @@
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "RegisterEditOpFieldOffset"
+                ],
                 "todo_names": [
                   "0x140c8acd0",
-                  "0x140c8b050",
-                  "0x140cdfdb0"
+                  "0x140c8b050"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "140cdfdb0"
+                ],
                 "todo_addresses": [
                   "140c8acd0",
-                  "140c8b050",
-                  "140cdfdb0"
+                  "140c8b050"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "interface/editing/editop/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
+                    "done": 1,
+                    "todo": 2,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
                     "properties_or_types_reviewed": 0,
@@ -14777,17 +14779,19 @@
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "RegisterEditOpFieldOffset"
+                    ],
                     "todo_names": [
                       "0x140c8acd0",
-                      "0x140c8b050",
-                      "0x140cdfdb0"
+                      "0x140c8b050"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "140cdfdb0"
+                    ],
                     "todo_addresses": [
                       "140c8acd0",
-                      "140c8b050",
-                      "140cdfdb0"
+                      "140c8b050"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -24507,13 +24511,13 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 90,
-        "todo": 112,
-        "total": 202,
+        "done": 94,
+        "todo": 110,
+        "total": 204,
         "behavior_or_helpers_reviewed": 85,
         "properties_or_types_reviewed": 5,
         "runtime_functions_identified": 123,
-        "property_type_functions_identified": 74,
+        "property_type_functions_identified": 76,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
         "done_names": [
@@ -24548,14 +24552,18 @@
           "TransferTransformPropertyPayload",
           "FlushDescriptorOutputBlock",
           "LoadDescriptorInputBlock",
+          "RegisterSigned32FieldOffset",
           "GetGameBodyStorage",
           "GetGameBodyCount",
           "ResizeGameBodyStorage",
           "AppendGameBodySlot",
+          "RegisterWireHeaderFieldOffset",
           "GetGameWireStorage",
           "GetGameWireCount",
           "ResizeGameWireStorage",
           "AppendGameWireSlot",
+          "RegisterEPropFieldOffset",
+          "RegisterWireBlendOpField",
           "GetGameThingReferenceStorage",
           "GetGameThingReferenceCount",
           "ResizeGameThingReferenceStorage",
@@ -24674,8 +24682,6 @@
           "0x140ce3ef0",
           "0x140ce5800",
           "0x140ce5fe0",
-          "0x140ce6330",
-          "0x140ce6ad0",
           "0x140ce7280",
           "0x140cea620",
           "0x140ceb280",
@@ -24754,14 +24760,18 @@
           "140ad5f90",
           "140c737c0",
           "140c73ef0",
+          "140cd93e0",
           "140ce5c10",
           "140ce5c20",
           "140ce5c30",
           "140ce5d00",
+          "140ce6330",
           "140ce6670",
           "140ce6680",
           "140ce6690",
           "140ce6700",
+          "140ce67b0",
+          "140ce6ad0",
           "140ce6db0",
           "140ce6dc0",
           "140ce6dd0",
@@ -24880,8 +24890,6 @@
           "140ce3ef0",
           "140ce5800",
           "140ce5fe0",
-          "140ce6330",
-          "140ce6ad0",
           "140ce7280",
           "140cea620",
           "140ceb280",
@@ -27491,20 +27499,22 @@
           {
             "name": "shared/helpers",
             "label": "Shared property helpers",
-            "done": 4,
+            "done": 6,
             "todo": 4,
-            "total": 8,
+            "total": 10,
             "behavior_or_helpers_reviewed": 0,
             "properties_or_types_reviewed": 4,
             "runtime_functions_identified": 0,
-            "property_type_functions_identified": 4,
+            "property_type_functions_identified": 6,
             "code_role_unresolved": 4,
             "whole_feature_completion": null,
             "done_names": [
               "VisitPosProperties",
               "VisitVariantProperties",
               "VisitCanvasProperties",
-              "VisitGadgetNameProperties"
+              "VisitGadgetNameProperties",
+              "RegisterSigned32FieldOffset",
+              "RegisterEPropFieldOffset"
             ],
             "todo_names": [
               "0x14048b5e0",
@@ -27516,7 +27526,9 @@
               "1404f68b0",
               "1404f70b0",
               "1404f7a20",
-              "1404f8350"
+              "1404f8350",
+              "140cd93e0",
+              "140ce67b0"
             ],
             "todo_addresses": [
               "14048b5e0",
@@ -27534,27 +27546,31 @@
               {
                 "name": "shared/helpers/properties-types",
                 "label": "Properties & type definitions",
-                "done": 4,
+                "done": 6,
                 "todo": 0,
-                "total": 4,
+                "total": 6,
                 "behavior_or_helpers_reviewed": 0,
                 "properties_or_types_reviewed": 4,
                 "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
+                "property_type_functions_identified": 6,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "VisitPosProperties",
                   "VisitVariantProperties",
                   "VisitCanvasProperties",
-                  "VisitGadgetNameProperties"
+                  "VisitGadgetNameProperties",
+                  "RegisterSigned32FieldOffset",
+                  "RegisterEPropFieldOffset"
                 ],
                 "todo_names": [],
                 "done_addresses": [
                   "1404f68b0",
                   "1404f70b0",
                   "1404f7a20",
-                  "1404f8350"
+                  "1404f8350",
+                  "140cd93e0",
+                  "140ce67b0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -28890,8 +28906,8 @@
           {
             "name": "shared/signals",
             "label": "Shared signal data",
-            "done": 0,
-            "todo": 4,
+            "done": 2,
+            "todo": 2,
             "total": 4,
             "behavior_or_helpers_reviewed": 0,
             "properties_or_types_reviewed": 0,
@@ -28899,17 +28915,19 @@
             "property_type_functions_identified": 4,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "RegisterWireHeaderFieldOffset",
+              "RegisterWireBlendOpField"
+            ],
             "todo_names": [
-              "0x140ce6330",
-              "0x140ce6ad0",
               "0x140cfade0",
               "0x140d1b8a0"
             ],
-            "done_addresses": [],
-            "todo_addresses": [
+            "done_addresses": [
               "140ce6330",
-              "140ce6ad0",
+              "140ce6ad0"
+            ],
+            "todo_addresses": [
               "140cfade0",
               "140d1b8a0"
             ],
@@ -28918,8 +28936,8 @@
               {
                 "name": "shared/signals/wireheader",
                 "label": "Wire Header",
-                "done": 0,
-                "todo": 2,
+                "done": 2,
+                "todo": 0,
                 "total": 2,
                 "behavior_or_helpers_reviewed": 0,
                 "properties_or_types_reviewed": 0,
@@ -28927,23 +28945,23 @@
                 "property_type_functions_identified": 2,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140ce6330",
-                  "0x140ce6ad0"
+                "done_names": [
+                  "RegisterWireHeaderFieldOffset",
+                  "RegisterWireBlendOpField"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "todo_names": [],
+                "done_addresses": [
                   "140ce6330",
                   "140ce6ad0"
                 ],
+                "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "shared/signals/wireheader/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
+                    "done": 2,
+                    "todo": 0,
                     "total": 2,
                     "behavior_or_helpers_reviewed": 0,
                     "properties_or_types_reviewed": 0,
@@ -28951,16 +28969,16 @@
                     "property_type_functions_identified": 2,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140ce6330",
-                      "0x140ce6ad0"
+                    "done_names": [
+                      "RegisterWireHeaderFieldOffset",
+                      "RegisterWireBlendOpField"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "todo_names": [],
+                    "done_addresses": [
                       "140ce6330",
                       "140ce6ad0"
                     ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -40168,5 +40186,5 @@
       }
     ]
   },
-  "unmapped": 7905
+  "unmapped": 7903
 }

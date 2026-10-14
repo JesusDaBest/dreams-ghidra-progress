@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 213,
+    "checked_and_applied_names": 218,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,25 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 213,
+    "verified_names": 218,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
-    "new_functions": [
-      "140ce6db0",
-      "140ce6dc0",
-      "140ce6dd0",
-      "140ce6de0",
-      "140ce6670",
-      "140ce6680",
-      "140ce6690",
-      "140ce6700",
-      "140ce5c10",
-      "140ce5c20",
-      "140ce5c30",
-      "140ce5d00"
-    ],
-    "scope": "Twelve typed Game container callbacks created;194 renames and19 created functions overall.",
+    "new_functions": [],
+    "scope": "Five Wire-related registration names and one existing helper ABI repair verified after clean reopening.199 renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2484,5 +2471,28 @@
     ],
     "runtime_verified": false,
     "audited_byte_credit_added": 0
+  },
+  "wire_header_findings": {
+    "selector_native_cases": 256,
+    "selector_passed": 256,
+    "selector_defined_in_ghidra": false,
+    "source_representations": "Header flag bit0 selects src_port signed32 (mask16) or src_prop EProp (mask1), both at offset4. Static writer mask filtering traced.",
+    "blend_labels": [
+      "MaxAndModulateBase",
+      "MaxAndOverwriteBase",
+      "BlendAndBlendBase"
+    ],
+    "prototype_repair": {
+      "name": "RegisterThingReferenceFieldOffset",
+      "signature": "void * RegisterThingReferenceFieldOffset(void * descriptor, char * name, uint object_offset)",
+      "effect": "Callers correctly show descriptor,name,offset arguments. No additional naming credit for this existing symbol."
+    },
+    "limits": [
+      "Full scene serialization unverified",
+      "Signal evaluation/blending math untraced",
+      "Large Game registration caller decompilation timeout; assembly remains available"
+    ],
+    "audited_byte_credit_added": 0,
+    "runtime_verified": false
   }
 }

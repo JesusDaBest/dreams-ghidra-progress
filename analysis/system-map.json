@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1665,
-  "unmapped_total": 7905,
+  "mapped_total": 1667,
+  "unmapped_total": 7903,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -16133,6 +16133,11 @@
           "type_name": "EditOp",
           "site": "140cdff1e",
           "target": "14170dabc"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterEditOpFieldOffset",
+          "support": "Registration metadata and complete native body reviewed; descriptive name persisted after reopening."
         }
       ],
       "code_sha256": "6f55fe6bb82cbd031b9322e8c9ce611baa30826bab839c298cc7471e366c2669",
@@ -16549,6 +16554,11 @@
           "type_name": "WireHeader",
           "site": "140ce64a3",
           "target": "14170f9bb"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterWireHeaderFieldOffset",
+          "support": "Registration metadata and complete native body reviewed; descriptive name persisted after reopening."
         }
       ],
       "code_sha256": "9dbfe6155305f8c2172157930cecb0595d0b27c30526cf764b20e537c6bd831e",
@@ -16574,6 +16584,11 @@
           ],
           "site": "140ce6ba3",
           "counter": "14585c9b8"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterWireBlendOpField",
+          "support": "Registration metadata and complete native body reviewed; descriptive name persisted after reopening."
         }
       ],
       "code_sha256": "30607423e5ce67a90d2ec2df4b69f08df1cdbd99cd583de613442ea04842d64f",
@@ -43004,6 +43019,44 @@
           "kind": "verified_semantic_review",
           "name": "AppendGameBodySlot",
           "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce67b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "properties-types"
+      ],
+      "component_basis": "Generic EProp or signed32 field registration helper body",
+      "code_role": "properties-types",
+      "code_role_basis": "Complete registration body review",
+      "code_sha256": "446e48512369fe850b02420eda4397557844ff75661918145088a5e008f51f05",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterEPropFieldOffset",
+          "support": "Registration metadata and complete native body reviewed; descriptive name persisted after reopening."
+        }
+      ]
+    },
+    "140cd93e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "properties-types"
+      ],
+      "component_basis": "Generic EProp or signed32 field registration helper body",
+      "code_role": "properties-types",
+      "code_role_basis": "Complete registration body review",
+      "code_sha256": "d85af7ef25a9620abd3eeea79e95f1acc6d13eabdf9563c02616f881a97d6634",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterSigned32FieldOffset",
+          "support": "Registration metadata and complete native body reviewed; descriptive name persisted after reopening."
         }
       ]
     }
