@@ -1521,3 +1521,11 @@ Optional-mask checks passed 96 presence/mapping cases, 35 truncated-header cases
 A separate native reproducer retains a limit deliberately excluded from the canonical-Boolean mismatch cases: raw noncanonical Boolean bytes can contain compact-integer continuation bits, causing the skipped-field path to consume bytes from the following field. Real game reachability is unproven; this is not classified as a demonstrated game defect.
 
 These tests supply schemas and load plans synthetically. Actual root schema parsing/matching, mask production, object references, hooks, nonempty postload callbacks, compression and storage are not validated. Boolean SIMD execution remains unproven. No real scene-file round trip, running-game verification or completion credit is claimed.
+
+### Native field matching connected to decoding
+
+The native field lookup passed 84 descriptor/alias/inheritance cases. It scans field records from a rotating cached index, accepts alias identifiers, and accumulates parent offsets. Primary hits advance the cursor; alias hits leave it unchanged. The native load-plan builder then mapped 12 primary/alias identifiers and left two unknown identifiers unmapped in a synthetic three-level descriptor hierarchy.
+
+The composite reader was connected to that actual native load-plan builder and lookup, removing prefilled destination mappings from the test. All 1,548 connected writer/mapping/reader cases passed across primary IDs, aliases, unknown fields, two initial lookup cursor positions and destination capacities of 0, 2 and 16. Unknown and surplus values were skipped before the following field, whose expected value confirmed alignment. Element bytes, padding and untouched tails matched expectations.
+
+Source schemas and destination descriptors are still synthetic. Root schema parsing, supplementary types, allocator paths, nonempty read/postload callbacks, object references, compression/storage and running-game behavior remain unverified. Boolean fixtures are canonical and avoid the unverified SIMD path. No new names or completion credit are claimed.

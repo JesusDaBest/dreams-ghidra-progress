@@ -2281,5 +2281,130 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "native_field_mapping_connected_validation": {
+    "identifier_lookup": {
+      "scope": "Captured native field-identifier lookup with synthetic descriptor tables, aliases and a three-level parent chain.",
+      "cases": 84,
+      "findings": [
+        "Scans 0x90-byte fields from a rotating cached index modulo field count; this body is not a hash lookup.",
+        "Primary identifier hit advances that descriptor cursor to the following slot.",
+        "Alias identifier hit returns the field without advancing the cursor.",
+        "Parent hits accumulate descriptor+0x100 offsets: tested 24 and 64 bytes.",
+        "Missing identifier returns null and zero output offset."
+      ],
+      "limits": [
+        "Synthetic valid descriptor/alias tables; duplicate identifiers, invalid cursor/count invariants and cycles are not tested.",
+        "No complete schema load-plan or game-runtime validation.",
+        "No added names or automatic completion credit."
+      ]
+    },
+    "load_plan": {
+      "scope": "Captured native load-plan builder plus native identifier lookup using synthetic field descriptors and three-level inheritance.",
+      "saved_fields_checked": 14,
+      "mapped_fields": 12,
+      "unmapped_fields": 2,
+      "rows": [
+        {
+          "identifier": 101,
+          "matched": true,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 202,
+          "matched": true,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 303,
+          "matched": true,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 111,
+          "matched": true,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 222,
+          "matched": true,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 333,
+          "matched": true,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 404,
+          "matched": true,
+          "inherited_offset": 24
+        },
+        {
+          "identifier": 505,
+          "matched": true,
+          "inherited_offset": 24
+        },
+        {
+          "identifier": 444,
+          "matched": true,
+          "inherited_offset": 24
+        },
+        {
+          "identifier": 555,
+          "matched": true,
+          "inherited_offset": 24
+        },
+        {
+          "identifier": 606,
+          "matched": true,
+          "inherited_offset": 64
+        },
+        {
+          "identifier": 666,
+          "matched": true,
+          "inherited_offset": 64
+        },
+        {
+          "identifier": 0,
+          "matched": false,
+          "inherited_offset": 0
+        },
+        {
+          "identifier": 999,
+          "matched": false,
+          "inherited_offset": 0
+        }
+      ],
+      "findings": [
+        "Primary and alias IDs map to the expected destination descriptor and accumulated parent offset.",
+        "Missing identifiers remain unmapped.",
+        "Destination-type cache is installed after successful build."
+      ],
+      "limits": [
+        "No supplementary descriptors, allocator paths, nonempty read/postload callback lists, or related-target cache reuse exercised.",
+        "Synthetic descriptors; full root schema parsing and real scene round trip remain unverified.",
+        "No game runtime or completion credit."
+      ]
+    },
+    "connected_reader": {
+      "scope": "Captured field/value/primitive writer -> controlled memory stream -> composite reader -> native load-plan builder and identifier lookup -> primitive reader/skip helpers.",
+      "connected_mapping_and_decode_cases": 1548,
+      "findings": [
+        "Reader creates its mapping from saved primary/alias identifiers instead of supplied destination pointers.",
+        "Unknown field IDs remain unmapped and are skipped; following field decodes correctly.",
+        "Destination capacities0,2,16 preserve only fitting elements and retain padding.",
+        "Both initial lookup cursor positions yield correct mapping."
+      ],
+      "limits": [
+        "Synthetic source schema and destination descriptors, not root schema parsing or real scene files.",
+        "No supplementary types, read hooks, nonempty callbacks, object references, compression/storage or game execution.",
+        "Canonical Boolean fixtures only; SIMD path excluded.",
+        "No automatic audited-byte/name credit."
+      ]
+    },
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }

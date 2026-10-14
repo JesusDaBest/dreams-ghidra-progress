@@ -1233,3 +1233,7 @@ Passed 1,199 connected native value cases and checked 1,871 short writes. Intege
 ### Composite field decoding connected
 
 Passed 83 matching-array cases, 430 schema-mismatch/unmapped cases, 980 truncation checks, and 132 optional-mask checks with captured native writer/reader instructions and synthetic schemas. A following field verified alignment. Retained a separate noncanonical-Boolean skip limitation. [Evidence scope and remaining gaps](ANALYSIS.md#connected-composite-fields-schema-mismatches-and-optional-masks). Completion counts are unchanged.
+
+### Native schema matching connected
+
+Passed 1,548 connected writer/field-mapping/reader cases, plus 84 identifier-lookup cases and a 14-field load-plan fixture. Mappings now come from captured native lookup/build code in this test, including aliases and unknown fields. [Scope and remaining gaps](ANALYSIS.md#native-field-matching-connected-to-decoding). Real root schema parsing remains open; completion counts are unchanged.
