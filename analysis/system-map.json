@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1667,
-  "unmapped_total": 7903,
+  "mapped_total": 1670,
+  "unmapped_total": 7900,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -5549,6 +5549,11 @@
           "site": "1409345e0",
           "target": "1416fd80c",
           "anchor_sha256": "fb83fcb265fbb302d7c3fe47ba24e8d5a3f308cff47392e5da6a8991c3e8470e"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortGameWires",
+          "support": "Game wire lookup or sorting-wrapper body and working signature verified after clean reopening; sorted execution unresolved."
         }
       ],
       "code_sha256": "28161e2076510960f76a442a1c887c15dede21a5ce3fbedf3cb580a06b892201",
@@ -43057,6 +43062,66 @@
           "kind": "verified_semantic_review",
           "name": "RegisterSigned32FieldOffset",
           "support": "Registration metadata and complete native body reviewed; descriptive name persisted after reopening."
+        }
+      ]
+    },
+    "140705c30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified Game wire storage and destination-run lookup behavior linked to Game sorting path",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native lookup body review",
+      "code_sha256": "b038a071b8c8af9bd93d5238bd218d10db78e33b7ec7359daa2d7a9a5fd91f7e",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindSourcePortWireInDestinationRun",
+          "support": "Game wire lookup or sorting-wrapper body and working signature verified after clean reopening; sorted execution unresolved."
+        }
+      ]
+    },
+    "1409063a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified Game wire storage and destination-run lookup behavior linked to Game sorting path",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native lookup body review",
+      "code_sha256": "43ded5d5e565039d0acdcf2b32f7b47880ed3ca0443ef3d98da3f2ba331b8cbb",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindSourcePortWireIndex",
+          "support": "Game wire lookup or sorting-wrapper body and working signature verified after clean reopening; sorted execution unresolved."
+        }
+      ]
+    },
+    "140906610": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified Game wire storage and destination-run lookup behavior linked to Game sorting path",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native lookup body review",
+      "code_sha256": "a57d2515dd6b402c8560da5a18c1a818aa5742fd6fea3089aff952894b33f288",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindWireIndexByDestinationProperty",
+          "support": "Game wire lookup or sorting-wrapper body and working signature verified after clean reopening; sorted execution unresolved."
         }
       ]
     }

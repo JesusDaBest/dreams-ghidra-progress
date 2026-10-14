@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 177,
-    "todo": 1490,
-    "total": 1667,
-    "behavior_or_helpers_reviewed": 121,
+    "done": 181,
+    "todo": 1489,
+    "total": 1670,
+    "behavior_or_helpers_reviewed": 125,
     "properties_or_types_reviewed": 45,
     "whole_feature_completion": null,
     "groups": [
@@ -24511,12 +24511,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 94,
-        "todo": 110,
-        "total": 204,
-        "behavior_or_helpers_reviewed": 85,
+        "done": 98,
+        "todo": 109,
+        "total": 207,
+        "behavior_or_helpers_reviewed": 89,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 123,
+        "runtime_functions_identified": 126,
         "property_type_functions_identified": 76,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24538,16 +24538,20 @@
           "VisitCanvasProperties",
           "VisitGadgetNameProperties",
           "FindPackedObjectPropertyPayload",
+          "FindSourcePortWireInDestinationRun",
           "ComputeThingTimelineIntervalFromTimeBounds",
           "AdvanceFilteredObjectGraphIterator",
           "AcquireLeastUsedThreadBufferLane",
           "ComputeObjectHierarchyTransform",
           "InitializeGamePoolContext",
+          "FindSourcePortWireIndex",
+          "FindWireIndexByDestinationProperty",
           "AcquireUnusedGamePoolContext",
           "RetainCurrentGamePoolContext",
           "ReleaseGamePoolContextReference",
           "SortU16IndicesByDescendingI32Keys",
           "LookupU32HashTableValue",
+          "SortGameWires",
           "ProcessMainThingUpdateWorker",
           "TransferTransformPropertyPayload",
           "FlushDescriptorOutputBlock",
@@ -24651,7 +24655,6 @@
           "0x140909150",
           "0x14090dde0",
           "0x14090e6f0",
-          "0x1409345c0",
           "0x140956a10",
           "0x140958760",
           "0x140a69070",
@@ -24746,16 +24749,20 @@
           "1404f7a20",
           "1404f8350",
           "140705a90",
+          "140705c30",
           "14075f490",
           "140769150",
           "1408c6390",
           "140903590",
           "140904120",
+          "1409063a0",
+          "140906610",
           "14090e110",
           "14090e280",
           "14090e300",
           "140912670",
           "140913a90",
+          "1409345c0",
           "140abb470",
           "140ad5f90",
           "140c737c0",
@@ -24859,7 +24866,6 @@
           "140909150",
           "14090dde0",
           "14090e6f0",
-          "1409345c0",
           "140956a10",
           "140958760",
           "140a69070",
@@ -24946,12 +24952,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 79,
-            "todo": 15,
-            "total": 94,
-            "behavior_or_helpers_reviewed": 79,
+            "done": 83,
+            "todo": 14,
+            "total": 97,
+            "behavior_or_helpers_reviewed": 83,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 87,
+            "runtime_functions_identified": 90,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24968,15 +24974,19 @@
               "DecodeLz4Block",
               "ReleaseRefCountedBlockHandle",
               "TransferSerializerByte",
+              "FindSourcePortWireInDestinationRun",
               "ComputeThingTimelineIntervalFromTimeBounds",
               "AdvanceFilteredObjectGraphIterator",
               "AcquireLeastUsedThreadBufferLane",
               "InitializeGamePoolContext",
+              "FindSourcePortWireIndex",
+              "FindWireIndexByDestinationProperty",
               "AcquireUnusedGamePoolContext",
               "RetainCurrentGamePoolContext",
               "ReleaseGamePoolContextReference",
               "SortU16IndicesByDescendingI32Keys",
               "LookupU32HashTableValue",
+              "SortGameWires",
               "ProcessMainThingUpdateWorker",
               "FlushDescriptorOutputBlock",
               "LoadDescriptorInputBlock",
@@ -25042,7 +25052,6 @@
               "0x14075f200",
               "0x14090dde0",
               "0x14090e6f0",
-              "0x1409345c0",
               "0x140956a10",
               "0x140958760",
               "0x140abba30",
@@ -25066,15 +25075,19 @@
               "14015e8c0",
               "14038bed0",
               "14039b4a0",
+              "140705c30",
               "14075f490",
               "140769150",
               "1408c6390",
               "140904120",
+              "1409063a0",
+              "140906610",
               "14090e110",
               "14090e280",
               "14090e300",
               "140912670",
               "140913a90",
+              "1409345c0",
               "140abb470",
               "140c737c0",
               "140c73ef0",
@@ -25140,7 +25153,6 @@
               "14075f200",
               "14090dde0",
               "14090e6f0",
-              "1409345c0",
               "140956a10",
               "140958760",
               "140abba30",
@@ -25615,6 +25627,77 @@
                 ]
               },
               {
+                "name": "shared/runtime/gameupdater",
+                "label": "Gameupdater",
+                "done": 4,
+                "todo": 2,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 6,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindSourcePortWireInDestinationRun",
+                  "FindSourcePortWireIndex",
+                  "FindWireIndexByDestinationProperty",
+                  "SortGameWires"
+                ],
+                "todo_names": [
+                  "0x140956a10",
+                  "0x140958760"
+                ],
+                "done_addresses": [
+                  "140705c30",
+                  "1409063a0",
+                  "140906610",
+                  "1409345c0"
+                ],
+                "todo_addresses": [
+                  "140956a10",
+                  "140958760"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/gameupdater/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 2,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 6,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindSourcePortWireInDestinationRun",
+                      "FindSourcePortWireIndex",
+                      "FindWireIndexByDestinationProperty",
+                      "SortGameWires"
+                    ],
+                    "todo_names": [
+                      "0x140956a10",
+                      "0x140958760"
+                    ],
+                    "done_addresses": [
+                      "140705c30",
+                      "1409063a0",
+                      "140906610",
+                      "1409345c0"
+                    ],
+                    "todo_addresses": [
+                      "140956a10",
+                      "140958760"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/runtime/egameevents",
                 "label": "Game Events",
                 "done": 0,
@@ -25718,61 +25801,6 @@
                       "140ccf9b0",
                       "140ce7280",
                       "140cea620"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/gameupdater",
-                "label": "Gameupdater",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1409345c0",
-                  "0x140956a10",
-                  "0x140958760"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1409345c0",
-                  "140956a10",
-                  "140958760"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/gameupdater/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1409345c0",
-                      "0x140956a10",
-                      "0x140958760"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1409345c0",
-                      "140956a10",
-                      "140958760"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40186,5 +40214,5 @@
       }
     ]
   },
-  "unmapped": 7903
+  "unmapped": 7900
 }

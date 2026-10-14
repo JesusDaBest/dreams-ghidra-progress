@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "199 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "203 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9196,
-    "other_names": 374,
-    "verification": "complete_inventory_matches_baseline_plus_199_renames_and_19_created_functions"
+    "default_fun_names": 9192,
+    "other_names": 378,
+    "verification": "complete_inventory_matches_baseline_plus_203_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4428,6 +4428,90 @@
         "Signal runtime behavior and actual scene round trip remain unverified.",
         "Large Game registration caller decompilation timed out; smaller caller and six changed functions decompiled.",
         "No additional audited-byte credit."
+      ]
+    },
+    {
+      "address": "140705c30",
+      "original_name": "FUN_140705c30",
+      "applied_name": "FindSourcePortWireInDestinationRun",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * FindSourcePortWireInDestinationRun(void * game, uint start_index, uint destination_ref, uint source_ref, uint destination_property)",
+      "evidence": [
+        "Complete lookup or sorting-wrapper body reviewed against registered Game/Wire fields.",
+        "Lookup checks cover1280 destination-run cases and4000 unsorted search cases; wrapper is statically traced to sort implementation.",
+        "Cold backup, isolated trial and fresh-reopen verification preserve native bytes and originals."
+      ],
+      "caveats": [
+        "Descriptive role and opaque-pointer working type; original source declaration not recovered.",
+        "Sorted execution, packed-reference invariants and game runtime remain unverified.",
+        "No audited-byte credit."
+      ]
+    },
+    {
+      "address": "1409063a0",
+      "original_name": "FUN_1409063a0",
+      "applied_name": "FindSourcePortWireIndex",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint FindSourcePortWireIndex(void * game, uint source_ref, uint destination_ref, uint destination_property)",
+      "evidence": [
+        "Complete lookup or sorting-wrapper body reviewed against registered Game/Wire fields.",
+        "Lookup checks cover1280 destination-run cases and4000 unsorted search cases; wrapper is statically traced to sort implementation.",
+        "Cold backup, isolated trial and fresh-reopen verification preserve native bytes and originals."
+      ],
+      "caveats": [
+        "Descriptive role and opaque-pointer working type; original source declaration not recovered.",
+        "Sorted execution, packed-reference invariants and game runtime remain unverified.",
+        "No audited-byte credit."
+      ]
+    },
+    {
+      "address": "140906610",
+      "original_name": "FUN_140906610",
+      "applied_name": "FindWireIndexByDestinationProperty",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint FindWireIndexByDestinationProperty(void * game, uint destination_ref, uint destination_property)",
+      "evidence": [
+        "Complete lookup or sorting-wrapper body reviewed against registered Game/Wire fields.",
+        "Lookup checks cover1280 destination-run cases and4000 unsorted search cases; wrapper is statically traced to sort implementation.",
+        "Cold backup, isolated trial and fresh-reopen verification preserve native bytes and originals."
+      ],
+      "caveats": [
+        "Descriptive role and opaque-pointer working type; original source declaration not recovered.",
+        "Sorted execution, packed-reference invariants and game runtime remain unverified.",
+        "No audited-byte credit."
+      ]
+    },
+    {
+      "address": "1409345c0",
+      "original_name": "FUN_1409345c0",
+      "applied_name": "SortGameWires",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void SortGameWires(void * game)",
+      "evidence": [
+        "Complete lookup or sorting-wrapper body reviewed against registered Game/Wire fields.",
+        "Lookup checks cover1280 destination-run cases and4000 unsorted search cases; wrapper is statically traced to sort implementation.",
+        "Cold backup, isolated trial and fresh-reopen verification preserve native bytes and originals."
+      ],
+      "caveats": [
+        "Descriptive role and opaque-pointer working type; original source declaration not recovered.",
+        "Sorted execution, packed-reference invariants and game runtime remain unverified.",
+        "No audited-byte credit."
       ]
     }
   ],
