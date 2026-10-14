@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 196,
+    "done": 198,
     "todo": 1484,
-    "total": 1680,
-    "behavior_or_helpers_reviewed": 137,
+    "total": 1682,
+    "behavior_or_helpers_reviewed": 139,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 49,
+        "done": 51,
         "todo": 413,
-        "total": 462,
-        "behavior_or_helpers_reviewed": 7,
+        "total": 464,
+        "behavior_or_helpers_reviewed": 9,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 9,
+        "runtime_functions_identified": 11,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -38,6 +38,8 @@
           "VisitWirelessTransmitterProperties",
           "VisitVariableGadgetProperties",
           "MarkLogicCycleWireEdges",
+          "ReadSplitterOutputVariant",
+          "BuildCombinerOutputVariant",
           "UpdateVariableGadgetValues",
           "ComputeTeleporterTransformWithOffset",
           "SubmitTeleporterPositionOffsetCommand",
@@ -504,6 +506,8 @@
           "1404df530",
           "1404e33a0",
           "14073de90",
+          "1408cecf0",
+          "1408cf9d0",
           "1408e4bb0",
           "1408f1dc0",
           "1408f2180",
@@ -2929,12 +2933,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 19,
+            "done": 21,
             "todo": 68,
-            "total": 87,
-            "behavior_or_helpers_reviewed": 2,
+            "total": 89,
+            "behavior_or_helpers_reviewed": 4,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 2,
+            "runtime_functions_identified": 4,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -2947,6 +2951,8 @@
               "VisitWirelessReceiverProperties",
               "VisitWirelessTransmitterProperties",
               "MarkLogicCycleWireEdges",
+              "ReadSplitterOutputVariant",
+              "BuildCombinerOutputVariant",
               "RegisterCombinerTypeDescriptor",
               "RegisterSignalInspectorTypeDescriptor",
               "RegisterSignalGeneratorTypeDescriptor",
@@ -3038,6 +3044,8 @@
               "1404dedb0",
               "1404df530",
               "14073de90",
+              "1408cecf0",
+              "1408cf9d0",
               "140d57980",
               "140d57b20",
               "140d57bf0",
@@ -3122,6 +3130,86 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/logic/combiner",
+                "label": "Combiner",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitCombinerProperties",
+                  "BuildCombinerOutputVariant",
+                  "RegisterCombinerTypeDescriptor",
+                  "RegisterCombinerFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404d87a0",
+                  "1408cf9d0",
+                  "140d57980",
+                  "140d6e850"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/combiner/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitCombinerProperties",
+                      "RegisterCombinerTypeDescriptor",
+                      "RegisterCombinerFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404d87a0",
+                      "140d57980",
+                      "140d6e850"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/combiner/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "BuildCombinerOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cf9d0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/logic/ecalculatorop",
                 "label": "Calculator Op",
@@ -3353,61 +3441,6 @@
                       "140d577e0",
                       "140d6ef00"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/combiner",
-                "label": "Combiner",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitCombinerProperties",
-                  "RegisterCombinerTypeDescriptor",
-                  "RegisterCombinerFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404d87a0",
-                  "140d57980",
-                  "140d6e850"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/combiner/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitCombinerProperties",
-                      "RegisterCombinerTypeDescriptor",
-                      "RegisterCombinerFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404d87a0",
-                      "140d57980",
-                      "140d6e850"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -4074,6 +4107,86 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/splitter",
+                "label": "Splitter",
+                "done": 2,
+                "todo": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitSplitterProperties",
+                  "ReadSplitterOutputVariant"
+                ],
+                "todo_names": [
+                  "0x140d578b0"
+                ],
+                "done_addresses": [
+                  "1404d83d0",
+                  "1408cecf0"
+                ],
+                "todo_addresses": [
+                  "140d578b0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/splitter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitSplitterProperties"
+                    ],
+                    "todo_names": [
+                      "0x140d578b0"
+                    ],
+                    "done_addresses": [
+                      "1404d83d0"
+                    ],
+                    "todo_addresses": [
+                      "140d578b0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/splitter/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReadSplitterOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cecf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/timer",
                 "label": "Timer",
                 "done": 0,
@@ -4487,61 +4600,6 @@
                     "todo_addresses": [
                       "1404bfad0",
                       "140d55c40"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/splitter",
-                "label": "Splitter",
-                "done": 1,
-                "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitSplitterProperties"
-                ],
-                "todo_names": [
-                  "0x140d578b0"
-                ],
-                "done_addresses": [
-                  "1404d83d0"
-                ],
-                "todo_addresses": [
-                  "140d578b0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/splitter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitSplitterProperties"
-                    ],
-                    "todo_names": [
-                      "0x140d578b0"
-                    ],
-                    "done_addresses": [
-                      "1404d83d0"
-                    ],
-                    "todo_addresses": [
-                      "140d578b0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40384,5 +40442,5 @@
       }
     ]
   },
-  "unmapped": 7890
+  "unmapped": 7888
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "218 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "220 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9177,
-    "other_names": 393,
-    "verification": "complete_inventory_matches_baseline_plus_218_renames_and_19_created_functions"
+    "default_fun_names": 9175,
+    "other_names": 395,
+    "verification": "complete_inventory_matches_baseline_plus_220_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4827,6 +4827,52 @@
         "Nonlinear and scalar-fallback conversions remain unverified by execution.",
         "Return components need not form a normalized quaternion for arbitrary input.",
         "No whole-game runtime proof or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cf9d0",
+      "original_name": "FUN_1408cf9d0",
+      "applied_name": "BuildCombinerOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildCombinerOutputVariant(void * combiner, VariantWorking40 * output)",
+      "evidence": [
+        "Original Combiner registration binds FatWireType at0xd1; helper reads that selector and emits a Variant.",
+        "Complete971-instruction body captured and pseudocode read; property dispatcher calls this helper for Combiner output.",
+        "2816 native entry-to-return cases verify selected component assembly with Number input records, null/missing/shuffled/duplicate properties and unchanged inputs.",
+        "Cold backup, isolated trial and independent reopening verify native instructions, argument locations and complete9570-function inventory."
+      ],
+      "caveats": [
+        "Descriptive name and conservative working arguments, not original source declarations.",
+        "Rotation, Position, Impact, PlayerValue and Timestamp special paths are not comprehensively validated.",
+        "Selected synthetic native paths do not establish gadget completion or game-runtime correctness.",
+        "No audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cecf0",
+      "original_name": "FUN_1408cecf0",
+      "applied_name": "ReadSplitterOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadSplitterOutputVariant(void * splitter, void * game, ushort property_id, VariantWorking40 * output)",
+      "evidence": [
+        "Original Splitter registration binds InputA at0xd8; helper reads its Variant tag at0xfc and selects output by property ID.",
+        "Complete681-instruction body captured and pseudocode read; connected dispatcher supplies the output property and Game context.",
+        "4608 native entry-to-return cases verify generic vector component extraction, missing-component zeros, output Signal type and alpha1.",
+        "Cold backup, isolated trial and independent reopening verify native instructions, argument locations and complete9570-function inventory."
+      ],
+      "caveats": [
+        "Descriptive name and conservative working arguments, not original source declarations.",
+        "Rotation, Position, Impact, PlayerValue and Timestamp special paths are not comprehensively validated.",
+        "Selected synthetic native paths do not establish gadget completion or game-runtime correctness.",
+        "No audited-byte credit."
       ]
     }
   ],

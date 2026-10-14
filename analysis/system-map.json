@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1680,
-  "unmapped_total": 7890,
+  "mapped_total": 1682,
+  "unmapped_total": 7888,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43349,6 +43349,46 @@
           "support": "Working XMM0 return persisted after independent reopening; selected native copy cases and unverified nonlinear paths distinguished."
         }
       ]
+    },
+    "1408cf9d0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "combiner",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original gadget property/type registrations matched to native field reads and output dispatcher",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native gadget output behavior review",
+      "code_sha256": "61f0f9d1b1e665c77febff69b391fccd5cf04ca1832359e2bed368a9aec55faa",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildCombinerOutputVariant",
+          "support": "Original gadget descriptor/field binding, native output paths, scoped synthetic execution and independently persisted name/types."
+        }
+      ]
+    },
+    "1408cecf0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "splitter",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original gadget property/type registrations matched to native field reads and output dispatcher",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native gadget output behavior review",
+      "code_sha256": "eff384b3e0b566806041d9a1db34125675dce85f9ee10ae348f5099687b7af5e",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadSplitterOutputVariant",
+          "support": "Original gadget descriptor/field binding, native output paths, scoped synthetic execution and independently persisted name/types."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48167,6 +48207,11 @@
                   "id": "properties-types",
                   "label": "Properties & type definitions",
                   "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
                 }
               ]
             },
@@ -48177,6 +48222,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

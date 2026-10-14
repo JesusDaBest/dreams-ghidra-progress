@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 237,
+    "checked_and_applied_names": 239,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 237,
+    "verified_names": 239,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Three connected vector-return repairs verified after independent reopening;218 renames and19 created functions overall.",
+    "scope": "Splitter and Combiner output helpers verified after independent reopening;220 renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2720,5 +2720,39 @@
       "Pre-release build compatibility unknown",
       "Not used as evidence for signal conversion semantics"
     ]
+  },
+  "splitter_combiner_output_review": {
+    "names": [
+      "BuildCombinerOutputVariant",
+      "ReadSplitterOutputVariant"
+    ],
+    "gadget_bindings": {
+      "combiner_fat_wire_type_offset": 209,
+      "splitter_input_variant_offset": 216,
+      "splitter_input_variant_type_offset": 252
+    },
+    "rotation_representation": {
+      "original_enum": "ERotationRepresentation",
+      "values": {
+        "0": "YawPitchRoll",
+        "1": "AxisAngle",
+        "2": "LAST"
+      },
+      "combiner_field_offset": 224,
+      "splitter_field_offset": 264
+    },
+    "native_cases": {
+      "combiner_component_assembly": 2816,
+      "splitter_vector_components": 4608
+    },
+    "limits": [
+      "Combiner special construction and Number/Signal difference not executed",
+      "Splitter scalar sign channels and special grouped/contextual outputs not executed",
+      "Invalid or sentinel rotation-mode reachability unknown",
+      "Timestamp stack area is reused; misleading Impact type propagation annotated",
+      "No whole-gadget or running-game completion"
+    ],
+    "audited_byte_credit_added": 0,
+    "runtime_game_verified": false
   }
 }

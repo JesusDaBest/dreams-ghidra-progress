@@ -1305,3 +1305,13 @@ Named `ExtractVariantVectorComponents`, `ExtractVariantFloat4Components` and `Ex
 Cold backups, isolated trials and independent reopening verify the repaired register returns, unchanged native code, all 9,570 function entries and intact original archives. A Media Molecule coding-stream lead, [The Tech Behind The Magic](https://www.youtube.com/watch?v=yZM_Ij9aeOA), is recorded separately: only official metadata was accessible; no visible source or binary match is claimed.
 
 Totals: 237 checked descriptive names, 1,680 mapped functions and 7,890 unmapped. Audited-byte coverage and game-runtime verification remain unchanged.
+
+### Splitter and Combiner output behavior
+
+Named `ReadSplitterOutputVariant` and `BuildCombinerOutputVariant` after matching original gadget field registrations to their native reads and the connected property-output dispatcher. These are gadget output helpers, beyond property registration. Splitter reads its InputA Variant; Combiner uses its FatWireType selector and input properties. Both use the original RotationRepresentation enum: YawPitchRoll or AxisAngle.
+
+2,816 full native entry-to-return Combiner cases establish selected component assembly from Number inputs: first matching input wins, missing inputs become zero, and unused output bytes remain unchanged. Another 4,608 Splitter cases establish generic vector component extraction, missing-component zeros, Signal output type and alpha 1. Inputs remain unchanged in these synthetic cases. These checks do not establish valid gameplay reachability of every synthetic fixture.
+
+Rotation conversions, Position/Impact/PlayerValue/Timestamp special paths and complete running-game behavior remain unresolved. The Number/Signal difference branch is traced statically. Reused stack storage caused Impact field names to appear in a Timestamp path; the project now annotates that decompiler artifact. Cold backup, isolated trial and independent reopening verify both names and working arguments, unchanged native code and original archives, and all 9,570 function entries.
+
+Totals: 239 checked descriptive names, 1,682 mapped functions and 7,888 unmapped. Audited-byte coverage and game-runtime verification remain unchanged.
