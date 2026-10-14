@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1677,
-  "unmapped_total": 7893,
+  "mapped_total": 1680,
+  "unmapped_total": 7890,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43287,6 +43287,66 @@
           "kind": "verified_semantic_review",
           "name": "DecodeImpactFromVariant",
           "support": "Original enum and Variant field binding read; descriptive role persisted after independent reopening."
+        }
+      ]
+    },
+    "1411c0250": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native typed Variant conversion and connected register-return callers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native descriptive-role review",
+      "code_sha256": "bd500f057a993542c4b2c1e9e469b52bc3d62e9fd077122877203205b35f6fa7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ExtractVariantVectorComponents",
+          "support": "Working XMM0 return persisted after independent reopening; selected native copy cases and unverified nonlinear paths distinguished."
+        }
+      ]
+    },
+    "1411c03b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native typed Variant conversion and connected register-return callers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native descriptive-role review",
+      "code_sha256": "90102b802a8d7b1d170f351b7ca6c75f32db48918cc56154dd1a7585c3636483",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ExtractVariantFloat4Components",
+          "support": "Working XMM0 return persisted after independent reopening; selected native copy cases and unverified nonlinear paths distinguished."
+        }
+      ]
+    },
+    "1411c04f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native typed Variant conversion and connected register-return callers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native descriptive-role review",
+      "code_sha256": "cd1c9bbaeab78fa9f9e188206b420131836ad1405f9ecac93e8249fd3756b90f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ExtractVariantQuaternionComponents",
+          "support": "Working XMM0 return persisted after independent reopening; selected native copy cases and unverified nonlinear paths distinguished."
         }
       ]
     }

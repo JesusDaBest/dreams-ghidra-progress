@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 193,
+    "done": 196,
     "todo": 1484,
-    "total": 1677,
-    "behavior_or_helpers_reviewed": 134,
+    "total": 1680,
+    "behavior_or_helpers_reviewed": 137,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
@@ -24562,12 +24562,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 108,
+        "done": 111,
         "todo": 105,
-        "total": 213,
-        "behavior_or_helpers_reviewed": 96,
+        "total": 216,
+        "behavior_or_helpers_reviewed": 99,
         "properties_or_types_reviewed": 12,
-        "runtime_functions_identified": 132,
+        "runtime_functions_identified": 135,
         "property_type_functions_identified": 76,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24645,6 +24645,9 @@
           "FindThingPropertyMetadata",
           "ReduceTypedSignalToScalar",
           "DecodeImpactFromVariant",
+          "ExtractVariantVectorComponents",
+          "ExtractVariantFloat4Components",
+          "ExtractVariantQuaternionComponents",
           "ConvertTaggedValueToTwoFloat4Blocks",
           "ConvertTypedSignalInPlace",
           "MergeTypedSignalsByMaximumMagnitude",
@@ -24862,6 +24865,9 @@
           "14114db10",
           "1411bfe20",
           "1411c00e0",
+          "1411c0250",
+          "1411c03b0",
+          "1411c04f0",
           "1411c0830",
           "1411c08c0",
           "1411c11b0",
@@ -27598,130 +27604,14 @@
             ]
           },
           {
-            "name": "shared/helpers",
-            "label": "Shared property helpers",
-            "done": 6,
-            "todo": 4,
-            "total": 10,
-            "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 6,
-            "runtime_functions_identified": 0,
-            "property_type_functions_identified": 6,
-            "code_role_unresolved": 4,
-            "whole_feature_completion": null,
-            "done_names": [
-              "VisitPosProperties",
-              "VisitVariantProperties",
-              "VisitCanvasProperties",
-              "VisitGadgetNameProperties",
-              "RegisterSigned32FieldOffset",
-              "RegisterEPropFieldOffset"
-            ],
-            "todo_names": [
-              "0x14048b5e0",
-              "0x14048fa90",
-              "0x14048fc40",
-              "0x140490040"
-            ],
-            "done_addresses": [
-              "1404f68b0",
-              "1404f70b0",
-              "1404f7a20",
-              "1404f8350",
-              "140cd93e0",
-              "140ce67b0"
-            ],
-            "todo_addresses": [
-              "14048b5e0",
-              "14048fa90",
-              "14048fc40",
-              "140490040"
-            ],
-            "unresolved_addresses": [
-              "14048b5e0",
-              "14048fa90",
-              "14048fc40",
-              "140490040"
-            ],
-            "groups": [
-              {
-                "name": "shared/helpers/properties-types",
-                "label": "Properties & type definitions",
-                "done": 6,
-                "todo": 0,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 6,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 6,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitPosProperties",
-                  "VisitVariantProperties",
-                  "VisitCanvasProperties",
-                  "VisitGadgetNameProperties",
-                  "RegisterSigned32FieldOffset",
-                  "RegisterEPropFieldOffset"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404f68b0",
-                  "1404f70b0",
-                  "1404f7a20",
-                  "1404f8350",
-                  "140cd93e0",
-                  "140ce67b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/helpers/role-unresolved",
-                "label": "Code role still unresolved",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 4,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14048b5e0",
-                  "0x14048fa90",
-                  "0x14048fc40",
-                  "0x140490040"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14048b5e0",
-                  "14048fa90",
-                  "14048fc40",
-                  "140490040"
-                ],
-                "unresolved_addresses": [
-                  "14048b5e0",
-                  "14048fa90",
-                  "14048fc40",
-                  "140490040"
-                ],
-                "groups": []
-              }
-            ]
-          },
-          {
             "name": "shared/signals",
             "label": "Shared signal data",
-            "done": 7,
+            "done": 10,
             "todo": 2,
-            "total": 9,
-            "behavior_or_helpers_reviewed": 5,
+            "total": 12,
+            "behavior_or_helpers_reviewed": 8,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 5,
+            "runtime_functions_identified": 8,
             "property_type_functions_identified": 4,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -27730,6 +27620,9 @@
               "RegisterWireBlendOpField",
               "ReduceTypedSignalToScalar",
               "DecodeImpactFromVariant",
+              "ExtractVariantVectorComponents",
+              "ExtractVariantFloat4Components",
+              "ExtractVariantQuaternionComponents",
               "ConvertTypedSignalInPlace",
               "MergeTypedSignalsByMaximumMagnitude",
               "BlendTypedSignalsByWeight"
@@ -27743,6 +27636,9 @@
               "140ce6ad0",
               "1411bfe20",
               "1411c00e0",
+              "1411c0250",
+              "1411c03b0",
+              "1411c04f0",
               "1411c08c0",
               "1411c11b0",
               "1411c1590"
@@ -27756,18 +27652,21 @@
               {
                 "name": "shared/signals/signal-values",
                 "label": "Signal values",
-                "done": 5,
+                "done": 8,
                 "todo": 0,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 5,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 8,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
+                "runtime_functions_identified": 8,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "ReduceTypedSignalToScalar",
                   "DecodeImpactFromVariant",
+                  "ExtractVariantVectorComponents",
+                  "ExtractVariantFloat4Components",
+                  "ExtractVariantQuaternionComponents",
                   "ConvertTypedSignalInPlace",
                   "MergeTypedSignalsByMaximumMagnitude",
                   "BlendTypedSignalsByWeight"
@@ -27776,6 +27675,9 @@
                 "done_addresses": [
                   "1411bfe20",
                   "1411c00e0",
+                  "1411c0250",
+                  "1411c03b0",
+                  "1411c04f0",
                   "1411c08c0",
                   "1411c11b0",
                   "1411c1590"
@@ -27786,18 +27688,21 @@
                   {
                     "name": "shared/signals/signal-values/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 5,
+                    "done": 8,
                     "todo": 0,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 5,
+                    "total": 8,
+                    "behavior_or_helpers_reviewed": 8,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 5,
+                    "runtime_functions_identified": 8,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "ReduceTypedSignalToScalar",
                       "DecodeImpactFromVariant",
+                      "ExtractVariantVectorComponents",
+                      "ExtractVariantFloat4Components",
+                      "ExtractVariantQuaternionComponents",
                       "ConvertTypedSignalInPlace",
                       "MergeTypedSignalsByMaximumMagnitude",
                       "BlendTypedSignalsByWeight"
@@ -27806,6 +27711,9 @@
                     "done_addresses": [
                       "1411bfe20",
                       "1411c00e0",
+                      "1411c0250",
+                      "1411c03b0",
+                      "1411c04f0",
                       "1411c08c0",
                       "1411c11b0",
                       "1411c1590"
@@ -27960,6 +27868,122 @@
                     "groups": []
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "name": "shared/helpers",
+            "label": "Shared property helpers",
+            "done": 6,
+            "todo": 4,
+            "total": 10,
+            "behavior_or_helpers_reviewed": 0,
+            "properties_or_types_reviewed": 6,
+            "runtime_functions_identified": 0,
+            "property_type_functions_identified": 6,
+            "code_role_unresolved": 4,
+            "whole_feature_completion": null,
+            "done_names": [
+              "VisitPosProperties",
+              "VisitVariantProperties",
+              "VisitCanvasProperties",
+              "VisitGadgetNameProperties",
+              "RegisterSigned32FieldOffset",
+              "RegisterEPropFieldOffset"
+            ],
+            "todo_names": [
+              "0x14048b5e0",
+              "0x14048fa90",
+              "0x14048fc40",
+              "0x140490040"
+            ],
+            "done_addresses": [
+              "1404f68b0",
+              "1404f70b0",
+              "1404f7a20",
+              "1404f8350",
+              "140cd93e0",
+              "140ce67b0"
+            ],
+            "todo_addresses": [
+              "14048b5e0",
+              "14048fa90",
+              "14048fc40",
+              "140490040"
+            ],
+            "unresolved_addresses": [
+              "14048b5e0",
+              "14048fa90",
+              "14048fc40",
+              "140490040"
+            ],
+            "groups": [
+              {
+                "name": "shared/helpers/properties-types",
+                "label": "Properties & type definitions",
+                "done": 6,
+                "todo": 0,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 6,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 6,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitPosProperties",
+                  "VisitVariantProperties",
+                  "VisitCanvasProperties",
+                  "VisitGadgetNameProperties",
+                  "RegisterSigned32FieldOffset",
+                  "RegisterEPropFieldOffset"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404f68b0",
+                  "1404f70b0",
+                  "1404f7a20",
+                  "1404f8350",
+                  "140cd93e0",
+                  "140ce67b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/helpers/role-unresolved",
+                "label": "Code role still unresolved",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 4,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14048b5e0",
+                  "0x14048fa90",
+                  "0x14048fc40",
+                  "0x140490040"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14048b5e0",
+                  "14048fa90",
+                  "14048fc40",
+                  "140490040"
+                ],
+                "unresolved_addresses": [
+                  "14048b5e0",
+                  "14048fa90",
+                  "14048fc40",
+                  "140490040"
+                ],
+                "groups": []
               }
             ]
           },
@@ -40360,5 +40384,5 @@
       }
     ]
   },
-  "unmapped": 7893
+  "unmapped": 7890
 }

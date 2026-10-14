@@ -169,5 +169,17 @@
     "NONE and LAST are registered enum labels; registration does not prove all values are runtime data",
     "Opaque payload and trailing bytes retained without invented meanings"
   ],
-  "runtime_verified": false
+  "runtime_verified": false,
+  "working_register_returns": {
+    "VariantVectorRegister16": {
+      "size": 16,
+      "components": "Three floats and one opaque fourth-lane field; source-type-specific lane behavior."
+    },
+    "VariantFourRegister16": {
+      "size": 16,
+      "components": "Four floats; no universal normalization guarantee."
+    },
+    "storage": "XMM0:16 return; Variant pointer in RDI:8",
+    "original_cpp_declarations_recovered": false
+  }
 }

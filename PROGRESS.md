@@ -1295,3 +1295,13 @@ Installed a conservative 40-byte Variant layout and 20-byte Impact decoder outpu
 Both maximum and weighted type-selection prefixes agree for every 256 × 256 byte-tag pair (131,072 scoped native prefix checks). Another 125 prepared-branch cases establish that equal identifier-like tags produce a Bool signal from payload truthiness. These checks stop before downstream conversion and do not establish valid runtime inputs or complete function behavior. The generic floating-point selection remains unverified: both emulator versions reject its blend instruction, and a comparison probe disagrees for a subnormal value even with an explicit floating-point control setting. No instruction shims were counted as native evidence.
 
 Totals: 234 checked descriptive names, 1,677 mapped functions and 7,893 unmapped. Audited-byte coverage and game-runtime verification remain unchanged.
+
+### Connected Variant vector and quaternion extraction
+
+Named `ExtractVariantVectorComponents`, `ExtractVariantFloat4Components` and `ExtractVariantQuaternionComponents`, replacing misleading inferred integer returns with conservative 128-bit XMM0 working return layouts. The connected conversion, weighted blending and vector-operation callers now consume explicit vector results. The layouts preserve the source-dependent fourth lane and do not claim original C++ declarations.
+
+3,072 scoped native entry-to-return cases validate selected direct-copy paths and input preservation across these helpers. The generic XYZ helper has 24 captured direct call sites, the four-component helper has 12, and the quaternion helper has one. Full callers, scalar fallbacks and nonlinear conversion math remain incomplete. The quaternion-oriented Float3 path uses +Y basis constants; its familiar rotation interpretation requires finite unit input, which this helper does not enforce. Arbitrary inputs need not yield normalized quaternions.
+
+Cold backups, isolated trials and independent reopening verify the repaired register returns, unchanged native code, all 9,570 function entries and intact original archives. A Media Molecule coding-stream lead, [The Tech Behind The Magic](https://www.youtube.com/watch?v=yZM_Ij9aeOA), is recorded separately: only official metadata was accessible; no visible source or binary match is claimed.
+
+Totals: 237 checked descriptive names, 1,680 mapped functions and 7,890 unmapped. Audited-byte coverage and game-runtime verification remain unchanged.

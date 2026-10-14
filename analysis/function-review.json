@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "215 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "218 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9180,
-    "other_names": 390,
-    "verification": "complete_inventory_matches_baseline_plus_215_renames_and_19_created_functions"
+    "default_fun_names": 9177,
+    "other_names": 393,
+    "verification": "complete_inventory_matches_baseline_plus_218_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4760,6 +4760,73 @@
         "Descriptive name, not recovered original function name.",
         "Static role reviewed; complete runtime behavior is not established.",
         "No additional audited-byte coverage credit."
+      ]
+    },
+    {
+      "address": "1411c0250",
+      "original_name": "FUN_1411c0250",
+      "applied_name": "ExtractVariantVectorComponents",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "VariantVectorRegister16 PS4_SYSV ExtractVariantVectorComponents(VariantWorking40 * signal)",
+      "evidence": [
+        "Complete77-instruction native body read;24 direct caller windows captured and XMM0 consumption traced.",
+        "1536 native entry-to-return cases verify twelve selected source tags and preserve all40 input bytes.",
+        "Cold backup, isolated trial and independent reopening verify working register storage, native bytes and9570 entries."
+      ],
+      "caveats": [
+        "Working XMM0:16 return container and RDI:8 input; original C++ declaration unknown.",
+        "Nonlinear and scalar-fallback conversions remain unverified by execution.",
+        "Return components need not form a normalized quaternion for arbitrary input.",
+        "No whole-game runtime proof or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411c03b0",
+      "original_name": "FUN_1411c03b0",
+      "applied_name": "ExtractVariantFloat4Components",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "VariantFourRegister16 PS4_SYSV ExtractVariantFloat4Components(VariantWorking40 * signal)",
+      "evidence": [
+        "Complete71-instruction native body read and12 caller windows captured; four-component extraction differs from quaternion-oriented conversion.",
+        "768 direct-copy native cases verify six tags; Float3 lift and AxisAngleRotation paths are static findings only.",
+        "Cold backup, isolated trial and independent reopening verify working register storage, native bytes and9570 entries."
+      ],
+      "caveats": [
+        "Working XMM0:16 return container and RDI:8 input; original C++ declaration unknown.",
+        "Nonlinear and scalar-fallback conversions remain unverified by execution.",
+        "Return components need not form a normalized quaternion for arbitrary input.",
+        "No whole-game runtime proof or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411c04f0",
+      "original_name": "FUN_1411c04f0",
+      "applied_name": "ExtractVariantQuaternionComponents",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "VariantFourRegister16 PS4_SYSV ExtractVariantQuaternionComponents(VariantWorking40 * signal)",
+      "evidence": [
+        "Complete97-instruction body read; unique caller consumes all four XMM0 lanes for subsequent norm handling.",
+        "Float3 formula uses original+Y basis constants; finite unit inputs support the conditional rotation interpretation.",
+        "768 direct-copy native cases verify six tags; nonlinear and scalar fallback paths not executed.",
+        "Cold backup, isolated trial and independent reopening verify working register storage, native bytes and9570 entries."
+      ],
+      "caveats": [
+        "Working XMM0:16 return container and RDI:8 input; original C++ declaration unknown.",
+        "Nonlinear and scalar-fallback conversions remain unverified by execution.",
+        "Return components need not form a normalized quaternion for arbitrary input.",
+        "No whole-game runtime proof or audited-byte credit."
       ]
     }
   ],
