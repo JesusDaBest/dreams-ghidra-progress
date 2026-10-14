@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1670,
-  "unmapped_total": 7900,
+  "mapped_total": 1671,
+  "unmapped_total": 7899,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -5363,6 +5363,11 @@
           "site": "14073e2ec",
           "target": "1416f50cb",
           "anchor_sha256": "f181cd7ca47174ad96fbae993aacd9c3ea259712c06437ac25a96d3e389d0dff"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "MarkLogicCycleWireEdges",
+          "support": "Native role and working type verified after clean reopening; validation is scoped to normalization or isolated DFS, not complete graph/game runtime."
         }
       ],
       "code_sha256": "c59ce310ecf91ab117fab2aafea8596ea0566224cfeaa2361cee26a4d703a31b",
@@ -5587,6 +5592,11 @@
           "site": "140956d6e",
           "target": "1416fd80c",
           "anchor_sha256": "fb83fcb265fbb302d7c3fe47ba24e8d5a3f308cff47392e5da6a8991c3e8470e"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareGameAndLinkedWireOrdering",
+          "support": "Native role and working type verified after clean reopening; validation is scoped to normalization or isolated DFS, not complete graph/game runtime."
         }
       ],
       "code_sha256": "28b214653278eceb197e5dd4c5156a1af96bbd834b90fd06a04b7afc965d905b",
@@ -43122,6 +43132,26 @@
           "kind": "verified_semantic_review",
           "name": "FindWireIndexByDestinationProperty",
           "support": "Game wire lookup or sorting-wrapper body and working signature verified after clean reopening; sorted execution unresolved."
+        }
+      ]
+    },
+    "140937f90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Wire mode normalization and inline update-preparation connection",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native normalization body review",
+      "code_sha256": "41919dc11d077532deb069861372296856969440134dfd71128c00a6078fb6b7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "NormalizeWireBlendModesByDestinationProperty",
+          "support": "Native role and working type verified after clean reopening; validation is scoped to normalization or isolated DFS, not complete graph/game runtime."
         }
       ]
     }

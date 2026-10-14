@@ -3,20 +3,20 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 181,
-    "todo": 1489,
-    "total": 1670,
-    "behavior_or_helpers_reviewed": 125,
+    "done": 184,
+    "todo": 1487,
+    "total": 1671,
+    "behavior_or_helpers_reviewed": 128,
     "properties_or_types_reviewed": 45,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 47,
-        "todo": 414,
+        "done": 48,
+        "todo": 413,
         "total": 461,
-        "behavior_or_helpers_reviewed": 5,
+        "behavior_or_helpers_reviewed": 6,
         "properties_or_types_reviewed": 38,
         "runtime_functions_identified": 8,
         "property_type_functions_identified": 452,
@@ -37,6 +37,7 @@
           "VisitWirelessReceiverProperties",
           "VisitWirelessTransmitterProperties",
           "VisitVariableGadgetProperties",
+          "MarkLogicCycleWireEdges",
           "UpdateVariableGadgetValues",
           "ComputeTeleporterTransformWithOffset",
           "SubmitTeleporterPositionOffsetCommand",
@@ -168,7 +169,6 @@
           "0x1404fb210",
           "0x140502070",
           "0x14050a300",
-          "0x14073de90",
           "0x140c8d950",
           "0x140c8da00",
           "0x140c8da40",
@@ -502,6 +502,7 @@
           "1404dedb0",
           "1404df530",
           "1404e33a0",
+          "14073de90",
           "1408e4bb0",
           "1408f1dc0",
           "1408f2180",
@@ -633,7 +634,6 @@
           "1404fb210",
           "140502070",
           "14050a300",
-          "14073de90",
           "140c8d950",
           "140c8da00",
           "140c8da40",
@@ -2927,10 +2927,10 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 17,
-            "todo": 69,
+            "done": 18,
+            "todo": 68,
             "total": 86,
-            "behavior_or_helpers_reviewed": 0,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 17,
             "runtime_functions_identified": 1,
             "property_type_functions_identified": 85,
@@ -2944,6 +2944,7 @@
               "VisitSignalGeneratorProperties",
               "VisitWirelessReceiverProperties",
               "VisitWirelessTransmitterProperties",
+              "MarkLogicCycleWireEdges",
               "RegisterCombinerTypeDescriptor",
               "RegisterSignalInspectorTypeDescriptor",
               "RegisterSignalGeneratorTypeDescriptor",
@@ -2970,7 +2971,6 @@
               "0x1404dfa70",
               "0x1404e8760",
               "0x1404f2e20",
-              "0x14073de90",
               "0x140c8d950",
               "0x140c8da00",
               "0x140c8da40",
@@ -3034,6 +3034,7 @@
               "1404da460",
               "1404dedb0",
               "1404df530",
+              "14073de90",
               "140d57980",
               "140d57b20",
               "140d57bf0",
@@ -3060,7 +3061,6 @@
               "1404dfa70",
               "1404e8760",
               "1404f2e20",
-              "14073de90",
               "140c8d950",
               "140c8da00",
               "140c8da40",
@@ -4696,45 +4696,45 @@
               {
                 "name": "gadgets-logic/logic/break-logic-cycles",
                 "label": "Break Logic Cycles",
-                "done": 0,
-                "todo": 1,
+                "done": 1,
+                "todo": 0,
                 "total": 1,
-                "behavior_or_helpers_reviewed": 0,
+                "behavior_or_helpers_reviewed": 1,
                 "properties_or_types_reviewed": 0,
                 "runtime_functions_identified": 1,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14073de90"
+                "done_names": [
+                  "MarkLogicCycleWireEdges"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "todo_names": [],
+                "done_addresses": [
                   "14073de90"
                 ],
+                "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "gadgets-logic/logic/break-logic-cycles/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
+                    "done": 1,
+                    "todo": 0,
                     "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
+                    "behavior_or_helpers_reviewed": 1,
                     "properties_or_types_reviewed": 0,
                     "runtime_functions_identified": 1,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x14073de90"
+                    "done_names": [
+                      "MarkLogicCycleWireEdges"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "todo_names": [],
+                    "done_addresses": [
                       "14073de90"
                     ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -24511,12 +24511,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 98,
-        "todo": 109,
-        "total": 207,
-        "behavior_or_helpers_reviewed": 89,
+        "done": 100,
+        "todo": 108,
+        "total": 208,
+        "behavior_or_helpers_reviewed": 91,
         "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 126,
+        "runtime_functions_identified": 127,
         "property_type_functions_identified": 76,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -24552,6 +24552,8 @@
           "SortU16IndicesByDescendingI32Keys",
           "LookupU32HashTableValue",
           "SortGameWires",
+          "NormalizeWireBlendModesByDestinationProperty",
+          "PrepareGameAndLinkedWireOrdering",
           "ProcessMainThingUpdateWorker",
           "TransferTransformPropertyPayload",
           "FlushDescriptorOutputBlock",
@@ -24655,7 +24657,6 @@
           "0x140909150",
           "0x14090dde0",
           "0x14090e6f0",
-          "0x140956a10",
           "0x140958760",
           "0x140a69070",
           "0x140abba30",
@@ -24763,6 +24764,8 @@
           "140912670",
           "140913a90",
           "1409345c0",
+          "140937f90",
+          "140956a10",
           "140abb470",
           "140ad5f90",
           "140c737c0",
@@ -24866,7 +24869,6 @@
           "140909150",
           "14090dde0",
           "14090e6f0",
-          "140956a10",
           "140958760",
           "140a69070",
           "140abba30",
@@ -24952,12 +24954,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 83,
-            "todo": 14,
-            "total": 97,
-            "behavior_or_helpers_reviewed": 83,
+            "done": 85,
+            "todo": 13,
+            "total": 98,
+            "behavior_or_helpers_reviewed": 85,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 90,
+            "runtime_functions_identified": 91,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -24987,6 +24989,8 @@
               "SortU16IndicesByDescendingI32Keys",
               "LookupU32HashTableValue",
               "SortGameWires",
+              "NormalizeWireBlendModesByDestinationProperty",
+              "PrepareGameAndLinkedWireOrdering",
               "ProcessMainThingUpdateWorker",
               "FlushDescriptorOutputBlock",
               "LoadDescriptorInputBlock",
@@ -25052,7 +25056,6 @@
               "0x14075f200",
               "0x14090dde0",
               "0x14090e6f0",
-              "0x140956a10",
               "0x140958760",
               "0x140abba30",
               "0x140c871f0",
@@ -25088,6 +25091,8 @@
               "140912670",
               "140913a90",
               "1409345c0",
+              "140937f90",
+              "140956a10",
               "140abb470",
               "140c737c0",
               "140c73ef0",
@@ -25153,7 +25158,6 @@
               "14075f200",
               "14090dde0",
               "14090e6f0",
-              "140956a10",
               "140958760",
               "140abba30",
               "140c871f0",
@@ -25629,12 +25633,12 @@
               {
                 "name": "shared/runtime/gameupdater",
                 "label": "Gameupdater",
-                "done": 4,
-                "todo": 2,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 4,
+                "done": 6,
+                "todo": 1,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 6,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
+                "runtime_functions_identified": 7,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -25642,20 +25646,22 @@
                   "FindSourcePortWireInDestinationRun",
                   "FindSourcePortWireIndex",
                   "FindWireIndexByDestinationProperty",
-                  "SortGameWires"
+                  "SortGameWires",
+                  "NormalizeWireBlendModesByDestinationProperty",
+                  "PrepareGameAndLinkedWireOrdering"
                 ],
                 "todo_names": [
-                  "0x140956a10",
                   "0x140958760"
                 ],
                 "done_addresses": [
                   "140705c30",
                   "1409063a0",
                   "140906610",
-                  "1409345c0"
+                  "1409345c0",
+                  "140937f90",
+                  "140956a10"
                 ],
                 "todo_addresses": [
-                  "140956a10",
                   "140958760"
                 ],
                 "unresolved_addresses": [],
@@ -25663,12 +25669,12 @@
                   {
                     "name": "shared/runtime/gameupdater/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 4,
-                    "todo": 2,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 4,
+                    "done": 6,
+                    "todo": 1,
+                    "total": 7,
+                    "behavior_or_helpers_reviewed": 6,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 6,
+                    "runtime_functions_identified": 7,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -25676,20 +25682,22 @@
                       "FindSourcePortWireInDestinationRun",
                       "FindSourcePortWireIndex",
                       "FindWireIndexByDestinationProperty",
-                      "SortGameWires"
+                      "SortGameWires",
+                      "NormalizeWireBlendModesByDestinationProperty",
+                      "PrepareGameAndLinkedWireOrdering"
                     ],
                     "todo_names": [
-                      "0x140956a10",
                       "0x140958760"
                     ],
                     "done_addresses": [
                       "140705c30",
                       "1409063a0",
                       "140906610",
-                      "1409345c0"
+                      "1409345c0",
+                      "140937f90",
+                      "140956a10"
                     ],
                     "todo_addresses": [
-                      "140956a10",
                       "140958760"
                     ],
                     "unresolved_addresses": [],
@@ -40214,5 +40222,5 @@
       }
     ]
   },
-  "unmapped": 7900
+  "unmapped": 7899
 }

@@ -1561,3 +1561,11 @@ WireHeader selects between overlapping source representations: flag bit0 selects
 Named and typed three Wire lookups and `SortGameWires` after connected native review. The destination-run lookup stops at a changed destination and requires matching source, property and source-port flag;1280 synthetic native cases passed. Two index lookups distinguish source-port matching from destination/property-only matching;4000 synthetic unsorted-path cases passed. The sorting wrapper passes the full64-byte Wire range to its implementation and then sets `wires_sorted`.
 
 All four changes passed an isolated trial and fresh-reopen inventory, byte and archive checks. Sorted paths use AVX and remain unexecuted; partition/heap comparisons, packed-reference generations and caller grouping invariants remain open. This is lookup/storage behavior, not proof of signal evaluation or blending. Totals:222 checked names,9,570 functions,1,670 mapped and7,900 unmapped. Audited-byte coverage is unchanged.
+
+### Wire normalization and cycle marking
+
+Three connected routines now have checked descriptive names and working types: blend-mode normalization, Game/linked-Game wire preparation and logic-cycle edge marking. Normalization passed2048 synthetic native cases: the first non-blend mode in an eligible destination/property group wins. Update preparation sorts and normalizes wires and conditionally invokes cycle marking; primary and linked Games use different gates.
+
+The isolated native DFS block passed2048 cases covering all512 directed graphs on three vertices, two traversal orders and premarked-edge handling. It marks Wire flag0x04 on back edges to active vertices. These cases supply prebuilt adjacency and do not validate graph construction, vertex ordering, allocation or the flag's effect on signal evaluation. Full runtime signal arithmetic remains untraced.
+
+Cold backup, isolated trial and fresh reopening verified all three names/types with unchanged native bytes and original archives. Totals:225 checked names,9,570 discovered functions,1,671 mapped and7,899 unmapped. Audited-byte coverage is unchanged.
