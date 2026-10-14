@@ -1473,3 +1473,13 @@ Captured x86-64 lookup and insertion bytes ran under Unicorn 2.1.2 in isolated s
 The captured growth routine then ran with explicit successful allocation/free stubs. Across 300 inserted entries and 300 growth calls, capacities progressed from 16 to 1,024. All registered IDs survived 6,621 lookup checks; seven allocations and six old-allocation releases were observed. Stack and callee-saved register checks also passed.
 
 These execute the captured instruction bytes rather than merely reimplementing the table algorithm, but still use synthetic valid tables and controlled dependencies. Real allocators, allocation failures, overflow, invalid/full tables, complete formal correctness and the running Dreams game remain unverified. Counts and audited-byte coverage are unchanged.
+
+### Compact and chunk-reader instruction emulation
+
+Captured compact unsigned32/64-bit reader instructions passed 284 value/range cases and 2,568 truncated-input cases with controlled byte-span stream callbacks. Boundary values through unsigned64 limits were checked. Failure paths in those cases preserved output storage, stack balance and callee-saved registers; the32-bit reader's short-read status1 and64-bit reader's status2 were confirmed.
+
+The compact readers were then connected to the captured native chunk-span reader. Across chunk widths1,2,3 and10, with and without interspersed reserved markers, 512 value/range/chunk cases and14 short-input/marker cases passed. Underlying reads and memory copying remained explicit stubs.
+
+Direct chunk-span and skip-adapter emulation passed728 cases, including248 partial-count cases. Checks covered multiple spans, zero lengths, null destinations, actual-consumed-byte results and untouched destination tails, plus stack/register preservation.
+
+These tests execute captured instruction bytes in synthetic memory. They do not run Dreams or decode real scene files. Real stream/memory-copy implementations, overlapping buffers, overlarge counts, overlong compact encodings, malformed marker runs and full caller contracts remain open. Counts and audited-byte coverage are unchanged.

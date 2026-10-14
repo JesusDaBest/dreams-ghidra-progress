@@ -2069,5 +2069,62 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "reflected_reader_instruction_emulation": {
+    "compact_readers": {
+      "scope": "Captured native compact-reader instructions with synthetic byte-span stream callback.",
+      "valid_or_range_cases": 284,
+      "truncated_cases": 2568,
+      "stream_callback_calls": 15976,
+      "unsigned_boundaries_through_64bits": true,
+      "output_unchanged_on_checked_failures": true,
+      "stack_and_callee_saved_registers_preserved": true,
+      "short_read_status": {
+        "ReadCompactUnsigned32": 1,
+        "ReadCompactUnsigned64": 2
+      },
+      "limits": [
+        "No running-game or real stream implementation execution.",
+        "Overlong/noncanonical encodings and invalid pointers are outside this pass.",
+        "No automatic audited-byte or name credit."
+      ]
+    },
+    "chunked_compact_readers": {
+      "scope": "Captured native compact and chunk-span reader instructions together; underlying byte-span reads and memcpy are controlled stubs.",
+      "value_range_chunk_cases": 512,
+      "short_empty_marker_cases": 14,
+      "memcpy_calls": 3858,
+      "chunk_widths": [
+        1,
+        2,
+        3,
+        10
+      ],
+      "reserved_markers_interspersed": true,
+      "status_and_value_checks_passed": true,
+      "stack_and_callee_saved_registers_preserved": true,
+      "limits": [
+        "Synthetic chunks, not real scene files or running-game validation.",
+        "Underlying stream and memcpy implementations are stubbed; overlong compact encodings and invalid memory remain outside this pass.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    "chunk_spans_and_skip": {
+      "scope": "Captured native chunk-span reader and both skip adapters with controlled underlying reads and memcpy.",
+      "cases": 728,
+      "partial_count_cases": 248,
+      "multiple_spans_zero_lengths_and_null_destinations": true,
+      "skip_count_results_match_consumed_bytes": true,
+      "untouched_destination_tails_checked": true,
+      "stack_and_callee_saved_registers_preserved": true,
+      "limits": [
+        "Synthetic valid memory and chunk streams; no game execution.",
+        "Underlying stream/memcpy stubs; overlapping memory, overlarge counts and malformed reserved-marker runs not proven.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }

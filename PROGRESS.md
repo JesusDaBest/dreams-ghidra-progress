@@ -1213,3 +1213,7 @@ Three verified roles added for descriptor lookup, growth and ID insertion. Trace
 ### Descriptor map emulation checked
 
 Captured lookup/insertion instructions passed 4,629 calls with reference-dictionary comparisons. Native growth/rehash preserved 300 entries across capacities 16–1,024 and 6,621 lookup checks with controlled allocation/free stubs. [Validation scope and limits](ANALYSIS.md#descriptor-map-instruction-emulation). This is instruction emulation, not running-game validation; no names or audited-byte credit added.
+
+### Native reader emulation checked
+
+Compact readers passed284 value/range and2,568 truncation cases. Connected native compact/chunk readers passed512 chunk cases and14 short/marker cases. Span/skip paths passed728 cases, including248 partial results. [Dependencies and validation limits](ANALYSIS.md#compact-and-chunk-reader-instruction-emulation). No running-game validation, new names or audited-byte credit claimed.
