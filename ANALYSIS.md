@@ -1491,3 +1491,13 @@ A fresh check matched the complete 623-instruction primitive reader and its Bool
 For counts 0 through 15, 48 complete-read cases and 360 short-read cases passed with captured native instructions and a controlled stream callback. Complete reads convert zero to 0 and nonzero to 1. Short reads return status 1 before normalization: the copied prefix remains raw and the untouched destination tail retains its prior contents. This describes partial-write behavior, not a demonstrated game defect.
 
 SIMD execution remains unverified. A minimal captured-instruction reproducer disagrees with explicit-source compare semantics under both Unicorn 2.1.2 and 2.1.4. Passing scalar checks do not validate vector paths. Dreams itself was not run; names and audited-byte coverage are unchanged.
+
+### Reflected array and container event contracts
+
+The complete 352-instruction field writer was reviewed against live memory, and the reader's corresponding event conditions were rechecked. Array callbacks bracket successful element writes, including an empty array. The contiguous-container path writes its compact count first, then obtains storage; zero count or null storage skips its callback pair. An absent count callback also returns without that pair. A separate pair-iterator route uses recursive pair-field writes and iterator cleanup.
+
+Captured field-writer instructions passed 24 array and 36 contiguous-container orchestration cases with controlled dependencies. Checks covered empty values, element errors, short count writes, missing count callbacks and null storage. Checked element errors propagate and suppress the closing notification. Callback return values do not override the result. These tests stub element serialization and stream writes; they do not verify serialized scene contents.
+
+On input, the closing array/container event occurs after mapped element reads and before surplus saved elements are skipped. The concrete scene-input observer's primitive opening/closing methods are no-ops. Its array/container closing methods forward to the supplied stream's control method; the identified input-stream implementation simply returns zero. Other supplied stream implementations remain separate dependencies.
+
+No new names, audited-byte credit or game-runtime verification are claimed.

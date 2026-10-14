@@ -1221,3 +1221,7 @@ Compact readers passed284 value/range and2,568 truncation cases. Connected nativ
 ### Boolean reader failure behavior checked
 
 The native scalar Boolean path passed 48 complete-read and 360 short-read cases for counts below 16. Short reads leave the transferred prefix unnormalized. Live code and constants were rechecked; vector execution remains unverified because of an isolated emulator mismatch. [Evidence scope and limits](ANALYSIS.md#boolean-primitive-conversion-and-short-reads). No completion credit added.
+
+### Array and container control flow checked
+
+Reviewed the complete field writer and passed 60 controlled orchestration cases across arrays and contiguous containers. Confirmed empty-value behavior, callback timing and failure propagation, and traced the concrete scene-input observer. [Findings and dependencies](ANALYSIS.md#reflected-array-and-container-event-contracts). Counts and completion coverage are unchanged.

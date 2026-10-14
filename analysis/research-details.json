@@ -2162,5 +2162,34 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "reflected_field_event_contracts": {
+    "native_field_writer_instructions_reviewed": 352,
+    "native_field_writer_bytes": 1292,
+    "live_reader_event_instructions_rechecked": 539,
+    "array_orchestration_cases": 24,
+    "contiguous_container_orchestration_cases": 36,
+    "concrete_scene_input_observer": {
+      "table_entries": 12,
+      "single_return_entries": 9,
+      "primitive_begin_end": "No-op methods.",
+      "array_container_end": "Forward to supplied input stream control slot.",
+      "identified_input_stream_target": "Returns zero with no side effects."
+    },
+    "findings": [
+      "Array notifications include an empty array; contiguous-container notifications require a nonzero count and nonnull storage.",
+      "Element failure suppresses the closing array/container notification; controlled callback return values do not override the writer status.",
+      "Reader closing field event occurs before surplus saved elements are skipped.",
+      "Pair-iterator container route uses separate iteration and cleanup; it bypasses the contiguous-container callback pair."
+    ],
+    "validation_limits": [
+      "Count, storage, element writer, stream write and observer implementations were explicit synthetic stubs for orchestration tests.",
+      "No actual scene round trip or compression/storage validation.",
+      "Other supplied stream implementations can behave differently.",
+      "Exact original declarations and full container invariants remain unresolved."
+    ],
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }
