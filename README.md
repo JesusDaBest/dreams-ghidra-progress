@@ -41,13 +41,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f55bb43032e2c39e6217bc6770955b8e768160a5/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0aa9bb83992396c6bcf6f4852ae747b5d9380d58/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**201 of 9,558 functions named and checked.** A function is one piece of the game's code.
+**213 of 9,570 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f55bb43032e2c39e6217bc6770955b8e768160a5/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0aa9bb83992396c6bcf6f4852ae747b5d9380d58/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,9 +66,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 315 | 0/106 | 2/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 190 | 73/111 | 5/74 |
+| Shared engine & object data | 202 | 85/123 | 5/74 |
 
-**1,653 of 9,558 discovered functions are mapped; 7,905 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,665 of 9,570 discovered functions are mapped; 7,905 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -820,10 +820,10 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 190 functions identified; 73 behavior/helper reviews; 5 property/type reviews
-  - **Game state & runtime** - 82 functions identified; 67 behavior/helper reviews; 0 property/type reviews
-    - **Saving & loading** - 43 functions identified; 43 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 43 functions identified; 43 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 202 functions identified; 85 behavior/helper reviews; 5 property/type reviews
+  - **Game state & runtime** - 94 functions identified; 79 behavior/helper reviews; 0 property/type reviews
+    - **Saving & loading** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
     - **Game contexts & runtime support** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 15 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Resource pages** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
@@ -1332,10 +1332,10 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **201 of 9,558 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
-- **1,653 functions mapped to parts of Dreams; 7,905 still unmapped.** Of the mapped functions, 160 have checked names.
-- **9,520 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
-- **Two source-schema predicates now have verified definitions and working signatures.** Native field-presence and auxiliary-mapping checks were reviewed and tested; fresh reopening preserves their bytes and the full inventory. Audited-byte coverage is unchanged.
+- **213 of 9,570 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **1,665 functions mapped to parts of Dreams; 7,905 still unmapped.** Of the mapped functions, 172 have checked names.
+- **9,532 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
+- **Twelve Game container callbacks now have verified definitions and working signatures.** Thing-reference, Wire and Body storage operations were traced into scene serialization and verified after reopening. Actual scene loading and saving remain unverified. Audited-byte coverage is unchanged.
 - **The trace now distinguishes a version-record payload from the alternate scene stream.** Native code links the payload to save/publish preparation and identifies matching input/output streams for the 99999 format branch. Complete format details and a working save/load round trip remain unverified.
 
 Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
