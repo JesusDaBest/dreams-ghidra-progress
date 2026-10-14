@@ -2191,5 +2191,25 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "primitive_writer_reader_connected_validation": {
+    "scope": "Captured native primitive writer connected to captured native primitive reader through controlled in-memory stream callbacks.",
+    "value_cases": 1199,
+    "short_write_cases": 1871,
+    "unsupported_and_empty_type_cases": 2,
+    "integer_encoding_reference_matched": true,
+    "boolean_input_bytes": "All 256 raw input bytes checked: writer preserves raw byte, reader normalizes zero/nonzero.",
+    "float_patterns": "Matching-width bit preservation checked for signed zeros, one, infinities, quiet/signaling NaN payload examples. No floating arithmetic claim.",
+    "short_write_finding": "Primitive writer returns success even when the controlled stream accepts fewer bytes, including zero. Native code discards returned count.",
+    "limits": [
+      "Synthetic memory and stream callbacks; not a complete scene round trip or game-runtime test.",
+      "Custom descriptors, compression, storage and caller stream-status checks remain unverified.",
+      "Known SIMD comparison defect is avoided by scalar Boolean and matching-width float paths.",
+      "No automatic audited-byte or naming credit."
+    ],
+    "native_writer_instructions_reviewed": 189,
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }

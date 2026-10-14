@@ -1225,3 +1225,7 @@ The native scalar Boolean path passed 48 complete-read and 360 short-read cases 
 ### Array and container control flow checked
 
 Reviewed the complete field writer and passed 60 controlled orchestration cases across arrays and contiguous containers. Confirmed empty-value behavior, callback timing and failure propagation, and traced the concrete scene-input observer. [Findings and dependencies](ANALYSIS.md#reflected-array-and-container-event-contracts). Counts and completion coverage are unchanged.
+
+### Native primitive writer connected to reader
+
+Passed 1,199 connected native value cases and checked 1,871 short writes. Integer wire encodings matched an independent reference; Boolean normalization and selected float-bit preservation were confirmed. The writer ignores returned byte counts; caller-level error handling remains open. [Scope and limits](ANALYSIS.md#connected-primitive-writer-and-reader-validation). No whole-scene or game-runtime completion claimed.

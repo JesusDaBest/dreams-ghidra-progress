@@ -1501,3 +1501,11 @@ Captured field-writer instructions passed 24 array and 36 contiguous-container o
 On input, the closing array/container event occurs after mapped element reads and before surplus saved elements are skipped. The concrete scene-input observer's primitive opening/closing methods are no-ops. Its array/container closing methods forward to the supplied stream's control method; the identified input-stream implementation simply returns zero. Other supplied stream implementations remain separate dependencies.
 
 No new names, audited-byte credit or game-runtime verification are claimed.
+
+### Connected primitive writer and reader validation
+
+Captured native primitive-writer and primitive-reader instructions were connected through controlled in-memory stream callbacks. All 1,199 value cases passed: unsigned compact integer encodings, signed zigzag encodings, all 256 raw Boolean input bytes, and selected matching-width floating-point bit patterns. Boolean writes preserve the raw byte while reads normalize zero/nonzero. Matching-width float checks preserved signed-zero, infinity and selected quiet/signaling NaN payload bits; this does not validate floating arithmetic or conversions.
+
+Another 1,871 short-write cases confirmed that the primitive writer returns success even when the stream accepts fewer bytes, including zero. Its native code discards the returned count. This is a function-level contract observation; actual stream error flags and caller-level failure handling remain unresolved, so it is not a demonstrated game defect. Empty type and unsupported type behavior were also checked.
+
+These are connected native value tests in synthetic memory, not a complete scene-file round trip or running-game validation. Custom serializers, scene framing, compression and storage remain separate dependencies. Names and audited-byte coverage are unchanged.
