@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "208 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "211 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9187,
-    "other_names": 383,
-    "verification": "complete_inventory_matches_baseline_plus_208_renames_and_19_created_functions"
+    "default_fun_names": 9184,
+    "other_names": 386,
+    "verification": "complete_inventory_matches_baseline_plus_211_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4617,6 +4617,68 @@
         "Descriptive names and opaque working pointers.",
         "Other scalar reductions, typed maximum/weighted helpers and real-game signal behavior remain unverified.",
         "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411c08c0",
+      "original_name": "FUN_1411c08c0",
+      "applied_name": "ConvertTypedSignalInPlace",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertTypedSignalInPlace(void * signal, uchar target_tag)",
+      "evidence": [
+        "Complete341-instruction body and target dispatch read; same-tag early return and common tag write traced.",
+        "511 native full-entry/return synthetic cases passed for same-tag preservation and target23 clearing."
+      ],
+      "caveats": [
+        "Other conversion pairs and contextual/math callees remain unverified.",
+        "Descriptive name is supported; complete behavior and in-game correctness are not established.",
+        "No audited-byte coverage credit added."
+      ]
+    },
+    {
+      "address": "1411c11b0",
+      "original_name": "FUN_1411c11b0",
+      "applied_name": "MergeTypedSignalsByMaximumMagnitude",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV MergeTypedSignalsByMaximumMagnitude(void * output, void * first, void * second)",
+      "evidence": [
+        "Complete192-instruction body read; type promotion, numeric component selection, Boolean and signed64 branches traced.",
+        "1352 isolated signed64 native branch cases passed; greater magnitude wins with second-on-tie, then negative winner clamps to zero."
+      ],
+      "caveats": [
+        "Entry dispatch/copy/conversion setup and generic SIMD selection not executed; Boolean special cases still need scoped tests.",
+        "Descriptive name is supported; complete behavior and in-game correctness are not established.",
+        "No audited-byte coverage credit added."
+      ]
+    },
+    {
+      "address": "1411c1590",
+      "original_name": "FUN_1411c1590",
+      "applied_name": "BlendTypedSignalsByWeight",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BlendTypedSignalsByWeight(void * output, uchar normalize_weights, OpaqueSignal40_ABI first, OpaqueSignal40_ABI second)",
+      "evidence": [
+        "Complete590-instruction body captured and read; type selection, threshold copies, normalization and type-specific paths traced.",
+        "By-value40-byte inputs at entry stack+8/+48 verified against native caller; helper/caller decompile after independent reopening.",
+        "Weight normalization zero/NaN branch behavior traced in assembly."
+      ],
+      "caveats": [
+        "Special-type conversion and math paths remain unverified by execution.",
+        "Rotation-like helper flips sign below approximately-0.01, not zero; its original aggregate type remains unknown.",
+        "Descriptive name is supported; complete behavior and in-game correctness are not established.",
+        "No audited-byte coverage credit added."
       ]
     }
   ],

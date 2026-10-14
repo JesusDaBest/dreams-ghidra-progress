@@ -1277,3 +1277,11 @@ Cold backup, isolated trial and fresh reopening verified all three names/types w
 Named `ReduceTypedSignalToScalar` and `AccumulateWireSignalByBlendMode` with conservative working types. The reducer returns a float in XMM0; correcting its inferred integer return removes misleading casts in the connected caller.1360 captured native direct-scalar/default-zero cases passed, including arbitrary NaN, infinity, signed-zero and subnormal payload bits. This does not validate other reductions or broad SIMD behavior.
 
 The property updater supplies Wire blend-mode byte+0x31 to the accumulator for property-source wires. Its mode branches scale/reduce typed inputs and delegate maximum/weighted combination to other helpers; those helpers and base-property application remain incomplete. One weighted helper still needs its stack-passed value arguments reconstructed. No running-game signal correctness is claimed. Cold backup, isolated trial and clean reopening preserved native bytes and original archives. Totals:227 checked names,9,570 discovered functions,1,673 mapped and7,897 unmapped. Audited-byte coverage is unchanged.
+
+### Connected typed signal conversion and combination
+
+Named `ConvertTypedSignalInPlace`, `MergeTypedSignalsByMaximumMagnitude` and `BlendTypedSignalsByWeight` after native body/caller review, cold backup, isolated trial and independent project reopening. The weighted helper now receives both40-byte value inputs correctly in the decompiler. All9,570 function entries were checked; only the three intended name/signature entries changed, and original archives remain unchanged.
+
+511 full-entry/return synthetic native conversion cases establish same-tag preservation and conversion to numeric tag23. Separately,1,352 isolated signed64 maximum-branch cases establish greater-magnitude selection, second-on-tie selection and clamping a negative winner to zero. These checks do not cover all conversions, generic SIMD selection or the running game. Weighted normalization control flow is traced statically; its rotation-like helper uses an approximately−0.01 sign-flip threshold and identity fallback, with special-value behavior still unresolved.
+
+Totals:230 checked descriptive names,1,676 mapped functions and7,894 unmapped. These are naming/mapping counts. Audited-byte coverage and game-runtime verification remain unchanged.

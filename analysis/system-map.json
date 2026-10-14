@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1673,
-  "unmapped_total": 7897,
+  "mapped_total": 1676,
+  "unmapped_total": 7894,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43192,6 +43192,66 @@
           "kind": "verified_semantic_review",
           "name": "AccumulateWireSignalByBlendMode",
           "support": "Descriptive name/type persisted after reopening; float reducer ABI supported by native caller and scoped synthetic checks. Full typed arithmetic/runtime unverified."
+        }
+      ]
+    },
+    "1411c08c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Connected typed signal conversion and combination native call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body descriptive-role review",
+      "code_sha256": "0d85f47fa3f36d8c0659c6f997201af0daada65393590918170337116a15bb46",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertTypedSignalInPlace",
+          "support": "Saved descriptive name and working arguments verified after independent project reopening; scoped synthetic checks and static limits documented."
+        }
+      ]
+    },
+    "1411c11b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Connected typed signal conversion and combination native call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body descriptive-role review",
+      "code_sha256": "da0340cf17afe2b2b5da05104ab8af7cd8250d80609a0d21716715eafff17a84",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MergeTypedSignalsByMaximumMagnitude",
+          "support": "Saved descriptive name and working arguments verified after independent project reopening; scoped synthetic checks and static limits documented."
+        }
+      ]
+    },
+    "1411c1590": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Connected typed signal conversion and combination native call chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body descriptive-role review",
+      "code_sha256": "6c7ddcdf0fb1ee038e63b0a8620a0792c857f3d6af061daa1c583b57909cc6d3",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BlendTypedSignalsByWeight",
+          "support": "Saved descriptive name and working arguments verified after independent project reopening; scoped synthetic checks and static limits documented."
         }
       ]
     }

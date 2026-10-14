@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 227,
+    "checked_and_applied_names": 230,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 227,
+    "verified_names": 230,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Scalar reducer float ABI and connected Wire blend accumulator names/types verified after reopening;208 renames and19 created functions overall.",
+    "scope": "Connected signal conversion, maximum selection and weighted blend names verified after independent offline reopening;211 renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2547,9 +2547,26 @@
     "connection": "Property updater checks Wire source-kind flag and supplies blend-mode byte at+0x31 to accumulator.",
     "limits": [
       "Nontrivial scalar reductions not executed",
-      "Typed maximum and weighted-combination helpers incomplete",
-      "Weighted helper stack by-value arguments unresolved",
+      "Full typed maximum/weighted arithmetic incomplete; working weighted stack arguments now repaired",
       "No game runtime proof"
+    ],
+    "audited_byte_credit_added": 0,
+    "runtime_verified": false
+  },
+  "signal_combination_review": {
+    "names": [
+      "ConvertTypedSignalInPlace",
+      "MergeTypedSignalsByMaximumMagnitude",
+      "BlendTypedSignalsByWeight"
+    ],
+    "conversion_native_cases": 511,
+    "integer_maximum_native_branch_cases": 1352,
+    "weighted_arguments": "Two40-byte by-value records, output pointer and low-byte normalization flag; stack layout independently verified.",
+    "limits": [
+      "Most target/source conversions not executed",
+      "Generic floating-point component and Boolean paths not executed",
+      "Special rotation and other weighted type math not executed",
+      "No whole-game runtime proof"
     ],
     "audited_byte_credit_added": 0,
     "runtime_verified": false
