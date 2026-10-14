@@ -1229,3 +1229,7 @@ Reviewed the complete field writer and passed 60 controlled orchestration cases 
 ### Native primitive writer connected to reader
 
 Passed 1,199 connected native value cases and checked 1,871 short writes. Integer wire encodings matched an independent reference; Boolean normalization and selected float-bit preservation were confirmed. The writer ignores returned byte counts; caller-level error handling remains open. [Scope and limits](ANALYSIS.md#connected-primitive-writer-and-reader-validation). No whole-scene or game-runtime completion claimed.
+
+### Composite field decoding connected
+
+Passed 83 matching-array cases, 430 schema-mismatch/unmapped cases, 980 truncation checks, and 132 optional-mask checks with captured native writer/reader instructions and synthetic schemas. A following field verified alignment. Retained a separate noncanonical-Boolean skip limitation. [Evidence scope and remaining gaps](ANALYSIS.md#connected-composite-fields-schema-mismatches-and-optional-masks). Completion counts are unchanged.

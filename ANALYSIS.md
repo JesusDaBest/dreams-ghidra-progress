@@ -1509,3 +1509,15 @@ Captured native primitive-writer and primitive-reader instructions were connecte
 Another 1,871 short-write cases confirmed that the primitive writer returns success even when the stream accepts fewer bytes, including zero. Its native code discards the returned count. This is a function-level contract observation; actual stream error flags and caller-level failure handling remain unresolved, so it is not a demonstrated game defect. Empty type and unsupported type behavior were also checked.
 
 These are connected native value tests in synthetic memory, not a complete scene-file round trip or running-game validation. Custom serializers, scene framing, compression and storage remain separate dependencies. Names and audited-byte coverage are unchanged.
+
+### Connected composite fields, schema mismatches and optional masks
+
+The captured native field/value/primitive writer was connected to the composite reader and primitive/skip helpers using controlled memory streams and prebuilt matching schemas. All 83 matching-array cases passed, including packed and padded layouts. Another 62 zero-accepting-stream cases confirmed that the field/value writer chain does not detect that form of short write.
+
+For canonical Boolean storage and the tested integer/float values, 430 schema-mismatch and unmapped-field cases preserved the expected destination prefix, padding and untouched tail. Surplus elements were consumed before a following scalar field, whose value confirmed stream alignment. Another 980 truncation checks returned errors without populating that following field.
+
+Optional-mask checks passed 96 presence/mapping cases, 35 truncated-header cases and one unsupported-destination case. Zero per-field masks mean unconditional fields; nonzero masks require an intersecting bit. Omitted fields consume no value bytes and preserve storage. Checked truncated mask headers return status 2 before field writes; a destination without mask support returns status 7 before consuming the header.
+
+A separate native reproducer retains a limit deliberately excluded from the canonical-Boolean mismatch cases: raw noncanonical Boolean bytes can contain compact-integer continuation bits, causing the skipped-field path to consume bytes from the following field. Real game reachability is unproven; this is not classified as a demonstrated game defect.
+
+These tests supply schemas and load plans synthetically. Actual root schema parsing/matching, mask production, object references, hooks, nonempty postload callbacks, compression and storage are not validated. Boolean SIMD execution remains unproven. No real scene-file round trip, running-game verification or completion credit is claimed.

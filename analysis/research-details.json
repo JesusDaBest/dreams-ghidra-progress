@@ -2211,5 +2211,75 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "connected_composite_field_validation": {
+    "matching_arrays": {
+      "scope": "Captured native field/value/primitive writer connected to captured native composite/primitive reader, with prebuilt synthetic matching schema and controlled memory stream.",
+      "matched_schema_array_cases": 83,
+      "zero_accepting_writer_cases": 62,
+      "checks": [
+        "Expected independent wire bytes and destination bytes/padding match.",
+        "Composite reader consumes a mapped saved array field and invokes actual zero-entry postload traversal.",
+        "Stack and callee-saved registers preserved."
+      ],
+      "limits": [
+        "Schema load plan is supplied synthetically; schema parsing/matching is not tested.",
+        "Read hooks, nonempty postload callbacks, optional masks, object references and surplus elements are excluded.",
+        "Primitive Boolean SIMD remains excluded.",
+        "No real scene, compression/storage or game runtime validation.",
+        "No automatic audited-byte or naming credit."
+      ]
+    },
+    "schema_mismatches": {
+      "scope": "Captured field/value/primitive writer connected to composite reader plus actual field/primitive skip helpers; synthetic schema with a following mapped scalar field.",
+      "mismatch_and_unmapped_cases": 430,
+      "truncated_cases": 980,
+      "destination_capacities": [
+        0,
+        1,
+        2,
+        4,
+        16
+      ],
+      "findings": [
+        "Reader stores only the mapped prefix fitting destination capacity.",
+        "Surplus source elements and wholly unmapped fields are consumed before the next scalar field, which reads the expected sentinel value.",
+        "Untouched padding and destination tail are preserved in complete cases.",
+        "Checked truncated inputs return nonzero and do not populate the following scalar field."
+      ],
+      "limits": [
+        "Boolean mismatch fixtures use canonical 0/1 storage; noncanonical Boolean bytes have a separate retained skip-alignment reproducer.",
+        "Prebuilt schema/load plan and controlled read/skip streams.",
+        "No root schema parsing, object references, optional masks, read hooks or nonempty postload callbacks.",
+        "Boolean SIMD remains excluded.",
+        "No real scene-file or game-runtime claim; no completion credit."
+      ]
+    },
+    "optional_masks": {
+      "scope": "Captured composite reader, compact-mask reader, primitive reader and skip helpers, with synthetic optional saved fields and a controlled stream.",
+      "mask_presence_mapping_cases": 96,
+      "truncated_mask_header_cases": 35,
+      "unsupported_destination_mask_case": 1,
+      "findings": [
+        "Zero per-field mask means unconditional field. Nonzero per-field mask requires any intersecting bit.",
+        "Absent fields consume no element bytes and preserve destination storage.",
+        "Present unmapped/surplus values are consumed before later present fields.",
+        "All checked partial compact-mask headers return status2 before field writes.",
+        "Destination lacking optional-mask support returns status7 before consuming header."
+      ],
+      "limits": [
+        "Synthetic prebuilt schema; actual schema flag production and writer mask callback not connected.",
+        "No hooks, object references, compression/storage or game runtime.",
+        "No automatic audited-byte/name credit."
+      ]
+    },
+    "noncanonical_boolean_limit": {
+      "fixture": "Deliberately injected noncanonical Boolean bytes are preserved by writer but can be consumed as compact integer continuation by the skipped-field path.",
+      "reproduced_with_captured_native_instructions": true,
+      "real_game_reachability": "Unproven; not classified as a game defect."
+    },
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }
