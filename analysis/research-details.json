@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 230,
+    "checked_and_applied_names": 234,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 230,
+    "verified_names": 234,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Connected signal conversion, maximum selection and weighted blend names verified after independent offline reopening;211 renames and19 created functions overall.",
+    "scope": "Original Variant enum and working layouts verified after independent reopening;215 renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2564,11 +2564,122 @@
     "weighted_arguments": "Two40-byte by-value records, output pointer and low-byte normalization flag; stack layout independently verified.",
     "limits": [
       "Most target/source conversions not executed",
-      "Generic floating-point component and Boolean paths not executed",
-      "Special rotation and other weighted type math not executed",
+      "Generic floating-point selection not executed reliably; emulator comparison counterexample and unsupported blend instruction recorded",
+      "Equal identifier-tag Boolean branch checked; mixed-type reductions remain incomplete",
+      "Special quaternion and other weighted math not executed",
       "No whole-game runtime proof"
     ],
     "audited_byte_credit_added": 0,
     "runtime_verified": false
+  },
+  "variant_type_recovery": {
+    "original_enum": "EVariantType",
+    "labels_recovered": 32,
+    "variant_fields": {
+      "alpha_offset": 32,
+      "type_offset": 36
+    },
+    "working_layout_sizes": {
+      "VariantWorking40": 40,
+      "ImpactWorking20": 20
+    },
+    "working_signatures_updated": 6,
+    "argument_storage_unchanged": true,
+    "promotion_byte_pairs_per_function": 65536,
+    "promotion_native_prefix_checks": 131072,
+    "equal_identifier_tag_boolean_branch_cases": 125,
+    "limits": [
+      "Original payload union and Impact subfield semantics unresolved",
+      "Byte-tag exhaustive selection does not validate conversions or invalid-tag reachability",
+      "One raw-copy pseudocode site emits a misleading numeric float cast; native bit-copy annotated in project",
+      "No game runtime proof or audited-byte credit"
+    ]
+  },
+  "review_scope_bookkeeping": {
+    "canonicalized_records": [
+      {
+        "address": "140d88790",
+        "previous_scope": "property_or_type",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d54160",
+        "previous_scope": "property_or_type",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d71ed0",
+        "previous_scope": "property_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d56fc0",
+        "previous_scope": "property_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d54090",
+        "previous_scope": "property_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d88a00",
+        "previous_scope": "property_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d54650",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140d86c30",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140ce6330",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140ce67b0",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140cdfdb0",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140cd93e0",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140ce6ad0",
+        "previous_scope": "property_or_type_registration",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140cb7f30",
+        "previous_scope": "property_or_type",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "140cb7e80",
+        "previous_scope": "property_or_type",
+        "canonical_scope": "properties_or_type_registration"
+      },
+      {
+        "address": "1401123b0",
+        "previous_scope": "property_or_type",
+        "canonical_scope": "properties_or_type_registration"
+      }
+    ],
+    "historical_records_previously_omitted_from_property_subtotals": 13,
+    "new_batch_records_corrected_before_publication": 3,
+    "additional_reviews_credited": 0
   }
 }

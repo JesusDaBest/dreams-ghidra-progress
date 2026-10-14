@@ -1285,3 +1285,13 @@ Named `ConvertTypedSignalInPlace`, `MergeTypedSignalsByMaximumMagnitude` and `Bl
 511 full-entry/return synthetic native conversion cases establish same-tag preservation and conversion to numeric tag23. Separately,1,352 isolated signed64 maximum-branch cases establish greater-magnitude selection, second-on-tie selection and clamping a negative winner to zero. These checks do not cover all conversions, generic SIMD selection or the running game. Weighted normalization control flow is traced statically; its rotation-like helper uses an approximately−0.01 sign-flip threshold and identity fallback, with special-value behavior still unresolved.
 
 Totals:230 checked descriptive names,1,676 mapped functions and7,894 unmapped. These are naming/mapping counts. Audited-byte coverage and game-runtime verification remain unchanged.
+
+### Original Variant types and Impact decoding
+
+Recovered all 32 original `EVariantType` labels and connected their enum descriptor to the Variant type byte at offset 36. The float at offset 32 is registered as `alpha`. [Recovered values and conservative layout](analysis/variant-types.json) now identify Quaternion, Impact, PlayerValue, Timestamp and other previously anonymous numeric paths.
+
+Installed a conservative 40-byte Variant layout and 20-byte Impact decoder output layout, preserving opaque payloads, padding and unknown subfield meanings. Six working signatures retain their verified argument locations, including both stack-passed Variant values. Named the Impact decoder and three enum registration helpers. Independent reopening confirms all 9,570 entries, only the intended nine name/signature entries changed, unchanged native instructions and intact original archives. A misleading raw-copy numeric float cast in the pseudocode is annotated with the assembly behavior; generated C is not a faithful source reconstruction.
+
+Both maximum and weighted type-selection prefixes agree for every 256 × 256 byte-tag pair (131,072 scoped native prefix checks). Another 125 prepared-branch cases establish that equal identifier-like tags produce a Bool signal from payload truthiness. These checks stop before downstream conversion and do not establish valid runtime inputs or complete function behavior. The generic floating-point selection remains unverified: both emulator versions reject its blend instruction, and a comparison probe disagrees for a subnormal value even with an explicit floating-point control setting. No instruction shims were counted as native evidence.
+
+Totals: 234 checked descriptive names, 1,677 mapped functions and 7,893 unmapped. Audited-byte coverage and game-runtime verification remain unchanged.

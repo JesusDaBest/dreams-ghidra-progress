@@ -603,6 +603,11 @@ def main(argv=None):
     content += ",\n".join("    " + json.dumps(row, separators=(",", ":")) for row in rows)
     content += "\n  ]\n}\n"
     applied = read_json(repo / 'analysis' / 'function-review.json')['applied']
+    allowed_scopes = {'behavior_or_helper', 'properties_or_type_registration'}
+    invalid_scopes = [(row['address'], row.get('reviewed_scope')) for row in applied
+                      if row.get('reviewed_scope') not in allowed_scopes]
+    if invalid_scopes:
+        raise ValueError(f'Unrecognized review scopes would omit subtotal credit: {invalid_scopes}')
     progress_path = repo / 'progress.json'
     progress_content = json.dumps(progress_data(status, applied, mapping), indent=2) + '\n'
     svg = render(status, applied, mapping)

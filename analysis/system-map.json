@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1676,
-  "unmapped_total": 7894,
+  "mapped_total": 1677,
+  "unmapped_total": 7893,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -417,6 +417,11 @@
           "type_name": "EVariantType",
           "site": "14011251e",
           "target": "14170b038"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterVariantTypeFieldOffset",
+          "support": "Original enum and Variant field binding read; descriptive role persisted after independent reopening."
         }
       ],
       "code_sha256": "c57894ef61b7a5546690c3cfe897590fef2557d5d7c8d87160fd6bf0d3fe1d3d",
@@ -11859,6 +11864,11 @@
           "type_name": "EVariantType",
           "site": "140cb7eae",
           "target": "14170b038"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "EnsureVariantTypeEnumRegistered",
+          "support": "Original enum and Variant field binding read; descriptive role persisted after independent reopening."
         }
       ],
       "code_sha256": "26dde063e86929a5988ab4a18837fdd16ca84550ba97d255aa2f379680fc5a51",
@@ -11892,6 +11902,11 @@
           "incoming_site": "140cb7ed7",
           "append_function": "140cb8160",
           "site": "140cb7f3d"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterVariantTypeEnumValues",
+          "support": "Original enum and Variant field binding read; descriptive role persisted after independent reopening."
         }
       ],
       "code_sha256": "28e20867b6b7cdb3a53899e80e1edc66844fd363f057d2e85b6f19aaa7fbe081",
@@ -43252,6 +43267,26 @@
           "kind": "verified_semantic_review",
           "name": "BlendTypedSignalsByWeight",
           "support": "Saved descriptive name and working arguments verified after independent project reopening; scoped synthetic checks and static limits documented."
+        }
+      ]
+    },
+    "1411c00e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Variant enum binding and native Impact conversion/caller chain",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body review",
+      "code_sha256": "8ea9665c99fc357baa45edcab13a69748e0a314df3461413c556de3245623125",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodeImpactFromVariant",
+          "support": "Original enum and Variant field binding read; descriptive role persisted after independent reopening."
         }
       ]
     }

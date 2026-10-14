@@ -3,11 +3,11 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 189,
-    "todo": 1487,
-    "total": 1676,
-    "behavior_or_helpers_reviewed": 133,
-    "properties_or_types_reviewed": 45,
+    "done": 193,
+    "todo": 1484,
+    "total": 1677,
+    "behavior_or_helpers_reviewed": 134,
+    "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
@@ -17,7 +17,7 @@
         "todo": 413,
         "total": 462,
         "behavior_or_helpers_reviewed": 7,
-        "properties_or_types_reviewed": 38,
+        "properties_or_types_reviewed": 42,
         "runtime_functions_identified": 9,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
@@ -8201,7 +8201,7 @@
             "todo": 57,
             "total": 64,
             "behavior_or_helpers_reviewed": 2,
-            "properties_or_types_reviewed": 3,
+            "properties_or_types_reviewed": 5,
             "runtime_functions_identified": 2,
             "property_type_functions_identified": 62,
             "code_role_unresolved": 0,
@@ -8883,7 +8883,7 @@
                 "todo": 1,
                 "total": 3,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 2,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
@@ -8911,7 +8911,7 @@
                     "todo": 1,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 2,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
@@ -10561,7 +10561,7 @@
             "todo": 22,
             "total": 32,
             "behavior_or_helpers_reviewed": 1,
-            "properties_or_types_reviewed": 7,
+            "properties_or_types_reviewed": 9,
             "runtime_functions_identified": 2,
             "property_type_functions_identified": 30,
             "code_role_unresolved": 0,
@@ -10727,7 +10727,7 @@
                 "todo": 1,
                 "total": 4,
                 "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 2,
                 "runtime_functions_identified": 1,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
@@ -10757,7 +10757,7 @@
                     "todo": 1,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 2,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
@@ -11542,7 +11542,7 @@
         "todo": 312,
         "total": 315,
         "behavior_or_helpers_reviewed": 0,
-        "properties_or_types_reviewed": 2,
+        "properties_or_types_reviewed": 3,
         "runtime_functions_identified": 106,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
@@ -14630,7 +14630,7 @@
             "todo": 42,
             "total": 45,
             "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 2,
+            "properties_or_types_reviewed": 3,
             "runtime_functions_identified": 0,
             "property_type_functions_identified": 45,
             "code_role_unresolved": 0,
@@ -14797,7 +14797,7 @@
                 "todo": 2,
                 "total": 3,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 1,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
@@ -14825,7 +14825,7 @@
                     "todo": 2,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
@@ -24562,17 +24562,18 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 104,
-        "todo": 108,
-        "total": 212,
-        "behavior_or_helpers_reviewed": 95,
-        "properties_or_types_reviewed": 5,
-        "runtime_functions_identified": 131,
+        "done": 108,
+        "todo": 105,
+        "total": 213,
+        "behavior_or_helpers_reviewed": 96,
+        "properties_or_types_reviewed": 12,
+        "runtime_functions_identified": 132,
         "property_type_functions_identified": 76,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
         "done_names": [
           "HashNameBytes32",
+          "RegisterVariantTypeFieldOffset",
           "WriteReflectedObjectRecords",
           "TouchKeyedResourceLastUseCounter",
           "CopyKeyedResourceDescriptorOrDefault",
@@ -24609,6 +24610,8 @@
           "TransferTransformPropertyPayload",
           "FlushDescriptorOutputBlock",
           "LoadDescriptorInputBlock",
+          "EnsureVariantTypeEnumRegistered",
+          "RegisterVariantTypeEnumValues",
           "RegisterSigned32FieldOffset",
           "GetGameBodyStorage",
           "GetGameBodyCount",
@@ -24641,6 +24644,7 @@
           "AppendSizedRecordToThreadBuffer",
           "FindThingPropertyMetadata",
           "ReduceTypedSignalToScalar",
+          "DecodeImpactFromVariant",
           "ConvertTaggedValueToTwoFloat4Blocks",
           "ConvertTypedSignalInPlace",
           "MergeTypedSignalsByMaximumMagnitude",
@@ -24683,7 +24687,6 @@
           "0x14010fc00",
           "0x1401115f0",
           "0x1401118b0",
-          "0x1401123b0",
           "0x140169390",
           "0x140169780",
           "0x14016ac20",
@@ -24721,8 +24724,6 @@
           "0x140c8b960",
           "0x140c8ba10",
           "0x140c8c220",
-          "0x140cb7e80",
-          "0x140cb7f30",
           "0x140cb8160",
           "0x140cc3dc0",
           "0x140cc58c0",
@@ -24789,6 +24790,7 @@
         ],
         "done_addresses": [
           "14010d370",
+          "1401123b0",
           "140116eb0",
           "140118620",
           "1401186d0",
@@ -24825,6 +24827,8 @@
           "140ad5f90",
           "140c737c0",
           "140c73ef0",
+          "140cb7e80",
+          "140cb7f30",
           "140cd93e0",
           "140ce5c10",
           "140ce5c20",
@@ -24857,6 +24861,7 @@
           "1410aa730",
           "14114db10",
           "1411bfe20",
+          "1411c00e0",
           "1411c0830",
           "1411c08c0",
           "1411c11b0",
@@ -24899,7 +24904,6 @@
           "14010fc00",
           "1401115f0",
           "1401118b0",
-          "1401123b0",
           "140169390",
           "140169780",
           "14016ac20",
@@ -24937,8 +24941,6 @@
           "140c8b960",
           "140c8ba10",
           "140c8c220",
-          "140cb7e80",
-          "140cb7f30",
           "140cb8160",
           "140cc3dc0",
           "140cc58c0",
@@ -26365,26 +26367,26 @@
           {
             "name": "shared/properties",
             "label": "Properties & variants",
-            "done": 5,
-            "todo": 11,
+            "done": 8,
+            "todo": 8,
             "total": 16,
             "behavior_or_helpers_reviewed": 4,
-            "properties_or_types_reviewed": 1,
+            "properties_or_types_reviewed": 4,
             "runtime_functions_identified": 4,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "RegisterVariantTypeFieldOffset",
               "FindPackedObjectPropertyPayload",
               "TransferTransformPropertyPayload",
+              "EnsureVariantTypeEnumRegistered",
+              "RegisterVariantTypeEnumValues",
               "RegisterVariantFieldOffset",
               "FindThingPropertyMetadata",
               "ConvertTaggedValueToTwoFloat4Blocks"
             ],
             "todo_names": [
-              "0x1401123b0",
-              "0x140cb7e80",
-              "0x140cb7f30",
               "0x140cb8160",
               "0x140cc7ab0",
               "0x140cc7b60",
@@ -26395,16 +26397,16 @@
               "0x140d1aa00"
             ],
             "done_addresses": [
+              "1401123b0",
               "140705a90",
               "140ad5f90",
+              "140cb7e80",
+              "140cb7f30",
               "140cfda40",
               "14114db10",
               "1411c0830"
             ],
             "todo_addresses": [
-              "1401123b0",
-              "140cb7e80",
-              "140cb7f30",
               "140cb8160",
               "140cc7ab0",
               "140cc7b60",
@@ -26419,27 +26421,29 @@
               {
                 "name": "shared/properties/evarianttype",
                 "label": "Variant Type",
-                "done": 0,
-                "todo": 4,
+                "done": 3,
+                "todo": 1,
                 "total": 4,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 3,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 4,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "RegisterVariantTypeFieldOffset",
+                  "EnsureVariantTypeEnumRegistered",
+                  "RegisterVariantTypeEnumValues"
+                ],
                 "todo_names": [
-                  "0x1401123b0",
-                  "0x140cb7e80",
-                  "0x140cb7f30",
                   "0x140cb8160"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "done_addresses": [
                   "1401123b0",
                   "140cb7e80",
-                  "140cb7f30",
+                  "140cb7f30"
+                ],
+                "todo_addresses": [
                   "140cb8160"
                 ],
                 "unresolved_addresses": [],
@@ -26447,27 +26451,29 @@
                   {
                     "name": "shared/properties/evarianttype/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 4,
+                    "done": 3,
+                    "todo": 1,
                     "total": 4,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 4,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "RegisterVariantTypeFieldOffset",
+                      "EnsureVariantTypeEnumRegistered",
+                      "RegisterVariantTypeEnumValues"
+                    ],
                     "todo_names": [
-                      "0x1401123b0",
-                      "0x140cb7e80",
-                      "0x140cb7f30",
                       "0x140cb8160"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "done_addresses": [
                       "1401123b0",
                       "140cb7e80",
-                      "140cb7f30",
+                      "140cb7f30"
+                    ],
+                    "todo_addresses": [
                       "140cb8160"
                     ],
                     "unresolved_addresses": [],
@@ -27598,7 +27604,7 @@
             "todo": 4,
             "total": 10,
             "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 4,
+            "properties_or_types_reviewed": 6,
             "runtime_functions_identified": 0,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 4,
@@ -27645,7 +27651,7 @@
                 "todo": 0,
                 "total": 6,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 4,
+                "properties_or_types_reviewed": 6,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 6,
                 "code_role_unresolved": 0,
@@ -27704,6 +27710,256 @@
                   "140490040"
                 ],
                 "groups": []
+              }
+            ]
+          },
+          {
+            "name": "shared/signals",
+            "label": "Shared signal data",
+            "done": 7,
+            "todo": 2,
+            "total": 9,
+            "behavior_or_helpers_reviewed": 5,
+            "properties_or_types_reviewed": 2,
+            "runtime_functions_identified": 5,
+            "property_type_functions_identified": 4,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "RegisterWireHeaderFieldOffset",
+              "RegisterWireBlendOpField",
+              "ReduceTypedSignalToScalar",
+              "DecodeImpactFromVariant",
+              "ConvertTypedSignalInPlace",
+              "MergeTypedSignalsByMaximumMagnitude",
+              "BlendTypedSignalsByWeight"
+            ],
+            "todo_names": [
+              "0x140cfade0",
+              "0x140d1b8a0"
+            ],
+            "done_addresses": [
+              "140ce6330",
+              "140ce6ad0",
+              "1411bfe20",
+              "1411c00e0",
+              "1411c08c0",
+              "1411c11b0",
+              "1411c1590"
+            ],
+            "todo_addresses": [
+              "140cfade0",
+              "140d1b8a0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/signals/signal-values",
+                "label": "Signal values",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ReduceTypedSignalToScalar",
+                  "DecodeImpactFromVariant",
+                  "ConvertTypedSignalInPlace",
+                  "MergeTypedSignalsByMaximumMagnitude",
+                  "BlendTypedSignalsByWeight"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1411bfe20",
+                  "1411c00e0",
+                  "1411c08c0",
+                  "1411c11b0",
+                  "1411c1590"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/signals/signal-values/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReduceTypedSignalToScalar",
+                      "DecodeImpactFromVariant",
+                      "ConvertTypedSignalInPlace",
+                      "MergeTypedSignalsByMaximumMagnitude",
+                      "BlendTypedSignalsByWeight"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1411bfe20",
+                      "1411c00e0",
+                      "1411c08c0",
+                      "1411c11b0",
+                      "1411c1590"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/signals/wireheader",
+                "label": "Wire Header",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 2,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterWireHeaderFieldOffset",
+                  "RegisterWireBlendOpField"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140ce6330",
+                  "140ce6ad0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/signals/wireheader/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 2,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterWireHeaderFieldOffset",
+                      "RegisterWireBlendOpField"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140ce6330",
+                      "140ce6ad0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/signals/packedsignal",
+                "label": "Packed Signal",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d1b8a0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d1b8a0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/signals/packedsignal/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d1b8a0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d1b8a0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/signals/wireseq",
+                "label": "Wire Seq",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cfade0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cfade0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/signals/wireseq/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cfade0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cfade0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
               }
             ]
           },
@@ -28318,250 +28574,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "140da0600"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/signals",
-            "label": "Shared signal data",
-            "done": 6,
-            "todo": 2,
-            "total": 8,
-            "behavior_or_helpers_reviewed": 4,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 4,
-            "property_type_functions_identified": 4,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "RegisterWireHeaderFieldOffset",
-              "RegisterWireBlendOpField",
-              "ReduceTypedSignalToScalar",
-              "ConvertTypedSignalInPlace",
-              "MergeTypedSignalsByMaximumMagnitude",
-              "BlendTypedSignalsByWeight"
-            ],
-            "todo_names": [
-              "0x140cfade0",
-              "0x140d1b8a0"
-            ],
-            "done_addresses": [
-              "140ce6330",
-              "140ce6ad0",
-              "1411bfe20",
-              "1411c08c0",
-              "1411c11b0",
-              "1411c1590"
-            ],
-            "todo_addresses": [
-              "140cfade0",
-              "140d1b8a0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/signals/signal-values",
-                "label": "Signal values",
-                "done": 4,
-                "todo": 0,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 4,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ReduceTypedSignalToScalar",
-                  "ConvertTypedSignalInPlace",
-                  "MergeTypedSignalsByMaximumMagnitude",
-                  "BlendTypedSignalsByWeight"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1411bfe20",
-                  "1411c08c0",
-                  "1411c11b0",
-                  "1411c1590"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/signals/signal-values/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 4,
-                    "todo": 0,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 4,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ReduceTypedSignalToScalar",
-                      "ConvertTypedSignalInPlace",
-                      "MergeTypedSignalsByMaximumMagnitude",
-                      "BlendTypedSignalsByWeight"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1411bfe20",
-                      "1411c08c0",
-                      "1411c11b0",
-                      "1411c1590"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/signals/wireheader",
-                "label": "Wire Header",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RegisterWireHeaderFieldOffset",
-                  "RegisterWireBlendOpField"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140ce6330",
-                  "140ce6ad0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/signals/wireheader/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterWireHeaderFieldOffset",
-                      "RegisterWireBlendOpField"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140ce6330",
-                      "140ce6ad0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/signals/packedsignal",
-                "label": "Packed Signal",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d1b8a0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d1b8a0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/signals/packedsignal/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d1b8a0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d1b8a0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/signals/wireseq",
-                "label": "Wire Seq",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cfade0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cfade0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/signals/wireseq/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cfade0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cfade0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -38850,7 +38862,7 @@
         "todo": 44,
         "total": 55,
         "behavior_or_helpers_reviewed": 9,
-        "properties_or_types_reviewed": 0,
+        "properties_or_types_reviewed": 2,
         "runtime_functions_identified": 9,
         "property_type_functions_identified": 46,
         "code_role_unresolved": 0,
@@ -39872,7 +39884,7 @@
             "todo": 7,
             "total": 18,
             "behavior_or_helpers_reviewed": 9,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 2,
             "runtime_functions_identified": 9,
             "property_type_functions_identified": 9,
             "code_role_unresolved": 0,
@@ -39930,7 +39942,7 @@
                 "todo": 1,
                 "total": 8,
                 "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 2,
                 "runtime_functions_identified": 5,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
@@ -39999,7 +40011,7 @@
                     "todo": 1,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 2,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
@@ -40348,5 +40360,5 @@
       }
     ]
   },
-  "unmapped": 7894
+  "unmapped": 7893
 }
