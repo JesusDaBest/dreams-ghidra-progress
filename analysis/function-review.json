@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "220 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "221 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9175,
-    "other_names": 395,
-    "verification": "complete_inventory_matches_baseline_plus_220_renames_and_19_created_functions"
+    "default_fun_names": 9174,
+    "other_names": 396,
+    "verification": "complete_inventory_matches_baseline_plus_221_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4873,6 +4873,28 @@
         "Rotation, Position, Impact, PlayerValue and Timestamp special paths are not comprehensively validated.",
         "Selected synthetic native paths do not establish gadget completion or game-runtime correctness.",
         "No audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411c2100",
+      "original_name": "FUN_1411c2100",
+      "applied_name": "NormalizeFloatComponentsWithUniformFallback",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV NormalizeFloatComponentsWithUniformFallback(float * components, int count)",
+      "evidence": [
+        "Complete54-instruction helper reviewed, including signed count guard, scalar accumulation/square root, unordered threshold branch, eight-component AVX division and scalar tail.",
+        "21 direct original-instruction hardware cases cover counts1/2/3/4/8/9 with nonzero/zero/NaN input and counts0/-1/INT_MIN as no-ops.",
+        "Five native calls in Calculator core pass contiguous float components and component counts.",
+        "Cold backup, isolated trial and independent reopening verify sole name/signature change, RDI/ESI storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research name, not original source recovery.",
+        "Exceptional caller reachability, infinity and threshold-adjacent behavior are not comprehensively validated.",
+        "No whole-game runtime verification or audited-byte credit."
       ]
     }
   ],

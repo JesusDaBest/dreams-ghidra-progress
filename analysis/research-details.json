@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 239,
+    "checked_and_applied_names": 240,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 239,
+    "verified_names": 240,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Splitter and Combiner output helpers verified after independent reopening;220 renames and19 created functions overall.",
+    "scope": "Normalization helper independently reopened;221 existing renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2754,5 +2754,32 @@
     ],
     "audited_byte_credit_added": 0,
     "runtime_game_verified": false
+  },
+  "calculator_native_checkpoint": {
+    "new_names": [
+      "NormalizeFloatComponentsWithUniformFallback"
+    ],
+    "working_signature": "void PS4_SYSV NormalizeFloatComponentsWithUniformFallback(float * components, int count)",
+    "native_cases": {
+      "number": 23,
+      "vector_components": 128,
+      "normalization_helper": 21,
+      "special_float3": 7,
+      "total": 179
+    },
+    "findings": [
+      "Selected Number comparisons scale both inputs by100 and round before comparing.",
+      "Original result predicate bytes from supplied libc implement __isnormalf; tested subnormal, NaN, infinity and overflow results become zero.",
+      "The normalization helper takes its uniform sqrt(1/count) fallback on unordered length as well as small/zero length; the simple decompiled <= condition omits NaN.",
+      "Special Float3 cases cover distance, length, normalize, dot/normalized-dot and cross/normalized-cross.",
+      "Registered operation labels do not by themselves prove implementation or UI reachability."
+    ],
+    "verification": "Original captured instructions and original library leaf in an isolated hardware process; cold backup, isolated project trial and independent reopen for saved helper name/types.",
+    "limits": [
+      "Selected synthetic fixtures only, not whole-function or gadget completion.",
+      "Angle-between-vectors, exceptional special inputs, other tags, timestamps, revision-sensitive Power and remaining math imports require review.",
+      "No running-game verification or audited-byte credit."
+    ],
+    "game_runtime_verified": false
   }
 }

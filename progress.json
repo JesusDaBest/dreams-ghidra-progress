@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 198,
+    "done": 199,
     "todo": 1484,
-    "total": 1682,
-    "behavior_or_helpers_reviewed": 139,
+    "total": 1683,
+    "behavior_or_helpers_reviewed": 140,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 51,
+        "done": 52,
         "todo": 413,
-        "total": 464,
-        "behavior_or_helpers_reviewed": 9,
+        "total": 465,
+        "behavior_or_helpers_reviewed": 10,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 11,
+        "runtime_functions_identified": 12,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -73,6 +73,7 @@
           "RegisterTeleporterFieldOffsets",
           "AllocateDefaultLight",
           "RegisterLightFieldOffsets",
+          "NormalizeFloatComponentsWithUniformFallback",
           "AccumulateWireSignalByBlendMode"
         ],
         "todo_names": [
@@ -541,6 +542,7 @@
           "140d78870",
           "140d88850",
           "140d88a00",
+          "1411c2100",
           "141218d80"
         ],
         "todo_addresses": [
@@ -2933,12 +2935,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 21,
+            "done": 22,
             "todo": 68,
-            "total": 89,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 90,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 4,
+            "runtime_functions_identified": 5,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -2963,6 +2965,7 @@
               "RegisterSignalGeneratorFieldOffsets",
               "RegisterSignalInspectorFieldOffsets",
               "RegisterCombinerFieldOffsets",
+              "NormalizeFloatComponentsWithUniformFallback",
               "AccumulateWireSignalByBlendMode"
             ],
             "todo_names": [
@@ -3056,6 +3059,7 @@
               "140d6e010",
               "140d6e2b0",
               "140d6e850",
+              "1411c2100",
               "141218d80"
             ],
             "todo_addresses": [
@@ -3130,6 +3134,90 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/logic/calculator",
+                "label": "Calculator",
+                "done": 2,
+                "todo": 2,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitCalculatorProperties",
+                  "NormalizeFloatComponentsWithUniformFallback"
+                ],
+                "todo_names": [
+                  "0x140d577e0",
+                  "0x140d6ef00"
+                ],
+                "done_addresses": [
+                  "1404d7ef0",
+                  "1411c2100"
+                ],
+                "todo_addresses": [
+                  "140d577e0",
+                  "140d6ef00"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/calculator/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitCalculatorProperties"
+                    ],
+                    "todo_names": [
+                      "0x140d577e0",
+                      "0x140d6ef00"
+                    ],
+                    "done_addresses": [
+                      "1404d7ef0"
+                    ],
+                    "todo_addresses": [
+                      "140d577e0",
+                      "140d6ef00"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/calculator/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "NormalizeFloatComponentsWithUniformFallback"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1411c2100"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/logic/combiner",
                 "label": "Combiner",
@@ -3381,65 +3469,6 @@
                       "140cbba30",
                       "140cbba70",
                       "140d67730"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/calculator",
-                "label": "Calculator",
-                "done": 1,
-                "todo": 2,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitCalculatorProperties"
-                ],
-                "todo_names": [
-                  "0x140d577e0",
-                  "0x140d6ef00"
-                ],
-                "done_addresses": [
-                  "1404d7ef0"
-                ],
-                "todo_addresses": [
-                  "140d577e0",
-                  "140d6ef00"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/calculator/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 2,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitCalculatorProperties"
-                    ],
-                    "todo_names": [
-                      "0x140d577e0",
-                      "0x140d6ef00"
-                    ],
-                    "done_addresses": [
-                      "1404d7ef0"
-                    ],
-                    "todo_addresses": [
-                      "140d577e0",
-                      "140d6ef00"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40442,5 +40471,5 @@
       }
     ]
   },
-  "unmapped": 7888
+  "unmapped": 7887
 }

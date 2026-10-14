@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1682,
-  "unmapped_total": 7888,
+  "mapped_total": 1683,
+  "unmapped_total": 7887,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43389,6 +43389,26 @@
           "support": "Original gadget descriptor/field binding, native output paths, scoped synthetic execution and independently persisted name/types."
         }
       ]
+    },
+    "1411c2100": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "calculator",
+        "runtime-implementation"
+      ],
+      "component_basis": "Five native calls from Calculator operation core connect the normalization helper to its component operations.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper instruction review and scoped original-instruction hardware execution.",
+      "code_sha256": "be506ef3d1a504536682a6ac3c0dc126d5bf3c0b7db2efadebcdb6b4b91aaafc",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "NormalizeFloatComponentsWithUniformFallback",
+          "support": "Signed count guard, scalar accumulation, unordered fallback, AVX division and scalar tail; independently persisted role name and pointer/count types."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48195,6 +48215,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

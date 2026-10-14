@@ -1613,3 +1613,10 @@ Named `ReadSplitterOutputVariant` and `BuildCombinerOutputVariant` after matchin
 Rotation conversions, Position/Impact/PlayerValue/Timestamp special paths and complete running-game behavior remain unresolved. The Number/Signal difference branch is traced statically. Reused stack storage caused Impact field names to appear in a Timestamp path; the project now annotates that decompiler artifact. Cold backup, isolated trial and independent reopening verify both names and working arguments, unchanged native code and original archives, and all 9,570 function entries.
 
 Totals: 239 checked descriptive names, 1,682 mapped functions and 7,888 unmapped. Audited-byte coverage and game-runtime verification remain unchanged.
+### Calculator native behavior checkpoint
+
+Named and typed the shared normalization helper after reviewing its complete native body and five calls from Calculator. Its unordered length branch handles NaN using the same equal-component fallback as zero/small vectors; the decompiler condition omitted that case.
+
+179 isolated original-instruction hardware cases passed:23 Number cases,128 vector component arithmetic cases,21 direct normalization helper cases and7 special Float3 cases. The result check uses the original supplied library implementation, rather than a replacement stub. Tested comparisons scale and round inputs before comparing. These are selected synthetic cases, not full Calculator completion or a running-game test. Angle-between-vectors, exceptional special inputs, other value types, timestamp and revision-sensitive math remain unresolved.
+
+240 descriptive names checked;1,683 functions mapped,7,887 unmapped. Audited-byte coverage is unchanged.
