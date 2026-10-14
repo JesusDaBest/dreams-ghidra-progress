@@ -1197,3 +1197,7 @@ Two cleanup roles saved and freshly verified, preserving types, code and referen
 ### Name hash named
 
 Saved and verified the shared name-ID helper after 970 arithmetic-model cases covering lengths 0–96. Totals: 194 checked names and 1,646 mapped functions. [Algorithm and validation limits](ANALYSIS.md#name-identifier-hash). No runtime or audited-byte credit added.
+
+### Six helper signatures verified
+
+Applied and freshly verified native-supported types for name spans, compact integers and chunk read/skip callbacks. All six helpers and three callers decompile successfully. [Contracts and limits](ANALYSIS.md#reflected-helper-signatures-verified). No new names or completion credit.

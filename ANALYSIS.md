@@ -1441,3 +1441,11 @@ A hash-verified cold backup preceded naming. Fresh reopening preserved native by
 970 deterministic cases cover every length 0–96 and signed high-byte inputs, matching captured-instruction interpretation against an independent arithmetic model. They exercise 1,103 of 1,104 instructions; the remaining branch lies outside the reviewed valid-length partition. This is not target execution or complete ABI/invalid-length validation.
 
 Fresh reopening preserved the name, existing prototype, native bytes and references; full inventory and archive checks passed. Totals: 194 checked names, 1,646 mapped functions and 7,910 unmapped. Audited-byte coverage remains unchanged.
+
+### Reflected helper signatures verified
+
+Six existing helpers now have native-supported working signatures. The raw-name reader takes context and output span pointers and returns byte status. The32-bit compact reader takes a stream and uint output pointer with byte status; the64-bit reader takes a stream and64-bit output pointer with32-bit status. The decoded value is stored through the output pointer rather than returned as status.
+
+The chunk-span reader takes stream, span-begin and span-end pointers and returns a64-bit consumed-byte count. Both skip adapters take stream and64-bit count and preserve that full byte-count result. Opaque pointers avoid inventing original class declarations.
+
+An isolated trial and promoted project decompiled all six helpers plus the outer record reader, composite loader and object-reference reader. Exact parameter/return register storage was checked. Fresh reopening preserved native bytes and references, and full inventory/archive checks passed. Virtual replacement tables, undiscovered callers and runtime behavior remain open. Counts remain194 checked names and1,646 mapped functions; audited-byte coverage is unchanged.

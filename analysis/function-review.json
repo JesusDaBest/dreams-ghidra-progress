@@ -3695,11 +3695,12 @@
       ],
       "caveats": [
         "Analyst descriptive name, not recovered original symbol.",
-        "Prototype remains provisional; indirect stream contracts and runtime behavior unresolved.",
+        "Opaque-pointer working signature applied; indirect stream contracts and runtime behavior unresolved.",
         "No additional audited-byte coverage credit."
       ],
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "undefined ReadReflectedChunkSpans(void)"
+      "saved_working_signature": "ulonglong ReadReflectedChunkSpans(void * stream, void * span_begin, void * span_end)",
+      "signature_basis": "Native body traverses16-byte spans between RSI/RDX, uses RDI stream and returns the accumulated consumed byte count in RAX. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "1415fe7a0",
@@ -3715,11 +3716,12 @@
       ],
       "caveats": [
         "Analyst descriptive name, not recovered original symbol.",
-        "Prototype remains provisional; indirect stream contracts and runtime behavior unresolved.",
+        "Opaque-pointer working signature applied; indirect stream contracts and runtime behavior unresolved.",
         "No additional audited-byte coverage credit."
       ],
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "undefined SkipReflectedChunkBytes(void)"
+      "saved_working_signature": "ulonglong SkipReflectedChunkBytes(void * stream, ulonglong count)",
+      "signature_basis": "Builds one null-destination span from RSI count, calls read slot+0x28 and preserves its full byte-count return. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "1415fe7f0",
@@ -3735,11 +3737,12 @@
       ],
       "caveats": [
         "Analyst descriptive name, not recovered original symbol.",
-        "Prototype remains provisional; indirect stream contracts and runtime behavior unresolved.",
+        "Opaque-pointer working signature applied; indirect stream contracts and runtime behavior unresolved.",
         "No additional audited-byte coverage credit."
       ],
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "undefined ForwardReflectedChunkSkip(void)"
+      "saved_working_signature": "ulonglong ForwardReflectedChunkSkip(void * stream, ulonglong count)",
+      "signature_basis": "Tail-forwards through slot+0x30 with stream/count preserved; captured table binds that slot to the reviewed skip adapter. Cleared EDX is not consumed by that bound adapter. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "141601900",
@@ -3792,11 +3795,12 @@
       ],
       "caveats": [
         "Analyst descriptive role, not recovered original symbol.",
-        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Working signature applied; no runtime validation or additional audited static-coverage credit.",
         "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
       ],
-      "prototype_preserved": true,
-      "calling_convention": "PS4_SYSV"
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar ReadReflectedNameBytes(void * context, void * byte_span)",
+      "signature_basis": "Native body consumes context and output begin/end pair; writes low-byte statuses and callers test AL. The span remains opaque until original layout naming is justified. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "141602890",
@@ -3811,11 +3815,12 @@
       ],
       "caveats": [
         "Analyst descriptive role, not recovered original symbol.",
-        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Working signature applied; no runtime validation or additional audited static-coverage credit.",
         "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
       ],
-      "prototype_preserved": true,
-      "calling_convention": "PS4_SYSV"
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar ReadCompactUnsigned32(void * stream, uint * output)",
+      "signature_basis": "Native body dereferences stream vtable, writes a32-bit output and returns low-byte status. Single discovered schema caller tests AL. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "141607c40",
@@ -3830,11 +3835,12 @@
       ],
       "caveats": [
         "Analyst descriptive role, not recovered original symbol.",
-        "Prototype preserved; no runtime validation or additional audited static-coverage credit.",
+        "Working signature applied; no runtime validation or additional audited static-coverage credit.",
         "Allocation, ownership, indirect contracts and malformed compact input remain unresolved."
       ],
-      "prototype_preserved": true,
-      "calling_convention": "PS4_SYSV"
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint ReadCompactUnsigned64(void * stream, ulonglong * output)",
+      "signature_basis": "Native body stores a64-bit value; all explicit status assignments normalize EAX to0/2. Callers compare EAX. Return describes status, not the decoded integer. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "1415fea20",

@@ -1947,5 +1947,70 @@
     "runtime_verified": false,
     "checked_name_count_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "reflected_helper_signature_verification": {
+    "functions": [
+      {
+        "address": "1416024d0",
+        "signature": "uchar ReadReflectedNameBytes(void * context, void * byte_span)",
+        "parameter_storages": [
+          "RDI:8",
+          "RSI:8"
+        ],
+        "return_storage": "AL:1"
+      },
+      {
+        "address": "141602890",
+        "signature": "uchar ReadCompactUnsigned32(void * stream, uint * output)",
+        "parameter_storages": [
+          "RDI:8",
+          "RSI:8"
+        ],
+        "return_storage": "AL:1"
+      },
+      {
+        "address": "141607c40",
+        "signature": "uint ReadCompactUnsigned64(void * stream, ulonglong * output)",
+        "parameter_storages": [
+          "RDI:8",
+          "RSI:8"
+        ],
+        "return_storage": "EAX:4"
+      },
+      {
+        "address": "1415fe600",
+        "signature": "ulonglong ReadReflectedChunkSpans(void * stream, void * span_begin, void * span_end)",
+        "parameter_storages": [
+          "RDI:8",
+          "RSI:8",
+          "RDX:8"
+        ],
+        "return_storage": "RAX:8"
+      },
+      {
+        "address": "1415fe7a0",
+        "signature": "ulonglong SkipReflectedChunkBytes(void * stream, ulonglong count)",
+        "parameter_storages": [
+          "RDI:8",
+          "RSI:8"
+        ],
+        "return_storage": "RAX:8"
+      },
+      {
+        "address": "1415fe7f0",
+        "signature": "ulonglong ForwardReflectedChunkSkip(void * stream, ulonglong count)",
+        "parameter_storages": [
+          "RDI:8",
+          "RSI:8"
+        ],
+        "return_storage": "RAX:8"
+      }
+    ],
+    "verified_after_clean_reopen": true,
+    "full_inventory_verified": true,
+    "original_archives_unchanged": true,
+    "runtime_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }
