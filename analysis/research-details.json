@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 201,
+    "checked_and_applied_names": 213,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,25 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 201,
-    "function_count": 9558,
+    "verified_names": 213,
+    "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
-      "141604dd0",
-      "141604e30"
+      "140ce6db0",
+      "140ce6dc0",
+      "140ce6dd0",
+      "140ce6de0",
+      "140ce6670",
+      "140ce6680",
+      "140ce6690",
+      "140ce6700",
+      "140ce5c10",
+      "140ce5c20",
+      "140ce5c30",
+      "140ce5d00"
     ],
-    "scope": "Two typed source-schema predicates created;194 renames and7 created functions overall.",
+    "scope": "Twelve typed Game container callbacks created;194 renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2448,6 +2458,31 @@
       "No original symbols, game runtime or completion credit."
     ],
     "typed_definitions_verified_after_clean_reopen": true,
+    "audited_byte_credit_added": 0
+  },
+  "game_container_callback_review": {
+    "functions": 12,
+    "instructions": 130,
+    "bytes": 661,
+    "roles": [
+      "storage",
+      "count",
+      "resize",
+      "append"
+    ],
+    "elements": [
+      "Thing references",
+      "Wire",
+      "Body"
+    ],
+    "evidence": "Registration callbacks and generic scene serializer consumers traced; definitions persisted after clean reopening.",
+    "limits": [
+      "No actual scene round trip",
+      "AVX execution unverified",
+      "Caller-side capacity/count invariants unresolved",
+      "Untouched record bytes not assigned member meanings"
+    ],
+    "runtime_verified": false,
     "audited_byte_credit_added": 0
   }
 }

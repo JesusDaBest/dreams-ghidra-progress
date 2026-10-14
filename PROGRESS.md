@@ -1245,3 +1245,9 @@ Checked 252 native encoder/buffered-stream cases, including 52 modeled flush fai
 ### Two schema predicates saved
 
 Two previously undefined source-schema predicates now have verified names and working signatures. Fresh reopening preserved their 152 bytes and the complete inventory; 504 synthetic predicate checks passed. Totals: 201 checked names across 9,558 functions; 1,653 mapped. [Behavior and limits](ANALYSIS.md#source-schema-predicates-defined). Audited-byte coverage is unchanged.
+
+### Game container callbacks
+
+Twelve previously undefined routines now have checked names and working signatures for storage, count, resize and append operations on Game Thing-reference, Wire and Body containers. Their complete native bodies contain 130 instructions in 661 bytes. Property registrations connect them to the generic scene serializer: loading calls resize before reading elements; saving calls count and storage. Wire entries occupy 64 bytes and Body entries 304 bytes. Initialization leaves some trailing bytes untouched; their meaning and caller-side bounds remain unresolved.
+
+A cold backup and isolated definition/decompilation trial preceded promotion. A clean reopening verified all twelve names, signatures and native bodies, the full 9,570-function inventory and original archive hashes. Totals are 213 checked names and 1,665 mapped functions; 7,905 remain unmapped. This is storage and serialization progress, not proof that an actual scene round trip or the game works. AVX execution remains unverified. Audited-byte coverage is unchanged.

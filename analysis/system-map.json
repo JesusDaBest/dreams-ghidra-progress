@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9558,
-  "mapped_total": 1653,
+  "inventory_total": 9570,
+  "mapped_total": 1665,
   "unmapped_total": 7905,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -42764,6 +42764,246 @@
           "kind": "verified_semantic_review",
           "name": "HasReflectedSourceField",
           "support": "Native body and vtable reviewed; typed definition persisted after clean reopening. Synthetic instruction checks passed; game runtime unverified."
+        }
+      ]
+    },
+    "140ce6db0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "f84e915a39a42129d4d8c8f1c771b4a320ba7b1ab0c17754721be4ff7b835a21",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetGameThingReferenceStorage",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6dc0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "f8d750e96c77d9a775f3f850092d0d675451ac287d54c28658f3191e312578c1",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetGameThingReferenceCount",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6dd0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "c50e0a560c096d5dece8827037f55f4e7eb055c76f81ffd2259e7bbfcfd7f5e0",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResizeGameThingReferenceStorage",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6de0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "501c0600bf53648d029303721ba5ce30e0e4ab1dbb6c27990f361e185887ca93",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGameThingReferenceSlot",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6670": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "f84e915a39a42129d4d8c8f1c771b4a320ba7b1ab0c17754721be4ff7b835a21",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetGameWireStorage",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6680": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "acb0e135558809ec6ece534ebed8ebd1d6464f41e825981398eb730271a8bae1",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetGameWireCount",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6690": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "f2fed40461f2d3a3de2b35ed8358f92b50b259f7e372c754662eab786293cea6",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResizeGameWireStorage",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce6700": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "8d3f947fd8bfb22ff1042eed8d061ca4bc8a45eb94ef2c429c0dbbfff52f7a71",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGameWireSlot",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce5c10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "f84e915a39a42129d4d8c8f1c771b4a320ba7b1ab0c17754721be4ff7b835a21",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetGameBodyStorage",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce5c20": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "fe133b829f1e129218a3eeed07cadd897c677d88839445e9491c7a33f1e4c93a",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetGameBodyCount",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce5c30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "ddb17dc996cde344439a57dedc285db160ff87e46c2ccac3905a324b8a173c64",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResizeGameBodyStorage",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
+        }
+      ]
+    },
+    "140ce5d00": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Game property registration and generic serializer callback consumers",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native storage/count/resize/append body review",
+      "code_sha256": "ac9410ad1d643e514a6cd512a67a757bf403ee0eb5be1f03bec48f663a758596",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGameBodySlot",
+          "support": "Registered Thing-reference, Wire or Body container helper; body and working type verified after reopening. This is shared storage/serialization work, not complete logic or physics understanding."
         }
       ]
     }

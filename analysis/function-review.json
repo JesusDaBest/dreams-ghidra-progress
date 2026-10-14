@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "194 existing-function renames and7 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "194 existing-function renames and19 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9558,
+    "total": 9570,
     "default_fun_names": 9201,
-    "other_names": 357,
-    "verification": "complete_inventory_matches_baseline_plus_194_renames_and_seven_created_functions"
+    "other_names": 369,
+    "verification": "complete_inventory_matches_baseline_plus_194_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4058,6 +4058,270 @@
       "caveats": [
         "Analyst descriptive name and working opaque-pointer signature, not recovered original declaration.",
         "Synthetic cases do not establish every caller or game runtime behavior.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6db0",
+      "original_name": null,
+      "applied_name": "GetGameThingReferenceStorage",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * GetGameThingReferenceStorage(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6dc0",
+      "original_name": null,
+      "applied_name": "GetGameThingReferenceCount",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint GetGameThingReferenceCount(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6dd0",
+      "original_name": null,
+      "applied_name": "ResizeGameThingReferenceStorage",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * ResizeGameThingReferenceStorage(void * container, uint count)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6de0",
+      "original_name": null,
+      "applied_name": "AppendGameThingReferenceSlot",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * AppendGameThingReferenceSlot(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6670",
+      "original_name": null,
+      "applied_name": "GetGameWireStorage",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * GetGameWireStorage(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6680",
+      "original_name": null,
+      "applied_name": "GetGameWireCount",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint GetGameWireCount(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6690",
+      "original_name": null,
+      "applied_name": "ResizeGameWireStorage",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * ResizeGameWireStorage(void * container, uint count)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce6700",
+      "original_name": null,
+      "applied_name": "AppendGameWireSlot",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * AppendGameWireSlot(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce5c10",
+      "original_name": null,
+      "applied_name": "GetGameBodyStorage",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * GetGameBodyStorage(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce5c20",
+      "original_name": null,
+      "applied_name": "GetGameBodyCount",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint GetGameBodyCount(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce5c30",
+      "original_name": null,
+      "applied_name": "ResizeGameBodyStorage",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * ResizeGameBodyStorage(void * container, uint count)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
+        "No automatic audited-byte credit."
+      ]
+    },
+    {
+      "address": "140ce5d00",
+      "original_name": null,
+      "applied_name": "AppendGameBodySlot",
+      "change_kind": "new_function_definition",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * AppendGameBodySlot(void * container)",
+      "calling_convention": "PS4_SYSV",
+      "evidence": [
+        "Complete registration-anchored body, branch boundaries and property descriptor callback bindings reviewed.",
+        "Connected static trace identifies loader resize and writer storage/count callback use.",
+        "Hash-verified cold backup, isolated definition/decompilation trial, promotion and fresh-reopen full inventory/archive verification."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque-pointer working signature; original declarations not recovered.",
+        "Actual scene round trip, caller bounds and AVX runtime behavior remain unverified.",
         "No automatic audited-byte credit."
       ]
     }
