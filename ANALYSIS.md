@@ -1483,3 +1483,11 @@ The compact readers were then connected to the captured native chunk-span reader
 Direct chunk-span and skip-adapter emulation passed728 cases, including248 partial-count cases. Checks covered multiple spans, zero lengths, null destinations, actual-consumed-byte results and untouched destination tails, plus stack/register preservation.
 
 These tests execute captured instruction bytes in synthetic memory. They do not run Dreams or decode real scene files. Real stream/memory-copy implementations, overlapping buffers, overlarge counts, overlong compact encodings, malformed marker runs and full caller contracts remain open. Counts and audited-byte coverage are unchanged.
+
+### Boolean primitive conversion and short reads
+
+A fresh check matched the complete 623-instruction primitive reader and its Boolean vector constants to the expected executable. Static control flow shows zero/nonzero normalization through 128-byte blocks, 16-byte blocks, and a scalar tail.
+
+For counts 0 through 15, 48 complete-read cases and 360 short-read cases passed with captured native instructions and a controlled stream callback. Complete reads convert zero to 0 and nonzero to 1. Short reads return status 1 before normalization: the copied prefix remains raw and the untouched destination tail retains its prior contents. This describes partial-write behavior, not a demonstrated game defect.
+
+SIMD execution remains unverified. A minimal captured-instruction reproducer disagrees with explicit-source compare semantics under both Unicorn 2.1.2 and 2.1.4. Passing scalar checks do not validate vector paths. Dreams itself was not run; names and audited-byte coverage are unchanged.

@@ -2126,5 +2126,41 @@
     "runtime_game_verified": false,
     "name_credit_added": 0,
     "audited_byte_credit_added": 0
+  },
+  "primitive_boolean_scalar_validation": {
+    "emulator": "2.1.4",
+    "scope": "Captured native Boolean bulk-input branch with counts below the SIMD threshold; controlled stream callback.",
+    "successful_scalar_normalization_cases": 48,
+    "short_read_cases": 360,
+    "counts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "finding": "Complete reads normalize each byte to 0/1. Short reads return status 1 before normalization, leaving the copied prefix raw and the uncopied tail untouched.",
+    "limitations": [
+      "Only counts 0..15, avoiding known SIMD emulator mismatch.",
+      "Synthetic stream and memory; no running-game claim.",
+      "Other source categories and custom callbacks are outside this check."
+    ],
+    "completion_credit_added": false,
+    "native_body_and_constants_rechecked": true,
+    "simd_validation": "Unproven: isolated explicit-source compare disagrees under Unicorn 2.1.2 and 2.1.4.",
+    "runtime_game_verified": false,
+    "name_credit_added": 0,
+    "audited_byte_credit_added": 0
   }
 }

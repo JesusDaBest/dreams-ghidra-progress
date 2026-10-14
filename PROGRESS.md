@@ -1217,3 +1217,7 @@ Captured lookup/insertion instructions passed 4,629 calls with reference-diction
 ### Native reader emulation checked
 
 Compact readers passed284 value/range and2,568 truncation cases. Connected native compact/chunk readers passed512 chunk cases and14 short/marker cases. Span/skip paths passed728 cases, including248 partial results. [Dependencies and validation limits](ANALYSIS.md#compact-and-chunk-reader-instruction-emulation). No running-game validation, new names or audited-byte credit claimed.
+
+### Boolean reader failure behavior checked
+
+The native scalar Boolean path passed 48 complete-read and 360 short-read cases for counts below 16. Short reads leave the transferred prefix unnormalized. Live code and constants were rechecked; vector execution remains unverified because of an isolated emulator mismatch. [Evidence scope and limits](ANALYSIS.md#boolean-primitive-conversion-and-short-reads). No completion credit added.
