@@ -1457,3 +1457,11 @@ Saved `CollectReflectedSchemaDependencies` and `WriteReflectedObjectRecords` aft
 The writer emits schema headers, raw names, field metadata and object payload records. Observed field inclusion/exclusion masks match between collection and emission. Named-alternative metadata binds to the reader’s category-1/flag-0x20 list path. Original source-type semantics are not inferred solely from that shape. Stream writes generally check returned lengths; allocation failures, callbacks and full framing still require analysis.
 
 Fresh reopening preserved both names, previous types, native bytes and references; full inventory and original archives passed checks. Totals: 196 checked names across 9,556 functions, 1,648 mapped and 7,908 unmapped. No runtime round trip or audited-byte credit was added.
+
+### Descriptor map roles named
+
+Saved `FindReflectedDescriptorSlot`, `EnsureReflectedDescriptorMapCapacity`, and `InsertReflectedDescriptorId` after reviewing all 361 native instructions. Lookup matches exact descriptor pointers and returns a map/index result with a capacity miss sentinel. Growth chooses power-of-two storage with minimum capacity 16 and reinserts old entries. Insertion updates existing IDs or displaces entries according to the same probe-distance rule used by lookup; the incoming pair can change during displacement.
+
+The collector registers a new descriptor before recursing. Repeated lookup of that same pointer can therefore suppress repeated traversal. This establishes the observed collection mechanism, not complete recursive-schema correctness in the reader. Zero keys, invalid/full tables, overflow, allocation failures and full ownership contracts remain open.
+
+Fresh reopening preserved names, previous types, native bytes and references; full inventory and original archives passed verification. Totals: 199 checked names, 1,651 mapped functions and 7,905 unmapped. No runtime or audited-byte credit was added.

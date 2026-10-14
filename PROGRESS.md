@@ -1205,3 +1205,7 @@ Applied and freshly verified native-supported types for name spans, compact inte
 ### Schema writer roles named
 
 Two verified names added for dependency collection and object-record writing. Traced emitted schema order, field filters, metadata and object payload records. Totals: 196 checked names and 1,648 mapped functions. [Evidence and remaining format contracts](ANALYSIS.md#schema-collection-and-object-record-writing-named). Audited-byte coverage remains unchanged.
+
+### Descriptor map helpers named
+
+Three verified roles added for descriptor lookup, growth and ID insertion. Traced exact-pointer traversal suppression and shared probe rules. Totals: 199 checked names and 1,651 mapped functions. [Evidence and limits](ANALYSIS.md#descriptor-map-roles-named). Audited-byte coverage is unchanged.

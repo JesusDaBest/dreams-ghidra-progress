@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "191 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "194 existing-function renames and5 newly defined descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9556,
-    "default_fun_names": 9204,
-    "other_names": 352,
-    "verification": "complete_inventory_matches_baseline_plus_191_renames_and_five_created_functions"
+    "default_fun_names": 9201,
+    "other_names": 355,
+    "verification": "complete_inventory_matches_baseline_plus_194_renames_and_five_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3956,6 +3956,63 @@
         "Analyst descriptive role, not original symbol; prototype preserved.",
         "Identifier-map internals, allocation failure, recursive schemas, indirect callbacks and complete framing remain unresolved.",
         "No runtime round trip or additional audited-byte coverage credit."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "1416046f0",
+      "original_name": "FUN_1416046f0",
+      "applied_name": "FindReflectedDescriptorSlot",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete87-instruction native body reviewed: exact descriptor-pointer lookup, mixed pointer hashing, wrapped linear probing, displacement early exit and map/index miss sentinel."
+      ],
+      "caveats": [
+        "Descriptive role, not original symbol; prototype preserved.",
+        "Capacity, zero-key, allocation, ownership and invalid-table contracts remain unresolved.",
+        "No runtime, exhaustive formal proof or additional audited-byte credit."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "141604820",
+      "original_name": "FUN_141604820",
+      "applied_name": "EnsureReflectedDescriptorMapCapacity",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete112-instruction native body reviewed: power-of-two/minimum16 growth, slot initialization, reinsertion and ownership-aware old allocation release."
+      ],
+      "caveats": [
+        "Descriptive role, not original symbol; prototype preserved.",
+        "Capacity, zero-key, allocation, ownership and invalid-table contracts remain unresolved.",
+        "No runtime, exhaustive formal proof or additional audited-byte credit."
+      ],
+      "prototype_preserved": true,
+      "calling_convention": "PS4_SYSV"
+    },
+    {
+      "address": "1416049b0",
+      "original_name": "FUN_1416049b0",
+      "applied_name": "InsertReflectedDescriptorId",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "evidence": [
+        "Complete162-instruction native body reviewed: pointer-key/uint-ID insertion and update, displacement swaps, mutable carried pair and inserted/result-slot reporting."
+      ],
+      "caveats": [
+        "Descriptive role, not original symbol; prototype preserved.",
+        "Capacity, zero-key, allocation, ownership and invalid-table contracts remain unresolved.",
+        "No runtime, exhaustive formal proof or additional audited-byte credit."
       ],
       "prototype_preserved": true,
       "calling_convention": "PS4_SYSV"
