@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 257,
+    "checked_and_applied_names": 258,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 257,
+    "verified_names": 258,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "238 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "239 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3109,6 +3109,22 @@
       "Two-slot cache expiry/locking and actual history consumers remain unresolved.",
       "Descriptive local-history role; no network-send or game-runtime validation claim.",
       "No full Remapper completion or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "remapper_history_cache_checkpoint": {
+    "name": "FindOrInitializeRemapperSignalHistory",
+    "controlled_native_cases": 784,
+    "findings": [
+      "Matching unflagged keys bypass expiry.",
+      "On miss, ordered age above threshold permits replacement; second eligible record overrides first.",
+      "Replacement initializes record and key/head/count, while hits refresh timestamp."
+    ],
+    "limits": [
+      "OS mutex/thread and memory copy/fill implementations are modeled fixtures; original implementations and concurrency not executed.",
+      "Selected keys/flags/ages around captured threshold; clock unit and actual consumers unresolved.",
+      "Descriptive local-history cache role; no network or whole-subsystem completion claim.",
+      "No running-game verification or audited-byte credit."
     ],
     "runtime_game_verified": false
   }

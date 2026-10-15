@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 216,
+    "done": 217,
     "todo": 1484,
-    "total": 1700,
-    "behavior_or_helpers_reviewed": 157,
+    "total": 1701,
+    "behavior_or_helpers_reviewed": 158,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 67,
+        "done": 68,
         "todo": 413,
-        "total": 480,
-        "behavior_or_helpers_reviewed": 25,
+        "total": 481,
+        "behavior_or_helpers_reviewed": 26,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 27,
+        "runtime_functions_identified": 28,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -56,6 +56,7 @@
           "ComputeTeleporterTransformWithOffset",
           "SubmitTeleporterPositionOffsetCommand",
           "AppendRemapperSignalHistory",
+          "FindOrInitializeRemapperSignalHistory",
           "InitializeVariableGadgetDefaults",
           "EvaluateRemapperSignal",
           "RegisterLightTypeDescriptor",
@@ -540,6 +541,7 @@
           "1408f1dc0",
           "1408f2180",
           "140907eb0",
+          "1409082f0",
           "140944f20",
           "140c27870",
           "140d54090",
@@ -995,12 +997,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 37,
+            "done": 38,
             "todo": 68,
-            "total": 105,
-            "behavior_or_helpers_reviewed": 20,
+            "total": 106,
+            "behavior_or_helpers_reviewed": 21,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 20,
+            "runtime_functions_identified": 21,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1028,6 +1030,7 @@
               "ReadSplitterOutputVariant",
               "BuildCombinerOutputVariant",
               "AppendRemapperSignalHistory",
+              "FindOrInitializeRemapperSignalHistory",
               "EvaluateRemapperSignal",
               "RegisterCombinerTypeDescriptor",
               "RegisterSignalInspectorTypeDescriptor",
@@ -1137,6 +1140,7 @@
               "1408cecf0",
               "1408cf9d0",
               "140907eb0",
+              "1409082f0",
               "140c27870",
               "140d57980",
               "140d57b20",
@@ -1224,6 +1228,100 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/logic/remapper",
+                "label": "Remapper",
+                "done": 4,
+                "todo": 3,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "UpdateRemapperOutputFromInput",
+                  "AppendRemapperSignalHistory",
+                  "FindOrInitializeRemapperSignalHistory",
+                  "EvaluateRemapperSignal"
+                ],
+                "todo_names": [
+                  "0x1404c8270",
+                  "0x140d567a0",
+                  "0x140d743c0"
+                ],
+                "done_addresses": [
+                  "1408cdf80",
+                  "140907eb0",
+                  "1409082f0",
+                  "140c27870"
+                ],
+                "todo_addresses": [
+                  "1404c8270",
+                  "140d567a0",
+                  "140d743c0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/remapper/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateRemapperOutputFromInput",
+                      "AppendRemapperSignalHistory",
+                      "FindOrInitializeRemapperSignalHistory",
+                      "EvaluateRemapperSignal"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cdf80",
+                      "140907eb0",
+                      "1409082f0",
+                      "140c27870"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/remapper/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c8270",
+                      "0x140d567a0",
+                      "0x140d743c0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c8270",
+                      "140d567a0",
+                      "140d743c0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/logic/calculator",
                 "label": "Calculator",
@@ -1399,96 +1497,6 @@
                       "1408cd210",
                       "1408cd5d0",
                       "1408cd8d0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/remapper",
-                "label": "Remapper",
-                "done": 3,
-                "todo": 3,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "UpdateRemapperOutputFromInput",
-                  "AppendRemapperSignalHistory",
-                  "EvaluateRemapperSignal"
-                ],
-                "todo_names": [
-                  "0x1404c8270",
-                  "0x140d567a0",
-                  "0x140d743c0"
-                ],
-                "done_addresses": [
-                  "1408cdf80",
-                  "140907eb0",
-                  "140c27870"
-                ],
-                "todo_addresses": [
-                  "1404c8270",
-                  "140d567a0",
-                  "140d743c0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/remapper/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c8270",
-                      "0x140d567a0",
-                      "0x140d743c0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c8270",
-                      "140d567a0",
-                      "140d743c0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/logic/remapper/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "UpdateRemapperOutputFromInput",
-                      "AppendRemapperSignalHistory",
-                      "EvaluateRemapperSignal"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408cdf80",
-                      "140907eb0",
-                      "140c27870"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -40745,5 +40753,5 @@
       }
     ]
   },
-  "unmapped": 7870
+  "unmapped": 7869
 }

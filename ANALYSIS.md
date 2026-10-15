@@ -1731,3 +1731,8 @@ Original initializer writes verify Power and OutputA offsets supplied to the fix
 Applied and independently reopened AppendRemapperSignalHistory with history/input/output pointers. The helper records paired input/output samples in a256-slot ring and maintains input extrema.7,680 scoped Timestamp native cases verify wrap, count cap256, signed extrema and equal-value retention. Copies update37 bytes of each40-byte Variant slot, preserving padding3.
 
 Original Game initialization corroborates two local history records and head255/count0.48 native initializer cases verify37-byte logical clears per slot. This follows the Remapper wrapper locally; it is not evidence of network transmission. Other type/component extrema, cache expiry/locking, consumers and actual game scheduling remain unresolved. Totals: 257 checked names; 1,700 mapped functions; 7,870 unmapped.
+### Remapper signal-history cache
+
+Applied and independently reopened FindOrInitializeRemapperSignalHistory with Game/key arguments and pointer return.784 controlled cases verify key hits, expiry boundaries including unordered ages, replacement and timestamp refresh. Matching unflagged keys bypass expiry; on a miss, a second eligible record overrides first. The original threshold is0.06666667014360428; its clock unit is not independently established.
+
+Original cache and initializer instructions, constant and import thunks execute with explicit modeled mutex, thread-id, copy and fill contracts. Actual PS4 synchronization/memory implementations and concurrency are not validated. Consumers and game scheduling remain unresolved. Totals: 258 checked names; 1,701 mapped functions; 7,869 unmapped.

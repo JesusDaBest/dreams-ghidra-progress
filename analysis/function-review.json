@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "238 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "239 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9157,
-    "other_names": 413,
-    "verification": "complete_inventory_matches_baseline_plus_238_renames_and_19_created_functions"
+    "default_fun_names": 9156,
+    "other_names": 414,
+    "verification": "complete_inventory_matches_baseline_plus_239_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5278,6 +5278,29 @@
         "Two-slot cache expiry/locking and actual history consumers remain unresolved.",
         "Descriptive local-history role; no network-send or game-runtime validation claim.",
         "No full Remapper completion or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1409082f0",
+      "original_name": "FUN_1409082f0",
+      "applied_name": "FindOrInitializeRemapperSignalHistory",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV FindOrInitializeRemapperSignalHistory(void * game, uint thing_identity)",
+      "evidence": [
+        "Complete79-instruction getter, two-record Game initialization and direct Remapper wrapper call inspected.",
+        "Exact loader NID bindings identify mutex lock/unlock and thread-id imports; original double expiry threshold captured.",
+        "784 controlled original-instruction cache-policy cases verify pointers, hits, expiry boundaries, NaN ages, second-slot precedence and exact replacement/refresh writes.",
+        "Cold backup, isolated trial and independent reopening verify descriptive name and pointer-return/Game/key signature, unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "OS mutex/thread and memory copy/fill implementations are modeled fixtures; original implementations and concurrency not executed.",
+        "Selected keys/flags/ages around captured threshold; clock unit and actual consumers unresolved.",
+        "Descriptive local-history cache role; no network or whole-subsystem completion claim.",
+        "No running-game verification or audited-byte credit."
       ]
     }
   ],
