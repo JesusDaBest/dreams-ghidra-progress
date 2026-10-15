@@ -4209,5 +4209,178 @@
       "Shape enum labels, opaque values and complete consumer behavior remain unresolved."
     ],
     "runtime_game_verified": false
+  },
+  "spatial_query_working_types_checkpoint": {
+    "functions": {
+      "1414f6370": {
+        "name": "CollectBvhLeavesIntersectingSegment",
+        "signature": "ushort * PS4_SYSV CollectBvhLeavesIntersectingSegment(BvhNodeWorking32 * nodes, ushort root_index, ushort * output, ushort * output_end, BvhQueryMasksWorking6 * masks, SpatialQueryFloat4Working16 segment_origin, SpatialQueryFloat4Working16 inverse_segment_direction)",
+        "parameters": [
+          {
+            "name": "nodes",
+            "type": "BvhNodeWorking32 *",
+            "storage": "RDI:8"
+          },
+          {
+            "name": "root_index",
+            "type": "ushort",
+            "storage": "SI:2"
+          },
+          {
+            "name": "output",
+            "type": "ushort *",
+            "storage": "RDX:8"
+          },
+          {
+            "name": "output_end",
+            "type": "ushort *",
+            "storage": "RCX:8"
+          },
+          {
+            "name": "masks",
+            "type": "BvhQueryMasksWorking6 *",
+            "storage": "R8:8"
+          },
+          {
+            "name": "segment_origin",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM0:16"
+          },
+          {
+            "name": "inverse_segment_direction",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM1:16"
+          }
+        ],
+        "return_storage": "RAX:8"
+      },
+      "1414f64b0": {
+        "name": "CollectBvhLeavesOverlappingBounds",
+        "signature": "ushort * PS4_SYSV CollectBvhLeavesOverlappingBounds(BvhNodeWorking32 * nodes, ushort root_index, ushort * output, ushort * output_end, BvhQueryMasksWorking6 * masks, SpatialQueryFloat4Working16 query_min, SpatialQueryFloat4Working16 query_max)",
+        "parameters": [
+          {
+            "name": "nodes",
+            "type": "BvhNodeWorking32 *",
+            "storage": "RDI:8"
+          },
+          {
+            "name": "root_index",
+            "type": "ushort",
+            "storage": "SI:2"
+          },
+          {
+            "name": "output",
+            "type": "ushort *",
+            "storage": "RDX:8"
+          },
+          {
+            "name": "output_end",
+            "type": "ushort *",
+            "storage": "RCX:8"
+          },
+          {
+            "name": "masks",
+            "type": "BvhQueryMasksWorking6 *",
+            "storage": "R8:8"
+          },
+          {
+            "name": "query_min",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM0:16"
+          },
+          {
+            "name": "query_max",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM1:16"
+          }
+        ],
+        "return_storage": "RAX:8"
+      },
+      "140903930": {
+        "name": "EnqueueRegionQuery",
+        "signature": "uint PS4_SYSV EnqueueRegionQuery(void * state, uchar shape_kind, BvhQueryMasksWorking6 * masks, uchar phase, uchar auxiliary_tag, undefined8 opaque_value_0, SpatialQueryFloat4Working16 centre_and_radius, SpatialQueryFloat4Working16 orientation_input, SpatialQueryFloat4Working16 transform_position_scale, SpatialQueryFloat4Working16 transform_rotation, SpatialQueryFloat4Working16 extent_input, SpatialQueryFloat4Working16 auxiliary_extent_input, undefined8 opaque_value_1)",
+        "parameters": [
+          {
+            "name": "state",
+            "type": "void *",
+            "storage": "RDI:8"
+          },
+          {
+            "name": "shape_kind",
+            "type": "uchar",
+            "storage": "SIL:1"
+          },
+          {
+            "name": "masks",
+            "type": "BvhQueryMasksWorking6 *",
+            "storage": "RDX:8"
+          },
+          {
+            "name": "phase",
+            "type": "uchar",
+            "storage": "CL:1"
+          },
+          {
+            "name": "auxiliary_tag",
+            "type": "uchar",
+            "storage": "R8B:1"
+          },
+          {
+            "name": "opaque_value_0",
+            "type": "undefined8",
+            "storage": "R9:8"
+          },
+          {
+            "name": "centre_and_radius",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM0:16"
+          },
+          {
+            "name": "orientation_input",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM1:16"
+          },
+          {
+            "name": "transform_position_scale",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM2:16"
+          },
+          {
+            "name": "transform_rotation",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM3:16"
+          },
+          {
+            "name": "extent_input",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM4:16"
+          },
+          {
+            "name": "auxiliary_extent_input",
+            "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+            "storage": "XMM5:16"
+          },
+          {
+            "name": "opaque_value_1",
+            "type": "undefined8",
+            "storage": "Stack[0x8]:8"
+          }
+        ],
+        "return_storage": "EAX:4"
+      }
+    },
+    "working_records": {
+      "SpatialQueryFloat4Working16": 16,
+      "BvhNodeWorking32": 32,
+      "BvhQueryMasksWorking6": 6
+    },
+    "original_instruction_spans_checked": 341,
+    "connected_consumer_decompilations": 2,
+    "name_review_count_unchanged": 289,
+    "limits": [
+      "Working types and displayed parameter order are analyst representations, not recovered original C++ declarations.",
+      "State and opaque values remain untyped; full game semantics and in-game validation remain unresolved."
+    ],
+    "runtime_game_verified": false
   }
 }

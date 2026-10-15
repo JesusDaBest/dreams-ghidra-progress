@@ -5956,20 +5956,60 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV CollectBvhLeavesIntersectingSegment(void)",
+      "saved_working_signature": "ushort * PS4_SYSV CollectBvhLeavesIntersectingSegment(BvhNodeWorking32 * nodes, ushort root_index, ushort * output, ushort * output_end, BvhQueryMasksWorking6 * masks, SpatialQueryFloat4Working16 segment_origin, SpatialQueryFloat4Working16 inverse_segment_direction)",
       "evidence": [
         "Complete 84-instruction body matched original executable bytes.",
         "2,100 original-instruction ray query cases verify exact leaf order, output pointer, flag masks, output limits and input/guard preservation.",
         "Caller maps leaf indices through the sculpt tree identifier permutation.",
-        "Cold backup, isolated naming trial, promotion and independent reopening verify only the two expected functions changed."
+        "Cold backup, isolated naming trial, promotion and independent reopening verify only the two expected functions changed.",
+        "Follow-up signature review: exact GP/SIMD/stack storage,32-byte BVH node and6-byte mask records verified in isolated trial and independent reopening; both large consumers still decompile."
       ],
       "caveats": [
         "Finite bounds and nonzero power-of-two direction components only; NaNs/infinities/zero directions not yet tested.",
         "Constant expansion captured from original executable file, not proven runtime initialization state.",
         "Synthetic balanced trees; no real scene or caller callback execution.",
-        "Names are descriptive; existing signatures retained because exact SIMD argument types/storage remain unresolved.",
-        "Large caller routines and gameplay callbacks are not fully reviewed."
-      ]
+        "Large caller routines and gameplay callbacks are not fully reviewed.",
+        "Working types and displayed parameter order are analyst representations, not recovered original C++ declarations.",
+        "State and opaque values remain untyped; full game semantics and in-game validation remain unresolved."
+      ],
+      "saved_parameter_storage": [
+        {
+          "name": "nodes",
+          "type": "BvhNodeWorking32 *",
+          "storage": "RDI:8"
+        },
+        {
+          "name": "root_index",
+          "type": "ushort",
+          "storage": "SI:2"
+        },
+        {
+          "name": "output",
+          "type": "ushort *",
+          "storage": "RDX:8"
+        },
+        {
+          "name": "output_end",
+          "type": "ushort *",
+          "storage": "RCX:8"
+        },
+        {
+          "name": "masks",
+          "type": "BvhQueryMasksWorking6 *",
+          "storage": "R8:8"
+        },
+        {
+          "name": "segment_origin",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM0:16"
+        },
+        {
+          "name": "inverse_segment_direction",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM1:16"
+        }
+      ],
+      "saved_return_storage": "RAX:8"
     },
     {
       "address": "1414f64b0",
@@ -5980,20 +6020,60 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV CollectBvhLeavesOverlappingBounds(void)",
+      "saved_working_signature": "ushort * PS4_SYSV CollectBvhLeavesOverlappingBounds(BvhNodeWorking32 * nodes, ushort root_index, ushort * output, ushort * output_end, BvhQueryMasksWorking6 * masks, SpatialQueryFloat4Working16 query_min, SpatialQueryFloat4Working16 query_max)",
       "evidence": [
         "Complete 70-instruction body matched original executable bytes.",
         "2,100 original-instruction overlap query cases verify exact leaf order, output pointer, flag masks, output limits and input/guard preservation.",
         "Caller maps leaf indices through the sculpt tree identifier permutation.",
-        "Cold backup, isolated naming trial, promotion and independent reopening verify only the two expected functions changed."
+        "Cold backup, isolated naming trial, promotion and independent reopening verify only the two expected functions changed.",
+        "Follow-up signature review: exact GP/SIMD/stack storage,32-byte BVH node and6-byte mask records verified in isolated trial and independent reopening; both large consumers still decompile."
       ],
       "caveats": [
         "Finite bounds and nonzero power-of-two direction components only; NaNs/infinities/zero directions not yet tested.",
         "Constant expansion captured from original executable file, not proven runtime initialization state.",
         "Synthetic balanced trees; no real scene or caller callback execution.",
-        "Names are descriptive; existing signatures retained because exact SIMD argument types/storage remain unresolved.",
-        "Large caller routines and gameplay callbacks are not fully reviewed."
-      ]
+        "Large caller routines and gameplay callbacks are not fully reviewed.",
+        "Working types and displayed parameter order are analyst representations, not recovered original C++ declarations.",
+        "State and opaque values remain untyped; full game semantics and in-game validation remain unresolved."
+      ],
+      "saved_parameter_storage": [
+        {
+          "name": "nodes",
+          "type": "BvhNodeWorking32 *",
+          "storage": "RDI:8"
+        },
+        {
+          "name": "root_index",
+          "type": "ushort",
+          "storage": "SI:2"
+        },
+        {
+          "name": "output",
+          "type": "ushort *",
+          "storage": "RDX:8"
+        },
+        {
+          "name": "output_end",
+          "type": "ushort *",
+          "storage": "RCX:8"
+        },
+        {
+          "name": "masks",
+          "type": "BvhQueryMasksWorking6 *",
+          "storage": "R8:8"
+        },
+        {
+          "name": "query_min",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM0:16"
+        },
+        {
+          "name": "query_max",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM1:16"
+        }
+      ],
+      "saved_return_storage": "RAX:8"
     },
     {
       "address": "140903930",
@@ -6004,21 +6084,91 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV EnqueueRegionQuery(void)",
+      "saved_working_signature": "uint PS4_SYSV EnqueueRegionQuery(void * state, uchar shape_kind, BvhQueryMasksWorking6 * masks, uchar phase, uchar auxiliary_tag, undefined8 opaque_value_0, SpatialQueryFloat4Working16 centre_and_radius, SpatialQueryFloat4Working16 orientation_input, SpatialQueryFloat4Working16 transform_position_scale, SpatialQueryFloat4Working16 transform_rotation, SpatialQueryFloat4Working16 extent_input, SpatialQueryFloat4Working16 auxiliary_extent_input, undefined8 opaque_value_1)",
       "evidence": [
         "Complete187-instruction body matched original executable bytes.",
         "192 accepted and96 rejected original-instruction queue cases verify record fields, local transforms, capacity and packed handle.",
         "Complete state allocation and input preservation checked, including untouched record padding.",
         "Region-query consumer traverses sculpt BVH and uses original RegionQuery profiling labels.",
         "Import loader NID and local libc symbol resolve __isinff; repeated288 cases execute original import thunk and libc instructions.",
-        "Cold backup, isolated naming trial, promotion and independent reopening verify only the intended function changed."
+        "Cold backup, isolated naming trial, promotion and independent reopening verify only the intended function changed.",
+        "Follow-up signature review: exact GP/SIMD/stack storage,32-byte BVH node and6-byte mask records verified in isolated trial and independent reopening; both large consumers still decompile."
       ],
       "caveats": [
         "Cardinal180-degree/identity unit rotations, positive power-of-two scales and finite selected inputs; arbitrary quaternions/nonfinite inputs untested.",
         "No concurrent enqueue, game-state integration or region-query execution.",
-        "Existing signature retained pending exact SIMD/stack ABI recovery.",
-        "Shape enum labels, opaque values and complete consumer behavior remain unresolved."
-      ]
+        "Shape enum labels, opaque values and complete consumer behavior remain unresolved.",
+        "Working types and displayed parameter order are analyst representations, not recovered original C++ declarations.",
+        "State and opaque values remain untyped; full game semantics and in-game validation remain unresolved."
+      ],
+      "saved_parameter_storage": [
+        {
+          "name": "state",
+          "type": "void *",
+          "storage": "RDI:8"
+        },
+        {
+          "name": "shape_kind",
+          "type": "uchar",
+          "storage": "SIL:1"
+        },
+        {
+          "name": "masks",
+          "type": "BvhQueryMasksWorking6 *",
+          "storage": "RDX:8"
+        },
+        {
+          "name": "phase",
+          "type": "uchar",
+          "storage": "CL:1"
+        },
+        {
+          "name": "auxiliary_tag",
+          "type": "uchar",
+          "storage": "R8B:1"
+        },
+        {
+          "name": "opaque_value_0",
+          "type": "undefined8",
+          "storage": "R9:8"
+        },
+        {
+          "name": "centre_and_radius",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM0:16"
+        },
+        {
+          "name": "orientation_input",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM1:16"
+        },
+        {
+          "name": "transform_position_scale",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM2:16"
+        },
+        {
+          "name": "transform_rotation",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM3:16"
+        },
+        {
+          "name": "extent_input",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM4:16"
+        },
+        {
+          "name": "auxiliary_extent_input",
+          "type": "/DreamsResearch/SpatialQueryFloat4Working16\npack(disabled)\nStructure SpatialQueryFloat4Working16 {\n   0   float   4   x   \"\"\n   4   float   4   y   \"\"\n   8   float   4   z   \"\"\n   12   float   4   lane3   \"\"\n}\nLength: 16 Alignment: 1\n",
+          "storage": "XMM5:16"
+        },
+        {
+          "name": "opaque_value_1",
+          "type": "undefined8",
+          "storage": "Stack[0x8]:8"
+        }
+      ],
+      "saved_return_storage": "EAX:4"
     }
   ],
   "deferred": [

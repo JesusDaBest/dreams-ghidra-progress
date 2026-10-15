@@ -2012,3 +2012,9 @@ Applied EnqueueRegionQuery after reviewing all187 original instructions and runn
 Tests cover192 accepted and96 rejected requests with exact handle/record/padding checks, independent local-centre and extent math, complete state-allocation preservation and unchanged inputs. Fixtures use cardinal unit rotations and positive power-of-two scales. The import loader NID and local libc symbol identify __isinff; these tests execute its original instructions through the retained original thunk. Arbitrary rotations, complete consumer semantics, concurrency and gameplay integration remain open. Existing SIMD/stack signature retained.
 
 Cold backup, isolated trial and independent reopening verify the saved name and unchanged original archives. Totals:289 checked names among9,577 discovered functions;1,730 mapped and7,847 unmapped. No whole-subsystem completion claim.
+
+### Spatial-query working types
+
+Recovered explicit register/stack signatures for the two BVH query helpers and EnqueueRegionQuery. Both collectors return the output-end pointer in RAX, receive the root as16 bits in SI, and read two16-byte SIMD inputs in XMM0/XMM1. The enqueue function returns its32-bit packed handle in EAX, reads six SIMD inputs in XMM0..XMM5, and receives a second opaque64-bit value at incoming stack offset8. Its former local_res8 was the incoming argument and is now represented as a parameter.
+
+The working types expose the32-byte BVH node and6-byte query-mask record. They preserve unknown state and opaque values. Cold backup, isolated trial, promotion and independent reopening verify exactly three signature changes and unchanged original instructions/archives; both large query consumers still decompile. Displayed argument order and record names are analyst representations, not original C++ declarations. Existing controlled native evidence remains scoped; there is no new gameplay validation or name-count increase. Total stays289 checked names.
