@@ -3524,5 +3524,42 @@
       "Group-index array is consumed by the subsequent claimed-group arbitration loop."
     ],
     "model_correction": "Ancestor search scans the whole same-name group except self, including later entries; initial earlier-only interpretation failed and was corrected."
+  },
+  "gate_arbitration_native_checkpoint": {
+    "passed": 1344,
+    "sizes": [
+      1,
+      2,
+      3,
+      8,
+      16,
+      64,
+      256
+    ],
+    "branch_counts": {
+      "claimed": 41395,
+      "activate": 8658,
+      "queue_new": 6685,
+      "queue_max": 20261,
+      "queue_clear": 9318,
+      "forward": 17253,
+      "inactive": 49947,
+      "forget": 30309
+    },
+    "method": "Original arbitration inline instructions, original scalar reducer/constants, explicit allocation/stack boundary adapter. Complete Gate objects, Game fixture, group/pointer arrays and claimed scratch guards checked.",
+    "findings": [
+      "Earlier active Gate claims a group and clears later GateActive before request handling.",
+      "Synchronized request activates only when group unclaimed; otherwise only Queue reset mode retains queue for synchronized Gates.",
+      "Active forwarding copies37 Variant bytes and clears queue; inactive path writes NONE/alpha1 without clearing payload.",
+      "New queue stores frame+1 with uint32 wrap and current scalar; existing queue stores maximum level.",
+      "New queue clears forget flag before final forget processing."
+    ],
+    "limits": [
+      "Number inputs and finite levels; other Variant reductions and NaN levels not covered here.",
+      "Precomputed valid group indices; sorting/grouping/update composition not executed.",
+      "Allocation/free and real game scheduling unexecuted; no whole-subsystem completion credit."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
