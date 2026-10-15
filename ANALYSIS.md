@@ -2874,3 +2874,15 @@ The span step selects glyph data, calculates advance and updates cursor and inde
 An additional 4,096 integration cases force a formatting-cache mismatch through the original span caller. It copies twelve style bytes, runs the original refresh function, then uses the refreshed font and scale in original glyph selection and advance. Exact context, descriptor, cursor and parser snapshot results agree. Nonzero packed color is checked separately rather than in this integration; full iterator-loop behavior and rendering remain unverified.
 
 All 278 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify names, signatures and unchanged instructions/archives. Synthetic bounded runtime objects support the tests; original loader execution, full glyph payloads, complete layout, shaping and rendering remain unfinished. Totals: 382 checked names, 1,815 mapped and 7,765 unmapped functions among 9,580 discovered functions. These are not whole-game completion percentages.
+
+### Saved next-line layout driver
+
+Applied TryLayoutNextTextLine with a float width limit, iterator/result/context pointers, an integer ellipsis policy and a Boolean result. It uses the original 31-class break transition table, refreshes formatting, selects glyph metrics, and saves parser/cursor/dimension checkpoints for rollback when a line exceeds the limit.
+
+Independent fixed-width ASCII checks cover hard wrapping and explicit newlines (8,432 calls, 656 text/width cases), space-based rollback (4,744 calls, 568 cases), and ellipsis reservation (1,300 calls, 325 cases). Exact line widths, heights, counts, next codepoints and byte or null cursors agree at four actual input alignments, with guarded inputs/iterator/output and the original stack canary intact. The original driver executes the original decoder, iterator and linked font/layout helpers.
+
+The driver accepts at least one ordinary character even at a zero limit. Trailing newline does not create an additional result. Space rollback can consume separating spaces while restoring dimensions from the preceding non-space checkpoint; a leading-space-only checkpoint can have zero height. Final-line ellipsis reservation can restore a prefix or default checkpoint without advancing input, so the caller controls continuation. This helper reports visible width and truncation; its caller handles the ellipsis contribution to aggregate dimensions.
+
+Fixture and oracle corrections are recorded locally and failed attempts are excluded. All 794 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the saved name, mixed float/integer SysV signature, Boolean return and unchanged instructions/archives. Synthetic fixed-width glyphs limit these results: Unicode breaking, variable metrics, direction mixing, markup integration, ellipsis-space interaction, full layout, shaping and rendering remain unfinished.
+
+Totals: 383 checked names, 1,816 mapped and 7,764 unmapped functions among 9,580 discovered functions. These counts do not establish whole-game completion.

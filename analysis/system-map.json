@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1815,
-  "unmapped_total": 7765,
+  "mapped_total": 1816,
+  "unmapped_total": 7764,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46136,6 +46136,27 @@
           "kind": "verified_semantic_review",
           "name": "StepTextLayoutSpanSelection",
           "support": "Original bodies, native style/color/span checks and cache-change integration, independent saved-signature reopen."
+        }
+      ]
+    },
+    "1412d8ca0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Lays out next text line with width limit and optional ellipsis reservation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Line layout and break-candidate rollback implementation.",
+      "code_sha256": "a4c74b887b72701c977ac6caa6355e9b2d3a836161a9105e88eeaf0db6bfc2dd",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryLayoutNextTextLine",
+          "support": "Original driver and break tables, independent hard/space/ellipsis native oracles, independently reopened mixed float SysV signature."
         }
       ]
     }

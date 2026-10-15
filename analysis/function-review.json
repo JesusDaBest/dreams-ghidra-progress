@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "352 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "353 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9043,
-    "other_names": 537,
-    "verification": "complete_inventory_matches_baseline_plus_352_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9042,
+    "other_names": 538,
+    "verification": "complete_inventory_matches_baseline_plus_353_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8398,6 +8398,29 @@
         "Packed color math checked separately; numerical RGB oracle permits two ULP, alpha exact.",
         "Formatting-change integration covers one ordinary glyph; no full iterator/layout loop, original loader, shaping or rendering.",
         "Working descriptive names/types; not recovered source."
+      ]
+    },
+    {
+      "address": "1412d8ca0",
+      "original_name": "FUN_1412d8ca0",
+      "applied_name": "TryLayoutNextTextLine",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryLayoutNextTextLine(float width_limit, void * text_iterator, void * line_result, void * layout_context, uint ellipsis_policy)",
+      "evidence": [
+        "Complete794 original instruction spans matched; line driver, original break tables and callers read.",
+        "8432 hard-wrap/newline calls across656 text/width cases;4744 space rollback calls across568 cases;1300 ellipsis calls across325 cases.",
+        "Independent fixed-width ASCII line width,height,count,next-codepoint and byte/null-cursor expectations at four actual input alignments;original linked decoder/layout helpers,guards and canary.",
+        "Probe fixture and oracle corrections preserved separately;failed attempts not credited.",
+        "Cold backup,isolated trial,promotion,independent reopen verify mixed float/integer SysV signature,Boolean result and unchanged archives."
+      ],
+      "caveats": [
+        "Synthetic fixed-width ASCII glyph metrics;Unicode line breaking,variable metrics,mixed directions and markup integration unverified.",
+        "Ellipsis-space interaction,full layout,original loader,shaping and rendering unfinished.",
+        "Working descriptive name and opaque pointer types;not recovered source."
       ]
     }
   ],
