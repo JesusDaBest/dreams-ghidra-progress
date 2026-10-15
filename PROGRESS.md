@@ -2450,3 +2450,13 @@ The previously opaque counter is populated from sceAvPlayerCurrentTime. Original
 The [primary shadPS4 API implementation](https://github.com/shadps4-emu/shadPS4/blob/main/src/core/libraries/avplayer/avplayer.cpp) corroborates the import NIDs. Its [source implementation](https://github.com/shadps4-emu/shadPS4/blob/main/src/core/libraries/avplayer/avplayer_source.cpp) returns milliseconds for CurrentTime, supporting seconds after the native division. This is emulator-source corroboration of the game dataflow, not Sony source or a live Dreams playback test.
 
 This advances the earlier unknown-counter finding to video playback timing used for text selection. It supports a video-timed text interpretation of this consumer; it does not prove all float-pair uses are captions or establish rendering correctness. The larger UI owner remains only partly captured. No new naming credit is added; 368 function names remain checked.
+
+### Saved playback-time text range selection
+
+Applied SelectTextRangeAtPlaybackTime with playback seconds, an opaque output context and text-key pointer. The caller clock is traced to AVPlayerCurrentTime divided by 1,000. The selector publishes the associated whole text span and a selected range index; it does not itself extract a substring for that range.
+
+The corrected native fixture passes 4,608 cached-path cases across empty, adjacent and overlapping ranges, first/middle/last key positions, missing keys/text, high key bits, finite/NaN/infinite values and four actual buffer alignments. An independent first-inclusive-range expectation verifies whole output, input, tables, blobs and guards. Shared endpoints and overlaps choose the first matching range. A gap sets the index to FFFFFFFF without publishing text. Missing cached keys leave the index unchanged while setting the state field; a zero low-56-bit key leaves output unchanged. The initial fixture was superseded after its alignment/key-position coverage was corrected; only the corrected result is counted here.
+
+Dynamic registry/lock/fallback branches and owned-buffer freeing remain unexecuted. This is not a live AV playback or caption-rendering test. Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives.
+
+Totals: 369 checked names (339 renames, 29 created functions and one retained-name review), 1,802 mapped and 7,778 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
