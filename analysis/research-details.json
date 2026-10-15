@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 269,
+    "checked_and_applied_names": 270,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 269,
+    "verified_names": 270,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "250 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "251 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3452,6 +3452,24 @@
       "Selected Number payloads and finite float keys; NaNs and other reductions not covered in full sort.",
       "Group construction, inline arbitration composition and actual game scheduling remain unverified.",
       "No whole-Gate completion or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "parent_scope_reference_checkpoint": {
+    "name": "ResolveParentScopeReference",
+    "controlled_native_cases": 24576,
+    "findings": [
+      "Cache-count match uses ushort parent table and skips cached parent codes13..15.",
+      "Cache-count mismatch follows parent pointers while current object byte2e is nonzero.",
+      "After traversal, a non-root glued object skips one extra parent using registered IsGluedGadget offset.",
+      "Root/no-parent can return current reference; encoded high reference bits are retained or normalized according to path."
+    ],
+    "limits": [
+      "Valid eight-object acyclic chains and selected encoded refs; invalid refs, cycles, absent objects and other kinds not covered.",
+      "Runtime glued offset reconstructed from original startup writer; cache construction and equivalence of traversal modes not validated.",
+      "Raw cached codes and object mode byte are deliberately not given unsupported human labels.",
+      "Selected Game lookup ranges checked; full grouping and actual scheduling unverified.",
+      "No whole-subsystem completion or audited-byte credit."
     ],
     "runtime_game_verified": false
   }
