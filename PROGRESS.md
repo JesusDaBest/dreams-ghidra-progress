@@ -2034,3 +2034,11 @@ Followed the accumulated gravity sum and weight into the game update pass. A con
 The initial test oracle incorrectly counted the fourth lane in the squared length. Reading the original SIMD instructions corrected that assumption; fourth-lane-only and mixed-lane cases now pass. Maximum direction error was below 0.000000077. Guarded poisoned outputs and unchanged inputs passed. Generated setup/output boundaries exclude snapshot locking and subsequent physics execution.
 
 A downstream object-loop consumer reads both resolved fields and multiplies strength by direction, but its full behavior remains under review. No full-function name or additional completion credit is claimed. The livestream's per-object gravity-factor implementation is still unmatched.
+
+### Sculpt gravity flag and movement-gadget linkage
+
+Mapped twelve Mover/Follower properties through their original metadata initializers and registrations, checking 347 instructions. Damping and per-axis damping amounts match the movement loop; Follower TargetPosition and ValidTarget identify its gadget outputs. This narrows the earlier downstream finding to movement-gadget processing, without claiming general gravity application for all physical bodies.
+
+Separately traced Sculpt.IgnoreGravity into a packed physics-related attribute path. The current registrar and consumer total 1,345 instructions checked against the original executable. A contiguous 26-instruction window passed 252 native cases: any nonzero IgnoreGravity flag makes the fourth packed byte zero; otherwise a body coefficient is scaled by 255, rounded via truncation after adding 0.5, and saturated into a byte. Negative, zero, fractional and above-one coefficients, multiple body indices and flag values were covered with exact output and unchanged input checks.
+
+Two adjacent runtime friction coefficients were explicit fixture inputs, not recovered initialization. Generated setup/exit boundaries exclude zero-count fallback, upload routing and the solver. The next trace must establish how the packed coefficient is consumed and where the body coefficient is produced. No extra function completion credit or match to the streamed per-object gravity-factor source is claimed.

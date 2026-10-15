@@ -5157,5 +5157,33 @@
     ],
     "new_names_checked": 0,
     "runtime_game_verified": false
+  },
+  "sculpt_ignore_gravity_packing_checkpoint": {
+    "status": "bounded_native_packing_verified",
+    "original_registrar_and_consumer_instructions_checked": 1345,
+    "passed_native_cases": 252,
+    "findings": [
+      "Sculpt.IgnoreGravity is a registered flag at object offset0x208.",
+      "Any nonzero flag zeroes the fourth packed component; otherwise the body coefficient is scaled by255, rounded via truncation after adding0.5, and saturated to a byte.",
+      "The adjacent packed friction components depend on runtime-initialized coefficients, explicitly modeled for this fixture."
+    ],
+    "limits": [
+      "Positive-count packing branch only; zero-count fallback and solver/upload routing excluded.",
+      "Runtime friction coefficient initialization is not recovered.",
+      "No complete function review, streamed-source identity or live physics claim."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
+  },
+  "movement_gadget_property_linkage_checkpoint": {
+    "verified_property_links": 12,
+    "original_instructions_checked": 347,
+    "findings": [
+      "Mover/Follower Damping and per-axis damping amounts are linked through original metadata initializers and property registrations.",
+      "Follower TargetPosition/ValidTarget identify gadget outputs in the previously found gravity-dependent object loop.",
+      "This movement-gadget loop is not established as the general gravity application code."
+    ],
+    "full_function_reviewed": false,
+    "new_names_checked": 0
   }
 }
