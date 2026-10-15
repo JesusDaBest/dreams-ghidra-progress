@@ -5216,5 +5216,44 @@
       "Descriptive name and working signature are not recovered original C++ declarations."
     ],
     "runtime_game_verified": false
+  },
+  "physics_shader_resource_checkpoint": {
+    "status": "original_native_path_hash_matches_verified",
+    "archive_entry_count": 604,
+    "verified_resources": [
+      {
+        "name": "Predict",
+        "bytes": 556,
+        "sha256": "adef4b43e8d1e6f0838113f77d4a8fea26156c8051c719e285d68de45b745f52"
+      },
+      {
+        "name": "GrabConstraint",
+        "bytes": 2632,
+        "sha256": "58448ff7ecd7e2eab8f8563ba4e4de14037c887d6b9aba3ca3ae1fdba82c6564"
+      },
+      {
+        "name": "ApplyConstraints",
+        "bytes": 1004,
+        "sha256": "df8cee86004a4d476f2b6d7383ab5e61bd7e8cc49aca53809a5eab6022b197f7"
+      },
+      {
+        "name": "Advance",
+        "bytes": 1524,
+        "sha256": "57c5d7e4f51fdeb1e4bee1accabd8999d80e1a75fee993ba61f5b2c06568c171"
+      }
+    ],
+    "findings": [
+      "Predict label is paired with dispatch dimensions ceil(particle_count/64),1,1 and mode0, followed by an existing compute-dispatch barrier helper.",
+      "Predict program loader constructs the path under src/physics/ORBIS_shaders and consults a sorted hash/resource table.",
+      "The local archive contains604 sorted unique entries; every extent is in bounds.",
+      "Original native seed0 hashing of four constructed paths confirms four exact archive resources."
+    ],
+    "limits": [
+      "Only Predict loader/dispatch and neighboring GrabConstraint loader individually traced; other two archive paths are confirmed by native hash but not full loader analysis.",
+      "Shader code regions, instruction set decoding, buffer bindings and coefficient semantics remain unverified.",
+      "No source C++ or PSSL recovery, shader semantic completion or new function naming credit."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
   }
 }

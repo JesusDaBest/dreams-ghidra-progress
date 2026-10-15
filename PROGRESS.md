@@ -2058,3 +2058,11 @@ Applied PopulatePhysicsArrayPointerTable after reading the complete 218-instruct
 1,024 complete native tests execute the original function and actual original libc memset through its original import thunk, without import models. Sixty-four independent source patterns and output alignments 0 through 15 match exact output bytes, guards and the whole readonly source page. Global resource initialization, pointer validity for later dereference, overlap/malformed pointers and solver interpretation remain unresolved.
 
 A full cold backup, isolated trial, promotion and independent reopening verify the saved name and working RDI output-pointer signature. Original instructions and archives are unchanged. Totals: 322 checked names (292 renames, 29 created functions and one retained-name review) among 9,580 discovered functions; 1,757 mapped and 7,823 unmapped. This does not mark the physics solver or Dreams complete.
+
+### Located the compiled physics shader resources
+
+The traced Predict stage submits a GPU compute dispatch with groups calculated from the particle count in batches of 64, followed by a compute barrier. Its program loader constructs a shader resource path and looks it up by hash. This establishes where CPU setup hands off to compiled shader code; CPU pseudocode alone does not establish the solver's gravity behavior.
+
+Validated the local shader archive's 604 sorted unique entries and all resource bounds. Executing the original 148-instruction path hash routine with seed zero confirms four exact resources: Predict (556 bytes), GrabConstraint (2,632), ApplyConstraints (1,004) and Advance (1,524). Extracted binaries remain local. Predict and the neighboring GrabConstraint loaders were inspected individually; the remaining two resource paths are confirmed by native hashing, without claiming their full loader behavior.
+
+Shader instruction decoding, buffer bindings and the gravity coefficient's solver interpretation remain unfinished. These are resource matches, not four completed shader decompilations, and add no function naming credit.
