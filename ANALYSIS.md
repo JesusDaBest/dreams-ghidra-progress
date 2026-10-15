@@ -2330,3 +2330,11 @@ Traced the registered GlobalSettings gravity fields into a runtime consumer and 
 This tests five original instructions with generated setup and exit, without import models. It does not test the complete function, concurrent snapshot/retry behavior, reset handling, final normalization or application to physical bodies. One caller supplies a null previous-settings pointer; its reachability through the reset-edge test remains unresolved. No new function name or whole-function review credit is added.
 
 The developer stream's per-object gravity-factor example remains a separate lead. Matching gravity terminology does not establish a source-code match. Reverse engineering is still incomplete; the checked-name total remains 321 of 9,580 discovered functions.
+
+### Global gravity: resolved strength and direction
+
+Followed the accumulated gravity sum and weight into the game update pass. A contiguous 30-instruction normalization window passed 1,715 native finite-value cases using the original constants. Positive strength weight produces (sum / weight) times 9.81; nonpositive weight defaults to 9.81. Direction uses its own weighted vector, defaults downward for nonpositive direction weight, and normalizes by XYZ length. A near-zero XYZ length produces zero direction.
+
+The initial test oracle incorrectly counted the fourth lane in the squared length. Reading the original SIMD instructions corrected that assumption; fourth-lane-only and mixed-lane cases now pass. Maximum direction error was below 0.000000077. Guarded poisoned outputs and unchanged inputs passed. Generated setup/output boundaries exclude snapshot locking and subsequent physics execution.
+
+A downstream object-loop consumer reads both resolved fields and multiplies strength by direction, but its full behavior remains under review. No full-function name or additional completion credit is claimed. The livestream's per-object gravity-factor implementation is still unmatched.

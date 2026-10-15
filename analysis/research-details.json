@@ -5139,5 +5139,23 @@
     "new_names_checked": 0,
     "runtime_game_verified": false,
     "full_function_reviewed": false
+  },
+  "global_gravity_normalization_checkpoint": {
+    "status": "bounded_native_window_verified",
+    "original_window_instructions": 30,
+    "passed_native_cases": 1715,
+    "findings": [
+      "Positive gravity weight yields (sum/weight)*9.81; nonpositive weight uses9.81.",
+      "Positive direction weight divides the vector by its weight; nonpositive weight substitutes downward direction.",
+      "Direction normalization uses XYZ squared length; a near-zero vector produces zero.",
+      "A downstream object-loop consumer reads both resolved fields and multiplies strength by direction. Its complete role is not yet reviewed."
+    ],
+    "limits": [
+      "Native tests cover only normalization with generated boundaries and original constants.",
+      "Fourth lane is observed without assigning a physical meaning.",
+      "Snapshot locking, live physics, special floating-point values and full containing functions remain unverified."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
   }
 }
