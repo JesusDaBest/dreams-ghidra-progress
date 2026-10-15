@@ -2408,3 +2408,11 @@ Applied AllocateTextScratchBytes with an arena pointer, byte count and pointer r
 This supersedes the earlier untested-chunk-growth limitation for this arena-backed float-pair path. Original fallback/OS heap allocation, failure handling, malformed arenas and the application meaning of the pairs remain unresolved.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 366 checked names (336 renames, 29 created functions and one retained-name review), 1,799 mapped and 7,781 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Verified content and placeholder-token chunk growth
+
+The original text builder now passes 104 content-growth cases through 16,384 bytes and 104 token-growth cases through 1,024 numbered placeholders. Both use the original arena method through virtual dispatch, original memcpy and original hash/parser bodies. Content chunks hold 4,096 bytes; token chunks hold 256 sixteen-byte descriptors. Exact guarded old/new chunks, links, logical offsets, used counts, record/index/link fields, hashes, parameter counts, arena cursor and inputs agree.
+
+This supersedes earlier unexecuted-growth limitations for these arena-backed paths. The scratch allocator fallback import is identified as malloc by its loader NID and matching original libc export. Its deeper heap implementation and allocation failures remain unexecuted. Token-growth coverage uses repeated numbered placeholders; other token kinds, final substitution and rendering remain unresolved.
+
+No new naming credit is added: 366 names checked among 9,580 discovered functions. These tests do not establish whole-game completion.

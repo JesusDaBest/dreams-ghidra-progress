@@ -5971,5 +5971,22 @@
       "Workingdescriptive names/types are not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_builder_chunk_growth_checkpoint": {
+    "content_cases": 104,
+    "largest_content_bytes": 16384,
+    "token_cases": 104,
+    "largest_numbered_placeholders": 1024,
+    "original_builder_instructions": 600,
+    "original_arena_instructions": 10,
+    "fallback_import": "malloc",
+    "fallback_library_body_bytes": 12,
+    "method": "Original builder and arena virtual dispatch with original memcpy/hash/parser; exact guarded chunks, links, logical offsets, counts, records and source.",
+    "limits": [
+      "Arena-backed valid inputs; libc heap fallback and failures not executed.",
+      "Token-growth streams use repeated numbered placeholders; other token kinds and substitution/rendering unresolved."
+    ],
+    "new_checked_names": 0,
+    "whole_game_complete": false
   }
 }
