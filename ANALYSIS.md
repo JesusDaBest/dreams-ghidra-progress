@@ -1660,3 +1660,8 @@ Synthetic Power metadata matches the original initializer; the initializer was n
 Named and independently reopened PassesThingUpdateStateAndPowerGate. Complete native control flow and four call sites distinguish mode/session/index gating, optional bypass, Power lookup and stored object state. The bypass leaves Power and object checks in place. The stored state comes from an update-mode argument and game mode, separately from Power. Original field and enum labels remain unresolved.
 
 4,862 scoped original-instruction hardware cases passed with synthetic metadata and selected flags, gates, offsets and Power values. This verifies selected predicate behavior, not running-game integration or full subsystem completion. Totals: 250 checked names; 1,693 mapped functions; 7,877 unmapped.
+### Selected Thing runtime reset
+
+Named and independently reopened ResetThingSelectedRuntimeState. The helper clears stored state bits18/19, then dispatches on Thing kind to reset selected fields. Selector ActivePort becomes255; Timer State becomes0 while CurrentTime remains unchanged. This is not a reset of every gadget setting or runtime value.
+
+2,048 original-instruction hardware cases passed across every low-byte dispatch value, four flag patterns and two fill patterns. Every object byte and guard was compared. Synthetic padded objects include unregistered kinds; game reachability and complete caller behavior remain unverified. Totals: 251 checked names; 1,694 mapped functions; 7,876 unmapped.

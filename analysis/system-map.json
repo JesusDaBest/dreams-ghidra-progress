@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1693,
-  "unmapped_total": 7877,
+  "mapped_total": 1694,
+  "unmapped_total": 7876,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43606,6 +43606,26 @@
         {
           "kind": "verified_semantic_review",
           "name": "PassesThingUpdateStateAndPowerGate",
+          "support": "Complete native predicate, caller contexts, scoped hardware cases and independent saved-project verification."
+        }
+      ]
+    },
+    "14093bb60": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind dispatch and two caller contexts establish shared Thing runtime reset.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "4e4b04992c565af9725a6d5e4e1a6bfb9989c6f645482be6f6d9bc7d2ab3695e",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetThingSelectedRuntimeState",
           "support": "Complete native predicate, caller contexts, scoped hardware cases and independent saved-project verification."
         }
       ]

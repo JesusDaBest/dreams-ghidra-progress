@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 250,
+    "checked_and_applied_names": 251,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 250,
+    "verified_names": 251,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "231 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "232 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2890,6 +2890,21 @@
       "Descriptive role name and working argument types; original Game fields, mode values and object flag labels remain unresolved.",
       "Synthetic metadata and selected input combinations; no original initializer execution or real-game integration validation.",
       "No whole-subsystem completion or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "thing_runtime_reset_checkpoint": {
+    "name": "ResetThingSelectedRuntimeState",
+    "native_cases": 2048,
+    "findings": [
+      "Clears stored object state bits18/19 and dispatches on low7-bit kind.",
+      "Selector ActivePort becomes255; Timer State becomes0 while CurrentTime stays unchanged.",
+      "Selected other kinds clear fixed fields, set negative-one sentinels or copy an identity-shaped constant."
+    ],
+    "limits": [
+      "Descriptive research name; resets only selected fields, not every runtime field.",
+      "Synthetic padded objects include unregistered kinds; complete caller semantics and real-game integration remain unresolved.",
+      "No full subsystem completion or audited-byte credit."
     ],
     "runtime_game_verified": false
   }
