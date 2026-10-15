@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1710,
-  "unmapped_total": 7860,
+  "mapped_total": 1711,
+  "unmapped_total": 7859,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43946,6 +43946,26 @@
         {
           "kind": "verified_semantic_review",
           "name": "UpdateGateActivationRequests",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
+    },
+    "140955110": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "gate",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native Gate pointer sort calls comparator before inline Gate group processing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "d6f582abe26c7c23f6bbc070190617c6fc28f2668d04aa47cc35e3c800b3e752",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GatePrecedesInActivationOrder",
           "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
         }
       ]

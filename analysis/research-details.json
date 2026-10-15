@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 267,
+    "checked_and_applied_names": 268,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 267,
+    "verified_names": 268,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "248 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "249 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3420,5 +3420,23 @@
     ],
     "runtime_game_verified": false,
     "verification_scope": "Static review of bounded inline Gate loop; original bytes checked in larger captured window. No execution or full-main-function completion claim."
+  },
+  "gate_activation_order_checkpoint": {
+    "name": "GatePrecedesInActivationOrder",
+    "controlled_native_cases": 12000,
+    "findings": [
+      "Unsigned64 Name key ascending, then signed32 Priority descending.",
+      "Interrupt level descending: zero without GateInterrupt, otherwise queued level if QueueFrame nonzero or current scalar.",
+      "Activation score descending: active byte, or request bit2 for inactive interruptible gate.",
+      "Then input scalar descending, ResetMode byte descending, QueueLevel descending, unsigned QueueFrame ascending, signed first-word key ascending.",
+      "Selected unordered NaN comparisons return false for both directions; full-sort NaN behavior is not established."
+    ],
+    "limits": [
+      "Selected Number input scalars and finite/nonfinite keys; other Variant reductions not covered.",
+      "Name comparison uses raw64 identity, not verified display-string lexical ordering; final integer field kept unnamed.",
+      "Full sort, group construction, NaN sort behavior and actual game scheduling remain unverified.",
+      "No whole-Gate completion or audited-byte credit."
+    ],
+    "runtime_game_verified": false
   }
 }

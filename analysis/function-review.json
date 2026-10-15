@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "248 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "249 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9147,
-    "other_names": 423,
-    "verification": "complete_inventory_matches_baseline_plus_248_renames_and_19_created_functions"
+    "default_fun_names": 9146,
+    "other_names": 424,
+    "verification": "complete_inventory_matches_baseline_plus_249_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5508,6 +5508,29 @@
         "Synthetic nonnull previous/current objects; selected Number/Signal/identifier inputs and boolean configuration, including ResetMode0/1.",
         "Only33-byte Game flag window checked, not whole Game buffer.",
         "Queue arbitration, Queue ResetMode2, null previous/reset edges and actual game runtime remain unverified.",
+        "No whole-Gate completion or audited-byte credit."
+      ]
+    },
+    {
+      "address": "140955110",
+      "original_name": "FUN_140955110",
+      "applied_name": "GatePrecedesInActivationOrder",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV GatePrecedesInActivationOrder(void * first_gate, void * second_gate)",
+      "evidence": [
+        "Gate registered fields bind comparator keys; original main update calls Gate pointer sort before inline arbitration.",
+        "Complete83-instruction comparator and ordered native comparisons read; sort caller and scalar reducer inspected.",
+        "12000 original-instruction hardware cases compare boolean result and complete input objects against independent key-order model.",
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "Selected Number input scalars and finite/nonfinite keys; other Variant reductions not covered.",
+        "Name comparison uses raw64 identity, not verified display-string lexical ordering; final integer field kept unnamed.",
+        "Full sort, group construction, NaN sort behavior and actual game scheduling remain unverified.",
         "No whole-Gate completion or audited-byte credit."
       ]
     }
