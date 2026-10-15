@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1784,
-  "unmapped_total": 7796,
+  "mapped_total": 1785,
+  "unmapped_total": 7795,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45485,6 +45485,27 @@
           "kind": "verified_semantic_review",
           "name": "HashBytesMurmur3X64_128",
           "support": "Complete original body,independent algorithm comparison and native checks,independently reopened name/signature."
+        }
+      ]
+    },
+    "1414bb300": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Text content and placeholder-record builder connected to original parser/hash/control pipeline.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text content/placeholder record implementation.",
+      "code_sha256": "3e7e3b63083820bc9890770ab7431becc8e1031c8ab8323f11c51df47f6d5281",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryStoreTextAndPlaceholderRecords",
+          "support": "Complete original body,selected bounded native builder checks,independently reopened name/signature."
         }
       ]
     }

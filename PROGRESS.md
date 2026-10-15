@@ -2298,3 +2298,13 @@ The complete original 600-instruction builder now executes against preallocated 
 Different keys with identical content reuse stored text and token data while cloning the link with an updated placeholder-base count. Empty insertion behaves differently: it leaves the record hash word untouched. Another 40 profiles and 80 calls show repeated empty-key lookup succeeding when that preexisting word is zero and rejecting for the tested nonzero words, without further mutation. This corrects the initial test expectation that every repeated empty key would succeed. These are synthetic storage states; allocator initialization and in-game reachability remain unverified, so no observed game defect is claimed.
 
 Allocation/chunk growth, external comparison-table and whitelist paths, hash collisions, broader formats, final substitution and rendering remain unresolved. The original byte-comparison import is resolved but its external-table caller path was not exercised here. No new checked-name or whole-function completion credit was added.
+
+### Saved text and placeholder-record builder
+
+Applied TryStoreTextAndPlaceholderRecords with working opaque builder-context, 64-bit key and bounded text arguments. Its complete 600-instruction body stores/reuses content and optional placeholder records, checks an optional whitelist and external key/offset/length table, and maintains hash/index/link metadata. The descriptive name identifies its role; it does not mean every execution path is verified.
+
+In addition to the previous 248 bounded and 80 empty-storage calls, 4,800 cases now exercise the original external-table and whitelist branches with the actual bcmp routine. Existing external text requires matching key, length and every byte, including bytes after embedded zeroes; a match succeeds without local insertion even at capacity zero. A nonnull empty whitelist rejects, while an absent whitelist or matching entry permits lookup. Whole guarded context, local/external buffers, inputs and original source/index data were checked.
+
+Allocation/chunk growth, virtual allocator, hash collisions, broader formats and final substitution/rendering remain unresolved. The preseeded empty-hash finding remains a synthetic-storage observation, not a verified in-game defect.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 352 checked names (322 renames, 29 created functions and one retained-name review), 1,785 mapped and 7,795 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "321 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "322 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9074,
-    "other_names": 506,
-    "verification": "complete_inventory_matches_baseline_plus_321_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9073,
+    "other_names": 507,
+    "verification": "complete_inventory_matches_baseline_plus_322_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7648,6 +7648,31 @@
         "No collision-free claim;first64-bit word is a dedup key,not a unique content identity guarantee.",
         "Full text-record builder/substitution/rendering unverified.",
         "Working descriptive name/types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414bb300",
+      "original_name": "FUN_1414bb300",
+      "applied_name": "TryStoreTextAndPlaceholderRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryStoreTextAndPlaceholderRecords(void * builder_context, ulonglong text_key, uchar * text_begin, uchar * text_end)",
+      "evidence": [
+        "Complete600-instruction body/callers read and original SELF/saved bytes agree.",
+        "248 bounded calls verify exactcontent/hash/index/token/link/counters,duplicate-contentreuse,keyconflict/capacity rejection;80 empty-state calls verify preservedhashword andseed-dependent repeatedlookup.",
+        "4800 whitelist/external-table cases use actual original bcmp;matchingkey,length,allbytes returns unchanged success,embeddedNUL included;wholeguardedcontext/arrays/chunks/externaldata/input/source/index/canary.",
+        "Original hash/parser/control/memcpy/bcmp code andoriginaldata used,no modeled replacements.",
+        "Cold backup,isolated trial,promotion and independent reopening verify name/signature and unchanged archives."
+      ],
+      "caveats": [
+        "Preallocated bounded paths;allocation/chunk growth and virtual allocator remain unexecuted.",
+        "Hash collisions and broader formats unresolved.",
+        "Empty insertion preserves preexisting hashword;synthetic storage tests do not establish in-game defect/reachability.",
+        "No final substitution/rendering or whole-game completion claim.",
+        "Descriptive working name and opaque-context types are not recovered source."
       ]
     }
   ],
