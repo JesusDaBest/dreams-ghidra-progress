@@ -6528,5 +6528,35 @@
       "Synthetic localcontext;no externalservices/accountdata."
     ],
     "project_modified": false
+  },
+  "text_at_name_auxiliary_processor_checks": {
+    "dispatcher_append": {
+      "calls": 64,
+      "method": "Original ordinary@dispatcher/reader/append/replacement and original dependencies;name lengths3/16,2wrapsettings,4alignments,4in-capacity insertion positions.Whole context/span/state/input checks;all backing bytes except three copied padding bytes checked;list count/guards/canary.",
+      "findings": [
+        "Accepted @name appends type3 auxiliaryrecord:zero firstQ,name in17bytes atoffset8,type3at28.",
+        "Appending occurs with either wrapper setting.",
+        "Three padding bytes25..27 copied from localstack have no initialized-value guarantee in inspected branch."
+      ],
+      "limits": [
+        "Recordpadding intentionallyexcluded fromvalueoracle;not semanticpayload.",
+        "Growth/fullcapacity,othernames,fullprocessor integration andrendering unresolved."
+      ],
+      "project_modified": false
+    },
+    "processor": {
+      "calls": 2080,
+      "method": "Original textprocessor,dispatcher,reader,predicate/cleanup,auxappend,replacement andlibc;all64acceptedASCIIcharacters repeatedatlengths3/16 plus2mixednames,2wrapsettings,2scanner modes,4alignments.Independentwholeoutput/context/input/list andauxpayload except3undefinedpaddingbytes;state guards/canary.",
+      "findings": [
+        "Ordinary @name processing preserves surroundingtext andinserts optionalFDE2/FDE3 wrappers.",
+        "Both scanner modes append one type3 namedauxrecord in tested paths."
+      ],
+      "limits": [
+        "Auxcapacitygrowth,arbitrarynamecombinations andmalformedtext untested.",
+        "Parserstate mutations notindependentlymodeled in full.",
+        "No rendering or game runtime claim."
+      ],
+      "project_modified": false
+    }
   }
 }
