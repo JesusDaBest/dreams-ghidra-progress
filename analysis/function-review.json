@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "280 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "281 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9579,
-    "default_fun_names": 9115,
-    "other_names": 464,
-    "verification": "complete_inventory_matches_baseline_plus_280_renames_and_28_created_functions"
+    "default_fun_names": 9114,
+    "other_names": 465,
+    "verification": "complete_inventory_matches_baseline_plus_281_renames_and_28_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6619,6 +6619,29 @@
         "Light kind2 trig/intensity paths, null/aliased/nonfinite/malformed inputs and racing metadata untested.",
         "Fourth lane is observed working machine data, not recovered original Float3 semantics.",
         "Initializer and full transform/query/game integration not executed."
+      ]
+    },
+    {
+      "address": "141112450",
+      "original_name": "FUN_141112450",
+      "applied_name": "PrepareObjectRegionQueryGeometry",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV PrepareObjectRegionQueryGeometry(void * object, SpatialQueryFloat4Working16 * inner_transform, SpatialQueryFloat4Working16 * inner_extent, SpatialQueryFloat4Working16 * outer_transform, SpatialQueryFloat4Working16 * outer_extent, SpatialQueryFloat4Working16 parent_position_scale, SpatialQueryFloat4Working16 parent_rotation)",
+      "evidence": [
+        "Complete 296-instruction geometry body matched original executable bytes.",
+        "11520 hardware cases execute original geometry296, bounds reader185 and current original libc isinff/thunk with no import models.",
+        "Independent quaternion/matrix and shape centre/extent reference; numeric error up to3.30e-6 at4e-5 tolerance and full guarded output/input preservation.",
+        "Five GP pointers and two full16-byte SIMD inputs use explicitly verified custom storage.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved name/signature and corrected HealthModifier caller."
+      ],
+      "caveats": [
+        "Selected finite HealthModifier kind43 profiles and positive scales only.",
+        "Light/kind30 special cases, alternate shape slot588, nonfinite/malformed/aliased inputs and full producer/queue/game integration untested.",
+        "Working Float4 containers/source argument order and fourth-lane geometry meanings are not original C++ declarations."
       ]
     }
   ],

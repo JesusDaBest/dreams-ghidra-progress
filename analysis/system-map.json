@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1746,
-  "unmapped_total": 7833,
+  "mapped_total": 1747,
+  "unmapped_total": 7832,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44674,6 +44674,26 @@
           "kind": "verified_semantic_review",
           "name": "ComputeObjectZoneAndFalloffBounds",
           "support": "Original185-instruction reader,18432 exact native fixtures, field linkage and saved pointer outputs independently reopened."
+        }
+      ]
+    },
+    "141112450": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "region-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Composes object region geometry for region-query request preparation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Prepares region-query transforms and extents using object shape metadata.",
+      "code_sha256": "e94765737062fdc0a7bbee501215a0c7ac9ffaee6c16f8ab6845941806cf95f3",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareObjectRegionQueryGeometry",
+          "support": "Original geometry/reader/libc,11520 scoped native cases and GP/SIMD signature independently reopened."
         }
       ]
     }
