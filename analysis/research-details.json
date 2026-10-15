@@ -5280,5 +5280,25 @@
     ],
     "new_names_checked": 0,
     "runtime_game_verified": false
+  },
+  "predict_cpu_shader_bindings_checkpoint": {
+    "status": "static_bindings_and_native_descriptor_verified",
+    "original_linkage_spans_checked": 123,
+    "descriptor_native_cases": 768,
+    "findings": [
+      "For in-range lanes with flag bit13 set: new_velocity=old_velocity + global_gravity_xyz*step*(packed_gravity_byte/255).",
+      "For in-range lanes with flag bit13 clear: new_velocity=(0,0,0).",
+      "Output position XYZ=input position XYZ + step*new_velocity; fourth component is preserved.",
+      "IgnoreGravity zeroes the packed byte, removing this shader gravity contribution while retaining old velocity in enabled lanes."
+    ],
+    "format_reference": "https://github.com/shadps4-emu/shadPS4/blob/b2d7ec7d31f9ad9426db93afe079db8679b3e1e0/src/video_core/amdgpu/pixel_format.h",
+    "limits": [
+      "Velocity/position terminology is a descriptive inference from traced CPU data flow and shader integration operations; original declarations remain unrecovered.",
+      "The producer and meaning of flag bit13 remain unresolved.",
+      "Static instruction trace and native descriptor tests do not substitute for GPU/live-game verification.",
+      "Exact shader floating-point rounding and original code-boundary parser remain unverified."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
   }
 }

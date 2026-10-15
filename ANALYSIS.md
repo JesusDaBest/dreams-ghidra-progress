@@ -2380,3 +2380,13 @@ The instruction trace calculates each lane's particle index and exits for indice
 These are symbolic instruction roles. CPU descriptor bindings, formatted component conversion and the original loader's code-boundary calculation still need corroboration before identifying the fields conclusively as velocity, position and gravity. Byte-exact reassembly is not GPU execution or proof of solver correctness. No new function completion credit is added.
 
 Tool/format references: [CLRX disassembler documentation](https://github.com/CLRX/CLRX-mirror/wiki/ClrxDisasm) and [opengnm shader binary structures](https://ps4-opengnm.github.io/opengnm/reference/shaderbinary/).
+
+### Predict: linked gravity coefficient and CPU bindings
+
+Traced the original CPU descriptor copies into the parameter offsets used by Predict. Its formatted input comes from the same particle array that receives the Sculpt IgnoreGravity-sensitive packed word. The vector parameter comes from resolved global gravity, and the step scalar comes from the frame step divided by an integer divisor.
+
+768 native cases execute the complete original descriptor constructor, original format-size helper/table and descriptor flag setter. The resulting descriptor has four-byte stride, four eight-bit components, unsigned normalized conversion and XYZW selection. Full descriptor bytes, guards and unchanged input frames match. The format identities are corroborated by [the pinned shadPS4 format definitions](https://github.com/shadps4-emu/shadPS4/blob/b2d7ec7d31f9ad9426db93afe079db8679b3e1e0/src/video_core/amdgpu/pixel_format.h). These tests verify descriptor generation, not GPU execution.
+
+The resulting static integration trace is: for in-range particles with flag bit 13 set, the three-component value becomes its old value plus global gravity times the step times the packed fourth byte divided by 255. With the bit clear, the shader stores zero instead. The output XYZ then advances by the step times that value, preserving the input fourth component. This supports descriptive velocity/position roles. IgnoreGravity removes this shader's gravity contribution in enabled lanes by making the packed coefficient zero.
+
+The flag bit's producer/meaning, exact shader floating-point rounding, original shader code-boundary parser and live-game behavior remain unresolved. No additional function completion credit is claimed.
