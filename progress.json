@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 280,
-    "todo": 1477,
+    "done": 282,
+    "todo": 1475,
     "total": 1757,
-    "behavior_or_helpers_reviewed": 215,
+    "behavior_or_helpers_reviewed": 217,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -38326,10 +38326,10 @@
       {
         "name": "physics",
         "label": "Physics & collision",
-        "done": 12,
-        "todo": 57,
+        "done": 14,
+        "todo": 55,
         "total": 69,
-        "behavior_or_helpers_reviewed": 12,
+        "behavior_or_helpers_reviewed": 14,
         "properties_or_types_reviewed": 0,
         "runtime_functions_identified": 37,
         "property_type_functions_identified": 32,
@@ -38347,7 +38347,9 @@
           "ComputeObjectZoneAndFalloffBounds",
           "GetTestSpheresAgainstSdfComputeShader",
           "GetSphereVsSphereCheckComputeShader",
-          "PopulatePhysicsArrayPointerTable"
+          "PopulatePhysicsArrayPointerTable",
+          "GetPredictShader",
+          "GetGrabConstraintShader"
         ],
         "todo_names": [
           "0x140111b70",
@@ -38401,9 +38403,7 @@
           "0x141507820",
           "0x141507bc0",
           "0x141507f60",
-          "0x141512220",
           "0x1415125b0",
-          "0x141512b80",
           "0x141512f20",
           "0x1415132c0",
           "0x141513650"
@@ -38420,7 +38420,9 @@
           "1411129d0",
           "1414f2fd0",
           "1414f3370",
-          "141511c90"
+          "141511c90",
+          "141512220",
+          "141512b80"
         ],
         "todo_addresses": [
           "140111b70",
@@ -38474,9 +38476,7 @@
           "141507820",
           "141507bc0",
           "141507f60",
-          "141512220",
           "1415125b0",
-          "141512b80",
           "141512f20",
           "1415132c0",
           "141513650"
@@ -39265,10 +39265,10 @@
           {
             "name": "physics/simulation",
             "label": "Physics simulation",
-            "done": 5,
-            "todo": 26,
+            "done": 7,
+            "todo": 24,
             "total": 31,
-            "behavior_or_helpers_reviewed": 5,
+            "behavior_or_helpers_reviewed": 7,
             "properties_or_types_reviewed": 0,
             "runtime_functions_identified": 23,
             "property_type_functions_identified": 8,
@@ -39279,7 +39279,9 @@
               "RegisterLabelCollidableFieldOffset",
               "GetTestSpheresAgainstSdfComputeShader",
               "GetSphereVsSphereCheckComputeShader",
-              "PopulatePhysicsArrayPointerTable"
+              "PopulatePhysicsArrayPointerTable",
+              "GetPredictShader",
+              "GetGrabConstraintShader"
             ],
             "todo_names": [
               "0x1409f4da0",
@@ -39302,9 +39304,7 @@
               "0x141507820",
               "0x141507bc0",
               "0x141507f60",
-              "0x141512220",
               "0x1415125b0",
-              "0x141512b80",
               "0x141512f20",
               "0x1415132c0",
               "0x141513650"
@@ -39314,7 +39314,9 @@
               "140d67d00",
               "1414f2fd0",
               "1414f3370",
-              "141511c90"
+              "141511c90",
+              "141512220",
+              "141512b80"
             ],
             "todo_addresses": [
               "1409f4da0",
@@ -39337,9 +39339,7 @@
               "141507820",
               "141507bc0",
               "141507f60",
-              "141512220",
               "1415125b0",
-              "141512b80",
               "141512f20",
               "1415132c0",
               "141513650"
@@ -39424,29 +39424,31 @@
               {
                 "name": "physics/simulation/mankinigpu",
                 "label": "Mankinigpu",
-                "done": 0,
-                "todo": 6,
+                "done": 2,
+                "todo": 4,
                 "total": 6,
-                "behavior_or_helpers_reviewed": 0,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
                 "runtime_functions_identified": 6,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "GetPredictShader",
+                  "GetGrabConstraintShader"
+                ],
                 "todo_names": [
-                  "0x141512220",
                   "0x1415125b0",
-                  "0x141512b80",
                   "0x141512f20",
                   "0x1415132c0",
                   "0x141513650"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "done_addresses": [
                   "141512220",
+                  "141512b80"
+                ],
+                "todo_addresses": [
                   "1415125b0",
-                  "141512b80",
                   "141512f20",
                   "1415132c0",
                   "141513650"
@@ -39456,29 +39458,31 @@
                   {
                     "name": "physics/simulation/mankinigpu/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 6,
+                    "done": 2,
+                    "todo": 4,
                     "total": 6,
-                    "behavior_or_helpers_reviewed": 0,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
                     "runtime_functions_identified": 6,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "GetPredictShader",
+                      "GetGrabConstraintShader"
+                    ],
                     "todo_names": [
-                      "0x141512220",
                       "0x1415125b0",
-                      "0x141512b80",
                       "0x141512f20",
                       "0x1415132c0",
                       "0x141513650"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "done_addresses": [
                       "141512220",
+                      "141512b80"
+                    ],
+                    "todo_addresses": [
                       "1415125b0",
-                      "141512b80",
                       "141512f20",
                       "1415132c0",
                       "141513650"

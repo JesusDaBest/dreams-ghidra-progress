@@ -2110,3 +2110,11 @@ Found a writer for the second particle word used by Advance's final commit gate.
 The marker is set before later correction calculations, so it does not prove that a nonzero correction was produced. CPU instructions copy the slot mask into the parameter field read by the shader; an identified set site enables a slot when its state byte equals 2. The original state label and complete mask provenance remain unresolved.
 
 GrabConstraint (475 instructions), ApplyConstraints (134) and ResetConstraints (285) now have byte-exact decode/reassembly checks. ResetConstraints was separately matched to the local archive with the original native path hash routine. These decoding results do not mark their complete behaviors understood. Only the selected marker writer/reader path is traced here; GPU execution, other writers and synchronization behavior remain unverified. No new naming credit is added, and binaries/disassembly stay local.
+
+### Saved Predict and GrabConstraint shader getters
+
+Applied GetPredictShader and GetGrabConstraintShader with working opaque pointer return types. Their complete bodies construct the corresponding shader resource paths, consult the packed resource table and support file-loading fallback. Each returns its static shader descriptor when its handle is present, otherwise null. Original native hashing independently confirms both archive resources.
+
+256 original-native initialized cached-success cases verify the exact descriptor address and an unchanged readonly global page. No imported callees execute in those cases. Initialization, path construction, lookup/load/failure and concurrency were inspected statically but remain outside the native test coverage; no complete shader or solver execution is claimed.
+
+Full cold backup, isolated trial, promotion and independent reopening verify both saved names/signatures and unchanged instructions/archives. Totals: 324 checked names (294 renames, 29 created functions, one retained-name review) among 9,580 discovered functions. Mapping remains 1,757 mapped and 7,823 unmapped because both wrappers were already classified under physics simulation.
