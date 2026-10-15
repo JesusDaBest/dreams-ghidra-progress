@@ -2416,3 +2416,11 @@ The original text builder now passes 104 content-growth cases through 16,384 byt
 This supersedes earlier unexecuted-growth limitations for these arena-backed paths. The scratch allocator fallback import is identified as malloc by its loader NID and matching original libc export. Its deeper heap implementation and allocation failures remain unexecuted. Token-growth coverage uses repeated numbered placeholders; other token kinds, final substitution and rendering remain unresolved.
 
 No new naming credit is added: 366 names checked among 9,580 discovered functions. These tests do not establish whole-game completion.
+
+### Verified locale-aware float-pair lookup
+
+Traced a 145-instruction runtime getter that searches linked records by masked key and locale. 9,240 native direct-lookup cases cover record counts through 127, empty leading blocks, every stored key and misses, pair flags, high key bits and locale choices. Exact returned begin/end pointers, record-use flag and whole guarded nodes/source/output agree. A direct record with pairs is marked used; a matching record without pairs returns an empty span.
+
+396 additional cases verify the serialized locale fallback across empty and populated language views and key tables. When the requested locale has no direct record, the getter can use the default-locale record to reach the requested serialized view, match a secondary key, and compute an eight-byte-pair span. That path does not mark the direct registry record used. A matching direct record without pairs suppresses fallback.
+
+The getter and ordered-boundary setters connect these pairs to editable ranges, but their units and application meaning remain unverified. Concurrency, malformed offsets and rendering are unresolved. The two-register aggregate return must be represented correctly in the saved ABI before applying a function name/type. No naming credit is added; the total remains 366 checked names.

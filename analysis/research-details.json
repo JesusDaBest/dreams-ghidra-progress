@@ -5988,5 +5988,23 @@
     ],
     "new_checked_names": 0,
     "whole_game_complete": false
+  },
+  "text_pair_registry_lookup_checkpoint": {
+    "original_instructions": 145,
+    "direct_cases": 9240,
+    "serialized_locale_fallback_cases": 396,
+    "findings": [
+      "Linked registry searched by masked key and locale.",
+      "Direct pair span marks record used; matching record without pairs returns empty.",
+      "Missing direct locale resolves serialized language views through default-locale record and secondary key.",
+      "Serialized fallback returns eight-byte-pair range without marking direct record used."
+    ],
+    "limits": [
+      "Pairs have ordered-boundary setter behavior, but units/application meaning remain unverified.",
+      "Concurrency and malformed table offsets unresolved.",
+      "Two-register aggregate return needs a justified saved ABI before applying name/types."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }
