@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1826,
-  "unmapped_total": 7754,
+  "mapped_total": 1827,
+  "unmapped_total": 7753,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46367,6 +46367,27 @@
           "kind": "verified_semantic_review",
           "name": "AppendTextAuxiliaryRecord",
           "support": "Original bodies and token dispatcher callers,bounded native execution and independent saved-signature reopening."
+        }
+      ]
+    },
+    "1414b96e0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reads accepted token text for substitution processing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Predicate-driven token reader.",
+      "code_sha256": "402710332a6bf733539a4230c6b6e4ab55f088fe4048480b1a4db312898915f2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryReadAcceptedTextToken",
+          "support": "Original reader and dispatcher callers,plain/formatted native checks and independently reopened signature."
         }
       ]
     }

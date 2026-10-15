@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "363 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "364 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9032,
-    "other_names": 548,
-    "verification": "complete_inventory_matches_baseline_plus_363_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9031,
+    "other_names": 549,
+    "verification": "complete_inventory_matches_baseline_plus_364_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8652,6 +8652,29 @@
         "Replacement source external ownership and previous owned-string release remain unexecuted.",
         "Internal marker and auxiliary payload meanings remain partly unresolved.",
         "Working descriptive names/types;not recovered source."
+      ]
+    },
+    {
+      "address": "1414b96e0",
+      "original_name": "FUN_1414b96e0",
+      "applied_name": "TryReadAcceptedTextToken",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryReadAcceptedTextToken(char * output_utf8, ulonglong * capacity_or_length, void * input_cursor_span, void * parser_state, void * acceptance_predicate)",
+      "evidence": [
+        "Complete211 original instruction spans matched;reader body and three dispatcher callers inspected.",
+        "1920 plain native checks including208 expected capacity failures;192 formatted checks including72 expected capacity failures.",
+        "Original decoder/control and virtual acceptance callbacks;independent byte/capacity/cursor commit checks and selected flat-tag style state expectations.",
+        "Cold backup,isolated trial,promotion and independent reopening verify saved Boolean signature and unchanged archives."
+      ],
+      "caveats": [
+        "Plain hash classification usesoriginaltable;selected committed direction/emoji state expectations derivedfromprobes,not independentdecoderverification.",
+        "Capacityzero,malformed/nested/internalstreams and nullpredicate failure remain unexecuted.",
+        "Complete dispatcher and rendering remain unverified.",
+        "Working descriptive name/types;not recovered source."
       ]
     }
   ],
