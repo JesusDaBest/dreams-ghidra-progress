@@ -4511,11 +4511,40 @@
     "accepted_cases": 11520,
     "target_rejection_cases": 5,
     "limits": [
-      "Default state mode only; special immediate health/cooldown/death-output updates not executed.",
-      "PerHit previous-history suppression and hit-cache writes not executed.",
       "Finite selected health/weights/multipliers, valid target indices and explicit Power metadata offset40; nonfinite inputs and malformed references untested.",
-      "Selected state windows per case plus final full-state check; no game-loop, integration or concurrency validation.",
-      "Working signature order and opaque object pointers; original C++ declarations and complete caller semantics not recovered."
+      "Working signature order and opaque object pointers; original C++ declarations and complete caller semantics not recovered.",
+      "Preinitialized current hit cache; lazy initialization, capacity/wrap limits and malformed mappings remain untested.",
+      "Selected finite fixtures and state gates; the gameplay names/meaning of immediate-state controls remain unresolved.",
+      "Full target/modifier/game checked every case; cache/control windows and sampled complete-state checks as detailed by each fixture.",
+      "No complete main update, real-game integration or concurrency validation."
+    ],
+    "runtime_game_verified": false
+  },
+  "health_modifier_branch_checkpoint": {
+    "previous_history_cases": 1872,
+    "immediate_state_cases": 10800,
+    "combined_perhit_immediate_cases": 1872,
+    "previous_list_counts": [
+      0,
+      1,
+      7,
+      8,
+      9,
+      15,
+      16,
+      17,
+      31,
+      32,
+      33
+    ],
+    "source_control_meanings": "unresolved",
+    "lazy_initialization": "untested",
+    "name_count_unchanged": 292,
+    "limits": [
+      "Preinitialized current hit cache; lazy initialization, capacity/wrap limits and malformed mappings remain untested.",
+      "Selected finite fixtures and state gates; the gameplay names/meaning of immediate-state controls remain unresolved.",
+      "Full target/modifier/game checked every case; cache/control windows and sampled complete-state checks as detailed by each fixture.",
+      "No complete main update, real-game integration or concurrency validation."
     ],
     "runtime_game_verified": false
   }
