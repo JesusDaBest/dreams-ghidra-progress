@@ -2018,3 +2018,11 @@ A Joint must have a parent resolving to a Sculpt. That Sculpt must have a parent
 Nine graph schemas cover valid/missing/wrong-type/null chains, absent PuppetHeart and exact-reference mismatch, with encoded-reference variants and empty/populated pair tables.32 expected Joint-parent changes and488 pair retirements match independent parent-chain and cleanup oracles. Full expected state SHA256 and guarded objects/pairs/frame are checked every case; pair flags/padding/count remain intact.
 
 All three region comments explicitly retain partial-review scope and were saved reversibly and independently reopened. Names/signatures, original instructions and archives remain unchanged. Grandparent lookup is valid/non-null in these fixtures; malformed grandparent chains, cycles, earlier/later upgrade stages and full15,647-instruction caller/game execution remain unverified. No new name credit:321 of9,580 checked names.
+
+### Global gravity settings: verified accumulation branch
+
+Traced the registered GlobalSettings gravity fields into a runtime consumer and cross-checked all 462 instructions against the original executable. A bounded native fixture passed 1,575 finite-value cases: when AdjustGravityStrength is nonzero, the branch adds Power times GravityMul to a sum and abs(Power) to its weight. With the option off, both values remain unchanged. Guarded output and unchanged input/field checks passed against an exact float32 oracle.
+
+This tests five original instructions with generated setup and exit, without import models. It does not test the complete function, concurrent snapshot/retry behavior, reset handling, final normalization or application to physical bodies. One caller supplies a null previous-settings pointer; its reachability through the reset-edge test remains unresolved. No new function name or whole-function review credit is added.
+
+The developer stream's per-object gravity-factor example remains a separate lead. Matching gravity terminology does not establish a source-code match. Reverse engineering is still incomplete; the checked-name total remains 321 of 9,580 discovered functions.

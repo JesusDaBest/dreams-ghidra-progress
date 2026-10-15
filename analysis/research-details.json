@@ -5122,5 +5122,22 @@
     ],
     "full_owner_reviewed": false,
     "runtime_game_verified": false
+  },
+  "global_settings_gravity_accumulation_checkpoint": {
+    "status": "bounded_native_branch_verified",
+    "original_containing_body_instructions_checked": 462,
+    "passed_native_cases": 1575,
+    "findings": [
+      "GlobalSettings GravityMul and AdjustGravityStrength field registrations match this runtime consumer.",
+      "Enabled gravity branch accumulates Power times GravityMul and absolute Power as separate sum/weight values. Any nonzero enable byte works; disabled branch preserves both."
+    ],
+    "limits": [
+      "The complete body also contains eligibility, InputReset-edge handling and metadata/telemetry operations, plus optimistic snapshot comparison/retry under a byte lock. Those paths are not native-tested here.",
+      "No full-function rename or review credit; no evidence that this is the streamed SetGravityFactor code.",
+      "Final normalization and application to physical bodies still require tracing."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false,
+    "full_function_reviewed": false
   }
 }
