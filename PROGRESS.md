@@ -2834,3 +2834,11 @@ Applied LookupCachedObjectOrRequest with a pointer return and an explicitly stor
 The complete 368-instruction body establishes exact identity comparison, a 4,096-entry 80-byte-record table, linear probing and separate raw-status paths. The resolver and worker linkages place this function in shared object-cache behavior; the map adds an Object cache group under shared object data. A new shared category avoids treating the whole cache as exclusive text-decoding code.
 
 This checkpoint verifies static role, ABI and saved types. It does not execute the complete cache, kernel clock/thread dependencies, invalidation, concurrency or request routing. The previously tested queue fragments remain separately bounded evidence. All 368 original spans match; cold backup, isolated trial, promotion and independent reopening verify unchanged instructions and archives. Totals: 402 checked names, 1,835 mapped and 7,745 unmapped among 9,580 discovered functions. Whole-game completion remains unproven.
+
+### Saved immediate/deferred object lookup handler
+
+Applied ProcessOrDeferObjectLookup with an integer processing-mode argument, optional status output and the same 32-byte DreamsObjectLookupKey passed by value at stack offset +8. The processing branch changes a field in its local stack key copy; the typed signature avoids representing that as a mutation of a caller-owned key object. The handler returns an opaque pointer where its local construction path supplies one, otherwise null.
+
+All 308 original instruction spans match. The complete handler assembly/decompilation and lookup-to-worker handoff establish its deferred queue versus processing branches. Evidence includes the separately bounded 212 comparison/append and 192 nonempty dequeue fragment checks; these do not execute the full handler, locks, thread/clock calls, local asset construction or request routing.
+
+Cold backup, isolated trial, promotion and independent reopening verify the name, custom stack key storage, exact field layout and unchanged archives. Totals: 403 checked names, 1,836 mapped and 7,744 unmapped among 9,580 discovered functions. Full runtime handler behavior, concurrency and whole-game completion remain unproven.
