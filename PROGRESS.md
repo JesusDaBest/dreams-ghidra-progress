@@ -2630,3 +2630,13 @@ Applied BuildTextLayoutRecord and ProcessTextLayoutTokens with independently reo
 Original code passed 4,032 initialization checks, 2,048 explicit direct-copy checks, 128 plain-text builder integration checks and 88 plain processor checks. Whole guarded output records, inputs, optional parser states and argument buffers agree with independent expectations. Plain cases include ASCII, newlines, Hebrew and inline boundary lengths. These checks execute the original decoder, scanner and string/libc helpers where called; the token dispatcher is exercised only on its no-selected-token path.
 
 Special substitutions, direction-marker replacement, auxiliary-record merging, heap growth and full game rendering remain unverified. All 859 original instruction spans match, both saved names/signatures survive independent reopening, and original archives remain unchanged. Totals: 390 checked names, 1,823 mapped and 7,757 unmapped among 9,580 discovered functions. This is bounded analysis progress, not whole-game completion.
+
+### Saved text layout iterator initialization
+
+Applied InitializeTextLayoutIterator with a reviewed five-argument SysV signature. It installs a bounded input span, uses either default parser state or a supplied 80-byte state, resolves direction when unset, optionally enables a parser flag, and primes the first visible unit while applying control tokens. Measurement initializes its iterator through this helper before laying out lines.
+
+All 149 original instruction spans match. Assembly confirms destination,begin,end,byte flag and optional state arguments. Default-state stores leave eight padding bytes untouched; the observed behavior is preserved rather than treating the object as wholly zero-initialized. Nonzero supplied direction survives; unknown direction uses the original probe and locale fallback.
+
+The original initializer passed 1152 bounded integration profiles covering eight plain/internal forms,three locale values,three flag values,four optional-state profiles including supplied zero direction and four alignments. Whole iterator bytes,input and supplied state,guards and stack canary agree. The oracle shares the separately checked original direction probe and advancement helpers,so this is not an independent specification of the entire iterator. Malformed streams,full shaping/rendering and in-game behavior remain unresolved.
+
+Cold backup,isolated trial,promotion and independent reopening verify the saved name/signature and unchanged original archives. Totals: 391 checked names,1,824 mapped and7,756 unmapped among9,580 discovered functions;these are not whole-game completion percentages.

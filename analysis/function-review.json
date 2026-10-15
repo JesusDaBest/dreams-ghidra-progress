@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "360 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "361 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9035,
-    "other_names": 545,
-    "verification": "complete_inventory_matches_baseline_plus_360_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9034,
+    "other_names": 546,
+    "verification": "complete_inventory_matches_baseline_plus_361_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8582,6 +8582,30 @@
         "Special substitutions,direction-marker replacement and auxiliary-record merging remain unexecuted.",
         "Heap growth,invalid pointers and complete game rendering remain unverified.",
         "Working descriptive names/types;not recovered original source."
+      ]
+    },
+    {
+      "address": "141554fb0",
+      "original_name": "FUN_141554fb0",
+      "applied_name": "InitializeTextLayoutIterator",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeTextLayoutIterator(void * text_iterator, char * input_begin, char * input_end, uchar enable_parser_flag, void * parser_state)",
+      "evidence": [
+        "All149 original instruction spans matched;complete initializer body and measurement caller inspected.",
+        "Assembly confirms RDI/RSI/RDX/CL/R8 arguments and void return;default padding store coverage audited.",
+        "1152 original native integration profiles covering input forms,locale,flag,optional state and four alignments;whole iterator/source/state/guards/canary checked.",
+        "Cold backup,isolated trial,promotion and independent reopening verify saved name/signature and unchanged archives."
+      ],
+      "caveats": [
+        "Integrationoracle sharesoriginaldirectionprobe/advance,notindependentwholeiterator specification.",
+        "Selectedvalidforms only;fontmetrics/shaping/layout/rendering unresolved.",
+        "Shared-dependency integration oracle is not independent whole-iterator behavior proof.",
+        "Unwritten padding is intentional observed behavior;do not zero full object in reimplementation without further evidence.",
+        "Working descriptive name and opaque state pointers;not recovered source."
       ]
     }
   ],
