@@ -4126,5 +4126,45 @@
     ],
     "project_modified": false,
     "runtime_game_verified": false
+  },
+  "sculpt_bounds_geometry_checkpoint": {
+    "without_body": {
+      "passed": 840,
+      "max_absolute_xyz_error": 1.428149047910665e-06,
+      "xyz_tolerance": 2e-05,
+      "method": "Original full worker on bounds-active, no-body path, with original constant bytes and explicit valid sculpt resource/object tables. Independent quaternion-transformed eight-corner XYZ envelope; all job bytes outside two output SIMD vectors checked exactly, flags/IDs/counter exact, object/resource unchanged.",
+      "findings": [
+        "Output XYZ bounds enclose transformed resource centre plus/minus three resource axes.",
+        "Selected identity/180/90-degree quaternions, translations, positive/zero/negative scales and zero/skewed axes match independent corner bounds.",
+        "No-body flags and inclusion/body-index bookkeeping match prior validated flag rules."
+      ],
+      "limits": [
+        "Two output SIMD fourth lanes not assigned geometric semantics or independently modeled.",
+        "Finite selected unit quaternions and resource matrices only; nonfinite/unnormalized cases unresolved.",
+        "Body-associated velocity expansion, complete scheduling/concurrency and actual game consumers remain unverified."
+      ],
+      "project_modified": false,
+      "runtime_game_verified": false
+    },
+    "with_body": {
+      "passed": 2520,
+      "max_absolute_xyz_error": 1.9645908508891807e-06,
+      "xyz_tolerance": 2e-05,
+      "method": "Original full worker on bounds-active, body-associated path with original flag helper, with original constant bytes and explicit valid sculpt resource/object tables. Independent quaternion-transformed eight-corner XYZ envelope; all job bytes outside two output SIMD vectors checked exactly, flags/IDs/counter exact, object/resource unchanged.",
+      "findings": [
+        "Output XYZ bounds enclose transformed resource centre plus/minus three resource axes.",
+        "Selected identity/180/90-degree quaternions, translations, positive/zero/negative scales and zero/skewed axes match independent corner bounds.",
+        "Body-associated bounds expand by the vector at body offset70 times original constant; flags and index bookkeeping match prior helper rules."
+      ],
+      "limits": [
+        "Two output SIMD fourth lanes not assigned geometric semantics or independently modeled.",
+        "Finite selected unit quaternions and resource matrices only; nonfinite/unnormalized cases unresolved.",
+        "Selected body metadata/velocity fixtures only; complete scheduling/concurrency and actual game consumers remain unverified.",
+        "Body vector gameplay meaning/units not established; velocity is a lead, not a verified field name."
+      ],
+      "project_modified": false,
+      "runtime_game_verified": false,
+      "expansion_factor_xyz": 0.13333334028720856
+    }
   }
 }
