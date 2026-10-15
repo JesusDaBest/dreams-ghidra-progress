@@ -2354,3 +2354,11 @@ Connected the original gravity-sensitive packing window to the original particle
 The connection deliberately skips particle geometry, mass computation and range allocation; it is not a complete function execution. Runtime friction coefficients and array pointer bindings remain explicit fixture inputs. The first disposable run failed because the fixture template omitted code/constants loading; the corrected fixture passed before these results were recorded.
 
 Separately checked the caller's original instructions: it prepares a gravity parameter with XYZ equal to direction times strength and a fourth lane equal to strength. How the coefficient arrays and gravity parameters reach the solver, and how the solver interprets them, still require tracing. No complete-function review or additional naming credit is claimed.
+
+### Saved physics array pointer table helper
+
+Applied PopulatePhysicsArrayPointerTable after reading the complete 218-instruction body and tracing its caller. It clears a 0x338-byte output table and fills 103 eight-byte entries from physics resource slots. The four particle arrays traced from Sculpt coefficient packing appear in table slots 10, 12, 13 and 14.
+
+1,024 complete native tests execute the original function and actual original libc memset through its original import thunk, without import models. Sixty-four independent source patterns and output alignments 0 through 15 match exact output bytes, guards and the whole readonly source page. Global resource initialization, pointer validity for later dereference, overlap/malformed pointers and solver interpretation remain unresolved.
+
+A full cold backup, isolated trial, promotion and independent reopening verify the saved name and working RDI output-pointer signature. Original instructions and archives are unchanged. Totals: 322 checked names (292 renames, 29 created functions and one retained-name review) among 9,580 discovered functions; 1,757 mapped and 7,823 unmapped. This does not mark the physics solver or Dreams complete.

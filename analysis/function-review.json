@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "291 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "292 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9104,
-    "other_names": 476,
-    "verification": "complete_inventory_matches_baseline_plus_291_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9103,
+    "other_names": 477,
+    "verification": "complete_inventory_matches_baseline_plus_292_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6943,6 +6943,29 @@
         "Allocation/growth/failure, live repeated registration and callback invocation untested.",
         "ASCII literal lengths<=26 only; full hash-function behavior is not reviewed or given credit.",
         "Registered enum labels, including deprecated/internal entries, do not prove feature availability or original C++ enum width."
+      ]
+    },
+    {
+      "address": "141511c90",
+      "original_name": "FUN_141511c90",
+      "applied_name": "PopulatePhysicsArrayPointerTable",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV PopulatePhysicsArrayPointerTable(ulonglong * output_table)",
+      "evidence": [
+        "Complete218-instruction function matched original SELF and current saved bytes.",
+        "1024 full-native tests use actual original379-byte libc memset through original thunk, without import models.",
+        "103 independent source slots,64 patterns and16 output alignments; exact output/guards and full readonly source page verified.",
+        "Four particle coefficient arrays traced from Sculpt packing are copied into table slots10,12,13,14.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify name, working RDI output ABI and unchanged original archives."
+      ],
+      "caveats": [
+        "Global resource initialization, pointer validity for later dereference and solver interpretation unresolved.",
+        "Overlapping source/output and malformed output pointers not tested.",
+        "Descriptive name and working signature are not recovered original C++ declarations."
       ]
     }
   ],

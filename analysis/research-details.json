@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 321,
+    "checked_and_applied_names": 322,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 321,
-    "function_count": 9570,
+    "verified_names": 322,
+    "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "291 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "292 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -5202,6 +5202,19 @@
       "Buffer transfer, solver interpretation and complete containing functions unverified."
     ],
     "new_names_checked": 0,
+    "runtime_game_verified": false
+  },
+  "physics_array_pointer_table_checkpoint": {
+    "name": "PopulatePhysicsArrayPointerTable",
+    "original_instructions": 218,
+    "passed_native_cases": 1024,
+    "entries_per_case": 103,
+    "actual_original_libc_memset": true,
+    "limits": [
+      "Global resource initialization, pointer validity for later dereference and solver interpretation unresolved.",
+      "Overlapping source/output and malformed output pointers not tested.",
+      "Descriptive name and working signature are not recovered original C++ declarations."
+    ],
     "runtime_game_verified": false
   }
 }

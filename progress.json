@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 279,
+    "done": 280,
     "todo": 1477,
-    "total": 1756,
-    "behavior_or_helpers_reviewed": 214,
+    "total": 1757,
+    "behavior_or_helpers_reviewed": 215,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -38326,12 +38326,12 @@
       {
         "name": "physics",
         "label": "Physics & collision",
-        "done": 11,
+        "done": 12,
         "todo": 57,
-        "total": 68,
-        "behavior_or_helpers_reviewed": 11,
+        "total": 69,
+        "behavior_or_helpers_reviewed": 12,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 36,
+        "runtime_functions_identified": 37,
         "property_type_functions_identified": 32,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -38346,7 +38346,8 @@
           "PrepareObjectRegionQueryGeometry",
           "ComputeObjectZoneAndFalloffBounds",
           "GetTestSpheresAgainstSdfComputeShader",
-          "GetSphereVsSphereCheckComputeShader"
+          "GetSphereVsSphereCheckComputeShader",
+          "PopulatePhysicsArrayPointerTable"
         ],
         "todo_names": [
           "0x140111b70",
@@ -38418,7 +38419,8 @@
           "141112450",
           "1411129d0",
           "1414f2fd0",
-          "1414f3370"
+          "1414f3370",
+          "141511c90"
         ],
         "todo_addresses": [
           "140111b70",
@@ -39263,12 +39265,12 @@
           {
             "name": "physics/simulation",
             "label": "Physics simulation",
-            "done": 4,
+            "done": 5,
             "todo": 26,
-            "total": 30,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 31,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 22,
+            "runtime_functions_identified": 23,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -39276,7 +39278,8 @@
               "CalculateSculptBoundsAndWakeBodiesJob",
               "RegisterLabelCollidableFieldOffset",
               "GetTestSpheresAgainstSdfComputeShader",
-              "GetSphereVsSphereCheckComputeShader"
+              "GetSphereVsSphereCheckComputeShader",
+              "PopulatePhysicsArrayPointerTable"
             ],
             "todo_names": [
               "0x1409f4da0",
@@ -39310,7 +39313,8 @@
               "140bc06b0",
               "140d67d00",
               "1414f2fd0",
-              "1414f3370"
+              "1414f3370",
+              "141511c90"
             ],
             "todo_addresses": [
               "1409f4da0",
@@ -39666,6 +39670,65 @@
                 ]
               },
               {
+                "name": "physics/simulation/gameupdater-physics",
+                "label": "Gameupdater Physics",
+                "done": 2,
+                "todo": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CalculateSculptBoundsAndWakeBodiesJob",
+                  "PopulatePhysicsArrayPointerTable"
+                ],
+                "todo_names": [
+                  "0x1409f4da0"
+                ],
+                "done_addresses": [
+                  "140bc06b0",
+                  "141511c90"
+                ],
+                "todo_addresses": [
+                  "1409f4da0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/gameupdater-physics/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 1,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "CalculateSculptBoundsAndWakeBodiesJob",
+                      "PopulatePhysicsArrayPointerTable"
+                    ],
+                    "todo_names": [
+                      "0x1409f4da0"
+                    ],
+                    "done_addresses": [
+                      "140bc06b0",
+                      "141511c90"
+                    ],
+                    "todo_addresses": [
+                      "1409f4da0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "physics/simulation/mankini",
                 "label": "Mankini",
                 "done": 0,
@@ -39714,61 +39777,6 @@
                       "141505310",
                       "141506ac0",
                       "141506e60"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/gameupdater-physics",
-                "label": "Gameupdater Physics",
-                "done": 1,
-                "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "CalculateSculptBoundsAndWakeBodiesJob"
-                ],
-                "todo_names": [
-                  "0x1409f4da0"
-                ],
-                "done_addresses": [
-                  "140bc06b0"
-                ],
-                "todo_addresses": [
-                  "1409f4da0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/gameupdater-physics/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "CalculateSculptBoundsAndWakeBodiesJob"
-                    ],
-                    "todo_names": [
-                      "0x1409f4da0"
-                    ],
-                    "done_addresses": [
-                      "140bc06b0"
-                    ],
-                    "todo_addresses": [
-                      "1409f4da0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41428,5 +41436,5 @@
       }
     ]
   },
-  "unmapped": 7824
+  "unmapped": 7823
 }
