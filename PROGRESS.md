@@ -2754,3 +2754,13 @@ Applied ChooseTextDirectionByVisibleMajority with two bounded text pointers and 
 All 150 original instruction spans match. Evidence includes the complete scanner and 115-instruction caller, 2,456 majority/reference/locale checks and 40 selected placeholder checks. The saved comment records majority selection, ties, fallback only with no counted strong characters, skipped typed references and selected placeholder kinds. Arabic and other scripts, formatting or malformed streams and full placeholder grammar remain unresolved.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives. Totals: 397 checked names, 1,830 mapped and 7,750 unmapped among 9,580 discovered functions. No full rendering or whole-game completion is claimed.
+
+### Directional majority counts decoded and shaped units
+
+The majority scanner counts units returned by the higher text decoder, not raw Unicode input characters. The distinction is observable with Arabic lam-alef: in the tested isolated contexts, two input letters produce one U+FEFB presentation-form unit. One Latin A plus one lam-alef cluster therefore ties and selects left-to-right. Earlier references to character counts should be read as decoded-unit counts; they do not establish raw input-character weighting.
+
+The original ligature table contains the lam/alef pair and U+FEFB/U+FEFC form alternatives. Twenty original iterator calls across eight profiles confirm U+FEFB for isolated lam-alef and Latin followed by lam-alef. This supports the expected unit count rather than deriving it solely from the majority result.
+
+Another 1,960 checks cover left/right unit counts 0–6, clue/size/packed-color flat tags, Arabic alef and space-separated lam-alef clusters, two locale values and four alignments. Known formatting tags add no directional weight, and selected Arabic clusters follow the decoded-unit majority/tie rules. Input guards and canaries remain intact. The preliminary fourteen-call observation probe is exploratory and receives no additional verification credit.
+
+Other Arabic joining contexts, comprehensive shaping, nested or malformed tags and rendered glyphs remain unresolved. This extends the evidence for the existing saved direction function; it adds no checked names or whole-game completion credit.

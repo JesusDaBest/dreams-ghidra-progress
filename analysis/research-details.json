@@ -6698,5 +6698,36 @@
       "Working descriptive name/types;not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_shaped_direction_checks": {
+    "iterator": {
+      "passed_profiles": 8,
+      "iterator_calls": 20,
+      "original_instructions": 101,
+      "method": "Originaliterator/higherdecoder/control/table overisolatedlam-alef andLatin+lam-alef,4alignments.ExplicitexpectedpresentationformFEFB supportedbyoriginal ligaturetable at141a6094c;unit/cursor/previous/classflag/guards.",
+      "findings": [
+        "TwoinputArabicletters lam-alef produceoneFEFB iteratorunit inselectedcontexts."
+      ],
+      "limits": [
+        "Twoisolatedcontexts only;notallArabicshaping.",
+        "Glyphshape itselfnotrendered."
+      ],
+      "project_modified": false
+    },
+    "direction": {
+      "calls": 1960,
+      "original_instructions": 150,
+      "method": "Originaldirection scanner/higherdecoder/control;LTR/RTLunitcounts0..6,3knownflatformat tags,ArabicAlef andspace-separatedlam-alef clusters,2locales,4alignments.Independentmajority/tie/fallback overexpecteddecodedunits;ligatureunit corroboratedbyoriginaltable/iteratorcheck;inputguards/canary.",
+      "findings": [
+        "Knownformattingtags do notadd directionalweight.",
+        "Arabiclam-alef contributesoneRTLunit inselectedcontexts,not twoinputletters;LatinA plusonecluster tiesLTR.",
+        "Majority isoverdecoded/shapedunits,notrawUnicodecharacter count."
+      ],
+      "limits": [
+        "SelectedisolatedArabicclusters only;notallArabicjoining/shaping.",
+        "Malformed/nestedtags andrendering unresolved."
+      ],
+      "project_modified": false
+    }
   }
 }
