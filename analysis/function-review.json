@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "289 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "289 existing-function renames,29 created descriptive functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -13,7 +13,7 @@
     "total": 9580,
     "default_fun_names": 9106,
     "other_names": 474,
-    "verification": "complete_inventory_matches_baseline_plus_289_renames_and_29_created_functions"
+    "verification": "complete_inventory_matches_baseline_plus_289_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6869,6 +6869,30 @@
         "Quaternion NaN payloads, subnormal/FTZ modes and aliasing untested.",
         "Complete glue-migration transform composition remains untested.",
         "RigidTransformWorking32 is an observed machine container, not recovered original C++ declaration."
+      ]
+    },
+    {
+      "address": "1401ac7b0",
+      "original_name": "ComposeRigidTransform",
+      "applied_name": "ComposeRigidTransform",
+      "existing_name_review": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComposeRigidTransform(RigidTransformWorking32 * output, SpatialQueryFloat4Working16 a_position_scale, SpatialQueryFloat4Working16 a_rotation, SpatialQueryFloat4Working16 b_position_scale, SpatialQueryFloat4Working16 b_rotation)",
+      "evidence": [
+        "Complete93-instruction original composition body matched SELF and saved bytes.",
+        "768 direct native cases execute original helper and actual libc isinff with no import models; independent position/scale/quaternion composition oracle.",
+        "192 zero quaternion products fall back to identity; maximum error6.98e-7 at5e-5 tolerance, NaN-poison output/guards/frame checked.",
+        "RDI typed output and full XMM0..3 input vectors recovered; connected migration caller now decompiles all five inputs.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify corrected custom ABI/types with unchanged original archives."
+      ],
+      "caveats": [
+        "Finite positions, selected positive scales and normalized first rotation only; nonunit/zero second rotation tested.",
+        "First rotation nonunit/nonfinite, subnormal/FTZ modes, aliasing and complete glue conversion chain untested.",
+        "Existing descriptive name retained; working machine types do not recover original source declarations."
       ]
     }
   ],

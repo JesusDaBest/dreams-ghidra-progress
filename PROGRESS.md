@@ -1958,3 +1958,13 @@ Applied CopyTransformWithNormalizedRotation with a typed output pointer in RDI a
 The first vector is copied bit-for-bit. Zero or infinite squared quaternion norms produce identity rotation. Norms within5e-7 of1 preserve the input quaternion bits; other tested norms use reciprocal-square-root refinement.511 original-native cases execute the49-instruction helper and actual22-byte libc isinff with no import models:3 identity fallbacks,5 near-unit preservation cases and503 normalizations. Maximum absolute error is1.17e-7 at tolerance3e-6. NaN-poison outputs, exact first-vector preservation, guards and input-frame checks are included.
 
 Cold backup, isolated trial, main promotion and independent reopening verify the saved name, custom stack value storage, exact working type offsets and connected caller decompilation with unchanged original archives. Quaternion NaN payloads, subnormal/FTZ modes, aliasing and complete glue-migration transform composition remain unresolved. Totals:318 checked names among9,580 discovered functions;1,755 mapped and7,825 unmapped.
+
+### Reviewed existing transform composition name and repaired input ABI
+
+Retained the pre-existing descriptive name ComposeRigidTransform and reviewed its complete93-instruction body. Corrected its previously empty signature to a typed output pointer in RDI plus four working16-byte vectors in XMM0 throughXMM3: first position/scale, first rotation, second position/scale and second rotation. The migration caller now shows all inputs.
+
+768 original-native cases execute the helper and actual libc isinff without import models. The independent oracle checks position=A.position+A.scale*Rotate(A.rotation,B.position), scale=A.scale*B.scale and normalized quaternion product.192 zero products use identity rotation. Maximum absolute error is6.98e-7 at5e-5 tolerance; NaN-poison outputs, guards and input frames are checked, and the bridge preserves Win64 XMM6 throughXMM15.
+
+Cold backup, isolated trial, main promotion and independent reopening verify the corrected custom ABI, working types and connected caller decompilation, with unchanged original archives. First rotations are normalized and positions/scales use selected finite positive profiles; first-rotation nonunit/nonfinite behavior, subnormal/FTZ modes, aliasing and the complete glue conversion chain remain unresolved.
+
+This is one newly checked existing name, not a new rename. Totals:319 checked names consist of289 existing-function renames,29 created functions and1 retained existing-name review, among9,580 discovered functions.1,756 functions are mapped and7,824 unmapped.

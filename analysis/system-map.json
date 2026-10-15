@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1755,
-  "unmapped_total": 7825,
+  "mapped_total": 1756,
+  "unmapped_total": 7824,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44854,6 +44854,26 @@
           "kind": "verified_semantic_review",
           "name": "CopyTransformWithNormalizedRotation",
           "support": "Original49 instructions, actual libc isinff,511 fixtures and independently saved custom stack ABI."
+        }
+      ]
+    },
+    "1401ac7b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "math",
+        "object-hierarchy-transform",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original position/scale/quaternion transform composition used by glue migration.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Composes translation/scale and normalizes quaternion product.",
+      "code_sha256": "63314e84c75b4d226111cfe954733ee1cf651522df3f9c59e66023d6fb5e2b39",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComposeRigidTransform",
+          "support": "Original93 instructions,768 native fixtures, preserved descriptive name and independently corrected five-input ABI."
         }
       ]
     }

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 276,
+    "done": 277,
     "todo": 1479,
-    "total": 1755,
-    "behavior_or_helpers_reviewed": 213,
+    "total": 1756,
+    "behavior_or_helpers_reviewed": 214,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25243,12 +25243,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 137,
+        "done": 138,
         "todo": 108,
-        "total": 245,
-        "behavior_or_helpers_reviewed": 124,
+        "total": 246,
+        "behavior_or_helpers_reviewed": 125,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 159,
+        "runtime_functions_identified": 160,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25265,6 +25265,7 @@
           "FindBestFitKeyedResourceBlockRun",
           "AllocateKeyedResourceBlocks",
           "DecodeLz4Block",
+          "ComposeRigidTransform",
           "ReleaseRefCountedBlockHandle",
           "TransferSerializerByte",
           "BeginFilteredPropertyVisit",
@@ -25514,6 +25515,7 @@
           "140119390",
           "1401194d0",
           "14015e8c0",
+          "1401ac7b0",
           "14038bed0",
           "14039b4a0",
           "140413d40",
@@ -28224,16 +28226,17 @@
           {
             "name": "shared/math",
             "label": "Numbers & transforms",
-            "done": 2,
+            "done": 3,
             "todo": 12,
-            "total": 14,
-            "behavior_or_helpers_reviewed": 2,
+            "total": 15,
+            "behavior_or_helpers_reviewed": 3,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 2,
+            "runtime_functions_identified": 3,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "ComposeRigidTransform",
               "CopyTransformWithNormalizedRotation",
               "ComputeObjectHierarchyTransform"
             ],
@@ -28252,6 +28255,7 @@
               "0x141606ff0"
             ],
             "done_addresses": [
+              "1401ac7b0",
               "1407a6bb0",
               "140903590"
             ],
@@ -28325,6 +28329,61 @@
                       "140cff430",
                       "141606f50"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/math/object-hierarchy-transform",
+                "label": "Object hierarchy transforms",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ComposeRigidTransform",
+                  "CopyTransformWithNormalizedRotation",
+                  "ComputeObjectHierarchyTransform"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1401ac7b0",
+                  "1407a6bb0",
+                  "140903590"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/math/object-hierarchy-transform/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ComposeRigidTransform",
+                      "CopyTransformWithNormalizedRotation",
+                      "ComputeObjectHierarchyTransform"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1401ac7b0",
+                      "1407a6bb0",
+                      "140903590"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -28427,57 +28486,6 @@
                       "140ce5800",
                       "140ce5fe0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/math/object-hierarchy-transform",
-                "label": "Object hierarchy transforms",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "CopyTransformWithNormalizedRotation",
-                  "ComputeObjectHierarchyTransform"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1407a6bb0",
-                  "140903590"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/math/object-hierarchy-transform/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "CopyTransformWithNormalizedRotation",
-                      "ComputeObjectHierarchyTransform"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1407a6bb0",
-                      "140903590"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -41416,5 +41424,5 @@
       }
     ]
   },
-  "unmapped": 7825
+  "unmapped": 7824
 }
