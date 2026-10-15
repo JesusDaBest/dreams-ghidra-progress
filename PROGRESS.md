@@ -2342,3 +2342,11 @@ The original reverse writer and size calculator now execute selected paths with 
 A separate 7,068-case check verifies the alias-format helper with three strings and optional tone suffix. It checks total capacity before writing, preserves cursor/output on the tested failures, and writes a raw low-byte tone character rather than validating a digit range. These checks use actual original strlen and strncpy.
 
 The first named-style reverse test exposed a missing fixture pointer table. The original three style records and pointers were read and explicitly relocated, then the source baseline was updated before checks passed. This was an incomplete fixture dependency, not a game failure. Formatted color/size output and emoji/flag aliases still need additional formatting/table coverage. Exact original markup restoration, final rendering/substitution and whole reverse-converter completion are not claimed. No checked-name credit was added.
+
+### Saved packed-payload reader and bounded alias appender
+
+Applied TryReadInternalTextPackedPayload and AppendTextAliasWithOptionalTone with working bounded cursor/output arguments and signed tone code. The payload reader reconstructs four encoded byte-plus-one units into a 32-bit value; its documented fourth-unit truncation behavior remains explicit. The alias appender joins prefix/name/suffix with an optional tone suffix and checks total capacity before writing. It does not validate arbitrary nonnegative tone codes.
+
+Evidence includes 16,384 valid packed-payload cases, 544 selected truncation cases and 7,068 alias-format cases with exact bytes, returns, cursors and guards, using original instructions/data and actual library dependencies. The original snprintf export and bounded-output callback were also traced into their formatting engine. That trace is static: color/size formatting coverage is not claimed, and no host-formatting substitute was used.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 356 checked names (326 renames, 29 created functions and one retained-name review), 1,789 mapped and 7,791 unmapped among 9,580 discovered functions. Broader reverse conversion, rendering, final substitution and whole-game completion remain unresolved.

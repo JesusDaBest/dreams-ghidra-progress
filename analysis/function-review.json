@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "324 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "326 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9071,
-    "other_names": 509,
-    "verification": "complete_inventory_matches_baseline_plus_324_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9069,
+    "other_names": 511,
+    "verification": "complete_inventory_matches_baseline_plus_326_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7722,6 +7722,54 @@
         "Short-buffer failure canleavepartialwrites/statechanges;not transactional.",
         "Connectedcaller outputsfitted4096-byte stackscratch;heaptemporary andchunkgrowth unexecuted.",
         "Reverseconversion/finalsubstitution/rendering unresolved.",
+        "Descriptive working names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414b1c00",
+      "original_name": "FUN_1414b1c00",
+      "applied_name": "TryReadInternalTextPackedPayload",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryReadInternalTextPackedPayload(uint * payload_output, uchar * * input_cursor_inout, uchar * input_end)",
+      "evidence": [
+        "Complete211/74-instruction helper bodies read and original SELF/saved bytes agree.",
+        "16384 packedpayload cases coverallbytevaluesineachlane/background,4alignments;544selectedtruncation cases verifyreturn/output/cursor/guards,includingfourthunitreplacement behavior.",
+        "7068 aliasformat cases cover6stringtriples,15signedtones,allcapacities0..required+2,4alignments;actualoriginalstrlen/strncpy,exactbytes/cursor/input/source/index/canary.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Selected malformedpayload coverage;fourthunittruncation canreturn successwithreplacement-derived byte.",
+        "Truncation observation not verified in-game defect/reachability.",
+        "Aliashelper doesnot validate positive tone-code range.",
+        "Original snprintfengine traced statically only;broaderreverse conversion/rendering unresolved.",
+        "Descriptive working names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "141499150",
+      "original_name": "FUN_141499150",
+      "applied_name": "AppendTextAliasWithOptionalTone",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV AppendTextAliasWithOptionalTone(uchar * * output_cursor_inout, uchar * output_end, uchar * prefix, uchar * alias_name, uchar * suffix, int tone_code)",
+      "evidence": [
+        "Complete211/74-instruction helper bodies read and original SELF/saved bytes agree.",
+        "16384 packedpayload cases coverallbytevaluesineachlane/background,4alignments;544selectedtruncation cases verifyreturn/output/cursor/guards,includingfourthunitreplacement behavior.",
+        "7068 aliasformat cases cover6stringtriples,15signedtones,allcapacities0..required+2,4alignments;actualoriginalstrlen/strncpy,exactbytes/cursor/input/source/index/canary.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Selected malformedpayload coverage;fourthunittruncation canreturn successwithreplacement-derived byte.",
+        "Truncation observation not verified in-game defect/reachability.",
+        "Aliashelper doesnot validate positive tone-code range.",
+        "Original snprintfengine traced statically only;broaderreverse conversion/rendering unresolved.",
         "Descriptive working names/types are not recoveredsource."
       ]
     }
