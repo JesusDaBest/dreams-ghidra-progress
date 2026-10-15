@@ -1670,3 +1670,8 @@ Named and independently reopened ResetThingSelectedRuntimeState. The helper clea
 Composed original helpers on hardware: 480 Selector sequences and 720 Timer sequences passed full object/output byte and guard checks. Selector reset installs ActivePort255, then an inactive update normalizes it to0 for a positive port count, even with zero Power. Timer reset clears State while preserving CurrentTime and TimerDone storage. Modes0/1/2 can still report done after reset when current equals target; CountDown3 instead requires Active state. Selected inactive Timer clamps can also make done output true.
 
 These are synthetic helper compositions with Game mode0, null previous state and null property bags. They do not establish real-game scheduling or complete gadget behavior. No verified-name or completion increment.
+### Randomiser weighted port selection
+
+Named and independently reopened ChooseRandomiserWeightedPort. Original fields bind NumPorts and WeightA through WeightJ to native reads. A zero eligible total returns sentinel10 without advancing the seed; otherwise a30-bit seed update chooses an eligible cumulative weight interval.
+
+147,456 synthetic native cases passed for port counts2..10, four weight profiles, four seeds and all10-bit exclusion masks. Exact seed writes and object/guard bytes were checked. Original mode labels are NoRepeat, Shuffle and TrueRandom; the full mode-update behavior and real-game integration remain unresolved. No whole-gadget completion credit. Totals: 252 checked names; 1,695 mapped functions; 7,875 unmapped.

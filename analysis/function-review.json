@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "232 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "233 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9163,
-    "other_names": 407,
-    "verification": "complete_inventory_matches_baseline_plus_232_renames_and_19_created_functions"
+    "default_fun_names": 9162,
+    "other_names": 408,
+    "verification": "complete_inventory_matches_baseline_plus_233_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5142,6 +5142,28 @@
         "Descriptive research name; resets only selected fields, not every runtime field.",
         "Synthetic padded objects include unregistered kinds; complete caller semantics and real-game integration remain unresolved.",
         "No full subsystem completion or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cd5d0",
+      "original_name": "FUN_1408cd5d0",
+      "applied_name": "ChooseRandomiserWeightedPort",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ChooseRandomiserWeightedPort(void * randomiser, uint * seed, uint excluded_ports)",
+      "evidence": [
+        "Original Randomiser descriptor binds NumPorts and WeightA..J; ERandomMode labels and four updater calls inspected.",
+        "Complete222-instruction native weighted picker reviewed against integer seed update and cumulative selection model.",
+        "147456 synthetic original-instruction cases passed for ports2..10, four profiles, four seeds and all10-bit exclusion masks, checking every object and seed/guard byte.",
+        "Cold backup, isolated trial, promotion and independent reopening verify one name/signature change, original instructions and archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive role name and working types; full Randomiser update modes and game integration remain unresolved.",
+        "Weight profiles, seeds and valid port-count range are scoped samples; malformed counts and masks above bit9 not tested.",
+        "No whole-gadget completion or audited-byte credit."
       ]
     }
   ],

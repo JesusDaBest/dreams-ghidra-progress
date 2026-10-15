@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 210,
+    "done": 211,
     "todo": 1484,
-    "total": 1694,
-    "behavior_or_helpers_reviewed": 151,
+    "total": 1695,
+    "behavior_or_helpers_reviewed": 152,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 61,
+        "done": 62,
         "todo": 413,
-        "total": 474,
-        "behavior_or_helpers_reviewed": 19,
+        "total": 475,
+        "behavior_or_helpers_reviewed": 20,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 21,
+        "runtime_functions_identified": 22,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -42,6 +42,7 @@
           "ReadCounterOutputVariant",
           "UpdateTimerFromControlInputs",
           "ReadTimerOutputVariant",
+          "ChooseRandomiserWeightedPort",
           "UpdateSelectorFromInputTransitions",
           "ReadSelectorOutputVariant",
           "EvaluateCalculatorInputs",
@@ -520,6 +521,7 @@
           "1408ccc60",
           "1408cccf0",
           "1408cd160",
+          "1408cd5d0",
           "1408cd970",
           "1408cdee0",
           "1408ce4f0",
@@ -983,12 +985,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 31,
+            "done": 32,
             "todo": 68,
-            "total": 99,
-            "behavior_or_helpers_reviewed": 14,
+            "total": 100,
+            "behavior_or_helpers_reviewed": 15,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 14,
+            "runtime_functions_identified": 15,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1005,6 +1007,7 @@
               "ReadCounterOutputVariant",
               "UpdateTimerFromControlInputs",
               "ReadTimerOutputVariant",
+              "ChooseRandomiserWeightedPort",
               "UpdateSelectorFromInputTransitions",
               "ReadSelectorOutputVariant",
               "EvaluateCalculatorInputs",
@@ -1108,6 +1111,7 @@
               "1408ccc60",
               "1408cccf0",
               "1408cd160",
+              "1408cd5d0",
               "1408cd970",
               "1408cdee0",
               "1408ce4f0",
@@ -1718,6 +1722,88 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/randomiser",
+                "label": "Randomiser",
+                "done": 1,
+                "todo": 3,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ChooseRandomiserWeightedPort"
+                ],
+                "todo_names": [
+                  "0x1404beab0",
+                  "0x140d55b70",
+                  "0x140d777b0"
+                ],
+                "done_addresses": [
+                  "1408cd5d0"
+                ],
+                "todo_addresses": [
+                  "1404beab0",
+                  "140d55b70",
+                  "140d777b0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/randomiser/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404beab0",
+                      "0x140d55b70",
+                      "0x140d777b0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404beab0",
+                      "140d55b70",
+                      "140d777b0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/randomiser/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ChooseRandomiserWeightedPort"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cd5d0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/selector",
                 "label": "Selector",
                 "done": 2,
@@ -2233,61 +2319,6 @@
                       "140cb19b0",
                       "140cb1a60",
                       "140cb1ab0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/randomiser",
-                "label": "Randomiser",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404beab0",
-                  "0x140d55b70",
-                  "0x140d777b0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404beab0",
-                  "140d55b70",
-                  "140d777b0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/randomiser/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404beab0",
-                      "0x140d55b70",
-                      "0x140d777b0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404beab0",
-                      "140d55b70",
-                      "140d777b0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40651,5 +40682,5 @@
       }
     ]
   },
-  "unmapped": 7876
+  "unmapped": 7875
 }
