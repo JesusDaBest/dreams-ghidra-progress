@@ -2982,5 +2982,21 @@
       "No complete Randomiser or game integration claim; no audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "randomiser_reset_sequence_checkpoint": {
+    "sequences_passed": 576,
+    "findings": [
+      "Reset installs port255 and clears state bits18/19. Active Game gates alone do not allow initialization while bit18 remains cleared.",
+      "After modeled restoration of bit18, initialization runs regardless of input trigger and preserves RandomIndex.",
+      "Positive equal weights select one configured port; zero eligible weight produces sentinel10 and all ten outputs return Signal0."
+    ],
+    "method": "Original reset, updater, picker and output instructions composed in bounded hardware process, with explicit synthetic TLS index1 and modeled worker bit18 restoration. Full object/previous/output bytes and guards checked.",
+    "limits": [
+      "Full worker not executed; the state-bit write is a modeled boundary.",
+      "Synthetic non-null previous state and TLS result; real worker caller passes null previous, reachability unresolved.",
+      "Two port counts, equal weights0/1 and two thread seeds; not exhaustive mode/game verification."
+    ],
+    "runtime_game_verified": false,
+    "new_names": 0
   }
 }

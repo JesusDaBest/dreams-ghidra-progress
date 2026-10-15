@@ -1690,3 +1690,8 @@ The synthetic TLS boundary and non-null previous-state fixture remain explicit l
 Applied and independently reopened ReadRandomiserOutputVariant. Sentinel10 silences every output. A selected output forwards the first matching common input at property122 as37 bytes, preserving the last3 output bytes; without that input it returns Signal1. Unselected outputs return Signal0.
 
 30,720 scoped original-instruction cases check low-byte property aliases, selected/sentinel ports, six well-formed bags, two tags and two port counts. Synthetic invalid configurations do not prove UI validity or real-game scheduling. No whole-gadget completion credit. Totals: 254 checked names; 1,697 mapped functions; 7,873 unmapped.
+### Randomiser reset and initialization sequences
+
+576 controlled compositions of original reset, update, picker and output helpers passed full byte/guard checks. Reset installs ActivePort255 and clears stored state bits18/19. With those bits cleared, valid Game gates alone do not allow initialization. After the fixture restores bit18, initialization selects a weighted port independently of a trigger and leaves RandomIndex unchanged. All-zero weights produce sentinel10 and silence all ten tested outputs.
+
+The full worker was not executed: its bit18 restoration is modeled explicitly. TLS index1 and non-null previous state are also synthetic boundaries. These sequences do not establish actual game scheduling or resolve the null previous pointer at the captured worker call. No naming or completion increment.
