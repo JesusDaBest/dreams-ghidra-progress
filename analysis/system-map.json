@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1745,
-  "unmapped_total": 7834,
+  "mapped_total": 1746,
+  "unmapped_total": 7833,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44656,6 +44656,26 @@
         }
       ],
       "code_sha256": "4ac067af114ccd63e35470cf6aa09036cc87438ac1875f276d24f2f419af48b8"
+    },
+    "1411129d0": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "region-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Object zone/falloff bound reader supplies region-query geometry preparation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reads region/falloff extents and radius fallback metadata into bounded vector outputs.",
+      "code_sha256": "58c5fd0a36b269a66be6b6d9385142b00e58591a101dacdb30d8fe5f611465aa",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeObjectZoneAndFalloffBounds",
+          "support": "Original185-instruction reader,18432 exact native fixtures, field linkage and saved pointer outputs independently reopened."
+        }
+      ]
     }
   },
   "hierarchy": [

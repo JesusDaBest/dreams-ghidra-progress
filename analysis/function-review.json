@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "279 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "280 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9579,
-    "default_fun_names": 9116,
-    "other_names": 463,
-    "verification": "complete_inventory_matches_baseline_plus_279_renames_and_28_created_functions"
+    "default_fun_names": 9115,
+    "other_names": 464,
+    "verification": "complete_inventory_matches_baseline_plus_280_renames_and_28_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6596,6 +6596,29 @@
         "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
         "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
         "Registrar initialization and full producer/query/BVH/game integration were not executed."
+      ]
+    },
+    {
+      "address": "1411129d0",
+      "original_name": "FUN_1411129d0",
+      "applied_name": "ComputeObjectZoneAndFalloffBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeObjectZoneAndFalloffBounds(void * object, SpatialQueryFloat4Working16 * zone_min, SpatialQueryFloat4Working16 * zone_max, SpatialQueryFloat4Working16 * falloff_min, SpatialQueryFloat4Working16 * falloff_max)",
+      "evidence": [
+        "Complete 185-instruction reader body matched original executable bytes.",
+        "18432 direct native cases verify exact guarded vector outputs, object/metadata preservation and zero/FFFF missing fields on selected nonLight paths.",
+        "Original1367-instruction straightline initializer provenance plus16 registration instructions and4 literals bind HealthModifier ZoneSize/ZoneOffset/FalloffSize/FalloffOffset.",
+        "No imports or models execute on tested reader paths.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved name, five GP pointer inputs and connected geometry caller decompilation."
+      ],
+      "caveats": [
+        "Light kind2 trig/intensity paths, null/aliased/nonfinite/malformed inputs and racing metadata untested.",
+        "Fourth lane is observed working machine data, not recovered original Float3 semantics.",
+        "Initializer and full transform/query/game integration not executed."
       ]
     }
   ],

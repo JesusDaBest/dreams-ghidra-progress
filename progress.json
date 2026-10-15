@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 266,
+    "done": 267,
     "todo": 1479,
-    "total": 1745,
-    "behavior_or_helpers_reviewed": 203,
+    "total": 1746,
+    "behavior_or_helpers_reviewed": 204,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -38258,12 +38258,12 @@
       {
         "name": "physics",
         "label": "Physics & collision",
-        "done": 8,
+        "done": 9,
         "todo": 57,
-        "total": 65,
-        "behavior_or_helpers_reviewed": 8,
+        "total": 66,
+        "behavior_or_helpers_reviewed": 9,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 33,
+        "runtime_functions_identified": 34,
         "property_type_functions_identified": 32,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -38274,6 +38274,7 @@
           "CalculateSculptBoundsAndWakeBodiesJob",
           "RegisterLabelCollidableFieldOffset",
           "ProcessQueuedRegionQueriesForPhase",
+          "ComputeObjectZoneAndFalloffBounds",
           "GetTestSpheresAgainstSdfComputeShader",
           "GetSphereVsSphereCheckComputeShader"
         ],
@@ -38343,6 +38344,7 @@
           "140bc06b0",
           "140d67d00",
           "140e839b0",
+          "1411129d0",
           "1414f2fd0",
           "1414f3370"
         ],
@@ -38408,531 +38410,14 @@
         "unresolved_addresses": [],
         "groups": [
           {
-            "name": "physics/simulation",
-            "label": "Physics simulation",
-            "done": 4,
-            "todo": 26,
-            "total": 30,
-            "behavior_or_helpers_reviewed": 4,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 22,
-            "property_type_functions_identified": 8,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "CalculateSculptBoundsAndWakeBodiesJob",
-              "RegisterLabelCollidableFieldOffset",
-              "GetTestSpheresAgainstSdfComputeShader",
-              "GetSphereVsSphereCheckComputeShader"
-            ],
-            "todo_names": [
-              "0x1409f4da0",
-              "0x140cbb110",
-              "0x140cbb1c0",
-              "0x140cbb210",
-              "0x140cc09e0",
-              "0x140cc0a90",
-              "0x140cc0af0",
-              "0x140ce4fc0",
-              "0x1414f1070",
-              "0x1414f1410",
-              "0x1414f17b0",
-              "0x1414f1b50",
-              "0x1414f1ee0",
-              "0x141505310",
-              "0x141506ac0",
-              "0x141506e60",
-              "0x141507480",
-              "0x141507820",
-              "0x141507bc0",
-              "0x141507f60",
-              "0x141512220",
-              "0x1415125b0",
-              "0x141512b80",
-              "0x141512f20",
-              "0x1415132c0",
-              "0x141513650"
-            ],
-            "done_addresses": [
-              "140bc06b0",
-              "140d67d00",
-              "1414f2fd0",
-              "1414f3370"
-            ],
-            "todo_addresses": [
-              "1409f4da0",
-              "140cbb110",
-              "140cbb1c0",
-              "140cbb210",
-              "140cc09e0",
-              "140cc0a90",
-              "140cc0af0",
-              "140ce4fc0",
-              "1414f1070",
-              "1414f1410",
-              "1414f17b0",
-              "1414f1b50",
-              "1414f1ee0",
-              "141505310",
-              "141506ac0",
-              "141506e60",
-              "141507480",
-              "141507820",
-              "141507bc0",
-              "141507f60",
-              "141512220",
-              "1415125b0",
-              "141512b80",
-              "141512f20",
-              "1415132c0",
-              "141513650"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "physics/simulation/ballmaker",
-                "label": "Ballmaker",
-                "done": 2,
-                "todo": 5,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 7,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "GetTestSpheresAgainstSdfComputeShader",
-                  "GetSphereVsSphereCheckComputeShader"
-                ],
-                "todo_names": [
-                  "0x1414f1070",
-                  "0x1414f1410",
-                  "0x1414f17b0",
-                  "0x1414f1b50",
-                  "0x1414f1ee0"
-                ],
-                "done_addresses": [
-                  "1414f2fd0",
-                  "1414f3370"
-                ],
-                "todo_addresses": [
-                  "1414f1070",
-                  "1414f1410",
-                  "1414f17b0",
-                  "1414f1b50",
-                  "1414f1ee0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/ballmaker/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 5,
-                    "total": 7,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 7,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "GetTestSpheresAgainstSdfComputeShader",
-                      "GetSphereVsSphereCheckComputeShader"
-                    ],
-                    "todo_names": [
-                      "0x1414f1070",
-                      "0x1414f1410",
-                      "0x1414f17b0",
-                      "0x1414f1b50",
-                      "0x1414f1ee0"
-                    ],
-                    "done_addresses": [
-                      "1414f2fd0",
-                      "1414f3370"
-                    ],
-                    "todo_addresses": [
-                      "1414f1070",
-                      "1414f1410",
-                      "1414f17b0",
-                      "1414f1b50",
-                      "1414f1ee0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/mankinigpu",
-                "label": "Mankinigpu",
-                "done": 0,
-                "todo": 6,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x141512220",
-                  "0x1415125b0",
-                  "0x141512b80",
-                  "0x141512f20",
-                  "0x1415132c0",
-                  "0x141513650"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "141512220",
-                  "1415125b0",
-                  "141512b80",
-                  "141512f20",
-                  "1415132c0",
-                  "141513650"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/mankinigpu/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 6,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 6,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x141512220",
-                      "0x1415125b0",
-                      "0x141512b80",
-                      "0x141512f20",
-                      "0x1415132c0",
-                      "0x141513650"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "141512220",
-                      "1415125b0",
-                      "141512b80",
-                      "141512f20",
-                      "1415132c0",
-                      "141513650"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/elabelcollidable",
-                "label": "Label Collidable",
-                "done": 1,
-                "todo": 3,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RegisterLabelCollidableFieldOffset"
-                ],
-                "todo_names": [
-                  "0x140cbb110",
-                  "0x140cbb1c0",
-                  "0x140cbb210"
-                ],
-                "done_addresses": [
-                  "140d67d00"
-                ],
-                "todo_addresses": [
-                  "140cbb110",
-                  "140cbb1c0",
-                  "140cbb210"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/elabelcollidable/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 3,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterLabelCollidableFieldOffset"
-                    ],
-                    "todo_names": [
-                      "0x140cbb110",
-                      "0x140cbb1c0",
-                      "0x140cbb210"
-                    ],
-                    "done_addresses": [
-                      "140d67d00"
-                    ],
-                    "todo_addresses": [
-                      "140cbb110",
-                      "140cbb1c0",
-                      "140cbb210"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/ephysicsquality",
-                "label": "Physics Quality",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cc09e0",
-                  "0x140cc0a90",
-                  "0x140cc0af0",
-                  "0x140ce4fc0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cc09e0",
-                  "140cc0a90",
-                  "140cc0af0",
-                  "140ce4fc0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/ephysicsquality/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cc09e0",
-                      "0x140cc0a90",
-                      "0x140cc0af0",
-                      "0x140ce4fc0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cc09e0",
-                      "140cc0a90",
-                      "140cc0af0",
-                      "140ce4fc0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/mankini-contact",
-                "label": "Mankini Contact",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x141507480",
-                  "0x141507820",
-                  "0x141507bc0",
-                  "0x141507f60"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "141507480",
-                  "141507820",
-                  "141507bc0",
-                  "141507f60"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/mankini-contact/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x141507480",
-                      "0x141507820",
-                      "0x141507bc0",
-                      "0x141507f60"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "141507480",
-                      "141507820",
-                      "141507bc0",
-                      "141507f60"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/mankini",
-                "label": "Mankini",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x141505310",
-                  "0x141506ac0",
-                  "0x141506e60"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "141505310",
-                  "141506ac0",
-                  "141506e60"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/mankini/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x141505310",
-                      "0x141506ac0",
-                      "0x141506e60"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "141505310",
-                      "141506ac0",
-                      "141506e60"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "physics/simulation/gameupdater-physics",
-                "label": "Gameupdater Physics",
-                "done": 1,
-                "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "CalculateSculptBoundsAndWakeBodiesJob"
-                ],
-                "todo_names": [
-                  "0x1409f4da0"
-                ],
-                "done_addresses": [
-                  "140bc06b0"
-                ],
-                "todo_addresses": [
-                  "1409f4da0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "physics/simulation/gameupdater-physics/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "CalculateSculptBoundsAndWakeBodiesJob"
-                    ],
-                    "todo_names": [
-                      "0x1409f4da0"
-                    ],
-                    "done_addresses": [
-                      "140bc06b0"
-                    ],
-                    "todo_addresses": [
-                      "1409f4da0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "name": "physics/queries",
             "label": "Collision queries",
-            "done": 4,
+            "done": 5,
             "todo": 25,
-            "total": 29,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 30,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 11,
+            "runtime_functions_identified": 12,
             "property_type_functions_identified": 18,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -38940,7 +38425,8 @@
               "EvaluateRegionShapeWeight",
               "BuildObjectRegionQueryMasks",
               "EnqueueRegionQuery",
-              "ProcessQueuedRegionQueriesForPhase"
+              "ProcessQueuedRegionQueriesForPhase",
+              "ComputeObjectZoneAndFalloffBounds"
             ],
             "todo_names": [
               "0x140111b70",
@@ -38973,7 +38459,8 @@
               "1408d4d70",
               "1408fa070",
               "140903930",
-              "140e839b0"
+              "140e839b0",
+              "1411129d0"
             ],
             "todo_addresses": [
               "140111b70",
@@ -39007,12 +38494,12 @@
               {
                 "name": "physics/queries/region-query",
                 "label": "Region Query",
-                "done": 4,
+                "done": 5,
                 "todo": 5,
-                "total": 9,
-                "behavior_or_helpers_reviewed": 4,
+                "total": 10,
+                "behavior_or_helpers_reviewed": 5,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 9,
+                "runtime_functions_identified": 10,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -39020,7 +38507,8 @@
                   "EvaluateRegionShapeWeight",
                   "BuildObjectRegionQueryMasks",
                   "EnqueueRegionQuery",
-                  "ProcessQueuedRegionQueriesForPhase"
+                  "ProcessQueuedRegionQueriesForPhase",
+                  "ComputeObjectZoneAndFalloffBounds"
                 ],
                 "todo_names": [
                   "0x141275f40",
@@ -39033,7 +38521,8 @@
                   "1408d4d70",
                   "1408fa070",
                   "140903930",
-                  "140e839b0"
+                  "140e839b0",
+                  "1411129d0"
                 ],
                 "todo_addresses": [
                   "141275f40",
@@ -39047,12 +38536,12 @@
                   {
                     "name": "physics/queries/region-query/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 4,
+                    "done": 5,
                     "todo": 5,
-                    "total": 9,
-                    "behavior_or_helpers_reviewed": 4,
+                    "total": 10,
+                    "behavior_or_helpers_reviewed": 5,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 9,
+                    "runtime_functions_identified": 10,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -39060,7 +38549,8 @@
                       "EvaluateRegionShapeWeight",
                       "BuildObjectRegionQueryMasks",
                       "EnqueueRegionQuery",
-                      "ProcessQueuedRegionQueriesForPhase"
+                      "ProcessQueuedRegionQueriesForPhase",
+                      "ComputeObjectZoneAndFalloffBounds"
                     ],
                     "todo_names": [
                       "0x141275f40",
@@ -39073,7 +38563,8 @@
                       "1408d4d70",
                       "1408fa070",
                       "140903930",
-                      "140e839b0"
+                      "140e839b0",
+                      "1411129d0"
                     ],
                     "todo_addresses": [
                       "141275f40",
@@ -39677,6 +39168,523 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "140d0ee70"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "physics/simulation",
+            "label": "Physics simulation",
+            "done": 4,
+            "todo": 26,
+            "total": 30,
+            "behavior_or_helpers_reviewed": 4,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 22,
+            "property_type_functions_identified": 8,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "CalculateSculptBoundsAndWakeBodiesJob",
+              "RegisterLabelCollidableFieldOffset",
+              "GetTestSpheresAgainstSdfComputeShader",
+              "GetSphereVsSphereCheckComputeShader"
+            ],
+            "todo_names": [
+              "0x1409f4da0",
+              "0x140cbb110",
+              "0x140cbb1c0",
+              "0x140cbb210",
+              "0x140cc09e0",
+              "0x140cc0a90",
+              "0x140cc0af0",
+              "0x140ce4fc0",
+              "0x1414f1070",
+              "0x1414f1410",
+              "0x1414f17b0",
+              "0x1414f1b50",
+              "0x1414f1ee0",
+              "0x141505310",
+              "0x141506ac0",
+              "0x141506e60",
+              "0x141507480",
+              "0x141507820",
+              "0x141507bc0",
+              "0x141507f60",
+              "0x141512220",
+              "0x1415125b0",
+              "0x141512b80",
+              "0x141512f20",
+              "0x1415132c0",
+              "0x141513650"
+            ],
+            "done_addresses": [
+              "140bc06b0",
+              "140d67d00",
+              "1414f2fd0",
+              "1414f3370"
+            ],
+            "todo_addresses": [
+              "1409f4da0",
+              "140cbb110",
+              "140cbb1c0",
+              "140cbb210",
+              "140cc09e0",
+              "140cc0a90",
+              "140cc0af0",
+              "140ce4fc0",
+              "1414f1070",
+              "1414f1410",
+              "1414f17b0",
+              "1414f1b50",
+              "1414f1ee0",
+              "141505310",
+              "141506ac0",
+              "141506e60",
+              "141507480",
+              "141507820",
+              "141507bc0",
+              "141507f60",
+              "141512220",
+              "1415125b0",
+              "141512b80",
+              "141512f20",
+              "1415132c0",
+              "141513650"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "physics/simulation/ballmaker",
+                "label": "Ballmaker",
+                "done": 2,
+                "todo": 5,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 7,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetTestSpheresAgainstSdfComputeShader",
+                  "GetSphereVsSphereCheckComputeShader"
+                ],
+                "todo_names": [
+                  "0x1414f1070",
+                  "0x1414f1410",
+                  "0x1414f17b0",
+                  "0x1414f1b50",
+                  "0x1414f1ee0"
+                ],
+                "done_addresses": [
+                  "1414f2fd0",
+                  "1414f3370"
+                ],
+                "todo_addresses": [
+                  "1414f1070",
+                  "1414f1410",
+                  "1414f17b0",
+                  "1414f1b50",
+                  "1414f1ee0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/ballmaker/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 5,
+                    "total": 7,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 7,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetTestSpheresAgainstSdfComputeShader",
+                      "GetSphereVsSphereCheckComputeShader"
+                    ],
+                    "todo_names": [
+                      "0x1414f1070",
+                      "0x1414f1410",
+                      "0x1414f17b0",
+                      "0x1414f1b50",
+                      "0x1414f1ee0"
+                    ],
+                    "done_addresses": [
+                      "1414f2fd0",
+                      "1414f3370"
+                    ],
+                    "todo_addresses": [
+                      "1414f1070",
+                      "1414f1410",
+                      "1414f17b0",
+                      "1414f1b50",
+                      "1414f1ee0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "physics/simulation/mankinigpu",
+                "label": "Mankinigpu",
+                "done": 0,
+                "todo": 6,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 6,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x141512220",
+                  "0x1415125b0",
+                  "0x141512b80",
+                  "0x141512f20",
+                  "0x1415132c0",
+                  "0x141513650"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "141512220",
+                  "1415125b0",
+                  "141512b80",
+                  "141512f20",
+                  "1415132c0",
+                  "141513650"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/mankinigpu/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 6,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 6,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x141512220",
+                      "0x1415125b0",
+                      "0x141512b80",
+                      "0x141512f20",
+                      "0x1415132c0",
+                      "0x141513650"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "141512220",
+                      "1415125b0",
+                      "141512b80",
+                      "141512f20",
+                      "1415132c0",
+                      "141513650"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "physics/simulation/elabelcollidable",
+                "label": "Label Collidable",
+                "done": 1,
+                "todo": 3,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterLabelCollidableFieldOffset"
+                ],
+                "todo_names": [
+                  "0x140cbb110",
+                  "0x140cbb1c0",
+                  "0x140cbb210"
+                ],
+                "done_addresses": [
+                  "140d67d00"
+                ],
+                "todo_addresses": [
+                  "140cbb110",
+                  "140cbb1c0",
+                  "140cbb210"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/elabelcollidable/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 3,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterLabelCollidableFieldOffset"
+                    ],
+                    "todo_names": [
+                      "0x140cbb110",
+                      "0x140cbb1c0",
+                      "0x140cbb210"
+                    ],
+                    "done_addresses": [
+                      "140d67d00"
+                    ],
+                    "todo_addresses": [
+                      "140cbb110",
+                      "140cbb1c0",
+                      "140cbb210"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "physics/simulation/ephysicsquality",
+                "label": "Physics Quality",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cc09e0",
+                  "0x140cc0a90",
+                  "0x140cc0af0",
+                  "0x140ce4fc0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cc09e0",
+                  "140cc0a90",
+                  "140cc0af0",
+                  "140ce4fc0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/ephysicsquality/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cc09e0",
+                      "0x140cc0a90",
+                      "0x140cc0af0",
+                      "0x140ce4fc0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cc09e0",
+                      "140cc0a90",
+                      "140cc0af0",
+                      "140ce4fc0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "physics/simulation/mankini-contact",
+                "label": "Mankini Contact",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x141507480",
+                  "0x141507820",
+                  "0x141507bc0",
+                  "0x141507f60"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "141507480",
+                  "141507820",
+                  "141507bc0",
+                  "141507f60"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/mankini-contact/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x141507480",
+                      "0x141507820",
+                      "0x141507bc0",
+                      "0x141507f60"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "141507480",
+                      "141507820",
+                      "141507bc0",
+                      "141507f60"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "physics/simulation/mankini",
+                "label": "Mankini",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x141505310",
+                  "0x141506ac0",
+                  "0x141506e60"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "141505310",
+                  "141506ac0",
+                  "141506e60"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/mankini/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x141505310",
+                      "0x141506ac0",
+                      "0x141506e60"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "141505310",
+                      "141506ac0",
+                      "141506e60"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "physics/simulation/gameupdater-physics",
+                "label": "Gameupdater Physics",
+                "done": 1,
+                "todo": 1,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CalculateSculptBoundsAndWakeBodiesJob"
+                ],
+                "todo_names": [
+                  "0x1409f4da0"
+                ],
+                "done_addresses": [
+                  "140bc06b0"
+                ],
+                "todo_addresses": [
+                  "1409f4da0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "physics/simulation/gameupdater-physics/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "CalculateSculptBoundsAndWakeBodiesJob"
+                    ],
+                    "todo_names": [
+                      "0x1409f4da0"
+                    ],
+                    "done_addresses": [
+                      "140bc06b0"
+                    ],
+                    "todo_addresses": [
+                      "1409f4da0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41336,5 +41344,5 @@
       }
     ]
   },
-  "unmapped": 7834
+  "unmapped": 7833
 }
