@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "302 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "304 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9093,
-    "other_names": 487,
-    "verification": "complete_inventory_matches_baseline_plus_302_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9091,
+    "other_names": 489,
+    "verification": "complete_inventory_matches_baseline_plus_304_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7193,6 +7193,54 @@
         "Tables describe this executable version; no current Unicode coverage claim.",
         "UTF8-like unit decoding is not strict scalar/shortest-encoding validation.",
         "Full markup parsing, font/glyph availability and visible rendering unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414adbe0",
+      "original_name": "FUN_1414adbe0",
+      "applied_name": "TryParseTextColorTag",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryParseTextColorTag(uint * packed_color_output, uchar * start, uchar * end)",
+      "evidence": [
+        "Complete original tag-parser bodies and selected base-parser/control-state linkage reviewed;221 original spans match SELF and saved bytes.",
+        "6688 original color-parser cases cover all148 named entries,both spelling variants,RGB/RGBA forms and malformed hex; exact partial outputs/Boolean/input/guards verified.",
+        "7388 original size-parser cases cover0..999 normal/padded,all256 bytes at selected positions and malformed forms; exact default/clamp/output/Boolean/input/guards verified.",
+        "Tests execute actual original206-byte libc strncmp through original thunk,with original strings/table and explicit fixture pointer relocation,no models.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Color parser can return false with partial output; all-zero RGBA is false.",
+        "Size parser writes default32 on tested failures and clamps successful values1..512.",
+        "Full markup/control integration and visible text rendering remain unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414addf0",
+      "original_name": "FUN_1414addf0",
+      "applied_name": "TryParseTextSizeTag",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryParseTextSizeTag(uint * size_output, uchar * start, uchar * end)",
+      "evidence": [
+        "Complete original tag-parser bodies and selected base-parser/control-state linkage reviewed;221 original spans match SELF and saved bytes.",
+        "6688 original color-parser cases cover all148 named entries,both spelling variants,RGB/RGBA forms and malformed hex; exact partial outputs/Boolean/input/guards verified.",
+        "7388 original size-parser cases cover0..999 normal/padded,all256 bytes at selected positions and malformed forms; exact default/clamp/output/Boolean/input/guards verified.",
+        "Tests execute actual original206-byte libc strncmp through original thunk,with original strings/table and explicit fixture pointer relocation,no models.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Color parser can return false with partial output; all-zero RGBA is false.",
+        "Size parser writes default32 on tested failures and clamps successful values1..512.",
+        "Full markup/control integration and visible text rendering remain unverified.",
         "Descriptive names and working types are not recovered source declarations."
       ]
     }
