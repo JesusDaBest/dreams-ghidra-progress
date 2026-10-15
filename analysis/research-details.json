@@ -3596,5 +3596,87 @@
     ],
     "project_modified": false,
     "runtime_game_verified": false
+  },
+  "gate_full_pipeline_checkpoint": {
+    "passed": 288,
+    "sizes": [
+      1,
+      2,
+      8,
+      32,
+      128,
+      256
+    ],
+    "profiles": [
+      "same",
+      "distinct",
+      "mixed",
+      "nested"
+    ],
+    "method": "Original request generation followed by sorter/comparator and continuous original grouping/arbitration loops; shuffled pointer inputs, explicit intervening allocator adapter and modeled overlap-safe memmove import. Original parent resolver and scalar reducer. Exact scope/group/claimed arrays with guards/tails, complete Gate and parent objects, pointer array and full Game allocation checked.",
+    "sort_depth_budgets": [
+      0,
+      1,
+      16
+    ],
+    "copy_fixture_checks": 96,
+    "branch_counts": {
+      "claimed": 12604,
+      "activate": 1912,
+      "queue_new": 583,
+      "queue_max": 3494,
+      "queue_clear": 2032,
+      "forward": 4974,
+      "inactive": 15522,
+      "forget": 10156
+    },
+    "limits": [
+      "Original library memmove replaced by explicit tested boundary model; nonnull previous/current snapshots and finite Number inputs only.",
+      "Valid cached acyclic parent trees with nonglued noncontainer parents; finite Number inputs only.",
+      "Allocation/free and game scheduler not executed; no running-game or subsystem-completion claim."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
+  },
+  "gate_sorted_composition_checkpoint": {
+    "passed": 288,
+    "sizes": [
+      1,
+      2,
+      8,
+      32,
+      128,
+      256
+    ],
+    "profiles": [
+      "same",
+      "distinct",
+      "mixed",
+      "nested"
+    ],
+    "method": "Original sorter/comparator followed by continuous original grouping and arbitration loops; shuffled pointer inputs, explicit intervening allocator adapter and modeled overlap-safe memmove import. Original parent resolver and scalar reducer. Exact scope/group/claimed arrays with guards/tails, complete Gate and parent objects, pointer array and full Game allocation checked.",
+    "sort_depth_budgets": [
+      0,
+      1,
+      16
+    ],
+    "copy_fixture_checks": 96,
+    "branch_counts": {
+      "claimed": 12569,
+      "activate": 2594,
+      "queue_new": 2029,
+      "queue_max": 6234,
+      "queue_clear": 2791,
+      "forward": 5304,
+      "inactive": 15192,
+      "forget": 9235
+    },
+    "limits": [
+      "Initial Gate request update not composed yet; original library memmove replaced by explicit tested boundary model.",
+      "Valid cached acyclic parent trees with nonglued noncontainer parents; finite Number inputs only.",
+      "Allocation/free and game scheduler not executed; no running-game or subsystem-completion claim."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
