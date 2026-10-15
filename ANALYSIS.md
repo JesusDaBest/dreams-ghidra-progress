@@ -2126,3 +2126,11 @@ Defined AllocateDefaultMicrochip and FreeMicrochipStorage at the original Microc
 256 creation fills check every object byte, guards, requested size and returned pointer.256 null and256 nonnull cleanup cases check forwarding. Original callbacks and import thunks execute with explicit allocator/deallocator models; actual heap implementations, allocation failure, reconstructed colour startup execution and game callback dispatch remain unverified. Cold backup, isolated trial, promotion and independent reopening confirm both definitions and opaque pointer ABIs, unchanged existing functions and unchanged original archives.
 
 Totals:301 checked names among9,579 discovered functions;1,740 mapped and7,839 unmapped. Two previously undefined callbacks were added; this is scoped lifecycle evidence, not whole-subsystem completion.
+
+### Specialized registrar ABI corrections
+
+Corrected Float3, SoundCategory and AudioNumber registrars from Windows two-argument annotations to native RDI registry / RSI property name / EDX offset contracts. Named RegisterNodeCustomIconFieldOffset, whose fixed original NodeCustomIcon label takes registry in RDI and offset in ESI. The Microchip caller now decompiles Colour, UserSoundCategory, Volume and NodeCustomIcon with the correct descriptor and offsets, without the previous phantom incomingRCX. Its stale uncertainty comment was updated.
+
+All514 original instruction spans match. Cold backup, isolated ABI trial, promotion and independent reopening verify four intended name/signature entries, connected caller decompilation and unchanged archives. RAX pointer outputs are observed working outputs, not recovered original C++ return declarations; metadata tags do not prove byte widths. Reserve/hash/type initialization and game integration remain untested here.
+
+Only the newly named icon registrar adds checked-name credit; the three existing-name ABI corrections add none. Totals:302 checked names among9,579 discovered functions;1,743 mapped and7,836 unmapped.

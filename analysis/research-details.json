@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 301,
+    "checked_and_applied_names": 302,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 301,
+    "verified_names": 302,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "273 existing-function renames and28 created functions verified after independent reopening.",
+    "scope": "274 existing-function renames and28 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4662,6 +4662,18 @@
       "Heap boundaries are explicit models; actual allocator/deallocator not executed.",
       "Colour constant reconstructed from original initialization writer; startup not executed.",
       "Allocation failure, runtime descriptor dispatch and real game lifecycle unverified."
+    ],
+    "runtime_game_verified": false
+  },
+  "microchip_registrar_abi_checkpoint": {
+    "original_instruction_spans_checked": 514,
+    "new_name": "RegisterNodeCustomIconFieldOffset",
+    "existing_name_signature_corrections": 3,
+    "caller_phantom_incoming_rcx_resolved": true,
+    "limits": [
+      "Observed RAX working pointer outputs do not recover original C++ return declarations.",
+      "Descriptor numeric tags are not asserted as byte widths.",
+      "Reserve/hash/type/guard implementations and full registration/game lifecycle not executed in this review."
     ],
     "runtime_game_verified": false
   }

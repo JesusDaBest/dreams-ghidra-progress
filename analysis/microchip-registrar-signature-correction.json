@@ -1,0 +1,89 @@
+{
+  "corrections": [
+    {
+      "event": "signature_correction",
+      "address": "140cde7a0",
+      "before": {
+        "name": "RegisterFloat3FieldOffset",
+        "signature": "undefined __fastcall RegisterFloat3FieldOffset(undefined8 param_1, undefined4 objectOffset)"
+      },
+      "after": {
+        "name": "RegisterFloat3FieldOffset",
+        "signature": "void * PS4_SYSV RegisterFloat3FieldOffset(void * registry, char * property_name, uint object_offset)"
+      },
+      "evidence": [
+        "Complete514 original instruction spans match executable bytes.",
+        "Generic native inputs are RDI registry, RSI property name and EDX offset; fixed NodeCustomIcon takes RDI registry and ESI offset.",
+        "Original float3, ESoundCategory, NodeCustomIcon and ENodeCustomIcon literals checked.",
+        "Cold backup, isolated trial, promotion and independent reopening verify exactly four name/signature entries changed.",
+        "Connected Microchip caller decompiles with correct descriptor/labels/offsets and no phantom incomingRCX."
+      ],
+      "caveats": [
+        "Observed RAX working pointer outputs do not recover original C++ return declarations.",
+        "Descriptor numeric tags are not asserted as byte widths.",
+        "Reserve/hash/type/guard implementations and full registration/game lifecycle not executed in this review."
+      ]
+    },
+    {
+      "event": "signature_correction",
+      "address": "140cf59d0",
+      "before": {
+        "name": "RegisterSoundCategoryEnumFieldOffset",
+        "signature": "undefined __fastcall RegisterSoundCategoryEnumFieldOffset(undefined8 param_1, undefined4 objectOffset)"
+      },
+      "after": {
+        "name": "RegisterSoundCategoryEnumFieldOffset",
+        "signature": "void * PS4_SYSV RegisterSoundCategoryEnumFieldOffset(void * registry, char * property_name, uint object_offset)"
+      },
+      "evidence": [
+        "Complete514 original instruction spans match executable bytes.",
+        "Generic native inputs are RDI registry, RSI property name and EDX offset; fixed NodeCustomIcon takes RDI registry and ESI offset.",
+        "Original float3, ESoundCategory, NodeCustomIcon and ENodeCustomIcon literals checked.",
+        "Cold backup, isolated trial, promotion and independent reopening verify exactly four name/signature entries changed.",
+        "Connected Microchip caller decompiles with correct descriptor/labels/offsets and no phantom incomingRCX."
+      ],
+      "caveats": [
+        "Observed RAX working pointer outputs do not recover original C++ return declarations.",
+        "Descriptor numeric tags are not asserted as byte widths.",
+        "Reserve/hash/type/guard implementations and full registration/game lifecycle not executed in this review."
+      ]
+    },
+    {
+      "event": "signature_correction",
+      "address": "140d6ccc0",
+      "before": {
+        "name": "RegisterAudioNumberFieldOffset",
+        "signature": "undefined __fastcall RegisterAudioNumberFieldOffset(undefined8 param_1, undefined4 objectOffset)"
+      },
+      "after": {
+        "name": "RegisterAudioNumberFieldOffset",
+        "signature": "void * PS4_SYSV RegisterAudioNumberFieldOffset(void * registry, char * property_name, uint object_offset)"
+      },
+      "evidence": [
+        "Complete514 original instruction spans match executable bytes.",
+        "Generic native inputs are RDI registry, RSI property name and EDX offset; fixed NodeCustomIcon takes RDI registry and ESI offset.",
+        "Original float3, ESoundCategory, NodeCustomIcon and ENodeCustomIcon literals checked.",
+        "Cold backup, isolated trial, promotion and independent reopening verify exactly four name/signature entries changed.",
+        "Connected Microchip caller decompiles with correct descriptor/labels/offsets and no phantom incomingRCX."
+      ],
+      "caveats": [
+        "Observed RAX working pointer outputs do not recover original C++ return declarations.",
+        "Descriptor numeric tags are not asserted as byte widths.",
+        "Reserve/hash/type/guard implementations and full registration/game lifecycle not executed in this review."
+      ]
+    }
+  ],
+  "evidence": [
+    "Complete514 original instruction spans match executable bytes.",
+    "Generic native inputs are RDI registry, RSI property name and EDX offset; fixed NodeCustomIcon takes RDI registry and ESI offset.",
+    "Original float3, ESoundCategory, NodeCustomIcon and ENodeCustomIcon literals checked.",
+    "Cold backup, isolated trial, promotion and independent reopening verify exactly four name/signature entries changed.",
+    "Connected Microchip caller decompiles with correct descriptor/labels/offsets and no phantom incomingRCX."
+  ],
+  "caveats": [
+    "Observed RAX working pointer outputs do not recover original C++ return declarations.",
+    "Descriptor numeric tags are not asserted as byte widths.",
+    "Reserve/hash/type/guard implementations and full registration/game lifecycle not executed in this review."
+  ],
+  "extra_checked_name_credit": 0
+}

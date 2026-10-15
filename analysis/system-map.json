@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1740,
-  "unmapped_total": 7839,
+  "mapped_total": 1743,
+  "unmapped_total": 7836,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -25185,9 +25185,14 @@
           "type_name": "ENodeCustomIcon",
           "site": "140d71bf0",
           "target": "14170b538"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterNodeCustomIconFieldOffset",
+          "support": "Original fixed NodeCustomIcon field literal, ENodeCustomIcon descriptor, full body and independently saved name/ABI."
         }
       ],
-      "code_sha256": "614d5d5835c58b590e1eefc0ef0c3333f5fd1e525c609f166a9bd50b4c3f9380",
+      "code_sha256": "5ef811b0e1b222fb4dee0be3845f497185e06b6a1b7b0ae7790b539e59208db5",
       "component_path": [
         "interface",
         "canvas",
@@ -44539,6 +44544,63 @@
           "support": "Original descriptor, exact native boundary/bytes, controlled execution and independent saved-project verification."
         }
       ]
+    },
+    "140cde7a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "properties-types"
+      ],
+      "component_basis": "Generic field registration body with native property/offset inputs.",
+      "code_role": "properties-types",
+      "code_role_basis": "Full registrar body and native calling contract reviewed.",
+      "evidence": [
+        {
+          "kind": "verified_signature_review",
+          "name": "RegisterFloat3FieldOffset",
+          "support": "Original native input/output dataflow and corrected Microchip caller; no additional checked-name credit."
+        }
+      ],
+      "code_sha256": "663f4fe1852040d71159d3d10d1fdab1c7295c2f90aa75b1c803959508e44fa6"
+    },
+    "140cf59d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "properties-types"
+      ],
+      "component_basis": "Generic field registration body with native property/offset inputs.",
+      "code_role": "properties-types",
+      "code_role_basis": "Full registrar body and native calling contract reviewed.",
+      "evidence": [
+        {
+          "kind": "verified_signature_review",
+          "name": "RegisterSoundCategoryEnumFieldOffset",
+          "support": "Original native input/output dataflow and corrected Microchip caller; no additional checked-name credit."
+        }
+      ],
+      "code_sha256": "9d423fdc5780b422414a497052366a4ef6bcd5784bd01ada338b93af736c0b6b"
+    },
+    "140d6ccc0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "properties-types"
+      ],
+      "component_basis": "Generic field registration body with native property/offset inputs.",
+      "code_role": "properties-types",
+      "code_role_basis": "Full registrar body and native calling contract reviewed.",
+      "evidence": [
+        {
+          "kind": "verified_signature_review",
+          "name": "RegisterAudioNumberFieldOffset",
+          "support": "Original native input/output dataflow and corrected Microchip caller; no additional checked-name credit."
+        }
+      ],
+      "code_sha256": "07a7686b557f59dec7850cd40aad36f4c387c29bec6acc61c6370bae733ceca6"
     }
   },
   "hierarchy": [
