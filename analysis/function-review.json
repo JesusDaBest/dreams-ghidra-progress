@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "342 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "343 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9053,
-    "other_names": 527,
-    "verification": "complete_inventory_matches_baseline_plus_342_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9052,
+    "other_names": 528,
+    "verification": "complete_inventory_matches_baseline_plus_343_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8164,6 +8164,31 @@
         "Inline destination only;ownedheap/free/newallocation notexecuted.",
         "Actualdrawing/layout/substitution notexecuted.",
         "Defaultfilevtable identifiesmethods;runtimevtableoverrides notprovenabsent.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414b86d0",
+      "original_name": "FUN_1414b86d0",
+      "applied_name": "TryFindNonemptyTextSegment",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryFindNonemptyTextSegment(uchar * * segment_begin_output, uchar * * segment_end_output, uchar * input_begin, uchar * input_end, int segment_index, uint separator_token, void * parser_state)",
+      "evidence": [
+        "Complete189instruction extractor,161instruction layoutwrapper and285instruction storedcontextconsumer read;originalSELF/savedbytes agree.",
+        "1008nativecases12plainUTF8forms,3separators,7signedindices,4alignments;independentsplit/nonemptyoracle and160exactsuccessspans plusinput/output/stateguards/canary.",
+        "Indexcountsnonemptysegments;leading/repeated/trailingseparatorsskipped;successspanexcludesseparator.",
+        "Layoutwrapperreadsselectionindex48hex andcallsextractor unlessalternateflag100 path;selectedparserstate restored bybody forlayout.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify name/signature includingseventhstackargument andunchangedarchives."
+      ],
+      "caveats": [
+        "SelectedplainUTF8forms only;tags/controlstate/internalstreams needseparatecoverage.",
+        "Returnedparserstate capturedbutnotindependentlymodeled.",
+        "Failureoutput/stateatomicity notclaimed.",
+        "Large dispatch/alternateextraction/layout/rendering unresolved.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }

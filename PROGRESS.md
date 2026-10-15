@@ -2478,3 +2478,13 @@ Applied SetAttachedTextSelection and ClearAttachedTextSelection with an opaque a
 384 native calls execute the complete 46/36-instruction methods, original context copy/string-storage helpers and actual strlen/memcpy. Cases cover six string lengths through 47, ready/unready contexts, own/borrowed spans, attached/null objects and four actual alignments. Whole guarded object, adapter, source, text backing and canary match exactly.
 
 Heap-owned destination freeing/new allocation, runtime vtable overrides, drawing, layout and substitution remain unverified. Cold backup, isolated trial, promotion and independent reopening verify saved names/types and unchanged instructions/archives. Totals: 372 checked names (342 renames, 29 created functions and one retained-name review), 1,805 mapped and 7,775 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Saved indexed nonempty text-segment extraction
+
+Applied TryFindNonemptyTextSegment with begin/end outputs, bounded input, signed segment index, separator token and parser-state pointer. The seventh argument is verified on the SysV stack. The helper uses the higher or internal decoder, applies control tokens, skips empty segments and returns a raw byte span excluding the separator. Its body snapshots the state at a segment start and restores it for later layout on success.
+
+1,008 native cases cover twelve plain UTF8 forms, three separators, seven signed indices and four alignments. An independent split/nonempty-segment expectation checks 160 successful byte spans; input, output and state guards pass. Negative and out-of-range indices fail for these finite inputs. Returned parser state is captured but not independently modeled; formatted/internal streams and failure atomicity remain unverified.
+
+Traced the stored display selection into a 285-instruction consumer, then a large dispatch and a 161-instruction layout wrapper. That wrapper reads the selected index and invokes this segment extractor unless an alternate flag selects another path. The larger dispatch has 11,236 defined instructions and did not decompile within the configured limit; its native body was captured without treating extraction as understanding. Alternate extraction, actual layout and rendering remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives. Totals: 373 checked names (343 renames, 29 created functions and one retained-name review), 1,806 mapped and 7,774 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
