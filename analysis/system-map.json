@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1749,
-  "unmapped_total": 7831,
+  "mapped_total": 1751,
+  "unmapped_total": 7829,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44734,6 +44734,46 @@
           "kind": "verified_semantic_review",
           "name": "ResolvePersistentObjectIdToIndex",
           "support": "Complete native resolver,169 direct checks and command pair-table producer linkage."
+        }
+      ]
+    },
+    "141150c50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Converts current object index pairs to persistent object IDs and sorts pair records.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Persistent object pair output and signed-ID record sorting.",
+      "code_sha256": "832a4e73c58056fa236014d5ac4c2dc97db96abb8c04cfd6da964711af8fa921",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildSortedPersistentObjectIdPairRecords",
+          "support": "Complete original183/807 instruction bodies and72 connected native export/sort fixtures, saved ABI independently reopened."
+        }
+      ]
+    },
+    "141150f00": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Converts current object index pairs to persistent object IDs and sorts pair records.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Persistent object pair output and signed-ID record sorting.",
+      "code_sha256": "351ef600ab64fc9bd1278ed48080b7a90825a3469174cee0271288b1a6db4d44",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortPersistentObjectIdPairRecords",
+          "support": "Complete original183/807 instruction bodies and72 connected native export/sort fixtures, saved ABI independently reopened."
         }
       ]
     }

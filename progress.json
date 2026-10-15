@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 270,
+    "done": 272,
     "todo": 1479,
-    "total": 1749,
-    "behavior_or_helpers_reviewed": 207,
+    "total": 1751,
+    "behavior_or_helpers_reviewed": 209,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25243,12 +25243,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 131,
+        "done": 133,
         "todo": 108,
-        "total": 239,
-        "behavior_or_helpers_reviewed": 118,
+        "total": 241,
+        "behavior_or_helpers_reviewed": 120,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 153,
+        "runtime_functions_identified": 155,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25335,6 +25335,8 @@
           "AppendSizedRecordToThreadBuffer",
           "ResolvePersistentObjectIdToIndex",
           "FindThingPropertyMetadata",
+          "BuildSortedPersistentObjectIdPairRecords",
+          "SortPersistentObjectIdPairRecords",
           "SortUnsigned64Values",
           "ReduceTypedSignalToScalar",
           "DecodeImpactFromVariant",
@@ -25578,6 +25580,8 @@
           "1410aa730",
           "1410ab490",
           "14114db10",
+          "141150c50",
+          "141150f00",
           "1411b8730",
           "1411bfe20",
           "1411c00e0",
@@ -26989,12 +26993,12 @@
           {
             "name": "shared/objects",
             "label": "Objects & references",
-            "done": 6,
+            "done": 8,
             "todo": 13,
-            "total": 19,
-            "behavior_or_helpers_reviewed": 6,
+            "total": 21,
+            "behavior_or_helpers_reviewed": 8,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 6,
+            "runtime_functions_identified": 8,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -27004,7 +27008,9 @@
               "ReadResolvedObjectPlayerMask",
               "PassesObjectPlayerMaskAndParentModeFilter",
               "ResolveParentScopeReference",
-              "ResolvePersistentObjectIdToIndex"
+              "ResolvePersistentObjectIdToIndex",
+              "BuildSortedPersistentObjectIdPairRecords",
+              "SortPersistentObjectIdPairRecords"
             ],
             "todo_names": [
               "0x1401118b0",
@@ -27027,7 +27033,9 @@
               "1408f85b0",
               "1408f96a0",
               "1408fa1f0",
-              "1410ab490"
+              "1410ab490",
+              "141150c50",
+              "141150f00"
             ],
             "todo_addresses": [
               "1401118b0",
@@ -27049,12 +27057,12 @@
               {
                 "name": "shared/objects/thing",
                 "label": "Thing",
-                "done": 6,
+                "done": 8,
                 "todo": 1,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 6,
+                "total": 9,
+                "behavior_or_helpers_reviewed": 8,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
+                "runtime_functions_identified": 8,
                 "property_type_functions_identified": 1,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -27064,7 +27072,9 @@
                   "ReadResolvedObjectPlayerMask",
                   "PassesObjectPlayerMaskAndParentModeFilter",
                   "ResolveParentScopeReference",
-                  "ResolvePersistentObjectIdToIndex"
+                  "ResolvePersistentObjectIdToIndex",
+                  "BuildSortedPersistentObjectIdPairRecords",
+                  "SortPersistentObjectIdPairRecords"
                 ],
                 "todo_names": [
                   "0x140d5ed90"
@@ -27075,7 +27085,9 @@
                   "1408f85b0",
                   "1408f96a0",
                   "1408fa1f0",
-                  "1410ab490"
+                  "1410ab490",
+                  "141150c50",
+                  "141150f00"
                 ],
                 "todo_addresses": [
                   "140d5ed90"
@@ -27085,12 +27097,12 @@
                   {
                     "name": "shared/objects/thing/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 6,
+                    "done": 8,
                     "todo": 0,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 6,
+                    "total": 8,
+                    "behavior_or_helpers_reviewed": 8,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 6,
+                    "runtime_functions_identified": 8,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -27100,7 +27112,9 @@
                       "ReadResolvedObjectPlayerMask",
                       "PassesObjectPlayerMaskAndParentModeFilter",
                       "ResolveParentScopeReference",
-                      "ResolvePersistentObjectIdToIndex"
+                      "ResolvePersistentObjectIdToIndex",
+                      "BuildSortedPersistentObjectIdPairRecords",
+                      "SortPersistentObjectIdPairRecords"
                     ],
                     "todo_names": [],
                     "done_addresses": [
@@ -27109,7 +27123,9 @@
                       "1408f85b0",
                       "1408f96a0",
                       "1408fa1f0",
-                      "1410ab490"
+                      "1410ab490",
+                      "141150c50",
+                      "141150f00"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -41368,5 +41384,5 @@
       }
     ]
   },
-  "unmapped": 7831
+  "unmapped": 7829
 }

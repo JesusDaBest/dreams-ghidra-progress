@@ -2200,3 +2200,13 @@ Applied ResolvePersistentObjectIdToIndex. It rejects ID0xffffffff before reading
 26 original producer spans show command case0x0e resolving persistent IDs from payload offsets2 and6, appending two current indices plus the byte at payload offset10 to the12-byte table, and incrementing its count up to capacity16,383. Valid resolver output has upper reference bits zero, explaining consistent encoding on this producer path. The byte flag, command name, sorting path and complete reader/game execution remain unresolved; the pair search itself remains without a subsystem assignment.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved resolver ABI and connected producer decompilation with original archives unchanged. Totals:312 checked names among9,580 discovered functions;1,749 mapped and7,831 unmapped.
+
+### Saved persistent object ID pair export and sort
+
+Applied BuildSortedPersistentObjectIdPairRecords and SortPersistentObjectIdPairRecords. The exporter compacts input records whose raw endpoint references are not0xffffffff, resolves signed low22-bit indices through the current object array, and writes persistent IDs from object offset0. Invalid indices or null object pointers produce0xffffffff IDs without removing that pair. The connected sorter orders signed32-bit first/second IDs lexicographically, carrying the byte at offset8 while leaving padding9..11 in physical slots.
+
+72 original native export/recursive-sort cases cover preallocated output, counts0 through129, empty and existing destination lengths, raw sentinels, invalid indices, null objects and signed IDs. Full state SHA256/objects are preserved. Vector headers, signed ordering, pair/flag multisets, output guards and padding are checked. No imports/models execute on this path.183 exporter and807 sorter instruction spans match the original executable.
+
+The exporter does not copy source byte8: newly initialized destination slots have flag0, while existing flags remain associated with compacted destination positions before sorting. This is recorded behavior, not a recovered semantic meaning for the flag. Allocation/growth/failure, malformed or aliased input, depth-budget exhaustion and whole caller/game execution remain untested. Sorting persistent-ID output does not establish the runtime index-pair table sorting path.
+
+Cold backup, isolated trial, main promotion and independent reopening verify both saved names, working pointer/depth ABI, connected exporter decompilation and unchanged original archives. Totals:314 checked names among9,580 discovered functions;1,751 mapped and7,829 unmapped.

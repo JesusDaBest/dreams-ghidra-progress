@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "283 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "285 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9112,
-    "other_names": 468,
-    "verification": "complete_inventory_matches_baseline_plus_283_renames_and_29_created_functions"
+    "default_fun_names": 9110,
+    "other_names": 470,
+    "verification": "complete_inventory_matches_baseline_plus_285_renames_and_29_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6724,6 +6724,52 @@
         "Hash-chain construction and whole command/caller/game runtime not executed.",
         "Append command label, one-byte record flag and sorting path remain unresolved.",
         "Working persistent ID/state types are descriptive machine contract, not recovered original C++ declarations."
+      ]
+    },
+    {
+      "address": "141150c50",
+      "original_name": "FUN_141150c50",
+      "applied_name": "BuildSortedPersistentObjectIdPairRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildSortedPersistentObjectIdPairRecords(void * output_vector, void * state)",
+      "evidence": [
+        "Complete original body matched SELF and saved project bytes.",
+        "72 connected original export/recursive-sort configurations with no imports/models on preallocated path; counts0..129 and signed-ID ordering checked.",
+        "Full state SHA256/objects preserved; vector header, output guards/padding and pair/flag multiset verified.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify names/working ABI and connected exporter decompilation; archives unchanged."
+      ],
+      "caveats": [
+        "Allocation/growth/failure, malformed or aliased input, depth-budget exhaustion and complete game/caller execution untested.",
+        "Source flag is not copied by exporter: new destination slots initialize flag0, existing flags retain compacted ordinal provenance before sort.",
+        "Output pair sorting is not evidence for sorting the runtime index-pair table.",
+        "Working pointers/uint64 depth budget do not recover original C++ declarations."
+      ]
+    },
+    {
+      "address": "141150f00",
+      "original_name": "FUN_141150f00",
+      "applied_name": "SortPersistentObjectIdPairRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SortPersistentObjectIdPairRecords(void * begin, void * end, ulonglong depth_budget)",
+      "evidence": [
+        "Complete original body matched SELF and saved project bytes.",
+        "72 connected original export/recursive-sort configurations with no imports/models on preallocated path; counts0..129 and signed-ID ordering checked.",
+        "Full state SHA256/objects preserved; vector header, output guards/padding and pair/flag multiset verified.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify names/working ABI and connected exporter decompilation; archives unchanged."
+      ],
+      "caveats": [
+        "Allocation/growth/failure, malformed or aliased input, depth-budget exhaustion and complete game/caller execution untested.",
+        "Source flag is not copied by exporter: new destination slots initialize flag0, existing flags retain compacted ordinal provenance before sort.",
+        "Output pair sorting is not evidence for sorting the runtime index-pair table.",
+        "Working pointers/uint64 depth budget do not recover original C++ declarations."
       ]
     }
   ],
