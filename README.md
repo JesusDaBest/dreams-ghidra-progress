@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/acd5baffed05f17dfccdd1bcd9aed28d676e49cc/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d2ddb9ed7f815118d84efe7af86c4b5714280887/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**285 of 9,576 functions named and checked.** A function is one piece of the game's code.
+**286 of 9,577 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/acd5baffed05f17dfccdd1bcd9aed28d676e49cc/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d2ddb9ed7f815118d84efe7af86c4b5714280887/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,7 +66,7 @@ Every square is one actual function and has the same size. All function squares 
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
 | Gadgets & logic | 495 | 39/41 | 45/454 |
-| Physics & collision | 60 | 2/28 | 0/32 |
+| Physics & collision | 61 | 3/29 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
 | Rendering & lighting | 271 | 0/245 | 0/26 |
@@ -74,7 +74,7 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 229 | 111/146 | 13/78 |
 
-**1,726 of 9,576 discovered functions are mapped; 7,850 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,727 of 9,577 discovered functions are mapped; 7,850 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1246,8 +1246,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Physics & collision** - 60 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-  - **Physics simulation** - 29 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+- **Physics & collision** - 61 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+  - **Physics simulation** - 30 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Ballmaker** - 7 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 7 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Mankinigpu** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1260,8 +1260,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Mankini** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Gameupdater Physics** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gameupdater Physics** - 2 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 1 behavior/helper reviews; 0 property/type reviews
   - **Collision queries** - 25 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Region Query** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
