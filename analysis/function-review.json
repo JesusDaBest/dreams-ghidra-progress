@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "374 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "375 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9021,
-    "other_names": 559,
-    "verification": "complete_inventory_matches_baseline_plus_374_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9020,
+    "other_names": 560,
+    "verification": "complete_inventory_matches_baseline_plus_375_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8897,6 +8897,28 @@
         "Static body and selected caller evidence; full writer runtime behavior not executed.",
         "All caller paths, special object-type side effects, concurrency and eviction safety remain unresolved.",
         "Numeric status enum names and original source names remain unknown."
+      ]
+    },
+    {
+      "address": "1403a3600",
+      "original_name": "FUN_1403a3600",
+      "applied_name": "UpdateObjectCacheFromResponseCode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateObjectCacheFromResponseCode(int response_code, DreamsObjectLookupKey lookup_key)",
+      "evidence": [
+        "Complete 80-instruction original response-code helper body and typed trial decompilation read; instruction bytes match.",
+        "Bounded upstream caller routes code 200 separately and passes non-200 code with the 32-byte lookup key.",
+        "Assembly traces distinguish cached-result preservation for 503/524, status mappings and a void semantic return.",
+        "Cold backup, isolated trial, promotion and independent reopen verify the name, signature, key layout and unchanged archives."
+      ],
+      "caveats": [
+        "Static evidence only; the 66-case truth table is a derived model, not native runtime execution.",
+        "Concrete response descriptor and numeric source enum names remain unresolved.",
+        "Some referenced callers lack function definitions and receive no review credit."
       ]
     }
   ],

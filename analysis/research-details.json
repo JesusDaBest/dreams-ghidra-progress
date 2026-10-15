@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 404,
+    "checked_and_applied_names": 405,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 404,
+    "verified_names": 405,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "374 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "375 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -6996,6 +6996,49 @@
       "Static body and selected caller evidence; full writer runtime behavior not executed.",
       "All caller paths, special object-type side effects, concurrency and eviction safety remain unresolved.",
       "Numeric status enum names and original source names remain unknown."
+    ],
+    "runtime_game_verified": false
+  },
+  "object_response_status_saved_checkpoint": {
+    "saved_name": "UpdateObjectCacheFromResponseCode",
+    "original_instructions": 80,
+    "key_layout": {
+      "fields": [
+        [
+          "reference_key",
+          0,
+          8
+        ],
+        [
+          "secondary_key",
+          8,
+          8
+        ],
+        [
+          "scope_key",
+          16,
+          8
+        ],
+        [
+          "scope_index",
+          24,
+          4
+        ],
+        [
+          "variant",
+          28,
+          4
+        ]
+      ],
+      "stack_offset": 8,
+      "size": 32,
+      "independent_reopen": true
+    },
+    "evidence_scope": "static complete response-status body and bounded upstream caller; not runtime execution",
+    "limits": [
+      "Static evidence only; the 66-case truth table is a derived model, not native runtime execution.",
+      "Concrete response descriptor and numeric source enum names remain unresolved.",
+      "Some referenced callers lack function definitions and receive no review credit."
     ],
     "runtime_game_verified": false
   }

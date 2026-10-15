@@ -3156,3 +3156,11 @@ Read all 577 original instructions and the typed trial decompilation. Five selec
 Cold backup, isolated trial, promotion and independent reopening verify the saved name, signature, key layout and unchanged archives. Full runtime writer behavior, all caller paths, object-type side effects, concurrency and eviction safety remain unresolved. Numeric status enum names are not recovered.
 
 Totals: 404 checked names and 1,837 mapped functions among 9,580 discovered functions; 7,743 still need system mapping.
+
+### Saved response-code cache update
+
+Applied UpdateObjectCacheFromResponseCode with an integer response code, 32-byte by-value lookup key and void return. Its caller routes code 200 to a separate payload handler. This helper maps 404 to cache status 4 and 423 to status 7. For 503 or 524, a nonnull cached payload with zero auxiliary flag selects status 2, preserving that payload; otherwise 503 selects status 8 and 524 selects status 3. Other codes select status 3.
+
+The writer receives an empty span, false retry-reset flag and a deadline of current time plus 600 seconds. Numeric status names and the concrete response type remain unresolved. The 66-case assembly-derived truth table is a model, not runtime validation.
+
+All 80 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the name, signature, key layout and unchanged archives. Totals: 405 checked names and 1,838 mapped functions among 9,580 discovered functions; 7,742 still need system mapping.

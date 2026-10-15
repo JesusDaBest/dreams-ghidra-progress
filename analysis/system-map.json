@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1837,
-  "unmapped_total": 7743,
+  "mapped_total": 1838,
+  "unmapped_total": 7742,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46598,6 +46598,27 @@
           "kind": "verified_semantic_review",
           "name": "StoreObjectLookupResult",
           "support": "Complete original writer assembly, selected caller ABI and independent reopen; no runtime execution claimed."
+        }
+      ]
+    },
+    "1403a3600": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object cache lookup observed through typed text references and worker request paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shared response-code to cache-status update.",
+      "code_sha256": "289957dd549e19e943b7cc972930d6eb19d5b0b25f8ea366c9d458d75544d1d4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateObjectCacheFromResponseCode",
+          "support": "Complete original response-status helper, upstream caller ABI and independent reopen; no runtime execution claimed."
         }
       ]
     }
