@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 245,
+    "checked_and_applied_names": 247,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 245,
+    "verified_names": 247,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Counter output/update helpers independently reopened;226 existing renames and19 created functions overall.",
+    "scope": "Selector output/update helpers independently reopened;228 existing renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2822,6 +2822,33 @@
       "Inspected direct caller passes null previous state; active real-game reachability and Game mode/gate names remain unresolved.",
       "Other active maxima/count extremes, infinity, overflow and game gates remain unverified.",
       "Output property labels remain unresolved. No audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "selector_runtime_checkpoint": {
+    "names": [
+      "ReadSelectorOutputVariant",
+      "UpdateSelectorFromInputTransitions"
+    ],
+    "native_cases": {
+      "output": 4416,
+      "inactive_update": 5120,
+      "inactive_bag_effects": 24,
+      "active_wrap": 4096,
+      "direct_port": 1296,
+      "total": 14952
+    },
+    "findings": [
+      "Inactive output is Signal0; active output is Signal1 or first matching37-byte input Variant when passthrough succeeds. Missing selected input falls back to1.",
+      "Selected active increment/decrement sign-class changes wrap once according to net direction; held classes and NaN inputs do not retrigger.",
+      "Highest newly rising port wins in tested four-port Number inputs; selected Dream-ID inputs use zero/nonzero truth.",
+      "Inactive flags can clear input floats and37 bytes per input Variant while preserving tail bytes and unrelated records."
+    ],
+    "metadata_setup": "Synthetic Power offset supplied from fresh original initializer binding; original initializer not executed.",
+    "limits": [
+      "Selected synthetic original-instruction checks, not whole Selector or game completion.",
+      "Game gate meanings, real-caller reachability, other exceptional/mixed inputs, active zero ports and malformed bags remain unresolved.",
+      "No running-game verification or audited-byte credit."
     ],
     "runtime_game_verified": false
   }

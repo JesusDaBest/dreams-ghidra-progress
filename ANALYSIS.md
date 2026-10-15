@@ -1641,3 +1641,10 @@ Named and typed Counter output/update helpers after matching original fields, na
 11,756 isolated native cases passed: 2,268 output cases, 1,296 inactive update cases with null previous state and 8,192 selected active input/reset cases. Output ratio and full threshold use unsigned values; update clamps use signed ordering. Selected sign-class transitions step the count, held classes do not retrigger, NaN inputs do not count, and reset rising edges clear current and wrap the reset byte.
 
 The update harness supplies two offsets verified from original initializer writes; the initializer itself was not executed. The inspected direct caller passes null previous state, so active real-game reachability, mode/gate meanings and full gadget integration remain unresolved. Other active extremes and output property labels also remain incomplete. No game-runtime or audited-byte credit added. Totals: 245 checked names; 1,688 mapped functions; 7,882 unmapped.
+### Selector output and input-transition behavior
+
+Named and independently reopened Selector output/update helpers after matching original descriptor fields, the kind-specific offset initializer and dispatcher calls. The output reader returns zero for inactive ports, one for an active port without a matching passthrough input, or copies the first matching input Variant.
+
+14,952 isolated native cases passed: 4,416 output, 5,120 inactive normalization, 24 inactive property-bag effects, 4,096 active wrapping and 1,296 direct-port cases. Selected sign-class input transitions wrap once by combined direction. In the tested four-port setup, the highest newly rising port wins; held inputs do not override. Inactive clearing preserves unrelated records and Variant tail bytes.
+
+Synthetic Power metadata matches original initializer writes; the initializer was not executed. Concrete Game gate meanings, real-caller reachability, other exceptional/mixed inputs, active zero ports and malformed bags remain incomplete. No game-runtime or audited-byte credit added. Totals: 247 checked names; 1,690 mapped functions; 7,880 unmapped.

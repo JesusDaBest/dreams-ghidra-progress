@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1688,
-  "unmapped_total": 7882,
+  "mapped_total": 1690,
+  "unmapped_total": 7880,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43509,6 +43509,46 @@
           "support": "Original field binding and native caller, instruction-verified metadata, scoped execution and independent saved-project reopening."
         }
       ]
+    },
+    "1408cdee0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "selector",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Selector descriptor/fields, kind36 initializer and native dispatcher identify port and state roles.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body review, scoped original-instruction hardware execution and independently persisted name/types.",
+      "code_sha256": "5bd4aa559caf3997f3b58ad2709a6bae92a106976e38e45c3894008aaa90905f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadSelectorOutputVariant",
+          "support": "Original registration, matching offsets and caller, scoped native output/update checks, independent saved-project reopening."
+        }
+      ]
+    },
+    "1408cd970": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "selector",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Selector descriptor/fields, kind36 initializer and native dispatcher identify port and state roles.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body review, scoped original-instruction hardware execution and independently persisted name/types.",
+      "code_sha256": "734ab63fce46128ae3aa55c3feb2e2e548c846f2ce8b80fa37d9290fbc4b2ebc",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateSelectorFromInputTransitions",
+          "support": "Original registration, matching offsets and caller, scoped native output/update checks, independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48254,6 +48294,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

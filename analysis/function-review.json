@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "226 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "228 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9169,
-    "other_names": 401,
-    "verification": "complete_inventory_matches_baseline_plus_226_renames_and_19_created_functions"
+    "default_fun_names": 9167,
+    "other_names": 403,
+    "verification": "complete_inventory_matches_baseline_plus_228_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5005,6 +5005,52 @@
         "Descriptive research role name; concrete context/Game structures remain unresolved.",
         "Direct caller passes null previous state; real-game reachability of active previous-state comparisons is unverified.",
         "Active tests use one gate configuration, maximum3 and nonnegative current values; other gates, signed extremes, overflow and infinity remain incomplete.",
+        "No running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cdee0",
+      "original_name": "FUN_1408cdee0",
+      "applied_name": "ReadSelectorOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadSelectorOutputVariant(void * selector, uint property_id, VariantWorking40 * output)",
+      "evidence": [
+        "Original Selector descriptor and field registrar bind NumPorts+d0, ActivePort+d1 and Passthrough+d2; kind36 offset initializer and dispatcher corroborate matching runtime reads.",
+        "Complete38-instruction output body reviewed.",
+        "4416 original-instruction hardware cases cover all256 low property bytes under selected active ports, selected null/empty/matching/missing/duplicate/shuffled bags, four Variant tags, passthrough values and NumPorts values.",
+        "Cold backup, isolated trial and independent reopening verify one name/signature change, RDI/ESI/RDX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive role name and conservative working arguments, not original source recovery.",
+        "Helper uses property low8 bits; outer dispatcher range and valid UI configurations are separate. NumPorts is not read by this helper.",
+        "Malformed bags, full Selector state-update and game reachability remain incomplete.",
+        "No running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cd970",
+      "original_name": "FUN_1408cd970",
+      "applied_name": "UpdateSelectorFromInputTransitions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateSelectorFromInputTransitions(void * context, void * previous_selector, void * selector, int object_index)",
+      "evidence": [
+        "Original Selector descriptor, field registration and kind36 offset initializer bind port/current/input fields to native reads and writes.",
+        "Complete317-instruction body captured; normalization, sign-class transitions, wrapping, direct-input scan and inactive clearing paths reviewed.",
+        "Scoped original-instruction hardware cases:5120 inactive normalization,24 inactive bag effects,4096 active wrapping and1296 direct-port cases. Metadata setup explicitly matches original initializer writes.",
+        "Cold backup, isolated trial and independent reopening verify one name/signature change, RDI/RSI/RDX/ECX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research name and opaque working context/state pointers, not original declarations.",
+        "Selected active configuration only; concrete Game gate meanings and real-caller reachability unresolved.",
+        "Active zero ports, mixed/exceptional direct inputs, negative direct values, malformed bags and full gadget integration remain incomplete.",
         "No running-game verification or audited-byte credit."
       ]
     }

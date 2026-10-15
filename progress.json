@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 204,
+    "done": 206,
     "todo": 1484,
-    "total": 1688,
-    "behavior_or_helpers_reviewed": 145,
+    "total": 1690,
+    "behavior_or_helpers_reviewed": 147,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 57,
+        "done": 59,
         "todo": 413,
-        "total": 470,
-        "behavior_or_helpers_reviewed": 15,
+        "total": 472,
+        "behavior_or_helpers_reviewed": 17,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 17,
+        "runtime_functions_identified": 19,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -40,6 +40,8 @@
           "MarkLogicCycleWireEdges",
           "UpdateCounterFromInputTransitions",
           "ReadCounterOutputVariant",
+          "UpdateSelectorFromInputTransitions",
+          "ReadSelectorOutputVariant",
           "EvaluateCalculatorInputs",
           "EvaluateWideCalculatorInputs",
           "ReadSplitterOutputVariant",
@@ -514,6 +516,8 @@
           "14073de90",
           "1408cca60",
           "1408ccc60",
+          "1408cd970",
+          "1408cdee0",
           "1408ce4f0",
           "1408ce5b0",
           "1408cecf0",
@@ -975,12 +979,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 27,
+            "done": 29,
             "todo": 68,
-            "total": 95,
-            "behavior_or_helpers_reviewed": 10,
+            "total": 97,
+            "behavior_or_helpers_reviewed": 12,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 10,
+            "runtime_functions_identified": 12,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -995,6 +999,8 @@
               "MarkLogicCycleWireEdges",
               "UpdateCounterFromInputTransitions",
               "ReadCounterOutputVariant",
+              "UpdateSelectorFromInputTransitions",
+              "ReadSelectorOutputVariant",
               "EvaluateCalculatorInputs",
               "EvaluateWideCalculatorInputs",
               "ReadSplitterOutputVariant",
@@ -1094,6 +1100,8 @@
               "14073de90",
               "1408cca60",
               "1408ccc60",
+              "1408cd970",
+              "1408cdee0",
               "1408ce4f0",
               "1408ce5b0",
               "1408cecf0",
@@ -1610,6 +1618,88 @@
                       "140cbba70",
                       "140d67730"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/selector",
+                "label": "Selector",
+                "done": 2,
+                "todo": 2,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "UpdateSelectorFromInputTransitions",
+                  "ReadSelectorOutputVariant"
+                ],
+                "todo_names": [
+                  "0x1404bfad0",
+                  "0x140d55c40"
+                ],
+                "done_addresses": [
+                  "1408cd970",
+                  "1408cdee0"
+                ],
+                "todo_addresses": [
+                  "1404bfad0",
+                  "140d55c40"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/selector/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404bfad0",
+                      "0x140d55c40"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404bfad0",
+                      "140d55c40"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/selector/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateSelectorFromInputTransitions",
+                      "ReadSelectorOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cd970",
+                      "1408cdee0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -2745,57 +2835,6 @@
                     "todo_addresses": [
                       "1404a7180",
                       "140d54990"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/selector",
-                "label": "Selector",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404bfad0",
-                  "0x140d55c40"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404bfad0",
-                  "140d55c40"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/selector/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404bfad0",
-                      "0x140d55c40"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404bfad0",
-                      "140d55c40"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40557,5 +40596,5 @@
       }
     ]
   },
-  "unmapped": 7882
+  "unmapped": 7880
 }
