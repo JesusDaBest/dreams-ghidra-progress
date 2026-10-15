@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "266 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "268 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9129,
-    "other_names": 448,
-    "verification": "complete_inventory_matches_baseline_plus_266_renames_and_26_created_functions"
+    "default_fun_names": 9127,
+    "other_names": 450,
+    "verification": "complete_inventory_matches_baseline_plus_268_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6256,6 +6256,54 @@
         "Full target/modifier/game checked every case; cache/control windows and sampled complete-state checks as detailed by each fixture.",
         "No complete main update, real-game integration or concurrency validation.",
         "Original libc trap/error and very-large non-temporal fill paths are outside these cache fixtures."
+      ]
+    },
+    {
+      "address": "1408f85b0",
+      "original_name": "FUN_1408f85b0",
+      "applied_name": "ReadResolvedObjectPlayerMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV ReadResolvedObjectPlayerMask(void * state, void * object)",
+      "evidence": [
+        "Complete 51-instruction body matched original executable bytes.",
+        "Original mask helper and164-instruction fallback resolver executed across1904 cases per helper plus one null-reader case.",
+        "All four recorded native callers useAL only; downstream HealthModifier logic consumes player mask bits.",
+        "Direct/inherited/parent/link/cache paths, all16 Power lane masks and NaN comparison covered with explicit metadata fixtures.",
+        "Cold backup, isolated naming/ABI trial, promotion and independent reopening verify exactly two intended entries changed."
+      ],
+      "caveats": [
+        "Explicit synthetic metadata offsets; exact property labels for slots686/6a4 and full40f link meaning unresolved.",
+        "Valid bounded object/parent/link fixtures; malformed references, cycles, large tables and concurrency untested.",
+        "Return typing establishes caller-visibleAL contract only; upper return bits and original C++ declaration not recovered.",
+        "No real-game integration validation."
+      ]
+    },
+    {
+      "address": "1408e2790",
+      "original_name": "FUN_1408e2790",
+      "applied_name": "GetPowerOrResolvedObjectPlayerMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV GetPowerOrResolvedObjectPlayerMask(void * state, void * object)",
+      "evidence": [
+        "Complete 102-instruction body matched original executable bytes.",
+        "Original mask helper and164-instruction fallback resolver executed across1904 cases per helper plus one null-reader case.",
+        "All four recorded native callers useAL only; downstream HealthModifier logic consumes player mask bits.",
+        "Direct/inherited/parent/link/cache paths, all16 Power lane masks and NaN comparison covered with explicit metadata fixtures.",
+        "Cold backup, isolated naming/ABI trial, promotion and independent reopening verify exactly two intended entries changed."
+      ],
+      "caveats": [
+        "Explicit synthetic metadata offsets; exact property labels for slots686/6a4 and full40f link meaning unresolved.",
+        "Valid bounded object/parent/link fixtures; malformed references, cycles, large tables and concurrency untested.",
+        "Return typing establishes caller-visibleAL contract only; upper return bits and original C++ declaration not recovered.",
+        "No real-game integration validation."
       ]
     }
   ],

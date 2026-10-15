@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1733,
-  "unmapped_total": 7844,
+  "mapped_total": 1735,
+  "unmapped_total": 7842,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44407,6 +44407,46 @@
           "kind": "verified_semantic_review",
           "name": "AccumulateHealthModifierDelta",
           "support": "Original health helper,11525 scoped native cases, field schemas and saved-name/type verification."
+        }
+      ]
+    },
+    "1408f85b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Common object/player routing support called by HealthModifier and other object logic.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete mask helpers and scoped original-instruction routing tests.",
+      "code_sha256": "b5447c96d12b00520aaa759f48a6c85bc6001a825e32196d0f319f978d75012d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadResolvedObjectPlayerMask",
+          "support": "Original helpers/resolver,1904 scoped cases per helper, low-byte caller contract and saved-name/type verification."
+        }
+      ]
+    },
+    "1408e2790": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Common object/player routing support called by HealthModifier and other object logic.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete mask helpers and scoped original-instruction routing tests.",
+      "code_sha256": "ea86f3e092bdea2b21ea55cb3499a18fa07a7ff34ce0ae96aa55d158a0041d47",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetPowerOrResolvedObjectPlayerMask",
+          "support": "Original helpers/resolver,1904 scoped cases per helper, low-byte caller contract and saved-name/type verification."
         }
       ]
     }
