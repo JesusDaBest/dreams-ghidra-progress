@@ -4513,10 +4513,11 @@
     "limits": [
       "Finite selected health/weights/multipliers, valid target indices and explicit Power metadata offset40; nonfinite inputs and malformed references untested.",
       "Working signature order and opaque object pointers; original C++ declarations and complete caller semantics not recovered.",
-      "Preinitialized current hit cache; lazy initialization, capacity/wrap limits and malformed mappings remain untested.",
+      "Lazy initialization validated for selected header sizes; cache capacity/wrap limits and malformed mappings remain untested.",
       "Selected finite fixtures and state gates; the gameplay names/meaning of immediate-state controls remain unresolved.",
       "Full target/modifier/game checked every case; cache/control windows and sampled complete-state checks as detailed by each fixture.",
-      "No complete main update, real-game integration or concurrency validation."
+      "No complete main update, real-game integration or concurrency validation.",
+      "Original libc trap/error and very-large non-temporal fill paths are outside these cache fixtures."
     ],
     "runtime_game_verified": false
   },
@@ -4538,14 +4539,47 @@
       33
     ],
     "source_control_meanings": "unresolved",
-    "lazy_initialization": "untested",
+    "lazy_initialization": "validated_in_selected_original_libc_cases",
     "name_count_unchanged": 292,
     "limits": [
-      "Preinitialized current hit cache; lazy initialization, capacity/wrap limits and malformed mappings remain untested.",
+      "Finite selected health/weights/multipliers, valid target indices and explicit Power metadata offset40; nonfinite inputs and malformed references untested.",
+      "Working signature order and opaque object pointers; original C++ declarations and complete caller semantics not recovered.",
+      "Lazy initialization validated for selected header sizes; cache capacity/wrap limits and malformed mappings remain untested.",
       "Selected finite fixtures and state gates; the gameplay names/meaning of immediate-state controls remain unresolved.",
       "Full target/modifier/game checked every case; cache/control windows and sampled complete-state checks as detailed by each fixture.",
-      "No complete main update, real-game integration or concurrency validation."
+      "No complete main update, real-game integration or concurrency validation.",
+      "Original libc trap/error and very-large non-temporal fill paths are outside these cache fixtures."
     ],
+    "runtime_game_verified": false
+  },
+  "health_modifier_lazy_cache_checkpoint": {
+    "controlled_native_cases": 2880,
+    "lazy_initialization_cases": 1296,
+    "object_counts": [
+      4,
+      10,
+      64,
+      257
+    ],
+    "header_fill_bytes": [
+      16,
+      40,
+      256,
+      1028
+    ],
+    "original_libc_function_bytes": 379,
+    "import_models": false,
+    "scope": "Selected first-contact and initialized-cache profiles with prior-hit suppression and immediate PerHit effects.",
+    "limits": [
+      "Finite selected health/weights/multipliers, valid target indices and explicit Power metadata offset40; nonfinite inputs and malformed references untested.",
+      "Working signature order and opaque object pointers; original C++ declarations and complete caller semantics not recovered.",
+      "Lazy initialization validated for selected header sizes; cache capacity/wrap limits and malformed mappings remain untested.",
+      "Selected finite fixtures and state gates; the gameplay names/meaning of immediate-state controls remain unresolved.",
+      "Full target/modifier/game checked every case; cache/control windows and sampled complete-state checks as detailed by each fixture.",
+      "No complete main update, real-game integration or concurrency validation.",
+      "Original libc trap/error and very-large non-temporal fill paths are outside these cache fixtures."
+    ],
+    "name_count_unchanged": 292,
     "runtime_game_verified": false
   }
 }
