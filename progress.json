@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 248,
+    "done": 249,
     "todo": 1482,
-    "total": 1730,
-    "behavior_or_helpers_reviewed": 185,
+    "total": 1731,
+    "behavior_or_helpers_reviewed": 186,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -38104,18 +38104,19 @@
       {
         "name": "physics",
         "label": "Physics & collision",
-        "done": 4,
+        "done": 5,
         "todo": 58,
-        "total": 62,
-        "behavior_or_helpers_reviewed": 4,
+        "total": 63,
+        "behavior_or_helpers_reviewed": 5,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 30,
+        "runtime_functions_identified": 31,
         "property_type_functions_identified": 32,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "EnqueueRegionQuery",
           "CalculateSculptBoundsAndWakeBodiesJob",
+          "ProcessQueuedRegionQueriesForPhase",
           "GetTestSpheresAgainstSdfComputeShader",
           "GetSphereVsSphereCheckComputeShader"
         ],
@@ -38182,6 +38183,7 @@
         "done_addresses": [
           "140903930",
           "140bc06b0",
+          "140e839b0",
           "1414f2fd0",
           "1414f3370"
         ],
@@ -38763,17 +38765,18 @@
           {
             "name": "physics/queries",
             "label": "Collision queries",
-            "done": 1,
+            "done": 2,
             "todo": 25,
-            "total": 26,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 27,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 8,
+            "runtime_functions_identified": 9,
             "property_type_functions_identified": 18,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
-              "EnqueueRegionQuery"
+              "EnqueueRegionQuery",
+              "ProcessQueuedRegionQueriesForPhase"
             ],
             "todo_names": [
               "0x140111b70",
@@ -38803,7 +38806,8 @@
               "0x141276db0"
             ],
             "done_addresses": [
-              "140903930"
+              "140903930",
+              "140e839b0"
             ],
             "todo_addresses": [
               "140111b70",
@@ -38837,17 +38841,18 @@
               {
                 "name": "physics/queries/region-query",
                 "label": "Region Query",
-                "done": 1,
+                "done": 2,
                 "todo": 5,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
+                "runtime_functions_identified": 7,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
-                  "EnqueueRegionQuery"
+                  "EnqueueRegionQuery",
+                  "ProcessQueuedRegionQueriesForPhase"
                 ],
                 "todo_names": [
                   "0x141275f40",
@@ -38857,7 +38862,8 @@
                   "0x141276db0"
                 ],
                 "done_addresses": [
-                  "140903930"
+                  "140903930",
+                  "140e839b0"
                 ],
                 "todo_addresses": [
                   "141275f40",
@@ -38871,17 +38877,18 @@
                   {
                     "name": "physics/queries/region-query/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 5,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 7,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 6,
+                    "runtime_functions_identified": 7,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
-                      "EnqueueRegionQuery"
+                      "EnqueueRegionQuery",
+                      "ProcessQueuedRegionQueriesForPhase"
                     ],
                     "todo_names": [
                       "0x141275f40",
@@ -38891,7 +38898,8 @@
                       "0x141276db0"
                     ],
                     "done_addresses": [
-                      "140903930"
+                      "140903930",
+                      "140e839b0"
                     ],
                     "todo_addresses": [
                       "141275f40",
@@ -41154,5 +41162,5 @@
       }
     ]
   },
-  "unmapped": 7847
+  "unmapped": 7846
 }

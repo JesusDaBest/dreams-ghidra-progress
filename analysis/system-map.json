@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1730,
-  "unmapped_total": 7847,
+  "mapped_total": 1731,
+  "unmapped_total": 7846,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44347,6 +44347,26 @@
           "kind": "verified_semantic_review",
           "name": "EnqueueRegionQuery",
           "support": "Complete queue body, consumer connection,288 scoped native cases and saved-name verification."
+        }
+      ]
+    },
+    "140e839b0": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "region-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Phase-filtered spatial query processing connects request records, sculpt BVH and result spans.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete processor body and scoped hardware bookkeeping tests.",
+      "code_sha256": "360b6758a877fa071ac1b6ab5905bd42af5ebf7acf53e0a3b586b66f46edff21",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ProcessQueuedRegionQueriesForPhase",
+          "support": "Complete processor, original GPU stage labels,360 scoped native cases and saved-name verification."
         }
       ]
     }

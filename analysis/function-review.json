@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "263 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "264 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9132,
-    "other_names": 445,
-    "verification": "complete_inventory_matches_baseline_plus_263_renames_and_26_created_functions"
+    "default_fun_names": 9131,
+    "other_names": 446,
+    "verification": "complete_inventory_matches_baseline_plus_264_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6169,6 +6169,30 @@
         }
       ],
       "saved_return_storage": "EAX:4"
+    },
+    {
+      "address": "140e839b0",
+      "original_name": "FUN_140e839b0",
+      "applied_name": "ProcessQueuedRegionQueriesForPhase",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ProcessQueuedRegionQueriesForPhase(void * game_context, uchar phase)",
+      "evidence": [
+        "Complete1261-instruction body matched original executable bytes and inspected against current decompilation.",
+        "Named enqueue and BVH helper connect request records to phase-filtered processor and result spans.",
+        "Original RegionQuery profiling labels and compute dispatch chain show bootstrap, field sampling,10 refinement iterations and output copy.",
+        "360 original-instruction empty/no supported candidate cases validate phase selection and header bookkeeping with complete state/game preservation.",
+        "Cold backup, isolated trial, promotion and independent reopening verify name and RDI game-context/SIL phase signature."
+      ],
+      "caveats": [
+        "No sculpt candidates, compute packets/shaders, positive result delivery, callback, actor-list or saturation path executed.",
+        "Byte-fill import modeled explicitly, not original libc implementation.",
+        "No real game or concurrency validation.",
+        "Broad descriptive processor role; subordinate shaders and complete gameplay semantics are unresolved."
+      ]
     }
   ],
   "deferred": [
