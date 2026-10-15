@@ -2226,3 +2226,13 @@ The original game loader NIDs resolve the pair exporter imports to memalign and 
 96 original native cases execute the exported memalign wrapper, relocated forwarding target and descriptor dispatcher. With deliberately mismatching synthetic heap metadata, the dispatcher returns null before calling the internal allocator. Both cookie modes, three mismatching descriptor values, four alignments and four sizes are covered; the input frame and complete16KiB data window remain unchanged. No allocator/import call is reached.
 
 This establishes an original null-return branch for descriptor rejection, not memory exhaustion on a valid initialized heap. Heap setup/validity, runtime dispatch-pointer replacement, the internal allocation implementation and live-game failure behavior remain unresolved. No additional checked-name credit:314 of9,580 discovered functions.
+
+### Saved object-pair add/remove command builders
+
+Applied SubmitAddPersistentObjectIdPairCommand and SubmitRemoveCurrentObjectPairCommand. Add builds an11-byte payload: ushort0xfdf6, two persistent uint IDs at offsets2 and6, and zero byte at10. Remove resolves a current pair record through the object array, writes persistent IDs or0xffffffff for invalid/null endpoints, and serializes record byte8&1 at offset10 with command0xfdf7. Both forward player and eligibility metadata.
+
+32 add and24 remove cases execute the original70/107-instruction builders with a receipt-only dispatcher model. They verify payloads, command IDs, endpoint stack arguments, player and eligibility flags, full state SHA256 and object/record/frame preservation. Scope is null game context, selected player/count/actor-presence states and endpoint boundary cases; game-present GUI/global-override paths and actual command queue/application remain untested.
+
+Original jump-table bytes map0xfdf6 to the append branch and0xfdf7 to the branch that invalidates the supplied current pair endpoints. A larger caller exports pair tables from two snapshots and emits these commands while comparing them. Its complete behavior, the pair flag meaning and full gameplay integration remain unresolved; it receives no full-function review credit.
+
+Cold backup, isolated trial, main promotion and independent reopening verify both saved names, working byte/uint/pointer ABI and connected caller decompilation, with original archives unchanged. Totals:316 checked names among9,580 discovered functions;1,753 mapped and7,827 unmapped.

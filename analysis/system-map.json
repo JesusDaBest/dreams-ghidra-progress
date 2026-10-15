@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1751,
-  "unmapped_total": 7829,
+  "mapped_total": 1753,
+  "unmapped_total": 7827,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44774,6 +44774,46 @@
           "kind": "verified_semantic_review",
           "name": "SortPersistentObjectIdPairRecords",
           "support": "Complete original183/807 instruction bodies and72 connected native export/sort fixtures, saved ABI independently reopened."
+        }
+      ]
+    },
+    "140b357d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Builds add/remove pair commands used by persistent object pair snapshot differencing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Constructs packed pair command payloads and forwards player/eligibility metadata.",
+      "code_sha256": "f2c8fd92cbe4a73748e92076202f3989d624dc0370c1de2dfdb3fa6b249c0f08",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SubmitAddPersistentObjectIdPairCommand",
+          "support": "Complete original70/107 instruction bodies,56 scoped native command-builder fixtures and exact jump-table linkage; saved ABI independently reopened."
+        }
+      ]
+    },
+    "140b358f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Builds add/remove pair commands used by persistent object pair snapshot differencing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Constructs packed pair command payloads and forwards player/eligibility metadata.",
+      "code_sha256": "7453e8aa013dca0651a41e92bdb5f380d2b61a8b594d41dbe115c1a5f525565f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SubmitRemoveCurrentObjectPairCommand",
+          "support": "Complete original70/107 instruction bodies,56 scoped native command-builder fixtures and exact jump-table linkage; saved ABI independently reopened."
         }
       ]
     }
