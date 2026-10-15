@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 249,
+    "checked_and_applied_names": 250,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 249,
+    "verified_names": 250,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Timer output/update helpers independently reopened;230 existing renames and19 created functions overall.",
+    "scope": "231 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2875,6 +2875,21 @@
       "Only22 active hand-picked cases at target1; large totals mainly measure output/inactive fixtures, not full active numerical coverage.",
       "Other targets, exceptional active values, simultaneous conditions, complete Game gates, input property labels and real-game reachability remain unresolved.",
       "No whole Timer completion, running-game verification or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "thing_update_gate_checkpoint": {
+    "name": "PassesThingUpdateStateAndPowerGate",
+    "native_cases": 4862,
+    "findings": [
+      "Optional bypass skips mode/session/index gates, while Power and object checks remain.",
+      "Either signed-zero Power rejects; unordered NaN passes that zero check. Signed-positive metadata offsets select Power reads.",
+      "Return depends on stored object flag18; worker writes that flag from nonzero update mode and game mode3, separately from Power."
+    ],
+    "limits": [
+      "Descriptive role name and working argument types; original Game fields, mode values and object flag labels remain unresolved.",
+      "Synthetic metadata and selected input combinations; no original initializer execution or real-game integration validation.",
+      "No whole-subsystem completion or audited-byte credit."
     ],
     "runtime_game_verified": false
   }

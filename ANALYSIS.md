@@ -1655,3 +1655,8 @@ Named and independently reopened Timer output/update helpers, matching original 
 18,286 scoped native cases passed: 9,720 output, 7,776 inactive update, 768 inactive property-bag and only 22 hand-picked active mode/boundary cases. Those active cases cover start/restart, speed signs, movement toward a position target, countdown, completion and reset at target 1. Original constants provide a step factor about 1/30 and crossing tolerance 0.005; selected SetSpeed cases can emit TimerDone before current reaches target. The large total does not represent exhaustive active-mode coverage.
 
 Synthetic Power metadata matches the original initializer; the initializer was not executed. Other active values/targets, simultaneous conditions, Game gate meanings, input labels and real-caller reachability remain incomplete. No game-runtime or audited-byte credit added. Totals: 249 checked names; 1,692 mapped functions; 7,878 unmapped.
+### Shared Thing update gate
+
+Named and independently reopened PassesThingUpdateStateAndPowerGate. Complete native control flow and four call sites distinguish mode/session/index gating, optional bypass, Power lookup and stored object state. The bypass leaves Power and object checks in place. The stored state comes from an update-mode argument and game mode, separately from Power. Original field and enum labels remain unresolved.
+
+4,862 scoped original-instruction hardware cases passed with synthetic metadata and selected flags, gates, offsets and Power values. This verifies selected predicate behavior, not running-game integration or full subsystem completion. Totals: 250 checked names; 1,693 mapped functions; 7,877 unmapped.

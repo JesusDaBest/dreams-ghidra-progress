@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "230 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "231 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9165,
-    "other_names": 405,
-    "verification": "complete_inventory_matches_baseline_plus_230_renames_and_19_created_functions"
+    "default_fun_names": 9164,
+    "other_names": 406,
+    "verification": "complete_inventory_matches_baseline_plus_231_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5098,6 +5098,28 @@
         "Only22 active hand-picked cases at target1; other targets, exceptional active values, simultaneous conditions and full state/numerical contract unresolved.",
         "Direct caller passes null previous state; synthetic active tests do not establish real-game reachability. Concrete Game gates and original input property labels remain unresolved.",
         "No running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cc990",
+      "original_name": "FUN_1408cc990",
+      "applied_name": "PassesThingUpdateStateAndPowerGate",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV PassesThingUpdateStateAndPowerGate(void * game, void * thing, int thing_index, uchar bypass_mode_gates)",
+      "evidence": [
+        "Complete54-instruction native predicate and four call sites inspected.",
+        "Worker stored flag18 write traced through dispatcher context to the main update-mode argument, separately from Power.",
+        "4862 selected original-instruction hardware cases passed, including signed-zero/NaN Power, absent signed offsets, object flags, gates/bypass and negative-index bypass.",
+        "Cold backup, isolated trial, promotion and independent reopening verify one name/signature change, SysV parameter storage, unchanged instructions and archives."
+      ],
+      "caveats": [
+        "Descriptive role name and working argument types; original Game fields, mode values and object flag labels remain unresolved.",
+        "Synthetic metadata and selected input combinations; no original initializer execution or real-game integration validation.",
+        "No whole-subsystem completion or audited-byte credit."
       ]
     }
   ],

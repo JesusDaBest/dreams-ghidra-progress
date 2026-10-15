@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1692,
-  "unmapped_total": 7878,
+  "mapped_total": 1693,
+  "unmapped_total": 7877,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43587,6 +43587,26 @@
           "kind": "verified_semantic_review",
           "name": "UpdateTimerFromControlInputs",
           "support": "Original fields/enums, native calls, verified constants and scoped tests, independent saved-project reopening."
+        }
+      ]
+    },
+    "1408cc990": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Four caller contexts and stored update-state provenance establish shared Thing runtime gate.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "complete_native_body_review",
+      "code_sha256": "9074e389f1402d8dfb0c191817bd875605e38b089c14ff3b3643e1730ccb8abc",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PassesThingUpdateStateAndPowerGate",
+          "support": "Complete native predicate, caller contexts, scoped hardware cases and independent saved-project verification."
         }
       ]
     }
