@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1754,
-  "unmapped_total": 7826,
+  "mapped_total": 1755,
+  "unmapped_total": 7825,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44834,6 +44834,26 @@
           "kind": "verified_semantic_review",
           "name": "ConvertObjectPairToGluedParent",
           "support": "Complete original helper,3024 scoped native cases and65 original caller spans."
+        }
+      ]
+    },
+    "1407a6bb0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "math",
+        "object-hierarchy-transform",
+        "runtime-implementation"
+      ],
+      "component_basis": "32-byte position/scale and quaternion transform copy with conditional normalization.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Preserves first vector and normalizes/falls back/preserves quaternion according to squared norm.",
+      "code_sha256": "ddcaba6caf2de6b9144e86933c785fe9b1f49fbe4d31ffb0e2b30e8e17592e2a",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopyTransformWithNormalizedRotation",
+          "support": "Original49 instructions, actual libc isinff,511 fixtures and independently saved custom stack ABI."
         }
       ]
     }

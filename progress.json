@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 275,
+    "done": 276,
     "todo": 1479,
-    "total": 1754,
-    "behavior_or_helpers_reviewed": 212,
+    "total": 1755,
+    "behavior_or_helpers_reviewed": 213,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25243,12 +25243,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 136,
+        "done": 137,
         "todo": 108,
-        "total": 244,
-        "behavior_or_helpers_reviewed": 123,
+        "total": 245,
+        "behavior_or_helpers_reviewed": 124,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 158,
+        "runtime_functions_identified": 159,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25276,6 +25276,7 @@
           "FindSourcePortWireInDestinationRun",
           "ComputeThingTimelineIntervalFromTimeBounds",
           "AdvanceFilteredObjectGraphIterator",
+          "CopyTransformWithNormalizedRotation",
           "AcquireLeastUsedThreadBufferLane",
           "PassesThingUpdateStateAndPowerGate",
           "GetPowerOrResolvedObjectPlayerMask",
@@ -25524,6 +25525,7 @@
           "140705c30",
           "14075f490",
           "140769150",
+          "1407a6bb0",
           "1408c6390",
           "1408cc990",
           "1408e2790",
@@ -28222,16 +28224,17 @@
           {
             "name": "shared/math",
             "label": "Numbers & transforms",
-            "done": 1,
+            "done": 2,
             "todo": 12,
-            "total": 13,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 14,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 1,
+            "runtime_functions_identified": 2,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "CopyTransformWithNormalizedRotation",
               "ComputeObjectHierarchyTransform"
             ],
             "todo_names": [
@@ -28249,6 +28252,7 @@
               "0x141606ff0"
             ],
             "done_addresses": [
+              "1407a6bb0",
               "140903590"
             ],
             "todo_addresses": [
@@ -28429,6 +28433,57 @@
                 ]
               },
               {
+                "name": "shared/math/object-hierarchy-transform",
+                "label": "Object hierarchy transforms",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CopyTransformWithNormalizedRotation",
+                  "ComputeObjectHierarchyTransform"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1407a6bb0",
+                  "140903590"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/math/object-hierarchy-transform/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "CopyTransformWithNormalizedRotation",
+                      "ComputeObjectHierarchyTransform"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407a6bb0",
+                      "140903590"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/math/float2-packed",
                 "label": "float2 packed",
                 "done": 0,
@@ -28564,53 +28619,6 @@
                     "todo_addresses": [
                       "140cda510"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/math/object-hierarchy-transform",
-                "label": "Object hierarchy transforms",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ComputeObjectHierarchyTransform"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140903590"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/math/object-hierarchy-transform/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ComputeObjectHierarchyTransform"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140903590"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -41408,5 +41416,5 @@
       }
     ]
   },
-  "unmapped": 7826
+  "unmapped": 7825
 }

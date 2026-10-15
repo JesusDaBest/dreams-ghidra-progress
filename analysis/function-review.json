@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "288 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "289 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9107,
-    "other_names": 473,
-    "verification": "complete_inventory_matches_baseline_plus_288_renames_and_29_created_functions"
+    "default_fun_names": 9106,
+    "other_names": 474,
+    "verification": "complete_inventory_matches_baseline_plus_289_renames_and_29_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6846,6 +6846,29 @@
         "Malformed/null inputs, cycles, full versioned caller and game behavior unresolved.",
         "This migration does not establish that every pair record or flag value means glue.",
         "Working opaque pointers/reference and Boolean machine result are not recovered original C++ declarations."
+      ]
+    },
+    {
+      "address": "1407a6bb0",
+      "original_name": "FUN_1407a6bb0",
+      "applied_name": "CopyTransformWithNormalizedRotation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CopyTransformWithNormalizedRotation(RigidTransformWorking32 * output, RigidTransformWorking32 value)",
+      "evidence": [
+        "Complete49-instruction body matched original SELF and saved bytes.",
+        "511 original-native cases plus actual original22-byte libc isinff; no import models, max absolute error1.17e-7 at3e-6 tolerance.",
+        "Exact position/scale vector copy, quaternion fallback/preservation/normalization, NaN-poison output, guards and inputframe checked.",
+        "Original migration caller places32-byte value on stack and passes RDI output pointer; corrected caller decompilation reflects both arguments.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify name, custom stack8:32 ABI and working type fields at0/16, with unchanged archives."
+      ],
+      "caveats": [
+        "Quaternion NaN payloads, subnormal/FTZ modes and aliasing untested.",
+        "Complete glue-migration transform composition remains untested.",
+        "RigidTransformWorking32 is an observed machine container, not recovered original C++ declaration."
       ]
     }
   ],
