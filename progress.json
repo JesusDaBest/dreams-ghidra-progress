@@ -3,11 +3,11 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 277,
-    "todo": 1479,
+    "done": 279,
+    "todo": 1477,
     "total": 1756,
     "behavior_or_helpers_reviewed": 214,
-    "properties_or_types_reviewed": 63,
+    "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
       {
@@ -25243,11 +25243,11 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 138,
-        "todo": 108,
+        "done": 140,
+        "todo": 106,
         "total": 246,
         "behavior_or_helpers_reviewed": 125,
-        "properties_or_types_reviewed": 13,
+        "properties_or_types_reviewed": 15,
         "runtime_functions_identified": 160,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
@@ -25305,6 +25305,8 @@
           "BuildSculptBoundsFlags",
           "FlushDescriptorOutputBlock",
           "LoadDescriptorInputBlock",
+          "RegisterThingTypeEnumEntries",
+          "AppendThingTypeEnumEntry",
           "EnsureVariantTypeEnumRegistered",
           "RegisterVariantTypeEnumValues",
           "RegisterSigned32FieldOffset",
@@ -25433,8 +25435,6 @@
           "0x140c82e60",
           "0x140c871f0",
           "0x140c8b960",
-          "0x140c8ba10",
-          "0x140c8c220",
           "0x140cb8160",
           "0x140cc3dc0",
           "0x140cc58c0",
@@ -25555,6 +25555,8 @@
           "140bbf520",
           "140c737c0",
           "140c73ef0",
+          "140c8ba10",
+          "140c8c220",
           "140cb7e80",
           "140cb7f30",
           "140cd93e0",
@@ -25683,8 +25685,6 @@
           "140c82e60",
           "140c871f0",
           "140c8b960",
-          "140c8ba10",
-          "140c8c220",
           "140cb8160",
           "140cc3dc0",
           "140cc58c0",
@@ -27003,11 +27003,11 @@
           {
             "name": "shared/objects",
             "label": "Objects & references",
-            "done": 11,
-            "todo": 13,
+            "done": 13,
+            "todo": 11,
             "total": 24,
             "behavior_or_helpers_reviewed": 11,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 2,
             "runtime_functions_identified": 11,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
@@ -27020,6 +27020,8 @@
               "ResolveParentScopeReference",
               "SubmitAddPersistentObjectIdPairCommand",
               "SubmitRemoveCurrentObjectPairCommand",
+              "RegisterThingTypeEnumEntries",
+              "AppendThingTypeEnumEntry",
               "ConvertObjectPairToGluedParent",
               "ResolvePersistentObjectIdToIndex",
               "BuildSortedPersistentObjectIdPairRecords",
@@ -27030,8 +27032,6 @@
               "0x1404901a0",
               "0x140c82e60",
               "0x140c8b960",
-              "0x140c8ba10",
-              "0x140c8c220",
               "0x140cde180",
               "0x140d13460",
               "0x140d1a240",
@@ -27048,6 +27048,8 @@
               "1408fa1f0",
               "140b357d0",
               "140b358f0",
+              "140c8ba10",
+              "140c8c220",
               "140e6ad40",
               "1410ab490",
               "141150c50",
@@ -27058,8 +27060,6 @@
               "1404901a0",
               "140c82e60",
               "140c8b960",
-              "140c8ba10",
-              "140c8c220",
               "140cde180",
               "140d13460",
               "140d1a240",
@@ -27187,60 +27187,64 @@
               {
                 "name": "shared/objects/ethingtype",
                 "label": "Thing Type",
-                "done": 0,
-                "todo": 5,
+                "done": 2,
+                "todo": 3,
                 "total": 5,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 2,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 5,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "RegisterThingTypeEnumEntries",
+                  "AppendThingTypeEnumEntry"
+                ],
                 "todo_names": [
                   "0x1401118b0",
                   "0x140c82e60",
-                  "0x140c8b960",
-                  "0x140c8ba10",
-                  "0x140c8c220"
+                  "0x140c8b960"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "140c8ba10",
+                  "140c8c220"
+                ],
                 "todo_addresses": [
                   "1401118b0",
                   "140c82e60",
-                  "140c8b960",
-                  "140c8ba10",
-                  "140c8c220"
+                  "140c8b960"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "shared/objects/ethingtype/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 5,
+                    "done": 2,
+                    "todo": 3,
                     "total": 5,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 2,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 5,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "RegisterThingTypeEnumEntries",
+                      "AppendThingTypeEnumEntry"
+                    ],
                     "todo_names": [
                       "0x1401118b0",
                       "0x140c82e60",
-                      "0x140c8b960",
-                      "0x140c8ba10",
-                      "0x140c8c220"
+                      "0x140c8b960"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "140c8ba10",
+                      "140c8c220"
+                    ],
                     "todo_addresses": [
                       "1401118b0",
                       "140c82e60",
-                      "140c8b960",
-                      "140c8ba10",
-                      "140c8c220"
+                      "140c8b960"
                     ],
                     "unresolved_addresses": [],
                     "groups": []

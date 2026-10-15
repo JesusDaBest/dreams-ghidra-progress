@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "289 existing-function renames,29 created descriptive functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "291 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9106,
-    "other_names": 474,
-    "verification": "complete_inventory_matches_baseline_plus_289_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9104,
+    "other_names": 476,
+    "verification": "complete_inventory_matches_baseline_plus_291_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6897,6 +6897,52 @@
         "Finite positions, selected positive scales and normalized first rotation only; nonunit/zero second rotation tested.",
         "First rotation nonunit/nonfinite, subnormal/FTZ modes, aliasing and complete versioned caller/game untested;1536 scoped connected cases verified.",
         "Existing descriptive name retained; working machine types do not recover original source declarations."
+      ]
+    },
+    {
+      "address": "140c8ba10",
+      "original_name": "FUN_140c8ba10",
+      "applied_name": "RegisterThingTypeEnumEntries",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RegisterThingTypeEnumEntries(void)",
+      "evidence": [
+        "Complete original366/91 instruction bodies matched SELF and saved project bytes.",
+        "121 original immediate/literal entry registrations, values0..119 plus LAST120 sentinel, matched original literals.",
+        "Four connected preallocated initializer runs reproduce484 exact records through original entry builder, original name hash and actual96-byte libc strlen; no import models.",
+        "Independent value/name map and short-name polynomial/hash oracle; complete output/guards/padding/prefix and64KiB descriptor page checked.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify saved names/working ABI and type-context caller decompilation; archives unchanged."
+      ],
+      "caveats": [
+        "Allocation/growth/failure, live repeated registration and callback invocation untested.",
+        "ASCII literal lengths<=26 only; full hash-function behavior is not reviewed or given credit.",
+        "Registered enum labels, including deprecated/internal entries, do not prove feature availability or original C++ enum width."
+      ]
+    },
+    {
+      "address": "140c8c220",
+      "original_name": "FUN_140c8c220",
+      "applied_name": "AppendThingTypeEnumEntry",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendThingTypeEnumEntry(uchar value, char * name)",
+      "evidence": [
+        "Complete original366/91 instruction bodies matched SELF and saved project bytes.",
+        "121 original immediate/literal entry registrations, values0..119 plus LAST120 sentinel, matched original literals.",
+        "Four connected preallocated initializer runs reproduce484 exact records through original entry builder, original name hash and actual96-byte libc strlen; no import models.",
+        "Independent value/name map and short-name polynomial/hash oracle; complete output/guards/padding/prefix and64KiB descriptor page checked.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify saved names/working ABI and type-context caller decompilation; archives unchanged."
+      ],
+      "caveats": [
+        "Allocation/growth/failure, live repeated registration and callback invocation untested.",
+        "ASCII literal lengths<=26 only; full hash-function behavior is not reviewed or given credit.",
+        "Registered enum labels, including deprecated/internal entries, do not prove feature availability or original C++ enum width."
       ]
     }
   ],

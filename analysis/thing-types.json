@@ -1,0 +1,614 @@
+{
+  "schema_version": 1,
+  "enum": "EThingType",
+  "scope": "Registered labels in the analyzed executable. Deprecated/internal names do not establish feature support. Original C++ enum width not recovered.",
+  "ordinary_value_count": 120,
+  "sentinel_value": 120,
+  "entries": [
+    {
+      "value": 0,
+      "name": "Group",
+      "sentinel": false
+    },
+    {
+      "value": 1,
+      "name": "Sculpt",
+      "sentinel": false
+    },
+    {
+      "value": 2,
+      "name": "Light",
+      "sentinel": false
+    },
+    {
+      "value": 3,
+      "name": "Key",
+      "sentinel": false
+    },
+    {
+      "value": 4,
+      "name": "TriggerZone",
+      "sentinel": false
+    },
+    {
+      "value": 5,
+      "name": "Joint",
+      "sentinel": false
+    },
+    {
+      "value": 6,
+      "name": "Dummy",
+      "sentinel": false
+    },
+    {
+      "value": 7,
+      "name": "SunDeprecated",
+      "sentinel": false
+    },
+    {
+      "value": 8,
+      "name": "SkyAndSun",
+      "sentinel": false
+    },
+    {
+      "value": 9,
+      "name": "Animation",
+      "sentinel": false
+    },
+    {
+      "value": 10,
+      "name": "LightPaint",
+      "sentinel": false
+    },
+    {
+      "value": 11,
+      "name": "PuppetHeart",
+      "sentinel": false
+    },
+    {
+      "value": 12,
+      "name": "ColourGadget",
+      "sentinel": false
+    },
+    {
+      "value": 13,
+      "name": "Microchip",
+      "sentinel": false
+    },
+    {
+      "value": 14,
+      "name": "Timeline",
+      "sentinel": false
+    },
+    {
+      "value": 15,
+      "name": "Sound",
+      "sentinel": false
+    },
+    {
+      "value": 16,
+      "name": "Mover",
+      "sentinel": false
+    },
+    {
+      "value": 17,
+      "name": "Sprite",
+      "sentinel": false
+    },
+    {
+      "value": 18,
+      "name": "Grade",
+      "sentinel": false
+    },
+    {
+      "value": 19,
+      "name": "CameraGadget",
+      "sentinel": false
+    },
+    {
+      "value": 20,
+      "name": "Controlinator",
+      "sentinel": false
+    },
+    {
+      "value": 21,
+      "name": "AdvancedMover",
+      "sentinel": false
+    },
+    {
+      "value": 22,
+      "name": "Follower",
+      "sentinel": false
+    },
+    {
+      "value": 23,
+      "name": "Rotator",
+      "sentinel": false
+    },
+    {
+      "value": 24,
+      "name": "AdvancedRotator",
+      "sentinel": false
+    },
+    {
+      "value": 25,
+      "name": "LookAtRotator",
+      "sentinel": false
+    },
+    {
+      "value": 26,
+      "name": "RocketRotator",
+      "sentinel": false
+    },
+    {
+      "value": 27,
+      "name": "Gyroscope",
+      "sentinel": false
+    },
+    {
+      "value": 28,
+      "name": "TextGadget",
+      "sentinel": false
+    },
+    {
+      "value": 29,
+      "name": "EffectField",
+      "sentinel": false
+    },
+    {
+      "value": 30,
+      "name": "DEPRECATE_DreamBubble",
+      "sentinel": false
+    },
+    {
+      "value": 31,
+      "name": "Teleporter",
+      "sentinel": false
+    },
+    {
+      "value": 32,
+      "name": "Counter",
+      "sentinel": false
+    },
+    {
+      "value": 33,
+      "name": "Inverter",
+      "sentinel": false
+    },
+    {
+      "value": 34,
+      "name": "PortalGadget",
+      "sentinel": false
+    },
+    {
+      "value": 35,
+      "name": "Randomiser",
+      "sentinel": false
+    },
+    {
+      "value": 36,
+      "name": "Selector",
+      "sentinel": false
+    },
+    {
+      "value": 37,
+      "name": "And",
+      "sentinel": false
+    },
+    {
+      "value": 38,
+      "name": "Or",
+      "sentinel": false
+    },
+    {
+      "value": 39,
+      "name": "Xor",
+      "sentinel": false
+    },
+    {
+      "value": 40,
+      "name": "AudioCategoryMix",
+      "sentinel": false
+    },
+    {
+      "value": 41,
+      "name": "PrizeBubble",
+      "sentinel": false
+    },
+    {
+      "value": 42,
+      "name": "Collectabubble",
+      "sentinel": false
+    },
+    {
+      "value": 43,
+      "name": "CameraArrow",
+      "sentinel": false
+    },
+    {
+      "value": 44,
+      "name": "Destroyer",
+      "sentinel": false
+    },
+    {
+      "value": 45,
+      "name": "SliderGadget",
+      "sentinel": false
+    },
+    {
+      "value": 46,
+      "name": "ButtonGadget",
+      "sentinel": false
+    },
+    {
+      "value": 47,
+      "name": "GrabSensor",
+      "sentinel": false
+    },
+    {
+      "value": 48,
+      "name": "Ruler",
+      "sentinel": false
+    },
+    {
+      "value": 49,
+      "name": "Emitter",
+      "sentinel": false
+    },
+    {
+      "value": 50,
+      "name": "Remapper",
+      "sentinel": false
+    },
+    {
+      "value": 51,
+      "name": "AudioMasterMix",
+      "sentinel": false
+    },
+    {
+      "value": 52,
+      "name": "MovementSensor",
+      "sentinel": false
+    },
+    {
+      "value": 53,
+      "name": "AngleSensor",
+      "sentinel": false
+    },
+    {
+      "value": 54,
+      "name": "RotationSensor",
+      "sentinel": false
+    },
+    {
+      "value": 55,
+      "name": "InventorySensor",
+      "sentinel": false
+    },
+    {
+      "value": 56,
+      "name": "InventoryReset",
+      "sentinel": false
+    },
+    {
+      "value": 57,
+      "name": "StampingEnabler",
+      "sentinel": false
+    },
+    {
+      "value": 58,
+      "name": "Timer",
+      "sentinel": false
+    },
+    {
+      "value": 59,
+      "name": "Reporter",
+      "sentinel": false
+    },
+    {
+      "value": 60,
+      "name": "ForceRepulseGadget",
+      "sentinel": false
+    },
+    {
+      "value": 61,
+      "name": "Node",
+      "sentinel": false
+    },
+    {
+      "value": 62,
+      "name": "RaycastGadget",
+      "sentinel": false
+    },
+    {
+      "value": 63,
+      "name": "ImpactSensor",
+      "sentinel": false
+    },
+    {
+      "value": 64,
+      "name": "Checkpoint",
+      "sentinel": false
+    },
+    {
+      "value": 65,
+      "name": "GlobalSettings",
+      "sentinel": false
+    },
+    {
+      "value": 66,
+      "name": "HealthGadget",
+      "sentinel": false
+    },
+    {
+      "value": 67,
+      "name": "HealthModifier",
+      "sentinel": false
+    },
+    {
+      "value": 68,
+      "name": "FogGadget",
+      "sentinel": false
+    },
+    {
+      "value": 69,
+      "name": "AutoGuidesGadget",
+      "sentinel": false
+    },
+    {
+      "value": 70,
+      "name": "Calculator",
+      "sentinel": false
+    },
+    {
+      "value": 71,
+      "name": "Splitter",
+      "sentinel": false
+    },
+    {
+      "value": 72,
+      "name": "Combiner",
+      "sentinel": false
+    },
+    {
+      "value": 73,
+      "name": "MagicDoor",
+      "sentinel": false
+    },
+    {
+      "value": 74,
+      "name": "SignalInspector",
+      "sentinel": false
+    },
+    {
+      "value": 75,
+      "name": "SignalGenerator",
+      "sentinel": false
+    },
+    {
+      "value": 76,
+      "name": "CameraShaker",
+      "sentinel": false
+    },
+    {
+      "value": 77,
+      "name": "PadRumble",
+      "sentinel": false
+    },
+    {
+      "value": 78,
+      "name": "Speaker",
+      "sentinel": false
+    },
+    {
+      "value": 79,
+      "name": "DelayGadget",
+      "sentinel": false
+    },
+    {
+      "value": 80,
+      "name": "ReporterSculpt",
+      "sentinel": false
+    },
+    {
+      "value": 81,
+      "name": "ReporterTelemetry",
+      "sentinel": false
+    },
+    {
+      "value": 82,
+      "name": "WirelessReceiver",
+      "sentinel": false
+    },
+    {
+      "value": 83,
+      "name": "WirelessTransmitter",
+      "sentinel": false
+    },
+    {
+      "value": 84,
+      "name": "Gate",
+      "sentinel": false
+    },
+    {
+      "value": 85,
+      "name": "ImpGadget",
+      "sentinel": false
+    },
+    {
+      "value": 86,
+      "name": "Wipe",
+      "sentinel": false
+    },
+    {
+      "value": 87,
+      "name": "PuppetControls",
+      "sentinel": false
+    },
+    {
+      "value": 88,
+      "name": "VariableGadget",
+      "sentinel": false
+    },
+    {
+      "value": 89,
+      "name": "VariableModifierGadget",
+      "sentinel": false
+    },
+    {
+      "value": 90,
+      "name": "ScoreGadget",
+      "sentinel": false
+    },
+    {
+      "value": 91,
+      "name": "ScoreModifierGadget",
+      "sentinel": false
+    },
+    {
+      "value": 92,
+      "name": "VRCursorSensor",
+      "sentinel": false
+    },
+    {
+      "value": 93,
+      "name": "DevGadget",
+      "sentinel": false
+    },
+    {
+      "value": 94,
+      "name": "ImpQuestGadget",
+      "sentinel": false
+    },
+    {
+      "value": 95,
+      "name": "HeadGadget",
+      "sentinel": false
+    },
+    {
+      "value": 96,
+      "name": "HandGadget",
+      "sentinel": false
+    },
+    {
+      "value": 97,
+      "name": "WideCalculator",
+      "sentinel": false
+    },
+    {
+      "value": 98,
+      "name": "Scripter",
+      "sentinel": false
+    },
+    {
+      "value": 99,
+      "name": "PhotoGadget",
+      "sentinel": false
+    },
+    {
+      "value": 100,
+      "name": "NetworkSignalGadget",
+      "sentinel": false
+    },
+    {
+      "value": 101,
+      "name": "SocialGadget",
+      "sentinel": false
+    },
+    {
+      "value": 102,
+      "name": "DreamiverseReferenceGadget",
+      "sentinel": false
+    },
+    {
+      "value": 103,
+      "name": "MetagameGadget",
+      "sentinel": false
+    },
+    {
+      "value": 104,
+      "name": "NetworkVariableGadget",
+      "sentinel": false
+    },
+    {
+      "value": 105,
+      "name": "SearchGadget",
+      "sentinel": false
+    },
+    {
+      "value": 106,
+      "name": "SpawnplaceGadget",
+      "sentinel": false
+    },
+    {
+      "value": 107,
+      "name": "ScoreboardDisplayGadget",
+      "sentinel": false
+    },
+    {
+      "value": 108,
+      "name": "MultiplayerSessionGadget",
+      "sentinel": false
+    },
+    {
+      "value": 109,
+      "name": "NetworkSpawnerGadget",
+      "sentinel": false
+    },
+    {
+      "value": 110,
+      "name": "ImpAnimationGadget",
+      "sentinel": false
+    },
+    {
+      "value": 111,
+      "name": "UnlockablesGadget",
+      "sentinel": false
+    },
+    {
+      "value": 112,
+      "name": "CoinDispenser",
+      "sentinel": false
+    },
+    {
+      "value": 113,
+      "name": "CoinConsumer",
+      "sentinel": false
+    },
+    {
+      "value": 114,
+      "name": "PUMagicDoor",
+      "sentinel": false
+    },
+    {
+      "value": 115,
+      "name": "TimeGadget",
+      "sentinel": false
+    },
+    {
+      "value": 116,
+      "name": "PUMapGadget",
+      "sentinel": false
+    },
+    {
+      "value": 117,
+      "name": "PUMapMarker",
+      "sentinel": false
+    },
+    {
+      "value": 118,
+      "name": "PUAvatarWheelState",
+      "sentinel": false
+    },
+    {
+      "value": 119,
+      "name": "PUAvatarSettings",
+      "sentinel": false
+    },
+    {
+      "value": 120,
+      "name": "LAST",
+      "sentinel": true
+    }
+  ]
+}
