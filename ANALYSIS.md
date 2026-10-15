@@ -2080,3 +2080,9 @@ Applied ReadResolvedObjectPlayerMask and GetPowerOrResolvedObjectPlayerMask with
 3,809 native checks execute both original helpers and their original fallback resolver with direct/inherited/parent/link/cached-container fixtures, all16 lane masks and a NaN lane. Linear and sorted link paths select the tested first matching0x40f entry. All object buffers and selected state windows are checked each case, with sampled full-state preservation; no imports are modeled. Exact metadata property labels, complete link semantics, malformed/cyclic graphs, large tables and game integration remain unresolved. Cold backup, isolated trial and independent reopening verify the two saved names/signatures and unchanged original archives.
 
 Totals:294 checked names among9,577 discovered functions;1,735 mapped and7,842 unmapped. Shared-object classification reflects generic routing support, not a claim that every caller is understood.
+
+### Player-mask field identities from original registrations
+
+Matched original offset-table initializer stores to native registration calls and original field-name literals. For Sculpt (kind 1), table slot 0x6a4 points to object offset 0x24c, registered as PlayerOwnership. For HealthGadget (kind 0x42) and HealthModifier (kind 0x43), fallback slot 0x686 points to offsets 0xd0 and 0xe0 respectively, both registered as IsGluedGadget. Fifteen original instruction spans and three literal references establish these links.
+
+These links apply to the specified kinds; they do not establish the field for every Thing. The resolver follows the parent when the identified gadget glue flag is set. Its Microchip field and 0x40f link meaning remain unresolved. An unrelated registered field offset with the same numeric value was rejected as a label source. No new function-name credit is added; the checked total remains 294.
