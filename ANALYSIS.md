@@ -2736,3 +2736,13 @@ Applied FindTextFloatPairSpan with a text key, locale hash and a reviewed sixtee
 The earlier 9,240 direct lookup cases and 396 serialized locale fallback cases support this role. Matching direct pair records are marked used; serialized fallback resolves secondary keys in locale views without that mark. Pair units/application meaning, concurrency, malformed tables, substitution and rendering remain unresolved. The explicit aggregate model is a working interpretation of the machine ABI, not a recovered original source declaration.
 
 Cold backup, isolated trial, promotion and independent reopening verify unchanged original instructions and archives. Totals: 367 checked names (337 renames, 29 created functions and one retained-name review), 1,800 mapped and 7,780 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Saved text range copy and extension
+
+Applied CopyOrExtendTextFloatRanges with a target extent, desired range count and record pointer. The helper copies existing eight-byte pairs, then fills missing ranges using a 0.25 gap and default width of 2, or an adjusted width based on the target extent. It redirects the record to pooled storage and updates its count and chunk bookkeeping.
+
+960 native cases cover requested counts through 256, four existing counts, five initial chunk usages and six finite extents. An independent float32 oracle checks exact whole chunks, record, source, globals and guards, including walking existing linked chunks when the current chunk cannot fit the whole array. Pool reuse and new allocation remain unexecuted.
+
+A higher consumer selects the first inclusive range containing an input value before selecting text. Its bounded caller converts an unsigned counter to float and divides it by the original constant 1,000. This supports a time-scaled interpretation but does not establish the source counter units or prove a specific caption/subtitle feature. The large owner did not decompile within the configured limit; a bounded 54-instruction caller window was captured and original-byte checked instead.
+
+Cold backup, isolated trial, promotion and independent reopening verify the name, mixed float/integer arguments and unchanged instructions/archives. Totals: 368 checked names (338 renames, 29 created functions and one retained-name review), 1,801 mapped and 7,779 unmapped among 9,580 discovered functions. NaN/overflow/invalid counts, concurrency, substitution and rendering remain unresolved.

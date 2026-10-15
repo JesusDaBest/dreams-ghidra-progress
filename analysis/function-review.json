@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "337 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "338 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9058,
-    "other_names": 522,
-    "verification": "complete_inventory_matches_baseline_plus_337_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9057,
+    "other_names": 523,
+    "verification": "complete_inventory_matches_baseline_plus_338_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8043,6 +8043,31 @@
         "Floatpairunits/applicationmeaning unresolved.",
         "Explicitcustomreturnstorage modelsobservedRAXbegin/RDXend,notrecoveredsource declaration.",
         "Substitution/rendering unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414aa000",
+      "original_name": "FUN_1414aa000",
+      "applied_name": "CopyOrExtendTextFloatRanges",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CopyOrExtendTextFloatRanges(float target_extent, uint desired_range_count, void * text_record)",
+      "evidence": [
+        "Complete146instruction originalcopy/fillhelper,309instruction rangeselector andbounded54instruction callerwindow read;helper/nativeSELF/savedbytes agree.",
+        "960nativeexisting/prelinkedchunkcases with8counts through256,4oldcounts,5initialuses,6finiteextents;independentfloat32oracle exactwholechunks/record/source/globals/guards.",
+        "Copiesmin(old,new)8bytepairs;missingranges use0.25gap and2defaultwidth orwidthadjustedagainsttargetextent.",
+        "Higherselector usesinclusivepairboundaries;boundedcallerconvertsunsignedcountertofloat anddividesbyoriginal1000constant,sourcecounterunitsunresolved.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify name/signature/floatregisteraddress andunchangedarchives."
+      ],
+      "caveats": [
+        "Existing/prelinkedchunks tested;poolpop/newallocation notexecuted.",
+        "Selectedfinitevalidpairs;NaN/overflow/invalidcounts unresolved.",
+        "Counterdividedby1000 supports time-scaledinterpretation,notproof ofsourceunits.",
+        "Concurrency/substitution/rendering unresolved.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }
