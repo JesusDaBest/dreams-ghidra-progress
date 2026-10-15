@@ -3263,5 +3263,21 @@
       "No running-game validation, whole-gadget completion or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "signal_generator_active_phase_checkpoint": {
+    "passed": 576,
+    "max_output_absolute_error": 0,
+    "findings": [
+      "Four stages: cosine rise0, high hold1, cosine fall2, low hold3.",
+      "Step is original1/30 only for Game mode3, either activity flag set and pause flagzero; otherwise0.",
+      "No-boundary stage fraction advances by step divided by sweep or cached pause duration."
+    ],
+    "limits": [
+      "Selected phases/durations without stage crossings; RNG transitions and malformed durations not executed.",
+      "Bounded cosine arguments only; libc exceptional/large-argument/error paths not executed.",
+      "TLS and guard environment modeled; no real-game validation."
+    ],
+    "runtime_game_verified": false,
+    "math_import": "Exact loader NID resolves cosf; original local libc implementation and constants executed for bounded arguments."
   }
 }
