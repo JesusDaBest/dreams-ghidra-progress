@@ -2702,3 +2702,13 @@ Applied StoreTextFloatPairRecords with mode, builder context, key, interleaved f
 Chunk growth and its allocator remain unexecuted. Malformed-table safety and floating-point exception flags are not claimed verified. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives.
 
 Totals: 365 checked names (335 renames, 29 created functions and one retained-name review), 1,798 mapped and 7,782 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Saved scratch arena allocation and connected chunk growth
+
+Applied AllocateTextScratchBytes with an arena pointer, byte count and pointer return. When enough capacity remains, the original body returns the old cursor and advances it by exactly the request. Zero-sized requests and exact fits are accepted. This body does not round alignment or initialize the backing bytes. An out-of-space tail call exists but remains unexecuted.
+
+3,192 native cases check requests through the text-builder object size, spare-capacity variations and four alignments, with exact return/cursor/whole guarded object and unchanged backing. Another 280 connected cases run the original float-pair storage helper and original arena allocator through virtual dispatch, growing through 1,024 pairs. Chunk links, logical base indices, used counts, pair bytes, record/context fields and allocator cursor agree exactly. The bounded backing storage supplies memory; no host allocator replaces the original arena method.
+
+This supersedes the earlier untested-chunk-growth limitation for this arena-backed float-pair path. Original fallback/OS heap allocation, failure handling, malformed arenas and the application meaning of the pairs remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 366 checked names (336 renames, 29 created functions and one retained-name review), 1,799 mapped and 7,781 unmapped among 9,580 discovered functions. No whole-game completion is inferred.

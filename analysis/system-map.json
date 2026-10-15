@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1798,
-  "unmapped_total": 7782,
+  "mapped_total": 1799,
+  "unmapped_total": 7781,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45779,6 +45779,27 @@
           "kind": "verified_semantic_review",
           "name": "StoreTextFloatPairRecords",
           "support": "Originalbody,nativeguardedstorage andexistingrecordcomparison checks,independentlyreopenedname/signature."
+        }
+      ]
+    },
+    "1414bb2c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Scratcharena usedbyoriginaltextrecordbuilder andfloatpairchunkgrowth.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Textscratch byteallocation implementation.",
+      "code_sha256": "80e332f876c9f8d58cf4c115dc79d334c188d521e08864d7a67eafb377d53755",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateTextScratchBytes",
+          "support": "Originalbody,in-capacityarena andconnectedchunkgrowth checks,independentlyreopenedname/signature."
         }
       ]
     }
