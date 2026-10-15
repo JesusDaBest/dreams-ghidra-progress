@@ -5317,5 +5317,25 @@
     ],
     "new_names_checked": 0,
     "runtime_game_verified": false
+  },
+  "advance_shader_commit_gate_checkpoint": {
+    "status": "decoded_roundtrip_and_selected_static_gate_traced",
+    "code_bytes": 1152,
+    "instruction_count": 236,
+    "byte_exact_roundtrip": true,
+    "findings": [
+      "Same common parameter layout maps flag descriptor0xf0 to body-derived particle words and descriptor0x130 to array149417948 (previously zeroed at particle initialization).",
+      "Shader masks body lookup indices to13 bits with0x1fff. This does not prove the producer enforces the matching index bound.",
+      "Final velocity commit predicate is (candidate XYZ squared length > threshold AND particle flag bit13) OR (second particle word bit0).",
+      "Candidate position is committed and candidate velocity retained when that predicate holds; otherwise output velocity is zero and the existing primary position is not overwritten at that commit point.",
+      "Other shader stages can therefore affect the final outcome after Predict; Predict alone is not complete integration behavior."
+    ],
+    "limits": [
+      "Only selected data flow and final commit gate reviewed; earlier correction/matrix/contact-related paths remain incompletely interpreted.",
+      "The second word bit0 producer/meaning and threshold producer remain unresolved.",
+      "Full GPU execution, arithmetic rounding and body-index validity not tested."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
   }
 }

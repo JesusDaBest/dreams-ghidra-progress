@@ -2094,3 +2094,11 @@ The flag bit's producer/meaning, exact shader floating-point rounding, original 
 The original ExtractShaderBinarySections helper also passed 64 native cases using all four confirmed shader resources at sixteen input alignments. It independently confirms the instruction start at resource offset 96. For Predict it returns a 404-byte section containing the 228-byte executable span plus metadata. Footer length, first-instruction metadata pointer and terminal instruction agree on the executable span, addressing the earlier section-start corroboration gap.
 
 Exact output pointers/lengths, guards, padding and unchanged resource bytes passed. This does not validate malformed headers, execute the shaders or add naming/completion credit. The graph's checked-name count remains 322.
+
+### Advance shader: final motion commit gate
+
+Decoded Advance's 1,152-byte executable span and reassembled all 236 instructions to byte-identical code. Original CPU descriptor copies and dispatch instructions connect its particle flags and second per-particle word to the common parameter table. The shader explicitly masks body lookup indices to thirteen bits; the producer's valid index bound still requires verification.
+
+The selected final write path keeps candidate velocity and commits candidate position when either the candidate XYZ squared length exceeds a threshold and particle flag bit 13 is set, or bit 0 in a second particle word is set. Otherwise it writes zero velocity and does not overwrite the primary position at that commit point. Thus Predict's earlier flag gate alone does not establish the final motion outcome.
+
+The second bit's producer/meaning, threshold initialization and earlier correction/matrix paths remain unresolved. This is a selected static data-flow review plus full byte-exact instruction decoding, not execution or complete understanding of Advance. No shader/function completion credit is added; raw shader code remains local.
