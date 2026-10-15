@@ -1584,3 +1584,9 @@ Cold backup, isolated trial, promotion and independent reopening verify both nam
 The Gate descriptor points to two callbacks that are not yet defined as functions in the saved project. Complete bounded decoding identifies a50-instruction creation path and a4-instruction cleanup path; all callback bytes match the original PS4 executable. Creation requests352 bytes and sets Power1, Priority10, no active/queued request, empty input/output Variants, GateSync1 and ScopeType1. Cleanup returns for null and otherwise tail-jumps to a deallocation import.
 
 Creation also reads a runtime colour global. A native initialization window loads original file-backed colour components and stores them to that global; this trace avoids assuming uninitialized memory is its runtime value. Initializer execution, later indirect writers, exact allocation/deallocation import symbols, allocation failure and actual lifecycle execution remain unverified. No functions were created or named in this checkpoint;272 checked names remain.
+
+### Gate callback initialization execution
+
+Original creation instructions pass256 cases, one for every initial fill byte. All352 object bytes, surrounding guards, requested allocation size and returned pointer match the independent initialization model. The original cleanup callback passes256 null cases without calling deallocation and256 nonnull cases forwarding the exact pointer once. Complete object bytes remain unchanged during cleanup.
+
+Original import thunks run against explicit heap-boundary substitutes; these tests do not execute the actual allocator or deallocator. The colour value is supplied from the original static initialization writer and file-backed constant; that startup writer is not executed. Allocation failure, runtime descriptor dispatch and in-game lifecycle remain unverified. No function definitions or names were added in this checkpoint;272 checked names remain.

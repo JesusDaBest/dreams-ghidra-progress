@@ -3711,5 +3711,25 @@
       "Full lifecycle, out-of-memory behavior and real game execution remain unverified."
     ],
     "runtime_game_verified": false
+  },
+  "gate_callback_native_checkpoint": {
+    "passed_creation_cases": 256,
+    "passed_null_cleanup_cases": 256,
+    "passed_nonnull_cleanup_cases": 256,
+    "object_size": 352,
+    "original_callback_instructions": 54,
+    "method": "Original callback instructions and import thunks; explicit allocator returning guarded buffer and deallocator recording calls. Full object, guards, allocation size, returned pointer and cleanup call behavior checked across256 initial fill bytes. Colour fixture reconstructed from original static writer and constant bytes.",
+    "findings": [
+      "Creation initializes all352 bytes independently of their initial fill in these fixtures.",
+      "Original defaults match reflected offsets, including Power1, Priority10, GateSync1 and ScopeType1.",
+      "Null cleanup does not call deallocator; nonnull forwards exact pointer once."
+    ],
+    "limits": [
+      "Heap allocator/deallocator implementations are modeled, not executed.",
+      "Colour startup writer not executed; exact file-backed constant supplied explicitly.",
+      "Allocation failure, runtime callback dispatch and in-game lifecycle remain unverified."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
