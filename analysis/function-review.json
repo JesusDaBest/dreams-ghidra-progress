@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "275 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "279 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9579,
-    "default_fun_names": 9120,
-    "other_names": 459,
-    "verification": "complete_inventory_matches_baseline_plus_275_renames_and_28_created_functions"
+    "default_fun_names": 9116,
+    "other_names": 463,
+    "verification": "complete_inventory_matches_baseline_plus_279_renames_and_28_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6501,12 +6501,101 @@
         "Original HealthModifier kind/type/field registration and existing zone query trace bind both branches.",
         "1944 impact-path native cases verify eight11-bit slots, duplicate suppression, tag/scratch gates and NaN/zero/negative target Power.",
         "Original libc memset executes; TLS/scratch/graph dependencies are explicit models.",
-        "Cold backup, isolated trial, promotion and independent reopening verify saved name and GameRDI/phaseESI working ABI."
+        "Cold backup, isolated trial, promotion and independent reopening verify saved name and GameRDI/phaseESI working ABI.",
+        "Follow-up original registration resolves LabelAnyOrAll Any0/All1; saved producer comment reconciled and independently reopened."
       ],
       "caveats": [
         "One modifier and synthetic target graph in impact phase; graph/TLS/scratch implementations modeled.",
         "Zone geometry/enqueue branch statically traced but not executed in this batch.",
-        "Exact filter enum/property2d7 labels, multiple-modifier interaction and game integration unresolved."
+        "Original property2d7 label, multiple-modifier interaction and game integration unresolved."
+      ]
+    },
+    {
+      "address": "1408fa070",
+      "original_name": "FUN_1408fa070",
+      "applied_name": "BuildObjectRegionQueryMasks",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV BuildObjectRegionQueryMasks(void * state, void * object, uchar include_visibility_collision)",
+      "evidence": [
+        "Complete 107-instruction body matched original executable bytes.",
+        "Original fixed field/enum literals and HealthModifier offset initializer links reviewed.",
+        "Cold backup, isolated trial, promotion and independent reopening verify four intended name/signature entries and connected caller decompilation.",
+        "69120 original-instruction native cases independently check any/all/excluded masks, optional visibility/collision and compatibility boundary; no imports/models."
+      ],
+      "caveats": [
+        "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
+        "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
+        "Registrar initialization and full producer/query/BVH/game integration were not executed."
+      ]
+    },
+    {
+      "address": "140d67730",
+      "original_name": "FUN_140d67730",
+      "applied_name": "RegisterLabelAnyOrAllFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV RegisterLabelAnyOrAllFieldOffset(void * registry, uint object_offset)",
+      "evidence": [
+        "Complete 139-instruction body matched original executable bytes.",
+        "Original fixed field/enum literals and HealthModifier offset initializer links reviewed.",
+        "Cold backup, isolated trial, promotion and independent reopening verify four intended name/signature entries and connected caller decompilation.",
+        "Original enum field registration and value calls reviewed statically; this registrar was not dynamically executed."
+      ],
+      "caveats": [
+        "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
+        "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
+        "Registrar initialization and full producer/query/BVH/game integration were not executed."
+      ]
+    },
+    {
+      "address": "140d67a10",
+      "original_name": "FUN_140d67a10",
+      "applied_name": "RegisterLabelVisibleFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV RegisterLabelVisibleFieldOffset(void * registry, uint object_offset)",
+      "evidence": [
+        "Complete 142-instruction body matched original executable bytes.",
+        "Original fixed field/enum literals and HealthModifier offset initializer links reviewed.",
+        "Cold backup, isolated trial, promotion and independent reopening verify four intended name/signature entries and connected caller decompilation.",
+        "Original enum field registration and value calls reviewed statically; this registrar was not dynamically executed."
+      ],
+      "caveats": [
+        "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
+        "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
+        "Registrar initialization and full producer/query/BVH/game integration were not executed."
+      ]
+    },
+    {
+      "address": "140d67d00",
+      "original_name": "FUN_140d67d00",
+      "applied_name": "RegisterLabelCollidableFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV RegisterLabelCollidableFieldOffset(void * registry, uint object_offset)",
+      "evidence": [
+        "Complete 142-instruction body matched original executable bytes.",
+        "Original fixed field/enum literals and HealthModifier offset initializer links reviewed.",
+        "Cold backup, isolated trial, promotion and independent reopening verify four intended name/signature entries and connected caller decompilation.",
+        "Original enum field registration and value calls reviewed statically; this registrar was not dynamically executed."
+      ],
+      "caveats": [
+        "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
+        "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
+        "Registrar initialization and full producer/query/BVH/game integration were not executed."
       ]
     }
   ],

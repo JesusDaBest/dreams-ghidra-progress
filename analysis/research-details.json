@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 303,
+    "checked_and_applied_names": 307,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 303,
+    "verified_names": 307,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "275 existing-function renames and28 created functions verified after independent reopening.",
+    "scope": "279 existing-function renames and28 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4687,7 +4687,41 @@
     "limits": [
       "One modifier and synthetic target graph in impact phase; graph/TLS/scratch implementations modeled.",
       "Zone geometry/enqueue branch statically traced but not executed in this batch.",
-      "Exact filter enum/property2d7 labels, multiple-modifier interaction and game integration unresolved."
+      "Original property2d7 label, multiple-modifier interaction and game integration unresolved."
+    ],
+    "runtime_game_verified": false,
+    "label_any_or_all_resolved": true
+  },
+  "region_query_mask_checkpoint": {
+    "names": [
+      "BuildObjectRegionQueryMasks",
+      "RegisterLabelAnyOrAllFieldOffset",
+      "RegisterLabelVisibleFieldOffset",
+      "RegisterLabelCollidableFieldOffset"
+    ],
+    "original_instruction_spans_checked": 530,
+    "mask_helper_native_cases": 69120,
+    "zero_label_all_mode_compat_cases": 4608,
+    "enum_labels": {
+      "LabelAnyOrAll": [
+        "Any",
+        "All"
+      ],
+      "LabelVisible": [
+        "Visible",
+        "Invisible",
+        "Ignore"
+      ],
+      "LabelCollidable": [
+        "Collidable",
+        "NotCollidable",
+        "Ignore"
+      ]
+    },
+    "limits": [
+      "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
+      "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
+      "Registrar initialization and full producer/query/BVH/game integration were not executed."
     ],
     "runtime_game_verified": false
   }

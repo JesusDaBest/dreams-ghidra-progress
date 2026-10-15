@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1744,
-  "unmapped_total": 7835,
+  "mapped_total": 1745,
+  "unmapped_total": 7834,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -24585,9 +24585,14 @@
           "type_name": "ELabelAnyOrAll",
           "site": "140d6789d",
           "target": "14170ad2c"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterLabelAnyOrAllFieldOffset",
+          "support": "Original enum field registration and value calls reviewed statically; this registrar was not dynamically executed."
         }
       ],
-      "code_sha256": "7526ec325cd96cd1a531a1399da0a07b5b1ca7306e8a8bbc0039c8f09f605d48",
+      "code_sha256": "dbc725b91c3e30358a8d6f847e762c1e2e73999bacd724b0b655a98bde83f24f",
       "component_path": [
         "gadgets-logic",
         "logic",
@@ -24607,9 +24612,14 @@
           "type_name": "ELabelVisible",
           "site": "140d67b7d",
           "target": "14170ad3b"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterLabelVisibleFieldOffset",
+          "support": "Original enum field registration and value calls reviewed statically; this registrar was not dynamically executed."
         }
       ],
-      "code_sha256": "c9dbe4b34cc5c79c9b39de439ead2119472339c5383708ee347cffe397610b4d",
+      "code_sha256": "9095b60e5f30b1878e7529a47935b379df1cf7736f9c3ba479057f6bc4f40c22",
       "component_path": [
         "rendering",
         "visibility",
@@ -24629,9 +24639,14 @@
           "type_name": "ELabelCollidable",
           "site": "140d67e6d",
           "target": "14170ad5a"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterLabelCollidableFieldOffset",
+          "support": "Original enum field registration and value calls reviewed statically; this registrar was not dynamically executed."
         }
       ],
-      "code_sha256": "0335f78b9b634efddc010894e6bfbfa180f6052957d803455f976ca503d90141",
+      "code_sha256": "bee3c6beb727bec6e07ba88ee409bbf7d6e9c8ede14812d9ca916b68f02ff508",
       "component_path": [
         "physics",
         "simulation",
@@ -44621,6 +44636,26 @@
           "support": "Original460-instruction producer,1944 impact fixtures, existing zone trace and saved signature independently reopened."
         }
       ]
+    },
+    "1408fa070": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "region-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Object filter masks feed the verified region-query enqueue chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete mask builder body and scoped native tests.",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildObjectRegionQueryMasks",
+          "support": "69120 original-instruction native cases independently check any/all/excluded masks, optional visibility/collision and compatibility boundary; no imports/models."
+        }
+      ],
+      "code_sha256": "4ac067af114ccd63e35470cf6aa09036cc87438ac1875f276d24f2f419af48b8"
     }
   },
   "hierarchy": [
