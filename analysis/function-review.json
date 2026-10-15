@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "355 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "356 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9040,
-    "other_names": 540,
-    "verification": "complete_inventory_matches_baseline_plus_355_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9039,
+    "other_names": 541,
+    "verification": "complete_inventory_matches_baseline_plus_356_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8467,6 +8467,28 @@
         "Exact mixed-direction recursive branch coverage not instrumented.",
         "Descriptor contains a temporary stack-iterator pointer;not dereferenced or treated as persistent output.",
         "Synthetic fixed-width fonts;full layout,shaping and rendering unverified.",
+        "Working descriptive name and opaque pointer types;not recovered source."
+      ]
+    },
+    {
+      "address": "1414b8220",
+      "original_name": "FUN_1414b8220",
+      "applied_name": "TryScanTextPrefixToStopUnit",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryScanTextPrefixToStopUnit(void * prefix_begin_out, void * prefix_end_out, void * parser_snapshot, void * input_cursor, void * input_end, void * stop_units_begin, void * stop_units_end, void * parser_state, void * stop_unit_out)",
+      "evidence": [
+        "Complete201 original instruction spans matched; scanner and text-processor caller read.",
+        "384 plain UTF8 scans across stop lists,alignments and optional stop-output profiles;40 consecutive formatted scans across five known style/size/color forms.",
+        "Original decoder/control helpers;independent prefix/cursor/stop offsets,exact80-byte entry snapshot,known active formatting fields,input/state guards and canary.",
+        "Cold backup,isolated trial,promotion and independent reopen verify Boolean result,nine SysV arguments including three stack parameters,and unchanged archives."
+      ],
+      "caveats": [
+        "Selected well-formed plain/markup forms and ASCII stop units;nesting,malformed and internal-stream interactions incomplete.",
+        "Failure output atomicity,complete processor,layout and rendering unverified.",
         "Working descriptive name and opaque pointer types;not recovered source."
       ]
     }

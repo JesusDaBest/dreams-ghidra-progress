@@ -2908,3 +2908,11 @@ Native checks cover 80 fixed-width ASCII runs, 192 Latin/Hebrew runs and 256 new
 The mixed-text checks do not independently instrument exact recursive branch coverage. The descriptor includes a temporary local-iterator pointer, which tests do not dereference after return or treat as persistent output. Fixed-width synthetic glyphs limit these findings; complete layout, shaping and rendering remain unverified.
 
 All 227 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the saved name and signature, unchanged instructions and unchanged original archives. Totals: 385 checked names, 1,818 mapped and 7,762 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.
+
+### Saved text prefix scanner
+
+Applied TryScanTextPrefixToStopUnit with a Boolean result and nine reviewed SysV arguments, including three stack parameters. It snapshots the first 80 parser-state bytes, decodes units and applies controls until a selected non-control stop unit or input end. The stop unit is excluded from the prefix but consumed from the cursor and optionally reported. Nonempty input can return an empty prefix at a leading stop; empty input returns false.
+
+384 plain UTF8 checks cover twelve forms, four stop lists, four actual input alignments and optional stop output. Another 40 checks cover two consecutive scans of five known style/size/color forms across newline. Independent byte spans, cursor and stop values, exact entry snapshots and known active format fields agree with the original scanner/decoder/control helpers; guarded inputs/state and the original stack canary remain intact. Active formatting survives the consumed newline and enters the next snapshot. The following visible tail excludes trailing closing markup while the cursor consumes it to input end.
+
+All 201 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify name, signature and unchanged instructions/archives. Nesting, malformed markup, internal streams, failure atomicity, the complete text processor, layout and rendering remain unverified. Totals: 386 checked names, 1,819 mapped and 7,761 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.

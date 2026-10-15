@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1818,
-  "unmapped_total": 7762,
+  "mapped_total": 1819,
+  "unmapped_total": 7761,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46199,6 +46199,27 @@
           "kind": "verified_semantic_review",
           "name": "TryStepDirectionalTextLayout",
           "support": "Original run loop and recursion read,native cursor/span checks and independently reopened Boolean signature."
+        }
+      ]
+    },
+    "1414b8220": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Scans decoded text prefixes and snapshots parser state for token processing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Stop-unit scanning implementation.",
+      "code_sha256": "3d4f3316b562f55a1391b57271526ce12698d74b50d2624dc3706cd76a5c0e94",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryScanTextPrefixToStopUnit",
+          "support": "Original scanner and caller,native prefix/formatting checks,independently reopened nine-argument SysV signature."
         }
       ]
     }
