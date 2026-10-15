@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 268,
+    "checked_and_applied_names": 269,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 268,
+    "verified_names": 269,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "249 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "250 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3435,6 +3435,22 @@
       "Selected Number input scalars and finite/nonfinite keys; other Variant reductions not covered.",
       "Name comparison uses raw64 identity, not verified display-string lexical ordering; final integer field kept unnamed.",
       "Full sort, group construction, NaN sort behavior and actual game scheduling remain unverified.",
+      "No whole-Gate completion or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "gate_pointer_sort_checkpoint": {
+    "name": "SortGatePointersByActivationOrder",
+    "controlled_native_cases": 180,
+    "findings": [
+      "Selected arrays sort by independently established Gate comparator keys.",
+      "Sizes cover insertion threshold32/33, larger partition paths and depth0 fallback.",
+      "Sorted/reverse/random/equal-key and duplicate-pointer arrays retain exact pointer multiplicity and unchanged objects."
+    ],
+    "limits": [
+      "Explicit modeled overlap-safe memmove boundary; original copy implementation not executed.",
+      "Selected Number payloads and finite float keys; NaNs and other reductions not covered in full sort.",
+      "Group construction, inline arbitration composition and actual game scheduling remain unverified.",
       "No whole-Gate completion or audited-byte credit."
     ],
     "runtime_game_verified": false

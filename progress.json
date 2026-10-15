@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 227,
+    "done": 228,
     "todo": 1484,
-    "total": 1711,
-    "behavior_or_helpers_reviewed": 168,
+    "total": 1712,
+    "behavior_or_helpers_reviewed": 169,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 78,
+        "done": 79,
         "todo": 413,
-        "total": 491,
-        "behavior_or_helpers_reviewed": 36,
+        "total": 492,
+        "behavior_or_helpers_reviewed": 37,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 38,
+        "runtime_functions_identified": 39,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -66,6 +66,7 @@
           "AppendRemapperSignalHistory",
           "FindOrInitializeRemapperSignalHistory",
           "InitializeVariableGadgetDefaults",
+          "SortGatePointersByActivationOrder",
           "GatePrecedesInActivationOrder",
           "EvaluateRemapperSignal",
           "RegisterLightTypeDescriptor",
@@ -561,6 +562,7 @@
           "140907eb0",
           "1409082f0",
           "140944f20",
+          "1409537f0",
           "140955110",
           "140c27870",
           "140d54090",
@@ -1017,12 +1019,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 48,
+            "done": 49,
             "todo": 68,
-            "total": 116,
-            "behavior_or_helpers_reviewed": 31,
+            "total": 117,
+            "behavior_or_helpers_reviewed": 32,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 31,
+            "runtime_functions_identified": 32,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1059,6 +1061,7 @@
               "UpdateSignalGeneratorOutputAndRandomRanges",
               "AppendRemapperSignalHistory",
               "FindOrInitializeRemapperSignalHistory",
+              "SortGatePointersByActivationOrder",
               "GatePrecedesInActivationOrder",
               "EvaluateRemapperSignal",
               "RegisterCombinerTypeDescriptor",
@@ -1179,6 +1182,7 @@
               "1408ed6a0",
               "140907eb0",
               "1409082f0",
+              "1409537f0",
               "140955110",
               "140c27870",
               "140d57980",
@@ -2054,6 +2058,88 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/gate",
+                "label": "Gate",
+                "done": 3,
+                "todo": 1,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "UpdateGateActivationRequests",
+                  "SortGatePointersByActivationOrder",
+                  "GatePrecedesInActivationOrder"
+                ],
+                "todo_names": [
+                  "0x1404dfa70"
+                ],
+                "done_addresses": [
+                  "1408ed310",
+                  "1409537f0",
+                  "140955110"
+                ],
+                "todo_addresses": [
+                  "1404dfa70"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/gate/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateGateActivationRequests",
+                      "SortGatePointersByActivationOrder",
+                      "GatePrecedesInActivationOrder"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ed310",
+                      "1409537f0",
+                      "140955110"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/gate/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404dfa70"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404dfa70"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/selector",
                 "label": "Selector",
                 "done": 2,
@@ -2727,84 +2813,6 @@
                       "140cb19b0",
                       "140cb1a60",
                       "140cb1ab0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/gate",
-                "label": "Gate",
-                "done": 2,
-                "todo": 1,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "UpdateGateActivationRequests",
-                  "GatePrecedesInActivationOrder"
-                ],
-                "todo_names": [
-                  "0x1404dfa70"
-                ],
-                "done_addresses": [
-                  "1408ed310",
-                  "140955110"
-                ],
-                "todo_addresses": [
-                  "1404dfa70"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/gate/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "UpdateGateActivationRequests",
-                      "GatePrecedesInActivationOrder"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408ed310",
-                      "140955110"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/logic/gate/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404dfa70"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404dfa70"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40990,5 +40998,5 @@
       }
     ]
   },
-  "unmapped": 7859
+  "unmapped": 7858
 }

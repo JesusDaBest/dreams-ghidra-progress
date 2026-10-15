@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "249 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "250 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9146,
-    "other_names": 424,
-    "verification": "complete_inventory_matches_baseline_plus_249_renames_and_19_created_functions"
+    "default_fun_names": 9145,
+    "other_names": 425,
+    "verification": "complete_inventory_matches_baseline_plus_250_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5531,6 +5531,29 @@
         "Selected Number input scalars and finite/nonfinite keys; other Variant reductions not covered.",
         "Name comparison uses raw64 identity, not verified display-string lexical ordering; final integer field kept unnamed.",
         "Full sort, group construction, NaN sort behavior and actual game scheduling remain unverified.",
+        "No whole-Gate completion or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1409537f0",
+      "original_name": "FUN_1409537f0",
+      "applied_name": "SortGatePointersByActivationOrder",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SortGatePointersByActivationOrder(void * * begin, void * * end, longlong depth_budget)",
+      "evidence": [
+        "Original main update calls this Gate pointer-range sort before group arbitration; full comparator keys inspected.",
+        "Complete1500-instruction sort and83-instruction comparator inspected;1583 instruction spans match original PS4 executable.",
+        "180 original-instruction sort cases compare exact guards, pointer multiplicity, lexicographic key order and complete objects;96 separate copy-fixture checks.",
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "Explicit modeled overlap-safe memmove boundary; original copy implementation not executed.",
+        "Selected Number payloads and finite float keys; NaNs and other reductions not covered in full sort.",
+        "Group construction, inline arbitration composition and actual game scheduling remain unverified.",
         "No whole-Gate completion or audited-byte credit."
       ]
     }

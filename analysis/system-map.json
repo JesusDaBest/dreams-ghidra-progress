@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1711,
-  "unmapped_total": 7859,
+  "mapped_total": 1712,
+  "unmapped_total": 7858,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43966,6 +43966,26 @@
         {
           "kind": "verified_semantic_review",
           "name": "GatePrecedesInActivationOrder",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
+    },
+    "1409537f0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "gate",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original main update sorts Gate pointers before grouping/claim processing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "be9a7aa16f47873175c6374dde552c8c8347d75fd0bcd9b565e57d9271bec4a4",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortGatePointersByActivationOrder",
           "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
         }
       ]
