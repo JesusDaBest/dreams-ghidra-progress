@@ -1675,3 +1675,8 @@ These are synthetic helper compositions with Game mode0, null previous state and
 Named and independently reopened ChooseRandomiserWeightedPort. Original fields bind NumPorts and WeightA through WeightJ to native reads. A zero eligible total returns sentinel10 without advancing the seed; otherwise a30-bit seed update chooses an eligible cumulative weight interval.
 
 147,456 synthetic native cases passed for port counts2..10, four weight profiles, four seeds and all10-bit exclusion masks. Exact seed writes and object/guard bytes were checked. Original mode labels are NoRepeat, Shuffle and TrueRandom; the full mode-update behavior and real-game integration remain unresolved. No whole-gadget completion credit. Totals: 252 checked names; 1,695 mapped functions; 7,875 unmapped.
+### Randomiser mode-update trace
+
+12,960 controlled native updater cases compare NoRepeat, Shuffle, TrueRandom and a synthetic invalid mode, including initialization, trigger transitions, exact seed changes and16-bit counter boundaries. Shuffle advances a deterministic weighted ordering from ShuffleSeed. Initialization can run without a trigger, updates the thread seed again for ShuffleSeed and does not increment RandomIndex. An out-of-range Shuffle port may remain until the final clamp.
+
+The updater, weighted picker and import thunk retain their original instructions. The operating-system TLS boundary is explicitly modeled to return worker seed index1; this is not execution of the PS4 OS implementation. Tests use non-null previous state, while the captured direct worker call passes null. Actual active-path reachability and scheduling remain unresolved. No names or completion metrics added.

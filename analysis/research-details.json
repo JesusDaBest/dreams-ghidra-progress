@@ -2938,5 +2938,23 @@
       "No whole-gadget completion or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "randomiser_update_mode_checkpoint": {
+    "cases_passed": 12960,
+    "scope": "Ports2/3/10, three weight profiles, three thread seeds and shuffle seeds, five current ports, four trigger transitions and two counter boundaries across three modes plus synthetic mode255.",
+    "findings": [
+      "NoRepeat excludes current port, TrueRandom draws without exclusions; Shuffle advances a deterministic weighted ordering from ShuffleSeed.",
+      "Initialization also runs without trigger, updates the thread seed again for ShuffleSeed, and leaves RandomIndex unchanged.",
+      "Initialized rising triggers increment16-bit RandomIndex; held/falling inputs do not.",
+      "Out-of-range current port in Shuffle can remain until final clamp rather than restarting at first weighted entry."
+    ],
+    "external_boundary": "Original import thunk retained; synthetic scePthreadGetspecific fixture returns worker seed index1. OS implementation not tested.",
+    "limits": [
+      "Synthetic non-null previous state and active gates; direct worker caller captured with null previous, so real reachability remains unresolved.",
+      "Ports2/3/10, three weight profiles, three seeds and shuffle seeds, selected current ports/trigger bytes only.",
+      "External TLS implementation and full game integration unverified."
+    ],
+    "runtime_game_verified": false,
+    "new_names": 0
   }
 }
