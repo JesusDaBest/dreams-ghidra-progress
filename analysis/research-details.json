@@ -6453,5 +6453,22 @@
       "Fontmetrics/shaping/layout/rendering notexecuted."
     ],
     "project_modified": false
+  },
+  "text_token_reader_capacity_check": {
+    "calls": 1920,
+    "successes": 1712,
+    "capacity_failures": 208,
+    "original_reader_instructions": 211,
+    "method": "Original reader,original virtual acceptance callbacks anddecoder/control;12 validplainforms,2predicates,capacities1..20,4alignments.Independent prefix/UTF8/capacity/commit oracle;hash classification usesoriginaltable;selected committed direction/emoji state observations modeled after probes,not independent decoder verification.",
+    "findings": [
+      "Success commits accepted prefix,cursor andparserstate,setsoutputlength andterminator;rejectedunit remainsunconsumed.",
+      "Capacity failure returnsfalse without committing length/cursor/parserstate;alreadywritten prefix remains without newlywritten terminator.",
+      "Name callback acceptsASCIIletters,digits,hyphen,underscore;hash callback excludeshash andtable-definedclasses."
+    ],
+    "limits": [
+      "Capacityzero,malformedUTF8,formatting/internalstreams andnullpredicate failure unexecuted.",
+      "No complete token dispatcher or game rendering verification."
+    ],
+    "project_modified": false
   }
 }
