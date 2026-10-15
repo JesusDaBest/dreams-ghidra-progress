@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 287,
+    "done": 288,
     "todo": 1475,
-    "total": 1762,
-    "behavior_or_helpers_reviewed": 222,
+    "total": 1763,
+    "behavior_or_helpers_reviewed": 223,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -12205,12 +12205,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 5,
+        "done": 6,
         "todo": 311,
-        "total": 316,
-        "behavior_or_helpers_reviewed": 2,
+        "total": 317,
+        "behavior_or_helpers_reviewed": 3,
         "properties_or_types_reviewed": 3,
-        "runtime_functions_identified": 107,
+        "runtime_functions_identified": 108,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12219,6 +12219,7 @@
           "RegisterEditOpFieldOffset",
           "RegisterRecordModeFieldOffset",
           "RegisterNodeCustomIconFieldOffset",
+          "TryDecodeEmojiSkinToneSuffix",
           "DecodeTextUtf8UnitWithEscapes"
         ],
         "todo_names": [
@@ -12539,6 +12540,7 @@
           "140cdfdb0",
           "140cf47a0",
           "140d71a90",
+          "141499f00",
           "1414ada10"
         ],
         "todo_addresses": [
@@ -14218,16 +14220,17 @@
           {
             "name": "interface/text",
             "label": "Text & fonts",
-            "done": 1,
+            "done": 2,
             "todo": 54,
-            "total": 55,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 56,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 14,
+            "runtime_functions_identified": 15,
             "property_type_functions_identified": 41,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "TryDecodeEmojiSkinToneSuffix",
               "DecodeTextUtf8UnitWithEscapes"
             ],
             "todo_names": [
@@ -14287,6 +14290,7 @@
               "0x1415c0430"
             ],
             "done_addresses": [
+              "141499f00",
               "1414ada10"
             ],
             "todo_addresses": [
@@ -15103,6 +15107,57 @@
                 ]
               },
               {
+                "name": "interface/text/text-decoding",
+                "label": "Text decoding",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "TryDecodeEmojiSkinToneSuffix",
+                  "DecodeTextUtf8UnitWithEscapes"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141499f00",
+                  "1414ada10"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/text/text-decoding/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "TryDecodeEmojiSkinToneSuffix",
+                      "DecodeTextUtf8UnitWithEscapes"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141499f00",
+                      "1414ada10"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "interface/text/texteditmessage",
                 "label": "Text Edit Message",
                 "done": 0,
@@ -15289,53 +15344,6 @@
                     "todo_addresses": [
                       "140d2de80"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "interface/text/text-decoding",
-                "label": "Text decoding",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "DecodeTextUtf8UnitWithEscapes"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1414ada10"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "interface/text/text-decoding/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "DecodeTextUtf8UnitWithEscapes"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1414ada10"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -41531,5 +41539,5 @@
       }
     ]
   },
-  "unmapped": 7818
+  "unmapped": 7817
 }

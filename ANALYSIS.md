@@ -2464,3 +2464,13 @@ The linked archived debug-text vertex shader directly reads 16-byte packed recor
 Native resource-path hashing also matches 94 vertex-path candidates to local archived shaders. All have zero fetch-input count in the inspected layout; individual caller links remain leads except the directly traced examples. Construction checks cover 1,504 resource/alignment cases, not in-game rendering.
 
 Full cold backup, isolated trial, promotion and independent reopening verify the new name/signature, original instructions and archives. Totals: 329 checked names (299 renames, 29 created functions and one retained-name review), 1,762 mapped and 7,818 unmapped among 9,580 discovered functions. No whole-game completion percentage is inferred.
+
+### Saved emoji skin-tone suffix decoder
+
+Applied TryDecodeEmojiSkinToneSuffix with a working Boolean return and tone-code output, base codepoint, cursor, end and variation-present output arguments. It checks the original 99-entry base-character table and recognizes U+1F3FB through U+1F3FF, directly or after U+FE0F. Success writes values 48 through 52 and consumes the suffix; failure preserves the caller outputs and cursor.
+
+7,416 original-native helper/decoder cases cover every eligible base, four noneligible values, all five modifiers, optional variation selector and missing/malformed/truncated suffixes at four alignments. Exact values, guards, source and canary match without modeled callees. This executable-specific table does not establish current Unicode support, glyph availability or correct visible emoji rendering.
+
+A separate connected check confirms that repeated calls to the complete base parser preserve the lower decoder behavior: backslash-n followed by Z yields linefeed, n and Z. Its effect in the final text wrapper and visible rendering remains unresolved.
+
+Full cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 330 checked names (300 renames, 29 created functions and one retained-name review), 1,763 mapped and 7,817 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
