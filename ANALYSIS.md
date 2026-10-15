@@ -1996,3 +1996,11 @@ The body path also executes the original flag helper and expands bounds by a sto
 Defined CalculateSculptBoundsAndWakeBodiesJob with its complete1732-byte body and opaque job-context pointer input. The original job label, native dispatcher and4128 scoped worker cases support its bound-calculation, flag, notification and wake-state roles. Cold backup, isolated trial, promotion and independent reopening verify the saved definition, unchanged existing functions/instructions and original archives.
 
 Recorded under physics simulation because it writes body wake-state flags and prepares sculpt bounds for spatial-tree construction. XYZ math is tolerance-checked; fourth SIMD lanes, body-vector meaning/units, nonfinite/unnormalized inputs, concurrency and actual gameplay wake effects remain unresolved. Totals:286 checked names among9,577 discovered functions;1,727 mapped and7,850 unmapped. No whole-subsystem completion claim.
+
+### Saved spatial-tree query helper names
+
+Applied CollectBvhLeavesIntersectingSegment and CollectBvhLeavesOverlappingBounds after reviewing all154 original instructions and running4,200 controlled native cases. Both traverse the sculpt bounding-volume tree, filter node flags and return a bounded list of leaf indices. Callers convert these indices to object identifiers. The segment helper checks the interval from0 to1; the overlap helper compares XYZ bounds and masks the fourth lane.
+
+Tests check exact traversal order, output pointers, zero/small/full capacities, flag masks, untouched inputs and guards, plus two empty-root cases. They use finite synthetic trees and nonzero directions. The segment expansion constant was captured from the original executable file; runtime initialization remains unresolved. Exact SIMD signatures and complete caller behavior remain open, so existing signatures were retained. Backup, isolated trial and independent reopening verify the names and unchanged original archives.
+
+Totals:288 checked descriptive names among9,577 discovered functions;1,729 mapped and7,848 unmapped. This is helper-level evidence, not a whole-game completion percentage or real-game validation.

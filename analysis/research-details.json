@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 286,
+    "checked_and_applied_names": 288,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 286,
+    "verified_names": 288,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "260 existing-function renames and26 created functions verified after independent reopening.",
+    "scope": "262 existing-function renames and26 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4175,6 +4175,23 @@
       "XYZ envelopes checked with explicit tolerance; output SIMD fourth lanes not independently modeled.",
       "Selected finite resource/object/body fixtures; nonfinite/unnormalized inputs and complete large state allocations unverified.",
       "Body-vector meaning/units, concurrent scheduling and real game wake effects unresolved."
+    ],
+    "runtime_game_verified": false
+  },
+  "spatial_tree_query_helpers_checkpoint": {
+    "names": [
+      "CollectBvhLeavesIntersectingSegment",
+      "CollectBvhLeavesOverlappingBounds"
+    ],
+    "original_instruction_spans_checked": 154,
+    "controlled_native_cases": 4200,
+    "sentinel_root_cases": 2,
+    "limits": [
+      "Finite bounds and nonzero power-of-two direction components only; NaNs/infinities/zero directions not yet tested.",
+      "Constant expansion captured from original executable file, not proven runtime initialization state.",
+      "Synthetic balanced trees; no real scene or caller callback execution.",
+      "Names are descriptive; existing signatures retained because exact SIMD argument types/storage remain unresolved.",
+      "Large caller routines and gameplay callbacks are not fully reviewed."
     ],
     "runtime_game_verified": false
   }

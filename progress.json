@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 245,
+    "done": 247,
     "todo": 1482,
-    "total": 1727,
-    "behavior_or_helpers_reviewed": 182,
+    "total": 1729,
+    "behavior_or_helpers_reviewed": 184,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25141,12 +25141,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 124,
+        "done": 126,
         "todo": 105,
-        "total": 229,
-        "behavior_or_helpers_reviewed": 111,
+        "total": 231,
+        "behavior_or_helpers_reviewed": 113,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 146,
+        "runtime_functions_identified": 148,
         "property_type_functions_identified": 78,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25244,6 +25244,8 @@
           "LinkMortonBvhNodesJob",
           "PropagateMortonBvhBoundsJob",
           "BuildMortonBvhForBounds",
+          "CollectBvhLeavesIntersectingSegment",
+          "CollectBvhLeavesOverlappingBounds",
           "ReadReflectedChunkSpans",
           "SkipReflectedChunkBytes",
           "ForwardReflectedChunkSkip",
@@ -25477,6 +25479,8 @@
           "1414f5cf0",
           "1414f5fa0",
           "1414f60f0",
+          "1414f6370",
+          "1414f64b0",
           "1415fe600",
           "1415fe7a0",
           "1415fe7f0",
@@ -26645,12 +26649,12 @@
           {
             "name": "shared/helpers",
             "label": "Shared property helpers",
-            "done": 15,
+            "done": 17,
             "todo": 4,
-            "total": 19,
-            "behavior_or_helpers_reviewed": 8,
+            "total": 21,
+            "behavior_or_helpers_reviewed": 10,
             "properties_or_types_reviewed": 7,
-            "runtime_functions_identified": 7,
+            "runtime_functions_identified": 9,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 4,
             "whole_feature_completion": null,
@@ -26669,7 +26673,9 @@
               "InitializeMortonBvhLeavesJob",
               "LinkMortonBvhNodesJob",
               "PropagateMortonBvhBoundsJob",
-              "BuildMortonBvhForBounds"
+              "BuildMortonBvhForBounds",
+              "CollectBvhLeavesIntersectingSegment",
+              "CollectBvhLeavesOverlappingBounds"
             ],
             "todo_names": [
               "0x14048b5e0",
@@ -26692,7 +26698,9 @@
               "1414f5c30",
               "1414f5cf0",
               "1414f5fa0",
-              "1414f60f0"
+              "1414f60f0",
+              "1414f6370",
+              "1414f64b0"
             ],
             "todo_addresses": [
               "14048b5e0",
@@ -26747,12 +26755,12 @@
               {
                 "name": "shared/helpers/spatial-trees",
                 "label": "Spatial trees",
-                "done": 6,
+                "done": 8,
                 "todo": 0,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 6,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 8,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
+                "runtime_functions_identified": 8,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -26762,7 +26770,9 @@
                   "InitializeMortonBvhLeavesJob",
                   "LinkMortonBvhNodesJob",
                   "PropagateMortonBvhBoundsJob",
-                  "BuildMortonBvhForBounds"
+                  "BuildMortonBvhForBounds",
+                  "CollectBvhLeavesIntersectingSegment",
+                  "CollectBvhLeavesOverlappingBounds"
                 ],
                 "todo_names": [],
                 "done_addresses": [
@@ -26771,7 +26781,9 @@
                   "1414f5c30",
                   "1414f5cf0",
                   "1414f5fa0",
-                  "1414f60f0"
+                  "1414f60f0",
+                  "1414f6370",
+                  "1414f64b0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -41128,5 +41140,5 @@
       }
     ]
   },
-  "unmapped": 7850
+  "unmapped": 7848
 }

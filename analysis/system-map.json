@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1727,
-  "unmapped_total": 7850,
+  "mapped_total": 1729,
+  "unmapped_total": 7848,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44289,6 +44289,44 @@
           "kind": "verified_semantic_review",
           "name": "CalculateSculptBoundsAndWakeBodiesJob",
           "support": "Original job label/dispatcher, complete body, scoped tests and saved-project verification."
+        }
+      ]
+    },
+    "1414f6370": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "spatial-trees"
+      ],
+      "component_basis": "Complete BVH traversal helpers and sculpt-tree query consumers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original recursive instructions and scoped hardware query tests.",
+      "code_sha256": "7323f3b23cae1307464ba4a18cf673d7bb61cc46042a1752caa4ab0344711b2d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CollectBvhLeavesIntersectingSegment",
+          "support": "Complete body, caller leaf mapping, 2100 scoped native cases and saved-name verification."
+        }
+      ]
+    },
+    "1414f64b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "spatial-trees"
+      ],
+      "component_basis": "Complete BVH traversal helpers and sculpt-tree query consumers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original recursive instructions and scoped hardware query tests.",
+      "code_sha256": "7436d03b67982e9f999066ae46a1d66ef54fa73696f006c0523a3ca3c927b6ba",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CollectBvhLeavesOverlappingBounds",
+          "support": "Complete body, caller leaf mapping, 2100 scoped native cases and saved-name verification."
         }
       ]
     }

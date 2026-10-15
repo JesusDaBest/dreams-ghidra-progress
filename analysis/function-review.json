@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "260 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "262 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9135,
-    "other_names": 442,
-    "verification": "complete_inventory_matches_baseline_plus_260_renames_and_26_created_functions"
+    "default_fun_names": 9133,
+    "other_names": 444,
+    "verification": "complete_inventory_matches_baseline_plus_262_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5946,6 +5946,54 @@
         "Body-vector meaning/units, concurrent scheduling and real game wake effects unresolved."
       ],
       "created_function": true
+    },
+    {
+      "address": "1414f6370",
+      "original_name": "FUN_1414f6370",
+      "applied_name": "CollectBvhLeavesIntersectingSegment",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV CollectBvhLeavesIntersectingSegment(void)",
+      "evidence": [
+        "Complete 84-instruction body matched original executable bytes.",
+        "2,100 original-instruction ray query cases verify exact leaf order, output pointer, flag masks, output limits and input/guard preservation.",
+        "Caller maps leaf indices through the sculpt tree identifier permutation.",
+        "Cold backup, isolated naming trial, promotion and independent reopening verify only the two expected functions changed."
+      ],
+      "caveats": [
+        "Finite bounds and nonzero power-of-two direction components only; NaNs/infinities/zero directions not yet tested.",
+        "Constant expansion captured from original executable file, not proven runtime initialization state.",
+        "Synthetic balanced trees; no real scene or caller callback execution.",
+        "Names are descriptive; existing signatures retained because exact SIMD argument types/storage remain unresolved.",
+        "Large caller routines and gameplay callbacks are not fully reviewed."
+      ]
+    },
+    {
+      "address": "1414f64b0",
+      "original_name": "FUN_1414f64b0",
+      "applied_name": "CollectBvhLeavesOverlappingBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV CollectBvhLeavesOverlappingBounds(void)",
+      "evidence": [
+        "Complete 70-instruction body matched original executable bytes.",
+        "2,100 original-instruction overlap query cases verify exact leaf order, output pointer, flag masks, output limits and input/guard preservation.",
+        "Caller maps leaf indices through the sculpt tree identifier permutation.",
+        "Cold backup, isolated naming trial, promotion and independent reopening verify only the two expected functions changed."
+      ],
+      "caveats": [
+        "Finite bounds and nonzero power-of-two direction components only; NaNs/infinities/zero directions not yet tested.",
+        "Constant expansion captured from original executable file, not proven runtime initialization state.",
+        "Synthetic balanced trees; no real scene or caller callback execution.",
+        "Names are descriptive; existing signatures retained because exact SIMD argument types/storage remain unresolved.",
+        "Large caller routines and gameplay callbacks are not fully reviewed."
+      ]
     }
   ],
   "deferred": [
