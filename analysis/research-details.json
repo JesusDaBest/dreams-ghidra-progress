@@ -5185,5 +5185,23 @@
     ],
     "full_function_reviewed": false,
     "new_names_checked": 0
+  },
+  "sculpt_particle_coefficient_fanout_checkpoint": {
+    "status": "connected_packing_and_fanout_windows_verified",
+    "passed_native_cases": 480,
+    "particle_entries_checked_per_array": 17472,
+    "original_packing_instructions": 26,
+    "original_fanout_instructions": 29,
+    "findings": [
+      "The IgnoreGravity-sensitive packed word is copied to every particle in the object range; a second parallel array is zeroed and two others receive a separate packed word.",
+      "A caller independently prepares a four-lane gravity parameter containing XYZ direction times strength and strength in lane four."
+    ],
+    "limits": [
+      "Generated connection excludes geometry, mass computation and range allocation.",
+      "Runtime friction coefficients and array bindings are explicit fixture inputs.",
+      "Buffer transfer, solver interpretation and complete containing functions unverified."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
   }
 }
