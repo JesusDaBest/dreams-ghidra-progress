@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 284,
+    "checked_and_applied_names": 285,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 284,
+    "verified_names": 285,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "259 existing-function renames and25 created functions verified after independent reopening.",
+    "scope": "260 existing-function renames and25 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4078,6 +4078,34 @@
       "Flag semantic labels and parent worker wakeup behavior not established by these bit tests.",
       "No running-game or completion claim."
     ],
+    "runtime_game_verified": false
+  },
+  "object_player_filter_checkpoint": {
+    "name": "PassesObjectPlayerMaskAndParentModeFilter",
+    "passed": 7104,
+    "path_cases": {
+      "cached_mode_one": 576,
+      "cached_other_modes": 1728,
+      "scan": 2304,
+      "no_parent": 1152,
+      "direct_mask": 126,
+      "early_reject": 1218
+    },
+    "original_native_instructions": 94,
+    "method": "Original filter on hardware with explicit valid object/player/cache/record fixtures. Exact AL result and full object/player/record tables plus cached map checked unchanged.",
+    "findings": [
+      "Reference index0, null player, disabled player and player status13 reject immediately.",
+      "Object mode0 accepts when OR of object mask bytes24/25 has no selected player bit.",
+      "Mode1 uses high7 cached index bits without a cached record-mode comparison; other nonzero modes use low7 bits and compare record mode.",
+      "Out-of-cache-range parent lookup scans records1..count and compares full encoded parent and mode; cached lookup normalizes parent index.",
+      "Nonzero modes accept when no matching record is resolved."
+    ],
+    "limits": [
+      "Valid object references1/2 and three-record tables; invalid/null object lookups and out-of-range cached indices not executed.",
+      "Cache/record patterns exercise contracts; cache construction/invariants and gameplay mode meanings unresolved.",
+      "Selected state tables checked, not entire large state allocation; no running-game claim."
+    ],
+    "project_modified": false,
     "runtime_game_verified": false
   }
 }

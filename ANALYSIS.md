@@ -1972,3 +1972,9 @@ The tests cover per-object bitset mask4, player-filter contribution16, category-
 Applied BuildSculptBoundsFlags with opaque Game/current-state/sculpt pointers, signed body index and32-bit flag return.93 original instructions and57,600 scoped hardware cases support its role. Cold backup, isolated trial, promotion and independent reopening verify the name/signature, unchanged original instructions and archive hashes.
 
 Bit mechanics remain numeric where gameplay meaning is unresolved. Other player/parent filter modes, full large state allocations and parent worker wakeup behavior remain unverified. Totals:284 checked names among9,576 functions;1,725 mapped and7,851 unmapped. Current status snapshot is dated2026-10-15. No whole-subsystem completion credit.
+
+### Object/player mask and parent-mode filter
+
+Applied PassesObjectPlayerMaskAndParentModeFilter with encoded object reference, opaque player/state pointers, player index and boolean AL return.7104 original-instruction cases cover direct masks, early rejection, cached high/low record indices and fallback scans. Mode1 uses high7 cached bits; other nonzero modes use low7 bits with a record-mode check. Scans compare the full encoded parent, while cached lookup normalizes its index. Nonzero modes accept when no record resolves.
+
+Full object/player/record tables and cached map remain unchanged. Backed-up trial, promotion and independent reopening verify the saved signature and original bytes/archives. Gameplay mode meanings, cache construction/invariants and invalid/null object lookups remain unresolved. Totals:285 checked names among9,576 functions;1,726 mapped and7,850 unmapped. No whole-subsystem completion credit.
