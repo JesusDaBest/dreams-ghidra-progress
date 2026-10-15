@@ -1924,3 +1924,9 @@ Applied BeginFilteredPropertyVisit. It rejects suppressed visits and explicit na
 Corrected RegisterSigned32FieldOffset to descriptor/name/32-bit offset inputs and an opaque property-record pointer return.139 original instructions and the s32 type literal support the role and ABI. Backed-up trial, promotion and independent reopening verify the saved signature; names and original bytes/archives are unchanged.
 
 Corrected an unsupported earlier interpretation of unsigned metadata4 as a byte width, including the saved Ghidra comment and current public evidence. Signed registration has metadata8; the meaning of these numeric values remains unresolved. Original u32/s32 labels establish the field types. No new checked-name or completion credit;277 names remain checked.
+
+### Developer rendering material comparison
+
+Reviewed Alex Evans’ [SIGGRAPH2015 slides](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), including the specific Hilbert-order/point-cluster description on page112. The talk covers historical rendering experiments; it does not establish this executable’s implementation.
+
+Fresh inspection of a local candidate instead finds Morton/Leaves/Links/Bounds job labels,2n-1 records and a64-bit sorter.583 captured instruction spans match the original executable. A256-element job batch is insufficient evidence of the slides’ point-cluster storage. Four worker callbacks are identified for further tracing; their ownership and data layout remain unresolved. No source/binary function match, new name or completion credit is claimed.277 names remain checked.

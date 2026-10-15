@@ -3859,5 +3859,43 @@
       "Static allocation/type registration review; allocator, static guards and serializer callbacks remain unexecuted."
     ],
     "runtime_game_verified": false
+  },
+  "rendering_material_comparison_checkpoint": {
+    "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+    "source_title": "Learning from Failure \u2014 Alex Evans, SIGGRAPH2015",
+    "pages": 145,
+    "reviewed_pages": [
+      21,
+      67,
+      68,
+      69,
+      70,
+      72,
+      90,
+      104,
+      106,
+      109,
+      112,
+      139
+    ],
+    "source_lead": "Page112 describes Hilbert ordering at4-cubed voxel blocks and approximately256-point clusters; earlier brick techniques are explicitly discussed as historical experiments.",
+    "original_instruction_spans_checked": 583,
+    "binary_function_match_established": false,
+    "limits": [
+      "2015 material is not build-identical evidence.",
+      "Morton tree-building candidate does not establish Hilbert point-cluster algorithm.",
+      "Worker bodies, hierarchy ownership and exact data layout remain unresolved."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false,
+    "candidate_native_instruction_counts": [
+      157,
+      426
+    ],
+    "candidate_findings": [
+      "Uses original Morton/Leaves/Links/Bounds job labels.",
+      "Prepares2n-1 records with32-byte stride and sorts64-bit values.",
+      "Job batch count ceiling(n/256) is not evidence of256-point cluster storage."
+    ]
   }
 }
