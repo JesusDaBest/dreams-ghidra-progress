@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/43c1977092268279411cdb6b73874a701c397e36/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/423f36cf8c78aec8e3865a2d3e89fdc98344fc3d/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**275 of 9,572 functions named and checked.** A function is one piece of the game's code.
+**276 of 9,572 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/43c1977092268279411cdb6b73874a701c397e36/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/423f36cf8c78aec8e3865a2d3e89fdc98344fc3d/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
-| Gadgets & logic | 495 | 39/41 | 44/454 |
+| Gadgets & logic | 495 | 39/41 | 45/454 |
 | Physics & collision | 60 | 2/28 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
@@ -79,11 +79,11 @@ Every square is one actual function and has the same size. All function squares 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 495 functions identified; 39 behavior/helper reviews; 44 property/type reviews
-  - **Logic & signals** - 121 functions identified; 34 behavior/helper reviews; 19 property/type reviews
-    - **Gate** - 8 functions identified; 5 behavior/helper reviews; 2 property/type reviews
+- **Gadgets & logic** - 495 functions identified; 39 behavior/helper reviews; 45 property/type reviews
+  - **Logic & signals** - 121 functions identified; 34 behavior/helper reviews; 20 property/type reviews
+    - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Remapper** - 7 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
