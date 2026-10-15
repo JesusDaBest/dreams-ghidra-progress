@@ -4044,5 +4044,28 @@
     ],
     "project_modified": false,
     "runtime_game_verified": false
+  },
+  "sculpt_bounds_flags_checkpoint": {
+    "passed": 57600,
+    "profiles": {
+      "skip_player_query": 11520,
+      "query_mode_zero": 46080
+    },
+    "original_instruction_spans_checked": 187,
+    "method": "Original93-instruction bounds-flag helper and94-instruction player/object filter on hardware. Independent bit model checks full uint32 return; complete object/body table and selected Game/state windows unchanged.",
+    "findings": [
+      "Flag4 comes from selected per-object bitset; failed selected-player filter adds16.",
+      "Category byte209 contributes shifted bits; zero category yields sign-extended0x8000 pattern.",
+      "Bit8 requires ordered positive level4C; NaN leaves it clear in native comparison.",
+      "Object bytes46/45 and auxiliary state govern bits1/2; selected body metadata can request bit2 and extra object metadata contributes bit64."
+    ],
+    "limits": [
+      "Player/object filter only mode-byte2E zero, valid indices1/2 and enabled player records; other traversal modes unresolved.",
+      "Selected Game/state windows checked, not full large allocations.",
+      "Flag semantic labels and parent worker wakeup behavior not established by these bit tests.",
+      "No running-game or completion claim."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }

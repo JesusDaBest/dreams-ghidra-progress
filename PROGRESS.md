@@ -1662,3 +1662,9 @@ Cold backup, isolated ABI trial, promotion and independent reopening verify the 
 Applied SortUnsigned64Values with unsigned64 begin/end pointers and a64-bit partition budget. The complete426-instruction routine sorts ascending with unsigned comparisons, partition/insertion paths and a larger-range heap fallback.375 native array cases across sizes0..1024, high-bit/extreme/duplicate/random/reverse data and budgets-1/0/1/16/1024 match independent unsigned ordering and exact value multiplicity; both guards remain intact.
 
 Backed-up trial, promotion and independent reopening verify the name/signature, original instructions and unchanged archives. The original copy import resolves to an explicit overlap-safe model; malformed ranges, concurrent mutation and actual library copy remain unverified. Totals:283 checked names among9,576 functions;1,724 mapped and7,852 unmapped. No whole-subsystem completion claim.
+
+### Sculpt bounds flag construction
+
+The sculpt-bound/body-wakeup worker calls a helper that constructs the flags stored beside each bound.57,600 original-instruction cases compare its complete32-bit return with an independent bit model, including11,520 skipped-player-query and46,080 mode-zero player-query cases.187 instructions across the flag helper and filter match the original executable. Complete object/body-table bytes and selected context/state windows remain unchanged.
+
+The tests cover per-object bitset mask4, player-filter contribution16, category-byte shifting, ordered positive level mask8, object/auxiliary masks1/2 and selected body/extra metadata contributions. Native NaN comparison leaves mask8 clear. These establish numeric mechanics, not complete gameplay names for the bits. Other parent/filter modes, full large state allocations, the worker’s wakeup behavior and in-game execution remain unresolved. No new names or completion credit;283 names remain checked.
