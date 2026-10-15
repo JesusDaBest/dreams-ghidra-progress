@@ -6855,5 +6855,19 @@
       "This is fragment behavior,not full concurrent queue or in-game bug verification."
     ],
     "project_modified": false
+  },
+  "text_request_queue_pop_fragment_check": {
+    "calls": 192,
+    "original_fragment_instructions": 12,
+    "method": "Original nonempty dequeue fragment;bytes matched,relative branch preserved but empty case excluded;appended fixture return and bridge capture of output registers.Independent whole guarded queue/output;counts1/2/3/16/127/128,8payload profiles,4alignments.",
+    "findings": [
+      "Decrements count and selects previous final32-byte record:latest-in-first-out.",
+      "Removed slot remains unchanged;only count is decremented in this fragment."
+    ],
+    "limits": [
+      "Empty branch,locks,thread update,consumer processing and fullworker function notexecuted.",
+      "No concurrent queue or in-game scheduling guarantee."
+    ],
+    "project_modified": false
   }
 }

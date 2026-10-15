@@ -2816,3 +2816,13 @@ The deferred request path has a 128-entry queue of 32-byte key tuples. Its compa
 The fixture executes the original 36-instruction fragment with relative branches intact and an appended fixture return. It compares whole guarded queue and descriptor buffers across counts 0–8, 127 and 128, match positions and four alignments. It deliberately bypasses locks, thread-ID updates, caller status and routing. These results prove the bounded fragment behavior, not an in-game concurrency bug, the complete deferred queue or external request behavior.
 
 Kernel clock/thread execution, cache writers/invalidation, request routing and whole object resolution remain unresolved. No new checked names or whole-game completion credit is added; no external service requests were made.
+
+### Deferred request consumer order and processing handoff
+
+References to the deferred key array locate its consumer inside a larger worker routine. The consumer decrements the count and reads the previous final 32-byte record, so this path processes the newest queued tuple first. It does not clear the removed slot; the lowered count determines which records remain active.
+
+All 192 bounded native dequeue checks passed across counts 1, 2, 3, 16, 127 and 128, eight record payload profiles and four output alignments. The original twelve-instruction nonempty fragment runs with its bytes and relative branch intact, an appended fixture return and a bridge that captures its output registers. Whole guarded queue and output records match independent expectations. The empty branch is deliberately excluded.
+
+Surrounding original assembly releases the queue lock, rebuilds the same 32-byte tuple on the stack and calls the producer's request handler with processing mode 1. It then reacquires the lock before taking another key. This links deferred insertion to processing; the handoff and locks were read statically rather than executed in the fragment fixture. Request routing, timing, concurrent behavior and full worker execution remain unverified.
+
+The earlier duplicate-append result should be understood alongside this newest-first consumer. Neither fragment alone establishes an in-game defect or the intended coalescing policy. No new checked names or whole-game completion credit is added, and no external request was executed.
