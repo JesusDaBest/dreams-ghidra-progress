@@ -3050,3 +3050,11 @@ All 2,456 bounded checks passed across Latin/Hebrew counts 0–12 and selected b
 Another 40 checks cover selected percent forms after Hebrew: accepted string, numeric and named placeholder forms are skipped, while unknown percent-q contributes its literal q. These use original scanner, placeholder/key parsers and decoder/control dependencies. Input guards and canaries agree. A failed fixture transformation removed setup before native scanner execution; it was corrected, preserved locally and receives no passing credit.
 
 Arabic and other scripts, formatting/nested or malformed streams, complete placeholder grammar and game rendering remain unverified. Caller interpretation and saved naming are still pending, so no new checked-name or whole-game completion credit is added.
+
+### Saved reference-aware directional majority scanner
+
+Applied ChooseTextDirectionByVisibleMajority with two bounded text pointers and an unsigned-byte SysV return. The comment-cache caller compares AL with 3 and stores the result as its RTL flag at record offset 0x3A. This confirms that upper EAX count bits are not part of the direction result and supports correcting the earlier wide inferred return type.
+
+All 150 original instruction spans match. Evidence includes the complete scanner and 115-instruction caller, 2,456 majority/reference/locale checks and 40 selected placeholder checks. The saved comment records majority selection, ties, fallback only with no counted strong characters, skipped typed references and selected placeholder kinds. Arabic and other scripts, formatting or malformed streams and full placeholder grammar remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives. Totals: 397 checked names, 1,830 mapped and 7,750 unmapped among 9,580 discovered functions. No full rendering or whole-game completion is claimed.
