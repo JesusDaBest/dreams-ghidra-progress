@@ -6483,5 +6483,36 @@
       "Working descriptive name/types;not recovered source."
     ],
     "runtime_game_verified": false
+  },
+  "text_bracket_name_suppression_checks": {
+    "dispatcher": {
+      "calls": 336,
+      "method": "Original982-instruction dispatcher selected bracket branch,original211reader/namecallback/virtualcleanup/decoder/control.26 name-boundaryforms,4alignments,2priorflagstates;independent acceptance flag andwholeguardedcontext/cursor/state/output/input/canary.",
+      "findings": [
+        "Left-bracket token looks ahead for @ plus3..16 acceptedASCII nameunits followed byrightbracket.",
+        "Sets context flag114hex tovalidity,returnsfalse,leavescaller span/state/replacement unchanged.",
+        "Input beyond closing bracket doesnotpreventrecognition.",
+        "Following @ token sees flag1,clearsflag andreturnsfalse without consuminginput orreplacement;128 suppression calls."
+      ],
+      "limits": [
+        "Malformed/nested formatting,external substitution services and complete dispatcher unverified.",
+        "Synthetic context;no game runtime claim."
+      ],
+      "project_modified": false
+    },
+    "processor": {
+      "calls": 112,
+      "method": "Original440processor plus982dispatcher,211reader,namecallback/virtualcleanup,scanner/decoder/control/insertion/libc;validbracketednames lengths3..16,2stoplist modes,4alignments;exactwholeguardedoutput/context/input/state guards/canary.",
+      "findings": [
+        "Valid bracketed @name remains literal in output with surroundingtext.",
+        "One-shot context suppressionflag ends cleared afterprocessing."
+      ],
+      "limits": [
+        "Invalid brackets andordinary @replacement path unexecuted.",
+        "Parser state guardchecked butfullmutationnotindependentlymodeled.",
+        "No rendering/game runtime claim."
+      ],
+      "project_modified": false
+    }
   }
 }

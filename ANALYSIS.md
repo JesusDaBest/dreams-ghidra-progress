@@ -2978,3 +2978,11 @@ Alongside the 1,920 plain checks already reported, 192 formatted checks cover cl
 Only three known flat formatting tags are covered. Malformed or nested markup, internal streams, zero capacity and null-predicate failure remain unexecuted. Plain hash classification uses original tables, and selected direction/emoji state expectations came from probes rather than independent decoder verification.
 
 Cold backup, isolated trial, promotion and independent reopening verify the name/signature and unchanged archives. Totals: 394 checked names, 1,827 mapped and 7,753 unmapped among 9,580 discovered functions. Full game behavior and whole-game completion remain unproven.
+
+### Bracketed-name substitution suppression
+
+The original dispatcher's left-bracket branch looks ahead for @ followed by 3–16 accepted ASCII name characters and a right bracket. It records recognition in a context flag without consuming the caller's input or producing replacement text. The following @ dispatch clears that flag and returns without substitution. This provides a one-use suppression path for bracketed names; it does not establish the meaning or correctness of every other substitution form.
+
+A 336-call check includes 208 bracket-recognition cases and 128 following-@ suppression calls. These cover name lengths 0–19, delimiter and punctuation variants, four alignments and both prior flag states. Original reader, name predicate, virtual cleanup and decoder/control code execute. Whole guarded context, input span, parser state and replacement output remain as independently expected. The earlier standalone 208-case receipt overlaps this check and is not additional unique coverage.
+
+Another 112 checks execute the original text processor with the dispatcher and its dependencies: valid bracketed names of lengths 3–16 remain literal with surrounding text, in both scanner-list modes and four alignments. Exact whole output, context and input agree; parser-state guards and canaries remain intact. Parser-state mutations are not independently modeled in full. Invalid-bracket integration, ordinary @ replacement, malformed/nested markup, external substitutions and rendering remain unverified. No new checked-name or whole-game completion credit is added.
