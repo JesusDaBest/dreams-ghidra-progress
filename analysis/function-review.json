@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "281 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "282 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9114,
-    "other_names": 466,
-    "verification": "complete_inventory_matches_baseline_plus_281_renames_and_29_created_functions"
+    "default_fun_names": 9113,
+    "other_names": 467,
+    "verification": "complete_inventory_matches_baseline_plus_282_renames_and_29_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6676,6 +6676,30 @@
         "Parent cache construction, negative/malformed source refs and cycles untested.",
         "Fourth supplied argument is unused; working callback formal types/count do not recover original C++ declaration.",
         "Standalone callback plus static consumer linkage; full processor/GPU/game integration remains unverified."
+      ]
+    },
+    {
+      "address": "14094d430",
+      "original_name": "FUN_14094d430",
+      "applied_name": "TestSortedReferencePairRecordMatch",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TestSortedReferencePairRecordMatch(void * begin, void * end, uint first_reference, uint second_reference)",
+      "evidence": [
+        "Complete43-instruction original body matched SELF and saved project bytes.",
+        "6384 consistently encoded sorted-table native cases match independent signed-low22 tuple membership; table/frame/guards preserved.",
+        "20 original native probes confirm equal normalized first index with different upper bits may accept without checking second word.",
+        "17 original caller spans establish12-byte stride, two packed reference arguments, rawFFFFFFFF exclusion and AL result consumption.",
+        "Cold backup, isolated trial, main promotion and independent reopening verify name/working Boolean ABI and caller decompilation; original archives unchanged."
+      ],
+      "caveats": [
+        "Table producer/domain and ignored third word remain unresolved; no subsystem assignment claimed.",
+        "Mixed upper encodings are not guaranteed exact pair membership.",
+        "Malformed lengths, unsorted tables and complete caller/game runtime untested.",
+        "Working opaque pointers and uint references are machine contract, not recovered original C++ types."
       ]
     }
   ],

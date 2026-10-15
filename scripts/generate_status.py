@@ -596,6 +596,10 @@ def main(argv=None):
     args = parser.parse_args(argv)
     status = sanitize(read_json(args.status), args.inventory, args.cache_index)
     mapping = read_json(args.system_map)
+    if (mapping.get('inventory_total') != status['inventory_total']
+            or mapping.get('mapped_total') != len(mapping['assignments'])
+            or mapping.get('unmapped_total') != status['inventory_total'] - len(mapping['assignments'])):
+        raise ValueError('System-map inventory and mapped/unmapped totals do not match current status')
     # Compact rows keep the public inventory small and reviewable; the header is pretty printed.
     header = dict(status)
     rows = header.pop("rows")
