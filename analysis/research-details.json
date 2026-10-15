@@ -3487,5 +3487,42 @@
       "Cache invalidation, full grouping and actual game scheduling remain unverified."
     ],
     "runtime_game_verified": false
+  },
+  "gate_scope_group_checkpoint": {
+    "passed": 432,
+    "profiles": {
+      "same": 108,
+      "distinct": 108,
+      "mixed": 108,
+      "nested": 108
+    },
+    "sizes": [
+      1,
+      2,
+      3,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "method": "Original inline grouping instructions and original parent resolver; explicit stack/register scratch boundary adapter, valid acyclic cached parent trees and sorted-name Gate fixtures. Exact key/group arrays, unused tails, guards and complete object bytes checked.",
+    "limits": [
+      "Allocation, sorting and arbitration not composed in this fixture.",
+      "Cached non-container parent objects only; fallback traversal and glued/container combinations not covered here.",
+      "No in-game validation or completion credit."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false,
+    "original_instruction_spans_checked": 552,
+    "findings": [
+      "Sorted Gates are partitioned by equal raw Name identity at +0x140.",
+      "ScopeType zero obtains a parent scope reference; nonzero begins with zero scope key.",
+      "Nonzero matching scope keys copy an earlier Gate group index.",
+      "Zero scope keys traverse resolved parent and cached ancestor references, searching the whole same-name group except self; matching indices may belong to later entries.",
+      "Group-index array is consumed by the subsequent claimed-group arbitration loop."
+    ],
+    "model_correction": "Ancestor search scans the whole same-name group except self, including later entries; initial earlier-only interpretation failed and was corrected."
   }
 }
