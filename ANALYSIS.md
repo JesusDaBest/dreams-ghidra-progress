@@ -2692,3 +2692,13 @@ Native checks cover 44 direct/guard cases, 168 forward cases, 168 reverse cases 
 Both directions use the stack temporary through 4,096 bytes. The larger allocation/free branch was read but remains unexecuted. Chunk growth, placeholder parsing in the conversion integration, substitution and rendering remain unresolved.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 364 checked names (334 renames, 29 created functions and one retained-name review), 1,797 mapped and 7,783 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Saved keyed float-pair record storage
+
+Applied StoreTextFloatPairRecords with mode, builder context, key, interleaved float-pair source and count arguments. The original caller stores these records alongside text. The helper filters keys, compares existing records, then stores a key/index/count record and copies eight bytes per pair into chunks of 256 entries. The application meaning of the pairs remains unresolved.
+
+3,168 native storage/guard cases cover counts through 256, initial chunk usage, supported/unsupported modes, record capacities and four alignments. Another 1,920 cases cover existing records and key filters using an independent floating-point equality expectation. Positive and negative zero compare equal; identical quiet NaN bits do not. Whole guarded context, records, chunks, source and existing tables agree. Original memcpy is used.
+
+Chunk growth and its allocator remain unexecuted. Malformed-table safety and floating-point exception flags are not claimed verified. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives.
+
+Totals: 365 checked names (335 renames, 29 created functions and one retained-name review), 1,798 mapped and 7,782 unmapped among 9,580 discovered functions. No whole-game completion is inferred.

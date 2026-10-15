@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "334 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "335 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9061,
-    "other_names": 519,
-    "verification": "complete_inventory_matches_baseline_plus_334_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9060,
+    "other_names": 520,
+    "verification": "complete_inventory_matches_baseline_plus_335_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7968,6 +7968,31 @@
         "Heaptemporary above4096bytes/chunkgrowth notexecuted.",
         "Placeholderparsing disabled inconversionintegration.",
         "Broadercallerclasslayout,substitution/rendering unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414c02b0",
+      "original_name": "FUN_1414c02b0",
+      "applied_name": "StoreTextFloatPairRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV StoreTextFloatPairRecords(uint representation_mode, void * builder_context, ulonglong record_key, float * interleaved_float_pairs, uint pair_count)",
+      "evidence": [
+        "Complete153instruction original helper andtextrecord callerlinkage reviewed;nativeSELF/savedbytes agree.",
+        "3168storage/guardcases acrosscounts0..256,chunkuse/modes/capacities/alignments withoriginalmemcpy;exactwholeguardedcontext/record/chunk/input/canary.",
+        "1920existingrecord/whitelistcases withindependentIEEEequalityoracle;positive/negativezero equal,identicalquietNaNunequal;exacttables/source/storageguards.",
+        "16bytekey/index/countrecords reference256-entrychunks of8bytefloatpairs.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify name/signature andunchangedarchives."
+      ],
+      "caveats": [
+        "Floatpairmeaning beyondkeyedstorage unresolved.",
+        "Chunkgrowth originalallocator branch notexecuted.",
+        "Selectedvalidexternalrecords;notmalformedtable safetyproof.",
+        "Floatcomparisonexceptionflags notclaimedunchanged.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }
