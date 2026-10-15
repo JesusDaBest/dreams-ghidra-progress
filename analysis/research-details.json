@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 258,
+    "checked_and_applied_names": 260,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 258,
+    "verified_names": 260,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "239 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "241 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3150,6 +3150,39 @@
       "No general mixed-type numeric ordering, type-conversion or game scheduling claim."
     ],
     "new_names": 0,
+    "runtime_game_verified": false
+  },
+  "inverter_output_checkpoint": {
+    "name": "ReadInverterOutputVariant",
+    "controlled_native_cases": 44,
+    "findings": [
+      "Selected numeric inputs use signed clamp[-1,1] then sign-selected endpoint minus input; zero produces1 and both extremes produce0.",
+      "Selected NaN inputs choose clamp fallback and produce0.",
+      "Registered identifier-like tags complement raw nonzero64-bit payload; payload-1 is treated nonzero here.",
+      "Only result float, alpha1 and Signal tag5 are written; other output bytes remain untouched."
+    ],
+    "limits": [
+      "Selected input types and controlled native fixtures; other variant reductions remain untested.",
+      "Descriptive output helper name, not whole-gadget completion.",
+      "No running-game validation or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "xor_output_checkpoint": {
+    "name": "ReadXorOutputVariant",
+    "controlled_native_cases": 130520,
+    "findings": [
+      "Zero active inputs leave output untouched.",
+      "One active input forwards its first37 bytes.",
+      "Second active input forces Signal0 and stops; three active inputs do not restore a true result.",
+      "Identifier tags test raw nonzero64 payload including all-ones; Number/Signal use ordered scalar>0.",
+      "Record ordering does not change port ordering."
+    ],
+    "limits": [
+      "Selected input types and controlled native fixtures; other variant reductions remain untested.",
+      "Descriptive output helper name, not whole-gadget completion.",
+      "No running-game validation or audited-byte credit."
+    ],
     "runtime_game_verified": false
   }
 }

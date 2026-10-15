@@ -1743,3 +1743,10 @@ Original cache and initializer instructions, constant and import thunks execute 
 220 mixed Timestamp cases show type priority: incoming Timestamp replaces sampled non-Timestamp extrema, while existing Timestamp extrema survive non-Timestamp inputs. Both Timestamp values use signed64 comparisons. Ring sampling still records incoming input/output values.
 
 Non-Timestamp payloads in mixed-tag cases are synthetic opaque patterns, not assumed valid numeric values. Broader mixed-type/shape behavior, consumers and game scheduling remain unverified. No names or completion metrics added.
+### Inverter and XOR output helpers
+
+Applied and independently reopened ReadInverterOutputVariant and ReadXorOutputVariant. Original kind-table entries and property branches bind both helpers to their gadgets. Inverter passed44 selected numeric and identifier cases. Its numeric path clamps to[-1,1] then subtracts from a sign-selected endpoint; zero maps to1 and both endpoints to0.
+
+XOR passed130,520 uniform and mixed selected-input cases. Exactly one active input forwards its original value; a second active input writes zero and stops. No active input leaves the caller-provided output untouched. This is exactly-one behavior, not parity XOR. Identifier-like tags use raw nonzero64-bit payloads, including all-ones; Number/Signal inputs use ordered scalar>0. Full output bytes, padding, input objects and guards were compared.
+
+These tests execute original instructions in controlled local fixtures. Other variant reductions and running-game behavior remain unverified. Totals:260 checked names;1,703 mapped functions;7,867 unmapped. This adds no whole-game completion or audited-byte credit.

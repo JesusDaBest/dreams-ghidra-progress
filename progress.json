@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 217,
+    "done": 219,
     "todo": 1484,
-    "total": 1701,
-    "behavior_or_helpers_reviewed": 158,
+    "total": 1703,
+    "behavior_or_helpers_reviewed": 160,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 68,
+        "done": 70,
         "todo": 413,
-        "total": 481,
-        "behavior_or_helpers_reviewed": 26,
+        "total": 483,
+        "behavior_or_helpers_reviewed": 28,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 28,
+        "runtime_functions_identified": 30,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -50,6 +50,8 @@
           "UpdateRemapperOutputFromInput",
           "EvaluateCalculatorInputs",
           "EvaluateWideCalculatorInputs",
+          "ReadXorOutputVariant",
+          "ReadInverterOutputVariant",
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
           "UpdateVariableGadgetValues",
@@ -535,6 +537,8 @@
           "1408cdf80",
           "1408ce4f0",
           "1408ce5b0",
+          "1408ce9f0",
+          "1408ceb90",
           "1408cecf0",
           "1408cf9d0",
           "1408e4bb0",
@@ -997,12 +1001,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 38,
+            "done": 40,
             "todo": 68,
-            "total": 106,
-            "behavior_or_helpers_reviewed": 21,
+            "total": 108,
+            "behavior_or_helpers_reviewed": 23,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 21,
+            "runtime_functions_identified": 23,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1027,6 +1031,8 @@
               "UpdateRemapperOutputFromInput",
               "EvaluateCalculatorInputs",
               "EvaluateWideCalculatorInputs",
+              "ReadXorOutputVariant",
+              "ReadInverterOutputVariant",
               "ReadSplitterOutputVariant",
               "BuildCombinerOutputVariant",
               "AppendRemapperSignalHistory",
@@ -1137,6 +1143,8 @@
               "1408cdf80",
               "1408ce4f0",
               "1408ce5b0",
+              "1408ce9f0",
+              "1408ceb90",
               "1408cecf0",
               "1408cf9d0",
               "140907eb0",
@@ -2452,6 +2460,84 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/inverter",
+                "label": "Inverter",
+                "done": 1,
+                "todo": 2,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ReadInverterOutputVariant"
+                ],
+                "todo_names": [
+                  "0x1404bd0c0",
+                  "0x140d559d0"
+                ],
+                "done_addresses": [
+                  "1408ceb90"
+                ],
+                "todo_addresses": [
+                  "1404bd0c0",
+                  "140d559d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/inverter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404bd0c0",
+                      "0x140d559d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404bd0c0",
+                      "140d559d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/inverter/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReadInverterOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ceb90"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/signalgenerator",
                 "label": "Signal Generator",
                 "done": 3,
@@ -2881,57 +2967,6 @@
                 ]
               },
               {
-                "name": "gadgets-logic/logic/inverter",
-                "label": "Inverter",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404bd0c0",
-                  "0x140d559d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404bd0c0",
-                  "140d559d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/inverter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404bd0c0",
-                      "0x140d559d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404bd0c0",
-                      "140d559d0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
                 "name": "gadgets-logic/logic/microchip",
                 "label": "Microchip",
                 "done": 0,
@@ -3028,6 +3063,80 @@
                       "1404f2e20",
                       "140d59c70"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/xor",
+                "label": "Xor",
+                "done": 1,
+                "todo": 1,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ReadXorOutputVariant"
+                ],
+                "todo_names": [
+                  "0x1404c0bc0"
+                ],
+                "done_addresses": [
+                  "1408ce9f0"
+                ],
+                "todo_addresses": [
+                  "1404c0bc0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/xor/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c0bc0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c0bc0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/xor/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReadXorOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ce9f0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -3357,53 +3466,6 @@
                       "141218d80"
                     ],
                     "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/xor",
-                "label": "Xor",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404c0bc0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404c0bc0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/xor/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c0bc0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c0bc0"
-                    ],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -40753,5 +40815,5 @@
       }
     ]
   },
-  "unmapped": 7869
+  "unmapped": 7867
 }
