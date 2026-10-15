@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/95da50192c81abac60ecce6d75474e40217d21c2/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1735b544224dea5449dcd0f327596ddc304cd9d9/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**347 of 9,580 functions named and checked.** A function is one piece of the game's code.
+**350 of 9,580 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/95da50192c81abac60ecce6d75474e40217d21c2/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1735b544224dea5449dcd0f327596ddc304cd9d9/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,11 +70,11 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
 | Rendering & lighting | 274 | 4/248 | 0/26 |
-| Editor & interface | 334 | 20/125 | 3/207 |
+| Editor & interface | 337 | 23/128 | 3/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 247 | 126/161 | 15/81 |
 
-**1,780 of 9,580 discovered functions are mapped; 7,800 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,783 of 9,580 discovered functions are mapped; 7,797 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -457,7 +457,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 334 functions identified; 20 behavior/helper reviews; 3 property/type reviews
+- **Editor & interface** - 337 functions identified; 23 behavior/helper reviews; 3 property/type reviews
   - **UI drawing & interaction** - 101 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Interface primitives** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -493,9 +493,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Loading Screen** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Text & fonts** - 73 functions identified; 19 behavior/helper reviews; 0 property/type reviews
-    - **Text decoding** - 19 functions identified; 19 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 19 functions identified; 19 behavior/helper reviews; 0 property/type reviews
+  - **Text & fonts** - 76 functions identified; 22 behavior/helper reviews; 0 property/type reviews
+    - **Text decoding** - 22 functions identified; 22 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 22 functions identified; 22 behavior/helper reviews; 0 property/type reviews
     - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Language** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
