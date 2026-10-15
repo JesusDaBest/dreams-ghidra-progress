@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1827,
-  "unmapped_total": 7753,
+  "mapped_total": 1829,
+  "unmapped_total": 7751,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46388,6 +46388,48 @@
           "kind": "verified_semantic_review",
           "name": "TryReadAcceptedTextToken",
           "support": "Original reader and dispatcher callers,plain/formatted native checks and independently reopened signature."
+        }
+      ]
+    },
+    "140165300": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Typed text key parsing and shared hex decoding observed in slash substitution.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Typed key parsing helper implementation.",
+      "code_sha256": "ae2a536d2a4757253431dbbd92c514feb851193edc56b2a6788dc87347d06883",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryDecodeSevenBytesLowerHex",
+          "support": "Original helper bodies and slash caller,native key/hex checks andindependentlyreopened signatures;hex helper isshared."
+        }
+      ]
+    },
+    "1414b8e20": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Typed text key parsing and shared hex decoding observed in slash substitution.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Typed key parsing helper implementation.",
+      "code_sha256": "4468f5c16890bfb96149a7c2c0e6feb3740959912a28aea5f0a9a842e8f376b4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryParseTextTypedKey",
+          "support": "Original helper bodies and slash caller,native key/hex checks andindependentlyreopened signatures;hex helper isshared."
         }
       ]
     }

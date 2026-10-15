@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 394,
+    "checked_and_applied_names": 396,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 394,
+    "verified_names": 396,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "364 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "366 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -6623,5 +6623,21 @@
       "project_modified": false,
       "type_prefix_allowlist": "CDMOPTUVabcdeghijkmopqrstuvwxz"
     }
+  },
+  "text_slash_key_helper_saved_checkpoint": {
+    "saved_names": {
+      "140165300": "TryDecodeSevenBytesLowerHex",
+      "1414b8e20": "TryParseTextTypedKey"
+    },
+    "original_instructions": 583,
+    "hex_calls": 15360,
+    "parser_calls": 740,
+    "limits": [
+      "Hex decoder has19callers andisnotexclusive totext;mapping recordsitsobservedtextuse.",
+      "Parser digit-state expectation derivedfromprobe;not independentfull decoderstateverification.",
+      "Formatting,nonASCII,trailinginput and type-specificsubstitutions remain unverified.",
+      "Working descriptive names/types;not recovered source."
+    ],
+    "runtime_game_verified": false
   }
 }

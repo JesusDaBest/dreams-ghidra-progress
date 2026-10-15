@@ -3024,3 +3024,11 @@ The original seven-byte hex decoder passed 15,360 checks: 256 payload patterns p
 The enclosing 404-instruction parser passed 740 checks covering all 52 letter prefixes, three hex patterns, fourteen invalid-hex positions, fifteen truncated lengths and four alignments. Failure preserves the caller cursor and parser state. After collecting fifteen ASCII units it clears the output key before validating the prefix and hex; on truncation the output remains untouched. Success commits the parsed cursor and state. Packed-key, acceptance, cursor and guard expectations are independently calculated. One decoder-state byte for digits was corrected from observed probes, so these checks do not independently specify the complete decoder state.
 
 Formatting, nesting, non-ASCII units, trailing input, type-specific substitutions and rendering remain unverified. No new saved names or whole-game completion credit is added. All fixtures and raw code remain local.
+
+### Saved typed-key parsing helpers
+
+Applied TryDecodeSevenBytesLowerHex and TryParseTextTypedKey with reviewed Boolean SysV signatures. All 583 original instruction spans match. The hex helper takes a seven-byte output and fourteen readable input characters; the parser takes a 64-bit key output, cursor span and opaque parser state. Complete bodies and the slash dispatcher caller were read at assembly level. The hex helper has nineteen entry references and is shared beyond text; its subsystem mapping records observed text use rather than exclusivity.
+
+The saved comments preserve the independently tested behavior: lowercase-only hex, partial output on hex failure, thirty accepted type prefixes, packed 56-bit numeric value plus type byte, all-zero normalization and distinct output-versus-cursor effects on parser failure. Evidence includes 15,360 hex checks and 740 parser checks. The selected digit-state expectation came from a probe rather than an independent decoder specification; formatting, non-ASCII, trailing input and type-specific substitutions remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify both names/signatures, unchanged instructions and original archives. Totals: 396 checked names, 1,829 mapped and 7,751 unmapped among 9,580 discovered functions. No full dispatcher, rendering or whole-game completion is claimed.
