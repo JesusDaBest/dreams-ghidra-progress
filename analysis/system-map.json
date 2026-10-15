@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1708,
-  "unmapped_total": 7862,
+  "mapped_total": 1709,
+  "unmapped_total": 7861,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43909,6 +43909,26 @@
           "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
         }
       ]
+    },
+    "1408ecaa0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "signalinspector",
+        "runtime-implementation"
+      ],
+      "component_basis": "Registered field layout and worker kind0x4a call bind counter updater to SignalInspector.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "c3290911498155c4446b7c48055dbdd8787c4660cb75da8ce3d083ca3044efdf",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateSignalInspectorChangeCounters",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48808,6 +48828,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 224,
+    "done": 225,
     "todo": 1484,
-    "total": 1708,
-    "behavior_or_helpers_reviewed": 165,
+    "total": 1709,
+    "behavior_or_helpers_reviewed": 166,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 75,
+        "done": 76,
         "todo": 413,
-        "total": 488,
-        "behavior_or_helpers_reviewed": 33,
+        "total": 489,
+        "behavior_or_helpers_reviewed": 34,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 35,
+        "runtime_functions_identified": 36,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -57,6 +57,7 @@
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
           "UpdateVariableGadgetValues",
+          "UpdateSignalInspectorChangeCounters",
           "EvaluateSignalGeneratorPhase",
           "UpdateSignalGeneratorOutputAndRandomRanges",
           "ComputeTeleporterTransformWithOffset",
@@ -549,6 +550,7 @@
           "1408cecf0",
           "1408cf9d0",
           "1408e4bb0",
+          "1408ecaa0",
           "1408ed470",
           "1408ed6a0",
           "1408f1dc0",
@@ -1011,12 +1013,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 45,
+            "done": 46,
             "todo": 68,
-            "total": 113,
-            "behavior_or_helpers_reviewed": 28,
+            "total": 114,
+            "behavior_or_helpers_reviewed": 29,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 28,
+            "runtime_functions_identified": 29,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1047,6 +1049,7 @@
               "ReadInverterOutputVariant",
               "ReadSplitterOutputVariant",
               "BuildCombinerOutputVariant",
+              "UpdateSignalInspectorChangeCounters",
               "EvaluateSignalGeneratorPhase",
               "UpdateSignalGeneratorOutputAndRandomRanges",
               "AppendRemapperSignalHistory",
@@ -1164,6 +1167,7 @@
               "1408ceb90",
               "1408cecf0",
               "1408cf9d0",
+              "1408ecaa0",
               "1408ed470",
               "1408ed6a0",
               "140907eb0",
@@ -2124,6 +2128,86 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/signalinspector",
+                "label": "Signal Inspector",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitSignalInspectorProperties",
+                  "UpdateSignalInspectorChangeCounters",
+                  "RegisterSignalInspectorTypeDescriptor",
+                  "RegisterSignalInspectorFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404d9c10",
+                  "1408ecaa0",
+                  "140d57b20",
+                  "140d6e2b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/signalinspector/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitSignalInspectorProperties",
+                      "RegisterSignalInspectorTypeDescriptor",
+                      "RegisterSignalInspectorFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404d9c10",
+                      "140d57b20",
+                      "140d6e2b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/signalinspector/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateSignalInspectorChangeCounters"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ecaa0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/and",
                 "label": "And",
                 "done": 2,
@@ -2712,61 +2796,6 @@
                     "todo_names": [],
                     "done_addresses": [
                       "1408ceb90"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/signalinspector",
-                "label": "Signal Inspector",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitSignalInspectorProperties",
-                  "RegisterSignalInspectorTypeDescriptor",
-                  "RegisterSignalInspectorFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404d9c10",
-                  "140d57b20",
-                  "140d6e2b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/signalinspector/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitSignalInspectorProperties",
-                      "RegisterSignalInspectorTypeDescriptor",
-                      "RegisterSignalInspectorFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404d9c10",
-                      "140d57b20",
-                      "140d6e2b0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -40922,5 +40951,5 @@
       }
     ]
   },
-  "unmapped": 7862
+  "unmapped": 7861
 }

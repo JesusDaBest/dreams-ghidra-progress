@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "246 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "247 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9149,
-    "other_names": 421,
-    "verification": "complete_inventory_matches_baseline_plus_246_renames_and_19_created_functions"
+    "default_fun_names": 9148,
+    "other_names": 422,
+    "verification": "complete_inventory_matches_baseline_plus_247_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5458,6 +5458,29 @@
         "Decompiler still represents opaque upper SIMD-register bytes; the verified scalar lane and16-byte magnitude argument are explicit.",
         "Zero/negative/NaN durations and real-game integration remain unverified.",
         "No whole-subsystem completion or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408ecaa0",
+      "original_name": "FUN_1408ecaa0",
+      "applied_name": "UpdateSignalInspectorChangeCounters",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateSignalInspectorChangeCounters(void * previous_inspector, void * current_inspector)",
+      "evidence": [
+        "Original registered InputA, Power and change-counter fields and worker kind0x4a call verified.",
+        "Complete40-instruction helper, scalar reducer and native comparisons inspected.",
+        "34800 original-instruction hardware cases compare exact output, input and guard bytes.",
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "Synthetic nonnull previous/current objects; captured main worker sets previous RDI0, so real-game reachability unresolved.",
+        "Only selected Number/Signal reductions, Power bits and byte counter states tested.",
+        "Original field names identify counters; actual display interpretation and scheduling unverified.",
+        "No whole-gadget completion or audited-byte credit."
       ]
     }
   ],
