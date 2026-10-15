@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1819,
-  "unmapped_total": 7761,
+  "mapped_total": 1821,
+  "unmapped_total": 7759,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46220,6 +46220,48 @@
           "kind": "verified_semantic_review",
           "name": "TryScanTextPrefixToStopUnit",
           "support": "Original scanner and caller,native prefix/formatting checks,independently reopened nine-argument SysV signature."
+        }
+      ]
+    },
+    "1401789a0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reusable string storage and insertion used by the text processor.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "String storage and insertion implementation.",
+      "code_sha256": "03e2bcc47d8ccd4f2675d963ba8c81cc4c957a29a7f237c2bfca03d7d78a57c0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareTextStringStorage",
+          "support": "Original helper bodies and text processor callers,bounded native storage/insertion checks and independent saved-signature reopen."
+        }
+      ]
+    },
+    "14018fb60": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reusable string storage and insertion used by the text processor.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "String storage and insertion implementation.",
+      "code_sha256": "433026f556393d7703e26ea3e63a4d70892d683672c1cd1ea4531435732d5f79",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertTextStringSpan",
+          "support": "Original helper bodies and text processor callers,bounded native storage/insertion checks and independent saved-signature reopen."
         }
       ]
     }

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 386,
+    "checked_and_applied_names": 388,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 386,
+    "verified_names": 388,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "356 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "358 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -6341,6 +6341,24 @@
       "Selected well-formed plain/markup forms and ASCII stop units;nesting,malformed and internal-stream interactions incomplete.",
       "Failure output atomicity,complete processor,layout and rendering unverified.",
       "Working descriptive name and opaque pointer types;not recovered source."
+    ],
+    "runtime_game_verified": false
+  },
+  "text_string_storage_insert_saved_checkpoint": {
+    "saved_names": {
+      "1401789a0": "PrepareTextStringStorage",
+      "14018fb60": "InsertTextStringSpan"
+    },
+    "original_instructions": 177,
+    "storage_calls": 2056,
+    "insertion_calls": 17112,
+    "direct_copy_integration_calls": 2048,
+    "limits": [
+      "Owned-buffer release,heap growth/allocation failure and extreme lengths unexecuted.",
+      "Insertion uses valid inline capacity;external ownership,invalid positions and source aliasing untested.",
+      "These are reusable string helpers observed in text processing;not exclusive to this subsystem.",
+      "Complete text processor,layout and rendering remain unverified.",
+      "Working descriptive names/types;not recovered source."
     ],
     "runtime_game_verified": false
   }
