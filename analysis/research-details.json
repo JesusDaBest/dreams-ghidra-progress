@@ -3346,11 +3346,25 @@
       "Unused payload and differing input alpha do not make selected Number/Signal values count as changed."
     ],
     "limits": [
-      "Synthetic nonnull previous/current objects; captured main worker sets previous RDI0, so real-game reachability unresolved.",
+      "Matching previous Inspector pointer is passed through a shared-tail entry that bypasses clearing RDI. Initial/mismatched-object gating and real-game scheduling remain unverified.",
       "Only selected Number/Signal reductions, Power bits and byte counter states tested.",
       "Original field names identify counters; actual display interpretation and scheduling unverified.",
       "No whole-gadget completion or audited-byte credit."
     ],
+    "runtime_game_verified": false
+  },
+  "signal_inspector_caller_correction": {
+    "findings": [
+      "No previous object branches to140ab87db, which clearsRDI.",
+      "Matching previous kind4a selects previous pointer at140ab8035 and jumps140ab87dd, bypassing clear."
+    ],
+    "previous_report_correction": "Earlier unconditional-null description came from a bounded shared tail and missed the incoming edge.",
+    "original_caller_instruction_spans_checked": 32,
+    "limits": [
+      "Initial/mismatched previous object and runtime Power gating remain unverified.",
+      "No game-runtime validation."
+    ],
+    "names_added": 0,
     "runtime_game_verified": false
   }
 }

@@ -5474,10 +5474,11 @@
         "Original registered InputA, Power and change-counter fields and worker kind0x4a call verified.",
         "Complete40-instruction helper, scalar reducer and native comparisons inspected.",
         "34800 original-instruction hardware cases compare exact output, input and guard bytes.",
-        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives.",
+        "Both incoming shared-tail paths inspected; matching previous kind4a bypasses nulling, confirmed against original PS4 SELF bytes."
       ],
       "caveats": [
-        "Synthetic nonnull previous/current objects; captured main worker sets previous RDI0, so real-game reachability unresolved.",
+        "Matching previous Inspector pointer is passed through a shared-tail entry that bypasses clearing RDI. Initial/mismatched-object gating and real-game scheduling remain unverified.",
         "Only selected Number/Signal reductions, Power bits and byte counter states tested.",
         "Original field names identify counters; actual display interpretation and scheduling unverified.",
         "No whole-gadget completion or audited-byte credit."
