@@ -2094,3 +2094,11 @@ Applied InitializeMicrochipTypeDescriptor and RegisterMicrochipProperties. The o
 All104 original instruction spans match. Full cold backup, isolated trial, promotion and independent reopening verify two intended name/comment changes, unchanged signatures and unchanged original archives. Specialized registrar arguments, descriptor numeric meanings, imported guard behavior, allocation/cleanup bodies and game integration remain unresolved. No native gameplay test or original C++ prototype is claimed.
 
 Totals:296 checked names among9,577 discovered functions;1,736 mapped and7,841 unmapped.
+
+### Saved Microchip property visitor
+
+Applied VisitMicrochipProperties after reviewing all752 original instructions and matching its named field offsets to the Microchip registrar. It visits version-gated fields, handles nested FirstChild traversal, retains unnamed legacy placeholders and updates a legacy canvas flag for selected older versions when a stored float is nonzero or NaN. The original calls and code establish these branches; virtual callbacks and full serializer traversal were not executed.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/comment, unchanged signature and unchanged original archives. Separately,110 original instruction spans establish that Microchip property0x40f has offset-table sentinel0xffff and an eligibility consumer rejects an existing matching wire. This narrows the connection role without proving its original label.
+
+Totals:297 checked names among9,577 discovered functions;1,736 mapped and7,841 unmapped. No game integration or complete serializer reconstruction is claimed.

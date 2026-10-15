@@ -1840,31 +1840,23 @@
     },
     "1404a7180": {
       "system": "gadgets-logic",
-      "evidence": [
-        {
-          "kind": "object_type_dispatch",
-          "tag": 13,
-          "type_name": "Microchip",
-          "enum_call_site": "140c8bafa",
-          "enum_label_address": "14171fd73",
-          "enum_function": "140c8ba10",
-          "dispatcher": "14048b740",
-          "jump_table": "14169c12c",
-          "table_entry": "14169c160",
-          "branch": "14048c58b",
-          "site": "14048c596"
-        }
-      ],
-      "code_sha256": "80bdef8f267c33eabd9a054a5de16b68332293b3e7c145525ebcd05437bf5aac",
       "component_path": [
         "gadgets-logic",
         "logic",
         "microchip",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "Visitor original label/offset pairs match Microchip registration.",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "Visits Microchip fields with serializer version gates.",
+      "code_sha256": "708bca819583f831320bcf7e1b2438878443d474a2582e16105cbdb961352d78",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "VisitMicrochipProperties",
+          "support": "Complete original visitor body and matched registered fields; saved name independently reopened."
+        }
+      ]
     },
     "1404a7da0": {
       "system": "gadgets-logic",
