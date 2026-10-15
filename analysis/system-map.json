@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1758,
-  "unmapped_total": 7822,
+  "mapped_total": 1760,
+  "unmapped_total": 7820,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44939,6 +44939,48 @@
           "kind": "verified_semantic_review",
           "name": "ReadShaderFileToAllocatedBuffer",
           "support": "Complete original body, shader loader callers,528 scoped native boundary-model cases and independently reopened name/signature."
+        }
+      ]
+    },
+    "140010570": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "graphics",
+        "toolkit",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native vertex-fetch program sizing/generation used by shader resource construction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Graphics shader toolkit helper.",
+      "code_sha256": "2ea3d96bc350e023c24854f52ea7731486a65629178a593e2aab5c1dea9f9956",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeVertexFetchShaderSize",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1400376f0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "graphics",
+        "toolkit",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native vertex-fetch program sizing/generation used by shader resource construction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Graphics shader toolkit helper.",
+      "code_sha256": "2ff9a288c10d85e907797c3aedfb74fb678ab6a62cd93b1a6bf089f51be65b79",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GenerateVertexFetchShaderInstructions",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]
     }

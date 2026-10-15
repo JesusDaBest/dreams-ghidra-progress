@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "295 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "297 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9100,
-    "other_names": 480,
-    "verification": "complete_inventory_matches_baseline_plus_295_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9098,
+    "other_names": 482,
+    "verification": "complete_inventory_matches_baseline_plus_297_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7037,6 +7037,50 @@
         "True reports only nonnull fopen; seek/tell/allocation/read/close results are unchecked, so it does not guarantee a complete usable buffer.",
         "Caller failure cleanup caveat remains documented separately; no live crash or exploit claim.",
         "Name and working types are descriptive, not recovered original C++ declarations."
+      ]
+    },
+    {
+      "address": "140010570",
+      "original_name": "FUN_140010570",
+      "applied_name": "ComputeVertexFetchShaderSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ushort PS4_SYSV ComputeVertexFetchShaderSize(void * shader_header)",
+      "evidence": [
+        "Complete original function matched SELF and saved bytes; shader resource construction callers reviewed.",
+        "8600 complete native size-wrapper/setup cases and3584 complete native generation cases verify scoped size/byte outputs, guards and inputs without modeled imports.",
+        "Independent CLRX decode/reassembly of a72-byte generated sample confirms descriptor loads, formatted vertex loads, waits and return; trailing4-byte metadata count excluded from executable decode.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Tests use synthetic headers/descriptors; real resource compatibility and malformed inputs are not verified.",
+        "No GPU execution or complete rendering verification.",
+        "Descriptive names and opaque working pointer types are not recovered original declarations."
+      ]
+    },
+    {
+      "address": "1400376f0",
+      "original_name": "FUN_1400376f0",
+      "applied_name": "GenerateVertexFetchShaderInstructions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV GenerateVertexFetchShaderInstructions(uint * instruction_output, void * fetch_descriptor)",
+      "evidence": [
+        "Complete original function matched SELF and saved bytes; shader resource construction callers reviewed.",
+        "8600 complete native size-wrapper/setup cases and3584 complete native generation cases verify scoped size/byte outputs, guards and inputs without modeled imports.",
+        "Independent CLRX decode/reassembly of a72-byte generated sample confirms descriptor loads, formatted vertex loads, waits and return; trailing4-byte metadata count excluded from executable decode.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Tests use synthetic headers/descriptors; real resource compatibility and malformed inputs are not verified.",
+        "No GPU execution or complete rendering verification.",
+        "Descriptive names and opaque working pointer types are not recovered original declarations."
       ]
     }
   ],

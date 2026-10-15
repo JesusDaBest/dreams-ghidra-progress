@@ -2438,3 +2438,11 @@ Applied ReadShaderFileToAllocatedBuffer after reviewing its complete 44-instruct
 384 failed-open and 144 opened-file original-native cases verify call receipts, outputs and guards. Explicit I/O/allocator boundary models do not perform real filesystem access, payload transfer or allocation/deallocation. These checks establish helper control flow, not real backend reliability or complete shader loading.
 
 Full cold backup, isolated trial, promotion and independent reopening verify the descriptive name and working signature without changing original instructions or archives. The generic helper is mapped under shared engine runtime support, rather than credited to an exclusive gameplay subsystem. Totals: 325 checked names (295 renames, 29 created functions and one retained-name review) among 9,580 discovered functions; 1,758 mapped and 7,822 unmapped. This is not a percentage of the entire game understood.
+
+### Saved vertex-fetch shader helpers
+
+Applied ComputeVertexFetchShaderSize and GenerateVertexFetchShaderInstructions after reading their complete bodies and shader construction callers. The first computes the auxiliary buffer size from a shader header. The second emits descriptor loads, formatted vertex-buffer loads, waits and a return instruction, followed by a metadata count. Both are mapped to the rendering graphics toolkit.
+
+8,600 original-native size-wrapper/setup cases and 3,584 original-native generation cases verify synthetic inputs, exact outputs and guards without modeled imports. Independent CLRX decoding and reassembly reproduce a 72-byte generated program exactly; its trailing four-byte metadata count is excluded from executable decoding. Real shader compatibility, malformed inputs and GPU execution remain unverified. The surrounding resource initializer still has unresolved allocation-error handling; it receives no completion credit here.
+
+Full cold backup, isolated trial, promotion and independent reopening verify both saved names and working signatures, unchanged original instructions and unchanged archives. Totals: 327 checked names (297 renames, 29 created functions and one retained-name review) among 9,580 discovered functions; 1,760 mapped and 7,820 unmapped. These counts do not measure whole-game completion.
