@@ -3229,5 +3229,23 @@
       "No running-game validation or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "and_or_mixed_promotion_checkpoint": {
+    "controlled_native_cases": 19404,
+    "findings": [
+      "Number/Signal with Float2/Float3/Float4 promotes to component type and broadcasts scalar before magnitude selection.",
+      "Number/Signal with PlayerValue promotes to five-lane PlayerValue and broadcasts scalar.",
+      "Both input orders checked; component tie chooses second input.",
+      "PlayerValue with Float2/Float3/Float4 uses vector type via original special-promotion table.",
+      "Selected nonnegative PlayerValue reduces to maximum of five lanes, then broadcasts before component magnitude selection.",
+      "Both input orders checked; component tie chooses second input."
+    ],
+    "limits": [
+      "PlayerValue/vector reductions only selected nonnegative profiles; signed and exceptional reductions untested here.",
+      "Other conversion paths include retained Game context, quaternion math imports and default zero-fill; those are not covered by these probes.",
+      "No new names, audited-byte credit or game-runtime validation."
+    ],
+    "new_names": 0,
+    "runtime_game_verified": false
   }
 }
