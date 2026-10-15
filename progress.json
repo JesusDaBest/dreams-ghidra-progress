@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 206,
+    "done": 208,
     "todo": 1484,
-    "total": 1690,
-    "behavior_or_helpers_reviewed": 147,
+    "total": 1692,
+    "behavior_or_helpers_reviewed": 149,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 59,
+        "done": 61,
         "todo": 413,
-        "total": 472,
-        "behavior_or_helpers_reviewed": 17,
+        "total": 474,
+        "behavior_or_helpers_reviewed": 19,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 19,
+        "runtime_functions_identified": 21,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -40,6 +40,8 @@
           "MarkLogicCycleWireEdges",
           "UpdateCounterFromInputTransitions",
           "ReadCounterOutputVariant",
+          "UpdateTimerFromControlInputs",
+          "ReadTimerOutputVariant",
           "UpdateSelectorFromInputTransitions",
           "ReadSelectorOutputVariant",
           "EvaluateCalculatorInputs",
@@ -516,6 +518,8 @@
           "14073de90",
           "1408cca60",
           "1408ccc60",
+          "1408cccf0",
+          "1408cd160",
           "1408cd970",
           "1408cdee0",
           "1408ce4f0",
@@ -979,12 +983,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 29,
+            "done": 31,
             "todo": 68,
-            "total": 97,
-            "behavior_or_helpers_reviewed": 12,
+            "total": 99,
+            "behavior_or_helpers_reviewed": 14,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 12,
+            "runtime_functions_identified": 14,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -999,6 +1003,8 @@
               "MarkLogicCycleWireEdges",
               "UpdateCounterFromInputTransitions",
               "ReadCounterOutputVariant",
+              "UpdateTimerFromControlInputs",
+              "ReadTimerOutputVariant",
               "UpdateSelectorFromInputTransitions",
               "ReadSelectorOutputVariant",
               "EvaluateCalculatorInputs",
@@ -1100,6 +1106,8 @@
               "14073de90",
               "1408cca60",
               "1408ccc60",
+              "1408cccf0",
+              "1408cd160",
               "1408cd970",
               "1408cdee0",
               "1408ce4f0",
@@ -1277,6 +1285,92 @@
                       "1408ce4f0",
                       "1411c2100",
                       "1411c21e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/timer",
+                "label": "Timer",
+                "done": 2,
+                "todo": 3,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "UpdateTimerFromControlInputs",
+                  "ReadTimerOutputVariant"
+                ],
+                "todo_names": [
+                  "0x1404ce170",
+                  "0x140d56e20",
+                  "0x140d728d0"
+                ],
+                "done_addresses": [
+                  "1408cccf0",
+                  "1408cd160"
+                ],
+                "todo_addresses": [
+                  "1404ce170",
+                  "140d56e20",
+                  "140d728d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/timer/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404ce170",
+                      "0x140d56e20",
+                      "0x140d728d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404ce170",
+                      "140d56e20",
+                      "140d728d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/timer/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateTimerFromControlInputs",
+                      "ReadTimerOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cccf0",
+                      "1408cd160"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -2440,61 +2534,6 @@
                       "1408cecf0"
                     ],
                     "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/timer",
-                "label": "Timer",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404ce170",
-                  "0x140d56e20",
-                  "0x140d728d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404ce170",
-                  "140d56e20",
-                  "140d728d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/timer/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404ce170",
-                      "0x140d56e20",
-                      "0x140d728d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404ce170",
-                      "140d56e20",
-                      "140d728d0"
-                    ],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -40596,5 +40635,5 @@
       }
     ]
   },
-  "unmapped": 7880
+  "unmapped": 7878
 }

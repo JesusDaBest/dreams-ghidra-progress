@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "228 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "230 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9167,
-    "other_names": 403,
-    "verification": "complete_inventory_matches_baseline_plus_228_renames_and_19_created_functions"
+    "default_fun_names": 9165,
+    "other_names": 405,
+    "verification": "complete_inventory_matches_baseline_plus_230_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5051,6 +5051,52 @@
         "Descriptive research name and opaque working context/state pointers, not original declarations.",
         "Selected active configuration only; concrete Game gate meanings and real-caller reachability unresolved.",
         "Active zero ports, mixed/exceptional direct inputs, negative direct values, malformed bags and full gadget integration remain incomplete.",
+        "No running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cd160",
+      "original_name": "FUN_1408cd160",
+      "applied_name": "ReadTimerOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadTimerOutputVariant(void * timer, uint property_id, VariantWorking40 * output)",
+      "evidence": [
+        "Original Timer descriptor/field registrar bind TargetTime+d4, CurrentTime+d8, TimerType+dc and State+e8 to matching runtime reads.",
+        "Original field enum descriptors identify CountDown3 and Active1; complete32-instruction native output body and dispatcher caller reviewed.",
+        "9720 original-instruction hardware cases cover current/target boundaries and special values, type/state bytes and property aliases; unused bytes and inputs preserved.",
+        "Cold backup, isolated trial and independent reopening verify one name/signature change, RDI/ESI/RDX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research role name and working arguments, not original source recovery.",
+        "Selected synthetic configurations include unregistered type/state bytes; UI/game reachability not established.",
+        "NaN classification checked without asserting every payload bit. Full Timer update and game integration remain unresolved.",
+        "No running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cccf0",
+      "original_name": "FUN_1408cccf0",
+      "applied_name": "UpdateTimerFromControlInputs",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateTimerFromControlInputs(void * context, void * previous_timer, void * timer, int object_index)",
+      "evidence": [
+        "Original Timer field/enum registration and kind58 Power-offset initializer match state/time/mode reads and writes.",
+        "Complete265-instruction native body reviewed: Game gates, previous/current control/reset bag reads, four modes, crossing pulse and final bounds.",
+        "Scoped original-instruction hardware checks include7776 inactive value cases,768 inactive bag cases and22 selected active modes/crossing/reset cases; original constants, strides and mode jump table supplied unchanged.",
+        "Cold backup, isolated trial and independent reopening verify one name/signature change, RDI/RSI/RDX/ECX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research role name and opaque working context pointers, not original source declarations.",
+        "Only22 active hand-picked cases at target1; other targets, exceptional active values, simultaneous conditions and full state/numerical contract unresolved.",
+        "Direct caller passes null previous state; synthetic active tests do not establish real-game reachability. Concrete Game gates and original input property labels remain unresolved.",
         "No running-game verification or audited-byte credit."
       ]
     }

@@ -1350,3 +1350,10 @@ Named and independently reopened Selector output/update helpers after matching o
 14,952 isolated native cases passed: 4,416 output, 5,120 inactive normalization, 24 inactive property-bag effects, 4,096 active wrapping and 1,296 direct-port cases. Selected sign-class input transitions wrap once by combined direction. In the tested four-port setup, the highest newly rising port wins; held inputs do not override. Inactive clearing preserves unrelated records and Variant tail bytes.
 
 Synthetic Power metadata matches original initializer writes; the initializer was not executed. Concrete Game gate meanings, real-caller reachability, other exceptional/mixed inputs, active zero ports and malformed bags remain incomplete. No game-runtime or audited-byte credit added. Totals: 247 checked names; 1,690 mapped functions; 7,880 unmapped.
+### Timer outputs and control-input modes
+
+Named and independently reopened Timer output/update helpers, matching original time/state fields and mode enum descriptors. The output ratio is unclamped. CountDown done output requires zero current time and Active state; other modes compare current and target exactly.
+
+18,286 scoped native cases passed: 9,720 output, 7,776 inactive update, 768 inactive property-bag and only 22 hand-picked active mode/boundary cases. Those active cases cover start/restart, speed signs, movement toward a position target, countdown, completion and reset at target 1. Original constants provide a step factor about 1/30 and crossing tolerance 0.005; selected SetSpeed cases can emit TimerDone before current reaches target. The large total does not represent exhaustive active-mode coverage.
+
+Synthetic Power metadata matches the original initializer; the initializer was not executed. Other active values/targets, simultaneous conditions, Game gate meanings, input labels and real-caller reachability remain incomplete. No game-runtime or audited-byte credit added. Totals: 249 checked names; 1,692 mapped functions; 7,878 unmapped.

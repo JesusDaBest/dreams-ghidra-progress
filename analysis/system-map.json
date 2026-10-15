@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1690,
-  "unmapped_total": 7880,
+  "mapped_total": 1692,
+  "unmapped_total": 7878,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43549,6 +43549,46 @@
           "support": "Original registration, matching offsets and caller, scoped native output/update checks, independent saved-project reopening."
         }
       ]
+    },
+    "1408cd160": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "timer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Timer descriptor, time/state/mode fields and enum bindings matched to native output/update paths and callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body review, scoped original-instruction hardware execution and independently persisted name/types.",
+      "code_sha256": "448965c8a89ad510935800a6dd149969398a5df805830393b2e79e532840127f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadTimerOutputVariant",
+          "support": "Original fields/enums, native calls, verified constants and scoped tests, independent saved-project reopening."
+        }
+      ]
+    },
+    "1408cccf0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "timer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Timer descriptor, time/state/mode fields and enum bindings matched to native output/update paths and callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native body review, scoped original-instruction hardware execution and independently persisted name/types.",
+      "code_sha256": "493d44e159b31dd69d37adf90cd9d7aa0c68ff37089c4c0036a9fa442a5d2f4b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateTimerFromControlInputs",
+          "support": "Original fields/enums, native calls, verified constants and scoped tests, independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48354,6 +48394,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]
