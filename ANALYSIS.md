@@ -1948,3 +1948,9 @@ Both tree-builder calls come from a routine scheduling the original CalculateScu
 30 connected cases now execute the original normalization/scheduling wrapper together with the four workers and sorter. Sizes0 through513 include flat axes and identical centres. Independent float32 calculations match normalized keys; tests also verify job labels/counts, complete tree invariants, forward/inverse identifier permutations, unchanged input records and scratch guards. Empty input returns0 without jobs. Nonempty input returns2n-1.
 
 A failed first model assumed flat-axis conversion contributed zero; original instruction execution instead produces the equivalent of coordinate32768 in the interleaved key. The model was corrected before publication. Sequential scheduler/fence substitutes and an overlap-safe copy model are explicit boundaries; concurrency, explicit nonfinite input bounds, index overflow and real consumers remain unverified. No new names or completion credit;281 names remain checked.
+
+### Saved Morton tree wrapper name
+
+Applied BuildMortonBvhForBounds with five opaque pointer inputs and a32-bit node-count return. Original157-instruction wrapper, four job targets and30 connected cases support its role. Empty input returns0; nonempty input produces2n-1 nodes and forward/inverse identifier permutations. The first caller-supplied context pointer remains opaque; actual jobs use a global scheduler.
+
+Cold backup, isolated ABI trial, promotion and independent reopening verify the saved name/signature and unchanged original bytes/archives. Sequential scheduler/fence and copy models remain explicit limits; concurrency and complete real-game consumers are unresolved. Totals:282 checked names among9,576 functions;1,723 mapped and7,853 unmapped. No whole-subsystem completion credit.
