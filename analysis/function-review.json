@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "346 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "348 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9049,
-    "other_names": 531,
-    "verification": "complete_inventory_matches_baseline_plus_346_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9047,
+    "other_names": 533,
+    "verification": "complete_inventory_matches_baseline_plus_348_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8260,6 +8260,52 @@
         "Invalid pointers and malformed table indices excluded.",
         "Glyph payload, shaping, metrics and rendering unverified.",
         "Working descriptive name and reviewed return type; not recovered source."
+      ]
+    },
+    {
+      "address": "1415515f0",
+      "original_name": "FUN_1415515f0",
+      "applied_name": "RemapTextCodepointForFont",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV RemapTextCodepointForFont(uint codepoint, uchar direction_flag)",
+      "evidence": [
+        "All original instruction spans matched, full remapper and glyph-pointer bodies inspected.",
+        "262307 original-remapper calls; 2490440 original helper/remapper calls over twelve asset lookup tables.",
+        "48960 corrected calls across6120 direction/list/alignment profiles; exact pointers, guards and unchanged inputs. Failed empty-list fixture attempt preserved and not credited.",
+        "Cold backup, isolated trial, promotion and independent reopen verify names/signatures and unchanged archives."
+      ],
+      "caveats": [
+        "Property/mirror expectations use original tables, not an independent Unicode specification.",
+        "Runtime font objects and record arrays synthesized; original loader not executed.",
+        "Malformed pointers/tables, glyph payloads, metrics, shaping and rendering unverified.",
+        "Working descriptive names/types; not recovered source."
+      ]
+    },
+    {
+      "address": "141557a60",
+      "original_name": "FUN_141557a60",
+      "applied_name": "FindTextGlyphRecordData",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV FindTextGlyphRecordData(void * parser_state, void * font_set, uint codepoint)",
+      "evidence": [
+        "All original instruction spans matched, full remapper and glyph-pointer bodies inspected.",
+        "262307 original-remapper calls; 2490440 original helper/remapper calls over twelve asset lookup tables.",
+        "48960 corrected calls across6120 direction/list/alignment profiles; exact pointers, guards and unchanged inputs. Failed empty-list fixture attempt preserved and not credited.",
+        "Cold backup, isolated trial, promotion and independent reopen verify names/signatures and unchanged archives."
+      ],
+      "caveats": [
+        "Property/mirror expectations use original tables, not an independent Unicode specification.",
+        "Runtime font objects and record arrays synthesized; original loader not executed.",
+        "Malformed pointers/tables, glyph payloads, metrics, shaping and rendering unverified.",
+        "Working descriptive names/types; not recovered source."
       ]
     }
   ],

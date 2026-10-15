@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1809,
-  "unmapped_total": 7771,
+  "mapped_total": 1811,
+  "unmapped_total": 7769,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46010,6 +46010,48 @@
           "kind": "verified_semantic_review",
           "name": "FindFontGlyphRecord",
           "support": "Original body, original asset lookup checks, exhaustive bounded preference cases and independently reopened aggregate return signature."
+        }
+      ]
+    },
+    "1415515f0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Codepoint remapping and runtime glyph lookup for text layout.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Font lookup implementation.",
+      "code_sha256": "9c8a1e230ff1e436d3f509f67734de2d8bac4b4c94822ea78dcf8ab364237725",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapTextCodepointForFont",
+          "support": "Original function bodies, native execution over asset lookup planes and bounded direction/list profiles, independent saved-signature reopen."
+        }
+      ]
+    },
+    "141557a60": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Codepoint remapping and runtime glyph lookup for text layout.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Font lookup implementation.",
+      "code_sha256": "79720a16bc1a0adcd71cbe434eaa59830f18d22ae49cb18e81555f89bacbe0b4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindTextGlyphRecordData",
+          "support": "Original function bodies, native execution over asset lookup planes and bounded direction/list profiles, independent saved-signature reopen."
         }
       ]
     }
