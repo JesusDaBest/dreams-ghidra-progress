@@ -5766,5 +5766,22 @@
       "Descriptive working name and opaque-context types are not recovered source."
     ],
     "runtime_game_verified": false
+  },
+  "text_record_allocation_caller_checkpoint": {
+    "caller_original_instructions": 150,
+    "direct_native_cases": 44,
+    "allocation_scope": "Original operator-new/malloc dispatch windows,default file-backed pointer targets,new-handler retry and throw path traced statically;heap delegate andinitialization remain unresolved.",
+    "findings": [
+      "Content chunks hold4096bytes;token chunks hold256records;both blocks are4120bytes withheaders/counters.",
+      "Caller selects directstorage orrepresentation conversion basedonmode0/1 and0E prefix.",
+      "Nullsource/invalidmode guards andexplicit/automaticend paths verifiedwithoriginalbuilder/hash/copy/strlen dependencies."
+    ],
+    "limits": [
+      "Default dispatch pointers arefileinitialvalues,not liveallocatorproof.",
+      "Heap initialization,virtualallocation,chunkgrowth anderror paths notexecuted.",
+      "Representationconversion andfinalsubstitution/rendering unresolved."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }

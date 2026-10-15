@@ -2308,3 +2308,11 @@ In addition to the previous 248 bounded and 80 empty-storage calls, 4,800 cases 
 Allocation/chunk growth, virtual allocator, hash collisions, broader formats and final substitution/rendering remain unresolved. The preseeded empty-hash finding remains a synthetic-storage observation, not a verified in-game defect.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 352 checked names (322 renames, 29 created functions and one retained-name review), 1,785 mapped and 7,795 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
+
+### Allocation boundary and the text-record caller
+
+The builder grows content in 4,096-byte payload chunks and tokens in 256-record chunks. Both use 4,120-byte blocks including headers and counters, allocated through operator new or the allocator object first virtual entry. Original library windows trace operator new through a configurable allocation dispatch: zero-size requests normalize to one, failed allocations consult a new-handler and retry or enter an allocation-exception path. The default malloc dispatch reaches a heap delegate whose initialization remains unresolved. File-backed initial dispatch pointers are not proof of live runtime targets; this allocation path has not been executed.
+
+A 150-instruction caller selects direct storage or text-representation conversion based on modes zero/one and a leading control byte. Forty-four native checks verify its direct/guard paths using original builder/hash/copy/strlen dependencies: null source and invalid modes leave the builder unchanged, automatic end stops at the first zero byte, and an explicit bounded range preserves embedded zeroes. Whole guarded caller/builder contexts, arrays/chunks, inputs and original source/index data were checked.
+
+The conversion helpers, temporary heap allocation, chunk growth, virtual allocator and final substitution/rendering remain unresolved. No new checked-name or whole-function completion credit was added.
