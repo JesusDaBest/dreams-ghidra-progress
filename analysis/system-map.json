@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1777,
-  "unmapped_total": 7803,
+  "mapped_total": 1780,
+  "unmapped_total": 7800,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45338,6 +45338,69 @@
           "kind": "verified_semantic_review",
           "name": "FindInitialTextDirection",
           "support": "Complete original body,native property-domain and selected lookahead checks,independently reopened name/signature."
+        }
+      ]
+    },
+    "1414b1390": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Packed direction and transition-token helpers used by original higher-level text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "1cd2ec99d92125b179b43d468ee7bc3d930e89958403e1880e8e0e7ed404adbd",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolvePackedTextDirection",
+          "support": "Complete original body,native packed-state checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "1414b1250": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Packed direction and transition-token helpers used by original higher-level text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "947fe8923eb9e11d8324cf363512fadca3e28fd2d1937a96eaab347e224cefe2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectTextDirectionTransitionToken",
+          "support": "Complete original body,native packed-state checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "1414b13f0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Packed direction and transition-token helpers used by original higher-level text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "33262924b3e8e34aa2691a6958e40a3c819bfea5bce536cfd43eb04d25514dbc",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectTextDirectionExitToken",
+          "support": "Complete original body,native packed-state checks,independently reopened names/signatures."
         }
       ]
     }

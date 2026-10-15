@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "314 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "317 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9081,
-    "other_names": 499,
-    "verification": "complete_inventory_matches_baseline_plus_314_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9078,
+    "other_names": 502,
+    "verification": "complete_inventory_matches_baseline_plus_317_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7487,6 +7487,75 @@
         "Executable Unicode data is not a modern Unicode conformance claim.",
         "No visible bidirectional rendering verification.",
         "Descriptive working name and types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414b1390",
+      "original_name": "FUN_1414b1390",
+      "applied_name": "ResolvePackedTextDirection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV ResolvePackedTextDirection(uint fallback_packed_direction, uint default_direction, uint current_packed_direction)",
+      "evidence": [
+        "Complete original32/96/61-instruction helper bodies and higher-level parser callers read;original SELF/saved bytes agree.",
+        "40896 guarded state profiles span depth boundaries,low masks,negative sentinels,fallbacks,state masks,modes and alignments.204480 resolution,204480 transition and40896 exit calls verify results and whole96-byte state;only category byte1D changes for token selectors.",
+        "Exit-token initial oracle assumed same-direction restoration;native failure and assembly established opposite-direction selection before passing checks.",
+        "Cold backup,corrected isolated trial,promotion and independent reopening verify expected names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Synthetic packed states include combinations not proven reachable in game.",
+        "Only byte result is meaningful for packed resolver;upper register bits are not claimed.",
+        "Whole bidirectional-parser and visible rendering remain unverified.",
+        "Working descriptive names/types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414b1250",
+      "original_name": "FUN_1414b1250",
+      "applied_name": "SelectTextDirectionTransitionToken",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV SelectTextDirectionTransitionToken(uchar desired_direction, void * parser_state)",
+      "evidence": [
+        "Complete original32/96/61-instruction helper bodies and higher-level parser callers read;original SELF/saved bytes agree.",
+        "40896 guarded state profiles span depth boundaries,low masks,negative sentinels,fallbacks,state masks,modes and alignments.204480 resolution,204480 transition and40896 exit calls verify results and whole96-byte state;only category byte1D changes for token selectors.",
+        "Exit-token initial oracle assumed same-direction restoration;native failure and assembly established opposite-direction selection before passing checks.",
+        "Cold backup,corrected isolated trial,promotion and independent reopening verify expected names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Synthetic packed states include combinations not proven reachable in game.",
+        "Only byte result is meaningful for packed resolver;upper register bits are not claimed.",
+        "Whole bidirectional-parser and visible rendering remain unverified.",
+        "Working descriptive names/types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414b13f0",
+      "original_name": "FUN_1414b13f0",
+      "applied_name": "SelectTextDirectionExitToken",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV SelectTextDirectionExitToken(void * parser_state)",
+      "evidence": [
+        "Complete original32/96/61-instruction helper bodies and higher-level parser callers read;original SELF/saved bytes agree.",
+        "40896 guarded state profiles span depth boundaries,low masks,negative sentinels,fallbacks,state masks,modes and alignments.204480 resolution,204480 transition and40896 exit calls verify results and whole96-byte state;only category byte1D changes for token selectors.",
+        "Exit-token initial oracle assumed same-direction restoration;native failure and assembly established opposite-direction selection before passing checks.",
+        "Cold backup,corrected isolated trial,promotion and independent reopening verify expected names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Synthetic packed states include combinations not proven reachable in game.",
+        "Only byte result is meaningful for packed resolver;upper register bits are not claimed.",
+        "Whole bidirectional-parser and visible rendering remain unverified.",
+        "Working descriptive names/types are not recovered source."
       ]
     }
   ],
