@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 201,
+    "done": 202,
     "todo": 1484,
-    "total": 1685,
-    "behavior_or_helpers_reviewed": 142,
+    "total": 1686,
+    "behavior_or_helpers_reviewed": 143,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 54,
+        "done": 55,
         "todo": 413,
-        "total": 467,
-        "behavior_or_helpers_reviewed": 12,
+        "total": 468,
+        "behavior_or_helpers_reviewed": 13,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 14,
+        "runtime_functions_identified": 15,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -76,6 +76,7 @@
           "AllocateDefaultLight",
           "RegisterLightFieldOffsets",
           "NormalizeFloatComponentsWithUniformFallback",
+          "EvaluateTypedCalculatorOperation",
           "AccumulateWireSignalByBlendMode"
         ],
         "todo_names": [
@@ -547,6 +548,7 @@
           "140d88850",
           "140d88a00",
           "1411c2100",
+          "1411c21e0",
           "141218d80"
         ],
         "todo_addresses": [
@@ -2939,12 +2941,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 24,
+            "done": 25,
             "todo": 68,
-            "total": 92,
-            "behavior_or_helpers_reviewed": 7,
+            "total": 93,
+            "behavior_or_helpers_reviewed": 8,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 7,
+            "runtime_functions_identified": 8,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -2972,6 +2974,7 @@
               "RegisterSignalInspectorFieldOffsets",
               "RegisterCombinerFieldOffsets",
               "NormalizeFloatComponentsWithUniformFallback",
+              "EvaluateTypedCalculatorOperation",
               "AccumulateWireSignalByBlendMode"
             ],
             "todo_names": [
@@ -3068,6 +3071,7 @@
               "140d6e2b0",
               "140d6e850",
               "1411c2100",
+              "1411c21e0",
               "141218d80"
             ],
             "todo_addresses": [
@@ -3145,19 +3149,20 @@
               {
                 "name": "gadgets-logic/logic/calculator",
                 "label": "Calculator",
-                "done": 3,
+                "done": 4,
                 "todo": 2,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 2,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 2,
+                "runtime_functions_identified": 3,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "VisitCalculatorProperties",
                   "EvaluateCalculatorInputs",
-                  "NormalizeFloatComponentsWithUniformFallback"
+                  "NormalizeFloatComponentsWithUniformFallback",
+                  "EvaluateTypedCalculatorOperation"
                 ],
                 "todo_names": [
                   "0x140d577e0",
@@ -3166,7 +3171,8 @@
                 "done_addresses": [
                   "1404d7ef0",
                   "1408ce4f0",
-                  "1411c2100"
+                  "1411c2100",
+                  "1411c21e0"
                 ],
                 "todo_addresses": [
                   "140d577e0",
@@ -3206,23 +3212,25 @@
                   {
                     "name": "gadgets-logic/logic/calculator/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 2,
+                    "done": 3,
                     "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
+                    "runtime_functions_identified": 3,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "EvaluateCalculatorInputs",
-                      "NormalizeFloatComponentsWithUniformFallback"
+                      "NormalizeFloatComponentsWithUniformFallback",
+                      "EvaluateTypedCalculatorOperation"
                     ],
                     "todo_names": [],
                     "done_addresses": [
                       "1408ce4f0",
-                      "1411c2100"
+                      "1411c2100",
+                      "1411c21e0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -40510,5 +40518,5 @@
       }
     ]
   },
-  "unmapped": 7885
+  "unmapped": 7884
 }

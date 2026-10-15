@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 242,
+    "checked_and_applied_names": 243,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 242,
+    "verified_names": 243,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "Both Calculator wrappers independently reopened;223 existing renames and19 created functions overall.",
+    "scope": "Shared Calculator core independently reopened;224 existing renames and19 created functions overall.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -2759,7 +2759,8 @@
     "new_names": [
       "NormalizeFloatComponentsWithUniformFallback",
       "EvaluateCalculatorInputs",
-      "EvaluateWideCalculatorInputs"
+      "EvaluateWideCalculatorInputs",
+      "EvaluateTypedCalculatorOperation"
     ],
     "working_signature": "void PS4_SYSV NormalizeFloatComponentsWithUniformFallback(float * components, int count)",
     "native_cases": {
@@ -2767,10 +2768,14 @@
       "vector_components": 128,
       "normalization_helper": 21,
       "special_float3": 10,
-      "total": 2928,
+      "total": 3272,
       "timestamp": 1053,
       "wide_wrapper": 1533,
-      "standard_wrapper": 160
+      "standard_wrapper": 160,
+      "power": 40,
+      "unary": 36,
+      "acos": 12,
+      "mixed_types": 256
     },
     "findings": [
       "Selected Number comparisons scale both inputs by100 and round before comparing.",
@@ -2781,13 +2786,15 @@
       "Standard Calculator returns Number zero for operation IDs33..38, including NotEqual33 despite the core having a branch. Valid UI reachability is unresolved.",
       "Wide Calculator visits ports in index order, skips missing values, copies the first found input and folds subsequent inputs. A single input preserves alpha; tested combinations produce alpha1.",
       "Timestamp ordering is signed64, despite unsigned-looking decompiled comparisons. Addition wraps; subtraction clamps according to the wrapped signed result.",
-      "Original acosf instructions and constants produce expected angles for aligned, perpendicular and opposite Float3 axes."
+      "Original acosf instructions and constants produce expected angles for aligned, perpendicular and opposite Float3 axes.",
+      "Power behavior changes at registered last_edited_revision1672: tested signed zero bases with exponent0.4 return1 before the boundary and0 afterward. Original powf code and constants are used.",
+      "Selected Number inputs broadcast across Colour/Float2/Float3/Float4 before arithmetic. Both operand orders preserve subtraction/division direction and original inputs remain unchanged.",
+      "Tested Round signed half values round away from zero. ACos clamps tested out-of-range inputs; NaN selects the lower bound and yields pi radians or approximately180 degrees."
     ],
     "verification": "Original captured instructions and original library leaf in an isolated hardware process; cold backup, isolated project trial and independent reopen for saved helper name/types.",
     "limits": [
-      "Selected synthetic fixtures only, not full gadget completion or game execution.",
-      "Exceptional special inputs, other value types, mixed-type conversion, revision-sensitive Power and remaining math branches require review.",
-      "Wide wrapper fixtures cover Number inputs and Add/Subtract/Multiply; malformed/null/duplicate property bags are not comprehensively tested.",
+      "Descriptive role names and selected synthetic native checks, not full Calculator or game completion.",
+      "Remaining type/operator pairs, exceptional values, external-library error/scaling branches and UI reachability require review.",
       "No running-game verification or audited-byte credit."
     ],
     "game_runtime_verified": false

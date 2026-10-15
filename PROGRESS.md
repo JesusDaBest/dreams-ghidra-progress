@@ -1329,3 +1329,10 @@ Named and independently reopened both Calculator output wrappers, matching their
 The expanded isolated native suite passes 2,928 cases: 23 Number cases, 128 vector arithmetic cases, 21 normalization helper cases, 10 special Float3 cases, 1,053 Timestamp cases, 1,533 Wide Calculator wrapper cases and 160 standard wrapper cases. Original acosf code handles the tested axis angles. Native timestamp comparisons use signed 64-bit ordering; addition wraps and subtraction clamps according to the wrapped signed result. The unsigned-looking pseudocode is misleading.
 
 These tests use selected synthetic inputs and original instructions, not a running game. Other value types, exceptional inputs, mixed conversions, revision-sensitive Power and remaining math branches are incomplete. No audited-byte credit added. Totals: 242 checked names; 1,685 mapped functions; 7,885 unmapped.
+### Shared Calculator core and compatibility behavior
+
+Named the shared evaluator called by both Calculator wrappers, preserving its established six-argument working ABI and by-value Variant inputs. Independent reopening verifies the descriptive role name and unchanged native instructions. This is role identification, not a claim that every operator/type combination is fully understood.
+
+The native suite now passes 3,272 scoped cases. Forty Power cases use original powf instructions and constants: signed zero bases raised to 0.4 return 1 before last_edited_revision 1672 and 0 afterward. Another 256 mixed-type cases establish Number broadcasting into Colour/Float2/Float3/Float4, preserving operand order and caller inputs. Thirty-six unary and twelve ACos cases check selected rounding, clamping, NaN and unit-conversion behavior.
+
+Remaining type/operator pairs, exceptional inputs, library error/scaling branches and game execution remain incomplete. No audited-byte credit added. Totals: 243 checked names; 1,686 mapped functions; 7,884 unmapped.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "223 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "224 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9172,
-    "other_names": 398,
-    "verification": "complete_inventory_matches_baseline_plus_223_renames_and_19_created_functions"
+    "default_fun_names": 9171,
+    "other_names": 399,
+    "verification": "complete_inventory_matches_baseline_plus_224_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4939,6 +4939,28 @@
         "Descriptive research name, not original source recovery.",
         "Runtime cases use Number inputs and three operations; other tags/operators, null property pointer, duplicate records and malformed bags remain untested.",
         "No whole-game runtime verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411c21e0",
+      "original_name": "FUN_1411c21e0",
+      "applied_name": "EvaluateTypedCalculatorOperation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EvaluateTypedCalculatorOperation(VariantWorking40 * output, ECalculatorOp operation, ECalculatorUnits units, uint last_edited_revision, VariantWorking40 first, VariantWorking40 second)",
+      "evidence": [
+        "Original ECalculatorOp/ECalculatorUnits enum registration, Game.last_edited_revision binding and both Calculator wrapper calls identify the shared operation role.",
+        "Complete1351-instruction body captured and rechecked; promotion, component/vector-special, Timestamp and revision-sensitive Power paths reviewed. Signed-relative dispatch entries independently decoded.",
+        "3272 scoped original-instruction hardware cases establish selected arithmetic, vector, Timestamp, wrapper, Power, rounding, ACos and mixed Number/vector behavior.",
+        "Cold backup, isolated trial and independent reopening verify one descriptive name change, preserved six-argument ABI/types, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research role name, not original source recovery or full numerical contract.",
+        "Remaining operators, type pairs, exceptional inputs and external-library error paths are incomplete; Quaternion/Bitfield ordinary path is statically traced as payload-copy rather than component arithmetic.",
+        "No full Calculator/game completion, running-game verification or audited-byte credit."
       ]
     }
   ],

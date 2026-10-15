@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1685,
-  "unmapped_total": 7885,
+  "mapped_total": 1686,
+  "unmapped_total": 7884,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43447,6 +43447,26 @@
           "kind": "verified_semantic_review",
           "name": "EvaluateWideCalculatorInputs",
           "support": "Original property bindings, whole native wrapper capture, caller, scoped hardware execution and independently persisted descriptive name/types."
+        }
+      ]
+    },
+    "1411c21e0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "calculator",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both original Calculator gadget output wrappers call this shared operation evaluator.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Registered operation/unit enums, original field bindings, native dispatch and scoped hardware execution.",
+      "code_sha256": "8e1ea93e3b21493b54314176d73f60d7ddbf00f616cadcdeb33d38e657a51db2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateTypedCalculatorOperation",
+          "support": "Shared core role supported by both wrapper callers, registered enums, promotion/conversion paths, original math import bindings and scoped native execution."
         }
       ]
     }
