@@ -1336,3 +1336,10 @@ Named the shared evaluator called by both Calculator wrappers, preserving its es
 The native suite now passes 3,272 scoped cases. Forty Power cases use original powf instructions and constants: signed zero bases raised to 0.4 return 1 before last_edited_revision 1672 and 0 afterward. Another 256 mixed-type cases establish Number broadcasting into Colour/Float2/Float3/Float4, preserving operand order and caller inputs. Thirty-six unary and twelve ACos cases check selected rounding, clamping, NaN and unit-conversion behavior.
 
 Remaining type/operator pairs, exceptional inputs, library error/scaling branches and game execution remain incomplete. No audited-byte credit added. Totals: 243 checked names; 1,686 mapped functions; 7,884 unmapped.
+### Counter output and input-transition behavior
+
+Named and typed Counter output/update helpers after matching original fields, native callers and the kind-specific runtime offset initializer. Independent reopening verifies both changes and unchanged original instructions/archives.
+
+11,756 isolated native cases passed: 2,268 output cases, 1,296 inactive update cases with null previous state and 8,192 selected active input/reset cases. Output ratio and full threshold use unsigned values; update clamps use signed ordering. Selected sign-class transitions step the count, held classes do not retrigger, NaN inputs do not count, and reset rising edges clear current and wrap the reset byte.
+
+The update harness supplies two offsets verified from original initializer writes; the initializer itself was not executed. The inspected direct caller passes null previous state, so active real-game reachability, mode/gate meanings and full gadget integration remain unresolved. Other active extremes and output property labels also remain incomplete. No game-runtime or audited-byte credit added. Totals: 245 checked names; 1,688 mapped functions; 7,882 unmapped.

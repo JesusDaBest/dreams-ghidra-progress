@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1686,
-  "unmapped_total": 7884,
+  "mapped_total": 1688,
+  "unmapped_total": 7882,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43469,6 +43469,46 @@
           "support": "Shared core role supported by both wrapper callers, registered enums, promotion/conversion paths, original math import bindings and scoped native execution."
         }
       ]
+    },
+    "1408ccc60": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "counter",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Counter registration, matching field reads/writes, kind32 caller and offset-table initializer identify the role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native helper body reviewed, scoped hardware execution and independently persisted name/types.",
+      "code_sha256": "2938708cf655bcee9ae17f244d64714ee56713f99b602d50db9db2d9c026c508",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadCounterOutputVariant",
+          "support": "Original field binding and native caller, instruction-verified metadata, scoped execution and independent saved-project reopening."
+        }
+      ]
+    },
+    "1408cca60": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "counter",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Counter registration, matching field reads/writes, kind32 caller and offset-table initializer identify the role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native helper body reviewed, scoped hardware execution and independently persisted name/types.",
+      "code_sha256": "e3814e8335028cef5d8cce2af8cbe1d84e4b337afa9aee5ffcd6b337373023aa",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateCounterFromInputTransitions",
+          "support": "Original field binding and native caller, instruction-verified metadata, scoped execution and independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48176,6 +48216,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

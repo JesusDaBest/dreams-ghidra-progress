@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 202,
+    "done": 204,
     "todo": 1484,
-    "total": 1686,
-    "behavior_or_helpers_reviewed": 143,
+    "total": 1688,
+    "behavior_or_helpers_reviewed": 145,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 55,
+        "done": 57,
         "todo": 413,
-        "total": 468,
-        "behavior_or_helpers_reviewed": 13,
+        "total": 470,
+        "behavior_or_helpers_reviewed": 15,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 15,
+        "runtime_functions_identified": 17,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -38,6 +38,8 @@
           "VisitWirelessTransmitterProperties",
           "VisitVariableGadgetProperties",
           "MarkLogicCycleWireEdges",
+          "UpdateCounterFromInputTransitions",
+          "ReadCounterOutputVariant",
           "EvaluateCalculatorInputs",
           "EvaluateWideCalculatorInputs",
           "ReadSplitterOutputVariant",
@@ -510,6 +512,8 @@
           "1404df530",
           "1404e33a0",
           "14073de90",
+          "1408cca60",
+          "1408ccc60",
           "1408ce4f0",
           "1408ce5b0",
           "1408cecf0",
@@ -968,6 +972,2265 @@
         ],
         "unresolved_addresses": [],
         "groups": [
+          {
+            "name": "gadgets-logic/logic",
+            "label": "Logic & signals",
+            "done": 27,
+            "todo": 68,
+            "total": 95,
+            "behavior_or_helpers_reviewed": 10,
+            "properties_or_types_reviewed": 17,
+            "runtime_functions_identified": 10,
+            "property_type_functions_identified": 85,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "VisitCalculatorProperties",
+              "VisitSplitterProperties",
+              "VisitCombinerProperties",
+              "VisitSignalInspectorProperties",
+              "VisitSignalGeneratorProperties",
+              "VisitWirelessReceiverProperties",
+              "VisitWirelessTransmitterProperties",
+              "MarkLogicCycleWireEdges",
+              "UpdateCounterFromInputTransitions",
+              "ReadCounterOutputVariant",
+              "EvaluateCalculatorInputs",
+              "EvaluateWideCalculatorInputs",
+              "ReadSplitterOutputVariant",
+              "BuildCombinerOutputVariant",
+              "RegisterCombinerTypeDescriptor",
+              "RegisterSignalInspectorTypeDescriptor",
+              "RegisterSignalGeneratorTypeDescriptor",
+              "RegisterWirelessReceiverTypeDescriptor",
+              "RegisterWirelessTransmitterTypeDescriptor",
+              "RegisterWirelessTransmitterFieldOffsets",
+              "RegisterWirelessReceiverFieldOffsets",
+              "RegisterSignalGeneratorFieldOffsets",
+              "RegisterSignalInspectorFieldOffsets",
+              "RegisterCombinerFieldOffsets",
+              "NormalizeFloatComponentsWithUniformFallback",
+              "EvaluateTypedCalculatorOperation",
+              "AccumulateWireSignalByBlendMode"
+            ],
+            "todo_names": [
+              "0x1404a7180",
+              "0x1404bc6b0",
+              "0x1404bd0c0",
+              "0x1404beab0",
+              "0x1404bfad0",
+              "0x1404c0200",
+              "0x1404c06e0",
+              "0x1404c0bc0",
+              "0x1404c8270",
+              "0x1404ce170",
+              "0x1404dcc90",
+              "0x1404dfa70",
+              "0x1404e8760",
+              "0x1404f2e20",
+              "0x140c8d950",
+              "0x140c8da00",
+              "0x140c8da40",
+              "0x140cad450",
+              "0x140cad500",
+              "0x140cad550",
+              "0x140cb19b0",
+              "0x140cb1a60",
+              "0x140cb1ab0",
+              "0x140cb9dd0",
+              "0x140cb9e80",
+              "0x140cba130",
+              "0x140cbb980",
+              "0x140cbba30",
+              "0x140cbba70",
+              "0x140cbc5e0",
+              "0x140cbc940",
+              "0x140cbc9f0",
+              "0x140cbca50",
+              "0x140cbe4d0",
+              "0x140cbe580",
+              "0x140cbe5e0",
+              "0x140cbfbd0",
+              "0x140cbfc80",
+              "0x140cbfce0",
+              "0x140cc0070",
+              "0x140cc0120",
+              "0x140cc01b0",
+              "0x140cc0540",
+              "0x140cc05f0",
+              "0x140cc0680",
+              "0x140cc9fe0",
+              "0x140cca090",
+              "0x140cca0e0",
+              "0x140d18580",
+              "0x140d54990",
+              "0x140d55900",
+              "0x140d559d0",
+              "0x140d55b70",
+              "0x140d55c40",
+              "0x140d567a0",
+              "0x140d56e20",
+              "0x140d577e0",
+              "0x140d578b0",
+              "0x140d57f30",
+              "0x140d58dd0",
+              "0x140d59c70",
+              "0x140d66230",
+              "0x140d67730",
+              "0x140d6ce30",
+              "0x140d6ef00",
+              "0x140d728d0",
+              "0x140d743c0",
+              "0x140d777b0"
+            ],
+            "done_addresses": [
+              "1404d7ef0",
+              "1404d83d0",
+              "1404d87a0",
+              "1404d9c10",
+              "1404da460",
+              "1404dedb0",
+              "1404df530",
+              "14073de90",
+              "1408cca60",
+              "1408ccc60",
+              "1408ce4f0",
+              "1408ce5b0",
+              "1408cecf0",
+              "1408cf9d0",
+              "140d57980",
+              "140d57b20",
+              "140d57bf0",
+              "140d581a0",
+              "140d58270",
+              "140d6c220",
+              "140d6c4b0",
+              "140d6e010",
+              "140d6e2b0",
+              "140d6e850",
+              "1411c2100",
+              "1411c21e0",
+              "141218d80"
+            ],
+            "todo_addresses": [
+              "1404a7180",
+              "1404bc6b0",
+              "1404bd0c0",
+              "1404beab0",
+              "1404bfad0",
+              "1404c0200",
+              "1404c06e0",
+              "1404c0bc0",
+              "1404c8270",
+              "1404ce170",
+              "1404dcc90",
+              "1404dfa70",
+              "1404e8760",
+              "1404f2e20",
+              "140c8d950",
+              "140c8da00",
+              "140c8da40",
+              "140cad450",
+              "140cad500",
+              "140cad550",
+              "140cb19b0",
+              "140cb1a60",
+              "140cb1ab0",
+              "140cb9dd0",
+              "140cb9e80",
+              "140cba130",
+              "140cbb980",
+              "140cbba30",
+              "140cbba70",
+              "140cbc5e0",
+              "140cbc940",
+              "140cbc9f0",
+              "140cbca50",
+              "140cbe4d0",
+              "140cbe580",
+              "140cbe5e0",
+              "140cbfbd0",
+              "140cbfc80",
+              "140cbfce0",
+              "140cc0070",
+              "140cc0120",
+              "140cc01b0",
+              "140cc0540",
+              "140cc05f0",
+              "140cc0680",
+              "140cc9fe0",
+              "140cca090",
+              "140cca0e0",
+              "140d18580",
+              "140d54990",
+              "140d55900",
+              "140d559d0",
+              "140d55b70",
+              "140d55c40",
+              "140d567a0",
+              "140d56e20",
+              "140d577e0",
+              "140d578b0",
+              "140d57f30",
+              "140d58dd0",
+              "140d59c70",
+              "140d66230",
+              "140d67730",
+              "140d6ce30",
+              "140d6ef00",
+              "140d728d0",
+              "140d743c0",
+              "140d777b0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "gadgets-logic/logic/calculator",
+                "label": "Calculator",
+                "done": 4,
+                "todo": 2,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitCalculatorProperties",
+                  "EvaluateCalculatorInputs",
+                  "NormalizeFloatComponentsWithUniformFallback",
+                  "EvaluateTypedCalculatorOperation"
+                ],
+                "todo_names": [
+                  "0x140d577e0",
+                  "0x140d6ef00"
+                ],
+                "done_addresses": [
+                  "1404d7ef0",
+                  "1408ce4f0",
+                  "1411c2100",
+                  "1411c21e0"
+                ],
+                "todo_addresses": [
+                  "140d577e0",
+                  "140d6ef00"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/calculator/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitCalculatorProperties"
+                    ],
+                    "todo_names": [
+                      "0x140d577e0",
+                      "0x140d6ef00"
+                    ],
+                    "done_addresses": [
+                      "1404d7ef0"
+                    ],
+                    "todo_addresses": [
+                      "140d577e0",
+                      "140d6ef00"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/calculator/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "EvaluateCalculatorInputs",
+                      "NormalizeFloatComponentsWithUniformFallback",
+                      "EvaluateTypedCalculatorOperation"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ce4f0",
+                      "1411c2100",
+                      "1411c21e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/combiner",
+                "label": "Combiner",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitCombinerProperties",
+                  "BuildCombinerOutputVariant",
+                  "RegisterCombinerTypeDescriptor",
+                  "RegisterCombinerFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404d87a0",
+                  "1408cf9d0",
+                  "140d57980",
+                  "140d6e850"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/combiner/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitCombinerProperties",
+                      "RegisterCombinerTypeDescriptor",
+                      "RegisterCombinerFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404d87a0",
+                      "140d57980",
+                      "140d6e850"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/combiner/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "BuildCombinerOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cf9d0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/counter",
+                "label": "Counter",
+                "done": 2,
+                "todo": 2,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "UpdateCounterFromInputTransitions",
+                  "ReadCounterOutputVariant"
+                ],
+                "todo_names": [
+                  "0x1404bc6b0",
+                  "0x140d55900"
+                ],
+                "done_addresses": [
+                  "1408cca60",
+                  "1408ccc60"
+                ],
+                "todo_addresses": [
+                  "1404bc6b0",
+                  "140d55900"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/counter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404bc6b0",
+                      "0x140d55900"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404bc6b0",
+                      "140d55900"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/counter/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateCounterFromInputTransitions",
+                      "ReadCounterOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cca60",
+                      "1408ccc60"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/ecalculatorop",
+                "label": "Calculator Op",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cb9dd0",
+                  "0x140cb9e80",
+                  "0x140cba130",
+                  "0x140d66230"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cb9dd0",
+                  "140cb9e80",
+                  "140cba130",
+                  "140d66230"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/ecalculatorop/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cb9dd0",
+                      "0x140cb9e80",
+                      "0x140cba130",
+                      "0x140d66230"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cb9dd0",
+                      "140cb9e80",
+                      "140cba130",
+                      "140d66230"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/edelayselect",
+                "label": "Delay Select",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cbe4d0",
+                  "0x140cbe580",
+                  "0x140cbe5e0",
+                  "0x140d6ce30"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cbe4d0",
+                  "140cbe580",
+                  "140cbe5e0",
+                  "140d6ce30"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/edelayselect/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cbe4d0",
+                      "0x140cbe580",
+                      "0x140cbe5e0",
+                      "0x140d6ce30"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cbe4d0",
+                      "140cbe580",
+                      "140cbe5e0",
+                      "140d6ce30"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/elabelanyorall",
+                "label": "Label Any Or All",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cbb980",
+                  "0x140cbba30",
+                  "0x140cbba70",
+                  "0x140d67730"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cbb980",
+                  "140cbba30",
+                  "140cbba70",
+                  "140d67730"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/elabelanyorall/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cbb980",
+                      "0x140cbba30",
+                      "0x140cbba70",
+                      "0x140d67730"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cbb980",
+                      "140cbba30",
+                      "140cbba70",
+                      "140d67730"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/ecalculatorunits",
+                "label": "Calculator Units",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140c8d950",
+                  "0x140c8da00",
+                  "0x140c8da40"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140c8d950",
+                  "140c8da00",
+                  "140c8da40"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/ecalculatorunits/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140c8d950",
+                      "0x140c8da00",
+                      "0x140c8da40"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140c8d950",
+                      "140c8da00",
+                      "140c8da40"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/egateresetmode",
+                "label": "Gate Reset Mode",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cad450",
+                  "0x140cad500",
+                  "0x140cad550"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cad450",
+                  "140cad500",
+                  "140cad550"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/egateresetmode/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cad450",
+                      "0x140cad500",
+                      "0x140cad550"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cad450",
+                      "140cad500",
+                      "140cad550"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/erandommode",
+                "label": "Random Mode",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cc9fe0",
+                  "0x140cca090",
+                  "0x140cca0e0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cc9fe0",
+                  "140cca090",
+                  "140cca0e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/erandommode/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cc9fe0",
+                      "0x140cca090",
+                      "0x140cca0e0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cc9fe0",
+                      "140cca090",
+                      "140cca0e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/eremappercurve",
+                "label": "Remapper Curve",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cc0070",
+                  "0x140cc0120",
+                  "0x140cc01b0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cc0070",
+                  "140cc0120",
+                  "140cc01b0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/eremappercurve/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cc0070",
+                      "0x140cc0120",
+                      "0x140cc01b0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cc0070",
+                      "140cc0120",
+                      "140cc01b0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/eremapperedgemode",
+                "label": "Remapper Edge Mode",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cc0540",
+                  "0x140cc05f0",
+                  "0x140cc0680"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cc0540",
+                  "140cc05f0",
+                  "140cc0680"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/eremapperedgemode/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cc0540",
+                      "0x140cc05f0",
+                      "0x140cc0680"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cc0540",
+                      "140cc05f0",
+                      "140cc0680"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/eremapperpreset",
+                "label": "Remapper Preset",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cbfbd0",
+                  "0x140cbfc80",
+                  "0x140cbfce0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cbfbd0",
+                  "140cbfc80",
+                  "140cbfce0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/eremapperpreset/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cbfbd0",
+                      "0x140cbfc80",
+                      "0x140cbfce0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cbfbd0",
+                      "140cbfc80",
+                      "140cbfce0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/etimerinputmode",
+                "label": "Timer Input Mode",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cbc940",
+                  "0x140cbc9f0",
+                  "0x140cbca50"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cbc940",
+                  "140cbc9f0",
+                  "140cbca50"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/etimerinputmode/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cbc940",
+                      "0x140cbc9f0",
+                      "0x140cbca50"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cbc940",
+                      "140cbc9f0",
+                      "140cbca50"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/ewireblendop",
+                "label": "Wire Blend Op",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cb19b0",
+                  "0x140cb1a60",
+                  "0x140cb1ab0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cb19b0",
+                  "140cb1a60",
+                  "140cb1ab0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/ewireblendop/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cb19b0",
+                      "0x140cb1a60",
+                      "0x140cb1ab0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cb19b0",
+                      "140cb1a60",
+                      "140cb1ab0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/randomiser",
+                "label": "Randomiser",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404beab0",
+                  "0x140d55b70",
+                  "0x140d777b0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404beab0",
+                  "140d55b70",
+                  "140d777b0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/randomiser/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404beab0",
+                      "0x140d55b70",
+                      "0x140d777b0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404beab0",
+                      "140d55b70",
+                      "140d777b0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/remapper",
+                "label": "Remapper",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404c8270",
+                  "0x140d567a0",
+                  "0x140d743c0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404c8270",
+                  "140d567a0",
+                  "140d743c0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/remapper/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c8270",
+                      "0x140d567a0",
+                      "0x140d743c0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c8270",
+                      "140d567a0",
+                      "140d743c0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/signalgenerator",
+                "label": "Signal Generator",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitSignalGeneratorProperties",
+                  "RegisterSignalGeneratorTypeDescriptor",
+                  "RegisterSignalGeneratorFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404da460",
+                  "140d57bf0",
+                  "140d6e010"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/signalgenerator/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitSignalGeneratorProperties",
+                      "RegisterSignalGeneratorTypeDescriptor",
+                      "RegisterSignalGeneratorFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404da460",
+                      "140d57bf0",
+                      "140d6e010"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/signalinspector",
+                "label": "Signal Inspector",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitSignalInspectorProperties",
+                  "RegisterSignalInspectorTypeDescriptor",
+                  "RegisterSignalInspectorFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404d9c10",
+                  "140d57b20",
+                  "140d6e2b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/signalinspector/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitSignalInspectorProperties",
+                      "RegisterSignalInspectorTypeDescriptor",
+                      "RegisterSignalInspectorFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404d9c10",
+                      "140d57b20",
+                      "140d6e2b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/splitter",
+                "label": "Splitter",
+                "done": 2,
+                "todo": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitSplitterProperties",
+                  "ReadSplitterOutputVariant"
+                ],
+                "todo_names": [
+                  "0x140d578b0"
+                ],
+                "done_addresses": [
+                  "1404d83d0",
+                  "1408cecf0"
+                ],
+                "todo_addresses": [
+                  "140d578b0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/splitter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitSplitterProperties"
+                    ],
+                    "todo_names": [
+                      "0x140d578b0"
+                    ],
+                    "done_addresses": [
+                      "1404d83d0"
+                    ],
+                    "todo_addresses": [
+                      "140d578b0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/splitter/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReadSplitterOutputVariant"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408cecf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/timer",
+                "label": "Timer",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404ce170",
+                  "0x140d56e20",
+                  "0x140d728d0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404ce170",
+                  "140d56e20",
+                  "140d728d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/timer/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404ce170",
+                      "0x140d56e20",
+                      "0x140d728d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404ce170",
+                      "140d56e20",
+                      "140d728d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/widecalculator",
+                "label": "Wide Calculator",
+                "done": 1,
+                "todo": 2,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "EvaluateWideCalculatorInputs"
+                ],
+                "todo_names": [
+                  "0x1404e8760",
+                  "0x140d58dd0"
+                ],
+                "done_addresses": [
+                  "1408ce5b0"
+                ],
+                "todo_addresses": [
+                  "1404e8760",
+                  "140d58dd0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/widecalculator/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404e8760",
+                      "0x140d58dd0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404e8760",
+                      "140d58dd0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/widecalculator/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "EvaluateWideCalculatorInputs"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ce5b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/wirelessreceiver",
+                "label": "Wireless Receiver",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitWirelessReceiverProperties",
+                  "RegisterWirelessReceiverTypeDescriptor",
+                  "RegisterWirelessReceiverFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404dedb0",
+                  "140d581a0",
+                  "140d6c4b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/wirelessreceiver/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitWirelessReceiverProperties",
+                      "RegisterWirelessReceiverTypeDescriptor",
+                      "RegisterWirelessReceiverFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404dedb0",
+                      "140d581a0",
+                      "140d6c4b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/wirelesstransmitter",
+                "label": "Wireless Transmitter",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitWirelessTransmitterProperties",
+                  "RegisterWirelessTransmitterTypeDescriptor",
+                  "RegisterWirelessTransmitterFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404df530",
+                  "140d58270",
+                  "140d6c220"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/wirelesstransmitter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitWirelessTransmitterProperties",
+                      "RegisterWirelessTransmitterTypeDescriptor",
+                      "RegisterWirelessTransmitterFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404df530",
+                      "140d58270",
+                      "140d6c220"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/delaygadget",
+                "label": "Delay Gadget",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404dcc90",
+                  "0x140d57f30"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404dcc90",
+                  "140d57f30"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/delaygadget/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404dcc90",
+                      "0x140d57f30"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404dcc90",
+                      "140d57f30"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/inverter",
+                "label": "Inverter",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404bd0c0",
+                  "0x140d559d0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404bd0c0",
+                  "140d559d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/inverter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404bd0c0",
+                      "0x140d559d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404bd0c0",
+                      "140d559d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/microchip",
+                "label": "Microchip",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404a7180",
+                  "0x140d54990"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404a7180",
+                  "140d54990"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/microchip/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404a7180",
+                      "0x140d54990"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404a7180",
+                      "140d54990"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/selector",
+                "label": "Selector",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404bfad0",
+                  "0x140d55c40"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404bfad0",
+                  "140d55c40"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/selector/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404bfad0",
+                      "0x140d55c40"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404bfad0",
+                      "140d55c40"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/timegadget",
+                "label": "Time Gadget",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404f2e20",
+                  "0x140d59c70"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404f2e20",
+                  "140d59c70"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/timegadget/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404f2e20",
+                      "0x140d59c70"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404f2e20",
+                      "140d59c70"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/and",
+                "label": "And",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404c0200"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404c0200"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/and/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c0200"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c0200"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/break-logic-cycles",
+                "label": "Break Logic Cycles",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "MarkLogicCycleWireEdges"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14073de90"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/break-logic-cycles/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "MarkLogicCycleWireEdges"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14073de90"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/etimerstate",
+                "label": "Timer State",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cbc5e0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cbc5e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/etimerstate/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cbc5e0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cbc5e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/gate",
+                "label": "Gate",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404dfa70"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404dfa70"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/gate/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404dfa70"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404dfa70"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/or",
+                "label": "Or",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404c06e0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404c06e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/or/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c06e0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c06e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/remapperstate",
+                "label": "Remapper State",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d18580"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d18580"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/remapperstate/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d18580"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d18580"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/wire-blending",
+                "label": "Wire blending",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AccumulateWireSignalByBlendMode"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141218d80"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/wire-blending/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AccumulateWireSignalByBlendMode"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141218d80"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/logic/xor",
+                "label": "Xor",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404c0bc0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404c0bc0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/xor/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c0bc0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c0bc0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
           {
             "name": "gadgets-logic/network",
             "label": "Online & multiplayer gadgets",
@@ -2930,2230 +5193,6 @@
                     "todo_addresses": [
                       "1404ef1f0",
                       "140d59790"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "gadgets-logic/logic",
-            "label": "Logic & signals",
-            "done": 25,
-            "todo": 68,
-            "total": 93,
-            "behavior_or_helpers_reviewed": 8,
-            "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 8,
-            "property_type_functions_identified": 85,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "VisitCalculatorProperties",
-              "VisitSplitterProperties",
-              "VisitCombinerProperties",
-              "VisitSignalInspectorProperties",
-              "VisitSignalGeneratorProperties",
-              "VisitWirelessReceiverProperties",
-              "VisitWirelessTransmitterProperties",
-              "MarkLogicCycleWireEdges",
-              "EvaluateCalculatorInputs",
-              "EvaluateWideCalculatorInputs",
-              "ReadSplitterOutputVariant",
-              "BuildCombinerOutputVariant",
-              "RegisterCombinerTypeDescriptor",
-              "RegisterSignalInspectorTypeDescriptor",
-              "RegisterSignalGeneratorTypeDescriptor",
-              "RegisterWirelessReceiverTypeDescriptor",
-              "RegisterWirelessTransmitterTypeDescriptor",
-              "RegisterWirelessTransmitterFieldOffsets",
-              "RegisterWirelessReceiverFieldOffsets",
-              "RegisterSignalGeneratorFieldOffsets",
-              "RegisterSignalInspectorFieldOffsets",
-              "RegisterCombinerFieldOffsets",
-              "NormalizeFloatComponentsWithUniformFallback",
-              "EvaluateTypedCalculatorOperation",
-              "AccumulateWireSignalByBlendMode"
-            ],
-            "todo_names": [
-              "0x1404a7180",
-              "0x1404bc6b0",
-              "0x1404bd0c0",
-              "0x1404beab0",
-              "0x1404bfad0",
-              "0x1404c0200",
-              "0x1404c06e0",
-              "0x1404c0bc0",
-              "0x1404c8270",
-              "0x1404ce170",
-              "0x1404dcc90",
-              "0x1404dfa70",
-              "0x1404e8760",
-              "0x1404f2e20",
-              "0x140c8d950",
-              "0x140c8da00",
-              "0x140c8da40",
-              "0x140cad450",
-              "0x140cad500",
-              "0x140cad550",
-              "0x140cb19b0",
-              "0x140cb1a60",
-              "0x140cb1ab0",
-              "0x140cb9dd0",
-              "0x140cb9e80",
-              "0x140cba130",
-              "0x140cbb980",
-              "0x140cbba30",
-              "0x140cbba70",
-              "0x140cbc5e0",
-              "0x140cbc940",
-              "0x140cbc9f0",
-              "0x140cbca50",
-              "0x140cbe4d0",
-              "0x140cbe580",
-              "0x140cbe5e0",
-              "0x140cbfbd0",
-              "0x140cbfc80",
-              "0x140cbfce0",
-              "0x140cc0070",
-              "0x140cc0120",
-              "0x140cc01b0",
-              "0x140cc0540",
-              "0x140cc05f0",
-              "0x140cc0680",
-              "0x140cc9fe0",
-              "0x140cca090",
-              "0x140cca0e0",
-              "0x140d18580",
-              "0x140d54990",
-              "0x140d55900",
-              "0x140d559d0",
-              "0x140d55b70",
-              "0x140d55c40",
-              "0x140d567a0",
-              "0x140d56e20",
-              "0x140d577e0",
-              "0x140d578b0",
-              "0x140d57f30",
-              "0x140d58dd0",
-              "0x140d59c70",
-              "0x140d66230",
-              "0x140d67730",
-              "0x140d6ce30",
-              "0x140d6ef00",
-              "0x140d728d0",
-              "0x140d743c0",
-              "0x140d777b0"
-            ],
-            "done_addresses": [
-              "1404d7ef0",
-              "1404d83d0",
-              "1404d87a0",
-              "1404d9c10",
-              "1404da460",
-              "1404dedb0",
-              "1404df530",
-              "14073de90",
-              "1408ce4f0",
-              "1408ce5b0",
-              "1408cecf0",
-              "1408cf9d0",
-              "140d57980",
-              "140d57b20",
-              "140d57bf0",
-              "140d581a0",
-              "140d58270",
-              "140d6c220",
-              "140d6c4b0",
-              "140d6e010",
-              "140d6e2b0",
-              "140d6e850",
-              "1411c2100",
-              "1411c21e0",
-              "141218d80"
-            ],
-            "todo_addresses": [
-              "1404a7180",
-              "1404bc6b0",
-              "1404bd0c0",
-              "1404beab0",
-              "1404bfad0",
-              "1404c0200",
-              "1404c06e0",
-              "1404c0bc0",
-              "1404c8270",
-              "1404ce170",
-              "1404dcc90",
-              "1404dfa70",
-              "1404e8760",
-              "1404f2e20",
-              "140c8d950",
-              "140c8da00",
-              "140c8da40",
-              "140cad450",
-              "140cad500",
-              "140cad550",
-              "140cb19b0",
-              "140cb1a60",
-              "140cb1ab0",
-              "140cb9dd0",
-              "140cb9e80",
-              "140cba130",
-              "140cbb980",
-              "140cbba30",
-              "140cbba70",
-              "140cbc5e0",
-              "140cbc940",
-              "140cbc9f0",
-              "140cbca50",
-              "140cbe4d0",
-              "140cbe580",
-              "140cbe5e0",
-              "140cbfbd0",
-              "140cbfc80",
-              "140cbfce0",
-              "140cc0070",
-              "140cc0120",
-              "140cc01b0",
-              "140cc0540",
-              "140cc05f0",
-              "140cc0680",
-              "140cc9fe0",
-              "140cca090",
-              "140cca0e0",
-              "140d18580",
-              "140d54990",
-              "140d55900",
-              "140d559d0",
-              "140d55b70",
-              "140d55c40",
-              "140d567a0",
-              "140d56e20",
-              "140d577e0",
-              "140d578b0",
-              "140d57f30",
-              "140d58dd0",
-              "140d59c70",
-              "140d66230",
-              "140d67730",
-              "140d6ce30",
-              "140d6ef00",
-              "140d728d0",
-              "140d743c0",
-              "140d777b0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "gadgets-logic/logic/calculator",
-                "label": "Calculator",
-                "done": 4,
-                "todo": 2,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitCalculatorProperties",
-                  "EvaluateCalculatorInputs",
-                  "NormalizeFloatComponentsWithUniformFallback",
-                  "EvaluateTypedCalculatorOperation"
-                ],
-                "todo_names": [
-                  "0x140d577e0",
-                  "0x140d6ef00"
-                ],
-                "done_addresses": [
-                  "1404d7ef0",
-                  "1408ce4f0",
-                  "1411c2100",
-                  "1411c21e0"
-                ],
-                "todo_addresses": [
-                  "140d577e0",
-                  "140d6ef00"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/calculator/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 2,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitCalculatorProperties"
-                    ],
-                    "todo_names": [
-                      "0x140d577e0",
-                      "0x140d6ef00"
-                    ],
-                    "done_addresses": [
-                      "1404d7ef0"
-                    ],
-                    "todo_addresses": [
-                      "140d577e0",
-                      "140d6ef00"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/logic/calculator/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "EvaluateCalculatorInputs",
-                      "NormalizeFloatComponentsWithUniformFallback",
-                      "EvaluateTypedCalculatorOperation"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408ce4f0",
-                      "1411c2100",
-                      "1411c21e0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/combiner",
-                "label": "Combiner",
-                "done": 4,
-                "todo": 0,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitCombinerProperties",
-                  "BuildCombinerOutputVariant",
-                  "RegisterCombinerTypeDescriptor",
-                  "RegisterCombinerFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404d87a0",
-                  "1408cf9d0",
-                  "140d57980",
-                  "140d6e850"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/combiner/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitCombinerProperties",
-                      "RegisterCombinerTypeDescriptor",
-                      "RegisterCombinerFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404d87a0",
-                      "140d57980",
-                      "140d6e850"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/logic/combiner/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "BuildCombinerOutputVariant"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408cf9d0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/ecalculatorop",
-                "label": "Calculator Op",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cb9dd0",
-                  "0x140cb9e80",
-                  "0x140cba130",
-                  "0x140d66230"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cb9dd0",
-                  "140cb9e80",
-                  "140cba130",
-                  "140d66230"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/ecalculatorop/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cb9dd0",
-                      "0x140cb9e80",
-                      "0x140cba130",
-                      "0x140d66230"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cb9dd0",
-                      "140cb9e80",
-                      "140cba130",
-                      "140d66230"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/edelayselect",
-                "label": "Delay Select",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cbe4d0",
-                  "0x140cbe580",
-                  "0x140cbe5e0",
-                  "0x140d6ce30"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cbe4d0",
-                  "140cbe580",
-                  "140cbe5e0",
-                  "140d6ce30"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/edelayselect/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cbe4d0",
-                      "0x140cbe580",
-                      "0x140cbe5e0",
-                      "0x140d6ce30"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cbe4d0",
-                      "140cbe580",
-                      "140cbe5e0",
-                      "140d6ce30"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/elabelanyorall",
-                "label": "Label Any Or All",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cbb980",
-                  "0x140cbba30",
-                  "0x140cbba70",
-                  "0x140d67730"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cbb980",
-                  "140cbba30",
-                  "140cbba70",
-                  "140d67730"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/elabelanyorall/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cbb980",
-                      "0x140cbba30",
-                      "0x140cbba70",
-                      "0x140d67730"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cbb980",
-                      "140cbba30",
-                      "140cbba70",
-                      "140d67730"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/ecalculatorunits",
-                "label": "Calculator Units",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140c8d950",
-                  "0x140c8da00",
-                  "0x140c8da40"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140c8d950",
-                  "140c8da00",
-                  "140c8da40"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/ecalculatorunits/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140c8d950",
-                      "0x140c8da00",
-                      "0x140c8da40"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140c8d950",
-                      "140c8da00",
-                      "140c8da40"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/egateresetmode",
-                "label": "Gate Reset Mode",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cad450",
-                  "0x140cad500",
-                  "0x140cad550"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cad450",
-                  "140cad500",
-                  "140cad550"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/egateresetmode/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cad450",
-                      "0x140cad500",
-                      "0x140cad550"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cad450",
-                      "140cad500",
-                      "140cad550"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/erandommode",
-                "label": "Random Mode",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cc9fe0",
-                  "0x140cca090",
-                  "0x140cca0e0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cc9fe0",
-                  "140cca090",
-                  "140cca0e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/erandommode/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cc9fe0",
-                      "0x140cca090",
-                      "0x140cca0e0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cc9fe0",
-                      "140cca090",
-                      "140cca0e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/eremappercurve",
-                "label": "Remapper Curve",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cc0070",
-                  "0x140cc0120",
-                  "0x140cc01b0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cc0070",
-                  "140cc0120",
-                  "140cc01b0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/eremappercurve/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cc0070",
-                      "0x140cc0120",
-                      "0x140cc01b0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cc0070",
-                      "140cc0120",
-                      "140cc01b0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/eremapperedgemode",
-                "label": "Remapper Edge Mode",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cc0540",
-                  "0x140cc05f0",
-                  "0x140cc0680"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cc0540",
-                  "140cc05f0",
-                  "140cc0680"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/eremapperedgemode/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cc0540",
-                      "0x140cc05f0",
-                      "0x140cc0680"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cc0540",
-                      "140cc05f0",
-                      "140cc0680"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/eremapperpreset",
-                "label": "Remapper Preset",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cbfbd0",
-                  "0x140cbfc80",
-                  "0x140cbfce0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cbfbd0",
-                  "140cbfc80",
-                  "140cbfce0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/eremapperpreset/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cbfbd0",
-                      "0x140cbfc80",
-                      "0x140cbfce0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cbfbd0",
-                      "140cbfc80",
-                      "140cbfce0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/etimerinputmode",
-                "label": "Timer Input Mode",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cbc940",
-                  "0x140cbc9f0",
-                  "0x140cbca50"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cbc940",
-                  "140cbc9f0",
-                  "140cbca50"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/etimerinputmode/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cbc940",
-                      "0x140cbc9f0",
-                      "0x140cbca50"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cbc940",
-                      "140cbc9f0",
-                      "140cbca50"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/ewireblendop",
-                "label": "Wire Blend Op",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cb19b0",
-                  "0x140cb1a60",
-                  "0x140cb1ab0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cb19b0",
-                  "140cb1a60",
-                  "140cb1ab0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/ewireblendop/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cb19b0",
-                      "0x140cb1a60",
-                      "0x140cb1ab0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cb19b0",
-                      "140cb1a60",
-                      "140cb1ab0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/randomiser",
-                "label": "Randomiser",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404beab0",
-                  "0x140d55b70",
-                  "0x140d777b0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404beab0",
-                  "140d55b70",
-                  "140d777b0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/randomiser/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404beab0",
-                      "0x140d55b70",
-                      "0x140d777b0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404beab0",
-                      "140d55b70",
-                      "140d777b0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/remapper",
-                "label": "Remapper",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404c8270",
-                  "0x140d567a0",
-                  "0x140d743c0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404c8270",
-                  "140d567a0",
-                  "140d743c0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/remapper/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c8270",
-                      "0x140d567a0",
-                      "0x140d743c0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c8270",
-                      "140d567a0",
-                      "140d743c0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/signalgenerator",
-                "label": "Signal Generator",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitSignalGeneratorProperties",
-                  "RegisterSignalGeneratorTypeDescriptor",
-                  "RegisterSignalGeneratorFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404da460",
-                  "140d57bf0",
-                  "140d6e010"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/signalgenerator/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitSignalGeneratorProperties",
-                      "RegisterSignalGeneratorTypeDescriptor",
-                      "RegisterSignalGeneratorFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404da460",
-                      "140d57bf0",
-                      "140d6e010"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/signalinspector",
-                "label": "Signal Inspector",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitSignalInspectorProperties",
-                  "RegisterSignalInspectorTypeDescriptor",
-                  "RegisterSignalInspectorFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404d9c10",
-                  "140d57b20",
-                  "140d6e2b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/signalinspector/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitSignalInspectorProperties",
-                      "RegisterSignalInspectorTypeDescriptor",
-                      "RegisterSignalInspectorFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404d9c10",
-                      "140d57b20",
-                      "140d6e2b0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/splitter",
-                "label": "Splitter",
-                "done": 2,
-                "todo": 1,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitSplitterProperties",
-                  "ReadSplitterOutputVariant"
-                ],
-                "todo_names": [
-                  "0x140d578b0"
-                ],
-                "done_addresses": [
-                  "1404d83d0",
-                  "1408cecf0"
-                ],
-                "todo_addresses": [
-                  "140d578b0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/splitter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitSplitterProperties"
-                    ],
-                    "todo_names": [
-                      "0x140d578b0"
-                    ],
-                    "done_addresses": [
-                      "1404d83d0"
-                    ],
-                    "todo_addresses": [
-                      "140d578b0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/logic/splitter/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ReadSplitterOutputVariant"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408cecf0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/timer",
-                "label": "Timer",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404ce170",
-                  "0x140d56e20",
-                  "0x140d728d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404ce170",
-                  "140d56e20",
-                  "140d728d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/timer/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404ce170",
-                      "0x140d56e20",
-                      "0x140d728d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404ce170",
-                      "140d56e20",
-                      "140d728d0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/widecalculator",
-                "label": "Wide Calculator",
-                "done": 1,
-                "todo": 2,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "EvaluateWideCalculatorInputs"
-                ],
-                "todo_names": [
-                  "0x1404e8760",
-                  "0x140d58dd0"
-                ],
-                "done_addresses": [
-                  "1408ce5b0"
-                ],
-                "todo_addresses": [
-                  "1404e8760",
-                  "140d58dd0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/widecalculator/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404e8760",
-                      "0x140d58dd0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404e8760",
-                      "140d58dd0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/logic/widecalculator/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "EvaluateWideCalculatorInputs"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408ce5b0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/wirelessreceiver",
-                "label": "Wireless Receiver",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitWirelessReceiverProperties",
-                  "RegisterWirelessReceiverTypeDescriptor",
-                  "RegisterWirelessReceiverFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404dedb0",
-                  "140d581a0",
-                  "140d6c4b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/wirelessreceiver/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitWirelessReceiverProperties",
-                      "RegisterWirelessReceiverTypeDescriptor",
-                      "RegisterWirelessReceiverFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404dedb0",
-                      "140d581a0",
-                      "140d6c4b0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/wirelesstransmitter",
-                "label": "Wireless Transmitter",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitWirelessTransmitterProperties",
-                  "RegisterWirelessTransmitterTypeDescriptor",
-                  "RegisterWirelessTransmitterFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404df530",
-                  "140d58270",
-                  "140d6c220"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/wirelesstransmitter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitWirelessTransmitterProperties",
-                      "RegisterWirelessTransmitterTypeDescriptor",
-                      "RegisterWirelessTransmitterFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404df530",
-                      "140d58270",
-                      "140d6c220"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/counter",
-                "label": "Counter",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404bc6b0",
-                  "0x140d55900"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404bc6b0",
-                  "140d55900"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/counter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404bc6b0",
-                      "0x140d55900"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404bc6b0",
-                      "140d55900"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/delaygadget",
-                "label": "Delay Gadget",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404dcc90",
-                  "0x140d57f30"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404dcc90",
-                  "140d57f30"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/delaygadget/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404dcc90",
-                      "0x140d57f30"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404dcc90",
-                      "140d57f30"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/inverter",
-                "label": "Inverter",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404bd0c0",
-                  "0x140d559d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404bd0c0",
-                  "140d559d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/inverter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404bd0c0",
-                      "0x140d559d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404bd0c0",
-                      "140d559d0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/microchip",
-                "label": "Microchip",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404a7180",
-                  "0x140d54990"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404a7180",
-                  "140d54990"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/microchip/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404a7180",
-                      "0x140d54990"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404a7180",
-                      "140d54990"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/selector",
-                "label": "Selector",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404bfad0",
-                  "0x140d55c40"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404bfad0",
-                  "140d55c40"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/selector/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404bfad0",
-                      "0x140d55c40"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404bfad0",
-                      "140d55c40"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/timegadget",
-                "label": "Time Gadget",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404f2e20",
-                  "0x140d59c70"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404f2e20",
-                  "140d59c70"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/timegadget/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404f2e20",
-                      "0x140d59c70"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404f2e20",
-                      "140d59c70"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/and",
-                "label": "And",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404c0200"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404c0200"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/and/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c0200"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c0200"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/break-logic-cycles",
-                "label": "Break Logic Cycles",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "MarkLogicCycleWireEdges"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14073de90"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/break-logic-cycles/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "MarkLogicCycleWireEdges"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14073de90"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/etimerstate",
-                "label": "Timer State",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cbc5e0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cbc5e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/etimerstate/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cbc5e0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cbc5e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/gate",
-                "label": "Gate",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404dfa70"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404dfa70"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/gate/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404dfa70"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404dfa70"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/or",
-                "label": "Or",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404c06e0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404c06e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/or/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c06e0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c06e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/remapperstate",
-                "label": "Remapper State",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d18580"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d18580"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/remapperstate/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d18580"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d18580"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/wire-blending",
-                "label": "Wire blending",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AccumulateWireSignalByBlendMode"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141218d80"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/wire-blending/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AccumulateWireSignalByBlendMode"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141218d80"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/xor",
-                "label": "Xor",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404c0bc0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404c0bc0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/xor/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c0bc0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c0bc0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40518,5 +40557,5 @@
       }
     ]
   },
-  "unmapped": 7884
+  "unmapped": 7882
 }

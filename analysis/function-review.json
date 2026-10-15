@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "224 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "226 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9171,
-    "other_names": 399,
-    "verification": "complete_inventory_matches_baseline_plus_224_renames_and_19_created_functions"
+    "default_fun_names": 9169,
+    "other_names": 401,
+    "verification": "complete_inventory_matches_baseline_plus_226_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4961,6 +4961,51 @@
         "Descriptive research role name, not original source recovery or full numerical contract.",
         "Remaining operators, type pairs, exceptional inputs and external-library error paths are incomplete; Quaternion/Bitfield ordinary path is statically traced as payload-copy rather than component arithmetic.",
         "No full Calculator/game completion, running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408ccc60",
+      "original_name": "FUN_1408ccc60",
+      "applied_name": "ReadCounterOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadCounterOutputVariant(void * counter, uint property_id, VariantWorking40 * output)",
+      "evidence": [
+        "Original Counter type registration connects CurrValue+d0, MaxValue+d4 and Inverted+d8 to matching runtime reads.",
+        "Complete32-instruction body and property-dispatch caller reviewed.",
+        "2268 original-instruction hardware cases cover9x9 current/max patterns,4 inversion bytes and7 property IDs, including high-bit aliases, zero maximum and unsigned32 boundaries.",
+        "Cold backup, isolated trial and independent reopening verify one name/signature change, RDI/ESI/RDX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research role name, not original source recovery.",
+        "Output property labels, valid UI reachability, state update/reset and whole gadget integration remain unresolved.",
+        "No running-game verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408cca60",
+      "original_name": "FUN_1408cca60",
+      "applied_name": "UpdateCounterFromInputTransitions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateCounterFromInputTransitions(void * context, void * previous_counter, void * counter, int object_index)",
+      "evidence": [
+        "Original Counter field registration, native kind32 caller and original offset-table initializer bind current, maximum, increment/decrement, reset and reset count.",
+        "Complete123-instruction body reviewed: signed clamp, mode/power/flag gates, current/previous sign-class transitions, reset edge and state write.",
+        "1296 inactive/null-previous and8192 synthetic active original-instruction hardware cases pass; metadata values are transparently supplied from verified original initializer writes.",
+        "Cold backup, isolated trial and independent reopening verify one name/signature change, RDI/RSI/RDX/ECX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research role name; concrete context/Game structures remain unresolved.",
+        "Direct caller passes null previous state; real-game reachability of active previous-state comparisons is unverified.",
+        "Active tests use one gate configuration, maximum3 and nonnegative current values; other gates, signed extremes, overflow and infinity remain incomplete.",
+        "No running-game verification or audited-byte credit."
       ]
     }
   ],
