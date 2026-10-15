@@ -1702,3 +1702,10 @@ Repaired the working evaluator signature from native register/stack evidence: tw
 840 finite Number/Signal cases verify seven unsmoothed curves, three range configurations and bypass within1e-6; unused output bytes, inputs and guards are checked exactly. Sixteen separate bypass cases show selected quiet/signaling NaNs become positive zero, while infinities and subnormals preserve their bits. The fixture executes the original libc NaN predicate rather than a substitute normal-value filter.
 
 Smoothing, edge-state behavior, vector/player components and real-game integration remain unverified. No new checked-name or completion credit.
+### Remapper edge state and smoothing
+
+46,080 controlled native cases check all256 prior scalar state-flag bytes across six edge modes, five finite inputs, three prior outputs and Number/Signal tags. Pulse modes emit their selected edge and clear the latch in these unsmoothed cases. ToggleOnEnter/Leave invert the latch on their selected threshold entry. ToggleOnBoth instead sets it at an upper entry and clears it at a lower entry. Upper state bits are preserved.
+
+576 separate native smoothing cases use the original libc exp2f body and indexed table/constants. Selected rise/fall coefficients follow1-exp2(-6*(1/30)/smoothTime), alongside a separate linear increment. Results match the float32 model within1e-6; other bytes and guards are exact. The external exp2f error helper is deliberately unmapped and selected exponents avoid that path.
+
+These cover ordered0..1 ranges and selected scalar inputs. Reversed thresholds, vector/player lanes, combined edge-plus-smoothing behavior and game scheduling remain unverified. No naming or completion increment.

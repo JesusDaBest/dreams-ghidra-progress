@@ -3014,5 +3014,30 @@
     ],
     "name_credit": 0,
     "runtime_game_verified": false
+  },
+  "remapper_edge_smoothing_checkpoint": {
+    "edge_cases": 46080,
+    "smoothing_cases": 576,
+    "edge_findings": [
+      "State bits1/2 track at-or-above upper threshold and at-or-below lower threshold; bits3..7 are preserved.",
+      "Pulse modes1/2/3 set latch on qualifying upper/lower entries, output1 in these unsmoothed cases then clear latch.",
+      "ToggleOnEnter4/ToggleOnLeave5 invert latch on their selected threshold entry.",
+      "ToggleOnBoth6 sets latch on upper entry and clears it on lower entry; it does not blindly invert on either edge."
+    ],
+    "smoothing_findings": [
+      "Rise/fall coefficients follow selected float32 model1-exp2(-6*(1/30)/smoothTime), with separate linear increment(1/30)/smoothTime*0.061640624.",
+      "Zero-comparison flag disables smoothing; inactive mode gate with zero flag0 suppresses positive smoothing advancement in selected cases."
+    ],
+    "limits": [
+      "Only ordered0..1 thresholds/output range, zero smoothing, Custom preset and both evaluator flags1.",
+      "Number/Signal only, selected finite inputs and previous outputs; reversed/degenerate thresholds and vector/player lanes untested.",
+      "No running-game scheduling or full edge-with-smoothing verification.",
+      "Number only, Custom preset, edge0 curveOff, ordered0..1 ranges and selected finite smoothing/input values.",
+      "Original exp2f out-of-range error helper not mapped; selected negative bounded exponents avoid it.",
+      "Floating result tolerance1e-6; unused bytes and guards exact. No game-runtime or complete edge/smoothing integration validation."
+    ],
+    "method": "Original evaluator/reducer, original libc NaN and exp2f bodies and referenced constants/tables executed in bounded hardware subprocesses.",
+    "new_names": 0,
+    "runtime_game_verified": false
   }
 }
