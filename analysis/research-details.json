@@ -5824,5 +5824,25 @@
     ],
     "new_checked_names": 0,
     "runtime_game_verified": false
+  },
+  "text_reverse_basic_checkpoint": {
+    "alias_format_native_cases": 7068,
+    "reverse_capacity_cases": 1056,
+    "reverse_input_forms": 16,
+    "reverse_flag_profiles": 2,
+    "scope": "Selected full original reversewriter/size/decoder/glyphexpansion paths with actualstrlen/strncpy/memchr andoriginalrelocatedstyledata;aliashelper separatelychecked.",
+    "findings": [
+      "Selected internalstreams reconstruct readabletext andmarkup;size matcheswrittenbytes.",
+      "Flag8 selects[em]markup instead ofasterisks forselectedemphasis.",
+      "Aliasformatter checkswhole capacitybeforewriting andcanappendraw_tone suffixbyte.",
+      "Stylepointer fixturedependency was traced andexplicitlyrelocated fromoriginaldata beforepassingchecks."
+    ],
+    "limits": [
+      "Formattedcolor/size andemoji/flag aliases needadditionalformatting/tables.",
+      "Not exactoriginalmarkup orrendering equivalence guarantee.",
+      "No finalsubstitution orwhole reverseconverter completion claim."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }
