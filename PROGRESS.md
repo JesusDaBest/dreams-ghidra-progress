@@ -2736,3 +2736,13 @@ Another 216 checks execute the original typed-key parser with clue, size and pac
 Success skips the opening formatting controls, commits their state effects and stops after exactly fifteen visible ASCII units. The closing tag and any trailing text remain unconsumed. Invalid prefix or hex clears the key output but rolls back the complete caller cursor and parser state, including speculative formatting changes. Exact packed key, cursor, whole guarded state/output/input and canary expectations agree.
 
 These checks cover three known flat tags and selected insertion points, not nesting, malformed markup, non-ASCII input or full slash substitution. The previously saved comments' formatting limitation describes their earlier checkpoint; this later evidence extends it only to the cases listed here. No additional checked names or whole-game completion credit is added.
+
+### Reference-aware text direction by majority
+
+The inspected 150-instruction scanner counts two directional character classes and chooses the low-byte result from their majority. Latin/Hebrew checks confirm left-to-right on ties containing strong characters. Locale fallback is used only when neither directional class contributes. Successfully parsed slash typed keys are skipped; an invalid type prefix leaves its letters available to influence the result.
+
+All 2,456 bounded checks passed across Latin/Hebrew counts 0–12 and selected boundaries 255, 256, 257 and 300, valid/invalid references, two locale values and four alignments. Full-register checks confirm that only the low byte carries the direction: upper EAX bits can retain count data above that byte. Treating the complete register as a clean direction enum would therefore be unjustified without checking the caller.
+
+Another 40 checks cover selected percent forms after Hebrew: accepted string, numeric and named placeholder forms are skipped, while unknown percent-q contributes its literal q. These use original scanner, placeholder/key parsers and decoder/control dependencies. Input guards and canaries agree. A failed fixture transformation removed setup before native scanner execution; it was corrected, preserved locally and receives no passing credit.
+
+Arabic and other scripts, formatting/nested or malformed streams, complete placeholder grammar and game rendering remain unverified. Caller interpretation and saved naming are still pending, so no new checked-name or whole-game completion credit is added.

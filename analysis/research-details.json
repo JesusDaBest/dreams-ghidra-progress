@@ -6654,5 +6654,36 @@
       "No complete slashsubstitution/rendering verification."
     ],
     "project_modified": false
+  },
+  "text_reference_aware_direction_checks": {
+    "majority": {
+      "calls": 2456,
+      "original_instructions": 150,
+      "method": "Original150scanner with originaltypedkey/hex/visibleunit/decoder/control;Latin/Hebrew counts0..12,255/256/257/300;valid/invalidslashreferences,2locales,4alignments.Independentmajority/tie/fallback/reference-skip andfullEAX oracle,inputguards/canary.",
+      "findings": [
+        "Lowbyte2LTR unlessRTLcount exceedsLTR;tieswithstrongcharacters LTR.",
+        "Nostrongcharacters use locale fallback:matchingvalue RTL,other LTR.",
+        "Successfullyparsed typedkeys skipped;invalidprefix leavesletters contributing todirection.",
+        "EAX upperbits retaincountOR above lowbyte;direction meaning is lowbyte only."
+      ],
+      "limits": [
+        "Placeholderpercentbranch,formatting,Arabic/nonHebrewRTL andmalformedstreams unexecuted.",
+        "No complete shaping/rendering or game runtime claim."
+      ],
+      "project_modified": false
+    },
+    "placeholders": {
+      "calls": 40,
+      "original_instructions": 150,
+      "method": "Original direction scanner and original placeholder parser/decoder dependencies;5percent forms afterHebrew,2locales,4alignments;independent direction oracle,inputguards/canary.",
+      "findings": [
+        "Selected accepted percent forms skipped inmajoritycount whileunknownpercent-q contributesliteralq."
+      ],
+      "limits": [
+        "Selected forms only;notcompleteplaceholdergrammar.",
+        "No rendering/game claim."
+      ],
+      "project_modified": false
+    }
   }
 }
