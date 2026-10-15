@@ -3402,5 +3402,23 @@
       "No whole-Gate completion or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "gate_arbitration_inline_checkpoint": {
+    "original_instruction_spans_checked": 524,
+    "findings": [
+      "A256-byte claimed-group scratch array is cleared before this loop; gate group indices come from a parallel array.",
+      "Already-claimed group clears current GateActive before request processing. GateSync plus unclaimed group sets active on requested input.",
+      "Active gate copies37 bytes of InputA to OutputA, clears QueueFrame/QueueLevel, and marks group claimed.",
+      "Inactive output is tagged NONE with alpha1; its payload bytes are not cleared by this branch.",
+      "Queue initialization stores Game counter+27aeb8 plus1 and reduced input level; existing queue level uses MAXSS with current reduced input.",
+      "forget_queue clears QueueFrame/QueueLevel and itself."
+    ],
+    "limits": [
+      "Static native/data-flow review only; inline loop not executed in a controlled fixture.",
+      "Surrounding gate ordering, group construction, comparator/priority rules and flag-to-loop scheduling remain unresolved.",
+      "No new names, mapping credit, audited bytes or running-game validation."
+    ],
+    "runtime_game_verified": false,
+    "verification_scope": "Static review of bounded inline Gate loop; original bytes checked in larger captured window. No execution or full-main-function completion claim."
   }
 }

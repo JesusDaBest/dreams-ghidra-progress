@@ -1813,3 +1813,10 @@ Applied and independently reopened UpdateGateActivationRequests after inspecting
 50,176 original-instruction cases compare complete previous/current objects and a33-byte Game flag window. Selected Number/Signal and identifier-like values, Power bits, ResetMode0/1, queue markers and boolean flags are covered. Request1 versus3 distinguishes powered prior truth; identifiers use raw nonzero64 payloads while other selected inputs use scalar>0. Negative and selected NaN Power enter the nonzero path. Queue arbitration, Queue reset mode2, null previous/reset edges and actual game runtime remain unresolved.
 
 Names, saved signature and native bytes were independently reopened after backed-up trial/promotion; archives are unchanged. No whole-gadget completion or audited-byte credit added. Totals:267 checked names;1,710 mapped functions;7,860 unmapped.
+### Inline Gate arbitration and output path
+
+A bounded assembly trace locates Gate processing inside the main update routine. A256-byte claimed-group scratch array is zeroed, and gates use group indices from a parallel array. An already-claimed group clears a later gate's active state. On a requested input, GateSync with an unclaimed group can set the gate active. Active gates copy37 bytes of InputA to OutputA, clear QueueFrame/QueueLevel and mark the group claimed. Inactive outputs become NONE with weight1; the branch retains their old payload bytes.
+
+Queue initialization stores the Game counter plus1 and the reduced input level; an existing queue level uses MAXSS with current input. forget_queue clears the queue fields and itself.524 instruction spans in the captured window match the original unencrypted PS4 executable. These findings come from static native/data-flow inspection, not execution of the inline loop.
+
+The surrounding priority/order rules, group construction and request-flag-to-loop scheduling remain unresolved. Nearby-storage and raw-byte cluster searches were treated only as leads; unrelated candidates were rejected. No new name, mapping or whole-game completion credit is added.
