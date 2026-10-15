@@ -4204,11 +4204,12 @@
     "capacity_rejections": 96,
     "limits": [
       "Cardinal180-degree/identity unit rotations, positive power-of-two scales and finite selected inputs; arbitrary quaternions/nonfinite inputs untested.",
-      "No concurrent enqueue, game-state integration or region-query execution.",
+      "No concurrent enqueue, real-game caller integration or query execution; selected synthetic producer-to-enqueue chain is verified.",
       "Existing signature retained pending exact SIMD/stack ABI recovery.",
       "Shape enum labels, opaque values and complete consumer behavior remain unresolved."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "selected_health_modifier_zone_chain_validated": true
   },
   "spatial_query_working_types_checkpoint": {
     "functions": {
@@ -4686,11 +4687,12 @@
     "full_eight_slot_cases": 72,
     "limits": [
       "One modifier and synthetic target graph in impact phase; graph/TLS/scratch implementations modeled.",
-      "Zone geometry/enqueue branch statically traced but not executed in this batch.",
+      "Selected zone producer/geometry/mask/enqueue chain now validated; inherited ancestry, query execution and full game loop remain untested.",
       "Original property2d7 label, multiple-modifier interaction and game integration unresolved."
     ],
     "runtime_game_verified": false,
-    "label_any_or_all_resolved": true
+    "label_any_or_all_resolved": true,
+    "selected_health_modifier_zone_chain_validated": true
   },
   "region_query_mask_checkpoint": {
     "names": [
@@ -4721,9 +4723,10 @@
     "limits": [
       "Synthetic helper metadata; negative sentinels, full metadata construction, generic gate field and compatibility-state meaning unresolved.",
       "Registrar RAX pointers are observed working outputs; original C++ return declarations and enum storage widths are not recovered.",
-      "Registrar initialization and full producer/query/BVH/game integration were not executed."
+      "Registrar initialization and query/BVH/game execution remain untested; selected producer-to-enqueue validation is recorded below."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "selected_health_modifier_zone_chain_validated": true
   },
   "region_extent_reader_checkpoint": {
     "name": "ComputeObjectZoneAndFalloffBounds",
@@ -4735,9 +4738,10 @@
     "limits": [
       "Light kind2 trig/intensity paths, null/aliased/nonfinite/malformed inputs and racing metadata untested.",
       "Fourth lane is observed working machine data, not recovered original Float3 semantics.",
-      "Initializer and full transform/query/game integration not executed."
+      "Initializer, inherited ancestry, query execution and full game loop untested; selected producer/transform-to-enqueue fixture chain is verified."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "selected_health_modifier_zone_chain_validated": true
   },
   "region_query_geometry_checkpoint": {
     "name": "PrepareObjectRegionQueryGeometry",
@@ -4750,9 +4754,48 @@
     "tolerance": 4e-05,
     "limits": [
       "Selected finite HealthModifier kind43 profiles and positive scales only.",
-      "Light/kind30 special cases, alternate shape slot588, nonfinite/malformed/aliased inputs and full producer/queue/game integration untested.",
+      "Light/kind30 special cases, alternate shape slot588, nonfinite/malformed/aliased inputs and real-game loop/query execution untested; selected producer-to-enqueue fixture chain is verified.",
       "Working Float4 containers/source argument order and fourth-lane geometry meanings are not original C++ declarations."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "selected_health_modifier_zone_chain_validated": true,
+    "nan_poison_revalidated": true
+  },
+  "health_modifier_zone_chain_checkpoint": {
+    "native_cases": 15552,
+    "accepted_requests": 8640,
+    "capacity_rejections": 4320,
+    "entire_level_bypasses": 2592,
+    "accepted_zero_label_all_compat_cases": {
+      "1736": 720,
+      "1737": 720
+    },
+    "native_instruction_spans": 1235,
+    "functions": [
+      "1408e2910",
+      "141112450",
+      "1411129d0",
+      "1408fa070",
+      "140903930"
+    ],
+    "models": [
+      "TLS lookup",
+      "scratch allocation",
+      "scratch release"
+    ],
+    "method": "Original producer-to-geometry/bounds/masks/enqueue chain with original libc isinff/thunk on hardware. Only TLS and scratch allocation/release boundaries modeled; graph iterator not called. Independent request transform/centre/extents/masks/handle oracle; all queue bytes, padding, object/metadata/scratch/receipt effects eachcase, full game/current/previous state every256th.",
+    "maximum_numeric_error": 1.7339533009419483e-07,
+    "tolerance": 4e-05,
+    "saved_comments_verified": 5,
+    "names_signatures_unchanged": true,
+    "original_archives_unchanged": true,
+    "limits": [
+      "One valid HealthModifier, no inherited base or cache ancestry; selected cardinal rotations, positive power-of-two scales and finite geometry.",
+      "TLS/scratch boundary implementations modeled; glued callback body, query execution/GPU results and full game-loop integration untested.",
+      "No concurrency, malformed/nonfinite inputs or arbitrary capacity states."
+    ],
+    "runtime_game_verified": false,
+    "nan_poison_revalidated": true,
+    "floating_output_poison": "NaN bytesFF; all floating fields must be overwritten before tolerance checks"
   }
 }
