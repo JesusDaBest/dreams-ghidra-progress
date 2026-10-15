@@ -2798,3 +2798,13 @@ Cold backup, isolated trial, promotion and independent reopening verify saved na
 Twenty native cases cover clue, term, pink, size and color markup spanning a newline, at four input alignments. Exact second-segment offsets and independently expected style/size/color fields agree. The returned span contains the selected text but excludes trailing closing tags that only change control state. The returned parser state retains formatting active before that selected text, even though the extractor subsequently encountered the closing tag.
 
 This resolves the selected-field part of the earlier formatting-state question. It does not independently verify the entire parser state, nested or malformed tags, internal streams, alternate extraction, layout or rendering. No new naming credit is added; 373 names remain checked.
+
+### Saved text-layout unit iterator
+
+Applied AdvanceTextLayoutUnit with an opaque iterator pointer and Boolean result. It applies and skips formatting controls before returning the next decoded unit, tracks the previous unit and cursor, and stores a classification flag from the original property table. End-of-input clears the current unit and flag. A terminal soft hyphen becomes a dash; a middle soft hyphen is retained.
+
+44 native profiles with 136 calls cover eleven known UTF8 forms at four alignments, including ASCII, newline, embedded NUL, Hebrew, emoji, soft hyphens and style/size/color markup. Expected codepoints are independent; classification expectations use original table bytes. Exact current/previous units, flag, selected formatting fields and input/iterator guards agree.
+
+The alternate indexed extraction path uses this iterator and additional font/layout helpers. Its state-construction and metrics functions were read, but font metrics, shaping, alternate extraction, actual layout and rendering remain unexecuted. Internal streams, nesting and malformed UTF8 need further coverage.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives. Totals: 374 checked names (344 renames, 29 created functions and one retained-name review), 1,807 mapped and 7,773 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
