@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "281 existing-function renames and28 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "281 existing-function renames and29 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9579,
+    "total": 9580,
     "default_fun_names": 9114,
-    "other_names": 465,
-    "verification": "complete_inventory_matches_baseline_plus_281_renames_and_28_created_functions"
+    "other_names": 466,
+    "verification": "complete_inventory_matches_baseline_plus_281_renames_and_29_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6652,6 +6652,30 @@
         "Selected finite HealthModifier kind43 profiles and positive scales only.",
         "Light/kind30 special cases, alternate shape slot588, nonfinite/malformed/aliased inputs and real-game loop/query execution untested; selected producer-to-enqueue fixture chain is verified.",
         "Working Float4 containers/source argument order and fourth-lane geometry meanings are not original C++ declarations."
+      ]
+    },
+    {
+      "address": "1408d5ac0",
+      "original_name": null,
+      "applied_name": "AcceptRegionQueryTargetOutsideSourceParentSubtree",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV AcceptRegionQueryTargetOutsideSourceParentSubtree(void * game, void * query, ushort target_index, void * target_object_unused)",
+      "evidence": [
+        "Original query producer stores this callback for glued HealthModifiers; request+104 carries source reference.",
+        "Original processor Sculpt candidate call supplies Game/request/index/target pointer and consumesAL;30 call-site instructions matched original bytes.",
+        "Complete19-instruction/74-byte callback has verified nonoverlapping boundary and original bytes.",
+        "46400 acyclic tree cases plus2 null-pointer sentinel cases execute original callback with no imports/models; exact returns and guarded input/cache preservation checked.",
+        "Cold backup, isolated definition trial, promotion and independent reopening verify body/name/ABI and unchanged original archives."
+      ],
+      "caveats": [
+        "Parent cache construction, negative/malformed source refs and cycles untested.",
+        "Fourth supplied argument is unused; working callback formal types/count do not recover original C++ declaration.",
+        "Standalone callback plus static consumer linkage; full processor/GPU/game integration remains unverified."
       ]
     }
   ],
