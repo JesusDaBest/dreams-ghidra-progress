@@ -2312,3 +2312,13 @@ The next selected upgrade stage is gated by a signed version comparison at or be
 The harness executes the original version gate and cleanup region with a generated trampoline skipping the intervening parent-upgrade block and exiting before later upgrades. Earlier glue conversion is excluded. This is bounded native-region evidence, not full-caller or game execution. Large Windows stack pages are pre-touched and nonvolatile GP/XMM registers preserved.
 
 Both region comments explicitly mark partial review and were saved reversibly and independently reopened. Names/signatures, original instructions and archives are unchanged. The full15,647-instruction caller remains unreviewed; no additional name credit. Checked-name count stays321 of9,580.
+
+### Connected Joint parent upgrade and pair cleanup
+
+216 additional native cases execute the original version gate, intervening Joint parent-upgrade block and following pair cleanup consecutively. Only the exit before later upgrades is generated; the parent block is no longer skipped. Tested versions0x21f and0x220 run both blocks;0x221 skips them. The selected contiguous region has159 owned original instruction spans.
+
+A Joint must have a parent resolving to a Sculpt. That Sculpt must have a parent resolving to an object whose own parent reference H is not0xffffffff. The code scans for any nonnull PuppetHeart with parent reference exactly equal to H. On a match, it copies H into the Joint parent field. The comparison uses the full32-bit reference: differing upper bits prevent a match even when the normalized index is the same. Group and Light grandparent kinds behave alike in the tested block. Original enum registrations bind all type names.
+
+Nine graph schemas cover valid/missing/wrong-type/null chains, absent PuppetHeart and exact-reference mismatch, with encoded-reference variants and empty/populated pair tables.32 expected Joint-parent changes and488 pair retirements match independent parent-chain and cleanup oracles. Full expected state SHA256 and guarded objects/pairs/frame are checked every case; pair flags/padding/count remain intact.
+
+All three region comments explicitly retain partial-review scope and were saved reversibly and independently reopened. Names/signatures, original instructions and archives remain unchanged. Grandparent lookup is valid/non-null in these fixtures; malformed grandparent chains, cycles, earlier/later upgrade stages and full15,647-instruction caller/game execution remain unverified. No new name credit:321 of9,580 checked names.

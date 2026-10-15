@@ -5088,6 +5088,39 @@
       "Selected finite arrays up to257 records; malformed pointers, cycles and live loading behavior untested."
     ],
     "full_owner_reviewed": false,
+    "runtime_game_verified": false,
+    "connected_parent_block_followup": "216 additional connected cases execute the previously skipped parent block before cleanup;32 parent changes and488 pair retirements verified."
+  },
+  "serialized_upgrade_joint_parent_checkpoint": {
+    "owned_original_instruction_spans": 159,
+    "native_cases": 216,
+    "joint_parent_changes": 32,
+    "retired_pair_records": 488,
+    "version_profiles": [
+      "21Fhex",
+      "220hex",
+      "221hex"
+    ],
+    "scope": "Original version gate, Joint parent-upgrade block and following pair cleanup executed consecutively; only exit before later upgrades generated.",
+    "types": {
+      "Joint": 5,
+      "Sculpt": 1,
+      "PuppetHeart": 11,
+      "Group": 0,
+      "Light": 2
+    },
+    "findings": [
+      "A Joint parent resolves to Sculpt; that Sculpt parent resolves to an object whose parent reference H is non-sentinel.",
+      "Any nonnull PuppetHeart with full32-bit parent reference equal H causes Joint parent to become H.",
+      "Same normalized index with different upper reference bits does not satisfy the PuppetHeart comparison.",
+      "Grandparent kinds Group/Light both work; no grandparent-kind restriction observed."
+    ],
+    "limits": [
+      "Earlier upgrade/glue stages, later continuations and complete15647-instruction caller/game excluded.",
+      "Grandparent lookup must be valid/non-null in tested fixtures; malformed grandparent chains can reach unchecked dereferences and are not executed.",
+      "Selected eight-object graphs, finite arrays and no cyclic hierarchy; not general loading validation."
+    ],
+    "full_owner_reviewed": false,
     "runtime_game_verified": false
   }
 }
