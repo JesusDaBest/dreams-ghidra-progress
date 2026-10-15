@@ -3130,3 +3130,11 @@ All 192 bounded native dequeue checks passed across counts 1, 2, 3, 16, 127 and 
 Surrounding original assembly releases the queue lock, rebuilds the same 32-byte tuple on the stack and calls the producer's request handler with processing mode 1. It then reacquires the lock before taking another key. This links deferred insertion to processing; the handoff and locks were read statically rather than executed in the fragment fixture. Request routing, timing, concurrent behavior and full worker execution remain unverified.
 
 The earlier duplicate-append result should be understood alongside this newest-first consumer. Neither fragment alone establishes an in-game defect or the intended coalescing policy. No new checked names or whole-game completion credit is added, and no external request was executed.
+
+### Saved shared object-cache lookup and key structure
+
+Applied LookupCachedObjectOrRequest with a pointer return and an explicitly stored 32-byte DreamsObjectLookupKey value on the stack at offset +8. The key contains three 64-bit fields followed by two signed 32-bit fields. Field offsets and stack storage are independently checked after reopening. These are reviewed descriptive field roles, not recovered source declarations.
+
+The complete 368-instruction body establishes exact identity comparison, a 4,096-entry 80-byte-record table, linear probing and separate raw-status paths. The resolver and worker linkages place this function in shared object-cache behavior; the map adds an Object cache group under shared object data. A new shared category avoids treating the whole cache as exclusive text-decoding code.
+
+This checkpoint verifies static role, ABI and saved types. It does not execute the complete cache, kernel clock/thread dependencies, invalidation, concurrency or request routing. The previously tested queue fragments remain separately bounded evidence. All 368 original spans match; cold backup, isolated trial, promotion and independent reopening verify unchanged instructions and archives. Totals: 402 checked names, 1,835 mapped and 7,745 unmapped among 9,580 discovered functions. Whole-game completion remains unproven.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "371 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "372 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9024,
-    "other_names": 556,
-    "verification": "complete_inventory_matches_baseline_plus_371_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9023,
+    "other_names": 557,
+    "verification": "complete_inventory_matches_baseline_plus_372_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8831,6 +8831,28 @@
         "StaticABI/descriptiverole evidence;nativecache/kernelclock/thread/request behavior unexecuted.",
         "Lookupcontext/scope typesopaque;pendingstates andcomplete objectresolution unresolved.",
         "Workingdescriptive name/types;not recoveredsource."
+      ]
+    },
+    {
+      "address": "1403a38d0",
+      "original_name": "FUN_1403a38d0",
+      "applied_name": "LookupCachedObjectOrRequest",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV LookupCachedObjectOrRequest(uchar allow_request, void * status_output, void * metadata_output, void * auxiliary_output, DreamsObjectLookupKey lookup_key)",
+      "evidence": [
+        "All368originalinstructionspans matched;completecachelookupassembly/decompilation andresolver/request/consumer linkages read.",
+        "Threeu64/twoi32 identityfields andstackbyvalue layout provenbyregister/stack loads andcaller tuplecopies.",
+        "Independentreopen verifies32-byte structure fields andcustomstackstorage8,pluspointerreturn.",
+        "Coldbackup,isolatedtrial,promotion andindependentreopening verify unchangedarchives."
+      ],
+      "caveats": [
+        "Staticrole/ABI/layout evidence only;fullnativecache/kernelclock/thread/request behavior unexecuted.",
+        "Rawstatus meanings andcacheinvalidation/concurrency remainincomplete.",
+        "Workingdescriptive name/type fields;not recoveredsource."
       ]
     }
   ],

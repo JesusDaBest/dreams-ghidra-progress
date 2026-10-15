@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 359,
+    "done": 360,
     "todo": 1475,
-    "total": 1834,
-    "behavior_or_helpers_reviewed": 294,
+    "total": 1835,
+    "behavior_or_helpers_reviewed": 295,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -25894,12 +25894,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 142,
+        "done": 143,
         "todo": 106,
-        "total": 248,
-        "behavior_or_helpers_reviewed": 127,
+        "total": 249,
+        "behavior_or_helpers_reviewed": 128,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 162,
+        "runtime_functions_identified": 163,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25920,6 +25920,7 @@
           "ComposeRigidTransform",
           "ReleaseRefCountedBlockHandle",
           "TransferSerializerByte",
+          "LookupCachedObjectOrRequest",
           "BeginFilteredPropertyVisit",
           "VisitPosProperties",
           "VisitVariantProperties",
@@ -26172,6 +26173,7 @@
           "1401ac7b0",
           "14038bed0",
           "14039b4a0",
+          "1403a38d0",
           "140413d40",
           "1404f68b0",
           "1404f70b0",
@@ -27446,234 +27448,19 @@
             ]
           },
           {
-            "name": "shared/helpers",
-            "label": "Shared property helpers",
-            "done": 17,
-            "todo": 7,
-            "total": 24,
-            "behavior_or_helpers_reviewed": 10,
-            "properties_or_types_reviewed": 7,
-            "runtime_functions_identified": 9,
-            "property_type_functions_identified": 11,
-            "code_role_unresolved": 4,
-            "whole_feature_completion": null,
-            "done_names": [
-              "RegisterUnsigned32FieldOffset",
-              "BeginFilteredPropertyVisit",
-              "VisitPosProperties",
-              "VisitVariantProperties",
-              "VisitCanvasProperties",
-              "VisitGadgetNameProperties",
-              "BuildSculptBoundsFlags",
-              "RegisterSigned32FieldOffset",
-              "RegisterEPropFieldOffset",
-              "SortUnsigned64Values",
-              "GenerateMortonBvhKeysJob",
-              "InitializeMortonBvhLeavesJob",
-              "LinkMortonBvhNodesJob",
-              "PropagateMortonBvhBoundsJob",
-              "BuildMortonBvhForBounds",
-              "CollectBvhLeavesIntersectingSegment",
-              "CollectBvhLeavesOverlappingBounds"
-            ],
-            "todo_names": [
-              "0x14048b5e0",
-              "0x14048fa90",
-              "0x14048fc40",
-              "0x140490040",
-              "0x140cde7a0",
-              "0x140cf59d0",
-              "0x140d6ccc0"
-            ],
-            "done_addresses": [
-              "140112930",
-              "140413d40",
-              "1404f68b0",
-              "1404f70b0",
-              "1404f7a20",
-              "1404f8350",
-              "140bbf520",
-              "140cd93e0",
-              "140ce67b0",
-              "1411b8730",
-              "1414f5a90",
-              "1414f5c30",
-              "1414f5cf0",
-              "1414f5fa0",
-              "1414f60f0",
-              "1414f6370",
-              "1414f64b0"
-            ],
-            "todo_addresses": [
-              "14048b5e0",
-              "14048fa90",
-              "14048fc40",
-              "140490040",
-              "140cde7a0",
-              "140cf59d0",
-              "140d6ccc0"
-            ],
-            "unresolved_addresses": [
-              "14048b5e0",
-              "14048fa90",
-              "14048fc40",
-              "140490040"
-            ],
-            "groups": [
-              {
-                "name": "shared/helpers/properties-types",
-                "label": "Properties & type definitions",
-                "done": 8,
-                "todo": 3,
-                "total": 11,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 7,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 11,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RegisterUnsigned32FieldOffset",
-                  "BeginFilteredPropertyVisit",
-                  "VisitPosProperties",
-                  "VisitVariantProperties",
-                  "VisitCanvasProperties",
-                  "VisitGadgetNameProperties",
-                  "RegisterSigned32FieldOffset",
-                  "RegisterEPropFieldOffset"
-                ],
-                "todo_names": [
-                  "0x140cde7a0",
-                  "0x140cf59d0",
-                  "0x140d6ccc0"
-                ],
-                "done_addresses": [
-                  "140112930",
-                  "140413d40",
-                  "1404f68b0",
-                  "1404f70b0",
-                  "1404f7a20",
-                  "1404f8350",
-                  "140cd93e0",
-                  "140ce67b0"
-                ],
-                "todo_addresses": [
-                  "140cde7a0",
-                  "140cf59d0",
-                  "140d6ccc0"
-                ],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/helpers/spatial-trees",
-                "label": "Spatial trees",
-                "done": 8,
-                "todo": 0,
-                "total": 8,
-                "behavior_or_helpers_reviewed": 8,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 8,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "BuildSculptBoundsFlags",
-                  "GenerateMortonBvhKeysJob",
-                  "InitializeMortonBvhLeavesJob",
-                  "LinkMortonBvhNodesJob",
-                  "PropagateMortonBvhBoundsJob",
-                  "BuildMortonBvhForBounds",
-                  "CollectBvhLeavesIntersectingSegment",
-                  "CollectBvhLeavesOverlappingBounds"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140bbf520",
-                  "1414f5a90",
-                  "1414f5c30",
-                  "1414f5cf0",
-                  "1414f5fa0",
-                  "1414f60f0",
-                  "1414f6370",
-                  "1414f64b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/helpers/role-unresolved",
-                "label": "Code role still unresolved",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 4,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14048b5e0",
-                  "0x14048fa90",
-                  "0x14048fc40",
-                  "0x140490040"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14048b5e0",
-                  "14048fa90",
-                  "14048fc40",
-                  "140490040"
-                ],
-                "unresolved_addresses": [
-                  "14048b5e0",
-                  "14048fa90",
-                  "14048fc40",
-                  "140490040"
-                ],
-                "groups": []
-              },
-              {
-                "name": "shared/helpers/sorting",
-                "label": "Sorting",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "SortUnsigned64Values"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1411b8730"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": []
-              }
-            ]
-          },
-          {
             "name": "shared/objects",
             "label": "Objects & references",
-            "done": 13,
+            "done": 14,
             "todo": 11,
-            "total": 24,
-            "behavior_or_helpers_reviewed": 11,
+            "total": 25,
+            "behavior_or_helpers_reviewed": 12,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 11,
+            "runtime_functions_identified": 12,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "LookupCachedObjectOrRequest",
               "GetPowerOrResolvedObjectPlayerMask",
               "ResolveGluedOrMicrochipInputReference",
               "ReadResolvedObjectPlayerMask",
@@ -27702,6 +27489,7 @@
               "0x140d5ed90"
             ],
             "done_addresses": [
+              "1403a38d0",
               "1408e2790",
               "1408f8330",
               "1408f85b0",
@@ -28015,6 +27803,53 @@
                 ]
               },
               {
+                "name": "shared/objects/object-cache",
+                "label": "Object cache",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "LookupCachedObjectOrRequest"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1403a38d0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/object-cache/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "LookupCachedObjectOrRequest"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1403a38d0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/objects/persistentobjectdata",
                 "label": "Persistent Object Data",
                 "done": 0,
@@ -28154,6 +27989,222 @@
                     "groups": []
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "name": "shared/helpers",
+            "label": "Shared property helpers",
+            "done": 17,
+            "todo": 7,
+            "total": 24,
+            "behavior_or_helpers_reviewed": 10,
+            "properties_or_types_reviewed": 7,
+            "runtime_functions_identified": 9,
+            "property_type_functions_identified": 11,
+            "code_role_unresolved": 4,
+            "whole_feature_completion": null,
+            "done_names": [
+              "RegisterUnsigned32FieldOffset",
+              "BeginFilteredPropertyVisit",
+              "VisitPosProperties",
+              "VisitVariantProperties",
+              "VisitCanvasProperties",
+              "VisitGadgetNameProperties",
+              "BuildSculptBoundsFlags",
+              "RegisterSigned32FieldOffset",
+              "RegisterEPropFieldOffset",
+              "SortUnsigned64Values",
+              "GenerateMortonBvhKeysJob",
+              "InitializeMortonBvhLeavesJob",
+              "LinkMortonBvhNodesJob",
+              "PropagateMortonBvhBoundsJob",
+              "BuildMortonBvhForBounds",
+              "CollectBvhLeavesIntersectingSegment",
+              "CollectBvhLeavesOverlappingBounds"
+            ],
+            "todo_names": [
+              "0x14048b5e0",
+              "0x14048fa90",
+              "0x14048fc40",
+              "0x140490040",
+              "0x140cde7a0",
+              "0x140cf59d0",
+              "0x140d6ccc0"
+            ],
+            "done_addresses": [
+              "140112930",
+              "140413d40",
+              "1404f68b0",
+              "1404f70b0",
+              "1404f7a20",
+              "1404f8350",
+              "140bbf520",
+              "140cd93e0",
+              "140ce67b0",
+              "1411b8730",
+              "1414f5a90",
+              "1414f5c30",
+              "1414f5cf0",
+              "1414f5fa0",
+              "1414f60f0",
+              "1414f6370",
+              "1414f64b0"
+            ],
+            "todo_addresses": [
+              "14048b5e0",
+              "14048fa90",
+              "14048fc40",
+              "140490040",
+              "140cde7a0",
+              "140cf59d0",
+              "140d6ccc0"
+            ],
+            "unresolved_addresses": [
+              "14048b5e0",
+              "14048fa90",
+              "14048fc40",
+              "140490040"
+            ],
+            "groups": [
+              {
+                "name": "shared/helpers/properties-types",
+                "label": "Properties & type definitions",
+                "done": 8,
+                "todo": 3,
+                "total": 11,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 7,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 11,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterUnsigned32FieldOffset",
+                  "BeginFilteredPropertyVisit",
+                  "VisitPosProperties",
+                  "VisitVariantProperties",
+                  "VisitCanvasProperties",
+                  "VisitGadgetNameProperties",
+                  "RegisterSigned32FieldOffset",
+                  "RegisterEPropFieldOffset"
+                ],
+                "todo_names": [
+                  "0x140cde7a0",
+                  "0x140cf59d0",
+                  "0x140d6ccc0"
+                ],
+                "done_addresses": [
+                  "140112930",
+                  "140413d40",
+                  "1404f68b0",
+                  "1404f70b0",
+                  "1404f7a20",
+                  "1404f8350",
+                  "140cd93e0",
+                  "140ce67b0"
+                ],
+                "todo_addresses": [
+                  "140cde7a0",
+                  "140cf59d0",
+                  "140d6ccc0"
+                ],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/helpers/spatial-trees",
+                "label": "Spatial trees",
+                "done": 8,
+                "todo": 0,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 8,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 8,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "BuildSculptBoundsFlags",
+                  "GenerateMortonBvhKeysJob",
+                  "InitializeMortonBvhLeavesJob",
+                  "LinkMortonBvhNodesJob",
+                  "PropagateMortonBvhBoundsJob",
+                  "BuildMortonBvhForBounds",
+                  "CollectBvhLeavesIntersectingSegment",
+                  "CollectBvhLeavesOverlappingBounds"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140bbf520",
+                  "1414f5a90",
+                  "1414f5c30",
+                  "1414f5cf0",
+                  "1414f5fa0",
+                  "1414f60f0",
+                  "1414f6370",
+                  "1414f64b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/helpers/role-unresolved",
+                "label": "Code role still unresolved",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 4,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14048b5e0",
+                  "0x14048fa90",
+                  "0x14048fc40",
+                  "0x140490040"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14048b5e0",
+                  "14048fa90",
+                  "14048fc40",
+                  "140490040"
+                ],
+                "unresolved_addresses": [
+                  "14048b5e0",
+                  "14048fa90",
+                  "14048fc40",
+                  "140490040"
+                ],
+                "groups": []
+              },
+              {
+                "name": "shared/helpers/sorting",
+                "label": "Sorting",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SortUnsigned64Values"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1411b8730"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
               }
             ]
           },
@@ -42113,5 +42164,5 @@
       }
     ]
   },
-  "unmapped": 7746
+  "unmapped": 7745
 }
