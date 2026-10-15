@@ -5065,5 +5065,29 @@
       "Registered enum labels, including deprecated/internal entries, do not prove feature availability or original C++ enum width."
     ],
     "runtime_game_verified": false
+  },
+  "serialized_upgrade_joint_pair_checkpoint": {
+    "original_owned_instruction_spans": 54,
+    "native_cases": 192,
+    "retired_pair_records": 3060,
+    "version_profiles": [
+      "17Ehex",
+      "21Fhex",
+      "220hex",
+      "221hex"
+    ],
+    "type_binding": "Joint=5 from original EThingType registration",
+    "gate": "Signed version<=220hex from selected entry",
+    "execution_boundary": "Generated trampoline skips intervening parent-upgrade region and exits before later upgrades; earlier glue conversion excluded.",
+    "findings": [
+      "Both refs must resolve to nonnull objects; either masked Joint type invalidates only first8 record bytes.",
+      "Flags0/1/2/255, padding and count preserved; pair flag not interpreted in this region."
+    ],
+    "limits": [
+      "Earlier glue conversion and intervening parent upgrade block excluded; no full15647-instruction caller/game verification.",
+      "Selected finite arrays up to257 records; malformed pointers, cycles and live loading behavior untested."
+    ],
+    "full_owner_reviewed": false,
+    "runtime_game_verified": false
   }
 }

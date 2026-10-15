@@ -2302,3 +2302,13 @@ Four preallocated runs execute the original366-instruction initializer,91-instru
 The [verified object type map](analysis/thing-types.json) includes Group0, Sculpt1, Key3, Joint5, PuppetHeart11, Microchip13, Timeline14 and Sound15. These are registered names in this executable, including deprecated/internal entries; they do not prove feature availability or an original enum declaration width. This identifies the next legacy pair-cleanup test for kind5 as Joint; the separate pair flag remains unresolved.
 
 Cold backup, isolated trial, main promotion and independent reopening verify both names, the observed byte/string entry ABI, type-context caller decompilation and unchanged original archives. Allocation/growth/failure and callback invocation remain untested. Totals:321 checked names (291 renames,29 created functions,1 retained existing-name review) among9,580 discovered functions. Mapping totals remain1,756 mapped and7,824 unmapped because these two functions were already classified as type registration.
+
+### Bounded legacy Joint-pair cleanup
+
+The next selected upgrade stage is gated by a signed version comparison at or below0x220. Original EThingType registration identifies masked type5 as Joint. When both endpoint references resolve to nonnull objects and either endpoint is a Joint, the cleanup invalidates only the first8 bytes of the12-byte pair record. Flags, padding and table count are preserved. This region does not interpret the pair flag.
+
+192 native cases cover versions0x17e,0x21f,0x220 and0x221; arrays of0,1,2,9,33 and257 records; null object slots; invalid/negative/upper-bit references; reversed and self pairs; and flags0,1,2 and255.3,060 expected pair retirements match an independent signed-low22/type oracle. Full expected state SHA256, guarded objects/pairs and input frames are checked every case.
+
+The harness executes the original version gate and cleanup region with a generated trampoline skipping the intervening parent-upgrade block and exiting before later upgrades. Earlier glue conversion is excluded. This is bounded native-region evidence, not full-caller or game execution. Large Windows stack pages are pre-touched and nonvolatile GP/XMM registers preserved.
+
+Both region comments explicitly mark partial review and were saved reversibly and independently reopened. Names/signatures, original instructions and archives are unchanged. The full15,647-instruction caller remains unreviewed; no additional name credit. Checked-name count stays321 of9,580.
