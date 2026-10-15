@@ -2772,3 +2772,13 @@ The slash dispatcher checks context flag 0x2000 and a fixed sixteen-entry parsed
 All 144 checks passed across an unhandled lowercase-e key, an all-zero normalized key and an invalid prefix, list counts 0/15/16, four flag combinations and four alignments. Original dispatcher, key parser, hex/visible-unit helpers, decoder/control, replacement and libc code execute. Independent whole context, key-array, cursor, state, output-span, input-guard and canary expectations agree.
 
 The selected unhandled-type and zero-key paths store the parsed key and succeed with an empty replacement, optionally surrounded by internal wrappers. This is not evidence about a failed object lookup: object-resolving branches were not executed. Auxiliary records are disabled in this batch. Full processor integration, handled key types, rendering and game behavior remain unresolved. No checked names or whole-game completion credit is added.
+
+### Display-name cleanup and 64-byte string helpers
+
+The inspected display-name builder uses a 64-byte string representation with metadata at offset 0x3C. Its storage helper passed 520 checks covering inline lengths 0–63, two negative length patterns and borrowed external lengths 64–127 within capacity 128, at four alignments. Its insertion helper passed 17,112 bounded inline checks with original strlen, memmove and memcpy. These are separate original functions from the earlier 256-byte text helpers.
+
+The original display-name builder then passed 76 integration checks across nineteen nonempty source forms and four alignments. It removes exact lowercase br/nl tags, literal backslash-n, UTF-8 U+0085, LF and CR. Uppercase or incomplete tags remain literal in the tested cases. Nonempty input containing only removed forms becomes empty without entering the empty-source fallback branch.
+
+Whole guarded output, source object and input agree with expectations. The output is a C string: bytes beyond its new terminator can retain previous source data. An initial oracle omitted the first source copy and therefore predicted the wrong unused bytes; it was corrected to model the observed preparation/copy sequence and receives no passing credit. The helper does not clear the entire inline buffer.
+
+Owned-buffer release, heap growth, fallback/localization, current-object special cases, null objects, complete slash object resolution and rendering remain unverified. No new names or whole-game completion credit is added. Raw code and fixtures remain local.

@@ -6743,5 +6743,46 @@
       "Auxrecordlist disabled;fullprocessor/rendering unverified."
     ],
     "project_modified": false
+  },
+  "text_display_name_helper_checks": {
+    "storage": {
+      "calls": 520,
+      "original_instructions": 82,
+      "method": "Original64-byte storage helper;inline0..63 plus2negativepatterns,borrowedexternal64..127 capacity128,4alignments.Independentexactreturnedpointer andwholeguardedrecord/backing.",
+      "findings": [
+        "Inline resetmetadata3Chex andsignednegativeclamp;borrowedexternalcapacity retained."
+      ],
+      "limits": [
+        "Ownedfree/growth/failure andextremelengths unexecuted."
+      ],
+      "project_modified": false
+    },
+    "insertion": {
+      "calls": 17112,
+      "original_instructions": 95,
+      "method": "Original64-byte insertion plusoriginalstrlen/memmove/memcpy;allpositions inlengths0..31,selectedpositions47/60/62,payload0/1/3/16 includingNUL,4alignments;inlinecapacityonly.Independentwholeguardedrecord/input.",
+      "findings": [
+        "In-capacity insertionpreservesprefix/shiftsuffix/writespayloadandterminator."
+      ],
+      "limits": [
+        "Heapgrowth,externalownership,invalidpositions andaliasing unexecuted."
+      ],
+      "project_modified": false
+    },
+    "cleanup": {
+      "calls": 76,
+      "forms": 19,
+      "original_display_builder_instructions": 241,
+      "method": "Original display builder,64-byte storage/insertion,original strlen/strncmp/memcpy/memmove;nonempty sources,four alignments;independent listed-sequence removal and whole guarded output/object/input.",
+      "findings": [
+        "Removes exact br/nl tags,literal backslash-n,UTF8 NEL,LF,CR;case sensitive.",
+        "Nonempty source may become empty after cleanup without fallback."
+      ],
+      "limits": [
+        "Fallback/localization/current-object specialcase,heapgrowth/nullobject unexecuted.",
+        "No complete slashresolver/rendering claim."
+      ],
+      "project_modified": false
+    }
   }
 }
