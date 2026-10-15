@@ -1721,3 +1721,8 @@ This is not a full Remapper completion claim. Combined edge/smoothing, vector/pl
 1,800 separate PlayerValue edge/smoothing cases use differing previous lane values. All1,800 distinguish a shared scalar reduction of previous PlayerValue from lane-local history. Current lanes and their state flags remain separate, while smoothing uses that shared previous scalar. The selected nonnegative profiles reduce to their common maximum. Original evaluator, reducer, math bodies and tables execute without substitutes.
 
 These are synthetic helper findings, not a gameplay bug or impact claim. Other prior-value classes, presets, longer sequences and real-game scheduling remain unverified. No naming or completion increment.
+### Remapper runtime wrapper
+
+Applied and independently reopened UpdateRemapperOutputFromInput with four native working arguments.972 controlled wrapper cases verify freeze transitions and write boundaries: both prior and current FreezeOutput must be nonzero to reuse stored prior output. Current-only freeze and leaving freeze still evaluate input in the tested configurations. The stored-output route copies37 bytes and preserves the final3 output bytes.
+
+Original initializer writes verify Power and OutputA offsets supplied to the fixture. These tests cover inactive Game mode0, selected Number/Signal values, Custom preset, no smoothing/edges and well-formed/null input bags. Active/network behavior and real-game scheduling remain unresolved. Totals: 256 checked names; 1,699 mapped functions; 7,871 unmapped.
