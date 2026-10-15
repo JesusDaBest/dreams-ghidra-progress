@@ -2488,3 +2488,9 @@ Applied TryFindNonemptyTextSegment with begin/end outputs, bounded input, signed
 Traced the stored display selection into a 285-instruction consumer, then a large dispatch and a 161-instruction layout wrapper. That wrapper reads the selected index and invokes this segment extractor unless an alternate flag selects another path. The larger dispatch has 11,236 defined instructions and did not decompile within the configured limit; its native body was captured without treating extraction as understanding. Alternate extraction, actual layout and rendering remain unresolved.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives. Totals: 373 checked names (343 renames, 29 created functions and one retained-name review), 1,806 mapped and 7,774 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Verified formatting state at a selected segment start
+
+Twenty native cases cover clue, term, pink, size and color markup spanning a newline, at four input alignments. Exact second-segment offsets and independently expected style/size/color fields agree. The returned span contains the selected text but excludes trailing closing tags that only change control state. The returned parser state retains formatting active before that selected text, even though the extractor subsequently encountered the closing tag.
+
+This resolves the selected-field part of the earlier formatting-state question. It does not independently verify the entire parser state, nested or malformed tags, internal streams, alternate extraction, layout or rendering. No new naming credit is added; 373 names remain checked.

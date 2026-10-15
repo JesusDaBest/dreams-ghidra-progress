@@ -6143,5 +6143,28 @@
       "Workingdescriptive names/types are not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_formatted_segment_state_checkpoint": {
+    "passed_cases": 20,
+    "forms": [
+      "clue",
+      "term",
+      "pink",
+      "size20",
+      "color123456"
+    ],
+    "input_alignments": 4,
+    "findings": [
+      "Second segment retains formatting active before it.",
+      "Trailing control-only closing tags excluded from selected byte span."
+    ],
+    "verified_scope": "Selected style/size/color fields and exact segment offsets with original decoder/control/tag bodies.",
+    "limits": [
+      "Selectedstatefields only,notindependentwhole96bytestateoracle.",
+      "Fivevalidplainmarkupforms;internalstreams/nesting/malformedtags/alternateextraction unresolved.",
+      "Noactuallayout/renderingexecution."
+    ],
+    "new_checked_names": 0,
+    "project_modified": false
   }
 }
