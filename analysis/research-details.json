@@ -3796,13 +3796,14 @@
     "name": "RegisterUnsigned32FieldOffset",
     "original_instruction_spans_checked": 139,
     "original_type_label": "u32",
-    "reflected_width": 4,
     "limits": [
       "Static metadata/control-flow review; reflection allocation, static guards and serialization not execution-tested.",
       "Descriptor and returned property record remain opaque pointer working types.",
       "No whole-subsystem or running-game completion claim."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "raw_metadata_value": 4,
+    "metadata_value_meaning": "Unresolved; not established byte width."
   },
   "gate_property_visitor_checkpoint": {
     "name": "VisitGateProperties",
@@ -3845,6 +3846,18 @@
       "Mode flags remain numeric contracts without unsupported read/write direction names."
     ],
     "project_modified": false,
+    "runtime_game_verified": false
+  },
+  "signed_registrar_abi_correction": {
+    "name": "RegisterSigned32FieldOffset",
+    "signature": "void * PS4_SYSV RegisterSigned32FieldOffset(void * descriptor, char * field_name, uint byte_offset)",
+    "original_instruction_spans_checked": 139,
+    "original_type_label": "s32",
+    "raw_metadata_value": 8,
+    "metadata_value_meaning": "Unresolved; not established byte width.",
+    "limits": [
+      "Static allocation/type registration review; allocator, static guards and serializer callbacks remain unexecuted."
+    ],
     "runtime_game_verified": false
   }
 }

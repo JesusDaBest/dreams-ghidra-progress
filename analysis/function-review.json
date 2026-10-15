@@ -4393,14 +4393,15 @@
       "original_name": "FUN_140cd93e0",
       "applied_name": "RegisterSigned32FieldOffset",
       "status": "applied_read_back_verified",
-      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "properties_or_type_registration",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined RegisterSigned32FieldOffset(void)",
+      "saved_working_signature": "void * PS4_SYSV RegisterSigned32FieldOffset(void * descriptor, char * field_name, uint byte_offset)",
       "evidence": [
         "Complete native registration helper body and Wire metadata links reviewed.",
-        "Cold backup, isolated trial, promotion and fresh-reopen inventory/archive verification."
+        "Cold backup, isolated trial, promotion and fresh-reopen inventory/archive verification.",
+        "Signature correction independently verifies RDI descriptor, RSI field name, EDX byte offset and RAX property pointer; original139 instructions unchanged."
       ],
       "caveats": [
         "Descriptive role; preserved prototype for these five renames.",
@@ -5682,7 +5683,7 @@
       "calling_convention": "PS4_SYSV",
       "saved_working_signature": "void * PS4_SYSV RegisterUnsigned32FieldOffset(void * descriptor, char * field_name, uint byte_offset)",
       "evidence": [
-        "Original literal u32 and reflected width4 identify unsigned32 field type.",
+        "Original literal u32 identifies unsigned32 field type; metadata4 width interpretation is unproven.",
         "Complete139-instruction body appends a144-byte property record, stores name/hash/offset, attaches type/default metadata and returns its pointer.",
         "Gate QueueFrame caller and signed32 registrar analogy corroborate field-registration role.",
         "Cold backup, isolated trial, promotion and independent reopening verify name and RDI/RSI/EDX arguments with RAX pointer return; original native bytes match."

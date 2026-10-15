@@ -1605,7 +1605,7 @@ The independent model initially represented a no-parent reference as signed-1 in
 
 ### Unsigned32 field registration
 
-Applied RegisterUnsigned32FieldOffset with descriptor/name/32-bit byte-offset inputs and an opaque property-record pointer return. Original u32 metadata and width4 bind the field type. The complete139-instruction body appends a144-byte property record, stores the name/hash/offset and attaches type/default metadata. Gate QueueFrame uses this shared helper.
+Applied RegisterUnsigned32FieldOffset with descriptor/name/32-bit byte-offset inputs and an opaque property-record pointer return. The original u32 label binds the field type; numeric metadata4 is not established as a byte width. The complete139-instruction body appends a144-byte property record, stores the name/hash/offset and attaches type/default metadata. Gate QueueFrame uses this shared helper.
 
 Original bytes match the PS4 executable. Backed-up trial, promotion and independent reopening verify the saved name/signature and unchanged archives. Reflection allocation/static guards and serialization remain unexecuted. Totals:275 checked names among9,572 functions;1,717 mapped and7,855 unmapped. No whole-subsystem completion credit.
 
@@ -1620,3 +1620,9 @@ Backed-up trial, promotion and independent reopening verify the name/signature a
 Applied BeginFilteredPropertyVisit. It rejects suppressed visits and explicit names beginning#, generates signed decimal names for unnamed fields only in mode1, and accepts filters matching the complete name or a slash-delimited descendant. Accepted mode0 calls the first virtual callback with the name; mode1 calls the second only when a prior field was visited. Success sets the prior-field flag and returns1. Modes remain numeric contracts without inferred read/write direction.
 
 2112 original-instruction cases compare return, callback sequence and every visitor-context byte using explicit string/format and virtual callback models.73 instruction spans and the original format literal match the PS4 executable. Backed-up trial, promotion and independent reopening verify the saved name/signature and unchanged archives. Real serialization recursion remains unverified. Totals:277 checked names among9,572 functions;1,718 mapped and7,854 unmapped.
+
+### Signed field registrar ABI and metadata correction
+
+Corrected RegisterSigned32FieldOffset to descriptor/name/32-bit offset inputs and an opaque property-record pointer return.139 original instructions and the s32 type literal support the role and ABI. Backed-up trial, promotion and independent reopening verify the saved signature; names and original bytes/archives are unchanged.
+
+Corrected an unsupported earlier interpretation of unsigned metadata4 as a byte width, including the saved Ghidra comment and current public evidence. Signed registration has metadata8; the meaning of these numeric values remains unresolved. Original u32/s32 labels establish the field types. No new checked-name or completion credit;277 names remain checked.
