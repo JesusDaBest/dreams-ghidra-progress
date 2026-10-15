@@ -6045,5 +6045,40 @@
       "Workingdescriptive names/types are not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_video_playback_time_checkpoint": {
+    "original_instruction_spans_checked": 965,
+    "clock_api": "sceAvPlayerCurrentTime",
+    "related_apis": [
+      "sceAvPlayerInitEx",
+      "sceAvPlayerGetVideoDataEx",
+      "sceAvPlayerIsActive",
+      "sceAvPlayerAddSource",
+      "sceAvPlayerAddSourceEx"
+    ],
+    "native_time_divisor": 1000,
+    "findings": [
+      "AV-player time returned by identified import is preserved and stored in the object read by text selection.",
+      "Unsigned playback counter is converted to float and divided by1000 before inclusive float-range text selection.",
+      "Seconds units corroborated by primary shadPS4 implementation using milliseconds; identifies video-timed text usage."
+    ],
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/shadps4-emu/shadPS4/main/src/core/libraries/avplayer/avplayer.cpp",
+        "support": "NID registrations and current-time/video-data API definitions."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/shadps4-emu/shadPS4/main/src/core/libraries/avplayer/avplayer_source.cpp",
+        "support": "CurrentTime implementation uses milliseconds; corroborates native divide1000 as seconds.",
+        "source_kind": "Emulator implementation, not Sony source or Dreams runtime."
+      }
+    ],
+    "limits": [
+      "Static dataflow and original-byte checks; no live AV playback or caption rendering.",
+      "Does not establish that all float-pair consumers are video captions.",
+      "Worker/UI windows bounded; incomplete larger owner decompilation."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }
