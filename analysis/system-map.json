@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1824,
-  "unmapped_total": 7756,
+  "mapped_total": 1826,
+  "unmapped_total": 7754,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46325,6 +46325,48 @@
           "kind": "verified_semantic_review",
           "name": "InitializeTextLayoutIterator",
           "support": "Original initializer and measurement caller,1152 native integration profiles and independently reopened signature."
+        }
+      ]
+    },
+    "1414b6d70": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Replacement spans and auxiliary records used by the text token processor.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text token helper implementation.",
+      "code_sha256": "46c9cf724d806d69c10ce4c3fc15d27e36cb91f3fc1bf3b134d13dc4f9b7a225",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetTextReplacementSpan",
+          "support": "Original bodies and token dispatcher callers,bounded native execution and independent saved-signature reopening."
+        }
+      ]
+    },
+    "1414b8110": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Replacement spans and auxiliary records used by the text token processor.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text token helper implementation.",
+      "code_sha256": "0e1a5ee51bf5b549f7bd777cad3ed366ec213009355682bed4dd39c4301a5f01",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendTextAuxiliaryRecord",
+          "support": "Original bodies and token dispatcher callers,bounded native execution and independent saved-signature reopening."
         }
       ]
     }
