@@ -2998,5 +2998,21 @@
     ],
     "runtime_game_verified": false,
     "new_names": 0
+  },
+  "remapper_unsmoothed_checkpoint": {
+    "finite_curve_cases": 840,
+    "exceptional_bypass_cases": 16,
+    "findings": [
+      "Native range normalization and curves Off/Abs/Clamp/EaseIn/EaseOut/EaseInEaseOut/Step match selected finite scalar model within1e-6.",
+      "For bypassed Number/Signal inputs, quiet/signaling NaN patterns become positive zero; selected infinities and subnormals retain exact bits."
+    ],
+    "method": "Original evaluator, scalar reducer, constants, import thunk and original libc NaN predicate on native hardware; repaired40-byte by-value arguments.",
+    "limits": [
+      "Tolerance1e-6 for result float; all other object/output/input/guard bytes exact.",
+      "Smoothing exp2f path and edge modes not executed. exp2f import remains unresolved in fixture and cannot silently run.",
+      "No vector/player components or running-game integration validation; exceptional numeric checks only cover bypass1."
+    ],
+    "name_credit": 0,
+    "runtime_game_verified": false
   }
 }
