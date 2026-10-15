@@ -5730,5 +5730,26 @@
       "operator new"
     ],
     "import_scope": "Pinned import-loader NID bindings and original libc export symbols resolved;not dependency execution verification."
+  },
+  "text_record_builder_bounded_checkpoint": {
+    "original_owner_instructions": 600,
+    "bounded_input_profiles": 64,
+    "bounded_builder_calls": 248,
+    "empty_seed_profiles": 40,
+    "empty_seed_builder_calls": 80,
+    "scope": "Complete original builder executed on preallocated guarded records/index/links/content/token chunks with original hash/parser/control/memcpy code and data;selected insertion/reuse/rejection paths.",
+    "findings": [
+      "Exact raw content,hash/index records,16-byte tokens,link metadata and counters verified.",
+      "Different key with same content reuses content/tokenstorage and updates placeholder-base metadata.",
+      "Empty insertion preserves prior hashword;repeated empty lookup depends on that word beingzero."
+    ],
+    "limits": [
+      "Preallocated bounded paths;chunk growth/operatornew/virtual allocator not executed.",
+      "External bcmp lookup table,whitelist,hash collisions and broader formats unresolved.",
+      "Empty hashword tests use synthetic initialstorage;not a verified in-game defect.",
+      "No final substitution/rendering or wholefunction completion claim."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }
