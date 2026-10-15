@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "260 existing-function renames and25 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "260 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9576,
+    "total": 9577,
     "default_fun_names": 9135,
-    "other_names": 441,
-    "verification": "complete_inventory_matches_baseline_plus_260_renames_and_25_created_functions"
+    "other_names": 442,
+    "verification": "complete_inventory_matches_baseline_plus_260_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5923,6 +5923,29 @@
         "Cache/record patterns exercise contracts; cache construction/invariants and gameplay mode meanings unresolved.",
         "Selected state tables checked, not entire large state allocation; no running-game claim."
       ]
+    },
+    {
+      "address": "140bc06b0",
+      "original_name": null,
+      "applied_name": "CalculateSculptBoundsAndWakeBodiesJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CalculateSculptBoundsAndWakeBodiesJob(void * job_context)",
+      "evidence": [
+        "Original CalculateSculptBoundsAndWakeUpBodies job label and dispatcher pointer bind the worker.",
+        "Complete nonoverlapping1732-byte body inspected in isolated project and matched original executable bytes.",
+        "768 wake-state,840 no-body geometry and2520 body-associated geometry native cases validate selected worker paths.",
+        "Cold backup, isolated trial, promotion and independent reopening verify definition, RDI context input and unchanged existing functions/archives."
+      ],
+      "caveats": [
+        "XYZ envelopes checked with explicit tolerance; output SIMD fourth lanes not independently modeled.",
+        "Selected finite resource/object/body fixtures; nonfinite/unnormalized inputs and complete large state allocations unverified.",
+        "Body-vector meaning/units, concurrent scheduling and real game wake effects unresolved."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [

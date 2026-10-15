@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9576,
-  "mapped_total": 1726,
+  "inventory_total": 9577,
+  "mapped_total": 1727,
   "unmapped_total": 7850,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -44269,6 +44269,26 @@
           "kind": "verified_semantic_review",
           "name": "PassesObjectPlayerMaskAndParentModeFilter",
           "support": "Native body, callers, original bytes, scoped filter tests and saved-project verification."
+        }
+      ]
+    },
+    "140bc06b0": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "simulation",
+        "gameupdater-physics",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original sculpt-bound/body-wakeup physics job, body-state writes and spatial-tree preparation caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native worker and scoped wake/bounds hardware tests independently persisted.",
+      "code_sha256": "076ba822d4462d309f62421437ee2e05d424b06af6b797d8cef3d21b723a1d96",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CalculateSculptBoundsAndWakeBodiesJob",
+          "support": "Original job label/dispatcher, complete body, scoped tests and saved-project verification."
         }
       ]
     }
