@@ -2926,3 +2926,11 @@ The original storage helper passed 2,056 checks covering inline lengths 0–255,
 Another 2,048 direct-copy integration checks execute the original record builder, storage helper and memcpy for every explicit length 0–255, two payload profiles and four alignments. Exact payload, terminator, record fields, input guards and stack canary agree. Owned-buffer release, heap growth/failure, extreme lengths, external insertion ownership, invalid positions and source aliasing remain untested. Complete text processing, layout and rendering remain unfinished.
 
 All 177 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify both names/signatures and unchanged instructions/archives. Totals: 388 checked names, 1,821 mapped and 7,759 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.
+
+### Saved text record construction and processing
+
+Applied BuildTextLayoutRecord and ProcessTextLayoutTokens with independently reopened SysV signatures. The builder takes a floating width limit plus eleven integer/pointer arguments, initializes the layout record, and either copies an explicit byte span directly or processes text through the token scanner. It also contains auxiliary-record transfer/merge paths. The processor scans spans, dispatches selected tokens and inserts replacement text.
+
+Original code passed 4,032 initialization checks, 2,048 explicit direct-copy checks, 128 plain-text builder integration checks and 88 plain processor checks. Whole guarded output records, inputs, optional parser states and argument buffers agree with independent expectations. Plain cases include ASCII, newlines, Hebrew and inline boundary lengths. These checks execute the original decoder, scanner and string/libc helpers where called; the token dispatcher is exercised only on its no-selected-token path.
+
+Special substitutions, direction-marker replacement, auxiliary-record merging, heap growth and full game rendering remain unverified. All 859 original instruction spans match, both saved names/signatures survive independent reopening, and original archives remain unchanged. Totals: 390 checked names, 1,823 mapped and 7,757 unmapped among 9,580 discovered functions. This is bounded analysis progress, not whole-game completion.
