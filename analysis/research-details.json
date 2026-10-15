@@ -5272,7 +5272,7 @@
       "Symbolic roles are deliberately generic until CPU descriptors/field offsets are traced.",
       "Formatted component conversion depends on the buffer descriptor; UNORM mapping to IgnoreGravity coefficient is not yet proven.",
       "No GPU execution, exact floating-point rounding proof or full solver correctness claim.",
-      "Original loader code-boundary calculation still needs independent corroboration."
+      "Original section extractor now corroborated by64 native cases; malformed-header validation and GPU execution remain unverified."
     ],
     "sources": [
       "https://github.com/CLRX/CLRX-mirror/wiki/ClrxDisasm",
@@ -5296,7 +5296,24 @@
       "Velocity/position terminology is a descriptive inference from traced CPU data flow and shader integration operations; original declarations remain unrecovered.",
       "The producer and meaning of flag bit13 remain unresolved.",
       "Static instruction trace and native descriptor tests do not substitute for GPU/live-game verification.",
-      "Exact shader floating-point rounding and original code-boundary parser remain unverified."
+      "Original section extractor now corroborated by64 native cases; malformed-header validation and GPU execution remain unverified."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
+  },
+  "predict_flag_and_section_checkpoint": {
+    "status": "native_packing_and_original_section_extractor_verified",
+    "flag_native_cases": 1536,
+    "section_extractor_native_cases": 64,
+    "findings": [
+      "Predict bit13 is the inverse of body flag0x20 for indices below8192.",
+      "Higher index-bit overlap is observed in arithmetic probes; reachability is unverified.",
+      "Original section extractor confirms code start96 for four shader resources.",
+      "Predict section length404 includes metadata beyond its228-byte executable span."
+    ],
+    "limits": [
+      "Body flag0x20 semantic meaning/producer and actual body-index upper bound unresolved.",
+      "No malformed resource validation, particle-array fill or GPU execution verified."
     ],
     "new_names_checked": 0,
     "runtime_game_verified": false

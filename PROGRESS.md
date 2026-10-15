@@ -2086,3 +2086,11 @@ Traced the original CPU descriptor copies into the parameter offsets used by Pre
 The resulting static integration trace is: for in-range particles with flag bit 13 set, the three-component value becomes its old value plus global gravity times the step times the packed fourth byte divided by 255. With the bit clear, the shader stores zero instead. The output XYZ then advances by the step times that value, preserving the input fourth component. This supports descriptive velocity/position roles. IgnoreGravity removes this shader's gravity contribution in enabled lanes by making the packed coefficient zero.
 
 The flag bit's producer/meaning, exact shader floating-point rounding, original shader code-boundary parser and live-game behavior remain unresolved. No additional function completion credit is claimed.
+
+### Predict flag packing and original shader section boundaries
+
+1,536 native cases verify the CPU flag-packing expression. For body indices below 8,192, the shader's enabling bit 13 is the inverse of body metadata flag 0x20. Probes at indices 8,192 and 16,383 show that the unmasked index can force that bit on. These probes establish arithmetic behavior, not that such indices occur in a valid game state. The body's index bound and the meaning/producer of flag 0x20 remain unresolved; no sleeping/static interpretation is assigned.
+
+The original ExtractShaderBinarySections helper also passed 64 native cases using all four confirmed shader resources at sixteen input alignments. It independently confirms the instruction start at resource offset 96. For Predict it returns a 404-byte section containing the 228-byte executable span plus metadata. Footer length, first-instruction metadata pointer and terminal instruction agree on the executable span, addressing the earlier section-start corroboration gap.
+
+Exact output pointers/lengths, guards, padding and unchanged resource bytes passed. This does not validate malformed headers, execute the shaders or add naming/completion credit. The graph's checked-name count remains 322.
