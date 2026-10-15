@@ -5692,5 +5692,23 @@
     ],
     "new_checked_names": 0,
     "runtime_game_verified": false
+  },
+  "text_placeholder_consumers_checkpoint": {
+    "direction_estimator_native_cases": 8928,
+    "input_forms": 1116,
+    "byte_matched_instruction_spans": 1240,
+    "scope": "Original150-instruction direction estimator tested on selected text;600-instruction text-record builder and404-instruction slash helper read statically;86-instruction bounded locale startup window traced.",
+    "findings": [
+      "Strong RTL count must exceed LTR count;ties chooseLTR.Recognized placeholder text does not count.",
+      "Zero-count fallback compares active locale hash with original native hash of ar;startup code selects locale string and localization-file fallbacks.",
+      "Record builder stores/deduplicates content and creates16-byte literal/placeholder records with mode/direction flags;it does not perform final substitutions."
+    ],
+    "limits": [
+      "Builder,allocator/dedup paths and slash-reference helper not execution-verified.",
+      "Selected text cases;no broad Unicode/bidi/rendering conformance.",
+      "Bounded startup trace;not full startup or live locale-selection verification."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }

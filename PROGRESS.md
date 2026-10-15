@@ -2270,3 +2270,13 @@ Connected checks now trace recognized placeholder spans through the complete ori
 552 base-parser sequences passed 3,032 calls; 2,176 higher-parser sequences passed 12,000 calls across four flag profiles and four alignments. Exact units, cursors, flags and whole guarded state were checked, along with original input/source/index pages and canary. The higher-parser fixture mirrors the original emitter previous-token store and control-handler ordering.
 
 These checks cover selected ASCII forms, with higher-parser cases starting in left-to-right mode. Escaping, Unicode, right-to-left text, nested malformed placeholders, substitution values and final formatted rendering remain unresolved. No new checked-name or whole-parser completion credit was added.
+
+### Placeholder consumers, direction estimation and locale fallback
+
+Two additional callers were traced. One counts strong left-to-right and right-to-left text units while skipping recognized placeholders. Another stores/deduplicates text content and builds 16-byte literal/placeholder records in chunked buffers, adding mode and direction flags. This builder prepares records for later use; it is not the final substitution routine.
+
+The complete original 150-instruction direction estimator passed 8,928 native cases covering 1,089 ASCII/Hebrew count combinations plus selected placeholders, tags and neutral text, two controlled locale values and four alignments. Right-to-left wins only when its strong-unit count exceeds left-to-right; ties choose left-to-right. Letters inside selected placeholder names do not count. Inputs, original source/index data and canary were checked, and the fixture locale global was restored.
+
+For zero strong-unit counts, the estimator compares the active locale hash against the original native hash of ar. A bounded startup trace shows the language-code table containing ar, hashing the selected locale and its prefix before a hyphen, then checking localization files and assigning fallback locale hashes. This resolves the earlier unknown comparison as an Arabic-locale fallback in this executable; live locale selection was not tested.
+
+1,240 original instruction spans were byte-matched across the two callers, slash-reference helper and bounded startup window. The 600-instruction record builder and 404-instruction slash helper remain statically traced, with allocator/dedup/reference dependencies unresolved. Final substitution, broad bidirectional behavior and rendering remain unverified. No checked-name or whole-function completion credit was added.
