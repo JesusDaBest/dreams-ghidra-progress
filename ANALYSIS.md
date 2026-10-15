@@ -2886,3 +2886,15 @@ The driver accepts at least one ordinary character even at a zero limit. Trailin
 Fixture and oracle corrections are recorded locally and failed attempts are excluded. All 794 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the saved name, mixed float/integer SysV signature, Boolean return and unchanged instructions/archives. Synthetic fixed-width glyphs limit these results: Unicode breaking, variable metrics, direction mixing, markup integration, ellipsis-space interaction, full layout, shaping and rendering remain unfinished.
 
 Totals: 383 checked names, 1,816 mapped and 7,764 unmapped functions among 9,580 discovered functions. These counts do not establish whole-game completion.
+
+### Saved aggregate text dimension measurement
+
+Applied MeasureTextLayoutDimensions with a reviewed DreamsTextDimensions return structure: width and height are two binary32 fields in the low 64 bits of XMM0. This replaces the earlier integer-return interpretation. Parameters cover width limit, input begin/end, layout context, unit limit, optional parser state and line limit, with reviewed SysV register storage.
+
+The original function initializes an iterator and repeatedly invokes TryLayoutNextTextLine. It takes the maximum line width and sums heights with binary32 rounding and configured spacing. The unit limit is checked after an entire line and before the final ellipsis adjustment. When the last permitted line truncates, the ellipsis advance is added to the aggregate maximum width only if the restored iterator has a nonzero current codepoint. A default checkpoint can suppress that adjustment. Adding to an earlier wider line's aggregate maximum can produce a result wider than the requested width limit.
+
+17,680 native calls across 4,420 fixed-width single-word profiles match independent exact dimension expectations for width, unit and line limits and a controlled positive ellipsis width. Four actual input alignments agree; guarded source, parser state and output remain intact, as does the original stack canary. Tests execute the original aggregate caller, iterator initializer, line driver and linked layout helpers. An initial oracle omitted the restored-codepoint gate; its correction is preserved locally and the failed attempt is excluded.
+
+All 119 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the saved name, eight-byte field layout, custom XMM0 return storage and all parameters, with unchanged instructions and original archives. Synthetic fixed-width glyphs limit the result: spaces/newline aggregation, spacing variants, optional null parser state, Unicode layout, mixed directions, shaping and rendering remain unfinished.
+
+Totals: 384 checked names, 1,817 mapped and 7,763 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.

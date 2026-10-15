@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "353 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "354 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9042,
-    "other_names": 538,
-    "verification": "complete_inventory_matches_baseline_plus_353_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9041,
+    "other_names": 539,
+    "verification": "complete_inventory_matches_baseline_plus_354_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8421,6 +8421,29 @@
         "Synthetic fixed-width ASCII glyph metrics;Unicode line breaking,variable metrics,mixed directions and markup integration unverified.",
         "Ellipsis-space interaction,full layout,original loader,shaping and rendering unfinished.",
         "Working descriptive name and opaque pointer types;not recovered source."
+      ]
+    },
+    {
+      "address": "1412d8a40",
+      "original_name": "FUN_1412d8a40",
+      "applied_name": "MeasureTextLayoutDimensions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "DreamsTextDimensions PS4_SYSV MeasureTextLayoutDimensions(float width_limit, char * text_begin, char * text_end, void * layout_context, uint unit_limit, void * parser_state, int line_limit)",
+      "evidence": [
+        "Complete119 original instruction spans matched; aggregate caller and original line driver read.",
+        "17680 original aggregate calls across4420 fixed-width profiles;original149 initializer,794 line driver and linked helpers.",
+        "Independent exact binary32 width/height expectations for width/unit/line limits,positive ellipsis and four actual input alignments;guarded source/parserstate/output and original stackcanary.",
+        "Initial ellipsis oracle corrected for nonzero restored-codepoint gate;failed attempt not credited.",
+        "Cold backup,isolated trial,promotion,independent reopen verify two-float field layout and low64 XMM0 custom return,all seven parameter storages and unchanged archives."
+      ],
+      "caveats": [
+        "Synthetic fixed-width single-word ASCII and controlled positive ellipsis;spaces/newline aggregation,spacing variants,mixed directions and optional null parser state unverified.",
+        "Full Unicode layout,original loader,shaping and rendering unfinished.",
+        "Working descriptive name and reviewed return structure;not recovered source."
       ]
     }
   ],
