@@ -4458,7 +4458,7 @@
         "4": "Ellipsoid",
         "5": "EntireLevel"
       },
-      "scope": "Original37-instruction descriptor and24-instruction value-registration bodies match executable bytes. Direct property-field-to-evaluator binding still unresolved; not counted as a new verified function."
+      "scope": "Follow-up original-byte trace binds this enum through HealthModifier zone queries; other consumers and complete gameplay behavior remain unresolved."
     },
     "limits": [
       "Mode2/3 nonempty geometry not validated by independent oracle.",
@@ -4467,6 +4467,38 @@
       "Analyst parameter order and transform container labels; original C++ declarations not recovered.",
       "Matching transformA/B and uniform inner/outer extent triples only.",
       "Nonuniform extents, mode2/3 nonempty geometry, complete enum and gameplay integration remain unresolved."
+    ],
+    "name_count_unchanged": 291,
+    "runtime_game_verified": false
+  },
+  "region_zone_enum_binding_checkpoint": {
+    "enum_type": "EGadgetZoneType",
+    "working_type": "GadgetZoneTypeWorkingByte",
+    "working_width": 1,
+    "values": {
+      "0": "Sphere",
+      "1": "Box",
+      "2": "Cylinder",
+      "3": "Cone",
+      "4": "Ellipsoid",
+      "5": "EntireLevel"
+    },
+    "bound_route": "HealthModifier ZoneType+110 -> EnqueueRegionQuery record byte0 -> ProcessQueuedRegionQueriesForPhase -> EvaluateRegionShapeWeight",
+    "distinct_trigger_zone_offset": 240,
+    "original_instruction_spans_crosschecked": 1342,
+    "saved_signature_updates": {
+      "140903930": {
+        "name": "EnqueueRegionQuery",
+        "signature": "uint PS4_SYSV EnqueueRegionQuery(void * state, GadgetZoneTypeWorkingByte shape_kind, BvhQueryMasksWorking6 * masks, uchar phase, uchar auxiliary_tag, undefined8 opaque_value_0, SpatialQueryFloat4Working16 centre_and_radius, SpatialQueryFloat4Working16 orientation_input, SpatialQueryFloat4Working16 transform_position_scale, SpatialQueryFloat4Working16 transform_rotation, SpatialQueryFloat4Working16 extent_input, SpatialQueryFloat4Working16 auxiliary_extent_input, undefined8 opaque_value_1)"
+      },
+      "1408d4d70": {
+        "name": "EvaluateRegionShapeWeight",
+        "signature": "float PS4_SYSV EvaluateRegionShapeWeight(GadgetZoneTypeWorkingByte shape_mode, SpatialQueryFloat4Working16 sample_point, SpatialQueryFloat4Working16 transform_a_position_scale, SpatialQueryFloat4Working16 transform_a_rotation, SpatialQueryFloat4Working16 inner_extent, SpatialQueryFloat4Working16 outer_extent, SpatialQueryFloat4Working16 transform_b_position_scale, SpatialQueryFloat4Working16 transform_b_rotation)"
+      }
+    },
+    "limits": [
+      "HealthModifier route statically traced; full producer-to-gameplay execution and other consumers remain unresolved.",
+      "Working enum width1 follows actual byte storage; original C++ enum width and descriptor metadata2 meaning remain unresolved."
     ],
     "name_count_unchanged": 291,
     "runtime_game_verified": false

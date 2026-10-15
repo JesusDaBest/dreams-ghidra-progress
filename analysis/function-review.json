@@ -6084,7 +6084,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "uint PS4_SYSV EnqueueRegionQuery(void * state, uchar shape_kind, BvhQueryMasksWorking6 * masks, uchar phase, uchar auxiliary_tag, undefined8 opaque_value_0, SpatialQueryFloat4Working16 centre_and_radius, SpatialQueryFloat4Working16 orientation_input, SpatialQueryFloat4Working16 transform_position_scale, SpatialQueryFloat4Working16 transform_rotation, SpatialQueryFloat4Working16 extent_input, SpatialQueryFloat4Working16 auxiliary_extent_input, undefined8 opaque_value_1)",
+      "saved_working_signature": "uint PS4_SYSV EnqueueRegionQuery(void * state, GadgetZoneTypeWorkingByte shape_kind, BvhQueryMasksWorking6 * masks, uchar phase, uchar auxiliary_tag, undefined8 opaque_value_0, SpatialQueryFloat4Working16 centre_and_radius, SpatialQueryFloat4Working16 orientation_input, SpatialQueryFloat4Working16 transform_position_scale, SpatialQueryFloat4Working16 transform_rotation, SpatialQueryFloat4Working16 extent_input, SpatialQueryFloat4Working16 auxiliary_extent_input, undefined8 opaque_value_1)",
       "evidence": [
         "Complete187-instruction body matched original executable bytes.",
         "192 accepted and96 rejected original-instruction queue cases verify record fields, local transforms, capacity and packed handle.",
@@ -6092,14 +6092,17 @@
         "Region-query consumer traverses sculpt BVH and uses original RegionQuery profiling labels.",
         "Import loader NID and local libc symbol resolve __isinff; repeated288 cases execute original import thunk and libc instructions.",
         "Cold backup, isolated naming trial, promotion and independent reopening verify only the intended function changed.",
-        "Follow-up signature review: exact GP/SIMD/stack storage,32-byte BVH node and6-byte mask records verified in isolated trial and independent reopening; both large consumers still decompile."
+        "Follow-up signature review: exact GP/SIMD/stack storage,32-byte BVH node and6-byte mask records verified in isolated trial and independent reopening; both large consumers still decompile.",
+        "Static HealthModifier ZoneType+110 field-to-queue-to-weight trace binds original EGadgetZoneType values. Object kind43 check, byte load, query record byte0 and processor mode clamp are traced in original instructions. Working byte enum applied to queue/evaluator shape parameters and independently reopened; connected callers decompile."
       ],
       "caveats": [
         "Cardinal180-degree/identity unit rotations, positive power-of-two scales and finite selected inputs; arbitrary quaternions/nonfinite inputs untested.",
         "No concurrent enqueue, game-state integration or region-query execution.",
-        "Shape enum labels, opaque values and complete consumer behavior remain unresolved.",
+        "Opaque values and complete consumer behavior remain unresolved.",
         "Working types and displayed parameter order are analyst representations, not recovered original C++ declarations.",
-        "State and opaque values remain untyped; full game semantics and in-game validation remain unresolved."
+        "State and opaque values remain untyped; full game semantics and in-game validation remain unresolved.",
+        "HealthModifier route statically traced; full producer-to-gameplay execution and other consumers remain unresolved.",
+        "Working enum width1 follows actual byte storage; original C++ enum width and descriptor metadata2 meaning remain unresolved."
       ],
       "saved_parameter_storage": [
         {
@@ -6109,7 +6112,7 @@
         },
         {
           "name": "shape_kind",
-          "type": "uchar",
+          "type": "GadgetZoneTypeWorkingByte",
           "storage": "SIL:1"
         },
         {
@@ -6205,22 +6208,25 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "float PS4_SYSV EvaluateRegionShapeWeight(uchar shape_mode, SpatialQueryFloat4Working16 sample_point, SpatialQueryFloat4Working16 transform_a_position_scale, SpatialQueryFloat4Working16 transform_a_rotation, SpatialQueryFloat4Working16 inner_extent, SpatialQueryFloat4Working16 outer_extent, SpatialQueryFloat4Working16 transform_b_position_scale, SpatialQueryFloat4Working16 transform_b_rotation)",
+      "saved_working_signature": "float PS4_SYSV EvaluateRegionShapeWeight(GadgetZoneTypeWorkingByte shape_mode, SpatialQueryFloat4Working16 sample_point, SpatialQueryFloat4Working16 transform_a_position_scale, SpatialQueryFloat4Working16 transform_a_rotation, SpatialQueryFloat4Working16 inner_extent, SpatialQueryFloat4Working16 outer_extent, SpatialQueryFloat4Working16 transform_b_position_scale, SpatialQueryFloat4Working16 transform_b_rotation)",
       "evidence": [
         "Complete686-instruction evaluator captured and matched original executable bytes.",
         "1833 original-instruction cases validate selected identity/uniform-axis radial and box-shell falloff plus empty/constant/invalid guards.",
         "Region processor consumes positive scalar result as query weight; return storage is low32bitsXMM0.",
         "Exact DIL, five16-byte SIMD inputs and two16-byte incoming stack containers represented in working signature.",
         "Cold backup, isolated trial, promotion and independent reopening verify saved name/signature and connected processor decompilation.",
-        "Follow-up1350 original-instruction cases validate randomized translations/unit rotations/positive uniform scales for modes0/1/4 with matching transform containers and uniform extent triples; independent radial/box references, max error below0.0000143 and unchanged inputs checked."
+        "Follow-up1350 original-instruction cases validate randomized translations/unit rotations/positive uniform scales for modes0/1/4 with matching transform containers and uniform extent triples; independent radial/box references, max error below0.0000143 and unchanged inputs checked.",
+        "Static HealthModifier ZoneType+110 field-to-queue-to-weight trace binds original EGadgetZoneType values. Object kind43 check, byte load, query record byte0 and processor mode clamp are traced in original instructions. Working byte enum applied to queue/evaluator shape parameters and independently reopened; connected callers decompile."
       ],
       "caveats": [
         "Mode2/3 nonempty geometry not validated by independent oracle.",
-        "Full shape enum/source symbols and gameplay meaning of mode5 unresolved.",
+        "Original source symbols and complete gameplay behavior remain unresolved.",
         "No real-game or GPU validation.",
         "Analyst parameter order and transform container labels; original C++ declarations not recovered.",
         "Matching transformA/B and uniform inner/outer extent triples only.",
-        "Nonuniform extents, mode2/3 nonempty geometry, complete enum and gameplay integration remain unresolved."
+        "Nonuniform extents, mode2/3 nonempty geometry, all consumer bindings and gameplay integration remain unresolved.",
+        "HealthModifier route statically traced; full producer-to-gameplay execution and other consumers remain unresolved.",
+        "Working enum width1 follows actual byte storage; original C++ enum width and descriptor metadata2 meaning remain unresolved."
       ]
     }
   ],
