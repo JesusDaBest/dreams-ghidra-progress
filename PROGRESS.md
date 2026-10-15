@@ -1428,3 +1428,8 @@ These are synthetic helper findings, not a gameplay bug or impact claim. Other p
 Applied and independently reopened UpdateRemapperOutputFromInput with four native working arguments.972 controlled wrapper cases verify freeze transitions and write boundaries: both prior and current FreezeOutput must be nonzero to reuse stored prior output. Current-only freeze and leaving freeze still evaluate input in the tested configurations. The stored-output route copies37 bytes and preserves the final3 output bytes.
 
 Original initializer writes verify Power and OutputA offsets supplied to the fixture. These tests cover inactive Game mode0, selected Number/Signal values, Custom preset, no smoothing/edges and well-formed/null input bags. Active/network behavior and real-game scheduling remain unresolved. Totals: 256 checked names; 1,699 mapped functions; 7,871 unmapped.
+### Local Remapper signal history
+
+Applied and independently reopened AppendRemapperSignalHistory with history/input/output pointers. The helper records paired input/output samples in a256-slot ring and maintains input extrema.7,680 scoped Timestamp native cases verify wrap, count cap256, signed extrema and equal-value retention. Copies update37 bytes of each40-byte Variant slot, preserving padding3.
+
+Original Game initialization corroborates two local history records and head255/count0.48 native initializer cases verify37-byte logical clears per slot. This follows the Remapper wrapper locally; it is not evidence of network transmission. Other type/component extrema, cache expiry/locking, consumers and actual game scheduling remain unresolved. Totals: 257 checked names; 1,700 mapped functions; 7,870 unmapped.
