@@ -1736,3 +1736,10 @@ Original Game initialization corroborates two local history records and head255/
 Applied and independently reopened FindOrInitializeRemapperSignalHistory with Game/key arguments and pointer return.784 controlled cases verify key hits, expiry boundaries including unordered ages, replacement and timestamp refresh. Matching unflagged keys bypass expiry; on a miss, a second eligible record overrides first. The original threshold is0.06666667014360428; its clock unit is not independently established.
 
 Original cache and initializer instructions, constant and import thunks execute with explicit modeled mutex, thread-id, copy and fill contracts. Actual PS4 synchronization/memory implementations and concurrency are not validated. Consumers and game scheduling remain unresolved. Totals: 258 checked names; 1,701 mapped functions; 7,869 unmapped.
+### Signal-history typed extrema
+
+420 finite component cases and72 selected special-value pairs extend history validation beyond Timestamp. Sampled scalar/vector extrema are component-wise, retain current input metadata/unused payload, and preserve slot padding. Native min/max select stored operand bits on equal or unordered comparisons in these tests, including signed-zero and NaN patterns; no NaN cleanup occurs here.
+
+220 mixed Timestamp cases show type priority: incoming Timestamp replaces sampled non-Timestamp extrema, while existing Timestamp extrema survive non-Timestamp inputs. Both Timestamp values use signed64 comparisons. Ring sampling still records incoming input/output values.
+
+Non-Timestamp payloads in mixed-tag cases are synthetic opaque patterns, not assumed valid numeric values. Broader mixed-type/shape behavior, consumers and game scheduling remain unverified. No names or completion metrics added.

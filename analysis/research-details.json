@@ -3127,5 +3127,29 @@
       "No running-game verification or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "signal_history_typed_extrema_checkpoint": {
+    "finite_component_cases": 420,
+    "special_Number_Float4_pairs": 72,
+    "mixed_Timestamp_cases": 220,
+    "findings": [
+      "Selected Number/Signal/Float2/3/4/8/PlayerValue extrema are component-wise.",
+      "First sample initializes extrema; later sampled paths retain current input metadata/unused payload while selecting numeric component extrema.",
+      "Ring slot and extrema padding3 remain unchanged.",
+      "Selected native min/max comparisons select stored operand bits on equal/unordered inputs, including signed-zero and NaN patterns; no NaN cleanup occurs here.",
+      "Incoming Timestamp replaces sampled non-Timestamp extrema irrespective of payload numeric interpretation.",
+      "Existing Timestamp extrema remain when sampled non-Timestamp input arrives.",
+      "When both are Timestamp, extrema select signed64 values and preserve stored37-byte metadata on equal values.",
+      "Input/output rings still record incoming values even when existing extrema take priority."
+    ],
+    "limits": [
+      "Same input/stored extrema type, selected finite values, four ring boundaries and three counts.",
+      "Mixed types and real history consumers remain unverified; selected exceptional pairs cover Number/Float4 only.",
+      "Selected tag combinations, five64-bit payload patterns, two ring boundaries and two nonzero counts.",
+      "Non-Timestamp payloads in these synthetic branches are opaque bit patterns, not asserted valid finite Float4/Number values.",
+      "No general mixed-type numeric ordering, type-conversion or game scheduling claim."
+    ],
+    "new_names": 0,
+    "runtime_game_verified": false
   }
 }
