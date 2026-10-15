@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "307 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "311 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9088,
-    "other_names": 492,
-    "verification": "complete_inventory_matches_baseline_plus_307_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9084,
+    "other_names": 496,
+    "verification": "complete_inventory_matches_baseline_plus_311_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7313,6 +7313,110 @@
         "Opaque text-state field meanings are only partially resolved.",
         "Control-state and prefix tests do not verify whole markup/font/rendering behavior.",
         "Prefix match alone does not require whole-tag equality; caller may impose that separately.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414968c0",
+      "original_name": "FUN_1414968c0",
+      "applied_name": "SortTextNameHashRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SortTextNameHashRecords(void * begin, void * end, ulonglong recursion_budget)",
+      "evidence": [
+        "Complete original bodies and original startup/text-parser callers reviewed;950 original spans match SELF and saved bytes.",
+        "1152 complete sorter cases execute original recursive body and actual1819-byte memmove shared implementation/jump table; order,full-record multiset,guards/canary verified.",
+        "Original bounded startup/hash/sort/actual libc rebuild3513 source records in9 groups across3 fill patterns; exact hashes/source-pointers/order/padding,whole-source/guards/canary verified,no models.",
+        "1566 original general/Tren source lookups plus1792 absent and2794 overlength cases pass on startup-built indices,without source/index mutation.",
+        "6016 plain alias and80592 suffix cases execute complete original resolver; actual special eligibility sort included,exact value/tone/class/input/index/source guards verified,no models.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Only bounded original startup window is executed; huge startup owner is not reviewed/named.",
+        "Alias failure can write tone/class outputs; working uint32 tone pointer preserves the0xffffffff sentinel bits without claiming original source signedness.",
+        "Sort equal-key stability and arbitrary invalid pointer/range safety are not claimed.",
+        "Whole markup/font/glyph/visible rendering remain unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "141499240",
+      "original_name": "FUN_141499240",
+      "applied_name": "GetTextIconCodepointByHash",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV GetTextIconCodepointByHash(uint name_hash, uint name_bytes)",
+      "evidence": [
+        "Complete original bodies and original startup/text-parser callers reviewed;950 original spans match SELF and saved bytes.",
+        "1152 complete sorter cases execute original recursive body and actual1819-byte memmove shared implementation/jump table; order,full-record multiset,guards/canary verified.",
+        "Original bounded startup/hash/sort/actual libc rebuild3513 source records in9 groups across3 fill patterns; exact hashes/source-pointers/order/padding,whole-source/guards/canary verified,no models.",
+        "1566 original general/Tren source lookups plus1792 absent and2794 overlength cases pass on startup-built indices,without source/index mutation.",
+        "6016 plain alias and80592 suffix cases execute complete original resolver; actual special eligibility sort included,exact value/tone/class/input/index/source guards verified,no models.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Only bounded original startup window is executed; huge startup owner is not reviewed/named.",
+        "Alias failure can write tone/class outputs; working uint32 tone pointer preserves the0xffffffff sentinel bits without claiming original source signedness.",
+        "Sort equal-key stability and arbitrary invalid pointer/range safety are not claimed.",
+        "Whole markup/font/glyph/visible rendering remain unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "141499310",
+      "original_name": "FUN_141499310",
+      "applied_name": "GetTrenIconCodepointByHash",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV GetTrenIconCodepointByHash(uint name_hash)",
+      "evidence": [
+        "Complete original bodies and original startup/text-parser callers reviewed;950 original spans match SELF and saved bytes.",
+        "1152 complete sorter cases execute original recursive body and actual1819-byte memmove shared implementation/jump table; order,full-record multiset,guards/canary verified.",
+        "Original bounded startup/hash/sort/actual libc rebuild3513 source records in9 groups across3 fill patterns; exact hashes/source-pointers/order/padding,whole-source/guards/canary verified,no models.",
+        "1566 original general/Tren source lookups plus1792 absent and2794 overlength cases pass on startup-built indices,without source/index mutation.",
+        "6016 plain alias and80592 suffix cases execute complete original resolver; actual special eligibility sort included,exact value/tone/class/input/index/source guards verified,no models.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Only bounded original startup window is executed; huge startup owner is not reviewed/named.",
+        "Alias failure can write tone/class outputs; working uint32 tone pointer preserves the0xffffffff sentinel bits without claiming original source signedness.",
+        "Sort equal-key stability and arbitrary invalid pointer/range safety are not claimed.",
+        "Whole markup/font/glyph/visible rendering remain unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "141499380",
+      "original_name": "FUN_141499380",
+      "applied_name": "ResolveTextEmojiAlias",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ResolveTextEmojiAlias(uchar * start, uchar * end, uint * tone_code_output, uchar * alias_class_output)",
+      "evidence": [
+        "Complete original bodies and original startup/text-parser callers reviewed;950 original spans match SELF and saved bytes.",
+        "1152 complete sorter cases execute original recursive body and actual1819-byte memmove shared implementation/jump table; order,full-record multiset,guards/canary verified.",
+        "Original bounded startup/hash/sort/actual libc rebuild3513 source records in9 groups across3 fill patterns; exact hashes/source-pointers/order/padding,whole-source/guards/canary verified,no models.",
+        "1566 original general/Tren source lookups plus1792 absent and2794 overlength cases pass on startup-built indices,without source/index mutation.",
+        "6016 plain alias and80592 suffix cases execute complete original resolver; actual special eligibility sort included,exact value/tone/class/input/index/source guards verified,no models.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Only bounded original startup window is executed; huge startup owner is not reviewed/named.",
+        "Alias failure can write tone/class outputs; working uint32 tone pointer preserves the0xffffffff sentinel bits without claiming original source signedness.",
+        "Sort equal-key stability and arbitrary invalid pointer/range safety are not claimed.",
+        "Whole markup/font/glyph/visible rendering remain unverified.",
         "Descriptive names and working types are not recovered source declarations."
       ]
     }

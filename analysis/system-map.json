@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1770,
-  "unmapped_total": 7810,
+  "mapped_total": 1774,
+  "unmapped_total": 7806,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45190,6 +45190,90 @@
         {
           "kind": "verified_semantic_review",
           "name": "TryConsumeTextLiteralPrefix",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414968c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Name-hash index sorting and original icon/emoji lookup implementation used by the text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "7913343836742c1a8a50e7bece8d4def7e498ec7f50fde56fe7289cbe03fb764",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortTextNameHashRecords",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "141499240": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Name-hash index sorting and original icon/emoji lookup implementation used by the text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "b2be8c985ac1d1b8eec5364c56fe9d245fd93145822e1fd04368607885498c9e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetTextIconCodepointByHash",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "141499310": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Name-hash index sorting and original icon/emoji lookup implementation used by the text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "3fbe378162781f492b0ce97d5b376991ed859bef9b11612bfc764d61025ee132",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetTrenIconCodepointByHash",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "141499380": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Name-hash index sorting and original icon/emoji lookup implementation used by the text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "a40bf87ee898b9531d19eb0f5dc5f6671d38836b8240c504a7508613667fc910",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolveTextEmojiAlias",
           "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]
