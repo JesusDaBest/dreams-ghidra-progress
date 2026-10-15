@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9576,
-  "mapped_total": 1724,
-  "unmapped_total": 7852,
+  "mapped_total": 1725,
+  "unmapped_total": 7851,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44230,6 +44230,25 @@
           "kind": "verified_semantic_review",
           "name": "SortUnsigned64Values",
           "support": "Native unsigned comparisons, complete routine, scoped tests and saved-project verification."
+        }
+      ]
+    },
+    "140bbf520": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "spatial-trees"
+      ],
+      "component_basis": "Builds flags for sculpt bounds feeding spatial-tree preparation; complete consumers unresolved.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native helper and scoped hardware bit tests independently saved.",
+      "code_sha256": "35ce94bd5c3ccc0dd1c946ed25f16e40108ea6b35d9b9044661a34d97369c51b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildSculptBoundsFlags",
+          "support": "Original bounds worker, complete native helper, independent bit tests and saved-project verification."
         }
       ]
     }

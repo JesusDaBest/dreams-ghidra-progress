@@ -1668,3 +1668,9 @@ Backed-up trial, promotion and independent reopening verify the name/signature, 
 The sculpt-bound/body-wakeup worker calls a helper that constructs the flags stored beside each bound.57,600 original-instruction cases compare its complete32-bit return with an independent bit model, including11,520 skipped-player-query and46,080 mode-zero player-query cases.187 instructions across the flag helper and filter match the original executable. Complete object/body-table bytes and selected context/state windows remain unchanged.
 
 The tests cover per-object bitset mask4, player-filter contribution16, category-byte shifting, ordered positive level mask8, object/auxiliary masks1/2 and selected body/extra metadata contributions. Native NaN comparison leaves mask8 clear. These establish numeric mechanics, not complete gameplay names for the bits. Other parent/filter modes, full large state allocations, the worker’s wakeup behavior and in-game execution remain unresolved. No new names or completion credit;283 names remain checked.
+
+### Saved sculpt-bound flag helper name
+
+Applied BuildSculptBoundsFlags with opaque Game/current-state/sculpt pointers, signed body index and32-bit flag return.93 original instructions and57,600 scoped hardware cases support its role. Cold backup, isolated trial, promotion and independent reopening verify the name/signature, unchanged original instructions and archive hashes.
+
+Bit mechanics remain numeric where gameplay meaning is unresolved. Other player/parent filter modes, full large state allocations and parent worker wakeup behavior remain unverified. Totals:284 checked names among9,576 functions;1,725 mapped and7,851 unmapped. Current status snapshot is dated2026-10-15. No whole-subsystem completion credit.
