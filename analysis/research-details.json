@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 277,
+    "checked_and_applied_names": 281,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 277,
+    "verified_names": 281,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "256 existing-function renames and21 created functions verified after independent reopening.",
+    "scope": "256 existing-function renames and25 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3932,6 +3932,22 @@
       "Copy import modeled; scene/render/physics ownership and in-game execution unresolved."
     ],
     "project_modified": false,
+    "runtime_game_verified": false
+  },
+  "morton_worker_definitions_checkpoint": {
+    "names": [
+      "GenerateMortonBvhKeysJob",
+      "InitializeMortonBvhLeavesJob",
+      "LinkMortonBvhNodesJob",
+      "PropagateMortonBvhBoundsJob"
+    ],
+    "function_count": 9576,
+    "caller_context": "CalculateSculptBoundsAndWakeUpBodies followed by two tree builds from transformed bounds.",
+    "limits": [
+      "Finite integer/origin0/scale1 fixtures and sequential jobs; wrapper normalization and concurrency not execution-tested.",
+      "Copy import explicitly modeled.",
+      "Full consumer ownership and in-game behavior remain unresolved; not a match to older Hilbert point-cluster slides."
+    ],
     "runtime_game_verified": false
   }
 }

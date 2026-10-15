@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "256 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "256 existing-function renames and25 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9572,
+    "total": 9576,
     "default_fun_names": 9139,
-    "other_names": 433,
-    "verification": "complete_inventory_matches_baseline_plus_256_renames_and_21_created_functions"
+    "other_names": 437,
+    "verification": "complete_inventory_matches_baseline_plus_256_renames_and_25_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5737,6 +5737,102 @@
         "Synthetic valid C strings and four selected signed indices; malformed pointers and complete visitor recursion untested.",
         "Mode flags remain numeric contracts without unsupported read/write direction names."
       ]
+    },
+    {
+      "address": "1414f5a90",
+      "original_name": null,
+      "applied_name": "GenerateMortonBvhKeysJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV GenerateMortonBvhKeysJob(void * job_context, uint batch_index)",
+      "evidence": [
+        "Original Morton/Leaves/Links/Bounds job targets bind the four worker roles.",
+        "Complete nonoverlapping bodies retain original bytes and match original PS4 captures.",
+        "36 connected arrays verify independent keys, full tree structure, bound unions and flag propagation.",
+        "Caller schedules CalculateSculptBoundsAndWakeUpBodies and builds two trees from transformed bounds.",
+        "Backed-up trial, promotion and independent reopening verify definitions and RDI/ESI job inputs."
+      ],
+      "caveats": [
+        "Finite integer/origin0/scale1 fixtures and sequential jobs; wrapper normalization and concurrency not execution-tested.",
+        "Copy import explicitly modeled.",
+        "Full consumer ownership and in-game behavior remain unresolved; not a match to older Hilbert point-cluster slides."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1414f5c30",
+      "original_name": null,
+      "applied_name": "InitializeMortonBvhLeavesJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeMortonBvhLeavesJob(void * job_context, uint batch_index)",
+      "evidence": [
+        "Original Morton/Leaves/Links/Bounds job targets bind the four worker roles.",
+        "Complete nonoverlapping bodies retain original bytes and match original PS4 captures.",
+        "36 connected arrays verify independent keys, full tree structure, bound unions and flag propagation.",
+        "Caller schedules CalculateSculptBoundsAndWakeUpBodies and builds two trees from transformed bounds.",
+        "Backed-up trial, promotion and independent reopening verify definitions and RDI/ESI job inputs."
+      ],
+      "caveats": [
+        "Finite integer/origin0/scale1 fixtures and sequential jobs; wrapper normalization and concurrency not execution-tested.",
+        "Copy import explicitly modeled.",
+        "Full consumer ownership and in-game behavior remain unresolved; not a match to older Hilbert point-cluster slides."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1414f5cf0",
+      "original_name": null,
+      "applied_name": "LinkMortonBvhNodesJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV LinkMortonBvhNodesJob(void * job_context, uint batch_index)",
+      "evidence": [
+        "Original Morton/Leaves/Links/Bounds job targets bind the four worker roles.",
+        "Complete nonoverlapping bodies retain original bytes and match original PS4 captures.",
+        "36 connected arrays verify independent keys, full tree structure, bound unions and flag propagation.",
+        "Caller schedules CalculateSculptBoundsAndWakeUpBodies and builds two trees from transformed bounds.",
+        "Backed-up trial, promotion and independent reopening verify definitions and RDI/ESI job inputs."
+      ],
+      "caveats": [
+        "Finite integer/origin0/scale1 fixtures and sequential jobs; wrapper normalization and concurrency not execution-tested.",
+        "Copy import explicitly modeled.",
+        "Full consumer ownership and in-game behavior remain unresolved; not a match to older Hilbert point-cluster slides."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1414f5fa0",
+      "original_name": null,
+      "applied_name": "PropagateMortonBvhBoundsJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV PropagateMortonBvhBoundsJob(void * job_context, uint batch_index)",
+      "evidence": [
+        "Original Morton/Leaves/Links/Bounds job targets bind the four worker roles.",
+        "Complete nonoverlapping bodies retain original bytes and match original PS4 captures.",
+        "36 connected arrays verify independent keys, full tree structure, bound unions and flag propagation.",
+        "Caller schedules CalculateSculptBoundsAndWakeUpBodies and builds two trees from transformed bounds.",
+        "Backed-up trial, promotion and independent reopening verify definitions and RDI/ESI job inputs."
+      ],
+      "caveats": [
+        "Finite integer/origin0/scale1 fixtures and sequential jobs; wrapper normalization and concurrency not execution-tested.",
+        "Copy import explicitly modeled.",
+        "Full consumer ownership and in-game behavior remain unresolved; not a match to older Hilbert point-cluster slides."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [
