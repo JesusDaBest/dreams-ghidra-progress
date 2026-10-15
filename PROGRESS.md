@@ -1452,3 +1452,10 @@ Applied and independently reopened ReadInverterOutputVariant and ReadXorOutputVa
 XOR passed130,520 uniform and mixed selected-input cases. Exactly one active input forwards its original value; a second active input writes zero and stops. No active input leaves the caller-provided output untouched. This is exactly-one behavior, not parity XOR. Identifier-like tags use raw nonzero64-bit payloads, including all-ones; Number/Signal inputs use ordered scalar>0. Full output bytes, padding, input objects and guards were compared.
 
 These tests execute original instructions in controlled local fixtures. Other variant reductions and running-game behavior remain unverified. Totals:260 checked names;1,703 mapped functions;7,867 unmapped. This adds no whole-game completion or audited-byte credit.
+### AND and OR typed output helpers
+
+Applied and independently reopened ReadAndOutputVariant, ReadOrOutputVariant and MergeTypedSignalsByMinimumMagnitude. Original kind-table entries and output-property branches bind the wrappers. AND picks the smaller-magnitude signed component; OR picks the larger. Equal or unordered component comparisons select the second input bits. Numeric weights use SSE minimum/maximum, also taking the second operand on equal or unordered comparisons.
+
+21,168 original-instruction numeric pair checks,5,292 identifier/Timestamp pair checks,4,704 mixed Number/Signal pair checks and12,152 multi-port wrapper checks passed. Identifier-like values combine raw-nonzero truth into Bool with zero alpha. Timestamp branches compare signed64 magnitudes, clamp a selected negative timestamp to zero, and use absolute min/max alpha. The wrappers always combine two embedded inputs, then fold extra sparse properties in port order. Missing extra inputs become NONE/zero. Tests compare exact input/output/guard bytes, including NaN payloads, signed zero and padding.
+
+Broader mixed-type promotion and actual running-game behavior remain unverified. Totals:263 checked names;1,706 mapped functions;7,864 unmapped. No whole-subsystem completion or audited-byte credit is added.

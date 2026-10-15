@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1703,
-  "unmapped_total": 7867,
+  "mapped_total": 1706,
+  "unmapped_total": 7864,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43809,6 +43809,66 @@
           "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
         }
       ]
+    },
+    "1408ce750": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "and",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind-table dispatcher binds this output helper to and.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "374d98befb75d89391860e8d57f4b6ea757588d2117f9118cff60951eef25b58",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadAndOutputVariant",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
+    },
+    "1408ce8a0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "or",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind-table dispatcher binds this output helper to or.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "fccab2ebd54e53b98e9a3090532d9eb5cdfbfa5e20aeb9a8119cf305de81497f",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadOrOutputVariant",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
+    },
+    "1411c0ea0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "and",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original AND caller uses typed minimum-magnitude helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "083f90bf02f2bef38895ca549fd4b8c65f490e485c96b970a2ecaa249a48fdc2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MergeTypedSignalsByMinimumMagnitude",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48581,6 +48641,11 @@
                   "id": "properties-types",
                   "label": "Properties & type definitions",
                   "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
                 }
               ]
             },
@@ -48591,6 +48656,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

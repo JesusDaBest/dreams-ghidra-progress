@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "241 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "244 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9154,
-    "other_names": 416,
-    "verification": "complete_inventory_matches_baseline_plus_241_renames_and_19_created_functions"
+    "default_fun_names": 9151,
+    "other_names": 419,
+    "verification": "complete_inventory_matches_baseline_plus_244_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5343,6 +5343,72 @@
       ],
       "caveats": [
         "Selected input types and controlled native fixtures; other variant reductions remain untested.",
+        "Descriptive output helper name, not whole-gadget completion.",
+        "No running-game validation or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408ce750",
+      "original_name": "FUN_1408ce750",
+      "applied_name": "ReadAndOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadAndOutputVariant(void * gadget, void * output)",
+      "evidence": [
+        "Original dispatcher kind table and output-property branch verified.",
+        "Complete helper, scalar reducer, constants and sparse-property stride inspected.",
+        "6076 original-instruction hardware cases compare exact output, input and guard bytes.",
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "Selected same-tag numeric, identifier, Timestamp and mixed Number/Signal fixtures; broader mixed promotion remains unverified.",
+        "Descriptive output helper name, not whole-gadget completion.",
+        "No running-game validation or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408ce8a0",
+      "original_name": "FUN_1408ce8a0",
+      "applied_name": "ReadOrOutputVariant",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadOrOutputVariant(void * gadget, void * output)",
+      "evidence": [
+        "Original dispatcher kind table and output-property branch verified.",
+        "Complete helper, scalar reducer, constants and sparse-property stride inspected.",
+        "6076 original-instruction hardware cases compare exact output, input and guard bytes.",
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "Selected same-tag numeric, identifier, Timestamp and mixed Number/Signal fixtures; broader mixed promotion remains unverified.",
+        "Descriptive output helper name, not whole-gadget completion.",
+        "No running-game validation or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1411c0ea0",
+      "original_name": "FUN_1411c0ea0",
+      "applied_name": "MergeTypedSignalsByMinimumMagnitude",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV MergeTypedSignalsByMinimumMagnitude(void * output, void * first, void * second)",
+      "evidence": [
+        "Original AND calls bind the minimum-magnitude helper.",
+        "Complete helper, scalar reducer, constants and sparse-property stride inspected.",
+        "15582 original-instruction hardware cases compare exact output, input and guard bytes.",
+        "Cold backup, isolated trial and independent reopening verify saved name/signature and unchanged native bytes and archives."
+      ],
+      "caveats": [
+        "Selected same-tag numeric, identifier, Timestamp and mixed Number/Signal fixtures; broader mixed promotion remains unverified.",
         "Descriptive output helper name, not whole-gadget completion.",
         "No running-game validation or audited-byte credit."
       ]

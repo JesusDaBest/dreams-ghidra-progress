@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 260,
+    "checked_and_applied_names": 263,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 260,
+    "verified_names": 263,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "241 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "244 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3180,6 +3180,51 @@
     ],
     "limits": [
       "Selected input types and controlled native fixtures; other variant reductions remain untested.",
+      "Descriptive output helper name, not whole-gadget completion.",
+      "No running-game validation or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "and_output_checkpoint": {
+    "name": "ReadAndOutputVariant",
+    "controlled_native_cases": 6076,
+    "findings": [
+      "First two embedded inputs+48/+70 always combined; extra ports2..NumPorts-1 fold sparse input properties0x122+i.",
+      "Missing extra inputs default NONE/zero; numeric AND result becomeszero and alpha0.",
+      "Port-order fold independent of sparse record ordering;37 output bytes written, tail padding3 preserved."
+    ],
+    "limits": [
+      "Selected same-tag numeric, identifier, Timestamp and mixed Number/Signal fixtures; broader mixed promotion remains unverified.",
+      "Descriptive output helper name, not whole-gadget completion.",
+      "No running-game validation or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "or_output_checkpoint": {
+    "name": "ReadOrOutputVariant",
+    "controlled_native_cases": 6076,
+    "findings": [
+      "First two embedded inputs+48/+70 always combined; extra ports2..NumPorts-1 fold sparse input properties0x122+i.",
+      "Missing extra inputs default NONE/zero; numeric AND result becomeszero and alpha0.",
+      "Port-order fold independent of sparse record ordering;37 output bytes written, tail padding3 preserved."
+    ],
+    "limits": [
+      "Selected same-tag numeric, identifier, Timestamp and mixed Number/Signal fixtures; broader mixed promotion remains unverified.",
+      "Descriptive output helper name, not whole-gadget completion.",
+      "No running-game validation or audited-byte credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "minimum-signal_output_checkpoint": {
+    "name": "MergeTypedSignalsByMinimumMagnitude",
+    "controlled_native_cases": 15582,
+    "findings": [
+      "Same-tag numeric lanes select signed component of minimum/maximum magnitude, ties and unordered comparisons select second input bits.",
+      "Numeric alpha uses SSE minimum/maximum with second operand on equal or unordered comparisons.",
+      "Unused output payload is zeroed; three tail padding bytes remain untouched."
+    ],
+    "limits": [
+      "Selected same-tag numeric, identifier, Timestamp and mixed Number/Signal fixtures; broader mixed promotion remains unverified.",
       "Descriptive output helper name, not whole-gadget completion.",
       "No running-game validation or audited-byte credit."
     ],
