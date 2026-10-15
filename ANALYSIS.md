@@ -1912,3 +1912,9 @@ Original bytes match the PS4 executable. Backed-up trial, promotion and independ
 Applied VisitGateProperties with opaque visitor and Gate pointer inputs. Original kind84 dispatch, reflected fields and complete763-instruction body bind the role. Native branches filter property paths and format versions: ParentFromModel from729, QueueFrame replacing legacy Queuing from1049, QueueLevel from1085, forget/reset-waiting/sync fields from1131, IsGluedGadget from1139, and ScopeType from1673. A separate scope compatibility branch covers1673 through1850 inclusive. These are numeric format thresholds, not dates.
 
 Backed-up trial, promotion and independent reopening verify the name/signature and unchanged original instructions/archives. Virtual callbacks and full serialization direction remain unexecuted. Totals:276 checked names among9,572 functions;1,717 mapped and7,855 unmapped. No whole-subsystem completion credit.
+
+### Filtered property visitor entry
+
+Applied BeginFilteredPropertyVisit. It rejects suppressed visits and explicit names beginning#, generates signed decimal names for unnamed fields only in mode1, and accepts filters matching the complete name or a slash-delimited descendant. Accepted mode0 calls the first virtual callback with the name; mode1 calls the second only when a prior field was visited. Success sets the prior-field flag and returns1. Modes remain numeric contracts without inferred read/write direction.
+
+2112 original-instruction cases compare return, callback sequence and every visitor-context byte using explicit string/format and virtual callback models.73 instruction spans and the original format literal match the PS4 executable. Backed-up trial, promotion and independent reopening verify the saved name/signature and unchanged archives. Real serialization recursion remains unverified. Totals:277 checked names among9,572 functions;1,718 mapped and7,854 unmapped.

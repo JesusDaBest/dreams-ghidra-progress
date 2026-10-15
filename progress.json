@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 235,
+    "done": 236,
     "todo": 1482,
-    "total": 1717,
-    "behavior_or_helpers_reviewed": 172,
+    "total": 1718,
+    "behavior_or_helpers_reviewed": 173,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25141,13 +25141,13 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 115,
+        "done": 116,
         "todo": 105,
-        "total": 220,
-        "behavior_or_helpers_reviewed": 102,
+        "total": 221,
+        "behavior_or_helpers_reviewed": 103,
         "properties_or_types_reviewed": 13,
         "runtime_functions_identified": 138,
-        "property_type_functions_identified": 77,
+        "property_type_functions_identified": 78,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
         "done_names": [
@@ -25165,6 +25165,7 @@
           "DecodeLz4Block",
           "ReleaseRefCountedBlockHandle",
           "TransferSerializerByte",
+          "BeginFilteredPropertyVisit",
           "VisitPosProperties",
           "VisitVariantProperties",
           "VisitCanvasProperties",
@@ -25389,6 +25390,7 @@
           "14015e8c0",
           "14038bed0",
           "14039b4a0",
+          "140413d40",
           "1404f68b0",
           "1404f70b0",
           "1404f7a20",
@@ -28234,6 +28236,130 @@
             ]
           },
           {
+            "name": "shared/helpers",
+            "label": "Shared property helpers",
+            "done": 8,
+            "todo": 4,
+            "total": 12,
+            "behavior_or_helpers_reviewed": 1,
+            "properties_or_types_reviewed": 7,
+            "runtime_functions_identified": 0,
+            "property_type_functions_identified": 8,
+            "code_role_unresolved": 4,
+            "whole_feature_completion": null,
+            "done_names": [
+              "RegisterUnsigned32FieldOffset",
+              "BeginFilteredPropertyVisit",
+              "VisitPosProperties",
+              "VisitVariantProperties",
+              "VisitCanvasProperties",
+              "VisitGadgetNameProperties",
+              "RegisterSigned32FieldOffset",
+              "RegisterEPropFieldOffset"
+            ],
+            "todo_names": [
+              "0x14048b5e0",
+              "0x14048fa90",
+              "0x14048fc40",
+              "0x140490040"
+            ],
+            "done_addresses": [
+              "140112930",
+              "140413d40",
+              "1404f68b0",
+              "1404f70b0",
+              "1404f7a20",
+              "1404f8350",
+              "140cd93e0",
+              "140ce67b0"
+            ],
+            "todo_addresses": [
+              "14048b5e0",
+              "14048fa90",
+              "14048fc40",
+              "140490040"
+            ],
+            "unresolved_addresses": [
+              "14048b5e0",
+              "14048fa90",
+              "14048fc40",
+              "140490040"
+            ],
+            "groups": [
+              {
+                "name": "shared/helpers/properties-types",
+                "label": "Properties & type definitions",
+                "done": 8,
+                "todo": 0,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 7,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 8,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterUnsigned32FieldOffset",
+                  "BeginFilteredPropertyVisit",
+                  "VisitPosProperties",
+                  "VisitVariantProperties",
+                  "VisitCanvasProperties",
+                  "VisitGadgetNameProperties",
+                  "RegisterSigned32FieldOffset",
+                  "RegisterEPropFieldOffset"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140112930",
+                  "140413d40",
+                  "1404f68b0",
+                  "1404f70b0",
+                  "1404f7a20",
+                  "1404f8350",
+                  "140cd93e0",
+                  "140ce67b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": []
+              },
+              {
+                "name": "shared/helpers/role-unresolved",
+                "label": "Code role still unresolved",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 4,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14048b5e0",
+                  "0x14048fa90",
+                  "0x14048fc40",
+                  "0x140490040"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14048b5e0",
+                  "14048fa90",
+                  "14048fc40",
+                  "140490040"
+                ],
+                "unresolved_addresses": [
+                  "14048b5e0",
+                  "14048fa90",
+                  "14048fc40",
+                  "140490040"
+                ],
+                "groups": []
+              }
+            ]
+          },
+          {
             "name": "shared/signals",
             "label": "Shared signal data",
             "done": 10,
@@ -28498,126 +28624,6 @@
                     "groups": []
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "name": "shared/helpers",
-            "label": "Shared property helpers",
-            "done": 7,
-            "todo": 4,
-            "total": 11,
-            "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 7,
-            "runtime_functions_identified": 0,
-            "property_type_functions_identified": 7,
-            "code_role_unresolved": 4,
-            "whole_feature_completion": null,
-            "done_names": [
-              "RegisterUnsigned32FieldOffset",
-              "VisitPosProperties",
-              "VisitVariantProperties",
-              "VisitCanvasProperties",
-              "VisitGadgetNameProperties",
-              "RegisterSigned32FieldOffset",
-              "RegisterEPropFieldOffset"
-            ],
-            "todo_names": [
-              "0x14048b5e0",
-              "0x14048fa90",
-              "0x14048fc40",
-              "0x140490040"
-            ],
-            "done_addresses": [
-              "140112930",
-              "1404f68b0",
-              "1404f70b0",
-              "1404f7a20",
-              "1404f8350",
-              "140cd93e0",
-              "140ce67b0"
-            ],
-            "todo_addresses": [
-              "14048b5e0",
-              "14048fa90",
-              "14048fc40",
-              "140490040"
-            ],
-            "unresolved_addresses": [
-              "14048b5e0",
-              "14048fa90",
-              "14048fc40",
-              "140490040"
-            ],
-            "groups": [
-              {
-                "name": "shared/helpers/properties-types",
-                "label": "Properties & type definitions",
-                "done": 7,
-                "todo": 0,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 7,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 7,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RegisterUnsigned32FieldOffset",
-                  "VisitPosProperties",
-                  "VisitVariantProperties",
-                  "VisitCanvasProperties",
-                  "VisitGadgetNameProperties",
-                  "RegisterSigned32FieldOffset",
-                  "RegisterEPropFieldOffset"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140112930",
-                  "1404f68b0",
-                  "1404f70b0",
-                  "1404f7a20",
-                  "1404f8350",
-                  "140cd93e0",
-                  "140ce67b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": []
-              },
-              {
-                "name": "shared/helpers/role-unresolved",
-                "label": "Code role still unresolved",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 4,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14048b5e0",
-                  "0x14048fa90",
-                  "0x14048fc40",
-                  "0x140490040"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14048b5e0",
-                  "14048fa90",
-                  "14048fc40",
-                  "140490040"
-                ],
-                "unresolved_addresses": [
-                  "14048b5e0",
-                  "14048fa90",
-                  "14048fc40",
-                  "140490040"
-                ],
-                "groups": []
               }
             ]
           },
@@ -41018,5 +41024,5 @@
       }
     ]
   },
-  "unmapped": 7855
+  "unmapped": 7854
 }

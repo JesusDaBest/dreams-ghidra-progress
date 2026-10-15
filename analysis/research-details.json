@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 276,
+    "checked_and_applied_names": 277,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 276,
+    "verified_names": 277,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "255 existing-function renames and21 created functions verified after independent reopening.",
+    "scope": "256 existing-function renames and21 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3824,6 +3824,27 @@
       "Version thresholds are numeric format values, not dates or named game releases.",
       "Opaque visitor/Gate working pointer types; no whole-Gate or running-game completion claim."
     ],
+    "runtime_game_verified": false
+  },
+  "filtered_property_begin_checkpoint": {
+    "name": "BeginFilteredPropertyVisit",
+    "passed": 2112,
+    "accepted_cases": 218,
+    "original_instruction_spans_checked": 73,
+    "method": "Original helper and original import thunks on hardware; explicit strlen/prefix/decimal-format and two virtual callback models. Exact return, callback sequence and entire visitor context checked.",
+    "findings": [
+      "Suppression byteA1 rejects before other work.",
+      "Explicit names beginning# are rejected.",
+      "Null name requires modeA0 and formats signed index9C as decimal into contextA9.",
+      "Filter accepts exact property name or name followed by slash; empty/null filter accepts all.",
+      "Accepted mode0 invokes first virtual callback with name; mode1 invokes second only when prior flagA8 set; success setsA8 and returns1."
+    ],
+    "limits": [
+      "Standard string and virtual visitor operations explicitly modeled, not real serialization implementations.",
+      "Synthetic valid C strings and four selected signed indices; malformed pointers and complete visitor recursion untested.",
+      "Mode flags remain numeric contracts without unsupported read/write direction names."
+    ],
+    "project_modified": false,
     "runtime_game_verified": false
   }
 }

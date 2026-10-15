@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "255 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "256 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9572,
-    "default_fun_names": 9140,
-    "other_names": 432,
-    "verification": "complete_inventory_matches_baseline_plus_255_renames_and_21_created_functions"
+    "default_fun_names": 9139,
+    "other_names": 433,
+    "verification": "complete_inventory_matches_baseline_plus_256_renames_and_21_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5713,6 +5713,28 @@
         "Static native/control-flow review; virtual visitor callbacks and complete serialization direction not executed or inferred.",
         "Version thresholds are numeric format values, not dates or named game releases.",
         "Opaque visitor/Gate working pointer types; no whole-Gate or running-game completion claim."
+      ]
+    },
+    {
+      "address": "140413d40",
+      "original_name": "FUN_140413d40",
+      "applied_name": "BeginFilteredPropertyVisit",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV BeginFilteredPropertyVisit(void * visitor, char * field_name)",
+      "evidence": [
+        "Complete73-instruction helper and Gate compatibility callers inspected;980 recorded call references identify shared use.",
+        "Original PS4 bytes and %d format constant checked.",
+        "2112 original-instruction cases compare return, virtual callback sequence and complete visitor context.",
+        "Cold backup, trial/promotion and independent reopening verify saved name, two inputs and EAX uint32 result."
+      ],
+      "caveats": [
+        "Standard string and virtual visitor operations explicitly modeled, not real serialization implementations.",
+        "Synthetic valid C strings and four selected signed indices; malformed pointers and complete visitor recursion untested.",
+        "Mode flags remain numeric contracts without unsupported read/write direction names."
       ]
     }
   ],
