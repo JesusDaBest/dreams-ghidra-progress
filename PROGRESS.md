@@ -1590,3 +1590,9 @@ Creation also reads a runtime colour global. A native initialization window load
 Original creation instructions pass256 cases, one for every initial fill byte. All352 object bytes, surrounding guards, requested allocation size and returned pointer match the independent initialization model. The original cleanup callback passes256 null cases without calling deallocation and256 nonnull cases forwarding the exact pointer once. Complete object bytes remain unchanged during cleanup.
 
 Original import thunks run against explicit heap-boundary substitutes; these tests do not execute the actual allocator or deallocator. The colour value is supplied from the original static initialization writer and file-backed constant; that startup writer is not executed. Allocation failure, runtime descriptor dispatch and in-game lifecycle remain unverified. No function definitions or names were added in this checkpoint;272 checked names remain.
+
+### Saved Gate lifecycle callback definitions
+
+Defined AllocateDefaultGate and FreeGateStorage at the original descriptor callback targets, with pointer return/no arguments and void/pointer argument respectively. The full nonoverlapping50- and4-instruction bodies retain original bytes. Existing functions are unchanged. Cold backup, isolated trial, promotion and independent reopening confirm the definitions, ABI storage and saved decompilation. Original archives remain unchanged.
+
+The definitions are supported by256 full-object initialization cases and512 cleanup cases using explicit heap-boundary models. Actual heap implementation, allocation failure, startup execution and in-game lifecycle remain unverified. Totals:274 checked names among9,572 discovered functions;1,716 mapped and7,856 unmapped. This adds two previously undefined functions, not extraction or whole-subsystem completion credit.

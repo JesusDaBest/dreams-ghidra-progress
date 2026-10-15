@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 272,
+    "checked_and_applied_names": 274,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 272,
+    "verified_names": 274,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "253 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "253 existing-function renames and21 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3730,6 +3730,20 @@
       "Allocation failure, runtime callback dispatch and in-game lifecycle remain unverified."
     ],
     "project_modified": false,
+    "runtime_game_verified": false
+  },
+  "gate_callback_definitions_checkpoint": {
+    "names": [
+      "AllocateDefaultGate",
+      "FreeGateStorage"
+    ],
+    "function_count": 9572,
+    "original_archives_unchanged": true,
+    "limits": [
+      "Heap boundaries are explicit models; actual allocator/deallocator not executed.",
+      "Colour constant reconstructed from original initialization writer; startup not executed.",
+      "Allocation failure, runtime descriptor dispatch and real game lifecycle unverified."
+    ],
     "runtime_game_verified": false
   }
 }

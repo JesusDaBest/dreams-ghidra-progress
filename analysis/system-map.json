@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9570,
-  "mapped_total": 1714,
+  "inventory_total": 9572,
+  "mapped_total": 1716,
   "unmapped_total": 7856,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -44033,6 +44033,46 @@
           "kind": "verified_semantic_review",
           "name": "InitializeGateTypeDescriptor",
           "support": "Original Gate reflection metadata, native body, original byte match and independent saved-project verification."
+        }
+      ]
+    },
+    "140d6b810": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "gate",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Gate descriptor callback pointer and full object defaults bind Gate lifecycle role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callbacks and scoped hardware tests independently persisted.",
+      "code_sha256": "f6474f4c4547ca47a6fd1cf34368e661c18c5cc0647aa416a9f05a96cf222585",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateDefaultGate",
+          "support": "Original descriptor, exact native boundary/bytes, controlled execution and independent saved-project verification."
+        }
+      ]
+    },
+    "140d6b970": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "gate",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Gate descriptor callback pointer and full object defaults bind Gate lifecycle role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callbacks and scoped hardware tests independently persisted.",
+      "code_sha256": "c581962bebe5c652d816b5438564e01e6758cb8db2ace2d5294bf550b8d5c311",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FreeGateStorage",
+          "support": "Original descriptor, exact native boundary/bytes, controlled execution and independent saved-project verification."
         }
       ]
     }
