@@ -1342,7 +1342,7 @@ Named and typed Counter output/update helpers after matching original fields, na
 
 11,756 isolated native cases passed: 2,268 output cases, 1,296 inactive update cases with null previous state and 8,192 selected active input/reset cases. Output ratio and full threshold use unsigned values; update clamps use signed ordering. Selected sign-class transitions step the count, held classes do not retrigger, NaN inputs do not count, and reset rising edges clear current and wrap the reset byte.
 
-The update harness supplies two offsets verified from original initializer writes; the initializer itself was not executed. The inspected direct caller passes null previous state, so active real-game reachability, mode/gate meanings and full gadget integration remain unresolved. Other active extremes and output property labels also remain incomplete. No game-runtime or audited-byte credit added. Totals: 245 checked names; 1,688 mapped functions; 7,882 unmapped.
+The update harness supplies two offsets verified from original initializer writes; the initializer itself was not executed. The matching-previous caller path passes a Counter pointer through a shared-tail entry that bypasses nulling. Initial-state gating, mode/gate meanings and actual integration remain unresolved. Other active extremes and output property labels also remain incomplete. No game-runtime or audited-byte credit added. Totals: 245 checked names; 1,688 mapped functions; 7,882 unmapped.
 ### Selector output and input-transition behavior
 
 Named and independently reopened Selector output/update helpers after matching original descriptor fields, the kind-specific offset initializer and dispatcher calls. The output reader returns zero for inactive ports, one for an active port without a matching passthrough input, or copies the first matching input Variant.
@@ -1381,12 +1381,12 @@ Named and independently reopened ChooseRandomiserWeightedPort. Original fields b
 
 12,960 controlled native updater cases compare NoRepeat, Shuffle, TrueRandom and a synthetic invalid mode, including initialization, trigger transitions, exact seed changes and16-bit counter boundaries. Shuffle advances a deterministic weighted ordering from ShuffleSeed. Initialization can run without a trigger, updates the thread seed again for ShuffleSeed and does not increment RandomIndex. An out-of-range Shuffle port may remain until the final clamp.
 
-The updater, weighted picker and import thunk retain their original instructions. The operating-system TLS boundary is explicitly modeled to return worker seed index1; this is not execution of the PS4 OS implementation. Tests use non-null previous state, while the captured direct worker call passes null. Actual active-path reachability and scheduling remain unresolved. No names or completion metrics added.
+The updater, weighted picker and import thunk retain their original instructions. The operating-system TLS boundary is explicitly modeled to return worker seed index1; this is not execution of the PS4 OS implementation. Tests use synthetic non-null previous state. The matching-previous worker path passes the previous Randomiser through a shared-tail entry; initial-state gating and actual scheduling remain unresolved. No names or completion metrics added.
 ### Randomiser trigger-edge updater name
 
 Applied and independently reopened UpdateRandomiserFromTriggerEdges with working Game, previous Randomiser, current Randomiser and object-index arguments. Original fields, mode labels, complete native control flow and12,960 controlled native cases support the descriptive role. Initialization can run without a trigger; initialized zero-to-nonzero input advances selection and16-bit RandomIndex.
 
-The synthetic TLS boundary and non-null previous-state fixture remain explicit limitations. The captured direct worker call passes null previous state, so active game reachability is unresolved. Neither this name nor the tests establish whole-gadget completion. Totals: 253 checked names; 1,696 mapped functions; 7,874 unmapped.
+The synthetic TLS boundary and non-null previous-state fixture remain explicit limitations. The matching-previous worker path passes the previous Randomiser through a shared-tail entry; initial-state gating and actual game scheduling remain unresolved. Neither this name nor the tests establish whole-gadget completion. Totals: 253 checked names; 1,696 mapped functions; 7,874 unmapped.
 ### Randomiser output routing
 
 Applied and independently reopened ReadRandomiserOutputVariant. Sentinel10 silences every output. A selected output forwards the first matching common input at property122 as37 bytes, preserving the last3 output bytes; without that input it returns Signal1. Unselected outputs return Signal0.
@@ -1396,7 +1396,7 @@ Applied and independently reopened ReadRandomiserOutputVariant. Sentinel10 silen
 
 576 controlled compositions of original reset, update, picker and output helpers passed full byte/guard checks. Reset installs ActivePort255 and clears stored state bits18/19. With those bits cleared, valid Game gates alone do not allow initialization. After the fixture restores bit18, initialization selects a weighted port independently of a trigger and leaves RandomIndex unchanged. All-zero weights produce sentinel10 and silence all ten tested outputs.
 
-The full worker was not executed: its bit18 restoration is modeled explicitly. TLS index1 and non-null previous state are also synthetic boundaries. These sequences do not establish actual game scheduling or resolve the null previous pointer at the captured worker call. No naming or completion increment.
+The full worker was not executed: its bit18 restoration is modeled explicitly. TLS index1 and non-null previous state are also synthetic boundaries. These sequences do not establish actual game scheduling. Wider incoming-edge inspection confirms the matching-previous worker path bypasses the nulling instruction; initial-state gating remains unresolved. No naming or completion increment.
 ### Remapper unsmoothed curve paths
 
 Repaired the working evaluator signature from native register/stack evidence: two40-byte Variants pass by value. Independent reopening confirms the saved types and unchanged original instructions/archives, without naming credit. Original fields and enum labels identify range configuration, smoothing, edge modes and curve choices.
@@ -1503,3 +1503,8 @@ Applied and independently reopened UpdateSignalInspectorChangeCounters after ins
 A wider control-flow trace corrects the earlier unconditional-null description. The absent-previous path clears the pointer, while the matching-Inspector path selects the previous object and enters the shared call tail after that clearing instruction.32 incoming-edge instruction spans match the original unencrypted PS4 executable exactly; the40-instruction helper and selected call tail also match. The nulling instruction is real, but is bypassed on the matching path.
 
 The Ghidra annotation was corrected in a backed-up trial, promoted and independently reopened. Function names, signatures, native instructions and archives are unchanged. Earlier bounded-window evidence omitted this incoming edge. Initial/mismatched-object Power gating and actual in-game scheduling remain unverified. Name totals remain266.
+### Stateful gadget caller audit correction
+
+Counter, Selector, Timer and Randomiser use the same shared-tail pattern found in Signal Inspector. Each matching-previous path selects a correctly typed previous pointer in RSI, then enters the call tail after its nulling instruction. Only absent/mismatched paths select null.204 instruction spans across these incoming edges and call tails match the original unencrypted PS4 executable. Earlier unconditional-null caveats based on short tail windows were incomplete and are corrected here and in current function reviews.
+
+All four saved Ghidra annotations were corrected through a cold backup, isolated trial, promotion and independent reopen. Names, signatures, instructions and archives remain unchanged. Existing synthetic helper tests still do not establish actual scheduling, initial-state gating or full gadget integration. No name or completion increment;266 functions remain checked.
