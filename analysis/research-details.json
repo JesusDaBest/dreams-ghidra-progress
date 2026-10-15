@@ -3561,5 +3561,40 @@
     ],
     "project_modified": false,
     "runtime_game_verified": false
+  },
+  "gate_group_arbitration_composed_checkpoint": {
+    "passed": 288,
+    "sizes": [
+      1,
+      2,
+      8,
+      32,
+      128,
+      256
+    ],
+    "profiles": [
+      "same",
+      "distinct",
+      "mixed",
+      "nested"
+    ],
+    "method": "Continuous original grouping then arbitration loops; explicit intervening allocator adapter and pre-sorted-name fixtures. Original parent resolver and scalar reducer. Exact scope/group/claimed arrays with guards/tails, complete Gate and parent objects, pointer array and full Game allocation checked.",
+    "branch_counts": {
+      "claimed": 12573,
+      "activate": 2603,
+      "queue_new": 2058,
+      "queue_max": 6245,
+      "queue_clear": 2792,
+      "forward": 5235,
+      "inactive": 15261,
+      "forget": 9112
+    },
+    "limits": [
+      "Sorting and initial Gate request update not composed yet.",
+      "Valid cached acyclic parent trees with nonglued noncontainer parents; finite Number inputs only.",
+      "Allocation/free and game scheduler not executed; no running-game or subsystem-completion claim."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
