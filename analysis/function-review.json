@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "313 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "314 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9082,
-    "other_names": 498,
-    "verification": "complete_inventory_matches_baseline_plus_313_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9081,
+    "other_names": 499,
+    "verification": "complete_inventory_matches_baseline_plus_314_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7463,6 +7463,29 @@
       "caveats": [
         "Selected bounded label cases; arbitrary nested markup remains unverified.",
         "No visible button rendering or whole text-parser completion claim.",
+        "Descriptive working name and types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414b0700",
+      "original_name": "FUN_1414b0700",
+      "applied_name": "FindInitialTextDirection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV FindInitialTextDirection(uint current_unit, uchar * next_byte, uchar * end, void * parser_state)",
+      "evidence": [
+        "Complete167-instruction body and original higher-level parser caller read;original SELF/saved bytes agree.",
+        "262160 native cases cover all131072 property-table codepoints and8 outside values across2 parser-state profiles;exact byte result and caller-state preservation.",
+        "72 selected lookahead cases cover neutral prefixes,ASCII/Hebrew/Arabic,button/color/size/named-style markup and0E raw direction controls;original parser/control/library dependencies and initialized tables,whole guarded caller state,input/index/source/canary.",
+        "Full cold backup,isolated trial,promotion and independent reopening verify saved name/signature and unchanged archives."
+      ],
+      "caveats": [
+        "Selected nonempty lookahead forms;arbitrary markup/escape/malformed combinations not verified.",
+        "Executable Unicode data is not a modern Unicode conformance claim.",
+        "No visible bidirectional rendering verification.",
         "Descriptive working name and types are not recovered source declarations."
       ]
     }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1776,
-  "unmapped_total": 7804,
+  "mapped_total": 1777,
+  "unmapped_total": 7803,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45317,6 +45317,27 @@
           "kind": "verified_semantic_review",
           "name": "TryFindTextButtonLabelSpan",
           "support": "Complete original body,native scanner and connected parser checks,independently reopened name/signature."
+        }
+      ]
+    },
+    "1414b0700": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Initial direction selection used by original higher-level text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "21cf94d768a582439ff4b3627a73a4ade7986a5770568a0522687308affd88d0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindInitialTextDirection",
+          "support": "Complete original body,native property-domain and selected lookahead checks,independently reopened name/signature."
         }
       ]
     }

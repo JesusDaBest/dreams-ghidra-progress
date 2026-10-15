@@ -2228,3 +2228,11 @@ The higher-level parser and all eight directly referenced direction/marker helpe
 The wrapper can emit an initial direction token without consuming input. The caller must apply that token before requesting the next unit; the original text emitter does so and stores the previous token before handling it. The selected Hebrew label is preserved between the button tokens, then the following ASCII character receives direction-transition tokens. A preliminary fixture that omitted control application repeated the initial token; this was a fixture caller omission, not a game stall.
 
 These are selected path checks. General bidirectional text, Arabic shaping, nested markup, markdown and visible rendering remain unverified. No additional function names or whole-function completion credit were added.
+
+### Saved initial text-direction lookup
+
+Applied FindInitialTextDirection with working current-unit, bounded next-byte/end, opaque parser-state arguments and unsigned-byte result. The original Unicode-property category selects left-to-right or right-to-left immediately for strong characters. Otherwise the helper copies 80 bytes of parser state and scans subsequent decoded units, applying controls to the copy. Exhaustion returns unknown; caller state remains unchanged. A special raw direction-control path is also present.
+
+262,160 original-native cases cover every codepoint in the executable property-table range plus eight outside values across two state profiles. Another 72 selected lookahead cases cover neutral prefixes, ASCII, Hebrew, Arabic, tags, button labels and raw direction controls. Exact results, guarded caller state, inputs, initialized indices, source pages and canary were checked using original code/data and actual library dependencies. These checks do not establish modern Unicode conformance, arbitrary markup/escape/malformed behavior or visible bidirectional rendering.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 344 checked names (314 renames, 29 created functions and one retained-name review), 1,777 mapped and 7,803 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
