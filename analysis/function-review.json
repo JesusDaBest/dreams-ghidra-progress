@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "300 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "302 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9095,
-    "other_names": 485,
-    "verification": "complete_inventory_matches_baseline_plus_300_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9093,
+    "other_names": 487,
+    "verification": "complete_inventory_matches_baseline_plus_302_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7148,6 +7148,52 @@
         "Returned tone-code values48..52 are working behavior; downstream visual glyph selection remains unverified.",
         "Whole markup parser and emoji rendering not verified.",
         "Descriptive name and working types are not recovered original source declarations."
+      ]
+    },
+    {
+      "address": "1414998f0",
+      "original_name": "FUN_1414998f0",
+      "applied_name": "TryMatchTextEmojiSequence",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryMatchTextEmojiSequence(uint * mapped_value_output, uint base_codepoint, uchar * * cursor, uchar * end, uchar insert_variation_selector)",
+      "evidence": [
+        "Complete original bodies and text-parser callers read;218 original spans match SELF and saved bytes.",
+        "12528 original matcher cases cover all379 continuation sequences, exact/extended/truncated/mismatch inputs, selector-insertion modes and4 alignments; exact mapped value/cursor/guards/input/canary verified without models.",
+        "4392 complete original plain decoder cases verify output,cursor,Boolean,input and guards without imports/models.48 selected complete base-parser cases establish conditional variation-selector consumption against original property tables.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Tables describe this executable version; no current Unicode coverage claim.",
+        "UTF8-like unit decoding is not strict scalar/shortest-encoding validation.",
+        "Full markup parsing, font/glyph availability and visible rendering unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414b1b40",
+      "original_name": "FUN_1414b1b40",
+      "applied_name": "DecodeUtf8Unit",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV DecodeUtf8Unit(uint * codepoint_output, uchar * * cursor, uchar * end)",
+      "evidence": [
+        "Complete original bodies and text-parser callers read;218 original spans match SELF and saved bytes.",
+        "12528 original matcher cases cover all379 continuation sequences, exact/extended/truncated/mismatch inputs, selector-insertion modes and4 alignments; exact mapped value/cursor/guards/input/canary verified without models.",
+        "4392 complete original plain decoder cases verify output,cursor,Boolean,input and guards without imports/models.48 selected complete base-parser cases establish conditional variation-selector consumption against original property tables.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Tables describe this executable version; no current Unicode coverage claim.",
+        "UTF8-like unit decoding is not strict scalar/shortest-encoding validation.",
+        "Full markup parsing, font/glyph availability and visible rendering unverified.",
+        "Descriptive names and working types are not recovered source declarations."
       ]
     }
   ],

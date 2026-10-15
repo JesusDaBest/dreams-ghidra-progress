@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1763,
-  "unmapped_total": 7817,
+  "mapped_total": 1765,
+  "unmapped_total": 7815,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45044,6 +45044,48 @@
           "kind": "verified_semantic_review",
           "name": "TryDecodeEmojiSkinToneSuffix",
           "support": "Complete original body,7416 scoped native cases and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414998f0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original text-parser sequence and character decoding helpers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "b86bf084d4010cd654def99cfdea7eff8a23a1fc6182fb17a8aaf90f0c8ec275",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryMatchTextEmojiSequence",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414b1b40": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original text-parser sequence and character decoding helpers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "a4f4eb7a47051c4c255c804c6edd140a22dce9d42ecb14e46423d3e2dfff7330",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodeUtf8Unit",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]
     }
