@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1683,
-  "unmapped_total": 7887,
+  "mapped_total": 1685,
+  "unmapped_total": 7885,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43409,6 +43409,46 @@
           "support": "Signed count guard, scalar accumulation, unordered fallback, AVX division and scalar tail; independently persisted role name and pointer/count types."
         }
       ]
+    },
+    "1408ce4f0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "calculator",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original gadget property registration, native field reads and property-dispatch caller identify this output wrapper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete wrapper body reviewed and selected original-instruction hardware cases passed.",
+      "code_sha256": "150b6c9c97ed02c450387a5f0651b70107d7fe0c6ef8385233c828dd6295563a",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateCalculatorInputs",
+          "support": "Original property bindings, whole native wrapper capture, caller, scoped hardware execution and independently persisted descriptive name/types."
+        }
+      ]
+    },
+    "1408ce5b0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "widecalculator",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original gadget property registration, native field reads and property-dispatch caller identify this output wrapper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete wrapper body reviewed and selected original-instruction hardware cases passed.",
+      "code_sha256": "910a4e25baa3f29efeecab55a69034d365bcfbb49996d0e3019de44fc61cc711",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateWideCalculatorInputs",
+          "support": "Original property bindings, whole native wrapper capture, caller, scoped hardware execution and independently persisted descriptive name/types."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48329,6 +48369,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 199,
+    "done": 201,
     "todo": 1484,
-    "total": 1683,
-    "behavior_or_helpers_reviewed": 140,
+    "total": 1685,
+    "behavior_or_helpers_reviewed": 142,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 52,
+        "done": 54,
         "todo": 413,
-        "total": 465,
-        "behavior_or_helpers_reviewed": 10,
+        "total": 467,
+        "behavior_or_helpers_reviewed": 12,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 12,
+        "runtime_functions_identified": 14,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -38,6 +38,8 @@
           "VisitWirelessTransmitterProperties",
           "VisitVariableGadgetProperties",
           "MarkLogicCycleWireEdges",
+          "EvaluateCalculatorInputs",
+          "EvaluateWideCalculatorInputs",
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
           "UpdateVariableGadgetValues",
@@ -507,6 +509,8 @@
           "1404df530",
           "1404e33a0",
           "14073de90",
+          "1408ce4f0",
+          "1408ce5b0",
           "1408cecf0",
           "1408cf9d0",
           "1408e4bb0",
@@ -2935,12 +2939,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 22,
+            "done": 24,
             "todo": 68,
-            "total": 90,
-            "behavior_or_helpers_reviewed": 5,
+            "total": 92,
+            "behavior_or_helpers_reviewed": 7,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 5,
+            "runtime_functions_identified": 7,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -2953,6 +2957,8 @@
               "VisitWirelessReceiverProperties",
               "VisitWirelessTransmitterProperties",
               "MarkLogicCycleWireEdges",
+              "EvaluateCalculatorInputs",
+              "EvaluateWideCalculatorInputs",
               "ReadSplitterOutputVariant",
               "BuildCombinerOutputVariant",
               "RegisterCombinerTypeDescriptor",
@@ -3047,6 +3053,8 @@
               "1404dedb0",
               "1404df530",
               "14073de90",
+              "1408ce4f0",
+              "1408ce5b0",
               "1408cecf0",
               "1408cf9d0",
               "140d57980",
@@ -3137,17 +3145,18 @@
               {
                 "name": "gadgets-logic/logic/calculator",
                 "label": "Calculator",
-                "done": 2,
+                "done": 3,
                 "todo": 2,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 1,
+                "runtime_functions_identified": 2,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "VisitCalculatorProperties",
+                  "EvaluateCalculatorInputs",
                   "NormalizeFloatComponentsWithUniformFallback"
                 ],
                 "todo_names": [
@@ -3156,6 +3165,7 @@
                 ],
                 "done_addresses": [
                   "1404d7ef0",
+                  "1408ce4f0",
                   "1411c2100"
                 ],
                 "todo_addresses": [
@@ -3196,20 +3206,22 @@
                   {
                     "name": "gadgets-logic/logic/calculator/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
+                    "runtime_functions_identified": 2,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
+                      "EvaluateCalculatorInputs",
                       "NormalizeFloatComponentsWithUniformFallback"
                     ],
                     "todo_names": [],
                     "done_addresses": [
+                      "1408ce4f0",
                       "1411c2100"
                     ],
                     "todo_addresses": [],
@@ -4271,6 +4283,84 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/widecalculator",
+                "label": "Wide Calculator",
+                "done": 1,
+                "todo": 2,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "EvaluateWideCalculatorInputs"
+                ],
+                "todo_names": [
+                  "0x1404e8760",
+                  "0x140d58dd0"
+                ],
+                "done_addresses": [
+                  "1408ce5b0"
+                ],
+                "todo_addresses": [
+                  "1404e8760",
+                  "140d58dd0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/widecalculator/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404e8760",
+                      "0x140d58dd0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404e8760",
+                      "140d58dd0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/widecalculator/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "EvaluateWideCalculatorInputs"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ce5b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/wirelessreceiver",
                 "label": "Wireless Receiver",
                 "done": 3,
@@ -4680,57 +4770,6 @@
                     "todo_addresses": [
                       "1404f2e20",
                       "140d59c70"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/widecalculator",
-                "label": "Wide Calculator",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404e8760",
-                  "0x140d58dd0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404e8760",
-                  "140d58dd0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/widecalculator/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404e8760",
-                      "0x140d58dd0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404e8760",
-                      "140d58dd0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -40471,5 +40510,5 @@
       }
     ]
   },
-  "unmapped": 7887
+  "unmapped": 7885
 }

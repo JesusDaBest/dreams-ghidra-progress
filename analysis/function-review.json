@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "221 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
+  "review_scope": "223 existing-function renames and19 created descriptive functions verified after reopening;4 reviews remain deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9174,
-    "other_names": 396,
-    "verification": "complete_inventory_matches_baseline_plus_221_renames_and_19_created_functions"
+    "default_fun_names": 9172,
+    "other_names": 398,
+    "verification": "complete_inventory_matches_baseline_plus_223_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4894,6 +4894,50 @@
       "caveats": [
         "Descriptive research name, not original source recovery.",
         "Exceptional caller reachability, infinity and threshold-adjacent behavior are not comprehensively validated.",
+        "No whole-game runtime verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408ce4f0",
+      "original_name": "FUN_1408ce4f0",
+      "applied_name": "EvaluateCalculatorInputs",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EvaluateCalculatorInputs(void * calculator, void * game, VariantWorking40 * output)",
+      "evidence": [
+        "Complete43-instruction wrapper and original OperandA/OperandB/CalculatorOp/CalculatorUnits field bindings reviewed.",
+        "160 full original-instruction wrapper cases cover Add/Subtract/Multiply/Divide and guard IDs33..38 in both unit modes;768 earlier guard cases independently cover every unit byte.",
+        "Native caller1410ac663 connects this wrapper to gadget property dispatch.",
+        "Cold backup, isolated trial and independent reopening verify sole name/signature entry change, RDI/RSI/RDX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research name, not original source recovery.",
+        "Selected synthetic Number inputs only; other types/operators and valid UI reachability remain unresolved.",
+        "No whole-game runtime verification or audited-byte credit."
+      ]
+    },
+    {
+      "address": "1408ce5b0",
+      "original_name": "FUN_1408ce5b0",
+      "applied_name": "EvaluateWideCalculatorInputs",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EvaluateWideCalculatorInputs(void * wide_calculator, void * game, VariantWorking40 * output)",
+      "evidence": [
+        "Complete98-instruction wrapper reviewed; original registration binds NumPorts at+d0 and CalculatorOp at+d2.",
+        "1533 original-instruction hardware cases: counts0..8, every input-presence mask, operations Add/Subtract/Multiply, alternating property record order.",
+        "Native caller1410ac7f3 connects this wrapper to gadget property dispatch.",
+        "Cold backup, isolated trial and independent reopening verify sole name/signature entry change, RDI/RSI/RDX storage, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive research name, not original source recovery.",
+        "Runtime cases use Number inputs and three operations; other tags/operators, null property pointer, duplicate records and malformed bags remain untested.",
         "No whole-game runtime verification or audited-byte credit."
       ]
     }

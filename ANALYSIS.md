@@ -1620,3 +1620,10 @@ Named and typed the shared normalization helper after reviewing its complete nat
 179 isolated original-instruction hardware cases passed:23 Number cases,128 vector component arithmetic cases,21 direct normalization helper cases and7 special Float3 cases. The result check uses the original supplied library implementation, rather than a replacement stub. Tested comparisons scale and round inputs before comparing. These are selected synthetic cases, not full Calculator completion or a running-game test. Angle-between-vectors, exceptional special inputs, other value types, timestamp and revision-sensitive math remain unresolved.
 
 240 descriptive names checked;1,683 functions mapped,7,887 unmapped. Audited-byte coverage is unchanged.
+### Calculator output wrappers and timestamp behavior
+
+Named and independently reopened both Calculator output wrappers, matching their registered fields and property-dispatch callers. Wide Calculator folds available inputs in port order; the standard wrapper returns zero for operation IDs 33–38, including NotEqual despite its core branch. UI reachability remains unresolved.
+
+The expanded isolated native suite passes 2,928 cases: 23 Number cases, 128 vector arithmetic cases, 21 normalization helper cases, 10 special Float3 cases, 1,053 Timestamp cases, 1,533 Wide Calculator wrapper cases and 160 standard wrapper cases. Original acosf code handles the tested axis angles. Native timestamp comparisons use signed 64-bit ordering; addition wraps and subtraction clamps according to the wrapped signed result. The unsigned-looking pseudocode is misleading.
+
+These tests use selected synthetic inputs and original instructions, not a running game. Other value types, exceptional inputs, mixed conversions, revision-sensitive Power and remaining math branches are incomplete. No audited-byte credit added. Totals: 242 checked names; 1,685 mapped functions; 7,885 unmapped.
