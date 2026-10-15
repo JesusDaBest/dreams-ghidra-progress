@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9572,
-  "mapped_total": 1716,
-  "unmapped_total": 7856,
+  "mapped_total": 1717,
+  "unmapped_total": 7855,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44073,6 +44073,25 @@
           "kind": "verified_semantic_review",
           "name": "FreeGateStorage",
           "support": "Original descriptor, exact native boundary/bytes, controlled execution and independent saved-project verification."
+        }
+      ]
+    },
+    "140112930": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "helpers",
+        "properties-types"
+      ],
+      "component_basis": "Generic unsigned32 field registration body and original u32 metadata.",
+      "code_role": "properties-types",
+      "code_role_basis": "Complete registration body and saved ABI reviewed.",
+      "code_sha256": "bcc1872681021c07bdb498b94ba095f86b3deb28d98e03131d5feedafb0d5d82",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterUnsigned32FieldOffset",
+          "support": "Original type label/width, complete native body and independent saved-project verification."
         }
       ]
     }

@@ -1602,3 +1602,9 @@ The definitions are supported by256 full-object initialization cases and512 clea
 The connected original request/sort/group/arbitration sequence passes another288 cases with valid acyclic Gate-kind parent trees:144 cached traversal and144 fallback traversal cases, with parent-mode and glued flags varied. Cached type entries match the parent objects' Gate kind. Original parent resolution runs in the connected sequence. Exact scope/group/claim arrays, full Gate and parent objects and the full Game allocation are checked alongside sorting and output/queue behavior.
 
 The independent model initially represented a no-parent reference as signed-1 in an unsigned output array; that fixture encoding was corrected before the successful run. The fallback mode byte remains semantically unnamed. Container-kind combinations, invalid/cyclic references, other Variant inputs and real game scheduling remain unverified. Heap/copy boundaries remain explicit models. No names or completion credit are added;274 names remain checked.
+
+### Unsigned32 field registration
+
+Applied RegisterUnsigned32FieldOffset with descriptor/name/32-bit byte-offset inputs and an opaque property-record pointer return. Original u32 metadata and width4 bind the field type. The complete139-instruction body appends a144-byte property record, stores the name/hash/offset and attaches type/default metadata. Gate QueueFrame uses this shared helper.
+
+Original bytes match the PS4 executable. Backed-up trial, promotion and independent reopening verify the saved name/signature and unchanged archives. Reflection allocation/static guards and serialization remain unexecuted. Totals:275 checked names among9,572 functions;1,717 mapped and7,855 unmapped. No whole-subsystem completion credit.

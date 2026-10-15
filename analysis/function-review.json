@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "253 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "254 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9572,
-    "default_fun_names": 9142,
-    "other_names": 430,
-    "verification": "complete_inventory_matches_baseline_plus_253_renames_and_21_created_functions"
+    "default_fun_names": 9141,
+    "other_names": 431,
+    "verification": "complete_inventory_matches_baseline_plus_254_renames_and_21_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5670,6 +5670,28 @@
         "Allocation failure, runtime descriptor dispatch and real game lifecycle unverified."
       ],
       "created_function": true
+    },
+    {
+      "address": "140112930",
+      "original_name": "FUN_140112930",
+      "applied_name": "RegisterUnsigned32FieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV RegisterUnsigned32FieldOffset(void * descriptor, char * field_name, uint byte_offset)",
+      "evidence": [
+        "Original literal u32 and reflected width4 identify unsigned32 field type.",
+        "Complete139-instruction body appends a144-byte property record, stores name/hash/offset, attaches type/default metadata and returns its pointer.",
+        "Gate QueueFrame caller and signed32 registrar analogy corroborate field-registration role.",
+        "Cold backup, isolated trial, promotion and independent reopening verify name and RDI/RSI/EDX arguments with RAX pointer return; original native bytes match."
+      ],
+      "caveats": [
+        "Static metadata/control-flow review; reflection allocation, static guards and serialization not execution-tested.",
+        "Descriptor and returned property record remain opaque pointer working types.",
+        "No whole-subsystem or running-game completion claim."
+      ]
     }
   ],
   "deferred": [
