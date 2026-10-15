@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e331a277eab09aa01ee36139ade9f19706d22040/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/43c1977092268279411cdb6b73874a701c397e36/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**274 of 9,572 functions named and checked.** A function is one piece of the game's code.
+**275 of 9,572 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e331a277eab09aa01ee36139ade9f19706d22040/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/43c1977092268279411cdb6b73874a701c397e36/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -72,9 +72,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 271 | 0/245 | 0/26 |
 | Editor & interface | 315 | 0/106 | 3/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 219 | 102/138 | 12/76 |
+| Shared engine & object data | 220 | 102/138 | 13/77 |
 
-**1,716 of 9,572 discovered functions are mapped; 7,856 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,717 of 9,572 discovered functions are mapped; 7,855 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -842,7 +842,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 219 functions identified; 102 behavior/helper reviews; 12 property/type reviews
+- **Shared engine & object data** - 220 functions identified; 102 behavior/helper reviews; 13 property/type reviews
   - **Game state & runtime** - 100 functions identified; 87 behavior/helper reviews; 0 property/type reviews
     - **Saving & loading** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
@@ -928,8 +928,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Shared property helpers** - 10 functions identified; 0 behavior/helper reviews; 6 property/type reviews
-    - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 6 property/type reviews
+  - **Shared property helpers** - 11 functions identified; 0 behavior/helper reviews; 7 property/type reviews
+    - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 7 property/type reviews
     - **Code role still unresolved** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Identifiers & assets** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
