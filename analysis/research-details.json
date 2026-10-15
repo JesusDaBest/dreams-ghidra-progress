@@ -5674,5 +5674,23 @@
       "Descriptive working names/types are not recovered source."
     ],
     "runtime_game_verified": false
+  },
+  "text_placeholder_parser_handoff_checkpoint": {
+    "base_sequences": 552,
+    "base_parser_calls": 3032,
+    "higher_parser_sequences": 2176,
+    "higher_parser_calls": 12000,
+    "scope": "Selected ASCII placeholder spans through original base and higher-level parsers,original dependency/data/library fixture;exact flags,cursor and guarded state/control transitions.",
+    "findings": [
+      "Recognized span end stored in state+0;interior decoded units carry special-output flag.",
+      "Higher parser bypasses ordinary interpretation for interior span units,including angle-tag/colon-alias text.",
+      "Span clears at recorded end;boundary byte1F marks next decoded unit."
+    ],
+    "limits": [
+      "Selected ASCII forms;higher-parser tests begin inLTRmode2.",
+      "RTL,escaping,Unicode,nested malformed placeholders,substitution and visible rendering unresolved."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }

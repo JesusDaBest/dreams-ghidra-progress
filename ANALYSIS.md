@@ -2566,3 +2566,11 @@ Numbered placeholders begin with 1 through 9 and accumulate subsequent digits mo
 The complete original bodies total 326 instructions. Native checks cover 63,168 option cases, 16,416 token cases and 16,416 span cases, with exact descriptors, cursor/span outputs and guards. Original code, hash, library dependencies and constants are used. Substitution values, final formatted output and visible localization/rendering remain unverified.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 350 checked names (320 renames, 29 created functions and one retained-name review), 1,783 mapped and 7,797 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
+
+### Placeholder spans through both text parsers
+
+Connected checks now trace recognized placeholder spans through the complete original base and higher-level text parsers. The base parser records the span end in state and marks subsequent decoded units inside that span as special output. The higher parser returns those units without normal markup/direction interpretation. Selected angle-tag and colon-alias text inside placeholders therefore remains literal. At the recorded end, the span clears and a boundary byte marks the first following decoded unit.
+
+552 base-parser sequences passed 3,032 calls; 2,176 higher-parser sequences passed 12,000 calls across four flag profiles and four alignments. Exact units, cursors, flags and whole guarded state were checked, along with original input/source/index pages and canary. The higher-parser fixture mirrors the original emitter previous-token store and control-handler ordering.
+
+These checks cover selected ASCII forms, with higher-parser cases starting in left-to-right mode. Escaping, Unicode, right-to-left text, nested malformed placeholders, substitution values and final formatted rendering remain unresolved. No new checked-name or whole-parser completion credit was added.
