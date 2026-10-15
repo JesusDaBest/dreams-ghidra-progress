@@ -4107,5 +4107,24 @@
     ],
     "project_modified": false,
     "runtime_game_verified": false
+  },
+  "sculpt_wake_branch_checkpoint": {
+    "passed": 768,
+    "wake_cases": 160,
+    "notification_cases": 384,
+    "method": "Original1732-byte worker, valid sculpt resource table and object/state fixtures. Bounds-active header flag deliberately clear, isolating comparison/wake bookkeeping branch without library or helper substitutes. Complete job context, full prior/current objects and four-byte wake flag window checked.",
+    "findings": [
+      "Wake-state write requires previous counterpart and body, then byte208/45 difference or previous208 zero with selected state changes.",
+      "W-only vector changes do not trigger the selected state-change condition; xyz or scalar NaN does.",
+      "Wake write updates low16 bits to(initial&0xf0fb)|4 and preserves adjacent upper16 bits.",
+      "Notification compares ordered-positive level status, byte45 and object header bit; atomic work counter advances by two batch claims for one item."
+    ],
+    "limits": [
+      "Bounds-active geometry path deliberately not executed; full transformed bounds math unresolved.",
+      "One valid sculpt/body/resource, two batch sizes and selected state changes; full state buffers and concurrency not checked.",
+      "Wake bit gameplay consequences and actual scheduler/in-game behavior remain unverified."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
