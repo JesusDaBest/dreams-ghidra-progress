@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "336 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "337 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9059,
-    "other_names": 521,
-    "verification": "complete_inventory_matches_baseline_plus_336_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9058,
+    "other_names": 522,
+    "verification": "complete_inventory_matches_baseline_plus_337_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8018,6 +8018,31 @@
         "Boundedtestbacking,not originalOSheapimplementation.",
         "Nooverflow/invalidpointer/malformedarenasafetyclaim.",
         "Floatpairapplicationmeaning unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414aad10",
+      "original_name": "FUN_1414aad10",
+      "applied_name": "FindTextFloatPairSpan",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "DreamsTextFloatPairSpan PS4_SYSV FindTextFloatPairSpan(ulonglong text_key, uint locale_hash)",
+      "evidence": [
+        "Complete145instruction getter,registrylookup,fallbackandnativecallerreturnuse read;originalSELF/savedbytes agree.",
+        "9240native directlookupcases plus396serializedlocale fallbackcases;exactRAX/RDXspan,usedflag,wholeguardedregistry/tables/source/output.",
+        "Reviewed16bytestructure with8bytefloatpointers beginat0/endat8;customRDX:8,RAX:8 returnstorage andRDI:8/ESI:4 parameters verifiedafterindependentreopen.",
+        "Decompilerreturns namedbegin/endfields without hiddenreturnpointer;structurelayout matchesobservedregistersemantics.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify name/signature andunchangedarchives."
+      ],
+      "caveats": [
+        "Selectedvalidregistry/serializedtables;malformedoffsets andconcurrency unresolved.",
+        "Floatpairunits/applicationmeaning unresolved.",
+        "Explicitcustomreturnstorage modelsobservedRAXbegin/RDXend,notrecoveredsource declaration.",
+        "Substitution/rendering unresolved.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }

@@ -2424,3 +2424,11 @@ Traced a 145-instruction runtime getter that searches linked records by masked k
 396 additional cases verify the serialized locale fallback across empty and populated language views and key tables. When the requested locale has no direct record, the getter can use the default-locale record to reach the requested serialized view, match a secondary key, and compute an eight-byte-pair span. That path does not mark the direct registry record used. A matching direct record without pairs suppresses fallback.
 
 The getter and ordered-boundary setters connect these pairs to editable ranges, but their units and application meaning remain unverified. Concurrency, malformed offsets and rendering are unresolved. The two-register aggregate return must be represented correctly in the saved ABI before applying a function name/type. No naming credit is added; the total remains 366 checked names.
+
+### Saved locale-aware text float-pair span getter
+
+Applied FindTextFloatPairSpan with a text key, locale hash and a reviewed sixteen-byte result containing begin/end float pointers. Explicit custom return storage represents the observed begin pointer in RAX and end pointer in RDX, with eight-byte fields at offsets zero and eight. Independent reopening verifies the structure layout, parameter registers, return registers and saved descriptive name. The decompiler now returns named span fields without introducing a hidden output argument.
+
+The earlier 9,240 direct lookup cases and 396 serialized locale fallback cases support this role. Matching direct pair records are marked used; serialized fallback resolves secondary keys in locale views without that mark. Pair units/application meaning, concurrency, malformed tables, substitution and rendering remain unresolved. The explicit aggregate model is a working interpretation of the machine ABI, not a recovered original source declaration.
+
+Cold backup, isolated trial, promotion and independent reopening verify unchanged original instructions and archives. Totals: 367 checked names (337 renames, 29 created functions and one retained-name review), 1,800 mapped and 7,780 unmapped among 9,580 discovered functions. No whole-game completion is inferred.

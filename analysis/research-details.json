@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 366,
+    "checked_and_applied_names": 367,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 366,
+    "verified_names": 367,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "336 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "337 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -6001,10 +6001,31 @@
     ],
     "limits": [
       "Pairs have ordered-boundary setter behavior, but units/application meaning remain unverified.",
-      "Concurrency and malformed table offsets unresolved.",
-      "Two-register aggregate return needs a justified saved ABI before applying name/types."
+      "Concurrency and malformed table offsets unresolved."
     ],
     "new_checked_names": 0,
+    "runtime_game_verified": false,
+    "saved_abi_verified": true
+  },
+  "text_pair_span_saved_checkpoint": {
+    "saved_names": {
+      "1414aad10": "FindTextFloatPairSpan"
+    },
+    "original_instructions": 145,
+    "direct_cases": 9240,
+    "serialized_fallback_cases": 396,
+    "return_storage": "RDX:8,RAX:8",
+    "return_fields": {
+      "begin": 0,
+      "end": 8
+    },
+    "limits": [
+      "Selectedvalidregistry/serializedtables;malformedoffsets andconcurrency unresolved.",
+      "Floatpairunits/applicationmeaning unresolved.",
+      "Explicitcustomreturnstorage modelsobservedRAXbegin/RDXend,notrecoveredsource declaration.",
+      "Substitution/rendering unresolved.",
+      "Workingdescriptive names/types are not recoveredsource."
+    ],
     "runtime_game_verified": false
   }
 }
