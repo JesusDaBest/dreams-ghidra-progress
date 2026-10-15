@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1803,
-  "unmapped_total": 7777,
+  "mapped_total": 1805,
+  "unmapped_total": 7775,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45884,6 +45884,48 @@
           "kind": "verified_semantic_review",
           "name": "CopyTextSelectionContext",
           "support": "Originalbody,nativecontextcopy/ownershipchecks,independentlyreopenedname/signature."
+        }
+      ]
+    },
+    "1406576a0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Attacheddisplayobject textselection set/clear adaptermethods.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Attachedtextselection state implementation.",
+      "code_sha256": "2ab0ec4c9a4f0a7d01ccc62abe323aefaf5ac60b62015c1c0e1584af9dc2c9a2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetAttachedTextSelection",
+          "support": "Originalbodies,nativeattachedobject set/clear checks,independentlyreopenednames/signatures."
+        }
+      ]
+    },
+    "140657760": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Attacheddisplayobject textselection set/clear adaptermethods.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Attachedtextselection state implementation.",
+      "code_sha256": "0173d49be77b00bccf6f22c4a8fa18b41eae44769d46eaad238d7fcc5f9a6045",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ClearAttachedTextSelection",
+          "support": "Originalbodies,nativeattachedobject set/clear checks,independentlyreopenednames/signatures."
         }
       ]
     }

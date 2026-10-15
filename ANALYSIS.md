@@ -2774,3 +2774,11 @@ Applied CopyTextSelectionContext with destination/source context pointers. It co
 The video UI copies the selected context before calling its display interface, whose implementation stores a copied context in the display object. This traces the handoff but does not verify live caption rendering. Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives.
 
 Totals: 370 checked names (340 renames, 29 created functions and one retained-name review), 1,803 mapped and 7,777 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Saved attached-display text selection handoff
+
+Applied SetAttachedTextSelection and ClearAttachedTextSelection with an opaque adapter and source-selection argument for the setter. The original file vtable and video UI calls identify these set/clear methods. An attached object receives a copied selection context; own ready spans rebase to its text storage. Clearing resets the key, span, state and ready flag, with FFFFFFFF as the range index. A null attached object makes both methods no-ops.
+
+384 native calls execute the complete 46/36-instruction methods, original context copy/string-storage helpers and actual strlen/memcpy. Cases cover six string lengths through 47, ready/unready contexts, own/borrowed spans, attached/null objects and four actual alignments. Whole guarded object, adapter, source, text backing and canary match exactly.
+
+Heap-owned destination freeing/new allocation, runtime vtable overrides, drawing, layout and substitution remain unverified. Cold backup, isolated trial, promotion and independent reopening verify saved names/types and unchanged instructions/archives. Totals: 372 checked names (342 renames, 29 created functions and one retained-name review), 1,805 mapped and 7,775 unmapped among 9,580 discovered functions. No whole-game completion is inferred.

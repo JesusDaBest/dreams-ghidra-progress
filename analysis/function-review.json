@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "340 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "342 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9055,
-    "other_names": 525,
-    "verification": "complete_inventory_matches_baseline_plus_340_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9053,
+    "other_names": 527,
+    "verification": "complete_inventory_matches_baseline_plus_342_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8116,6 +8116,54 @@
         "Destinationownedheap/free andnewallocation notexecuted.",
         "SelectedwellformedCstrings;aliasing/malformedpointer safetyunresolved.",
         "Doesnotextractselectedsubstring orverifydisplayrendering.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1406576a0",
+      "original_name": "FUN_1406576a0",
+      "applied_name": "SetAttachedTextSelection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetAttachedTextSelection(void * display_adapter, void * selection_context)",
+      "evidence": [
+        "Complete46/36instruction adaptermethods andvideoUIvtablehandoff read;nativeSELF/savedbytes agree.",
+        "384nativecalls withoriginal80copy/82stringstorage/strlen/memcpy:6lengths0..47,ready0/1,own/borrowedspan,attached/nullobject,4actualalignments.",
+        "Exactwholeobject/adapter/source/blob/guards/canary;contextstoredatattachedobject5F8hex andownreadyspan rebasedtoitsstring.",
+        "Clearingresetskey/span/state/ready andrangeindexFFFFFFFF;nullattachedobject no-op.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify names/signatures andunchangedarchives."
+      ],
+      "caveats": [
+        "Inline destination only;ownedheap/free/newallocation notexecuted.",
+        "Actualdrawing/layout/substitution notexecuted.",
+        "Defaultfilevtable identifiesmethods;runtimevtableoverrides notprovenabsent.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "140657760",
+      "original_name": "FUN_140657760",
+      "applied_name": "ClearAttachedTextSelection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ClearAttachedTextSelection(void * display_adapter)",
+      "evidence": [
+        "Complete46/36instruction adaptermethods andvideoUIvtablehandoff read;nativeSELF/savedbytes agree.",
+        "384nativecalls withoriginal80copy/82stringstorage/strlen/memcpy:6lengths0..47,ready0/1,own/borrowedspan,attached/nullobject,4actualalignments.",
+        "Exactwholeobject/adapter/source/blob/guards/canary;contextstoredatattachedobject5F8hex andownreadyspan rebasedtoitsstring.",
+        "Clearingresetskey/span/state/ready andrangeindexFFFFFFFF;nullattachedobject no-op.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify names/signatures andunchangedarchives."
+      ],
+      "caveats": [
+        "Inline destination only;ownedheap/free/newallocation notexecuted.",
+        "Actualdrawing/layout/substitution notexecuted.",
+        "Defaultfilevtable identifiesmethods;runtimevtableoverrides notprovenabsent.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }
