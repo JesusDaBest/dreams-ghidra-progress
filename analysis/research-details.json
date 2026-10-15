@@ -6784,5 +6784,33 @@
       ],
       "project_modified": false
     }
+  },
+  "text_display_name_fallback_relative_checks": {
+    "fallback": {
+      "calls": 20,
+      "method": "Original display-name builder andstorage/libc onempty preferredname withnonempty suppliedfallback;fiveforms inclbrtag/LF/NEL/63byteboundary,4alignments;wholeguardedoutput/object/input.",
+      "findings": [
+        "Supplied nonemptyfallback copiedverbatim,includingbreaktag andlinebreakbytes;preferred-name cleanup isnotapplied."
+      ],
+      "limits": [
+        "Null/emptyfallback localization,current-object specialcase,heapgrowth unexecuted."
+      ],
+      "project_modified": false
+    },
+    "relative_name": {
+      "calls": 76,
+      "forms": 19,
+      "original_display_builder_instructions": 241,
+      "method": "Original display builder,64-byte storage/insertion,original strlen/strncmp/memcpy/memmove;relative preferred-name storage atobject+A0 viaoffset30hex,nonempty sources,four alignments;independent listed-sequence removal and whole guarded output/object/input.",
+      "findings": [
+        "Removes exact br/nl tags,literal backslash-n,UTF8 NEL,LF,CR;case sensitive.",
+        "Nonempty source may become empty after cleanup without fallback."
+      ],
+      "limits": [
+        "Fallback/localization/current-object specialcase,heapgrowth/nullobject unexecuted.",
+        "No complete slashresolver/rendering claim."
+      ],
+      "project_modified": false
+    }
   }
 }

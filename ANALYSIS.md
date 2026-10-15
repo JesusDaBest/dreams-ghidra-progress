@@ -3086,3 +3086,11 @@ The original display-name builder then passed 76 integration checks across ninet
 Whole guarded output, source object and input agree with expectations. The output is a C string: bytes beyond its new terminator can retain previous source data. An initial oracle omitted the first source copy and therefore predicted the wrong unused bytes; it was corrected to model the observed preparation/copy sequence and receives no passing credit. The helper does not clear the entire inline buffer.
 
 Owned-buffer release, heap growth, fallback/localization, current-object special cases, null objects, complete slash object resolution and rendering remain unverified. No new names or whole-game completion credit is added. Raw code and fixtures remain local.
+
+### Display-name fallback differs from preferred-name cleanup
+
+When the preferred name is empty and a nonempty fallback is supplied, the original builder copies that fallback verbatim. Twenty checks cover ordinary text, a br tag, LF, UTF-8 NEL and the 63-byte inline boundary at four alignments. The tags and line-break bytes remain in the output. Preferred-name cleanup must therefore not be generalized to all output branches.
+
+Another 76 checks exercise relative preferred-name storage inside the object rather than a name pointer. The nineteen source forms use a positive relative offset from the name field and four alignments. Cleanup, empty-after-cleanup behavior, whole guarded output and unchanged source object agree with the earlier pointer-backed cases.
+
+This extends the prior fallback limitation only to nonempty supplied fallback text. Null or empty fallback still enters unresolved localization branches. Current-object special cases, heap growth, null objects, complete object resolution and rendering remain unverified. No checked names or whole-game completion credit is added.
