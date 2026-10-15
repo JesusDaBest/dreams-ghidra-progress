@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/559b01a8a652104ef03fa6134d6ae0c19d0a4213/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/618898e192cbf2a0f12e6cd10b9d3d5ad724d4fc/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**380 of 9,580 functions named and checked.** A function is one piece of the game's code.
+**382 of 9,580 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/559b01a8a652104ef03fa6134d6ae0c19d0a4213/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/618898e192cbf2a0f12e6cd10b9d3d5ad724d4fc/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,11 +70,11 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
 | Rendering & lighting | 274 | 4/248 | 0/26 |
-| Editor & interface | 366 | 52/157 | 3/207 |
+| Editor & interface | 368 | 54/159 | 3/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 248 | 127/162 | 15/81 |
 
-**1,813 of 9,580 discovered functions are mapped; 7,767 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,815 of 9,580 discovered functions are mapped; 7,765 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -457,10 +457,10 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 366 functions identified; 52 behavior/helper reviews; 3 property/type reviews
-  - **Text & fonts** - 105 functions identified; 51 behavior/helper reviews; 0 property/type reviews
-    - **Text decoding** - 51 functions identified; 51 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 51 functions identified; 51 behavior/helper reviews; 0 property/type reviews
+- **Editor & interface** - 368 functions identified; 54 behavior/helper reviews; 3 property/type reviews
+  - **Text & fonts** - 107 functions identified; 53 behavior/helper reviews; 0 property/type reviews
+    - **Text decoding** - 53 functions identified; 53 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 53 functions identified; 53 behavior/helper reviews; 0 property/type reviews
     - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Language** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
