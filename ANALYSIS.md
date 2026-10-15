@@ -1942,3 +1942,9 @@ The tested layout has2n-1 nodes of32 bytes and16-bit indices, with root2n-2. Key
 Defined GenerateMortonBvhKeysJob, InitializeMortonBvhLeavesJob, LinkMortonBvhNodesJob and PropagateMortonBvhBoundsJob with opaque context and32-bit batch-index inputs. Backed-up trial, promotion and independent reopening confirm nonoverlapping bodies, unchanged instructions/existing functions and original archive hashes.
 
 Both tree-builder calls come from a routine scheduling the original CalculateSculptBoundsAndWakeUpBodies job and collecting transformed object bounds. This connects the work to sculpt/physics processing without establishing every consumer. The worker definitions are recorded under shared spatial helpers.36 connected tree cases support their roles; normalization, concurrency and complete consumers remain unresolved. Totals:281 checked names among9,576 discovered functions;1,722 mapped and7,854 unmapped. No whole-subsystem completion claim.
+
+### Morton tree normalization and scheduling wrapper
+
+30 connected cases now execute the original normalization/scheduling wrapper together with the four workers and sorter. Sizes0 through513 include flat axes and identical centres. Independent float32 calculations match normalized keys; tests also verify job labels/counts, complete tree invariants, forward/inverse identifier permutations, unchanged input records and scratch guards. Empty input returns0 without jobs. Nonempty input returns2n-1.
+
+A failed first model assumed flat-axis conversion contributed zero; original instruction execution instead produces the equivalent of coordinate32768 in the interleaved key. The model was corrected before publication. Sequential scheduler/fence substitutes and an overlap-safe copy model are explicit boundaries; concurrency, explicit nonfinite input bounds, index overflow and real consumers remain unverified. No new names or completion credit;281 names remain checked.

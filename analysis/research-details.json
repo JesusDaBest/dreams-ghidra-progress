@@ -3949,5 +3949,39 @@
       "Full consumer ownership and in-game behavior remain unresolved; not a match to older Hilbert point-cluster slides."
     ],
     "runtime_game_verified": false
+  },
+  "morton_wrapper_native_checkpoint": {
+    "passed": 30,
+    "sizes": [
+      0,
+      1,
+      2,
+      3,
+      32,
+      33,
+      255,
+      256,
+      257,
+      513
+    ],
+    "profiles": [
+      "random",
+      "flat_z",
+      "all_equal"
+    ],
+    "method": "Original normalization/scheduling wrapper, four workers and sorter. Explicit sequential scheduler, fence no-ops and overlap-safe copy model. Independent float32 normalization/interleaving, job labels/counts, full tree invariants, forward/inverse permutations, input preservation and guards checked.",
+    "findings": [
+      "Empty input returns0 and schedules no jobs.",
+      "Flat axes normalize through infinity/NaN conversion to effective coordinate32768 in the interleaved key in tested original instructions.",
+      "Finite varied centres match independently rounded float32 normalization to65535 range.",
+      "Complete wrapper returns2n-1 and builds inverse identifier permutation."
+    ],
+    "limits": [
+      "Scheduler/fences modeled sequentially; concurrency and real synchronization not established.",
+      "Finite selected bounds; explicit NaN/infinity inputs, invalid records, index overflow and allocation contracts untested.",
+      "Original library copy modeled; real game consumers unresolved."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
