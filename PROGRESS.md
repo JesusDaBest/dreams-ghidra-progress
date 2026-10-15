@@ -2728,3 +2728,11 @@ Applied TryDecodeSevenBytesLowerHex and TryParseTextTypedKey with reviewed Boole
 The saved comments preserve the independently tested behavior: lowercase-only hex, partial output on hex failure, thirty accepted type prefixes, packed 56-bit numeric value plus type byte, all-zero normalization and distinct output-versus-cursor effects on parser failure. Evidence includes 15,360 hex checks and 740 parser checks. The selected digit-state expectation came from a probe rather than an independent decoder specification; formatting, non-ASCII, trailing input and type-specific substitutions remain unresolved.
 
 Cold backup, isolated trial, promotion and independent reopening verify both names/signatures, unchanged instructions and original archives. Totals: 396 checked names, 1,829 mapped and 7,751 unmapped among 9,580 discovered functions. No full dispatcher, rendering or whole-game completion is claimed.
+
+### Typed-key formatting and trailing-input commit
+
+Another 216 checks execute the original typed-key parser with clue, size and packed-color tags inserted before the key or at two positions within it. They cover a valid key, an invalid type prefix and invalid hex, with two trailing suffixes and four alignments. Seventy-two valid cases succeed; the other 144 are expected validation failures.
+
+Success skips the opening formatting controls, commits their state effects and stops after exactly fifteen visible ASCII units. The closing tag and any trailing text remain unconsumed. Invalid prefix or hex clears the key output but rolls back the complete caller cursor and parser state, including speculative formatting changes. Exact packed key, cursor, whole guarded state/output/input and canary expectations agree.
+
+These checks cover three known flat tags and selected insertion points, not nesting, malformed markup, non-ASCII input or full slash substitution. The previously saved comments' formatting limitation describes their earlier checkpoint; this later evidence extends it only to the cases listed here. No additional checked names or whole-game completion credit is added.
