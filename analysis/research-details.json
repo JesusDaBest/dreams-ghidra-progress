@@ -5019,7 +5019,33 @@
     "scope": "Microchip source and allowed Sculpt parent; finite positions, positive selected scales, normalized parent and unit/nonunit/zero source rotation.",
     "state_audit": "Full expected state SHA256 every31st case, sampling zero/nonzero wire paths; guarded objects/frame/both metadata rows/wires checked every case.",
     "limits": [
-      "Versioned caller/pair invalidation, hierarchy cache, malformed/nonfinite transforms, cycles, aliasing and full game integration untested."
+      "Full versioned caller, earlier/later upgrades, hierarchy cache, malformed/nonfinite transforms, cycles, aliasing and game integration unverified; bounded glue-pair caller loop now has60 native cases."
+    ],
+    "runtime_game_verified": false
+  },
+  "serialized_upgrade_glue_loop_checkpoint": {
+    "owner_original_instruction_count": 15647,
+    "owner_fully_reviewed": false,
+    "source_file": "serialise_upgrade.cpp",
+    "bounded_region_owned_instructions": 68,
+    "native_cases": 60,
+    "invalidated_pairs": 108,
+    "version_profiles": [
+      "17Dhex",
+      "17Ehex",
+      "17Fhex",
+      "220hex"
+    ],
+    "version_gate": "signed version<=17E from this bounded entry",
+    "execution_boundary": "Generated exit trampolines terminate before later upgrades; earlier upgrade branches excluded.",
+    "findings": [
+      "Valid pair endpoints choose first positive glue metadata endpoint or otherwise second.",
+      "Once helper is called, old pair endpoints invalidate even when conversion returns false.",
+      "Only successful conversions contribute1 to local OR accumulator."
+    ],
+    "limits": [
+      "Earlier upgrade branches before this entry and later continuations are excluded.",
+      "No full15647-instruction caller/game verification; nonfinite/malformed/cyclic contexts and general transform/wire profiles untested here."
     ],
     "runtime_game_verified": false
   }

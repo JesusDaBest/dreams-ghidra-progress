@@ -2282,3 +2282,13 @@ An independent inverse-parent/world transform oracle checks the resulting Parent
 Coverage uses finite positions, selected positive scales, normalized parent rotations and unit/nonunit/zero source rotations. The versioned caller, old-pair invalidation, hierarchy caches, malformed/nonfinite transforms, cycles, aliasing and full game integration remain unresolved. This is scoped integration evidence, not completion of Dreams or the complete migration system.
 
 All three saved comments were updated reversibly and independently reopened. Names/signatures, original instruction bytes and archives are unchanged. Checked-name count remains319 of9,580.
+
+### Bounded serialized-game upgrade caller and old-pair retirement
+
+The original caller references serialise_upgrade.cpp and receives its version value in ESI. The selected native region compares that value as signed and enters this glue-pair conversion loop for versions at or below0x17e. The tested0x17d and0x17e cases execute it;0x17f and0x220 skip it from this entry. Earlier upgrade branches and later continuations are excluded.
+
+60 native cases execute the original bounded loop and the original migration/composition/normalization helpers with libc isinff. Explicit generated exit trampolines stop before other upgrades; this is not full-caller execution. Tests cover empty/small/mixed arrays, duplicate/reversed pairs, invalid endpoints, incompatible types and inherited/already-glued sources. An independent sequential oracle verifies full expected state SHA256, objects, frame, metadata and guards every case. Large Windows stack pages are pre-touched and nonvolatile GP/XMM registers preserved.
+
+108 old pairs are invalidated. The caller selects the first endpoint with positive glue metadata, otherwise the second. After calling the helper, it invalidates the old pair even if conversion is rejected. Only successful conversions contribute1 to the local change accumulator. Retiring an old record therefore does not mean that a new glued-parent relationship was created.
+
+The evidence comment was updated reversibly and independently reopened; names, signatures, original instructions and archives remain unchanged. The full15,647-instruction caller is not reviewed or given a function name/progress credit. Full loading/game behavior and other upgrade branches remain unresolved. Checked-name count stays319 of9,580.
