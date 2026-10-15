@@ -1728,3 +1728,9 @@ Applied ProcessQueuedRegionQueriesForPhase with an opaque game-context pointer a
 360 controlled native cases validate empty requests, empty trees, phase selection, selected null/unsupported candidates and newly initialized result headers while checking complete state/game preservation. The byte-fill import is explicitly modeled. These tests do not execute sculpt GPU work, positive result delivery, callbacks, actor-list paths or saturation; real-game behavior and concurrency remain open. Cold backup, isolated trial and independent reopening verify the saved name/signature and unchanged original archives.
 
 Totals:290 checked descriptive names among9,577 discovered functions;1,731 mapped and7,846 unmapped. This broad processor role does not mean every called shader or the subsystem is understood.
+
+### Positive Sprite region-query results
+
+Validated the processor direct result path with408 additional original-instruction cases:192 single-leaf cases and216 cases using trees of1,3 or33 leaves. Original enum instructions independently identify object kind17 as Sprite. Admitted Sprite candidates append weight1.0 and their mapped object identifiers when the query auxiliary bit2 is set and phase/masks match. Tests check exact entry order, per-query count/start spans, total append count and complete state/game preservation.
+
+The candidate scratch list holds1,024 entries shared across matching requests. The global result buffer stops appending at16,383 entries; subsequent direct-path requests receive empty spans. This establishes the selected direct Sprite path, not GPU sculpt output or exact geometry beyond BVH admission. Byte-fill import modeling, synthetic scenes, callbacks, actor-list fields, GPU saturation and in-game/concurrent validation remain explicit limits. The saved processor comment and current evidence were updated; checked-name total remains290.
