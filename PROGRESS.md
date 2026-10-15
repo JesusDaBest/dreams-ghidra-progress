@@ -2594,3 +2594,13 @@ The original function initializes an iterator and repeatedly invokes TryLayoutNe
 All 119 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the saved name, eight-byte field layout, custom XMM0 return storage and all parameters, with unchanged instructions and original archives. Synthetic fixed-width glyphs limit the result: spaces/newline aggregation, spacing variants, optional null parser state, Unicode layout, mixed directions, shaping and rendering remain unfinished.
 
 Totals: 384 checked names, 1,817 mapped and 7,763 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.
+
+### Saved directional text layout step
+
+Applied TryStepDirectionalTextLayout with iterator, layout-context and unit-descriptor pointers, an outer-direction Boolean and a Boolean result. It copies the iterator, measures a directional run, then replays its snapshot through StepTextLayoutSpanSelection or a recursive call for a different direction. Early selected-span completion propagates true. Its recursive call now decompiles with an explicit Boolean result.
+
+Native checks cover 80 fixed-width ASCII runs, 192 Latin/Hebrew runs and 256 newline-separated selected-span completion cases. They execute the original decoder, iterator, font/glyph selector, refresh, advance and span step. Independent cursor/EOF/snapshot or selected start/end expectations agree at four actual input alignments, with guards and the original stack canary intact. Iterator observations confirm that Latin units resolve left-to-right despite a right-to-left fallback; an early-completion oracle initially confused those and was corrected without crediting the failed attempt.
+
+The mixed-text checks do not independently instrument exact recursive branch coverage. The descriptor includes a temporary local-iterator pointer, which tests do not dereference after return or treat as persistent output. Fixed-width synthetic glyphs limit these findings; complete layout, shaping and rendering remain unverified.
+
+All 227 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the saved name and signature, unchanged instructions and unchanged original archives. Totals: 385 checked names, 1,818 mapped and 7,762 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.

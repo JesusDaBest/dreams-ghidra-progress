@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "354 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "355 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9041,
-    "other_names": 539,
-    "verification": "complete_inventory_matches_baseline_plus_354_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9040,
+    "other_names": 540,
+    "verification": "complete_inventory_matches_baseline_plus_355_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8444,6 +8444,30 @@
         "Synthetic fixed-width single-word ASCII and controlled positive ellipsis;spaces/newline aggregation,spacing variants,mixed directions and optional null parser state unverified.",
         "Full Unicode layout,original loader,shaping and rendering unfinished.",
         "Working descriptive name and reviewed return structure;not recovered source."
+      ]
+    },
+    {
+      "address": "1412da740",
+      "original_name": "FUN_1412da740",
+      "applied_name": "TryStepDirectionalTextLayout",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryStepDirectionalTextLayout(void * text_iterator, void * layout_context, void * unit_descriptor, bool outer_right_to_left)",
+      "evidence": [
+        "Complete227 original instruction spans matched; measure/replay and recursive paths read.",
+        "80 fixed-width ASCII runs;192 Latin/Hebrew runs;256 selected-span completion calls,with original decoder/iterator/selector/refresh/span/advance helpers.",
+        "Independent finalcursor/EOF/snapshot or selectedstart/end expectations,four actual input alignments,guards and canary.",
+        "Iterator observations distinguish actual Latin LTR direction from RTL fallback;early-completion oracle corrected and failed attempt excluded.",
+        "Cold backup,isolated trial,promotion,independent reopen verify Boolean recursion result,SysV signature and unchanged archives."
+      ],
+      "caveats": [
+        "Exact mixed-direction recursive branch coverage not instrumented.",
+        "Descriptor contains a temporary stack-iterator pointer;not dereferenced or treated as persistent output.",
+        "Synthetic fixed-width fonts;full layout,shaping and rendering unverified.",
+        "Working descriptive name and opaque pointer types;not recovered source."
       ]
     }
   ],
