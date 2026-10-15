@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 299,
+    "checked_and_applied_names": 301,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 299,
+    "verified_names": 301,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "273 existing-function renames and26 created functions verified after independent reopening.",
+    "scope": "273 existing-function renames and28 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4648,6 +4648,20 @@
       "Valid synthetic graphs/metadata; cache construction, malformed refs, cycles and large tables unresolved.",
       "Original property40f label and other-kind metadata field identities unresolved.",
       "No real game integration validation."
+    ],
+    "runtime_game_verified": false
+  },
+  "microchip_callback_definitions_checkpoint": {
+    "names": [
+      "AllocateDefaultMicrochip",
+      "FreeMicrochipStorage"
+    ],
+    "function_count": 9579,
+    "original_archives_unchanged": true,
+    "limits": [
+      "Heap boundaries are explicit models; actual allocator/deallocator not executed.",
+      "Colour constant reconstructed from original initialization writer; startup not executed.",
+      "Allocation failure, runtime descriptor dispatch and real game lifecycle unverified."
     ],
     "runtime_game_verified": false
   }

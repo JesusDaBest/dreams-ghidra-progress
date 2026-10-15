@@ -5,7 +5,7 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1738,
+  "mapped_total": 1740,
   "unmapped_total": 7839,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -44499,6 +44499,46 @@
           "support": "Original direct full-reference fixtures, matched glue fields and saved working signature independently reopened."
         }
       ]
+    },
+    "140d83e60": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "microchip",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Microchip descriptor callback pointer and full object defaults bind Microchip lifecycle role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callbacks and scoped hardware tests independently persisted.",
+      "code_sha256": "7566088472375a7c283abd7a535853d56e5f83acbe125bf07c0b0bf7e46d1f08",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateDefaultMicrochip",
+          "support": "Original descriptor, exact native boundary/bytes, controlled execution and independent saved-project verification."
+        }
+      ]
+    },
+    "140d83fb0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "microchip",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Microchip descriptor callback pointer and full object defaults bind Microchip lifecycle role.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native callbacks and scoped hardware tests independently persisted.",
+      "code_sha256": "768a89f335b97d2766d99540290db6db4a645e158662dfa52f1ecfe33bd21dd5",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FreeMicrochipStorage",
+          "support": "Original descriptor, exact native boundary/bytes, controlled execution and independent saved-project verification."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -49210,6 +49250,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

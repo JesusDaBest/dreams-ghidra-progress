@@ -2118,3 +2118,11 @@ Applied ResolveGluedOrMicrochipInputReference with opaque state, encoded object 
 256 direct native cases execute the original164-instruction resolver, independently checking complete returned references and failure sentinel0xffffffff. Input/output upper10 bits vary across four values;96 successful results retain nonzero upper reference bits. Entire state and every object buffer are preserved each case. These supplement the3809 earlier mask fixtures; no import models or game integration are claimed. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives.
 
 Cache construction, malformed or cyclic graphs, large tables and full gameplay behavior remain unresolved. Totals:299 checked names among9,577 discovered functions;1,738 mapped and7,839 unmapped.
+
+### Saved Microchip allocation and cleanup callbacks
+
+Defined AllocateDefaultMicrochip and FreeMicrochipStorage at the original Microchip descriptor callback targets. Complete48- and4-instruction bodies have verified nonoverlapping boundaries and original bytes. The allocator requests336 bytes and initializes the full object; cleanup skips null and forwards the exact nonnull pointer. Defaults match registered fields, including Power1, Halfsize1/1, FirstChild0xffffffff and IsGluedGadget0. The descriptor value0x40 is not asserted as allocation size.
+
+256 creation fills check every object byte, guards, requested size and returned pointer.256 null and256 nonnull cleanup cases check forwarding. Original callbacks and import thunks execute with explicit allocator/deallocator models; actual heap implementations, allocation failure, reconstructed colour startup execution and game callback dispatch remain unverified. Cold backup, isolated trial, promotion and independent reopening confirm both definitions and opaque pointer ABIs, unchanged existing functions and unchanged original archives.
+
+Totals:301 checked names among9,579 discovered functions;1,740 mapped and7,839 unmapped. Two previously undefined callbacks were added; this is scoped lifecycle evidence, not whole-subsystem completion.
