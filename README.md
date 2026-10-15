@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0c9d4e2bfb5dbc16ce053f57533ddc665a53cc9a/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/6009c41078b71341b15b0cf2c8fe704a34050cc6/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**322 of 9,580 functions named and checked.** A function is one piece of the game's code.
+**324 of 9,580 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/0c9d4e2bfb5dbc16ce053f57533ddc665a53cc9a/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/6009c41078b71341b15b0cf2c8fe704a34050cc6/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,7 +66,7 @@ Every square is one actual function and has the same size. All function squares 
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
 | Gadgets & logic | 500 | 47/45 | 45/455 |
-| Physics & collision | 69 | 12/37 | 0/32 |
+| Physics & collision | 69 | 14/37 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
 | Rendering & lighting | 271 | 1/245 | 0/26 |
@@ -1248,7 +1248,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Physics & collision** - 69 functions identified; 12 behavior/helper reviews; 0 property/type reviews
+- **Physics & collision** - 69 functions identified; 14 behavior/helper reviews; 0 property/type reviews
   - **Collision queries** - 32 functions identified; 7 behavior/helper reviews; 0 property/type reviews
     - **Region Query** - 12 functions identified; 7 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 12 functions identified; 7 behavior/helper reviews; 0 property/type reviews
@@ -1276,11 +1276,11 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Ray Hit Id Seq / Hit Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Physics simulation** - 31 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+  - **Physics simulation** - 31 functions identified; 7 behavior/helper reviews; 0 property/type reviews
     - **Ballmaker** - 7 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 7 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Mankinigpu** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mankinigpu** - 6 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Label Collidable** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Physics Quality** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
