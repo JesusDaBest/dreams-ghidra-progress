@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 409,
+    "checked_and_applied_names": 410,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 409,
+    "verified_names": 410,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "379 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "380 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7087,5 +7087,20 @@
     "total_selected_parser_checks": 3472,
     "scope": "Original-code bounded fixtures; no complete payload parsing or stream refill.",
     "new_checked_names_from_tests": 0
+  },
+  "dream_record_cache_saved_checkpoint": {
+    "functions": {
+      "1403b1ac0": {
+        "name": "NormalizeAndCacheDreamRecord",
+        "signature": "ulonglong PS4_SYSV NormalizeAndCacheDreamRecord(ulonglong scope_key, int scope_index, void * payload_span_descriptor, uchar auxiliary_flag)"
+      }
+    },
+    "original_instructions": 307,
+    "runtime_game_verified": false,
+    "limits": [
+      "Static function-role evidence; complete Dream-record handler runtime behavior remains unexecuted.",
+      "Opaque record fields, copy/serialization helpers, account-slot semantics, category-table bounds, allocation failure and concurrency remain unresolved.",
+      "Member hashes are serialized member-name identifiers, not proven intrinsic runtime type IDs."
+    ]
   }
 }

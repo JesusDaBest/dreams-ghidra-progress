@@ -2878,3 +2878,11 @@ All 465 original instruction spans match. Trial decompilations, saved custom Sys
 The member-reader fixtures now cover 3,472 selected cases: 432 unquoted names, 864 quoted names, 448 escape/error cases and 1,728 comment cases. They compare complete state, input and guards. The reader hashes raw escaped member-name bytes; missing colons set an error and zero discriminator. Comment tests use the refill helper only while sufficient input remains. Actual stream refill, truncated inputs, arrays and the complete payload parser remain unexecuted. These checks add no function-name credit.
 
 Totals: 409 checked names and 1,842 mapped functions among 9,580 discovered functions; 7,738 still need system mapping.
+
+### Saved Dream-record normalization and cache handler
+
+Applied NormalizeAndCacheDreamRecord with scope key/index, a mutable payload-span descriptor and auxiliary flag, returning the record key or zero. The parsed dream member dispatch selects this helper. It can copy and rebuild a payload, remap selected integer-array values, update record flags, accumulate three category maxima and write either a payload cache entry or status-only entry with a 600-second deadline.
+
+The original diagnostic identifies a missing field at offset 0xc0 as an author. Other field names, account-slot interpretation and category meanings remain provisional. Copy/serialization helper signatures, category-table safety, NaN behavior, allocation failures and concurrency remain unresolved.
+
+All 307 original instruction spans and the typed trial decompilation were read. Trial, promotion and independent reopening verify the saved name/signature and unchanged archives. The full handler has not been executed. Totals: 410 checked names and 1,843 mapped functions among 9,580 discovered functions; 7,737 still need system mapping.
