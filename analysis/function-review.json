@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "329 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "331 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9066,
-    "other_names": 514,
-    "verification": "complete_inventory_matches_baseline_plus_329_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9064,
+    "other_names": 516,
+    "verification": "complete_inventory_matches_baseline_plus_331_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7845,6 +7845,56 @@
         "Arbitraryhashcollisions/unboundedinput notverified.",
         "Sort equivalence isnormalizedinstruction comparison,not formalproof forallmachineenvironments.",
         "Fullreverseformatter/snprintfflow/rendering unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "141499b60",
+      "original_name": "FUN_141499b60",
+      "applied_name": "ComputeSpecialEmojiOutputSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV ComputeSpecialEmojiOutputSize(uint special_emoji_id, uint named_mode, int tone_code)",
+      "evidence": [
+        "Complete65/94instruction original bodies,callers andSysV arguments reviewed;nativeSELF andsavedbytes agree.",
+        "186320named/untone checks and79436display checks across135sourceIDs,14tones,allcapacities0..required+2,4alignments;exactbytes/cursor/guards/source/index/canary.",
+        "Original snprintf %s_tone%c path separatelychecked2548cases;nohostformatter.",
+        "Missingdisplay lookup succeedswithoutwriting;unknownID fails/sizezero.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify names/signatures andunchangedarchives."
+      ],
+      "caveats": [
+        "Displayoracle shares separatelyverifiednative lookup.",
+        "Selected14tonevalues,notall32-bitinputs.",
+        "Only %s_tone%c formatterpath verified;otherconversions unresolved.",
+        "Whole reverseformatter/rendering/substitution unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "141499d90",
+      "original_name": "FUN_141499d90",
+      "applied_name": "TryWriteSpecialEmojiOutput",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryWriteSpecialEmojiOutput(uint special_emoji_id, uchar * * output_cursor_inout, uchar * output_end, uchar named_mode, int tone_code)",
+      "evidence": [
+        "Complete65/94instruction original bodies,callers andSysV arguments reviewed;nativeSELF andsavedbytes agree.",
+        "186320named/untone checks and79436display checks across135sourceIDs,14tones,allcapacities0..required+2,4alignments;exactbytes/cursor/guards/source/index/canary.",
+        "Original snprintf %s_tone%c path separatelychecked2548cases;nohostformatter.",
+        "Missingdisplay lookup succeedswithoutwriting;unknownID fails/sizezero.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify names/signatures andunchangedarchives."
+      ],
+      "caveats": [
+        "Displayoracle shares separatelyverifiednative lookup.",
+        "Selected14tonevalues,notall32-bitinputs.",
+        "Only %s_tone%c formatterpath verified;otherconversions unresolved.",
+        "Whole reverseformatter/rendering/substitution unresolved.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }

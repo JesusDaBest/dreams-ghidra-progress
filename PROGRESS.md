@@ -2360,3 +2360,11 @@ The original bounded startup window builds 2,553 canonical and 1,344 alternate r
 15,654 native lookup checks cover all 3,897 source names at four alignments plus unknown/empty cases, verifying exact returned pointers and guards. Arbitrary hash collisions, unbounded input, complete reverse formatting and rendering remain unverified.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 359 checked names (329 renames, 29 created functions and one retained-name review), 1,792 mapped and 7,788 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
+
+### Saved special emoji output helpers
+
+Applied ComputeSpecialEmojiOutputSize and TryWriteSpecialEmojiOutput with working ID, mode, tone and bounded-output arguments. Missing display lookup returns success without output; unknown IDs fail and have size zero. Nonnegative tone uses the low byte of tone plus one.
+
+All 135 source IDs and 14 selected signed tones were tested: 186,320 named/untone cases and 79,436 display cases across bounded capacities and four alignments. Exact bytes, cursors, guards, indices, source data and canary were checked. The original snprintf %s_tone%c path passed 2,548 separate cases, without a host formatter. Display expectations share the separately checked original lookup. Other formatting conversions and the full reverse text pipeline remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 361 checked names (331 renames, 29 created functions and one retained-name review), 1,794 mapped and 7,786 unmapped among 9,580 discovered functions. This is not whole-game completion.
