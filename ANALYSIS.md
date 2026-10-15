@@ -2516,3 +2516,11 @@ Applied TryResolveTextFlagAlias with working bounded start/end, output-pointer a
 The connected colon-alias path also passes 16,276 successful plain/toned cases with exact tokens, payload/style fields and guarded state. Selected unknown/empty/malformed-colon sequences pass 288 runs comprising 5,340 decoded units: they remain literal and advance character by character. These checks use original startup-built indices, original hash/sort/parser/helper bodies and actual library dependencies without models. They do not verify arbitrary markup, Unicode composition, glyph/font availability or visible rendering.
 
 Full cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 342 checked names (312 renames, 29 created functions and one retained-name review), 1,775 mapped and 7,805 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
+
+### Saved button-label span parser
+
+Applied TryFindTextButtonLabelSpan with working byte-pointer start/end in/out arguments and Boolean return. It recognizes the exact button opening prefix, advances the label start, and scans with the original escaped text decoder until a raw closing quote/greater-than pair. A matched prefix still advances start if the closing delimiter is missing. Escaped or hex-decoded quotes do not close the span.
+
+Original-native checks cover 48 basic and 88 selected escaped/malformed/NUL cases. Another 64 connected parser sequences comprising 352 calls verify the opening token, label characters, queued closing token, delimiter skipping, exact guarded state and control-handler return. These checks use original code, initialized tables and actual library dependencies. Selected color/size/named-style paths also passed 432 connected checks; closing size tags accept size-prefixed trailing text, while closing color tags require whole-name equality. Arbitrary nested markup and visible rendering remain unverified.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved change and unchanged original instructions/archives. Totals: 343 checked names (313 renames, 29 created functions and one retained-name review), 1,776 mapped and 7,804 unmapped among 9,580 discovered functions. This is partial semantic analysis, not whole-game completion.

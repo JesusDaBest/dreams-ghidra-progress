@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "312 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "313 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9083,
-    "other_names": 497,
-    "verification": "complete_inventory_matches_baseline_plus_312_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9082,
+    "other_names": 498,
+    "verification": "complete_inventory_matches_baseline_plus_313_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7442,6 +7442,28 @@
         "Successful and selected literal-fallback base-parser paths verified; arbitrary markup/composition remains unverified.",
         "Whole control/glyph/font/visible rendering remains unverified.",
         "Descriptive name and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414b1a60",
+      "original_name": "FUN_1414b1a60",
+      "applied_name": "TryFindTextButtonLabelSpan",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryFindTextButtonLabelSpan(uchar * * label_start_inout, uchar * * label_end_inout)",
+      "evidence": [
+        "Complete69-instruction body and base-parser callers read;original SELF and saved native bytes agree.",
+        "48 basic and88 escape/malformed/NUL native cases verify Boolean,pointer endpoints,input/index/source pages and guards using original decoder and actual library dependencies.",
+        "64 connected base-parser sequences,352 calls verify FDDF opening,intervening ASCII text,queuedFDE0 closing,cursor and whole guarded state;control return depends flags bit0.",
+        "Cold backup,isolated trial,promotion and independent reopening verify saved name/signature and unchanged original archives."
+      ],
+      "caveats": [
+        "Selected bounded label cases; arbitrary nested markup remains unverified.",
+        "No visible button rendering or whole text-parser completion claim.",
+        "Descriptive working name and types are not recovered source declarations."
       ]
     }
   ],

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1775,
-  "unmapped_total": 7805,
+  "mapped_total": 1776,
+  "unmapped_total": 7804,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45296,6 +45296,27 @@
           "kind": "verified_semantic_review",
           "name": "TryResolveTextFlagAlias",
           "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414b1a60": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Button-label span helper used by original text markup parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "2e2e446783e0155b9c11f213a631d2022b5ab6aea924e8b199baa560c5fc1273",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryFindTextButtonLabelSpan",
+          "support": "Complete original body,native scanner and connected parser checks,independently reopened name/signature."
         }
       ]
     }
