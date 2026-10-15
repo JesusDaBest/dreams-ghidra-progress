@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 288,
+    "checked_and_applied_names": 289,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 288,
+    "verified_names": 289,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "262 existing-function renames and26 created functions verified after independent reopening.",
+    "scope": "263 existing-function renames and26 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4192,6 +4192,21 @@
       "Synthetic balanced trees; no real scene or caller callback execution.",
       "Names are descriptive; existing signatures retained because exact SIMD argument types/storage remain unresolved.",
       "Large caller routines and gameplay callbacks are not fully reviewed."
+    ],
+    "runtime_game_verified": false
+  },
+  "region_query_queue_checkpoint": {
+    "names": [
+      "EnqueueRegionQuery"
+    ],
+    "original_instruction_spans_checked": 187,
+    "accepted_cases": 192,
+    "capacity_rejections": 96,
+    "limits": [
+      "Cardinal180-degree/identity unit rotations, positive power-of-two scales and finite selected inputs; arbitrary quaternions/nonfinite inputs untested.",
+      "No concurrent enqueue, game-state integration or region-query execution.",
+      "Existing signature retained pending exact SIMD/stack ABI recovery.",
+      "Shape enum labels, opaque values and complete consumer behavior remain unresolved."
     ],
     "runtime_game_verified": false
   }

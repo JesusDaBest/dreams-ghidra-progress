@@ -1706,3 +1706,11 @@ Applied CollectBvhLeavesIntersectingSegment and CollectBvhLeavesOverlappingBound
 Tests check exact traversal order, output pointers, zero/small/full capacities, flag masks, untouched inputs and guards, plus two empty-root cases. They use finite synthetic trees and nonzero directions. The segment expansion constant was captured from the original executable file; runtime initialization remains unresolved. Exact SIMD signatures and complete caller behavior remain open, so existing signatures were retained. Backup, isolated trial and independent reopening verify the names and unchanged original archives.
 
 Totals:288 checked descriptive names among9,577 discovered functions;1,729 mapped and7,848 unmapped. This is helper-level evidence, not a whole-game completion percentage or real-game validation.
+
+### Saved region-query enqueue name
+
+Applied EnqueueRegionQuery after reviewing all187 original instructions and running288 controlled native cases. It appends a112-byte record, returns a packed handle combining generation, a marker, phase bit and queue index, and rejects requests at capacity256 with an overflow flag. The connected consumer traverses the sculpt BVH before region sampling/refinement.
+
+Tests cover192 accepted and96 rejected requests with exact handle/record/padding checks, independent local-centre and extent math, complete state-allocation preservation and unchanged inputs. Fixtures use cardinal unit rotations and positive power-of-two scales. The import loader NID and local libc symbol identify __isinff; these tests execute its original instructions through the retained original thunk. Arbitrary rotations, complete consumer semantics, concurrency and gameplay integration remain open. Existing SIMD/stack signature retained.
+
+Cold backup, isolated trial and independent reopening verify the saved name and unchanged original archives. Totals:289 checked names among9,577 discovered functions;1,730 mapped and7,847 unmapped. No whole-subsystem completion claim.
