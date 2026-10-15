@@ -5800,5 +5800,29 @@
       "Descriptive working names/types are not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_internal_decoder_checkpoint": {
+    "original_decoder_instructions": 577,
+    "original_packed_reader_instructions": 211,
+    "packed_valid_cases": 16384,
+    "packed_truncation_cases": 544,
+    "stream_comparisons": 84,
+    "decoded_units": 308,
+    "unused_payload_difference_cases": 20,
+    "presentation_metadata_difference_cases": 36,
+    "scope": "Selected internal stream decoding and packedpayload reader;token-defined payload andescape comparison,not fullstate equivalence.",
+    "findings": [
+      "Four encoded byte-plus-one units reconstruct32-bit payload.",
+      "Truncated fourth unit canreturn success withreplacement-derived highbyte;earlier selected truncations preserveoutput/cursor andfail.",
+      "Selectedencoded tokens,definedpayloads andescapeflags matchoriginalsourceparser.",
+      "Unusedscratchpayload andpresentationmetadata differences areexplicitly recorded;no rendering-equivalence claim."
+    ],
+    "limits": [
+      "Selected malformedinputs and21valid streamvectors only.",
+      "Readablemarkup reverseconverter andfinalrendering/substitution remainunverified.",
+      "Truncation observation isnotverified in-game defect/reachability."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }
