@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 266,
+    "checked_and_applied_names": 267,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 266,
+    "verified_names": 267,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "247 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "248 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3384,6 +3384,23 @@
       "Native control flow verified; full worker scheduling and initial/mismatched-object Power gating remain unverified."
     ],
     "names_added": 0,
+    "runtime_game_verified": false
+  },
+  "gate_activation_request_checkpoint": {
+    "name": "UpdateGateActivationRequests",
+    "controlled_native_cases": 50176,
+    "findings": [
+      "Always clears activation request byte158; zero Power suppresses remaining work, selected negative/NaN Power does not.",
+      "Current truth uses raw nonzero identifier or ordered reduced scalar>0; prior powered truth distinguishes request1 vs rising request3.",
+      "Reset waiting and synchronization can clear active state and set forget-queue flag.",
+      "Inactive gate combines current request with nonzero queue marker; nonzero request marks Game flag."
+    ],
+    "limits": [
+      "Synthetic nonnull previous/current objects; selected Number/Signal/identifier inputs and boolean configuration, including ResetMode0/1.",
+      "Only33-byte Game flag window checked, not whole Game buffer.",
+      "Queue arbitration, Queue ResetMode2, null previous/reset edges and actual game runtime remain unverified.",
+      "No whole-Gate completion or audited-byte credit."
+    ],
     "runtime_game_verified": false
   }
 }
