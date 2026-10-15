@@ -3,21 +3,21 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 234,
-    "todo": 1483,
+    "done": 235,
+    "todo": 1482,
     "total": 1717,
     "behavior_or_helpers_reviewed": 172,
-    "properties_or_types_reviewed": 62,
+    "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 83,
-        "todo": 412,
+        "done": 84,
+        "todo": 411,
         "total": 495,
         "behavior_or_helpers_reviewed": 39,
-        "properties_or_types_reviewed": 44,
+        "properties_or_types_reviewed": 45,
         "runtime_functions_identified": 41,
         "property_type_functions_identified": 454,
         "code_role_unresolved": 0,
@@ -36,6 +36,7 @@
           "VisitReporterTelemetryProperties",
           "VisitWirelessReceiverProperties",
           "VisitWirelessTransmitterProperties",
+          "VisitGateProperties",
           "VisitVariableGadgetProperties",
           "MarkLogicCycleWireEdges",
           "UpdateCounterFromInputTransitions",
@@ -168,7 +169,6 @@
           "0x1404db820",
           "0x1404dcc90",
           "0x1404de660",
-          "0x1404dfa70",
           "0x1404e0760",
           "0x1404e0be0",
           "0x1404e1cc0",
@@ -535,6 +535,7 @@
           "1404de8c0",
           "1404dedb0",
           "1404df530",
+          "1404dfa70",
           "1404e33a0",
           "14073de90",
           "1408cca60",
@@ -667,7 +668,6 @@
           "1404db820",
           "1404dcc90",
           "1404de660",
-          "1404dfa70",
           "1404e0760",
           "1404e0be0",
           "1404e1cc0",
@@ -1025,11 +1025,11 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 53,
-            "todo": 68,
+            "done": 54,
+            "todo": 67,
             "total": 121,
             "behavior_or_helpers_reviewed": 34,
-            "properties_or_types_reviewed": 19,
+            "properties_or_types_reviewed": 20,
             "runtime_functions_identified": 34,
             "property_type_functions_identified": 87,
             "code_role_unresolved": 0,
@@ -1042,6 +1042,7 @@
               "VisitSignalGeneratorProperties",
               "VisitWirelessReceiverProperties",
               "VisitWirelessTransmitterProperties",
+              "VisitGateProperties",
               "MarkLogicCycleWireEdges",
               "UpdateCounterFromInputTransitions",
               "ReadCounterOutputVariant",
@@ -1101,7 +1102,6 @@
               "0x1404c8270",
               "0x1404ce170",
               "0x1404dcc90",
-              "0x1404dfa70",
               "0x1404e8760",
               "0x1404f2e20",
               "0x140c8d950",
@@ -1167,6 +1167,7 @@
               "1404da460",
               "1404dedb0",
               "1404df530",
+              "1404dfa70",
               "14073de90",
               "1408cca60",
               "1408ccc60",
@@ -1226,7 +1227,6 @@
               "1404c8270",
               "1404ce170",
               "1404dcc90",
-              "1404dfa70",
               "1404e8760",
               "1404f2e20",
               "140c8d950",
@@ -1289,16 +1289,17 @@
               {
                 "name": "gadgets-logic/logic/gate",
                 "label": "Gate",
-                "done": 7,
-                "todo": 1,
+                "done": 8,
+                "todo": 0,
                 "total": 8,
                 "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 2,
+                "properties_or_types_reviewed": 3,
                 "runtime_functions_identified": 5,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
+                  "VisitGateProperties",
                   "UpdateGateActivationRequests",
                   "SortGatePointersByActivationOrder",
                   "GatePrecedesInActivationOrder",
@@ -1307,10 +1308,9 @@
                   "FreeGateStorage",
                   "RegisterGateProperties"
                 ],
-                "todo_names": [
-                  "0x1404dfa70"
-                ],
+                "todo_names": [],
                 "done_addresses": [
+                  "1404dfa70",
                   "1408ed310",
                   "1409537f0",
                   "140955110",
@@ -1319,9 +1319,7 @@
                   "140d6b970",
                   "140d6b980"
                 ],
-                "todo_addresses": [
-                  "1404dfa70"
-                ],
+                "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
@@ -1358,29 +1356,27 @@
                   {
                     "name": "gadgets-logic/logic/gate/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 2,
-                    "todo": 1,
+                    "done": 3,
+                    "todo": 0,
                     "total": 3,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 2,
+                    "properties_or_types_reviewed": 3,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 3,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
+                      "VisitGateProperties",
                       "InitializeGateTypeDescriptor",
                       "RegisterGateProperties"
                     ],
-                    "todo_names": [
-                      "0x1404dfa70"
-                    ],
+                    "todo_names": [],
                     "done_addresses": [
+                      "1404dfa70",
                       "140d58340",
                       "140d6b980"
                     ],
-                    "todo_addresses": [
-                      "1404dfa70"
-                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

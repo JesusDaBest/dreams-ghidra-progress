@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "254 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "255 existing-function renames and21 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9572,
-    "default_fun_names": 9141,
-    "other_names": 431,
-    "verification": "complete_inventory_matches_baseline_plus_254_renames_and_21_created_functions"
+    "default_fun_names": 9140,
+    "other_names": 432,
+    "verification": "complete_inventory_matches_baseline_plus_255_renames_and_21_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5691,6 +5691,28 @@
         "Static metadata/control-flow review; reflection allocation, static guards and serialization not execution-tested.",
         "Descriptor and returned property record remain opaque pointer working types.",
         "No whole-subsystem or running-game completion claim."
+      ]
+    },
+    {
+      "address": "1404dfa70",
+      "original_name": "FUN_1404dfa70",
+      "applied_name": "VisitGateProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV VisitGateProperties(void * visitor, void * gate)",
+      "evidence": [
+        "Original Thing kind84 Gate dispatcher directly calls this visitor.",
+        "Complete763-instruction body visits Gate labels and object offsets matching reflection registration.",
+        "Native path-filter branches and numeric version comparisons reviewed, including legacy queue and scope compatibility paths.",
+        "Original PS4 bytes, cold backup, trial/promotion and independent reopening verify name and two opaque pointer inputs."
+      ],
+      "caveats": [
+        "Static native/control-flow review; virtual visitor callbacks and complete serialization direction not executed or inferred.",
+        "Version thresholds are numeric format values, not dates or named game releases.",
+        "Opaque visitor/Gate working pointer types; no whole-Gate or running-game completion claim."
       ]
     }
   ],

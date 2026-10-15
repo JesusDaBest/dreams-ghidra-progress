@@ -1608,3 +1608,9 @@ The independent model initially represented a no-parent reference as signed-1 in
 Applied RegisterUnsigned32FieldOffset with descriptor/name/32-bit byte-offset inputs and an opaque property-record pointer return. Original u32 metadata and width4 bind the field type. The complete139-instruction body appends a144-byte property record, stores the name/hash/offset and attaches type/default metadata. Gate QueueFrame uses this shared helper.
 
 Original bytes match the PS4 executable. Backed-up trial, promotion and independent reopening verify the saved name/signature and unchanged archives. Reflection allocation/static guards and serialization remain unexecuted. Totals:275 checked names among9,572 functions;1,717 mapped and7,855 unmapped. No whole-subsystem completion credit.
+
+### Gate property visitor
+
+Applied VisitGateProperties with opaque visitor and Gate pointer inputs. Original kind84 dispatch, reflected fields and complete763-instruction body bind the role. Native branches filter property paths and format versions: ParentFromModel from729, QueueFrame replacing legacy Queuing from1049, QueueLevel from1085, forget/reset-waiting/sync fields from1131, IsGluedGadget from1139, and ScopeType from1673. A separate scope compatibility branch covers1673 through1850 inclusive. These are numeric format thresholds, not dates.
+
+Backed-up trial, promotion and independent reopening verify the name/signature and unchanged original instructions/archives. Virtual callbacks and full serialization direction remain unexecuted. Totals:276 checked names among9,572 functions;1,717 mapped and7,855 unmapped. No whole-subsystem completion credit.
