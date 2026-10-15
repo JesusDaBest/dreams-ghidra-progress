@@ -5255,5 +5255,30 @@
     ],
     "new_names_checked": 0,
     "runtime_game_verified": false
+  },
+  "predict_shader_decode_checkpoint": {
+    "status": "decoded_and_byte_roundtrip_verified",
+    "code_bytes": 228,
+    "instruction_count": 47,
+    "byte_exact_roundtrip": true,
+    "findings": [
+      "Lane index is workgroup_id*64+local_id; lanes with index>=count terminate.",
+      "A loaded flag word gates the branch on original bit13 via32-bit left shift18 and signed-negative test.",
+      "Enabled lanes compute a three-component value from old_value + vector_parameter.xyz*step*formatted_component.w.",
+      "Disabled lanes store zero as the three-component value.",
+      "The four-component input advances XYZ by step times the stored three-component value; its fourth component is preserved."
+    ],
+    "limits": [
+      "Symbolic roles are deliberately generic until CPU descriptors/field offsets are traced.",
+      "Formatted component conversion depends on the buffer descriptor; UNORM mapping to IgnoreGravity coefficient is not yet proven.",
+      "No GPU execution, exact floating-point rounding proof or full solver correctness claim.",
+      "Original loader code-boundary calculation still needs independent corroboration."
+    ],
+    "sources": [
+      "https://github.com/CLRX/CLRX-mirror/wiki/ClrxDisasm",
+      "https://ps4-opengnm.github.io/opengnm/reference/shaderbinary/"
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
   }
 }

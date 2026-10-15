@@ -2066,3 +2066,13 @@ The traced Predict stage submits a GPU compute dispatch with groups calculated f
 Validated the local shader archive's 604 sorted unique entries and all resource bounds. Executing the original 148-instruction path hash routine with seed zero confirms four exact resources: Predict (556 bytes), GrabConstraint (2,632), ApplyConstraints (1,004) and Advance (1,524). Extracted binaries remain local. Predict and the neighboring GrabConstraint loaders were inspected individually; the remaining two resource paths are confirmed by native hashing, without claiming their full loader behavior.
 
 Shader instruction decoding, buffer bindings and the gravity coefficient's solver interpretation remain unfinished. These are resource matches, not four completed shader decompilations, and add no function naming credit.
+
+### Predict shader instruction trace
+
+Decoded a 228-byte executable region containing 47 instructions from the confirmed Predict resource. Its first instruction's metadata pointer, footer code length and terminal instruction agree on the region. Reassembling the complete disassembly with CLRX reproduces every code byte exactly. The disassembler was obtained from its publisher and its archive checksum verified; extracted game code and disassembly remain local.
+
+The instruction trace calculates each lane's particle index and exits for indices outside the count. A flag-word bit gates a three-component update. Enabled lanes combine the old value with a vector parameter times a step scalar and the fourth formatted component; disabled lanes store zero. Another four-component buffer then advances XYZ using the updated three-component value and the same step, preserving its fourth component.
+
+These are symbolic instruction roles. CPU descriptor bindings, formatted component conversion and the original loader's code-boundary calculation still need corroboration before identifying the fields conclusively as velocity, position and gravity. Byte-exact reassembly is not GPU execution or proof of solver correctness. No new function completion credit is added.
+
+Tool/format references: [CLRX disassembler documentation](https://github.com/CLRX/CLRX-mirror/wiki/ClrxDisasm) and [opengnm shader binary structures](https://ps4-opengnm.github.io/opengnm/reference/shaderbinary/).
