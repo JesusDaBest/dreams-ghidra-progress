@@ -2806,3 +2806,13 @@ Applied ResolveTextReferenceObject and corrected its inferred void return to an 
 Evidence includes the complete adapter assembly, the 368- and 550-instruction callee bodies and their return paths, and the dispatcher caller. The five SysV arguments are a 64-bit reference key, status output, scope output, opaque lookup context and request-permission byte. Context and scope structures remain opaque because their complete layouts are not established.
 
 This is static ABI and descriptive-role evidence. Runtime cache timing, thread checks, request queuing, pending states and complete object resolution have not been executed or verified. No new native lookup test count is claimed. All 64 original adapter spans match; cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged archives. Totals: 401 checked names, 1,834 mapped and 7,746 unmapped among 9,580 discovered functions. Whole-game completion remains unproven.
+
+### Object cache lookup and deferred queue comparison
+
+Assembly review identifies a 4,096-entry object lookup table with 80-byte records and linear probing. Lookup compares a five-field identity tuple, stops at an empty first key field and handles raw status values separately. Some statuses return a cached record's object payload; others return metadata or defer/retry. Access-time updates, locale discrimination and request permission affect these paths. This is a partial reader-side layout, not a verified complete cache or status specification.
+
+The deferred request path has a 128-entry queue of 32-byte key tuples. Its comparison loop overwrites the match flag for every entry and tests it only after the loop. A native check of the original contiguous comparison/append fragment passed 212 cases: a match in the last record suppresses append, while an earlier match followed by a different final record permits a duplicate append. Count 128 skips insertion; count 127 can fill the final slot.
+
+The fixture executes the original 36-instruction fragment with relative branches intact and an appended fixture return. It compares whole guarded queue and descriptor buffers across counts 0–8, 127 and 128, match positions and four alignments. It deliberately bypasses locks, thread-ID updates, caller status and routing. These results prove the bounded fragment behavior, not an in-game concurrency bug, the complete deferred queue or external request behavior.
+
+Kernel clock/thread execution, cache writers/invalidation, request routing and whole object resolution remain unresolved. No new checked names or whole-game completion credit is added; no external service requests were made.

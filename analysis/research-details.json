@@ -6840,5 +6840,20 @@
       "Workingdescriptive name/types;not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_object_request_queue_fragment_check": {
+    "calls": 212,
+    "original_fragment_instructions": 36,
+    "method": "Contiguous original comparison/append fragment,all bytes matched;relative branches retained,appended fixture return.Independent whole guarded queue/descriptor model;counts0..8/127/128,matchpositions and4alignments.",
+    "findings": [
+      "Only final existing record match suppresses append in this fragment.",
+      "Earlier matching record followed by different final record permits duplicate append.",
+      "Count128 skips append;count127 accepts last slot unless last record matches."
+    ],
+    "limits": [
+      "Entry/exit bypass original locks,thread-ID update,status and request routing.",
+      "This is fragment behavior,not full concurrent queue or in-game bug verification."
+    ],
+    "project_modified": false
   }
 }
