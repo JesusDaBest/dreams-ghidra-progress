@@ -403,14 +403,14 @@ def render_hierarchy(nodes, bounds, depth=0):
                     penalty=sum(overlaps(box,(x0+cx*side,y0+cy*side,side,side))
                                 for child,child_cells,_ in regions
                                 if child['path'][:len(node['path'])]==node['path']
-                                and len(child['path'])>len(node['path']) and child['id']=='prim-text'
+                                and len(child['path'])>len(node['path']) and child['id'] in {'prim-text','hull'}
                                 for cx,cy in child_cells)
                     candidates.append((penalty,box,line_boxes))
             if candidates:
                 _,box,line_boxes=min(candidates,key=lambda item:item[0])
                 placed=(box,values,sizes,line_boxes)
                 if level==0:root_placements.append(placed)
-            if placed and level>0:break
+            if placed and level>0 and min(item[0] for item in candidates)==0:break
         if root_placements:
             placed=min(root_placements,key=lambda p:(p[0][1],p[0][0],p[0][3]))
         if placed is None:

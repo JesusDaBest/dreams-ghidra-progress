@@ -2280,3 +2280,13 @@ The complete original 150-instruction direction estimator passed 8,928 native ca
 For zero strong-unit counts, the estimator compares the active locale hash against the original native hash of ar. A bounded startup trace shows the language-code table containing ar, hashing the selected locale and its prefix before a hyphen, then checking localization files and assigning fallback locale hashes. This resolves the earlier unknown comparison as an Arabic-locale fallback in this executable; live locale selection was not tested.
 
 1,240 original instruction spans were byte-matched across the two callers, slash-reference helper and bounded startup window. The 600-instruction record builder and 404-instruction slash helper remain statically traced, with allocator/dedup/reference dependencies unresolved. Final substitution, broad bidirectional behavior and rendering remain unverified. No checked-name or whole-function completion credit was added.
+
+### Saved shared byte-hash helper used by text records
+
+Applied HashBytesMurmur3X64_128 with working input pointer, 64-bit byte count, 32-bit seed and two-word output arguments. Its complete 148-instruction body, constants, block/tail rotations and final mix match the [primary MurmurHash3 x64/128 reference](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp). This is algorithm identification, not recovery of the game source declaration.
+
+21,363 original-native cases match an independent arithmetic implementation for lengths 0 through 256 and selected block/page boundaries through 8,192 bytes, four patterns, five seeds, four alignments and three null-input/zero-length cases. Both output words, input/output guards and original source/index data were checked. The executable uses a 64-bit length argument, so it is not asserted to have the exact reference API.
+
+There are 758 static call references. The text-record builder passes seed zero and stores the first 64-bit output word as its content deduplication key. This does not establish collision-free identity, complete builder behavior or final substitution. Its copy/allocation dependencies remain to be tested. Original import-loader bindings and libc export symbols resolve these as memcpy, bcmp and operator new; bcmp is a bounded byte comparison rather than a string comparison.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 351 checked names (321 renames, 29 created functions and one retained-name review), 1,784 mapped and 7,796 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.

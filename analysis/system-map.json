@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1783,
-  "unmapped_total": 7797,
+  "mapped_total": 1784,
+  "unmapped_total": 7796,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45464,6 +45464,27 @@
           "kind": "verified_semantic_review",
           "name": "TryFindTextPlaceholderSpan",
           "support": "Complete original body,native placeholder/option/span checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "14011a4e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared byte-hash helper with758 static callers,including original text-content dedup builder.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shared noncryptographic byte-hash implementation.",
+      "code_sha256": "b7ab3d8c9fe9956318215981118b9f5cf023302dc0a53950597802e7ca6086fe",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "HashBytesMurmur3X64_128",
+          "support": "Complete original body,independent algorithm comparison and native checks,independently reopened name/signature."
         }
       ]
     }

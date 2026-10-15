@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "320 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "321 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9075,
-    "other_names": 505,
-    "verification": "complete_inventory_matches_baseline_plus_320_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9074,
+    "other_names": 506,
+    "verification": "complete_inventory_matches_baseline_plus_321_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7625,6 +7625,29 @@
         "Source-base pointer and offset-bias are working types;only low32-bit relative offset arithmetic is verified.",
         "No modern printf/localization/rendering conformance claim.",
         "Descriptive working names/types are not recovered source."
+      ]
+    },
+    {
+      "address": "14011a4e0",
+      "original_name": "FUN_14011a4e0",
+      "applied_name": "HashBytesMurmur3X64_128",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV HashBytesMurmur3X64_128(void * input_bytes, ulonglong byte_count, uint seed, ulonglong * hash_output)",
+      "evidence": [
+        "Complete148-instruction body and original15-entry signed-relative tail jump table matched original executable.",
+        "Original block/tail/rotation/constants/fmix structure matched primary AustinAppleby MurmurHash3_x64_128 source.21363 native cases compare independent arithmetic;267 lengths,4 patterns,5seeds,4 alignments,3null-empty cases;exact128-bit output/input/output guards/source/index/canary.",
+        "758 static call references;original text-record builder supplies seed0 and stores first64-bit word as dedup key.",
+        "Cold backup,isolated trial,promotion and independent reopening verify name/signature and unchanged original archives."
+      ],
+      "caveats": [
+        "Tested lengths through8192;original uint64length differspublished referenceintAPI.",
+        "No collision-free claim;first64-bit word is a dedup key,not a unique content identity guarantee.",
+        "Full text-record builder/substitution/rendering unverified.",
+        "Working descriptive name/types are not recovered source."
       ]
     }
   ],

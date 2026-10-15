@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 308,
+    "done": 309,
     "todo": 1475,
-    "total": 1783,
-    "behavior_or_helpers_reviewed": 243,
+    "total": 1784,
+    "behavior_or_helpers_reviewed": 244,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -25494,12 +25494,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 141,
+        "done": 142,
         "todo": 106,
-        "total": 247,
-        "behavior_or_helpers_reviewed": 126,
+        "total": 248,
+        "behavior_or_helpers_reviewed": 127,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 161,
+        "runtime_functions_identified": 162,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25515,6 +25515,7 @@
           "AllocateKeyedResourceBlocksWithEviction",
           "FindBestFitKeyedResourceBlockRun",
           "AllocateKeyedResourceBlocks",
+          "HashBytesMurmur3X64_128",
           "DecodeLz4Block",
           "ComposeRigidTransform",
           "ReleaseRefCountedBlockHandle",
@@ -25766,6 +25767,7 @@
           "140119260",
           "140119390",
           "1401194d0",
+          "14011a4e0",
           "14015e8c0",
           "1401ac7b0",
           "14038bed0",
@@ -29832,6 +29834,285 @@
             ]
           },
           {
+            "name": "shared/support",
+            "label": "Engine support",
+            "done": 1,
+            "todo": 5,
+            "total": 6,
+            "behavior_or_helpers_reviewed": 1,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 6,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "HashBytesMurmur3X64_128"
+            ],
+            "todo_names": [
+              "0x140909150",
+              "0x140a69070",
+              "0x140e900e0",
+              "0x1410c9720",
+              "0x14124f9d0"
+            ],
+            "done_addresses": [
+              "14011a4e0"
+            ],
+            "todo_addresses": [
+              "140909150",
+              "140a69070",
+              "140e900e0",
+              "1410c9720",
+              "14124f9d0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/support/common-routines",
+                "label": "Support implementation",
+                "done": 1,
+                "todo": 1,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "HashBytesMurmur3X64_128"
+                ],
+                "todo_names": [
+                  "0x140a69070"
+                ],
+                "done_addresses": [
+                  "14011a4e0"
+                ],
+                "todo_addresses": [
+                  "140a69070"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/common-routines/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "HashBytesMurmur3X64_128"
+                    ],
+                    "todo_names": [
+                      "0x140a69070"
+                    ],
+                    "done_addresses": [
+                      "14011a4e0"
+                    ],
+                    "todo_addresses": [
+                      "140a69070"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/game",
+                "label": "Game",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140909150"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140909150"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/game/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140909150"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140909150"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/sillyrender",
+                "label": "Sillyrender",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140e900e0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140e900e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/sillyrender/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140e900e0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140e900e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/tweak",
+                "label": "Tweak",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1410c9720"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1410c9720"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/tweak/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1410c9720"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1410c9720"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/widgets",
+                "label": "Widgets",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14124f9d0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14124f9d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/widgets/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x14124f9d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "14124f9d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/errors",
             "label": "Errors & diagnostics",
             "done": 0,
@@ -30228,273 +30509,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "1416062d0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/support",
-            "label": "Engine support",
-            "done": 0,
-            "todo": 5,
-            "total": 5,
-            "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 5,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [],
-            "todo_names": [
-              "0x140909150",
-              "0x140a69070",
-              "0x140e900e0",
-              "0x1410c9720",
-              "0x14124f9d0"
-            ],
-            "done_addresses": [],
-            "todo_addresses": [
-              "140909150",
-              "140a69070",
-              "140e900e0",
-              "1410c9720",
-              "14124f9d0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/support/common-routines",
-                "label": "Support implementation",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140a69070"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140a69070"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/common-routines/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140a69070"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140a69070"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/game",
-                "label": "Game",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140909150"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140909150"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/game/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140909150"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140909150"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/sillyrender",
-                "label": "Sillyrender",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140e900e0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140e900e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/sillyrender/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140e900e0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140e900e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/tweak",
-                "label": "Tweak",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1410c9720"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1410c9720"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/tweak/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1410c9720"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1410c9720"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/widgets",
-                "label": "Widgets",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14124f9d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14124f9d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/widgets/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x14124f9d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "14124f9d0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41699,5 +41713,5 @@
       }
     ]
   },
-  "unmapped": 7797
+  "unmapped": 7796
 }
