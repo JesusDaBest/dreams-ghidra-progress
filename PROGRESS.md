@@ -2886,3 +2886,13 @@ Applied NormalizeAndCacheDreamRecord with scope key/index, a mutable payload-spa
 The original diagnostic identifies a missing field at offset 0xc0 as an author. Other field names, account-slot interpretation and category meanings remain provisional. Copy/serialization helper signatures, category-table safety, NaN behavior, allocation failures and concurrency remain unresolved.
 
 All 307 original instruction spans and the typed trial decompilation were read. Trial, promotion and independent reopening verify the saved name/signature and unchanged archives. The full handler has not been executed. Totals: 410 checked names and 1,843 mapped functions among 9,580 discovered functions; 7,737 still need system mapping.
+
+### Saved Dream-record copy and owned-array cleanup
+
+Applied CopyDreamRecord and ReleaseDreamRecordOwnedArrays. The copy helper transfers fixed fields through an observed extent of 0x358 bytes and reconstructs 18 array descriptors through byte copies or delegated element-copy helpers. The cleanup helper releases negative-marker owned arrays, including nested owned storage in two 96-byte-element arrays. It leaves descriptors unchanged; repeated cleanup is not established as safe.
+
+All 508 original instruction spans and both typed trial decompilations were read. Trial, promotion and independent reopen verify the saved names/signatures and unchanged archives. Full copying, delegated deep-copy semantics, allocation failure and actual deallocator behavior remain unverified.
+
+The original integer-remapping fragment passed 192 checks with its original lookup table and full input/guard comparisons. Separately, the entire cleanup body passed 88 ownership/order checks with the deallocator explicitly replaced by a recording stub. Those cleanup checks verify which pointers are passed in what order, not real allocation or freeing. Neither fixture proves the complete normalization handler.
+
+Totals: 412 checked names and 1,845 mapped functions among 9,580 discovered functions; 7,735 still need system mapping.

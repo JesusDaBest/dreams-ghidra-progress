@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1843,
-  "unmapped_total": 7737,
+  "mapped_total": 1845,
+  "unmapped_total": 7735,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46723,6 +46723,48 @@
         {
           "kind": "verified_semantic_review",
           "name": "NormalizeAndCacheDreamRecord",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
+        }
+      ]
+    },
+    "140192380": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "41391c2e31b7f20eb907c128428340cf2f06a2c62966b2ca6905245f29ff3ec0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopyDreamRecord",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
+        }
+      ]
+    },
+    "140192b30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "74217dae13c6d77063c383712dba442db23307b162108f5c56c39665e22f6ab7",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseDreamRecordOwnedArrays",
           "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
         }
       ]
