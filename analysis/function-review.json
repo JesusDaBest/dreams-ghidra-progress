@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "271 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "272 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9124,
-    "other_names": 453,
-    "verification": "complete_inventory_matches_baseline_plus_271_renames_and_26_created_functions"
+    "default_fun_names": 9123,
+    "other_names": 454,
+    "verification": "complete_inventory_matches_baseline_plus_272_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6370,6 +6370,28 @@
         "Virtual/import callbacks and recursive traversal were not executed in-game.",
         "Original C++ types and complete serializer mode meanings unresolved.",
         "The0x40f connection label remains unresolved; separate static consumer review narrows its role only."
+      ]
+    },
+    {
+      "address": "14126d9f0",
+      "original_name": "FUN_14126d9f0",
+      "applied_name": "CheckWirePropertyEligibility",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV CheckWirePropertyEligibility(void * state, uint object_reference, ushort property_bits, uchar mode_flag)",
+      "evidence": [
+        "Complete 109-instruction eligibility body matched original executable bytes.",
+        "12960 hardware cases execute original eligibility109, wire lookup94 and metadata lookup98 instructions with no import models.",
+        "Return preserves flag XOR1 in special property/kind case, including240 nonboolean fixture results.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved name and exact RDI/ESI/DX/CL toAL working ABI."
+      ],
+      "caveats": [
+        "Synthetic valid objects and tables; collisions, subtype paths and malformed graphs unresolved.",
+        "Original property labels and exact UI mode semantics unresolved.",
+        "No real game integration validation."
       ]
     }
   ],

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 256,
+    "done": 257,
     "todo": 1480,
-    "total": 1736,
-    "behavior_or_helpers_reviewed": 193,
+    "total": 1737,
+    "behavior_or_helpers_reviewed": 194,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25180,12 +25180,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 128,
+        "done": 129,
         "todo": 105,
-        "total": 233,
-        "behavior_or_helpers_reviewed": 115,
+        "total": 234,
+        "behavior_or_helpers_reviewed": 116,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 150,
+        "runtime_functions_identified": 151,
         "property_type_functions_identified": 78,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25280,6 +25280,7 @@
           "ConvertTypedSignalInPlace",
           "MergeTypedSignalsByMaximumMagnitude",
           "BlendTypedSignalsByWeight",
+          "CheckWirePropertyEligibility",
           "GenerateMortonBvhKeysJob",
           "InitializeMortonBvhLeavesJob",
           "LinkMortonBvhNodesJob",
@@ -25517,6 +25518,7 @@
           "1411c08c0",
           "1411c11b0",
           "1411c1590",
+          "14126d9f0",
           "1414f5a90",
           "1414f5c30",
           "1414f5cf0",
@@ -25673,12 +25675,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 87,
+            "done": 88,
             "todo": 13,
-            "total": 100,
-            "behavior_or_helpers_reviewed": 87,
+            "total": 101,
+            "behavior_or_helpers_reviewed": 88,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 93,
+            "runtime_functions_identified": 94,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25739,6 +25741,7 @@
               "MarkPackedResourceTreeReachable",
               "FinalizePackedResourceTreeWriter",
               "AppendSizedRecordToThreadBuffer",
+              "CheckWirePropertyEligibility",
               "ReadReflectedChunkSpans",
               "SkipReflectedChunkBytes",
               "ForwardReflectedChunkSkip",
@@ -25843,6 +25846,7 @@
               "1410614b0",
               "141061af0",
               "1410aa730",
+              "14126d9f0",
               "1415fe600",
               "1415fe7a0",
               "1415fe7f0",
@@ -26364,12 +26368,12 @@
               {
                 "name": "shared/runtime/gameupdater",
                 "label": "Gameupdater",
-                "done": 6,
+                "done": 7,
                 "todo": 1,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 6,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 7,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 7,
+                "runtime_functions_identified": 8,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -26379,7 +26383,8 @@
                   "FindWireIndexByDestinationProperty",
                   "SortGameWires",
                   "NormalizeWireBlendModesByDestinationProperty",
-                  "PrepareGameAndLinkedWireOrdering"
+                  "PrepareGameAndLinkedWireOrdering",
+                  "CheckWirePropertyEligibility"
                 ],
                 "todo_names": [
                   "0x140958760"
@@ -26390,7 +26395,8 @@
                   "140906610",
                   "1409345c0",
                   "140937f90",
-                  "140956a10"
+                  "140956a10",
+                  "14126d9f0"
                 ],
                 "todo_addresses": [
                   "140958760"
@@ -26400,12 +26406,12 @@
                   {
                     "name": "shared/runtime/gameupdater/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 6,
+                    "done": 7,
                     "todo": 1,
-                    "total": 7,
-                    "behavior_or_helpers_reviewed": 6,
+                    "total": 8,
+                    "behavior_or_helpers_reviewed": 7,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 7,
+                    "runtime_functions_identified": 8,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -26415,7 +26421,8 @@
                       "FindWireIndexByDestinationProperty",
                       "SortGameWires",
                       "NormalizeWireBlendModesByDestinationProperty",
-                      "PrepareGameAndLinkedWireOrdering"
+                      "PrepareGameAndLinkedWireOrdering",
+                      "CheckWirePropertyEligibility"
                     ],
                     "todo_names": [
                       "0x140958760"
@@ -26426,7 +26433,8 @@
                       "140906610",
                       "1409345c0",
                       "140937f90",
-                      "140956a10"
+                      "140956a10",
+                      "14126d9f0"
                     ],
                     "todo_addresses": [
                       "140958760"
@@ -41225,5 +41233,5 @@
       }
     ]
   },
-  "unmapped": 7841
+  "unmapped": 7840
 }

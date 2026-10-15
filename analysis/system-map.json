@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1736,
-  "unmapped_total": 7841,
+  "mapped_total": 1737,
+  "unmapped_total": 7840,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44457,6 +44457,26 @@
           "kind": "verified_semantic_review",
           "name": "RegisterMicrochipProperties",
           "support": "Complete original bodies, type literal and glue-field table linkage; saved names independently reopened."
+        }
+      ]
+    },
+    "14126d9f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared Thing wire storage and metadata eligibility used by editor connection callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native wire/property eligibility checks.",
+      "code_sha256": "37d5c2867d4f23a526a91ac1eeee7c5f30204004afb9128822322c4810fca0da",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CheckWirePropertyEligibility",
+          "support": "Original instruction fixtures, connected editor callers and saved working signature independently reopened."
         }
       ]
     }

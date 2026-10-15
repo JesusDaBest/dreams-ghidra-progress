@@ -2102,3 +2102,11 @@ Applied VisitMicrochipProperties after reviewing all752 original instructions an
 Cold backup, isolated trial, promotion and independent reopening verify the saved name/comment, unchanged signature and unchanged original archives. Separately,110 original instruction spans establish that Microchip property0x40f has offset-table sentinel0xffff and an eligibility consumer rejects an existing matching wire. This narrows the connection role without proving its original label.
 
 Totals:297 checked names among9,577 discovered functions;1,736 mapped and7,841 unmapped. No game integration or complete serializer reconstruction is claimed.
+
+### Saved wire-property eligibility check
+
+Applied CheckWirePropertyEligibility with a caller-visible unsigned byte return and opaque state/object-reference/property/mode inputs. It rejects invalid references and selected special properties, checks existing source or destination wire endpoints for two connection properties, and conditionally requires property metadata flagbit0. The special property0x359/kind0x59 or0x5b path returns mode XOR1; it is not universally a normalized Boolean.
+
+12,960 native fixture cases execute the original109-instruction check plus the original94-instruction wire search and98-instruction metadata lookup, with no import models. Fixtures cover linear/sorted wires, selected kinds/properties, metadata flags and noncanonical mode bytes;240 results exceed1. Object, wire and metadata buffers are preserved each case, with full state preservation sampled every500 cases. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives.
+
+Editor caller paths use this result while considering connection interactions, but exact UI modes, property labels, collision/subtype lookup paths, malformed graphs and full game integration remain unresolved. The0x40f label is not inferred. Totals:298 checked names among9,577 discovered functions;1,737 mapped and7,840 unmapped.
