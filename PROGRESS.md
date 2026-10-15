@@ -2350,3 +2350,13 @@ Applied TryReadInternalTextPackedPayload and AppendTextAliasWithOptionalTone wit
 Evidence includes 16,384 valid packed-payload cases, 544 selected truncation cases and 7,068 alias-format cases with exact bytes, returns, cursors and guards, using original instructions/data and actual library dependencies. The original snprintf export and bounded-output callback were also traced into their formatting engine. That trace is static: color/size formatting coverage is not claimed, and no host-formatting substitute was used.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 356 checked names (326 renames, 29 created functions and one retained-name review), 1,789 mapped and 7,791 unmapped among 9,580 discovered functions. Broader reverse conversion, rendering, final substitution and whole-game completion remain unresolved.
+
+### Saved canonical and alternate emoji display lookup
+
+Applied SortEmojiCanonicalNameIndex, SortEmojiAliasNameIndex and FindEmojiDisplayStringByName with working bounded index/name arguments. The lookup searches the canonical table for a display-string pointer, then searches the alternate table and resolves its canonical-name hash if needed. The alternate record own display pointer is not returned directly by this helper.
+
+The original bounded startup window builds 2,553 canonical and 1,344 alternate records using the original strlen, name hash and two sort bodies. Three executions with different padding values verify all hash/source pairs, sorted keys, padding and preservation of older indices/source data. The two 571-instruction sort bodies match the previously reviewed name-hash sort after normalizing only local instruction addresses. No host-sorted replacement was used.
+
+15,654 native lookup checks cover all 3,897 source names at four alignments plus unknown/empty cases, verifying exact returned pointers and guards. Arbitrary hash collisions, unbounded input, complete reverse formatting and rendering remain unverified.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 359 checked names (329 renames, 29 created functions and one retained-name review), 1,792 mapped and 7,788 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.

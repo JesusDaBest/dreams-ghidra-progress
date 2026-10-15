@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1789,
-  "unmapped_total": 7791,
+  "mapped_total": 1792,
+  "unmapped_total": 7788,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45590,6 +45590,69 @@
           "kind": "verified_semantic_review",
           "name": "AppendTextAliasWithOptionalTone",
           "support": "Complete original body,native packedpayload/truncation/aliascapacity checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "141497180": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Canonical/alternate emoji-name indices and displaystring lookup used by original reverse text pipeline.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Emoji display lookup/index implementation.",
+      "code_sha256": "91525122f91d2d44dbb59c86fa3da34496fd08db4d71a62d3efea37803fece1c",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortEmojiCanonicalNameIndex",
+          "support": "Complete original bodies,actualstartupindex construction andnative source-name lookup checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "141497a40": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Canonical/alternate emoji-name indices and displaystring lookup used by original reverse text pipeline.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Emoji display lookup/index implementation.",
+      "code_sha256": "b7746aef48e14dc4b3d9292d6f4d57fc480367302e665f93ba22817be87bc63e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortEmojiAliasNameIndex",
+          "support": "Complete original bodies,actualstartupindex construction andnative source-name lookup checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "141499c60": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Canonical/alternate emoji-name indices and displaystring lookup used by original reverse text pipeline.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Emoji display lookup/index implementation.",
+      "code_sha256": "6b59720be1dfc70893adb6b195d76ca9bd9ed64c53ec23c003ad3a860d9f9813",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindEmojiDisplayStringByName",
+          "support": "Complete original bodies,actualstartupindex construction andnative source-name lookup checks,independently reopened names/signatures."
         }
       ]
     }
