@@ -2764,3 +2764,13 @@ The corrected native fixture passes 4,608 cached-path cases across empty, adjace
 Dynamic registry/lock/fallback branches and owned-buffer freeing remain unexecuted. This is not a live AV playback or caption-rendering test. Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives.
 
 Totals: 369 checked names (339 renames, 29 created functions and one retained-name review), 1,802 mapped and 7,778 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Saved text selection context copy and span ownership
+
+Applied CopyTextSelectionContext with destination/source context pointers. It copies the text key, range index, state, ready flag and C-string storage. If a ready span points to the source own string, it rebases that span to the destination copied string and computes its end. Otherwise it preserves the borrowed begin/end pointers. It does not extract a substring using the selected index.
+
+1,536 native cases cover string lengths zero through 47, inline and borrowed external strings, ready/unready states, own/borrowed spans and four actual alignments. The original 80-instruction copy and 82-instruction string-storage helper run with actual strlen and memcpy. Exact whole guarded source, destination, backing string and canary match expectations. Destination heap freeing/new allocation and malformed pointers remain unexecuted.
+
+The video UI copies the selected context before calling its display interface, whose implementation stores a copied context in the display object. This traces the handoff but does not verify live caption rendering. Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives.
+
+Totals: 370 checked names (340 renames, 29 created functions and one retained-name review), 1,803 mapped and 7,777 unmapped among 9,580 discovered functions. No whole-game completion is inferred.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1802,
-  "unmapped_total": 7778,
+  "mapped_total": 1803,
+  "unmapped_total": 7777,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45863,6 +45863,27 @@
           "kind": "verified_semantic_review",
           "name": "SelectTextRangeAtPlaybackTime",
           "support": "Originalbody,nativecachedrange-selectionchecks andclockprovenance,independentlyreopenedname/signature."
+        }
+      ]
+    },
+    "14149b3d0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Copies textselection contexts andrebasesownedstringspans.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Textselection contextcopy implementation.",
+      "code_sha256": "d8b801485f90f1247f320b3aa7f918829e903addd3ad1806f8a2326290e73fae",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopyTextSelectionContext",
+          "support": "Originalbody,nativecontextcopy/ownershipchecks,independentlyreopenedname/signature."
         }
       ]
     }
