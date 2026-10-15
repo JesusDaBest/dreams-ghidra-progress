@@ -3172,3 +3172,13 @@ Applied ReadStructuredTextMemberName with an opaque parser-state pointer and voi
 The original parser, quote scanner, whitespace helper and hash routine passed 1,296 selected checks: nine names, unquoted and both quote styles, selected whitespace and 16 alignments. Complete parser state, input, guards, spans, cursor and hash were compared. Separately, 144 original-hash checks confirmed candidate matches for player_identity, playeridentity, impcfg, version, dream, user, edit_rights, comment and photo. Hashes can collide, so those matches do not uniquely recover original type names.
 
 All 144 original reader instructions match. Trial, promotion and independent reopen verify the saved name/signature and unchanged archives. Escapes, comments, malformed input, stream refill, arrays and the full payload parser remain unexecuted. Totals: 406 checked names and 1,839 mapped functions among 9,580 discovered functions; 7,741 still need system mapping.
+
+### Saved object-response processing chain
+
+Applied HandleObjectLookupResponse, QueueObjectResponseForProcessing and DispatchParsedObjectMemberToCache. The callback queues nonempty successful responses and delegates other response codes to cache-status handling. The queue builder copies identity pairs, retains the response owner and signals a worker. The dispatcher routes 13 serialized-member identifiers to shared cache writes or specialized helpers.
+
+All 465 original instruction spans match. Trial decompilations, saved custom SysV interfaces and an independent reopen agree with the assembly. Complete callback/queue/dispatcher runtime behavior, delegated helper signatures, allocation failures and concurrency remain unresolved. Original archives remain unchanged.
+
+The member-reader fixtures now cover 3,472 selected cases: 432 unquoted names, 864 quoted names, 448 escape/error cases and 1,728 comment cases. They compare complete state, input and guards. The reader hashes raw escaped member-name bytes; missing colons set an error and zero discriminator. Comment tests use the refill helper only while sufficient input remains. Actual stream refill, truncated inputs, arrays and the complete payload parser remain unexecuted. These checks add no function-name credit.
+
+Totals: 409 checked names and 1,842 mapped functions among 9,580 discovered functions; 7,738 still need system mapping.

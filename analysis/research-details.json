@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 406,
+    "checked_and_applied_names": 409,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 406,
+    "verified_names": 409,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "376 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "379 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7053,5 +7053,39 @@
       "Working descriptive function name, not recovered source."
     ],
     "runtime_game_verified": false
+  },
+  "object_response_chain_saved_checkpoint": {
+    "functions": {
+      "1403a3520": {
+        "name": "HandleObjectLookupResponse",
+        "signature": "int PS4_SYSV HandleObjectLookupResponse(void * context, void * unused_callback_argument, void * response_descriptor)"
+      },
+      "1403a3730": {
+        "name": "QueueObjectResponseForProcessing",
+        "signature": "void PS4_SYSV QueueObjectResponseForProcessing(void * response_descriptor, void * scope_descriptor, void * key_pair_list, int option)"
+      },
+      "1403b1560": {
+        "name": "DispatchParsedObjectMemberToCache",
+        "signature": "void PS4_SYSV DispatchParsedObjectMemberToCache(ulonglong scope_key, int scope_index, void * result_descriptor, uint member_hash, void * first_key_output, void * second_key_output, uchar auxiliary_flag)"
+      }
+    },
+    "original_instructions": 465,
+    "runtime_game_verified": false,
+    "limits": [
+      "Static function-role evidence; complete callback, queue and dispatcher runtime behavior remains unexecuted.",
+      "Opaque payload/descriptor types, delegated helper signatures, allocator failure and concurrency remain unresolved.",
+      "Member hashes are serialized member-name identifiers, not proven intrinsic runtime type IDs."
+    ]
+  },
+  "structured_member_reader_additional_checks": {
+    "checks": {
+      "object-member-parser-native-check.json": 432,
+      "object-member-quoted-parser-native-check.json": 864,
+      "object-member-escape-error-native-check.json": 448,
+      "object-member-comment-parser-native-check.json": 1728
+    },
+    "total_selected_parser_checks": 3472,
+    "scope": "Original-code bounded fixtures; no complete payload parsing or stream refill.",
+    "new_checked_names_from_tests": 0
   }
 }

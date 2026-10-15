@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "376 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "379 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9019,
-    "other_names": 561,
-    "verification": "complete_inventory_matches_baseline_plus_376_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9016,
+    "other_names": 564,
+    "verification": "complete_inventory_matches_baseline_plus_379_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8941,6 +8941,69 @@
         "Checks cover complete in-memory selected names only; escapes, comments, malformed input, refill, arrays and full payload parser remain unexecuted.",
         "Member hashes are not unique original runtime type names.",
         "Working descriptive function name, not recovered source."
+      ]
+    },
+    {
+      "address": "1403a3520",
+      "original_name": "FUN_1403a3520",
+      "applied_name": "HandleObjectLookupResponse",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV HandleObjectLookupResponse(void * context, void * unused_callback_argument, void * response_descriptor)",
+      "evidence": [
+        "Complete 58-instruction original body and typed trial decompilation read; bytes matched.",
+        "Callback-to-queue and worker-to-dispatcher linkage reviewed in bounded caller/consumer windows.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Static function-role evidence; complete callback, queue and dispatcher runtime behavior remains unexecuted.",
+        "Opaque payload/descriptor types, delegated helper signatures, allocator failure and concurrency remain unresolved.",
+        "Member hashes are serialized member-name identifiers, not proven intrinsic runtime type IDs."
+      ]
+    },
+    {
+      "address": "1403a3730",
+      "original_name": "FUN_1403a3730",
+      "applied_name": "QueueObjectResponseForProcessing",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV QueueObjectResponseForProcessing(void * response_descriptor, void * scope_descriptor, void * key_pair_list, int option)",
+      "evidence": [
+        "Complete 103-instruction original body and typed trial decompilation read; bytes matched.",
+        "Callback-to-queue and worker-to-dispatcher linkage reviewed in bounded caller/consumer windows.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Static function-role evidence; complete callback, queue and dispatcher runtime behavior remains unexecuted.",
+        "Opaque payload/descriptor types, delegated helper signatures, allocator failure and concurrency remain unresolved.",
+        "Member hashes are serialized member-name identifiers, not proven intrinsic runtime type IDs."
+      ]
+    },
+    {
+      "address": "1403b1560",
+      "original_name": "FUN_1403b1560",
+      "applied_name": "DispatchParsedObjectMemberToCache",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DispatchParsedObjectMemberToCache(ulonglong scope_key, int scope_index, void * result_descriptor, uint member_hash, void * first_key_output, void * second_key_output, uchar auxiliary_flag)",
+      "evidence": [
+        "Complete 304-instruction original body and typed trial decompilation read; bytes matched.",
+        "Callback-to-queue and worker-to-dispatcher linkage reviewed in bounded caller/consumer windows.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Static function-role evidence; complete callback, queue and dispatcher runtime behavior remains unexecuted.",
+        "Opaque payload/descriptor types, delegated helper signatures, allocator failure and concurrency remain unresolved.",
+        "Member hashes are serialized member-name identifiers, not proven intrinsic runtime type IDs."
       ]
     }
   ],

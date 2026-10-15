@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1839,
-  "unmapped_total": 7741,
+  "mapped_total": 1842,
+  "unmapped_total": 7738,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46640,6 +46640,69 @@
           "kind": "verified_semantic_review",
           "name": "ReadStructuredTextMemberName",
           "support": "Complete member-reader body, bounded native checks and independent reopen; no complete payload execution claimed."
+        }
+      ]
+    },
+    "1403a3520": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "ca1df7c92d5bef693b3f071f3c2fff3d1a51b7b276a630f66f69f8676da94e99",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "HandleObjectLookupResponse",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
+        }
+      ]
+    },
+    "1403a3730": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "4f8e7e23ed7c06a5f3f4760a9b54dcf4e5dd217736586d474ff219d79e35f053",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueueObjectResponseForProcessing",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
+        }
+      ]
+    },
+    "1403b1560": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "db99bb6742000313909ee0112309c7df758656f91ca8fd3ed690f6e9e7ae1c68",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchParsedObjectMemberToCache",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
         }
       ]
     }
