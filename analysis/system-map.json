@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1696,
-  "unmapped_total": 7874,
+  "mapped_total": 1697,
+  "unmapped_total": 7873,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43667,6 +43667,26 @@
           "kind": "verified_semantic_review",
           "name": "UpdateRandomiserFromTriggerEdges",
           "support": "Original descriptor/fields, native picker and four calls, scoped hardware tests, independent saved-project reopening."
+        }
+      ]
+    },
+    "1408cd8d0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "randomiser",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Randomiser ActivePort binding matches native output selection.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "266390dbe005e633fa60c741b4b07a45ca54f5353cc9351fc9f40a7a07334658",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadRandomiserOutputVariant",
+          "support": "Original field binding, complete native output helper, scoped hardware tests and independent saved-project reopening."
         }
       ]
     }

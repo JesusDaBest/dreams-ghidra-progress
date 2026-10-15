@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 212,
+    "done": 213,
     "todo": 1484,
-    "total": 1696,
-    "behavior_or_helpers_reviewed": 153,
+    "total": 1697,
+    "behavior_or_helpers_reviewed": 154,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 63,
+        "done": 64,
         "todo": 413,
-        "total": 476,
-        "behavior_or_helpers_reviewed": 21,
+        "total": 477,
+        "behavior_or_helpers_reviewed": 22,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 23,
+        "runtime_functions_identified": 24,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -44,6 +44,7 @@
           "ReadTimerOutputVariant",
           "UpdateRandomiserFromTriggerEdges",
           "ChooseRandomiserWeightedPort",
+          "ReadRandomiserOutputVariant",
           "UpdateSelectorFromInputTransitions",
           "ReadSelectorOutputVariant",
           "EvaluateCalculatorInputs",
@@ -524,6 +525,7 @@
           "1408cd160",
           "1408cd210",
           "1408cd5d0",
+          "1408cd8d0",
           "1408cd970",
           "1408cdee0",
           "1408ce4f0",
@@ -987,12 +989,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 33,
+            "done": 34,
             "todo": 68,
-            "total": 101,
-            "behavior_or_helpers_reviewed": 16,
+            "total": 102,
+            "behavior_or_helpers_reviewed": 17,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 16,
+            "runtime_functions_identified": 17,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1011,6 +1013,7 @@
               "ReadTimerOutputVariant",
               "UpdateRandomiserFromTriggerEdges",
               "ChooseRandomiserWeightedPort",
+              "ReadRandomiserOutputVariant",
               "UpdateSelectorFromInputTransitions",
               "ReadSelectorOutputVariant",
               "EvaluateCalculatorInputs",
@@ -1116,6 +1119,7 @@
               "1408cd160",
               "1408cd210",
               "1408cd5d0",
+              "1408cd8d0",
               "1408cd970",
               "1408cdee0",
               "1408ce4f0",
@@ -1303,18 +1307,19 @@
               {
                 "name": "gadgets-logic/logic/randomiser",
                 "label": "Randomiser",
-                "done": 2,
+                "done": 3,
                 "todo": 3,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 2,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
+                "runtime_functions_identified": 3,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "UpdateRandomiserFromTriggerEdges",
-                  "ChooseRandomiserWeightedPort"
+                  "ChooseRandomiserWeightedPort",
+                  "ReadRandomiserOutputVariant"
                 ],
                 "todo_names": [
                   "0x1404beab0",
@@ -1323,7 +1328,8 @@
                 ],
                 "done_addresses": [
                   "1408cd210",
-                  "1408cd5d0"
+                  "1408cd5d0",
+                  "1408cd8d0"
                 ],
                 "todo_addresses": [
                   "1404beab0",
@@ -1362,23 +1368,25 @@
                   {
                     "name": "gadgets-logic/logic/randomiser/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 2,
+                    "done": 3,
                     "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
+                    "runtime_functions_identified": 3,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "UpdateRandomiserFromTriggerEdges",
-                      "ChooseRandomiserWeightedPort"
+                      "ChooseRandomiserWeightedPort",
+                      "ReadRandomiserOutputVariant"
                     ],
                     "todo_names": [],
                     "done_addresses": [
                       "1408cd210",
-                      "1408cd5d0"
+                      "1408cd5d0",
+                      "1408cd8d0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -40690,5 +40698,5 @@
       }
     ]
   },
-  "unmapped": 7874
+  "unmapped": 7873
 }
