@@ -3056,5 +3056,27 @@
       "No running-game validation or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "remapper_component_player_checkpoint": {
+    "component_bypass_cases": 10240,
+    "player_edge_smoothing_cases": 1800,
+    "shared_history_distinguishing_cases": 1800,
+    "findings": [
+      "Selected Float2/3/4/8 and PlayerValue components apply independent bypass bits.",
+      "Unbypassed lanes apply selected0..1 to1..3 affine range; bypassed lanes retain exact input.",
+      "Other payload bytes, alpha, tag and tail remain unchanged in these selected configurations.",
+      "Selected PlayerValue edge processing uses independent current lanes and per-lane state flags.",
+      "Smoothing history in these edge cases uses one scalar reduction of the entire previous PlayerValue, not each previous lane.",
+      "Chosen nonnegative previous profiles reduce to their common maximum, and observed results distinguish shared from lane-local history."
+    ],
+    "limits": [
+      "Only Custom preset, curveOff, zero smoothing, edge0, both flags1 and matching previous tag/shape.",
+      "No player edge-state separation, mixed-type previous values, exceptional components or real-game validation.",
+      "Three nonnegative prior profiles, two finite rise/fall times, ordered0..1 ranges, Custom preset and active gate only.",
+      "This is helper behavior; no claim of gameplay bug, intent or in-game impact.",
+      "Negative/NaN prior reduction, other presets, long sequences and runtime scheduling remain unverified."
+    ],
+    "new_names": 0,
+    "runtime_game_verified": false
   }
 }

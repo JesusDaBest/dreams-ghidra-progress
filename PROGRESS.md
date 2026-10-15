@@ -1416,3 +1416,10 @@ These cover ordered0..1 ranges and selected scalar inputs. Reversed thresholds, 
 Applied and independently reopened EvaluateRemapperSignal, with four register arguments and two40-byte Variants passed by value. Original fields and enums identify range mapping, curves, edge state, smoothing, presets and component bypass. The descriptive role is supported by native control-flow review and47,512 scoped cases across separately tested paths.
 
 This is not a full Remapper completion claim. Combined edge/smoothing, vector/player lanes, reversed thresholds, other presets and running-game integration remain unresolved. Original instructions and archives remain unchanged. Totals: 255 checked names; 1,698 mapped functions; 7,872 unmapped.
+### Remapper components and player edge history
+
+10,240 original-instruction cases verify independent bypass bits and selected affine range mapping for Float2/3/4/8 and PlayerValue. They preserve untouched payload, alpha, type, tail, configuration and input bytes. Scope: Custom preset, curveOff, no smoothing or edges, matching prior type/shape and selected finite values.
+
+1,800 separate PlayerValue edge/smoothing cases use differing previous lane values. All1,800 distinguish a shared scalar reduction of previous PlayerValue from lane-local history. Current lanes and their state flags remain separate, while smoothing uses that shared previous scalar. The selected nonnegative profiles reduce to their common maximum. Original evaluator, reducer, math bodies and tables execute without substitutes.
+
+These are synthetic helper findings, not a gameplay bug or impact claim. Other prior-value classes, presets, longer sequences and real-game scheduling remain unverified. No naming or completion increment.
