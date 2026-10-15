@@ -5588,5 +5588,22 @@
       "Descriptive working name and types are not recovered source declarations."
     ],
     "runtime_game_verified": false
+  },
+  "text_button_wrapper_checkpoint": {
+    "left_to_right_sequences": 128,
+    "left_to_right_wrapper_calls": 768,
+    "mixed_hebrew_ascii_sequences": 32,
+    "mixed_wrapper_calls": 272,
+    "scope": "Selected paths through complete original higher-level parser and direction helpers,original base/button/control code,Unicode data and actual library dependencies;exact tokens,cursor,guarded state and original emitter previous-token ordering.",
+    "findings": [
+      "Initial direction-control tokens do not advance input;caller applies them before parsing again.",
+      "Selected Hebrew label followed by ASCII text adds direction-transition tokens around the ASCII run."
+    ],
+    "limits": [
+      "Selected paths only;whole wrapper and helper names unresolved.",
+      "No broad bidirectional,Arabic shaping,nested markup,markdown or visible rendering verification."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }

@@ -2220,3 +2220,11 @@ Applied TryFindTextButtonLabelSpan with working byte-pointer start/end in/out ar
 Original-native checks cover 48 basic and 88 selected escaped/malformed/NUL cases. Another 64 connected parser sequences comprising 352 calls verify the opening token, label characters, queued closing token, delimiter skipping, exact guarded state and control-handler return. These checks use original code, initialized tables and actual library dependencies. Selected color/size/named-style paths also passed 432 connected checks; closing size tags accept size-prefixed trailing text, while closing color tags require whole-name equality. Arbitrary nested markup and visible rendering remain unverified.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved change and unchanged original instructions/archives. Totals: 343 checked names (313 renames, 29 created functions and one retained-name review), 1,776 mapped and 7,804 unmapped among 9,580 discovered functions. This is partial semantic analysis, not whole-game completion.
+
+### Button labels through the higher-level text parser
+
+The higher-level parser and all eight directly referenced direction/marker helpers were read alongside the existing base parser. Its 1,269 instruction spans match the original executable. Selected native checks now cover 128 ASCII button-label sequences (768 wrapper calls) and 32 mixed Hebrew-label/ASCII-suffix sequences (272 calls), with exact output tokens, cursor positions and guarded state before and after the original control handler. Original code, initialized lookup tables, Unicode data and actual library dependencies are used.
+
+The wrapper can emit an initial direction token without consuming input. The caller must apply that token before requesting the next unit; the original text emitter does so and stores the previous token before handling it. The selected Hebrew label is preserved between the button tokens, then the following ASCII character receives direction-transition tokens. A preliminary fixture that omitted control application repeated the initial token; this was a fixture caller omission, not a game stall.
+
+These are selected path checks. General bidirectional text, Arabic shaping, nested markup, markdown and visible rendering remain unverified. No additional function names or whole-function completion credit were added.
