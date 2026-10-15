@@ -5385,11 +5385,33 @@
     "original_instructions": 409,
     "cached_native_cases": 256,
     "limits": [
-      "Initialization, path construction, file lookup/load/failure and concurrency are statically reviewed but not native-tested.",
+      "Initialization, actual formatting/file I/O, successful loading and concurrency remain untested. Failure-conditioned control/data flow has explicit boundary-model coverage, not live filesystem validation.",
       "Only nonnull cached resource handles are native-tested; stale/malformed handles are not validated.",
       "Opaque working pointer return is not the recovered original C++ shader descriptor declaration.",
       "No shader execution or complete solver/game verification claimed."
     ],
+    "runtime_game_verified": false
+  },
+  "shader_getter_open_failure_checkpoint": {
+    "status": "failure_conditioned_native_flow_verified_with_models",
+    "helper_cases": 384,
+    "getter_cases": 256,
+    "findings": [
+      "When both file-open attempts are forced to fail, each getter returnsNULL but forwards the preexisting scratch pointer value to free.",
+      "The scratch pointer is untouched by the original failed-open helper; seeded values survive to the recorded free argument."
+    ],
+    "models": [
+      "Formatting supplies a terminated empty path.",
+      "fopen records arguments and returnsNULL.",
+      "free records the pointer and does not deallocate."
+    ],
+    "limits": [
+      "Formatting model only supplies a terminated empty path; actual formatting and filesystem behavior untested.",
+      "This establishes failure-conditioned native control/data flow, not a live crash or exploit.",
+      "Scratch contents in real execution depend on prior stack state. Successful reads, allocation, malformed resources and concurrency untested."
+    ],
+    "ghidra_comments_independently_reopened": true,
+    "new_names_checked": 0,
     "runtime_game_verified": false
   }
 }

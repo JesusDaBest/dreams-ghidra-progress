@@ -2422,3 +2422,11 @@ Applied GetPredictShader and GetGrabConstraintShader with working opaque pointer
 256 original-native initialized cached-success cases verify the exact descriptor address and an unchanged readonly global page. No imported callees execute in those cases. Initialization, path construction, lookup/load/failure and concurrency were inspected statically but remain outside the native test coverage; no complete shader or solver execution is claimed.
 
 Full cold backup, isolated trial, promotion and independent reopening verify both saved names/signatures and unchanged instructions/archives. Totals: 324 checked names (294 renames, 29 created functions, one retained-name review) among 9,580 discovered functions. Mapping remains 1,757 mapped and 7,823 unmapped because both wrappers were already classified under physics simulation.
+
+### Shader file-open failure follow-up
+
+Traced the shader file helper through resolved fopen, fseek, ftell, malloc, fread and fclose imports. Its failed-open branch returns false without initializing the caller's output pointer or size. 384 native helper cases with a failed-open boundary model verify that both sentinel outputs remain untouched.
+
+256 further cases execute the complete original getters and file helper with explicit formatting, failed-open and recording-only free models. When both open attempts fail, each getter returns null but passes its preexisting scratch pointer value to modeled free. Seeded scratch values survive to that argument unchanged. This identifies a potentially unsafe cleanup path; it does not establish a live-game crash, exploit or actual deallocation. Real scratch contents depend on prior stack state.
+
+The formatting model supplies only a terminated empty path, the open model returns null, and the free model records rather than frees. Actual formatting/filesystem behavior, successful loading, allocation failures, short reads and concurrency remain untested. Updated Ghidra comments survived independent reopening with unchanged names, signatures and all 409 getter instruction spans. The checked-name total remains 324.
