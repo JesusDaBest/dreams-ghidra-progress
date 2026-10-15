@@ -4850,11 +4850,34 @@
     "connected_native_cases": 72,
     "imports_or_models_on_preallocated_path": false,
     "limits": [
-      "Allocation/growth/failure, malformed or aliased input, depth-budget exhaustion and complete game/caller execution untested.",
+      "Real allocator semantics, malformed or aliased input, depth-budget exhaustion and complete game/caller execution remain untested;36 modeled growth/failure configurations are recorded separately.",
       "Source flag is not copied by exporter: new destination slots initialize flag0, existing flags retain compacted ordinal provenance before sort.",
       "Output pair sorting is not evidence for sorting the runtime index-pair table.",
       "Working pointers/uint64 depth budget do not recover original C++ declarations."
     ],
     "runtime_game_verified": false
+  },
+  "persistent_pair_export_growth_checkpoint": {
+    "original_export_instructions": 183,
+    "original_sort_instructions": 807,
+    "growth_configurations": 36,
+    "first_allocation_success_cases": 12,
+    "conditional_null_allocation_cases": 24,
+    "modeled_boundaries": [
+      "aligned allocator",
+      "deallocator"
+    ],
+    "findings": [
+      "Successful growth requests alignment16 and12*max(2*oldcapacity,sourcecount) bytes, copies old records and frees old storage.",
+      "If allocator returns null, original code compacts into old backing beyond its logical capacity. Oversized guarded fixture backing keeps observation physically bounded.",
+      "A later successful retry copies only old length and initializes remaining output pairs toFFFFFFFF/zero flag.",
+      "If both allocations fail, vector length/capacity remain old although pair writes occurred beyond logical capacity."
+    ],
+    "limits": [
+      "Actual allocator may terminate/throw instead of returning null; conditional findings do not demonstrate a live-game heap failure.",
+      "Real allocator, concurrency, malformed/aliased inputs, depth-budget exhaustion and complete game integration untested."
+    ],
+    "runtime_game_verified": false,
+    "distinct_buffer_fill_copy_checks": true
   }
 }
