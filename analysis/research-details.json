@@ -4925,10 +4925,32 @@
     "accepted": 54,
     "original_caller_spans": 65,
     "limits": [
-      "Optional transform conversion and wire invalidation branches untested.",
+      "Optional transform conversion untested; wire invalidation has48 scoped native fixtures.",
       "Malformed/null inputs, cycles, full versioned caller and game behavior unresolved.",
       "This migration does not establish that every pair record or flag value means glue.",
       "Working opaque pointers/reference and Boolean machine result are not recovered original C++ declarations."
+    ],
+    "runtime_game_verified": false
+  },
+  "object_pair_glue_wire_migration_checkpoint": {
+    "native_cases": 48,
+    "invalidated_records": 168,
+    "original_instructions": 170,
+    "wire_counts": [
+      1,
+      2,
+      17,
+      257
+    ],
+    "imports_or_models": false,
+    "observations": [
+      "Wire record flag at48 bit0, property at40 equal231hex and endpoint at36 resolving to source pointer gate invalidation.",
+      "Matching record bytes32..39 invalidated; remaining record bytes/count preserved.",
+      "Upper-bit references and distinct object indices resolving to the same source pointer match."
+    ],
+    "limits": [
+      "Optional transform path, malformed pointers/cycles, full-capacity arrays and complete caller/game behavior untested.",
+      "Wire record flag semantics here do not identify the separate pair-table flag."
     ],
     "runtime_game_verified": false
   }

@@ -2239,10 +2239,18 @@ Cold backup, isolated trial, main promotion and independent reopening verify bot
 
 ### Saved legacy object-pair to glued-parent conversion
 
-Applied ConvertObjectPairToGluedParent. The source inheritance byte must be zero, its IsGluedGadget metadata offset positive, and its glue byte clear. The target must differ from the source and existing parent and belong to the accepted type set. Success writes the full target reference to source offset4 and sets its IsGluedGadget field to1. Optional branches convert a local transform and invalidate matching property0x231 wire records; these branches remain untested.
+Applied ConvertObjectPairToGluedParent. The source inheritance byte must be zero, its IsGluedGadget metadata offset positive, and its glue byte clear. The target must differ from the source and existing parent and belong to the accepted type set. Success writes the full target reference to source offset4 and sets its IsGluedGadget field to1. Optional branches convert a local transform and invalidate matching property0x231 wire records; scoped wire cleanup validation follows below, while transform conversion remains untested.
 
 3,024 original-native cases with54 accepted conversions cover the previously identified Microchip, HealthGadget and HealthModifier glue offsets, missing0/0xffff metadata, inherited/already-glued sources, self/same-parent rejection, target-type gates and upper reference bits. No imports/models execute on this tested path; optional transform metadata is absent and wire count is zero. Complete guarded source/target/frame/metadata effects are checked, with full state SHA256 every64th case.
 
-65 original versioned-caller instructions show the helper being used for compatible pair endpoints, its AL result accumulated and the old pair invalidated. This connects a legacy use of the table to glued-object relationships; it does not prove that every pair or flag means glue. Malformed/null inputs, cycles, optional transform/wire branches and complete caller/game behavior remain unresolved.
+65 original versioned-caller instructions show the helper being used for compatible pair endpoints, its AL result accumulated and the old pair invalidated. This connects a legacy use of the table to glued-object relationships; it does not prove that every pair or flag means glue. Malformed/null inputs, cycles, optional transform branches and complete caller/game behavior remain unresolved; scoped wire cleanup validation follows below.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved name and working state/object/reference ABI, unchanged existing functions and original archives. Totals:317 checked names among9,580 discovered functions;1,754 mapped and7,826 unmapped.
+
+### Glue migration wire cleanup validation
+
+48 additional cases execute the original glue-conversion helper through its wire cleanup path, with168 expected invalidations and wire counts1,2,17 and257. No imports/models execute; optional transform metadata remains absent. Each64-byte wire record must have flag byte48 bit0 set, property at40 equal0x231, and endpoint reference at36 resolving to the source object pointer. Matching record bytes32 through39 become0xffffffffffffffff. Property, flags, padding and count remain unchanged.
+
+Tests cover three known glue-bearing object types, nonmatching flags/properties/endpoints, invalid references, upper reference bits, distinct indices resolving to the same source pointer and inherited-source rejection. Every case checks full expected state SHA256 and guarded source/target objects, frame and metadata, including expected parent/glue changes.
+
+The saved comment was updated reversibly and independently reopened; names, signatures, original instructions and archives are unchanged. Optional local-transform conversion, malformed pointers/cycles, full-capacity arrays and complete versioned caller/game behavior remain unresolved. This is a wire-record flag, not identification of the separate pair-table flag. Checked-name count remains317 of9,580.
