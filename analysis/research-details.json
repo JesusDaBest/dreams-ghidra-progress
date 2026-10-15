@@ -4925,12 +4925,13 @@
     "accepted": 54,
     "original_caller_spans": 65,
     "limits": [
-      "Optional transform conversion untested; wire invalidation has48 scoped native fixtures.",
+      "Optional transform conversion has1536 scoped Microchip/Sculpt-parent cases; other types/configurations and full caller/game unverified.",
       "Malformed/null inputs, cycles, full versioned caller and game behavior unresolved.",
       "This migration does not establish that every pair record or flag value means glue.",
       "Working opaque pointers/reference and Boolean machine result are not recovered original C++ declarations."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "connected_chain_followup": "1536 original-native Microchip/Sculpt-parent transform and wire cases; full versioned caller/game behavior remains unverified."
   },
   "object_pair_glue_wire_migration_checkpoint": {
     "native_cases": 48,
@@ -4949,10 +4950,11 @@
       "Upper-bit references and distinct object indices resolving to the same source pointer match."
     ],
     "limits": [
-      "Optional transform path, malformed pointers/cycles, full-capacity arrays and complete caller/game behavior untested.",
+      "Other transform configurations, malformed pointers/cycles, full-capacity arrays and complete caller/game behavior untested.",
       "Wire record flag semantics here do not identify the separate pair-table flag."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "connected_chain_followup": "1536 original-native Microchip/Sculpt-parent transform and wire cases; full versioned caller/game behavior remains unverified."
   },
   "transform_normalize_checkpoint": {
     "name": "CopyTransformWithNormalizedRotation",
@@ -4970,10 +4972,11 @@
     ],
     "limits": [
       "Quaternion NaN payloads, subnormal/FTZ modes and aliasing untested.",
-      "Complete glue-migration transform composition remains untested.",
+      "Complete versioned caller/game behavior remains untested;1536 scoped connected transform cases verified.",
       "RigidTransformWorking32 is an observed machine container, not recovered original C++ declaration."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "connected_chain_followup": "1536 original-native Microchip/Sculpt-parent transform and wire cases; full versioned caller/game behavior remains unverified."
   },
   "transform_compose_checkpoint": {
     "name": "ComposeRigidTransform",
@@ -4993,8 +4996,30 @@
     ],
     "limits": [
       "Finite positions, selected positive scales and normalized first rotation only; nonunit/zero second rotation tested.",
-      "First rotation nonunit/nonfinite, subnormal/FTZ modes, aliasing and complete glue conversion chain untested.",
+      "First rotation nonunit/nonfinite, subnormal/FTZ modes, aliasing and complete versioned caller/game untested;1536 scoped connected cases verified.",
       "Existing descriptive name retained; working machine types do not recover original source declarations."
+    ],
+    "runtime_game_verified": false,
+    "connected_chain_followup": "1536 original-native Microchip/Sculpt-parent transform and wire cases; full versioned caller/game behavior remains unverified."
+  },
+  "glue_transform_chain_checkpoint": {
+    "original_instructions": 312,
+    "original_libc_isinff_bytes": 22,
+    "native_cases": 1536,
+    "wire_invalidations": 1536,
+    "max_absolute_error": 3.1389034376161362e-06,
+    "tolerance": 0.0001,
+    "imports_or_models": false,
+    "field_offsets": {
+      "Microchip.Pos": "40hex",
+      "Microchip.ParentFromModel": "60hex",
+      "Microchip.IsGluedGadget": "138hex",
+      "Sculpt.metadata0": "50hex"
+    },
+    "scope": "Microchip source and allowed Sculpt parent; finite positions, positive selected scales, normalized parent and unit/nonunit/zero source rotation.",
+    "state_audit": "Full expected state SHA256 every31st case, sampling zero/nonzero wire paths; guarded objects/frame/both metadata rows/wires checked every case.",
+    "limits": [
+      "Versioned caller/pair invalidation, hierarchy cache, malformed/nonfinite transforms, cycles, aliasing and full game integration untested."
     ],
     "runtime_game_verified": false
   }

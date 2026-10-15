@@ -2272,3 +2272,13 @@ Retained the pre-existing descriptive name ComposeRigidTransform and reviewed it
 Cold backup, isolated trial, main promotion and independent reopening verify the corrected custom ABI, working types and connected caller decompilation, with unchanged original archives. First rotations are normalized and positions/scales use selected finite positive profiles; first-rotation nonunit/nonfinite behavior, subnormal/FTZ modes, aliasing and the complete glue conversion chain remain unresolved.
 
 This is one newly checked existing name, not a new rename. Totals:319 checked names consist of289 existing-function renames,29 created functions and1 retained existing-name review, among9,580 discovered functions.1,756 functions are mapped and7,824 unmapped.
+
+### Connected glue conversion, parent-relative transform and wire cleanup
+
+1,536 scoped cases execute the original glue conversion, composition and normalization helpers together (312 instructions), plus the original22-byte libc isinff, with no function models. A Microchip source is converted to an allowed Sculpt parent. Original initializer stores bind Microchip position offset0x40, ParentFromModel0x60 and IsGluedGadget0x138; the Sculpt position field uses0x50. The ParentFromModel registration was also checked against original bytes. A Microchip parent is excluded by the original target-type mask and is not used in this fixture.
+
+An independent inverse-parent/world transform oracle checks the resulting ParentFromModel position, scale and normalized rotation. The test also checks the parent reference, glue byte and1,536 expected wire-record endpoint invalidations. Maximum absolute transform error is3.14e-6 at tolerance1e-4. Guarded source/target objects, frame, both metadata rows and wire buffers are checked every case. Full expected state SHA256 is checked every31st case so samples cover zero and nonzero wire paths; the sampling audit rerun does not add duplicate case credit.
+
+Coverage uses finite positions, selected positive scales, normalized parent rotations and unit/nonunit/zero source rotations. The versioned caller, old-pair invalidation, hierarchy caches, malformed/nonfinite transforms, cycles, aliasing and full game integration remain unresolved. This is scoped integration evidence, not completion of Dreams or the complete migration system.
+
+All three saved comments were updated reversibly and independently reopened. Names/signatures, original instruction bytes and archives are unchanged. Checked-name count remains319 of9,580.
