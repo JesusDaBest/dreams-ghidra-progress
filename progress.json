@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 257,
+    "done": 258,
     "todo": 1480,
-    "total": 1737,
-    "behavior_or_helpers_reviewed": 194,
+    "total": 1738,
+    "behavior_or_helpers_reviewed": 195,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25180,12 +25180,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 129,
+        "done": 130,
         "todo": 105,
-        "total": 234,
-        "behavior_or_helpers_reviewed": 116,
+        "total": 235,
+        "behavior_or_helpers_reviewed": 117,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 151,
+        "runtime_functions_identified": 152,
         "property_type_functions_identified": 78,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25216,6 +25216,7 @@
           "AcquireLeastUsedThreadBufferLane",
           "PassesThingUpdateStateAndPowerGate",
           "GetPowerOrResolvedObjectPlayerMask",
+          "ResolveGluedOrMicrochipInputReference",
           "ReadResolvedObjectPlayerMask",
           "PassesObjectPlayerMaskAndParentModeFilter",
           "ResolveParentScopeReference",
@@ -25454,6 +25455,7 @@
           "1408c6390",
           "1408cc990",
           "1408e2790",
+          "1408f8330",
           "1408f85b0",
           "1408f96a0",
           "1408fa1f0",
@@ -27247,17 +27249,18 @@
           {
             "name": "shared/objects",
             "label": "Objects & references",
-            "done": 4,
+            "done": 5,
             "todo": 13,
-            "total": 17,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 18,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 4,
+            "runtime_functions_identified": 5,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "GetPowerOrResolvedObjectPlayerMask",
+              "ResolveGluedOrMicrochipInputReference",
               "ReadResolvedObjectPlayerMask",
               "PassesObjectPlayerMaskAndParentModeFilter",
               "ResolveParentScopeReference"
@@ -27279,6 +27282,7 @@
             ],
             "done_addresses": [
               "1408e2790",
+              "1408f8330",
               "1408f85b0",
               "1408f96a0",
               "1408fa1f0"
@@ -27300,6 +27304,96 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "shared/objects/thing",
+                "label": "Thing",
+                "done": 5,
+                "todo": 1,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetPowerOrResolvedObjectPlayerMask",
+                  "ResolveGluedOrMicrochipInputReference",
+                  "ReadResolvedObjectPlayerMask",
+                  "PassesObjectPlayerMaskAndParentModeFilter",
+                  "ResolveParentScopeReference"
+                ],
+                "todo_names": [
+                  "0x140d5ed90"
+                ],
+                "done_addresses": [
+                  "1408e2790",
+                  "1408f8330",
+                  "1408f85b0",
+                  "1408f96a0",
+                  "1408fa1f0"
+                ],
+                "todo_addresses": [
+                  "140d5ed90"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/thing/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetPowerOrResolvedObjectPlayerMask",
+                      "ResolveGluedOrMicrochipInputReference",
+                      "ReadResolvedObjectPlayerMask",
+                      "PassesObjectPlayerMaskAndParentModeFilter",
+                      "ResolveParentScopeReference"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408e2790",
+                      "1408f8330",
+                      "1408f85b0",
+                      "1408f96a0",
+                      "1408fa1f0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "shared/objects/thing/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d5ed90"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d5ed90"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "shared/objects/ethingtype",
                 "label": "Thing Type",
@@ -27357,92 +27451,6 @@
                       "140c8b960",
                       "140c8ba10",
                       "140c8c220"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/thing",
-                "label": "Thing",
-                "done": 4,
-                "todo": 1,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 4,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "GetPowerOrResolvedObjectPlayerMask",
-                  "ReadResolvedObjectPlayerMask",
-                  "PassesObjectPlayerMaskAndParentModeFilter",
-                  "ResolveParentScopeReference"
-                ],
-                "todo_names": [
-                  "0x140d5ed90"
-                ],
-                "done_addresses": [
-                  "1408e2790",
-                  "1408f85b0",
-                  "1408f96a0",
-                  "1408fa1f0"
-                ],
-                "todo_addresses": [
-                  "140d5ed90"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/thing/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 4,
-                    "todo": 0,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 4,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "GetPowerOrResolvedObjectPlayerMask",
-                      "ReadResolvedObjectPlayerMask",
-                      "PassesObjectPlayerMaskAndParentModeFilter",
-                      "ResolveParentScopeReference"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408e2790",
-                      "1408f85b0",
-                      "1408f96a0",
-                      "1408fa1f0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "shared/objects/thing/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d5ed90"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d5ed90"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41233,5 +41241,5 @@
       }
     ]
   },
-  "unmapped": 7840
+  "unmapped": 7839
 }

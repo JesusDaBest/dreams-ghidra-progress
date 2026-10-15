@@ -1806,3 +1806,11 @@ Applied CheckWirePropertyEligibility with a caller-visible unsigned byte return 
 12,960 native fixture cases execute the original109-instruction check plus the original94-instruction wire search and98-instruction metadata lookup, with no import models. Fixtures cover linear/sorted wires, selected kinds/properties, metadata flags and noncanonical mode bytes;240 results exceed1. Object, wire and metadata buffers are preserved each case, with full state preservation sampled every500 cases. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives.
 
 Editor caller paths use this result while considering connection interactions, but exact UI modes, property labels, collision/subtype lookup paths, malformed graphs and full game integration remain unresolved. The0x40f label is not inferred. Totals:298 checked names among9,577 discovered functions;1,737 mapped and7,840 unmapped.
+
+### Saved glued-parent and Microchip-input reference resolver
+
+Applied ResolveGluedOrMicrochipInputReference with opaque state, encoded object reference and a full uint reference return. It resolves container/inheritance ancestry, returns the parent when the identified IsGluedGadget field is set, or scans an unglued Microchip input connection with property0x40f and returns its opposite endpoint. The original0x40f label remains unclaimed. The glue field identity is established for Microchip, HealthGadget and HealthModifier; other kinds require separate registration evidence.
+
+256 direct native cases execute the original164-instruction resolver, independently checking complete returned references and failure sentinel0xffffffff. Input/output upper10 bits vary across four values;96 successful results retain nonzero upper reference bits. Entire state and every object buffer are preserved each case. These supplement the3809 earlier mask fixtures; no import models or game integration are claimed. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives.
+
+Cache construction, malformed or cyclic graphs, large tables and full gameplay behavior remain unresolved. Totals:299 checked names among9,577 discovered functions;1,738 mapped and7,839 unmapped.

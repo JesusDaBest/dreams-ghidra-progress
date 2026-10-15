@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "272 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "273 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9123,
-    "other_names": 454,
-    "verification": "complete_inventory_matches_baseline_plus_272_renames_and_26_created_functions"
+    "default_fun_names": 9122,
+    "other_names": 455,
+    "verification": "complete_inventory_matches_baseline_plus_273_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6391,6 +6391,29 @@
       "caveats": [
         "Synthetic valid objects and tables; collisions, subtype paths and malformed graphs unresolved.",
         "Original property labels and exact UI mode semantics unresolved.",
+        "No real game integration validation."
+      ]
+    },
+    {
+      "address": "1408f8330",
+      "original_name": "FUN_1408f8330",
+      "applied_name": "ResolveGluedOrMicrochipInputReference",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ResolveGluedOrMicrochipInputReference(void * state, uint object_reference)",
+      "evidence": [
+        "Complete 164-instruction resolver body matched original executable bytes.",
+        "256 direct hardware cases check full EAX reference return, upper10 encoded bits and full state/object preservation with no import models.",
+        "Original registration and initializer links identify IsGluedGadget for Microchip, HealthGadget and HealthModifier.",
+        "Existing3809 mask fixtures execute this resolver through both original mask helpers.",
+        "Cold backup, isolated trial, promotion and independent reopening verify name and RDI/ESI toEAX working ABI."
+      ],
+      "caveats": [
+        "Valid synthetic graphs/metadata; cache construction, malformed refs, cycles and large tables unresolved.",
+        "Original property40f label and other-kind metadata field identities unresolved.",
         "No real game integration validation."
       ]
     }
