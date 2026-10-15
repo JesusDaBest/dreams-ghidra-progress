@@ -5637,5 +5637,24 @@
       "Working descriptive names/types are not recovered source."
     ],
     "runtime_game_verified": false
+  },
+  "text_direction_class_lookahead_checkpoint": {
+    "original_helper_instructions": 68,
+    "native_cases": 262176,
+    "reference_base_parser_calls": 262344,
+    "scope": "Original class lookahead compared with direct original base-parser traversal and executable property data;table-domain encoded codepoints,two outside values and14 selected strings,2 alignments.",
+    "findings": [
+      "Category7 skipped;includes #,$,% rather than ordinary spaces.",
+      "Exhaustion returns byte255,special queued output/out-of-table units return0.",
+      "Caller state preserved using80-byte local copy.",
+      "Percent-placeholder helper chain was traced and loaded as original dependency."
+    ],
+    "limits": [
+      "Comparison shares original base parser/data;not independent Unicode validation.",
+      "Input decoding can transform supplied codepoint.",
+      "Selected multi-unit/control cases;full bidi/rendering unverified."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }
