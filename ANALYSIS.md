@@ -3014,3 +3014,13 @@ Original scanner tables explain a mode difference: the table selected by context
 The dispatcher passed 296 checks covering 37 accepted lengths from zero through selected inline boundaries up to 245, two wrapper settings and four alignments. Another 32 processor checks cover lengths 4 and 16, both wrapper settings, both scanner modes and four alignments, with auxiliary output enabled. Independent expectations cover complete output, context, cursor/list/input and defined auxiliary bytes. Parser-state guards and canaries remain intact; full processor parser-state mutations are not independently modeled.
 
 These checks use repeated uppercase A text and bounded inline capacity. Other accepted characters, capacity growth, malformed text, rendering and game runtime remain unresolved. The complete dispatcher is still unfinished, so no new name or whole-game completion credit is added.
+
+### Slash substitution key parsing
+
+The slash branch calls a parser for a 15-character typed key: one allowed type letter followed by fourteen lowercase hexadecimal characters. The seven decoded bytes form a 56-bit numeric value packed above the type byte. An all-zero numeric value normalizes the complete key to zero. Static prefix-mask decoding identifies exactly thirty accepted letters: CDMOPTUVabcdeghijkmopqrstuvwxz. Their individual semantic meanings remain unresolved.
+
+The original seven-byte hex decoder passed 15,360 checks: 256 payload patterns plus every possible byte at each of the fourteen input positions, in four alignments. Only digits and lowercase a–f are accepted. A bad pair returns false, retaining earlier completed output bytes and leaving the current and later output bytes untouched. There is no input-length parameter; this helper assumes fourteen readable bytes.
+
+The enclosing 404-instruction parser passed 740 checks covering all 52 letter prefixes, three hex patterns, fourteen invalid-hex positions, fifteen truncated lengths and four alignments. Failure preserves the caller cursor and parser state. After collecting fifteen ASCII units it clears the output key before validating the prefix and hex; on truncation the output remains untouched. Success commits the parsed cursor and state. Packed-key, acceptance, cursor and guard expectations are independently calculated. One decoder-state byte for digits was corrected from observed probes, so these checks do not independently specify the complete decoder state.
+
+Formatting, nesting, non-ASCII units, trailing input, type-specific substitutions and rendering remain unverified. No new saved names or whole-game completion credit is added. All fixtures and raw code remain local.

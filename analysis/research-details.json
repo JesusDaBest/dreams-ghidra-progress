@@ -6586,5 +6586,42 @@
       ],
       "project_modified": false
     }
+  },
+  "text_slash_key_checks": {
+    "hex_decoder": {
+      "calls": 15360,
+      "successes": 1920,
+      "original_instructions": 179,
+      "method": "Original179instruction decoder;256 seven-byte patterns andeverybyte0..255 at each14inputposition,4alignments.Independent lowerhex nibble/pair oracle andwholeguardedoutput/source/canary.",
+      "findings": [
+        "Decodes exactly14 lowercasehex characters to7bytes;uppercaseA..F rejected.",
+        "On invalid pair returnsfalse,retains earlier completed outputbytes andleavescurrent/laterbytes untouched.",
+        "No inputlength parameter;caller mustprovide14 readablebytes."
+      ],
+      "limits": [
+        "No unreadablepointer test.",
+        "Standalone decoder behavior doesnotverify slash parser or game substitution."
+      ],
+      "project_modified": false
+    },
+    "parser": {
+      "calls": 740,
+      "successes": 360,
+      "original_parser_instructions": 404,
+      "original_hex_instructions": 179,
+      "original_visible_unit_instructions": 96,
+      "method": "Original parser/hexdecoder/visibleunit plusoriginaldecoder/control/libc;52letterprefixes,3hexpatterns,14invalidhexpositions,15truncatedlengths,4alignments.Independent typeallowlist/packedkey/cursor/guards;digit-state byte41 modeled after observed probe,not independent full decoder-state proof.",
+      "findings": [
+        "Accepts typeprefix from exact30character allowlist plus14lowerhexcharacters.",
+        "Packs56-bitnumericvalue above typebyte;allzero numeric normalizeswholekeytozero.",
+        "Failure leavescaller span/state unchanged;outputzeroed after15ASCIIunits evenifprefix/hexinvalid,untouchedontruncation."
+      ],
+      "limits": [
+        "Formatting/nesting/nonASCII andtrailinginput notcovered.",
+        "Typeprefix meanings andcomplete slashsubstitution/rendering unresolved."
+      ],
+      "project_modified": false,
+      "type_prefix_allowlist": "CDMOPTUVabcdeghijkmopqrstuvwxz"
+    }
   }
 }
