@@ -3279,5 +3279,29 @@
     ],
     "runtime_game_verified": false,
     "math_import": "Exact loader NID resolves cosf; original local libc implementation and constants executed for bounded arguments."
+  },
+  "signal_generator_transition_checkpoint": {
+    "passed": 432,
+    "transition_counts": {
+      "0->1": 140,
+      "1->2": 84,
+      "2->3": 140,
+      "3->0": 84
+    },
+    "max_rng_draws_per_case": 2,
+    "max_output_absolute_error": 0.0,
+    "findings": [
+      "Crossing a rise/fall stage draws a new cached pause duration.",
+      "Entering fall draws the low magnitude endpoint; entering rise draws the high endpoint.",
+      "Unused timestep continues into subsequent stages; selected short durations cross multiple boundaries within one captured step.",
+      "Original30-bit LCG draw order and final worker seed checked.",
+      "When sweep<=original1/30 constant, newly drawn pause lower bound is max(PauseSeconds.low,1/30); otherwise max(PauseSeconds.low,0)."
+    ],
+    "limits": [
+      "Selected positive durations, finite magnitude ranges and four seeds.",
+      "Zero/negative/NaN durations and larger time steps untested.",
+      "TLS and guard environment modeled; no actual game validation."
+    ],
+    "runtime_game_verified": false
   }
 }
