@@ -2126,3 +2126,11 @@ Traced the shader file helper through resolved fopen, fseek, ftell, malloc, frea
 256 further cases execute the complete original getters and file helper with explicit formatting, failed-open and recording-only free models. When both open attempts fail, each getter returns null but passes its preexisting scratch pointer value to modeled free. Seeded scratch values survive to that argument unchanged. This identifies a potentially unsafe cleanup path; it does not establish a live-game crash, exploit or actual deallocation. Real scratch contents depend on prior stack state.
 
 The formatting model supplies only a terminated empty path, the open model returns null, and the free model records rather than frees. Actual formatting/filesystem behavior, successful loading, allocation failures, short reads and concurrency remain untested. Updated Ghidra comments survived independent reopening with unchanged names, signatures and all 409 getter instruction spans. The checked-name total remains 324.
+
+### Saved shader file-buffer reader
+
+Applied ReadShaderFileToAllocatedBuffer after reviewing its complete 44-instruction body and shader-loading callers. It opens the path, obtains a size truncated to 32 bits, allocates a buffer, requests the read and closes the file. Its Boolean result reports whether opening succeeded. Seek, tell, allocation, read and close errors do not change that result; true does not guarantee a complete usable buffer. Failed open leaves both output values untouched.
+
+384 failed-open and 144 opened-file original-native cases verify call receipts, outputs and guards. Explicit I/O/allocator boundary models do not perform real filesystem access, payload transfer or allocation/deallocation. These checks establish helper control flow, not real backend reliability or complete shader loading.
+
+Full cold backup, isolated trial, promotion and independent reopening verify the descriptive name and working signature without changing original instructions or archives. The generic helper is mapped under shared engine runtime support, rather than credited to an exclusive gameplay subsystem. Totals: 325 checked names (295 renames, 29 created functions and one retained-name review) among 9,580 discovered functions; 1,758 mapped and 7,822 unmapped. This is not a percentage of the entire game understood.

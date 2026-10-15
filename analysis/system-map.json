@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1757,
-  "unmapped_total": 7823,
+  "mapped_total": 1758,
+  "unmapped_total": 7822,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44918,6 +44918,27 @@
           "kind": "verified_semantic_review",
           "name": "PopulatePhysicsArrayPointerTable",
           "support": "Complete original body,1024 native cases with actual libc memset, and original particle array source linkage."
+        }
+      ]
+    },
+    "1413c3150": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic file-to-buffer helper shared by shader resource loaders, including physics shader getters; no exclusive gameplay subsystem inferred.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reads a file into an allocated byte buffer.",
+      "code_sha256": "16d2494628660844eeaca69273f69c68ab84e3a0b6c902194563513dd1f4d62f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadShaderFileToAllocatedBuffer",
+          "support": "Complete original body, shader loader callers,528 scoped native boundary-model cases and independently reopened name/signature."
         }
       ]
     }
