@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1830,
-  "unmapped_total": 7750,
+  "mapped_total": 1833,
+  "unmapped_total": 7747,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46451,6 +46451,69 @@
           "kind": "verified_semantic_review",
           "name": "ChooseTextDirectionByVisibleMajority",
           "support": "Original scanner andcommentcaller,native majority/referencechecks andindependentlyreopened byte signature."
+        }
+      ]
+    },
+    "1401790e0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Display-name construction and shared small-string helpers observed in text substitutions.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Display-name and small-string implementation.",
+      "code_sha256": "a76be68959b11563b309b4fd0b9550e882308c06534726f06beaa646cf46b303",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareSmallStringStorage",
+          "support": "Original bodies/assembly/callers,bounded native string/display-name checks andindependent saved-signature reopen;string helpers shared."
+        }
+      ]
+    },
+    "1401a5870": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Display-name construction and shared small-string helpers observed in text substitutions.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Display-name and small-string implementation.",
+      "code_sha256": "7d89a767a4f38c717f3f6c8cb1b938fcf128934081a76aa0eba88e40f3136c35",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertSmallStringSpan",
+          "support": "Original bodies/assembly/callers,bounded native string/display-name checks andindependent saved-signature reopen;string helpers shared."
+        }
+      ]
+    },
+    "1401a5af0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Display-name construction and shared small-string helpers observed in text substitutions.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Display-name and small-string implementation.",
+      "code_sha256": "c75b33ed7148b71f3193adb2c449c078fa6d0c7b263eb3e81486f258ce81b9ab",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildObjectDisplayName",
+          "support": "Original bodies/assembly/callers,bounded native string/display-name checks andindependent saved-signature reopen;string helpers shared."
         }
       ]
     }

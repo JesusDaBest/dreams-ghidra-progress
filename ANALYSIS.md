@@ -3094,3 +3094,11 @@ When the preferred name is empty and a nonempty fallback is supplied, the origin
 Another 76 checks exercise relative preferred-name storage inside the object rather than a name pointer. The nineteen source forms use a positive relative offset from the name field and four alignments. Cleanup, empty-after-cleanup behavior, whole guarded output and unchanged source object agree with the earlier pointer-backed cases.
 
 This extends the prior fallback limitation only to nonempty supplied fallback text. Null or empty fallback still enters unresolved localization branches. Current-object special cases, heap growth, null objects, complete object resolution and rendering remain unverified. No checked names or whole-game completion credit is added.
+
+### Saved small-string and display-name helpers
+
+Applied PrepareSmallStringStorage, InsertSmallStringSpan and BuildObjectDisplayName with reviewed SysV signatures. All 418 original instruction spans match. The storage helper returns its selected character buffer and takes a signed length; insertion takes a signed position and bounded source span; the display builder takes output, object and optional fallback pointers. Opaque pointers avoid inventing a complete source structure.
+
+The comments preserve 64-byte representation details, metadata at 0x3C, negative-length clamping, tested insertion behavior, preferred-name cleanup and verbatim nonempty fallback copying. Evidence includes 520 storage checks, 17,112 insertion checks and 172 display-builder integration checks across pointer-backed and relative preferred names plus supplied fallback. Old bytes may remain beyond the output terminator. The string helpers are shared beyond text; mapping records their observed display-name use rather than exclusivity.
+
+Owned-buffer release, heap growth/failure, invalid insertion positions, source aliasing, localization/current-object special cases and null objects remain unexecuted. Cold backup, isolated trial, promotion and independent reopening verify all names/signatures and unchanged archives. Totals: 400 checked names, 1,833 mapped and 7,747 unmapped among 9,580 discovered functions. Full object resolution, rendering and whole-game completion remain unproven.
