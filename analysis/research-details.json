@@ -3319,5 +3319,20 @@
       "No whole-subsystem completion or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "signal_generator_output_read_checkpoint": {
+    "passed": 84,
+    "findings": [
+      "SignalGenerator kind75 property0x11d maps to OutputNormalised+ec.",
+      "Reader returns success1 and packages exact float payload bits as Signal5 with alpha1.",
+      "Default reads embedded field; forced sparse mode uses matching override, otherwise falls back to embedded field.",
+      "Only float0, alpha32 and tag36 written; remaining output bytes unchanged, including tail padding."
+    ],
+    "limits": [
+      "Only SignalGenerator property0x11d; generic reader other types/properties not validated.",
+      "Runtime offset table reconstructed, full startup and actual wire scheduling not executed."
+    ],
+    "runtime_game_verified": false,
+    "boundary_limitation": "Existing Ghidra generic-reader body omits undefined indirect-jump blocks; selected path independently inspected as original raw bytes, without broad reader completion or signature claims."
   }
 }
