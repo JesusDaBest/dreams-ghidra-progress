@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "349 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "350 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9046,
-    "other_names": 534,
-    "verification": "complete_inventory_matches_baseline_plus_349_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9045,
+    "other_names": 535,
+    "verification": "complete_inventory_matches_baseline_plus_350_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8329,6 +8329,29 @@
         "No original loader, full layout, shaping or rendering execution.",
         "Property expectations use original tables.",
         "Working descriptive name and opaque pointer types; not recovered source."
+      ]
+    },
+    {
+      "address": "141557420",
+      "original_name": "FUN_141557420",
+      "applied_name": "SelectFontGlyphForTextUnit",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "DreamsFontGlyphRecord PS4_SYSV SelectFontGlyphForTextUnit(void * font_set, uint codepoint, void * parser_state)",
+      "evidence": [
+        "Complete380 original instruction spans matched; full selector, dispatch table and native callers inspected.",
+        "1800 ordinary calls over twelve original font lookup tables;46080 auxiliary-key/variant calls;4992 supplied/global payload preference calls.",
+        "Original selector/remapper/preference helper with exact RAX/RDX and unchanged guarded states/tables/context.",
+        "Cold backup, isolated trial, promotion and independent reopen verify aggregate return layout/storage and unchanged archives.",
+        "Recaptured layout caller now explicitly consumes named font and glyph_index fields and passes glyph data to ComputeTextGlyphAdvance."
+      ],
+      "caveats": [
+        "Synthetic bounded runtime objects and selected fallback directions; not exhaustive malformed-input testing.",
+        "Original loader, complete glyph payloads, full layout, shaping and rendering unexecuted.",
+        "Working descriptive name and reviewed return type; not recovered source."
       ]
     }
   ],

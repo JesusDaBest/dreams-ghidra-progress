@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1812,
-  "unmapped_total": 7768,
+  "mapped_total": 1813,
+  "unmapped_total": 7767,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46073,6 +46073,27 @@
           "kind": "verified_semantic_review",
           "name": "ComputeTextGlyphAdvance",
           "support": "Original body and linked glyph lookup, bit-exact arithmetic checks and independently reopened float signature."
+        }
+      ]
+    },
+    "141557420": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Selects font and glyph index for ordinary and special text units.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text-unit glyph selection implementation.",
+      "code_sha256": "2a9677a169a8358c8281120aec971149b720ca06d9e8e2a6f5f586562b9f25b9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectFontGlyphForTextUnit",
+          "support": "Original selector and callers, native checks of ordinary and all six special branches, independently reopened aggregate signature."
         }
       ]
     }
