@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 363,
+    "done": 364,
     "todo": 1475,
-    "total": 1838,
-    "behavior_or_helpers_reviewed": 298,
+    "total": 1839,
+    "behavior_or_helpers_reviewed": 299,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -25894,12 +25894,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 146,
+        "done": 147,
         "todo": 106,
-        "total": 252,
-        "behavior_or_helpers_reviewed": 131,
+        "total": 253,
+        "behavior_or_helpers_reviewed": 132,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 166,
+        "runtime_functions_identified": 167,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -26012,6 +26012,7 @@
           "BlendTypedSignalsByWeight",
           "CheckWirePropertyEligibility",
           "ReadShaderFileToAllocatedBuffer",
+          "ReadStructuredTextMemberName",
           "GenerateMortonBvhKeysJob",
           "InitializeMortonBvhLeavesJob",
           "LinkMortonBvhNodesJob",
@@ -26268,6 +26269,7 @@
           "1411c1590",
           "14126d9f0",
           "1413c3150",
+          "1414d6330",
           "1414f5a90",
           "1414f5c30",
           "1414f5cf0",
@@ -30309,6 +30311,281 @@
             ]
           },
           {
+            "name": "shared/strings",
+            "label": "Strings",
+            "done": 1,
+            "todo": 5,
+            "total": 6,
+            "behavior_or_helpers_reviewed": 1,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 1,
+            "property_type_functions_identified": 5,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "ReadStructuredTextMemberName"
+            ],
+            "todo_names": [
+              "0x14010cf30",
+              "0x14010f920",
+              "0x140d1ab80",
+              "0x141605ed0",
+              "0x1416062d0"
+            ],
+            "done_addresses": [
+              "1414d6330"
+            ],
+            "todo_addresses": [
+              "14010cf30",
+              "14010f920",
+              "140d1ab80",
+              "141605ed0",
+              "1416062d0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/strings/smallstring",
+                "label": "Small String",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14010cf30",
+                  "0x14010f920"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14010cf30",
+                  "14010f920"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/strings/smallstring/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x14010cf30",
+                      "0x14010f920"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "14010cf30",
+                      "14010f920"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/strings/serialisedstringid",
+                "label": "Serialised String Id",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d1ab80"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d1ab80"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/strings/serialisedstringid/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d1ab80"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d1ab80"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/strings/string",
+                "label": "string",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x141605ed0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "141605ed0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/strings/string/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x141605ed0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "141605ed0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/strings/structured-text",
+                "label": "Structured text",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ReadStructuredTextMemberName"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1414d6330"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/strings/structured-text/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ReadStructuredTextMemberName"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1414d6330"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/strings/wchar-t",
+                "label": "wchar t",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1416062d0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1416062d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/strings/wchar-t/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1416062d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1416062d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/support",
             "label": "Engine support",
             "done": 1,
@@ -30760,230 +31037,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "140d21af0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/strings",
-            "label": "Strings",
-            "done": 0,
-            "todo": 5,
-            "total": 5,
-            "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
-            "property_type_functions_identified": 5,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [],
-            "todo_names": [
-              "0x14010cf30",
-              "0x14010f920",
-              "0x140d1ab80",
-              "0x141605ed0",
-              "0x1416062d0"
-            ],
-            "done_addresses": [],
-            "todo_addresses": [
-              "14010cf30",
-              "14010f920",
-              "140d1ab80",
-              "141605ed0",
-              "1416062d0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/strings/smallstring",
-                "label": "Small String",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14010cf30",
-                  "0x14010f920"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14010cf30",
-                  "14010f920"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/strings/smallstring/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x14010cf30",
-                      "0x14010f920"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "14010cf30",
-                      "14010f920"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/strings/serialisedstringid",
-                "label": "Serialised String Id",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d1ab80"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d1ab80"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/strings/serialisedstringid/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d1ab80"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d1ab80"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/strings/string",
-                "label": "string",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x141605ed0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "141605ed0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/strings/string/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x141605ed0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "141605ed0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/strings/wchar-t",
-                "label": "wchar t",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1416062d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1416062d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/strings/wchar-t/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1416062d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1416062d0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -42188,5 +42241,5 @@
       }
     ]
   },
-  "unmapped": 7742
+  "unmapped": 7741
 }

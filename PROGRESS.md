@@ -2860,3 +2860,11 @@ Applied UpdateObjectCacheFromResponseCode with an integer response code, 32-byte
 The writer receives an empty span, false retry-reset flag and a deadline of current time plus 600 seconds. Numeric status names and the concrete response type remain unresolved. The 66-case assembly-derived truth table is a model, not runtime validation.
 
 All 80 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify the name, signature, key layout and unchanged archives. Totals: 405 checked names and 1,838 mapped functions among 9,580 discovered functions; 7,742 still need system mapping.
+
+### Saved structured-text member reader
+
+Applied ReadStructuredTextMemberName with an opaque parser-state pointer and void return. It reads quoted or unquoted object member names, requires a colon and computes their name hash. These hashes feed response payload dispatch; they are member-name identifiers, not proven intrinsic runtime type IDs.
+
+The original parser, quote scanner, whitespace helper and hash routine passed 1,296 selected checks: nine names, unquoted and both quote styles, selected whitespace and 16 alignments. Complete parser state, input, guards, spans, cursor and hash were compared. Separately, 144 original-hash checks confirmed candidate matches for player_identity, playeridentity, impcfg, version, dream, user, edit_rights, comment and photo. Hashes can collide, so those matches do not uniquely recover original type names.
+
+All 144 original reader instructions match. Trial, promotion and independent reopen verify the saved name/signature and unchanged archives. Escapes, comments, malformed input, stream refill, arrays and the full payload parser remain unexecuted. Totals: 406 checked names and 1,839 mapped functions among 9,580 discovered functions; 7,741 still need system mapping.

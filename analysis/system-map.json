@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1838,
-  "unmapped_total": 7742,
+  "mapped_total": 1839,
+  "unmapped_total": 7741,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46621,6 +46621,27 @@
           "support": "Complete original response-status helper, upstream caller ABI and independent reopen; no runtime execution claimed."
         }
       ]
+    },
+    "1414d6330": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "strings",
+        "structured-text",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared structured-text member reader used by response payload parsing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reads member spans and hashes in structured text.",
+      "code_sha256": "7e1d05f09c80dea9a15cb8c07a0057de92bdfa7ef01c82ac407027eb7679d09c",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadStructuredTextMemberName",
+          "support": "Complete member-reader body, bounded native checks and independent reopen; no complete payload execution claimed."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -46672,6 +46693,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "structured-text",
+              "label": "Structured text",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

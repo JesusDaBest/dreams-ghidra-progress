@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "375 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "376 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9020,
-    "other_names": 560,
-    "verification": "complete_inventory_matches_baseline_plus_375_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9019,
+    "other_names": 561,
+    "verification": "complete_inventory_matches_baseline_plus_376_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8919,6 +8919,28 @@
         "Static evidence only; the 66-case truth table is a derived model, not native runtime execution.",
         "Concrete response descriptor and numeric source enum names remain unresolved.",
         "Some referenced callers lack function definitions and receive no review credit."
+      ]
+    },
+    {
+      "address": "1414d6330",
+      "original_name": "FUN_1414d6330",
+      "applied_name": "ReadStructuredTextMemberName",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReadStructuredTextMemberName(void * parser_state)",
+      "evidence": [
+        "Complete144 original instructions and typed trial decompilation read; bytes matched.",
+        "1296 original-code checks across nine member names, unquoted and both quote styles, whitespace and16 alignments; complete state/input/guards compared.",
+        "Original hash routine separately confirms144 checks for nine literal member-name candidates.",
+        "Cold backup, isolated trial, promotion and independent reopen verify one-pointer SysV void signature and unchanged archives."
+      ],
+      "caveats": [
+        "Checks cover complete in-memory selected names only; escapes, comments, malformed input, refill, arrays and full payload parser remain unexecuted.",
+        "Member hashes are not unique original runtime type names.",
+        "Working descriptive function name, not recovered source."
       ]
     }
   ],

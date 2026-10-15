@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 405,
+    "checked_and_applied_names": 406,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 405,
+    "verified_names": 406,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "375 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "376 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7039,6 +7039,18 @@
       "Static evidence only; the 66-case truth table is a derived model, not native runtime execution.",
       "Concrete response descriptor and numeric source enum names remain unresolved.",
       "Some referenced callers lack function definitions and receive no review credit."
+    ],
+    "runtime_game_verified": false
+  },
+  "structured_member_reader_saved_checkpoint": {
+    "saved_name": "ReadStructuredTextMemberName",
+    "original_instructions": 144,
+    "native_member_parser_checks": 1296,
+    "evidence_scope": "complete body plus bounded original-code parser checks; not complete payload parser execution",
+    "limits": [
+      "Checks cover complete in-memory selected names only; escapes, comments, malformed input, refill, arrays and full payload parser remain unexecuted.",
+      "Member hashes are not unique original runtime type names.",
+      "Working descriptive function name, not recovered source."
     ],
     "runtime_game_verified": false
   }
