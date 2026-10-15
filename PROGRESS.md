@@ -2102,3 +2102,11 @@ Decoded Advance's 1,152-byte executable span and reassembled all 236 instruction
 The selected final write path keeps candidate velocity and commits candidate position when either the candidate XYZ squared length exceeds a threshold and particle flag bit 13 is set, or bit 0 in a second particle word is set. Otherwise it writes zero velocity and does not overwrite the primary position at that commit point. Thus Predict's earlier flag gate alone does not establish the final motion outcome.
 
 The second bit's producer/meaning, threshold initialization and earlier correction/matrix paths remain unresolved. This is a selected static data-flow review plus full byte-exact instruction decoding, not execution or complete understanding of Advance. No shader/function completion credit is added; raw shader code remains local.
+
+### GrabConstraint marker reaches Advance
+
+Found a writer for the second particle word used by Advance's final commit gate. After checking the slot's particle range and activation mask, GrabConstraint reads that word, sets bit 0, and writes it back with an additional descriptor-count bounds check. The common CPU descriptor table links this write to the same array read by Advance. This establishes one path by which an active grab constraint can force the final commit independently of the motion threshold and particle bit 13.
+
+The marker is set before later correction calculations, so it does not prove that a nonzero correction was produced. CPU instructions copy the slot mask into the parameter field read by the shader; an identified set site enables a slot when its state byte equals 2. The original state label and complete mask provenance remain unresolved.
+
+GrabConstraint (475 instructions), ApplyConstraints (134) and ResetConstraints (285) now have byte-exact decode/reassembly checks. ResetConstraints was separately matched to the local archive with the original native path hash routine. These decoding results do not mark their complete behaviors understood. Only the selected marker writer/reader path is traced here; GPU execution, other writers and synchronization behavior remain unverified. No new naming credit is added, and binaries/disassembly stay local.

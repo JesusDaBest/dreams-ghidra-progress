@@ -5332,8 +5332,47 @@
     ],
     "limits": [
       "Only selected data flow and final commit gate reviewed; earlier correction/matrix/contact-related paths remain incompletely interpreted.",
-      "The second word bit0 producer/meaning and threshold producer remain unresolved.",
+      "One GrabConstraint writer for bit0 is now traced; complete writer inventory and threshold producer remain unresolved.",
       "Full GPU execution, arithmetic rounding and body-index validity not tested."
+    ],
+    "new_names_checked": 0,
+    "runtime_game_verified": false
+  },
+  "grabconstraint_advance_marker_checkpoint": {
+    "status": "selected_static_writer_to_reader_linked",
+    "original_cpu_spans_checked": 41,
+    "shader_decoding": [
+      {
+        "name": "grabconstraint",
+        "code_bytes": 2312,
+        "instructions": 475,
+        "byte_exact_roundtrip": true
+      },
+      {
+        "name": "applyconstraints",
+        "code_bytes": 660,
+        "instructions": 134,
+        "byte_exact_roundtrip": true
+      },
+      {
+        "name": "resetconstraints",
+        "code_bytes": 1428,
+        "instructions": 285,
+        "byte_exact_roundtrip": true
+      }
+    ],
+    "findings": [
+      "GrabConstraint first bounds the particle against its slot range and checks the slot activation mask.",
+      "On that active path it loads the second particle word, ORs bit0 and stores it only where the particle index is below descriptor record count.",
+      "This is the same common parameter-table array whose bit0 Advance uses to force the final commit independently of bit13/threshold.",
+      "The marker is set before later branch-specific grab correction arithmetic; it is not evidence that a nonzero correction has already been produced.",
+      "CPU copies its accumulated slot mask into parameter+0x80; one identified setter ORs1<<slot when a per-slot state byte equals2. Exact original declaration and state label remain unresolved."
+    ],
+    "limits": [
+      "One verified writer path, not an exhaustive writer inventory.",
+      "No GPU execution, inter-dispatch synchronization validation or complete GrabConstraint semantic review.",
+      "Body metadata flag0x20 producer/meaning and index bound remain unresolved.",
+      "ApplyConstraints and ResetConstraints are decoded with byte-exact roundtrip but not given semantic completion credit."
     ],
     "new_names_checked": 0,
     "runtime_game_verified": false
