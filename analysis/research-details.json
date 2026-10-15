@@ -3472,5 +3472,20 @@
       "No whole-subsystem completion or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "parent_cache_construction_checkpoint": {
+    "original_instruction_spans_checked": 219,
+    "enum_strings_original_bytes_match": true,
+    "findings": [
+      "Runtime object registration writes parent low16 to parent cache and type low7 to cached type byte.",
+      "The same path updates object count and cache count to inserted index+1.",
+      "Original Thing type enum binds13 Microchip,14 Timeline,15 Sound; these are the cached parent types skipped by ResolveParentScopeReference."
+    ],
+    "limits": [
+      "Static writer/enum inspection; registration routine and cache rebuild not execution-tested.",
+      "The object mode byte used by fallback traversal remains semantically unresolved.",
+      "Cache invalidation, full grouping and actual game scheduling remain unverified."
+    ],
+    "runtime_game_verified": false
   }
 }

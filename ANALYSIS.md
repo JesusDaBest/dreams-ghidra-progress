@@ -1841,3 +1841,8 @@ Applied and independently reopened ResolveParentScopeReference with Game/encoded
 24,576 original-instruction cases validate both modes separately on valid eight-object acyclic chains, with selected cache/mode patterns, glued flags and encoded high bits. Return values, complete objects and selected Game lookup ranges are checked. The glued offset fixture is reconstructed from an original startup store; startup and cache construction are not executed, and mode equivalence is not established. Invalid references, cycles, absent objects, other object kinds, complete Gate grouping and actual scheduling remain unverified.
 
 Backed-up trial, promotion and independent reopening confirm the name/signature and unchanged instructions/archives. Totals:270 checked names;1,713 mapped functions;7,857 unmapped. No whole-subsystem completion or audited-byte credit added.
+### Parent cache writer and container types
+
+Fresh native inspection of a runtime object-registration path shows the parent cache receiving the object parent's low16 bits and the type cache receiving Thing kind low7 bits. Object count and cache count are both set to the inserted index plus1. The original Thing enum registers13 as Microchip,14 as Timeline and15 as Sound. This establishes the previously unnamed cached types skipped by ResolveParentScopeReference as those three containers.
+
+219 writer/enum instruction spans and the enum string bytes match the original unencrypted PS4 executable. This is static data-flow evidence; object registration and full cache rebuild were not execution-tested. The fallback object-mode byte, cache invalidation, complete grouping and actual game scheduling remain unresolved. No function-name or completion increment;270 functions remain checked.
