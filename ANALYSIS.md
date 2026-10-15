@@ -2672,3 +2672,13 @@ Applied ComputeSpecialEmojiOutputSize and TryWriteSpecialEmojiOutput with workin
 All 135 source IDs and 14 selected signed tones were tested: 186,320 named/untone cases and 79,436 display cases across bounded capacities and four alignments. Exact bytes, cursors, guards, indices, source data and canary were checked. The original snprintf %s_tone%c path passed 2,548 separate cases, without a host formatter. Display expectations share the separately checked original lookup. Other formatting conversions and the full reverse text pipeline remain unresolved.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 361 checked names (331 renames, 29 created functions and one retained-name review), 1,794 mapped and 7,786 unmapped among 9,580 discovered functions. This is not whole-game completion.
+
+### Saved internal text to readable markup conversion
+
+Applied ComputeReadableTextFromInternalSize and TryWriteReadableTextFromInternal with bounded input/output arguments and opaque parser state. The functions decode internal tokens, count or emit readable text and markup, and apply state controls. Their output can normalize the input; it is not guaranteed to reproduce original source markup.
+
+Native checks cover 1,056 basic capacity cases, 440,264 special-emoji capacity cases (6,480 complete streams), and 5,584 cases across all 21 existing forward-generated streams and eight flag settings. The original integer formatter passed 49,032 separate cases. Successful bytes, sizes, cursors and state agree; buffer, input, source, index and canary checks pass. Most normalized-output expectations share a full-capacity native baseline or separately checked helper, rather than an independent complete specification.
+
+Selected tests cover text, styles, buttons, placeholders, escapes, color, size and emoji/flag output. Malformed streams, all token/flag combinations, substitution and rendering remain unresolved. Short-buffer failures can leave partial writes or state changes; atomic failure is not claimed.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged instructions/archives. Totals: 363 checked names (333 renames, 29 created functions and one retained-name review), 1,796 mapped and 7,784 unmapped among 9,580 discovered functions. No whole-game completion percentage is inferred.

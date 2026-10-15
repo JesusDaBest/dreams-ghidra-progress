@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "331 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "333 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9064,
-    "other_names": 516,
-    "verification": "complete_inventory_matches_baseline_plus_331_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9062,
+    "other_names": 518,
+    "verification": "complete_inventory_matches_baseline_plus_333_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7895,6 +7895,54 @@
         "Selected14tonevalues,notall32-bitinputs.",
         "Only %s_tone%c formatterpath verified;otherconversions unresolved.",
         "Whole reverseformatter/rendering/substitution unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414b3fa0",
+      "original_name": "FUN_1414b3fa0",
+      "applied_name": "ComputeReadableTextFromInternalSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV ComputeReadableTextFromInternalSize(uchar * internal_begin, uchar * internal_end, uint format_flags)",
+      "evidence": [
+        "Complete691/1177instruction original size/writer bodies andcallerflow reviewed;nativeSELF andsavedbytes agree.",
+        "1056basiccases,440264specialemoji capacitycases/6480fullstreams,5584cases across21forwardvectors and8flags;exactsuccessbytes/size/cursors/state,guards/sources/indices/canary.",
+        "Originalsnprintf integerpaths checked49032cases andstringpath2548cases;nohostformatter.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify names/signatures andunchangedarchives."
+      ],
+      "caveats": [
+        "Selectedvalidstreams only;notalltokens/flags ormalformedinputs.",
+        "Mostnormalizationexpectations share nativebaseline/helperoracle.",
+        "Capacityfailure maypartiallywrite/advancestate;notatomic.",
+        "Exactsource restoration,substitutionandrendering unresolved.",
+        "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414b2aa0",
+      "original_name": "FUN_1414b2aa0",
+      "applied_name": "TryWriteReadableTextFromInternal",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryWriteReadableTextFromInternal(uchar * * output_cursor_inout, uchar * output_end, uchar * * input_cursor_inout, uchar * input_end, void * parser_state)",
+      "evidence": [
+        "Complete691/1177instruction original size/writer bodies andcallerflow reviewed;nativeSELF andsavedbytes agree.",
+        "1056basiccases,440264specialemoji capacitycases/6480fullstreams,5584cases across21forwardvectors and8flags;exactsuccessbytes/size/cursors/state,guards/sources/indices/canary.",
+        "Originalsnprintf integerpaths checked49032cases andstringpath2548cases;nohostformatter.",
+        "Coldbackup,isolatedtrial,promotion,independentreopen verify names/signatures andunchangedarchives."
+      ],
+      "caveats": [
+        "Selectedvalidstreams only;notalltokens/flags ormalformedinputs.",
+        "Mostnormalizationexpectations share nativebaseline/helperoracle.",
+        "Capacityfailure maypartiallywrite/advancestate;notatomic.",
+        "Exactsource restoration,substitutionandrendering unresolved.",
         "Workingdescriptive names/types are not recoveredsource."
       ]
     }

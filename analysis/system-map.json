@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1794,
-  "unmapped_total": 7786,
+  "mapped_total": 1796,
+  "unmapped_total": 7784,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45695,6 +45695,48 @@
           "kind": "verified_semantic_review",
           "name": "TryWriteSpecialEmojiOutput",
           "support": "Originalbodies andnative named/display capacitychecks withoriginalformatter,independently reopenednames/signatures."
+        }
+      ]
+    },
+    "1414b3fa0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Internaltext-to-readablemarkup size/writer usedby text-record conversion caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Internaltext readablemarkup conversion implementation.",
+      "code_sha256": "4eb8feb784fe94f822b9639ff75acc74d1e6aceb51322233773a91cc326f5c9a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeReadableTextFromInternalSize",
+          "support": "Originalbodies,native conversion checks withoriginalformatter,independently reopenednames/signatures."
+        }
+      ]
+    },
+    "1414b2aa0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Internaltext-to-readablemarkup size/writer usedby text-record conversion caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Internaltext readablemarkup conversion implementation.",
+      "code_sha256": "b6ec50e38056d617be3e594bd998955a210711cbb4503faac3adffdb3d9e810f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryWriteReadableTextFromInternal",
+          "support": "Originalbodies,native conversion checks withoriginalformatter,independently reopenednames/signatures."
         }
       ]
     }
