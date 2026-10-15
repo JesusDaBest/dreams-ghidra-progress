@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 250,
+    "done": 251,
     "todo": 1482,
-    "total": 1732,
-    "behavior_or_helpers_reviewed": 187,
+    "total": 1733,
+    "behavior_or_helpers_reviewed": 188,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 84,
+        "done": 85,
         "todo": 411,
-        "total": 495,
-        "behavior_or_helpers_reviewed": 39,
+        "total": 496,
+        "behavior_or_helpers_reviewed": 40,
         "properties_or_types_reviewed": 45,
-        "runtime_functions_identified": 41,
+        "runtime_functions_identified": 42,
         "property_type_functions_identified": 454,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -57,6 +57,7 @@
           "ReadInverterOutputVariant",
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
+          "AccumulateHealthModifierDelta",
           "UpdateVariableGadgetValues",
           "UpdateSignalInspectorChangeCounters",
           "UpdateGateActivationRequests",
@@ -556,6 +557,7 @@
           "1408ceb90",
           "1408cecf0",
           "1408cf9d0",
+          "1408e31c0",
           "1408e4bb0",
           "1408ecaa0",
           "1408ed310",
@@ -8823,17 +8825,18 @@
           {
             "name": "gadgets-logic/gameplay",
             "label": "Gameplay & scoring",
-            "done": 7,
+            "done": 8,
             "todo": 57,
-            "total": 64,
-            "behavior_or_helpers_reviewed": 2,
+            "total": 65,
+            "behavior_or_helpers_reviewed": 3,
             "properties_or_types_reviewed": 5,
-            "runtime_functions_identified": 2,
+            "runtime_functions_identified": 3,
             "property_type_functions_identified": 62,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "VisitVariableGadgetProperties",
+              "AccumulateHealthModifierDelta",
               "UpdateVariableGadgetValues",
               "InitializeVariableGadgetDefaults",
               "RegisterForceRepulseGadgetTypeDescriptor",
@@ -8902,6 +8905,7 @@
             ],
             "done_addresses": [
               "1404e33a0",
+              "1408e31c0",
               "1408e4bb0",
               "140944f20",
               "140d56fc0",
@@ -9167,6 +9171,88 @@
                       "140ccc020",
                       "140d68f60"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/gameplay/healthmodifier",
+                "label": "Health Modifier",
+                "done": 1,
+                "todo": 3,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AccumulateHealthModifierDelta"
+                ],
+                "todo_names": [
+                  "0x1404d54d0",
+                  "0x140d57570",
+                  "0x140d6fca0"
+                ],
+                "done_addresses": [
+                  "1408e31c0"
+                ],
+                "todo_addresses": [
+                  "1404d54d0",
+                  "140d57570",
+                  "140d6fca0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/gameplay/healthmodifier/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404d54d0",
+                      "0x140d57570",
+                      "0x140d6fca0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404d54d0",
+                      "140d57570",
+                      "140d6fca0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/gameplay/healthmodifier/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AccumulateHealthModifierDelta"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408e31c0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -9555,61 +9641,6 @@
                     ],
                     "todo_addresses": [
                       "1404ceba0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/gameplay/healthmodifier",
-                "label": "Health Modifier",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404d54d0",
-                  "0x140d57570",
-                  "0x140d6fca0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404d54d0",
-                  "140d57570",
-                  "140d6fca0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/gameplay/healthmodifier/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404d54d0",
-                      "0x140d57570",
-                      "0x140d6fca0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404d54d0",
-                      "140d57570",
-                      "140d6fca0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41170,5 +41201,5 @@
       }
     ]
   },
-  "unmapped": 7845
+  "unmapped": 7844
 }

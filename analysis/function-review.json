@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "265 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "266 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9130,
-    "other_names": 447,
-    "verification": "complete_inventory_matches_baseline_plus_265_renames_and_26_created_functions"
+    "default_fun_names": 9129,
+    "other_names": 448,
+    "verification": "complete_inventory_matches_baseline_plus_266_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6227,6 +6227,31 @@
         "Nonuniform extents, mode2/3 nonempty geometry, all consumer bindings and gameplay integration remain unresolved.",
         "HealthModifier route statically traced; full producer-to-gameplay execution and other consumers remain unresolved.",
         "Working enum width1 follows actual byte storage; original C++ enum width and descriptor metadata2 meaning remain unresolved."
+      ]
+    },
+    {
+      "address": "1408e31c0",
+      "original_name": "FUN_1408e31c0",
+      "applied_name": "AccumulateHealthModifierDelta",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV AccumulateHealthModifierDelta(void * game_context, uint modifier_index, void * modifier, uchar player_mask, int target_index, float weight)",
+      "evidence": [
+        "Complete386-instruction helper captured, inspected and matched original executable bytes.",
+        "Main update HealthModifier query loop passes result weight to helper and consumes itsAL acceptance result.",
+        "11520 original-instruction arithmetic/player-routing cases plus5 target rejection cases match independent float32 and state-change references.",
+        "Original HealthGadget schema names CurHealth,MaxHealth,CooldownTimeLeft,DamageMultiplier and ConsiderPlayers; original mode enum names PerSec/PerHit.",
+        "Cold backup, isolated ABI trial, promotion and independent reopening verify saved name, six-input register signature and boolAL return."
+      ],
+      "caveats": [
+        "Default state mode only; special immediate health/cooldown/death-output updates not executed.",
+        "PerHit previous-history suppression and hit-cache writes not executed.",
+        "Finite selected health/weights/multipliers, valid target indices and explicit Power metadata offset40; nonfinite inputs and malformed references untested.",
+        "Selected state windows per case plus final full-state check; no game-loop, integration or concurrency validation.",
+        "Working signature order and opaque object pointers; original C++ declarations and complete caller semantics not recovered."
       ]
     }
   ],
