@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1761,
-  "unmapped_total": 7819,
+  "mapped_total": 1762,
+  "unmapped_total": 7818,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45004,6 +45004,27 @@
           "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]
+    },
+    "1414ada10": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Character unit decoder used by the traced text-parser and debug-text emission path; no exclusivity claim.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Decodes bounded text unit and escapes.",
+      "code_sha256": "894df2ea9e9c149ff5fd8f74f4ca22cd34b0f23ede51b728159f813c1a780dc9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodeTextUtf8UnitWithEscapes",
+          "support": "Complete original body,7372 scoped native cases and independently reopened name/signature."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -47705,6 +47726,17 @@
             {
               "id": "prim-text",
               "label": "Text drawing",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "text-decoding",
+              "label": "Text decoding",
               "children": [
                 {
                   "id": "runtime-implementation",

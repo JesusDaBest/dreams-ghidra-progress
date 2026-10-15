@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "298 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "299 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9097,
-    "other_names": 483,
-    "verification": "complete_inventory_matches_baseline_plus_298_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9096,
+    "other_names": 484,
+    "verification": "complete_inventory_matches_baseline_plus_299_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7103,6 +7103,29 @@
         "Tests use synthetic headers/descriptors; real resource compatibility and malformed inputs are not verified.",
         "No GPU execution or complete rendering verification.",
         "Descriptive names and opaque working pointer types are not recovered original declarations."
+      ]
+    },
+    {
+      "address": "1414ada10",
+      "original_name": "FUN_1414ada10",
+      "applied_name": "DecodeTextUtf8UnitWithEscapes",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV DecodeTextUtf8UnitWithEscapes(uint * codepoint_output, uchar * * cursor, uchar * end, uchar * escaped_output)",
+      "evidence": [
+        "Complete143-instruction original function and text-parser callers read; native bytes agree with original SELF.",
+        "4380 ordinary UTF8-like unit cases verify codepoint,cursor,Boolean,flag,input and guards.",
+        "2992 escape cases execute actual original132-byte libc memchr through original import thunk, without modeled calls.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify saved name/signature and unchanged original archives."
+      ],
+      "caveats": [
+        "Not strict Unicode scalar or shortest-encoding validation.",
+        "Backslash-n emits linefeed but leaves cursor at n and escaped flag clear; effect in higher parser unresolved.",
+        "Finite malformed/escape corpus; higher markup/control parsing and complete renderer unverified.",
+        "Descriptive name and working types are not recovered original source declarations."
       ]
     }
   ],

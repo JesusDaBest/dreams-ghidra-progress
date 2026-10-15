@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 286,
+    "done": 287,
     "todo": 1475,
-    "total": 1761,
-    "behavior_or_helpers_reviewed": 221,
+    "total": 1762,
+    "behavior_or_helpers_reviewed": 222,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -12205,12 +12205,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 4,
+        "done": 5,
         "todo": 311,
-        "total": 315,
-        "behavior_or_helpers_reviewed": 1,
+        "total": 316,
+        "behavior_or_helpers_reviewed": 2,
         "properties_or_types_reviewed": 3,
-        "runtime_functions_identified": 106,
+        "runtime_functions_identified": 107,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12218,7 +12218,8 @@
           "AddRecordModeEnumValue",
           "RegisterEditOpFieldOffset",
           "RegisterRecordModeFieldOffset",
-          "RegisterNodeCustomIconFieldOffset"
+          "RegisterNodeCustomIconFieldOffset",
+          "DecodeTextUtf8UnitWithEscapes"
         ],
         "todo_names": [
           "0x140111e30",
@@ -12537,7 +12538,8 @@
           "140cb3d40",
           "140cdfdb0",
           "140cf47a0",
-          "140d71a90"
+          "140d71a90",
+          "1414ada10"
         ],
         "todo_addresses": [
           "140111e30",
@@ -14216,16 +14218,18 @@
           {
             "name": "interface/text",
             "label": "Text & fonts",
-            "done": 0,
+            "done": 1,
             "todo": 54,
-            "total": 54,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 55,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 13,
+            "runtime_functions_identified": 14,
             "property_type_functions_identified": 41,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "DecodeTextUtf8UnitWithEscapes"
+            ],
             "todo_names": [
               "0x140c8caf0",
               "0x140c8cba0",
@@ -14282,7 +14286,9 @@
               "0x1415c0080",
               "0x1415c0430"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1414ada10"
+            ],
             "todo_addresses": [
               "140c8caf0",
               "140c8cba0",
@@ -15283,6 +15289,53 @@
                     "todo_addresses": [
                       "140d2de80"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "interface/text/text-decoding",
+                "label": "Text decoding",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "DecodeTextUtf8UnitWithEscapes"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1414ada10"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/text/text-decoding/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "DecodeTextUtf8UnitWithEscapes"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1414ada10"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -41478,5 +41531,5 @@
       }
     ]
   },
-  "unmapped": 7819
+  "unmapped": 7818
 }

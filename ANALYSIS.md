@@ -2454,3 +2454,13 @@ Applied CreateVertexFetchShaderFromHeader with a working void return and instruc
 2,560 connected original-native cases execute the size wrapper, generation wrapper, setup helper and generator together (362 instruction spans). Calculated size equals the exact emitted instructions plus trailing metadata. Output slack/guards, register modifier, complete inputs and canary match at four alignments without modeled callees/imports. Synthetic header acceptance does not establish real resource compatibility, malformed-header safety or GPU execution.
 
 Full cold backup, isolated trial, promotion and independent reopening verify the saved name/signature, original instructions and archives. Totals: 328 checked names (298 renames, 29 created functions and one retained-name review), 1,761 mapped functions and 7,819 unmapped among 9,580 discovered functions. Whole-game completion is not claimed.
+
+### Debug-text records and saved text-unit decoder
+
+Applied DecodeTextUtf8UnitWithEscapes with working codepoint-output, cursor, end and escaped-flag arguments. 4,380 ordinary-unit and 2,992 escape original-native cases verify exact values, cursor advancement and guards; escape tests use the actual original libc memchr. The decoder is not a strict Unicode validator. Backslash-n produces linefeed while leaving the cursor at n and the escaped flag clear; its higher-parser effect remains unresolved.
+
+The linked archived debug-text vertex shader directly reads 16-byte packed records and expands each into six vertices. CPU emission and draw callers confirm the record layout and pending-count times six. 8,192 tests of original packing windows verify half-float pairs, color and atlas row cutoff. Both inline character-normalization paths match across every 16-bit input and selected 32-bit boundaries. The 344-byte shader independently decodes/reassembles exactly. Selected windows do not validate the entire emitter; glyph decoding/lookup, graphics submission, resource lifetime and GPU execution remain unresolved.
+
+Native resource-path hashing also matches 94 vertex-path candidates to local archived shaders. All have zero fetch-input count in the inspected layout; individual caller links remain leads except the directly traced examples. Construction checks cover 1,504 resource/alignment cases, not in-game rendering.
+
+Full cold backup, isolated trial, promotion and independent reopening verify the new name/signature, original instructions and archives. Totals: 329 checked names (299 renames, 29 created functions and one retained-name review), 1,762 mapped and 7,818 unmapped among 9,580 discovered functions. No whole-game completion percentage is inferred.
