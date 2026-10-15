@@ -3691,5 +3691,25 @@
       "Descriptive working names; no whole-Gate or running-game completion claim."
     ],
     "runtime_game_verified": false
+  },
+  "gate_callback_boundaries_checkpoint": {
+    "callback_instruction_counts": [
+      50,
+      4
+    ],
+    "findings": [
+      "Creation callback requests0x160 bytes from imported allocation thunk, initializes the object and returns its pointer.",
+      "Known immediate defaults: Power1, Priority10, Name0, ResetMode0, Reset0, GateActive0, GateInterrupt0, QueueFrame0, QueueLevel0, request/forget/waiting0, GateSync1, ScopeType1.",
+      "InputA and OutputA payload/alpha/type are cleared to NONE/zero; tail bytes are also covered by initial zero stores.",
+      "Cleanup callback returns for null; nonnull tail-jumps to an imported deallocation thunk.",
+      "A native initialization window loads original file-backed colour components and stores them to the global read by Gate creation."
+    ],
+    "limits": [
+      "Allocation/deallocation import symbols not yet resolved in this review.",
+      "Default colour has a static initialization writer with original constants; initializer execution and possible later indirect writers remain unverified.",
+      "No native execution, function creation or rename performed.",
+      "Full lifecycle, out-of-memory behavior and real game execution remain unverified."
+    ],
+    "runtime_game_verified": false
   }
 }

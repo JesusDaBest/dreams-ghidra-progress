@@ -1578,3 +1578,9 @@ This validates the connected sequence for selected finite Number inputs and nonn
 Applied InitializeGateTypeDescriptor and RegisterGateProperties. The initializer binds the original Gate label, base properties, descriptor callbacks and property registrar. The registrar defines the reflected input/output, priority, queue, reset and scope fields and their enum metadata.374 native instruction spans match the original PS4 executable; runtime traces corroborate selected offsets.
 
 Cold backup, isolated trial, promotion and independent reopening verify both names and void/no-argument signatures with unchanged instructions and original archives. Registration allocation/static guards and callbacks remain unexecuted. Totals:272 checked names;1,714 mapped functions;7,856 unmapped. No whole-subsystem completion credit.
+
+### Gate creation and cleanup callback boundaries
+
+The Gate descriptor points to two callbacks that are not yet defined as functions in the saved project. Complete bounded decoding identifies a50-instruction creation path and a4-instruction cleanup path; all callback bytes match the original PS4 executable. Creation requests352 bytes and sets Power1, Priority10, no active/queued request, empty input/output Variants, GateSync1 and ScopeType1. Cleanup returns for null and otherwise tail-jumps to a deallocation import.
+
+Creation also reads a runtime colour global. A native initialization window loads original file-backed colour components and stores them to that global; this trace avoids assuming uninitialized memory is its runtime value. Initializer execution, later indirect writers, exact allocation/deallocation import symbols, allocation failure and actual lifecycle execution remain unverified. No functions were created or named in this checkpoint;272 checked names remain.
