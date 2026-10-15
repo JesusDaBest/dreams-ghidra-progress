@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 263,
+    "checked_and_applied_names": 264,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 263,
+    "verified_names": 264,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "244 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "245 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3246,6 +3246,22 @@
       "No new names, audited-byte credit or game-runtime validation."
     ],
     "new_names": 0,
+    "runtime_game_verified": false
+  },
+  "signal-generator_output_checkpoint": {
+    "name": "UpdateSignalGeneratorOutputAndRandomRanges",
+    "controlled_native_cases": 864,
+    "findings": [
+      "Out-of-range cached pause and two magnitude endpoints are refreshed in that order with original30-bit LCG.",
+      "Refresh occurs even when Power is signedzero; zero Power leaves output/phase unchanged.",
+      "Nonzero and selected NaN Power enter evaluator; inactive Game uses zero step and phase1.25 high-hold yields interpolated high endpoint."
+    ],
+    "limits": [
+      "Only inactive Game and selected high-hold phase, ranges, cached values, Power bits and seeds tested.",
+      "TLS import returns worker index1 fixture; original OS implementation not executed.",
+      "Active transitions, cosine path, invalid ranges, evaluator working signature and real-game scheduling remain unresolved.",
+      "No running-game validation, whole-gadget completion or audited-byte credit."
+    ],
     "runtime_game_verified": false
   }
 }

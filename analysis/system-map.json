@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1706,
-  "unmapped_total": 7864,
+  "mapped_total": 1707,
+  "unmapped_total": 7863,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43869,6 +43869,26 @@
           "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
         }
       ]
+    },
+    "1408ed6a0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "signalgenerator",
+        "runtime-implementation"
+      ],
+      "component_basis": "Registered field layout and worker kind0x4b conditional call bind this updater to SignalGenerator.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "8e91902a472590e397c11579d85fa28ba619e127d5e6acc837265f3c5fdc9f85",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateSignalGeneratorOutputAndRandomRanges",
+          "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48779,6 +48799,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

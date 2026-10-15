@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-13",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 222,
+    "done": 223,
     "todo": 1484,
-    "total": 1706,
-    "behavior_or_helpers_reviewed": 163,
+    "total": 1707,
+    "behavior_or_helpers_reviewed": 164,
     "properties_or_types_reviewed": 59,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 73,
+        "done": 74,
         "todo": 413,
-        "total": 486,
-        "behavior_or_helpers_reviewed": 31,
+        "total": 487,
+        "behavior_or_helpers_reviewed": 32,
         "properties_or_types_reviewed": 42,
-        "runtime_functions_identified": 33,
+        "runtime_functions_identified": 34,
         "property_type_functions_identified": 452,
         "code_role_unresolved": 1,
         "whole_feature_completion": null,
@@ -57,6 +57,7 @@
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
           "UpdateVariableGadgetValues",
+          "UpdateSignalGeneratorOutputAndRandomRanges",
           "ComputeTeleporterTransformWithOffset",
           "SubmitTeleporterPositionOffsetCommand",
           "AppendRemapperSignalHistory",
@@ -547,6 +548,7 @@
           "1408cecf0",
           "1408cf9d0",
           "1408e4bb0",
+          "1408ed6a0",
           "1408f1dc0",
           "1408f2180",
           "140907eb0",
@@ -1007,12 +1009,12 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 43,
+            "done": 44,
             "todo": 68,
-            "total": 111,
-            "behavior_or_helpers_reviewed": 26,
+            "total": 112,
+            "behavior_or_helpers_reviewed": 27,
             "properties_or_types_reviewed": 17,
-            "runtime_functions_identified": 26,
+            "runtime_functions_identified": 27,
             "property_type_functions_identified": 85,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -1043,6 +1045,7 @@
               "ReadInverterOutputVariant",
               "ReadSplitterOutputVariant",
               "BuildCombinerOutputVariant",
+              "UpdateSignalGeneratorOutputAndRandomRanges",
               "AppendRemapperSignalHistory",
               "FindOrInitializeRemapperSignalHistory",
               "EvaluateRemapperSignal",
@@ -1158,6 +1161,7 @@
               "1408ceb90",
               "1408cecf0",
               "1408cf9d0",
+              "1408ed6a0",
               "140907eb0",
               "1409082f0",
               "140c27870",
@@ -2032,6 +2036,86 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/signalgenerator",
+                "label": "Signal Generator",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitSignalGeneratorProperties",
+                  "UpdateSignalGeneratorOutputAndRandomRanges",
+                  "RegisterSignalGeneratorTypeDescriptor",
+                  "RegisterSignalGeneratorFieldOffsets"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1404da460",
+                  "1408ed6a0",
+                  "140d57bf0",
+                  "140d6e010"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/signalgenerator/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitSignalGeneratorProperties",
+                      "RegisterSignalGeneratorTypeDescriptor",
+                      "RegisterSignalGeneratorFieldOffsets"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1404da460",
+                      "140d57bf0",
+                      "140d6e010"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/logic/signalgenerator/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateSignalGeneratorOutputAndRandomRanges"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408ed6a0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/and",
                 "label": "And",
                 "done": 2,
@@ -2620,61 +2704,6 @@
                     "todo_names": [],
                     "done_addresses": [
                       "1408ceb90"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/signalgenerator",
-                "label": "Signal Generator",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitSignalGeneratorProperties",
-                  "RegisterSignalGeneratorTypeDescriptor",
-                  "RegisterSignalGeneratorFieldOffsets"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1404da460",
-                  "140d57bf0",
-                  "140d6e010"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/signalgenerator/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitSignalGeneratorProperties",
-                      "RegisterSignalGeneratorTypeDescriptor",
-                      "RegisterSignalGeneratorFieldOffsets"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1404da460",
-                      "140d57bf0",
-                      "140d6e010"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -40885,5 +40914,5 @@
       }
     ]
   },
-  "unmapped": 7864
+  "unmapped": 7863
 }
