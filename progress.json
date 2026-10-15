@@ -3,23 +3,23 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 253,
-    "todo": 1482,
-    "total": 1735,
-    "behavior_or_helpers_reviewed": 190,
+    "done": 255,
+    "todo": 1481,
+    "total": 1736,
+    "behavior_or_helpers_reviewed": 192,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 85,
-        "todo": 411,
-        "total": 496,
-        "behavior_or_helpers_reviewed": 40,
+        "done": 87,
+        "todo": 410,
+        "total": 497,
+        "behavior_or_helpers_reviewed": 42,
         "properties_or_types_reviewed": 45,
         "runtime_functions_identified": 42,
-        "property_type_functions_identified": 454,
+        "property_type_functions_identified": 455,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
@@ -72,6 +72,7 @@
           "GatePrecedesInActivationOrder",
           "EvaluateRemapperSignal",
           "RegisterLightTypeDescriptor",
+          "InitializeMicrochipTypeDescriptor",
           "RegisterTeleporterTypeDescriptor",
           "RegisterForceRepulseGadgetTypeDescriptor",
           "RegisterCombinerTypeDescriptor",
@@ -102,6 +103,7 @@
           "RegisterCombinerFieldOffsets",
           "RegisterForceRepulseGadgetFieldOffsets",
           "RegisterTeleporterFieldOffsets",
+          "RegisterMicrochipProperties",
           "AllocateDefaultLight",
           "RegisterLightFieldOffsets",
           "MergeTypedSignalsByMinimumMagnitude",
@@ -389,7 +391,6 @@
           "0x140d544b0",
           "0x140d54580",
           "0x140d548c0",
-          "0x140d54990",
           "0x140d54a60",
           "0x140d54b30",
           "0x140d54c00",
@@ -572,6 +573,7 @@
           "140955110",
           "140c27870",
           "140d54090",
+          "140d54990",
           "140d55830",
           "140d56fc0",
           "140d57980",
@@ -602,6 +604,7 @@
           "140d6e850",
           "140d71ed0",
           "140d78870",
+          "140d83fc0",
           "140d88850",
           "140d88a00",
           "1411c0ea0",
@@ -889,7 +892,6 @@
           "140d544b0",
           "140d54580",
           "140d548c0",
-          "140d54990",
           "140d54a60",
           "140d54b30",
           "140d54c00",
@@ -1027,13 +1029,13 @@
           {
             "name": "gadgets-logic/logic",
             "label": "Logic & signals",
-            "done": 54,
-            "todo": 67,
-            "total": 121,
-            "behavior_or_helpers_reviewed": 34,
+            "done": 56,
+            "todo": 66,
+            "total": 122,
+            "behavior_or_helpers_reviewed": 36,
             "properties_or_types_reviewed": 20,
             "runtime_functions_identified": 34,
-            "property_type_functions_identified": 87,
+            "property_type_functions_identified": 88,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
@@ -1073,6 +1075,7 @@
               "SortGatePointersByActivationOrder",
               "GatePrecedesInActivationOrder",
               "EvaluateRemapperSignal",
+              "InitializeMicrochipTypeDescriptor",
               "RegisterCombinerTypeDescriptor",
               "RegisterSignalInspectorTypeDescriptor",
               "RegisterSignalGeneratorTypeDescriptor",
@@ -1087,6 +1090,7 @@
               "RegisterSignalGeneratorFieldOffsets",
               "RegisterSignalInspectorFieldOffsets",
               "RegisterCombinerFieldOffsets",
+              "RegisterMicrochipProperties",
               "MergeTypedSignalsByMinimumMagnitude",
               "NormalizeFloatComponentsWithUniformFallback",
               "EvaluateTypedCalculatorOperation",
@@ -1141,7 +1145,6 @@
               "0x140cca090",
               "0x140cca0e0",
               "0x140d18580",
-              "0x140d54990",
               "0x140d55900",
               "0x140d559d0",
               "0x140d55b70",
@@ -1198,6 +1201,7 @@
               "1409537f0",
               "140955110",
               "140c27870",
+              "140d54990",
               "140d57980",
               "140d57b20",
               "140d57bf0",
@@ -1212,6 +1216,7 @@
               "140d6e010",
               "140d6e2b0",
               "140d6e850",
+              "140d83fc0",
               "1411c0ea0",
               "1411c2100",
               "1411c21e0",
@@ -1266,7 +1271,6 @@
               "140cca090",
               "140cca0e0",
               "140d18580",
-              "140d54990",
               "140d55900",
               "140d559d0",
               "140d55b70",
@@ -2928,6 +2932,65 @@
                 ]
               },
               {
+                "name": "gadgets-logic/logic/microchip",
+                "label": "Microchip",
+                "done": 2,
+                "todo": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializeMicrochipTypeDescriptor",
+                  "RegisterMicrochipProperties"
+                ],
+                "todo_names": [
+                  "0x1404a7180"
+                ],
+                "done_addresses": [
+                  "140d54990",
+                  "140d83fc0"
+                ],
+                "todo_addresses": [
+                  "1404a7180"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/logic/microchip/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 2,
+                    "todo": 1,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "InitializeMicrochipTypeDescriptor",
+                      "RegisterMicrochipProperties"
+                    ],
+                    "todo_names": [
+                      "0x1404a7180"
+                    ],
+                    "done_addresses": [
+                      "140d54990",
+                      "140d83fc0"
+                    ],
+                    "todo_addresses": [
+                      "1404a7180"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/logic/splitter",
                 "label": "Splitter",
                 "done": 2,
@@ -3240,57 +3303,6 @@
                     "todo_addresses": [
                       "1404dcc90",
                       "140d57f30"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/logic/microchip",
-                "label": "Microchip",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404a7180",
-                  "0x140d54990"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404a7180",
-                  "140d54990"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/logic/microchip/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404a7180",
-                      "0x140d54990"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404a7180",
-                      "140d54990"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41217,5 +41229,5 @@
       }
     ]
   },
-  "unmapped": 7842
+  "unmapped": 7841
 }

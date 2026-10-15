@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1735,
-  "unmapped_total": 7842,
+  "mapped_total": 1736,
+  "unmapped_total": 7841,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -21783,25 +21783,23 @@
     },
     "140d54990": {
       "system": "gadgets-logic",
-      "evidence": [
-        {
-          "kind": "type_registration",
-          "descriptor": "1458a4710",
-          "type_name": "Microchip",
-          "site": "140d549cc",
-          "target": "14171fd73"
-        }
-      ],
-      "code_sha256": "917efe6e790f1a075b6390b51030588f0e5303418710f5b7b9533d9b60e9c8af",
       "component_path": [
         "gadgets-logic",
         "logic",
         "microchip",
         "properties-types"
       ],
-      "component_basis": "registered_type",
+      "component_basis": "Original Microchip descriptor label and connected field registration.",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "Registers original Microchip type and fields.",
+      "code_sha256": "a144175ca5a6e2274219a3eb916a8608e329cac68250427a93b7c5b340b70489",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeMicrochipTypeDescriptor",
+          "support": "Complete original bodies, type literal and glue-field table linkage; saved names independently reopened."
+        }
+      ]
     },
     "140d54a60": {
       "system": "gadgets-logic",
@@ -44447,6 +44445,26 @@
           "kind": "verified_semantic_review",
           "name": "GetPowerOrResolvedObjectPlayerMask",
           "support": "Original helpers/resolver,1904 scoped cases per helper, low-byte caller contract and saved-name/type verification."
+        }
+      ]
+    },
+    "140d83fc0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "microchip",
+        "properties-types"
+      ],
+      "component_basis": "Original Microchip descriptor label and connected field registration.",
+      "code_role": "properties-types",
+      "code_role_basis": "Registers original Microchip type and fields.",
+      "code_sha256": "24c659b4b3d0d0aab03cc397512ef31f3428920585aea93241aacdfbcb093dd5",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterMicrochipProperties",
+          "support": "Complete original bodies, type literal and glue-field table linkage; saved names independently reopened."
         }
       ]
     }

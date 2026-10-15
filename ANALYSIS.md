@@ -2086,3 +2086,11 @@ Totals:294 checked names among9,577 discovered functions;1,735 mapped and7,842 u
 Matched original offset-table initializer stores to native registration calls and original field-name literals. For Sculpt (kind 1), table slot 0x6a4 points to object offset 0x24c, registered as PlayerOwnership. For HealthGadget (kind 0x42) and HealthModifier (kind 0x43), fallback slot 0x686 points to offsets 0xd0 and 0xe0 respectively, both registered as IsGluedGadget. Fifteen original instruction spans and three literal references establish these links.
 
 These links apply to the specified kinds; they do not establish the field for every Thing. The resolver follows the parent when the identified gadget glue flag is set. Its Microchip field and 0x40f link meaning remain unresolved. An unrelated registered field offset with the same numeric value was rejected as a label source. No new function-name credit is added; the checked total remains 294.
+
+### Saved Microchip type and field registration
+
+Applied InitializeMicrochipTypeDescriptor and RegisterMicrochipProperties. The original Microchip literal and descriptor connect the initializer, Thing base registration and 14 specialized field registrations. The registrar binds IsGluedGadget at object offset0x138; the original kind13 metadata initializer writes that offset to slot0x686. This resolves the Microchip field label used by the player-mask fallback resolver. The0x40f link meaning remains unresolved.
+
+All104 original instruction spans match. Full cold backup, isolated trial, promotion and independent reopening verify two intended name/comment changes, unchanged signatures and unchanged original archives. Specialized registrar arguments, descriptor numeric meanings, imported guard behavior, allocation/cleanup bodies and game integration remain unresolved. No native gameplay test or original C++ prototype is claimed.
+
+Totals:296 checked names among9,577 discovered functions;1,736 mapped and7,841 unmapped.
