@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/05b90d8c385d9b7a1587c3ea4c46e19c08f8ca20/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d7b27aa1d41bfb6cd7100297b501ca247d8103d6/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**299 of 9,577 functions named and checked.** A function is one piece of the game's code.
+**301 of 9,579 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/05b90d8c385d9b7a1587c3ea4c46e19c08f8ca20/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d7b27aa1d41bfb6cd7100297b501ca247d8103d6/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
-| Gadgets & logic | 497 | 43/42 | 45/455 |
+| Gadgets & logic | 499 | 45/44 | 45/455 |
 | Physics & collision | 64 | 6/32 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
@@ -74,13 +74,13 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 235 | 117/152 | 13/78 |
 
-**1,738 of 9,577 discovered functions are mapped; 7,839 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,740 of 9,579 discovered functions are mapped; 7,839 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 497 functions identified; 43 behavior/helper reviews; 45 property/type reviews
-  - **Logic & signals** - 122 functions identified; 37 behavior/helper reviews; 20 property/type reviews
+- **Gadgets & logic** - 499 functions identified; 45 behavior/helper reviews; 45 property/type reviews
+  - **Logic & signals** - 124 functions identified; 39 behavior/helper reviews; 20 property/type reviews
     - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
@@ -93,6 +93,9 @@ Every square is one actual function and has the same size. All function squares 
     - **Randomiser** - 6 functions identified; 3 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Microchip** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Signal Generator** - 5 functions identified; 2 behavior/helper reviews; 3 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
@@ -139,8 +142,6 @@ Every square is one actual function and has the same size. All function squares 
     - **Inverter** - 3 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Microchip** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Splitter** - 3 functions identified; 1 behavior/helper reviews; 1 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
