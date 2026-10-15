@@ -2142,3 +2142,11 @@ Applied ComputeVertexFetchShaderSize and GenerateVertexFetchShaderInstructions a
 8,600 original-native size-wrapper/setup cases and 3,584 original-native generation cases verify synthetic inputs, exact outputs and guards without modeled imports. Independent CLRX decoding and reassembly reproduce a 72-byte generated program exactly; its trailing four-byte metadata count is excluded from executable decoding. Real shader compatibility, malformed inputs and GPU execution remain unverified. The surrounding resource initializer still has unresolved allocation-error handling; it receives no completion credit here.
 
 Full cold backup, isolated trial, promotion and independent reopening verify both saved names and working signatures, unchanged original instructions and unchanged archives. Totals: 327 checked names (297 renames, 29 created functions and one retained-name review) among 9,580 discovered functions; 1,760 mapped and 7,820 unmapped. These counts do not measure whole-game completion.
+
+### Saved header-to-vertex-fetch wrapper
+
+Applied CreateVertexFetchShaderFromHeader with a working void return and instruction-output, modifier-output and opaque shader-header pointer arguments. Its complete body prepares the fetch descriptor from shader registers, points it at inline usage and vertex-semantic records, generates the auxiliary program and writes the register modifier. It is mapped under the rendering graphics toolkit.
+
+2,560 connected original-native cases execute the size wrapper, generation wrapper, setup helper and generator together (362 instruction spans). Calculated size equals the exact emitted instructions plus trailing metadata. Output slack/guards, register modifier, complete inputs and canary match at four alignments without modeled callees/imports. Synthetic header acceptance does not establish real resource compatibility, malformed-header safety or GPU execution.
+
+Full cold backup, isolated trial, promotion and independent reopening verify the saved name/signature, original instructions and archives. Totals: 328 checked names (298 renames, 29 created functions and one retained-name review), 1,761 mapped functions and 7,819 unmapped among 9,580 discovered functions. Whole-game completion is not claimed.

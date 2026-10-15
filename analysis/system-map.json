@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1760,
-  "unmapped_total": 7820,
+  "mapped_total": 1761,
+  "unmapped_total": 7819,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44980,6 +44980,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "GenerateVertexFetchShaderInstructions",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1400105f0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "graphics",
+        "toolkit",
+        "runtime-implementation"
+      ],
+      "component_basis": "Native vertex-fetch program sizing/generation used by shader resource construction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Graphics shader toolkit helper.",
+      "code_sha256": "a9ba9b0a02fe30b42cf7059f4f1fc233d13b4e25c1018fe0c85f14073b54db87",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CreateVertexFetchShaderFromHeader",
           "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]
