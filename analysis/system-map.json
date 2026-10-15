@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1813,
-  "unmapped_total": 7767,
+  "mapped_total": 1815,
+  "unmapped_total": 7765,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46094,6 +46094,48 @@
           "kind": "verified_semantic_review",
           "name": "SelectFontGlyphForTextUnit",
           "support": "Original selector and callers, native checks of ordinary and all six special branches, independently reopened aggregate signature."
+        }
+      ]
+    },
+    "1412d9c40": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Derived layout style and indexed text-span stepping.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text layout style and span selection implementation.",
+      "code_sha256": "9d521d1a3e0510ab7f8fbb389a9af71fbd3a70846ea101a27c9d5c00e3a3fef6",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RefreshTextLayoutStyle",
+          "support": "Original bodies, native style/color/span checks and cache-change integration, independent saved-signature reopen."
+        }
+      ]
+    },
+    "1412daad0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Derived layout style and indexed text-span stepping.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text layout style and span selection implementation.",
+      "code_sha256": "a934478fb73ee1a6295515def97ea6e8c3d55ef1a1b5edb837375c0af3a7b7a5",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "StepTextLayoutSpanSelection",
+          "support": "Original bodies, native style/color/span checks and cache-change integration, independent saved-signature reopen."
         }
       ]
     }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "350 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "352 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9045,
-    "other_names": 535,
-    "verification": "complete_inventory_matches_baseline_plus_350_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9043,
+    "other_names": 537,
+    "verification": "complete_inventory_matches_baseline_plus_352_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8352,6 +8352,52 @@
         "Synthetic bounded runtime objects and selected fallback directions; not exhaustive malformed-input testing.",
         "Original loader, complete glyph payloads, full layout, shaping and rendering unexecuted.",
         "Working descriptive name and reviewed return type; not recovered source."
+      ]
+    },
+    {
+      "address": "1412d9c40",
+      "original_name": "FUN_1412d9c40",
+      "applied_name": "RefreshTextLayoutStyle",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RefreshTextLayoutStyle(void * layout_context)",
+      "evidence": [
+        "All278 original instruction spans matched; complete style-refresh and span-step bodies read.",
+        "80640 exact style cases;7168 original-powf color cases;5760 exact span-step cases;4096 formatting-cache-change integration cases.",
+        "Original linked selector/remapper/advance/font getter executed; exact guarded contexts/descriptors/cursors and unchanged iterators. RGB numerical oracle maximum two ULP.",
+        "Cold backup, isolated trial, promotion and independent reopen verified names/signatures and unchanged archives."
+      ],
+      "caveats": [
+        "Synthetic valid runtime font objects and selected finite layout values; not malformed-input testing.",
+        "Packed color math checked separately; numerical RGB oracle permits two ULP, alpha exact.",
+        "Formatting-change integration covers one ordinary glyph; no full iterator/layout loop, original loader, shaping or rendering.",
+        "Working descriptive names/types; not recovered source."
+      ]
+    },
+    {
+      "address": "1412daad0",
+      "original_name": "FUN_1412daad0",
+      "applied_name": "StepTextLayoutSpanSelection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV StepTextLayoutSpanSelection(void * text_iterator, void * layout_context, void * unit_descriptor, bool right_to_left)",
+      "evidence": [
+        "All278 original instruction spans matched; complete style-refresh and span-step bodies read.",
+        "80640 exact style cases;7168 original-powf color cases;5760 exact span-step cases;4096 formatting-cache-change integration cases.",
+        "Original linked selector/remapper/advance/font getter executed; exact guarded contexts/descriptors/cursors and unchanged iterators. RGB numerical oracle maximum two ULP.",
+        "Cold backup, isolated trial, promotion and independent reopen verified names/signatures and unchanged archives."
+      ],
+      "caveats": [
+        "Synthetic valid runtime font objects and selected finite layout values; not malformed-input testing.",
+        "Packed color math checked separately; numerical RGB oracle permits two ULP, alpha exact.",
+        "Formatting-change integration covers one ordinary glyph; no full iterator/layout loop, original loader, shaping or rendering.",
+        "Working descriptive names/types; not recovered source."
       ]
     }
   ],
