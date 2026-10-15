@@ -2986,3 +2986,13 @@ The original dispatcher's left-bracket branch looks ahead for @ followed by 3–
 A 336-call check includes 208 bracket-recognition cases and 128 following-@ suppression calls. These cover name lengths 0–19, delimiter and punctuation variants, four alignments and both prior flag states. Original reader, name predicate, virtual cleanup and decoder/control code execute. Whole guarded context, input span, parser state and replacement output remain as independently expected. The earlier standalone 208-case receipt overlaps this check and is not additional unique coverage.
 
 Another 112 checks execute the original text processor with the dispatcher and its dependencies: valid bracketed names of lengths 3–16 remain literal with surrounding text, in both scanner-list modes and four alignments. Exact whole output, context and input agree; parser-state guards and canaries remain intact. Parser-state mutations are not independently modeled in full. Invalid-bracket integration, ordinary @ replacement, malformed/nested markup, external substitutions and rendering remain unverified. No new checked-name or whole-game completion credit is added.
+
+### Ordinary at-name replacement boundaries
+
+The original dispatcher now executes the ordinary @ replacement path with synthetic local text. Names of 3–16 accepted characters produce @name as the replacement span. With context flag 0x1000 clear, the helper surrounds it with internal U+FDE2/U+FDE3 markers; with that flag set, it returns the plain replacement. The semantic meaning of these markers remains unresolved.
+
+Failure has two distinct cursor effects: accepted names shorter than three characters return false after consuming their accepted characters, while over-capacity names return false without committing cursor or parser state. This follows the reader's successful-read versus capacity-failure distinction and must be preserved when interpreting dispatcher callers.
+
+All 160 bounded checks passed for lengths 0–19, two wrapper settings and four alignments, with exact whole context, cursor, parser state, replacement span, input guards and stack canary expectations. They execute the original dispatcher, reader, name predicate, virtual cleanup, replacement helper, insertion and libc functions. The bounded-length import was resolved through the original loader NID to strnlen and matched to the local libc's 34-byte export before execution.
+
+This batch uses uppercase A names with an exclamation delimiter and disables the auxiliary list. It does not verify auxiliary append integration, all accepted name characters, the complete text processor, rendering or in-game behavior. No external service requests or account data are involved. No new names or whole-game completion credit are added.
