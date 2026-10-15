@@ -3068,3 +3068,11 @@ The original ligature table contains the lam/alef pair and U+FEFB/U+FEFC form al
 Another 1,960 checks cover left/right unit counts 0–6, clue/size/packed-color flat tags, Arabic alef and space-separated lam-alef clusters, two locale values and four alignments. Known formatting tags add no directional weight, and selected Arabic clusters follow the decoded-unit majority/tie rules. Input guards and canaries remain intact. The preliminary fourteen-call observation probe is exploratory and receives no additional verification credit.
 
 Other Arabic joining contexts, comprehensive shaping, nested or malformed tags and rendered glyphs remain unresolved. This extends the evidence for the existing saved direction function; it adds no checked names or whole-game completion credit.
+
+### Slash dispatcher key-list and disabling boundaries
+
+The slash dispatcher checks context flag 0x2000 and a fixed sixteen-entry parsed-key list before invoking the typed-key parser. With the flag set, it returns without parsing or mutation. Count 15 accepts one final key and becomes 16; count 16 rejects without changing the cursor, state or key list.
+
+All 144 checks passed across an unhandled lowercase-e key, an all-zero normalized key and an invalid prefix, list counts 0/15/16, four flag combinations and four alignments. Original dispatcher, key parser, hex/visible-unit helpers, decoder/control, replacement and libc code execute. Independent whole context, key-array, cursor, state, output-span, input-guard and canary expectations agree.
+
+The selected unhandled-type and zero-key paths store the parsed key and succeed with an empty replacement, optionally surrounded by internal wrappers. This is not evidence about a failed object lookup: object-resolving branches were not executed. Auxiliary records are disabled in this batch. Full processor integration, handled key types, rendering and game behavior remain unresolved. No checked names or whole-game completion credit is added.

@@ -6729,5 +6729,19 @@
       ],
       "project_modified": false
     }
+  },
+  "text_slash_dispatch_key_boundary_check": {
+    "calls": 144,
+    "method": "Original slashdispatcher/typedkey/hex/visibleunit/decoder/control/replacement/libc;unhandled-e key,zero-normalizedkey,invalidprefix;counts0/15/16;4flagsettings;4alignments.Independentwholecontext/keyarray/cursor/state/output/input/guards/canary.",
+    "findings": [
+      "Flag2000 disables slash path before parsing.",
+      "Fixedkeylist acceptsatmost16entries;count15 acceptsone,lastslot;count16 rejectswithoutmutation.",
+      "Selectedunhandled-e andzero-key paths storekey andsucceedwithemptyreplacement,optionallywrappermarkers;not failedlookup equivalence."
+    ],
+    "limits": [
+      "Handledkeytypes andobjectresolvers notexecuted.",
+      "Auxrecordlist disabled;fullprocessor/rendering unverified."
+    ],
+    "project_modified": false
   }
 }
