@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "370 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "371 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9025,
-    "other_names": 555,
-    "verification": "complete_inventory_matches_baseline_plus_370_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9024,
+    "other_names": 556,
+    "verification": "complete_inventory_matches_baseline_plus_371_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8809,6 +8809,28 @@
         "Storage/insertion helpers shared beyondtext;mapping recordsobserveddisplay-name use,notexclusivity.",
         "Ownedfree/heapgrowth/failure,invalidpositions/aliasing andlocalizedfallback/currentobject/nullobject unexecuted.",
         "Working descriptive names/types;not recovered source."
+      ]
+    },
+    {
+      "address": "1403d6c80",
+      "original_name": "FUN_1403d6c80",
+      "applied_name": "ResolveTextReferenceObject",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV ResolveTextReferenceObject(ulonglong reference_key, void * status_output, void * scope_output, void * lookup_context, uchar allow_request)",
+      "evidence": [
+        "All64originalinstructionspans matched;completeadapterbody read.",
+        "368/550instructionlookupcallee bodies andreturnepilogues read;both returnobjectpointer/null inRAX,preservedbyadapter.",
+        "Slashdispatcher tests RAX andpasses returnedobject toBuildObjectDisplayName.",
+        "Coldbackup,isolatedtrial,promotion andindependentreopening verifypointer signature andunchangedarchives."
+      ],
+      "caveats": [
+        "StaticABI/descriptiverole evidence;nativecache/kernelclock/thread/request behavior unexecuted.",
+        "Lookupcontext/scope typesopaque;pendingstates andcomplete objectresolution unresolved.",
+        "Workingdescriptive name/types;not recoveredsource."
       ]
     }
   ],
