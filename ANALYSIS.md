@@ -2556,3 +2556,13 @@ The 68-instruction direction-class lookahead uses an 80-byte copy of parser stat
 262,176 native cases compare it with direct traversal of the original base parser and original property data: all encoded codepoints in the table domain, two outside values, 14 selected strings and two alignments. Exact byte results, whole guarded caller state, input/index/source pages and canary were checked. This comparison shares the original parser/data and therefore is not independent Unicode-standard validation; supplied encodings may also be transformed by the decoder.
 
 Expanding beyond the earlier selected button paths reached a percent-placeholder dependency missing from that fixture. The original 42-, 164- and 120-instruction helper chain was captured, read and byte-matched, then loaded with actual library dependencies and original constants. It recognizes percent tokens and parses placeholder/format options; it is not a Unicode-composition helper. No game defect is inferred from the incomplete-fixture failure. No additional checked-name or whole-parser completion credit is added.
+
+### Saved placeholder token, format and span helpers
+
+Applied ParseTextPlaceholderFormatOptions, TryParseTextPlaceholderToken and TryFindTextPlaceholderSpan with working bounded cursor/output arguments. The option parser recognizes flags once in the order #, +, 0, stores width and precision in bytes, and consumes supported type characters without storing them. Decimal width/precision wrap modulo 256; star stores 255. A dot without digits advances the cursor without setting precision.
+
+Numbered placeholders begin with 1 through 9 and accumulate subsequent digits modulo 32 bits. Named bracket placeholders store a name hash, relative source offset and byte length, with optional colon-separated format options. Literal percent has its own record kind; the span checker accepts numbered, named and general-format kinds while excluding literal percent. Failure can change token-parser outputs, while the span checker preserves its output on failure.
+
+The complete original bodies total 326 instructions. Native checks cover 63,168 option cases, 16,416 token cases and 16,416 span cases, with exact descriptors, cursor/span outputs and guards. Original code, hash, library dependencies and constants are used. Substitution values, final formatted output and visible localization/rendering remain unverified.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 350 checked names (320 renames, 29 created functions and one retained-name review), 1,783 mapped and 7,797 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.

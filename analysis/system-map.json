@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1780,
-  "unmapped_total": 7800,
+  "mapped_total": 1783,
+  "unmapped_total": 7797,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45401,6 +45401,69 @@
           "kind": "verified_semantic_review",
           "name": "SelectTextDirectionExitToken",
           "support": "Complete original body,native packed-state checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "1414ad820": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Placeholder-format and span helpers used by original text decoder.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "451205bfc05a740ff52dee0bbda84919d3a181b5b101fc97c4ff52f09938177c",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ParseTextPlaceholderFormatOptions",
+          "support": "Complete original body,native placeholder/option/span checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "1414ad5d0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Placeholder-format and span helpers used by original text decoder.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "0b3427628423666ed15aa9ec5f013037f08c65f50d7487bb538a677bdb4823a5",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryParseTextPlaceholderToken",
+          "support": "Complete original body,native placeholder/option/span checks,independently reopened names/signatures."
+        }
+      ]
+    },
+    "1414ad990": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Placeholder-format and span helpers used by original text decoder.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "7da997e4e94eaa70b108d0610cf0b8280e1d1a7ebf31a2c5ba4a7ad135713dad",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryFindTextPlaceholderSpan",
+          "support": "Complete original body,native placeholder/option/span checks,independently reopened names/signatures."
         }
       ]
     }

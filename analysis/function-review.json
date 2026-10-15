@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "317 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "320 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9078,
-    "other_names": 502,
-    "verification": "complete_inventory_matches_baseline_plus_317_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9075,
+    "other_names": 505,
+    "verification": "complete_inventory_matches_baseline_plus_320_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7556,6 +7556,75 @@
         "Only byte result is meaningful for packed resolver;upper register bits are not claimed.",
         "Whole bidirectional-parser and visible rendering remain unverified.",
         "Working descriptive names/types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414ad820",
+      "original_name": "FUN_1414ad820",
+      "applied_name": "ParseTextPlaceholderFormatOptions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ParseTextPlaceholderFormatOptions(void * descriptor_output, uchar * * cursor_inout, uchar * end)",
+      "evidence": [
+        "Complete original120/164/42-instruction helper bodies and callers read;original SELF/saved bytes agree.",
+        "63168 option cases cover flags,width/precision0..1024,wildcards,all256 leading bytes,valid/invalid kinds,3 descriptor profiles and4 alignments;exact16-byte descriptor,cursor/input/source/index/guard/canary.",
+        "16416 token and16416 span checks verify kind records,number wrap,named hash/relative offset/length,format suffixes and literal-percent exclusion;original hash/memchr/constants used.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Synthetic bounded placeholder formats;substitution values and final output unverified.",
+        "Source-base pointer and offset-bias are working types;only low32-bit relative offset arithmetic is verified.",
+        "No modern printf/localization/rendering conformance claim.",
+        "Descriptive working names/types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414ad5d0",
+      "original_name": "FUN_1414ad5d0",
+      "applied_name": "TryParseTextPlaceholderToken",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryParseTextPlaceholderToken(void * descriptor_output, uchar * * cursor_inout, uchar * end, uchar * source_base, uint source_offset_bias)",
+      "evidence": [
+        "Complete original120/164/42-instruction helper bodies and callers read;original SELF/saved bytes agree.",
+        "63168 option cases cover flags,width/precision0..1024,wildcards,all256 leading bytes,valid/invalid kinds,3 descriptor profiles and4 alignments;exact16-byte descriptor,cursor/input/source/index/guard/canary.",
+        "16416 token and16416 span checks verify kind records,number wrap,named hash/relative offset/length,format suffixes and literal-percent exclusion;original hash/memchr/constants used.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Synthetic bounded placeholder formats;substitution values and final output unverified.",
+        "Source-base pointer and offset-bias are working types;only low32-bit relative offset arithmetic is verified.",
+        "No modern printf/localization/rendering conformance claim.",
+        "Descriptive working names/types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414ad990",
+      "original_name": "FUN_1414ad990",
+      "applied_name": "TryFindTextPlaceholderSpan",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryFindTextPlaceholderSpan(uchar * * span_end_output, uchar * start, uchar * end)",
+      "evidence": [
+        "Complete original120/164/42-instruction helper bodies and callers read;original SELF/saved bytes agree.",
+        "63168 option cases cover flags,width/precision0..1024,wildcards,all256 leading bytes,valid/invalid kinds,3 descriptor profiles and4 alignments;exact16-byte descriptor,cursor/input/source/index/guard/canary.",
+        "16416 token and16416 span checks verify kind records,number wrap,named hash/relative offset/length,format suffixes and literal-percent exclusion;original hash/memchr/constants used.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Synthetic bounded placeholder formats;substitution values and final output unverified.",
+        "Source-base pointer and offset-bias are working types;only low32-bit relative offset arithmetic is verified.",
+        "No modern printf/localization/rendering conformance claim.",
+        "Descriptive working names/types are not recovered source."
       ]
     }
   ],

@@ -314,6 +314,16 @@ def render_hierarchy(nodes, bounds, depth=0):
         if len(items)==1:return [(items[0],positions)]
         width=max(x for x,y in positions)-min(x for x,y in positions)+1
         height=max(y for x,y in positions)-min(y for x,y in positions)+1
+        # Small child regions need a compact footprint so their labels fit.
+        # Carve only existing lattice cells; counts and square sizes stay exact.
+        compact=[n for n in items if n['id']=='prim-text' and 5<=len(n['rows'])<=20]
+        if compact:
+            small=max(compact,key=lambda n:len(n['rows']))
+            amount=len(small['rows']);span=math.ceil(math.sqrt(amount))
+            for gx,gy in sorted(positions,key=lambda p:(-p[1],p[0])):
+                candidate={(gx+i%span,gy+i//span) for i in range(amount)}
+                if candidate<=positions:
+                    return [(small,candidate)]+divide([n for n in items if n is not small],positions-candidate)
         total=len(positions);running=0;choices=[]
         for cut in range(1,len(items)):
             running+=len(items[cut-1]['rows'])
@@ -389,7 +399,13 @@ def render_hierarchy(nodes, bounds, depth=0):
                     if not covered<=owned or any(overlaps(line_box,b) for b in occupied):break
                     line_boxes.append(line_box);line_y+=fs+2
                 if len(line_boxes)==len(values):
-                    candidates.append((0,box,line_boxes))
+                    # Prefer parent headings outside small named children.
+                    penalty=sum(overlaps(box,(x0+cx*side,y0+cy*side,side,side))
+                                for child,child_cells,_ in regions
+                                if child['path'][:len(node['path'])]==node['path']
+                                and len(child['path'])>len(node['path']) and child['id']=='prim-text'
+                                for cx,cy in child_cells)
+                    candidates.append((penalty,box,line_boxes))
             if candidates:
                 _,box,line_boxes=min(candidates,key=lambda item:item[0])
                 placed=(box,values,sizes,line_boxes)
