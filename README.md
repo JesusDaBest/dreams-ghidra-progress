@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/562db9aaca63292ecbedef34637633233e2b8aeb/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/80c33e96cede6f11780ba875b4bd6c24eabcc299/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**263 of 9,570 functions named and checked.** A function is one piece of the game's code.
+**264 of 9,570 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/562db9aaca63292ecbedef34637633233e2b8aeb/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/80c33e96cede6f11780ba875b4bd6c24eabcc299/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
-| Gadgets & logic | 486 | 31/33 | 42/452 |
+| Gadgets & logic | 487 | 32/34 | 42/452 |
 | Physics & collision | 60 | 2/28 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
@@ -74,13 +74,13 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 218 | 101/137 | 12/76 |
 
-**1,706 of 9,570 discovered functions are mapped; 7,864 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,707 of 9,570 discovered functions are mapped; 7,863 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 486 functions identified; 31 behavior/helper reviews; 42 property/type reviews
-  - **Logic & signals** - 111 functions identified; 26 behavior/helper reviews; 17 property/type reviews
+- **Gadgets & logic** - 487 functions identified; 32 behavior/helper reviews; 42 property/type reviews
+  - **Logic & signals** - 112 functions identified; 27 behavior/helper reviews; 17 property/type reviews
     - **Remapper** - 7 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -108,6 +108,9 @@ Every square is one actual function and has the same size. All function squares 
     - **Selector** - 4 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Signal Generator** - 4 functions identified; 1 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **And** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -130,8 +133,6 @@ Every square is one actual function and has the same size. All function squares 
     - **Inverter** - 3 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Signal Generator** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Signal Inspector** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Splitter** - 3 functions identified; 1 behavior/helper reviews; 1 property/type reviews
@@ -1355,7 +1356,7 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **263 of 9,570 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
+- **264 of 9,570 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
 - **1,703 functions mapped to parts of Dreams; 7,867 still unmapped.** Of the mapped functions, 219 have checked names.
 - **9,532 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
 - **Splitter and Combiner output behavior is now mapped and named.** Selected component paths passed 7,424 native cases. Rotation and special-type paths remain incomplete; game execution and audited-byte coverage are unchanged.
