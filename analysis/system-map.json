@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1774,
-  "unmapped_total": 7806,
+  "mapped_total": 1775,
+  "unmapped_total": 7805,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45274,6 +45274,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "ResolveTextEmojiAlias",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414997e0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Flag-alias fallback used by original colon-name text parser.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "873330dc806268be04c7cbfee50fbf5ba3834115899a696e9ed358b0a1df94e3",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryResolveTextFlagAlias",
           "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]

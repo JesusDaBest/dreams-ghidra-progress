@@ -2204,3 +2204,11 @@ Applied SortTextNameHashRecords, GetTextIconCodepointByHash, GetTrenIconCodepoin
 These checks verify CPU table construction and lookup. The huge startup owner, whole markup pipeline, font/glyph availability and visible rendering remain unverified. Equal-key sort stability and invalid-pointer safety are not claimed. The working 32-bit tone-output type preserves its all-ones sentinel; original source signedness is not recovered.
 
 Full cold backup, isolated trial, promotion and independent reopening verify all four names/signatures and unchanged original instructions/archives. Totals: 341 checked names (311 renames, 29 created functions and one retained-name review), 1,774 mapped and 7,806 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
+
+### Saved text flag-alias fallback and connected token checks
+
+Applied TryResolveTextFlagAlias with working bounded start/end, output-pointer and Boolean return arguments. It searches the initialized flag-prefixed and short country-code tables, each with 254 original records and separate length limits. Success writes the executable-specific flag identifier; miss preserves the output. 2,300 original-native direct cases cover all 508 source names plus unknown, empty and overlength inputs. Another 2,032 complete original base-parser cases confirm the flag token, payload and cursor advancement.
+
+The connected colon-alias path also passes 16,276 successful plain/toned cases with exact tokens, payload/style fields and guarded state. Selected unknown/empty/malformed-colon sequences pass 288 runs comprising 5,340 decoded units: they remain literal and advance character by character. These checks use original startup-built indices, original hash/sort/parser/helper bodies and actual library dependencies without models. They do not verify arbitrary markup, Unicode composition, glyph/font availability or visible rendering.
+
+Full cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 342 checked names (312 renames, 29 created functions and one retained-name review), 1,775 mapped and 7,805 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
