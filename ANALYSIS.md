@@ -1894,3 +1894,9 @@ Original import thunks run against explicit heap-boundary substitutes; these tes
 Defined AllocateDefaultGate and FreeGateStorage at the original descriptor callback targets, with pointer return/no arguments and void/pointer argument respectively. The full nonoverlapping50- and4-instruction bodies retain original bytes. Existing functions are unchanged. Cold backup, isolated trial, promotion and independent reopening confirm the definitions, ABI storage and saved decompilation. Original archives remain unchanged.
 
 The definitions are supported by256 full-object initialization cases and512 cleanup cases using explicit heap-boundary models. Actual heap implementation, allocation failure, startup execution and in-game lifecycle remain unverified. Totals:274 checked names among9,572 discovered functions;1,716 mapped and7,856 unmapped. This adds two previously undefined functions, not extraction or whole-subsystem completion credit.
+
+### Gate pipeline with glued and fallback parents
+
+The connected original request/sort/group/arbitration sequence passes another288 cases with valid acyclic Gate-kind parent trees:144 cached traversal and144 fallback traversal cases, with parent-mode and glued flags varied. Cached type entries match the parent objects' Gate kind. Original parent resolution runs in the connected sequence. Exact scope/group/claim arrays, full Gate and parent objects and the full Game allocation are checked alongside sorting and output/queue behavior.
+
+The independent model initially represented a no-parent reference as signed-1 in an unsigned output array; that fixture encoding was corrected before the successful run. The fallback mode byte remains semantically unnamed. Container-kind combinations, invalid/cyclic references, other Variant inputs and real game scheduling remain unverified. Heap/copy boundaries remain explicit models. No names or completion credit are added;274 names remain checked.
