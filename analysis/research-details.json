@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 316,
+    "checked_and_applied_names": 317,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 316,
+    "verified_names": 317,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "287 existing-function renames and29 created functions independently reopened.",
+    "scope": "288 existing-function renames and29 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -4915,6 +4915,20 @@
       "Game-present GUI/global-override modes and complete multiplayer/caller/game behavior untested.",
       "The record flag low bit is serialized on removal, but its meaning is unresolved.",
       "Working opaque pointers and byte/uint arguments do not recover original C++ declarations."
+    ],
+    "runtime_game_verified": false
+  },
+  "object_pair_glue_migration_checkpoint": {
+    "name": "ConvertObjectPairToGluedParent",
+    "original_instructions": 170,
+    "native_cases": 3024,
+    "accepted": 54,
+    "original_caller_spans": 65,
+    "limits": [
+      "Optional transform conversion and wire invalidation branches untested.",
+      "Malformed/null inputs, cycles, full versioned caller and game behavior unresolved.",
+      "This migration does not establish that every pair record or flag value means glue.",
+      "Working opaque pointers/reference and Boolean machine result are not recovered original C++ declarations."
     ],
     "runtime_game_verified": false
   }

@@ -2236,3 +2236,13 @@ Applied SubmitAddPersistentObjectIdPairCommand and SubmitRemoveCurrentObjectPair
 Original jump-table bytes map0xfdf6 to the append branch and0xfdf7 to the branch that invalidates the supplied current pair endpoints. A larger caller exports pair tables from two snapshots and emits these commands while comparing them. Its complete behavior, the pair flag meaning and full gameplay integration remain unresolved; it receives no full-function review credit.
 
 Cold backup, isolated trial, main promotion and independent reopening verify both saved names, working byte/uint/pointer ABI and connected caller decompilation, with original archives unchanged. Totals:316 checked names among9,580 discovered functions;1,753 mapped and7,827 unmapped.
+
+### Saved legacy object-pair to glued-parent conversion
+
+Applied ConvertObjectPairToGluedParent. The source inheritance byte must be zero, its IsGluedGadget metadata offset positive, and its glue byte clear. The target must differ from the source and existing parent and belong to the accepted type set. Success writes the full target reference to source offset4 and sets its IsGluedGadget field to1. Optional branches convert a local transform and invalidate matching property0x231 wire records; these branches remain untested.
+
+3,024 original-native cases with54 accepted conversions cover the previously identified Microchip, HealthGadget and HealthModifier glue offsets, missing0/0xffff metadata, inherited/already-glued sources, self/same-parent rejection, target-type gates and upper reference bits. No imports/models execute on this tested path; optional transform metadata is absent and wire count is zero. Complete guarded source/target/frame/metadata effects are checked, with full state SHA256 every64th case.
+
+65 original versioned-caller instructions show the helper being used for compatible pair endpoints, its AL result accumulated and the old pair invalidated. This connects a legacy use of the table to glued-object relationships; it does not prove that every pair or flag means glue. Malformed/null inputs, cycles, optional transform/wire branches and complete caller/game behavior remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name and working state/object/reference ABI, unchanged existing functions and original archives. Totals:317 checked names among9,580 discovered functions;1,754 mapped and7,826 unmapped.
