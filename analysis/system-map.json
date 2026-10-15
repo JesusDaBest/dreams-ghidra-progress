@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1811,
-  "unmapped_total": 7769,
+  "mapped_total": 1812,
+  "unmapped_total": 7768,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46052,6 +46052,27 @@
           "kind": "verified_semantic_review",
           "name": "FindTextGlyphRecordData",
           "support": "Original function bodies, native execution over asset lookup planes and bounded direction/list profiles, independent saved-signature reopen."
+        }
+      ]
+    },
+    "1412dae20": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Computes glyph advance for text layout.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Glyph width arithmetic implementation.",
+      "code_sha256": "fbe8c558e6be258eba1edd5a4013ef05552a61d160a2d2345b4ed23c29335f22",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeTextGlyphAdvance",
+          "support": "Original body and linked glyph lookup, bit-exact arithmetic checks and independently reopened float signature."
         }
       ]
     }

@@ -2844,3 +2844,13 @@ The glyph helper resolves direction from the first nonnegative override at state
 The original remapper passed 262,307 checks. The original glyph helper and remapper together passed 2,490,440 checks over all twelve original asset lookup planes in two fallback directions, plus 48,960 corrected checks across 6,120 direction/list/alignment profiles. Exact pointers, guards and unchanged inputs agree. The initial direction fixture incorrectly represented an empty list; its failure was preserved, corrected and excluded from passing counts.
 
 All 159 original instruction spans match. Cold backup, isolated trial, promotion and independent reopening verify both saved names and signatures, unchanged instructions and unchanged archives. Runtime arrays are synthesized and property expectations use original tables. Loader execution, glyph payloads, metrics, shaping and rendering remain unverified. Totals: 378 checked names, 1,811 mapped and 7,769 unmapped functions among 9,580 discovered functions; these are not whole-game completion percentages.
+
+### Saved glyph advance calculation
+
+Applied ComputeTextGlyphAdvance with a float return in XMM0 and three reviewed SysV pointer parameters: iterator, layout context and glyph record data. The iterator classification flag can force zero advance. Normal glyph width uses a signed 16-bit field divided by 64, multiplied by one plus a packed nine-bit field divided by 255, then by the layout scale. An optional multiplier excludes codepoints with property bit 0x40; tabs still use it.
+
+Tabs look up the space glyph and multiply its advance by four. The fixed-width digit option uses 96; control 0x1A uses the exact stored float 41.60000228881836; internal token 0xFDDB has zero width. These are measured layout units, not screen pixels or an assertion about all text behavior.
+
+All 92 original instruction spans match. The original function, original glyph lookup and original remapper passed 15,360 finite-input checks with bit-exact binary32 results and unchanged input buffers. The arithmetic oracle follows assembly operation order. Its first version rounded decimal 41.6 differently from the game's stored constant; that mismatch was documented, corrected and excluded from passing counts.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved name, parameter storage and float return, unchanged instructions and unchanged original archives. Synthetic records and original property tables support these checks; NaN, infinity, denormal behavior, original loader execution, full layout, shaping and rendering remain unverified. Totals: 379 checked names, 1,812 mapped and 7,768 unmapped functions among 9,580 discovered functions. Whole-game completion remains unproven.
