@@ -2378,3 +2378,13 @@ Native checks cover 1,056 basic capacity cases, 440,264 special-emoji capacity c
 Selected tests cover text, styles, buttons, placeholders, escapes, color, size and emoji/flag output. Malformed streams, all token/flag combinations, substitution and rendering remain unresolved. Short-buffer failures can leave partial writes or state changes; atomic failure is not claimed.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged instructions/archives. Totals: 363 checked names (333 renames, 29 created functions and one retained-name review), 1,796 mapped and 7,784 unmapped among 9,580 discovered functions. No whole-game completion percentage is inferred.
+
+### Saved mode-selected text conversion and storage caller
+
+Applied StoreTextRecordInSelectedRepresentation with an opaque mode context, record key and bounded text arguments. Mode zero stores internal text; mode one stores readable text. Matching input representation is stored directly, otherwise the appropriate size and writer helpers convert it before the record builder runs. Null end uses strlen; null source and unsupported modes return without storage. The function returns no success status and ignores the builder result.
+
+Native checks cover 44 direct/guard cases, 168 forward cases, 168 reverse cases and 144 ASCII boundary cases through exactly 4,096 converted bytes. Whole guarded caller/context/record/index/content buffers, hashes, inputs, source indices and canary match expectations. Conversion expectations share earlier native converter vectors; boundary byte expectations are independent.
+
+Both directions use the stack temporary through 4,096 bytes. The larger allocation/free branch was read but remains unexecuted. Chunk growth, placeholder parsing in the conversion integration, substitution and rendering remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original instructions/archives. Totals: 364 checked names (334 renames, 29 created functions and one retained-name review), 1,797 mapped and 7,783 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
