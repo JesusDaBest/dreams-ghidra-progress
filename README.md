@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/fe372a4388554354f25eb89b05b1ad7d3dc939a0/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/cb3f9bb2a5357a6092a3c5c72b85b5b4a202c1e9/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**296 of 9,577 functions named and checked.** A function is one piece of the game's code.
+**297 of 9,577 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/fe372a4388554354f25eb89b05b1ad7d3dc939a0/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/cb3f9bb2a5357a6092a3c5c72b85b5b4a202c1e9/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 122 | 5/83 | 0/39 |
-| Gadgets & logic | 497 | 42/42 | 45/455 |
+| Gadgets & logic | 497 | 43/42 | 45/455 |
 | Physics & collision | 64 | 6/32 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
@@ -79,8 +79,8 @@ Every square is one actual function and has the same size. All function squares 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 497 functions identified; 42 behavior/helper reviews; 45 property/type reviews
-  - **Logic & signals** - 122 functions identified; 36 behavior/helper reviews; 20 property/type reviews
+- **Gadgets & logic** - 497 functions identified; 43 behavior/helper reviews; 45 property/type reviews
+  - **Logic & signals** - 122 functions identified; 37 behavior/helper reviews; 20 property/type reviews
     - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
@@ -139,8 +139,8 @@ Every square is one actual function and has the same size. All function squares 
     - **Inverter** - 3 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Microchip** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Microchip** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Splitter** - 3 functions identified; 1 behavior/helper reviews; 1 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
