@@ -2944,3 +2944,11 @@ All 149 original instruction spans match. Assembly confirms destination,begin,en
 The original initializer passed 1152 bounded integration profiles covering eight plain/internal forms,three locale values,three flag values,four optional-state profiles including supplied zero direction and four alignments. Whole iterator bytes,input and supplied state,guards and stack canary agree. The oracle shares the separately checked original direction probe and advancement helpers,so this is not an independent specification of the entire iterator. Malformed streams,full shaping/rendering and in-game behavior remain unresolved.
 
 Cold backup,isolated trial,promotion and independent reopening verify the saved name/signature and unchanged original archives. Totals: 391 checked names,1,824 mapped and7,756 unmapped among9,580 discovered functions;these are not whole-game completion percentages.
+
+### Token processing: auxiliary records and replacement spans
+
+Direct execution now covers selected branches beyond plain-text passthrough. Token 0xFDDF appends a 32-byte auxiliary record when the list has spare capacity: bytes 0–24 become zero, bytes 25–27 remain untouched, and the type field at byte 28 becomes 4. The list count increases, the dispatcher returns false, and the replacement span remains unchanged. Thirty-two checks cover eight insertion positions and four record alignments with exact whole-buffer, list, context, span and canary expectations. The meaning of type 4 remains unknown; allocation and full-capacity paths were not executed.
+
+A separate 100-instruction helper replaces the context string and returns its begin/end span. A nonzero flag surrounds the input with the UTF-8 encodings of U+FDE2 and U+FDE3; zero copies plain text. All 3,000 checks passed for inline lengths 0–249, three flag values and four alignments, executing original string and libc dependencies. Whole guarded context, source and returned span agree with independent expectations. Release of owned old storage, external sources and heap growth remain untested. The internal markers' meaning has not yet been established.
+
+These results do not verify the complete dispatcher, account-dependent substitutions, rendering or in-game behavior. No new names or completion credit are added for partially covered dispatcher behavior. Raw instructions and fixtures remain local.

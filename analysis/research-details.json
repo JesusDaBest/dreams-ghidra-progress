@@ -6391,5 +6391,36 @@
       "Working descriptive name and opaque state pointers;not recovered source."
     ],
     "runtime_game_verified": false
+  },
+  "text_token_selected_branch_checks": {
+    "auxiliary_marker": {
+      "calls": 32,
+      "token_hex": "0xfddf",
+      "original_dispatcher_instructions": 982,
+      "method": "Original complete dispatcher code;FDDF in-capacity branch only;8 insertion counts at4 record alignments.Independent whole guarded32-byte records/list/context/output-span checks andcanary.",
+      "findings": [
+        "Appends32-byte auxiliary record,type4 atoffset28,zeroesbytes0..24,leavesbytes25..27 untouched.",
+        "Increments list count;returnsfalse and leaves replacement span unchanged."
+      ],
+      "limits": [
+        "No allocation/full-capacity branch,null list,other tokens or processor integration executed.",
+        "Semantic meaning of auxiliary type4 not established."
+      ],
+      "project_modified": false
+    },
+    "replacement_span": {
+      "calls": 3000,
+      "original_instructions": 100,
+      "method": "Original complete helper with original insertion/strlen/memmove/memcpy;inline lengths0..249,flag0/1/255,four alignments.Independent exact whole guardedcontext/source/span andcanary.",
+      "findings": [
+        "Replaces context-owned string atoffset16 and returns begin/end span.",
+        "Nonzero flag wraps text in UTF8 encodings of U+FDE2 and U+FDE3;zero copies plain text."
+      ],
+      "limits": [
+        "Owned old string release,external source and heap growth unexecuted.",
+        "Meaning of internal wrapper markers and full token dispatch unresolved."
+      ],
+      "project_modified": false
+    }
   }
 }
