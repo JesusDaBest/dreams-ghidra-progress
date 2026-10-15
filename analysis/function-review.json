@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "322 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "324 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9073,
-    "other_names": 507,
-    "verification": "complete_inventory_matches_baseline_plus_322_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9071,
+    "other_names": 509,
+    "verification": "complete_inventory_matches_baseline_plus_324_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7673,6 +7673,56 @@
         "Empty insertion preserves preexisting hashword;synthetic storage tests do not establish in-game defect/reachability.",
         "No final substitution/rendering or whole-game completion claim.",
         "Descriptive working name and opaque-context types are not recovered source."
+      ]
+    },
+    {
+      "address": "1414b27a0",
+      "original_name": "FUN_1414b27a0",
+      "applied_name": "ComputeInternalTextStreamSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV ComputeInternalTextStreamSize(uchar * text_begin, uchar * text_end)",
+      "evidence": [
+        "Complete195/530-instruction size/writer bodies and original caller read;original SELF/saved bytes agree.",
+        "840 native capacity cases cover21 selected inputs,allcapacities0..required+2 and4alignments;exactsuccessfulbytes/cursors/state andcapacity/input/source/index/canary;independentknownempty/ASCII/Hebrew bytevectors.",
+        "168 connected originalmode0 caller/build cases verifyconverted storedbytes/count/hash againstprior direct-converter vectors;explicit/automaticends,4alignments,guardedcontext/arrays/chunks.",
+        "Originalparser/control/data/library dependencies used,no modeled replacements.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "21 selected inputs;not allcontrolpayloads/Unicode/RTL/optionalmarker pathsverified.",
+        "Short-buffer failure canleavepartialwrites/statechanges;not transactional.",
+        "Connectedcaller outputsfitted4096-byte stackscratch;heaptemporary andchunkgrowth unexecuted.",
+        "Reverseconversion/finalsubstitution/rendering unresolved.",
+        "Descriptive working names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "1414b2040",
+      "original_name": "FUN_1414b2040",
+      "applied_name": "WriteInternalTextStream",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV WriteInternalTextStream(uchar * * output_cursor_inout, uchar * output_end, uchar * * input_cursor_inout, uchar * input_end, void * parser_state, uchar * marker_input_position)",
+      "evidence": [
+        "Complete195/530-instruction size/writer bodies and original caller read;original SELF/saved bytes agree.",
+        "840 native capacity cases cover21 selected inputs,allcapacities0..required+2 and4alignments;exactsuccessfulbytes/cursors/state andcapacity/input/source/index/canary;independentknownempty/ASCII/Hebrew bytevectors.",
+        "168 connected originalmode0 caller/build cases verifyconverted storedbytes/count/hash againstprior direct-converter vectors;explicit/automaticends,4alignments,guardedcontext/arrays/chunks.",
+        "Originalparser/control/data/library dependencies used,no modeled replacements.",
+        "Cold backup,isolated trial,promotion and independent reopening verify names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "21 selected inputs;not allcontrolpayloads/Unicode/RTL/optionalmarker pathsverified.",
+        "Short-buffer failure canleavepartialwrites/statechanges;not transactional.",
+        "Connectedcaller outputsfitted4096-byte stackscratch;heaptemporary andchunkgrowth unexecuted.",
+        "Reverseconversion/finalsubstitution/rendering unresolved.",
+        "Descriptive working names/types are not recoveredsource."
       ]
     }
   ],

@@ -2620,3 +2620,13 @@ The builder grows content in 4,096-byte payload chunks and tokens in 256-record 
 A 150-instruction caller selects direct storage or text-representation conversion based on modes zero/one and a leading control byte. Forty-four native checks verify its direct/guard paths using original builder/hash/copy/strlen dependencies: null source and invalid modes leave the builder unchanged, automatic end stops at the first zero byte, and an explicit bounded range preserves embedded zeroes. Whole guarded caller/builder contexts, arrays/chunks, inputs and original source/index data were checked.
 
 The conversion helpers, temporary heap allocation, chunk growth, virtual allocator and final substitution/rendering remain unresolved. No new checked-name or whole-function completion credit was added.
+
+### Saved internal text-stream size and writer
+
+Applied ComputeInternalTextStreamSize and WriteInternalTextStream with working bounded text/cursor arguments and opaque parser state. The forward writer emits an internal stream beginning with control byte 0x0E for nonempty output, then encoded text/control units, escape markers and payloads. It applies controls and commits cursors after complete units. The size helper follows the same parser/control pipeline without writing output.
+
+840 native capacity checks cover 21 selected plain, Hebrew, tag, alias, placeholder and escaped inputs, every capacity from zero through required size plus two, and four alignments. Selected measured sizes match actual byte counts; known empty/ASCII/Hebrew byte vectors also match. Short buffers return failure without writing past the supplied end, but partial writes and state changes are possible, so failure is not claimed atomic.
+
+Another 168 connected original-caller cases verify that mode-zero conversion stores the encoded bytes, length and hash through the record builder. They cover explicit/automatic input ends and the stack temporary-buffer path. Expected bytes come from prior direct-converter checks, not an independent full format specification. Optional marker insertion, broader control/Unicode/RTL cases, reverse conversion, heap temporaries, final substitution and rendering remain unresolved.
+
+Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and unchanged original instructions/archives. Totals: 354 checked names (324 renames, 29 created functions and one retained-name review), 1,787 mapped and 7,793 unmapped among 9,580 discovered functions. Whole-game completion is not inferred.
