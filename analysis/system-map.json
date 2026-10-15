@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1731,
-  "unmapped_total": 7846,
+  "mapped_total": 1732,
+  "unmapped_total": 7845,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44367,6 +44367,26 @@
           "kind": "verified_semantic_review",
           "name": "ProcessQueuedRegionQueriesForPhase",
           "support": "Complete processor, original GPU stage labels,360 scoped native cases and saved-name verification."
+        }
+      ]
+    },
+    "1408d4d70": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "region-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "CPU region weight calculation is called by the phase-filtered region-query processor.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body captured; scoped native weight cases and exact ABI recovery.",
+      "code_sha256": "f840edc11c36996c296b6677a949cf302163a886318e7fd1dabe548f1d3eaa53",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateRegionShapeWeight",
+          "support": "Original evaluator,1833 scoped native cases, float return and saved-name/type verification."
         }
       ]
     }

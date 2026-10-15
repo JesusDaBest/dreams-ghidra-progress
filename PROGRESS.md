@@ -1734,3 +1734,11 @@ Totals:290 checked descriptive names among9,577 discovered functions;1,731 mappe
 Validated the processor direct result path with408 additional original-instruction cases:192 single-leaf cases and216 cases using trees of1,3 or33 leaves. Original enum instructions independently identify object kind17 as Sprite. Admitted Sprite candidates append weight1.0 and their mapped object identifiers when the query auxiliary bit2 is set and phase/masks match. Tests check exact entry order, per-query count/start spans, total append count and complete state/game preservation.
 
 The candidate scratch list holds1,024 entries shared across matching requests. The global result buffer stops appending at16,383 entries; subsequent direct-path requests receive empty spans. This establishes the selected direct Sprite path, not GPU sculpt output or exact geometry beyond BVH admission. Byte-fill import modeling, synthetic scenes, callbacks, actor-list fields, GPU saturation and in-game/concurrent validation remain explicit limits. The saved processor comment and current evidence were updated; checked-name total remains290.
+
+### Saved CPU region-shape weight evaluator
+
+Applied EvaluateRegionShapeWeight and recovered its float return in XMM0, shape byte in DIL, five16-byte SIMD inputs and two16-byte incoming stack transform containers. The connected region processor consumes its positive output as a query weight. All686 original instruction spans match the executable; working types expose storage without claiming original C++ declarations or source argument order.
+
+1,833 controlled original-instruction cases validate selected identity/uniform-axis mode0/4 radial falloff, mode1 box-shell falloff and empty/constant/invalid guards. Independent reference error stays below0.00000017. The original box-intersection callee executes; mapped cylinder/cone callees are not exercised with nonempty geometry. General rotations, nonuniform extents, full shape enum, mode5 gameplay meaning and real-game/GPU behavior remain unresolved. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature; connected processor still decompiles.
+
+Totals:291 checked descriptive names among9,577 discovered functions;1,732 mapped and7,845 unmapped. Selected weight cases do not establish complete geometry or subsystem understanding.

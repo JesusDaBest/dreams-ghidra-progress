@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "264 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "265 existing-function renames and26 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9577,
-    "default_fun_names": 9131,
-    "other_names": 446,
-    "verification": "complete_inventory_matches_baseline_plus_264_renames_and_26_created_functions"
+    "default_fun_names": 9130,
+    "other_names": 447,
+    "verification": "complete_inventory_matches_baseline_plus_265_renames_and_26_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -6194,6 +6194,31 @@
         "No real game or concurrency validation.",
         "Broad descriptive processor role; subordinate shaders and complete gameplay semantics are unresolved.",
         "Positive direct-path fixtures use synthetic balanced Sprite trees; concrete gameplay appearance and geometric accuracy beyond BVH admission remain unresolved."
+      ]
+    },
+    {
+      "address": "1408d4d70",
+      "original_name": "FUN_1408d4d70",
+      "applied_name": "EvaluateRegionShapeWeight",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float PS4_SYSV EvaluateRegionShapeWeight(uchar shape_mode, SpatialQueryFloat4Working16 sample_point, SpatialQueryFloat4Working16 transform_a_position_scale, SpatialQueryFloat4Working16 transform_a_rotation, SpatialQueryFloat4Working16 inner_extent, SpatialQueryFloat4Working16 outer_extent, SpatialQueryFloat4Working16 transform_b_position_scale, SpatialQueryFloat4Working16 transform_b_rotation)",
+      "evidence": [
+        "Complete686-instruction evaluator captured and matched original executable bytes.",
+        "1833 original-instruction cases validate selected identity/uniform-axis radial and box-shell falloff plus empty/constant/invalid guards.",
+        "Region processor consumes positive scalar result as query weight; return storage is low32bitsXMM0.",
+        "Exact DIL, five16-byte SIMD inputs and two16-byte incoming stack containers represented in working signature.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved name/signature and connected processor decompilation."
+      ],
+      "caveats": [
+        "Only identity transforms and selected uniform positive axes; general rotations/nonuniform extents unresolved.",
+        "Mode2/3 nonempty geometry not validated by independent oracle.",
+        "Full shape enum/source symbols and gameplay meaning of mode5 unresolved.",
+        "No real-game or GPU validation.",
+        "Analyst parameter order and transform container labels; original C++ declarations not recovered."
       ]
     }
   ],
