@@ -2907,5 +2907,21 @@
       "No full subsystem completion or audited-byte credit."
     ],
     "runtime_game_verified": false
+  },
+  "reset_update_output_sequences": {
+    "selector_sequences": 480,
+    "timer_sequences": 720,
+    "method": "Original reset, update and output functions composed with synthetic objects in bounded native hardware subprocesses. Full object/output bytes and guards checked.",
+    "findings": [
+      "Selector reset installs ActivePort255. Inactive update normalizes it to0 for positive port counts, including zero Power.",
+      "Timer reset clears State but preserves CurrentTime and TimerDone storage. In modes0/1/2, done output can remain true when current equals target; CountDown3 requires Active state and is false after reset.",
+      "Inactive Timer update still clamps selected finite time values, which can make done output true in modes0/1/2."
+    ],
+    "limits": [
+      "Inactive Game mode0, null previous objects and null property bags only.",
+      "Selected synthetic dimensions include zero port count and out-of-dispatch output aliases, without claiming valid UI configurations.",
+      "These are helper compositions, not observed game scheduling. No names, completion counts or audited-byte credit added."
+    ],
+    "runtime_game_verified": false
   }
 }

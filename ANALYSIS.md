@@ -1665,3 +1665,8 @@ Named and independently reopened PassesThingUpdateStateAndPowerGate. Complete na
 Named and independently reopened ResetThingSelectedRuntimeState. The helper clears stored state bits18/19, then dispatches on Thing kind to reset selected fields. Selector ActivePort becomes255; Timer State becomes0 while CurrentTime remains unchanged. This is not a reset of every gadget setting or runtime value.
 
 2,048 original-instruction hardware cases passed across every low-byte dispatch value, four flag patterns and two fill patterns. Every object byte and guard was compared. Synthetic padded objects include unregistered kinds; game reachability and complete caller behavior remain unverified. Totals: 251 checked names; 1,694 mapped functions; 7,876 unmapped.
+### Reset, inactive update and output sequences
+
+Composed original helpers on hardware: 480 Selector sequences and 720 Timer sequences passed full object/output byte and guard checks. Selector reset installs ActivePort255, then an inactive update normalizes it to0 for a positive port count, even with zero Power. Timer reset clears State while preserving CurrentTime and TimerDone storage. Modes0/1/2 can still report done after reset when current equals target; CountDown3 instead requires Active state. Selected inactive Timer clamps can also make done output true.
+
+These are synthetic helper compositions with Game mode0, null previous state and null property bags. They do not establish real-game scheduling or complete gadget behavior. No verified-name or completion increment.
