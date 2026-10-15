@@ -1656,3 +1656,9 @@ A failed first model assumed flat-axis conversion contributed zero; original ins
 Applied BuildMortonBvhForBounds with five opaque pointer inputs and a32-bit node-count return. Original157-instruction wrapper, four job targets and30 connected cases support its role. Empty input returns0; nonempty input produces2n-1 nodes and forward/inverse identifier permutations. The first caller-supplied context pointer remains opaque; actual jobs use a global scheduler.
 
 Cold backup, isolated ABI trial, promotion and independent reopening verify the saved name/signature and unchanged original bytes/archives. Sequential scheduler/fence and copy models remain explicit limits; concurrency and complete real-game consumers are unresolved. Totals:282 checked names among9,576 functions;1,723 mapped and7,853 unmapped. No whole-subsystem completion credit.
+
+### Unsigned64 range sorter
+
+Applied SortUnsigned64Values with unsigned64 begin/end pointers and a64-bit partition budget. The complete426-instruction routine sorts ascending with unsigned comparisons, partition/insertion paths and a larger-range heap fallback.375 native array cases across sizes0..1024, high-bit/extreme/duplicate/random/reverse data and budgets-1/0/1/16/1024 match independent unsigned ordering and exact value multiplicity; both guards remain intact.
+
+Backed-up trial, promotion and independent reopening verify the name/signature, original instructions and unchanged archives. The original copy import resolves to an explicit overlap-safe model; malformed ranges, concurrent mutation and actual library copy remain unverified. Totals:283 checked names among9,576 functions;1,724 mapped and7,852 unmapped. No whole-subsystem completion claim.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "257 existing-function renames and25 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "258 existing-function renames and25 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9576,
-    "default_fun_names": 9138,
-    "other_names": 438,
-    "verification": "complete_inventory_matches_baseline_plus_257_renames_and_25_created_functions"
+    "default_fun_names": 9137,
+    "other_names": 439,
+    "verification": "complete_inventory_matches_baseline_plus_258_renames_and_25_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5855,6 +5855,28 @@
         "Finite selected bounds; explicit NaN/infinity inputs, invalid records, index overflow and allocation contracts untested.",
         "Original library copy modeled; real game consumers unresolved.",
         "First caller-supplied build-context pointer role remains unresolved; actual scheduler is read from a global."
+      ]
+    },
+    {
+      "address": "1411b8730",
+      "original_name": "FUN_1411b8730",
+      "applied_name": "SortUnsigned64Values",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SortUnsigned64Values(ulonglong * begin, ulonglong * end, longlong partition_budget)",
+      "evidence": [
+        "Complete426-instruction native sorter inspected and matched original PS4 bytes.",
+        "375 original-instruction cases cover unsigned high-bit/extreme/duplicate/random/reverse values, empty ranges, boundaries and five partition budgets.",
+        "Exact sorted values, multiplicity and both guards checked against independent unsigned sorting.",
+        "Cold backup, isolated trial, promotion and independent reopening verify name and pointer/pointer/64-bit budget ABI."
+      ],
+      "caveats": [
+        "Original library memmove implementation modeled, not executed.",
+        "Valid begin/end pointers and selected sizes/budgets; malformed ranges and concurrent mutation untested.",
+        "No game scheduler or subsystem completion claim."
       ]
     }
   ],

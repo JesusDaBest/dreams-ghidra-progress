@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 282,
+    "checked_and_applied_names": 283,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 282,
+    "verified_names": 283,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "257 existing-function renames and25 created functions verified after independent reopening.",
+    "scope": "258 existing-function renames and25 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3994,6 +3994,55 @@
       "Original library copy modeled; real game consumers unresolved.",
       "First caller-supplied build-context pointer role remains unresolved; actual scheduler is read from a global."
     ],
+    "runtime_game_verified": false
+  },
+  "unsigned64_sort_checkpoint": {
+    "name": "SortUnsigned64Values",
+    "passed": 375,
+    "sizes": [
+      0,
+      1,
+      2,
+      3,
+      16,
+      31,
+      32,
+      33,
+      40,
+      41,
+      64,
+      65,
+      255,
+      256,
+      1024
+    ],
+    "profiles": [
+      "random",
+      "ascending",
+      "descending",
+      "duplicates",
+      "edge_values"
+    ],
+    "partition_budgets": [
+      -1,
+      0,
+      1,
+      16,
+      1024
+    ],
+    "original_native_instructions": 426,
+    "method": "Original unsigned64 sort instructions on hardware with retained original memmove thunk and explicit overlap-safe copy model. Exact unsigned order, value multiplicity and both guards checked.",
+    "findings": [
+      "Ascending comparison treats high-bit values as unsigned.",
+      "Selected empty/small/large arrays, duplicate keys and reverse order match independent unsigned sorting.",
+      "Negative/zero budget selects fallback for larger ranges; selected positive budgets exercise partitioning and recursive budget reduction."
+    ],
+    "limits": [
+      "Original library memmove implementation modeled, not executed.",
+      "Valid begin/end pointers and selected sizes/budgets; malformed ranges and concurrent mutation untested.",
+      "No game scheduler or subsystem completion claim."
+    ],
+    "project_modified": false,
     "runtime_game_verified": false
   }
 }
