@@ -6558,5 +6558,33 @@
       ],
       "project_modified": false
     }
+  },
+  "text_hash_substitution_checks": {
+    "dispatcher": {
+      "calls": 296,
+      "method": "Original hashdispatcher/reader/tablepredicate/virtualcleanup/replacement/insertion/libc;37 acceptedtextlengths0..245,2wrapsettings,4alignments;independentwholecontext/cursor/state/span/input/guards/canary.",
+      "findings": [
+        "Hash branch requiresatleast4acceptedbytes and prefixes UTF8 U+E474 plusspace to acceptedtext.",
+        "Flag1000 disablesFDE2/FDE3 wrappers;shortacceptedtext failsaftercursoradvance."
+      ],
+      "limits": [
+        "Auxlistdisabled;growth,capacityfailure andotheracceptedcharacters unresolved.",
+        "Privateuseglyph meaningnotestablished;no rendering/game claim."
+      ],
+      "project_modified": false
+    },
+    "processor": {
+      "calls": 32,
+      "method": "Originalprocessor/hashdispatcher/reader/tablepredicate/cleanup/replacement/auxrecord/libc;lengths4/16,2wrapflags,2scannermodes,4alignments;independentwholeoutput/context/list/input andauxbytes except3paddingbytes;stateguards/canary.",
+      "findings": [
+        "Flag80 enables hash substitution;defaultscanner preservesliteralhashtext.",
+        "Enabledpath producesU+E474+space+text withoptionalwrappers andappends type2 auxiliaryrecord zeroingbytes0..24."
+      ],
+      "limits": [
+        "Capacitygrowth,otheracceptedcharacters,malformedtext andrendering unresolved.",
+        "Fullparserstatemutations notindependentlymodeled."
+      ],
+      "project_modified": false
+    }
   }
 }
