@@ -1382,3 +1382,8 @@ Named and independently reopened ChooseRandomiserWeightedPort. Original fields b
 12,960 controlled native updater cases compare NoRepeat, Shuffle, TrueRandom and a synthetic invalid mode, including initialization, trigger transitions, exact seed changes and16-bit counter boundaries. Shuffle advances a deterministic weighted ordering from ShuffleSeed. Initialization can run without a trigger, updates the thread seed again for ShuffleSeed and does not increment RandomIndex. An out-of-range Shuffle port may remain until the final clamp.
 
 The updater, weighted picker and import thunk retain their original instructions. The operating-system TLS boundary is explicitly modeled to return worker seed index1; this is not execution of the PS4 OS implementation. Tests use non-null previous state, while the captured direct worker call passes null. Actual active-path reachability and scheduling remain unresolved. No names or completion metrics added.
+### Randomiser trigger-edge updater name
+
+Applied and independently reopened UpdateRandomiserFromTriggerEdges with working Game, previous Randomiser, current Randomiser and object-index arguments. Original fields, mode labels, complete native control flow and12,960 controlled native cases support the descriptive role. Initialization can run without a trigger; initialized zero-to-nonzero input advances selection and16-bit RandomIndex.
+
+The synthetic TLS boundary and non-null previous-state fixture remain explicit limitations. The captured direct worker call passes null previous state, so active game reachability is unresolved. Neither this name nor the tests establish whole-gadget completion. Totals: 253 checked names; 1,696 mapped functions; 7,874 unmapped.
