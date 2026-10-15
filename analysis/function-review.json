@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "304 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "307 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9091,
-    "other_names": 489,
-    "verification": "complete_inventory_matches_baseline_plus_304_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9088,
+    "other_names": 492,
+    "verification": "complete_inventory_matches_baseline_plus_307_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -7241,6 +7241,78 @@
         "Color parser can return false with partial output; all-zero RGBA is false.",
         "Size parser writes default32 on tested failures and clamps successful values1..512.",
         "Full markup/control integration and visible text rendering remain unverified.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414afae0",
+      "original_name": "FUN_1414afae0",
+      "applied_name": "ApplyTextControlToken",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV ApplyTextControlToken(uint token, void * text_state)",
+      "evidence": [
+        "Complete original bodies and text-parser/emitter callers reviewed;225 original spans match SELF and saved bytes.",
+        "10240 original control-handler/unwinding cases verify exact Boolean,whole96-byte state and guards across160 tokens/64 state profiles;original jump/reset/Unicode tables,no models.",
+        "1812 complete original prefix cases use actual original strlen/strncmp through thunks;empty/long/embedded-NUL literals,short ranges,all256 first bytes and4 alignments;exact cursor/input/literalguards.",
+        "Original named-style table and48 native hash checks link clue/term/pink to style2/1/3; selected color/size token-to-field linkage independently recorded.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Opaque text-state field meanings are only partially resolved.",
+        "Control-state and prefix tests do not verify whole markup/font/rendering behavior.",
+        "Prefix match alone does not require whole-tag equality; caller may impose that separately.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414afd70",
+      "original_name": "FUN_1414afd70",
+      "applied_name": "UnwindTextStateMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UnwindTextStateMask(void * text_state)",
+      "evidence": [
+        "Complete original bodies and text-parser/emitter callers reviewed;225 original spans match SELF and saved bytes.",
+        "10240 original control-handler/unwinding cases verify exact Boolean,whole96-byte state and guards across160 tokens/64 state profiles;original jump/reset/Unicode tables,no models.",
+        "1812 complete original prefix cases use actual original strlen/strncmp through thunks;empty/long/embedded-NUL literals,short ranges,all256 first bytes and4 alignments;exact cursor/input/literalguards.",
+        "Original named-style table and48 native hash checks link clue/term/pink to style2/1/3; selected color/size token-to-field linkage independently recorded.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Opaque text-state field meanings are only partially resolved.",
+        "Control-state and prefix tests do not verify whole markup/font/rendering behavior.",
+        "Prefix match alone does not require whole-tag equality; caller may impose that separately.",
+        "Descriptive names and working types are not recovered source declarations."
+      ]
+    },
+    {
+      "address": "1414b16c0",
+      "original_name": "FUN_1414b16c0",
+      "applied_name": "TryConsumeTextLiteralPrefix",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryConsumeTextLiteralPrefix(uchar * * cursor, uchar * end, uchar * literal)",
+      "evidence": [
+        "Complete original bodies and text-parser/emitter callers reviewed;225 original spans match SELF and saved bytes.",
+        "10240 original control-handler/unwinding cases verify exact Boolean,whole96-byte state and guards across160 tokens/64 state profiles;original jump/reset/Unicode tables,no models.",
+        "1812 complete original prefix cases use actual original strlen/strncmp through thunks;empty/long/embedded-NUL literals,short ranges,all256 first bytes and4 alignments;exact cursor/input/literalguards.",
+        "Original named-style table and48 native hash checks link clue/term/pink to style2/1/3; selected color/size token-to-field linkage independently recorded.",
+        "Full cold backup, isolated trial, promotion and independent reopening verify names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Opaque text-state field meanings are only partially resolved.",
+        "Control-state and prefix tests do not verify whole markup/font/rendering behavior.",
+        "Prefix match alone does not require whole-tag equality; caller may impose that separately.",
         "Descriptive names and working types are not recovered source declarations."
       ]
     }

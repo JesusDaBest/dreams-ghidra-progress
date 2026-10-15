@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1767,
-  "unmapped_total": 7813,
+  "mapped_total": 1770,
+  "unmapped_total": 7810,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45127,6 +45127,69 @@
         {
           "kind": "verified_semantic_review",
           "name": "TryParseTextSizeTag",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414afae0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original text-control application,packed-state unwinding and bounded literal-prefix helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "ac6fefa087168404b442bcc5d7c51f7b439fa5c9e3cb8f06f6a2fea7029c3837",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyTextControlToken",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414afd70": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original text-control application,packed-state unwinding and bounded literal-prefix helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "c89ba060a50aa7ca80fd9ecf2ad556ead24e97f2f810a97f80cbec544a105cf0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UnwindTextStateMask",
+          "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
+        }
+      ]
+    },
+    "1414b16c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original text-control application,packed-state unwinding and bounded literal-prefix helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Text decoding implementation.",
+      "code_sha256": "943ebc268c4776f62b3e65c0fd2692ea8885730cb9d26d2dc823401aa5d24faa",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryConsumeTextLiteralPrefix",
           "support": "Complete original body, native tests, independent generated GCN decode and independently reopened name/signature."
         }
       ]
