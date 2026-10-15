@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9577,
-  "mapped_total": 1743,
-  "unmapped_total": 7836,
+  "mapped_total": 1744,
+  "unmapped_total": 7835,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44601,6 +44601,26 @@
         }
       ],
       "code_sha256": "07a7686b557f59dec7850cd40aad36f4c387c29bec6acc61c6370bae733ceca6"
+    },
+    "1408e2910": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "gameplay",
+        "healthmodifier",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original HealthModifier linked-list/type check and zone/impact field routing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Queues HealthModifier zone work and prepares packed impact targets.",
+      "code_sha256": "9ccd536db8c0bfd0b1791d2a134989811d29961d640a630644b814bb4d239d70",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareHealthModifierZoneQueriesAndImpactTargets",
+          "support": "Original460-instruction producer,1944 impact fixtures, existing zone trace and saved signature independently reopened."
+        }
+      ]
     }
   },
   "hierarchy": [

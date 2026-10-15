@@ -1830,3 +1830,11 @@ Corrected Float3, SoundCategory and AudioNumber registrars from Windows two-argu
 All514 original instruction spans match. Cold backup, isolated ABI trial, promotion and independent reopening verify four intended name/signature entries, connected caller decompilation and unchanged archives. RAX pointer outputs are observed working outputs, not recovered original C++ return declarations; metadata tags do not prove byte widths. Reserve/hash/type initialization and game integration remain untested here.
 
 Only the newly named icon registrar adds checked-name credit; the three existing-name ABI corrections add none. Totals:302 checked names among9,579 discovered functions;1,743 mapped and7,836 unmapped.
+
+### Saved HealthModifier query and impact preparation
+
+Applied PrepareHealthModifierZoneQueriesAndImpactTargets after reviewing the complete460-instruction body. It walks active HealthModifiers and clears OutputHealthModAffected, prepares zone queries in the zero phase, and builds impact target mappings in the nonzero phase. EntireLevel zones clear the cached query handle; other shapes route through the existing geometry/mask/enqueue chain. Impact targets retain low16 mapping bits, acquire a modifier tag and append label/filter flags to the first free of eight11-bit slots. Duplicate traversal targets and full records are skipped.
+
+1,944 native impact cases cover all slot occupancies, selected label/filter flags, map/scratch gates and negative/zero/positive/NaN target Power.576 cases append a packed token,648 reject a tagged mapping and72 reach a full eight-slot record. The original producer and libc memset execute; TLS, scratch allocation/release and graph traversal are explicit models. Exact object/packed/map/scratch/receipt checks run each case, with full game/current/previous-state preservation checked every128th.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature and unchanged original archives. Zone execution, real graph traversal, multiple-modifier interactions, exact filter/property2d7 labels and complete game-loop integration remain unresolved. Totals:303 checked names among9,579 discovered functions;1,744 mapped and7,835 unmapped.

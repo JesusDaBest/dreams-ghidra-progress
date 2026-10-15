@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 261,
+    "done": 262,
     "todo": 1482,
-    "total": 1743,
-    "behavior_or_helpers_reviewed": 198,
+    "total": 1744,
+    "behavior_or_helpers_reviewed": 199,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 90,
+        "done": 91,
         "todo": 409,
-        "total": 499,
-        "behavior_or_helpers_reviewed": 45,
+        "total": 500,
+        "behavior_or_helpers_reviewed": 46,
         "properties_or_types_reviewed": 45,
-        "runtime_functions_identified": 44,
+        "runtime_functions_identified": 45,
         "property_type_functions_identified": 455,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -58,6 +58,7 @@
           "ReadInverterOutputVariant",
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
+          "PrepareHealthModifierZoneQueriesAndImpactTargets",
           "AccumulateHealthModifierDelta",
           "UpdateVariableGadgetValues",
           "UpdateSignalInspectorChangeCounters",
@@ -561,6 +562,7 @@
           "1408ceb90",
           "1408cecf0",
           "1408cf9d0",
+          "1408e2910",
           "1408e31c0",
           "1408e4bb0",
           "1408ecaa0",
@@ -8870,17 +8872,18 @@
           {
             "name": "gadgets-logic/gameplay",
             "label": "Gameplay & scoring",
-            "done": 8,
+            "done": 9,
             "todo": 57,
-            "total": 65,
-            "behavior_or_helpers_reviewed": 3,
+            "total": 66,
+            "behavior_or_helpers_reviewed": 4,
             "properties_or_types_reviewed": 5,
-            "runtime_functions_identified": 3,
+            "runtime_functions_identified": 4,
             "property_type_functions_identified": 62,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "VisitVariableGadgetProperties",
+              "PrepareHealthModifierZoneQueriesAndImpactTargets",
               "AccumulateHealthModifierDelta",
               "UpdateVariableGadgetValues",
               "InitializeVariableGadgetDefaults",
@@ -8950,6 +8953,7 @@
             ],
             "done_addresses": [
               "1404e33a0",
+              "1408e2910",
               "1408e31c0",
               "1408e4bb0",
               "140944f20",
@@ -9019,6 +9023,92 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/gameplay/healthmodifier",
+                "label": "Health Modifier",
+                "done": 2,
+                "todo": 3,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "PrepareHealthModifierZoneQueriesAndImpactTargets",
+                  "AccumulateHealthModifierDelta"
+                ],
+                "todo_names": [
+                  "0x1404d54d0",
+                  "0x140d57570",
+                  "0x140d6fca0"
+                ],
+                "done_addresses": [
+                  "1408e2910",
+                  "1408e31c0"
+                ],
+                "todo_addresses": [
+                  "1404d54d0",
+                  "140d57570",
+                  "140d6fca0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/gameplay/healthmodifier/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404d54d0",
+                      "0x140d57570",
+                      "0x140d6fca0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404d54d0",
+                      "140d57570",
+                      "140d6fca0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/gameplay/healthmodifier/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "PrepareHealthModifierZoneQueriesAndImpactTargets",
+                      "AccumulateHealthModifierDelta"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408e2910",
+                      "1408e31c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/gameplay/variablegadget",
                 "label": "Variable Gadget",
@@ -9216,88 +9306,6 @@
                       "140ccc020",
                       "140d68f60"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/gameplay/healthmodifier",
-                "label": "Health Modifier",
-                "done": 1,
-                "todo": 3,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AccumulateHealthModifierDelta"
-                ],
-                "todo_names": [
-                  "0x1404d54d0",
-                  "0x140d57570",
-                  "0x140d6fca0"
-                ],
-                "done_addresses": [
-                  "1408e31c0"
-                ],
-                "todo_addresses": [
-                  "1404d54d0",
-                  "140d57570",
-                  "140d6fca0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/gameplay/healthmodifier/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404d54d0",
-                      "0x140d57570",
-                      "0x140d6fca0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404d54d0",
-                      "140d57570",
-                      "140d6fca0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/gameplay/healthmodifier/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AccumulateHealthModifierDelta"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408e31c0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -41304,5 +41312,5 @@
       }
     ]
   },
-  "unmapped": 7836
+  "unmapped": 7835
 }
