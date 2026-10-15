@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 270,
+    "checked_and_applied_names": 272,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 270,
+    "verified_names": 272,
     "function_count": 9570,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "251 existing-function renames and19 created functions verified after independent reopening.",
+    "scope": "253 existing-function renames and19 created functions verified after independent reopening.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3677,6 +3677,19 @@
       "Allocation/free and game scheduler not executed; no running-game or subsystem-completion claim."
     ],
     "project_modified": false,
+    "runtime_game_verified": false
+  },
+  "gate_registration_checkpoint": {
+    "names": [
+      "InitializeGateTypeDescriptor",
+      "RegisterGateProperties"
+    ],
+    "original_instruction_spans_checked": 374,
+    "limits": [
+      "Static reflection registration review; allocator, static guards and descriptor callbacks not execution-tested.",
+      "Enum strings are preserved without inferring complete UI scope semantics.",
+      "Descriptive working names; no whole-Gate or running-game completion claim."
+    ],
     "runtime_game_verified": false
   }
 }

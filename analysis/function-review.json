@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "251 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "253 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9144,
-    "other_names": 426,
-    "verification": "complete_inventory_matches_baseline_plus_251_renames_and_19_created_functions"
+    "default_fun_names": 9142,
+    "other_names": 428,
+    "verification": "complete_inventory_matches_baseline_plus_253_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5579,6 +5579,50 @@
         "Raw cached codes and object mode byte are deliberately not given unsupported human labels.",
         "Selected Game lookup ranges checked; full grouping and actual scheduling unverified.",
         "No whole-subsystem completion or audited-byte credit."
+      ]
+    },
+    {
+      "address": "140d58340",
+      "original_name": "FUN_140d58340",
+      "applied_name": "InitializeGateTypeDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeGateTypeDescriptor(void)",
+      "evidence": [
+        "Complete native body and original reflection descriptor/property offsets inspected.",
+        "374 instruction spans across the two registrars match the original PS4 executable.",
+        "Runtime updater, sorter and grouping/arbitration independently corroborate selected Gate offsets.",
+        "Cold backup, isolated trial, promotion and independent reopening verify names and void no-argument signatures."
+      ],
+      "caveats": [
+        "Static reflection registration review; allocator, static guards and descriptor callbacks not execution-tested.",
+        "Enum strings are preserved without inferring complete UI scope semantics.",
+        "Descriptive working names; no whole-Gate or running-game completion claim."
+      ]
+    },
+    {
+      "address": "140d6b980",
+      "original_name": "FUN_140d6b980",
+      "applied_name": "RegisterGateProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RegisterGateProperties(void)",
+      "evidence": [
+        "Complete native body and original reflection descriptor/property offsets inspected.",
+        "374 instruction spans across the two registrars match the original PS4 executable.",
+        "Runtime updater, sorter and grouping/arbitration independently corroborate selected Gate offsets.",
+        "Cold backup, isolated trial, promotion and independent reopening verify names and void no-argument signatures."
+      ],
+      "caveats": [
+        "Static reflection registration review; allocator, static guards and descriptor callbacks not execution-tested.",
+        "Enum strings are preserved without inferring complete UI scope semantics.",
+        "Descriptive working names; no whole-Gate or running-game completion claim."
       ]
     }
   ],

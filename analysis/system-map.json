@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1713,
-  "unmapped_total": 7857,
+  "mapped_total": 1714,
+  "unmapped_total": 7856,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -24822,6 +24822,16 @@
     },
     "140d6b980": {
       "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "gate",
+        "properties-types"
+      ],
+      "component_basis": "Original Gate descriptor and direct registrar tail call bind the reflected property table.",
+      "code_role": "properties-types",
+      "code_role_basis": "Complete native descriptor/field registration inspected and independently saved.",
+      "code_sha256": "63e710b177174cb6452b215271a15b7e4499dc18eafb21ce1c3f4c6d0bc471f7",
       "evidence": [
         {
           "kind": "type_registration",
@@ -24836,17 +24846,13 @@
           "type_name": "EScopeType",
           "site": "140d6be39",
           "target": "14170c79c"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterGateProperties",
+          "support": "Original Gate reflection metadata, native body, original byte match and independent saved-project verification."
         }
-      ],
-      "code_sha256": "b434fd4a29671eabb049aea06972758cf372de972243f70d5f5319d0a91e58d5",
-      "component_path": [
-        "gadgets-logic",
-        "common",
-        "role-unresolved"
-      ],
-      "component_basis": "multiple_components",
-      "code_role": "role-unresolved",
-      "code_role_basis": "insufficient_evidence"
+      ]
     },
     "140d6ce30": {
       "system": "gadgets-logic",
@@ -44007,6 +44013,26 @@
           "kind": "verified_semantic_review",
           "name": "ResolveParentScopeReference",
           "support": "Original dispatcher, complete native helper, scoped hardware tests and independent saved-project reopening."
+        }
+      ]
+    },
+    "140d58340": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "gate",
+        "properties-types"
+      ],
+      "component_basis": "Original Gate descriptor and direct registrar tail call bind the reflected property table.",
+      "code_role": "properties-types",
+      "code_role_basis": "Complete native descriptor/field registration inspected and independently saved.",
+      "code_sha256": "2dc6c53139b9a0649e74d427f876cf502fcd105c9a4344c0b52ba818250e83e1",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeGateTypeDescriptor",
+          "support": "Original Gate reflection metadata, native body, original byte match and independent saved-project verification."
         }
       ]
     }
