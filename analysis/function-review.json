@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-12",
   "status": "applied_verified_after_reopening",
-  "review_scope": "235 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
+  "review_scope": "236 existing-function renames and19 created descriptive functions independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9570,
-    "default_fun_names": 9160,
-    "other_names": 410,
-    "verification": "complete_inventory_matches_baseline_plus_235_renames_and_19_created_functions"
+    "default_fun_names": 9159,
+    "other_names": 411,
+    "verification": "complete_inventory_matches_baseline_plus_236_renames_and_19_created_functions"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -5209,6 +5209,29 @@
         "Synthetic configurations include out-of-dispatch aliases and NumPorts0; valid UI configurations and real-game scheduling not established.",
         "Selected tags and well-formed bags; malformed input not tested.",
         "No complete Randomiser or game integration claim; no audited-byte credit."
+      ]
+    },
+    {
+      "address": "140c27870",
+      "original_name": "FUN_140c27870",
+      "applied_name": "EvaluateRemapperSignal",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EvaluateRemapperSignal(VariantWorking40 * output, void * configuration_and_state, uchar mode_gate_active, uchar zero_comparison_flag, VariantWorking40 current_input, VariantWorking40 previous_output)",
+      "evidence": [
+        "Original Remapper descriptor, fields and curve/edge/preset enum labels matched to complete446-instruction evaluator and native callers.",
+        "Native ABI traces identify four register arguments and two40-byte Variants passed by value; working types independently verified.",
+        "840 finite curves,16 exceptional bypass,46080 scalar edge and576 smoothing cases pass scoped native checks with original libc exp2f and NaN predicate.",
+        "Cold backup, isolated trial, promotion and independent reopen verify persisted role name, unchanged instructions and original archives."
+      ],
+      "caveats": [
+        "Descriptive role name; tests do not establish complete evaluator behavior.",
+        "Combined edge/smoothing, vector/player lanes, reversed thresholds and additional presets remain incomplete.",
+        "Selected original math paths only; external exp2f error helper intentionally unmapped.",
+        "No running-game validation or audited-byte credit."
       ]
     }
   ],

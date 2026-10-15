@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9570,
-  "mapped_total": 1697,
-  "unmapped_total": 7873,
+  "mapped_total": 1698,
+  "unmapped_total": 7872,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -43689,6 +43689,26 @@
           "support": "Original field binding, complete native output helper, scoped hardware tests and independent saved-project reopening."
         }
       ]
+    },
+    "140c27870": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "logic",
+        "remapper",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Remapper descriptor/fields, native configuration construction and evaluator match.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Native control flow and scoped original-instruction hardware cases independently persisted.",
+      "code_sha256": "7ac2cdff83bbaf7fc3ebce422f880f13f11ec67f41a77bd1d5d6089cafb95ae6",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateRemapperSignal",
+          "support": "Original Remapper fields/enums, native arguments, scoped curve/edge/smoothing tests and independent saved-project reopening."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48488,6 +48508,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

@@ -1411,3 +1411,8 @@ Smoothing, edge-state behavior, vector/player components and real-game integrati
 576 separate native smoothing cases use the original libc exp2f body and indexed table/constants. Selected rise/fall coefficients follow1-exp2(-6*(1/30)/smoothTime), alongside a separate linear increment. Results match the float32 model within1e-6; other bytes and guards are exact. The external exp2f error helper is deliberately unmapped and selected exponents avoid that path.
 
 These cover ordered0..1 ranges and selected scalar inputs. Reversed thresholds, vector/player lanes, combined edge-plus-smoothing behavior and game scheduling remain unverified. No naming or completion increment.
+### Remapper evaluator name
+
+Applied and independently reopened EvaluateRemapperSignal, with four register arguments and two40-byte Variants passed by value. Original fields and enums identify range mapping, curves, edge state, smoothing, presets and component bypass. The descriptive role is supported by native control-flow review and47,512 scoped cases across separately tested paths.
+
+This is not a full Remapper completion claim. Combined edge/smoothing, vector/player lanes, reversed thresholds, other presets and running-game integration remain unresolved. Original instructions and archives remain unchanged. Totals: 255 checked names; 1,698 mapped functions; 7,872 unmapped.
