@@ -3897,5 +3897,41 @@
       "Prepares2n-1 records with32-byte stride and sorts64-bit values.",
       "Job batch count ceiling(n/256) is not evidence of256-point cluster storage."
     ]
+  },
+  "morton_tree_pipeline_checkpoint": {
+    "passed": 36,
+    "sizes": [
+      1,
+      2,
+      3,
+      16,
+      32,
+      33,
+      255,
+      256,
+      257,
+      511,
+      512,
+      513
+    ],
+    "profiles": [
+      "random",
+      "duplicate_centres",
+      "reverse_centres"
+    ],
+    "method": "Original key/leaf/link/bounds workers and unsigned64 sorter; explicit tested overlap-safe memmove model. Keys checked against independent bit interleaving; full tree reachability, unique parent/child linkage, bound unions and flag propagation checked. Input/context preservation and all scratch guards checked.",
+    "findings": [
+      "Workers build a binary bounding-volume tree with2n-1 nodes,32-byte node stride and16-bit indices.",
+      "Keys interleave16 bits from each integer-normalized centre coordinate and append16-bit original index.",
+      "Leaf permutation preserves original record identifiers; internal nodes combine child bounds and flags.",
+      "Tree root is node2n-2 in tested fixtures;256 is worker batch size, not proved point-cluster storage."
+    ],
+    "limits": [
+      "Finite selected integer centres with explicit origin0/scale1; native normalization wrapper and degenerate/NaN bounds not executed.",
+      "Sequential job execution; concurrent scheduling and atomic memory ordering not validated.",
+      "Copy import modeled; scene/render/physics ownership and in-game execution unresolved."
+    ],
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }

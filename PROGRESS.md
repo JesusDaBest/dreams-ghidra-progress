@@ -1632,3 +1632,9 @@ Corrected an unsupported earlier interpretation of unsigned metadata4 as a byte 
 Reviewed Alex Evans’ [SIGGRAPH2015 slides](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), including the specific Hilbert-order/point-cluster description on page112. The talk covers historical rendering experiments; it does not establish this executable’s implementation.
 
 Fresh inspection of a local candidate instead finds Morton/Leaves/Links/Bounds job labels,2n-1 records and a64-bit sorter.583 captured instruction spans match the original executable. A256-element job batch is insufficient evidence of the slides’ point-cluster storage. Four worker callbacks are identified for further tracing; their ownership and data layout remain unresolved. No source/binary function match, new name or completion credit is claimed.277 names remain checked.
+
+### Morton binary bounding-volume tree workers
+
+The four native workers generate Morton keys, initialize leaves, link a binary tree and propagate bounds/flags.36 connected array cases pass across sizes1 through513, including duplicate and reversed centres and256-item job boundaries. Independent bit interleaving checks the keys; recursive invariants verify every node is reached exactly once, parent/child consistency, complete bound unions and flag propagation. Input/context bytes and scratch guards remain unchanged.
+
+The tested layout has2n-1 nodes of32 bytes and16-bit indices, with root2n-2. Keys combine16 coordinate bits per axis with a16-bit original index.256 is the job batch size; this does not establish the earlier talk’s point-cluster implementation. Original sorter/workers run with an explicit overlap-safe copy model and origin0/scale1 finite integer fixtures. Native normalization, degenerate/NaN bounds, concurrent scheduling and scene/render/physics ownership remain unverified. No new definitions, names or completion credit;277 names remain checked.
