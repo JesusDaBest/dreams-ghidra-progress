@@ -6181,5 +6181,24 @@
       "Workingdescriptive names/types are not recoveredsource."
     ],
     "runtime_game_verified": false
+  },
+  "text_layout_initialization_checkpoint": {
+    "passed_profiles": 384,
+    "original_instructions": {
+      "initializer": 149,
+      "direction_probe": 89,
+      "advance": 101
+    },
+    "findings": [
+      "Initializer installsboundedinput,optionalparserstate andlocale/defaultdirection,thenprimesfirstnoncontrolunit.",
+      "Suppliednonzerodirectionpreserved;flagaddsparserbit1;unknowninitialdirectionusesArabicRTL ordefaultLTR.",
+      "Withoutsuppliedstate,eightpaddingbytesremainunwritten;oracle retainsinitialpoisonatthosebytes."
+    ],
+    "limits": [
+      "Integrationoracle sharesoriginaldirectionprobe/advance,notindependentwholeiterator specification.",
+      "Selectedvalidforms only;fontmetrics/shaping/layout/rendering unresolved."
+    ],
+    "new_checked_names": 0,
+    "runtime_game_verified": false
   }
 }

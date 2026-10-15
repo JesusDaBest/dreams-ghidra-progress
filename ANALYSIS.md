@@ -2808,3 +2808,9 @@ Applied AdvanceTextLayoutUnit with an opaque iterator pointer and Boolean result
 The alternate indexed extraction path uses this iterator and additional font/layout helpers. Its state-construction and metrics functions were read, but font metrics, shaping, alternate extraction, actual layout and rendering remain unexecuted. Internal streams, nesting and malformed UTF8 need further coverage.
 
 Cold backup, isolated trial, promotion and independent reopening verify saved name/types and unchanged instructions/archives. Totals: 374 checked names (344 renames, 29 created functions and one retained-name review), 1,807 mapped and 7,773 unmapped among 9,580 discovered functions. No whole-game completion is inferred.
+
+### Verified text-layout iterator initialization
+
+384 native integration profiles run the original iterator initializer, direction probe and previously checked advance helper. Eight plain/internal forms, two locale settings, two flag settings, three optional-state profiles and four alignments agree with manually prepared iterator state followed by the original advance helper. Whole iterator, source, supplied-state guards and canary agree.
+
+Initialization installs bounded input, preserves a supplied nonzero direction, applies the flag bit, chooses Arabic RTL or default LTR for unknown initial direction, and primes the first non-control unit. Without supplied state, eight padding bytes remain unwritten; the expected state retains their original poison values. The integration expectation shares original direction/advance helpers and is not an independent complete iterator specification. Font metrics, shaping, layout and rendering remain unexecuted. No new naming credit is added; 374 names remain checked.
