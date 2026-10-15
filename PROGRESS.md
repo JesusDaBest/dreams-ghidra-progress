@@ -2510,3 +2510,13 @@ Cold backup, isolated trial, promotion and independent reopening verify saved na
 384 native integration profiles run the original iterator initializer, direction probe and previously checked advance helper. Eight plain/internal forms, two locale settings, two flag settings, three optional-state profiles and four alignments agree with manually prepared iterator state followed by the original advance helper. Whole iterator, source, supplied-state guards and canary agree.
 
 Initialization installs bounded input, preserves a supplied nonzero direction, applies the flag bit, chooses Arabic RTL or default LTR for unknown initial direction, and primes the first non-control unit. Without supplied state, eight padding bytes remain unwritten; the expected state retains their original poison values. The integration expectation shares original direction/advance helpers and is not an independent complete iterator specification. Font metrics, shaping, layout and rendering remain unexecuted. No new naming credit is added; 374 names remain checked.
+
+### Saved font data loader
+
+Applied LoadFontDataFromFile with opaque font-object and already-open file pointers. It retains the file handle, links the font into the runtime list, initializes glyph worker managers when needed, and loads packed FNTD font tables. The loader accepts versions 1 through 8. Version 7 uses a 48-byte header; packed 14-byte primary and 22-byte secondary records expand backwards into 48-byte runtime records with resolved record links.
+
+All 540 original instruction spans match. Import resolution confirms fopen, fread and C++ operator new[]; the allocator is not malloc. All twelve local version-7 assets agree with the table read order and bounds, covering 137,235 primary and 6,415 secondary records. Checked same-array links and primary-to-secondary references are within bounds.
+
+This is static loader and asset-structure evidence. The loader, worker threads, glyph payload decoding, shaping and rendering have not been executed. The inspected path does not check fread return counts; valid asset checks do not establish malformed-input safety. Raw assets and code remain local.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name and signature, unchanged instruction bytes and unchanged original archives. Totals: 375 checked names, 1,808 mapped and 7,772 unmapped functions among 9,580 discovered functions. These counts do not measure whole-game completion.

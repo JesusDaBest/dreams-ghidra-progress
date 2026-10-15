@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 374,
+    "checked_and_applied_names": 375,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 374,
+    "verified_names": 375,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "344 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "345 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -6199,6 +6199,22 @@
       "Selectedvalidforms only;fontmetrics/shaping/layout/rendering unresolved."
     ],
     "new_checked_names": 0,
+    "runtime_game_verified": false
+  },
+  "font_data_loader_saved_checkpoint": {
+    "saved_name": "LoadFontDataFromFile",
+    "original_instructions": 540,
+    "asset_validation": {
+      "files": 12,
+      "primary_records": 137235,
+      "secondary_records": 6415
+    },
+    "limits": [
+      "Static inspection and original asset structure only; loader not executed.",
+      "Glyph worker threads, allocation failure behavior, remaining file payload, shaping and rendering not validated.",
+      "fread return counts are not checked on the inspected loader path; valid assets do not establish malformed-input safety.",
+      "Working descriptive name and opaque pointer types; not recovered source."
+    ],
     "runtime_game_verified": false
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "344 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "345 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9051,
-    "other_names": 529,
-    "verification": "complete_inventory_matches_baseline_plus_344_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9050,
+    "other_names": 530,
+    "verification": "complete_inventory_matches_baseline_plus_345_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8214,6 +8214,29 @@
         "Classificationexpectation usesoriginaltable,notindependentUnicodeproperties.",
         "Fontmetrics/shaping/layout/rendering notexecuted.",
         "Workingdescriptive names/types are not recoveredsource."
+      ]
+    },
+    {
+      "address": "141554540",
+      "original_name": "FUN_141554540",
+      "applied_name": "LoadFontDataFromFile",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV LoadFontDataFromFile(void * font_object, void * font_file)",
+      "evidence": [
+        "All 540 original instruction spans matched; complete loader body and startup callers inspected.",
+        "Loader imports resolved through original loader NIDs and local libc exports: fopen, fread and operator new[].",
+        "All twelve local version-7 font assets checked against read order, table bounds and packed record links.",
+        "Cold backup, isolated trial, promotion and independent reopen verified saved name/signature and unchanged archives."
+      ],
+      "caveats": [
+        "Static inspection and original asset structure only; loader not executed.",
+        "Glyph worker threads, allocation failure behavior, remaining file payload, shaping and rendering not validated.",
+        "fread return counts are not checked on the inspected loader path; valid assets do not establish malformed-input safety.",
+        "Working descriptive name and opaque pointer types; not recovered source."
       ]
     }
   ],
