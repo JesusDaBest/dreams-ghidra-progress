@@ -2520,3 +2520,13 @@ All 540 original instruction spans match. Import resolution confirms fopen, frea
 This is static loader and asset-structure evidence. The loader, worker threads, glyph payload decoding, shaping and rendering have not been executed. The inspected path does not check fread return counts; valid asset checks do not establish malformed-input safety. Raw assets and code remain local.
 
 Cold backup, isolated trial, promotion and independent reopening verify the saved name and signature, unchanged instruction bytes and unchanged original archives. Totals: 375 checked names, 1,808 mapped and 7,772 unmapped functions among 9,580 discovered functions. These counts do not measure whole-game completion.
+
+### Saved font glyph lookup
+
+Applied FindFontGlyphRecord with a reviewed 16-byte return type containing the selected font pointer and glyph index. Assembly and native execution confirm the two fields return in RAX and RDX. This corrects the incomplete pointer-only interpretation of related callers; their other behavior remains under investigation.
+
+The lookup uses each word's lower 16 bits as a presence mask and upper 16 bits as a base index, adding the rank of lower present bits. Mode zero selects the first font containing the codepoint, even without runtime records. Nonzero modes skip missing records: low mode byte 2 prefers the packed record class at or above 0x10000000, while other low bytes prefer below it. If no preferred match exists, the first eligible font is returned. No match returns both fields zero.
+
+The original 105-instruction helper passed 1,245,220 mode-zero checks covering every codepoint in all twelve original asset lookup planes plus out-of-range sentinels. Another 21,868 calls cover 3,124 exhaustive ordered lists of zero through four fonts, five availability/record states, four object alignments and seven modes. Return fields, output guards and unchanged input objects/tables agree. These tests use synthesized runtime objects with original lookup data; they do not execute the original loader or rendering.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name, signature, aggregate field layout and custom register return storage. Original instruction bytes and archives remain unchanged. Totals: 376 checked names, 1,809 mapped and 7,771 unmapped functions among 9,580 discovered functions. Whole-game completion, malformed-input safety, shaping, metrics and rendering remain unproven.

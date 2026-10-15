@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1808,
-  "unmapped_total": 7772,
+  "mapped_total": 1809,
+  "unmapped_total": 7771,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -45989,6 +45989,27 @@
           "kind": "verified_semantic_review",
           "name": "LoadFontDataFromFile",
           "support": "Original loader body, startup font-file calls, validated original asset table layout and independently reopened signature."
+        }
+      ]
+    },
+    "141551710": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "text-decoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Selects font and glyph index for text layout.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Font lookup and preference implementation.",
+      "code_sha256": "bda5aae6876a6ec2a69bba0b7032a0477c0aaadad98573170d9311df97db2dfd",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindFontGlyphRecord",
+          "support": "Original body, original asset lookup checks, exhaustive bounded preference cases and independently reopened aggregate return signature."
         }
       ]
     }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "345 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "346 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9050,
-    "other_names": 530,
-    "verification": "complete_inventory_matches_baseline_plus_345_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9049,
+    "other_names": 531,
+    "verification": "complete_inventory_matches_baseline_plus_346_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -8237,6 +8237,29 @@
         "Glyph worker threads, allocation failure behavior, remaining file payload, shaping and rendering not validated.",
         "fread return counts are not checked on the inspected loader path; valid assets do not establish malformed-input safety.",
         "Working descriptive name and opaque pointer types; not recovered source."
+      ]
+    },
+    {
+      "address": "141551710",
+      "original_name": "FUN_141551710",
+      "applied_name": "FindFontGlyphRecord",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "DreamsFontGlyphRecord PS4_SYSV FindFontGlyphRecord(void * font_set, uint codepoint, uint selection_mode)",
+      "evidence": [
+        "Complete original 105-instruction bitmap/rank and preference lookup read and matched to original executable.",
+        "Original helper executed for 1245220 mode-zero checks over twelve original font lookup tables.",
+        "21868 preference calls across 3124 exhaustive ordered font-list and alignment profiles; exact RAX/RDX, guards and unchanged inputs.",
+        "Cold backup, isolated trial, promotion and independent reopen verified aggregate return storage, saved signature and unchanged archives."
+      ],
+      "caveats": [
+        "Runtime font objects synthesized; original loader not executed.",
+        "Invalid pointers and malformed table indices excluded.",
+        "Glyph payload, shaping, metrics and rendering unverified.",
+        "Working descriptive name and reviewed return type; not recovered source."
       ]
     }
   ],
