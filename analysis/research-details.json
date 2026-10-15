@@ -4879,5 +4879,27 @@
     ],
     "runtime_game_verified": false,
     "distinct_buffer_fill_copy_checks": true
+  },
+  "pair_allocator_libc_trace_checkpoint": {
+    "bindings": [
+      "Game allocator thunk resolves memalign through original loader NID and matching local libc export.",
+      "Game deallocator thunk resolves free through original loader NID and matching local libc export."
+    ],
+    "memalign_module_path": [
+      "export279A0",
+      "relative relocation slot124148 ->27FD0",
+      "heap dispatcher31320"
+    ],
+    "free_module_path": [
+      "export27960",
+      "relative relocation slot124128 ->27F00"
+    ],
+    "native_descriptor_rejection_cases": 96,
+    "result": "Original memalign path returns null for mismatching synthetic heap descriptor; frame and16KiB data window unchanged.",
+    "limits": [
+      "Descriptor rejection is not valid-heap memory exhaustion.",
+      "Heap initialization/validity, runtime replacement of dispatch pointers, internal allocator body and live-game behavior unresolved."
+    ],
+    "runtime_game_verified": false
   }
 }
