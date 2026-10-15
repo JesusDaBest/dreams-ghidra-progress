@@ -4435,12 +4435,40 @@
     "controlled_native_cases": 1833,
     "maximum_reference_error": 1.692096069372262e-07,
     "limits": [
-      "Only identity transforms and selected uniform positive axes; general rotations/nonuniform extents unresolved.",
       "Mode2/3 nonempty geometry not validated by independent oracle.",
       "Full shape enum/source symbols and gameplay meaning of mode5 unresolved.",
       "No real-game or GPU validation.",
-      "Analyst parameter order and transform container labels; original C++ declarations not recovered."
+      "Analyst parameter order and transform container labels; original C++ declarations not recovered.",
+      "Matching transformA/B and uniform inner/outer extent triples only.",
+      "Nonuniform extents, mode2/3 nonempty geometry, complete enum and gameplay integration remain unresolved."
     ],
+    "runtime_game_verified": false
+  },
+  "region_shape_transform_checkpoint": {
+    "controlled_native_cases": 1350,
+    "maximum_error": 1.4289581074855562e-05,
+    "scope": "Matching transform containers and uniform inner/outer extent triples; selected randomized unit rotations, translations and positive uniform scales.",
+    "enum_lead": {
+      "type_name": "EGadgetZoneType",
+      "values": {
+        "0": "Sphere",
+        "1": "Box",
+        "2": "Cylinder",
+        "3": "Cone",
+        "4": "Ellipsoid",
+        "5": "EntireLevel"
+      },
+      "scope": "Original37-instruction descriptor and24-instruction value-registration bodies match executable bytes. Direct property-field-to-evaluator binding still unresolved; not counted as a new verified function."
+    },
+    "limits": [
+      "Mode2/3 nonempty geometry not validated by independent oracle.",
+      "Full shape enum/source symbols and gameplay meaning of mode5 unresolved.",
+      "No real-game or GPU validation.",
+      "Analyst parameter order and transform container labels; original C++ declarations not recovered.",
+      "Matching transformA/B and uniform inner/outer extent triples only.",
+      "Nonuniform extents, mode2/3 nonempty geometry, complete enum and gameplay integration remain unresolved."
+    ],
+    "name_count_unchanged": 291,
     "runtime_game_verified": false
   }
 }

@@ -1742,3 +1742,9 @@ Applied EvaluateRegionShapeWeight and recovered its float return in XMM0, shape 
 1,833 controlled original-instruction cases validate selected identity/uniform-axis mode0/4 radial falloff, mode1 box-shell falloff and empty/constant/invalid guards. Independent reference error stays below0.00000017. The original box-intersection callee executes; mapped cylinder/cone callees are not exercised with nonempty geometry. General rotations, nonuniform extents, full shape enum, mode5 gameplay meaning and real-game/GPU behavior remain unresolved. Cold backup, isolated trial, promotion and independent reopening verify the saved name/signature; connected processor still decompiles.
 
 Totals:291 checked descriptive names among9,577 discovered functions;1,732 mapped and7,845 unmapped. Selected weight cases do not establish complete geometry or subsystem understanding.
+
+### Transformed region-weight evidence and enum lead
+
+1,350 additional original-instruction cases validate radial modes0/4 and box mode1 with randomized translations, unit rotations and positive uniform scales. Matching transform containers and uniform inner/outer extent triples remain explicit fixture limits. Independent references use actual float32 inputs; maximum error is below0.0000143. No imports are modeled, and inputs remain unchanged.
+
+The original EGadgetZoneType registration declares0 Sphere,1 Box,2 Cylinder,3 Cone,4 Ellipsoid and5 EntireLevel. Its descriptor/value bodies match original executable bytes. These labels are consistent with the weight modes, but the direct property-field-to-evaluator trace remains open. Exploratory cylinder/cone axis probes are retained locally and provide no geometric validation credit. Nonuniform extents, unmatched transforms, nonempty modes2/3 and gameplay/GPU validation remain unresolved. The saved evidence comment was independently reopened; checked-name total stays291.
