@@ -3146,3 +3146,13 @@ Applied ProcessOrDeferObjectLookup with an integer processing-mode argument, opt
 All 308 original instruction spans match. The complete handler assembly/decompilation and lookup-to-worker handoff establish its deferred queue versus processing branches. Evidence includes the separately bounded 212 comparison/append and 192 nonempty dequeue fragment checks; these do not execute the full handler, locks, thread/clock calls, local asset construction or request routing.
 
 Cold backup, isolated trial, promotion and independent reopening verify the name, custom stack key storage, exact field layout and unchanged archives. Totals: 403 checked names, 1,836 mapped and 7,744 unmapped among 9,580 discovered functions. Full runtime handler behavior, concurrency and whole-game completion remain unproven.
+
+### Saved shared object cache writer
+
+Applied StoreObjectLookupResult with numeric status, payload begin/end, retry-counter reset flag, auxiliary flag, deadline seconds and the 32-byte DreamsObjectLookupKey passed by value. It handles both payload replacement and status-only updates, returning the stored payload pointer or null.
+
+Read all 577 original instructions and the typed trial decompilation. Five selected caller windows add 358 byte-matched instruction spans and confirm mixed register/stack arguments. Their decoded deadline constants are all 600 seconds, added to current time; this is not proof that every caller uses that duration or that every cache read enforces expiry.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved name, signature, key layout and unchanged archives. Full runtime writer behavior, all caller paths, object-type side effects, concurrency and eviction safety remain unresolved. Numeric status enum names are not recovered.
+
+Totals: 404 checked names and 1,837 mapped functions among 9,580 discovered functions; 7,743 still need system mapping.

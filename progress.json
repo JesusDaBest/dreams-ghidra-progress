@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 361,
+    "done": 362,
     "todo": 1475,
-    "total": 1836,
-    "behavior_or_helpers_reviewed": 296,
+    "total": 1837,
+    "behavior_or_helpers_reviewed": 297,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -25894,12 +25894,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 144,
+        "done": 145,
         "todo": 106,
-        "total": 250,
-        "behavior_or_helpers_reviewed": 129,
+        "total": 251,
+        "behavior_or_helpers_reviewed": 130,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 164,
+        "runtime_functions_identified": 165,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25921,6 +25921,7 @@
           "ReleaseRefCountedBlockHandle",
           "TransferSerializerByte",
           "LookupCachedObjectOrRequest",
+          "StoreObjectLookupResult",
           "ProcessOrDeferObjectLookup",
           "BeginFilteredPropertyVisit",
           "VisitPosProperties",
@@ -26175,6 +26176,7 @@
           "14038bed0",
           "14039b4a0",
           "1403a38d0",
+          "1403a3ef0",
           "1403a4dc0",
           "140413d40",
           "1404f68b0",
@@ -27452,17 +27454,18 @@
           {
             "name": "shared/objects",
             "label": "Objects & references",
-            "done": 15,
+            "done": 16,
             "todo": 11,
-            "total": 26,
-            "behavior_or_helpers_reviewed": 13,
+            "total": 27,
+            "behavior_or_helpers_reviewed": 14,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 13,
+            "runtime_functions_identified": 14,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "LookupCachedObjectOrRequest",
+              "StoreObjectLookupResult",
               "ProcessOrDeferObjectLookup",
               "GetPowerOrResolvedObjectPlayerMask",
               "ResolveGluedOrMicrochipInputReference",
@@ -27493,6 +27496,7 @@
             ],
             "done_addresses": [
               "1403a38d0",
+              "1403a3ef0",
               "1403a4dc0",
               "1408e2790",
               "1408f8330",
@@ -27705,6 +27709,61 @@
                 ]
               },
               {
+                "name": "shared/objects/object-cache",
+                "label": "Object cache",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "LookupCachedObjectOrRequest",
+                  "StoreObjectLookupResult",
+                  "ProcessOrDeferObjectLookup"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1403a38d0",
+                  "1403a3ef0",
+                  "1403a4dc0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/object-cache/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "LookupCachedObjectOrRequest",
+                      "StoreObjectLookupResult",
+                      "ProcessOrDeferObjectLookup"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1403a38d0",
+                      "1403a3ef0",
+                      "1403a4dc0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/objects/group",
                 "label": "Group",
                 "done": 0,
@@ -27750,57 +27809,6 @@
                       "1404901a0",
                       "140d53ef0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/object-cache",
-                "label": "Object cache",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "LookupCachedObjectOrRequest",
-                  "ProcessOrDeferObjectLookup"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1403a38d0",
-                  "1403a4dc0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/object-cache/runtime-implementation",
-                    "label": "Runtime implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "LookupCachedObjectOrRequest",
-                      "ProcessOrDeferObjectLookup"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1403a38d0",
-                      "1403a4dc0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -42172,5 +42180,5 @@
       }
     ]
   },
-  "unmapped": 7744
+  "unmapped": 7743
 }
