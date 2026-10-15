@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 269,
+    "done": 270,
     "todo": 1479,
-    "total": 1748,
-    "behavior_or_helpers_reviewed": 206,
+    "total": 1749,
+    "behavior_or_helpers_reviewed": 207,
     "properties_or_types_reviewed": 63,
     "whole_feature_completion": null,
     "groups": [
@@ -25243,12 +25243,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 130,
+        "done": 131,
         "todo": 108,
-        "total": 238,
-        "behavior_or_helpers_reviewed": 117,
+        "total": 239,
+        "behavior_or_helpers_reviewed": 118,
         "properties_or_types_reviewed": 13,
-        "runtime_functions_identified": 152,
+        "runtime_functions_identified": 153,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -25333,6 +25333,7 @@
           "MarkPackedResourceTreeReachable",
           "FinalizePackedResourceTreeWriter",
           "AppendSizedRecordToThreadBuffer",
+          "ResolvePersistentObjectIdToIndex",
           "FindThingPropertyMetadata",
           "SortUnsigned64Values",
           "ReduceTypedSignalToScalar",
@@ -25575,6 +25576,7 @@
           "1410614b0",
           "141061af0",
           "1410aa730",
+          "1410ab490",
           "14114db10",
           "1411b8730",
           "1411bfe20",
@@ -26985,6 +26987,468 @@
             ]
           },
           {
+            "name": "shared/objects",
+            "label": "Objects & references",
+            "done": 6,
+            "todo": 13,
+            "total": 19,
+            "behavior_or_helpers_reviewed": 6,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 6,
+            "property_type_functions_identified": 13,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "GetPowerOrResolvedObjectPlayerMask",
+              "ResolveGluedOrMicrochipInputReference",
+              "ReadResolvedObjectPlayerMask",
+              "PassesObjectPlayerMaskAndParentModeFilter",
+              "ResolveParentScopeReference",
+              "ResolvePersistentObjectIdToIndex"
+            ],
+            "todo_names": [
+              "0x1401118b0",
+              "0x1404901a0",
+              "0x140c82e60",
+              "0x140c8b960",
+              "0x140c8ba10",
+              "0x140c8c220",
+              "0x140cde180",
+              "0x140d13460",
+              "0x140d1a240",
+              "0x140d1bda0",
+              "0x140d1fa70",
+              "0x140d53ef0",
+              "0x140d5ed90"
+            ],
+            "done_addresses": [
+              "1408e2790",
+              "1408f8330",
+              "1408f85b0",
+              "1408f96a0",
+              "1408fa1f0",
+              "1410ab490"
+            ],
+            "todo_addresses": [
+              "1401118b0",
+              "1404901a0",
+              "140c82e60",
+              "140c8b960",
+              "140c8ba10",
+              "140c8c220",
+              "140cde180",
+              "140d13460",
+              "140d1a240",
+              "140d1bda0",
+              "140d1fa70",
+              "140d53ef0",
+              "140d5ed90"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/objects/thing",
+                "label": "Thing",
+                "done": 6,
+                "todo": 1,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 6,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 6,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetPowerOrResolvedObjectPlayerMask",
+                  "ResolveGluedOrMicrochipInputReference",
+                  "ReadResolvedObjectPlayerMask",
+                  "PassesObjectPlayerMaskAndParentModeFilter",
+                  "ResolveParentScopeReference",
+                  "ResolvePersistentObjectIdToIndex"
+                ],
+                "todo_names": [
+                  "0x140d5ed90"
+                ],
+                "done_addresses": [
+                  "1408e2790",
+                  "1408f8330",
+                  "1408f85b0",
+                  "1408f96a0",
+                  "1408fa1f0",
+                  "1410ab490"
+                ],
+                "todo_addresses": [
+                  "140d5ed90"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/thing/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 6,
+                    "todo": 0,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 6,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 6,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetPowerOrResolvedObjectPlayerMask",
+                      "ResolveGluedOrMicrochipInputReference",
+                      "ReadResolvedObjectPlayerMask",
+                      "PassesObjectPlayerMaskAndParentModeFilter",
+                      "ResolveParentScopeReference",
+                      "ResolvePersistentObjectIdToIndex"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408e2790",
+                      "1408f8330",
+                      "1408f85b0",
+                      "1408f96a0",
+                      "1408fa1f0",
+                      "1410ab490"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "shared/objects/thing/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d5ed90"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d5ed90"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/ethingtype",
+                "label": "Thing Type",
+                "done": 0,
+                "todo": 5,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 5,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1401118b0",
+                  "0x140c82e60",
+                  "0x140c8b960",
+                  "0x140c8ba10",
+                  "0x140c8c220"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1401118b0",
+                  "140c82e60",
+                  "140c8b960",
+                  "140c8ba10",
+                  "140c8c220"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/ethingtype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 5,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 5,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1401118b0",
+                      "0x140c82e60",
+                      "0x140c8b960",
+                      "0x140c8ba10",
+                      "0x140c8c220"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1401118b0",
+                      "140c82e60",
+                      "140c8b960",
+                      "140c8ba10",
+                      "140c8c220"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/group",
+                "label": "Group",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1404901a0",
+                  "0x140d53ef0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1404901a0",
+                  "140d53ef0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/group/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404901a0",
+                      "0x140d53ef0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404901a0",
+                      "140d53ef0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/thingref",
+                "label": "Thing Ref",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cde180",
+                  "0x140d1a240"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cde180",
+                  "140d1a240"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/thingref/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cde180",
+                      "0x140d1a240"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cde180",
+                      "140d1a240"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/persistentobjectdata",
+                "label": "Persistent Object Data",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d13460"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d13460"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/persistentobjectdata/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d13460"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d13460"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/thingpos",
+                "label": "Thing Pos",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d1bda0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d1bda0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/thingpos/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d1bda0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d1bda0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/thingpos2d",
+                "label": "Thing Pos2 D",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d1fa70"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d1fa70"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/thingpos2d/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d1fa70"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d1fa70"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/diagnostics",
             "label": "Debugging & diagnostics",
             "done": 0,
@@ -27321,462 +27785,6 @@
                     "todo_addresses": [
                       "140176430",
                       "1401767d0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/objects",
-            "label": "Objects & references",
-            "done": 5,
-            "todo": 13,
-            "total": 18,
-            "behavior_or_helpers_reviewed": 5,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 5,
-            "property_type_functions_identified": 13,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "GetPowerOrResolvedObjectPlayerMask",
-              "ResolveGluedOrMicrochipInputReference",
-              "ReadResolvedObjectPlayerMask",
-              "PassesObjectPlayerMaskAndParentModeFilter",
-              "ResolveParentScopeReference"
-            ],
-            "todo_names": [
-              "0x1401118b0",
-              "0x1404901a0",
-              "0x140c82e60",
-              "0x140c8b960",
-              "0x140c8ba10",
-              "0x140c8c220",
-              "0x140cde180",
-              "0x140d13460",
-              "0x140d1a240",
-              "0x140d1bda0",
-              "0x140d1fa70",
-              "0x140d53ef0",
-              "0x140d5ed90"
-            ],
-            "done_addresses": [
-              "1408e2790",
-              "1408f8330",
-              "1408f85b0",
-              "1408f96a0",
-              "1408fa1f0"
-            ],
-            "todo_addresses": [
-              "1401118b0",
-              "1404901a0",
-              "140c82e60",
-              "140c8b960",
-              "140c8ba10",
-              "140c8c220",
-              "140cde180",
-              "140d13460",
-              "140d1a240",
-              "140d1bda0",
-              "140d1fa70",
-              "140d53ef0",
-              "140d5ed90"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/objects/thing",
-                "label": "Thing",
-                "done": 5,
-                "todo": 1,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "GetPowerOrResolvedObjectPlayerMask",
-                  "ResolveGluedOrMicrochipInputReference",
-                  "ReadResolvedObjectPlayerMask",
-                  "PassesObjectPlayerMaskAndParentModeFilter",
-                  "ResolveParentScopeReference"
-                ],
-                "todo_names": [
-                  "0x140d5ed90"
-                ],
-                "done_addresses": [
-                  "1408e2790",
-                  "1408f8330",
-                  "1408f85b0",
-                  "1408f96a0",
-                  "1408fa1f0"
-                ],
-                "todo_addresses": [
-                  "140d5ed90"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/thing/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 5,
-                    "todo": 0,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 5,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 5,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "GetPowerOrResolvedObjectPlayerMask",
-                      "ResolveGluedOrMicrochipInputReference",
-                      "ReadResolvedObjectPlayerMask",
-                      "PassesObjectPlayerMaskAndParentModeFilter",
-                      "ResolveParentScopeReference"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408e2790",
-                      "1408f8330",
-                      "1408f85b0",
-                      "1408f96a0",
-                      "1408fa1f0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "shared/objects/thing/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d5ed90"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d5ed90"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/ethingtype",
-                "label": "Thing Type",
-                "done": 0,
-                "todo": 5,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 5,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1401118b0",
-                  "0x140c82e60",
-                  "0x140c8b960",
-                  "0x140c8ba10",
-                  "0x140c8c220"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1401118b0",
-                  "140c82e60",
-                  "140c8b960",
-                  "140c8ba10",
-                  "140c8c220"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/ethingtype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 5,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 5,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1401118b0",
-                      "0x140c82e60",
-                      "0x140c8b960",
-                      "0x140c8ba10",
-                      "0x140c8c220"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1401118b0",
-                      "140c82e60",
-                      "140c8b960",
-                      "140c8ba10",
-                      "140c8c220"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/group",
-                "label": "Group",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404901a0",
-                  "0x140d53ef0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404901a0",
-                  "140d53ef0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/group/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404901a0",
-                      "0x140d53ef0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404901a0",
-                      "140d53ef0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/thingref",
-                "label": "Thing Ref",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cde180",
-                  "0x140d1a240"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cde180",
-                  "140d1a240"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/thingref/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cde180",
-                      "0x140d1a240"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cde180",
-                      "140d1a240"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/persistentobjectdata",
-                "label": "Persistent Object Data",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d13460"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d13460"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/persistentobjectdata/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d13460"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d13460"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/thingpos",
-                "label": "Thing Pos",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d1bda0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d1bda0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/thingpos/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d1bda0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d1bda0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/thingpos2d",
-                "label": "Thing Pos2 D",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d1fa70"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d1fa70"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/thingpos2d/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d1fa70"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d1fa70"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -41360,5 +41368,5 @@
       }
     ]
   },
-  "unmapped": 7832
+  "unmapped": 7831
 }

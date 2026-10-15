@@ -2190,3 +2190,13 @@ Applied TestSortedReferencePairRecordMatch with begin/end pointers, two uint ref
 6,384 original native cases match independent tuple membership for consistently encoded sorted tables, including sizes0 through513, negative/boundary indices, duplicates and four upper-bit patterns. Another20 probes show that different upper bits with equal first index can accept regardless of the second reference. Table/frame bytes and guards are unchanged; no imports/models execute.17 original caller spans confirm the12-byte stride, two packed reference arguments, raw0xffffffff exclusions and Boolean result use.
 
 Cold backup, isolated trial, main promotion and independent reopening verify persistence, connected caller decompilation and unchanged original archives. Table production/domain, mixed-encoding ordering, malformed lengths, unsorted records and full caller/game execution remain unresolved. No subsystem assignment is claimed before tracing the table producer. Totals:311 checked names among9,580 discovered functions;1,748 remain mapped and7,832 unmapped.
+
+### Saved persistent object ID resolver and pair-table producer trace
+
+Applied ResolvePersistentObjectIdToIndex. It rejects ID0xffffffff before reading state, looks up a bucket by the low16 ID bits, checks a signed upper-ID fingerprint in an18-bit descriptor, then compares the full ID at the candidate object. On a miss it follows the collision chain until an index is outside the current object count. Success returns the low14-bit current index; failure returns0xffffffff.
+
+168 finite-chain configurations plus a null-state sentinel execute all28 original instructions without imports/models. Counts0 through513, high-bit IDs, first/middle/last/missing matches and fingerprint/full-ID mismatches are covered. Every case checks full state SHA256, object and input-frame preservation. Cyclic/malformed chains, invalid object pointers, counts beyond14-bit capacity and hash-table construction remain untested.
+
+26 original producer spans show command case0x0e resolving persistent IDs from payload offsets2 and6, appending two current indices plus the byte at payload offset10 to the12-byte table, and incrementing its count up to capacity16,383. Valid resolver output has upper reference bits zero, explaining consistent encoding on this producer path. The byte flag, command name, sorting path and complete reader/game execution remain unresolved; the pair search itself remains without a subsystem assignment.
+
+Cold backup, isolated trial, promotion and independent reopening verify the saved resolver ABI and connected producer decompilation with original archives unchanged. Totals:312 checked names among9,580 discovered functions;1,749 mapped and7,831 unmapped.

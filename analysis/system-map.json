@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1748,
-  "unmapped_total": 7832,
+  "mapped_total": 1749,
+  "unmapped_total": 7831,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -44714,6 +44714,26 @@
           "kind": "verified_semantic_review",
           "name": "AcceptRegionQueryTargetOutsideSourceParentSubtree",
           "support": "Original callback producer/consumer linkage, bounded body,46402 native cases and independently saved definition."
+        }
+      ]
+    },
+    "1410ab490": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Persistent object ID hash-bucket resolution into current object array index.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reads object ID, bucket descriptors and collision chain; returns current index or sentinel.",
+      "code_sha256": "1f56dc46cffd14536c06a2a4c196206f6402a8dad3b938ac8eef522eecd559f9",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolvePersistentObjectIdToIndex",
+          "support": "Complete native resolver,169 direct checks and command pair-table producer linkage."
         }
       ]
     }
