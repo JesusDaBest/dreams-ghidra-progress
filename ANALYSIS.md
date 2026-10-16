@@ -3535,3 +3535,13 @@ The game’s original format table identifies the companion distance atlas as R8
 The complete original descriptor/size chain passed both hardware-mode inputs: 512 MiB storage, 256-byte alignment, with the format preserved after control-flag changes. No GPU allocation or rendering was performed.
 
 An independent integer model checked all 1,048,576 possible twenty-bit indices. Their base coordinates map uniquely into 256×256×16 slots of size 8³ inside this atlas. This verifies the software base-address formula, not actual allocator capacity, every shader lane, hardware tiling or memory visibility. Reviewed-name total remains 468.
+
+### Surface-voxel counting consumes packed metadata
+
+Linked the actual Bricker2CountSurfaceVoxels shader through original loader literals, native archive hashing and section extraction. Read all 68 decoded instructions; reassembly reproduced the exact 344 program bytes. The shader reads 172 R8Uint metadata bytes per physical brick and counts nonzero nibbles. It does not sample the distance atlas directly. The gather producer explicitly zeros the final unused nibble, leaving 343 valid cell entries.
+
+Software models passed 1,200 record-count cases and 224 counter-distribution cases. The shader always adds the count to its selected level counter. A separate per-brick DWORD’s high bit also enables weighted contributions to lower-index counters, using powers of four with 32-bit arithmetic. That flag’s meaning and the counters’ physical units remain unresolved; GPU atomics, memory visibility and runtime results are unverified.
+
+Saved GetOrLoadBricker2CountSurfaceVoxelsShader after matching all 206 CPU instructions and independently reopening its working pointer-return signature. Backup, trial and promotion passed.
+
+Totals: 469 reviewed names; 1,898 mapped and 7,690 unmapped among 9,588 discovered functions.
