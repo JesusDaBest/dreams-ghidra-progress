@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "387 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "388 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9008,
-    "other_names": 572,
-    "verification": "complete_inventory_matches_baseline_plus_387_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9007,
+    "other_names": 573,
+    "verification": "complete_inventory_matches_baseline_plus_388_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9211,6 +9211,28 @@
       "caveats": [
         "Nonempty names, inline empty names, null output and allocator/growth/failure paths have not been executed.",
         "Angle units and portal-type values remain unresolved; descriptive name is not recovered source.",
+        "The complete parent serializer and whole-game behavior remain unverified."
+      ]
+    },
+    {
+      "address": "1403ad660",
+      "original_name": "FUN_1403ad660",
+      "applied_name": "MaterializeEditRightsMetadata",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV MaterializeEditRightsMetadata(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "evidence": [
+        "Complete 356-instruction original body and trial decompilation read; bytes matched against original executable.",
+        "Dream-record remix_of_edit_right nested at offset 0x1b0; two additional bounded caller windows read and matched. Field stores identify edit_right_bits, edit_right_ref_bits and edit_right_sig.",
+        "Original hash routine passed 64 checks against four bounded original literals. Original materializer passed 432 scalar-selection checks with explicit output and empty signature descriptors; exact output/input/descriptor/guards checked.",
+        "Cold backup, isolated trial, promotion and independent reopen verify descriptive name and custom seven-argument SysV ABI."
+      ],
+      "caveats": [
+        "Nonempty signatures, inline empty strings, null output and allocator/growth/failure paths have not been executed.",
+        "Bit meanings and signature creation/validation remain unresolved; this helper only copies existing metadata.",
         "The complete parent serializer and whole-game behavior remain unverified."
       ]
     }

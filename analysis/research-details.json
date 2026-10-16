@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 417,
+    "checked_and_applied_names": 418,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 417,
+    "verified_names": 418,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "387 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "388 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7256,6 +7256,23 @@
     "limits": [
       "Nonempty names, inline empty names, null output and allocator/growth/failure paths have not been executed.",
       "Angle units and portal-type values remain unresolved; descriptive name is not recovered source.",
+      "The complete parent serializer and whole-game behavior remain unverified."
+    ]
+  },
+  "edit_right_materializer_saved_checkpoint": {
+    "functions": {
+      "1403ad660": {
+        "name": "MaterializeEditRightsMetadata",
+        "signature": "void PS4_SYSV MaterializeEditRightsMetadata(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)"
+      }
+    },
+    "original_instructions": 356,
+    "original_scalar_checks": 432,
+    "original_hash_checks": 64,
+    "runtime_game_verified": false,
+    "limits": [
+      "Nonempty signatures, inline empty strings, null output and allocator/growth/failure paths have not been executed.",
+      "Bit meanings and signature creation/validation remain unresolved; this helper only copies existing metadata.",
       "The complete parent serializer and whole-game behavior remain unverified."
     ]
   }
