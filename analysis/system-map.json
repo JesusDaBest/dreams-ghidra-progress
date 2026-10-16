@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1909,
-  "unmapped_total": 7679,
+  "mapped_total": 1910,
+  "unmapped_total": 7678,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48185,6 +48185,27 @@
           "kind": "verified_semantic_review",
           "name": "CreateAndQueueDeferredDrawJob",
           "support": "Complete builder read and native chain tested; signature and stack arguments independently reopened."
+        }
+      ]
+    },
+    "14139fbf0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-registers",
+        "runtime-implementation"
+      ],
+      "component_basis": "Compute and draw job builders use this helper to copy shader constants and register backing-resource dependencies.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Copies shader constant payloads and registers backing resources.",
+      "code_sha256": "3b4bad7fef02fb9fd6ed87d9cce6b1c609be58c9adacb254d127a11568395791",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterDeferredShaderConstants",
+          "support": "Complete helper read and native chains tested; four-argument signature and backing pointer return independently reopened."
         }
       ]
     }

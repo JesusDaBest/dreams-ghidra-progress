@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 446,
+    "done": 447,
     "todo": 1463,
-    "total": 1909,
-    "behavior_or_helpers_reviewed": 381,
+    "total": 1910,
+    "behavior_or_helpers_reviewed": 382,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21526,12 +21526,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 31,
+        "done": 32,
         "todo": 268,
-        "total": 299,
-        "behavior_or_helpers_reviewed": 31,
+        "total": 300,
+        "behavior_or_helpers_reviewed": 32,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 273,
+        "runtime_functions_identified": 274,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21561,6 +21561,7 @@
           "AppendComputeCompletionFence",
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
+          "RegisterDeferredShaderConstants",
           "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
           "CreateAndQueueDeferredDrawJob",
@@ -21864,6 +21865,7 @@
           "141297cf0",
           "14131e560",
           "14131eca0",
+          "14139fbf0",
           "14139fd80",
           "1413a00c0",
           "1413a0150",
@@ -25205,12 +25207,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 23,
+            "done": 24,
             "todo": 0,
-            "total": 23,
-            "behavior_or_helpers_reviewed": 23,
+            "total": 24,
+            "behavior_or_helpers_reviewed": 24,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 23,
+            "runtime_functions_identified": 24,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25233,6 +25235,7 @@
               "CalculateImageDescriptorStorageRequirements",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
+              "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
               "TryAllocateGraphicsResourceStorage",
@@ -25259,6 +25262,7 @@
               "140044480",
               "141297bd0",
               "141297cf0",
+              "14139fbf0",
               "14139fd80",
               "1413a00c0",
               "1413c2ee0",
@@ -25513,6 +25517,57 @@
                 ]
               },
               {
+                "name": "rendering/compute/command-registers",
+                "label": "Shader input registers",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendComputeUserDataRegisters",
+                  "RegisterDeferredShaderConstants"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14003b5e0",
+                  "14139fbf0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/command-registers/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendComputeUserDataRegisters",
+                      "RegisterDeferredShaderConstants"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14003b5e0",
+                      "14139fbf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/resource-dependencies",
                 "label": "Resource dependencies",
                 "done": 2,
@@ -25556,53 +25611,6 @@
                     "done_addresses": [
                       "14139fd80",
                       "1413a00c0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/command-registers",
-                "label": "Shader input registers",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AppendComputeUserDataRegisters"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14003b5e0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/command-registers/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AppendComputeUserDataRegisters"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14003b5e0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -43370,5 +43378,5 @@
       }
     ]
   },
-  "unmapped": 7679
+  "unmapped": 7678
 }

@@ -3679,3 +3679,11 @@ The original 735-instruction draw-building chain passed 96 additional resource-t
 A further 16 original-chain fixtures covered both constant streams in modes 1 and 2 with nonempty root access lists and a shared dependency child. Mode 1 retains its backing record; mode 2 creates a registered copy. The fixtures verified dependency order, shared-child suppression, queue insertion and resource marker updates. Local native memcpy/memset shims remain fixture boundaries. No actual GPU execution was performed.
 
 This extends validation of the existing descriptive name; it adds no function names, mapping cells or whole-game completion credit. Earlier checkpoint limits describe the checks available at those checkpoints; these results supersede the former untested-mode-2 and empty-dependencies limitations for the specified fixture cases.
+
+### Deferred shader constant registration
+
+Saved RegisterDeferredShaderConstants after reading and matching all 110 original instructions, testing it inside the original compute and draw chains, and independently reopening its four-argument working signature and opaque backing-record pointer return. The packed argument contains a low 32-bit mode and high 32-bit byte count. The helper copies payload bytes to the arena and records their DWORD count.
+
+Mode 1 finds a backing resource covering the pointer loaded from the source. Mode 2 finds the source address, creates a registered copy and inherits dependency links. The reviewed dependency collector then walks those links for the job. Modes 0 and unknown modes return no backing record. Synthetic chain tests cover these distinctions, including shared-child suppression; they do not establish invalid-input safety, real capacity, concurrency or GPU behavior. Imported copy/zero routines were local native shims in the fixtures.
+
+Totals: 487 reviewed names; 1,910 mapped and 7,678 unmapped among 9,588 discovered functions. No whole-game completion credit is inferred.
