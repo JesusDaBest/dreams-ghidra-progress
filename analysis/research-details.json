@@ -8031,5 +8031,34 @@
       "Status values andcapacity branches traced,not exhaustively validated forinvalid inputs."
     ],
     "runtime_game_verified": false
+  },
+  "bricker_shader_research_checkpoint": {
+    "tree_writer_static_instructions": 49,
+    "tree_writer_exact_roundtrip_bytes": 260,
+    "gather_staged_static_instructions": 2807,
+    "gather_exact_roundtrip_verified": false,
+    "software_models": {
+      "coordinate_decode_cases": 5668,
+      "bc3_payload_packing_cases": 4176,
+      "float_class_definition_cases": 8242,
+      "trilinear_coefficients": 64,
+      "center_gradient_coefficients": 24,
+      "restored_interior_addresses": 512
+    },
+    "findings": [
+      "Archive lookup linked the actual gather and tree-writer programs.",
+      "Gather coordinates,hash/sparse-tree lookups,sampling,filtering,interpolation,gradient bounds,output reservation,compressed payload andmetadata tail traced.",
+      "Bit packing independently matches BC3-compatible byte layout;actual bound resource format remains unverified.",
+      "Shared-memory restoration covers all metadata corner addresses;mask60 includes negative zero under documented GCN class semantics."
+    ],
+    "limits": [
+      "No GPU execution,gameplay verification orwhole-algorithm conformance.",
+      "Gather reassembly failed at nine image-store constraints;whole-program encoding roundtrip unverified.",
+      "Software and algebraic checks do not establish hardware floating behavior,concurrency ormemory visibility.",
+      "Primary class reference is GCN3;exact PS4 GCN1.1 semantics still require confirmation.",
+      "Channel meanings,scalar physical meaning andruntime safety remain unresolved."
+    ],
+    "runtime_gpu_verified": false,
+    "reviewed_name_count_increment": 0
   }
 }

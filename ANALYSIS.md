@@ -3442,3 +3442,14 @@ Saved RunBricker2BuildPipeline after staged review andmatching of2,512 original 
 This establishes a descriptive CPU orchestration role,not a recovered source implementation orvalidated GPU algorithm. The exact aggregate stack types remain unresolved;the existing unknown prototype was retained. Helper tests do not prove whole-pipeline geometry orruntime correctness. Raw code remains local.
 
 Totals:455 reviewed names;1,887 mapped and7,701 unmapped among9,588 discovered functions.
+
+### Bricker2 shader research: encoding and semantics remain separate
+
+Read all 49 decoded tree-writer instructions and all 2,807 decoded gather instructions in staged reviews. The tree writer reassembled to its exact 260 original bytes. Gather reassembly failed at nine image-store constraints, so its complete encoding roundtrip remains unverified. Raw shaders and disassembly remain local.
+
+The gather trace covers coordinate decoding, hash and sparse-tree lookup, sample filtering, weighted interpolation, gradient bounds, index reservation, compressed payload and final records. Exact algebra checks establish one trilinear output and its center-gradient coefficients. Software models checked 5,668 coordinate cases and 4,176 final payload-packing cases; the payload matches BC3 byte-field layout, but the bound resource format is unverified. A 512-address model resolves shared-memory restoration before metadata reads. These checks do not execute the GPU or prove whole-shader correctness.
+
+AMD class documentation clarifies that mask 60 selects negative classes including negative zero; 8,242 software cases check that definition. The reference is GCN3, so exact PS4 GCN1.1 behavior remains a stated assumption. Channel meanings, scalar units, GPU floating behavior, memory visibility and runtime safety remain unresolved. Reviewed-name total stays 455.
+
+Format reference: https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression
+ISA reference: https://gpuopen.com/download/AMD_GCN3_Instruction_Set_Architecture_rev1.1.pdf
