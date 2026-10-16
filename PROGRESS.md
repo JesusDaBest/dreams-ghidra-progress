@@ -3395,3 +3395,11 @@ The original semantic mapper passed 192 cases covering 2,256 input words, includ
 The original input-control writer passed 204 exact packet cases, including counts 0–33, refill failure and relocation. Counts 1–32 preserve every source word; count zero emits NOP words, while count 33 advances over unfilled payload. The latter is observed boundary behavior, not a supported-use claim. Real caller limits still need audit.
 
 Totals: 492 reviewed names; 1,915 mapped and 7,673 unmapped among 9,588 discovered functions. No whole-game completion percentage is inferred.
+
+### Integrated binding-chain validation and failure-path scope
+
+Executed all 412 original instructions of the five-function shader-binding chain together across 192 controlled cases. Vertex/pixel binding wrappers, metadata mapping and input-control packet writing now connect in one fixture. Mapped input words reached the exact emitted packet payload, including the Neo-controlled branch. GNM imports, refill and the Neo query remained controlled substitutes; no real platform-generated binding packet or GPU interpolation was executed.
+
+A targeted transition test first denied command space, then restored space while requesting the same shader pair. The first call still updated the pointer cache; the second skipped rebinding because the pair matched. This establishes helper-local behavior, not a whole-engine defect. The original initialization path selects a default refill callback returning false, and the executor clears its local shader cache at entry. Persistence across executor invocations is therefore not demonstrated. Capacity accounting, later callback changes and recovery within an execution pass still need review.
+
+No new names or mapping cells were added. Totals remain 492 reviewed names, 1,915 mapped and 7,673 unmapped among 9,588 discovered functions.

@@ -8665,6 +8665,12 @@
       "No real GPU interpolation, platform-generated packet validation, actual allocator or concurrency proof.",
       "Cache error recovery and caller input-count bounds unresolved."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "integrated_original_chain_cases": 192,
+    "integrated_original_instructions": 412,
+    "retry_scenario_verified": true,
+    "executor_entry_shader_cache_reset_verified": true,
+    "default_refill_callback_returns_false": true,
+    "recovery_scope": "Identical cached pair skips retry within the helper after failed emission; cache resets at executor entry. Real exhaustion/accounting and later callback changes remain unresolved."
   }
 }
