@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 431,
+    "checked_and_applied_names": 434,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 431,
-    "function_count": 9580,
+    "verified_names": 434,
+    "function_count": 9583,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "401 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "401 renames,32 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7773,5 +7773,30 @@
       "Acceptsnoncanonical encodings; truncation/error yieldszero and10thbyte payload truncatesmodulo64. Zeroisnot proof ofvalidinput.",
       "No wholeparser orlivegame verification; trialpseudocode inspection limitedtosignature andfinalreturn."
     ]
+  },
+  "verified_decoder_definitions_checkpoint": {
+    "functions": {
+      "140163d80": {
+        "name": "DecodeBase64LikeText",
+        "signature": "ulonglong PS4_SYSV DecodeBase64LikeText(void * output, ulonglong capacity, void * input_text)"
+      },
+      "1413f6970": {
+        "name": "FindRequestSlotByStreamId",
+        "signature": "void * PS4_SYSV FindRequestSlotByStreamId(void * context, uint stream_id)"
+      },
+      "1413f94b0": {
+        "name": "ReadHpackPrefixInteger",
+        "signature": "uint PS4_SYSV ReadHpackPrefixInteger(void * stream_descriptor, uint first_byte, uint prefix_mask)"
+      }
+    },
+    "function_count": 9583,
+    "original_instructions": 292,
+    "scoped_native_checks": {
+      "140163d80": 1320,
+      "1413f6970": 828,
+      "1413f94b0": 6912
+    },
+    "original_archives_unchanged": true,
+    "real_game_verified": false
   }
 }

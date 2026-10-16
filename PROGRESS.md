@@ -3040,3 +3040,11 @@ Saved ReadUnsignedVarint64OrZero after reading its complete original body and ru
 The reader accepts noncanonical encodings and returns zero for truncated or invalid continuation sequences. Zero therefore does not prove valid input. These are scoped original-helper tests, not whole-parser or live-game verification.
 
 Totals: 431 checked names and 1,864 mapped functions among 9,580 discovered functions; 7,716 still need mapping. These counts do not measure whole-game completion.
+
+### Saved transport decoding helpers
+
+Defined DecodeBase64LikeText, FindRequestSlotByStreamId and ReadHpackPrefixInteger after reading their complete original bodies, auditing boundaries and testing original machine code. The scoped checks total 1,320, 828 and 6,912 respectively. Independent reopening verified all three saved definitions and working signatures; original code and archives remain unchanged.
+
+The text decoder treats equals as zero-valued data and can write three bytes when its supplied capacity is below three. Tests used oversized guarded allocations; this is helper behavior, not an exploitability claim. The known status-details caller supplies 2,048 bytes. None of these tests verifies the whole parser, live service or game.
+
+Totals: 434 checked names and 1,867 mapped functions among 9,583 discovered functions; 7,716 still need mapping. Three previously undefined functions were added; extraction is not semantic completion.

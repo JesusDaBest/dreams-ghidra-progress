@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9580,
-  "mapped_total": 1864,
+  "inventory_total": 9583,
+  "mapped_total": 1867,
   "unmapped_total": 7716,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -47165,6 +47165,69 @@
           "kind": "verified_semantic_review",
           "name": "ReadUnsignedVarint64OrZero",
           "support": "Completeoriginalbody,2296scopedchecks,independentreopen."
+        }
+      ]
+    },
+    "140163d80": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "serialization",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed shared transport parsing helpers and original caller chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Verified helper body and scoped original native execution.",
+      "code_sha256": "a1c1562e3e74f98f32319323ae6a6985cc3390c41435942fbccce6f70d9fa806",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodeBase64LikeText",
+          "support": "Original bytes/controlflow, scoped native checks, independent saved-project reopen."
+        }
+      ]
+    },
+    "1413f6970": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "serialization",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed shared transport parsing helpers and original caller chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Verified helper body and scoped original native execution.",
+      "code_sha256": "7e9ff4964ca972fb666094045c15d87e9001effde8f19a6c019b5be425405458",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindRequestSlotByStreamId",
+          "support": "Original bytes/controlflow, scoped native checks, independent saved-project reopen."
+        }
+      ]
+    },
+    "1413f94b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "serialization",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed shared transport parsing helpers and original caller chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Verified helper body and scoped original native execution.",
+      "code_sha256": "8647126c47f69cfebc0ff75cd1d5298aa1a4d4eb0533ef2a92cda01ef0dfdbf0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadHpackPrefixInteger",
+          "support": "Original bytes/controlflow, scoped native checks, independent saved-project reopen."
         }
       ]
     }
