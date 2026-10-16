@@ -7181,5 +7181,65 @@
     "output_allocation_executed": false,
     "full_serializer_executed": false,
     "new_checked_names_from_tests": 0
+  },
+  "thermometer_record_type_checkpoint": {
+    "functions": {
+      "1403adb60": {
+        "name": "MaterializeLightThermometerData",
+        "signature": "void PS4_SYSV MaterializeLightThermometerData(DreamsLightThermometerData * first_input, DreamsLightThermometerData * second_input, void * selection_begin, void * selection_end, DreamsLightThermometerData * output, void * buffer_descriptor, uchar force_second)"
+      },
+      "1403adfa0": {
+        "name": "MaterializeThermometerEntry",
+        "signature": "void PS4_SYSV MaterializeThermometerEntry(DreamsThermometerEntry * first_input, DreamsThermometerEntry * second_input, void * selection_begin, void * selection_end, DreamsThermometerEntry * output, void * buffer_descriptor, uchar force_second)"
+      }
+    },
+    "layouts": {
+      "1403adb60": {
+        "name": "DreamsLightThermometerData",
+        "fields": [
+          [
+            "gameplay",
+            0,
+            4
+          ],
+          [
+            "graphics",
+            4,
+            4
+          ],
+          [
+            "audio",
+            8,
+            4
+          ]
+        ],
+        "size": 12,
+        "independent_reopen": true
+      },
+      "1403adfa0": {
+        "name": "DreamsThermometerEntry",
+        "fields": [
+          [
+            "type",
+            0,
+            4
+          ],
+          [
+            "amount",
+            4,
+            4
+          ]
+        ],
+        "size": 8,
+        "independent_reopen": true
+      }
+    },
+    "only_expected_signatures_changed": true,
+    "original_archives_unchanged": true,
+    "new_checked_names": 0,
+    "limits": [
+      "Descriptive working structures, not recovered source declarations.",
+      "No added runtime coverage; allocation/growth/failure and full parent serializer remain unverified."
+    ]
   }
 }

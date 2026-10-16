@@ -9120,7 +9120,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializeLightThermometerData(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "saved_working_signature": "void PS4_SYSV MaterializeLightThermometerData(DreamsLightThermometerData * first_input, DreamsLightThermometerData * second_input, void * selection_begin, void * selection_end, DreamsLightThermometerData * output, void * buffer_descriptor, uchar force_second)",
       "evidence": [
         "Complete 292-instruction original body and typed trial decompilation read; bytes matched.",
         "Dream serializer links thermometer_data array and light_thermo_data fields; original literal hashes and stores confirm field identities.",
@@ -9130,7 +9130,29 @@
         "Complete helper assembly plus672 original-body selection/bit-copy checks with preexisting output; allocation/growth remains unverified.",
         "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
         "Signed32-bit output-relative offsets and whole serializer behavior remain unresolved."
-      ]
+      ],
+      "verified_record_layout": {
+        "name": "DreamsLightThermometerData",
+        "fields": [
+          [
+            "gameplay",
+            0,
+            4
+          ],
+          [
+            "graphics",
+            4,
+            4
+          ],
+          [
+            "audio",
+            8,
+            4
+          ]
+        ],
+        "size": 12,
+        "independent_reopen": true
+      }
     },
     {
       "address": "1403adfa0",
@@ -9141,7 +9163,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializeThermometerEntry(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "saved_working_signature": "void PS4_SYSV MaterializeThermometerEntry(DreamsThermometerEntry * first_input, DreamsThermometerEntry * second_input, void * selection_begin, void * selection_end, DreamsThermometerEntry * output, void * buffer_descriptor, uchar force_second)",
       "evidence": [
         "Complete 279-instruction original body and typed trial decompilation read; bytes matched.",
         "Dream serializer links thermometer_data array and light_thermo_data fields; original literal hashes and stores confirm field identities.",
@@ -9151,7 +9173,24 @@
         "Complete helper assembly plus672 original-body selection/bit-copy checks with preexisting output; allocation/growth remains unverified.",
         "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
         "Signed32-bit output-relative offsets and whole serializer behavior remain unresolved."
-      ]
+      ],
+      "verified_record_layout": {
+        "name": "DreamsThermometerEntry",
+        "fields": [
+          [
+            "type",
+            0,
+            4
+          ],
+          [
+            "amount",
+            4,
+            4
+          ]
+        ],
+        "size": 8,
+        "independent_reopen": true
+      }
     }
   ],
   "deferred": [

@@ -2912,3 +2912,9 @@ Applied MaterializeLightThermometerData and MaterializeThermometerEntry with sev
 All 571 original instruction spans and both typed trial decompilations were read. Trial, promotion and independent reopen verify names/signatures and unchanged archives. Both original bodies passed 672 checks with preexisting output: field-selection subsets, empty selection, force flags, alignments and exact bit patterns including NaNs, infinities and signed zero. These materializers copy values; they do not compute category maxima or clamp amounts.
 
 Output allocation/growth/failure, large relative offsets and the full 5,503-instruction parent serializer remain unverified. Selected parent branches identify author at 0xc0, head version at 0xd0, thermometer entries at 0x248 and light thermometer data at 0x258; the whole parent is not counted as reviewed. Totals: 416 checked names and 1,849 mapped functions among 9,580 discovered functions; 7,731 still need system mapping.
+
+### Typed thermometer input/output records
+
+Saved working structures DreamsLightThermometerData (12 bytes: gameplay, graphics and audio floats at offsets 0, 4 and 8) and DreamsThermometerEntry (8 bytes: unsigned type at offset 0 and amount float at offset 4). Both materializers now use these types for input and output pointers. The custom SysV register/stack storage remains unchanged.
+
+Independent reopening verified every field offset, width, record size and saved signature; original instruction bytes and archives match. These are descriptive layouts supported by the traced field names and existing bounded checks, not recovered source declarations. No function-name or runtime-coverage credit was added.
