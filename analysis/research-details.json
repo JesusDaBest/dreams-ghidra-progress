@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 430,
+    "checked_and_applied_names": 431,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 430,
+    "verified_names": 431,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "400 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "401 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7755,6 +7755,23 @@
       "Percentilestrtod path,allocation/growth/failure,longtagtruncation,arbitraryaliases,malformedcounts andlivegame remainunverified.",
       "Fulloriginalassembly reviewed;trialpseudocode inspection limited tosignature,dispatch/namedhelpercall windows andreturn;overlappingglobalwarning remains.",
       "InlineTAGtest excludesunspecifiedrecordpadding41..47 frombytecomparison."
+    ]
+  },
+  "unsigned_varint_reader_saved_checkpoint": {
+    "functions": {
+      "1413f33c0": {
+        "name": "ReadUnsignedVarint64OrZero",
+        "signature": "void PS4_SYSV ReadUnsignedVarint64OrZero(void * stream_descriptor, void * decoded_value)"
+      }
+    },
+    "original_instructions": 123,
+    "original_native_checks": 2296,
+    "new_checked_names": 1,
+    "real_game_verified": false,
+    "limits": [
+      "Descriptive name,not originalsource; streamdescriptor remainsopaquepointer.",
+      "Acceptsnoncanonical encodings; truncation/error yieldszero and10thbyte payload truncatesmodulo64. Zeroisnot proof ofvalidinput.",
+      "No wholeparser orlivegame verification; trialpseudocode inspection limitedtosignature andfinalreturn."
     ]
   }
 }

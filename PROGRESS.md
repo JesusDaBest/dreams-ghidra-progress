@@ -3032,3 +3032,11 @@ Saved ApplyTaggedDreamMetadata with a tagged-entry pointer and mutable Dream-rec
 Its original tested paths passed 13,968 checks across flag/enum writes, typed references, challenge rank, category/award/tool-tag appends and inline TAG construction, using original dependencies and preallocated storage. The 216 TAG checks compare defined fields and buffers while excluding unspecified record padding at bytes 41 through 47. The tested paths do not cover the entire helper: percentile conversion, allocation/growth/failure, long-tag truncation, malformed counts, arbitrary aliases and live-game behavior remain unresolved. The decompiler still warns about overlapping globals; complete original assembly is the primary evidence.
 
 Totals: 430 checked names and 1,863 mapped functions among 9,580 discovered functions; 7,717 still need mapping. This is documented semantic-review work, not a whole-game completion percentage.
+
+### Saved unsigned integer decoder
+
+Saved ReadUnsignedVarint64OrZero after reading its complete original body and running 2,296 independent-model checks of decoded values, cursor movement and full input/output guards. Independent reopening verified the descriptive name and working SysV signature. Original code and archives remain unchanged.
+
+The reader accepts noncanonical encodings and returns zero for truncated or invalid continuation sequences. Zero therefore does not prove valid input. These are scoped original-helper tests, not whole-parser or live-game verification.
+
+Totals: 431 checked names and 1,864 mapped functions among 9,580 discovered functions; 7,716 still need mapping. These counts do not measure whole-game completion.

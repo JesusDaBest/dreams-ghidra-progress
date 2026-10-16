@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1863,
-  "unmapped_total": 7717,
+  "mapped_total": 1864,
+  "unmapped_total": 7716,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47144,6 +47144,27 @@
           "kind": "verified_semantic_review",
           "name": "ApplyTaggedDreamMetadata",
           "support": "Completeoriginalbody/callers,13968scopedparentchecks andindependentreopen."
+        }
+      ]
+    },
+    "1413f33c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "serialization",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed unsignedvarint reader usedby transportstatusdetails andbinaryrecord parsing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Decodesinteger andadvances boundedstreamcursor.",
+      "code_sha256": "865d90eb60bc33fad752fee31d785e2e5d0be8351b70c53f5967cd2b1864235d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadUnsignedVarint64OrZero",
+          "support": "Completeoriginalbody,2296scopedchecks,independentreopen."
         }
       ]
     }
