@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "401 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "403 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8994,
-    "other_names": 594,
-    "verification": "complete_inventory_matches_baseline_plus_401_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8992,
+    "other_names": 596,
+    "verification": "complete_inventory_matches_baseline_plus_403_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9963,6 +9963,50 @@
         "Decompilerwarning:overlappingglobals; trialpseudocode inspectionlimitedtosignature/setup/finalreturn;completeassemblyprimary."
       ],
       "created_function": true
+    },
+    {
+      "address": "14127a040",
+      "original_name": "FUN_14127a040",
+      "applied_name": "GetOrLoadBricker2TagBricksShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadBricker2TagBricksShader(void)",
+      "evidence": [
+        "Complete 205-instruction original wrapper read and matched; 369 loader-callee instructions reviewed.",
+        "Original SELF import relocations identify guarded initialization, destructor registration and file-loading imports.",
+        "Caller windows connect returned shader resources to the brick compute pipeline.",
+        "Cold backup, isolated trial, promotion and independent reopening verify name/signature; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive CPU resource-loading role; GPU tagging/hashing algorithm and live rendering unverified.",
+        "File loader reports file-open success without independently checking full fread count.",
+        "Opaque resource layout and working no-argument void-pointer return are not original source declarations."
+      ]
+    },
+    {
+      "address": "14127a780",
+      "original_name": "FUN_14127a780",
+      "applied_name": "GetOrLoadBricker2HashBricksShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadBricker2HashBricksShader(void)",
+      "evidence": [
+        "Complete 205-instruction original wrapper read and matched; 369 loader-callee instructions reviewed.",
+        "Original SELF import relocations identify guarded initialization, destructor registration and file-loading imports.",
+        "Caller windows connect returned shader resources to the brick compute pipeline.",
+        "Cold backup, isolated trial, promotion and independent reopening verify name/signature; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive CPU resource-loading role; GPU tagging/hashing algorithm and live rendering unverified.",
+        "File loader reports file-open success without independently checking full fread count.",
+        "Opaque resource layout and working no-argument void-pointer return are not original source declarations."
+      ]
     }
   ],
   "deferred": [

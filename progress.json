@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 397,
-    "todo": 1475,
+    "done": 399,
+    "todo": 1473,
     "total": 1872,
-    "behavior_or_helpers_reviewed": 332,
+    "behavior_or_helpers_reviewed": 334,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -31628,10 +31628,10 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 5,
-        "todo": 117,
+        "done": 7,
+        "todo": 115,
         "total": 122,
-        "behavior_or_helpers_reviewed": 5,
+        "behavior_or_helpers_reviewed": 7,
         "properties_or_types_reviewed": 0,
         "runtime_functions_identified": 83,
         "property_type_functions_identified": 39,
@@ -31642,7 +31642,9 @@
           "AppendPackedResourceRecord",
           "TryAppendPackedResourceRecordDelta",
           "RebuildPackedCSGRecordsWithMetadataOffset",
-          "RecomputePackedResourceNodeSummary"
+          "RecomputePackedResourceNodeSummary",
+          "GetOrLoadBricker2TagBricksShader",
+          "GetOrLoadBricker2HashBricksShader"
         ],
         "todo_names": [
           "0x140491730",
@@ -31689,9 +31691,7 @@
           "0x141279560",
           "0x141279900",
           "0x141279ca0",
-          "0x14127a040",
           "0x14127a3e0",
-          "0x14127a780",
           "0x14127ab20",
           "0x14127aec0",
           "0x14127b260",
@@ -31768,7 +31768,9 @@
           "140c67d90",
           "140c68080",
           "140c6a1e0",
-          "140c6b930"
+          "140c6b930",
+          "14127a040",
+          "14127a780"
         ],
         "todo_addresses": [
           "140491730",
@@ -31815,9 +31817,7 @@
           "141279560",
           "141279900",
           "141279ca0",
-          "14127a040",
           "14127a3e0",
-          "14127a780",
           "14127ab20",
           "14127aec0",
           "14127b260",
@@ -31894,10 +31894,10 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 5,
-            "todo": 78,
+            "done": 7,
+            "todo": 76,
             "total": 83,
-            "behavior_or_helpers_reviewed": 5,
+            "behavior_or_helpers_reviewed": 7,
             "properties_or_types_reviewed": 0,
             "runtime_functions_identified": 77,
             "property_type_functions_identified": 6,
@@ -31908,7 +31908,9 @@
               "AppendPackedResourceRecord",
               "TryAppendPackedResourceRecordDelta",
               "RebuildPackedCSGRecordsWithMetadataOffset",
-              "RecomputePackedResourceNodeSummary"
+              "RecomputePackedResourceNodeSummary",
+              "GetOrLoadBricker2TagBricksShader",
+              "GetOrLoadBricker2HashBricksShader"
             ],
             "todo_names": [
               "0x140cb01c0",
@@ -31922,9 +31924,7 @@
               "0x141279560",
               "0x141279900",
               "0x141279ca0",
-              "0x14127a040",
               "0x14127a3e0",
-              "0x14127a780",
               "0x14127ab20",
               "0x14127aec0",
               "0x14127b260",
@@ -31995,7 +31995,9 @@
               "140c67d90",
               "140c68080",
               "140c6a1e0",
-              "140c6b930"
+              "140c6b930",
+              "14127a040",
+              "14127a780"
             ],
             "todo_addresses": [
               "140cb01c0",
@@ -32009,9 +32011,7 @@
               "141279560",
               "141279900",
               "141279ca0",
-              "14127a040",
               "14127a3e0",
-              "14127a780",
               "14127ab20",
               "14127aec0",
               "14127b260",
@@ -32082,25 +32082,26 @@
               {
                 "name": "sculpting-painting/csg/bricker2",
                 "label": "Sculpt bricks",
-                "done": 0,
-                "todo": 29,
+                "done": 2,
+                "todo": 27,
                 "total": 29,
-                "behavior_or_helpers_reviewed": 0,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
                 "runtime_functions_identified": 29,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "GetOrLoadBricker2TagBricksShader",
+                  "GetOrLoadBricker2HashBricksShader"
+                ],
                 "todo_names": [
                   "0x141278e20",
                   "0x1412791c0",
                   "0x141279560",
                   "0x141279900",
                   "0x141279ca0",
-                  "0x14127a040",
                   "0x14127a3e0",
-                  "0x14127a780",
                   "0x14127ab20",
                   "0x14127aec0",
                   "0x14127b260",
@@ -32123,16 +32124,17 @@
                   "0x14127f000",
                   "0x14127f3a0"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "14127a040",
+                  "14127a780"
+                ],
                 "todo_addresses": [
                   "141278e20",
                   "1412791c0",
                   "141279560",
                   "141279900",
                   "141279ca0",
-                  "14127a040",
                   "14127a3e0",
-                  "14127a780",
                   "14127ab20",
                   "14127aec0",
                   "14127b260",
@@ -32160,25 +32162,26 @@
                   {
                     "name": "sculpting-painting/csg/bricker2/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 29,
+                    "done": 2,
+                    "todo": 27,
                     "total": 29,
-                    "behavior_or_helpers_reviewed": 0,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
                     "runtime_functions_identified": 29,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "GetOrLoadBricker2TagBricksShader",
+                      "GetOrLoadBricker2HashBricksShader"
+                    ],
                     "todo_names": [
                       "0x141278e20",
                       "0x1412791c0",
                       "0x141279560",
                       "0x141279900",
                       "0x141279ca0",
-                      "0x14127a040",
                       "0x14127a3e0",
-                      "0x14127a780",
                       "0x14127ab20",
                       "0x14127aec0",
                       "0x14127b260",
@@ -32201,16 +32204,17 @@
                       "0x14127f000",
                       "0x14127f3a0"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "14127a040",
+                      "14127a780"
+                    ],
                     "todo_addresses": [
                       "141278e20",
                       "1412791c0",
                       "141279560",
                       "141279900",
                       "141279ca0",
-                      "14127a040",
                       "14127a3e0",
-                      "14127a780",
                       "14127ab20",
                       "14127aec0",
                       "14127b260",

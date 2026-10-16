@@ -3072,3 +3072,9 @@ Defined DecodeNextHpackHeader after reading all 361 original instructions and au
 The top-level decoder has not been executed. Supporting helpers passed scoped original-code tests and 384 combined pipeline steps; those do not establish whole-decoder correctness. The decompiler warns about overlapping globals. Original formatted-copy behavior, exhaustive Huffman padding/EOS handling, malformed tables, aliases, concurrency and live-game behavior remain unresolved.
 
 Totals: 439 checked names and 1,872 mapped functions among 9,588 discovered functions; 7,716 still need mapping.
+
+### Brick shader resource wrappers
+
+Saved GetOrLoadBricker2TagBricksShader and GetOrLoadBricker2HashBricksShader after reading 410 original wrapper instructions and 369 loader-callee instructions. Original import relocations confirm guarded initialization, destructor registration and file loading. The wrappers obtain/cache shader resources through packed-blob or file paths and return an opaque resource pointer when its prepared-header pointer is present. They are CPU loading wrappers, not the GPU tagging or hashing algorithms. The file reader checks whether opening succeeded but does not independently check a complete fread.
+
+Cold backup, isolated trial, promotion and independent reopening verify both names and working signatures; original instructions and archives are unchanged. GPU execution, concurrency, full sculpt behavior and exact correspondence to the 2015 rendering talk remain unverified. Totals: 441 reviewed names among 9,588 discovered functions; this does not measure whole-game completion.
