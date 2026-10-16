@@ -2930,3 +2930,11 @@ The original helper passed 816 scalar-selection checks with explicit output and 
 Applied MaterializeEditRightsMetadata after reading all 356 original instructions, tracing the nested Dream record and two additional caller windows, and independently reopening the saved name and seven-argument SysV layout. The 88-byte structure contains two rights bit fields and a signature string. The helper copies stored metadata; it does not generate or verify the signature. Bit meanings remain unresolved.
 
 The original helper passed 432 scalar-selection checks with explicit output and empty signature descriptors. The original hash routine passed 64 checks for four associated field and parent names. Nonempty signatures, inline empty strings, null output and allocation/growth/failure remain untested. Original archives and instructions are unchanged. Totals: 418 checked names and 1,851 mapped functions among 9,580 discovered functions; 7,729 still need system mapping. These are bounded code-review counts, not whole-game completion.
+
+### Saved collection-icon and Dream-version materializers
+
+Applied MaterializeCollectionIconRecord and MaterializeDreamVersionInfo after reading and matching all 1,009 original instructions, reviewing trial decompilations and independently reopening the saved names and seven-argument SysV layouts. Collection icons contain a hash, type, color data, manual-icon flag and thing type. The 104-byte version record contains portal and collection-icon arrays, cover/audio hashes, thermometer values, visibility and rights fields. These are metadata layouts; their rendering or gameplay meaning is not fully recovered.
+
+The original collection-icon helper passed 1,188 explicit-output checks. Original version-info and light-thermometer helpers passed 648 checks with empty arrays and preallocated output; seven field/parent names passed 112 original hash checks. Nonempty arrays and strings, null output, allocation/growth/failure and large offsets remain untested. The full parent serializer has now been read and byte-matched, but has not been executed as a whole and is not counted as semantically complete.
+
+Totals: 420 checked names and 1,853 mapped functions among 9,580 discovered functions; 7,727 still need system mapping. Original instructions and archives are unchanged.

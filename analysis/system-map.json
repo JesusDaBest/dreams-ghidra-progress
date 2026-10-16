@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1851,
-  "unmapped_total": 7729,
+  "mapped_total": 1853,
+  "unmapped_total": 7727,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46892,6 +46892,48 @@
           "kind": "verified_semantic_review",
           "name": "MaterializeEditRightsMetadata",
           "support": "Complete original assembly, parent linkage, bounded native checks and independent saved-project reopen."
+        }
+      ]
+    },
+    "1403acb50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "0fe1ade539d9ecc181e7c3b2923fbf5326c2e6cfa94a58227b2b116a71e6811f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MaterializeCollectionIconRecord",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
+        }
+      ]
+    },
+    "1403ae380": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object lookup response processing and cache result dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed object-response processing chain.",
+      "code_sha256": "406490a2225d4fd9d2fa77c27a0fb3390dd3738deb25a626f250e92bb2db2ea4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MaterializeDreamVersionInfo",
+          "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
         }
       ]
     }
