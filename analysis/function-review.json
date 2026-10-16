@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "492 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "505 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8903,
-    "other_names": 685,
-    "verification": "complete_inventory_matches_baseline_plus_492_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8890,
+    "other_names": 698,
+    "verification": "complete_inventory_matches_baseline_plus_505_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -12109,6 +12109,305 @@
         "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
         "Refill controlled; no real GPU, allocator orlive-game verification.",
         "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034810",
+      "original_name": "FUN_140034810",
+      "applied_name": "ResetEqaaControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetEqaaControl(uint * control_word)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140034820",
+      "original_name": "FUN_140034820",
+      "applied_name": "SetEqaaMaxAnchorSamples",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetEqaaMaxAnchorSamples(uint * control_word, uint sample_count_code)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140034840",
+      "original_name": "FUN_140034840",
+      "applied_name": "SetEqaaMaskExportSamples",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetEqaaMaskExportSamples(uint * control_word, uint sample_count_code)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140034860",
+      "original_name": "FUN_140034860",
+      "applied_name": "SetEqaaAlphaToMaskSamples",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetEqaaAlphaToMaskSamples(uint * control_word, uint sample_count_code)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140034890",
+      "original_name": "FUN_140034890",
+      "applied_name": "SetEqaaIncoherentReadsEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetEqaaIncoherentReadsEnabled(uint * control_word, uint enabled)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140022200",
+      "original_name": "FUN_140022200",
+      "applied_name": "AppendEqaaControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendEqaaControl(void * command_context, uint eqaa_control)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "1400265b0",
+      "original_name": "FUN_1400265b0",
+      "applied_name": "AppendMsaaAndViewportScissorEnable",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendMsaaAndViewportScissorEnable(void * command_context, uint msaa_enabled, uint viewport_scissor_enabled)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140011750",
+      "original_name": "FUN_140011750",
+      "applied_name": "ConfigureDefaultMsaaSamplePattern",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConfigureDefaultMsaaSamplePattern(void * command_context, uint sample_count_code)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "1400264d0",
+      "original_name": "FUN_1400264d0",
+      "applied_name": "AppendFrontPolygonOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendFrontPolygonOffset(void * command_context, float scale, float offset)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140026540",
+      "original_name": "FUN_140026540",
+      "applied_name": "AppendBackPolygonOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendBackPolygonOffset(void * command_context, float scale, float offset)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140034b80",
+      "original_name": "FUN_140034b80",
+      "applied_name": "BuildSampleLocationDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildSampleLocationDescriptor(void * sample_descriptor, uint * sample_locations, ulonglong centroid_priority)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "1400266a0",
+      "original_name": "FUN_1400266a0",
+      "applied_name": "AppendSampleLocationsAndCentroidPriority",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendSampleLocationsAndCentroidPriority(void * command_context, void * sample_descriptor)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "140026620",
+      "original_name": "FUN_140026620",
+      "applied_name": "AppendMsaaSampleCountAndDistance",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendMsaaSampleCountAndDistance(void * command_context, uint sample_count_code, uint max_sample_distance)",
+      "evidence": [
+        "Complete343 original instructions across13 multisample/samplepattern/polygonbias helpers read andbyte matched.",
+        "Original-native2090 EQAAsetter cases,2560 packet/floatbias cases and128 connected samplepattern cases.",
+        "Primary gfx7.2 registers/fields corroborate roles; exact original sample patterns andcentroid priorities checked.",
+        "Backed-up trial andindependent trial/main reopening verified signatures, floatand64-bit storage andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recovered original symbols.",
+        "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
+        "Someflags shiftwithoutBoolean normalization.",
+        "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
       ]
     }
   ],

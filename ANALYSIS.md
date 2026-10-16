@@ -3755,3 +3755,13 @@ The fourteen original setters passed 5,852 exact packing/default/preservation ca
 Five original packet writers passed 350 cases checking register targets, masks, duplicated front/back stencil reference/mask words, every output-buffer byte, cursor movement, refill failure and successful relocation. The refill callback was controlled. These checks do not validate actual depth/stencil/raster output, real allocator behavior or live-game execution.
 
 Totals: 530 reviewed names; 1,953 mapped and 7,635 unmapped among 9,588 discovered functions.
+
+### Multisampling, sample patterns and polygon bias
+
+Saved 13 descriptive names with independently reopened working signatures for EQAA fields, MSAA/scissor enable, default sample patterns, sample-location descriptors, centroid priorities, sample-count/distance configuration and front/back polygon offset. All 343 original instructions were read and byte matched. Backed-up trial and independent trial/main reopening verified only expected changes, including float and 64-bit argument storage, with original instruction bytes and archives unchanged.
+
+The five original EQAA setters passed 2,090 exact packing/default cases. Four command writers passed 2,560 cases checking packet words, masks, cursor, all destination bytes, refill failure and relocation. Front/back float-bias packets preserved NaN, infinity and negative-zero argument bits even when the controlled refill callback overwrote volatile float registers. This does not establish supported hardware usage for those values.
+
+The original default sample-pattern composite, descriptor constructor and two writers passed 128 connected cases against original pattern tables and centroid priorities. All 25 packet words, or capacity-dependent subsequences, were checked. Out-of-range sample codes produce zero locations while AA configuration still uses the code’s low three bits; this is observed behavior, not supported usage. Some flags also shift inputs without Boolean normalization. Refill was controlled. Actual GPU sample positions, real allocator behavior and live-game output remain unverified.
+
+Totals: 543 reviewed names; 1,966 mapped and 7,622 unmapped among 9,588 discovered functions.

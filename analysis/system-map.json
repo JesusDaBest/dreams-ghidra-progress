@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1953,
-  "unmapped_total": 7635,
+  "mapped_total": 1966,
+  "unmapped_total": 7622,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49108,6 +49108,279 @@
         {
           "kind": "verified_semantic_review",
           "name": "AppendRasterControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034810": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "1df8eed5de3158f416b76de6766b079a7067de033c465a3a0fb4c27772ff3be4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetEqaaControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034820": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "6e7ffdc7d43a33e37dac45443e4cbb19f234c5bc7bd04d93a2ae853c3721083d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetEqaaMaxAnchorSamples",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034840": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "53f1a3390ef8da4370765bc2f44476460c3080a4c2f580850a15bca6b1ec2363",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetEqaaMaskExportSamples",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034860": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "bab8c69fe435a62b28a30a48c9b752856ffffe1b3c28385463df3943e5b2fb69",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetEqaaAlphaToMaskSamples",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034890": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "d1460ccd22465b62fe1c55885fddec442acf1056af4b547c093c5bfad6936933",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetEqaaIncoherentReadsEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140022200": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "bdca2f6118d3ebb5d4523915683d3338bbf9fd59195a5dcfb126afc2547b3c6d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendEqaaControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400265b0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "4e1547aa65dcfff6531e70ef3e0b81166d741c2002e9a70e68353aaa3512d4e3",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendMsaaAndViewportScissorEnable",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140011750": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "4e161b5d15000be1b9ac1d797e1a0712b0fd1a4143b694ed668adf00aaf41fa1",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConfigureDefaultMsaaSamplePattern",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400264d0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "c03a17375778cace2780f5be01872704ccfdb93dc2cf13f9f521f49ca55bdcd2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendFrontPolygonOffset",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140026540": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "2fc1c2d7b8215ae4f1ad4750f4b2622f106f1268a1116224d5adf149215a9345",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendBackPolygonOffset",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034b80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "568022a582bf5d3f398e7d6891728b1a8e2ef8512f7754cc6628427be28ed20e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildSampleLocationDescriptor",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400266a0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "ab671c436d01e8555cb9b92a61a1be1186f00793b51c20b0fbcacf44cd09aed2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendSampleLocationsAndCentroidPriority",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140026620": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "EQAA/MSAA sample pattern andpolygonbias draw-state path read andnative-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Multisample control, sample locations, centroid priorities orpolygonbias construction/emission.",
+      "code_sha256": "1033db52524c34490574097eb4e18caf2ae526c595bc9df756c6c7f859022aa3",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendMsaaSampleCountAndDistance",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
