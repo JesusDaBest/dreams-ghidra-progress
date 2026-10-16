@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1859,
-  "unmapped_total": 7721,
+  "mapped_total": 1862,
+  "unmapped_total": 7718,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47060,6 +47060,69 @@
           "kind": "verified_semantic_review",
           "name": "ResolveAwardHashByName",
           "support": "Completeoriginalbody/caller,191originalawardnames,3136wholehelperchecks andindependentreopen."
+        }
+      ]
+    },
+    "140635600": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed hashing,string insertion and tag record append used by Dream metadata builders;semantic association is not exclusive ownership.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Provides hashing or owned-container operations used by metadata construction.",
+      "code_sha256": "65af06c3473bbaa82d732fc99010962a6e842d96c3aa811669d49f859d373566",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertPackedSmallStringBytes",
+          "support": "Completeoriginalbodies/callers,scopedoriginalnativechecks and independent saved-project reopening."
+        }
+      ]
+    },
+    "14015f300": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed hashing,string insertion and tag record append used by Dream metadata builders;semantic association is not exclusive ownership.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Provides hashing or owned-container operations used by metadata construction.",
+      "code_sha256": "e8d4ee82bc439cccbe85a35e9482de6e5592b3ab3c150b3a14e1e5ebff3bd88a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "HashBytesXXH64",
+          "support": "Completeoriginalbodies/callers,scopedoriginalnativechecks and independent saved-project reopening."
+        }
+      ]
+    },
+    "1403b2a90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed hashing,string insertion and tag record append used by Dream metadata builders;semantic association is not exclusive ownership.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Provides hashing or owned-container operations used by metadata construction.",
+      "code_sha256": "a3925dd5dd6d71d4618cfcd081ac4369ef74a34d447d3f91f4f5d8ccb840a8d0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendTagRecord56",
+          "support": "Completeoriginalbodies/callers,scopedoriginalnativechecks and independent saved-project reopening."
         }
       ]
     }

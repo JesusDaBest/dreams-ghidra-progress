@@ -3016,3 +3016,11 @@ Read the complete 916-instruction tagged metadata helper and checked 13,752 case
 Execution corrected two static interpretations: lowercase h is accepted as the typed reference prefix while uppercase H is rejected; tool-tag index 836, ImportExportMode, is accepted. Both initial fixture mismatches were retained with their causes and corrected checks. Unknown categories leave arrays unchanged; unknown awards append zero.
 
 Separately, the original tag hash matched an independent XXH64 specification model in 5,824 checks. Tag-record append passed 480 checks and string insertion with original libc shared copy code passed 1,888 checks. Full tag construction and percentile conversion remain untested, as do allocation/growth/failure, malformed counts and arbitrary aliases. No naming credit added: 426 checked names.
+
+### Saved tag runtime helpers
+
+Saved HashBytesXXH64, AppendTagRecord56 and InsertPackedSmallStringBytes with assembly-supported SysV arguments and returns. All three original bodies were read and matched, and the saved names/signatures independently reopened. Original instructions and archives are unchanged.
+
+The original hash passed 5,824 checks against an independent XXH64 specification model, including four seeds, lengths through 1,024 bytes, binary inputs and alignment. The append helper passed 480 checks of all 56 copied bytes, count changes, pointer/relative storage and existing-element inputs. String insertion passed 1,888 checks using original libc shared copy code across inline and preallocated external storage. These are 8,192 scoped checks; allocation/growth/failure, invalid indexes/counts, arbitrary aliases, full tag construction and live-game behavior remain unverified.
+
+Totals: 429 checked names and 1,862 mapped functions among 9,580 discovered functions; 7,718 still need mapping.

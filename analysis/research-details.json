@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 426,
+    "checked_and_applied_names": 429,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 426,
+    "verified_names": 429,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "396 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "399 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7707,6 +7707,36 @@
       "Original function entered but only listed paths tested;not all branches or livegame.",
       "Arrays and string storage preallocated;allocation/growth/failure,malformed counts,arbitraryaliases and percentile conversion remain untested.",
       "Tag helper checks do not yet execute the complete tag construction path."
+    ]
+  },
+  "tag_runtime_helper_saved_checkpoint": {
+    "functions": {
+      "140635600": {
+        "name": "InsertPackedSmallStringBytes",
+        "signature": "void PS4_SYSV InsertPackedSmallStringBytes(void * string_object, int insert_index, void * source_begin, void * source_end)"
+      },
+      "14015f300": {
+        "name": "HashBytesXXH64",
+        "signature": "ulonglong PS4_SYSV HashBytesXXH64(void * data, ulonglong length, ulonglong seed)"
+      },
+      "1403b2a90": {
+        "name": "AppendTagRecord56",
+        "signature": "void PS4_SYSV AppendTagRecord56(void * array_descriptor, void * record)"
+      }
+    },
+    "original_instructions": 371,
+    "checks": {
+      "xxh64": 5824,
+      "tag_append": 480,
+      "string_insertion": 1888
+    },
+    "new_checked_names": 3,
+    "real_game_verified": false,
+    "limits": [
+      "Descriptive names,not recovered source symbols.",
+      "Container checks usepreallocatedstorage;allocation/growth/failure,invalidindexes/counts,arbitraryaliases andlivegame remainuntested.",
+      "Fulloriginalassembly reviewed;trialpseudocode inspection limited tosignatures,entry/finalwindows.",
+      "Standalonehelperchecks do not yet execute complete tagconstruction or establish subsystemcompletion."
     ]
   }
 }
