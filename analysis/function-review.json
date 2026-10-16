@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "505 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "508 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8890,
-    "other_names": 698,
-    "verification": "complete_inventory_matches_baseline_plus_505_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8887,
+    "other_names": 701,
+    "verification": "complete_inventory_matches_baseline_plus_508_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -12408,6 +12408,78 @@
         "Out-of-range patterncode yieldszero locations butAAconfiguration stilluses low3bits; unsupported-use notclaimed.",
         "Someflags shiftwithoutBoolean normalization.",
         "Refillcontrolled; no GPU,actualallocator orlive-game validation; no supportedNaN/infinityclaim."
+      ]
+    },
+    {
+      "address": "1413c5010",
+      "original_name": "FUN_1413c5010",
+      "applied_name": "ApplyGraphicsDrawStateIfChanged",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyGraphicsDrawStateIfChanged(void * binding_context, void * draw_state)",
+      "evidence": [
+        "Complete1247 original instructions acrossdraw-state updater,baseline reset andimageview offsethelper read andbyte matched.",
+        "Fullparent21 connected scenarios; initializer3 exhaustioncases and40 baselinecases withcontrolledGNM fixture.",
+        "Offset90 linear validconstructed-image cases matched independentmip sums; invalidslice rejected unchangedoutputs.",
+        "Backed-up trial andindependent trial/main reopenverified signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recoveredoriginalsymbols.",
+        "Caches/trackingcanadvance afterfailedemission; executorresetsbetweenpasses,butin-pass capacitypolicy remainsopen.",
+        "GNMshaderAPI andrefill controlled; no realplatformpackets/GPU/live-game verification.",
+        "Resourceonce-onlyprologue,allview/multisamplebranches andtiled-offsetfastpath notfullyvalidated.",
+        "Offsetgeneralpath ignoresnestederrors; validinputconstraints required."
+      ]
+    },
+    {
+      "address": "1413c49f0",
+      "original_name": "FUN_1413c49f0",
+      "applied_name": "ResetGraphicsBindingState",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetGraphicsBindingState(void * binding_context)",
+      "evidence": [
+        "Complete1247 original instructions acrossdraw-state updater,baseline reset andimageview offsethelper read andbyte matched.",
+        "Fullparent21 connected scenarios; initializer3 exhaustioncases and40 baselinecases withcontrolledGNM fixture.",
+        "Offset90 linear validconstructed-image cases matched independentmip sums; invalidslice rejected unchangedoutputs.",
+        "Backed-up trial andindependent trial/main reopenverified signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recoveredoriginalsymbols.",
+        "Caches/trackingcanadvance afterfailedemission; executorresetsbetweenpasses,butin-pass capacitypolicy remainsopen.",
+        "GNMshaderAPI andrefill controlled; no realplatformpackets/GPU/live-game verification.",
+        "Resourceonce-onlyprologue,allview/multisamplebranches andtiled-offsetfastpath notfullyvalidated.",
+        "Offsetgeneralpath ignoresnestederrors; validinputconstraints required."
+      ]
+    },
+    {
+      "address": "1400449e0",
+      "original_name": "FUN_1400449e0",
+      "applied_name": "CalculateImageViewOffsetAndSliceSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV CalculateImageViewOffsetAndSliceSize(ulonglong * byte_offset_out, ulonglong * slice_size_out, void * image_descriptor, uint mip_index, uint slice_index)",
+      "evidence": [
+        "Complete1247 original instructions acrossdraw-state updater,baseline reset andimageview offsethelper read andbyte matched.",
+        "Fullparent21 connected scenarios; initializer3 exhaustioncases and40 baselinecases withcontrolledGNM fixture.",
+        "Offset90 linear validconstructed-image cases matched independentmip sums; invalidslice rejected unchangedoutputs.",
+        "Backed-up trial andindependent trial/main reopenverified signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names,not recoveredoriginalsymbols.",
+        "Caches/trackingcanadvance afterfailedemission; executorresetsbetweenpasses,butin-pass capacitypolicy remainsopen.",
+        "GNMshaderAPI andrefill controlled; no realplatformpackets/GPU/live-game verification.",
+        "Resourceonce-onlyprologue,allview/multisamplebranches andtiled-offsetfastpath notfullyvalidated.",
+        "Offsetgeneralpath ignoresnestederrors; validinputconstraints required."
       ]
     }
   ],

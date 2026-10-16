@@ -3461,3 +3461,13 @@ The five original EQAA setters passed 2,090 exact packing/default cases. Four co
 The original default sample-pattern composite, descriptor constructor and two writers passed 128 connected cases against original pattern tables and centroid priorities. All 25 packet words, or capacity-dependent subsequences, were checked. Out-of-range sample codes produce zero locations while AA configuration still uses the code’s low three bits; this is observed behavior, not supported usage. Some flags also shift inputs without Boolean normalization. Refill was controlled. Actual GPU sample positions, real allocator behavior and live-game output remain unverified.
 
 Totals: 543 reviewed names; 1,966 mapped and 7,622 unmapped among 9,588 discovered functions.
+
+### Graphics draw-state binding and image-view offsets
+
+Three descriptive names and working signatures were independently reopened: ApplyGraphicsDrawStateIfChanged, ResetGraphicsBindingState and CalculateImageViewOffsetAndSliceSize. All 1,247 original instructions were read and byte matched; original archives remained unchanged.
+
+The draw-state updater connects color and depth targets, blend controls, viewport/scissor, multisampling, depth/stencil, raster state and polygon bias. Twenty-one connected scenarios checked normal binding, unchanged repeats, changes, removal and failed-capacity retry. Caches can advance when emission fails. Executor resets between invocations are established, but in-pass allocation policy and live-game consequences remain unresolved.
+
+The baseline reset passed 40 capacity/refill/return/mode combinations and three failed-refill cache patterns. Its GNM shader call used an explicit controlled fixture: this does not validate real platform shader packets. The image-view helper passed 90 valid linear-image cases against independent mip-offset sums and one invalid-slice rejection. Tiled fast paths, optional metadata paths and the resource prologue still need investigation. The general offset path ignores nested errors, so successful return alone does not establish valid input or output. No GPU or live-game result is claimed.
+
+Totals: 546 reviewed names; 1,969 mapped and 7,619 unmapped among 9,588 discovered functions.

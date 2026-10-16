@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1966,
-  "unmapped_total": 7622,
+  "mapped_total": 1969,
+  "unmapped_total": 7619,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49381,6 +49381,69 @@
         {
           "kind": "verified_semantic_review",
           "name": "AppendMsaaSampleCountAndDistance",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1413c5010": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state binding, reset and image-view offsets reviewed with original native fixtures.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Graphics binding-state control and image-view addressing.",
+      "code_sha256": "791b3f245cbd24ee9d7dbcefa51915d004fe60401f777ca74e65d7589896c735",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyGraphicsDrawStateIfChanged",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1413c49f0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state binding, reset and image-view offsets reviewed with original native fixtures.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Graphics binding-state control and image-view addressing.",
+      "code_sha256": "f0ef98bd7489e923dfbb5643116f2807229b59e492486ac19e2509582e423f87",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetGraphicsBindingState",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400449e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state binding, reset and image-view offsets reviewed with original native fixtures.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Graphics binding-state control and image-view addressing.",
+      "code_sha256": "d7f0506e6293f314d6524b2b4a11f4f7ae9cf4098721d30b4c508a0f890d2e3a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CalculateImageViewOffsetAndSliceSize",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 503,
+    "done": 506,
     "todo": 1463,
-    "total": 1966,
-    "behavior_or_helpers_reviewed": 438,
+    "total": 1969,
+    "behavior_or_helpers_reviewed": 441,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21526,12 +21526,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 88,
+        "done": 91,
         "todo": 268,
-        "total": 356,
-        "behavior_or_helpers_reviewed": 88,
+        "total": 359,
+        "behavior_or_helpers_reviewed": 91,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 330,
+        "runtime_functions_identified": 333,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21611,6 +21611,7 @@
           "BuildSurfaceLayoutInputFromImageDescriptor",
           "BuildStencilSurfaceLayoutInput",
           "CalculateImageDescriptorStorageRequirements",
+          "CalculateImageViewOffsetAndSliceSize",
           "RegisterLabelVisibleFieldOffset",
           "SubmitComputeQueueAndWaitForFence",
           "AppendComputeCompletionFence",
@@ -21622,7 +21623,9 @@
           "CreateAndQueueDeferredDrawJob",
           "TryAllocateGraphicsResourceStorage",
           "InitializeGpuImageResource",
+          "ResetGraphicsBindingState",
           "BindGraphicsShaderPairIfChanged",
+          "ApplyGraphicsDrawStateIfChanged",
           "ScheduleRequiredQueueSequenceWaits"
         ],
         "todo_names": [
@@ -21971,6 +21974,7 @@
           "140043a90",
           "140044120",
           "140044480",
+          "1400449e0",
           "140d67a10",
           "141297bd0",
           "141297cf0",
@@ -21982,7 +21986,9 @@
           "1413a0150",
           "1413c2ee0",
           "1413c3620",
+          "1413c49f0",
           "1413c4ed0",
+          "1413c5010",
           "1413c90c0"
         ],
         "todo_addresses": [
@@ -22260,12 +22266,12 @@
           {
             "name": "rendering/drawing",
             "label": "Scene drawing",
-            "done": 58,
+            "done": 61,
             "todo": 66,
-            "total": 124,
-            "behavior_or_helpers_reviewed": 58,
+            "total": 127,
+            "behavior_or_helpers_reviewed": 61,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 124,
+            "runtime_functions_identified": 127,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -22326,8 +22332,11 @@
               "BuildSampleLocationDescriptor",
               "BuildPixelInputControlWords",
               "BuildStencilSurfaceLayoutInput",
+              "CalculateImageViewOffsetAndSliceSize",
               "CreateAndQueueDeferredDrawJob",
-              "BindGraphicsShaderPairIfChanged"
+              "ResetGraphicsBindingState",
+              "BindGraphicsShaderPairIfChanged",
+              "ApplyGraphicsDrawStateIfChanged"
             ],
             "todo_names": [
               "0x140c29820",
@@ -22454,8 +22463,11 @@
               "140034b80",
               "1400371a0",
               "140044120",
+              "1400449e0",
               "1413a0150",
-              "1413c4ed0"
+              "1413c49f0",
+              "1413c4ed0",
+              "1413c5010"
             ],
             "todo_addresses": [
               "140c29820",
@@ -22530,12 +22542,12 @@
               {
                 "name": "rendering/drawing/renderer",
                 "label": "Renderer",
-                "done": 58,
+                "done": 61,
                 "todo": 3,
-                "total": 61,
-                "behavior_or_helpers_reviewed": 58,
+                "total": 64,
+                "behavior_or_helpers_reviewed": 61,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 61,
+                "runtime_functions_identified": 64,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -22596,8 +22608,11 @@
                   "BuildSampleLocationDescriptor",
                   "BuildPixelInputControlWords",
                   "BuildStencilSurfaceLayoutInput",
+                  "CalculateImageViewOffsetAndSliceSize",
                   "CreateAndQueueDeferredDrawJob",
-                  "BindGraphicsShaderPairIfChanged"
+                  "ResetGraphicsBindingState",
+                  "BindGraphicsShaderPairIfChanged",
+                  "ApplyGraphicsDrawStateIfChanged"
                 ],
                 "todo_names": [
                   "0x140c29820",
@@ -22661,8 +22676,11 @@
                   "140034b80",
                   "1400371a0",
                   "140044120",
+                  "1400449e0",
                   "1413a0150",
-                  "1413c4ed0"
+                  "1413c49f0",
+                  "1413c4ed0",
+                  "1413c5010"
                 ],
                 "todo_addresses": [
                   "140c29820",
@@ -22674,12 +22692,12 @@
                   {
                     "name": "rendering/drawing/renderer/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 58,
+                    "done": 61,
                     "todo": 3,
-                    "total": 61,
-                    "behavior_or_helpers_reviewed": 58,
+                    "total": 64,
+                    "behavior_or_helpers_reviewed": 61,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 61,
+                    "runtime_functions_identified": 64,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -22740,8 +22758,11 @@
                       "BuildSampleLocationDescriptor",
                       "BuildPixelInputControlWords",
                       "BuildStencilSurfaceLayoutInput",
+                      "CalculateImageViewOffsetAndSliceSize",
                       "CreateAndQueueDeferredDrawJob",
-                      "BindGraphicsShaderPairIfChanged"
+                      "ResetGraphicsBindingState",
+                      "BindGraphicsShaderPairIfChanged",
+                      "ApplyGraphicsDrawStateIfChanged"
                     ],
                     "todo_names": [
                       "0x140c29820",
@@ -22805,8 +22826,11 @@
                       "140034b80",
                       "1400371a0",
                       "140044120",
+                      "1400449e0",
                       "1413a0150",
-                      "1413c4ed0"
+                      "1413c49f0",
+                      "1413c4ed0",
+                      "1413c5010"
                     ],
                     "todo_addresses": [
                       "140c29820",
@@ -43826,5 +43850,5 @@
       }
     ]
   },
-  "unmapped": 7622
+  "unmapped": 7619
 }
