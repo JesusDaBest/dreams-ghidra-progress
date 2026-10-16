@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1883,
-  "unmapped_total": 7705,
+  "mapped_total": 1886,
+  "unmapped_total": 7702,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47581,6 +47581,69 @@
           "support": "Full original CPU execution and independently reopened working signature; hardware semantics unverified."
         }
       ]
+    },
+    "141295a00": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "brick-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete body and sculpt cache/refill caller chain;generic cache-list walker classified as shared support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Block storage andcache lifetime support.",
+      "code_sha256": "5fa2f640f0a0647694b35ac45d44684e148f9f0ba17cd3c235b29e4824822281",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResizeBrickBlockChain",
+          "support": "Complete original body,scoped native execution,independent saved-signature reopen;concurrency unverified."
+        }
+      ]
+    },
+    "140739e90": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "brick-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete body and sculpt cache/refill caller chain;generic cache-list walker classified as shared support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Block storage andcache lifetime support.",
+      "code_sha256": "c8bb8579b9f7ef62159013d84e8c98ba5465fec8672cc4bc17b399ed36d8dc55",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseMarkedObjectCacheReferences",
+          "support": "Complete original body,scoped native execution,independent saved-signature reopen;concurrency unverified."
+        }
+      ]
+    },
+    "14129c290": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete body and sculpt cache/refill caller chain;generic cache-list walker classified as shared support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Block storage andcache lifetime support.",
+      "code_sha256": "2d27bd39fc4349782e0f457798a71388a529c5ddc701238c8e3c19312a4a9ce7",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueueAgedCacheEntriesForRelease",
+          "support": "Complete original body,scoped native execution,independent saved-signature reopen;concurrency unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -47850,7 +47913,7 @@
         },
         {
           "id": "objects",
-          "label": "Objects & references",
+          "label": "Object refs",
           "children": [
             {
               "id": "ethingtype",
@@ -48168,6 +48231,17 @@
             {
               "id": "memory-pools",
               "label": "Memory pools",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "cache-lists",
+              "label": "Cache lists",
               "children": [
                 {
                   "id": "runtime-implementation",
@@ -49635,7 +49709,7 @@
             },
             {
               "id": "prim",
-              "label": "Interface primitives",
+              "label": "UI primitives",
               "children": [
                 {
                   "id": "runtime-implementation",
@@ -50698,7 +50772,7 @@
       "children": [
         {
           "id": "creations",
-          "label": "Creation references",
+          "label": "Creation refs",
           "children": [
             {
               "id": "edreamuipage",
@@ -50952,7 +51026,7 @@
         },
         {
           "id": "players",
-          "label": "Players & sessions",
+          "label": "Player sessions",
           "children": [
             {
               "id": "machineid",
@@ -51659,6 +51733,17 @@
             {
               "id": "packed-csg-records",
               "label": "CSG record storage",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "brick-storage",
+              "label": "Brick storage",
               "children": [
                 {
                   "id": "runtime-implementation",

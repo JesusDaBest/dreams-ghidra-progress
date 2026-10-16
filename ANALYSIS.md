@@ -3426,3 +3426,11 @@ Saved InitializeGpuBufferDescriptor and refined the signature of the existing Pa
 HasherClear follow-up locates the archived shader using the original hash and section extractor. Its16-instruction program issues zero stores to both tables;80 decoded bytes reassemble exactly, with76 trailing bytes excluded. Successful descriptor construction supplies the same capacity to both bounds checks. This is static evidence, not GPU execution or hardware validation.
 
 Totals:451 reviewed names;1,883 mapped and7,705 unmapped among9,588 discovered functions.
+
+### Brick storage and cache lifetime
+
+Saved ResizeBrickBlockChain,ReleaseMarkedObjectCacheReferences andQueueAgedCacheEntriesForRelease after complete original-body review andindependent reopening. Original CPU fixtures passed2,970 block-resize,288 direct-reference maintenance,1,848 state1 walker and3,696 collision/wrap state2 walker cases. Exact links,counts,guarded images andbudget/hash changes were checked within those scopes. The generic walker is mapped to shared support;sculpt block storage andmarked-object maintenance are mapped to sculpt geometry.
+
+The static chain connects reference release,generation aging,queueing,pending-resource release andblock recycling. Original imports identify mutex operations,an untimed condition wait andgeneration broadcast. A zero initial walker budget can still move its first eligible entry. Auxiliary arrays,mixed hash homes,optional callbacks,concurrency,whole-program liveness andlivegame/GPU behavior remain unverified. Test counts do not represent game completion.
+
+Totals:454 reviewed names;1,886 mapped and7,702 unmapped among9,588 discovered functions.

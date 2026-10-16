@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "413 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "416 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8982,
-    "other_names": 606,
-    "verification": "complete_inventory_matches_baseline_plus_413_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8979,
+    "other_names": 609,
+    "verification": "complete_inventory_matches_baseline_plus_416_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10243,6 +10243,78 @@
         "No GPU interpretation, effective hardware bounds or live game verification.",
         "Only valid mapped descriptor outputs tested; arbitrary invalid pointers and overlap untested.",
         "Names/types are descriptive working analysis, not recovered original declarations."
+      ]
+    },
+    {
+      "address": "141295a00",
+      "original_name": "FUN_141295a00",
+      "applied_name": "ResizeBrickBlockChain",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ResizeBrickBlockChain(uint packed_chain, uint requested_blocks)",
+      "evidence": [
+        "Complete original block resize, marked-reference maintenance and cache-walker bodies read and matched:503 instructions.",
+        "Original executions:2970 block resize,288 direct-reference maintenance,1848 state1 walker and3696 collision/wrap state2 walker cases.",
+        "Original refill callback, reclamation controller,pending drain,mutex/condition imports,generation increment andbroadcast linked statically.",
+        "Backups,isolated trials,saved promotions andindependent reopens verified names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Native cases cover documented fixture paths,not fullgame,GPU execution orconcurrency.",
+        "Auxiliary reference arrays,mixed hash homes,optional deletion callback,refill callback execution andmalformed metadata remain untested.",
+        "Initial zero walker budget can still move the first eligible entry.",
+        "Untimed condition wait is present; whole-program liveness is unverified.",
+        "Names andopaque workingtypes are analyst descriptions,not originalsource declarations."
+      ]
+    },
+    {
+      "address": "140739e90",
+      "original_name": "FUN_140739e90",
+      "applied_name": "ReleaseMarkedObjectCacheReferences",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReleaseMarkedObjectCacheReferences(void)",
+      "evidence": [
+        "Complete original block resize, marked-reference maintenance and cache-walker bodies read and matched:503 instructions.",
+        "Original executions:2970 block resize,288 direct-reference maintenance,1848 state1 walker and3696 collision/wrap state2 walker cases.",
+        "Original refill callback, reclamation controller,pending drain,mutex/condition imports,generation increment andbroadcast linked statically.",
+        "Backups,isolated trials,saved promotions andindependent reopens verified names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Native cases cover documented fixture paths,not fullgame,GPU execution orconcurrency.",
+        "Auxiliary reference arrays,mixed hash homes,optional deletion callback,refill callback execution andmalformed metadata remain untested.",
+        "Initial zero walker budget can still move the first eligible entry.",
+        "Untimed condition wait is present; whole-program liveness is unverified.",
+        "Names andopaque workingtypes are analyst descriptions,not originalsource declarations."
+      ]
+    },
+    {
+      "address": "14129c290",
+      "original_name": "FUN_14129c290",
+      "applied_name": "QueueAgedCacheEntriesForRelease",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV QueueAgedCacheEntriesForRelease(void * cache_object, uint source_sentinel, uint current_generation, void * cost_callback, uint requested_budget)",
+      "evidence": [
+        "Complete original block resize, marked-reference maintenance and cache-walker bodies read and matched:503 instructions.",
+        "Original executions:2970 block resize,288 direct-reference maintenance,1848 state1 walker and3696 collision/wrap state2 walker cases.",
+        "Original refill callback, reclamation controller,pending drain,mutex/condition imports,generation increment andbroadcast linked statically.",
+        "Backups,isolated trials,saved promotions andindependent reopens verified names/signatures andunchanged archives."
+      ],
+      "caveats": [
+        "Native cases cover documented fixture paths,not fullgame,GPU execution orconcurrency.",
+        "Auxiliary reference arrays,mixed hash homes,optional deletion callback,refill callback execution andmalformed metadata remain untested.",
+        "Initial zero walker budget can still move the first eligible entry.",
+        "Untimed condition wait is present; whole-program liveness is unverified.",
+        "Names andopaque workingtypes are analyst descriptions,not originalsource declarations."
       ]
     }
   ],
