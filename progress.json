@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 443,
+    "done": 444,
     "todo": 1463,
-    "total": 1906,
-    "behavior_or_helpers_reviewed": 378,
+    "total": 1907,
+    "behavior_or_helpers_reviewed": 379,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 92,
+        "done": 93,
         "todo": 408,
-        "total": 500,
-        "behavior_or_helpers_reviewed": 47,
+        "total": 501,
+        "behavior_or_helpers_reviewed": 48,
         "properties_or_types_reviewed": 45,
-        "runtime_functions_identified": 45,
+        "runtime_functions_identified": 46,
         "property_type_functions_identified": 455,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -69,6 +69,7 @@
           "SubmitTeleporterPositionOffsetCommand",
           "AppendRemapperSignalHistory",
           "FindOrInitializeRemapperSignalHistory",
+          "InitializeEffectFieldDefaults",
           "InitializeVariableGadgetDefaults",
           "SortGatePointersByActivationOrder",
           "GatePrecedesInActivationOrder",
@@ -573,6 +574,7 @@
           "1408f2180",
           "140907eb0",
           "1409082f0",
+          "1409415f0",
           "140944f20",
           "1409537f0",
           "140955110",
@@ -11271,12 +11273,12 @@
           {
             "name": "gadgets-logic/presentation",
             "label": "Cameras, lights & effects",
-            "done": 10,
+            "done": 11,
             "todo": 22,
-            "total": 32,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 33,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 9,
-            "runtime_functions_identified": 2,
+            "runtime_functions_identified": 3,
             "property_type_functions_identified": 30,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -11284,6 +11286,7 @@
               "VisitFogProperties",
               "VisitCameraShakerProperties",
               "VisitPadRumbleProperties",
+              "InitializeEffectFieldDefaults",
               "RegisterLightTypeDescriptor",
               "RegisterCameraShakerTypeDescriptor",
               "RegisterPadRumbleTypeDescriptor",
@@ -11320,6 +11323,7 @@
               "1404d6660",
               "1404dabe0",
               "1404db190",
+              "1409415f0",
               "140d54090",
               "140d57cc0",
               "140d57d90",
@@ -11354,6 +11358,88 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/presentation/effectfield",
+                "label": "Effect Field",
+                "done": 1,
+                "todo": 3,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializeEffectFieldDefaults"
+                ],
+                "todo_names": [
+                  "0x1404b52d0",
+                  "0x140d55690",
+                  "0x140d78e40"
+                ],
+                "done_addresses": [
+                  "1409415f0"
+                ],
+                "todo_addresses": [
+                  "1404b52d0",
+                  "140d55690",
+                  "140d78e40"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/presentation/effectfield/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404b52d0",
+                      "0x140d55690",
+                      "0x140d78e40"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404b52d0",
+                      "140d55690",
+                      "140d78e40"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/presentation/effectfield/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "InitializeEffectFieldDefaults"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1409415f0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/presentation/grade",
                 "label": "Grade gadget & color processing",
@@ -11568,61 +11654,6 @@
                       "140d6ddf0"
                     ],
                     "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/presentation/effectfield",
-                "label": "Effect Field",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1404b52d0",
-                  "0x140d55690",
-                  "0x140d78e40"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1404b52d0",
-                  "140d55690",
-                  "140d78e40"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/presentation/effectfield/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404b52d0",
-                      "0x140d55690",
-                      "0x140d78e40"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404b52d0",
-                      "140d55690",
-                      "140d78e40"
-                    ],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -43317,5 +43348,5 @@
       }
     ]
   },
-  "unmapped": 7682
+  "unmapped": 7681
 }

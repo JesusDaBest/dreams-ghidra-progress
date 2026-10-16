@@ -3637,3 +3637,13 @@ Read 588 instructions across state accumulation, flushing, sequence waits and po
 The original release writer passed 4,320 fixtures checking every emitted word, field masks, refill failure and relocation. It writes seven DWORDs headed c0054902 and advances 28 bytes. The opcode is RELEASE_MEM in the [AMD kernel definitions](https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux.git/%2B/1e43c377a79f9189fea8f2711b399d4e8b4e609b/drivers/gpu/drm/amd/amdgpu/cikd.h). The traced caller supplies event 47, cache flags zero, data selector one and the incremented sequence payload. Packet encoding was executed locally; no GPU ordering, coherence or liveness validation is claimed.
 
 Totals: 483 reviewed names; 1,906 mapped and 7,682 unmapped among 9,588 discovered functions.
+
+### EffectField initialization and wave properties
+
+Saved InitializeEffectFieldDefaults with a working void return and one object-pointer parameter after a backed-up trial, independent trial reopen, promotion and independent main-project reopen. All 93 original initializer instructions and 277 instructions around five recorded direct callers were byte matched. Each caller clears 592 bytes before initialization. The registered EffectField descriptor identifies its creation callback, which calls this initializer.
+
+Executed the original initializer across three controlled guard paths. Wave amount, scroll and time initialize to zero; wave position initializes to (1, 0). The one-time packed default is computed or reused from its cache. Guard imports were replaced by controlled stubs. These checks cover the wave fields, packed value and object boundary canaries; they do not validate every initialized field, real guard synchronization or concurrency.
+
+Inspected visible wave source in Media Molecule’s [2016 technical livestream](https://www.youtube.com/watch?v=yZM_Ij9aeOA), including the splats_mega.cpp tab and octave-based deformation. Related wave properties exist in this executable, but their runtime consumers and shader upload remain unresolved. No equivalence to that footage, water-system identification or runtime deformation completion is claimed.
+
+Totals: 484 reviewed names; 1,907 mapped and 7,681 unmapped among 9,588 discovered functions. Reviewed names measure supported descriptive roles, not overall game completion.
