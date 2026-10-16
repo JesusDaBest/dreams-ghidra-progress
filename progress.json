@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 452,
+    "done": 453,
     "todo": 1463,
-    "total": 1915,
-    "behavior_or_helpers_reviewed": 387,
+    "total": 1916,
+    "behavior_or_helpers_reviewed": 388,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21526,12 +21526,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 37,
+        "done": 38,
         "todo": 268,
-        "total": 305,
-        "behavior_or_helpers_reviewed": 37,
+        "total": 306,
+        "behavior_or_helpers_reviewed": 38,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 279,
+        "runtime_functions_identified": 280,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21542,6 +21542,7 @@
           "InitializeGpuBufferDescriptor",
           "PackMaskedFormatFields",
           "GetPackedFormatChannelSelector",
+          "AppendColorRenderTargetBinding",
           "AppendPixelInputControlWords",
           "AppendGnmPixelShaderBinding",
           "AppendGnmVertexShaderBinding",
@@ -21851,6 +21852,7 @@
           "14001d980",
           "14001eb20",
           "14001f1d0",
+          "140022580",
           "140023d10",
           "140024160",
           "140024280",
@@ -24308,16 +24310,17 @@
           {
             "name": "rendering/drawing",
             "label": "Scene drawing",
-            "done": 7,
+            "done": 8,
             "todo": 66,
-            "total": 73,
-            "behavior_or_helpers_reviewed": 7,
+            "total": 74,
+            "behavior_or_helpers_reviewed": 8,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 73,
+            "runtime_functions_identified": 74,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "AppendColorRenderTargetBinding",
               "AppendPixelInputControlWords",
               "AppendGnmPixelShaderBinding",
               "AppendGnmVertexShaderBinding",
@@ -24395,6 +24398,7 @@
               "0x141392cc0"
             ],
             "done_addresses": [
+              "140022580",
               "140023d10",
               "140024160",
               "140024280",
@@ -24696,6 +24700,97 @@
                 ]
               },
               {
+                "name": "rendering/drawing/renderer",
+                "label": "Renderer",
+                "done": 8,
+                "todo": 3,
+                "total": 11,
+                "behavior_or_helpers_reviewed": 8,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 11,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendColorRenderTargetBinding",
+                  "AppendPixelInputControlWords",
+                  "AppendGnmPixelShaderBinding",
+                  "AppendGnmVertexShaderBinding",
+                  "AppendGraphicsUserDataRegisters",
+                  "BuildPixelInputControlWords",
+                  "CreateAndQueueDeferredDrawJob",
+                  "BindGraphicsShaderPairIfChanged"
+                ],
+                "todo_names": [
+                  "0x140c29820",
+                  "0x140c29bc0",
+                  "0x140c29f60"
+                ],
+                "done_addresses": [
+                  "140022580",
+                  "140023d10",
+                  "140024160",
+                  "140024280",
+                  "1400256c0",
+                  "1400371a0",
+                  "1413a0150",
+                  "1413c4ed0"
+                ],
+                "todo_addresses": [
+                  "140c29820",
+                  "140c29bc0",
+                  "140c29f60"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/drawing/renderer/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 8,
+                    "todo": 3,
+                    "total": 11,
+                    "behavior_or_helpers_reviewed": 8,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 11,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendColorRenderTargetBinding",
+                      "AppendPixelInputControlWords",
+                      "AppendGnmPixelShaderBinding",
+                      "AppendGnmVertexShaderBinding",
+                      "AppendGraphicsUserDataRegisters",
+                      "BuildPixelInputControlWords",
+                      "CreateAndQueueDeferredDrawJob",
+                      "BindGraphicsShaderPairIfChanged"
+                    ],
+                    "todo_names": [
+                      "0x140c29820",
+                      "0x140c29bc0",
+                      "0x140c29f60"
+                    ],
+                    "done_addresses": [
+                      "140022580",
+                      "140023d10",
+                      "140024160",
+                      "140024280",
+                      "1400256c0",
+                      "1400371a0",
+                      "1413a0150",
+                      "1413c4ed0"
+                    ],
+                    "todo_addresses": [
+                      "140c29820",
+                      "140c29bc0",
+                      "140c29f60"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/drawing/volume",
                 "label": "Volume",
                 "done": 0,
@@ -24776,93 +24871,6 @@
                       "141392580",
                       "141392910",
                       "141392cc0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/drawing/renderer",
-                "label": "Renderer",
-                "done": 7,
-                "todo": 3,
-                "total": 10,
-                "behavior_or_helpers_reviewed": 7,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 10,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AppendPixelInputControlWords",
-                  "AppendGnmPixelShaderBinding",
-                  "AppendGnmVertexShaderBinding",
-                  "AppendGraphicsUserDataRegisters",
-                  "BuildPixelInputControlWords",
-                  "CreateAndQueueDeferredDrawJob",
-                  "BindGraphicsShaderPairIfChanged"
-                ],
-                "todo_names": [
-                  "0x140c29820",
-                  "0x140c29bc0",
-                  "0x140c29f60"
-                ],
-                "done_addresses": [
-                  "140023d10",
-                  "140024160",
-                  "140024280",
-                  "1400256c0",
-                  "1400371a0",
-                  "1413a0150",
-                  "1413c4ed0"
-                ],
-                "todo_addresses": [
-                  "140c29820",
-                  "140c29bc0",
-                  "140c29f60"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/drawing/renderer/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 7,
-                    "todo": 3,
-                    "total": 10,
-                    "behavior_or_helpers_reviewed": 7,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 10,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AppendPixelInputControlWords",
-                      "AppendGnmPixelShaderBinding",
-                      "AppendGnmVertexShaderBinding",
-                      "AppendGraphicsUserDataRegisters",
-                      "BuildPixelInputControlWords",
-                      "CreateAndQueueDeferredDrawJob",
-                      "BindGraphicsShaderPairIfChanged"
-                    ],
-                    "todo_names": [
-                      "0x140c29820",
-                      "0x140c29bc0",
-                      "0x140c29f60"
-                    ],
-                    "done_addresses": [
-                      "140023d10",
-                      "140024160",
-                      "140024280",
-                      "1400256c0",
-                      "1400371a0",
-                      "1413a0150",
-                      "1413c4ed0"
-                    ],
-                    "todo_addresses": [
-                      "140c29820",
-                      "140c29bc0",
-                      "140c29f60"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -43418,5 +43426,5 @@
       }
     ]
   },
-  "unmapped": 7673
+  "unmapped": 7672
 }

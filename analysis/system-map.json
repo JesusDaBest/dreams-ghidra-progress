@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1915,
-  "unmapped_total": 7673,
+  "mapped_total": 1916,
+  "unmapped_total": 7672,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48311,6 +48311,27 @@
           "kind": "verified_semantic_review",
           "name": "AppendPixelInputControlWords",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140022580": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Render-target packet writer called by draw-state binding path.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Color render-target register command emission.",
+      "code_sha256": "f16f9195f4bf9f4d1c1ae1fb3248928c6c784687a5f5a60f156a805e187c25da",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendColorRenderTargetBinding",
+          "support": "Complete original writer reviewed and connected-native tested; independently reopened signature."
         }
       ]
     }

@@ -3403,3 +3403,11 @@ Executed all 412 original instructions of the five-function shader-binding chain
 A targeted transition test first denied command space, then restored space while requesting the same shader pair. The first call still updated the pointer cache; the second skipped rebinding because the pair matched. This establishes helper-local behavior, not a whole-engine defect. The original initialization path selects a default refill callback returning false, and the executor clears its local shader cache at entry. Persistence across executor invocations is therefore not demonstrated. Capacity accounting, later callback changes and recovery within an execution pass still need review.
 
 No new names or mapping cells were added. Totals remain 492 reviewed names, 1,915 mapped and 7,673 unmapped among 9,588 discovered functions.
+
+### Color render-target command binding
+
+Saved AppendColorRenderTargetBinding with an independently reopened working signature. It writes the selected color-target descriptor registers when the derived base word is nonzero; a null descriptor or zero derived word clears the target INFO register. Every packet word, cursor movement, refill failure and relocation was checked in 384 isolated cases and 8,704 connected cases using the original descriptor/format/tile helpers. The connected path covers 490 original instructions. The tile resolver separately passed 7,616 cases and the descriptor helper 25,648 cases. These counts overlap in code coverage and are not whole-game progress percentages.
+
+Connected testing corrected an earlier local bit-field interpretation: one macro-table reader selects bits 6–7, rather than bits 2–3. Nested resolver failure cases remain excluded: the caller ignores its return status and may consume unwritten stack output. Valid descriptor constraints, base-word address units and real GPU behavior remain unresolved. Refill was controlled. No live game or GPU execution is claimed.
+
+Totals: 493 reviewed names; 1,916 mapped and 7,672 unmapped among 9,588 discovered functions.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "454 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "455 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8941,
-    "other_names": 647,
-    "verification": "complete_inventory_matches_baseline_plus_454_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8940,
+    "other_names": 648,
+    "verification": "complete_inventory_matches_baseline_plus_455_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11233,6 +11233,29 @@
         "No real GPU packets from platform imports, actual interpolation, concurrency or allocator behavior tested.",
         "Pair-cache error recovery and valid caller count limits remain unresolved.",
         "Input count33 writer advances without payload; no claim of supported usage."
+      ]
+    },
+    {
+      "address": "140022580",
+      "original_name": "FUN_140022580",
+      "applied_name": "AppendColorRenderTargetBinding",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendColorRenderTargetBinding(void * command_context, uint target_slot, void * target_descriptor)",
+      "evidence": [
+        "Complete64 original writer instructions read and byte matched;490 original instructions connected across descriptor decoding and packet emission.",
+        "384 isolated packet cases,7616 tile-resolver cases,25648 descriptor-helper cases and8704 connected descriptor-to-packet cases.",
+        "CB_COLOR target register identity corroborated against primary gfx7.2 definitions.",
+        "Backed-up trial and independent trial/main reopenings verified working signature and unchanged original archives."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original source symbol.",
+        "Controlled refill callback; no real GPU or game execution.",
+        "Nested resolver error paths excluded; caller ignores status and may use unwritten stack output. Descriptor validity constraints unresolved.",
+        "Descriptor base-word units and complete hardware semantics unresolved."
       ]
     }
   ],
