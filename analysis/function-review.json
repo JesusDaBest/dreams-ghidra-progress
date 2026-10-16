@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "412 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "413 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8983,
-    "other_names": 605,
-    "verification": "complete_inventory_matches_baseline_plus_412_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8982,
+    "other_names": 606,
+    "verification": "complete_inventory_matches_baseline_plus_413_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1409,17 +1409,23 @@
       "original_name": "FUN_14001eb20",
       "applied_name": "PackMaskedFormatFields",
       "status": "applied_read_back_verified",
-      "persistence_verification": "verified_after_clean_stop_and_reopening",
+      "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high",
       "evidence": [
-        "Complete 17-instruction body read. Six masks and shifts exhaustively describe the arithmetic contract; no calls or branches."
+        "Complete 17-instruction body read. Six masks and shifts exhaustively describe the arithmetic contract; no calls or branches.",
+        "Complete 60-instruction GPU descriptor initializer and 17-instruction format packer read and matched to original instructions.",
+        "1280 original full-packer cases and336 original full descriptor-construction cases passed; output bytes and adjacent guards checked.",
+        "Eleven format-packer call/jump sites across seven owners inspected; neutral field parameters preserve unresolved enum meanings.",
+        "Backup, isolated trial, saved promotion and independent reopening verify both signatures, one new name and unchanged archives."
       ],
       "caveats": [
-        "Descriptive analyst name, not a recovered original symbol.",
-        "Analyst name, not original symbol.",
-        "No runtime validation or prototype/type/boundary/byte changes."
+        "No GPU interpretation, effective hardware bounds or live game verification.",
+        "Only valid mapped descriptor outputs tested; arbitrary invalid pointers and overlap untested.",
+        "Names/types are descriptive working analysis, not recovered original declarations."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint PS4_SYSV PackMaskedFormatFields(uint field0, uint field1, uint field2, uint field3, uint field4, uint field5)",
+      "calling_convention": "PS4_SYSV"
     },
     {
       "address": "14001d7e0",
@@ -10215,6 +10221,28 @@
         "Dispatcher queues work without an internal barrier or CPU wait; callers supply sequencing.",
         "Loader may return null; dispatcher has no local null check. Static risk only, no reproduced crash.",
         "Working opaque-object signatures and descriptive names are not original source declarations."
+      ]
+    },
+    {
+      "address": "14001d980",
+      "original_name": "FUN_14001d980",
+      "applied_name": "InitializeGpuBufferDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeGpuBufferDescriptor(void * descriptor_out, ulonglong buffer_address, uint stride, uint element_count)",
+      "evidence": [
+        "Complete 60-instruction GPU descriptor initializer and 17-instruction format packer read and matched to original instructions.",
+        "1280 original full-packer cases and336 original full descriptor-construction cases passed; output bytes and adjacent guards checked.",
+        "Eleven format-packer call/jump sites across seven owners inspected; neutral field parameters preserve unresolved enum meanings.",
+        "Backup, isolated trial, saved promotion and independent reopening verify both signatures, one new name and unchanged archives."
+      ],
+      "caveats": [
+        "No GPU interpretation, effective hardware bounds or live game verification.",
+        "Only valid mapped descriptor outputs tested; arbitrary invalid pointers and overlap untested.",
+        "Names/types are descriptive working analysis, not recovered original declarations."
       ]
     }
   ],

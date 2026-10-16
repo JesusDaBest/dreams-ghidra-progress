@@ -3114,3 +3114,11 @@ Saved DispatchGpuHashTableClear and GetOrLoadHasherClearShader after reading and
 Allocator follow-up adds 512 multiblock/node-exhaustion and 1,920 snapshot core-window cases, for 3,048 total selected core checks. A first-fit split-node shortfall can return failure without trying a later exact-fit block; a high-water snapshot can contain only a prefix when nodes run out. Mutex entry/exit, concurrency, invalid metadata, overflow and full allocator behavior remain unverified. These checks add evidence, not reviewed-name counts.
 
 Totals: 450 reviewed names; 1,881 mapped and 7,707 unmapped among 9,588 discovered functions. The larger brick pipeline remains under analysis and is not counted as reviewed.
+
+### GPU buffer descriptors and format fields
+
+Saved InitializeGpuBufferDescriptor and refined the signature of the existing PackMaskedFormatFields name. All77 original instructions were read and matched; 1,280 original packer executions and336 complete descriptor-construction executions passed, including guarded outputs. Eleven packer call/jump sites across seven owners establish its broader graphics use. Individual enum meanings remain unresolved, so field parameters stay neutral. This adds one reviewed name, not two.
+
+HasherClear follow-up locates the archived shader using the original hash and section extractor. Its16-instruction program issues zero stores to both tables;80 decoded bytes reassemble exactly, with76 trailing bytes excluded. Successful descriptor construction supplies the same capacity to both bounds checks. This is static evidence, not GPU execution or hardware validation.
+
+Totals:451 reviewed names;1,883 mapped and7,705 unmapped among9,588 discovered functions.

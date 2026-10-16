@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1881,
-  "unmapped_total": 7707,
+  "mapped_total": 1883,
+  "unmapped_total": 7705,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47539,6 +47539,48 @@
           "support": "Complete CPU body and independent saved-signature reopening; GPU semantics unverified."
         }
       ]
+    },
+    "14001d980": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "buffer-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete descriptor packing bodies and GPU hash construction/caller chain; general GPU support rather than exclusive sculpt behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Initializes a GPU buffer descriptor or packs format fields.",
+      "code_sha256": "d64503fca439e3dcc9ff030e6fffe382bf9cf022a7470ddaf012d2054cebd188",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeGpuBufferDescriptor",
+          "support": "Full original CPU execution and independently reopened working signature; hardware semantics unverified."
+        }
+      ]
+    },
+    "14001eb20": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "buffer-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete descriptor packing bodies and GPU hash construction/caller chain; general GPU support rather than exclusive sculpt behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Initializes a GPU buffer descriptor or packs format fields.",
+      "code_sha256": "676c97f0ca046a31e7728970a9ebb5eb5446a83b090997bbde93d106e2d6ccb0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PackMaskedFormatFields",
+          "support": "Full original CPU execution and independently reopened working signature; hardware semantics unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48040,7 +48082,7 @@
         },
         {
           "id": "helpers",
-          "label": "Shared property helpers",
+          "label": "Property helpers",
           "children": [
             {
               "id": "role-unresolved",
@@ -54614,6 +54656,17 @@
             {
               "id": "resource-storage",
               "label": "Resource storage",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "buffer-descriptors",
+              "label": "Buffer descriptors",
               "children": [
                 {
                   "id": "runtime-implementation",
