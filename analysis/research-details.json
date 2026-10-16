@@ -8409,5 +8409,55 @@
       "Count+63 uses32-bit wrapping before division by64."
     ],
     "runtime_game_verified": false
+  },
+  "occlusion_volume_shader_checkpoint": {
+    "reviewed_programs": [
+      {
+        "name": "OcclusionCopyInstances",
+        "instructions": 248,
+        "program_bytes": 1360,
+        "exact_roundtrip": true
+      },
+      {
+        "name": "OcclusionMakeInitialVoxels",
+        "instructions": 178,
+        "program_bytes": 984,
+        "exact_roundtrip": true
+      },
+      {
+        "name": "OcclusionMakeChildEmitMasks",
+        "instructions": 316,
+        "program_bytes": 1740,
+        "exact_roundtrip": true
+      },
+      {
+        "name": "OcclusionWriteAtomics",
+        "instructions": 282,
+        "program_bytes": 1592,
+        "exact_roundtrip": false,
+        "assembler_limit": "Image atomic instruction rejected because unorm bit is not set; original encoding retained."
+      }
+    ],
+    "software_models": {
+      "parent_child_index_cases": 320,
+      "wave_mask_cases": 4162,
+      "morton_coordinate_cases": 32768,
+      "byte_slot_cases": 1024
+    },
+    "new_names": 0,
+    "runtime_game_verified": false,
+    "findings": [
+      "Eight child lanes per parent, one packed8-bit mask per parent.",
+      "Child emission samples sculpt distance and compares against scale/orientation threshold.",
+      "Atomic output selects image minimum or Morton-packed bufferOR path.",
+      "Four reviewed programs do not load surface-counter volume bytes128..167.",
+      "Volume flag at packed byte124 comes from zero-extended CPU record byte24."
+    ],
+    "limits": [
+      "No GPU execution, concurrency or float hardware validation.",
+      "No surface-counter rendering policy established.",
+      "Full CPU renderer and runtime region bounds are not verified.",
+      "Assembler failure excludes atomic writer from exact-roundtrip claims."
+    ]
   }
 }

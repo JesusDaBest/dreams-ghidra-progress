@@ -3279,3 +3279,13 @@ Read all 262 PointQueryRun GPU instructions and reproduced all 1,400 program byt
 This consumer reads volume bytes 40–83; it does not read the surface counters at bytes 128–167. Rendering use of those counters remains unresolved. Physical distance units, all returned vector-component meanings, exceptional floating-point behavior and live GPU correctness are not established. A shader-load failure can return null and the dispatcher has no visible null check; no live crash is claimed.
 
 Totals: 475 reviewed names; 1,900 mapped and 7,688 unmapped among 9,588 discovered functions.
+
+### Occlusion voxel stages read beyond the shader names
+
+Read four complete GPU programs linked to CPU descriptor bindings and original archive resources. OcclusionCopyInstances transforms per-instance data (248 instructions, 1,360 program bytes). OcclusionMakeInitialVoxels transforms/intersects bounds, reserves ordered output slots and emits parent records (178 instructions, 984 bytes). OcclusionMakeChildEmitMasks evaluates eight children per parent, samples the sculpt distance atlas, compares against a scale/orientation-dependent threshold and writes a 64-bit wave mask containing eight adjacent bits per parent (316 instructions, 1,740 bytes). All three programs reassembled exactly; trailing metadata was excluded.
+
+OcclusionWriteAtomics (282 instructions, 1,592 program bytes) follows packed tree references, evaluates child occupancy and extracts each parent's eight-bit mask. One branch applies an image atomic minimum; another interleaves parent coordinates, adds a region offset and atomically ORs the mask into its byte within a DWORD. CLRX rejected the image atomic instruction because its unorm bit is not set. Kept the original encoding; this program has **no successful reassembly verification**.
+
+Integer software checks passed 320 parent/child indexing cases, 4,162 wave masks, all 32,768 coordinates in a 32-cubed region and 1,024 byte-slot/mask combinations. These verify the stated packing models, not running GPU behavior. None of these four programs reads volume counter bytes 128–167. The child-emission flag at packed byte 124 comes from CPU record byte 24, zero-extended; its broader meaning remains unresolved.
+
+No GPU execution, atomic-concurrency, hardware floating-point or full CPU-renderer validation is claimed. Runtime region bounds, all numeric output meanings and rendering use of the surface counters remain open. No new names or whole-executable behavior coverage were credited for this checkpoint.
