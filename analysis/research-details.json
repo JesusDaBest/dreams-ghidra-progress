@@ -8624,10 +8624,12 @@
     "working_arguments": 9,
     "limits": [
       "memcpy/memset imported routines replaced by local native shims.",
-      "Synthetic backing resources with empty dependencies; mode2 and render-target resource tracking not native-tested.",
       "Capacity, concurrency, all callers and GPU execution remain unresolved.",
-      "Descriptive name and opaque structures do not claim original source recovery."
+      "Descriptive name and opaque structures do not claim original source recovery.",
+      "Resource tracking passed 96 additional cases; constant modes1/2 with nonempty roots and a shared dependency child passed 16 cases. Invalid IDs, capacity, concurrency and GPU execution remain untested."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "resource_tracking_followup_cases": 96,
+    "dependency_modes_followup_cases": 16
   }
 }

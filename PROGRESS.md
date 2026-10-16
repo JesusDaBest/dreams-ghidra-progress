@@ -3367,3 +3367,11 @@ Traced both constant streams of the glass draw. Each contains the same eight-byt
 Recovered the original ELFOShape names and numeric values: Sine, Sandcastle, Square, Ramp, RandomSmooth and RandomStep. They agree with the selected shader waveform branches, including smoothed and stepped hash samples. The waveform modulates a weight used for contributions derived from the original Colour property. Those contributions accumulate into later shading calculations. Final pixel-export dataflow, complete mode behavior under GPU arithmetic and the full glass shader remain unresolved. No equivalence to the 2016 livestream’s water algorithm is established.
 
 Totals: 486 reviewed names; 1,909 mapped and 7,679 unmapped among 9,588 discovered functions. These are verified descriptive roles, not a whole-game completion percentage.
+
+### Deferred draw resource and dependency validation
+
+The original 735-instruction draw-building chain passed 96 additional resource-tracking fixtures across all nine draw-state handle slots and three argument handle slots. These checked first/last-job markers, retention of existing access kinds, write markers and branch-specific flags. Valid synthetic IDs and bounded contexts were used; invalid handles, capacity and concurrency remain untested.
+
+A further 16 original-chain fixtures covered both constant streams in modes 1 and 2 with nonempty root access lists and a shared dependency child. Mode 1 retains its backing record; mode 2 creates a registered copy. The fixtures verified dependency order, shared-child suppression, queue insertion and resource marker updates. Local native memcpy/memset shims remain fixture boundaries. No actual GPU execution was performed.
+
+This extends validation of the existing descriptive name; it adds no function names, mapping cells or whole-game completion credit. Earlier checkpoint limits describe the checks available at those checkpoints; these results supersede the former untested-mode-2 and empty-dependencies limitations for the specified fixture cases.
