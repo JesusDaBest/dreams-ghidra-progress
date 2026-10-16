@@ -3242,3 +3242,11 @@ Applied MaterializeCollectionIconRecord and MaterializeDreamVersionInfo after re
 The original collection-icon helper passed 1,188 explicit-output checks. Original version-info and light-thermometer helpers passed 648 checks with empty arrays and preallocated output; seven field/parent names passed 112 original hash checks. Nonempty arrays and strings, null output, allocation/growth/failure and large offsets remain untested. The full parent serializer has now been read and byte-matched, but has not been executed as a whole and is not counted as semantically complete.
 
 Totals: 420 checked names and 1,853 mapped functions among 9,580 discovered functions; 7,727 still need system mapping. Original instructions and archives are unchanged.
+
+### Nested arrays and string-storage follow-up
+
+The original version-info, portal, collection-icon and light-thermometer helpers passed 672 integrated checks with actual nested arrays of zero, one or two entries. Tests cover pointer and relative input descriptors, distinct source counts, field selection, force flags, alignment, complete output buffers and guards. Portal names were empty in that integrated fixture.
+
+Separately, original portal and edit-rights helpers passed 1,944 synthetic string checks using the original strlen and strncpy implementations. Their import slots were independently matched through original executable relocations and bundled libc exports. Checks cover inline, pointer and relative input strings and the 63/64-byte output-storage boundary. No account credentials or real signature material were used. Allocation/growth/failure, null output, malformed inputs, aliasing and integrated nonempty portal strings remain untested.
+
+The previously unnamed byte at record offset 0x149 matches was_localised_from_content_field. Its 32-character name exceeded the earlier candidate index limit; the index was corrected and 16 original hash checks passed. The output byte is initialized to zero and copied late, after earlier text-gating checks. Its full runtime role remains under investigation. Counts stay at 420 checked names; these tests add evidence, not additional function-name or whole-game completion credit.
