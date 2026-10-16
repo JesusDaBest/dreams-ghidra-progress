@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1904,
-  "unmapped_total": 7684,
+  "mapped_total": 1906,
+  "unmapped_total": 7682,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48079,6 +48079,48 @@
         {
           "kind": "verified_semantic_review",
           "name": "AppendGnmDispatchIndirectOnMecWithMode",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
+    },
+    "1413c90c0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete native-tested queue wait scheduling and release-memory packet generation; post-job caller and matching sequence addresses traced.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Schedules required queue sequence waits or writes release-memory packet.",
+      "code_sha256": "855d698a493771eb40b0e4d971abf06ce58f8d8e3091b8a3a71fd3ef9558b62e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ScheduleRequiredQueueSequenceWaits",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
+    },
+    "14003ba80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete native-tested queue wait scheduling and release-memory packet generation; post-job caller and matching sequence addresses traced.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Schedules required queue sequence waits or writes release-memory packet.",
+      "code_sha256": "5c1de7056d9cff1234a06205e9a3deed6ad0ad6c5cc8248c7d31343c0764ed7d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendReleaseMemoryPacket",
           "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ]

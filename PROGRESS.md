@@ -3323,3 +3323,13 @@ Both indirect wrappers call sceGnmDispatchIndirectOnMec, identified through the 
 Fixture corrections are retained locally: fixed guard/end-pointer expectations in finalizer tests, initialized the argument tracking byte in chain tests, and corrected the synthetic refill branch. No original-code failure was inferred from those fixture errors. Queue capacities, invalid IDs, unusual copy sizes and concurrency still need work.
 
 Totals: 481 reviewed names; 1,904 mapped and 7,684 unmapped among 9,588 discovered functions.
+
+### Queue sequence waits and release-memory packet encoding
+
+Saved ScheduleRequiredQueueSequenceWaits and AppendReleaseMemoryPacket after matching all 154 original CPU instructions and independently reopening their working signatures, including the release writer stack arguments. The wait helper passed 1,024 original-native fixtures with command spies. It schedules each wait only when the unsigned required sequence exceeds its cached value, selects the frame-parity address slot, updates the cached value and clears the pending requirements. Tested values include zero and unsigned boundary values; this does not prove safe runtime sequence rollover.
+
+Read 588 instructions across state accumulation, flushing, sequence waits and post-job updates. State accumulation records sequence maxima and cache flags without emitting commands. The flush path reaches known wait and acquire-memory writers. Post-job code increments its queue sequence and targets the same address slots used by waits. Full cache semantics, alternate queue writers and live GPU visibility remain unresolved.
+
+The original release writer passed 4,320 fixtures checking every emitted word, field masks, refill failure and relocation. It writes seven DWORDs headed c0054902 and advances 28 bytes. The opcode is RELEASE_MEM in the [AMD kernel definitions](https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux.git/%2B/1e43c377a79f9189fea8f2711b399d4e8b4e609b/drivers/gpu/drm/amd/amdgpu/cikd.h). The traced caller supplies event 47, cache flags zero, data selector one and the incremented sequence payload. Packet encoding was executed locally; no GPU ordering, coherence or liveness validation is claimed.
+
+Totals: 483 reviewed names; 1,906 mapped and 7,682 unmapped among 9,588 discovered functions.

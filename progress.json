@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 441,
+    "done": 443,
     "todo": 1463,
-    "total": 1904,
-    "behavior_or_helpers_reviewed": 376,
+    "total": 1906,
+    "behavior_or_helpers_reviewed": 378,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 27,
+        "done": 29,
         "todo": 268,
-        "total": 295,
-        "behavior_or_helpers_reviewed": 27,
+        "total": 297,
+        "behavior_or_helpers_reviewed": 29,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 269,
+        "runtime_functions_identified": 271,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21520,6 +21520,7 @@
           "AppendGnmDispatchIndirectOnMec",
           "AppendGnmDispatchIndirectOnMecWithMode",
           "AppendComputeUserDataRegisters",
+          "AppendReleaseMemoryPacket",
           "CalculateGpuSurfaceLayout",
           "BuildSurfaceLayoutInputFromImageDescriptor",
           "CalculateImageDescriptorStorageRequirements",
@@ -21531,7 +21532,8 @@
           "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
           "TryAllocateGraphicsResourceStorage",
-          "InitializeGpuImageResource"
+          "InitializeGpuImageResource",
+          "ScheduleRequiredQueueSequenceWaits"
         ],
         "todo_names": [
           "0x140c29820",
@@ -21819,6 +21821,7 @@
           "14003aed0",
           "14003af30",
           "14003b5e0",
+          "14003ba80",
           "14003d0a0",
           "140043a90",
           "140044480",
@@ -21830,7 +21833,8 @@
           "14139fd80",
           "1413a00c0",
           "1413c2ee0",
-          "1413c3620"
+          "1413c3620",
+          "1413c90c0"
         ],
         "todo_addresses": [
           "140c29820",
@@ -25148,12 +25152,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 21,
+            "done": 23,
             "todo": 0,
-            "total": 21,
-            "behavior_or_helpers_reviewed": 21,
+            "total": 23,
+            "behavior_or_helpers_reviewed": 23,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 21,
+            "runtime_functions_identified": 23,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25170,6 +25174,7 @@
               "AppendGnmDispatchIndirectOnMec",
               "AppendGnmDispatchIndirectOnMecWithMode",
               "AppendComputeUserDataRegisters",
+              "AppendReleaseMemoryPacket",
               "CalculateGpuSurfaceLayout",
               "BuildSurfaceLayoutInputFromImageDescriptor",
               "CalculateImageDescriptorStorageRequirements",
@@ -25178,7 +25183,8 @@
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
               "TryAllocateGraphicsResourceStorage",
-              "InitializeGpuImageResource"
+              "InitializeGpuImageResource",
+              "ScheduleRequiredQueueSequenceWaits"
             ],
             "todo_names": [],
             "done_addresses": [
@@ -25194,6 +25200,7 @@
               "14003aed0",
               "14003af30",
               "14003b5e0",
+              "14003ba80",
               "14003d0a0",
               "140043a90",
               "140044480",
@@ -25202,7 +25209,8 @@
               "14139fd80",
               "1413a00c0",
               "1413c2ee0",
-              "1413c3620"
+              "1413c3620",
+              "1413c90c0"
             ],
             "todo_addresses": [],
             "unresolved_addresses": [],
@@ -25283,6 +25291,65 @@
                       "140043a90",
                       "140044480",
                       "1413c3620"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/completion",
+                "label": "Queue completion",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendReleaseMemoryPacket",
+                  "SubmitComputeQueueAndWaitForFence",
+                  "AppendComputeCompletionFence",
+                  "ScheduleRequiredQueueSequenceWaits"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14003ba80",
+                  "141297bd0",
+                  "141297cf0",
+                  "1413c90c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/completion/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendReleaseMemoryPacket",
+                      "SubmitComputeQueueAndWaitForFence",
+                      "AppendComputeCompletionFence",
+                      "ScheduleRequiredQueueSequenceWaits"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14003ba80",
+                      "141297bd0",
+                      "141297cf0",
+                      "1413c90c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -25385,57 +25452,6 @@
                     "done_addresses": [
                       "14003aed0",
                       "14003af30"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/completion",
-                "label": "Queue completion",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "SubmitComputeQueueAndWaitForFence",
-                  "AppendComputeCompletionFence"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141297bd0",
-                  "141297cf0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/completion/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "SubmitComputeQueueAndWaitForFence",
-                      "AppendComputeCompletionFence"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141297bd0",
-                      "141297cf0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -43301,5 +43317,5 @@
       }
     ]
   },
-  "unmapped": 7684
+  "unmapped": 7682
 }
