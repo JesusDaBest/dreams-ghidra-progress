@@ -3593,3 +3593,15 @@ OcclusionWriteAtomics (282 instructions, 1,592 program bytes) follows packed tre
 Integer software checks passed 320 parent/child indexing cases, 4,162 wave masks, all 32,768 coordinates in a 32-cubed region and 1,024 byte-slot/mask combinations. These verify the stated packing models, not running GPU behavior. None of these four programs reads volume counter bytes 128–167. The child-emission flag at packed byte 124 comes from CPU record byte 24, zero-extended; its broader meaning remains unresolved.
 
 No GPU execution, atomic-concurrency, hardware floating-point or full CPU-renderer validation is claimed. Runtime region bounds, all numeric output meanings and rendering use of the surface counters remain open. No new names or whole-executable behavior coverage were credited for this checkpoint.
+
+### Occlusion refinement loop and buffer handoffs
+
+Saved GetOrLoadOcclusionWriteChildVoxelsShader and GetOrLoadOcclusionUpdateDispatchArgsShader after matching all 412 loader instructions and independently reopening their no-argument pointer signatures. Read both GPU programs and reproduced all 244 and 100 program bytes exactly, excluding metadata. The child writer doubles packed coordinates, adds child bits and preserves region and instance IDs. Its ordered reservation precedes the 524,288-record output guard; the argument updater clamps the accumulated count to that capacity before preparing the next dispatch.
+
+Traced five refinement rounds in the CPU renderer. They alternate resource IDs 45 and 46; each round reads the previous output, and the final atomic stage requests ID 46. Starting from zero spatial coordinates, five refinements generate parent coordinates 0–31; the last eight child bits therefore encode a 64-cubed occupancy region. Checked 37,448 coordinate-refinement cases. These are static binding requests and software models; backend binding and GPU synchronization are not validated.
+
+The selected region count is unsigned min(requested, 6) when a control float equals zero, otherwise unsigned min(requested, 3). Both signed zeros select six; the comparison model sends NaN to three. Checked 2,331 selection cases. The setting meaning and live values remain unknown. Only selected paths of the enclosing renderer were reviewed.
+
+The one-bit voxel packing structurally agrees with pages 136–139 of [Alex Evans SIGGRAPH 2015 talk](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), which describes cascaded binary occupancy and atomic OR. This does not establish build-identical code or current cascade count. Located the official [engine-code livestream](https://www.youtube.com/watch?v=yZM_Ij9aeOA); its footage and visible code remain uninspected and unmatched.
+
+Totals: 477 reviewed names; mapping remains 1,900 of 9,588 discovered functions. No in-game validation or additional whole-executable behavior coverage is claimed.

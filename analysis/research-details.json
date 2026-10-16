@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 475,
+    "checked_and_applied_names": 477,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 475,
+    "verified_names": 477,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "437 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "439 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8459,5 +8459,39 @@
       "Full CPU renderer and runtime region bounds are not verified.",
       "Assembler failure excludes atomic writer from exact-roundtrip claims."
     ]
+  },
+  "occlusion_refinement_checkpoint": {
+    "saved_names": [
+      "GetOrLoadOcclusionWriteChildVoxelsShader",
+      "GetOrLoadOcclusionUpdateDispatchArgsShader"
+    ],
+    "original_loader_instructions": 412,
+    "exact_shader_program_bytes": [
+      244,
+      100
+    ],
+    "refinement_rounds": 5,
+    "generated_parent_coordinate_range": [
+      0,
+      31
+    ],
+    "equivalent_occupancy_dimension": 64,
+    "output_capacity_records": 524288,
+    "alternating_resource_ids": [
+      45,
+      46
+    ],
+    "final_atomic_input_resource_id": 46,
+    "region_count_rule": "unsigned min(requested,6 if control float equals zero else3)",
+    "coordinate_model_cases": 37448,
+    "region_selection_model_cases": 2331,
+    "limits": [
+      "No GPU execution, concurrency or backend resource-binding validation.",
+      "Only selected renderer paths reviewed; full3933-instruction owner not credited.",
+      "Region cap3or6 established; control-setting meaning and live values unresolved.",
+      "Other atomic-writer shader still lacks successful reassembly.",
+      "Surface-counter rendering usage remains unresolved."
+    ],
+    "runtime_game_verified": false
   }
 }

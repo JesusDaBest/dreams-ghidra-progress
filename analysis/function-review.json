@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "437 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "439 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8958,
-    "other_names": 630,
-    "verification": "complete_inventory_matches_baseline_plus_437_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8956,
+    "other_names": 632,
+    "verification": "complete_inventory_matches_baseline_plus_439_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10827,6 +10827,56 @@
         "This shader does not read the surface-counter fields; rendering counter policy is still unresolved.",
         "Loader may return null; caller has no visible null check, not a demonstrated live crash.",
         "Count+63 uses32-bit wrapping before division by64."
+      ]
+    },
+    {
+      "address": "14131eca0",
+      "original_name": "FUN_14131eca0",
+      "applied_name": "GetOrLoadOcclusionWriteChildVoxelsShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadOcclusionWriteChildVoxelsShader(void)",
+      "evidence": [
+        "All412 original CPU loader instructions read and matched.",
+        "Child writer44instructions and dispatch updater18instructions reassemble exactly244 and100bytes.",
+        "Selected CPU loop, five refinements, alternating resourceIDs45/46 and final atomic input46 traced.",
+        "37448 coordinate cases and2331 region-count model cases passed.",
+        "Backup, trial, promotion and independent reopening verified names and working signatures."
+      ],
+      "caveats": [
+        "No GPU execution, concurrency or backend resource-binding validation.",
+        "Only selected renderer paths reviewed; full3933-instruction owner not credited.",
+        "Region cap3or6 established; control-setting meaning and live values unresolved.",
+        "Other atomic-writer shader still lacks successful reassembly.",
+        "Surface-counter rendering usage remains unresolved."
+      ]
+    },
+    {
+      "address": "14131e560",
+      "original_name": "FUN_14131e560",
+      "applied_name": "GetOrLoadOcclusionUpdateDispatchArgsShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadOcclusionUpdateDispatchArgsShader(void)",
+      "evidence": [
+        "All412 original CPU loader instructions read and matched.",
+        "Child writer44instructions and dispatch updater18instructions reassemble exactly244 and100bytes.",
+        "Selected CPU loop, five refinements, alternating resourceIDs45/46 and final atomic input46 traced.",
+        "37448 coordinate cases and2331 region-count model cases passed.",
+        "Backup, trial, promotion and independent reopening verified names and working signatures."
+      ],
+      "caveats": [
+        "No GPU execution, concurrency or backend resource-binding validation.",
+        "Only selected renderer paths reviewed; full3933-instruction owner not credited.",
+        "Region cap3or6 established; control-setting meaning and live values unresolved.",
+        "Other atomic-writer shader still lacks successful reassembly.",
+        "Surface-counter rendering usage remains unresolved."
       ]
     }
   ],
