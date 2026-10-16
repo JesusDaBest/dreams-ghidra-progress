@@ -8860,10 +8860,24 @@
     "rejected_preserving_output": 992,
     "connected_binding_cases": 120,
     "limits": [
-      "Exact padded storage arithmetic and address masks not independently established.",
+      "Exact padded storage arithmetic remains unresolved.",
+      "Address masks match original-table model in 120 corrected valid-format cases; hardware meaning and allocation unverified.",
       "Executor ignores constructor status; upstream validity constraints remain unresolved.",
-      "Specific metadata hardware classification, allocation andGPU/live-game output unverified."
+      "Specific metadata hardware classification and GPU/live-game output unverified."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "address_binding_followup": {
+      "corrected_native_cases": 120,
+      "original_fixture_superseded": true,
+      "source_format": "Valid 128-bit source-format fields supplied.",
+      "checks": [
+        "Source getter and image binder masks matched original tile-table arithmetic.",
+        "Every enabled nested resolver input checked valid; bypass tile modes verified."
+      ],
+      "limits": [
+        "Synthetic descriptors and controlled hardware mode; no GPU or allocation verification.",
+        "Exact padded storage remains unresolved."
+      ]
+    }
   }
 }

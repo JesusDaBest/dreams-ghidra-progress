@@ -3491,3 +3491,9 @@ The selector matched independently decoded original jump-table constants for all
 The runtime executor builds the descriptor, reads the target auxiliary address, binds it and applies usage flags. This sequence passed 120 connected cases with source and boundary preservation. Address binding can clear additional tile bits; exact mask arithmetic is not independently proved. The executor ignores constructor status, but upstream validity constraints must be established before claiming a runtime defect. Specific GPU metadata identity, allocation behavior and live-game output remain unverified.
 
 Totals: 552 reviewed names; 1,975 mapped and 7,613 unmapped among 9,588 discovered functions.
+
+### Auxiliary address-binding evidence correction
+
+The earlier 120-case connected binding fixture left the source-format field unset. Its nested resolver validity was therefore unproven, and that receipt has been superseded. The corrected fixture supplies a valid 128-bit source format and checks every enabled nested resolver input. All 120 cases matched the exact source-getter and image-binder masks derived from original tile tables; tile modes that bypass masking were also checked. These replace the earlier 120 cases rather than adding to their count.
+
+Different source and auxiliary-image formats can select different table entries and clear different address bits. This explains the previously observed difference between the getter address and the final bound address. Exact padded storage, allocation behavior and GPU output remain unresolved. No function-review or completion count changed.
