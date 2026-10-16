@@ -3008,3 +3008,11 @@ Saved ResolveAwardHashByName with text begin/end pointers and an output-hash poi
 All 191 recognized hashes now match original executable award-name strings, including four longer Impy 2022/2023 nominee names missed by the earlier short-string index. The complete original lookup and hash code passed 3,136 checks covering these names, unknown inputs, alignment and exact outputs/guards. Hash collisions, arbitrary input lengths, aliases and live-game behavior remain untested. This verifies award metadata resolution, not the award service or entire game.
 
 Totals: 426 checked names and 1,859 mapped functions among 9,580 discovered functions; 7,721 still need mapping.
+
+### Tagged metadata path validation
+
+Read the complete 916-instruction tagged metadata helper and checked 13,752 cases through original code across flags, five enum fields, typed references, signed challenge rank, category/award appends and tutorial tool-tag appends. Arrays were preallocated; checks cover counts, existing entries, pointer/relative descriptors and whole output allocations. These are tested paths, not every branch or live-game behavior.
+
+Execution corrected two static interpretations: lowercase h is accepted as the typed reference prefix while uppercase H is rejected; tool-tag index 836, ImportExportMode, is accepted. Both initial fixture mismatches were retained with their causes and corrected checks. Unknown categories leave arrays unchanged; unknown awards append zero.
+
+Separately, the original tag hash matched an independent XXH64 specification model in 5,824 checks. Tag-record append passed 480 checks and string insertion with original libc shared copy code passed 1,888 checks. Full tag construction and percentile conversion remain untested, as do allocation/growth/failure, malformed counts and arbitrary aliases. No naming credit added: 426 checked names.
