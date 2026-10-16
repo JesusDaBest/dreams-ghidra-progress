@@ -3421,3 +3421,13 @@ The five original field setters passed 2,090 exact packing cases, including over
 The original blend/target-mask writers passed 640 cases checking every packet word, capacity threshold, refill failure/relocation and cursor. Blend controls clear bits 13–15 before emission. The connected depth/stencil writer and descriptor helpers passed 6,400 cases over 501 original instructions, checking 24-word active packets and six-word disabled packets. Nested resolver failure cases remain excluded because their caller ignores status and may consume unwritten output. Valid descriptor constraints remain unresolved. Refill was controlled, with no real GPU or live-game validation. Test instruction scopes overlap and do not measure whole-game completion.
 
 Totals: 501 reviewed names; 1,924 mapped and 7,664 unmapped among 9,588 discovered functions.
+
+### Stencil surface layout and storage range
+
+Saved BuildStencilSurfaceLayoutInput and ComputeStencilSurfaceSliceSize with independently reopened working signatures. Their complete 148 original instructions were read and byte matched. The existing CalculateGpuSurfaceLayout name and signature were retained; its 1,377-instruction body received additional review and tests, with no duplicate naming credit. Original instruction bytes and archive inputs remain unchanged.
+
+The complete original query passed 432 linear-surface cases against independently calculated dimensions and byte counts. The connected original stencil builder, query, size wrapper, base helpers and depth/stencil range helper passed 1,440 cases: 378 accepted layouts and 1,062 rejected synthetic descriptors. The returned range matched the minimum base and maximum end, with descriptor base words converted in 256-byte units. Accepted stencil byte counts agreed with the returned padded dimensions and sample count. These tiled checks establish internal consistency; padding is not independently predicted. For example, a synthetic 128-by-64 surface with two samples needed 32,768 bytes rather than the unpadded 16,384 bytes.
+
+The size wrapper ignores the builder status, queries again, and returns the low 32 bits of the 64-bit size on query success or zero on failure. No tested builder failure became a successful second query. The query can partially write output before returning an error. Exact constraints for all descriptors, overflow cases, other view indices and real GPU behavior remain unresolved. Layout pointers remain opaque.
+
+Totals: 503 reviewed names; 1,926 mapped and 7,662 unmapped among 9,588 discovered functions.

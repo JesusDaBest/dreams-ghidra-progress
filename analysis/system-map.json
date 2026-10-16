@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1924,
-  "unmapped_total": 7664,
+  "mapped_total": 1926,
+  "unmapped_total": 7662,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48499,6 +48499,48 @@
         {
           "kind": "verified_semantic_review",
           "name": "AppendDepthStencilRenderTargetBinding",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140044120": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Stencil surface-layout input construction and slice sizing, connected to depth/stencil tracking.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Stencil surface description construction or storage slice-size calculation.",
+      "code_sha256": "b5c223b58712dd01044409331a3d5ae6bf357e7f1638f69a96c40360bbe45501",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildStencilSurfaceLayoutInput",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140021580": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Stencil surface-layout input construction and slice sizing, connected to depth/stencil tracking.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Stencil surface description construction or storage slice-size calculation.",
+      "code_sha256": "5722f1035115fb803ca97d955bcad1c5d2e9b17d14029bc53d8410efa419c993",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeStencilSurfaceSliceSize",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

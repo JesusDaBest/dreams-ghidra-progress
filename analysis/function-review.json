@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "463 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "465 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8932,
-    "other_names": 656,
-    "verification": "complete_inventory_matches_baseline_plus_463_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8930,
+    "other_names": 658,
+    "verification": "complete_inventory_matches_baseline_plus_465_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11440,6 +11440,54 @@
         "Refill controlled; no real GPU or live-game execution.",
         "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
         "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140044120",
+      "original_name": "FUN_140044120",
+      "applied_name": "BuildStencilSurfaceLayoutInput",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV BuildStencilSurfaceLayoutInput(void * layout_input, void * depth_stencil_descriptor, uint view_index)",
+      "evidence": [
+        "Complete148 original instructions across two stencil-layout functions read and byte matched.",
+        "Surrounding existing CalculateGpuSurfaceLayout1377 instructions further reviewed;432 linear cases and1440 connected builder/query/size/range cases,378 accepted and1062 rejected.",
+        "Connected accepted storage byte counts checked against padded output dimensions; min-base/max-end range composition verified.",
+        "Backed-up trial, independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered source names.",
+        "Tiled padding not independently predicted; composition tests do not establish full hardware correctness.",
+        "Size wrapper ignores builder status, returns low32 bits of64-bit query size on success andzero on failure.",
+        "Opaque layout/descriptor pointers; field structures not applied.",
+        "No real GPU or live-game verification; sampledview0 aligned dimensions."
+      ]
+    },
+    {
+      "address": "140021580",
+      "original_name": "FUN_140021580",
+      "applied_name": "ComputeStencilSurfaceSliceSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ComputeStencilSurfaceSliceSize(void * depth_stencil_descriptor)",
+      "evidence": [
+        "Complete148 original instructions across two stencil-layout functions read and byte matched.",
+        "Surrounding existing CalculateGpuSurfaceLayout1377 instructions further reviewed;432 linear cases and1440 connected builder/query/size/range cases,378 accepted and1062 rejected.",
+        "Connected accepted storage byte counts checked against padded output dimensions; min-base/max-end range composition verified.",
+        "Backed-up trial, independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered source names.",
+        "Tiled padding not independently predicted; composition tests do not establish full hardware correctness.",
+        "Size wrapper ignores builder status, returns low32 bits of64-bit query size on success andzero on failure.",
+        "Opaque layout/descriptor pointers; field structures not applied.",
+        "No real GPU or live-game verification; sampledview0 aligned dimensions."
       ]
     }
   ],
