@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1910,
-  "unmapped_total": 7678,
+  "mapped_total": 1915,
+  "unmapped_total": 7673,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48206,6 +48206,111 @@
           "kind": "verified_semantic_review",
           "name": "RegisterDeferredShaderConstants",
           "support": "Complete helper read and native chains tested; four-argument signature and backing pointer return independently reopened."
+        }
+      ]
+    },
+    "1413c4ed0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Graphics draw executor shader-pair binding, semantic linkage and pixel input-control command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shader pair binding or pixel input control construction/emission.",
+      "code_sha256": "99f8496af5ee063041b14f3f3ed36ea4e87b4c9ba8f436523adccc45b7146eb0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BindGraphicsShaderPairIfChanged",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140024280": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Graphics draw executor shader-pair binding, semantic linkage and pixel input-control command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shader pair binding or pixel input control construction/emission.",
+      "code_sha256": "6970d3fe2192f5e7f3b53fcc00682a1a735df379dc6043a6f1a379039248999a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGnmVertexShaderBinding",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140024160": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Graphics draw executor shader-pair binding, semantic linkage and pixel input-control command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shader pair binding or pixel input control construction/emission.",
+      "code_sha256": "ee7ef473360ed8e398f31cf90eca72d5853b3022fa77ee6490079c5cf9c6ff02",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGnmPixelShaderBinding",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400371a0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Graphics draw executor shader-pair binding, semantic linkage and pixel input-control command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shader pair binding or pixel input control construction/emission.",
+      "code_sha256": "002624c00312ef0d7ffef554fda85ff958e90513e141de046fca779a1d7df1ae",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildPixelInputControlWords",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140023d10": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Graphics draw executor shader-pair binding, semantic linkage and pixel input-control command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Shader pair binding or pixel input control construction/emission.",
+      "code_sha256": "bb0d6b761c6a8eed5dd3ae390866d8cf4bfa1ae83f74955906f2f9f2d7d151f9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendPixelInputControlWords",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
     }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "449 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "454 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8946,
-    "other_names": 642,
-    "verification": "complete_inventory_matches_baseline_plus_449_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8941,
+    "other_names": 647,
+    "verification": "complete_inventory_matches_baseline_plus_454_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11115,6 +11115,121 @@
         "Imported memcpy/memset were local native shims in chain fixtures.",
         "Synthetic bounded resources only; capacity, invalid-input handling, concurrency and GPU execution untested.",
         "Packed low32 mode/high32 bytecount is descriptive; original structure and enum names not recovered."
+      ]
+    },
+    {
+      "address": "1413c4ed0",
+      "original_name": "FUN_1413c4ed0",
+      "applied_name": "BindGraphicsShaderPairIfChanged",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BindGraphicsShaderPairIfChanged(void * binding_context, void * vertex_shader, void * pixel_shader)",
+      "evidence": [
+        "Complete 412 original instructions across this five-function group read and byte matched.",
+        "Original-native fixtures: pair64, wrappers96, packet writer204 and semantic mapper192 cases (2256 input words).",
+        "Platform imports independently linked through original SELF symbols and relocations; mode query identified as cached Boolean sceKernelIsNeoMode.",
+        "Backed-up isolated trial, independent trial reopening, promotion and independent main-project reopening verified signatures."
+      ],
+      "caveats": [
+        "GNM calls, refill and Neo query were controlled substitutes in the relevant fixtures.",
+        "No real GPU packets from platform imports, actual interpolation, concurrency or allocator behavior tested.",
+        "Pair-cache error recovery and valid caller count limits remain unresolved.",
+        "Input count33 writer advances without payload; no claim of supported usage."
+      ]
+    },
+    {
+      "address": "140024280",
+      "original_name": "FUN_140024280",
+      "applied_name": "AppendGnmVertexShaderBinding",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGnmVertexShaderBinding(void * command_context, void * shader_metadata, uint modifier)",
+      "evidence": [
+        "Complete 412 original instructions across this five-function group read and byte matched.",
+        "Original-native fixtures: pair64, wrappers96, packet writer204 and semantic mapper192 cases (2256 input words).",
+        "Platform imports independently linked through original SELF symbols and relocations; mode query identified as cached Boolean sceKernelIsNeoMode.",
+        "Backed-up isolated trial, independent trial reopening, promotion and independent main-project reopening verified signatures."
+      ],
+      "caveats": [
+        "GNM calls, refill and Neo query were controlled substitutes in the relevant fixtures.",
+        "No real GPU packets from platform imports, actual interpolation, concurrency or allocator behavior tested.",
+        "Pair-cache error recovery and valid caller count limits remain unresolved.",
+        "Input count33 writer advances without payload; no claim of supported usage."
+      ]
+    },
+    {
+      "address": "140024160",
+      "original_name": "FUN_140024160",
+      "applied_name": "AppendGnmPixelShaderBinding",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGnmPixelShaderBinding(void * command_context, void * shader_metadata)",
+      "evidence": [
+        "Complete 412 original instructions across this five-function group read and byte matched.",
+        "Original-native fixtures: pair64, wrappers96, packet writer204 and semantic mapper192 cases (2256 input words).",
+        "Platform imports independently linked through original SELF symbols and relocations; mode query identified as cached Boolean sceKernelIsNeoMode.",
+        "Backed-up isolated trial, independent trial reopening, promotion and independent main-project reopening verified signatures."
+      ],
+      "caveats": [
+        "GNM calls, refill and Neo query were controlled substitutes in the relevant fixtures.",
+        "No real GPU packets from platform imports, actual interpolation, concurrency or allocator behavior tested.",
+        "Pair-cache error recovery and valid caller count limits remain unresolved.",
+        "Input count33 writer advances without payload; no claim of supported usage."
+      ]
+    },
+    {
+      "address": "1400371a0",
+      "original_name": "FUN_1400371a0",
+      "applied_name": "BuildPixelInputControlWords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildPixelInputControlWords(uint * output_words, void * vertex_semantics, uint vertex_semantic_count, void * pixel_semantics, uint pixel_input_count)",
+      "evidence": [
+        "Complete 412 original instructions across this five-function group read and byte matched.",
+        "Original-native fixtures: pair64, wrappers96, packet writer204 and semantic mapper192 cases (2256 input words).",
+        "Platform imports independently linked through original SELF symbols and relocations; mode query identified as cached Boolean sceKernelIsNeoMode.",
+        "Backed-up isolated trial, independent trial reopening, promotion and independent main-project reopening verified signatures."
+      ],
+      "caveats": [
+        "GNM calls, refill and Neo query were controlled substitutes in the relevant fixtures.",
+        "No real GPU packets from platform imports, actual interpolation, concurrency or allocator behavior tested.",
+        "Pair-cache error recovery and valid caller count limits remain unresolved.",
+        "Input count33 writer advances without payload; no claim of supported usage."
+      ]
+    },
+    {
+      "address": "140023d10",
+      "original_name": "FUN_140023d10",
+      "applied_name": "AppendPixelInputControlWords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendPixelInputControlWords(void * command_context, uint * control_words, uint input_count)",
+      "evidence": [
+        "Complete 412 original instructions across this five-function group read and byte matched.",
+        "Original-native fixtures: pair64, wrappers96, packet writer204 and semantic mapper192 cases (2256 input words).",
+        "Platform imports independently linked through original SELF symbols and relocations; mode query identified as cached Boolean sceKernelIsNeoMode.",
+        "Backed-up isolated trial, independent trial reopening, promotion and independent main-project reopening verified signatures."
+      ],
+      "caveats": [
+        "GNM calls, refill and Neo query were controlled substitutes in the relevant fixtures.",
+        "No real GPU packets from platform imports, actual interpolation, concurrency or allocator behavior tested.",
+        "Pair-cache error recovery and valid caller count limits remain unresolved.",
+        "Input count33 writer advances without payload; no claim of supported usage."
       ]
     }
   ],

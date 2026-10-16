@@ -3687,3 +3687,15 @@ Saved RegisterDeferredShaderConstants after reading and matching all 110 origina
 Mode 1 finds a backing resource covering the pointer loaded from the source. Mode 2 finds the source address, creates a registered copy and inherits dependency links. The reviewed dependency collector then walks those links for the job. Modes 0 and unknown modes return no backing record. Synthetic chain tests cover these distinctions, including shared-child suppression; they do not establish invalid-input safety, real capacity, concurrency or GPU behavior. Imported copy/zero routines were local native shims in the fixtures.
 
 Totals: 487 reviewed names; 1,910 mapped and 7,678 unmapped among 9,588 discovered functions. No whole-game completion credit is inferred.
+
+### Shader-pair binding and pixel input controls
+
+Saved BindGraphicsShaderPairIfChanged, AppendGnmVertexShaderBinding, AppendGnmPixelShaderBinding, BuildPixelInputControlWords and AppendPixelInputControlWords with evidence-supported working signatures. All 412 original instructions were read and matched. Backed-up trial, independent trial reopen, promotion and independent main-project reopen verified the five changes without changing executable bytes or archive inputs.
+
+The original pair helper passed 64 cases with command-recording substitutes: unchanged pairs emit no binding calls, changed stages update their cache, null pixel shaders skip input linkage, and changing either stage rebuilds input controls when needed. The original binding wrappers passed 96 cases covering arguments, capacity thresholds, refill failure/relocation and import return status. Their imports independently resolve to sceGnmSetVsShader and sceGnmSetPsShader350. These tests do not execute those platform APIs or validate their generated GPU packets. Cache fields can update even if lower emission fails; full recovery invariants remain unresolved.
+
+The original semantic mapper passed 192 cases covering 2,256 input words, including missing and duplicate semantics. It selects the first matching vertex semantic, uses a fallback for missing matches and packs metadata flags into control words. Its special path is gated by a cached Boolean sceKernelIsNeoMode result. The query was controlled in the fixture; no real console mode or GPU interpolation was tested. Exact compiler semantic names and all hardware bit meanings remain unresolved.
+
+The original input-control writer passed 204 exact packet cases, including counts 0–33, refill failure and relocation. Counts 1–32 preserve every source word; count zero emits NOP words, while count 33 advances over unfilled payload. The latter is observed boundary behavior, not a supported-use claim. Real caller limits still need audit.
+
+Totals: 492 reviewed names; 1,915 mapped and 7,673 unmapped among 9,588 discovered functions. No whole-game completion percentage is inferred.
