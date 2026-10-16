@@ -8169,5 +8169,21 @@
       "Some errors can leave partial descriptor or accumulated size/alignment outputs."
     ],
     "runtime_game_verified": false
+  },
+  "surface_layout_linear_execution_checkpoint": {
+    "original_dependency_instructions_read": 458,
+    "ordinary_linear_native_cases": 320,
+    "aligned_linear_native_cases": 320,
+    "scope": "Entire original surface-layout function and dependencies/tables, depth1, single sample, 8/16/32/64/128bit uncompressed pixels.",
+    "independent_checks": [
+      "Padded dimensions and exact storage-byte calculation.",
+      "Selected array mode, aligned base requirement, unchanged input and outer guards."
+    ],
+    "model_correction": "Initial aligned pitch formula failed a1x1 8bit case; corrected slice constraint and all320alignedcases passed.",
+    "limits": [
+      "Tiled,compressed,mips,arrays,depth>1,overflow,concurrency andGPUbehavior unverified.",
+      "Other output fields not independently modeled; stackcanary supplied locally."
+    ],
+    "reviewed_name_increment": 0
   }
 }

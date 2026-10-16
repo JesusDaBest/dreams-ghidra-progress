@@ -3197,3 +3197,11 @@ Saved InitializeImageDescriptorFromSpecification, CalculateGpuSurfaceLayout and 
 Validation and failure paths are part of this review: late errors can leave a partially modified descriptor or accumulated size/alignment outputs. Exact input/output structures and some called layout-property helpers remain unresolved. These are descriptive name-only changes with existing unknown prototypes retained; neither whole-function CPU execution nor GPU behavior is claimed. Backup, isolated trial, promotion and independent reopening passed.
 
 Totals: 464 reviewed names; 1,894 mapped and 7,694 unmapped among 9,588 discovered functions.
+
+### Original surface-layout execution: linear modes
+
+Read and matched another 458 instructions across the layout dependencies, including packed tile-property lookups and macro-layout selection. Executed the entire original CalculateGpuSurfaceLayout routine with its original helper code and tables in 320 ordinary-linear and 320 aligned-linear cases. Independent formulas checked dimensions and storage bytes for five pixel sizes across varied widths/heights; input and surrounding memory guards remained unchanged.
+
+The first aligned model underpredicted padding for a 1×1 eight-bit surface. The original returns a 256-pixel pitch there. Correcting the slice-divisibility constraint resolved the mismatch, and all 320 aligned cases then passed. This failed prediction is recorded as a model correction, not counted as a passing case.
+
+Coverage is limited to single-sample, depth-one, uncompressed linear surfaces. Tiled modes, compressed formats, mip chains, arrays, overflow, concurrency and GPU execution remain unvalidated. Other output fields have not all been independently modeled. No new names are counted; the total remains 464.
