@@ -3509,3 +3509,11 @@ Read and matched another 458 instructions across the layout dependencies, includ
 The first aligned model underpredicted padding for a 1×1 eight-bit surface. The original returns a 256-pixel pitch there. Correcting the slice-divisibility constraint resolved the mismatch, and all 320 aligned cases then passed. This failed prediction is recorded as a model correction, not counted as a passing case.
 
 Coverage is limited to single-sample, depth-one, uncompressed linear surfaces. Tiled modes, compressed formats, mip chains, arrays, overflow, concurrency and GPU execution remain unvalidated. Other output fields have not all been independently modeled. No new names are counted; the total remains 464.
+
+### Linked image constructor execution and working prototypes
+
+Executed 64 linked scenarios through the complete original image constructor, storage-requirements routine, descriptor-to-layout conversion and packed-format getter: 256 successful original function calls. Checks cover dimensions, descriptor kind and format roundtrip, exact storage size/alignment, decoded layout values, unchanged input and surrounding memory guards. Four invalid constructor cases confirm that early mip validation preserves the descriptor while later kind/dimension errors leave partial changes. Coverage is restricted to kind9 linear128bit images, one mip/sample, depth1 and slice0.
+
+Saved BuildSurfaceLayoutInputFromImageDescriptor and GetImageDescriptorPackedFormat. Also replaced unknown prototypes on the three previously named constructor/layout/storage routines with justified register arguments and status returns. Storage now has explicit 64-bit size and 32-bit alignment output pointers. Structures remain opaque. Backup, trial, promotion and independent reopening passed; other image kinds, tiled/compressed formats, overflow, concurrency and GPU execution remain unvalidated.
+
+Totals: 466 reviewed names; 1,896 mapped and 7,692 unmapped among 9,588 discovered functions. Three prototype updates do not add name counts.

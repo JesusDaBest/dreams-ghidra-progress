@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 424,
+    "done": 426,
     "todo": 1470,
-    "total": 1894,
-    "behavior_or_helpers_reviewed": 359,
+    "total": 1896,
+    "behavior_or_helpers_reviewed": 361,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 17,
+        "done": 19,
         "todo": 270,
-        "total": 287,
-        "behavior_or_helpers_reviewed": 17,
+        "total": 289,
+        "behavior_or_helpers_reviewed": 19,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 261,
+        "runtime_functions_identified": 263,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21514,9 +21514,11 @@
           "GenerateVertexFetchShaderInstructions",
           "InitializeImageDescriptorFromSpecification",
           "SetImageDescriptorFormat",
+          "GetImageDescriptorPackedFormat",
           "SetImageDescriptorControlFlags",
           "AppendComputeUserDataRegisters",
           "CalculateGpuSurfaceLayout",
+          "BuildSurfaceLayoutInputFromImageDescriptor",
           "CalculateImageDescriptorStorageRequirements",
           "RegisterLabelVisibleFieldOffset",
           "SubmitComputeQueueAndWaitForFence",
@@ -21805,9 +21807,11 @@
           "1400376f0",
           "140037e60",
           "1400382a0",
+          "1400387e0",
           "14003a020",
           "14003b5e0",
           "14003d0a0",
+          "140043a90",
           "140044480",
           "140d67a10",
           "141297bd0",
@@ -25124,6 +25128,376 @@
             ]
           },
           {
+            "name": "rendering/compute",
+            "label": "GPU compute support",
+            "done": 15,
+            "todo": 0,
+            "total": 15,
+            "behavior_or_helpers_reviewed": 15,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 15,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "ExtractShaderBinarySections",
+              "InitializeGpuBufferDescriptor",
+              "PackMaskedFormatFields",
+              "GetPackedFormatChannelSelector",
+              "InitializeImageDescriptorFromSpecification",
+              "SetImageDescriptorFormat",
+              "GetImageDescriptorPackedFormat",
+              "SetImageDescriptorControlFlags",
+              "AppendComputeUserDataRegisters",
+              "CalculateGpuSurfaceLayout",
+              "BuildSurfaceLayoutInputFromImageDescriptor",
+              "CalculateImageDescriptorStorageRequirements",
+              "SubmitComputeQueueAndWaitForFence",
+              "AppendComputeCompletionFence",
+              "TryAllocateGraphicsResourceStorage"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "140011fb0",
+              "14001d980",
+              "14001eb20",
+              "14001f1d0",
+              "140037e60",
+              "1400382a0",
+              "1400387e0",
+              "14003a020",
+              "14003b5e0",
+              "14003d0a0",
+              "140043a90",
+              "140044480",
+              "141297bd0",
+              "141297cf0",
+              "1413c2ee0"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "rendering/compute/image-descriptors",
+                "label": "Image descriptors",
+                "done": 8,
+                "todo": 0,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 8,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 8,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetPackedFormatChannelSelector",
+                  "InitializeImageDescriptorFromSpecification",
+                  "SetImageDescriptorFormat",
+                  "GetImageDescriptorPackedFormat",
+                  "SetImageDescriptorControlFlags",
+                  "CalculateGpuSurfaceLayout",
+                  "BuildSurfaceLayoutInputFromImageDescriptor",
+                  "CalculateImageDescriptorStorageRequirements"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14001f1d0",
+                  "140037e60",
+                  "1400382a0",
+                  "1400387e0",
+                  "14003a020",
+                  "14003d0a0",
+                  "140043a90",
+                  "140044480"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/image-descriptors/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 8,
+                    "todo": 0,
+                    "total": 8,
+                    "behavior_or_helpers_reviewed": 8,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 8,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetPackedFormatChannelSelector",
+                      "InitializeImageDescriptorFromSpecification",
+                      "SetImageDescriptorFormat",
+                      "GetImageDescriptorPackedFormat",
+                      "SetImageDescriptorControlFlags",
+                      "CalculateGpuSurfaceLayout",
+                      "BuildSurfaceLayoutInputFromImageDescriptor",
+                      "CalculateImageDescriptorStorageRequirements"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14001f1d0",
+                      "140037e60",
+                      "1400382a0",
+                      "1400387e0",
+                      "14003a020",
+                      "14003d0a0",
+                      "140043a90",
+                      "140044480"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/buffer-descriptors",
+                "label": "Buffer descriptors",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializeGpuBufferDescriptor",
+                  "PackMaskedFormatFields"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14001d980",
+                  "14001eb20"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/buffer-descriptors/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "InitializeGpuBufferDescriptor",
+                      "PackMaskedFormatFields"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14001d980",
+                      "14001eb20"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/completion",
+                "label": "Queue completion",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SubmitComputeQueueAndWaitForFence",
+                  "AppendComputeCompletionFence"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141297bd0",
+                  "141297cf0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/completion/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "SubmitComputeQueueAndWaitForFence",
+                      "AppendComputeCompletionFence"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141297bd0",
+                      "141297cf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/command-registers",
+                "label": "Shader input registers",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendComputeUserDataRegisters"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14003b5e0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/command-registers/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendComputeUserDataRegisters"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14003b5e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/resource-storage",
+                "label": "Resource storage",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "TryAllocateGraphicsResourceStorage"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1413c2ee0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/resource-storage/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "TryAllocateGraphicsResourceStorage"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1413c2ee0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/shader-sections",
+                "label": "Shader binary sections",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ExtractShaderBinarySections"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140011fb0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/shader-sections/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ExtractShaderBinarySections"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140011fb0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "rendering/graphics",
             "label": "Graphics infrastructure",
             "done": 3,
@@ -25492,364 +25866,6 @@
                     "todo_addresses": [
                       "1413c4650"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "rendering/compute",
-            "label": "GPU compute support",
-            "done": 13,
-            "todo": 0,
-            "total": 13,
-            "behavior_or_helpers_reviewed": 13,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 13,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "ExtractShaderBinarySections",
-              "InitializeGpuBufferDescriptor",
-              "PackMaskedFormatFields",
-              "GetPackedFormatChannelSelector",
-              "InitializeImageDescriptorFromSpecification",
-              "SetImageDescriptorFormat",
-              "SetImageDescriptorControlFlags",
-              "AppendComputeUserDataRegisters",
-              "CalculateGpuSurfaceLayout",
-              "CalculateImageDescriptorStorageRequirements",
-              "SubmitComputeQueueAndWaitForFence",
-              "AppendComputeCompletionFence",
-              "TryAllocateGraphicsResourceStorage"
-            ],
-            "todo_names": [],
-            "done_addresses": [
-              "140011fb0",
-              "14001d980",
-              "14001eb20",
-              "14001f1d0",
-              "140037e60",
-              "1400382a0",
-              "14003a020",
-              "14003b5e0",
-              "14003d0a0",
-              "140044480",
-              "141297bd0",
-              "141297cf0",
-              "1413c2ee0"
-            ],
-            "todo_addresses": [],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "rendering/compute/image-descriptors",
-                "label": "Image descriptors",
-                "done": 6,
-                "todo": 0,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 6,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "GetPackedFormatChannelSelector",
-                  "InitializeImageDescriptorFromSpecification",
-                  "SetImageDescriptorFormat",
-                  "SetImageDescriptorControlFlags",
-                  "CalculateGpuSurfaceLayout",
-                  "CalculateImageDescriptorStorageRequirements"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14001f1d0",
-                  "140037e60",
-                  "1400382a0",
-                  "14003a020",
-                  "14003d0a0",
-                  "140044480"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/image-descriptors/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 6,
-                    "todo": 0,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 6,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 6,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "GetPackedFormatChannelSelector",
-                      "InitializeImageDescriptorFromSpecification",
-                      "SetImageDescriptorFormat",
-                      "SetImageDescriptorControlFlags",
-                      "CalculateGpuSurfaceLayout",
-                      "CalculateImageDescriptorStorageRequirements"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14001f1d0",
-                      "140037e60",
-                      "1400382a0",
-                      "14003a020",
-                      "14003d0a0",
-                      "140044480"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/buffer-descriptors",
-                "label": "Buffer descriptors",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "InitializeGpuBufferDescriptor",
-                  "PackMaskedFormatFields"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14001d980",
-                  "14001eb20"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/buffer-descriptors/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "InitializeGpuBufferDescriptor",
-                      "PackMaskedFormatFields"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14001d980",
-                      "14001eb20"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/completion",
-                "label": "Queue completion",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "SubmitComputeQueueAndWaitForFence",
-                  "AppendComputeCompletionFence"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141297bd0",
-                  "141297cf0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/completion/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "SubmitComputeQueueAndWaitForFence",
-                      "AppendComputeCompletionFence"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141297bd0",
-                      "141297cf0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/command-registers",
-                "label": "Shader input registers",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AppendComputeUserDataRegisters"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14003b5e0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/command-registers/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AppendComputeUserDataRegisters"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14003b5e0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/resource-storage",
-                "label": "Resource storage",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "TryAllocateGraphicsResourceStorage"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1413c2ee0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/resource-storage/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "TryAllocateGraphicsResourceStorage"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1413c2ee0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/shader-sections",
-                "label": "Shader binary sections",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ExtractShaderBinarySections"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140011fb0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/shader-sections/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ExtractShaderBinarySections"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140011fb0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -43125,5 +43141,5 @@
       }
     ]
   },
-  "unmapped": 7694
+  "unmapped": 7692
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "426 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "428 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8969,
-    "other_names": 619,
-    "verification": "complete_inventory_matches_baseline_plus_426_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8967,
+    "other_names": 621,
+    "verification": "complete_inventory_matches_baseline_plus_428_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10473,7 +10473,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV InitializeImageDescriptorFromSpecification(void)",
+      "saved_working_signature": "uint PS4_SYSV InitializeImageDescriptorFromSpecification(void * descriptor, void * specification)",
       "evidence": [
         "All 1874 original instructions across the three routines read and matched; large layout body reviewed in four stages.",
         "Image constructor, surface-layout and mip storage-requirements caller/callee chain traced.",
@@ -10484,6 +10484,22 @@
         "Whole functions were not executed; no GPU validation.",
         "Called layout-property helpers remain partly unread; overflow, invalid pointers and concurrency unverified.",
         "Some errors can leave partial descriptor or accumulated size/alignment outputs."
+      ],
+      "type_followups": [
+        {
+          "before": "undefined PS4_SYSV InitializeImageDescriptorFromSpecification(void)",
+          "after": "uint PS4_SYSV InitializeImageDescriptorFromSpecification(void * descriptor, void * specification)",
+          "evidence": [
+            "Complete original bodies and caller/callee argument flow traced; 2117 instruction spans matched for this batch.",
+            "64 linked scenarios execute the complete original constructor, storage, decoder and format getter; four invalid constructor cases check partial-output behavior.",
+            "Backup, isolated trial, promotion and independent reopening passed."
+          ],
+          "caveats": [
+            "Working signatures with opaque structures, not original source declarations.",
+            "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
+            "No GPU execution, overflow or concurrency validation."
+          ]
+        }
       ]
     },
     {
@@ -10495,7 +10511,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV CalculateGpuSurfaceLayout(void)",
+      "saved_working_signature": "uint PS4_SYSV CalculateGpuSurfaceLayout(void * layout_output, void * layout_input)",
       "evidence": [
         "All 1874 original instructions across the three routines read and matched; large layout body reviewed in four stages.",
         "Image constructor, surface-layout and mip storage-requirements caller/callee chain traced.",
@@ -10506,6 +10522,22 @@
         "Whole functions were not executed; no GPU validation.",
         "Called layout-property helpers remain partly unread; overflow, invalid pointers and concurrency unverified.",
         "Some errors can leave partial descriptor or accumulated size/alignment outputs."
+      ],
+      "type_followups": [
+        {
+          "before": "undefined PS4_SYSV CalculateGpuSurfaceLayout(void)",
+          "after": "uint PS4_SYSV CalculateGpuSurfaceLayout(void * layout_output, void * layout_input)",
+          "evidence": [
+            "Complete original bodies and caller/callee argument flow traced; 2117 instruction spans matched for this batch.",
+            "64 linked scenarios execute the complete original constructor, storage, decoder and format getter; four invalid constructor cases check partial-output behavior.",
+            "Backup, isolated trial, promotion and independent reopening passed."
+          ],
+          "caveats": [
+            "Working signatures with opaque structures, not original source declarations.",
+            "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
+            "No GPU execution, overflow or concurrency validation."
+          ]
+        }
       ]
     },
     {
@@ -10517,7 +10549,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV CalculateImageDescriptorStorageRequirements(void)",
+      "saved_working_signature": "uint PS4_SYSV CalculateImageDescriptorStorageRequirements(ulonglong * size_bytes, uint * alignment_bytes, void * descriptor)",
       "evidence": [
         "All 1874 original instructions across the three routines read and matched; large layout body reviewed in four stages.",
         "Image constructor, surface-layout and mip storage-requirements caller/callee chain traced.",
@@ -10528,6 +10560,64 @@
         "Whole functions were not executed; no GPU validation.",
         "Called layout-property helpers remain partly unread; overflow, invalid pointers and concurrency unverified.",
         "Some errors can leave partial descriptor or accumulated size/alignment outputs."
+      ],
+      "type_followups": [
+        {
+          "before": "undefined PS4_SYSV CalculateImageDescriptorStorageRequirements(void)",
+          "after": "uint PS4_SYSV CalculateImageDescriptorStorageRequirements(ulonglong * size_bytes, uint * alignment_bytes, void * descriptor)",
+          "evidence": [
+            "Complete original bodies and caller/callee argument flow traced; 2117 instruction spans matched for this batch.",
+            "64 linked scenarios execute the complete original constructor, storage, decoder and format getter; four invalid constructor cases check partial-output behavior.",
+            "Backup, isolated trial, promotion and independent reopening passed."
+          ],
+          "caveats": [
+            "Working signatures with opaque structures, not original source declarations.",
+            "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
+            "No GPU execution, overflow or concurrency validation."
+          ]
+        }
+      ]
+    },
+    {
+      "address": "140043a90",
+      "original_name": "FUN_140043a90",
+      "applied_name": "BuildSurfaceLayoutInputFromImageDescriptor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV BuildSurfaceLayoutInputFromImageDescriptor(void * layout_input, void * descriptor, uint mip_level, uint slice_index)",
+      "evidence": [
+        "Complete original bodies and caller/callee argument flow traced; 2117 instruction spans matched for this batch.",
+        "64 linked scenarios execute the complete original constructor, storage, decoder and format getter; four invalid constructor cases check partial-output behavior.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Working signatures with opaque structures, not original source declarations.",
+        "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
+        "No GPU execution, overflow or concurrency validation."
+      ]
+    },
+    {
+      "address": "1400387e0",
+      "original_name": "FUN_1400387e0",
+      "applied_name": "GetImageDescriptorPackedFormat",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV GetImageDescriptorPackedFormat(void * descriptor)",
+      "evidence": [
+        "Complete original bodies and caller/callee argument flow traced; 2117 instruction spans matched for this batch.",
+        "64 linked scenarios execute the complete original constructor, storage, decoder and format getter; four invalid constructor cases check partial-output behavior.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Working signatures with opaque structures, not original source declarations.",
+        "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
+        "No GPU execution, overflow or concurrency validation."
       ]
     }
   ],

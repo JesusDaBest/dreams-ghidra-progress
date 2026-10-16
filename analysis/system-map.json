@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1894,
-  "unmapped_total": 7694,
+  "mapped_total": 1896,
+  "unmapped_total": 7692,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47778,6 +47778,11 @@
           "kind": "verified_semantic_review",
           "name": "InitializeImageDescriptorFromSpecification",
           "support": "Complete original body review and independently reopened descriptive name; whole-function execution and GPU behavior unverified."
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeImageDescriptorFromSpecification",
+          "support": "Complete original linked execution for selected linear cases and independently reopened prototype; GPU unverified."
         }
       ]
     },
@@ -47799,6 +47804,11 @@
           "kind": "verified_semantic_review",
           "name": "CalculateGpuSurfaceLayout",
           "support": "Complete original body review and independently reopened descriptive name; whole-function execution and GPU behavior unverified."
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "CalculateGpuSurfaceLayout",
+          "support": "Complete original linked execution for selected linear cases and independently reopened prototype; GPU unverified."
         }
       ]
     },
@@ -47820,6 +47830,53 @@
           "kind": "verified_semantic_review",
           "name": "CalculateImageDescriptorStorageRequirements",
           "support": "Complete original body review and independently reopened descriptive name; whole-function execution and GPU behavior unverified."
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "CalculateImageDescriptorStorageRequirements",
+          "support": "Complete original linked execution for selected linear cases and independently reopened prototype; GPU unverified."
+        }
+      ]
+    },
+    "140043a90": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete descriptor conversion/getter bodies and constructor/storage caller chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds layout input or reads packed descriptor format.",
+      "code_sha256": "dc3d1fe73f3fa547c327aaf324151e1c5a76850daad7fd604d189f8680322acd",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildSurfaceLayoutInputFromImageDescriptor",
+          "support": "Complete original linked execution for selected linear cases and independently reopened prototype; GPU unverified."
+        }
+      ]
+    },
+    "1400387e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete descriptor conversion/getter bodies and constructor/storage caller chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds layout input or reads packed descriptor format.",
+      "code_sha256": "89b95ae83fd8eb3d69ff56bb2c3a1c3dcc9bda6e014a1ccea6e8d4ac95c6954b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetImageDescriptorPackedFormat",
+          "support": "Complete original linked execution for selected linear cases and independently reopened prototype; GPU unverified."
         }
       ]
     }
