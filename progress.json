@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 379,
+    "done": 380,
     "todo": 1475,
-    "total": 1854,
-    "behavior_or_helpers_reviewed": 314,
+    "total": 1855,
+    "behavior_or_helpers_reviewed": 315,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -12205,12 +12205,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 76,
+        "done": 77,
         "todo": 311,
-        "total": 387,
-        "behavior_or_helpers_reviewed": 73,
+        "total": 388,
+        "behavior_or_helpers_reviewed": 74,
         "properties_or_types_reviewed": 3,
-        "runtime_functions_identified": 178,
+        "runtime_functions_identified": 179,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12236,6 +12236,7 @@
           "TryStepDirectionalTextLayout",
           "StepTextLayoutSpanSelection",
           "ComputeTextGlyphAdvance",
+          "LookupLanguageCodeByKey",
           "SortTextNameHashRecords",
           "SortEmojiCanonicalNameIndex",
           "SortEmojiAliasNameIndex",
@@ -12627,6 +12628,7 @@
           "1412da740",
           "1412daad0",
           "1412dae20",
+          "141496420",
           "1414968c0",
           "141497180",
           "141497a40",
@@ -13001,12 +13003,12 @@
           {
             "name": "interface/text",
             "label": "Text & fonts",
-            "done": 72,
+            "done": 73,
             "todo": 54,
-            "total": 126,
-            "behavior_or_helpers_reviewed": 72,
+            "total": 127,
+            "behavior_or_helpers_reviewed": 73,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 85,
+            "runtime_functions_identified": 86,
             "property_type_functions_identified": 41,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -13028,6 +13030,7 @@
               "TryStepDirectionalTextLayout",
               "StepTextLayoutSpanSelection",
               "ComputeTextGlyphAdvance",
+              "LookupLanguageCodeByKey",
               "SortTextNameHashRecords",
               "SortEmojiCanonicalNameIndex",
               "SortEmojiAliasNameIndex",
@@ -13158,6 +13161,7 @@
               "1412da740",
               "1412daad0",
               "1412dae20",
+              "141496420",
               "1414968c0",
               "141497180",
               "141497a40",
@@ -13701,23 +13705,27 @@
               {
                 "name": "interface/text/elanguage",
                 "label": "Language",
-                "done": 0,
+                "done": 1,
                 "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 1,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
+                "runtime_functions_identified": 1,
                 "property_type_functions_identified": 4,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "LookupLanguageCodeByKey"
+                ],
                 "todo_names": [
                   "0x140cbd630",
                   "0x140cbd6e0",
                   "0x140cbd890",
                   "0x140cfb2b0"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "141496420"
+                ],
                 "todo_addresses": [
                   "140cbd630",
                   "140cbd6e0",
@@ -13752,6 +13760,29 @@
                       "140cbd890",
                       "140cfb2b0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "interface/text/elanguage/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "LookupLanguageCodeByKey"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141496420"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -42361,5 +42392,5 @@
       }
     ]
   },
-  "unmapped": 7726
+  "unmapped": 7725
 }
