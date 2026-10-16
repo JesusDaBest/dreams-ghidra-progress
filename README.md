@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8317ac1f7f257ce79fe893a3f29b0c85ddfdd5b1/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/addd4239177427edc967e7043aa36faaaa6206c6/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**473 of 9,588 functions named and checked.** A function is one piece of the game's code.
+**475 of 9,588 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8317ac1f7f257ce79fe893a3f29b0c85ddfdd5b1/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/addd4239177427edc967e7043aa36faaaa6206c6/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,7 +66,7 @@ Every square is one actual function and has the same size. All function squares 
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 130 | 22/91 | 0/39 |
 | Gadgets & logic | 500 | 47/45 | 45/455 |
-| Physics & collision | 69 | 14/37 | 0/32 |
+| Physics & collision | 70 | 16/38 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
 | Rendering & lighting | 291 | 21/265 | 0/26 |
@@ -74,7 +74,7 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 285 | 164/199 | 15/81 |
 
-**1,899 of 9,588 discovered functions are mapped; 7,689 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,900 of 9,588 discovered functions are mapped; 7,688 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1274,8 +1274,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Physics & collision** - 69 functions identified; 14 behavior/helper reviews; 0 property/type reviews
-  - **Collision queries** - 32 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+- **Physics & collision** - 70 functions identified; 16 behavior/helper reviews; 0 property/type reviews
+  - **Collision queries** - 33 functions identified; 9 behavior/helper reviews; 0 property/type reviews
     - **Region Query** - 12 functions identified; 7 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 12 functions identified; 7 behavior/helper reviews; 0 property/type reviews
     - **Hit Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1286,6 +1286,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Shapecast Thing Type Filter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Point Query** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Ray Hit Id Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Ray Hit Seq** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1293,8 +1295,6 @@ Every square is one actual function and has the same size. All function squares 
     - **Bvh Condition Mask** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Model Raycast** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Point Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Ray Hit** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
