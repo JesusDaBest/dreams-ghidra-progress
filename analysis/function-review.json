@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "394 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "395 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9001,
-    "other_names": 579,
-    "verification": "complete_inventory_matches_baseline_plus_394_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9000,
+    "other_names": 580,
+    "verification": "complete_inventory_matches_baseline_plus_395_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9622,6 +9622,29 @@
         "Descriptive names,not original source names.",
         "Preallocated output;allocation,growth,free and failure paths not executed.",
         "Invalid counts,aliases,unsupported languages,page boundaries and live-game behavior remain untested."
+      ]
+    },
+    {
+      "address": "1401ec760",
+      "original_name": "FUN_1401ec760",
+      "applied_name": "TryLookupCategoryIdByName",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryLookupCategoryIdByName(char * name_begin, char * name_end, uint * category_id_out)",
+      "evidence": [
+        "Complete500originalinstructions and categorymetadata caller read andmatched.",
+        "75original NULterminated categoryliterals passed1200 originalhashchecks.",
+        "Complete original categoryhelper,hash andsuccessful originallibcdependencies passed4880checks across75names,prefix/trailingpunctuation,unknown/wrongcase/numeric inputs and16alignments;exactsuccess/ID,input/outputguards.",
+        "Coldbackup,isolatedtrial,promotion andindependentreopenverify descriptive name,three-argument SysV signature andboolreturn;originalinstructions/archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive analystname,not source symbol.",
+        "Long suffix bounds,malformed prefixed allpunctuation inputs,libcerrorhandler andlivegame untested.",
+        "Complete originalassembly reviewed;trialpseudocode inspection limited tosignature andsuccess/return windows.",
+        "Category metadata lookup doesnot establish gameplay subsystemcompletion."
       ]
     }
   ],

@@ -2992,3 +2992,11 @@ Totals: 424 checked names and 1,857 mapped functions among 9,580 discovered func
 Preserved the existing reviewed name GetToolTagName and saved its one 32-bit index argument and string-pointer return. Independent reopening verified persistence and unchanged original instructions and archives. The complete original leaf function, five relative jump tables and original strings passed 5,123 checks across all 837 traced indexes, nearby values, signed extremes and deterministic random inputs. Unsupported values return notag. Names include tools, modes, menus and actions; this verifies the lookup, not those systems. No new naming credit: 424 checked names.
 
 Further metadata tracing distinguishes category-name lookup from numeric parsing: the helper forms a kCategory name, hashes it and maps recognized hashes to category IDs. Award lookup recognizes a fixed set of 191 hashes and writes the recognized hash or zero. These two helpers have static body review but no new runtime or naming credit.
+
+### Verified category-name lookup
+
+Saved TryLookupCategoryIdByName with text begin/end pointers, a category-ID output pointer and a success/failure return. All 500 original instructions were read and matched; the saved name/signature was independently reopened without instruction or archive changes. This converts category names into metadata IDs, rather than parsing decimal numbers.
+
+Seventy-five original category literals passed 1,200 checks with the original hash function. The complete original lookup, hash and successful libc dependencies then passed 4,880 checks covering recognized names, CATEGORY_ prefixes, trailing punctuation or spaces, unknown and wrong-case inputs, alignment and exact outputs/guards. Success writes the ID; failure leaves the output unchanged. Long suffix bounds, malformed prefixed all-punctuation inputs, libc error handling and live-game behavior remain untested.
+
+Totals: 425 checked names and 1,858 mapped functions among 9,580 discovered functions; 7,722 still need mapping. This is documented semantic-review progress, not a whole-game completion percentage.
