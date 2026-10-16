@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d1bee27dbc3f99a039c29a4a6fd1f4a7fd8817c7/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/ea2cdd7460277a2f496934451be3b7ef4c7b6bef/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**455 of 9,588 functions named and checked.** A function is one piece of the game's code.
+**457 of 9,588 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d1bee27dbc3f99a039c29a4a6fd1f4a7fd8817c7/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/ea2cdd7460277a2f496934451be3b7ef4c7b6bef/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -64,7 +64,7 @@ Every square is one actual function and has the same size. All function squares 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
-| Sculpting & painting | 129 | 15/90 | 0/39 |
+| Sculpting & painting | 129 | 17/90 | 0/39 |
 | Gadgets & logic | 500 | 47/45 | 45/455 |
 | Physics & collision | 69 | 14/37 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
@@ -1018,10 +1018,10 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-- **Sculpting & painting** - 129 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-  - **Sculpt geometry** - 90 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-    - **Sculpt bricks** - 31 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 31 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+- **Sculpting & painting** - 129 functions identified; 17 behavior/helper reviews; 0 property/type reviews
+  - **Sculpt geometry** - 90 functions identified; 17 behavior/helper reviews; 0 property/type reviews
+    - **Sculpt bricks** - 31 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 31 functions identified; 6 behavior/helper reviews; 0 property/type reviews
     - **Chunk** - 26 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 26 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sweep** - 11 functions identified; 2 behavior/helper reviews; 0 property/type reviews
