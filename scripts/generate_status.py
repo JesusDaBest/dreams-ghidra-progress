@@ -305,7 +305,8 @@ def render_hierarchy(nodes, bounds, depth=0):
     # Preserve equal squares for arbitrary evidence-backed inventory sizes.
     # A partial final row contains no fake functions or completion padding.
     grid_rows=math.ceil(count/columns)
-    side=min(width/columns,height/grid_rows)
+    # Let the SVG grow vertically instead of shrinking a packed lattice.
+    side=width/columns
     cells={(i%columns,i//columns) for i in range(count)}
     regions=[];out=[]
     def divide(items,positions):
@@ -367,9 +368,9 @@ def render_hierarchy(nodes, bounds, depth=0):
     labels=[];labeled=set();occupied=[]
     def overlaps(a,b):
         return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
-    # Preserve existing placements, then retry missing labels against stepped
-    # line footprints without moving a heading that already fits.
-    pending=[(*region,False) for region in sorted(regions,key=lambda r:(r[2],-len(r[1]),r[0]['path']))]
+    # Keep system headings first; give specific components room before their
+    # intermediate headings. Retry missing labels against stepped footprints.
+    pending=[(*region,False) for region in sorted(regions,key=lambda r:(0 if r[2]==0 else 1,-r[2],-len(r[1]),r[0]['path']))]
     for node,owned,level,stepped in pending:
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<5:continue
