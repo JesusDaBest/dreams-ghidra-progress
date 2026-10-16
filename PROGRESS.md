@@ -3024,3 +3024,11 @@ Saved HashBytesXXH64, AppendTagRecord56 and InsertPackedSmallStringBytes with as
 The original hash passed 5,824 checks against an independent XXH64 specification model, including four seeds, lengths through 1,024 bytes, binary inputs and alignment. The append helper passed 480 checks of all 56 copied bytes, count changes, pointer/relative storage and existing-element inputs. String insertion passed 1,888 checks using original libc shared copy code across inline and preallocated external storage. These are 8,192 scoped checks; allocation/growth/failure, invalid indexes/counts, arbitrary aliases, full tag construction and live-game behavior remain unverified.
 
 Totals: 429 checked names and 1,862 mapped functions among 9,580 discovered functions; 7,718 still need mapping.
+
+### Saved tagged Dream metadata helper
+
+Saved ApplyTaggedDreamMetadata with a tagged-entry pointer and mutable Dream-record pointer. Its complete 916-instruction body and 14 discriminator cases were read and matched, and three record-building callers traced. Independent reopening verified the descriptive name and working SysV signature; original instructions and archives remain unchanged.
+
+Its original tested paths passed 13,968 checks across flag/enum writes, typed references, challenge rank, category/award/tool-tag appends and inline TAG construction, using original dependencies and preallocated storage. The 216 TAG checks compare defined fields and buffers while excluding unspecified record padding at bytes 41 through 47. The tested paths do not cover the entire helper: percentile conversion, allocation/growth/failure, long-tag truncation, malformed counts, arbitrary aliases and live-game behavior remain unresolved. The decompiler still warns about overlapping globals; complete original assembly is the primary evidence.
+
+Totals: 430 checked names and 1,863 mapped functions among 9,580 discovered functions; 7,717 still need mapping. This is documented semantic-review work, not a whole-game completion percentage.
