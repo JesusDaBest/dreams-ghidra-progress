@@ -3064,3 +3064,11 @@ Defined InsertHpackDynamicEntry after tracing both tail callers and correcting G
 The original helper passed 5,760 scoped insertion-sequence checks of packed records, shifted indices, eviction and guards, with original hash and copy dependencies. Oversized entries can exceed the configured table limit; full HPACK conformance, malformed tables, aliases, concurrency and live-game behavior remain unresolved.
 
 Totals: 438 checked names and 1,871 mapped functions among 9,587 discovered functions; 7,716 still need mapping.
+
+### Saved HPACK header representation decoder
+
+Defined DecodeNextHpackHeader after reading all 361 original instructions and auditing control flow, tail calls and boundaries. It handles indexed headers, literal names/values and table-size updates through the reviewed helpers. Independent reopening verified the saved name and working stream-descriptor signature; original bytes and archives remain unchanged.
+
+The top-level decoder has not been executed. Supporting helpers passed scoped original-code tests and 384 combined pipeline steps; those do not establish whole-decoder correctness. The decompiler warns about overlapping globals. Original formatted-copy behavior, exhaustive Huffman padding/EOS handling, malformed tables, aliases, concurrency and live-game behavior remain unresolved.
+
+Totals: 439 checked names and 1,872 mapped functions among 9,588 discovered functions; 7,716 still need mapping.

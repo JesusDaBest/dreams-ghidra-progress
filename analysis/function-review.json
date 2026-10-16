@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "401 existing-function renames,36 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "401 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9587,
+    "total": 9588,
     "default_fun_names": 8994,
-    "other_names": 593,
-    "verification": "complete_inventory_matches_baseline_plus_401_renames_and_36_created_functions_and_1_reviewed_existing_name"
+    "other_names": 594,
+    "verification": "complete_inventory_matches_baseline_plus_401_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9938,6 +9938,29 @@
         "Oversizedentry canbeinsertedaboveconfiguredtablelimit; notfullHPACKconformance.",
         "Counts256limit,aliases,malformedspans/tables,concurrency andwholedecoder/livegame unresolved.",
         "Decompilertrial inspected signature/setup/finalcopywindows only;complete originalassemblyprimary."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1413f8da0",
+      "original_name": null,
+      "applied_name": "DecodeNextHpackHeader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DecodeNextHpackHeader(void * header_stream)",
+      "evidence": [
+        "Complete361 originalinstructions read/matched; controlflow,tailcalls andnonoverlapping boundariesaudited.",
+        "Static61entryheader tablematchesRFC7541;122originalpointerrelocationsverified.",
+        "Supportingoriginalhelpers testedseparately and384combinedpipeline steps; topdecoderitself NOTexecuted.",
+        "Coldbackup,isolatedtrial,promotion andindependentreopen verifydefinition andworkingoneargumentSysVsignature; originalbytes/archives unchanged."
+      ],
+      "caveats": [
+        "Staticdescriptive role,not recoveredsource orwholeprotocolconformance.",
+        "Topdecoder/originalsnprintf path notexecuted;Huffmanpadding/EOS,aliases,malformedtables,concurrency andlivegame unresolved.",
+        "Decompilerwarning:overlappingglobals; trialpseudocode inspectionlimitedtosignature/setup/finalreturn;completeassemblyprimary."
       ],
       "created_function": true
     }

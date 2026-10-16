@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9587,
-  "mapped_total": 1871,
+  "inventory_total": 9588,
+  "mapped_total": 1872,
   "unmapped_total": 7716,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -47312,6 +47312,27 @@
           "kind": "verified_semantic_review",
           "name": "InsertHpackDynamicEntry",
           "support": "Originaltailcalls/body,scopedtests,isolatedownershipsplit andindependentreopen."
+        }
+      ]
+    },
+    "1413f8da0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "serialization",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed HPACK headerrepresentation decoder insharedtransport.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Completeoriginalbody andhelpercontracts;topdecoder runtimeunverified.",
+      "code_sha256": "63dfe9ecea5948da0879960b4a742e64b994b359af8b0c4de73481cf05bdf902",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodeNextHpackHeader",
+          "support": "Originalassembly/controlflow/static-tablematch/helpers andindependentreopen."
         }
       ]
     }
