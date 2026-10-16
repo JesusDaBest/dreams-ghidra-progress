@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 414,
+    "checked_and_applied_names": 416,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 414,
+    "verified_names": 416,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "384 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "386 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7153,6 +7153,33 @@
     "empty_nested_overlap_cases": 144,
     "original_allocator_executed": false,
     "full_dream_record_copy_executed": false,
+    "new_checked_names_from_tests": 0
+  },
+  "thermometer_materializer_saved_checkpoint": {
+    "functions": {
+      "1403adb60": {
+        "name": "MaterializeLightThermometerData",
+        "signature": "void PS4_SYSV MaterializeLightThermometerData(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)"
+      },
+      "1403adfa0": {
+        "name": "MaterializeThermometerEntry",
+        "signature": "void PS4_SYSV MaterializeThermometerEntry(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)"
+      }
+    },
+    "original_instructions": 571,
+    "runtime_game_verified": false,
+    "limits": [
+      "Complete helper assembly plus672 original-body selection/bit-copy checks with preexisting output; allocation/growth remains unverified.",
+      "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
+      "Signed32-bit output-relative offsets and whole serializer behavior remain unresolved."
+    ]
+  },
+  "thermometer_materializer_bounded_checks": {
+    "light_cases": 432,
+    "entry_cases": 240,
+    "original_literal_hash_cases": 20,
+    "output_allocation_executed": false,
+    "full_serializer_executed": false,
     "new_checked_names_from_tests": 0
   }
 }

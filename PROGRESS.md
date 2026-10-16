@@ -2904,3 +2904,11 @@ Applied ReserveNestedByteArrayRecords96 and CopyNestedByteArrayRecords96 with as
 All 242 original instruction spans and both typed trial decompilations were read. Trial, promotion and independent reopening verify the names/signatures and unchanged archives. The element helper passed 144 original-code overlap/self-copy checks with empty nested arrays, comparing the complete buffer and guards without substituted calls.
 
 Actual allocation/growth, nonempty nested payload copying, failure rollback and complete Dream-record copying remain unverified. The element helper does not release destination nested storage first, so a general assignment contract is not established. Totals: 414 checked names and 1,847 mapped functions among 9,580 discovered functions; 7,733 still need system mapping.
+
+### Saved thermometer materializers
+
+Applied MaterializeLightThermometerData and MaterializeThermometerEntry with seven assembly-supported SysV arguments, including the stack byte controlling selection. The light record contains Gameplay, Graphics and Audio float bits at offsets 0, 4 and 8. Each detailed thermometer entry contains type at offset 0 and amount float bits at offset 4. Original literal hashes and serializer dataflow support these labels.
+
+All 571 original instruction spans and both typed trial decompilations were read. Trial, promotion and independent reopen verify names/signatures and unchanged archives. Both original bodies passed 672 checks with preexisting output: field-selection subsets, empty selection, force flags, alignments and exact bit patterns including NaNs, infinities and signed zero. These materializers copy values; they do not compute category maxima or clamp amounts.
+
+Output allocation/growth/failure, large relative offsets and the full 5,503-instruction parent serializer remain unverified. Selected parent branches identify author at 0xc0, head version at 0xd0, thermometer entries at 0x248 and light thermometer data at 0x258; the whole parent is not counted as reviewed. Totals: 416 checked names and 1,849 mapped functions among 9,580 discovered functions; 7,731 still need system mapping.

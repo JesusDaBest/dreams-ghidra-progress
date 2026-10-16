@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "384 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "386 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9011,
-    "other_names": 569,
-    "verification": "complete_inventory_matches_baseline_plus_384_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9009,
+    "other_names": 571,
+    "verification": "complete_inventory_matches_baseline_plus_386_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9109,6 +9109,48 @@
         "Static capacity-role evidence plus144 original element-copy checks for empty nested payloads; actual allocation/growth and nonempty nested copying remain unverified.",
         "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
         "Element copy does not release existing destination nested storage; caller lifecycle matters."
+      ]
+    },
+    {
+      "address": "1403adb60",
+      "original_name": "FUN_1403adb60",
+      "applied_name": "MaterializeLightThermometerData",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV MaterializeLightThermometerData(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "evidence": [
+        "Complete 292-instruction original body and typed trial decompilation read; bytes matched.",
+        "Dream serializer links thermometer_data array and light_thermo_data fields; original literal hashes and stores confirm field identities.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Complete helper assembly plus672 original-body selection/bit-copy checks with preexisting output; allocation/growth remains unverified.",
+        "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
+        "Signed32-bit output-relative offsets and whole serializer behavior remain unresolved."
+      ]
+    },
+    {
+      "address": "1403adfa0",
+      "original_name": "FUN_1403adfa0",
+      "applied_name": "MaterializeThermometerEntry",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV MaterializeThermometerEntry(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "evidence": [
+        "Complete 279-instruction original body and typed trial decompilation read; bytes matched.",
+        "Dream serializer links thermometer_data array and light_thermo_data fields; original literal hashes and stores confirm field identities.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Complete helper assembly plus672 original-body selection/bit-copy checks with preexisting output; allocation/growth remains unverified.",
+        "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
+        "Signed32-bit output-relative offsets and whole serializer behavior remain unresolved."
       ]
     }
   ],
