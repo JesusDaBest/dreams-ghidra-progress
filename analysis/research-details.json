@@ -7327,10 +7327,18 @@
     "known_direct_callers": 7,
     "real_game_verified": false,
     "limits": [
-      "Nonempty parent arrays,allocation/growth/failure,malformed inputs,aliases,large offsets and real-game execution remain untested.",
+      "Simultaneous nonempty arrays and strings,allocation/growth/failure,malformed inputs,aliases,large offsets and real-game execution remain untested.",
       "Unaligned append-position test disagreed with general record oracle;all seven known callers use fresh output descriptors. This is not a demonstrated game bug.",
       "Ghidra reports type-propagation and overlapping-global warnings. Only signature,entry/final field paths and named nested-call windows of trial pseudocode reviewed;complete original assembly is primary evidence.",
       "Many field enums and one field-name hash remain unresolved;not recovered source or whole-game completion."
     ]
+  },
+  "dream_record_array_followup": {
+    "original_parent_checks": 960,
+    "array_fields": 15,
+    "checks_per_field": 64,
+    "simultaneous_nonempty_arrays": false,
+    "allocation_executed": false,
+    "new_checked_names": 0
   }
 }

@@ -3260,3 +3260,9 @@ The complete original serializer passed 60 aligned minimal-record checks and 1,0
 An unaligned append-position test disagreed with the general record oracle. All seven known direct callers supply fresh empty output descriptors, consistent with the aligned path; no game bug is demonstrated. Nonempty parent arrays, allocation/growth/failure, malformed inputs, aliases and large offsets remain untested. Ghidra reports type-propagation and overlapping-global warnings; assembly remains primary evidence. Reading this body and testing bounded records does not recover all field semantics or complete Dreams.
 
 Totals: 421 checked names and 1,854 mapped functions among 9,580 discovered functions; 7,726 still need system mapping.
+
+### Complete serializer: nonempty array checks
+
+The complete original Dream-record serializer passed 960 additional checks across all 15 array fields, tested one at a time with one or two entries. These include framing, collection icons, categories, portals, developer tags, awards, tags, themes, collaborators, tutorial fields, slideshow hashes, thermometer entries and the nested version record arrays. Original helpers, libc string routines and framing constants were used. Tests verify whole output buffers, selection between distinct source arrays, pointer and relative descriptors, counts, offsets, alignment gaps, padding and unchanged inputs. Portal names were empty; tag strings were synthetic.
+
+This adds evidence to the existing function review and leaves the checked-name count at 421. Simultaneous nonempty arrays and strings, buffer growth/failure, malformed data, aliases, large offsets and real-game behavior remain untested.
