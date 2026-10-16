@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1934,
-  "unmapped_total": 7654,
+  "mapped_total": 1953,
+  "unmapped_total": 7635,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48709,6 +48709,405 @@
         {
           "kind": "verified_semantic_review",
           "name": "AppendGuardbandAdjustments",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034590": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "1df8eed5de3158f416b76de6766b079a7067de033c465a3a0fb4c27772ff3be4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetDepthControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034600": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "8efd27678b29db4f3ed49914a98840cd8a4454f031feafa97e5fdaf5961c86ca",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetDepthTestEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034610": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "86ac9a08eded87b62dc9ea156a927c00b1a4b80f2970fc989fb7ffc0d966a0ff",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetStencilTestEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400345a0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "c98c84790c0f8a23b6dadb866253d4e30b24ac7c71a118b691e9117b4c2ed33f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetDepthWriteAndCompareFunction",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034620": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "ff299b66d9145b42708b7e6f178afee62585f3ceb0100f10d48ca22eee092004",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetBackfaceStencilEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400345c0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "53f1a3390ef8da4370765bc2f44476460c3080a4c2f580850a15bca6b1ec2363",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetFrontStencilCompareFunction",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400345e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "9aadcf1b2e2a45b618b0bd3ac0d7d78cdc80c4f4987aeb3edda1180112078118",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetBackStencilCompareFunction",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034750": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "1df8eed5de3158f416b76de6766b079a7067de033c465a3a0fb4c27772ff3be4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetStencilOperationControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034760": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "cfcb63052685923fd3cfd7276138e9311fd04f2c8163516b789855ce9e728d82",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetFrontStencilOperations",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034780": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "528367d861f061494a2a66224a2c27039a8672e49957cf573da722ecb063e792",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetBackStencilOperations",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140021f40": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "c582d633ee9dcb52e03b8ca1a7f929d1859f3448b5cb72727992ffb9d2d21b78",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendStencilReferenceMasks",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033f60": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "936c9911f08e089e7f0db0f2f848cec6499947b7fcbaeb9f3ae40e94b038bf5d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetRasterControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033f70": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "4443fd7ca3c17c681b2b1430dcf146d4ecb049c55991ec1eff8b86e10074b40e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetFaceCullingMode",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033f90": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "6d9e512a4c1d79a1d4137fd79ece451800dd3f8de14a7b833c18dfbfc1e9817e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetPolygonModes",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033fd0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "5c700a32bfde0c99b0ccb75cd71c8a7f1329978db5d38e42881e259f5d9794d2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetPolygonOffsetEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140025de0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "630c9769880b048bda032baa8cde8e0412341ee40daeccc5fd33e7c1056d4e8b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendDepthRenderControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140022140": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "359d49c81d1a52a1f643fb8aaf1da8f99a876b51a7e7d5391adebd30d39dec2b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendDepthStencilControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400221a0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "076a26e994b542e2f90a37ec185d0636a2214a2fb1554f100261c64426e53865",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendStencilOperationControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140026260": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Depth/stencil/raster controls built by the draw-state binding path; original setters and packet writers reviewed and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Depth/stencil/raster control construction or command emission.",
+      "code_sha256": "24c5d21306d78819d9a55e88fa85d974553fc119a3b17c09af7d9745d4b394e9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendRasterControl",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

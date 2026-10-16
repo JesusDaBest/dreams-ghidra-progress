@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "473 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "492 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8922,
-    "other_names": 666,
-    "verification": "complete_inventory_matches_baseline_plus_473_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8903,
+    "other_names": 685,
+    "verification": "complete_inventory_matches_baseline_plus_492_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11672,6 +11672,443 @@
         "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
         "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
         "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140034590",
+      "original_name": "FUN_140034590",
+      "applied_name": "ResetDepthControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetDepthControl(uint * control_word)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034600",
+      "original_name": "FUN_140034600",
+      "applied_name": "SetDepthTestEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetDepthTestEnabled(uint * control_word, uint enabled)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034610",
+      "original_name": "FUN_140034610",
+      "applied_name": "SetStencilTestEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetStencilTestEnabled(uint * control_word, uint enabled)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "1400345a0",
+      "original_name": "FUN_1400345a0",
+      "applied_name": "SetDepthWriteAndCompareFunction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetDepthWriteAndCompareFunction(uint * control_word, uint write_enabled, uint compare_function)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034620",
+      "original_name": "FUN_140034620",
+      "applied_name": "SetBackfaceStencilEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetBackfaceStencilEnabled(uint * control_word, uint enabled)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "1400345c0",
+      "original_name": "FUN_1400345c0",
+      "applied_name": "SetFrontStencilCompareFunction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetFrontStencilCompareFunction(uint * control_word, uint compare_function)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "1400345e0",
+      "original_name": "FUN_1400345e0",
+      "applied_name": "SetBackStencilCompareFunction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetBackStencilCompareFunction(uint * control_word, uint compare_function)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034750",
+      "original_name": "FUN_140034750",
+      "applied_name": "ResetStencilOperationControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetStencilOperationControl(uint * control_word)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034760",
+      "original_name": "FUN_140034760",
+      "applied_name": "SetFrontStencilOperations",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetFrontStencilOperations(uint * control_word, uint stencil_fail, uint depth_pass, uint depth_fail)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140034780",
+      "original_name": "FUN_140034780",
+      "applied_name": "SetBackStencilOperations",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetBackStencilOperations(uint * control_word, uint stencil_fail, uint depth_pass, uint depth_fail)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140021f40",
+      "original_name": "FUN_140021f40",
+      "applied_name": "AppendStencilReferenceMasks",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendStencilReferenceMasks(void * command_context, uint reference_masks)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140033f60",
+      "original_name": "FUN_140033f60",
+      "applied_name": "ResetRasterControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetRasterControl(uint * control_word)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140033f70",
+      "original_name": "FUN_140033f70",
+      "applied_name": "SetFaceCullingMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetFaceCullingMode(uint * control_word, uint cull_mode)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140033f90",
+      "original_name": "FUN_140033f90",
+      "applied_name": "SetPolygonModes",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetPolygonModes(uint * control_word, uint front_mode, uint back_mode)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140033fd0",
+      "original_name": "FUN_140033fd0",
+      "applied_name": "SetPolygonOffsetEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetPolygonOffsetEnabled(uint * control_word, uint front_enabled, uint back_enabled)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140025de0",
+      "original_name": "FUN_140025de0",
+      "applied_name": "AppendDepthRenderControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendDepthRenderControl(void * command_context, uint render_control)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140022140",
+      "original_name": "FUN_140022140",
+      "applied_name": "AppendDepthStencilControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendDepthStencilControl(void * command_context, uint depth_control)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "1400221a0",
+      "original_name": "FUN_1400221a0",
+      "applied_name": "AppendStencilOperationControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendStencilOperationControl(void * command_context, uint stencil_control)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
+      ]
+    },
+    {
+      "address": "140026260",
+      "original_name": "FUN_140026260",
+      "applied_name": "AppendRasterControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendRasterControl(void * command_context, uint raster_control)",
+      "evidence": [
+        "Complete248 original instructions across19 depth/stencil/raster helpers read and byte matched.",
+        "Original-native5852 setter cases and350 packet cases checked packing, masks, defaults, exact packets, cursor andbuffer boundaries.",
+        "Primary gfx7.2 field/register definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified working signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Some flags do not Boolean-normalize oversized inputs; depth-enable can carry andpolygon enable compares fullinputs beforetruncation.",
+        "Refill controlled; no real GPU, allocator orlive-game verification.",
+        "Original enum labels andexhaustive32-bit input behavior not established."
       ]
     }
   ],

@@ -3745,3 +3745,13 @@ The connected original composite and seven callees passed 96 finite rectangle ca
 Six targeted edge observations found positive-infinity guardband values for zero extents under nontrapping floating-point control, signed scales for reversed rectangles, and exact preservation of a Z quiet-NaN payload and negative-zero offset. These observations do not establish supported hardware usage or exhaustive IEEE/integer behavior. No real GPU or live-game validation is claimed.
 
 Totals: 511 reviewed names; 1,934 mapped and 7,654 unmapped among 9,588 discovered functions.
+
+### Depth, stencil and raster controls
+
+Saved 19 descriptive names with independently reopened working signatures for depth-test enable/write/compare settings, front/back stencil compare and operations, reference masks, face culling, polygon modes and polygon-offset settings, plus their command writers. All 248 original instructions were read and byte matched. Backed-up trial and independent trial/main reopenings verified only the expected name/signature changes and unchanged original instruction bytes and archives.
+
+The fourteen original setters passed 5,852 exact packing/default/preservation cases. Primary gfx7.2 register fields corroborate the descriptive roles. Some flag setters do not normalize oversized inputs: depth-enable uses addition that can carry, while polygon mode-enable compares the full arguments against two before truncating their three-bit fields. The reviewed draw-state caller uses bounded or Boolean values; observed oversized behavior is not a supported-use claim. Original enum names remain unresolved.
+
+Five original packet writers passed 350 cases checking register targets, masks, duplicated front/back stencil reference/mask words, every output-buffer byte, cursor movement, refill failure and successful relocation. The refill callback was controlled. These checks do not validate actual depth/stencil/raster output, real allocator behavior or live-game execution.
+
+Totals: 530 reviewed names; 1,953 mapped and 7,635 unmapped among 9,588 discovered functions.
