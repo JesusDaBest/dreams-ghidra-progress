@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "423 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "426 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8972,
-    "other_names": 616,
-    "verification": "complete_inventory_matches_baseline_plus_423_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8969,
+    "other_names": 619,
+    "verification": "complete_inventory_matches_baseline_plus_426_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10462,6 +10462,72 @@
         "Descriptive names and working opaque pointers, not original declarations.",
         "All 4,096 selector combinations covered; other format bits and initial descriptors sampled.",
         "Stack canary supplied locally; no GPU execution or platform-driver validation."
+      ]
+    },
+    {
+      "address": "140037e60",
+      "original_name": "FUN_140037e60",
+      "applied_name": "InitializeImageDescriptorFromSpecification",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV InitializeImageDescriptorFromSpecification(void)",
+      "evidence": [
+        "All 1874 original instructions across the three routines read and matched; large layout body reviewed in four stages.",
+        "Image constructor, surface-layout and mip storage-requirements caller/callee chain traced.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Descriptive names only; existing unknown signatures retained because exact structures remain unresolved.",
+        "Whole functions were not executed; no GPU validation.",
+        "Called layout-property helpers remain partly unread; overflow, invalid pointers and concurrency unverified.",
+        "Some errors can leave partial descriptor or accumulated size/alignment outputs."
+      ]
+    },
+    {
+      "address": "14003d0a0",
+      "original_name": "FUN_14003d0a0",
+      "applied_name": "CalculateGpuSurfaceLayout",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV CalculateGpuSurfaceLayout(void)",
+      "evidence": [
+        "All 1874 original instructions across the three routines read and matched; large layout body reviewed in four stages.",
+        "Image constructor, surface-layout and mip storage-requirements caller/callee chain traced.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Descriptive names only; existing unknown signatures retained because exact structures remain unresolved.",
+        "Whole functions were not executed; no GPU validation.",
+        "Called layout-property helpers remain partly unread; overflow, invalid pointers and concurrency unverified.",
+        "Some errors can leave partial descriptor or accumulated size/alignment outputs."
+      ]
+    },
+    {
+      "address": "140044480",
+      "original_name": "FUN_140044480",
+      "applied_name": "CalculateImageDescriptorStorageRequirements",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV CalculateImageDescriptorStorageRequirements(void)",
+      "evidence": [
+        "All 1874 original instructions across the three routines read and matched; large layout body reviewed in four stages.",
+        "Image constructor, surface-layout and mip storage-requirements caller/callee chain traced.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Descriptive names only; existing unknown signatures retained because exact structures remain unresolved.",
+        "Whole functions were not executed; no GPU validation.",
+        "Called layout-property helpers remain partly unread; overflow, invalid pointers and concurrency unverified.",
+        "Some errors can leave partial descriptor or accumulated size/alignment outputs."
       ]
     }
   ],

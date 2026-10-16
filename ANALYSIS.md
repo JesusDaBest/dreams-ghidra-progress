@@ -3493,3 +3493,11 @@ Saved GetPackedFormatChannelSelector and SetImageDescriptorFormat with working a
 Complete original CPU execution passed 24,576 getter cases and 4,096 setter cases. These cover all 4,096 selector combinations, channels 0–3 and two out-of-range indices, sampled remaining format bits and randomized initial descriptor words, with surrounding-byte guards. The gather output literal selects channels [4, 5, 6, 7]. Stack-canary data was supplied locally; this does not execute GPU operations or validate the platform driver. Backup, trial, promotion and independent reopening passed.
 
 Totals: 461 reviewed names; 1,891 mapped and 7,697 unmapped among 9,588 discovered functions.
+
+### Image descriptors, surface layout and storage requirements
+
+Saved InitializeImageDescriptorFromSpecification, CalculateGpuSurfaceLayout and CalculateImageDescriptorStorageRequirements after reading and matching all 1,874 original instructions. The constructor validates image specifications and builds descriptors. The surface-layout routine calculates padded dimensions, storage bytes and tile/alignment fields through several modes and fallback paths. The storage routine uses either a restricted table path or mip-by-mip calculations, accumulating size and maximum alignment.
+
+Validation and failure paths are part of this review: late errors can leave a partially modified descriptor or accumulated size/alignment outputs. Exact input/output structures and some called layout-property helpers remain unresolved. These are descriptive name-only changes with existing unknown prototypes retained; neither whole-function CPU execution nor GPU behavior is claimed. Backup, isolated trial, promotion and independent reopening passed.
+
+Totals: 464 reviewed names; 1,894 mapped and 7,694 unmapped among 9,588 discovered functions.
