@@ -2896,3 +2896,11 @@ All 508 original instruction spans and both typed trial decompilations were read
 The original integer-remapping fragment passed 192 checks with its original lookup table and full input/guard comparisons. Separately, the entire cleanup body passed 88 ownership/order checks with the deallocator explicitly replaced by a recording stub. Those cleanup checks verify which pointers are passed in what order, not real allocation or freeing. Neither fixture proves the complete normalization handler.
 
 Totals: 412 checked names and 1,845 mapped functions among 9,580 discovered functions; 7,735 still need system mapping.
+
+### Saved nested-record array copy and reserve helpers
+
+Applied ReserveNestedByteArrayRecords96 and CopyNestedByteArrayRecords96 with assembly-supported SysV arguments and boolean/void returns. These helpers operate on 96-byte records containing a nested byte-array descriptor. The reserve helper grows storage and relocates existing records. The element helper chooses copy direction by address order, copies defined fields and reconstructs nested arrays. The names describe the observed layout, not recovered source type names.
+
+All 242 original instruction spans and both typed trial decompilations were read. Trial, promotion and independent reopening verify the names/signatures and unchanged archives. The element helper passed 144 original-code overlap/self-copy checks with empty nested arrays, comparing the complete buffer and guards without substituted calls.
+
+Actual allocation/growth, nonempty nested payload copying, failure rollback and complete Dream-record copying remain unverified. The element helper does not release destination nested storage first, so a general assignment contract is not established. Totals: 414 checked names and 1,847 mapped functions among 9,580 discovered functions; 7,733 still need system mapping.

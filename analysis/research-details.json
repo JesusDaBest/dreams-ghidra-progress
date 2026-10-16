@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 412,
+    "checked_and_applied_names": 414,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 412,
+    "verified_names": 414,
     "function_count": 9580,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "382 renames,29 created functions and1 retained existing-name review independently reopened.",
+    "scope": "384 renames,29 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7128,6 +7128,31 @@
     "cleanup_deallocator": "explicit recording replacement, no real frees",
     "full_copy_executed": false,
     "full_normalization_executed": false,
+    "new_checked_names_from_tests": 0
+  },
+  "nested_record_array_saved_checkpoint": {
+    "functions": {
+      "140194320": {
+        "name": "ReserveNestedByteArrayRecords96",
+        "signature": "bool PS4_SYSV ReserveNestedByteArrayRecords96(void * array_descriptor, ulonglong required_count)"
+      },
+      "1401944e0": {
+        "name": "CopyNestedByteArrayRecords96",
+        "signature": "void PS4_SYSV CopyNestedByteArrayRecords96(void * destination, void * source, longlong count)"
+      }
+    },
+    "original_instructions": 242,
+    "runtime_game_verified": false,
+    "limits": [
+      "Static capacity-role evidence plus144 original element-copy checks for empty nested payloads; actual allocation/growth and nonempty nested copying remain unverified.",
+      "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
+      "Element copy does not release existing destination nested storage; caller lifecycle matters."
+    ]
+  },
+  "nested_record_array_bounded_checks": {
+    "empty_nested_overlap_cases": 144,
+    "original_allocator_executed": false,
+    "full_dream_record_copy_executed": false,
     "new_checked_names_from_tests": 0
   }
 }

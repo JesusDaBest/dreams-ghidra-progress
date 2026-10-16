@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "382 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "384 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9013,
-    "other_names": 567,
-    "verification": "complete_inventory_matches_baseline_plus_382_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 9011,
+    "other_names": 569,
+    "verification": "complete_inventory_matches_baseline_plus_384_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9067,6 +9067,48 @@
         "Static copy-role evidence plus bounded cleanup-body checks with an explicitly replaced deallocator; full copy execution and real deallocation remain unverified.",
         "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
         "Cleanup leaves descriptors unchanged; repeated cleanup safety is not established."
+      ]
+    },
+    {
+      "address": "140194320",
+      "original_name": "FUN_140194320",
+      "applied_name": "ReserveNestedByteArrayRecords96",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV ReserveNestedByteArrayRecords96(void * array_descriptor, ulonglong required_count)",
+      "evidence": [
+        "Complete 117-instruction original body and typed trial decompilation read; bytes matched.",
+        "Dream-record array insertion helper links capacity growth and96-byte nested element copying; complete helper assembly reviewed.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Static capacity-role evidence plus144 original element-copy checks for empty nested payloads; actual allocation/growth and nonempty nested copying remain unverified.",
+        "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
+        "Element copy does not release existing destination nested storage; caller lifecycle matters."
+      ]
+    },
+    {
+      "address": "1401944e0",
+      "original_name": "FUN_1401944e0",
+      "applied_name": "CopyNestedByteArrayRecords96",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CopyNestedByteArrayRecords96(void * destination, void * source, longlong count)",
+      "evidence": [
+        "Complete 125-instruction original body and typed trial decompilation read; bytes matched.",
+        "Dream-record array insertion helper links capacity growth and96-byte nested element copying; complete helper assembly reviewed.",
+        "Cold backup, isolated trial, promotion and independent reopening verify descriptive name and custom SysV ABI."
+      ],
+      "caveats": [
+        "Static capacity-role evidence plus144 original element-copy checks for empty nested payloads; actual allocation/growth and nonempty nested copying remain unverified.",
+        "Delegated element-copy helpers, allocator failure, aliases and exact source record types remain unresolved.",
+        "Element copy does not release existing destination nested storage; caller lifecycle matters."
       ]
     }
   ],
