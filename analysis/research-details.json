@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 466,
+    "checked_and_applied_names": 468,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 466,
+    "verified_names": 468,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "428 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "430 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8220,6 +8220,38 @@
       "Working signatures with opaque structures, not original source declarations.",
       "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
       "No GPU execution, overflow or concurrency validation."
+    ],
+    "runtime_game_verified": false
+  },
+  "gpu_image_resource_and_attribute_atlas_checkpoint": {
+    "saved_names": [
+      "InitializeGpuImageResource",
+      "GetImageDescriptorPackedAllocationRequirements"
+    ],
+    "original_instructions": 180,
+    "source_dimensions": [
+      2048,
+      2048,
+      128
+    ],
+    "source_format": "Bc3Unorm",
+    "write_view_dimensions": [
+      512,
+      512,
+      128
+    ],
+    "write_view_format": "32_32_32_32 UINT",
+    "storage_bytes": 536870912,
+    "alignment_bytes": 256,
+    "hardware_modes_tested": [
+      0,
+      1
+    ],
+    "limits": [
+      "Resource initializer reviewed statically, not executed as a whole; allocation and metadata registration unvalidated.",
+      "Descriptor tests allocate no actual GPU memory and do not render.",
+      "Actual runtime hardware mode and physical channel meanings unresolved.",
+      "Packed requirements overflow branch read but not executed."
     ],
     "runtime_game_verified": false
   }

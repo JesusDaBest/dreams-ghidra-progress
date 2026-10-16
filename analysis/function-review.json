@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "428 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "430 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8967,
-    "other_names": 621,
-    "verification": "complete_inventory_matches_baseline_plus_428_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8965,
+    "other_names": 623,
+    "verification": "complete_inventory_matches_baseline_plus_430_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10618,6 +10618,52 @@
         "Working signatures with opaque structures, not original source declarations.",
         "Linked execution covers only kind9 linear128bit, single mip/sample, depth1 and slice0; other image formats/kinds unvalidated.",
         "No GPU execution, overflow or concurrency validation."
+      ]
+    },
+    {
+      "address": "1413c3620",
+      "original_name": "FUN_1413c3620",
+      "applied_name": "InitializeGpuImageResource",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeGpuImageResource(void * resource, void * specification, uint usage_mode)",
+      "evidence": [
+        "All 180 original instructions across resource initialization and packed requirements read and matched.",
+        "Original game format table identifies Bc3Unorm; startup source and write-view descriptor chain traced.",
+        "Original descriptor/storage chain for actual startup dimensions passed both hardware-mode inputs, with matching512MiB size and256byte alignment.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Resource initializer reviewed statically, not executed as a whole; allocation and metadata registration unvalidated.",
+        "Descriptor tests allocate no actual GPU memory and do not render.",
+        "Actual runtime hardware mode and physical channel meanings unresolved.",
+        "Packed requirements overflow branch read but not executed."
+      ]
+    },
+    {
+      "address": "1400383c0",
+      "original_name": "FUN_1400383c0",
+      "applied_name": "GetImageDescriptorPackedAllocationRequirements",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV GetImageDescriptorPackedAllocationRequirements(void * descriptor)",
+      "evidence": [
+        "All 180 original instructions across resource initialization and packed requirements read and matched.",
+        "Original game format table identifies Bc3Unorm; startup source and write-view descriptor chain traced.",
+        "Original descriptor/storage chain for actual startup dimensions passed both hardware-mode inputs, with matching512MiB size and256byte alignment.",
+        "Backup, isolated trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "Resource initializer reviewed statically, not executed as a whole; allocation and metadata registration unvalidated.",
+        "Descriptor tests allocate no actual GPU memory and do not render.",
+        "Actual runtime hardware mode and physical channel meanings unresolved.",
+        "Packed requirements overflow branch read but not executed."
       ]
     }
   ],

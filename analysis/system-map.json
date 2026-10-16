@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1896,
-  "unmapped_total": 7692,
+  "mapped_total": 1898,
+  "unmapped_total": 7690,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47877,6 +47877,48 @@
           "kind": "verified_semantic_review",
           "name": "GetImageDescriptorPackedFormat",
           "support": "Complete original linked execution for selected linear cases and independently reopened prototype; GPU unverified."
+        }
+      ]
+    },
+    "1413c3620": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete image-resource setup and allocation-size wrapper; general GPU image support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Initializes image resources or packs their allocation requirements.",
+      "code_sha256": "5eca7c7f9f95a029250876c3659ecea2c3c0f3bd81557b21afcafc12a8d09b84",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeGpuImageResource",
+          "support": "Complete original resource-initializer body reviewed statically; no whole-function execution. Saved signature independently reopened; GPU behavior unverified."
+        }
+      ]
+    },
+    "1400383c0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete image-resource setup and allocation-size wrapper; general GPU image support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Initializes image resources or packs their allocation requirements.",
+      "code_sha256": "326dc7e09ab3bcd9295876fbf64ad01b495e0a8eeffd4aa4f5ea2c226f406db2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetImageDescriptorPackedAllocationRequirements",
+          "support": "Complete original packed-requirements helper executed for both source/write descriptors under two hardware-mode inputs; overflow untested. Saved signature independently reopened; GPU behavior unverified."
         }
       ]
     }

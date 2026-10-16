@@ -3213,3 +3213,13 @@ Executed 64 linked scenarios through the complete original image constructor, st
 Saved BuildSurfaceLayoutInputFromImageDescriptor and GetImageDescriptorPackedFormat. Also replaced unknown prototypes on the three previously named constructor/layout/storage routines with justified register arguments and status returns. Storage now has explicit 64-bit size and 32-bit alignment output pointers. Structures remain opaque. Backup, trial, promotion and independent reopening passed; other image kinds, tiled/compressed formats, overflow, concurrency and GPU execution remain unvalidated.
 
 Totals: 466 reviewed names; 1,896 mapped and 7,692 unmapped among 9,588 discovered functions. Three prototype updates do not add name counts.
+
+### Sculpting compressed-attribute atlas and image resource setup
+
+The original game format table identifies the startup source texture as Bc3Unorm. Its dimensions are 2048×2048×128. The gather shader write view is 512×512×128 with four unsigned DWORDs per element, matching one sixteen-byte payload per 4×4 source block. Startup derives the write-view address from the source descriptor. Physical meanings of the payload channels remain unresolved.
+
+Executed the original tile selector, descriptor constructor, storage calculator and packed-requirements helper for these actual dimensions/formats under both hardware-mode inputs. Source and write view each require 536,870,912 bytes (512 MiB), aligned to 256 bytes. These tests calculate descriptors and sizes; they do not allocate GPU memory, execute shaders or observe which hardware mode the running game selects.
+
+Saved InitializeGpuImageResource and GetImageDescriptorPackedAllocationRequirements after matching all 180 instructions. The initializer builds a descriptor, attempts storage allocation, sets address/control flags and registers metadata; it was reviewed statically, without executing allocation or registration. The requirements wrapper packs alignment and size into one 64-bit result; its size-overflow branch remains untested. Backup, trial, promotion and independent reopening passed.
+
+Totals: 468 reviewed names; 1,898 mapped and 7,690 unmapped among 9,588 discovered functions.

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 426,
+    "done": 428,
     "todo": 1470,
-    "total": 1896,
-    "behavior_or_helpers_reviewed": 361,
+    "total": 1898,
+    "behavior_or_helpers_reviewed": 363,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 19,
+        "done": 21,
         "todo": 270,
-        "total": 289,
-        "behavior_or_helpers_reviewed": 19,
+        "total": 291,
+        "behavior_or_helpers_reviewed": 21,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 263,
+        "runtime_functions_identified": 265,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21514,6 +21514,7 @@
           "GenerateVertexFetchShaderInstructions",
           "InitializeImageDescriptorFromSpecification",
           "SetImageDescriptorFormat",
+          "GetImageDescriptorPackedAllocationRequirements",
           "GetImageDescriptorPackedFormat",
           "SetImageDescriptorControlFlags",
           "AppendComputeUserDataRegisters",
@@ -21523,7 +21524,8 @@
           "RegisterLabelVisibleFieldOffset",
           "SubmitComputeQueueAndWaitForFence",
           "AppendComputeCompletionFence",
-          "TryAllocateGraphicsResourceStorage"
+          "TryAllocateGraphicsResourceStorage",
+          "InitializeGpuImageResource"
         ],
         "todo_names": [
           "0x140c29820",
@@ -21807,6 +21809,7 @@
           "1400376f0",
           "140037e60",
           "1400382a0",
+          "1400383c0",
           "1400387e0",
           "14003a020",
           "14003b5e0",
@@ -21816,7 +21819,8 @@
           "140d67a10",
           "141297bd0",
           "141297cf0",
-          "1413c2ee0"
+          "1413c2ee0",
+          "1413c3620"
         ],
         "todo_addresses": [
           "140c29820",
@@ -25130,12 +25134,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 15,
+            "done": 17,
             "todo": 0,
-            "total": 15,
-            "behavior_or_helpers_reviewed": 15,
+            "total": 17,
+            "behavior_or_helpers_reviewed": 17,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 15,
+            "runtime_functions_identified": 17,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25146,6 +25150,7 @@
               "GetPackedFormatChannelSelector",
               "InitializeImageDescriptorFromSpecification",
               "SetImageDescriptorFormat",
+              "GetImageDescriptorPackedAllocationRequirements",
               "GetImageDescriptorPackedFormat",
               "SetImageDescriptorControlFlags",
               "AppendComputeUserDataRegisters",
@@ -25154,7 +25159,8 @@
               "CalculateImageDescriptorStorageRequirements",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
-              "TryAllocateGraphicsResourceStorage"
+              "TryAllocateGraphicsResourceStorage",
+              "InitializeGpuImageResource"
             ],
             "todo_names": [],
             "done_addresses": [
@@ -25164,6 +25170,7 @@
               "14001f1d0",
               "140037e60",
               "1400382a0",
+              "1400383c0",
               "1400387e0",
               "14003a020",
               "14003b5e0",
@@ -25172,7 +25179,8 @@
               "140044480",
               "141297bd0",
               "141297cf0",
-              "1413c2ee0"
+              "1413c2ee0",
+              "1413c3620"
             ],
             "todo_addresses": [],
             "unresolved_addresses": [],
@@ -25180,12 +25188,12 @@
               {
                 "name": "rendering/compute/image-descriptors",
                 "label": "Image descriptors",
-                "done": 8,
+                "done": 10,
                 "todo": 0,
-                "total": 8,
-                "behavior_or_helpers_reviewed": 8,
+                "total": 10,
+                "behavior_or_helpers_reviewed": 10,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 8,
+                "runtime_functions_identified": 10,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -25193,22 +25201,26 @@
                   "GetPackedFormatChannelSelector",
                   "InitializeImageDescriptorFromSpecification",
                   "SetImageDescriptorFormat",
+                  "GetImageDescriptorPackedAllocationRequirements",
                   "GetImageDescriptorPackedFormat",
                   "SetImageDescriptorControlFlags",
                   "CalculateGpuSurfaceLayout",
                   "BuildSurfaceLayoutInputFromImageDescriptor",
-                  "CalculateImageDescriptorStorageRequirements"
+                  "CalculateImageDescriptorStorageRequirements",
+                  "InitializeGpuImageResource"
                 ],
                 "todo_names": [],
                 "done_addresses": [
                   "14001f1d0",
                   "140037e60",
                   "1400382a0",
+                  "1400383c0",
                   "1400387e0",
                   "14003a020",
                   "14003d0a0",
                   "140043a90",
-                  "140044480"
+                  "140044480",
+                  "1413c3620"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -25216,12 +25228,12 @@
                   {
                     "name": "rendering/compute/image-descriptors/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 8,
+                    "done": 10,
                     "todo": 0,
-                    "total": 8,
-                    "behavior_or_helpers_reviewed": 8,
+                    "total": 10,
+                    "behavior_or_helpers_reviewed": 10,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 8,
+                    "runtime_functions_identified": 10,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -25229,22 +25241,26 @@
                       "GetPackedFormatChannelSelector",
                       "InitializeImageDescriptorFromSpecification",
                       "SetImageDescriptorFormat",
+                      "GetImageDescriptorPackedAllocationRequirements",
                       "GetImageDescriptorPackedFormat",
                       "SetImageDescriptorControlFlags",
                       "CalculateGpuSurfaceLayout",
                       "BuildSurfaceLayoutInputFromImageDescriptor",
-                      "CalculateImageDescriptorStorageRequirements"
+                      "CalculateImageDescriptorStorageRequirements",
+                      "InitializeGpuImageResource"
                     ],
                     "todo_names": [],
                     "done_addresses": [
                       "14001f1d0",
                       "140037e60",
                       "1400382a0",
+                      "1400383c0",
                       "1400387e0",
                       "14003a020",
                       "14003d0a0",
                       "140043a90",
-                      "140044480"
+                      "140044480",
+                      "1413c3620"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -43141,5 +43157,5 @@
       }
     ]
   },
-  "unmapped": 7692
+  "unmapped": 7690
 }
