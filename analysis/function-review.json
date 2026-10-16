@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "407 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "408 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8988,
-    "other_names": 600,
-    "verification": "complete_inventory_matches_baseline_plus_407_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8987,
+    "other_names": 601,
+    "verification": "complete_inventory_matches_baseline_plus_408_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10102,6 +10102,29 @@
         "GPU shader algorithms, world scale, resources and whole-builder execution remain unverified.",
         "Early exits may leave partial boundary state with the ready flag clear.",
         "No whole-sculpt or whole-game completion claim."
+      ]
+    },
+    {
+      "address": "141296330",
+      "original_name": "FUN_141296330",
+      "applied_name": "InitializeGpuHashTableResources",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeGpuHashTableResources(void * resource_object, uint allocation_type, uint requested_capacity)",
+      "evidence": [
+        "Complete 121-instruction resource builder read and matched against original executable.",
+        "Startup caller, paired table resources and parameter pointer linked to two archived brick shaders through original native path hashing and section extraction.",
+        "868 native checks verify the original parameter-writing window over all 217 capacity entries and four alignments, with exact output and guards.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved name and working signature; original archives unchanged."
+      ],
+      "caveats": [
+        "Parameter window tested, not the full constructor or allocator failure behavior.",
+        "GPU table operations, concurrency and hardware execution remain unverified.",
+        "Opaque object and working argument types are not recovered original source declarations.",
+        "Descriptor size semantics and resource lifetime remain unresolved."
       ]
     }
   ],

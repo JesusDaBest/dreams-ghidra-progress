@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1877,
-  "unmapped_total": 7711,
+  "mapped_total": 1878,
+  "unmapped_total": 7710,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47447,6 +47447,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "DispatchSweepHashBlocksRange",
+          "support": "Complete original body and caller/dataflow review; name independently reopened. GPU execution unverified."
+        }
+      ]
+    },
+    "141296330": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "bricker2",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original resource builder, startup caller and linked archived brick shader parameter dataflow.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Initializes paired GPU hash table resources and shader parameters.",
+      "code_sha256": "95b7d4ef061bb4599702e93167404da27580b545ddecd44e76c0464d25e6fc87",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeGpuHashTableResources",
           "support": "Complete original body and caller/dataflow review; name independently reopened. GPU execution unverified."
         }
       ]

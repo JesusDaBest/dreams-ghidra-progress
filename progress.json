@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 404,
+    "done": 405,
     "todo": 1473,
-    "total": 1877,
-    "behavior_or_helpers_reviewed": 339,
+    "total": 1878,
+    "behavior_or_helpers_reviewed": 340,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -31760,12 +31760,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 9,
+        "done": 10,
         "todo": 115,
-        "total": 124,
-        "behavior_or_helpers_reviewed": 9,
+        "total": 125,
+        "behavior_or_helpers_reviewed": 10,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 85,
+        "runtime_functions_identified": 86,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -31777,6 +31777,7 @@
           "RecomputePackedResourceNodeSummary",
           "GetOrLoadBricker2TagBricksShader",
           "GetOrLoadBricker2HashBricksShader",
+          "InitializeGpuHashTableResources",
           "BuildSweepBlockRanges",
           "DispatchSweepHashBlocksRange"
         ],
@@ -31905,6 +31906,7 @@
           "140c6b930",
           "14127a040",
           "14127a780",
+          "141296330",
           "1412a20f0",
           "1412a3b40"
         ],
@@ -32030,12 +32032,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 9,
+            "done": 10,
             "todo": 76,
-            "total": 85,
-            "behavior_or_helpers_reviewed": 9,
+            "total": 86,
+            "behavior_or_helpers_reviewed": 10,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 79,
+            "runtime_functions_identified": 80,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -32047,6 +32049,7 @@
               "RecomputePackedResourceNodeSummary",
               "GetOrLoadBricker2TagBricksShader",
               "GetOrLoadBricker2HashBricksShader",
+              "InitializeGpuHashTableResources",
               "BuildSweepBlockRanges",
               "DispatchSweepHashBlocksRange"
             ],
@@ -32136,6 +32139,7 @@
               "140c6b930",
               "14127a040",
               "14127a780",
+              "141296330",
               "1412a20f0",
               "1412a3b40"
             ],
@@ -32222,18 +32226,19 @@
               {
                 "name": "sculpting-painting/csg/bricker2",
                 "label": "Sculpt bricks",
-                "done": 2,
+                "done": 3,
                 "todo": 27,
-                "total": 29,
-                "behavior_or_helpers_reviewed": 2,
+                "total": 30,
+                "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 29,
+                "runtime_functions_identified": 30,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "GetOrLoadBricker2TagBricksShader",
-                  "GetOrLoadBricker2HashBricksShader"
+                  "GetOrLoadBricker2HashBricksShader",
+                  "InitializeGpuHashTableResources"
                 ],
                 "todo_names": [
                   "0x141278e20",
@@ -32266,7 +32271,8 @@
                 ],
                 "done_addresses": [
                   "14127a040",
-                  "14127a780"
+                  "14127a780",
+                  "141296330"
                 ],
                 "todo_addresses": [
                   "141278e20",
@@ -32302,18 +32308,19 @@
                   {
                     "name": "sculpting-painting/csg/bricker2/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 2,
+                    "done": 3,
                     "todo": 27,
-                    "total": 29,
-                    "behavior_or_helpers_reviewed": 2,
+                    "total": 30,
+                    "behavior_or_helpers_reviewed": 3,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 29,
+                    "runtime_functions_identified": 30,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "GetOrLoadBricker2TagBricksShader",
-                      "GetOrLoadBricker2HashBricksShader"
+                      "GetOrLoadBricker2HashBricksShader",
+                      "InitializeGpuHashTableResources"
                     ],
                     "todo_names": [
                       "0x141278e20",
@@ -32346,7 +32353,8 @@
                     ],
                     "done_addresses": [
                       "14127a040",
-                      "14127a780"
+                      "14127a780",
+                      "141296330"
                     ],
                     "todo_addresses": [
                       "141278e20",
@@ -42688,5 +42696,5 @@
       }
     ]
   },
-  "unmapped": 7711
+  "unmapped": 7710
 }

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 445,
+    "checked_and_applied_names": 446,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 445,
+    "verified_names": 446,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "407 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "408 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7906,6 +7906,25 @@
       "GPU shader algorithms, world scale, resources and whole-builder execution remain unverified.",
       "Early exits may leave partial boundary state with the ready flag clear.",
       "No whole-sculpt or whole-game completion claim."
+    ],
+    "runtime_game_verified": false
+  },
+  "brick_shader_analysis_checkpoint": {
+    "saved_resource_builder": "InitializeGpuHashTableResources",
+    "parameter_window_native_cases": 868,
+    "tag_shader_instructions": 306,
+    "hash_shader_instructions": 102,
+    "tag_program_roundtrip_bytes": 1552,
+    "hash_program_roundtrip_bytes": 496,
+    "morton_software_model_cases": 68608,
+    "observed_startup_capacity": 367001,
+    "limits": [
+      "Parameter window tested, not the full constructor or allocator failure behavior.",
+      "GPU table operations, concurrency and hardware execution remain unverified.",
+      "Opaque object and working argument types are not recovered original source declarations.",
+      "Descriptor size semantics and resource lifetime remain unresolved.",
+      "Shader roundtrip verifies decode/reassembly bytes, not GPU execution.",
+      "Morton checks are software instruction-model comparisons, not native shader tests."
     ],
     "runtime_game_verified": false
   }
