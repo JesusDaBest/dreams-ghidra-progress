@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 484,
+    "checked_and_applied_names": 485,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 484,
+    "verified_names": 485,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "446 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "447 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8573,5 +8573,37 @@
     ],
     "runtime_game_verified": false,
     "livestream_equivalence_established": false
+  },
+  "graphics_user_data_checkpoint": {
+    "saved_name": "AppendGraphicsUserDataRegisters",
+    "original_instructions": 95,
+    "native_packet_cases": 1296,
+    "limits": [
+      "Refill callback controlled; original allocator and GPU execution not tested.",
+      "Stage enum identities and caller count limits remain unresolved.",
+      "Count 17 advances over unfilled payload; no claim that it is supported real usage.",
+      "No complete shader or Dreams subsystem completion claim."
+    ],
+    "runtime_game_verified": false
+  },
+  "effect_field_shader_trace": {
+    "record_stride": 64,
+    "buffer_elements": 1024,
+    "allocation_bytes": 65536,
+    "allocation_alignment": 256,
+    "shader_resource": "PrimGlassIntoUILayerPS.ps.pssl.sb",
+    "selected_shader_instructions_byte_matched": 87,
+    "static_field_reads": [
+      "amount",
+      "position",
+      "time",
+      "reverse"
+    ],
+    "limits": [
+      "Selected paths only, not complete rendering or shader review.",
+      "Actual hardware stage and shader root-pointer binding need further audit.",
+      "No GPU execution or equivalence to 2016 water code established."
+    ],
+    "runtime_game_verified": false
   }
 }

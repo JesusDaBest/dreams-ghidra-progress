@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 444,
+    "done": 445,
     "todo": 1463,
-    "total": 1907,
-    "behavior_or_helpers_reviewed": 379,
+    "total": 1908,
+    "behavior_or_helpers_reviewed": 380,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21526,12 +21526,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 29,
+        "done": 30,
         "todo": 268,
-        "total": 297,
-        "behavior_or_helpers_reviewed": 29,
+        "total": 298,
+        "behavior_or_helpers_reviewed": 30,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 271,
+        "runtime_functions_identified": 272,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21542,6 +21542,7 @@
           "InitializeGpuBufferDescriptor",
           "PackMaskedFormatFields",
           "GetPackedFormatChannelSelector",
+          "AppendGraphicsUserDataRegisters",
           "GenerateVertexFetchShaderInstructions",
           "InitializeImageDescriptorFromSpecification",
           "SetImageDescriptorFormat",
@@ -21843,6 +21844,7 @@
           "14001d980",
           "14001eb20",
           "14001f1d0",
+          "1400256c0",
           "1400376f0",
           "140037e60",
           "1400382a0",
@@ -24292,16 +24294,18 @@
           {
             "name": "rendering/drawing",
             "label": "Scene drawing",
-            "done": 0,
+            "done": 1,
             "todo": 66,
-            "total": 66,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 67,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 66,
+            "runtime_functions_identified": 67,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "AppendGraphicsUserDataRegisters"
+            ],
             "todo_names": [
               "0x140c29820",
               "0x140c29bc0",
@@ -24370,7 +24374,9 @@
               "0x141392910",
               "0x141392cc0"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1400256c0"
+            ],
             "todo_addresses": [
               "140c29820",
               "140c29bc0",
@@ -24820,22 +24826,26 @@
               {
                 "name": "rendering/drawing/renderer",
                 "label": "Renderer",
-                "done": 0,
+                "done": 1,
                 "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
+                "runtime_functions_identified": 4,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "AppendGraphicsUserDataRegisters"
+                ],
                 "todo_names": [
                   "0x140c29820",
                   "0x140c29bc0",
                   "0x140c29f60"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "1400256c0"
+                ],
                 "todo_addresses": [
                   "140c29820",
                   "140c29bc0",
@@ -24846,22 +24856,26 @@
                   {
                     "name": "rendering/drawing/renderer/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
+                    "done": 1,
                     "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 1,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
+                    "runtime_functions_identified": 4,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "AppendGraphicsUserDataRegisters"
+                    ],
                     "todo_names": [
                       "0x140c29820",
                       "0x140c29bc0",
                       "0x140c29f60"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "1400256c0"
+                    ],
                     "todo_addresses": [
                       "140c29820",
                       "140c29bc0",
@@ -43348,5 +43362,5 @@
       }
     ]
   },
-  "unmapped": 7681
+  "unmapped": 7680
 }

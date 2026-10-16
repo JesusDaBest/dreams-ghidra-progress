@@ -3343,3 +3343,15 @@ Executed the original initializer across three controlled guard paths. Wave amou
 Inspected visible wave source in Media Molecule’s [2016 technical livestream](https://www.youtube.com/watch?v=yZM_Ij9aeOA), including the splats_mega.cpp tab and octave-based deformation. Related wave properties exist in this executable, but their runtime consumers and shader upload remain unresolved. No equivalence to that footage, water-system identification or runtime deformation completion is claimed.
 
 Totals: 484 reviewed names; 1,907 mapped and 7,681 unmapped among 9,588 discovered functions. Reviewed names measure supported descriptive roles, not overall game completion.
+
+### Graphics user-data writer and EffectField shader trace
+
+Saved AppendGraphicsUserDataRegisters with its five-argument working signature after backup, isolated trial, independent trial reopen, promotion and independent main-project reopen. All 95 original instructions were read and matched. The original function passed 1,296 packet fixtures covering register starts, stage indices, counts, capacity thresholds and controlled refill failure/relocation. Counts 1–16 copy the source DWORDs exactly. Count zero substitutes NOP words; count 17 advances without copying payload. Real caller limits remain unresolved, so count 17 is an observed boundary, not a supported-use claim. No GPU execution was tested.
+
+Traced EffectField type checking and packing into 64-byte records, then into a parity-selected allocation with a GPU descriptor for 1,024 elements. The allocation requests 65,536 bytes with 256-byte alignment. A glass UI draw path places this descriptor in a parameter block; its deferred draw job stores the two shader pointers and copies an eight-byte pointer to that block into its constant payload. Selected executor code sends that pointer through the reviewed user-data writer. Complete hardware stage and shader root-pointer binding still need audit.
+
+Matched the glass shader resources against the unchanged local archive using the original native hash and section parser. In PrimGlassIntoUILayerPS, the descriptor offset matches the CPU parameter block, and 87 selected shader instructions were checked against the archived bytes. The selected branch reads the traced amount, position, time and reverse fields, constructs a spatial phase, adds time and conditionally reverses it. Full modes, final output use and real GPU behavior remain unresolved. A separate PrimGadget lead used a different descriptor offset and was not treated as a confirmed wave consumer.
+
+These are current-build EffectField findings. They do not establish equivalence to the 2016 livestream’s trochoidal water deformation. Raw code, shader binaries and local data remain outside the public repository.
+
+Totals: 485 reviewed names; 1,908 mapped and 7,680 unmapped among 9,588 discovered functions. Naming and selected-path evidence do not measure overall game completion.

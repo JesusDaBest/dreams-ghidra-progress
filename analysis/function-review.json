@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "446 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "447 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8949,
-    "other_names": 639,
-    "verification": "complete_inventory_matches_baseline_plus_446_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8948,
+    "other_names": 640,
+    "verification": "complete_inventory_matches_baseline_plus_447_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11043,6 +11043,30 @@
         "Guard imports were controlled stubs; no real guard synchronization or concurrency tested.",
         "Other initialized fields not fully modeled.",
         "No runtime wave deformation, shader consumer or equivalence to the 2016 coding stream established."
+      ]
+    },
+    {
+      "address": "1400256c0",
+      "original_name": "FUN_1400256c0",
+      "applied_name": "AppendGraphicsUserDataRegisters",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGraphicsUserDataRegisters(void * command_context, uint stage_index, uint first_register, uint * values, uint dword_count)",
+      "evidence": [
+        "All 95 original instructions read and byte matched.",
+        "Complete original-native writer passed 1296 controlled packet fixtures.",
+        "Verified exact header, register index, payload, capacity threshold and refill relocation/failure behavior.",
+        "Draw executor traces copied parameter pointer through two DWORDs to this writer.",
+        "Backed-up isolated trial, independent trial reopen, promotion and independent main-project reopen verified the name and five-argument signature."
+      ],
+      "caveats": [
+        "Refill callback controlled; original allocator and GPU execution not tested.",
+        "Stage enum identities and caller count limits remain unresolved.",
+        "Count 17 advances over unfilled payload; no claim that it is supported real usage.",
+        "No complete shader or Dreams subsystem completion claim."
       ]
     }
   ],
