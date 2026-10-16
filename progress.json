@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 431,
-    "todo": 1467,
-    "total": 1898,
-    "behavior_or_helpers_reviewed": 366,
+    "done": 433,
+    "todo": 1466,
+    "total": 1899,
+    "behavior_or_helpers_reviewed": 368,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -32146,12 +32146,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 20,
-        "todo": 109,
-        "total": 129,
-        "behavior_or_helpers_reviewed": 20,
+        "done": 22,
+        "todo": 108,
+        "total": 130,
+        "behavior_or_helpers_reviewed": 22,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 90,
+        "runtime_functions_identified": 91,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -32174,6 +32174,8 @@
           "GetOrLoadHasherClearShader",
           "InitializeGpuHashTableResources",
           "DispatchGpuHashTableClear",
+          "GetOrLoadGdsCounterReadbackShader",
+          "DispatchGdsCounterReadback",
           "BuildSweepBlockRanges",
           "DispatchSweepHashBlocksRange"
         ],
@@ -32268,7 +32270,6 @@
           "0x141295bf0",
           "0x141296670",
           "0x141296a10",
-          "0x141297f40",
           "0x1412982d0",
           "0x14129d820",
           "0x14129dbd0",
@@ -32307,6 +32308,8 @@
           "141295f90",
           "141296330",
           "141296520",
+          "141297f40",
+          "141298670",
           "1412a20f0",
           "1412a3b40"
         ],
@@ -32401,7 +32404,6 @@
           "141295bf0",
           "141296670",
           "141296a10",
-          "141297f40",
           "1412982d0",
           "14129d820",
           "14129dbd0",
@@ -32426,12 +32428,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 20,
-            "todo": 70,
-            "total": 90,
-            "behavior_or_helpers_reviewed": 20,
+            "done": 22,
+            "todo": 69,
+            "total": 91,
+            "behavior_or_helpers_reviewed": 22,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 84,
+            "runtime_functions_identified": 85,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -32454,6 +32456,8 @@
               "GetOrLoadHasherClearShader",
               "InitializeGpuHashTableResources",
               "DispatchGpuHashTableClear",
+              "GetOrLoadGdsCounterReadbackShader",
+              "DispatchGdsCounterReadback",
               "BuildSweepBlockRanges",
               "DispatchSweepHashBlocksRange"
             ],
@@ -32515,7 +32519,6 @@
               "0x141295bf0",
               "0x141296670",
               "0x141296a10",
-              "0x141297f40",
               "0x1412982d0",
               "0x14129d820",
               "0x14129dbd0",
@@ -32548,6 +32551,8 @@
               "141295f90",
               "141296330",
               "141296520",
+              "141297f40",
+              "141298670",
               "1412a20f0",
               "1412a3b40"
             ],
@@ -32609,7 +32614,6 @@
               "141295bf0",
               "141296670",
               "141296a10",
-              "141297f40",
               "1412982d0",
               "14129d820",
               "14129dbd0",
@@ -33098,6 +33102,65 @@
                 ]
               },
               {
+                "name": "sculpting-painting/csg/pipe",
+                "label": "Pipe",
+                "done": 2,
+                "todo": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetOrLoadGdsCounterReadbackShader",
+                  "DispatchGdsCounterReadback"
+                ],
+                "todo_names": [
+                  "0x1412982d0"
+                ],
+                "done_addresses": [
+                  "141297f40",
+                  "141298670"
+                ],
+                "todo_addresses": [
+                  "1412982d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "sculpting-painting/csg/pipe/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 1,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetOrLoadGdsCounterReadbackShader",
+                      "DispatchGdsCounterReadback"
+                    ],
+                    "todo_names": [
+                      "0x1412982d0"
+                    ],
+                    "done_addresses": [
+                      "141297f40",
+                      "141298670"
+                    ],
+                    "todo_addresses": [
+                      "1412982d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "sculpting-painting/csg/brick-storage",
                 "label": "Brick storage",
                 "done": 2,
@@ -33244,57 +33307,6 @@
                     "todo_addresses": [
                       "141296670",
                       "141296a10"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "sculpting-painting/csg/pipe",
-                "label": "Pipe",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x141297f40",
-                  "0x1412982d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "141297f40",
-                  "1412982d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "sculpting-painting/csg/pipe/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x141297f40",
-                      "0x1412982d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "141297f40",
-                      "1412982d0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -43157,5 +43169,5 @@
       }
     ]
   },
-  "unmapped": 7690
+  "unmapped": 7689
 }

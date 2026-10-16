@@ -3259,3 +3259,13 @@ Page112 of Alex Evans’s 2015 talk describes Hilbert ordering of voxel bricks. 
 Saved GetOrLoadBricker2HashChildAndTagParentBricksShader and GetOrLoadBricker2CollectBricksShader after reading and matching all 410 original CPU instructions. Both archive programs were already fully read and reassembled exactly. Backup, trial, promotion and independent reopening passed.
 
 Totals: 471 reviewed names; 1,898 mapped and 7,690 unmapped among 9,588 discovered functions.
+
+### Surface counters traced through readback into volume records
+
+The ReadGDSCounters shader copies words from GDS into a destination buffer under both word-count and descriptor bounds. Read all 18 decoded instructions and reproduced the exact 92 program bytes. The CPU dispatcher prepares the destination, byte offset and count; it does not wait internally. The brick pipeline dispatches 69 words starting at GDS byte 256, then submits and waits for its fence before reading results.
+
+Traced the same 512-byte allocation and its 69-element, four-byte-stride descriptor through the CPU buffer. Words 59–68 correspond exactly to the ten surface-count counters at GDS bytes 492–528 and CPU buffer bytes 236–272. The successful build path copies them into its volume result. CopyAndPackGpuVolumeResource then forwards all ten unchanged to offsets 128–167 of both 168-byte packed volume-record arrays. The relevant successful path was reviewed; the enclosing caller is not claimed fully understood.
+
+Saved DispatchGdsCounterReadback and GetOrLoadGdsCounterReadbackShader after matching all 332 CPU instructions and independently reopening their working signatures. This establishes the counter data path, not rendering policy, physical units, GPU coherency, fence liveness or live readback correctness. Negative/overflow word counts remain unvalidated.
+
+Totals: 473 reviewed names; 1,899 mapped and 7,689 unmapped among 9,588 discovered functions.

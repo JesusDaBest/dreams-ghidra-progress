@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "433 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "435 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8962,
-    "other_names": 626,
-    "verification": "complete_inventory_matches_baseline_plus_433_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8960,
+    "other_names": 628,
+    "verification": "complete_inventory_matches_baseline_plus_435_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10733,6 +10733,52 @@
         "Curve properties support Hilbert-style ordering; exact convention and runtime depth bounds unresolved.",
         "Media Molecule2015 slides are architectural leads, not build-identical source.",
         "Working opaque pointer signatures and descriptive names, not original declarations."
+      ]
+    },
+    {
+      "address": "141298670",
+      "original_name": "FUN_141298670",
+      "applied_name": "DispatchGdsCounterReadback",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DispatchGdsCounterReadback(void * queue_context, void * destination_descriptor, uint gds_byte_offset, int word_count)",
+      "evidence": [
+        "All 332 original CPU scheduling/loader instructions read and matched; original shader literals and native archive hashing linked the program.",
+        "All 18 readback shader instructions read; exact 92-byte reassembly passed.",
+        "Allocation, descriptor, fence sequence and ten-counter transfers traced through CPU result assembly into two packed volume-record arrays.",
+        "Backup, trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "No GPU execution, fence liveness, coherency or live CPU readback validation.",
+        "Rendering policy, physical units and counter-overflow use remain unresolved.",
+        "Enclosing volume-build caller was reviewed only along the relevant successful path.",
+        "Working signatures with opaque context/descriptor pointers; negative or overflow counts unvalidated."
+      ]
+    },
+    {
+      "address": "141297f40",
+      "original_name": "FUN_141297f40",
+      "applied_name": "GetOrLoadGdsCounterReadbackShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadGdsCounterReadbackShader(void)",
+      "evidence": [
+        "All 332 original CPU scheduling/loader instructions read and matched; original shader literals and native archive hashing linked the program.",
+        "All 18 readback shader instructions read; exact 92-byte reassembly passed.",
+        "Allocation, descriptor, fence sequence and ten-counter transfers traced through CPU result assembly into two packed volume-record arrays.",
+        "Backup, trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "No GPU execution, fence liveness, coherency or live CPU readback validation.",
+        "Rendering policy, physical units and counter-overflow use remain unresolved.",
+        "Enclosing volume-build caller was reviewed only along the relevant successful path.",
+        "Working signatures with opaque context/descriptor pointers; negative or overflow counts unvalidated."
       ]
     }
   ],

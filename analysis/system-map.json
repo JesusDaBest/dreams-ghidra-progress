@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1898,
-  "unmapped_total": 7690,
+  "mapped_total": 1899,
+  "unmapped_total": 7689,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -28823,6 +28823,11 @@
           "site": "141298009",
           "target": "141725aca",
           "anchor_sha256": "b798b88c3d66d782fd6d3dd8741461dbdb319517e64962d05b0d4a868d96606c"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadGdsCounterReadbackShader",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ],
       "code_sha256": "54762ed9e15ffc05d750ea1cfddfb891b1dc0a6e97aa28460241feecf35c3d74",
@@ -47934,6 +47939,27 @@
           "kind": "verified_semantic_review",
           "name": "GetImageDescriptorPackedAllocationRequirements",
           "support": "Complete original packed-requirements helper executed for both source/write descriptors under two hardware-mode inputs; overflow untested. Saved signature independently reopened; GPU behavior unverified."
+        }
+      ]
+    },
+    "141298670": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "pipe",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete counter scheduling body, source-associated pipe.cpp ReadGDSCounters shader and Bricker2 callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Schedules CSG counter readback into a buffer descriptor.",
+      "code_sha256": "54aed3707248c446d76ead65b664a8a43c9cf2924b4fe3d7d8f68a41eb8de985",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchGdsCounterReadback",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ]
     }
