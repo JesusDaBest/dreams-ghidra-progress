@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f7348e20e783c30ef927da0efbe1342f07c495b9/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d190b2b3936b092762f214c94bed3dd26728d5a8/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**485 of 9,588 functions named and checked.** A function is one piece of the game's code.
+**486 of 9,588 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f7348e20e783c30ef927da0efbe1342f07c495b9/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d190b2b3936b092762f214c94bed3dd26728d5a8/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -69,12 +69,12 @@ Every square is one actual function and has the same size. All function squares 
 | Physics & collision | 70 | 16/38 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
-| Rendering & lighting | 298 | 30/272 | 0/26 |
+| Rendering & lighting | 299 | 31/273 | 0/26 |
 | Editor & interface | 390 | 76/181 | 3/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 285 | 164/199 | 15/81 |
 
-**1,908 of 9,588 discovered functions are mapped; 7,680 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,909 of 9,588 discovered functions are mapped; 7,679 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -744,7 +744,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Rendering & lighting** - 298 functions identified; 30 behavior/helper reviews; 0 property/type reviews
+- **Rendering & lighting** - 299 functions identified; 31 behavior/helper reviews; 0 property/type reviews
   - **Lighting & shadows** - 95 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sun Shadow** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -795,7 +795,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Scene drawing** - 67 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+  - **Scene drawing** - 68 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -804,8 +804,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Model Brushstroke** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Renderer** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Renderer** - 5 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Mips** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Noisy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
