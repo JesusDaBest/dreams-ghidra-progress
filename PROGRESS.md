@@ -2918,3 +2918,9 @@ Output allocation/growth/failure, large relative offsets and the full 5,503-inst
 Saved working structures DreamsLightThermometerData (12 bytes: gameplay, graphics and audio floats at offsets 0, 4 and 8) and DreamsThermometerEntry (8 bytes: unsigned type at offset 0 and amount float at offset 4). Both materializers now use these types for input and output pointers. The custom SysV register/stack storage remains unchanged.
 
 Independent reopening verified every field offset, width, record size and saved signature; original instruction bytes and archives match. These are descriptive layouts supported by the traced field names and existing bounded checks, not recovered source declarations. No function-name or runtime-coverage credit was added.
+
+### Saved portal metadata materializer
+
+Applied MaterializePortalRecord after reading all 423 original instructions, tracing the parent portals array, and verifying the saved name and seven-argument SysV layout after independent reopening. Each 96-byte record contains a portal-type byte, a name with inline or relative storage, a gadget-sequence value and raw angle bits. Angle units and type values remain unresolved. This is metadata processing, not proof that portal gameplay has been reconstructed.
+
+The original helper passed 816 scalar-selection checks with explicit output and empty descriptor names. The original hash routine passed 80 checks for the five associated member and parent names. Nonempty names, inline empty names, null output, allocation/growth/failure and the full parent serializer remain untested. Original archives and instruction bytes are unchanged. Totals: 417 checked names and 1,850 mapped functions among 9,580 discovered functions; 7,730 still need system mapping. These counts are not a percentage of a completed PC port or of all Dreams behavior understood.
