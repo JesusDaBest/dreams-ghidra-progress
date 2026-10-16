@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/97755e365217ba17183b135b347bd903896c5e8f/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/cceb4618c231a3a7a5e758c636158a773d7d61e9/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**530 of 9,588 functions named and checked.** A function is one piece of the game's code.
+**543 of 9,588 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/97755e365217ba17183b135b347bd903896c5e8f/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/cceb4618c231a3a7a5e758c636158a773d7d61e9/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -69,12 +69,12 @@ Every square is one actual function and has the same size. All function squares 
 | Physics & collision | 70 | 16/38 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 55 | 9/9 | 2/46 |
-| Rendering & lighting | 343 | 75/317 | 0/26 |
+| Rendering & lighting | 356 | 88/330 | 0/26 |
 | Editor & interface | 390 | 76/181 | 3/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
 | Shared engine & object data | 285 | 164/199 | 15/81 |
 
-**1,953 of 9,588 discovered functions are mapped; 7,635 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,966 of 9,588 discovered functions are mapped; 7,622 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -744,10 +744,10 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Rendering & lighting** - 343 functions identified; 75 behavior/helper reviews; 0 property/type reviews
-  - **Scene drawing** - 111 functions identified; 45 behavior/helper reviews; 0 property/type reviews
-    - **Renderer** - 48 functions identified; 45 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 48 functions identified; 45 behavior/helper reviews; 0 property/type reviews
+- **Rendering & lighting** - 356 functions identified; 88 behavior/helper reviews; 0 property/type reviews
+  - **Scene drawing** - 124 functions identified; 58 behavior/helper reviews; 0 property/type reviews
+    - **Renderer** - 61 functions identified; 58 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 61 functions identified; 58 behavior/helper reviews; 0 property/type reviews
     - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
