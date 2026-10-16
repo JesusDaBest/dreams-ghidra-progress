@@ -2976,3 +2976,13 @@ Saved `LookupLanguageCodeByKey` with its assembly-supported 32-bit input and str
 Caller tracing shows localized titles, descriptions and portal names select a matching language entry, falling back to an `all` entry. The title copy helper uses inline storage for up to 63 bytes; description storage uses a dynamic descriptor. The source of the selected language, enum/hash generation, allocation failure behavior and full live-game flow remain unresolved. The naming is descriptive, not recovered original source.
 
 Totals: 422 checked names and 1,855 mapped functions among 9,580 discovered functions; 7,725 still need system mapping. These counts measure documented work, not a percentage of the entire game recovered.
+
+### Verified localized-text selection
+
+Saved SelectLocalizedInlineText64 and SelectLocalizedDynamicText with two assembly-supported arguments and void returns. Both complete original bodies were read, caller and copy-helper paths traced, full trial pseudocode reviewed, and saved names/signatures independently reopened. Original instructions and archives are unchanged.
+
+The complete original selectors, language lookup, copy helpers and original libc routines passed 1,620 synthetic checks. The first exact language match wins; otherwise the last all entry is used; with neither, the destination stays unchanged. Checks cover text lengths through 127 bytes, duplicate and reordered keys, three selected languages, alignment and input/outer guards. Buffers were preallocated: allocation, growth, free, failures, invalid counts, aliases and live-game behavior remain untested.
+
+Static initialization tracing independently links six original imports and the 23-entry platform language table with its original relocations. The path checks DefaultLanguage, reads a platform parameter, and tests full and base localization-file paths before falling back. This path was not executed.
+
+Totals: 424 checked names and 1,857 mapped functions among 9,580 discovered functions; 7,723 still need mapping. These are documented review counts, not whole-game completion.

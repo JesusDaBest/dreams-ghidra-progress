@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1855,
-  "unmapped_total": 7725,
+  "mapped_total": 1857,
+  "unmapped_total": 7723,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46976,6 +46976,48 @@
           "kind": "verified_semantic_review",
           "name": "LookupLanguageCodeByKey",
           "support": "Complete original body/literals,localized callers,4205 standalone checks and independent saved-project reopen."
+        }
+      ]
+    },
+    "1406367f0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "elanguage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed language-keyed text selection used by Dream metadata builders; semantic placement does not assert source enum identity.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Selects localized text and assigns it to inline-capable or dynamic string storage.",
+      "code_sha256": "d0b11addf4be7273c0d5ccef8bc6c50e0c804864758f9ee6035828de1fe91979",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectLocalizedInlineText64",
+          "support": "Complete original assembly,caller and copy-helper tracing,1620 whole-selector checks and independent saved-project reopening."
+        }
+      ]
+    },
+    "1406368e0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "text",
+        "elanguage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed language-keyed text selection used by Dream metadata builders; semantic placement does not assert source enum identity.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Selects localized text and assigns it to inline-capable or dynamic string storage.",
+      "code_sha256": "b8c205937dce57bbe7dd7d11429bd382dba82fa80dc0c27edf1689d31b7aead7",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectLocalizedDynamicText",
+          "support": "Complete original assembly,caller and copy-helper tracing,1620 whole-selector checks and independent saved-project reopening."
         }
       ]
     }
