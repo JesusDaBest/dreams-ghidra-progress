@@ -3301,3 +3301,13 @@ The selected region count is unsigned min(requested, 6) when a control float equ
 The one-bit voxel packing structurally agrees with pages 136–139 of [Alex Evans SIGGRAPH 2015 talk](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), which describes cascaded binary occupancy and atomic OR. This does not establish build-identical code or current cascade count. Located the official [engine-code livestream](https://www.youtube.com/watch?v=yZM_Ij9aeOA); its footage and visible code remain uninspected and unmatched.
 
 Totals: 477 reviewed names; mapping remains 1,900 of 9,588 discovered functions. No in-game validation or additional whole-executable behavior coverage is claimed.
+
+### Deferred compute resource dependencies
+
+Saved CollectDeferredResourceAccessesForJob with a void return, unsigned job ID and opaque resource-record pointer. Read all 39 original instructions and executed the complete original helper in 168 isolated graph cases, including duplicate/shared children and cycles. It appends a resource linked list of access entries before recursively traversing dependencies. A per-resource 16-bit job marker suppresses repeat visits. An initial marker of 65,535 skips matching job IDs; IDs compare by their low 16 bits. Real scheduler job bounds and whether these edge cases are reachable remain unresolved.
+
+Read and matched 355 additional CPU instructions for deferred compute job construction, constant-data registration and dependency finalization. The builder records shader and argument data, tracks an indirect-argument resource when present, and queues the job. This is deferred scheduling evidence, not actual GPU command emission or synchronization validation. Native execution covers the 39-instruction walker only.
+
+Backup, isolated trial, promotion and independent reopening passed. The constant-registration caller decompiled with both corrected arguments. Pending-access capacities, invalid resource IDs and full binding-backend behavior remain open.
+
+Totals: 478 reviewed names; 1,901 mapped and 7,687 unmapped among 9,588 discovered functions.

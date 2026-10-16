@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "439 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "440 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8956,
-    "other_names": 632,
-    "verification": "complete_inventory_matches_baseline_plus_439_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8955,
+    "other_names": 633,
+    "verification": "complete_inventory_matches_baseline_plus_440_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10877,6 +10877,28 @@
         "Region cap3or6 established; control-setting meaning and live values unresolved.",
         "Other atomic-writer shader still lacks successful reassembly.",
         "Surface-counter rendering usage remains unresolved."
+      ]
+    },
+    {
+      "address": "1413a00c0",
+      "original_name": "FUN_1413a00c0",
+      "applied_name": "CollectDeferredResourceAccessesForJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CollectDeferredResourceAccessesForJob(uint job_id, void * resource_record)",
+      "evidence": [
+        "Complete39-instruction original resource walker read and matched.",
+        "Whole original native walker passed168 synthetic graph cases, including shared children, cycles and16-bit job markers.",
+        "355 additional compute-job construction and dependency-finalization instructions read and matched statically.",
+        "Backup, trial, promotion, independent reopening and caller decompilation verified working two-argument void signature."
+      ],
+      "caveats": [
+        "Native tests cover isolated graphs, not game execution or355other instructions.",
+        "Real job-ID bounds, pending-access capacities and overflow reachability unresolved.",
+        "Actual GPU command emission, binding backend and synchronization remain unresolved."
       ]
     }
   ],

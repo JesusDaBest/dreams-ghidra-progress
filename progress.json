@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 437,
+    "done": 438,
     "todo": 1463,
-    "total": 1900,
-    "behavior_or_helpers_reviewed": 372,
+    "total": 1901,
+    "behavior_or_helpers_reviewed": 373,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 23,
+        "done": 24,
         "todo": 268,
-        "total": 291,
-        "behavior_or_helpers_reviewed": 23,
+        "total": 292,
+        "behavior_or_helpers_reviewed": 24,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 265,
+        "runtime_functions_identified": 266,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21526,6 +21526,7 @@
           "AppendComputeCompletionFence",
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
+          "CollectDeferredResourceAccessesForJob",
           "TryAllocateGraphicsResourceStorage",
           "InitializeGpuImageResource"
         ],
@@ -21821,6 +21822,7 @@
           "141297cf0",
           "14131e560",
           "14131eca0",
+          "1413a00c0",
           "1413c2ee0",
           "1413c3620"
         ],
@@ -25140,12 +25142,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 17,
+            "done": 18,
             "todo": 0,
-            "total": 17,
-            "behavior_or_helpers_reviewed": 17,
+            "total": 18,
+            "behavior_or_helpers_reviewed": 18,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 17,
+            "runtime_functions_identified": 18,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25165,6 +25167,7 @@
               "CalculateImageDescriptorStorageRequirements",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
+              "CollectDeferredResourceAccessesForJob",
               "TryAllocateGraphicsResourceStorage",
               "InitializeGpuImageResource"
             ],
@@ -25185,6 +25188,7 @@
               "140044480",
               "141297bd0",
               "141297cf0",
+              "1413a00c0",
               "1413c2ee0",
               "1413c3620"
             ],
@@ -25416,6 +25420,53 @@
                     "todo_names": [],
                     "done_addresses": [
                       "14003b5e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/resource-dependencies",
+                "label": "Resource dependencies",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CollectDeferredResourceAccessesForJob"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1413a00c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/resource-dependencies/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "CollectDeferredResourceAccessesForJob"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1413a00c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -43183,5 +43234,5 @@
       }
     ]
   },
-  "unmapped": 7688
+  "unmapped": 7687
 }

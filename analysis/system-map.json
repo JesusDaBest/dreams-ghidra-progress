@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1900,
-  "unmapped_total": 7688,
+  "mapped_total": 1901,
+  "unmapped_total": 7687,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47998,6 +47998,27 @@
           "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ]
+    },
+    "1413a00c0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-dependencies",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete recursive access collector used by deferred compute constant-resource registration.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Collects deferred graphics resource dependencies by job ID.",
+      "code_sha256": "39522009a5bdb0b34db0df8e60c764e3508bb278c3d51e5e2ccd8d258db6f58e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CollectDeferredResourceAccessesForJob",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -55128,6 +55149,17 @@
             {
               "id": "command-registers",
               "label": "Shader input registers",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "resource-dependencies",
+              "label": "Resource dependencies",
               "children": [
                 {
                   "id": "runtime-implementation",
