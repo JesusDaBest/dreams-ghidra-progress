@@ -3471,3 +3471,13 @@ The draw-state updater connects color and depth targets, blend controls, viewpor
 The baseline reset passed 40 capacity/refill/return/mode combinations and three failed-refill cache patterns. Its GNM shader call used an explicit controlled fixture: this does not validate real platform shader packets. The image-view helper passed 90 valid linear-image cases against independent mip-offset sums and one invalid-slice rejection. Tiled fast paths, optional metadata paths and the resource prologue still need investigation. The general offset path ignores nested errors, so successful return alone does not establish valid input or output. No GPU or live-game result is claimed.
 
 Totals: 546 reviewed names; 1,969 mapped and 7,619 unmapped among 9,588 discovered functions.
+
+### Render-target auxiliary layouts and packed requirements
+
+Saved four descriptive names and working signatures for color/depth auxiliary-layout queries and their read-only size/alignment wrappers. All 363 original instructions were read and byte matched. Backed-up trial and independent trial/main reopening verified the expected names and parameter storage, successful decompilation, unchanged instruction bytes and unchanged original archives. Target descriptors remain opaque.
+
+The color query matched independent padding/divisibility arithmetic in 4,572 cases, including 108 rejections preserving outputs. The depth query matched padding, slice scaling and alignment rounding in 576 cases. Thirty-two connected wrapper cases checked enable flags and packed returns, including two oversized results: low size becomes zero when it exceeds 32 bits, while high alignment is retained. These wrappers differ from descriptor-mutating preparation helpers that truncate queried sizes.
+
+A separate layout-backed metadata query can write outputs while returning an error; callers must respect status. Unsupported fixed-path pipe configurations were excluded from execution because arithmetic validity is not established. Exact hardware metadata classification, actual allocation consumers and GPU/live-game behavior remain unresolved. The first color-query harness attempt had a pointer-width bug; it was corrected before the passing run and was not a Dreams fault.
+
+Totals: 550 reviewed names; 1,973 mapped and 7,615 unmapped among 9,588 discovered functions.

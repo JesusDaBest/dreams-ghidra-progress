@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 546,
+    "checked_and_applied_names": 550,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 546,
+    "verified_names": 550,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "508 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "512 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8826,6 +8826,25 @@
       "Caches may advance after failed emission; executor reset is verified, in-pass capacity policy remains unresolved.",
       "Resource prologue, tiled offset fast path and all view branches remain unverified.",
       "General offset path ignores nested errors; valid input constraints are required."
+    ],
+    "runtime_game_verified": false
+  },
+  "target_auxiliary_checkpoint": {
+    "saved_names": [
+      "CalculateColorTargetAuxiliaryLayout",
+      "CalculateDepthStencilTargetAuxiliaryLayout",
+      "GetColorTargetAuxiliarySizeAndAlignment",
+      "GetDepthStencilTargetAuxiliarySizeAndAlignment"
+    ],
+    "original_instructions": 363,
+    "color_query_native_cases": 4572,
+    "depth_query_native_cases": 576,
+    "packed_wrapper_native_cases": 32,
+    "oversize_cases": 2,
+    "limits": [
+      "Exact hardware metadata classification and allocation consumers unresolved.",
+      "Unsupported fixed-path pipe configurations excluded; upstream constraints remain open.",
+      "Synthetic descriptors, controlled cached hardware mode; no GPU or live-game verification."
     ],
     "runtime_game_verified": false
   }

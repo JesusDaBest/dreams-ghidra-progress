@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "508 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "512 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8887,
-    "other_names": 701,
-    "verification": "complete_inventory_matches_baseline_plus_508_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8883,
+    "other_names": 705,
+    "verification": "complete_inventory_matches_baseline_plus_512_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -12480,6 +12480,94 @@
         "GNMshaderAPI andrefill controlled; no realplatformpackets/GPU/live-game verification.",
         "Resourceonce-onlyprologue,allview/multisamplebranches andtiled-offsetfastpath notfullyvalidated.",
         "Offsetgeneralpath ignoresnestederrors; validinputconstraints required."
+      ]
+    },
+    {
+      "address": "14003e640",
+      "original_name": "FUN_14003e640",
+      "applied_name": "CalculateColorTargetAuxiliaryLayout",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV CalculateColorTargetAuxiliaryLayout(ulonglong * size_out, uint * alignment_out, uint * padded_width_out, uint * padded_height_out, void * target_descriptor)",
+      "evidence": [
+        "Complete363 original instructions read and byte matched; tile helpers and263 caller-path instructions traced.",
+        "Color auxiliary query4572 native cases; depth query576; packed wrappers32 including2 oversized results.",
+        "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive auxiliary roles; exact hardware metadata classification unresolved.",
+        "Opaque target descriptors; packed returnlowDWORD size,highDWORD alignment,oversized sizezero.",
+        "Unsupported fixed-path pipe configurations excluded; upstream validity notfully established.",
+        "Controlledmode, synthetic descriptors; noallocation/GPU/live-game verification."
+      ]
+    },
+    {
+      "address": "14003eca0",
+      "original_name": "FUN_14003eca0",
+      "applied_name": "CalculateDepthStencilTargetAuxiliaryLayout",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV CalculateDepthStencilTargetAuxiliaryLayout(ulonglong * size_out, uint * alignment_out, uint * padded_width_out, uint * padded_height_out, void * target_descriptor)",
+      "evidence": [
+        "Complete363 original instructions read and byte matched; tile helpers and263 caller-path instructions traced.",
+        "Color auxiliary query4572 native cases; depth query576; packed wrappers32 including2 oversized results.",
+        "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive auxiliary roles; exact hardware metadata classification unresolved.",
+        "Opaque target descriptors; packed returnlowDWORD size,highDWORD alignment,oversized sizezero.",
+        "Unsupported fixed-path pipe configurations excluded; upstream validity notfully established.",
+        "Controlledmode, synthetic descriptors; noallocation/GPU/live-game verification."
+      ]
+    },
+    {
+      "address": "140035e80",
+      "original_name": "FUN_140035e80",
+      "applied_name": "GetColorTargetAuxiliarySizeAndAlignment",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV GetColorTargetAuxiliarySizeAndAlignment(void * target_descriptor)",
+      "evidence": [
+        "Complete363 original instructions read and byte matched; tile helpers and263 caller-path instructions traced.",
+        "Color auxiliary query4572 native cases; depth query576; packed wrappers32 including2 oversized results.",
+        "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive auxiliary roles; exact hardware metadata classification unresolved.",
+        "Opaque target descriptors; packed returnlowDWORD size,highDWORD alignment,oversized sizezero.",
+        "Unsupported fixed-path pipe configurations excluded; upstream validity notfully established.",
+        "Controlledmode, synthetic descriptors; noallocation/GPU/live-game verification."
+      ]
+    },
+    {
+      "address": "14001fcb0",
+      "original_name": "FUN_14001fcb0",
+      "applied_name": "GetDepthStencilTargetAuxiliarySizeAndAlignment",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV GetDepthStencilTargetAuxiliarySizeAndAlignment(void * target_descriptor)",
+      "evidence": [
+        "Complete363 original instructions read and byte matched; tile helpers and263 caller-path instructions traced.",
+        "Color auxiliary query4572 native cases; depth query576; packed wrappers32 including2 oversized results.",
+        "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive auxiliary roles; exact hardware metadata classification unresolved.",
+        "Opaque target descriptors; packed returnlowDWORD size,highDWORD alignment,oversized sizezero.",
+        "Unsupported fixed-path pipe configurations excluded; upstream validity notfully established.",
+        "Controlledmode, synthetic descriptors; noallocation/GPU/live-game verification."
       ]
     }
   ],

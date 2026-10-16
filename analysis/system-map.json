@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1969,
-  "unmapped_total": 7619,
+  "mapped_total": 1973,
+  "unmapped_total": 7615,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49444,6 +49444,90 @@
         {
           "kind": "verified_semantic_review",
           "name": "CalculateImageViewOffsetAndSliceSize",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14003e640": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color/depth target auxiliary-layout and size/alignment callers read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Calculates auxiliary layout or exposes packed size/alignment for graphics target descriptors.",
+      "code_sha256": "f93d244387c26d606e0e8c9cb835ceab2e8e59d4b70e9f7fb04575c7da180c21",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CalculateColorTargetAuxiliaryLayout",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14003eca0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color/depth target auxiliary-layout and size/alignment callers read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Calculates auxiliary layout or exposes packed size/alignment for graphics target descriptors.",
+      "code_sha256": "8f952d349689eda59739d39206b5e746433f01575928f5951bcb7d6e93272798",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CalculateDepthStencilTargetAuxiliaryLayout",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140035e80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color/depth target auxiliary-layout and size/alignment callers read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Calculates auxiliary layout or exposes packed size/alignment for graphics target descriptors.",
+      "code_sha256": "54bfb4cef497db55451534c0fde7a02990f085372a150621555f7f89e4a8307a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetColorTargetAuxiliarySizeAndAlignment",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14001fcb0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color/depth target auxiliary-layout and size/alignment callers read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Calculates auxiliary layout or exposes packed size/alignment for graphics target descriptors.",
+      "code_sha256": "de7c1a31f0cb8f5f9a0266ed41f306b989c148d857d46201f5c6a0430cf54e24",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetDepthStencilTargetAuxiliarySizeAndAlignment",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
