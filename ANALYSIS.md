@@ -3545,3 +3545,11 @@ Software models passed 1,200 record-count cases and 224 counter-distribution cas
 Saved GetOrLoadBricker2CountSurfaceVoxelsShader after matching all 206 CPU instructions and independently reopening its working pointer-return signature. Backup, trial and promotion passed.
 
 Totals: 469 reviewed names; 1,898 mapped and 7,690 unmapped among 9,588 discovered functions.
+
+### Brick-key marker traced through collection and counting
+
+Read all 162 decoded instructions of Bricker2HashChildAndTagParentBricks and all 903 of Bricker2CollectBricks. Reassembly reproduced their exact 804 and 4,408 program bytes. Traced bounded parent/child hash operations, sibling selection, collection reservation/capacity filtering and bit-population counters. Atomic concurrency and GPU behavior remain unvalidated.
+
+The collection shader explicitly adds a high-bit marker when its iteration parameter is zero; the CPU supplies that parameter directly. The gather shader loads the key once and preserves it through the per-brick key write. The surface-count shader then tests that high bit for weighted counter contributions. This establishes a zero-iteration marker’s origin, rather than a distance or material flag. Its broader policy role and the counters’ physical units still need tracing.
+
+Collection also contains an orientation/coordinate-bit transformation. Its precise curve convention, bit-width constraints and input meanings are not established yet. Counter readback and CPU consumption remain unfinished. No new names are counted; the total stays 469.

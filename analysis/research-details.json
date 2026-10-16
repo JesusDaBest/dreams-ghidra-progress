@@ -8292,6 +8292,29 @@
       "Loader can return null; caller lacks a local null check.",
       "Working opaque pointer signature and descriptive name, not an original declaration."
     ],
-    "runtime_game_verified": false
+    "runtime_game_verified": false,
+    "flag_origin_followup": "brick_key_iteration_marker_checkpoint:staticzero-iterationorigin established;fullpolicy remains unresolved."
+  },
+  "brick_key_iteration_marker_checkpoint": {
+    "shader_instructions_read": {
+      "parent_tag": 162,
+      "collection": 903
+    },
+    "exact_roundtrip_bytes": {
+      "parent_tag": 804,
+      "collection": 4408
+    },
+    "flag_origin": "Collection sets bit31 when CPU iteration parameter iszero;gather preserveskey;countshader testsbit31.",
+    "other_findings": [
+      "Bounded parent/child hash operations and collection sibling checks traced.",
+      "Collection reservation precedes capacity filtering.",
+      "Per-bit population counters traced; physical policy and coordinate-transform convention remain unresolved."
+    ],
+    "limits": [
+      "No GPU execution, atomics/concurrency or whole-algorithm validation.",
+      "CPU counter consumption and full iteration-marker policy remain unresolved.",
+      "Coordinate-transform bit-width constraints remain unvalidated; explicit marker term is established."
+    ],
+    "reviewed_name_increment": 0
   }
 }
