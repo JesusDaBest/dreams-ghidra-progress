@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 473,
+    "checked_and_applied_names": 475,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 473,
+    "verified_names": 475,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "435 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "437 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8372,6 +8372,41 @@
       "Rendering policy, physical units and counter-overflow use remain unresolved.",
       "Enclosing volume-build caller was reviewed only along the relevant successful path.",
       "Working signatures with opaque context/descriptor pointers; negative or overflow counts unvalidated."
+    ],
+    "runtime_game_verified": false
+  },
+  "point_query_run_checkpoint": {
+    "saved_names": [
+      "DispatchPointQueriesAndWait",
+      "GetOrLoadPointQueryRunShader"
+    ],
+    "original_cpu_instructions": 337,
+    "shader_instructions": 262,
+    "exact_roundtrip_bytes": 1400,
+    "excluded_shader_metadata_bytes": 84,
+    "rational_interpolation_cases": 576,
+    "packed_reference_cases": 4096,
+    "volume_read_byte_ranges": [
+      [
+        40,
+        51
+      ],
+      [
+        52,
+        67
+      ],
+      [
+        68,
+        83
+      ]
+    ],
+    "surface_counters_read": false,
+    "limits": [
+      "No GPU execution or hardware floating-point conformance.",
+      "Distance units and all returned vector-component meanings remain unresolved.",
+      "This shader does not read the surface-counter fields; rendering counter policy is still unresolved.",
+      "Loader may return null; caller has no visible null check, not a demonstrated live crash.",
+      "Count+63 uses32-bit wrapping before division by64."
     ],
     "runtime_game_verified": false
   }

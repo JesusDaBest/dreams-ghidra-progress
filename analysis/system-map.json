@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1899,
-  "unmapped_total": 7689,
+  "mapped_total": 1900,
+  "unmapped_total": 7688,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -27028,6 +27028,11 @@
           "site": "141275309",
           "target": "1417242f8",
           "anchor_sha256": "f0bdd728e86b1f15019470ca9bb199ad89f019cdf9fe50f7fb5f16433e9988b7"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadPointQueryRunShader",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ],
       "code_sha256": "c993db67810ee052d7de3ce63c8046abdbbaea5c843d6b469b8d3801ed19cba2",
@@ -47959,6 +47964,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "DispatchGdsCounterReadback",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
+    },
+    "1412755e0": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "point-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete dispatcher binds the source-associated PointQueryRun shader.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Dispatches point queries against sculpt distance/tree/volume resources.",
+      "code_sha256": "371f85955b7b6e7357a6b99b717a1b664be825543dd199113dddd1ab79b0996e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchPointQueriesAndWait",
           "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ]

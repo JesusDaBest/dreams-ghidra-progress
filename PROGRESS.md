@@ -3269,3 +3269,13 @@ Traced the same 512-byte allocation and its 69-element, four-byte-stride descrip
 Saved DispatchGdsCounterReadback and GetOrLoadGdsCounterReadbackShader after matching all 332 CPU instructions and independently reopening their working signatures. This establishes the counter data path, not rendering policy, physical units, GPU coherency, fence liveness or live readback correctness. Negative/overflow word counts remain unvalidated.
 
 Totals: 473 reviewed names; 1,899 mapped and 7,689 unmapped among 9,588 discovered functions.
+
+### Sculpt point queries traced into the GPU program
+
+Saved DispatchPointQueriesAndWait and GetOrLoadPointQueryRunShader after reading and matching all 337 CPU instructions, backing up the project, testing an isolated copy and independently reopening both signatures. The dispatcher binds the sculpt distance atlas, sampler, packed tree, volume records, query records and output records. It dispatches groups of 64 and explicitly submits and waits for its fence. The unsigned group calculation wraps count+63 in 32 bits.
+
+Read all 262 PointQueryRun GPU instructions and reproduced all 1,400 program bytes exactly; the remaining 84 bytes are metadata. A query selects a volume, uses its bounds and packed tree information, and traverses three-byte child references. Two image gathers feed interpolation of the sculpt distance atlas. The decoding 4*sample-2 is the algebraic inverse of the writer distance/4+0.5. Checked 576 exact rational interpolation cases and 4,096 adjacent-word child-reference extraction cases. These are software algebra checks, not GPU execution.
+
+This consumer reads volume bytes 40–83; it does not read the surface counters at bytes 128–167. Rendering use of those counters remains unresolved. Physical distance units, all returned vector-component meanings, exceptional floating-point behavior and live GPU correctness are not established. A shader-load failure can return null and the dispatcher has no visible null check; no live crash is claimed.
+
+Totals: 475 reviewed names; 1,900 mapped and 7,688 unmapped among 9,588 discovered functions.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "435 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "437 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8960,
-    "other_names": 628,
-    "verification": "complete_inventory_matches_baseline_plus_435_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8958,
+    "other_names": 630,
+    "verification": "complete_inventory_matches_baseline_plus_437_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10779,6 +10779,54 @@
         "Rendering policy, physical units and counter-overflow use remain unresolved.",
         "Enclosing volume-build caller was reviewed only along the relevant successful path.",
         "Working signatures with opaque context/descriptor pointers; negative or overflow counts unvalidated."
+      ]
+    },
+    {
+      "address": "1412755e0",
+      "original_name": "FUN_1412755e0",
+      "applied_name": "DispatchPointQueriesAndWait",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DispatchPointQueriesAndWait(void * queue_context, void * query_descriptor, void * output_descriptor, uint query_count)",
+      "evidence": [
+        "All337 original CPU loader/dispatcher instructions read and matched.",
+        "PointQueryRun shader:262 instructions, exact1400-byte reassembly;84-byte metadata tail excluded.",
+        "576 rational interpolation and4096 packed child-reference model cases passed.",
+        "Backup, isolated trial, promotion and independent reopening verified both signatures."
+      ],
+      "caveats": [
+        "No GPU execution or hardware floating-point conformance.",
+        "Distance units and all returned vector-component meanings remain unresolved.",
+        "This shader does not read the surface-counter fields; rendering counter policy is still unresolved.",
+        "Loader may return null; caller has no visible null check, not a demonstrated live crash.",
+        "Count+63 uses32-bit wrapping before division by64."
+      ]
+    },
+    {
+      "address": "141275240",
+      "original_name": "FUN_141275240",
+      "applied_name": "GetOrLoadPointQueryRunShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadPointQueryRunShader(void)",
+      "evidence": [
+        "All337 original CPU loader/dispatcher instructions read and matched.",
+        "PointQueryRun shader:262 instructions, exact1400-byte reassembly;84-byte metadata tail excluded.",
+        "576 rational interpolation and4096 packed child-reference model cases passed.",
+        "Backup, isolated trial, promotion and independent reopening verified both signatures."
+      ],
+      "caveats": [
+        "No GPU execution or hardware floating-point conformance.",
+        "Distance units and all returned vector-component meanings remain unresolved.",
+        "This shader does not read the surface-counter fields; rendering counter policy is still unresolved.",
+        "Loader may return null; caller has no visible null check, not a demonstrated live crash.",
+        "Count+63 uses32-bit wrapping before division by64."
       ]
     }
   ],
