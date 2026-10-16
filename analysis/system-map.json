@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1858,
-  "unmapped_total": 7722,
+  "mapped_total": 1859,
+  "unmapped_total": 7721,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47039,6 +47039,27 @@
           "kind": "verified_semantic_review",
           "name": "TryLookupCategoryIdByName",
           "support": "Completeoriginalbody/caller,75originalcategoryliterals,4880completehelperchecks andindependentreopen."
+        }
+      ]
+    },
+    "1401624b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed award-name hash resolution used by tagged Dream metadata builder.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Stores recognized award name hashes orzero in metadata.",
+      "code_sha256": "23909af6c2b6c5e876272356f4b962f46af567209f8beb408347ad3139b74a4f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolveAwardHashByName",
+          "support": "Completeoriginalbody/caller,191originalawardnames,3136wholehelperchecks andindependentreopen."
         }
       ]
     }

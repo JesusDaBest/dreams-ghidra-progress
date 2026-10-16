@@ -3000,3 +3000,11 @@ Saved TryLookupCategoryIdByName with text begin/end pointers, a category-ID outp
 Seventy-five original category literals passed 1,200 checks with the original hash function. The complete original lookup, hash and successful libc dependencies then passed 4,880 checks covering recognized names, CATEGORY_ prefixes, trailing punctuation or spaces, unknown and wrong-case inputs, alignment and exact outputs/guards. Success writes the ID; failure leaves the output unchanged. Long suffix bounds, malformed prefixed all-punctuation inputs, libc error handling and live-game behavior remain untested.
 
 Totals: 425 checked names and 1,858 mapped functions among 9,580 discovered functions; 7,722 still need mapping. This is documented semantic-review progress, not a whole-game completion percentage.
+
+### Verified award-name resolution
+
+Saved ResolveAwardHashByName with text begin/end pointers and an output-hash pointer. The helper clears the output, hashes the supplied text, and stores that hash only when it belongs to its 191 recognized values. The working return is void because the traced metadata caller ignores the return register. All 584 original instructions were read and matched; backup, isolated trial, promotion and independent reopening verified the saved name/signature and unchanged original instructions and archives.
+
+All 191 recognized hashes now match original executable award-name strings, including four longer Impy 2022/2023 nominee names missed by the earlier short-string index. The complete original lookup and hash code passed 3,136 checks covering these names, unknown inputs, alignment and exact outputs/guards. Hash collisions, arbitrary input lengths, aliases and live-game behavior remain untested. This verifies award metadata resolution, not the award service or entire game.
+
+Totals: 426 checked names and 1,859 mapped functions among 9,580 discovered functions; 7,721 still need mapping.

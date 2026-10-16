@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "395 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "396 existing-function renames,29 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9580,
-    "default_fun_names": 9000,
-    "other_names": 580,
-    "verification": "complete_inventory_matches_baseline_plus_395_renames_and_29_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8999,
+    "other_names": 581,
+    "verification": "complete_inventory_matches_baseline_plus_396_renames_and_29_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9645,6 +9645,29 @@
         "Long suffix bounds,malformed prefixed allpunctuation inputs,libcerrorhandler andlivegame untested.",
         "Complete originalassembly reviewed;trialpseudocode inspection limited tosignature andsuccess/return windows.",
         "Category metadata lookup doesnot establish gameplay subsystemcompletion."
+      ]
+    },
+    {
+      "address": "1401624b0",
+      "original_name": "FUN_1401624b0",
+      "applied_name": "ResolveAwardHashByName",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResolveAwardHashByName(char * name_begin, char * name_end, uint * award_hash_out)",
+      "evidence": [
+        "Complete584originalinstructions and taggedmetadata caller read/matched.",
+        "All191acceptedhashes independently matched originalNULterminatedawardnames,includingfourlongnames.",
+        "Completeoriginalhelper/hash passed3136nativechecks:191awardnames plusunknownexamples at16alignments,exactoutput/input/outputguards.",
+        "Coldbackup,isolatedtrial,promotion andindependentreopenverify descriptivename,threeSysVarguments andworkingvoidreturn;instructions/archivesunchanged."
+      ],
+      "caveats": [
+        "Descriptive name,not recovered source.",
+        "Hashcollisions,arbitrarylengths,aliases andlivegame behavior untested.",
+        "Trialpseudocode review limited tosignature,entry andfinaloutput windows;fulloriginalassembly isprimaryevidence.",
+        "Awardmetadata resolution doesnot establish awardservice orwholegamecompletion."
       ]
     }
   ],
