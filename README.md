@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9c6c4c08b3d4d705c579ce0b16e2d1cb0202a9e1/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/4818c90b58556ea959ac89bb9c1c13eca86235cd/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**431 of 9,580 functions named and checked.** A function is one piece of the game's code.
+**434 of 9,583 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9c6c4c08b3d4d705c579ce0b16e2d1cb0202a9e1/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/4818c90b58556ea959ac89bb9c1c13eca86235cd/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -72,9 +72,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 274 | 4/248 | 0/26 |
 | Editor & interface | 390 | 76/181 | 3/207 |
 | Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 275 | 154/189 | 15/81 |
+| Shared engine & object data | 278 | 157/192 | 15/81 |
 
-**1,864 of 9,580 discovered functions are mapped; 7,716 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**1,867 of 9,583 discovered functions are mapped; 7,716 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -743,7 +743,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 275 functions identified; 154 behavior/helper reviews; 15 property/type reviews
+- **Shared engine & object data** - 278 functions identified; 157 behavior/helper reviews; 15 property/type reviews
   - **Game state & runtime** - 102 functions identified; 89 behavior/helper reviews; 0 property/type reviews
     - **Saving & loading** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
@@ -827,6 +827,17 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Serialization & upgrades** - 12 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+    - **Serialization implementation** - 5 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+    - **Serialise** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared signal data** - 12 functions identified; 8 behavior/helper reviews; 2 property/type reviews
     - **Signal values** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
@@ -836,17 +847,6 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Serialization & upgrades** - 9 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Serialise** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Serialization implementation** - 2 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Identifiers & assets** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
