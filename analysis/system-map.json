@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9580,
-  "mapped_total": 1853,
-  "unmapped_total": 7727,
+  "mapped_total": 1854,
+  "unmapped_total": 7726,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -46934,6 +46934,27 @@
           "kind": "verified_semantic_review",
           "name": "MaterializeDreamVersionInfo",
           "support": "Complete original assembly, bounded caller linkage and independent saved-project reopen; full runtime execution not claimed."
+        }
+      ]
+    },
+    "1403a55a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "object-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed Dream-record binary materialization used by object-cache and metadata update callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Materializes record fields and relative nested arrays/strings;not gameplay implementation.",
+      "code_sha256": "47c05235632a6349f01ef1e536eac0b8a0a409a85f954926bf313c95716ee6e8",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "MaterializeDreamRecord",
+          "support": "Complete original assembly,seven caller windows,bounded whole-parent nativechecks and independent saved-project reopen."
         }
       ]
     }
