@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1889,
-  "unmapped_total": 7699,
+  "mapped_total": 1891,
+  "unmapped_total": 7697,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47715,6 +47715,48 @@
           "kind": "verified_semantic_review",
           "name": "AppendComputeUserDataRegisters",
           "support": "2432 original-native cases andindependently reopened signature;GPU execution unverified."
+        }
+      ]
+    },
+    "14001f1d0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete format helpers andimage-descriptor constructor chain;generalGPUimage support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Extracts packedchannel selectors orsetsimage descriptor format fields.",
+      "code_sha256": "6e4388662aff0d0770670b937e99294344d8f5b93b4d118fa2df8d763fd1565d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetPackedFormatChannelSelector",
+          "support": "24576 original-native cases and independently reopened signature; GPU execution unverified."
+        }
+      ]
+    },
+    "1400382a0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete format helpers andimage-descriptor constructor chain;generalGPUimage support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Extracts packedchannel selectors orsetsimage descriptor format fields.",
+      "code_sha256": "d6f750b36a8b4d114e3db55ee7ec8b00f34107cbd9515c9ffe0c26d82e0aecbb",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetImageDescriptorFormat",
+          "support": "4096 original-native cases and independently reopened signature; GPU execution unverified."
         }
       ]
     }

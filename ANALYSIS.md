@@ -3485,3 +3485,11 @@ Traced the archived header through section extraction, CPU copying, code-address
 Compared pages 110–115 of Alex Evans’s 2015 talk with the current gather trace. Eight-corner surface classification and bounds provide architectural leads. The slides describe DXT1 color for point clusters, while this shader emits a BC3-compatible payload; these are not established as the same representation. Hilbert ordering, cluster BVHs and stochastic LOD remain unmatched. Historical slides do not justify build-specific function names by themselves.
 
 Source: https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf . Reviewed-name total remains 459.
+
+### Image-format fields and channel selectors
+
+Saved GetPackedFormatChannelSelector and SetImageDescriptorFormat with working argument and return types after reading and matching all 91 original instructions. The getter extracts one of four three-bit channel selectors and returns 2 for an out-of-range channel. The setter writes six data-format bits, four numeric-format bits and four channel selectors while preserving the other descriptor fields.
+
+Complete original CPU execution passed 24,576 getter cases and 4,096 setter cases. These cover all 4,096 selector combinations, channels 0–3 and two out-of-range indices, sampled remaining format bits and randomized initial descriptor words, with surrounding-byte guards. The gather output literal selects channels [4, 5, 6, 7]. Stack-canary data was supplied locally; this does not execute GPU operations or validate the platform driver. Backup, trial, promotion and independent reopening passed.
+
+Totals: 461 reviewed names; 1,891 mapped and 7,697 unmapped among 9,588 discovered functions.
