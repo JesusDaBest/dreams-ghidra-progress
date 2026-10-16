@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "408 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "410 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8987,
-    "other_names": 601,
-    "verification": "complete_inventory_matches_baseline_plus_408_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8985,
+    "other_names": 603,
+    "verification": "complete_inventory_matches_baseline_plus_410_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10125,6 +10125,52 @@
         "GPU table operations, concurrency and hardware execution remain unverified.",
         "Opaque object and working argument types are not recovered original source declarations.",
         "Descriptor size semantics and resource lifetime remain unresolved."
+      ]
+    },
+    {
+      "address": "1413c2ee0",
+      "original_name": "FUN_1413c2ee0",
+      "applied_name": "TryAllocateGraphicsResourceStorage",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryAllocateGraphicsResourceStorage(void * resource_storage, uint allocation_class, uint category_tag, uint byte_size, uint alignment)",
+      "evidence": [
+        "Complete 92-instruction resource-storage wrapper and 186-instruction aligned pool allocator read and matched.",
+        "Graphics callers, allocation classes, record fields and independently resolved mutex/thread-ID imports traced.",
+        "616 original allocation-core checks cover one free block, alignments, leading/trailing splits, no-fit state preservation, records, statistics and guards.",
+        "Cold backup, isolated trial, saved promotion and independent reopening verify both names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Core native tests bypass mutex entry/exit and disable high-water snapshots; not full allocator or thread-safety verification.",
+        "Node exhaustion, multi-block selection, invalid metadata and integer overflow remain untested.",
+        "Static unchecked-failure path in hash-resource setup is documented; no live crash reproduced.",
+        "Opaque records and working signatures are not original source declarations."
+      ]
+    },
+    {
+      "address": "1401657d0",
+      "original_name": "FUN_1401657d0",
+      "applied_name": "AllocateAlignedBlockFromPool",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV AllocateAlignedBlockFromPool(int pool_index, uint byte_size, uint alignment, uint category_tag)",
+      "evidence": [
+        "Complete 92-instruction resource-storage wrapper and 186-instruction aligned pool allocator read and matched.",
+        "Graphics callers, allocation classes, record fields and independently resolved mutex/thread-ID imports traced.",
+        "616 original allocation-core checks cover one free block, alignments, leading/trailing splits, no-fit state preservation, records, statistics and guards.",
+        "Cold backup, isolated trial, saved promotion and independent reopening verify both names/signatures and unchanged original archives."
+      ],
+      "caveats": [
+        "Core native tests bypass mutex entry/exit and disable high-water snapshots; not full allocator or thread-safety verification.",
+        "Node exhaustion, multi-block selection, invalid metadata and integer overflow remain untested.",
+        "Static unchecked-failure path in hash-resource setup is documented; no live crash reproduced.",
+        "Opaque records and working signatures are not original source declarations."
       ]
     }
   ],

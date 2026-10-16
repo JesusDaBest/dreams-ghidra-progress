@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 405,
+    "done": 407,
     "todo": 1473,
-    "total": 1878,
-    "behavior_or_helpers_reviewed": 340,
+    "total": 1880,
+    "behavior_or_helpers_reviewed": 342,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 177,
+        "done": 178,
         "todo": 106,
-        "total": 283,
-        "behavior_or_helpers_reviewed": 162,
+        "total": 284,
+        "behavior_or_helpers_reviewed": 163,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 197,
+        "runtime_functions_identified": 198,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -21521,6 +21521,7 @@
           "HashBytesXXH64",
           "ResolveAwardHashByName",
           "DecodeBase64LikeText",
+          "AllocateAlignedBlockFromPool",
           "CopyDreamRecord",
           "ReleaseDreamRecordOwnedArrays",
           "ReserveNestedByteArrayRecords96",
@@ -21808,6 +21809,7 @@
           "14015f300",
           "1401624b0",
           "140163d80",
+          "1401657d0",
           "140192380",
           "140192b30",
           "140194320",
@@ -26156,6 +26158,334 @@
             ]
           },
           {
+            "name": "shared/support",
+            "label": "Engine support",
+            "done": 2,
+            "todo": 5,
+            "total": 7,
+            "behavior_or_helpers_reviewed": 2,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 7,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "HashBytesMurmur3X64_128",
+              "AllocateAlignedBlockFromPool"
+            ],
+            "todo_names": [
+              "0x140909150",
+              "0x140a69070",
+              "0x140e900e0",
+              "0x1410c9720",
+              "0x14124f9d0"
+            ],
+            "done_addresses": [
+              "14011a4e0",
+              "1401657d0"
+            ],
+            "todo_addresses": [
+              "140909150",
+              "140a69070",
+              "140e900e0",
+              "1410c9720",
+              "14124f9d0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/support/common-routines",
+                "label": "Support implementation",
+                "done": 1,
+                "todo": 1,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "HashBytesMurmur3X64_128"
+                ],
+                "todo_names": [
+                  "0x140a69070"
+                ],
+                "done_addresses": [
+                  "14011a4e0"
+                ],
+                "todo_addresses": [
+                  "140a69070"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/common-routines/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "HashBytesMurmur3X64_128"
+                    ],
+                    "todo_names": [
+                      "0x140a69070"
+                    ],
+                    "done_addresses": [
+                      "14011a4e0"
+                    ],
+                    "todo_addresses": [
+                      "140a69070"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/game",
+                "label": "Game",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140909150"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140909150"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/game/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140909150"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140909150"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/memory-pools",
+                "label": "Memory pools",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AllocateAlignedBlockFromPool"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1401657d0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/memory-pools/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AllocateAlignedBlockFromPool"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1401657d0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/sillyrender",
+                "label": "Sillyrender",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140e900e0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140e900e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/sillyrender/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140e900e0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140e900e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/tweak",
+                "label": "Tweak",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1410c9720"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1410c9720"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/tweak/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1410c9720"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1410c9720"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/widgets",
+                "label": "Widgets",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14124f9d0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14124f9d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/widgets/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x14124f9d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "14124f9d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/strings",
             "label": "Strings",
             "done": 1,
@@ -26422,285 +26752,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "1416062d0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/support",
-            "label": "Engine support",
-            "done": 1,
-            "todo": 5,
-            "total": 6,
-            "behavior_or_helpers_reviewed": 1,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 6,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "HashBytesMurmur3X64_128"
-            ],
-            "todo_names": [
-              "0x140909150",
-              "0x140a69070",
-              "0x140e900e0",
-              "0x1410c9720",
-              "0x14124f9d0"
-            ],
-            "done_addresses": [
-              "14011a4e0"
-            ],
-            "todo_addresses": [
-              "140909150",
-              "140a69070",
-              "140e900e0",
-              "1410c9720",
-              "14124f9d0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/support/common-routines",
-                "label": "Support implementation",
-                "done": 1,
-                "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "HashBytesMurmur3X64_128"
-                ],
-                "todo_names": [
-                  "0x140a69070"
-                ],
-                "done_addresses": [
-                  "14011a4e0"
-                ],
-                "todo_addresses": [
-                  "140a69070"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/common-routines/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "HashBytesMurmur3X64_128"
-                    ],
-                    "todo_names": [
-                      "0x140a69070"
-                    ],
-                    "done_addresses": [
-                      "14011a4e0"
-                    ],
-                    "todo_addresses": [
-                      "140a69070"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/game",
-                "label": "Game",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140909150"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140909150"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/game/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140909150"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140909150"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/sillyrender",
-                "label": "Sillyrender",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140e900e0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140e900e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/sillyrender/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140e900e0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140e900e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/tweak",
-                "label": "Tweak",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1410c9720"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1410c9720"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/tweak/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1410c9720"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1410c9720"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/widgets",
-                "label": "Widgets",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14124f9d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14124f9d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/widgets/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x14124f9d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "14124f9d0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -27182,12 +27233,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 7,
+        "done": 8,
         "todo": 270,
-        "total": 277,
-        "behavior_or_helpers_reviewed": 7,
+        "total": 278,
+        "behavior_or_helpers_reviewed": 8,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 251,
+        "runtime_functions_identified": 252,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -27198,7 +27249,8 @@
           "GenerateVertexFetchShaderInstructions",
           "RegisterLabelVisibleFieldOffset",
           "SubmitComputeQueueAndWaitForFence",
-          "AppendComputeCompletionFence"
+          "AppendComputeCompletionFence",
+          "TryAllocateGraphicsResourceStorage"
         ],
         "todo_names": [
           "0x140c29820",
@@ -27479,7 +27531,8 @@
           "1400376f0",
           "140d67a10",
           "141297bd0",
-          "141297cf0"
+          "141297cf0",
+          "1413c2ee0"
         ],
         "todo_addresses": [
           "140c29820",
@@ -31535,6 +31588,181 @@
             ]
           },
           {
+            "name": "rendering/compute",
+            "label": "GPU compute support",
+            "done": 4,
+            "todo": 0,
+            "total": 4,
+            "behavior_or_helpers_reviewed": 4,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 4,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "ExtractShaderBinarySections",
+              "SubmitComputeQueueAndWaitForFence",
+              "AppendComputeCompletionFence",
+              "TryAllocateGraphicsResourceStorage"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "140011fb0",
+              "141297bd0",
+              "141297cf0",
+              "1413c2ee0"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "rendering/compute/completion",
+                "label": "Queue completion",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SubmitComputeQueueAndWaitForFence",
+                  "AppendComputeCompletionFence"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141297bd0",
+                  "141297cf0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/completion/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "SubmitComputeQueueAndWaitForFence",
+                      "AppendComputeCompletionFence"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141297bd0",
+                      "141297cf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/resource-storage",
+                "label": "Resource storage",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "TryAllocateGraphicsResourceStorage"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1413c2ee0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/resource-storage/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "TryAllocateGraphicsResourceStorage"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1413c2ee0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/shader-sections",
+                "label": "Shader binary sections",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ExtractShaderBinarySections"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140011fb0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/shader-sections/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ExtractShaderBinarySections"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140011fb0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "rendering/visibility",
             "label": "Visibility",
             "done": 1,
@@ -31622,132 +31850,6 @@
                       "140cbb600",
                       "140cbb650"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "rendering/compute",
-            "label": "GPU compute support",
-            "done": 3,
-            "todo": 0,
-            "total": 3,
-            "behavior_or_helpers_reviewed": 3,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 3,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "ExtractShaderBinarySections",
-              "SubmitComputeQueueAndWaitForFence",
-              "AppendComputeCompletionFence"
-            ],
-            "todo_names": [],
-            "done_addresses": [
-              "140011fb0",
-              "141297bd0",
-              "141297cf0"
-            ],
-            "todo_addresses": [],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "rendering/compute/completion",
-                "label": "Queue completion",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "SubmitComputeQueueAndWaitForFence",
-                  "AppendComputeCompletionFence"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141297bd0",
-                  "141297cf0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/completion/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "SubmitComputeQueueAndWaitForFence",
-                      "AppendComputeCompletionFence"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141297bd0",
-                      "141297cf0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/shader-sections",
-                "label": "Shader binary sections",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ExtractShaderBinarySections"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140011fb0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/shader-sections/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ExtractShaderBinarySections"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140011fb0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -42696,5 +42798,5 @@
       }
     ]
   },
-  "unmapped": 7710
+  "unmapped": 7708
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1878,
-  "unmapped_total": 7710,
+  "mapped_total": 1880,
+  "unmapped_total": 7708,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47471,6 +47471,48 @@
           "support": "Complete original body and caller/dataflow review; name independently reopened. GPU execution unverified."
         }
       ]
+    },
+    "1413c2ee0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete original allocation body and graphics caller trace; general pool allocator classified as shared engine support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Allocates resource storage or aligned blocks from a shared memory pool.",
+      "code_sha256": "eef6fadaef159e96eea4f5a5a24738cddcea5245c4317b747281ce76d1777e3f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryAllocateGraphicsResourceStorage",
+          "support": "Complete body, scoped native core tests and independent saved-signature reopen; full concurrency and live runtime unverified."
+        }
+      ]
+    },
+    "1401657d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "memory-pools",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete original allocation body and graphics caller trace; general pool allocator classified as shared engine support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Allocates resource storage or aligned blocks from a shared memory pool.",
+      "code_sha256": "fca06f79153de3ad45a463a7e5d96acf02e7f042f0f09cad6ee8c036075e419f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateAlignedBlockFromPool",
+          "support": "Complete body, scoped native core tests and independent saved-signature reopen; full concurrency and live runtime unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -48047,6 +48089,17 @@
             {
               "id": "widgets",
               "label": "Widgets",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "memory-pools",
+              "label": "Memory pools",
               "children": [
                 {
                   "id": "runtime-implementation",
@@ -54524,6 +54577,17 @@
             {
               "id": "shader-sections",
               "label": "Shader binary sections",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "resource-storage",
+              "label": "Resource storage",
               "children": [
                 {
                   "id": "runtime-implementation",
