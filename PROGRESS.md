@@ -3149,3 +3149,9 @@ AMD class documentation clarifies that mask 60 selects negative classes includin
 
 Format reference: https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression
 ISA reference: https://gpuopen.com/download/AMD_GCN3_Instruction_Set_Architecture_rev1.1.pdf
+
+### Bricker2 gather and tree-writing shader loaders
+
+Saved GetOrLoadBricker2GatherVoxelsChunkShader and GetOrLoadBricker2WriteTreeBricksShader after reading and matching all 411 original CPU instructions. Original source and shader literals link these loaders to the archived programs analyzed in the previous checkpoint. Both use guarded initialization, archive lookup and file fallback, and return an opaque resource only when its header is present. Backup, isolated trial, promotion and independent reopening passed. GPU execution and whole-shader correctness remain unverified.
+
+Totals: 457 reviewed names; 1,887 mapped and 7,701 unmapped among 9,588 discovered functions.
