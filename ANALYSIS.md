@@ -3527,3 +3527,11 @@ Executed the original tile selector, descriptor constructor, storage calculator 
 Saved InitializeGpuImageResource and GetImageDescriptorPackedAllocationRequirements after matching all 180 instructions. The initializer builds a descriptor, attempts storage allocation, sets address/control flags and registers metadata; it was reviewed statically, without executing allocation or registration. The requirements wrapper packs alignment and size into one 64-bit result; its size-overflow branch remains untested. Backup, trial, promotion and independent reopening passed.
 
 Totals: 468 reviewed names; 1,898 mapped and 7,690 unmapped among 9,588 discovered functions.
+
+### Sculpting distance atlas: format, binding and addressing
+
+The game’s original format table identifies the companion distance atlas as R8Unorm, with startup dimensions 2048×2048×128. Traced its descriptor through the brick pipeline’s local copy and control flags into the gather shader constant block and eight image stores. Each stored value uses the shader transform 0.25×distance+0.5, which algebraically maps −2 to 0, zero to 0.5 and +2 to 1. Physical units, GPU rounding and UNORM clamping/conversion remain unverified.
+
+The complete original descriptor/size chain passed both hardware-mode inputs: 512 MiB storage, 256-byte alignment, with the format preserved after control-flag changes. No GPU allocation or rendering was performed.
+
+An independent integer model checked all 1,048,576 possible twenty-bit indices. Their base coordinates map uniquely into 256×256×16 slots of size 8³ inside this atlas. This verifies the software base-address formula, not actual allocator capacity, every shader lane, hardware tiling or memory visibility. Reviewed-name total remains 468.

@@ -8254,5 +8254,28 @@
       "Packed requirements overflow branch read but not executed."
     ],
     "runtime_game_verified": false
+  },
+  "distance_atlas_binding_checkpoint": {
+    "format": "R8Unorm",
+    "dimensions": [
+      2048,
+      2048,
+      128
+    ],
+    "source": "Original game format table and startup specification, traced through the pipeline constant block to gather image stores.",
+    "native_descriptor_hardware_modes_tested": [
+      0,
+      1
+    ],
+    "storage_bytes": 536870912,
+    "alignment_bytes": 256,
+    "shader_value_transform": "0.25*distance+0.5",
+    "software_address_cases": 1048576,
+    "address_model": "8*(index&255,(index>>8)&255,index>>16)",
+    "limits": [
+      "No GPU execution, float rounding, UNORM conversion/clamping or physical-unit validation.",
+      "Address model does not prove allocator capacity, all lane coordinates or hardware tiling."
+    ],
+    "reviewed_name_increment": 0
   }
 }
