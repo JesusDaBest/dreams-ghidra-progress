@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 402,
+    "done": 404,
     "todo": 1473,
-    "total": 1875,
-    "behavior_or_helpers_reviewed": 337,
+    "total": 1877,
+    "behavior_or_helpers_reviewed": 339,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -31760,12 +31760,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 7,
+        "done": 9,
         "todo": 115,
-        "total": 122,
-        "behavior_or_helpers_reviewed": 7,
+        "total": 124,
+        "behavior_or_helpers_reviewed": 9,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 83,
+        "runtime_functions_identified": 85,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -31776,7 +31776,9 @@
           "RebuildPackedCSGRecordsWithMetadataOffset",
           "RecomputePackedResourceNodeSummary",
           "GetOrLoadBricker2TagBricksShader",
-          "GetOrLoadBricker2HashBricksShader"
+          "GetOrLoadBricker2HashBricksShader",
+          "BuildSweepBlockRanges",
+          "DispatchSweepHashBlocksRange"
         ],
         "todo_names": [
           "0x140491730",
@@ -31902,7 +31904,9 @@
           "140c6a1e0",
           "140c6b930",
           "14127a040",
-          "14127a780"
+          "14127a780",
+          "1412a20f0",
+          "1412a3b40"
         ],
         "todo_addresses": [
           "140491730",
@@ -32026,12 +32030,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 7,
+            "done": 9,
             "todo": 76,
-            "total": 83,
-            "behavior_or_helpers_reviewed": 7,
+            "total": 85,
+            "behavior_or_helpers_reviewed": 9,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 77,
+            "runtime_functions_identified": 79,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -32042,7 +32046,9 @@
               "RebuildPackedCSGRecordsWithMetadataOffset",
               "RecomputePackedResourceNodeSummary",
               "GetOrLoadBricker2TagBricksShader",
-              "GetOrLoadBricker2HashBricksShader"
+              "GetOrLoadBricker2HashBricksShader",
+              "BuildSweepBlockRanges",
+              "DispatchSweepHashBlocksRange"
             ],
             "todo_names": [
               "0x140cb01c0",
@@ -32129,7 +32135,9 @@
               "140c6a1e0",
               "140c6b930",
               "14127a040",
-              "14127a780"
+              "14127a780",
+              "1412a20f0",
+              "1412a3b40"
             ],
             "todo_addresses": [
               "140cb01c0",
@@ -32524,16 +32532,19 @@
               {
                 "name": "sculpting-painting/csg/sweep",
                 "label": "Sweep",
-                "done": 0,
+                "done": 2,
                 "todo": 9,
-                "total": 9,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 11,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 9,
+                "runtime_functions_identified": 11,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "BuildSweepBlockRanges",
+                  "DispatchSweepHashBlocksRange"
+                ],
                 "todo_names": [
                   "0x14129f940",
                   "0x14129fce0",
@@ -32545,7 +32556,10 @@
                   "0x1412a1290",
                   "0x1412a1620"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "1412a20f0",
+                  "1412a3b40"
+                ],
                 "todo_addresses": [
                   "14129f940",
                   "14129fce0",
@@ -32562,16 +32576,19 @@
                   {
                     "name": "sculpting-painting/csg/sweep/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
+                    "done": 2,
                     "todo": 9,
-                    "total": 9,
-                    "behavior_or_helpers_reviewed": 0,
+                    "total": 11,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 9,
+                    "runtime_functions_identified": 11,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "BuildSweepBlockRanges",
+                      "DispatchSweepHashBlocksRange"
+                    ],
                     "todo_names": [
                       "0x14129f940",
                       "0x14129fce0",
@@ -32583,7 +32600,10 @@
                       "0x1412a1290",
                       "0x1412a1620"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "1412a20f0",
+                      "1412a3b40"
+                    ],
                     "todo_addresses": [
                       "14129f940",
                       "14129fce0",
@@ -42668,5 +42688,5 @@
       }
     ]
   },
-  "unmapped": 7713
+  "unmapped": 7711
 }

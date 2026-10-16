@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "405 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "407 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8990,
-    "other_names": 598,
-    "verification": "complete_inventory_matches_baseline_plus_405_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8988,
+    "other_names": 600,
+    "verification": "complete_inventory_matches_baseline_plus_407_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10056,6 +10056,52 @@
         "Doorbell and event wait return codes are ignored in observed wrappers; no overall timeout or completion guarantee.",
         "Packet refill callback path not native-tested.",
         "Descriptive names and opaque context signature are not recovered original declarations."
+      ]
+    },
+    {
+      "address": "1412a20f0",
+      "original_name": "FUN_1412a20f0",
+      "applied_name": "BuildSweepBlockRanges",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV BuildSweepBlockRanges(void)",
+      "evidence": [
+        "Complete 1,451-instruction builder and 98-instruction range dispatcher read and matched against original SELF.",
+        "Caller, packed-coordinate, grid, GPU-counter and boundary dataflow traced through named compute stages.",
+        "7,880 original coordinate-window and 1,131 neighbor-window native cases match independent models; these are not whole-builder tests.",
+        "Cold backup, isolated trial, promotion and independent reopening verify both saved names; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive names only; existing incomplete signatures preserved pending mixed register, stack and float argument typing.",
+        "GPU shader algorithms, world scale, resources and whole-builder execution remain unverified.",
+        "Early exits may leave partial boundary state with the ready flag clear.",
+        "No whole-sculpt or whole-game completion claim."
+      ]
+    },
+    {
+      "address": "1412a3b40",
+      "original_name": "FUN_1412a3b40",
+      "applied_name": "DispatchSweepHashBlocksRange",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV DispatchSweepHashBlocksRange(void)",
+      "evidence": [
+        "Complete 1,451-instruction builder and 98-instruction range dispatcher read and matched against original SELF.",
+        "Caller, packed-coordinate, grid, GPU-counter and boundary dataflow traced through named compute stages.",
+        "7,880 original coordinate-window and 1,131 neighbor-window native cases match independent models; these are not whole-builder tests.",
+        "Cold backup, isolated trial, promotion and independent reopening verify both saved names; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive names only; existing incomplete signatures preserved pending mixed register, stack and float argument typing.",
+        "GPU shader algorithms, world scale, resources and whole-builder execution remain unverified.",
+        "Early exits may leave partial boundary state with the ready flag clear.",
+        "No whole-sculpt or whole-game completion claim."
       ]
     }
   ],

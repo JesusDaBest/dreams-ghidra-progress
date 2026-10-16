@@ -3086,3 +3086,9 @@ Saved SubmitComputeQueueAndWaitForFence and AppendComputeCompletionFence after c
 The existing ExtractShaderBinarySections name now has a tested two-argument signature, verified after reopening. 8,864 native checks cover pointer/size extraction and guards, not blob validity. Separately, 7,880 original coordinate-marking window tests and 1,131 neighbor-bit window tests match independent models of a 32-cubed byte grid. These selected windows do not validate the full sweep builder or GPU boundary results.
 
 Totals: 443 reviewed names among 9,588 discovered functions; 1,875 mapped and 7,713 unmapped. New compute-support mappings describe shared graphics infrastructure, not full completion of rendering or sculpting.
+
+### Saved sweep boundary routines
+
+Saved BuildSweepBlockRanges and DispatchSweepHashBlocksRange after reading and matching 1,549 original instructions. The builder marks and propagates a 32-cubed byte grid, orchestrates block-index, cleanup and coarser processing stages, reads counters after compute completion waits, builds paired range boundaries, applies reverse range hashing and bias, then pads boundaries and marks them ready. The range dispatcher uses adjacent boundaries for SweepHashBlocks.
+
+The 7,880 coordinate and 1,131 neighbor native checks cover selected CPU windows only. Whole-builder execution, GPU shader behavior, world scale and resource lifetime remain unverified. Early exits can leave partial boundaries with ready clear. Existing incomplete signatures were preserved; names are descriptive analyst labels. Backup, trial, saved promotion and independent reopening passed with original instructions and archives unchanged. Totals: 445 reviewed names, 1,877 mapped and 7,711 unmapped among 9,588 discovered functions.

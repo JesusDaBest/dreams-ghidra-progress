@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1875,
-  "unmapped_total": 7713,
+  "mapped_total": 1877,
+  "unmapped_total": 7711,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47406,6 +47406,48 @@
           "kind": "verified_semantic_review",
           "name": "ExtractShaderBinarySections",
           "support": "Complete original function review and independently reopened working signature; GPU behavior unverified."
+        }
+      ]
+    },
+    "1412a20f0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "sweep",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete sweep block-range control flow, named shaders, shared boundary arrays and brick-pipeline callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds sweep range boundaries or dispatches range hashing.",
+      "code_sha256": "180a8d99b54aa672ebfafa5780be3a68cc1218f6c6e6bd69ec7b4f4d58f4189b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildSweepBlockRanges",
+          "support": "Complete original body and caller/dataflow review; name independently reopened. GPU execution unverified."
+        }
+      ]
+    },
+    "1412a3b40": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "sweep",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete sweep block-range control flow, named shaders, shared boundary arrays and brick-pipeline callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds sweep range boundaries or dispatches range hashing.",
+      "code_sha256": "217d7c43e3549ea699fbeb07a2122a68e3e00d68c76c18ce2b8a5fba004e5bdd",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchSweepHashBlocksRange",
+          "support": "Complete original body and caller/dataflow review; name independently reopened. GPU execution unverified."
         }
       ]
     }
