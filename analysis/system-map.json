@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1901,
-  "unmapped_total": 7687,
+  "mapped_total": 1904,
+  "unmapped_total": 7684,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48019,6 +48019,69 @@
           "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
         }
       ]
+    },
+    "14139fd80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-dependencies",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete tested deferred job finalizer or original-import-linked indirect-dispatch wrapper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Finalizes queued graphics resource accesses or appends indirect compute dispatch.",
+      "code_sha256": "7c2a5ff7468d016ea7601c5024e78c93f5f43636eb762af0140eb09645033f16",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FinalizeAndQueueDeferredGraphicsJob",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
+    },
+    "14003aed0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete tested deferred job finalizer or original-import-linked indirect-dispatch wrapper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Finalizes queued graphics resource accesses or appends indirect compute dispatch.",
+      "code_sha256": "f6650483d29ce0fdb46477849a6b253b4904d383eea73e4f7c13acfda8bb4896",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGnmDispatchIndirectOnMec",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
+    },
+    "14003af30": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete tested deferred job finalizer or original-import-linked indirect-dispatch wrapper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Finalizes queued graphics resource accesses or appends indirect compute dispatch.",
+      "code_sha256": "b76756904d092c237612507ac26f3f2b0d3e615a3790e378329d6f7b73fe5788",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGnmDispatchIndirectOnMecWithMode",
+          "support": "Complete CPU/shader trace and independently reopened signature; GPU execution unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -55160,6 +55223,17 @@
             {
               "id": "resource-dependencies",
               "label": "Resource dependencies",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "command-dispatch",
+              "label": "Compute dispatch",
               "children": [
                 {
                   "id": "runtime-implementation",

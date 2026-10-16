@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "440 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "443 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8955,
-    "other_names": 633,
-    "verification": "complete_inventory_matches_baseline_plus_440_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8952,
+    "other_names": 636,
+    "verification": "complete_inventory_matches_baseline_plus_443_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10899,6 +10899,81 @@
         "Native tests cover isolated graphs, not game execution or355other instructions.",
         "Real job-ID bounds, pending-access capacities and overflow reachability unresolved.",
         "Actual GPU command emission, binding backend and synchronization remain unresolved."
+      ]
+    },
+    {
+      "address": "14139fd80",
+      "original_name": "FUN_14139fd80",
+      "applied_name": "FinalizeAndQueueDeferredGraphicsJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV FinalizeAndQueueDeferredGraphicsJob(void * job_record, uint tracking_mode)",
+      "evidence": [
+        "Complete238 original CPU instructions read/matched.",
+        "Finalizer170instructions passed198 original-native synthetic cases.",
+        "Full394-instruction compute builder chain passed144 cases with localmemcpyshim.",
+        "Indirect wrappers68instructions passed480 cases usingimportspy andcontrolledrefill.",
+        "Original SELF relocation/importNID identifies sceGnmDispatchIndirectOnMec.",
+        "Backups, isolated trial, promotion and independent reopening verified all three working signatures."
+      ],
+      "caveats": [
+        "No live GPU execution, actual GNM packetencoding or downstream synchronization proof.",
+        "Refill callback/import spy andmemcpyshim are explicit fixture boundaries.",
+        "Queue capacities, invalid IDs, odd copy sizes and concurrency unresolved.",
+        "Executor review covers selected196 instructions, not whole4611-instruction owner."
+      ]
+    },
+    {
+      "address": "14003aed0",
+      "original_name": "FUN_14003aed0",
+      "applied_name": "AppendGnmDispatchIndirectOnMec",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGnmDispatchIndirectOnMec(void * command_context, ulonglong argument_address)",
+      "evidence": [
+        "Complete238 original CPU instructions read/matched.",
+        "Finalizer170instructions passed198 original-native synthetic cases.",
+        "Full394-instruction compute builder chain passed144 cases with localmemcpyshim.",
+        "Indirect wrappers68instructions passed480 cases usingimportspy andcontrolledrefill.",
+        "Original SELF relocation/importNID identifies sceGnmDispatchIndirectOnMec.",
+        "Backups, isolated trial, promotion and independent reopening verified all three working signatures."
+      ],
+      "caveats": [
+        "No live GPU execution, actual GNM packetencoding or downstream synchronization proof.",
+        "Refill callback/import spy andmemcpyshim are explicit fixture boundaries.",
+        "Queue capacities, invalid IDs, odd copy sizes and concurrency unresolved.",
+        "Executor review covers selected196 instructions, not whole4611-instruction owner."
+      ]
+    },
+    {
+      "address": "14003af30",
+      "original_name": "FUN_14003af30",
+      "applied_name": "AppendGnmDispatchIndirectOnMecWithMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGnmDispatchIndirectOnMecWithMode(void * command_context, ulonglong argument_address, uint mode)",
+      "evidence": [
+        "Complete238 original CPU instructions read/matched.",
+        "Finalizer170instructions passed198 original-native synthetic cases.",
+        "Full394-instruction compute builder chain passed144 cases with localmemcpyshim.",
+        "Indirect wrappers68instructions passed480 cases usingimportspy andcontrolledrefill.",
+        "Original SELF relocation/importNID identifies sceGnmDispatchIndirectOnMec.",
+        "Backups, isolated trial, promotion and independent reopening verified all three working signatures."
+      ],
+      "caveats": [
+        "No live GPU execution, actual GNM packetencoding or downstream synchronization proof.",
+        "Refill callback/import spy andmemcpyshim are explicit fixture boundaries.",
+        "Queue capacities, invalid IDs, odd copy sizes and concurrency unresolved.",
+        "Executor review covers selected196 instructions, not whole4611-instruction owner."
       ]
     }
   ],

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 438,
+    "done": 441,
     "todo": 1463,
-    "total": 1901,
-    "behavior_or_helpers_reviewed": 373,
+    "total": 1904,
+    "behavior_or_helpers_reviewed": 376,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 24,
+        "done": 27,
         "todo": 268,
-        "total": 292,
-        "behavior_or_helpers_reviewed": 24,
+        "total": 295,
+        "behavior_or_helpers_reviewed": 27,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 266,
+        "runtime_functions_identified": 269,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21517,6 +21517,8 @@
           "GetImageDescriptorPackedAllocationRequirements",
           "GetImageDescriptorPackedFormat",
           "SetImageDescriptorControlFlags",
+          "AppendGnmDispatchIndirectOnMec",
+          "AppendGnmDispatchIndirectOnMecWithMode",
           "AppendComputeUserDataRegisters",
           "CalculateGpuSurfaceLayout",
           "BuildSurfaceLayoutInputFromImageDescriptor",
@@ -21526,6 +21528,7 @@
           "AppendComputeCompletionFence",
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
+          "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
           "TryAllocateGraphicsResourceStorage",
           "InitializeGpuImageResource"
@@ -21813,6 +21816,8 @@
           "1400383c0",
           "1400387e0",
           "14003a020",
+          "14003aed0",
+          "14003af30",
           "14003b5e0",
           "14003d0a0",
           "140043a90",
@@ -21822,6 +21827,7 @@
           "141297cf0",
           "14131e560",
           "14131eca0",
+          "14139fd80",
           "1413a00c0",
           "1413c2ee0",
           "1413c3620"
@@ -25142,12 +25148,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 18,
+            "done": 21,
             "todo": 0,
-            "total": 18,
-            "behavior_or_helpers_reviewed": 18,
+            "total": 21,
+            "behavior_or_helpers_reviewed": 21,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 18,
+            "runtime_functions_identified": 21,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25161,12 +25167,15 @@
               "GetImageDescriptorPackedAllocationRequirements",
               "GetImageDescriptorPackedFormat",
               "SetImageDescriptorControlFlags",
+              "AppendGnmDispatchIndirectOnMec",
+              "AppendGnmDispatchIndirectOnMecWithMode",
               "AppendComputeUserDataRegisters",
               "CalculateGpuSurfaceLayout",
               "BuildSurfaceLayoutInputFromImageDescriptor",
               "CalculateImageDescriptorStorageRequirements",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
+              "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
               "TryAllocateGraphicsResourceStorage",
               "InitializeGpuImageResource"
@@ -25182,12 +25191,15 @@
               "1400383c0",
               "1400387e0",
               "14003a020",
+              "14003aed0",
+              "14003af30",
               "14003b5e0",
               "14003d0a0",
               "140043a90",
               "140044480",
               "141297bd0",
               "141297cf0",
+              "14139fd80",
               "1413a00c0",
               "1413c2ee0",
               "1413c3620"
@@ -25330,6 +25342,57 @@
                 ]
               },
               {
+                "name": "rendering/compute/command-dispatch",
+                "label": "Compute dispatch",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendGnmDispatchIndirectOnMec",
+                  "AppendGnmDispatchIndirectOnMecWithMode"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14003aed0",
+                  "14003af30"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/command-dispatch/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendGnmDispatchIndirectOnMec",
+                      "AppendGnmDispatchIndirectOnMecWithMode"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14003aed0",
+                      "14003af30"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/completion",
                 "label": "Queue completion",
                 "done": 2,
@@ -25381,6 +25444,57 @@
                 ]
               },
               {
+                "name": "rendering/compute/resource-dependencies",
+                "label": "Resource dependencies",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FinalizeAndQueueDeferredGraphicsJob",
+                  "CollectDeferredResourceAccessesForJob"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14139fd80",
+                  "1413a00c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/resource-dependencies/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FinalizeAndQueueDeferredGraphicsJob",
+                      "CollectDeferredResourceAccessesForJob"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14139fd80",
+                      "1413a00c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/command-registers",
                 "label": "Shader input registers",
                 "done": 1,
@@ -25420,53 +25534,6 @@
                     "todo_names": [],
                     "done_addresses": [
                       "14003b5e0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/resource-dependencies",
-                "label": "Resource dependencies",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "CollectDeferredResourceAccessesForJob"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1413a00c0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/resource-dependencies/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "CollectDeferredResourceAccessesForJob"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1413a00c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -43234,5 +43301,5 @@
       }
     ]
   },
-  "unmapped": 7687
+  "unmapped": 7684
 }

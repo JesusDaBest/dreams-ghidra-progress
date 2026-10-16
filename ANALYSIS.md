@@ -3615,3 +3615,15 @@ Read and matched 355 additional CPU instructions for deferred compute job constr
 Backup, isolated trial, promotion and independent reopening passed. The constant-registration caller decompiled with both corrected arguments. Pending-access capacities, invalid resource IDs and full binding-backend behavior remain open.
 
 Totals: 478 reviewed names; 1,901 mapped and 7,687 unmapped among 9,588 discovered functions.
+
+### Deferred jobs reach indirect compute command writers
+
+Saved FinalizeAndQueueDeferredGraphicsJob and both indirect-dispatch wrappers after matching all 238 original instructions and independently reopening their working signatures. The original finalizer passed 198 bounded fixtures across scalar/vector list-copy boundaries, two tracking modes and prior-job hazard states. The complete four-routine compute builder chain passed 144 cases with an explicit local byte-copy shim for its memcpy import. It retains shader, constants and arguments, registers backing resources and queues the job. These tests do not execute a real scheduler or GPU.
+
+Traced 196 selected instructions in the 4,611-instruction executor. Compute jobs reach shader binding and constant upload. Direct dispatch is skipped when any group dimension is zero. Indirect dispatch resolves an argument resource and byte offset, then selects its command writer. The full executor and state-transition helper are not claimed understood.
+
+Both indirect wrappers call sceGnmDispatchIndirectOnMec, identified through the original SELF import relocation and local NID database. They require eight DWORDs, call refill when needed, reload a relocated cursor, and advance 32 bytes only when the import returns zero. Explicit mode packs (contextflag & 1) + 8*mode with 32-bit wrapping. The original wrappers passed 480 fixtures using an argument-recording import spy and controlled refill. Actual GNM packet bytes, real allocation behavior and GPU synchronization remain unverified.
+
+Fixture corrections are retained locally: fixed guard/end-pointer expectations in finalizer tests, initialized the argument tracking byte in chain tests, and corrected the synthetic refill branch. No original-code failure was inferred from those fixture errors. Queue capacities, invalid IDs, unusual copy sizes and concurrency still need work.
+
+Totals: 481 reviewed names; 1,904 mapped and 7,684 unmapped among 9,588 discovered functions.
