@@ -3130,3 +3130,11 @@ Saved ResizeBrickBlockChain,ReleaseMarkedObjectCacheReferences andQueueAgedCache
 The static chain connects reference release,generation aging,queueing,pending-resource release andblock recycling. Original imports identify mutex operations,an untimed condition wait andgeneration broadcast. A zero initial walker budget can still move its first eligible entry. Auxiliary arrays,mixed hash homes,optional callbacks,concurrency,whole-program liveness andlivegame/GPU behavior remain unverified. Test counts do not represent game completion.
 
 Totals:454 reviewed names;1,886 mapped and7,702 unmapped among9,588 discovered functions.
+
+### Bricker2 build pipeline
+
+Saved RunBricker2BuildPipeline after staged review andmatching of2,512 original CPU instructions,three caller traces andindependent reopening. It coordinates atlas/counter setup,ordinary ormulti-item tagging andcollection,block allocation,key sorting,voxel gathering or tree writing,compaction,hashing,open-face/corner work,child indices,surface counting,andfinal counter/output handling. Explicit readiness,capacity andallocation failure paths were traced.
+
+This establishes a descriptive CPU orchestration role,not a recovered source implementation orvalidated GPU algorithm. The exact aggregate stack types remain unresolved;the existing unknown prototype was retained. Helper tests do not prove whole-pipeline geometry orruntime correctness. Raw code remains local.
+
+Totals:455 reviewed names;1,887 mapped and7,701 unmapped among9,588 discovered functions.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "416 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "417 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8979,
-    "other_names": 609,
-    "verification": "complete_inventory_matches_baseline_plus_416_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8978,
+    "other_names": 610,
+    "verification": "complete_inventory_matches_baseline_plus_417_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10315,6 +10315,29 @@
         "Initial zero walker budget can still move the first eligible entry.",
         "Untimed condition wait is present; whole-program liveness is unverified.",
         "Names andopaque workingtypes are analyst descriptions,not originalsource declarations."
+      ]
+    },
+    {
+      "address": "14127f740",
+      "original_name": "FUN_14127f740",
+      "applied_name": "RunBricker2BuildPipeline",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV RunBricker2BuildPipeline(void)",
+      "evidence": [
+        "2512 original instructions matched; staged assembly reviews cover entry, setup, range/count flow, collection/allocation, processing, compaction, final stages and exits.",
+        "Three caller windows traced; original shader labels, hash-resource setup, block allocator and cache lifecycle linked.",
+        "Fresh decompilation completed; original assembly remains authoritative.",
+        "Backup,isolated trial,saved promotion andindependent reopen verify descriptive name andunchanged original archives."
+      ],
+      "caveats": [
+        "CPU orchestration name only;no complete pipeline orGPU/game execution.",
+        "Exact aggregate stack types unresolved;existing unknown signature retained instead of inferred15scalar prototype.",
+        "Helper native cases do not validate whole pipeline geometry,resource hazards orlive runtime.",
+        "Status values andcapacity branches traced,not exhaustively validated forinvalid inputs."
       ]
     }
   ],

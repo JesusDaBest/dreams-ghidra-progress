@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1886,
-  "unmapped_total": 7702,
+  "mapped_total": 1887,
+  "unmapped_total": 7701,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47642,6 +47642,27 @@
           "kind": "verified_semantic_review",
           "name": "QueueAgedCacheEntriesForRelease",
           "support": "Complete original body,scoped native execution,independent saved-signature reopen;concurrency unverified."
+        }
+      ]
+    },
+    "14127f740": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "bricker2",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete CPU orchestration body,original Bricker2 shader labels andsculpt/sweep caller chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Orchestrates brick/voxel tree building andrelated GPU stages.",
+      "code_sha256": "dc6d11247cdf9fca409fd0452953b891003ac64d23c62662a61a3483f904fc52",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RunBricker2BuildPipeline",
+          "support": "Staged original assembly review andindependent saved-name reopen;GPU output unverified."
         }
       ]
     }
