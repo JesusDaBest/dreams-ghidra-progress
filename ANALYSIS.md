@@ -3352,3 +3352,11 @@ Defined DecodeBase64LikeText, FindRequestSlotByStreamId and ReadHpackPrefixInteg
 The text decoder treats equals as zero-valued data and can write three bytes when its supplied capacity is below three. Tests used oversized guarded allocations; this is helper behavior, not an exploitability claim. The known status-details caller supplies 2,048 bytes. None of these tests verifies the whole parser, live service or game.
 
 Totals: 434 checked names and 1,867 mapped functions among 9,583 discovered functions; 7,716 still need mapping. Three previously undefined functions were added; extraction is not semantic completion.
+
+### Saved HPACK string and table helpers
+
+Defined DecodeHpackStringTo1024Buffer, LookupHpackHeaderByIndex and SetHpackDynamicTableLimit after complete original-body review and 688, 2,208 and 820 scoped original-code checks respectively. Independent reopening verified the saved definitions and working signatures; original bytes and archives remain unchanged. The 61-entry static header table matches RFC 7541, and all 122 original table-pointer relocations were verified.
+
+These checks do not establish whole-decoder or live-game correctness. Exhaustive Huffman padding/EOS handling, malformed table states, aliases and concurrency remain unresolved. The insertion helper remains undefined as a separate function because its code overlaps an existing Ghidra function body; ownership will be audited before changing that boundary.
+
+Totals: 437 checked names and 1,870 mapped functions among 9,586 discovered functions; 7,716 still need mapping. This records scoped semantic review, not whole-game completion.

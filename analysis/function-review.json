@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "401 existing-function renames,32 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "401 existing-function renames,35 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9583,
+    "total": 9586,
     "default_fun_names": 8994,
-    "other_names": 589,
-    "verification": "complete_inventory_matches_baseline_plus_401_renames_and_32_created_functions_and_1_reviewed_existing_name"
+    "other_names": 592,
+    "verification": "complete_inventory_matches_baseline_plus_401_renames_and_35_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -9847,6 +9847,75 @@
         "Descriptive name, not recovered original source.",
         "Helper tests do not verify whole parser, network service or live game.",
         "Decompiler trial inspection limited to signatures, setup and final returns; complete assembly is primary evidence."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1413f92d0",
+      "original_name": null,
+      "applied_name": "DecodeHpackStringTo1024Buffer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DecodeHpackStringTo1024Buffer(void * stream_descriptor, void * output_1024)",
+      "evidence": [
+        "Complete original body read and matched; direct control flow and nonoverlapping boundaries audited.",
+        "Original helper passed 688 scoped native checks with exact results and guards.",
+        "Cold backup, isolated trial, promotion and independent reopening verified definition and working SysV signature; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive name, not original source.",
+        "No whole header decoder, live network or game verification; aliases, malformed tables and concurrency unresolved.",
+        "Huffman checks cover published examples and bounded errors, not exhaustive padding/EOS conformance.",
+        "Trial pseudocode inspection limited to signature/setup/final return; complete original assembly is primary."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1413f84a0",
+      "original_name": null,
+      "applied_name": "LookupHpackHeaderByIndex",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV LookupHpackHeaderByIndex(void * table, uint header_index, void * name_span, void * value_span)",
+      "evidence": [
+        "Complete original body read and matched; direct control flow and nonoverlapping boundaries audited.",
+        "Original helper passed 2208 scoped native checks with exact results and guards.",
+        "Cold backup, isolated trial, promotion and independent reopening verified definition and working SysV signature; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive name, not original source.",
+        "No whole header decoder, live network or game verification; aliases, malformed tables and concurrency unresolved.",
+        "Huffman checks cover published examples and bounded errors, not exhaustive padding/EOS conformance.",
+        "Trial pseudocode inspection limited to signature/setup/final return; complete original assembly is primary."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1413f8560",
+      "original_name": null,
+      "applied_name": "SetHpackDynamicTableLimit",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetHpackDynamicTableLimit(void * table, uint byte_limit)",
+      "evidence": [
+        "Complete original body read and matched; direct control flow and nonoverlapping boundaries audited.",
+        "Original helper passed 820 scoped native checks with exact results and guards.",
+        "Cold backup, isolated trial, promotion and independent reopening verified definition and working SysV signature; original archives unchanged."
+      ],
+      "caveats": [
+        "Descriptive name, not original source.",
+        "No whole header decoder, live network or game verification; aliases, malformed tables and concurrency unresolved.",
+        "Huffman checks cover published examples and bounded errors, not exhaustive padding/EOS conformance.",
+        "Trial pseudocode inspection limited to signature/setup/final return; complete original assembly is primary."
       ],
       "created_function": true
     }

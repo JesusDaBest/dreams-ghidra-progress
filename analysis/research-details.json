@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 434,
+    "checked_and_applied_names": 437,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 434,
-    "function_count": 9583,
+    "verified_names": 437,
+    "function_count": 9586,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "401 renames,32 created functions and1 retained existing-name review independently reopened.",
+    "scope": "401 renames,35 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7798,5 +7798,31 @@
     },
     "original_archives_unchanged": true,
     "real_game_verified": false
+  },
+  "hpack_helpers_saved_checkpoint": {
+    "functions": {
+      "1413f92d0": {
+        "name": "DecodeHpackStringTo1024Buffer",
+        "signature": "void PS4_SYSV DecodeHpackStringTo1024Buffer(void * stream_descriptor, void * output_1024)"
+      },
+      "1413f84a0": {
+        "name": "LookupHpackHeaderByIndex",
+        "signature": "bool PS4_SYSV LookupHpackHeaderByIndex(void * table, uint header_index, void * name_span, void * value_span)"
+      },
+      "1413f8560": {
+        "name": "SetHpackDynamicTableLimit",
+        "signature": "void PS4_SYSV SetHpackDynamicTableLimit(void * table, uint byte_limit)"
+      }
+    },
+    "function_count": 9586,
+    "original_instructions": 215,
+    "scoped_native_checks": {
+      "1413f92d0": 688,
+      "1413f84a0": 2208,
+      "1413f8560": 820
+    },
+    "original_archives_unchanged": true,
+    "real_game_verified": false,
+    "insertion_definition_deferred": "Existing function body overlap requires ownership audit."
   }
 }
