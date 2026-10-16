@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 399,
+    "done": 402,
     "todo": 1473,
-    "total": 1872,
-    "behavior_or_helpers_reviewed": 334,
+    "total": 1875,
+    "behavior_or_helpers_reviewed": 337,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -27182,20 +27182,23 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 4,
+        "done": 7,
         "todo": 270,
-        "total": 274,
-        "behavior_or_helpers_reviewed": 4,
+        "total": 277,
+        "behavior_or_helpers_reviewed": 7,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 248,
+        "runtime_functions_identified": 251,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "ComputeVertexFetchShaderSize",
           "CreateVertexFetchShaderFromHeader",
+          "ExtractShaderBinarySections",
           "GenerateVertexFetchShaderInstructions",
-          "RegisterLabelVisibleFieldOffset"
+          "RegisterLabelVisibleFieldOffset",
+          "SubmitComputeQueueAndWaitForFence",
+          "AppendComputeCompletionFence"
         ],
         "todo_names": [
           "0x140c29820",
@@ -27472,8 +27475,11 @@
         "done_addresses": [
           "140010570",
           "1400105f0",
+          "140011fb0",
           "1400376f0",
-          "140d67a10"
+          "140d67a10",
+          "141297bd0",
+          "141297cf0"
         ],
         "todo_addresses": [
           "140c29820",
@@ -31616,6 +31622,132 @@
                       "140cbb600",
                       "140cbb650"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "rendering/compute",
+            "label": "GPU compute support",
+            "done": 3,
+            "todo": 0,
+            "total": 3,
+            "behavior_or_helpers_reviewed": 3,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 3,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "ExtractShaderBinarySections",
+              "SubmitComputeQueueAndWaitForFence",
+              "AppendComputeCompletionFence"
+            ],
+            "todo_names": [],
+            "done_addresses": [
+              "140011fb0",
+              "141297bd0",
+              "141297cf0"
+            ],
+            "todo_addresses": [],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "rendering/compute/completion",
+                "label": "Queue completion",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SubmitComputeQueueAndWaitForFence",
+                  "AppendComputeCompletionFence"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141297bd0",
+                  "141297cf0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/completion/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "SubmitComputeQueueAndWaitForFence",
+                      "AppendComputeCompletionFence"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141297bd0",
+                      "141297cf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/shader-sections",
+                "label": "Shader binary sections",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ExtractShaderBinarySections"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140011fb0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/shader-sections/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ExtractShaderBinarySections"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140011fb0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -42536,5 +42668,5 @@
       }
     ]
   },
-  "unmapped": 7716
+  "unmapped": 7713
 }

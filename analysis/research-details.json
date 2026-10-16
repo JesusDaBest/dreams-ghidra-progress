@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 441,
+    "checked_and_applied_names": 443,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 441,
+    "verified_names": 443,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "403 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "405 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7874,5 +7874,23 @@
       "File loader reports file-open success without independently checking full fread count.",
       "Opaque resource layout and working no-argument void-pointer return are not original source declarations."
     ]
+  },
+  "compute_completion_checkpoint": {
+    "saved_names": [
+      "SubmitComputeQueueAndWaitForFence",
+      "AppendComputeCompletionFence"
+    ],
+    "packet_native_cases": 2148,
+    "shader_section_native_cases": 8864,
+    "sweep_coordinate_window_cases": 7880,
+    "sweep_neighbor_window_cases": 1131,
+    "limits": [
+      "CPU code and packet preparation verified; GPU execution and hardware memory ordering remain unverified.",
+      "Doorbell and event wait return codes are ignored in observed wrappers; no overall timeout or completion guarantee.",
+      "Packet refill callback path not native-tested.",
+      "Descriptive names and opaque context signature are not recovered original declarations.",
+      "Grid tests cover selected original windows, not the complete boundary builder."
+    ],
+    "runtime_game_verified": false
   }
 }

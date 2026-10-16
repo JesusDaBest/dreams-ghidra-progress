@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1872,
-  "unmapped_total": 7716,
+  "mapped_total": 1875,
+  "unmapped_total": 7713,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47345,6 +47345,69 @@
           "support": "Originalassembly/controlflow/static-tablematch/helpers andindependentreopen."
         }
       ]
+    },
+    "141297bd0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Traced graphics compute infrastructure used by sculpt/sweep callers; shared utility, no exclusivity claim.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Prepares shader sections or compute completion operations.",
+      "code_sha256": "03170fde94acd6cb5290fb5d950ef923d5867b34be017b9044fed3ab7495844b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SubmitComputeQueueAndWaitForFence",
+          "support": "Complete original function review and independently reopened working signature; GPU behavior unverified."
+        }
+      ]
+    },
+    "141297cf0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Traced graphics compute infrastructure used by sculpt/sweep callers; shared utility, no exclusivity claim.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Prepares shader sections or compute completion operations.",
+      "code_sha256": "5a7696848217ec0fb403875a8714c6a3bedc1191e2dfdaac3f50941720e3f06b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendComputeCompletionFence",
+          "support": "Complete original function review and independently reopened working signature; GPU behavior unverified."
+        }
+      ]
+    },
+    "140011fb0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "shader-sections",
+        "runtime-implementation"
+      ],
+      "component_basis": "Traced graphics compute infrastructure used by sculpt/sweep callers; shared utility, no exclusivity claim.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Prepares shader sections or compute completion operations.",
+      "code_sha256": "d4bd452b54a9be9f9f5792f60f3497cb27323a3dda7159f414c661205622ee76",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ExtractShaderBinarySections",
+          "support": "Complete original function review and independently reopened working signature; GPU behavior unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -54370,6 +54433,34 @@
             {
               "id": "vr-layers",
               "label": "Vr Layers",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "compute",
+          "label": "GPU compute support",
+          "children": [
+            {
+              "id": "completion",
+              "label": "Queue completion",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "shader-sections",
+              "label": "Shader binary sections",
               "children": [
                 {
                   "id": "runtime-implementation",

@@ -3078,3 +3078,11 @@ Totals: 439 checked names and 1,872 mapped functions among 9,588 discovered func
 Saved GetOrLoadBricker2TagBricksShader and GetOrLoadBricker2HashBricksShader after reading 410 original wrapper instructions and 369 loader-callee instructions. Original import relocations confirm guarded initialization, destructor registration and file loading. The wrappers obtain/cache shader resources through packed-blob or file paths and return an opaque resource pointer when its prepared-header pointer is present. They are CPU loading wrappers, not the GPU tagging or hashing algorithms. The file reader checks whether opening succeeded but does not independently check a complete fread.
 
 Cold backup, isolated trial, promotion and independent reopening verify both names and working signatures; original instructions and archives are unchanged. GPU execution, concurrency, full sculpt behavior and exact correspondence to the 2015 rendering talk remain unverified. Totals: 441 reviewed names among 9,588 discovered functions; this does not measure whole-game completion.
+
+### Compute completion and scoped sweep-grid validation
+
+Saved SubmitComputeQueueAndWaitForFence and AppendComputeCompletionFence after complete original-body and caller review. The completion builder increments a fence number and emits its destination/value; the submission path notifies the compute queue and waits until the shared fence equals the expected value. Event wakeup alone does not permit continuation. Observed wrappers ignore platform return codes and have no overall timeout. 2,148 original packet-writer tests verify packing and cursor changes with existing capacity; GPU execution and memory ordering are unverified.
+
+The existing ExtractShaderBinarySections name now has a tested two-argument signature, verified after reopening. 8,864 native checks cover pointer/size extraction and guards, not blob validity. Separately, 7,880 original coordinate-marking window tests and 1,131 neighbor-bit window tests match independent models of a 32-cubed byte grid. These selected windows do not validate the full sweep builder or GPU boundary results.
+
+Totals: 443 reviewed names among 9,588 discovered functions; 1,875 mapped and 7,713 unmapped. New compute-support mappings describe shared graphics infrastructure, not full completion of rendering or sculpting.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "403 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "405 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8992,
-    "other_names": 596,
-    "verification": "complete_inventory_matches_baseline_plus_403_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8990,
+    "other_names": 598,
+    "verification": "complete_inventory_matches_baseline_plus_405_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1446,15 +1446,19 @@
       "persistence_verification": "verified_after_clean_stop_and_reopening",
       "confidence": "high",
       "evidence": [
-        "Complete 13-instruction, 43-byte body computes metadata pointer, code pointer and copy size; independently checked against both matched shader payloads."
+        "Complete 13-instruction, 43-byte body computes metadata pointer, code pointer and copy size; independently checked against both matched shader payloads.",
+        "Original leaf passed 8,864 pointer/arithmetic/guard checks; corrected two-argument signature independently reopened."
       ],
       "caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
         "Analyst name, not an original symbol.",
         "Growth callback and runtime behavior remain independently unresolved.",
-        "No prototype, type, convention, boundary or byte changes."
+        "No prototype, type, convention, boundary or byte changes.",
+        "Extractor does not validate blob size, magic or computed ranges; arithmetic tests do not dereference generated pointers."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ExtractShaderBinarySections(void * sections_out, void * shader_blob)"
     },
     {
       "address": "14003ade0",
@@ -10006,6 +10010,52 @@
         "Descriptive CPU resource-loading role; GPU tagging/hashing algorithm and live rendering unverified.",
         "File loader reports file-open success without independently checking full fread count.",
         "Opaque resource layout and working no-argument void-pointer return are not original source declarations."
+      ]
+    },
+    {
+      "address": "141297bd0",
+      "original_name": "FUN_141297bd0",
+      "applied_name": "SubmitComputeQueueAndWaitForFence",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SubmitComputeQueueAndWaitForFence(void * compute_context)",
+      "evidence": [
+        "Complete original 71-instruction wait and 84-instruction completion-builder bodies read and matched.",
+        "Original import relocations identify compute queue doorbell and event queue wait.",
+        "Fence destination and expected value link packet preparation to the CPU equality loop; 2,148 native packet tests cover existing-capacity emission.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and original archives."
+      ],
+      "caveats": [
+        "CPU code and packet preparation verified; GPU execution and hardware memory ordering remain unverified.",
+        "Doorbell and event wait return codes are ignored in observed wrappers; no overall timeout or completion guarantee.",
+        "Packet refill callback path not native-tested.",
+        "Descriptive names and opaque context signature are not recovered original declarations."
+      ]
+    },
+    {
+      "address": "141297cf0",
+      "original_name": "FUN_141297cf0",
+      "applied_name": "AppendComputeCompletionFence",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendComputeCompletionFence(void * compute_context)",
+      "evidence": [
+        "Complete original 71-instruction wait and 84-instruction completion-builder bodies read and matched.",
+        "Original import relocations identify compute queue doorbell and event queue wait.",
+        "Fence destination and expected value link packet preparation to the CPU equality loop; 2,148 native packet tests cover existing-capacity emission.",
+        "Cold backup, isolated trial, promotion and independent reopening verify saved names/signatures and original archives."
+      ],
+      "caveats": [
+        "CPU code and packet preparation verified; GPU execution and hardware memory ordering remain unverified.",
+        "Doorbell and event wait return codes are ignored in observed wrappers; no overall timeout or completion guarantee.",
+        "Packet refill callback path not native-tested.",
+        "Descriptive names and opaque context signature are not recovered original declarations."
       ]
     }
   ],
