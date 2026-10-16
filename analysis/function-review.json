@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "420 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "421 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8975,
-    "other_names": 613,
-    "verification": "complete_inventory_matches_baseline_plus_420_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8974,
+    "other_names": 614,
+    "verification": "complete_inventory_matches_baseline_plus_421_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10398,6 +10398,27 @@
       "caveats": [
         "Descriptive name andworking opaque descriptor type,not original declaration.",
         "Controls flags,not image dataformat.",
+        "CPU fixture doesnot validate GPU execution orrendering."
+      ]
+    },
+    {
+      "address": "14003b5e0",
+      "original_name": "FUN_14003b5e0",
+      "applied_name": "AppendComputeUserDataRegisters",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendComputeUserDataRegisters(void * command_buffer, uint register_offset, void * values, uint count)",
+      "evidence": [
+        "Complete83 original instructions matched;2432 native full-body cases verify register uploads,reservationfailure,relocation andunchanged surrounding bytes.",
+        "Gather shader inputupload caller andoriginal17entryjumptable traced.",
+        "Backup,isolated trial,promotion andindependent reopening passed."
+      ],
+      "caveats": [
+        "Descriptive name andworking opaque descriptor type,not original declaration.",
+        "Countsabove16 skipcopybutstilladvance;invalid-inputbehaviornotGPUvalidated.",
         "CPU fixture doesnot validate GPU execution orrendering."
       ]
     }

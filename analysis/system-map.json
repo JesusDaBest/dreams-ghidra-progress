@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1888,
-  "unmapped_total": 7700,
+  "mapped_total": 1889,
+  "unmapped_total": 7699,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47696,6 +47696,27 @@
           "support": "4096 original-native cases andindependently reopened signature;GPU execution unverified."
         }
       ]
+    },
+    "14003b5e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-registers",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete compute-register uploader andBricker2 gather caller;generalGPUcommand support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Appends compute user-data register values tocommandbuffer.",
+      "code_sha256": "7fd2d91c60986f47096356d04bd1a18d366cf94dd1fd3dd806f98e5941895183",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendComputeUserDataRegisters",
+          "support": "2432 original-native cases andindependently reopened signature;GPU execution unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -54815,6 +54836,17 @@
             {
               "id": "image-descriptors",
               "label": "Image descriptors",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "command-registers",
+              "label": "Shader input registers",
               "children": [
                 {
                   "id": "runtime-implementation",

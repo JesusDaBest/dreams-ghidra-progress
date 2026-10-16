@@ -3165,3 +3165,11 @@ Saved SetImageDescriptorControlFlags after matching all 18 instructions and pass
 Primary definitions: https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/master/drivers/gpu/drm/amd/include/asic_reg/gca/gfx_7_2_enum.h and https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/master/drivers/gpu/drm/amd/include/asic_reg/gca/gfx_7_2_sh_mask.h .
 
 Totals: 458 reviewed names; 1,888 mapped and 7,700 unmapped among 9,588 discovered functions.
+
+### Compute shader input-register upload
+
+Saved AppendComputeUserDataRegisters with a four-argument working signature after reading and matching all 83 original CPU instructions. The gather shader uses this helper to upload its input pointers, batch offset and selected buffer descriptor. In 2,432 cases executing the complete original helper, counts 0–16 copied the expected DWORDs, exact-capacity buffers worked, reservation failure preserved the cursor and buffers, and successful reservation could relocate the destination. Controlled callbacks substituted for the real allocator.
+
+Counts 17 and 32 emitted a header and advanced the cursor without copying values. This is documented invalid-count behavior, not a reproduced game failure. GPU submission, concurrency, real allocator behavior and integer-overflow cases remain unverified. Backup, trial, promotion and independent reopening passed.
+
+Totals: 459 reviewed names; 1,889 mapped and 7,699 unmapped among 9,588 discovered functions.

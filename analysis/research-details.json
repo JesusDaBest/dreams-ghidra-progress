@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 458,
+    "checked_and_applied_names": 459,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 458,
+    "verified_names": 459,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "420 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "421 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8084,6 +8084,22 @@
       "CPU fixture doesnot validate GPU execution orrendering.",
       "No hardware compression conformance orwhole-shader validation.",
       "UserSGPR/groupindex interpretation stillneedsheaderbindingconfirmation."
+    ],
+    "runtime_game_verified": false
+  },
+  "compute_user_register_upload_checkpoint": {
+    "saved_name": "AppendComputeUserDataRegisters",
+    "original_instructions": 83,
+    "native_cases": 2432,
+    "findings": [
+      "Exactregistercopiesforcounts0..16.",
+      "Reservationfailurepreservescursor andbuffers;successcanrelocate.",
+      "Counts17and32advancewithoutcopy."
+    ],
+    "limits": [
+      "Descriptive name andworking opaque descriptor type,not original declaration.",
+      "Countsabove16 skipcopybutstilladvance;invalid-inputbehaviornotGPUvalidated.",
+      "CPU fixture doesnot validate GPU execution orrendering."
     ],
     "runtime_game_verified": false
   }
