@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "512 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "514 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8883,
-    "other_names": 705,
-    "verification": "complete_inventory_matches_baseline_plus_512_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8881,
+    "other_names": 707,
+    "verification": "complete_inventory_matches_baseline_plus_514_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -12568,6 +12568,50 @@
         "Opaque target descriptors; packed returnlowDWORD size,highDWORD alignment,oversized sizezero.",
         "Unsupported fixed-path pipe configurations excluded; upstream validity notfully established.",
         "Controlledmode, synthetic descriptors; noallocation/GPU/live-game verification."
+      ]
+    },
+    {
+      "address": "140038de0",
+      "original_name": "FUN_140038de0",
+      "applied_name": "InitializeAuxiliaryImageDescriptorFromColorTarget",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV InitializeAuxiliaryImageDescriptorFromColorTarget(void * image_descriptor_out, void * color_target_descriptor)",
+      "evidence": [
+        "Complete262 original instructions read andbyte matched; runtime caller and187 address-binding helperinstructions traced.",
+        "Selector64 independentlydecodedtable cases;2240constructor slice/gatecases with1248formatroundtrips;120connectedbindingcases.",
+        "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive roles, not originalnames or specificGPUmetadataidentity.",
+        "Opaque image/target descriptors; maypartiallywrite onlatererrors; executorignoresconstructorstatus.",
+        "Exactpadding andaddressmask, upstreamvalidityconstraints unresolved.",
+        "Syntheticdescriptors, controlledmode; noallocation/GPU/live-game claim."
+      ]
+    },
+    {
+      "address": "14001ed80",
+      "original_name": "FUN_14001ed80",
+      "applied_name": "SelectPackedAuxiliaryImageFormat",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV SelectPackedAuxiliaryImageFormat(uint sample_code, uint fragment_code)",
+      "evidence": [
+        "Complete262 original instructions read andbyte matched; runtime caller and187 address-binding helperinstructions traced.",
+        "Selector64 independentlydecodedtable cases;2240constructor slice/gatecases with1248formatroundtrips;120connectedbindingcases.",
+        "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive roles, not originalnames or specificGPUmetadataidentity.",
+        "Opaque image/target descriptors; maypartiallywrite onlatererrors; executorignoresconstructorstatus.",
+        "Exactpadding andaddressmask, upstreamvalidityconstraints unresolved.",
+        "Syntheticdescriptors, controlledmode; noallocation/GPU/live-game claim."
       ]
     }
   ],

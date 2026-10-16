@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1973,
-  "unmapped_total": 7615,
+  "mapped_total": 1975,
+  "unmapped_total": 7613,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49528,6 +49528,48 @@
         {
           "kind": "verified_semantic_review",
           "name": "GetDepthStencilTargetAuxiliarySizeAndAlignment",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140038de0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Auxiliary-image construction and format selector traced from color targets through executor binding.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds auxiliary image descriptor or selects its packed format.",
+      "code_sha256": "d23dddda2e163700899555d10c46e86c67921a243c59e181d7e83f97fbaac225",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeAuxiliaryImageDescriptorFromColorTarget",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14001ed80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Auxiliary-image construction and format selector traced from color targets through executor binding.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds auxiliary image descriptor or selects its packed format.",
+      "code_sha256": "030945315b935f67dc83ba9a3e1ab6e0c09e28055ae6f5d17ec3037a46197061",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SelectPackedAuxiliaryImageFormat",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

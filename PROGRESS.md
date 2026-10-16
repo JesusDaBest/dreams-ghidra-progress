@@ -3481,3 +3481,13 @@ The color query matched independent padding/divisibility arithmetic in 4,572 cas
 A separate layout-backed metadata query can write outputs while returning an error; callers must respect status. Unsupported fixed-path pipe configurations were excluded from execution because arithmetic validity is not established. Exact hardware metadata classification, actual allocation consumers and GPU/live-game behavior remain unresolved. The first color-query harness attempt had a pointer-width bug; it was corrected before the passing run and was not a Dreams fault.
 
 Totals: 550 reviewed names; 1,973 mapped and 7,615 unmapped among 9,588 discovered functions.
+
+### Auxiliary image descriptors from color targets
+
+Saved InitializeAuxiliaryImageDescriptorFromColorTarget and SelectPackedAuxiliaryImageFormat with independently reopened signatures. All 262 original instructions were read and byte matched. Backed-up trial and independent trial/main reopening verified only expected name/signature changes, successful decompilation and unchanged original bytes and archives.
+
+The selector matched independently decoded original jump-table constants for all 64 encoded sample/fragment combinations. The constructor passed 2,240 slice/gate cases: 1,248 successful output formats roundtripped to the expected packed format, and 992 rejections preserved the output. Logical width and slice count were checked. Auxiliary height can be padded: a tested 64 by 64 target produced height 128. Exact padded storage arithmetic remains unresolved.
+
+The runtime executor builds the descriptor, reads the target auxiliary address, binds it and applies usage flags. This sequence passed 120 connected cases with source and boundary preservation. Address binding can clear additional tile bits; exact mask arithmetic is not independently proved. The executor ignores constructor status, but upstream validity constraints must be established before claiming a runtime defect. Specific GPU metadata identity, allocation behavior and live-game output remain unverified.
+
+Totals: 552 reviewed names; 1,975 mapped and 7,613 unmapped among 9,588 discovered functions.
