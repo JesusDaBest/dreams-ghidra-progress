@@ -8102,5 +8102,35 @@
       "CPU fixture doesnot validate GPU execution orrendering."
     ],
     "runtime_game_verified": false
+  },
+  "gather_register_binding_checkpoint": {
+    "archive_header_offset": 52,
+    "resource2_word": "0x58096",
+    "user_register_count": 11,
+    "hardware_group_index_enabled": true,
+    "evidence": "Extractor,loaderparser,patchedheader andcompute bindingpointer traced toarchived shader;entryusesgroupindexplusbatchoffset.",
+    "conclusion": "Extra12thuploadDWORDisoutside11userregisterrange;uninitializedshaderinputnotestablished.",
+    "limits": [
+      "Staticconfiguration,notobservedhardwareexecution.",
+      "Originalplatformdriverimplementationnotexecuted."
+    ],
+    "reviewed_name_increment": 0
+  },
+  "mm2015_gather_comparison_checkpoint": {
+    "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+    "pages_read": [
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ],
+    "result": "Surfacecrossingsandboundsarearchitecturalleads;historicalDXT1pointcloudformatdiffersfromcurrentBC3-compatiblepayload.",
+    "limits": [
+      "Historicalmaterialisnotbuild-identicalsource.",
+      "Hilbertordering,clusterBVH andstochasticLODremainunmatched."
+    ],
+    "reviewed_name_increment": 0
   }
 }

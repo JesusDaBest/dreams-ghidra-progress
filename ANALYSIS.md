@@ -3477,3 +3477,11 @@ Saved AppendComputeUserDataRegisters with a four-argument working signature afte
 Counts 17 and 32 emitted a header and advanced the cursor without copying values. This is documented invalid-count behavior, not a reproduced game failure. GPU submission, concurrency, real allocator behavior and integer-overflow cases remain unverified. Backup, trial, promotion and independent reopening passed.
 
 Totals: 459 reviewed names; 1,889 mapped and 7,699 unmapped among 9,588 discovered functions.
+
+### Gather register binding and historical rendering leads
+
+Traced the archived header through section extraction, CPU copying, code-address patching and compute-shader binding. The resource configuration selects eleven user registers and enables a hardware group-index register. The shader entry uses that group index plus the batch offset. Although the CPU uploader copies twelve DWORDs, the twelfth is outside the configured user-register range; this does not establish an uninitialized shader-input defect. This is a static trace, without GPU execution or execution of the platform driver.
+
+Compared pages 110–115 of Alex Evans’s 2015 talk with the current gather trace. Eight-corner surface classification and bounds provide architectural leads. The slides describe DXT1 color for point clusters, while this shader emits a BC3-compatible payload; these are not established as the same representation. Hilbert ordering, cluster BVHs and stochastic LOD remain unmatched. Historical slides do not justify build-specific function names by themselves.
+
+Source: https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf . Reviewed-name total remains 459.
