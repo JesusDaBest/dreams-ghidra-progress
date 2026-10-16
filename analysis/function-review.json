@@ -9201,7 +9201,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializePortalRecord(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "saved_working_signature": "void PS4_SYSV MaterializePortalRecord(DreamsReviewedPortalRecord * first_input, DreamsReviewedPortalRecord * second_input, void * selection_begin, void * selection_end, DreamsReviewedPortalRecord * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)",
       "evidence": [
         "Complete 423-instruction original body and trial decompilation read; bytes matched against original executable.",
         "Parent portals array uses 96-byte elements; field hashes and stores identify portal_type, name, gadget_seq and angle. Original hash routine passed 80 checks against five bounded original literals.",
@@ -9212,7 +9212,56 @@
       "caveats": [
         "Allocation/growth/failure,null output,embedded NUL/malformed counts,aliases and large relative offsets remain untested.",
         "Portal-type values and angle units remain unresolved; no whole-game execution."
-      ]
+      ],
+      "verified_record_layout": {
+        "buffer": {
+          "size": 24,
+          "fields": [
+            [
+              "data",
+              0,
+              8
+            ],
+            [
+              "used",
+              8,
+              8
+            ],
+            [
+              "capacity",
+              16,
+              8
+            ]
+          ]
+        },
+        "record": {
+          "size": 96,
+          "fields": [
+            [
+              "portal_type",
+              0,
+              1
+            ],
+            [
+              "name",
+              8,
+              80
+            ],
+            [
+              "gadget_seq",
+              88,
+              4
+            ],
+            [
+              "angle",
+              92,
+              4
+            ]
+          ]
+        },
+        "record_type": "DreamsReviewedPortalRecord",
+        "independent_reopen": true
+      }
     },
     {
       "address": "1403ad660",
@@ -9223,7 +9272,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializeEditRightsMetadata(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "saved_working_signature": "void PS4_SYSV MaterializeEditRightsMetadata(DreamsReviewedEditRightsMetadata * first_input, DreamsReviewedEditRightsMetadata * second_input, void * selection_begin, void * selection_end, DreamsReviewedEditRightsMetadata * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)",
       "evidence": [
         "Complete 356-instruction original body and trial decompilation read; bytes matched against original executable.",
         "Dream-record remix_of_edit_right nested at offset 0x1b0; two additional bounded caller windows read and matched. Field stores identify edit_right_bits, edit_right_ref_bits and edit_right_sig.",
@@ -9234,7 +9283,51 @@
       "caveats": [
         "Allocation/growth/failure,null output,embedded NUL/malformed counts,aliases and large relative offsets remain untested.",
         "Only synthetic strings tested; signature creation/validation and rights-bit meanings remain unresolved."
-      ]
+      ],
+      "verified_record_layout": {
+        "buffer": {
+          "size": 24,
+          "fields": [
+            [
+              "data",
+              0,
+              8
+            ],
+            [
+              "used",
+              8,
+              8
+            ],
+            [
+              "capacity",
+              16,
+              8
+            ]
+          ]
+        },
+        "record": {
+          "size": 88,
+          "fields": [
+            [
+              "edit_right_bits",
+              0,
+              4
+            ],
+            [
+              "edit_right_ref_bits",
+              4,
+              4
+            ],
+            [
+              "edit_right_sig",
+              8,
+              80
+            ]
+          ]
+        },
+        "record_type": "DreamsReviewedEditRightsMetadata",
+        "independent_reopen": true
+      }
     },
     {
       "address": "1403acb50",
@@ -9245,7 +9338,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializeCollectionIconRecord(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "saved_working_signature": "void PS4_SYSV MaterializeCollectionIconRecord(DreamsReviewedCollectionIconRecord * first_input, DreamsReviewedCollectionIconRecord * second_input, void * selection_begin, void * selection_end, DreamsReviewedCollectionIconRecord * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)",
       "evidence": [
         "Complete 354-instruction original body and trial decompilation read; bytes matched.",
         "Dream record parent fields and nested materializer calls traced; original hash routine validated seven field/parent names in112 checks.",
@@ -9256,7 +9349,61 @@
         "Collection-icon null-output/growth/failure and version-info nonempty arrays/strings remain unexecuted.",
         "Full parent serializer has5503 instructions read/matched but no complete runtime fixture; reading is not semantic completion.",
         "Enums, large offsets, aliases and allocation failures remain unresolved."
-      ]
+      ],
+      "verified_record_layout": {
+        "buffer": {
+          "size": 24,
+          "fields": [
+            [
+              "data",
+              0,
+              8
+            ],
+            [
+              "used",
+              8,
+              8
+            ],
+            [
+              "capacity",
+              16,
+              8
+            ]
+          ]
+        },
+        "record": {
+          "size": 64,
+          "fields": [
+            [
+              "icon_hash",
+              0,
+              16
+            ],
+            [
+              "icon_type",
+              16,
+              1
+            ],
+            [
+              "icon_col",
+              32,
+              16
+            ],
+            [
+              "icon_set_manually",
+              48,
+              1
+            ],
+            [
+              "main_thing_type",
+              49,
+              1
+            ]
+          ]
+        },
+        "record_type": "DreamsReviewedCollectionIconRecord",
+        "independent_reopen": true
+      }
     },
     {
       "address": "1403ae380",
@@ -9267,7 +9414,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializeDreamVersionInfo(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * output, void * buffer_descriptor, uchar force_second)",
+      "saved_working_signature": "void PS4_SYSV MaterializeDreamVersionInfo(DreamsReviewedVersionInfo * first_input, DreamsReviewedVersionInfo * second_input, void * selection_begin, void * selection_end, DreamsReviewedVersionInfo * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)",
       "evidence": [
         "Complete 655-instruction original body and trial decompilation read; bytes matched.",
         "Dream record parent fields and nested materializer calls traced; original hash routine validated seven field/parent names in112 checks.",
@@ -9278,7 +9425,86 @@
       "caveats": [
         "Integrated nonempty portal strings,null output,allocation/growth/failure,invalid counts,aliases and large offsets remain untested.",
         "The full parent serializer remains unexecuted; metadata review is not gameplay or whole-game completion."
-      ]
+      ],
+      "verified_record_layout": {
+        "buffer": {
+          "size": 24,
+          "fields": [
+            [
+              "data",
+              0,
+              8
+            ],
+            [
+              "used",
+              8,
+              8
+            ],
+            [
+              "capacity",
+              16,
+              8
+            ]
+          ]
+        },
+        "record": {
+          "size": 104,
+          "fields": [
+            [
+              "portals",
+              0,
+              16
+            ],
+            [
+              "main_thing_type",
+              16,
+              1
+            ],
+            [
+              "cover_icon_hash",
+              24,
+              16
+            ],
+            [
+              "audio_preview_hash",
+              40,
+              16
+            ],
+            [
+              "light_thermo_data",
+              56,
+              12
+            ],
+            [
+              "collection_icons",
+              72,
+              16
+            ],
+            [
+              "version_visibility",
+              88,
+              1
+            ],
+            [
+              "edit_right_bits",
+              92,
+              4
+            ],
+            [
+              "edit_right_ref_bits",
+              96,
+              4
+            ],
+            [
+              "allow_remixing",
+              100,
+              1
+            ]
+          ]
+        },
+        "record_type": "DreamsReviewedVersionInfo",
+        "independent_reopen": true
+      }
     },
     {
       "address": "1403a55a0",
@@ -9289,20 +9515,46 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV MaterializeDreamRecord(void * first_input, void * second_input, void * selection_begin, void * selection_end, void * buffer_descriptor)",
+      "saved_working_signature": "void PS4_SYSV MaterializeDreamRecord(void * first_input, void * second_input, void * selection_begin, void * selection_end, DreamsReviewedByteBuffer * buffer_descriptor)",
       "evidence": [
         "Complete5503-instruction original body read and matched,with full read-range ledger and all nested materializers traced.",
         "Five-argument SysV ABI supported by assembly and seven known direct callers;each supplies fresh empty outputbuffer and ignores return register.",
         "Complete original parent passed60 aligned minimal-record and1008 nonempty-string checks with original nestedhelpers/libc routines and preallocated output;exactfullbuffer/descriptors/input/guards checked.",
         "Cold backup,isolated trial,promotion and independent reopening verify descriptive name/signature and unchanged instructions/archives.",
-        "Complete original Dream-record serializer,reviewed nestedhelpers and original libc routines passed960 nonempty-array checks:15 fields separately,one/two distinct source entries,pointer/relative descriptors,selection,four input alignments;exactfullbuffer/counts/offsets/padding/input/guards. Portal names empty;tag strings synthetic."
+        "Complete original Dream-record serializer,reviewed nestedhelpers and original libc routines passed960 nonempty-array checks:15 fields separately,one/two distinct source entries,pointer/relative descriptors,selection,four input alignments;exactfullbuffer/counts/offsets/padding/input/guards. Portal names empty;tag strings synthetic.",
+        "Complete original parent passed384 combined-record checks with all15arrayfields and main/nestedportalstrings populated together,lengths3/63/64/127,pointer/relative inputs,selection andfourinputalignments;exactentirebuffer/descriptors/strings/padding/input/guards."
       ],
       "caveats": [
-        "Simultaneous nonempty arrays and strings,allocation/growth/failure,malformed inputs,aliases,large offsets and real-game execution remain untested.",
+        "Allocation/growth/failure,malformed inputs,aliases,large offsets,indirect callers and real-game execution remain untested.",
         "Unaligned append-position test disagreed with general record oracle;all seven known callers use fresh output descriptors. This is not a demonstrated game bug.",
         "Ghidra reports type-propagation and overlapping-global warnings. Only signature,entry/final field paths and named nested-call windows of trial pseudocode reviewed;complete original assembly is primary evidence.",
         "Many field enums and one field-name hash remain unresolved;not recovered source or whole-game completion."
-      ]
+      ],
+      "verified_record_layout": {
+        "buffer": {
+          "size": 24,
+          "fields": [
+            [
+              "data",
+              0,
+              8
+            ],
+            [
+              "used",
+              8,
+              8
+            ],
+            [
+              "capacity",
+              16,
+              8
+            ]
+          ]
+        },
+        "record": null,
+        "record_type": null,
+        "independent_reopen": true
+      }
     }
   ],
   "deferred": [

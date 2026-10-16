@@ -7327,7 +7327,7 @@
     "known_direct_callers": 7,
     "real_game_verified": false,
     "limits": [
-      "Simultaneous nonempty arrays and strings,allocation/growth/failure,malformed inputs,aliases,large offsets and real-game execution remain untested.",
+      "Allocation/growth/failure,malformed inputs,aliases,large offsets,indirect callers and real-game execution remain untested.",
       "Unaligned append-position test disagreed with general record oracle;all seven known callers use fresh output descriptors. This is not a demonstrated game bug.",
       "Ghidra reports type-propagation and overlapping-global warnings. Only signature,entry/final field paths and named nested-call windows of trial pseudocode reviewed;complete original assembly is primary evidence.",
       "Many field enums and one field-name hash remain unresolved;not recovered source or whole-game completion."
@@ -7339,6 +7339,250 @@
     "checks_per_field": 64,
     "simultaneous_nonempty_arrays": false,
     "allocation_executed": false,
+    "new_checked_names": 0
+  },
+  "dream_metadata_record_type_checkpoint": {
+    "functions": {
+      "1403acb50": {
+        "name": "MaterializeCollectionIconRecord",
+        "signature": "void PS4_SYSV MaterializeCollectionIconRecord(DreamsReviewedCollectionIconRecord * first_input, DreamsReviewedCollectionIconRecord * second_input, void * selection_begin, void * selection_end, DreamsReviewedCollectionIconRecord * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)"
+      },
+      "1403ae380": {
+        "name": "MaterializeDreamVersionInfo",
+        "signature": "void PS4_SYSV MaterializeDreamVersionInfo(DreamsReviewedVersionInfo * first_input, DreamsReviewedVersionInfo * second_input, void * selection_begin, void * selection_end, DreamsReviewedVersionInfo * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)"
+      },
+      "1403ad060": {
+        "name": "MaterializePortalRecord",
+        "signature": "void PS4_SYSV MaterializePortalRecord(DreamsReviewedPortalRecord * first_input, DreamsReviewedPortalRecord * second_input, void * selection_begin, void * selection_end, DreamsReviewedPortalRecord * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)"
+      },
+      "1403ad660": {
+        "name": "MaterializeEditRightsMetadata",
+        "signature": "void PS4_SYSV MaterializeEditRightsMetadata(DreamsReviewedEditRightsMetadata * first_input, DreamsReviewedEditRightsMetadata * second_input, void * selection_begin, void * selection_end, DreamsReviewedEditRightsMetadata * output, DreamsReviewedByteBuffer * buffer_descriptor, uchar force_second)"
+      },
+      "1403a55a0": {
+        "name": "MaterializeDreamRecord",
+        "signature": "void PS4_SYSV MaterializeDreamRecord(void * first_input, void * second_input, void * selection_begin, void * selection_end, DreamsReviewedByteBuffer * buffer_descriptor)"
+      }
+    },
+    "layouts": {
+      "DreamsReviewedInlineString64": {
+        "size": 80,
+        "fields": [
+          [
+            "data",
+            0,
+            8
+          ],
+          [
+            "offset_or_capacity",
+            8,
+            4
+          ],
+          [
+            "count",
+            12,
+            4
+          ],
+          [
+            "inline_text",
+            16,
+            64
+          ]
+        ]
+      },
+      "DreamsReviewedArrayDescriptor": {
+        "size": 16,
+        "fields": [
+          [
+            "data",
+            0,
+            8
+          ],
+          [
+            "offset_or_capacity",
+            8,
+            4
+          ],
+          [
+            "count",
+            12,
+            4
+          ]
+        ]
+      },
+      "DreamsReviewedByteBuffer": {
+        "size": 24,
+        "fields": [
+          [
+            "data",
+            0,
+            8
+          ],
+          [
+            "used",
+            8,
+            8
+          ],
+          [
+            "capacity",
+            16,
+            8
+          ]
+        ]
+      },
+      "DreamsReviewedPortalRecord": {
+        "size": 96,
+        "fields": [
+          [
+            "portal_type",
+            0,
+            1
+          ],
+          [
+            "name",
+            8,
+            80
+          ],
+          [
+            "gadget_seq",
+            88,
+            4
+          ],
+          [
+            "angle",
+            92,
+            4
+          ]
+        ]
+      },
+      "DreamsReviewedEditRightsMetadata": {
+        "size": 88,
+        "fields": [
+          [
+            "edit_right_bits",
+            0,
+            4
+          ],
+          [
+            "edit_right_ref_bits",
+            4,
+            4
+          ],
+          [
+            "edit_right_sig",
+            8,
+            80
+          ]
+        ]
+      },
+      "DreamsReviewedCollectionIconRecord": {
+        "size": 64,
+        "fields": [
+          [
+            "icon_hash",
+            0,
+            16
+          ],
+          [
+            "icon_type",
+            16,
+            1
+          ],
+          [
+            "icon_col",
+            32,
+            16
+          ],
+          [
+            "icon_set_manually",
+            48,
+            1
+          ],
+          [
+            "main_thing_type",
+            49,
+            1
+          ]
+        ]
+      },
+      "DreamsReviewedVersionInfo": {
+        "size": 104,
+        "fields": [
+          [
+            "portals",
+            0,
+            16
+          ],
+          [
+            "main_thing_type",
+            16,
+            1
+          ],
+          [
+            "cover_icon_hash",
+            24,
+            16
+          ],
+          [
+            "audio_preview_hash",
+            40,
+            16
+          ],
+          [
+            "light_thermo_data",
+            56,
+            12
+          ],
+          [
+            "collection_icons",
+            72,
+            16
+          ],
+          [
+            "version_visibility",
+            88,
+            1
+          ],
+          [
+            "edit_right_bits",
+            92,
+            4
+          ],
+          [
+            "edit_right_ref_bits",
+            96,
+            4
+          ],
+          [
+            "allow_remixing",
+            100,
+            1
+          ]
+        ]
+      }
+    },
+    "only_expected_signatures_changed": true,
+    "original_archives_unchanged": true,
+    "new_checked_names": 0,
+    "limits": [
+      "Descriptive working structures,not recovered source declarations.",
+      "Opaque hashes/color bytes and undefinedpadding retained;sourceenum/flag meanings unresolved.",
+      "Parent record input pointers remain untyped;only its outputbuffer pointer is typed.",
+      "Parent decompiler type-propagation and overlapping-global warnings remain.",
+      "Allocation/growth/failure,malformed inputs,aliases and real-game execution remain unverified."
+    ]
+  },
+  "dream_record_combined_followup": {
+    "original_parent_checks": 384,
+    "simultaneous_array_fields": 15,
+    "portal_string_lengths": [
+      3,
+      63,
+      64,
+      127
+    ],
+    "allocation_executed": false,
+    "credentials_used": false,
     "new_checked_names": 0
   }
 }
