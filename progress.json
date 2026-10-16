@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 395,
+    "done": 396,
     "todo": 1475,
-    "total": 1870,
-    "behavior_or_helpers_reviewed": 330,
+    "total": 1871,
+    "behavior_or_helpers_reviewed": 331,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21495,12 +21495,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 175,
+        "done": 176,
         "todo": 106,
-        "total": 281,
-        "behavior_or_helpers_reviewed": 160,
+        "total": 282,
+        "behavior_or_helpers_reviewed": 161,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 195,
+        "runtime_functions_identified": 196,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -21637,6 +21637,7 @@
           "ReadShaderFileToAllocatedBuffer",
           "ReadUnsignedVarint64OrZero",
           "FindRequestSlotByStreamId",
+          "InsertHpackDynamicEntry",
           "LookupHpackHeaderByIndex",
           "SetHpackDynamicTableLimit",
           "DecodeHpackStringTo1024Buffer",
@@ -21922,6 +21923,7 @@
           "1413c3150",
           "1413f33c0",
           "1413f6970",
+          "1413f80b0",
           "1413f84a0",
           "1413f8560",
           "1413f92d0",
@@ -24749,6 +24751,349 @@
             ]
           },
           {
+            "name": "shared/serialization",
+            "label": "Serialization & upgrades",
+            "done": 9,
+            "todo": 7,
+            "total": 16,
+            "behavior_or_helpers_reviewed": 9,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 16,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "DecodeBase64LikeText",
+              "ServiceEncodedSerializerBlock",
+              "ReadUnsignedVarint64OrZero",
+              "FindRequestSlotByStreamId",
+              "InsertHpackDynamicEntry",
+              "LookupHpackHeaderByIndex",
+              "SetHpackDynamicTableLimit",
+              "DecodeHpackStringTo1024Buffer",
+              "ReadHpackPrefixInteger"
+            ],
+            "todo_names": [
+              "0x140c66720",
+              "0x140d97090",
+              "0x140d98890",
+              "0x140d9aea0",
+              "0x140d9b320",
+              "0x140da0600",
+              "0x140dbf7c0"
+            ],
+            "done_addresses": [
+              "140163d80",
+              "140d91c30",
+              "1413f33c0",
+              "1413f6970",
+              "1413f80b0",
+              "1413f84a0",
+              "1413f8560",
+              "1413f92d0",
+              "1413f94b0"
+            ],
+            "todo_addresses": [
+              "140c66720",
+              "140d97090",
+              "140d98890",
+              "140d9aea0",
+              "140d9b320",
+              "140da0600",
+              "140dbf7c0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/serialization/common-routines",
+                "label": "Serialization implementation",
+                "done": 8,
+                "todo": 1,
+                "total": 9,
+                "behavior_or_helpers_reviewed": 8,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 9,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "DecodeBase64LikeText",
+                  "ReadUnsignedVarint64OrZero",
+                  "FindRequestSlotByStreamId",
+                  "InsertHpackDynamicEntry",
+                  "LookupHpackHeaderByIndex",
+                  "SetHpackDynamicTableLimit",
+                  "DecodeHpackStringTo1024Buffer",
+                  "ReadHpackPrefixInteger"
+                ],
+                "todo_names": [
+                  "0x140d97090"
+                ],
+                "done_addresses": [
+                  "140163d80",
+                  "1413f33c0",
+                  "1413f6970",
+                  "1413f80b0",
+                  "1413f84a0",
+                  "1413f8560",
+                  "1413f92d0",
+                  "1413f94b0"
+                ],
+                "todo_addresses": [
+                  "140d97090"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/serialization/common-routines/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 8,
+                    "todo": 1,
+                    "total": 9,
+                    "behavior_or_helpers_reviewed": 8,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 9,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "DecodeBase64LikeText",
+                      "ReadUnsignedVarint64OrZero",
+                      "FindRequestSlotByStreamId",
+                      "InsertHpackDynamicEntry",
+                      "LookupHpackHeaderByIndex",
+                      "SetHpackDynamicTableLimit",
+                      "DecodeHpackStringTo1024Buffer",
+                      "ReadHpackPrefixInteger"
+                    ],
+                    "todo_names": [
+                      "0x140d97090"
+                    ],
+                    "done_addresses": [
+                      "140163d80",
+                      "1413f33c0",
+                      "1413f6970",
+                      "1413f80b0",
+                      "1413f84a0",
+                      "1413f8560",
+                      "1413f92d0",
+                      "1413f94b0"
+                    ],
+                    "todo_addresses": [
+                      "140d97090"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/serialization/serialise",
+                "label": "Serialise",
+                "done": 1,
+                "todo": 3,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ServiceEncodedSerializerBlock"
+                ],
+                "todo_names": [
+                  "0x140d98890",
+                  "0x140d9aea0",
+                  "0x140d9b320"
+                ],
+                "done_addresses": [
+                  "140d91c30"
+                ],
+                "todo_addresses": [
+                  "140d98890",
+                  "140d9aea0",
+                  "140d9b320"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/serialization/serialise/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 3,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ServiceEncodedSerializerBlock"
+                    ],
+                    "todo_names": [
+                      "0x140d98890",
+                      "0x140d9aea0",
+                      "0x140d9b320"
+                    ],
+                    "done_addresses": [
+                      "140d91c30"
+                    ],
+                    "todo_addresses": [
+                      "140d98890",
+                      "140d9aea0",
+                      "140d9b320"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/serialization/sanitise",
+                "label": "Sanitise",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140c66720"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140c66720"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/serialization/sanitise/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140c66720"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140c66720"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/serialization/serialise-upgrade",
+                "label": "Serialise Upgrade",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140dbf7c0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140dbf7c0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/serialization/serialise-upgrade/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140dbf7c0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140dbf7c0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/serialization/serialise1",
+                "label": "Serialise1",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140da0600"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140da0600"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/serialization/serialise1/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140da0600"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140da0600"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/math",
             "label": "Numbers & transforms",
             "done": 3,
@@ -25198,343 +25543,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "140cda120"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/serialization",
-            "label": "Serialization & upgrades",
-            "done": 8,
-            "todo": 7,
-            "total": 15,
-            "behavior_or_helpers_reviewed": 8,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 15,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "DecodeBase64LikeText",
-              "ServiceEncodedSerializerBlock",
-              "ReadUnsignedVarint64OrZero",
-              "FindRequestSlotByStreamId",
-              "LookupHpackHeaderByIndex",
-              "SetHpackDynamicTableLimit",
-              "DecodeHpackStringTo1024Buffer",
-              "ReadHpackPrefixInteger"
-            ],
-            "todo_names": [
-              "0x140c66720",
-              "0x140d97090",
-              "0x140d98890",
-              "0x140d9aea0",
-              "0x140d9b320",
-              "0x140da0600",
-              "0x140dbf7c0"
-            ],
-            "done_addresses": [
-              "140163d80",
-              "140d91c30",
-              "1413f33c0",
-              "1413f6970",
-              "1413f84a0",
-              "1413f8560",
-              "1413f92d0",
-              "1413f94b0"
-            ],
-            "todo_addresses": [
-              "140c66720",
-              "140d97090",
-              "140d98890",
-              "140d9aea0",
-              "140d9b320",
-              "140da0600",
-              "140dbf7c0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/serialization/common-routines",
-                "label": "Serialization implementation",
-                "done": 7,
-                "todo": 1,
-                "total": 8,
-                "behavior_or_helpers_reviewed": 7,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 8,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "DecodeBase64LikeText",
-                  "ReadUnsignedVarint64OrZero",
-                  "FindRequestSlotByStreamId",
-                  "LookupHpackHeaderByIndex",
-                  "SetHpackDynamicTableLimit",
-                  "DecodeHpackStringTo1024Buffer",
-                  "ReadHpackPrefixInteger"
-                ],
-                "todo_names": [
-                  "0x140d97090"
-                ],
-                "done_addresses": [
-                  "140163d80",
-                  "1413f33c0",
-                  "1413f6970",
-                  "1413f84a0",
-                  "1413f8560",
-                  "1413f92d0",
-                  "1413f94b0"
-                ],
-                "todo_addresses": [
-                  "140d97090"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/serialization/common-routines/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 7,
-                    "todo": 1,
-                    "total": 8,
-                    "behavior_or_helpers_reviewed": 7,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 8,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "DecodeBase64LikeText",
-                      "ReadUnsignedVarint64OrZero",
-                      "FindRequestSlotByStreamId",
-                      "LookupHpackHeaderByIndex",
-                      "SetHpackDynamicTableLimit",
-                      "DecodeHpackStringTo1024Buffer",
-                      "ReadHpackPrefixInteger"
-                    ],
-                    "todo_names": [
-                      "0x140d97090"
-                    ],
-                    "done_addresses": [
-                      "140163d80",
-                      "1413f33c0",
-                      "1413f6970",
-                      "1413f84a0",
-                      "1413f8560",
-                      "1413f92d0",
-                      "1413f94b0"
-                    ],
-                    "todo_addresses": [
-                      "140d97090"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/serialization/serialise",
-                "label": "Serialise",
-                "done": 1,
-                "todo": 3,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ServiceEncodedSerializerBlock"
-                ],
-                "todo_names": [
-                  "0x140d98890",
-                  "0x140d9aea0",
-                  "0x140d9b320"
-                ],
-                "done_addresses": [
-                  "140d91c30"
-                ],
-                "todo_addresses": [
-                  "140d98890",
-                  "140d9aea0",
-                  "140d9b320"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/serialization/serialise/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 3,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ServiceEncodedSerializerBlock"
-                    ],
-                    "todo_names": [
-                      "0x140d98890",
-                      "0x140d9aea0",
-                      "0x140d9b320"
-                    ],
-                    "done_addresses": [
-                      "140d91c30"
-                    ],
-                    "todo_addresses": [
-                      "140d98890",
-                      "140d9aea0",
-                      "140d9b320"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/serialization/sanitise",
-                "label": "Sanitise",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140c66720"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140c66720"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/serialization/sanitise/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140c66720"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140c66720"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/serialization/serialise-upgrade",
-                "label": "Serialise Upgrade",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140dbf7c0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140dbf7c0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/serialization/serialise-upgrade/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140dbf7c0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140dbf7c0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/serialization/serialise1",
-                "label": "Serialise1",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140da0600"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140da0600"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/serialization/serialise1/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140da0600"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140da0600"
                     ],
                     "unresolved_addresses": [],
                     "groups": []

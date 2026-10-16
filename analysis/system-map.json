@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9586,
-  "mapped_total": 1870,
+  "inventory_total": 9587,
+  "mapped_total": 1871,
   "unmapped_total": 7716,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -47291,6 +47291,27 @@
           "kind": "verified_semantic_review",
           "name": "SetHpackDynamicTableLimit",
           "support": "Original assembly, scoped native tests, saved-project reopening."
+        }
+      ]
+    },
+    "1413f80b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "serialization",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "ReviewedHPACKpackedtable insertioncalledbyheaderencoders/decoder.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Completeoriginalbody and5760scopednativechecks.",
+      "code_sha256": "8f32b0e0ab3822dcec84c1976477290485d951dc9cfed5bf834fc35e77482b3b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertHpackDynamicEntry",
+          "support": "Originaltailcalls/body,scopedtests,isolatedownershipsplit andindependentreopen."
         }
       ]
     }

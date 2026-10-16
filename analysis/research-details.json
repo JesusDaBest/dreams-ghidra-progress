@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 437,
+    "checked_and_applied_names": 438,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 437,
-    "function_count": 9586,
+    "verified_names": 438,
+    "function_count": 9587,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "401 renames,35 created functions and1 retained existing-name review independently reopened.",
+    "scope": "401 renames,36 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7823,6 +7823,24 @@
     },
     "original_archives_unchanged": true,
     "real_game_verified": false,
-    "insertion_definition_deferred": "Existing function body overlap requires ownership audit."
+    "insertion_definition_deferred": "Resolved by independently verified backed-up ownership split; see hpack_insertion_saved_checkpoint."
+  },
+  "hpack_insertion_saved_checkpoint": {
+    "functions": {
+      "1413f80b0": {
+        "name": "InsertHpackDynamicEntry",
+        "signature": "void PS4_SYSV InsertHpackDynamicEntry(void * table, void * name_begin, void * name_end, void * value_begin, void * value_end)"
+      }
+    },
+    "original_instructions": 182,
+    "scoped_native_checks": 5760,
+    "original_archives_unchanged": true,
+    "existing_owner_body_change": "Only auditedinsertionaddressset removedfrom1413f85c0;otherbodiesandnames/signatures unchanged.",
+    "real_game_verified": false,
+    "limits": [
+      "Oversizedentry canbeinsertedaboveconfiguredtablelimit; notfullHPACKconformance.",
+      "Counts256limit,aliases,malformedspans/tables,concurrency andwholedecoder/livegame unresolved.",
+      "Decompilertrial inspected signature/setup/finalcopywindows only;complete originalassemblyprimary."
+    ]
   }
 }

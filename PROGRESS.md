@@ -3056,3 +3056,11 @@ Defined DecodeHpackStringTo1024Buffer, LookupHpackHeaderByIndex and SetHpackDyna
 These checks do not establish whole-decoder or live-game correctness. Exhaustive Huffman padding/EOS handling, malformed table states, aliases and concurrency remain unresolved. The insertion helper remains undefined as a separate function because its code overlaps an existing Ghidra function body; ownership will be audited before changing that boundary.
 
 Totals: 437 checked names and 1,870 mapped functions among 9,586 discovered functions; 7,716 still need mapping. This records scoped semantic review, not whole-game completion.
+
+### Saved HPACK dynamic table insertion
+
+Defined InsertHpackDynamicEntry after tracing both tail callers and correcting Ghidra ownership that had absorbed the callee into an encoder. The backed-up trial and independent reopen verified that only the audited insertion range left the encoder body; all other existing bodies, names and signatures stayed unchanged. Original bytes and archives are unchanged.
+
+The original helper passed 5,760 scoped insertion-sequence checks of packed records, shifted indices, eviction and guards, with original hash and copy dependencies. Oversized entries can exceed the configured table limit; full HPACK conformance, malformed tables, aliases, concurrency and live-game behavior remain unresolved.
+
+Totals: 438 checked names and 1,871 mapped functions among 9,587 discovered functions; 7,716 still need mapping.
