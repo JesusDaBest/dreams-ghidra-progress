@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 512,
+    "done": 514,
     "todo": 1463,
-    "total": 1975,
-    "behavior_or_helpers_reviewed": 447,
+    "total": 1977,
+    "behavior_or_helpers_reviewed": 449,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21526,12 +21526,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 97,
+        "done": 99,
         "todo": 268,
-        "total": 365,
-        "behavior_or_helpers_reviewed": 97,
+        "total": 367,
+        "behavior_or_helpers_reviewed": 99,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 339,
+        "runtime_functions_identified": 341,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21609,6 +21609,7 @@
           "SetImageDescriptorControlFlags",
           "AppendGnmDispatchIndirectOnMec",
           "AppendGnmDispatchIndirectOnMecWithMode",
+          "AppendComputeDispatchControl",
           "AppendComputeUserDataRegisters",
           "AppendReleaseMemoryPacket",
           "CalculateGpuSurfaceLayout",
@@ -21621,6 +21622,7 @@
           "RegisterLabelVisibleFieldOffset",
           "SubmitComputeQueueAndWaitForFence",
           "AppendComputeCompletionFence",
+          "DispatchComputeWithCachedControls",
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
           "RegisterDeferredShaderConstants",
@@ -21978,6 +21980,7 @@
           "14003a020",
           "14003aed0",
           "14003af30",
+          "14003b090",
           "14003b5e0",
           "14003ba80",
           "14003d0a0",
@@ -21990,6 +21993,7 @@
           "140d67a10",
           "141297bd0",
           "141297cf0",
+          "141298870",
           "14131e560",
           "14131eca0",
           "14139fbf0",
@@ -25727,12 +25731,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 24,
+            "done": 26,
             "todo": 0,
-            "total": 24,
-            "behavior_or_helpers_reviewed": 24,
+            "total": 26,
+            "behavior_or_helpers_reviewed": 26,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 24,
+            "runtime_functions_identified": 26,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25748,6 +25752,7 @@
               "SetImageDescriptorControlFlags",
               "AppendGnmDispatchIndirectOnMec",
               "AppendGnmDispatchIndirectOnMecWithMode",
+              "AppendComputeDispatchControl",
               "AppendComputeUserDataRegisters",
               "AppendReleaseMemoryPacket",
               "CalculateGpuSurfaceLayout",
@@ -25755,6 +25760,7 @@
               "CalculateImageDescriptorStorageRequirements",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
+              "DispatchComputeWithCachedControls",
               "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
@@ -25775,6 +25781,7 @@
               "14003a020",
               "14003aed0",
               "14003af30",
+              "14003b090",
               "14003b5e0",
               "14003ba80",
               "14003d0a0",
@@ -25782,6 +25789,7 @@
               "140044480",
               "141297bd0",
               "141297cf0",
+              "141298870",
               "14139fbf0",
               "14139fd80",
               "1413a00c0",
@@ -25868,6 +25876,65 @@
                       "140043a90",
                       "140044480",
                       "1413c3620"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/command-dispatch",
+                "label": "Compute dispatch",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendGnmDispatchIndirectOnMec",
+                  "AppendGnmDispatchIndirectOnMecWithMode",
+                  "AppendComputeDispatchControl",
+                  "DispatchComputeWithCachedControls"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14003aed0",
+                  "14003af30",
+                  "14003b090",
+                  "141298870"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/command-dispatch/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendGnmDispatchIndirectOnMec",
+                      "AppendGnmDispatchIndirectOnMecWithMode",
+                      "AppendComputeDispatchControl",
+                      "DispatchComputeWithCachedControls"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14003aed0",
+                      "14003af30",
+                      "14003b090",
+                      "141298870"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -25978,57 +26045,6 @@
                     "done_addresses": [
                       "14001d980",
                       "14001eb20"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/command-dispatch",
-                "label": "Compute dispatch",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AppendGnmDispatchIndirectOnMec",
-                  "AppendGnmDispatchIndirectOnMecWithMode"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14003aed0",
-                  "14003af30"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/command-dispatch/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AppendGnmDispatchIndirectOnMec",
-                      "AppendGnmDispatchIndirectOnMecWithMode"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14003aed0",
-                      "14003af30"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -43898,5 +43914,5 @@
       }
     ]
   },
-  "unmapped": 7613
+  "unmapped": 7611
 }

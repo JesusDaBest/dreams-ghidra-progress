@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1975,
-  "unmapped_total": 7613,
+  "mapped_total": 1977,
+  "unmapped_total": 7611,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49570,6 +49570,48 @@
         {
           "kind": "verified_semantic_review",
           "name": "SelectPackedAuxiliaryImageFormat",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "141298870": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared compute dispatch/control path traced from counter-readback and original platform import.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Caches compute controls, emits dispatch control or invokes dispatch writers.",
+      "code_sha256": "4941a4edd4d393b63b6f144c8eea488dae52d7d778d20eb1e092c912f6c4904d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchComputeWithCachedControls",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14003b090": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared compute dispatch/control path traced from counter-readback and original platform import.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Caches compute controls, emits dispatch control or invokes dispatch writers.",
+      "code_sha256": "11542f7c4f41a606f1f39dc673a3820c9de3b30128e37eb1cbd94185336ed7a1",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendComputeDispatchControl",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

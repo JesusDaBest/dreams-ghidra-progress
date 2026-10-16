@@ -3801,3 +3801,13 @@ Totals: 552 reviewed names; 1,975 mapped and 7,613 unmapped among 9,588 discover
 The earlier 120-case connected binding fixture left the source-format field unset. Its nested resolver validity was therefore unproven, and that receipt has been superseded. The corrected fixture supplies a valid 128-bit source format and checks every enabled nested resolver input. All 120 cases matched the exact source-getter and image-binder masks derived from original tile tables; tile modes that bypass masking were also checked. These replace the earlier 120 cases rather than adding to their count.
 
 Different source and auxiliary-image formats can select different table entries and clear different address bits. This explains the previously observed difference between the getter address and the final bound address. Exact padded storage, allocation behavior and GPU output remain unresolved. No function-review or completion count changed.
+
+### Shared compute dispatch and cached controls
+
+Saved DispatchComputeWithCachedControls and AppendComputeDispatchControl with independently reopened signatures. Both are shared graphics support, not completed sculpting algorithms. All 135 original instructions were read and byte matched. Backed-up trial and independent trial/main reopening verified expected name/signature changes, successful decompilation and unchanged original bytes and archives. Existing named platform dispatch writers were preserved.
+
+The control writer matched exact packet words, masks and capacity behavior in 500 cases. The shared wrapper passed 40 default cases and 972 float-control cases, including 540 exceptional-input cases under an explicitly nontrapping floating-point environment. Its zero-grid gate uses the low 32 bits of the dimension product, so overflow to zero also skips work. The platform import was linked to sceGnmDispatchDirect using original relocation metadata. The API was replaced only in scratch test memory; real platform packets were not validated.
+
+Thirty-two capacity/retry scenarios confirmed that cached controls can advance when their packet cannot be written; restoring capacity and retrying unchanged context does not restore that packet. Region counters count wrapper attempts even when no platform call occurs. Actual allocator recovery policy remains unresolved, so these findings do not establish a live-game defect. Exceptional arithmetic tests do not establish supported GPU settings.
+
+Totals: 554 reviewed names; 1,977 mapped and 7,611 unmapped among 9,588 discovered functions.
