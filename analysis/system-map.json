@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1926,
-  "unmapped_total": 7662,
+  "mapped_total": 1934,
+  "unmapped_total": 7654,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48541,6 +48541,174 @@
         {
           "kind": "verified_semantic_review",
           "name": "ComputeStencilSurfaceSliceSize",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400118d0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "236c4c40b1378890ff0f4709cbdd204d174dbfbc23936d5ba0f3486c7c74d1a3",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConfigureViewportFromRectangle",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140025870": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "146b572ce52596c608fa1090a02737282313aaff2a5244910abc0a977d4b82f5",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendViewportTransformAndDepthRange",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034400": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "55bed3f37fe4566fecfada1e524046511e271ef7ad1a3c8ea845919185c7a020",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetViewportTransformControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140034410": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "b3dc6f43205f4215b2dbe819390208001f7e15bdb0c1d9a28182faf28a072b06",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetViewportTransformMode",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140025c00": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "c4077af3494fb1508253f321e69b307ae5519ea0e24f40cdbf4634267b8e45c2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendViewportTransformControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140025a10": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "627c0382356423ae29f6473d5d1378d2a8255a672c836bc9750edd9b04c6bff3",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendScreenScissor",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1400223f0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "e3f8f2b72bb1df0319107f121fa945a7488ae95eadf62fc59ea49cfb589f8ba9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendHardwareScreenOffset",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140022470": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Viewport transform, scissor, screen-offset and guardband path read and connected-native tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Viewport transform or clipping-state construction/emission.",
+      "code_sha256": "5246873c26d01d70619126f75c653214ce8d6b10261756858127a66b21cd4662",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGuardbandAdjustments",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

@@ -3735,3 +3735,13 @@ The complete original query passed 432 linear-surface cases against independentl
 The size wrapper ignores the builder status, queries again, and returns the low 32 bits of the 64-bit size on query success or zero on failure. No tested builder failure became a successful second query. The query can partially write output before returning an error. Exact constraints for all descriptors, overflow cases, other view indices and real GPU behavior remain unresolved. Layout pointers remain opaque.
 
 Totals: 503 reviewed names; 1,926 mapped and 7,662 unmapped among 9,588 discovered functions.
+
+### Viewport transform and clipping commands
+
+Saved ConfigureViewportFromRectangle, AppendViewportTransformAndDepthRange, ResetViewportTransformControl, SetViewportTransformMode, AppendViewportTransformControl, AppendScreenScissor, AppendHardwareScreenOffset and AppendGuardbandAdjustments with independently reopened working signatures. All 361 original instructions were read and byte matched. Float parameters use the verified low four bytes of their XMM registers; scale and offset vectors have float-pointer working types. Backed-up trial and independent trial/main reopening verified only the expected changes and unchanged original archives.
+
+The connected original composite and seven callees passed 96 finite rectangle cases checking all 28 packet words. It constructs viewport half-extents, center translations, screen scissor, rounded hardware screen offsets and guardband adjustments. A further 2,496 capacity/refill cases checked exact packet subsequences and every destination byte. Failed refill can skip a large packet while later smaller packets still fit: emission is not atomic. Successful refill relocation preserves earlier writes and redirects subsequent packets. The callback was controlled; real allocator behavior remains unresolved.
+
+Six targeted edge observations found positive-infinity guardband values for zero extents under nontrapping floating-point control, signed scales for reversed rectangles, and exact preservation of a Z quiet-NaN payload and negative-zero offset. These observations do not establish supported hardware usage or exhaustive IEEE/integer behavior. No real GPU or live-game validation is claimed.
+
+Totals: 511 reviewed names; 1,934 mapped and 7,654 unmapped among 9,588 discovered functions.

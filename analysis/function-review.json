@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "465 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "473 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8930,
-    "other_names": 658,
-    "verification": "complete_inventory_matches_baseline_plus_465_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8922,
+    "other_names": 666,
+    "verification": "complete_inventory_matches_baseline_plus_473_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11488,6 +11488,190 @@
         "Size wrapper ignores builder status, returns low32 bits of64-bit query size on success andzero on failure.",
         "Opaque layout/descriptor pointers; field structures not applied.",
         "No real GPU or live-game verification; sampledview0 aligned dimensions."
+      ]
+    },
+    {
+      "address": "1400118d0",
+      "original_name": "FUN_1400118d0",
+      "applied_name": "ConfigureViewportFromRectangle",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConfigureViewportFromRectangle(void * command_context, uint left, uint top, uint right, uint bottom, float z_scale, float z_offset)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140025870",
+      "original_name": "FUN_140025870",
+      "applied_name": "AppendViewportTransformAndDepthRange",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendViewportTransformAndDepthRange(void * command_context, uint viewport_slot, float * scale_xyz, float * offset_xyz, float z_min, float z_max)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140034400",
+      "original_name": "FUN_140034400",
+      "applied_name": "ResetViewportTransformControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetViewportTransformControl(uint * transform_control)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140034410",
+      "original_name": "FUN_140034410",
+      "applied_name": "SetViewportTransformMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetViewportTransformMode(uint * transform_control, uint mode)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140025c00",
+      "original_name": "FUN_140025c00",
+      "applied_name": "AppendViewportTransformControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendViewportTransformControl(void * command_context, uint transform_control)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140025a10",
+      "original_name": "FUN_140025a10",
+      "applied_name": "AppendScreenScissor",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendScreenScissor(void * command_context, uint left, uint top, uint right, uint bottom)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "1400223f0",
+      "original_name": "FUN_1400223f0",
+      "applied_name": "AppendHardwareScreenOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendHardwareScreenOffset(void * command_context, uint x_offset, uint y_offset)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
+      ]
+    },
+    {
+      "address": "140022470",
+      "original_name": "FUN_140022470",
+      "applied_name": "AppendGuardbandAdjustments",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGuardbandAdjustments(void * command_context, float horizontal_clip, float vertical_clip, float horizontal_discard, float vertical_discard)",
+      "evidence": [
+        "Complete361 original instructions across viewport composite and seven callees read and byte matched.",
+        "Connected original-native96 finite cases checking28 packet words each;2496 capacity/refill cases and6 targeted edge observations.",
+        "Primary gfx7.2 register and transform-field definitions corroborate descriptive roles.",
+        "Backed-up trial and independent trial/main reopening verified signatures, float register storage and unchanged original archives."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original symbols.",
+        "Refill controlled; partial emission possible and later smaller packets may fit after failed larger packet.",
+        "Zero extent emits+infinity guardband under controlled nontrappingMXCSR; not supported GPU usage claim.",
+        "No exhaustive integer overflow/IEEE, real allocator, GPU or live-game verification."
       ]
     }
   ],
