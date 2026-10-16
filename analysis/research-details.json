@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 469,
+    "checked_and_applied_names": 471,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 469,
+    "verified_names": 471,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "431 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "433 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8316,5 +8316,31 @@
       "Coordinate-transform bit-width constraints remain unvalidated; explicit marker term is established."
     ],
     "reviewed_name_increment": 0
+  },
+  "collection_curve_and_loaders_checkpoint": {
+    "saved_names": [
+      "GetOrLoadBricker2HashChildAndTagParentBricksShader",
+      "GetOrLoadBricker2CollectBricksShader"
+    ],
+    "original_cpu_instructions": 410,
+    "curve_integer_instructions": 41,
+    "exhaustive_curve_points": 37448,
+    "zero_depth_cases": 256,
+    "depths_checked": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "mm_reference_page": 112,
+    "mm_reference": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+    "limits": [
+      "No full loader runtime, GPU execution, atomic concurrency or memory-visibility validation.",
+      "Curve properties support Hilbert-style ordering; exact convention and runtime depth bounds unresolved.",
+      "Media Molecule2015 slides are architectural leads, not build-identical source.",
+      "Working opaque pointer signatures and descriptive names, not original declarations."
+    ],
+    "runtime_game_verified": false
   }
 }

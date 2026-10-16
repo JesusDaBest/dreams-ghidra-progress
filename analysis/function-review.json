@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "431 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "433 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8964,
-    "other_names": 624,
-    "verification": "complete_inventory_matches_baseline_plus_431_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8962,
+    "other_names": 626,
+    "verification": "complete_inventory_matches_baseline_plus_433_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -10687,6 +10687,52 @@
         "The per-brick DWORD high bit, physical units and counter-overflow use remain unresolved.",
         "Loader can return null; caller lacks a local null check.",
         "Working opaque pointer signature and descriptive name, not an original declaration."
+      ]
+    },
+    {
+      "address": "14127aec0",
+      "original_name": "FUN_14127aec0",
+      "applied_name": "GetOrLoadBricker2HashChildAndTagParentBricksShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadBricker2HashChildAndTagParentBricksShader(void)",
+      "evidence": [
+        "All 410 original CPU loader instructions read and matched; original source/shader literals and native archive hashing link both programs.",
+        "Both shader programs were fully read and reassembled exactly: 804 and 4408 bytes.",
+        "A 41-instruction integer interpreter passes 37448 exhaustive points at depths1..5 for bijection, face adjacency and aligned recursive cubes.",
+        "Backup, trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "No full loader runtime, GPU execution, atomic concurrency or memory-visibility validation.",
+        "Curve properties support Hilbert-style ordering; exact convention and runtime depth bounds unresolved.",
+        "Media Molecule2015 slides are architectural leads, not build-identical source.",
+        "Working opaque pointer signatures and descriptive names, not original declarations."
+      ]
+    },
+    {
+      "address": "14127b600",
+      "original_name": "FUN_14127b600",
+      "applied_name": "GetOrLoadBricker2CollectBricksShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadBricker2CollectBricksShader(void)",
+      "evidence": [
+        "All 410 original CPU loader instructions read and matched; original source/shader literals and native archive hashing link both programs.",
+        "Both shader programs were fully read and reassembled exactly: 804 and 4408 bytes.",
+        "A 41-instruction integer interpreter passes 37448 exhaustive points at depths1..5 for bijection, face adjacency and aligned recursive cubes.",
+        "Backup, trial, promotion and independent reopening passed."
+      ],
+      "caveats": [
+        "No full loader runtime, GPU execution, atomic concurrency or memory-visibility validation.",
+        "Curve properties support Hilbert-style ordering; exact convention and runtime depth bounds unresolved.",
+        "Media Molecule2015 slides are architectural leads, not build-identical source.",
+        "Working opaque pointer signatures and descriptive names, not original declarations."
       ]
     }
   ],

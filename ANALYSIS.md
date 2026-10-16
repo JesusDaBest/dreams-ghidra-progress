@@ -3553,3 +3553,13 @@ Read all 162 decoded instructions of Bricker2HashChildAndTagParentBricks and all
 The collection shader explicitly adds a high-bit marker when its iteration parameter is zero; the CPU supplies that parameter directly. The gather shader loads the key once and preserves it through the per-brick key write. The surface-count shader then tests that high bit for weighted counter contributions. This establishes a zero-iteration marker’s origin, rather than a distance or material flag. Its broader policy role and the counters’ physical units still need tracing.
 
 Collection also contains an orientation/coordinate-bit transformation. Its precise curve convention, bit-width constraints and input meanings are not established yet. Counter readback and CPU consumption remain unfinished. No new names are counted; the total stays 469.
+
+### Collection coordinate ordering and Media Molecule’s Hilbert lead
+
+Interpreted the collection shader’s 41-instruction integer transform and exhaustively checked all 37,448 points at depths 1–5. Its outputs form a bijection, consecutive curve positions share a face, and recursive groups fill aligned cubes. Another 256 zero-depth inputs retain their values. These are independent geometric checks of Hilbert-style ordering; the exact orientation convention, larger depths and runtime parameter bounds remain unresolved. This is software interpretation, not GPU execution.
+
+Page112 of Alex Evans’s 2015 talk describes Hilbert ordering of voxel bricks. The executable now has matching structural evidence for that technique. The historical slide’s stated block/cluster sizes and other rendering details are not established as identical to this build, and the talk does not supply original function names. Source: https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf .
+
+Saved GetOrLoadBricker2HashChildAndTagParentBricksShader and GetOrLoadBricker2CollectBricksShader after reading and matching all 410 original CPU instructions. Both archive programs were already fully read and reassembled exactly. Backup, trial, promotion and independent reopening passed.
+
+Totals: 471 reviewed names; 1,898 mapped and 7,690 unmapped among 9,588 discovered functions.
