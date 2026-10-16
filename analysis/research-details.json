@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 485,
+    "checked_and_applied_names": 486,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 485,
+    "verified_names": 486,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "447 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "448 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -8601,8 +8601,32 @@
     ],
     "limits": [
       "Selected paths only, not complete rendering or shader review.",
-      "Actual hardware stage and shader root-pointer binding need further audit.",
-      "No GPU execution or equivalence to 2016 water code established."
+      "No actual GPU execution, complete driver configuration or final pixel-export dataflow validation.",
+      "No equivalence to the 2016 water code established."
+    ],
+    "runtime_game_verified": false,
+    "original_lfo_shape_names": [
+      "Sine",
+      "Sandcastle",
+      "Square",
+      "Ramp",
+      "RandomSmooth",
+      "RandomStep"
+    ],
+    "stage_pointer_followup": "Both vertex and pixel user-data register pairs receive the same parameter pointer on the traced draw path; register identities checked against LLVM primary definitions.",
+    "colour_followup": "Selected shader branch weights and accumulates contributions derived from the original Colour property; final render-target encoding remains unresolved."
+  },
+  "deferred_draw_job_checkpoint": {
+    "saved_name": "CreateAndQueueDeferredDrawJob",
+    "builder_instructions": 416,
+    "native_chain_instructions": 735,
+    "native_chain_cases": 108,
+    "working_arguments": 9,
+    "limits": [
+      "memcpy/memset imported routines replaced by local native shims.",
+      "Synthetic backing resources with empty dependencies; mode2 and render-target resource tracking not native-tested.",
+      "Capacity, concurrency, all callers and GPU execution remain unresolved.",
+      "Descriptive name and opaque structures do not claim original source recovery."
     ],
     "runtime_game_verified": false
   }

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 445,
+    "done": 446,
     "todo": 1463,
-    "total": 1908,
-    "behavior_or_helpers_reviewed": 380,
+    "total": 1909,
+    "behavior_or_helpers_reviewed": 381,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -21526,12 +21526,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 30,
+        "done": 31,
         "todo": 268,
-        "total": 298,
-        "behavior_or_helpers_reviewed": 30,
+        "total": 299,
+        "behavior_or_helpers_reviewed": 31,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 272,
+        "runtime_functions_identified": 273,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21563,6 +21563,7 @@
           "GetOrLoadOcclusionWriteChildVoxelsShader",
           "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
+          "CreateAndQueueDeferredDrawJob",
           "TryAllocateGraphicsResourceStorage",
           "InitializeGpuImageResource",
           "ScheduleRequiredQueueSequenceWaits"
@@ -21865,6 +21866,7 @@
           "14131eca0",
           "14139fd80",
           "1413a00c0",
+          "1413a0150",
           "1413c2ee0",
           "1413c3620",
           "1413c90c0"
@@ -24294,17 +24296,18 @@
           {
             "name": "rendering/drawing",
             "label": "Scene drawing",
-            "done": 1,
+            "done": 2,
             "todo": 66,
-            "total": 67,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 68,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 67,
+            "runtime_functions_identified": 68,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
-              "AppendGraphicsUserDataRegisters"
+              "AppendGraphicsUserDataRegisters",
+              "CreateAndQueueDeferredDrawJob"
             ],
             "todo_names": [
               "0x140c29820",
@@ -24375,7 +24378,8 @@
               "0x141392cc0"
             ],
             "done_addresses": [
-              "1400256c0"
+              "1400256c0",
+              "1413a0150"
             ],
             "todo_addresses": [
               "140c29820",
@@ -24826,17 +24830,18 @@
               {
                 "name": "rendering/drawing/renderer",
                 "label": "Renderer",
-                "done": 1,
+                "done": 2,
                 "todo": 3,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
+                "runtime_functions_identified": 5,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
-                  "AppendGraphicsUserDataRegisters"
+                  "AppendGraphicsUserDataRegisters",
+                  "CreateAndQueueDeferredDrawJob"
                 ],
                 "todo_names": [
                   "0x140c29820",
@@ -24844,7 +24849,8 @@
                   "0x140c29f60"
                 ],
                 "done_addresses": [
-                  "1400256c0"
+                  "1400256c0",
+                  "1413a0150"
                 ],
                 "todo_addresses": [
                   "140c29820",
@@ -24856,17 +24862,18 @@
                   {
                     "name": "rendering/drawing/renderer/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 3,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
+                    "runtime_functions_identified": 5,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
-                      "AppendGraphicsUserDataRegisters"
+                      "AppendGraphicsUserDataRegisters",
+                      "CreateAndQueueDeferredDrawJob"
                     ],
                     "todo_names": [
                       "0x140c29820",
@@ -24874,7 +24881,8 @@
                       "0x140c29f60"
                     ],
                     "done_addresses": [
-                      "1400256c0"
+                      "1400256c0",
+                      "1413a0150"
                     ],
                     "todo_addresses": [
                       "140c29820",
@@ -43362,5 +43370,5 @@
       }
     ]
   },
-  "unmapped": 7680
+  "unmapped": 7679
 }

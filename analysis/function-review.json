@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "447 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "448 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8948,
-    "other_names": 640,
-    "verification": "complete_inventory_matches_baseline_plus_447_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8947,
+    "other_names": 641,
+    "verification": "complete_inventory_matches_baseline_plus_448_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11067,6 +11067,30 @@
         "Stage enum identities and caller count limits remain unresolved.",
         "Count 17 advances over unfilled payload; no claim that it is supported real usage.",
         "No complete shader or Dreams subsystem completion claim."
+      ]
+    },
+    {
+      "address": "1413a0150",
+      "original_name": "FUN_1413a0150",
+      "applied_name": "CreateAndQueueDeferredDrawJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CreateAndQueueDeferredDrawJob(void * draw_state, void * vertex_shader, void * pixel_shader, ulonglong vertex_constant_mode_and_size, void * vertex_constant_source, uint pixel_constant_mode, uint pixel_constant_bytes, void * pixel_constant_source, void * draw_arguments)",
+      "evidence": [
+        "All 416 original builder instructions read and byte matched.",
+        "Complete 735-instruction original builder/constant/dependency/finalizer chain passed 108 controlled cases.",
+        "Verified copied draw state, argument record, shader pointers, two constant payloads and queue append.",
+        "Both constant-pointer streams traced to vertex and pixel user-data register writers.",
+        "Backed-up trial and independent trial/main-project reopening verify nine arguments, including entry stack offsets 8,16,24."
+      ],
+      "caveats": [
+        "memcpy/memset imported routines replaced by local native shims.",
+        "Synthetic backing resources with empty dependencies; mode2 and render-target resource tracking not native-tested.",
+        "Capacity, concurrency, all callers and GPU execution remain unresolved.",
+        "Descriptive name and opaque structures do not claim original source recovery."
       ]
     }
   ],

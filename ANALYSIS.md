@@ -3659,3 +3659,15 @@ Matched the glass shader resources against the unchanged local archive using the
 These are current-build EffectField findings. They do not establish equivalence to the 2016 livestream’s trochoidal water deformation. Raw code, shader binaries and local data remain outside the public repository.
 
 Totals: 485 reviewed names; 1,908 mapped and 7,680 unmapped among 9,588 discovered functions. Naming and selected-path evidence do not measure overall game completion.
+
+### Deferred draw construction and EffectField waveform follow-up
+
+Saved CreateAndQueueDeferredDrawJob with a working nine-argument signature, including three explicitly verified stack arguments. All 416 original builder instructions were read and matched. A 735-instruction original builder, constant-registration, dependency and finalizer chain passed 108 synthetic cases covering copied draw state, both shader pointers, null pixel-shader fallback, two constant payloads, argument preservation and queue insertion. Imported memcpy and memset were replaced by local native shims. Render-target tracking branches, constant mode 2, capacity, concurrency and real GPU execution were not tested.
+
+The fixtures clarified a precondition: pointer-tracking mode needs a registered resource covering the pointer target, not merely the address of the source payload. Invalid fixture inputs faulted in the dependency collector; corrected fixtures passed. This is not evidence of a failure with valid game inputs.
+
+Traced both constant streams of the glass draw. Each contains the same eight-byte parameter-block pointer. The executor sends them to vertex and pixel user-data register pairs. Original register-table values match [LLVM’s primary AMDGPU register definitions](https://llvm.org/doxygen/AMDGPUPALMetadata_8cpp_source.html). This resolves the earlier stage-identity uncertainty on this selected path; it does not validate complete driver configuration or GPU execution.
+
+Recovered the original ELFOShape names and numeric values: Sine, Sandcastle, Square, Ramp, RandomSmooth and RandomStep. They agree with the selected shader waveform branches, including smoothed and stepped hash samples. The waveform modulates a weight used for contributions derived from the original Colour property. Those contributions accumulate into later shading calculations. Final pixel-export dataflow, complete mode behavior under GPU arithmetic and the full glass shader remain unresolved. No equivalence to the 2016 livestream’s water algorithm is established.
+
+Totals: 486 reviewed names; 1,909 mapped and 7,679 unmapped among 9,588 discovered functions. These are verified descriptive roles, not a whole-game completion percentage.
