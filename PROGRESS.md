@@ -3411,3 +3411,13 @@ Saved AppendColorRenderTargetBinding with an independently reopened working sign
 Connected testing corrected an earlier local bit-field interpretation: one macro-table reader selects bits 6–7, rather than bits 2–3. Nested resolver failure cases remain excluded: the caller ignores its return status and may consume unwritten stack output. Valid descriptor constraints, base-word address units and real GPU behavior remain unresolved. Refill was controlled. No live game or GPU execution is claimed.
 
 Totals: 493 reviewed names; 1,916 mapped and 7,672 unmapped among 9,588 discovered functions.
+
+### Blend controls and depth/stencil target binding
+
+Saved eight descriptive names with working signatures: ResetBlendControl, SetBlendControlEnabled, SetColorBlendFactorsAndOperation, SetSeparateAlphaBlendEnabled, SetAlphaBlendFactorsAndOperation, AppendColorBlendControl, AppendColorTargetWriteMask and AppendDepthStencilRenderTargetBinding. All 180 original instructions were read and byte matched. Backed-up trial, independent trial reopen, promotion and independent main reopen verified only the expected name/signature changes and unchanged original archives.
+
+The five original field setters passed 2,090 exact packing cases, including oversized inputs and preservation masks. Primary gfx7.2 field definitions corroborate source/destination factors, operations, enable and separate-alpha roles. Enable inputs are shifted without Boolean normalization; the reviewed caller supplies zero or one. Hardware factor enum values and actual pixel output were not tested.
+
+The original blend/target-mask writers passed 640 cases checking every packet word, capacity threshold, refill failure/relocation and cursor. Blend controls clear bits 13–15 before emission. The connected depth/stencil writer and descriptor helpers passed 6,400 cases over 501 original instructions, checking 24-word active packets and six-word disabled packets. Nested resolver failure cases remain excluded because their caller ignores status and may consume unwritten output. Valid descriptor constraints remain unresolved. Refill was controlled, with no real GPU or live-game validation. Test instruction scopes overlap and do not measure whole-game completion.
+
+Totals: 501 reviewed names; 1,924 mapped and 7,664 unmapped among 9,588 discovered functions.

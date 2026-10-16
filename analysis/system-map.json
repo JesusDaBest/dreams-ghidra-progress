@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1916,
-  "unmapped_total": 7672,
+  "mapped_total": 1924,
+  "unmapped_total": 7664,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -48332,6 +48332,174 @@
           "kind": "verified_semantic_review",
           "name": "AppendColorRenderTargetBinding",
           "support": "Complete original writer reviewed and connected-native tested; independently reopened signature."
+        }
+      ]
+    },
+    "140033e60": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "1df8eed5de3158f416b76de6766b079a7067de033c465a3a0fb4c27772ff3be4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetBlendControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033e70": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "ee43636023d5993879a4a4090b24ea3190c78cf1606db9680a85d5d30f4df706",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetBlendControlEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033e80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "d14c6ee19a1e42072091a336b7350f5ea0fbbc6e48aebc910ecd07fb8c0b1d6e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetColorBlendFactorsAndOperation",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033ed0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "512f17e8a45775fad6f485edbbfaabd7700898b5570a116e2d8b8c58c7e5583e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetSeparateAlphaBlendEnabled",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140033ea0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "8b26c42b83fe8e0875771eefefbbac5d781d92b44e1b033f2aa1296247ddbd0c",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetAlphaBlendFactorsAndOperation",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140021e40": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "5745063431eae335b4b79d2afde4b3b1f2c2b54fc8be01bfa684b143cb94df59",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendColorBlendControl",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140021d80": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "969a64c3130747a32bee202f5561cc50d58041ef75a770bf7b2a9eefb17adf19",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendColorTargetWriteMask",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140022660": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "drawing",
+        "renderer",
+        "runtime-implementation"
+      ],
+      "component_basis": "Draw-state blend control and depth-target command path read and native-tested.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Blend-control packing, target-mask emission or depth/stencil target binding.",
+      "code_sha256": "35337b05a9a02f3cbefaac671bd3d1b3bbc347fc63085cfae732611609c38fc1",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendDepthStencilRenderTargetBinding",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
     }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "455 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "463 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8940,
-    "other_names": 648,
-    "verification": "complete_inventory_matches_baseline_plus_455_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8932,
+    "other_names": 656,
+    "verification": "complete_inventory_matches_baseline_plus_463_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -11256,6 +11256,190 @@
         "Controlled refill callback; no real GPU or game execution.",
         "Nested resolver error paths excluded; caller ignores status and may use unwritten stack output. Descriptor validity constraints unresolved.",
         "Descriptor base-word units and complete hardware semantics unresolved."
+      ]
+    },
+    {
+      "address": "140033e60",
+      "original_name": "FUN_140033e60",
+      "applied_name": "ResetBlendControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ResetBlendControl(uint * blend_control)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140033e70",
+      "original_name": "FUN_140033e70",
+      "applied_name": "SetBlendControlEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetBlendControlEnabled(uint * blend_control, uint enabled)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140033e80",
+      "original_name": "FUN_140033e80",
+      "applied_name": "SetColorBlendFactorsAndOperation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetColorBlendFactorsAndOperation(uint * blend_control, uint source_factor, uint operation, uint destination_factor)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140033ed0",
+      "original_name": "FUN_140033ed0",
+      "applied_name": "SetSeparateAlphaBlendEnabled",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetSeparateAlphaBlendEnabled(uint * blend_control, uint enabled)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140033ea0",
+      "original_name": "FUN_140033ea0",
+      "applied_name": "SetAlphaBlendFactorsAndOperation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetAlphaBlendFactorsAndOperation(uint * blend_control, uint source_factor, uint operation, uint destination_factor)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140021e40",
+      "original_name": "FUN_140021e40",
+      "applied_name": "AppendColorBlendControl",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendColorBlendControl(void * command_context, uint target_slot, uint blend_control)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140021d80",
+      "original_name": "FUN_140021d80",
+      "applied_name": "AppendColorTargetWriteMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendColorTargetWriteMask(void * command_context, uint target_write_mask)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
+      ]
+    },
+    {
+      "address": "140022660",
+      "original_name": "FUN_140022660",
+      "applied_name": "AppendDepthStencilRenderTargetBinding",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendDepthStencilRenderTargetBinding(void * command_context, void * depth_stencil_descriptor)",
+      "evidence": [
+        "Complete180 original instructions across eight blend/depth functions read and byte matched.",
+        "Original-native fixtures:2090 setter cases,640 blend/mask packet cases and6400 connected depth-target cases over501 original instructions.",
+        "Primary gfx7.2 register offsets and blend field masks corroborate descriptive roles.",
+        "Backed-up trial, independent trial reopening, promotion and independent main reopening verified signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive names, not recovered original source names.",
+        "Refill controlled; no real GPU or live-game execution.",
+        "Nested depth resolver error paths excluded; descriptor constraints unresolved.",
+        "Enable arguments shifted without Boolean normalization; reviewed caller supplies0/1."
       ]
     }
   ],
