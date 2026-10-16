@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1880,
-  "unmapped_total": 7708,
+  "mapped_total": 1881,
+  "unmapped_total": 7707,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -28712,6 +28712,11 @@
           "site": "141296059",
           "target": "141725985",
           "anchor_sha256": "f7281d1aaad40a1db2880321035d799724de4acd35578ec2aaff18edb840b8c0"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadHasherClearShader",
+          "support": "Complete CPU body and independent saved-signature reopening; GPU semantics unverified."
         }
       ],
       "code_sha256": "63e63f69e3aa06bd5423388f6afb1c0eb33699be176a8c62c2aa199fee72f560",
@@ -47511,6 +47516,27 @@
           "kind": "verified_semantic_review",
           "name": "AllocateAlignedBlockFromPool",
           "support": "Complete body, scoped native core tests and independent saved-signature reopen; full concurrency and live runtime unverified."
+        }
+      ]
+    },
+    "141296520": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "hasher",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete body and direct calls from the brick pipeline and sweep builder; same resource object and HasherClear shader as source-associated hasher loader.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Queues clearing of the CSG GPU hash buffers.",
+      "code_sha256": "f456f29c8739e65fb48996981d9bf852e2263d91852a18fd223425f5cf7f1b82",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchGpuHashTableClear",
+          "support": "Complete CPU body and independent saved-signature reopening; GPU semantics unverified."
         }
       ]
     }

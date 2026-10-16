@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 407,
-    "todo": 1473,
-    "total": 1880,
-    "behavior_or_helpers_reviewed": 342,
+    "done": 409,
+    "todo": 1472,
+    "total": 1881,
+    "behavior_or_helpers_reviewed": 344,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -31862,12 +31862,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 10,
-        "todo": 115,
-        "total": 125,
-        "behavior_or_helpers_reviewed": 10,
+        "done": 12,
+        "todo": 114,
+        "total": 126,
+        "behavior_or_helpers_reviewed": 12,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 86,
+        "runtime_functions_identified": 87,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -31879,7 +31879,9 @@
           "RecomputePackedResourceNodeSummary",
           "GetOrLoadBricker2TagBricksShader",
           "GetOrLoadBricker2HashBricksShader",
+          "GetOrLoadHasherClearShader",
           "InitializeGpuHashTableResources",
+          "DispatchGpuHashTableClear",
           "BuildSweepBlockRanges",
           "DispatchSweepHashBlocksRange"
         ],
@@ -31977,7 +31979,6 @@
           "0x141288f70",
           "0x141289310",
           "0x141295bf0",
-          "0x141295f90",
           "0x141296670",
           "0x141296a10",
           "0x141297f40",
@@ -32008,7 +32009,9 @@
           "140c6b930",
           "14127a040",
           "14127a780",
+          "141295f90",
           "141296330",
+          "141296520",
           "1412a20f0",
           "1412a3b40"
         ],
@@ -32106,7 +32109,6 @@
           "141288f70",
           "141289310",
           "141295bf0",
-          "141295f90",
           "141296670",
           "141296a10",
           "141297f40",
@@ -32134,12 +32136,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 10,
-            "todo": 76,
-            "total": 86,
-            "behavior_or_helpers_reviewed": 10,
+            "done": 12,
+            "todo": 75,
+            "total": 87,
+            "behavior_or_helpers_reviewed": 12,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 80,
+            "runtime_functions_identified": 81,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -32151,7 +32153,9 @@
               "RecomputePackedResourceNodeSummary",
               "GetOrLoadBricker2TagBricksShader",
               "GetOrLoadBricker2HashBricksShader",
+              "GetOrLoadHasherClearShader",
               "InitializeGpuHashTableResources",
+              "DispatchGpuHashTableClear",
               "BuildSweepBlockRanges",
               "DispatchSweepHashBlocksRange"
             ],
@@ -32216,7 +32220,6 @@
               "0x141288f70",
               "0x141289310",
               "0x141295bf0",
-              "0x141295f90",
               "0x141296670",
               "0x141296a10",
               "0x141297f40",
@@ -32241,7 +32244,9 @@
               "140c6b930",
               "14127a040",
               "14127a780",
+              "141295f90",
               "141296330",
+              "141296520",
               "1412a20f0",
               "1412a3b40"
             ],
@@ -32306,7 +32311,6 @@
               "141288f70",
               "141289310",
               "141295bf0",
-              "141295f90",
               "141296670",
               "141296a10",
               "141297f40",
@@ -32794,6 +32798,57 @@
                 ]
               },
               {
+                "name": "sculpting-painting/csg/hasher",
+                "label": "Hasher",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetOrLoadHasherClearShader",
+                  "DispatchGpuHashTableClear"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141295f90",
+                  "141296520"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "sculpting-painting/csg/hasher/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetOrLoadHasherClearShader",
+                      "DispatchGpuHashTableClear"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141295f90",
+                      "141296520"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "sculpting-painting/csg/inertia",
                 "label": "Inertia",
                 "done": 0,
@@ -33269,53 +33324,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "141295bf0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "sculpting-painting/csg/hasher",
-                "label": "Hasher",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x141295f90"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "141295f90"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "sculpting-painting/csg/hasher/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x141295f90"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "141295f90"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -42798,5 +42806,5 @@
       }
     ]
   },
-  "unmapped": 7708
+  "unmapped": 7707
 }

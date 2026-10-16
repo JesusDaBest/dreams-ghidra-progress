@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 448,
+    "checked_and_applied_names": 450,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 448,
+    "verified_names": 450,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "410 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "412 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -7936,10 +7936,37 @@
     "original_instructions": 278,
     "selected_core_native_cases": 616,
     "limits": [
-      "Core native tests bypass mutex entry/exit and disable high-water snapshots; not full allocator or thread-safety verification.",
-      "Node exhaustion, multi-block selection, invalid metadata and integer overflow remain untested.",
-      "Static unchecked-failure path in hash-resource setup is documented; no live crash reproduced.",
+      "Historical 616-case checkpoint bypassed mutex entry/exit and snapshots. Later multiblock and snapshot evidence is recorded separately in resource_allocation_followup.",
+      "Full allocator concurrency, invalid metadata and integer overflow remain unverified.",
+      "Static unchecked allocation failure is documented; no live crash reproduced.",
       "Opaque records and working signatures are not original source declarations."
+    ],
+    "runtime_game_verified": false
+  },
+  "gpu_hash_clear_checkpoint": {
+    "saved_names": [
+      "DispatchGpuHashTableClear",
+      "GetOrLoadHasherClearShader"
+    ],
+    "original_instructions": 292,
+    "limits": [
+      "No GPU clear-value, completion or live game verification.",
+      "Dispatcher queues work without an internal barrier or CPU wait; callers supply sequencing.",
+      "Loader may return null; dispatcher has no local null check. Static risk only, no reproduced crash.",
+      "Working opaque-object signatures and descriptive names are not original source declarations."
+    ],
+    "runtime_game_verified": false
+  },
+  "resource_allocation_followup": {
+    "multiblock_native_cases": 512,
+    "snapshot_native_cases": 1920,
+    "total_selected_core_native_cases": 3048,
+    "findings": [
+      "First fitting block can fail for insufficient split nodes without trying a later exact-fit block.",
+      "High-water value can advance with a partial snapshot when bookkeeping nodes run out."
+    ],
+    "limits": [
+      "Selected original allocation core only; mutex entry/exit, concurrency, invalid metadata, integer overflow and live game behavior remain unverified."
     ],
     "runtime_game_verified": false
   }
