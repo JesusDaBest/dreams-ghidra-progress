@@ -2986,3 +2986,9 @@ The complete original selectors, language lookup, copy helpers and original libc
 Static initialization tracing independently links six original imports and the 23-entry platform language table with its original relocations. The path checks DefaultLanguage, reads a platform parameter, and tests full and base localization-file paths before falling back. This path was not executed.
 
 Totals: 424 checked names and 1,857 mapped functions among 9,580 discovered functions; 7,723 still need mapping. These are documented review counts, not whole-game completion.
+
+### Verified tool-tag lookup signature
+
+Preserved the existing reviewed name GetToolTagName and saved its one 32-bit index argument and string-pointer return. Independent reopening verified persistence and unchanged original instructions and archives. The complete original leaf function, five relative jump tables and original strings passed 5,123 checks across all 837 traced indexes, nearby values, signed extremes and deterministic random inputs. Unsupported values return notag. Names include tools, modes, menus and actions; this verifies the lookup, not those systems. No new naming credit: 424 checked names.
+
+Further metadata tracing distinguishes category-name lookup from numeric parsing: the helper forms a kCategory name, hashes it and maps recognized hashes to category IDs. Award lookup recognizes a fixed set of 191 hashes and writes the recognized hash or zero. These two helpers have static body review but no new runtime or naming credit.

@@ -942,7 +942,8 @@
       "evidence": [
         "Complete captured assembly covers 687 instructions and 2777 bytes. The function takes EDI, dispatches through five bounded signed-relative jump tables, and returns static string pointers in RAX without calls or writes.",
         "Static interpretation of all observed instruction forms and directly read table bytes resolves all 837 input IDs from 0 through 0x344: 326 named entries, 511 notag results. Checks include InventoryVariableGadget at 0x264, InventoryNetworkVariableGadget at 0x2ec, ImportExportMode at 0x344, and notag for 0x345 and 0xffffffff.",
-        "Direct caller 14018dee0 passes the returned string under tool_tag to 14017f380. Direct caller 140634730 compares returned names against text input. Independent descriptor 140d25180 names EToolTag and uses the tooltag field, with corresponding enum registrations in 140d25430."
+        "Direct caller 14018dee0 passes the returned string under tool_tag to 14017f380. Direct caller 140634730 compares returned names against text input. Independent descriptor 140d25180 names EToolTag and uses the tooltag field, with corresponding enum registrations in 140d25430.",
+        "Complete original687-instruction leaf function,five originaljump tables and327NULterminated literals passed5123nativechecks:all837tracedindexes,nearbyindexes through1023,signedextremes,4096randomvalues. SavedoneuintEDI argument andcharpointerRAX return independentlyreopened;nameunchanged."
       ],
       "caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
@@ -950,7 +951,8 @@
         "Finite enumeration covers the observed tag range and two out-of-range representatives; unsigned dispatch guards provide the fallback for other out-of-range values.",
         "No parameter types, prototype, data layout, or calling convention changes proposed."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "char * PS4_SYSV GetToolTagName(uint tool_tag_index)"
     },
     {
       "address": "140944f20",

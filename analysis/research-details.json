@@ -7621,5 +7621,24 @@
       "Preallocated output;allocation,growth,free and failure paths not executed.",
       "Invalid counts,aliases,unsupported languages,page boundaries and live-game behavior remain untested."
     ]
+  },
+  "tool_tag_signature_runtime_checkpoint": {
+    "functions": {
+      "140646860": {
+        "name": "GetToolTagName",
+        "signature": "char * PS4_SYSV GetToolTagName(uint tool_tag_index)"
+      }
+    },
+    "original_instructions": 687,
+    "original_jump_tables": 5,
+    "original_literal_strings": 327,
+    "standalone_native_checks": 5123,
+    "new_checked_names": 0,
+    "original_archives_unchanged": true,
+    "limits": [
+      "Original lookup only;not tools,menus or tutorial execution.",
+      "Full original assembly reviewed;trial pseudocode review limited to signature,entry and final return windows.",
+      "Existing registered EToolTag association supports interpretation;no original source declaration recovered."
+    ]
   }
 }
