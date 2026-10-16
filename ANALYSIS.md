@@ -3459,3 +3459,13 @@ ISA reference: https://gpuopen.com/download/AMD_GCN3_Instruction_Set_Architectur
 Saved GetOrLoadBricker2GatherVoxelsChunkShader and GetOrLoadBricker2WriteTreeBricksShader after reading and matching all 411 original CPU instructions. Original source and shader literals link these loaders to the archived programs analyzed in the previous checkpoint. Both use guarded initialization, archive lookup and file fallback, and return an opaque resource only when its header is present. Backup, isolated trial, promotion and independent reopening passed. GPU execution and whole-shader correctness remain unverified.
 
 Totals: 457 reviewed names; 1,887 mapped and 7,701 unmapped among 9,588 discovered functions.
+
+### Gather output format and image descriptor flags
+
+Traced the gather output descriptor from its shader load to the CPU constructor. The output view divides source width/height by four and uses data format 14 with numeric format 4: 32_32_32_32 UINT in AMD register definitions. The shader writes four raw unsigned DWORDs carrying its BC3-compatible packed payload; the write view itself is not BC3-typed. This resolves the earlier hardware-format uncertainty statically, without GPU execution.
+
+Saved SetImageDescriptorControlFlags after matching all 18 instructions and passing 4,096 cases executing the complete original CPU body. The helper sets split control flags and does not set the data format. Backup, trial, promotion and independent reopening passed. The extra uploaded DWORD remains under investigation; the shader header indicates eleven user registers and a hardware group-index register, so an uninitialized shader input defect has not been established.
+
+Primary definitions: https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/master/drivers/gpu/drm/amd/include/asic_reg/gca/gfx_7_2_enum.h and https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux/+/master/drivers/gpu/drm/amd/include/asic_reg/gca/gfx_7_2_sh_mask.h .
+
+Totals: 458 reviewed names; 1,888 mapped and 7,700 unmapped among 9,588 discovered functions.

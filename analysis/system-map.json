@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1887,
-  "unmapped_total": 7701,
+  "mapped_total": 1888,
+  "unmapped_total": 7700,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -47675,6 +47675,27 @@
           "support": "Staged original assembly review andindependent saved-name reopen;GPU output unverified."
         }
       ]
+    },
+    "14003a020": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete image-descriptor flag setter andsource-associatedBricker2 image-view callers;general graphics support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Sets splitcontrolflags inimage descriptor.",
+      "code_sha256": "cd09e9886bc6f33b26aa48809cb7eaa6ae0ce61c5a8c5ecc796403be2774862e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetImageDescriptorControlFlags",
+          "support": "4096 original-native cases andindependently reopened signature;GPU execution unverified."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -54783,6 +54804,17 @@
             {
               "id": "buffer-descriptors",
               "label": "Buffer descriptors",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "image-descriptors",
+              "label": "Image descriptors",
               "children": [
                 {
                   "id": "runtime-implementation",

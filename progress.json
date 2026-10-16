@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 417,
+    "done": 418,
     "todo": 1470,
-    "total": 1887,
-    "behavior_or_helpers_reviewed": 352,
+    "total": 1888,
+    "behavior_or_helpers_reviewed": 353,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -27284,12 +27284,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 10,
+        "done": 11,
         "todo": 270,
-        "total": 280,
-        "behavior_or_helpers_reviewed": 10,
+        "total": 281,
+        "behavior_or_helpers_reviewed": 11,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 254,
+        "runtime_functions_identified": 255,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -27300,6 +27300,7 @@
           "InitializeGpuBufferDescriptor",
           "PackMaskedFormatFields",
           "GenerateVertexFetchShaderInstructions",
+          "SetImageDescriptorControlFlags",
           "RegisterLabelVisibleFieldOffset",
           "SubmitComputeQueueAndWaitForFence",
           "AppendComputeCompletionFence",
@@ -27584,6 +27585,7 @@
           "14001d980",
           "14001eb20",
           "1400376f0",
+          "14003a020",
           "140d67a10",
           "141297bd0",
           "141297cf0",
@@ -31277,12 +31279,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 6,
+            "done": 7,
             "todo": 0,
-            "total": 6,
-            "behavior_or_helpers_reviewed": 6,
+            "total": 7,
+            "behavior_or_helpers_reviewed": 7,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 6,
+            "runtime_functions_identified": 7,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -31290,6 +31292,7 @@
               "ExtractShaderBinarySections",
               "InitializeGpuBufferDescriptor",
               "PackMaskedFormatFields",
+              "SetImageDescriptorControlFlags",
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
               "TryAllocateGraphicsResourceStorage"
@@ -31299,6 +31302,7 @@
               "140011fb0",
               "14001d980",
               "14001eb20",
+              "14003a020",
               "141297bd0",
               "141297cf0",
               "1413c2ee0"
@@ -31401,6 +31405,53 @@
                     "done_addresses": [
                       "141297bd0",
                       "141297cf0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/image-descriptors",
+                "label": "Image descriptors",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SetImageDescriptorControlFlags"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14003a020"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/image-descriptors/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "SetImageDescriptorControlFlags"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14003a020"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -42983,5 +43034,5 @@
       }
     ]
   },
-  "unmapped": 7701
+  "unmapped": 7700
 }
