@@ -11751,5 +11751,101 @@
       "new_name_credit": 0,
       "project_modified": false
     }
+  },
+  "animation_record_working_types_checkpoint": {
+    "layouts": {
+      "AnimationRecordInputWorking80": {
+        "bytes": 80,
+        "verified_fields": {
+          "input_data": 0,
+          "packed_payload_bytes": 8,
+          "type_code": 16,
+          "record_flags": 18,
+          "range_value_a": 20,
+          "time_origin": 24,
+          "range_value_b": 76
+        },
+        "opaque_spans": [
+          [
+            12,
+            4
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            32,
+            12
+          ],
+          [
+            44,
+            32
+          ]
+        ]
+      },
+      "AnimationRecordHeaderWorking72": {
+        "bytes": 72,
+        "verified_fields": {
+          "packed_payload_bytes": 0,
+          "data_logical_offset": 4,
+          "type_code": 8,
+          "record_flags": 10,
+          "range_value_a": 12,
+          "time_origin": 16,
+          "range_value_b": 68
+        },
+        "opaque_spans": [
+          [
+            9,
+            1
+          ],
+          [
+            24,
+            12
+          ],
+          [
+            36,
+            32
+          ]
+        ]
+      },
+      "AnimationRecordPageRootsWorking8": {
+        "bytes": 8,
+        "verified_fields": {
+          "header_root": 0,
+          "data_root": 4
+        }
+      }
+    },
+    "saved_signatures": {
+      "14106de70": {
+        "name": "AppendAnimationHeaderAndPayloadRecord",
+        "signature": "int PS4_SYSV AppendAnimationHeaderAndPayloadRecord(AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages)"
+      },
+      "141070310": {
+        "name": "DispatchAnimationWireRecordUpdate",
+        "signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, void * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)"
+      },
+      "141077240": {
+        "name": "FUN_141077240",
+        "signature": "int PS4_SYSV FUN_141077240(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, void * wire_context, void * output_context, AnimationRecordPageRootsWorking8 * page_roots, void * auxiliary_state)"
+      },
+      "1410705f0": {
+        "name": "FUN_1410705f0",
+        "signature": "int PS4_SYSV FUN_1410705f0(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, void * wire_context, void * output_context, AnimationRecordPageRootsWorking8 * page_roots, void * auxiliary_state, byte flag_a, byte flag_b)"
+      },
+      "14107ea70": {
+        "name": "FUN_14107ea70",
+        "signature": "int PS4_SYSV FUN_14107ea70(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, void * wire_context, void * output_context, AnimationRecordPageRootsWorking8 * page_roots, void * auxiliary_state, byte flag_a, byte flag_b)"
+      }
+    },
+    "verification": "Independent reopening, all member offsets/sizes checked, original instruction bytes matched, five signatures changed and all9591 function names preserved. Fresh decompilation saved for allfive.",
+    "new_name_credit": 0,
+    "limits": [
+      "Working analyst layouts and ABI, not recovered source declarations.",
+      "Large update handlers remain unnamed/partially reviewed; three opaque context pointers do not define object layouts.",
+      "Unknown spans and range values retain neutral field names."
+    ]
   }
 }

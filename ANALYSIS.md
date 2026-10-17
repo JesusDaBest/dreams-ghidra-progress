@@ -4842,3 +4842,12 @@ When the first incoming key lies within tolerance of the next old stored time, i
 Complete header and payload streams match independent models, including the conditional masks. Tests also check returned indices, output transform, world/source-object/input/source-node immutability and guards. Original source counts include 42 records filling a 504-byte leaf, exercising output growth. Original allocator, finalizer, interning, release and hashing execute with adapted memory imports and controlled mutex/thread callbacks.
 
 Other types, exhaustive rounding/flag combinations, deeper original source trees, full producer/insertion execution, malformed inputs, concurrency and playback remain unverified. The 6,366-instruction extended handler is partially reviewed and unnamed. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
+
+
+### Working Animation record layouts and argument types
+
+Saved and independently reopened three explicit working types: the 80-byte input descriptor, 72-byte stored header and 8-byte header/data page-root pair. Their sizes and member offsets follow original assembly and the preceding append, converter and update evidence. Input pointer, packed byte count, type code, record flags, origin and resource roots now appear as named fields in decompiled code. Unresolved spans stay opaque; the two range values retain neutral names because the observed converter behavior does not establish a min/max contract.
+
+Append and dispatch now accept typed descriptor/root pointers. The three partially reviewed update handlers have working pointer/register/stack argument types consistent with the traced dispatcher and original-code suites, including the two extra byte arguments used by override/extended handlers. Their context pointers remain opaque. These are analyst working layouts and calling signatures, not recovered original source declarations.
+
+Independent reopening checks every defined member offset/size, original instruction bytes and fresh decompilation for all five functions. Only the five expected signatures changed; all 9,591 function names remain intact. Prior signatures/comments were saved locally. The larger handlers remain unnamed and partially reviewed, with no extra review or feature-completion credit. Totals remain 636 checked names and 2,048 mapped functions.

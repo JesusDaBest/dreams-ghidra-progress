@@ -14500,14 +14500,15 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, void * record_descriptor, uint * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, void * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)",
+      "saved_working_signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, void * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)",
       "evidence": [
         "Complete194-instruction original assembly and decompiled body reviewed and bytes verified; original insertion caller traced.",
         "Original Animation HeaderAndDataPages field registration at0x110 independently matched.",
         "2368 dispatcher scenarios execute original97-instruction wire lookup and43-instruction resource leaf iterator;304 select a record handler and2064 select fallback.",
         "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
         "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result.",
-        "Subsequent168-case original missing-wire path executes actual append/resource allocation/growth/finalization/hash without fallback probe; three existing-record mutation handlers remain separate."
+        "Subsequent168-case original missing-wire path executes actual append/resource allocation/growth/finalization/hash without fallback probe; three existing-record mutation handlers remain separate.",
+        "Subsequent independently reopened working layouts:80-byte input descriptor,72-byte stored header,8-byte header/data page-root pair; fresh decompilation exposes named verified fields. Unknown fields remain opaque; range values do not assert min/max semantics."
       ],
       "caveats": [
         "Analyst descriptive dispatcher name and working types, not original declarations.",
@@ -14524,13 +14525,14 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "int PS4_SYSV AppendAnimationHeaderAndPayloadRecord(void * record_descriptor, uint * header_and_data_pages)",
+      "saved_working_signature": "int PS4_SYSV AppendAnimationHeaderAndPayloadRecord(AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages)",
       "evidence": [
         "Complete265-instruction original assembly and decompiled append body read and byte verified.",
         "168 direct original writer scenarios cover empty/nonempty/full-header/branched trees, code0/1/3 and both original element-size table variants, zero/aligned/unaligned lengths and page growth.",
         "168 additional scenarios connect original dispatcher and wire lookup to original append, allocator, growth, finalization, interning, release and hash with no fallback probe.",
         "Exact flattened payload/header contents, stored logical offset, returned last-record index, source-node immutability, descriptor/payload and pair guards checked.",
-        "Saved signed32-bit return and descriptor/pages-pointer working ABI independently reopened and freshly decompiled."
+        "Saved signed32-bit return and descriptor/pages-pointer working ABI independently reopened and freshly decompiled.",
+        "Subsequent independently reopened working layouts:80-byte input descriptor,72-byte stored header,8-byte header/data page-root pair; fresh decompilation exposes named verified fields. Unknown fields remain opaque; range values do not assert min/max semantics."
       ],
       "caveats": [
         "Analyst descriptive names and working opaque signatures, not original source declarations.",
