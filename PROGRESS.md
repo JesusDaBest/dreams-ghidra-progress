@@ -5186,3 +5186,14 @@ Original action-table and dispatch evidence identifies action 818 as `KeyframeMo
 Renamed the working Machine prefix field from `opaque_flags_d6` to descriptive `keyframe_auto_blend`. Independent reopening and fresh typed-consumer decompilation confirm it. The byte datatype, partial prefix size, other fields, function names and signatures remain unchanged. This is a field identification, not a new reviewed-function count.
 
 One input control now has a concrete action-to-input-metadata link. The broader Animation Canvas blend/strength controls, final stored-key conversion, complete producer behavior and gameplay remain unverified. Totals remain 679 checked names and 2,091 mapped functions.
+
+
+### AutoBlend metadata through converter, filter and resource append
+
+864 connected native cases now exercise the original AutoBlend dispatch/case fragment, complete `ConvertAndReduceAnimationInputKeys`, `ClearAllZeroAnimationInputForSelectedProperties` and the original append/resource interning. Fixtures use property `0xba`, whose original format table identifies Bool, Keyframe/AutoKeyframe recording modes, three Machine positions, input counts 0/1/2/3/7/17, constant/alternating values, two input strides and both high-header-bit states.
+
+The converted extended Bool metadata is `0x700` with AutoBlend off or `0x709` with it on. A single-input AutoKeyframe adds `0x20`, producing `0x720`/`0x729`. All four words are independently read back from retained stored payloads. In 432 cases a nonempty payload reaches the resource tree byte-for-byte; 432 cases are empty or cleared by the zero filter. Header contents, source/Machine immutability and output guards are checked within the harness.
+
+The zero filter examines basic 8-byte positions even when supplied the tested extended 12-byte records; its scoped output matches an independent byte-position model. This observation is not a game-bug claim. Actual producer routing and framing must be established before interpreting its effect on the game.
+
+The host prepares UI stack locals, source records and the final 80-byte record descriptor, and starts append with empty roots. Original components run between those explicit boundaries. Thus the test proves component-level metadata preservation through append, while complete recording-event execution, original caller framing, wire insertion/notifications, other formats, disk persistence and gameplay remain unresolved. No additional names or whole-game completion credit are added; totals remain 679 checked names and 2,091 mapped functions.
