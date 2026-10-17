@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 588,
+    "checked_and_applied_names": 589,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 588,
+    "verified_names": 589,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "550 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "551 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9477,5 +9477,43 @@
       "Host memset ABI adapted; full insertion policy, merge modes, concurrency and live game remain unverified."
     ],
     "subsystem_assignment_added": false
+  },
+  "game_merger_reference_remap_checkpoint": {
+    "proposed_name": "RemapMergedObjectReferences",
+    "complete_body_instructions_read_and_verified": 548,
+    "switch_entries_verified": 82,
+    "verified_type_labels": {
+      "5": "Joint",
+      "11": "PuppetHeart",
+      "15": "Sound",
+      "17": "Sprite",
+      "49": "Emitter",
+      "52": "MovementSensor",
+      "53": "AngleSensor",
+      "54": "RotationSensor",
+      "86": "Wipe",
+      "109": "NetworkSpawnerGadget"
+    },
+    "findings": [
+      "Remaps selected kind-specific fields and common parent reference at object+8 through stride-eight signed 16-bit index map.",
+      "Joint, PuppetHeart and Sound branches remap direct index fields.",
+      "Sprite, Wipe, Emitter and NetworkSpawnerGadget branches remap stored object IDs through source lookup, index map and destination object ID.",
+      "Emitter and NetworkSpawnerGadget may clear missing IDs or preserve them; Sprite and Wipe retain on lookup failure.",
+      "Three sensor kinds use a dynamically registered field offset and optionally recover the same persistent ID in destination world.",
+      "If a parent reference becomes missing, optional side-effect context can mark the current destination object in a lazily initialized atomic bitset when the old Emitter parent points back to it."
+    ],
+    "validation": {
+      "kind_cases": 1024,
+      "parent_and_bitset_cases": 36,
+      "all_masked_kinds": 128,
+      "connected_wrapper_scenarios": 1024
+    },
+    "limits": [
+      "Registered sensor offsets are controlled metadata in native fixtures, not recovered field layouts.",
+      "No collision-chain alternatives or malformed indices tested.",
+      "Bitset consumer meaning, full merger modes, concurrency and live game remain unresolved.",
+      "Verified enum names do not recover original function or structure declarations."
+    ],
+    "name_applied_and_independently_reopened": true
   }
 }

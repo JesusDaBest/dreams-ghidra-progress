@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "550 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "551 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8845,
-    "other_names": 743,
-    "verification": "complete_inventory_matches_baseline_plus_550_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8844,
+    "other_names": 744,
+    "verification": "complete_inventory_matches_baseline_plus_551_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13419,6 +13419,30 @@
         "Analyst descriptive name and working signature; original source declarations unknown.",
         "Valid prior active counts and nonzero power-of-two lookup sizes assumed.",
         "Host memset ABI adapted; full insertion policy, merge modes, concurrency and live game remain unverified."
+      ]
+    },
+    {
+      "address": "140913170",
+      "original_name": "FUN_140913170",
+      "applied_name": "RemapMergedObjectReferences",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV RemapMergedObjectReferences(void * side_effect_context, void * source_world, void * destination_world, uint destination_index, void * index_map, uchar preserve_unmapped)",
+      "evidence": [
+        "Complete 548-instruction body and original 82-entry switch table read and verified against original bytes.",
+        "1024 full native cases cover all 128 masked kinds, missing and mapped references, sentinels and preservation flag.",
+        "36 additional native cases verify common parent remapping and optional lazy bitset initialization/marking.",
+        "Original enum registration labels and 13-instruction indirect capture wrapper independently byte verified; direct merger caller also traced.",
+        "1024 connected wrapper scenarios match direct-entry results and independent expected object bytes.",
+        "Compressed backup and independent reopening verify only expected name/signature changed."
+      ],
+      "caveats": [
+        "Descriptive analyst name and working types, not recovered source declarations.",
+        "Synthetic valid worlds and maps; sensor field offsets controlled by synthetic metadata.",
+        "Collision-chain variants, invalid references and concurrent execution untested.",
+        "Tracking-bitset consumer meaning and full merger modes unresolved; no live game verification."
       ]
     }
   ],
