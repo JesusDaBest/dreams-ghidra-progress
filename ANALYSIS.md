@@ -4266,3 +4266,12 @@ Saved ComputeHeadGadgetTargetTransform with a four-input working signature after
 288 scoped original-code scenarios support the role, including 64 connected selector/lookup/constructor cases. A verified compressed backup, independent reopening and fresh decompilation confirm persistence. Context/gadget/record pointers remain opaque; the output reuses the working 32-byte transform type.
 
 Degenerate or nonunit inputs, other modes, original field names, aliasing and full lifecycle remain unresolved. This name does not claim full semantic or subsystem completion. Totals: 605 checked names; 2,021 mapped and 7,568 unmapped among 9,589 discovered functions.
+
+
+### Hand constructor flag and scale wrapper
+
+64 flag-clear and 64 flag-set original-code cases verify the stored-state path of the larger hand constructor. With the flag clear, stored state composes with gadget-local transform. With it set, position stays fixed, stored scale is negated and a local X half-turn is applied before local composition. All stored/local scale-sign combinations were tested.
+
+128 connected wrapper/constructor cases establish scale behavior: a negative control value toggles the extra flag when optional state switching is disabled; negative zero does not. The wrapper keeps the constructor's output scale sign and replaces its magnitude with the control value's absolute magnitude. Original bit masks resolve that distinction. Independent equations, source buffers and output guards passed.
+
+These counts describe separate test scopes, not separate recovered implementation units. Most of the larger constructor's branches remain under review, including unstored state, metadata scaling, auxiliary and linked targets. Other wrapper flag sources, original field meanings, malformed inputs and live-game lifecycle remain unresolved. No checked-name credit is added.
