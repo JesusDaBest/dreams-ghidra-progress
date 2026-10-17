@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "622 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "623 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8773,
-    "other_names": 830,
-    "verification": "complete_inventory_matches_baseline_plus_622_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8772,
+    "other_names": 831,
+    "verification": "complete_inventory_matches_baseline_plus_623_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15577,6 +15577,30 @@
         "Final fallback may be a non-PuppetHeart ancestor; name does not guarantee returned type.",
         "Inherited parents must be valid and acyclic; invalid inherited pointers are dereferenced before a null check.",
         "Concrete object layouts, gameplay, ownership and generation validation are not established."
+      ]
+    },
+    {
+      "address": "1411dd800",
+      "original_name": "FUN_1411dd800",
+      "applied_name": "SampleAnimationRecordWithPropertyTransforms",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV SampleAnimationRecordWithPropertyTransforms(void)",
+      "evidence": [
+        "Complete508 original instructions and pseudocode reviewed and byte-verified.",
+        "2688 full-wrapper native cases connect original basic/extended samplers and selected property paths, including typed conversion, Quaternion angle conversion, parent lookup, flags and optional secondary output.",
+        "Original local-libc acosf body and9 constant spans byte-verified and supplied for in-domain Quaternion conversion tests; independent axis-angle model in degrees.",
+        "Original field registration links Animation+134 to IsKeyframe and+14c to AnimStrength; IsKeyframe controls tested secondary header-vector output.",
+        "Independent reopening and fresh decompilation verify name; all native bytes and all other names/signatures unchanged. Target parameter/return metadata preserved."
+      ],
+      "caveats": [
+        "Descriptive wrapper role only; large samplers remain partially reviewed.",
+        "Typed cases use a single key and AnimStrength1; no general interpolation, cross-leaf, other-strength or gameplay claim.",
+        "Finite normalized rotations and positive scales; no nonfinite/degenerate transform or acosf out-of-domain execution.",
+        "Original names for special property IDs remain unresolved; floating-register and opaque auxiliary parameter types require caller tracing."
       ]
     }
   ],

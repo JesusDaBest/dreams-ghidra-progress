@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2087,
-  "unmapped_total": 7516,
+  "mapped_total": 2088,
+  "unmapped_total": 7515,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52433,6 +52433,33 @@
             "120 full-entry native cases cover inherited-chain depths0/1/3/8, early PuppetHeart matches, fallback parents, ignored high10 reference bits and invalid non-inherited links; world and objects unchanged.",
             "Original enum registration directly links value11 to PuppetHeart; literal and registering instructions independently verified against original executable.",
             "Independent project reopening and fresh decompilation verify working two-pointer SysV arguments and pointer return; all other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1411dd800": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Animation header/data sampler wrapper, using source Animation fields and property-specific frame conversion.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Chooses sampler, handles alpha flag and transforms sampled value for special wire properties and keyframe secondary output.",
+      "code_sha256": "ea06662dbea374ed6b3447fd0f7916820b2ac6f24e896741dae2dcc0c6201522",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SampleAnimationRecordWithPropertyTransforms",
+          "support": [
+            "Complete508 original instructions and pseudocode reviewed and byte-verified.",
+            "2688 full-wrapper native cases connect original basic/extended samplers and selected property paths, including typed conversion, Quaternion angle conversion, parent lookup, flags and optional secondary output.",
+            "Original local-libc acosf body and9 constant spans byte-verified and supplied for in-domain Quaternion conversion tests; independent axis-angle model in degrees.",
+            "Original field registration links Animation+134 to IsKeyframe and+14c to AnimStrength; IsKeyframe controls tested secondary header-vector output.",
+            "Independent reopening and fresh decompilation verify name; all native bytes and all other names/signatures unchanged. Target parameter/return metadata preserved."
           ]
         }
       ]

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 675,
+    "checked_and_applied_names": 676,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 675,
+    "verified_names": 676,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "622 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "623 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15502,5 +15502,55 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "animation_sample_property_wrapper_checkpoint": {
+    "address": "1411dd800",
+    "name": "SampleAnimationRecordWithPropertyTransforms",
+    "native_instructions": 508,
+    "native_cases": 2688,
+    "test_groups": [
+      {
+        "entry": "1411dd800",
+        "cases": 168
+      },
+      {
+        "entry": "1411dd800",
+        "cases": 168
+      },
+      {
+        "entry": "1411dd800",
+        "cases": 168
+      },
+      {
+        "entry": "1411dd800",
+        "cases": 504
+      },
+      {
+        "entry": "1411dd800",
+        "cases": 336
+      },
+      {
+        "entry": "1411dd800",
+        "cases": 576
+      },
+      {
+        "entry": "1411dd800",
+        "cases": 768
+      }
+    ],
+    "evidence": [
+      "Complete508 original instructions and pseudocode reviewed and byte-verified.",
+      "2688 full-wrapper native cases connect original basic/extended samplers and selected property paths, including typed conversion, Quaternion angle conversion, parent lookup, flags and optional secondary output.",
+      "Original local-libc acosf body and9 constant spans byte-verified and supplied for in-domain Quaternion conversion tests; independent axis-angle model in degrees.",
+      "Original field registration links Animation+134 to IsKeyframe and+14c to AnimStrength; IsKeyframe controls tested secondary header-vector output.",
+      "Independent reopening and fresh decompilation verify name; all native bytes and all other names/signatures unchanged. Target parameter/return metadata preserved."
+    ],
+    "limits": [
+      "Descriptive wrapper role only; large samplers remain partially reviewed.",
+      "Typed cases use a single key and AnimStrength1; no general interpolation, cross-leaf, other-strength or gameplay claim.",
+      "Finite normalized rotations and positive scales; no nonfinite/degenerate transform or acosf out-of-domain execution.",
+      "Original names for special property IDs remain unresolved; floating-register and opaque auxiliary parameter types require caller tracing."
+    ],
+    "new_name_credit": 1
   }
 }
