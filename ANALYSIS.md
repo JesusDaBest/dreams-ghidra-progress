@@ -3861,3 +3861,13 @@ Original-code fixtures exercised all 512 combinations of nine optional allocatio
 The allocator was controlled and format globals were fixture values. The parameter allocation remained successful: the real allocator can return NULL, while subsequent hash setup dereferences the pointer unconditionally. Runtime capacity guarantees remain unresolved; no actual game fault is established. This does not verify actual GPU allocation, complete successful volume builds, resource destruction or concurrency.
 
 Totals: 559 reviewed names; 1,982 mapped and 7,606 unmapped among 9,588 discovered functions.
+
+### Volume and item capacity reclamation
+
+Saved ReclaimVolumeAndItemCapacity with two unsigned request counts and a one-byte success result. All 154 original instructions were read and byte matched; two inbound sites support the units and return contract. It computes separate volume and item pressure, retires weighted aged candidates, waits for a generation change while candidates remain, then drains retired resources before unlocking. Empty candidates with remaining pressure produce failure.
+
+Native checks covered 85 no-pressure cases, 80 weight callback cases, nine controlled pressure paths and nine repeated-wakeup cases. Unchanged generation after early wakeups keeps the loop waiting; a changed generation allows retry. An initial branch-offset defect in the scratch wait fixture was corrected before the passing rerun; it was not a game fault. Backed-up trial and independent trial/main reopening verified the saved name and signature and unchanged code and archives.
+
+Pressure fixtures replace retirement, drain and synchronization callees. They establish control flow, not real concurrent execution or connected GPU builds. The volume weight subtractand, upstream bounds and runtime capacity guarantees remain unresolved.
+
+Totals: 560 reviewed names; 1,983 mapped and 7,605 unmapped among 9,588 discovered functions.

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 519,
+    "done": 520,
     "todo": 1463,
-    "total": 1982,
-    "behavior_or_helpers_reviewed": 454,
+    "total": 1983,
+    "behavior_or_helpers_reviewed": 455,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -27102,12 +27102,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 180,
+        "done": 181,
         "todo": 106,
-        "total": 286,
-        "behavior_or_helpers_reviewed": 165,
+        "total": 287,
+        "behavior_or_helpers_reviewed": 166,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 200,
+        "runtime_functions_identified": 201,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27163,6 +27163,7 @@
           "FindPackedObjectPropertyPayload",
           "FindSourcePortWireInDestinationRun",
           "DrainRetiredVolumeAndItemResources",
+          "ReclaimVolumeAndItemCapacity",
           "ComputeThingTimelineIntervalFromTimeBounds",
           "AdvanceFilteredObjectGraphIterator",
           "CopyTransformWithNormalizedRotation",
@@ -27453,6 +27454,7 @@
           "140705a90",
           "140705c30",
           "1407300b0",
+          "140736cf0",
           "14075f490",
           "140769150",
           "1407a6bb0",
@@ -31443,12 +31445,12 @@
           {
             "name": "shared/support",
             "label": "Engine support",
-            "done": 4,
+            "done": 5,
             "todo": 5,
-            "total": 9,
-            "behavior_or_helpers_reviewed": 4,
+            "total": 10,
+            "behavior_or_helpers_reviewed": 5,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 9,
+            "runtime_functions_identified": 10,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -31456,6 +31458,7 @@
               "HashBytesMurmur3X64_128",
               "AllocateAlignedBlockFromPool",
               "DrainRetiredVolumeAndItemResources",
+              "ReclaimVolumeAndItemCapacity",
               "QueueAgedCacheEntriesForRelease"
             ],
             "todo_names": [
@@ -31469,6 +31472,7 @@
               "14011a4e0",
               "1401657d0",
               "1407300b0",
+              "140736cf0",
               "14129c290"
             ],
             "todo_addresses": [
@@ -31483,22 +31487,24 @@
               {
                 "name": "shared/support/cache-lists",
                 "label": "Cache lists",
-                "done": 2,
+                "done": 3,
                 "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
+                "runtime_functions_identified": 3,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "DrainRetiredVolumeAndItemResources",
+                  "ReclaimVolumeAndItemCapacity",
                   "QueueAgedCacheEntriesForRelease"
                 ],
                 "todo_names": [],
                 "done_addresses": [
                   "1407300b0",
+                  "140736cf0",
                   "14129c290"
                 ],
                 "todo_addresses": [],
@@ -31507,22 +31513,24 @@
                   {
                     "name": "shared/support/cache-lists/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 2,
+                    "done": 3,
                     "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
+                    "runtime_functions_identified": 3,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "DrainRetiredVolumeAndItemResources",
+                      "ReclaimVolumeAndItemCapacity",
                       "QueueAgedCacheEntriesForRelease"
                     ],
                     "todo_names": [],
                     "done_addresses": [
                       "1407300b0",
+                      "140736cf0",
                       "14129c290"
                     ],
                     "todo_addresses": [],
@@ -43954,5 +43962,5 @@
       }
     ]
   },
-  "unmapped": 7606
+  "unmapped": 7605
 }
