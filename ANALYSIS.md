@@ -5578,3 +5578,14 @@ The initial assumption of universal linear interpolation was disproved. The revi
 The branched tests respect the writer layout: whole 48-byte records in 480-byte leaves, with 24-byte logical page gaps. The first key starts at offset 432; later keys occupy the next leaf. Resource traversal uses the original code with an explicit host CRT double-`pow` import adapter. These tests do not split individual records across padding gaps.
 
 Scope is three Number keys starting at time zero, `AnimStrength = 1` and null wire/optional outputs. Other formats, strengths, easing, deeper trees, nonfinite values and gameplay remain unresolved. No additional names or completion credit are added.
+
+
+### Extended Number easing and stepped timing
+
+45,864 new native cases connect the wrapper and original extended sampler: 936 with zero extra metadata, 11,232 with explicit easing and 33,696 with quantized easing. Zero metadata preserves the tested gap-aware behavior. Explicit modes 1–4 instead match linear, ease-in, ease-out and symmetric power curves, including across larger key gaps. The four-bit strength field produces exponent `1 + 7 × (strength / 15)^2.807354927`; tested strengths are 0, 7 and 15.
+
+Bits 6–7 select stepped timing: nonzero values 1/2/3 floor elapsed time into approximately 2/30, 3/30 or 4/30-second bins before curve shaping. The original mode/strength/quantization instructions were independently matched to executable bytes. The verified local-libc `powf` body and constants execute on finite in-domain inputs; the independent curve model matches within `0.00002` absolute/relative tolerance.
+
+Media Molecule’s [Animation Canvas guide](https://docs.indreams.me/en/create/resources/recording-modes) describes blend/ease controls and every-second, third or fourth-frame stop-motion blending. That is consistent with these findings, but the editor control-to-metadata writes still need tracing. It does not establish a coding-livestream/source-code match or identify this executable’s exact build.
+
+Scope is three 56-byte Number records, one data leaf plus a matching header leaf, six key spacings, thirteen query fractions and `AnimStrength = 1`. Alpha-suppression/retirement flags, full output/guards/padding and source/header/resource immutability are checked. Metadata linkage/omission bits, mixed modes, smoothing/springiness, other formats/strengths, library errors, deeper trees and gameplay remain unresolved. No naming or completion credit is added.

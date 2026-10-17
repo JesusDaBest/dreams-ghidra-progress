@@ -15569,5 +15569,38 @@
       "Independent timeline model passes936 single-leaf and936 two-leaf cases; guards,type,alpha,padding,unused payload andsource/header/resource nodes checked.",
       "Branched tests use480-byte record leaves and explicit host pow adapter; records are not split across logical24-byte page gaps."
     ]
+  },
+  "extended_number_easing_checkpoint": {
+    "wrapper": "1411dd800",
+    "extended_sampler": "1411e6eb0",
+    "native_cases": 45864,
+    "zero_metadata_cases": 936,
+    "easing_cases": 11232,
+    "quantized_easing_cases": 33696,
+    "record_layout": "56-byte typed Number keys; controlword at+48,second extra wordzero.",
+    "controls": {
+      "mode_bits": "0..2",
+      "strength_bits": "8..11",
+      "quantization_bits": "6..7",
+      "power": "1+7*(strength/15)^2.807354927",
+      "quantum_seconds": "((bits6..7)+1)*float32(1/30) when nonzero"
+    },
+    "findings": [
+      "Zero metadata retains gap-aware basic behavior. Modes1..4 override gap hold and match linear,ease-in,ease-out,symmetric power curves.",
+      "Nonzero quantization floors elapsed time to2/30,3/30,4/30-second bins before curve shaping.",
+      "Original in-domain local-libc powf body and constants byte-verified and supplied; independent curve model tolerance2e-5 absolute/relative."
+    ],
+    "limits": [
+      "Three keys on one data leaf plus matching header leaf, six gaps,13 query fractions,AnimStrength1; no mixed modes or metadata bits3/4.",
+      "No library error behavior, omission/linkage/smoothing/springness,other value formats/strengths,deep trees or gameplay claim."
+    ],
+    "mm_lead": {
+      "url": "https://docs.indreams.me/en/create/resources/recording-modes",
+      "read_date": "2026-10-17",
+      "observation": "Official guide describes blend type,ease strength,smoothing,springiness and every-second/third/fourth-frame stop-motion blending.",
+      "relationship": "Consistent technical lead; exact editor control-to-metadata producer mapping and exact binary build remain unverified. Not a coding-livestream/source-code match."
+    },
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
