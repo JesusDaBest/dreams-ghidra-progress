@@ -5382,3 +5382,12 @@ Saved and independently reopened a working signature for `1407069d0`: six regist
 Fresh decompilation now passes `&incoming_record`, `flag_a`, `flag_b` and `override_mode` explicitly to `DispatchAnimationWireRecordUpdate`. This removes the misleading loose stack-variable presentation. The special transform-property path writes three floats to local descriptor bytes 32–43; their precise coordinate meaning remains unresolved. Because the descriptor is passed by value, these writes affect the callee's local copy.
 
 All 938 original instruction bytes and all 9,602 other function names/signatures remain unchanged. Before-state and reopening receipts are preserved locally. This is a type correction, not a new descriptive name: the function remains unnamed while transform, event, filtering and cleanup behavior are investigated. Checked names remains 665.
+
+
+### Animation insertion: full-entry empty-list boundary
+
+The full original `1407069d0` entry and return path passed 48 empty-destination cases using the recovered six-register/by-value-record/three-control ABI. Fixtures cover wire counts 0/1/63/64/1023/16383, four player indices and two control profiles. Even the maximum valid wire count accepts zero destinations without entering overflow diagnostics.
+
+The original memset thunk executes through a host memset adapter; its saved import binding and original thunk bytes were checked. A synthetic stack-cookie value is supplied. Entire world memory, context, source object, destination list, descriptor/configuration and guards remain unchanged. A positive control confirms that the full-world comparator detects a distant mutation.
+
+This is full-function execution of one no-op control path, not validation of all 938 instructions' behavior. Nonempty target filtering, transform preparation, animation dispatch, events, storage and cleanup remain separate scopes. The existing 48-case store/dirty-fragment evidence is not promoted to end-to-end insertion coverage. No new name credit; checked names remains 665.
