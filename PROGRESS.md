@@ -4156,3 +4156,16 @@ The earlier selector-255 limitation is now narrowed by 4,480 additional connecte
 384 further cases cover parent modes 1/2/3, absent or in-range parents, compact lookup words and matching/mismatching record modes. Mode 1 uses the high seven lookup bits; the other tested modes use the low seven bits and require the resolved record mode to match. A resolved parent-mode record rejects the filter. Missing parents or missing compact records pass. PuppetHeart storage remained unchanged on every call.
 
 The out-of-range parent fallback scan, other parent modes, malformed references, complete producer invariants, concurrency and live gameplay remain unverified. Earlier test receipts retain their original narrower scopes. Counts remain 628 checked names and 2,040 mapped functions.
+
+
+### PuppetHeart ancestry, glued roots and parent-record fallback
+
+Saved and independently reopened `ResolvePuppetOrGluedObjectRootReference`, with a working unsigned reference return and explicit register arguments. The complete 100-instruction function is used by Controlinator detection and other object/game-update paths. 3,584 connected original-code cases plus 72 zero-index cases support its descriptive role; the original 164-instruction callee executes in these fixtures.
+
+A category-11 PuppetHeart on the 16-bit ancestor chain returns immediately. Otherwise the function follows cached category-13..15 ancestry or uncached glued-object links, then permits the original input-parent resolver to override the result. Categories 0/1/10/11/17/41/42/95/96 preserve the result; other categories use a nonzero cached parent. A cached chain reaching zero can preserve the original input while the uncached glued path follows links to zero. These are distinct supplied contracts, not proof that both caches represent equivalent game state.
+
+The optional reflected-parent tests deliberately supply metadata offset 0x60. That offset is test data, not a recovered original field. Microchip link lookup, cache construction, reference/category producer invariants, malformed or cyclic ancestry, negative references, concurrency and gameplay remain unverified.
+
+The previously open local-user parent fallback scan now has 1,152 connected original-code cases. It skips reference -1 tombstones and requires both the complete packed parent reference and exact mode to match. A match rejects the user filter and adds mask bit 0x10; a missing match passes. Counts 0..5, first/middle/last matches and wrong-mode/reference records were checked. Whole world and context buffers matched explicit fixture writes after each batch. Larger counts and real-game producer invariants remain open.
+
+Totals are 629 checked names and 2,041 mapped functions among 9,591 discovered functions. No completed Dreams feature or in-game verification is claimed. Raw code, native fixtures and private data remain local.

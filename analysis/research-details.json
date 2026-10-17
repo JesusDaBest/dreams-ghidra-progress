@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 628,
+    "checked_and_applied_names": 629,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 628,
+    "verified_names": 629,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "587 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "588 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11131,5 +11131,37 @@
       }
     ],
     "new_name_credit": 0
+  },
+  "puppetheart_parent_fallback_checkpoint": {
+    "entry": "140bbf430",
+    "callee": "1408f96a0",
+    "native_cases": 1152,
+    "scope": "Original connected mask/filter fallback scan; selectors0..3, parent modes1/2/3/255, positive packed refs with0/400000 high bit, table counts0..5, tombstones, missing/matching-first/middle/last/wrong-mode/wrong-packed-reference records.",
+    "findings": [
+      "Fallback scans count records at1a48170+(i+1)*ce0, ignoring reference-1 tombstones.",
+      "Both full packed parent reference and exact parent-mode byte must match; a match rejects the filter and adds mask bit10.",
+      "Missing record passes filter. PuppetHeart storage immutable each call; entire world and context match explicit fixture writes after every user/mode/reference batch."
+    ],
+    "limits": [
+      "Counts above5, malformed records/references, races, complete producer invariants and gameplay remain unverified.",
+      "Reference low index127 deliberately selects out-of-range fallback while compact table count is4; no claim of real-game reachability for every supplied reference."
+    ],
+    "project_modified": false
+  },
+  "puppet_object_root_checkpoint": {
+    "address": "140768850",
+    "native_cases": 3656,
+    "evidence": [
+      "Complete100-instruction original body and its164-instruction original callee read; caller use traced in Controlinator detection and object/game-update paths.",
+      "3584 connected original-code cases cover all128 category values, acyclic depth0..4, cached/uncached paths, a high packed-reference bit and optional input-parent override through explicit supplied metadata.",
+      "72 additional cases cover valid zero-index objects, ancestry-to-zero and distinct cached/uncached contracts.",
+      "Name and explicit world/RDI8,reference/ESI4,uint/EAX4 working ABI independently reopened and freshly decompiled."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not recovered original source declarations.",
+      "Test metadata offset0x60 is supplied fixture data, not an original field offset; Microchip link lookup is not exercised by this root suite.",
+      "Cache construction/equivalence, real-game category/reference invariants, malformed/null/cyclic/negative references, concurrency and gameplay remain unverified."
+    ],
+    "independently_reopened_and_decompiled": true
   }
 }

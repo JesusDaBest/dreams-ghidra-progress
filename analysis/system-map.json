@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2040,
-  "unmapped_total": 7551,
+  "mapped_total": 2041,
+  "unmapped_total": 7550,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51112,6 +51112,32 @@
           ]
         }
       ]
+    },
+    "140768850": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared PuppetHeart ancestry and glued object root resolution, including region-query/Controlinator callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper reviewed and connected original-code execution checked.",
+      "code_sha256": "60b52f1abf1a1446474491977aac920d0e103e13c6b850efa77220199d0cfff0",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolvePuppetOrGluedObjectRootReference",
+          "support": [
+            "Complete100-instruction original body and its164-instruction original callee read; caller use traced in Controlinator detection and object/game-update paths.",
+            "3584 connected original-code cases cover all128 category values, acyclic depth0..4, cached/uncached paths, a high packed-reference bit and optional input-parent override through explicit supplied metadata.",
+            "72 additional cases cover valid zero-index objects, ancestry-to-zero and distinct cached/uncached contracts.",
+            "Name and explicit world/RDI8,reference/ESI4,uint/EAX4 working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
   "hierarchy": [
