@@ -14892,5 +14892,54 @@
       "reason": "Both candidates begin inside existing MOVZX instructions and are false overlapping decodes.",
       "limits": "Indirect bases,bulk initialization andother address expressions remain unresolved;not a proof the byte isunwritten."
     }
+  },
+  "animation_wire_store_checkpoint": {
+    "entry": "1407069d0",
+    "native_check": {
+      "entry": "1407069d0",
+      "native_cases": 48,
+      "original_instruction_rows_verified": 938,
+      "original_body_sha256": "987e7f1043cc6d31b41228c6d62afc799cceee72409c8274bd05da112d4b55f1",
+      "executed_blocks": [
+        {
+          "start": "14070790c",
+          "end_exclusive": "14070793c"
+        },
+        {
+          "start": "140707b50",
+          "end_exclusive": "140707b6f"
+        }
+      ],
+      "findings": [
+        "Original record-copy/count andpost-event dirty-marking fragments execute on synthetic world/context.",
+        "Exactly64 record bytes copied towirearray[count],count increments once,three worldflags andone contextflag set as modeled.",
+        "Entire world/context regions,sourceframe andconfig compared;positivecontrol detects distant world mutation."
+      ],
+      "limits": [
+        "Two original fragments concatenated in native bridge;interveningevent/control paths areexplicitly skipped.",
+        "Prepared recordbytes;transforms,dispatcher,selection,capacity guard andcleanup notexecuted bythis batch.",
+        "Sixvalid count fixtures through16382,eightopaque recordpatterns;not fullproducer orrealgame verification."
+      ],
+      "whole_function_static_body_read": true,
+      "whole_function_behavior_verified": false,
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "review": {
+      "entry": "1407069d0",
+      "pseudocode_sha256": "d5c6422ea44e064a76f0a9e9f5d32ce0b66033791ec4417b68524862cace084c",
+      "read_pseudocode_ranges": [
+        [
+          1,
+          1074
+        ]
+      ],
+      "complete_pseudocode_read": true,
+      "original_instruction_bytes_verified": 938,
+      "full_original_function_execution": false,
+      "signature_status": "Six register arguments plus80-byte stack descriptor andthree byte controls observed;complete saved ABI stillpending.",
+      "project_modified": false,
+      "new_name_credit": 0
+    }
   }
 }
