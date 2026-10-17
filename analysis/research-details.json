@@ -15552,5 +15552,22 @@
       "Original names for special property IDs remain unresolved; floating-register and opaque auxiliary parameter types require caller tracing."
     ],
     "new_name_credit": 1
+  },
+  "animation_number_gap_interpolation_checkpoint": {
+    "wrapper": "1411dd800",
+    "sampler": "1411de1b0",
+    "single_leaf_cases": 936,
+    "branched_two_leaf_cases": 936,
+    "limits": [
+      "Three Number keys, first keytime0, six gaps and13 query fractions, AnimStrength1; all flag combinations scoped to alpha suppression and retirement marker.",
+      "No exhaustive threshold/snap rounding, typed easing, other formats/strengths, deeper resource trees or gameplay claim."
+    ],
+    "new_name_credit": 0,
+    "project_modified": false,
+    "findings": [
+      "Close typed Number keys interpolate linearly; when float32 lefttime+original0.05000000447 constant<=righttime, sampled value switches between stored records around righttime-0.033333335+0.0001, with endpoint snapping.",
+      "Independent timeline model passes936 single-leaf and936 two-leaf cases; guards,type,alpha,padding,unused payload andsource/header/resource nodes checked.",
+      "Branched tests use480-byte record leaves and explicit host pow adapter; records are not split across logical24-byte page gaps."
+    ]
   }
 }

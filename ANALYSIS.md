@@ -5567,3 +5567,14 @@ The combined evidence now contains 2,688 full-wrapper native cases across seven 
 Another 768 cases cover Position, Float3, Impact and Number inputs to property `0x231`. Position supplies a full transform; Float3/Impact supply translation with unit scale and identity rotation; Number falls back to identity. The result matches header × sample × wire transform composition. Original registration identifies source byte `+0x134` as `IsKeyframe`: when enabled, the optional secondary output receives the header three-vector, alpha with its sign cleared, and Float3 tag, preserving unused bytes. The fixture toggles this field, alpha-suppression and retirement flags while checking all guards and immutable inputs.
 
 Typed suites use one key and `AnimStrength = 1`; general interpolation, cross-leaf traversal, other strengths, nonfinite/degenerate transforms and gameplay remain unverified. The two large samplers retain their partial-review status. Totals are 676 checked names, 2,088 mapped functions and 7,515 unmapped among 9,603 discovered.
+
+
+### Number interpolation distinguishes key gaps
+
+1,872 new native cases connect the named wrapper and original basic sampler: 936 use one data leaf and 936 use two leaves under a resource-tree branch. An independent three-key Number timeline model matches six key spacings, thirteen query fractions and both alpha-suppression/retirement flags. Value, type, alpha, unused payload, padding and guards are checked; source, header and resource nodes remain unchanged.
+
+The initial assumption of universal linear interpolation was disproved. The reviewed native branch interpolates close keys, but when float32 left-time plus the original `0.05000000447` constant is no greater than right-time, it selects one recorded value instead. In the tested gaps, the switch occurs around right-time minus `0.033333335` plus `0.0001`; nearby endpoint snapping also applies. These constants and the actual interpolation/selection instructions were independently matched to original bytes. This is scoped evidence, not an exhaustive threshold-rounding guarantee.
+
+The branched tests respect the writer layout: whole 48-byte records in 480-byte leaves, with 24-byte logical page gaps. The first key starts at offset 432; later keys occupy the next leaf. Resource traversal uses the original code with an explicit host CRT double-`pow` import adapter. These tests do not split individual records across padding gaps.
+
+Scope is three Number keys starting at time zero, `AnimStrength = 1` and null wire/optional outputs. Other formats, strengths, easing, deeper trees, nonfinite values and gameplay remain unresolved. No additional names or completion credit are added.
