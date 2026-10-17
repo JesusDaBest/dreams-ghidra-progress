@@ -15348,5 +15348,32 @@
       "Historicalwrite emitszero legacyword in testedcurrentcode; no oldsave compatibility claim.",
       "Whole-record legacyroundtrip,persistence,concurrency andgameplay unverified."
     ]
+  },
+  "game_wire_versioned_connected_checkpoint": {
+    "native_cases": 288,
+    "versions": [
+      "10d",
+      "3e4",
+      "3e5",
+      "437",
+      "438",
+      "449",
+      "44a",
+      "500"
+    ],
+    "findings": [
+      "Original vector,record,property/flags andtransform serializers connected across eight versions.",
+      "Records use51bytes at10d..3e4,52bytes at3e5..437,and50bytes at438+ in testedversionfixtures.",
+      "Two obsoletebytes beforetransform are consumed below438;semantic meaning notassigned andwritevalues notasserted.",
+      "Missingsecondflagbyte preservesexisting/default storage;readbelow44a clearsflagbit1;endpoint andallotherdefinedfields match model.",
+      "Completevector/serializer/streamguards andcursor validated;streamcomparison excludes onlytwo explicitlyopaqueobsoletewritebytes perolderrecord."
+    ],
+    "limits": [
+      "Counts0/1/3,unitquaternions,fastbuffer;pre10d formats and1c7..1cf special branches notcovered.",
+      "No slow/error/marker paths,completelegacy save compatibility,persistence orgameplay claim.",
+      "Original local-libc classifier supplied;source logging no-op."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

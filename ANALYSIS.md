@@ -5490,3 +5490,18 @@ Saved `SerializeWirePropertyIndexAndFlags` after complete review of its 171 orig
 The tested oldest write branch emits a zero legacy word in this executable. That observation is not a guarantee of supported historical save output. Tests use valid fast buffers and do not establish the record-level pre-`0xc5` layout, slow/error paths, complete legacy record roundtrips, persistence, concurrency or gameplay.
 
 Totals: 673 checked names, 2,085 mapped functions and 7,518 unmapped functions among 9,603 discovered. Counts describe reviewed code, not whole-game completion.
+
+
+### Versioned wire serializers connected
+
+288 native read/write cases connect the original vector, wire-record, property/flag and transform serializers across eight format versions. In the tested fixtures, record sizes are:
+
+| Format versions tested | Bytes per record |
+| --- | ---: |
+| `0x10d`, `0x3e4` | 51 |
+| `0x3e5`, `0x437` | 52 |
+| `0x438`, `0x449`, `0x44a`, `0x500` | 50 |
+
+The connected results confirm the added second flag byte, its preservation from existing/default storage when absent, and the pre-`0x44a` load-time clearing of flag bit 1. Endpoint conversion and all defined fields match the independent model. Below `0x438`, two obsolete bytes before the transform are consumed; their meaning remains unknown and their write values are excluded from byte-content assertions. Exact stream length/cursor, full vector/serializer buffers and guards remain checked.
+
+Scope is counts 0/1/3, unit quaternions and fast buffers. Pre-`0x10d` records, the special `0x1c7`–`0x1cf` branches, slow/error/marker paths and complete historical save compatibility remain unresolved. Source logging is controlled and the verified local-libc classifier is supplied at its import boundary. These checks do not establish full-world disk persistence or gameplay. No additional checked-name credit is added.
