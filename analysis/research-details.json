@@ -13073,5 +13073,66 @@
       "Memoryimports adapted;mutex/threadcallbacks controlled."
     ],
     "new_name_credit": 1
+  },
+  "animation_transition_parent_pages_checkpoint": {
+    "entries": [
+      "14108f690",
+      "1410908d0",
+      "141091b50",
+      "141092e60"
+    ],
+    "native_cases": 14040,
+    "converter_calls": 14040,
+    "dispatch_calls": 14040,
+    "by_type_code": {
+      "2": 1080,
+      "5": 1080,
+      "24": 1080,
+      "25": 1080,
+      "3": 1080,
+      "7": 1080,
+      "17": 1080,
+      "6": 1080,
+      "15": 1080,
+      "16": 1080,
+      "8": 1080,
+      "20": 1080,
+      "21": 1080
+    },
+    "profiles": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        1,
+        1
+      ]
+    ],
+    "findings": [
+      "All13 scalar/vector routes execute original converter, dispatcher, transition handler and delegates across source-page boundaries.",
+      "Each source has capacity, capacity+1, twice capacity or twice capacity+1 old records, at offsets0/recordwidth/504.",
+      "Scalar/float2 leaves use504 bytes; float3 uses496 and float4 uses500 with logical504-byte strides.",
+      "Ordinary mode and AutoKeyframe with both controls clear or set preserve exact header/data, metadata, rebasing and header index.",
+      "Original source nodes, world, input/context/auxiliary buffers and guards remain unchanged."
+    ],
+    "limits": [
+      "One parent level, finite ordered times and component fixtures; not exhaustive rounding or all control combinations.",
+      "Host double pow and memory adapters; mutex/thread callbacks controlled.",
+      "Deeper trees, invalid inputs, races, producer/playback unverified."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0,
+    "scope": "Connected original-code checks across one parent level; previous one-leaf receipts remain unchanged."
   }
 }
