@@ -5282,3 +5282,12 @@ The reader identifies the event and supplies decoded inputs itself. Removal sear
 A separate 120-case observation suite checks inverse notification after creation. It selects the first matching wire, so an older duplicate can be selected instead of the appended wire. Exact duplicates and duplicates differing only in flag bit 16 select the older entry; property, ordinal and bit 0 mismatches select the new entry. This is observed selection behavior, not a claim of a gameplay bug.
 
 Allocation, free and thread-local access remain controlled test boundaries. History output is disabled in the connected reader suites; the inverse-selection suite uses an explicit history-router observation probe. Complete user undo/redo, malformed inputs, dependency cycles, concurrency and gameplay remain unresolved. No checked-name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
+
+
+### Inverse event-code mapping named; mixed replay follows pass order
+
+Saved `GetInverseRecordedEventCode` with a working `ushort` input and return type. The complete 37-instruction original body exchanges seven pairs: `fde8/fdf2`, `fdf3/fdf5`, `fdf6/fdf7`, `fe06/fe08`, `fe0b/fe0c`, `fe0e/fe0f`, and `fe13/fe15`. All other 16-bit values remain unchanged. 131,072 native cases exhaust the 16-bit input domain with two upper-half patterns; applying the mapping twice restores each value. Independent reopening confirms the name, signature and unchanged original bytes; all other 9,602 names/signatures are preserved. The caller uses the mapped code for inverse history notification. This does not prove full event semantics or undo/redo correctness.
+
+Mixed wire streams now have 128 connected reader/wrapper/dispatcher checks. An initial input-order model failed on removal followed by creation. The original selection assembly explains why: creation runs in pass 2, removal in pass 3, even when removal appears first in the input bytes. The corrected model checks eight sequences with identical and alternating ordinals, full world/owner comparisons and input guards. Removal selects the first live match without decrementing the wire count; unmatched removals do nothing. Allocation/free/TLS remain controlled, history output is disabled and malformed/dependency-cycle/concurrent/gameplay behavior remains unresolved. This observation alone is not a game-bug claim.
+
+Totals: 685 checked names, 2,097 mapped functions and 7,506 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

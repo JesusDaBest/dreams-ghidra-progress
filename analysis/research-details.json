@@ -16123,5 +16123,63 @@
       "No exhaustive NaN payload/subnormal/MXCSR, aliasing, malformed buffer, concurrency, disk persistence orgameplay claim. Descriptive analyst name andworking opaque pointers."
     ],
     "new_name_credit": 1
+  },
+  "inverse_recorded_event_code_checkpoint": {
+    "address": "140ad5f20",
+    "name": "GetInverseRecordedEventCode",
+    "signature": "ushort PS4_SYSV GetInverseRecordedEventCode(ushort eventCode)",
+    "native_instructions": 37,
+    "native_check": {
+      "native_cases": 131072,
+      "input_domain": "All65536 low16-bit values with zero and0xdead upper halves; involution checked for each result.",
+      "native_instructions_verified": 37,
+      "pairs": [
+        [
+          "0xfde8",
+          "0xfdf2"
+        ],
+        [
+          "0xfdf3",
+          "0xfdf5"
+        ],
+        [
+          "0xfdf6",
+          "0xfdf7"
+        ],
+        [
+          "0xfe06",
+          "0xfe08"
+        ],
+        [
+          "0xfe0b",
+          "0xfe0c"
+        ],
+        [
+          "0xfe0e",
+          "0xfe0f"
+        ],
+        [
+          "0xfe13",
+          "0xfe15"
+        ]
+      ],
+      "finding": "Pure16-bit involution exchanges seven recorded-event pairs and leaves all other inputs unchanged. Sole captured caller uses output as inverse history notification code after event application.",
+      "limits": [
+        "Analyst descriptive role, not recovered source name. Mapping does not prove complete event semantics or undo/redo correctness."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete37-instruction original body, pseudocode and relative switch table read and byte matched.",
+      "131072 native cases exhaust every16-bit input with two upper-half patterns; applying mapping twice restores every value.",
+      "Seven inverse event pairs exchange; all other values unchanged. Sole captured caller uses result for inverse history notification after application.",
+      "Independent saved-project reopening confirms descriptive name and ushort SysV input/return; all other9602 names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working16-bit types, not original source declarations.",
+      "Mapping proves code exchange only, not complete event semantics or user undo/redo correctness."
+    ],
+    "new_name_credit": 1
   }
 }

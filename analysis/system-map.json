@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2096,
-  "unmapped_total": 7507,
+  "mapped_total": 2097,
+  "unmapped_total": 7506,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52684,6 +52684,32 @@
             "648 connected cases execute original replacement, lookup, history router, packet writer, full dispatcher entry, transform-tail writer andrevision trim without a final event probe for thetested mode1 wire paths.",
             "Complete fdf3 packet is54bytes:22-byte snapshot plus32-byte normalized transform. fdf5 remains22bytes; each full pair adds76bytes. Earlier44-byte results were scoped toheaders withan explicit final dispatcher probe.",
             "Independent reopening verifies descriptive name andworking four-argument SysV signature; original bytes andother names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140ad5f20": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Recorded-event inverse-code selection used by the runtime history notification wrapper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Exchanges seven inverse event-code pairs and preserves all other16-bit inputs.",
+      "code_sha256": "08acf83e5027283c59089890e3058474f837170a18945aaf215c05ff823ac070",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetInverseRecordedEventCode",
+          "support": [
+            "Complete37-instruction original body, pseudocode and relative switch table read and byte matched.",
+            "131072 native cases exhaust every16-bit input with two upper-half patterns; applying mapping twice restores every value.",
+            "Seven inverse event pairs exchange; all other values unchanged. Sole captured caller uses result for inverse history notification after application.",
+            "Independent saved-project reopening confirms descriptive name and ushort SysV input/return; all other9602 names/signatures and original bytes unchanged."
           ]
         }
       ],

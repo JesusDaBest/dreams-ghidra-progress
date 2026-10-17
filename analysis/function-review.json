@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "631 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "632 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8764,
-    "other_names": 839,
-    "verification": "complete_inventory_matches_baseline_plus_631_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8763,
+    "other_names": 840,
+    "verification": "complete_inventory_matches_baseline_plus_632_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15791,6 +15791,27 @@
         "Original independently verified local-libc classifier supplied at import thunk; prepared context globals, type key, existing keyed context andstream pointers remain fixtures.",
         "Only mode1 wire branches ofthe267374-byte dispatcher execute; the whole dispatcher isnot semantically reviewed orcredited. Replay-mode wire creation/deletion, non-wire events andfull recording producer remain unresolved.",
         "No exhaustive NaN payload/subnormal/MXCSR, aliasing, malformed buffer, concurrency, disk persistence orgameplay claim. Descriptive analyst name andworking opaque pointers."
+      ]
+    },
+    {
+      "address": "140ad5f20",
+      "original_name": "FUN_140ad5f20",
+      "applied_name": "GetInverseRecordedEventCode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ushort PS4_SYSV GetInverseRecordedEventCode(ushort eventCode)",
+      "evidence": [
+        "Complete37-instruction original body, pseudocode and relative switch table read and byte matched.",
+        "131072 native cases exhaust every16-bit input with two upper-half patterns; applying mapping twice restores every value.",
+        "Seven inverse event pairs exchange; all other values unchanged. Sole captured caller uses result for inverse history notification after application.",
+        "Independent saved-project reopening confirms descriptive name and ushort SysV input/return; all other9602 names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working16-bit types, not original source declarations.",
+        "Mapping proves code exchange only, not complete event semantics or user undo/redo correctness."
       ]
     }
   ],

@@ -71,5 +71,30 @@
       "flag bit0 mismatch",
       "flag bit16 mismatch"
     ]
+  },
+  "mixed_wire_streams": {
+    "native_cases": 128,
+    "sequences": [
+      "CR",
+      "CCR",
+      "CRC",
+      "RC",
+      "CCRRR",
+      "RCRC",
+      "CRCR",
+      "CCRRCCRR"
+    ],
+    "finding": "Original range reader, packet wrapper and dispatcher execute creation in pass2 before removal in pass3, even when removal precedes creation in input bytes. Input order is retained within these event groups. Creation appends new slots; removal tombstones first live match without decrementing count; these streams do not execute recreation after removal because the pass order groups creation first. Repeated missing removals are no-ops. Full world/owner and packet guards checked.",
+    "limits": [
+      "Controlled allocation/free/TLS; prepared valid world and manually encoded packets. History output disabled, player255.",
+      "Finite wire-only streams, not full user undo/redo, malformed/dependency-cycle/concurrency/gameplay proof."
+    ],
+    "key_patterns": [
+      "identical ordinal",
+      "alternating ordinals"
+    ],
+    "model_correction": "Initial input-order model failed RC; original pass-selection assembly and existing1056-case selection receipt establish creation pass2/removal pass3. Grouped model then passed these connected cases.",
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
