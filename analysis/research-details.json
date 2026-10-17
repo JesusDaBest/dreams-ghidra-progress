@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 638,
+    "checked_and_applied_names": 639,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 638,
-    "function_count": 9593,
+    "verified_names": 639,
+    "function_count": 9594,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "595 existing-function renames,42 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "595 existing-function renames,43 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11873,5 +11873,29 @@
     ],
     "new_definitions": 2,
     "new_name_credit": 2
+  },
+  "animation_byte_value_converter_checkpoint": {
+    "functions": {
+      "14109faf0": {
+        "name": "ConvertByteValueAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertByteValueAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, void * auxiliary_state, float * range_output_a, float * range_output_b)"
+      }
+    },
+    "native_cases": 1200,
+    "findings": [
+      "Basic path emits first key, value-byte changes and last key, preserving complete8-byte emitted input pairs. Extended path compares full byte, emits12-byte records with observed metadata; three intermediate bytes are not assigned semantic meaning or asserted.",
+      "Empty input leaves buffer unchanged and sets both bound outputs to zero. Exact output length, defined output fields, unchanged destination outside emitted range, guarded descriptor/bounds, source/aux immutability checked.",
+      "Basic lower/upper accumulators use min/max. In tested extended path both accumulators track maximum emitted time; this is observed behavior, not an intended minimum-bound contract.",
+      "Single-record extended metadata includes mode5 bit0x20; multi-record metadata omits it in these fixtures. Flags ataux+d6 contribute flags OR(flags*8), with0x700."
+    ],
+    "limits": [
+      "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
+      "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
+      "Three intermediate extended-record bytes are unasserted; no semantic field names assigned.",
+      "Top-level converter and other delegated formats remain partially reviewed."
+    ],
+    "writer_identity": "Original callees1410a2bd0/1410a2d60 are byte-identical to reviewed1410a3390/1410a3520.",
+    "new_definitions": 1,
+    "new_name_credit": 1
   }
 }

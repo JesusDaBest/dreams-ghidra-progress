@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9593,
-  "mapped_total": 2050,
+  "inventory_total": 9594,
+  "mapped_total": 2051,
   "unmapped_total": 7543,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -51381,6 +51381,33 @@
             "Partial-capacity and already-over-capacity cases establish bounded partial append, with no allocation or whole-record atomicity.",
             "Actual original Animation converter and connected update tests already execute the8/12-byte writer pair under ample capacity.",
             "New nonoverlapping function, typed24-byte buffer and two-pointer working void ABI independently reopened and freshly decompiled; existing function inventory unchanged."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "14109faf0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter delegates type11 byte-valued key conversion to this helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete byte-value conversion helper body and connected original native execution reviewed.",
+      "code_sha256": "02112ed718a07c1d9e241e6df45dc18efde7257dd97bc3820dee79e10b067821",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertByteValueAnimationInputKeys",
+          "support": [
+            "Complete192-instruction original closed helper reviewed and byte matched.",
+            "1200 original-code cases through top-level type11 converter execute this helper andactual8/12-byte writers; both writer bodies arebyte-identical to independently reviewed bounded helpers.",
+            "First/change/last key selection,full-byte comparison inbothformats,defined extendedfields,basic exactpairs,emptybounds andobserved basicmin/max versusextendedmax/max checked.",
+            "Counts0/1/2/3/7/17,strides8/16,modes0/5,fiveauxflags,fivevalue/timepatterns; complete guardeddescriptor/bounds,source/aux immutability anduntouched destinationoutside emittedrange checked.",
+            "New nonoverlapping boundary andeight-argument working void ABI independently reopened andfreshly decompiled; existing9593names/signatures unchanged."
           ]
         }
       ],

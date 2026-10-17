@@ -4382,3 +4382,14 @@ Defined and independently reopened `AppendBytes8ToBoundedBuffer` and `AppendByte
 The preceding connected converter/update suites already execute both original writers with ample capacity. Direct tests add their short/full/overfull-buffer behavior. Uint64 wraparound, pointer aliasing, invalid pointers, concurrency and the complete producer schedule remain unverified.
 
 These new definitions expand the discovered inventory rather than renaming existing functions. All 9,591 previously defined names/signatures remain unchanged. Totals are 638 checked names and 2,050 mapped functions among 9,593 discovered functions. This remains helper review, not whole-game completion.
+
+
+### Byte-valued Animation input conversion
+
+Defined and independently reopened `ConvertByteValueAnimationInputKeys`, the complete 192-instruction helper selected by the top-level converter's type-11 branch. Both basic and extended paths compare the full value byte. This differs from type 1, whose extended path compares only bit 0. Both retain the first key, value changes and the final key in the tested fixtures. Basic output preserves complete 8-byte pairs; extended output adds metadata in 12-byte records. Three intermediate extended bytes remain unasserted.
+
+1,200 original-code cases execute the actual top-level dispatch, this helper and its original writers. The writers are byte-for-byte copies of the two bounded helpers reviewed previously. Tests cover counts 0/1/2/3/7/17, strides 8/16, modes 0/5, five auxiliary flag values, repeated/changing/low-bit-equivalent values and reversed finite times. Defined output fields, exact basic pairs, lengths, guarded bounds/descriptor, immutable source/auxiliary state and untouched destination outside emitted records match the independent model.
+
+Empty input zeros both time outputs. Basic time outputs accumulate minimum/maximum; tested extended outputs both accumulate maximum. Single-record extended metadata includes the mode-5 bit; the tested multi-record path omits it. These are observed native behaviors, not an assumed min/max contract or recovered source declaration. Short buffers, nonfinite times, huge counts, aliasing, concurrency and full producer/gameplay behavior remain unresolved.
+
+The existing 9,593 names/signatures remain unchanged. The new function raises totals to 639 checked names and 2,051 mapped functions among 9,594 discovered functions. The top-level converter and its other formats remain incomplete.
