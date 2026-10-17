@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9589,
-  "mapped_total": 2024,
+  "inventory_total": 9591,
+  "mapped_total": 2026,
   "unmapped_total": 7565,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -50659,6 +50659,58 @@
             "Resolves supplied/body/cached/parent-relative/repeated transform according to object and auxiliary context.",
             "Can rebase Sculpt group frames or apply Controlinator/HeadGadget/HandGadget target transforms.",
             "Five register inputs and32-byte stack-by-value supplied transform are supported by original callers and connected scenarios."
+          ]
+        }
+      ]
+    },
+    "140ced9c0": {
+      "system": "dreamiverse",
+      "component_path": [
+        "dreamiverse",
+        "players",
+        "playeridx",
+        "properties-types"
+      ],
+      "component_basis": "Original PlayerIdx type registration installs this lifecycle callback.",
+      "code_role": "properties-types",
+      "code_role_basis": "Allocation or release callback in original type descriptor.",
+      "code_sha256": "66aa73510ac89c357867e2aa7e67922c11d45d70aa15f0bc4d1e398cc999f77a",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateDefaultPlayerIdx",
+          "support": [
+            "Original PlayerIdx property registration installs these allocation and release callbacks.",
+            "Complete original bodies and type/field registrations byte-verified against the saved program.",
+            "513 isolated original-callback scenarios verify allocation size, default byte, full pointer return, guards, release forwarding and null skip using controlled library substitutes.",
+            "Independent reopening verifies the two new nonoverlapping function definitions, typed signatures and fresh decompilations."
+          ]
+        }
+      ]
+    },
+    "140ced9e0": {
+      "system": "dreamiverse",
+      "component_path": [
+        "dreamiverse",
+        "players",
+        "playeridx",
+        "properties-types"
+      ],
+      "component_basis": "Original PlayerIdx type registration installs this lifecycle callback.",
+      "code_role": "properties-types",
+      "code_role_basis": "Allocation or release callback in original type descriptor.",
+      "code_sha256": "56b39be23e6214c78bcc15bde78c135870310b5c516626f924059c8129652352",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FreePlayerIdxIfNonNull",
+          "support": [
+            "Original PlayerIdx property registration installs these allocation and release callbacks.",
+            "Complete original bodies and type/field registrations byte-verified against the saved program.",
+            "513 isolated original-callback scenarios verify allocation size, default byte, full pointer return, guards, release forwarding and null skip using controlled library substitutes.",
+            "Independent reopening verifies the two new nonoverlapping function definitions, typed signatures and fresh decompilations."
           ]
         }
       ]

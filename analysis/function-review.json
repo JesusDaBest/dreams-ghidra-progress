@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "569 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "569 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9589,
+    "total": 9591,
     "default_fun_names": 8826,
-    "other_names": 763,
-    "verification": "complete_inventory_matches_baseline_plus_569_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "other_names": 765,
+    "verification": "complete_inventory_matches_baseline_plus_569_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13966,6 +13966,52 @@
         "Opaque selector context; output/input reuse working32-byte transform type.",
         "Original fields,unexplored state combinations,arbitrary recursion/cycles,nonfinite/invalid/aliased inputs and lifecycle unresolved.",
         "No full semantic/subsystem completion or live-game verification claim."
+      ]
+    },
+    {
+      "address": "140ced9c0",
+      "original_name": null,
+      "applied_name": "AllocateDefaultPlayerIdx",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "PlayerIdx * PS4_SYSV AllocateDefaultPlayerIdx(void)",
+      "evidence": [
+        "Original PlayerIdx property registration installs these allocation and release callbacks.",
+        "Complete original bodies and type/field registrations byte-verified against the saved program.",
+        "513 isolated original-callback scenarios verify allocation size, default byte, full pointer return, guards, release forwarding and null skip using controlled library substitutes.",
+        "Independent reopening verifies the two new nonoverlapping function definitions, typed signatures and fresh decompilations."
+      ],
+      "caveats": [
+        "Analyst descriptive function names; original type and member names recovered separately.",
+        "Real allocator/deallocator behavior, allocation failure and complete player lifecycle not tested.",
+        "One-byte PlayerIdx layout does not establish higher-level player identity semantics."
+      ]
+    },
+    {
+      "address": "140ced9e0",
+      "original_name": null,
+      "applied_name": "FreePlayerIdxIfNonNull",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV FreePlayerIdxIfNonNull(PlayerIdx * player_index)",
+      "evidence": [
+        "Original PlayerIdx property registration installs these allocation and release callbacks.",
+        "Complete original bodies and type/field registrations byte-verified against the saved program.",
+        "513 isolated original-callback scenarios verify allocation size, default byte, full pointer return, guards, release forwarding and null skip using controlled library substitutes.",
+        "Independent reopening verifies the two new nonoverlapping function definitions, typed signatures and fresh decompilations."
+      ],
+      "caveats": [
+        "Analyst descriptive function names; original type and member names recovered separately.",
+        "Real allocator/deallocator behavior, allocation failure and complete player lifecycle not tested.",
+        "One-byte PlayerIdx layout does not establish higher-level player identity semantics."
       ]
     }
   ],

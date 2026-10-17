@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 562,
+    "done": 564,
     "todo": 1462,
-    "total": 2024,
-    "behavior_or_helpers_reviewed": 495,
+    "total": 2026,
+    "behavior_or_helpers_reviewed": 497,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -35729,13 +35729,13 @@
       {
         "name": "dreamiverse",
         "label": "Dreamiverse & networking",
-        "done": 5,
+        "done": 7,
         "todo": 102,
-        "total": 107,
-        "behavior_or_helpers_reviewed": 5,
+        "total": 109,
+        "behavior_or_helpers_reviewed": 7,
         "properties_or_types_reviewed": 0,
         "runtime_functions_identified": 31,
-        "property_type_functions_identified": 76,
+        "property_type_functions_identified": 78,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
@@ -35743,7 +35743,9 @@
           "GetDreamstoneTypeName",
           "ParseCreatorLevelRecords",
           "SerializeCreatorLevelRecords",
-          "RegisterDreamstoneTypeValues"
+          "RegisterDreamstoneTypeValues",
+          "AllocateDefaultPlayerIdx",
+          "FreePlayerIdxIfNonNull"
         ],
         "todo_names": [
           "0x140112670",
@@ -35854,7 +35856,9 @@
           "140252190",
           "140412a70",
           "140413970",
-          "140c841a0"
+          "140c841a0",
+          "140ced9c0",
+          "140ced9e0"
         ],
         "todo_addresses": [
           "140112670",
@@ -37598,16 +37602,19 @@
           {
             "name": "dreamiverse/players",
             "label": "Player sessions",
-            "done": 0,
+            "done": 2,
             "todo": 23,
-            "total": 23,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 25,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 0,
             "runtime_functions_identified": 0,
-            "property_type_functions_identified": 23,
+            "property_type_functions_identified": 25,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "AllocateDefaultPlayerIdx",
+              "FreePlayerIdxIfNonNull"
+            ],
             "todo_names": [
               "0x140c75cc0",
               "0x140c9be30",
@@ -37633,7 +37640,10 @@
               "0x140d2cac0",
               "0x140d30c80"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "140ced9c0",
+              "140ced9e0"
+            ],
             "todo_addresses": [
               "140c75cc0",
               "140c9be30",
@@ -37721,6 +37731,69 @@
                 ]
               },
               {
+                "name": "dreamiverse/players/playeridx",
+                "label": "Player Idx",
+                "done": 2,
+                "todo": 2,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AllocateDefaultPlayerIdx",
+                  "FreePlayerIdxIfNonNull"
+                ],
+                "todo_names": [
+                  "0x140cec9d0",
+                  "0x140d1a560"
+                ],
+                "done_addresses": [
+                  "140ced9c0",
+                  "140ced9e0"
+                ],
+                "todo_addresses": [
+                  "140cec9d0",
+                  "140d1a560"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "dreamiverse/players/playeridx/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 2,
+                    "todo": 2,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AllocateDefaultPlayerIdx",
+                      "FreePlayerIdxIfNonNull"
+                    ],
+                    "todo_names": [
+                      "0x140cec9d0",
+                      "0x140d1a560"
+                    ],
+                    "done_addresses": [
+                      "140ced9c0",
+                      "140ced9e0"
+                    ],
+                    "todo_addresses": [
+                      "140cec9d0",
+                      "140d1a560"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "dreamiverse/players/elobbytype",
                 "label": "Lobby Type",
                 "done": 0,
@@ -37765,57 +37838,6 @@
                     "todo_addresses": [
                       "140c9be30",
                       "140ce93b0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "dreamiverse/players/playeridx",
-                "label": "Player Idx",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cec9d0",
-                  "0x140d1a560"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cec9d0",
-                  "140d1a560"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "dreamiverse/players/playeridx/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cec9d0",
-                      "0x140d1a560"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cec9d0",
-                      "140d1a560"
                     ],
                     "unresolved_addresses": [],
                     "groups": []

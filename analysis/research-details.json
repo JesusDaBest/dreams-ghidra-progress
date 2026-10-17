@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 608,
+    "checked_and_applied_names": 610,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 608,
-    "function_count": 9589,
+    "verified_names": 610,
+    "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
-      "1408f2040"
+      "140ced9c0",
+      "140ced9e0"
     ],
-    "scope": "569 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "569 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10205,5 +10206,39 @@
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true,
     "fresh_decompilation_verified": true
+  },
+  "controlinator_property_and_playeridx_checkpoint": {
+    "new_name_credit": 2,
+    "functions": {
+      "140ced9c0": {
+        "name": "AllocateDefaultPlayerIdx",
+        "signature": "PlayerIdx * PS4_SYSV AllocateDefaultPlayerIdx(void)"
+      },
+      "140ced9e0": {
+        "name": "FreePlayerIdxIfNonNull",
+        "signature": "void PS4_SYSV FreePlayerIdxIfNonNull(PlayerIdx * player_index)"
+      }
+    },
+    "native_callback_scenarios": 513,
+    "connected_controller_mode_scenarios": 192,
+    "controller_mode_accounting": "192-case set supersedes overlapping 128-case set; do not add both.",
+    "recovered_types": [
+      "EControllinatorMode",
+      "EFollowImpMode",
+      "PlayerIdx: one u8 idx member at offset zero"
+    ],
+    "field_annotations": 4,
+    "evidence": [
+      "Original PlayerIdx property registration installs these allocation and release callbacks.",
+      "Complete original bodies and type/field registrations byte-verified against the saved program.",
+      "513 isolated original-callback scenarios verify allocation size, default byte, full pointer return, guards, release forwarding and null skip using controlled library substitutes.",
+      "Independent reopening verifies the two new nonoverlapping function definitions, typed signatures and fresh decompilations."
+    ],
+    "limits": [
+      "Analyst descriptive function names; original type and member names recovered separately.",
+      "Real allocator/deallocator behavior, allocation failure and complete player lifecycle not tested.",
+      "One-byte PlayerIdx layout does not establish higher-level player identity semantics."
+    ],
+    "name_types_and_signatures_independently_reopened": true
   }
 }

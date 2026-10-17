@@ -4353,3 +4353,14 @@ Saved ResolveObjectTransformForAuxiliaryContext with a six-input working signatu
 1344 scoped entry-to-return scenarios support the descriptive role, excluding superseded sets. They cover source and eligibility gates, cached and recursive parent paths, repeats, packed references, signed group rebasing and connected gadget targets. Verified backup, independent reopening and fresh decompilation confirm the name and signature.
 
 The context remains opaque and the transform is an analyst working type. Original field names, unexplored state combinations, arbitrary recursion/cycles, nonfinite or invalid/aliased inputs and full lifecycles remain unresolved. This is not full semantic or feature completion. Totals: 608 checked names; 2,024 mapped and 7,565 unmapped among 9,589 discovered functions.
+
+
+### Verified PlayerIdx type and lifecycle callbacks
+
+Recovered `PlayerIdx` as a one-byte structure with original `u8 idx` at offset zero. Its original type registration installs two previously undefined callbacks, now saved as `AllocateDefaultPlayerIdx` and `FreePlayerIdxIfNonNull` with typed signatures. Independent reopening and fresh decompilation verify both definitions; all previously defined function names and signatures are unchanged.
+
+513 isolated cases check the original callbacks using controlled allocation/free substitutes: creation requests one byte, initializes 255, returns the full pointer and preserves adjacent guards; release forwards a nonnull pointer once and skips null. Real library behavior, allocation failure and full player lifecycle remain unverified.
+
+The original Controlinator enums are also saved as types. A connected 192-case mode set confirms the tested transform branch uses the parent reference for `Gun` and substitutes runtime-body position for `MaintainGrabOrientation` and `FaceDockToCamera`, retaining parent scale and rotation. This set supersedes the overlapping earlier 128 cases. Its metadata offsets, valid associations, positive scales and finite rotations are controlled fixture inputs, not a complete in-game mode test.
+
+Totals: 610 checked names, 2,026 mapped and 7,565 unmapped among 9,591 discovered functions. Type recovery and annotation alone receive no additional name-review credit. These counts do not measure whole-game semantic completion.
