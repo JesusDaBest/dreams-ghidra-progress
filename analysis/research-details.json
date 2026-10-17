@@ -11587,5 +11587,169 @@
     ],
     "new_name_credit": 0,
     "project_modified": false
+  },
+  "animation_type1_extended_update_checkpoint": {
+    "mode0": {
+      "entry": "141070310",
+      "real_handler": "14107ea70",
+      "native_cases": 300,
+      "converter_calls": 300,
+      "dispatch_calls": 300,
+      "scope": "Original type1 converter produces12-byte input; original dispatcher selects extended handler from oldheaderflag4 withoverride0. Oldextended records0/1/3/5/42 in one source leaf, six origin combinations, ten finite incoming patterns,mode0/auxflags0.",
+      "findings": [
+        "Mode0 preserves full12-byte retained old andincoming records except rebased float32 times; arbitrary old metadata high16 bits andlowflags preserved. Exact complete header/data streams match independent model.",
+        "Original dispatcher/lookup select actual extended handler; no handler probe. Existingwire0/newrecord1,outputtransform,wholeworld/sourceobject,inputs/source nodes/guards verified.",
+        "Full old leaf42*12=504 exercises output growth while retaining immutable original source. Original allocation/growth/finalization/intern/release/hash execute."
+      ],
+      "limits": [
+        "Type1 andmode0 only; modes/flags, original multilevel source, complete producer/insertion, invalid inputs,concurrency/playback unresolved.",
+        "Host memory imports adapted andmutex/thread callbacks controlled.",
+        "Whole6366-instruction handler remains unnamed andpartially reviewed."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "flag_profiles": {
+      "entry": "141070310",
+      "real_handler": "14107ea70",
+      "profiles": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          255,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          255,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          1,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          1
+        ],
+        [
+          5,
+          1,
+          1,
+          1
+        ]
+      ],
+      "native_cases": 2400,
+      "converter_calls": 2400,
+      "dispatch_calls": 2400,
+      "scope": "Original type1 converter produces12-byte input; original dispatcher selects extended handler from oldheaderflag4 withoverride0. Oldextended records0/1/3/5/42 in one source leaf, six origin combinations, ten finite incoming patterns,modes0/5 with8 specified auxiliary/dispatcherflagprofiles.",
+      "findings": [
+        "Mode5 prefix update preserves existing low-nibble metadata whenauxflagsnonzero andflagA0, except a zero low3bits pattern becomeslow9; otherwise clears low4bits. FlagB suppresses prefix modification. First incoming metadata combines nextold bits6..15 with conditional oldlow4/incomingbits4..5 when within tolerance.",
+        "Full12-byte retained old andincoming records follow modelled rebased times andconditional metadata bit masks; oldmetadata high16bits preserved. Exact complete header/data streams match independent model.",
+        "Original dispatcher/lookup select actual extended handler; no handler probe. Existingwire0/newrecord1,outputtransform,wholeworld/sourceobject,inputs/source nodes/guards verified.",
+        "Full old leaf42*12=504 exercises output growth while retaining immutable original source. Original allocation/growth/finalization/intern/release/hash execute."
+      ],
+      "limits": [
+        "Type1 only; exhaustive modes/flags androunding, original multilevel source, complete producer/insertion, invalid inputs,concurrency/playback unresolved.",
+        "Host memory imports adapted andmutex/thread callbacks controlled.",
+        "Whole6366-instruction handler remains unnamed andpartially reviewed."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "varied_metadata": {
+      "entry": "141070310",
+      "real_handler": "14107ea70",
+      "profiles": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          255,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          255,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          1,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          1
+        ],
+        [
+          5,
+          1,
+          1,
+          1
+        ]
+      ],
+      "native_cases": 960,
+      "converter_calls": 960,
+      "dispatch_calls": 960,
+      "scope": "Original type1 converter produces12-byte input; original dispatcher selects extended handler from oldheaderflag4 withoverride0. Oldextended records5/42 with varied metadata bits6..15 andhigh16bits in one source leaf, six origin combinations, ten finite incoming patterns,modes0/5 with8 specified auxiliary/dispatcherflagprofiles.",
+      "findings": [
+        "Mode5 prefix update preserves existing low-nibble metadata whenauxflagsnonzero andflagA0, except a zero low3bits pattern becomeslow9; otherwise clears low4bits. FlagB suppresses prefix modification. First incoming metadata combines nextold bits6..15 with conditional oldlow4/incomingbits4..5 when within tolerance.",
+        "Full12-byte retained old andincoming records follow modelled rebased times andconditional metadata bit masks; oldmetadata high16bits preserved. Exact complete header/data streams match independent model.",
+        "Original dispatcher/lookup select actual extended handler; no handler probe. Existingwire0/newrecord1,outputtransform,wholeworld/sourceobject,inputs/source nodes/guards verified.",
+        "Full old leaf42*12=504 exercises output growth while retaining immutable original source. Original allocation/growth/finalization/intern/release/hash execute."
+      ],
+      "limits": [
+        "Type1 only; exhaustive modes/flags androunding, original multilevel source, complete producer/insertion, invalid inputs,concurrency/playback unresolved.",
+        "Host memory imports adapted andmutex/thread callbacks controlled.",
+        "Whole6366-instruction handler remains unnamed andpartially reviewed."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    }
   }
 }

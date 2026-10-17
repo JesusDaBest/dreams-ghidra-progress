@@ -4349,3 +4349,16 @@ In the tested mode-5 branch, the last retained prefix key receives metadata 0x70
 Checks cover exact complete headers, expected output length, rebased times, defined old-record fields and all incoming fields including the conditional metadata mask, original input/source-node/world immutability, guards, returned indices and output transform. Three padding bytes in converted old records remain unasserted. Real resource growth/finalization/interning/release/hash executes with controlled mutex/thread callbacks and host memory-import adapters.
 
 This extends the connected transition to selected mode-5 flag combinations. Exhaustive rounding, other record formats/flags, deeper original source trees, full producer/insertion scheduling, malformed state, concurrency and playback remain unresolved. The handler remains unnamed and partially reviewed. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
+
+
+### Updating existing extended type-1 records
+
+The already-extended update path now has 300 connected mode-0 cases, 2,400 mode/flag-profile cases and 960 focused cases with varied old metadata. Each executes the original converter and byte writers, then original dispatcher/lookup with override 0 and old-header flag 4, reaching the real extended handler. No record-handler probe is used.
+
+Mode 0 preserves complete retained and incoming 12-byte records except rebased times. Mode 5 applies different boundary rules from basic-to-extended conversion: the last retained prefix key preserves its low metadata nibble when auxiliary flags are nonzero and dispatcher flag A is clear, except that a zero low-three-bit pattern becomes 9. Otherwise that boundary update clears the low four bits. Dispatcher flag B suppresses the prefix modification. Existing metadata's upper 16 bits remain unchanged in these fixtures.
+
+When the first incoming key lies within tolerance of the next old stored time, its metadata inherits old bits 6 through 15. Lower bits combine old/incoming state conditionally on the old low-three-bit pattern and auxiliary flags. The focused cases vary these old bits independently of incoming metadata, verifying inheritance rather than a shared constant. User-facing meanings of the bits remain unresolved.
+
+Complete header and payload streams match independent models, including the conditional masks. Tests also check returned indices, output transform, world/source-object/input/source-node immutability and guards. Original source counts include 42 records filling a 504-byte leaf, exercising output growth. Original allocator, finalizer, interning, release and hashing execute with adapted memory imports and controlled mutex/thread callbacks.
+
+Other types, exhaustive rounding/flag combinations, deeper original source trees, full producer/insertion execution, malformed inputs, concurrency and playback remain unverified. The 6,366-instruction extended handler is partially reviewed and unnamed. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
