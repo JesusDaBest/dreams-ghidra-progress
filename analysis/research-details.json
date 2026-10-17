@@ -15739,5 +15739,25 @@
       "No persistence, gameplay, allocation-failure, concurrency, UI-to-key-metadata or complete enclosing-workflow claim. Descriptive analyst name, not a recovered original source name."
     ],
     "new_name_credit": 1
+  },
+  "animation2_guarded_record_rebuild_pair_checkpoint": {
+    "field": "anim_2_upgraded",
+    "boolean_field_offset": "0x1c2bfc8",
+    "basic_pair_native_cases": 72,
+    "upgraded_pair_native_cases": 108,
+    "findings": [
+      "Original field registration ties the world guard byte to the literal anim_2_upgraded using the already reviewed Boolean offset-registration helper.",
+      "With the guard clear, the per-wire rebuild makes dense separate records. In 72 connected basic Bool cases the following original sparse compactor changes no world, wire, root or Animation bytes.",
+      "With the guard set, the per-wire rebuild is a no-op. In 108 connected basic/extended/mixed Bool cases the following compactor alone rebuilds sparse referenced ordinal sets, preserves sharing and retains payload/header metadata; dense sets, no references and trailing unused records alone skip rebuilding.",
+      "The original copy helper moves raw resource bytes into a bounded buffer; its stride argument limits truncation alignment, not per-key format conversion.",
+      "One original caller places the pair inside a serialization-upgrade path. This supports an upgrade distinction; it does not establish the full format migration or every call workflow."
+    ],
+    "limits": [
+      "Single-leaf Bool fixtures; basic three-key records and upgraded one-key basic/extended/mixed records.",
+      "Host allocator/free/memset and controlled TLS/runtime boundaries remain explicit.",
+      "No general extended-to-basic conversion, persistence, whole-caller execution, complete Animation 2.0 migration, UI write or gameplay claim.",
+      "No new names or whole-game completion credit."
+    ],
+    "new_name_credit": 0
   }
 }

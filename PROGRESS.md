@@ -5151,3 +5151,14 @@ Saved `RebuildAnimationRecordsPerActiveWire` after reviewing all 151 owned instr
 This differs from the following sparse compactor, which preserves shared references and skips dense ordinal sets. The fixtures execute the original rebuild, copy, range, append and resource-interning paths, with explicit host allocator/free/memset, controlled TLS and two synthetic runtime defaults. Extended inputs, other formats, deep resources, failures, persistence, gameplay and the full enclosing workflows remain unverified. No UI-to-key-metadata connection is claimed.
 
 Totals: 678 checked names, 2,090 mapped functions and 7,513 unmapped among 9,603 currently defined. These are code-review counts, not whole-game completion.
+
+
+### Why the two Animation rebuild helpers run in sequence
+
+The world-byte guard is now identified by original Boolean field registration as `anim_2_upgraded`. When it is clear, `RebuildAnimationRecordsPerActiveWire` produces dense records, one per matching active wire. In 72 connected basic Bool cases, the following `RebuildSparseAnimationRecordsAndRemapWires` changes no roots, Animation bytes or world/wire bytes.
+
+When `anim_2_upgraded` is set, the first helper skips rebuilding. In 108 connected basic/extended/mixed Bool cases, the second helper alone handles sparse referenced ordinals, preserves shared references and retains the tested header flags and payload bytes. Fifty-four cases rebuild; fifty-four skip because referenced indices are dense, absent, or have only trailing unused records.
+
+The original copy helper moves raw resource bytes. Its stride argument aligns capacity truncation; it does not convert each key. Together with the registered upgrade guard, this rules out treating the first helper as a general extended-to-basic converter. One original caller places the pair in a serialization-upgrade path, but the complete format migration and the second enclosing caller remain unresolved.
+
+These are 180 connected pair cases with single-leaf Bool fixtures, explicit host allocator/free/memset and controlled TLS/runtime boundaries. They do not prove all formats, deep resources, persistence, whole-caller execution, UI metadata writes or gameplay. No new names or completion credit are added; totals remain 678 checked names and 2,090 mapped functions.
