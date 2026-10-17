@@ -10944,5 +10944,28 @@
       "Input meanings/provenance, synchronization and exceptional floating behavior remain unresolved."
     ],
     "new_name_credit": 0
+  },
+  "region_query_accumulator_provenance_checkpoint": {
+    "inputA": {
+      "initial_bits": "0x7f7fffff",
+      "updates": "Refine unsigned atomic minimum after zero clamp",
+      "output_use": "A<1 selects1"
+    },
+    "inputB": {
+      "initial_bits": "0",
+      "updates": "SampleField and Refine unsigned atomic maximum",
+      "output_use": "Otherwise copied to result"
+    },
+    "iteration_input": "RefineSetup copies A-1 into a separate buffer read by Refine.",
+    "evidence": [
+      "CPU binding record stores match GPU descriptor loads across all named stages.",
+      "Archive hashes rechecked; relevant shader writes/atomics and CPU instruction bytes traced.",
+      "Ghidra annotations saved and independently reopened."
+    ],
+    "limits": [
+      "Unsigned bit-pattern min/max; full nonnegative float domain not proven.",
+      "Sampling/refinement formulas, synchronization, GPU execution and scene validation remain incomplete."
+    ],
+    "new_name_credit": 0
   }
 }

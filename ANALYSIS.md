@@ -4571,3 +4571,12 @@ The final stage receives a 52-byte record containing three buffer descriptors an
 For an active index below the count, the static instruction trace yields `output[i] = inputA[i] < 1.0 ? 1.0 : inputB[i]`. This follows the actual operand order and conditional-selection bits, rather than the stage name. The earlier meanings of the two inputs are still unresolved; neither is labeled as a distance or confidence value without that provenance.
 
 Ghidra binding annotations were saved and independently reopened. This is static shader/CPU binding analysis, with no GPU execution, synchronization validation or full scene test. Checked-name count remains 622.
+
+
+### Region-query accumulator provenance
+
+CopyOutput's inputs now link to earlier stage writes. Bootstrap initializes input A to the largest finite float bit pattern and input B to zero. SampleField updates B with unsigned atomic maximum after its positive-result reduction; Refine also updates B with unsigned atomic maximum. Refine updates A with unsigned atomic minimum after clamping the candidate value against zero.
+
+RefineSetup copies A minus one into a separate buffer that Refine reads during iteration. These writes and CPU descriptor bindings establish accumulation roles, but do not yet establish the full metric or field-sampling formulas. The atomics compare unsigned bit patterns; interpreting their ordering as ordinary float min/max requires the appropriate finite nonnegative domain, which is not proven for every path.
+
+The archive payload hashes and relevant CPU instruction bytes were rechecked, and Ghidra annotations were saved and independently reopened. GPU execution, synchronization and real-scene behavior remain unverified. No new name or whole-system completion credit was added.
