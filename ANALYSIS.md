@@ -4501,3 +4501,10 @@ Forty-five full-entry cases establish fallback camera ancestry behavior for All,
 The complete 126-instruction contribution helper was read. In 3,584 original-code cases, the first eligible matching token contributes an eased weight, attenuated by one minus each later entry's eased weight. Counts 0..3, modes 0..6, four eligibility flag patterns and all eight combinations of three context flags were covered; input bytes stayed unchanged. This does not establish every weight, token type or list ordering.
 
 Two incorrect reference assumptions were retained and corrected: zero threshold caps the stored accepted counter to zero, and observed curve mode 5 computes `3*x*x - 2*x`, rather than cubic smoothstep. Corrected references pass; original code was not changed. Ghidra scope annotations were saved and independently reopened. Multiple candidates/order, other groups, malformed ancestry and live gameplay remain unresolved. Processor and contribution helper remain unnamed; checked-name total stays 620.
+
+
+### Named layered blend-token contribution helper
+
+The contribution helper is now saved as `ComputeLayeredBlendTokenWeight`, with explicit pointer/token inputs and a float return. Its complete 126-instruction body and all three call sites were read at the relevant calls: token types 0 and 1 are observed, so the descriptive name does not imply a Camera-only token. Independent reopening and fresh decompilation verify persistence. The 3,584 helper checks and 90 connected Camera scope cases above support this role; exceptional weights, duplicates, larger counts and complete blend lifecycles remain unresolved.
+
+Totals: 621 checked names, 2,037 mapped and 7,554 unmapped among 9,591 discovered functions. These counts do not establish whole-game completion.

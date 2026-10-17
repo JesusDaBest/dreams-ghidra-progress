@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8816,
-    "other_names": 775,
-    "verification": "complete_inventory_matches_baseline_plus_579_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8815,
+    "other_names": 776,
+    "verification": "complete_inventory_matches_baseline_plus_580_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14214,6 +14214,27 @@
       "caveats": [
         "Analyst descriptive name and working ABI, not original symbol/declaration.",
         "Nonunit/zero/nonfinite quaternions, aliasing, extreme scales and complete caller lifecycles remain unresolved."
+      ]
+    },
+    {
+      "address": "140752eb0",
+      "original_name": "FUN_140752eb0",
+      "applied_name": "ComputeLayeredBlendTokenWeight",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "float PS4_SYSV ComputeLayeredBlendTokenWeight(void * blend_context, ulonglong token)",
+      "evidence": [
+        "Complete126-instruction leaf read and original bytes verified.",
+        "3584 full original helper calls match independent layered weight reference; input buffers immutable.",
+        "Three call sites establish multiple token types and Camera scope membership use.",
+        "90 connected Camera scope cases show positive contribution enables ancestry filtering without scaling region output.",
+        "Name and explicit pointer/RDI,token/RSI,float/XMM0 working ABI verified after independent reopen and fresh decompilation."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not original source declaration.",
+        "Exceptional weights, duplicate matches, larger counts and complete camera blend lifecycles remain unresolved."
       ]
     }
   ],

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 574,
+    "done": 575,
     "todo": 1462,
-    "total": 2036,
-    "behavior_or_helpers_reviewed": 507,
+    "total": 2037,
+    "behavior_or_helpers_reviewed": 508,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -21710,12 +21710,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 100,
+        "done": 101,
         "todo": 268,
-        "total": 368,
-        "behavior_or_helpers_reviewed": 100,
+        "total": 369,
+        "behavior_or_helpers_reviewed": 101,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 342,
+        "runtime_functions_identified": 343,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21803,6 +21803,7 @@
           "BuildStencilSurfaceLayoutInput",
           "CalculateImageDescriptorStorageRequirements",
           "CalculateImageViewOffsetAndSliceSize",
+          "ComputeLayeredBlendTokenWeight",
           "RegisterLabelVisibleFieldOffset",
           "InternAndBeginComputeProfilingRegion",
           "SubmitComputeQueueAndWaitForFence",
@@ -22175,6 +22176,7 @@
           "140044120",
           "140044480",
           "1400449e0",
+          "140752eb0",
           "140d67a10",
           "141297630",
           "141297bd0",
@@ -26819,162 +26821,20 @@
             ]
           },
           {
-            "name": "rendering/vr",
-            "label": "VR rendering",
-            "done": 0,
-            "todo": 6,
-            "total": 6,
-            "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 6,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [],
-            "todo_names": [
-              "0x1413ef870",
-              "0x1413efc10",
-              "0x1413f0f30",
-              "0x1413f12d0",
-              "0x1413f1670",
-              "0x1413f1a10"
-            ],
-            "done_addresses": [],
-            "todo_addresses": [
-              "1413ef870",
-              "1413efc10",
-              "1413f0f30",
-              "1413f12d0",
-              "1413f1670",
-              "1413f1a10"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "rendering/vr/vr-layers",
-                "label": "Vr Layers",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1413f0f30",
-                  "0x1413f12d0",
-                  "0x1413f1670",
-                  "0x1413f1a10"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1413f0f30",
-                  "1413f12d0",
-                  "1413f1670",
-                  "1413f1a10"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/vr/vr-layers/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1413f0f30",
-                      "0x1413f12d0",
-                      "0x1413f1670",
-                      "0x1413f1a10"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1413f0f30",
-                      "1413f12d0",
-                      "1413f1670",
-                      "1413f1a10"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/vr/vr-cursor",
-                "label": "Vr Cursor",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1413ef870",
-                  "0x1413efc10"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1413ef870",
-                  "1413efc10"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/vr/vr-cursor/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1413ef870",
-                      "0x1413efc10"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1413ef870",
-                      "1413efc10"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "name": "rendering/cameras",
             "label": "Camera blending",
-            "done": 0,
+            "done": 1,
             "todo": 5,
-            "total": 5,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 6,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 1,
             "property_type_functions_identified": 5,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "ComputeLayeredBlendTokenWeight"
+            ],
             "todo_names": [
               "0x140d04430",
               "0x140d04720",
@@ -26982,7 +26842,9 @@
               "0x140d04dd0",
               "0x140d05240"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "140752eb0"
+            ],
             "todo_addresses": [
               "140d04430",
               "140d04720",
@@ -27038,6 +26900,53 @@
                       "140d04430",
                       "140d04a00"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/cameras/blend-token-contribution",
+                "label": "Blend contribution",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ComputeLayeredBlendTokenWeight"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140752eb0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/cameras/blend-token-contribution/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ComputeLayeredBlendTokenWeight"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140752eb0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -27178,6 +27087,150 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "140d04720"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "rendering/vr",
+            "label": "VR rendering",
+            "done": 0,
+            "todo": 6,
+            "total": 6,
+            "behavior_or_helpers_reviewed": 0,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 6,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [],
+            "todo_names": [
+              "0x1413ef870",
+              "0x1413efc10",
+              "0x1413f0f30",
+              "0x1413f12d0",
+              "0x1413f1670",
+              "0x1413f1a10"
+            ],
+            "done_addresses": [],
+            "todo_addresses": [
+              "1413ef870",
+              "1413efc10",
+              "1413f0f30",
+              "1413f12d0",
+              "1413f1670",
+              "1413f1a10"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "rendering/vr/vr-layers",
+                "label": "Vr Layers",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1413f0f30",
+                  "0x1413f12d0",
+                  "0x1413f1670",
+                  "0x1413f1a10"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1413f0f30",
+                  "1413f12d0",
+                  "1413f1670",
+                  "1413f1a10"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/vr/vr-layers/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1413f0f30",
+                      "0x1413f12d0",
+                      "0x1413f1670",
+                      "0x1413f1a10"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1413f0f30",
+                      "1413f12d0",
+                      "1413f1670",
+                      "1413f1a10"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/vr/vr-cursor",
+                "label": "Vr Cursor",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1413ef870",
+                  "0x1413efc10"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1413ef870",
+                  "1413efc10"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/vr/vr-cursor/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1413ef870",
+                      "0x1413efc10"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1413ef870",
+                      "1413efc10"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -44642,5 +44695,5 @@
       }
     ]
   },
-  "unmapped": 7555
+  "unmapped": 7554
 }

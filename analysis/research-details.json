@@ -10681,7 +10681,23 @@
       "Multiple candidates/order, other token types, broader blend weights, invalid/group indices, malformed ancestry and live gameplay remain unresolved."
     ],
     "processor_review": "partial_unnamed",
-    "helper_review": "body_and_scoped_native_cases_read; name_and_type_pending",
+    "helper_review": "descriptive_name_and_working_abi_saved_and_independently_reopened",
     "checked_name_total_unchanged": 620
+  },
+  "layered_blend_token_weight_checkpoint": {
+    "name": "ComputeLayeredBlendTokenWeight",
+    "original_instructions": 126,
+    "native_cases": 3584,
+    "evidence": [
+      "Complete126-instruction leaf read and original bytes verified.",
+      "3584 full original helper calls match independent layered weight reference; input buffers immutable.",
+      "Three call sites establish multiple token types and Camera scope membership use.",
+      "90 connected Camera scope cases show positive contribution enables ancestry filtering without scaling region output.",
+      "Name and explicit pointer/RDI,token/RSI,float/XMM0 working ABI verified after independent reopen and fresh decompilation."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not original source declaration.",
+      "Exceptional weights, duplicate matches, larger counts and complete camera blend lifecycles remain unresolved."
+    ]
   }
 }
