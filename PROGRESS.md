@@ -5067,3 +5067,12 @@ Saved `ResolvePuppetHeartOrFallbackAncestor` after full review of its 85 origina
 The helper follows inheritance-marked ancestors, then returns PuppetHeart immediately or follows at most two additional parents. Its final fallback can be another type. 120 native cases validate valid acyclic inherited chains, early matches, fallback, ignored high reference bits and null results for invalid non-inherited links. Invalid inherited links are dereferenced before a null check and were not executed. Independent reopening and fresh decompilation verify the saved two-pointer working ABI, pointer return and unchanged original bytes; all other names/signatures remain unchanged.
 
 Mapped under shared object references. Totals are 675 checked names and 2,087 mapped functions, with 7,516 still unmapped among 9,603 discovered. This does not establish complete object layouts, gameplay behavior or whole-game completion.
+
+
+### Puppet-relative Animation vector adjustment
+
+504 boolean and 336 typed-record native cases connect the original wrapper, basic sampler, scalar reducer and `ResolvePuppetHeartOrFallbackAncestor`. For properties `0xb8` and `0xb9`, the wrapper converts inputs to an X/zero/Y vector, rotates it by the resolved PuppetHeart quaternion and returns the rotated X/Z pair as Float2. Boolean and Number inputs replicate their scalar into X and Y. For property `0x25b`, the result is Float3: scalar inputs are replicated across three lanes, Float2 supplies X/Y/zero, and Float3/Float4 supply X/Y/Z before rotation.
+
+The fixtures use the exact kind-11 property-zero offset `0x50`, independently verified from the original initializer instruction; the quaternion is read at property `+0x10`. Only this matrix entry is supplied, rather than executing the full runtime metadata constructor. The typed input tags match the existing registry, with their original name literals rechecked.
+
+Typed tests contain a single 48-byte record, so they establish conversion and rotation, not typed interpolation. Both suites use `AnimStrength = 1`, finite inputs, normalized rotations and a valid inherited parent link. Alpha-suppression and retirement flags, full output/guards/padding, unused payload bytes and source/header/resource/object/world/wire immutability are checked against an independent model. The remaining conversions, Quaternion angle conversion, other parent chains, original property names and gameplay remain unresolved. No new naming or completion credit is added.
