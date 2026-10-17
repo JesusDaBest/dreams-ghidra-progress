@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "function": "IsPhysicsConnectionUsable",
+  "review_kind": "working_signature_correction_of_preexisting_name",
+  "saved_working_signature": "bool PS4_SYSV IsPhysicsConnectionUsable(void * connection, uint packed_object_id, void * world, void * physics_context)",
+  "evidence": {
+    "complete_body_instructions_byte_matched": 105,
+    "bounded_caller_window_instructions_byte_matched": 133,
+    "native_test_cases": 1280,
+    "independent_trial_and_main_reopen_verified": true
+  },
+  "behavior": [
+    "Rejects missing endpoints, disabled connections, an absent second physics body and matching body IDs when both endpoints have bodies.",
+    "A context flag permits success after those initial checks.",
+    "Otherwise checks body side flags and requires the second endpoint to satisfy a registered property predicate if the first satisfies it."
+  ],
+  "limits": [
+    "Opaque pointer types are analyst-supported working types, not recovered source declarations.",
+    "Registered property meaning and whole-game valid-object preconditions remain unresolved.",
+    "No exact match or mismatch with Media Molecule livestream source established.",
+    "Native fixtures do not establish live game, concurrency or feature completion."
+  ],
+  "progress_accounting": {
+    "additional_reviewed_names": 0,
+    "overall_reverse_engineering_percentage_change": 0
+  },
+  "private_data": "Raw code, executable bytes and test fixtures remain local."
+}
