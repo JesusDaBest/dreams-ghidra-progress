@@ -10443,5 +10443,66 @@
       "Other detection modes, full shape/transform/filter combinations, malformed graphs, allocator implementation and live gameplay unresolved."
     ],
     "checked_name_total_unchanged": 619
+  },
+  "triggerzone_scope_box_imp_checkpoint": {
+    "tests": {
+      "triggerzone-bounded-box-connected": {
+        "native_cases": 162,
+        "scope": "Full original processor entry-to-return box Key detection, one candidate, three translated centres, three Z rotations and nine local points, passing/failing thresholds. Independent max-absolute-local-coordinate box-shell oracle, uniform inner2/outer4 and unit scales. Original reviewed helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Nonuniform box extents, other rotation axes/scales, player/ancestry combinations and other detection modes unresolved."
+        ]
+      },
+      "triggerzone-entirelevel-scope-zero": {
+        "native_cases": 15,
+        "scope": "Full-entry EntireLevel Key detection with All/Me/Others original scope values, six candidates with direct/deep matching ancestry, other trees and rootless parents, five thresholds including zero. Original helpers/isinff; allocation boundaries modeled. Ancestry word table and valid bounded chains supplied explicitly.",
+        "limits": [
+          "Bounded-region zero-threshold interactions, glued scope-reference variants, cycles/malformed references and bounded shape/filter combinations remain unresolved."
+        ]
+      },
+      "triggerzone-bounded-scope-zero": {
+        "native_cases": 15,
+        "scope": "Full-entry bounded sphere Key detection with All/Me/Others original scope values, six candidates with direct/deep matching ancestry, other trees and rootless parents, five thresholds including zero. Original helpers/isinff; allocation boundaries modeled. Ancestry word table and valid bounded chains supplied explicitly.",
+        "limits": [
+          "Broader zero-threshold combinations, glued scope-reference variants, cycles/malformed references and bounded shape/filter combinations remain unresolved."
+        ]
+      },
+      "triggerzone-imp-stored-connected": {
+        "native_cases": 88,
+        "scope": "Full-entry Imp detection with one eligible auxiliary record, A category2/B null, required flag8 and stored transform enabled. Four record channel indices,11 signed X distances, passing/failing thresholds; unit sphere inner2/outer4. Original helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Dual-state eligibility, reconstructed/special positions, segment adjustment, multiple records and other geometry/filter combinations unresolved.",
+          "Channel index0..3 tested, no invalid-index safety claim."
+        ]
+      },
+      "triggerzone-imp-eligibility-connected": {
+        "native_cases": 400,
+        "scope": "Full-entry Imp eligibility with five A/B pointer-category profiles, required flag present/absent, four group3a04 float values includingNaN, and record reference-1/0. Stored centre position and player channel0. Original helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Original category/flag/property labels not inferred from fixture numbers.",
+          "Reconstructed/special positions, multiple records, invalid pointers/indices and live gameplay unresolved."
+        ]
+      },
+      "triggerzone-imp-blended-connected": {
+        "native_cases": 360,
+        "scope": "Full-entry Imp detection, stored transform disabled and group4399 offset mode zero. Four player channels, three group positions, five state positions, alpha0/.5/1 and passing/failing thresholds. Unit transforms and sphere inner2/outer4. Original helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Offset/rotated modes, special record/object positions, unequal segment endpoints and clamp/import path remain unresolved.",
+          "No full mode or game completion."
+        ]
+      },
+      "triggerzone-imp-segment-connected": {
+        "native_cases": 42,
+        "scope": "Full-entry Imp special record/object position plus stored state endpoint, logarithmic segment adjustment, sphere inner2/outer4, seven first positions/three second positions/passing-failing thresholds. Original reviewed helpers, original isinff and original local libc logf with original constants; handle/allocation/free boundaries modeled. Positive finite logf inputs only.",
+        "limits": [
+          "Error/errno paths of logf, other record categories, rotations/offset modes, nonfinite positions and live gameplay unresolved."
+        ]
+      }
+    },
+    "independently_reopened_annotations": true,
+    "processor_review": "partial_unnamed",
+    "checked_name_total_unchanged": 619,
+    "resolved_reference_error": "Initial segment oracle omitted orientation/category-dependent vertical sample offset; diagnostic capture isolated omission, then42 uninstrumented cases passed. logf resolved from original loader NID and original local libc bytes.",
+    "scope_distinction": "Tested zero DetectCnt with scope exclusions succeeds for EntireLevel but fails for bounded sphere when globally name-matching candidates are excluded. Not a general bug claim."
   }
 }

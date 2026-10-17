@@ -4090,3 +4090,16 @@ The sphere reference independently calculates linear falloff for unit transforms
 The traced Key success routes disable the separate success-propagation loop. Binding a candidate output field to that loop does not mean the Key path enables it. Zero `DetectCnt` uses an all-matching condition in the tested bounded cases: a matching Key outside the region can fail detection and trigger rollback. Source ownership selects Key channels; candidate ownership selects accumulated TriggerZone channels.
 
 Saved annotations were independently reopened. The full 5,247-instruction function remains unnamed and only partially reviewed. Other detection modes, broader geometry and filter combinations, malformed graphs and live gameplay remain unresolved. No additional checked-name credit; total stays 619.
+
+
+### Scope, box geometry and Imp detection checkpoint
+
+The original `EDetectScope` registers All, Me and Others. Fifteen EntireLevel and fifteen bounded-sphere connected cases cover valid direct/deeper ancestry, other trees, rootless candidates and zero/positive thresholds. These are expanded scope sets; the earlier twelve positive-threshold cases overlap and are not added again. In these fixtures, zero `DetectCnt` succeeds with filtered matches for EntireLevel, while the bounded-sphere path fails when globally name-matching Keys are excluded by scope. This branch difference is not presented as a game bug.
+
+Another 162 full-entry box cases cover diagonal points, translations and Z rotations against an independent box-shell reference, with maximum output error below 0.00000012. Unit scales and uniform extents remain explicit limits.
+
+Imp detection now has 88 stored-position cases, 400 eligibility cases and 360 group-to-state interpolation cases. Tests cover four player channels, relevant pointer/category/flag gates, NaN rejection in the observed group-value condition, and successful/failing count thresholds. Original category/flag property names and broader offset modes remain unresolved.
+
+The segment math import resolves to `logf`. Forty-two full-entry special-position cases execute its original local libc implementation and compare outputs to an independent logarithmic segment reference plus the subsequent category-dependent sample offset. An initial one-dimensional reference missed that offset and failed. A private diagnostic capture isolated it; the final cases were rerun without diagnostic instrumentation, with maximum output error below 0.00000009. The failed expectation and resolution remain in local evidence.
+
+Original processor/helpers execute with explicit handle lookup and allocation/free fixture boundaries. Whole fixture buffers and cleanup are checked within each stated scope. These tests do not establish other detection modes, general rotations/scales, malformed graphs, math error paths or live gameplay. Ghidra notes were independently reopened; the full processor remains partially reviewed and unnamed. Checked-name total remains 619.
