@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 668,
+    "checked_and_applied_names": 669,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 668,
+    "verified_names": 669,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "615 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "616 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15167,5 +15167,40 @@
       "Synchronization controlled; full event dispatcher, other modes, null objects, disk persistence and gameplay unverified."
     ],
     "new_name_credit": 0
+  },
+  "header_data_pages_event_checkpoint": {
+    "address": "140b32c60",
+    "name": "DispatchHeaderAndDataPagesChangeEvent",
+    "signature": "void PS4_SYSV DispatchHeaderAndDataPagesChangeEvent(void * engine_context, void * world, byte player_index, void * source_object, ulonglong packed_roots)",
+    "native_instructions": 197,
+    "native_check": {
+      "entry": "140b32c60",
+      "native_instructions": 197,
+      "native_cases": 300,
+      "findings": [
+        "Complete original event builder produces exactly22 defined bytes: property766,objectID,two64-bit resource fingerprints; sentinel roots become zero fingerprints.",
+        "Resource dirty bitmap exactly contains non-sentinel roots.",
+        "Event-handler native probe receives correct context/world,22-byte range,property and player;source/context/world/config stay unchanged with optionaltracking disabled."
+      ],
+      "limits": [
+        "Handler140b1b7b0 is a probe; actual downstream application notexecuted in this suite.",
+        "Context optional tracking disabled;player-state control branches only default zero-fixture scope.",
+        "Synthetic fingerprints and stack cookie; no concurrency,persistence or gameplay validation."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 1,
+    "evidence": [
+      "Complete197-instruction original body and pseudocode reviewed.",
+      "300 full-entry native event-builder cases validate exact22-byte payload,fingerprints,sentinel conversion and dirty bits.",
+      "68 connected retirement/resource/event cases retained as separate scoped validation.",
+      "Independent reopening and fresh decompilation confirm name and five-argument working signature; all other names/signatures and original code bytes unchanged."
+    ],
+    "limits": [
+      "Event dispatcher is a probe in full-entry builder suite; optional tracking and non-default player state gates unresolved.",
+      "688 downstream property-branch cases verify tested modes only; not full handler integration.",
+      "No disk persistence,concurrency or gameplay claim."
+    ]
   }
 }

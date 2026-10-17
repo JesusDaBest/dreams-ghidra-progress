@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "615 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "616 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8780,
-    "other_names": 823,
-    "verification": "complete_inventory_matches_baseline_plus_615_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8779,
+    "other_names": 824,
+    "verification": "complete_inventory_matches_baseline_plus_616_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15426,6 +15426,28 @@
       "caveats": [
         "Valid nonnegative ordinals; replacement pointer opaque.",
         "No disk persistence, concurrency, maximum-depth, exhaustion or category1 summary validation."
+      ]
+    },
+    {
+      "address": "140b32c60",
+      "original_name": "FUN_140b32c60",
+      "applied_name": "DispatchHeaderAndDataPagesChangeEvent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DispatchHeaderAndDataPagesChangeEvent(void * engine_context, void * world, byte player_index, void * source_object, ulonglong packed_roots)",
+      "evidence": [
+        "Complete197-instruction original body and pseudocode reviewed.",
+        "300 full-entry native event-builder cases validate exact22-byte payload,fingerprints,sentinel conversion and dirty bits.",
+        "68 connected retirement/resource/event cases retained as separate scoped validation.",
+        "Independent reopening and fresh decompilation confirm name and five-argument working signature; all other names/signatures and original code bytes unchanged."
+      ],
+      "caveats": [
+        "Event dispatcher is a probe in full-entry builder suite; optional tracking and non-default player state gates unresolved.",
+        "688 downstream property-branch cases verify tested modes only; not full handler integration.",
+        "No disk persistence,concurrency or gameplay claim."
       ]
     }
   ],

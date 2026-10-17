@@ -4953,3 +4953,16 @@ Original metadata initialization confirms Animation property 766 is `HeaderAndDa
 196 connected native branch cases cover the property-list and missing-property paths. With a property-list entry, the branch replaces its roots and updates the reflected field only when it still equals the entry's previous roots. A different reflected value remains unchanged. Without a property-list entry, the branch resolves directly into the reflected field. Exact object/property buffers, input stream, 16-byte cursor advance and dirty bitmap match the model.
 
 The fixture metadata slot is populated from the verified original initializer instruction. These checks use original branch, lookup and resolver code, with controlled synchronization and explicit private-clone continuations. They do not execute the entire event dispatcher or establish other modes, null-object handling, disk persistence or gameplay behavior. No additional checked-name credit is claimed; totals remain 668 checked names and 2,080 mapped functions.
+
+
+### Header/data page event builder named
+
+Saved `DispatchHeaderAndDataPagesChangeEvent` with its five-argument working signature after reviewing all 197 original instructions. Independent reopening and fresh decompilation confirm the name and signature; all other 9,602 function names/signatures and original instruction bytes are unchanged.
+
+300 full-entry native cases verify the exact 22-byte event: property 766, object ID and two resource fingerprints. Sentinel roots become zero fingerprints. The resource dirty bitmap matches the non-sentinel roots. A separate 68-case connected suite follows original retirement through header replacement, resource allocation/interning and event construction: updated header contents survive as resolvable fingerprints while the old header tree and data root remain unchanged.
+
+688 downstream property-branch cases distinguish modes. Mode 1 serializes roots without changing object/property storage. Mode 0 resolves incoming fingerprints and updates a reflected value when it still agrees with the previous property-list value. Tested modes 2 and 255 update an existing property-list value without synchronizing the reflected field. Without a property-list entry, resolution targets the reflected field directly. These observations do not assign broader meanings to the modes.
+
+The event dispatcher and wire removal remain probes in the connected retirement suite. Optional object/player tracking branches, non-default player-state gates, full dispatcher integration, wire compaction, concurrency, persistence and gameplay remain unverified. The separate downstream tests stop at explicit private-clone continuations and retain their own limits.
+
+Totals: 669 checked names and 2,081 mapped functions among 9,603 discovered; 7,522 remain unmapped. This is code-review inventory, not whole-game completion.

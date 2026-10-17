@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2080,
-  "unmapped_total": 7523,
+  "mapped_total": 2081,
+  "unmapped_total": 7522,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52254,6 +52254,32 @@
             "Complete97-instruction body and callers reviewed; original bytes verified.",
             "328 connected original-code cases across category3 trees with internal depth1/2/4/6; exact record contents and old-node preservation checked.",
             "Independent reopening and fresh decompilation confirm name and working signature; all other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140b32c60": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared property-change event builder serializes HeaderAndDataPages roots, marks resource dirty bits and tracks object/player changes.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds and dispatches property766 resource-change event, with object/player tracking gates.",
+      "code_sha256": "f064657e5a446d3c9569f30487cc398ce13c28de145050fb9b141563b6389dc9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchHeaderAndDataPagesChangeEvent",
+          "support": [
+            "Complete197-instruction original body and pseudocode reviewed.",
+            "300 full-entry native event-builder cases validate exact22-byte payload,fingerprints,sentinel conversion and dirty bits.",
+            "68 connected retirement/resource/event cases retained as separate scoped validation.",
+            "Independent reopening and fresh decompilation confirm name and five-argument working signature; all other names/signatures and original code bytes unchanged."
           ]
         }
       ]
