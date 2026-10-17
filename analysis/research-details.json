@@ -15880,5 +15880,63 @@
       "No full recording producer, resource append, disk persistence or gameplay claim. Working opaque-pointer types and descriptive analyst name, not recovered original declarations."
     ],
     "new_name_credit": 1
+  },
+  "property_event_history_router_checkpoint": {
+    "address": "140b19cc0",
+    "name": "RoutePropertyEventToEnabledHistoryStreams",
+    "signature": "void PS4_SYSV RoutePropertyEventToEnabledHistoryStreams(void * owner, void * world, ushort eventCode, byte playerIndex, void * eventDescriptor, uint sourceObjectId, uint destinationObjectId, byte recordFirstStream, byte recordSecondStream)",
+    "native_instructions": 324,
+    "native_check": {
+      "native_cases": 216,
+      "enabled_history_cases": 72,
+      "first_stream_written_cases": 48,
+      "second_stream_written_cases": 48,
+      "router_owned_instructions_verified": 324,
+      "original_components": [
+        "ReplaceAnimationWireRecordOrdinalAndNotify",
+        "140b19cc0 history-routing helper",
+        "140b18fa0 packed-event writer"
+      ],
+      "finding": "Original replacement, original notification/history routing and original writer connect: first, second orboth enabled history streams receive beforefdf3 andafterfdf5 exact22-byte snapshots, increment byte counts44 andset corresponding pool active flags. Missing ordisabled history suppresses history-stream writes while direct wire replacement andeligible owner inverse queue still occur.",
+      "limits": [
+        "History-context resolver returns a controlled fixture; low-level event application is a recording probe.",
+        "Matching revision0, valid stable-ID source lookup anddestination references, one player, no reclamation/overflow orfull producer.",
+        "No disk persistence, special non-wire event prehandlers, event application effects orgameplay claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0,
+      "separate_queue_writer_suite": {
+        "native_cases": 240,
+        "queued_event_write_attempts": 480,
+        "matching_existing_event_candidates": 144,
+        "deduplicated_wire_events": 0,
+        "final_queue_byte_lengths": [
+          44,
+          66
+        ],
+        "original_queue_writer_instructions_verified": 667,
+        "finding": "Original wire record replacement and original queue writer produce22-byte snapshots: eventu16, sourceIDu32, destinationIDu32, propertyu32, recordOrdinalu32, flagsu32. Both wire event IDs bypass the coalescing scan via the original exclusion mask, so each queued call appends22bytes even with matching existing snapshots.",
+        "limits": [
+          "Immediate notification routing and low-level event application are recording probes, not original engines.",
+          "Valid references, one player, eligible owner context, ample history buffer and no history-reclamation context.",
+          "Wire-event branchesfdf3/fdf5 only; eligible-event coalescing, other formats, full recording producer, disk persistence and gameplay remain unresolved."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete pseudocode and324 owned original instructions reviewed, byte-verified andmatched to the1526-byte original unwind extent.",
+      "216 connected original replacement/router/writer cases cover first,second,both history streams, enabled/missing/disabled context, valid stable-ID source lookup andwire snapshots.",
+      "Enabled streams receive exact beforefdf3/afterfdf5 snapshots, byte counts44 andpool active flags. Missing/disabled history suppresses stream writes while direct wire replacement andeligible owner inverse queue still occur.",
+      "Separate240 original replacement/queue-writer cases verify22-byte wire packets and480 append attempts. Both wire IDs are excluded from coalescing by the original mask;144 matching existing candidates stillappend.",
+      "Independent reopening andfresh decompilation verify descriptive name andnine-argument working SysV signature. Original bytes andother function names/signatures unchanged."
+    ],
+    "limits": [
+      "Controlled history-context resolver andlow-level event application probe remain explicit boundaries; no full game-event effects oractual context-registry lookup claim.",
+      "Wire fdf3/fdf5 paths, matching revision0, valid references andample history buffers. Non-wire preprocessing, revision refresh, reclamation, overflow, invalid references andconcurrency remain unverified.",
+      "No full recording producer, disk persistence orgameplay claim. Opaque working pointer types anddescriptive analyst name, not recovered original declaration."
+    ],
+    "new_name_credit": 1
   }
 }

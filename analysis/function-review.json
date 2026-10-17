@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "627 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "628 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8768,
-    "other_names": 835,
-    "verification": "complete_inventory_matches_baseline_plus_627_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8767,
+    "other_names": 836,
+    "verification": "complete_inventory_matches_baseline_plus_628_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15698,6 +15698,29 @@
         "Event/removal callees are recording probes with controlled returns, not original event engines; downstream event effects and wire removal are not claimed.",
         "Valid destination lookups, player0/255, selected owner/recording profiles, high reference bits and queue-boundary counts. Global force-history mode, invalid references and concurrency remain unverified.",
         "No full recording producer, resource append, disk persistence or gameplay claim. Working opaque-pointer types and descriptive analyst name, not recovered original declarations."
+      ]
+    },
+    {
+      "address": "140b19cc0",
+      "original_name": "FUN_140b19cc0",
+      "applied_name": "RoutePropertyEventToEnabledHistoryStreams",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RoutePropertyEventToEnabledHistoryStreams(void * owner, void * world, ushort eventCode, byte playerIndex, void * eventDescriptor, uint sourceObjectId, uint destinationObjectId, byte recordFirstStream, byte recordSecondStream)",
+      "evidence": [
+        "Complete pseudocode and324 owned original instructions reviewed, byte-verified andmatched to the1526-byte original unwind extent.",
+        "216 connected original replacement/router/writer cases cover first,second,both history streams, enabled/missing/disabled context, valid stable-ID source lookup andwire snapshots.",
+        "Enabled streams receive exact beforefdf3/afterfdf5 snapshots, byte counts44 andpool active flags. Missing/disabled history suppresses stream writes while direct wire replacement andeligible owner inverse queue still occur.",
+        "Separate240 original replacement/queue-writer cases verify22-byte wire packets and480 append attempts. Both wire IDs are excluded from coalescing by the original mask;144 matching existing candidates stillappend.",
+        "Independent reopening andfresh decompilation verify descriptive name andnine-argument working SysV signature. Original bytes andother function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Controlled history-context resolver andlow-level event application probe remain explicit boundaries; no full game-event effects oractual context-registry lookup claim.",
+        "Wire fdf3/fdf5 paths, matching revision0, valid references andample history buffers. Non-wire preprocessing, revision refresh, reclamation, overflow, invalid references andconcurrency remain unverified.",
+        "No full recording producer, disk persistence orgameplay claim. Opaque working pointer types anddescriptive analyst name, not recovered original declaration."
       ]
     }
   ],

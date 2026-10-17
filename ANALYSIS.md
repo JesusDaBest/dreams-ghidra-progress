@@ -5688,3 +5688,16 @@ Saved `ReplaceAnimationWireRecordOrdinalAndNotify` after reviewing all 370 owned
 The three event/removal callees are recording probes with controlled returns. Their original event effects and actual removal were not executed here. Global force-history mode, invalid references, full producer execution, resource append, disk persistence and gameplay remain unresolved. This identifies the caller's record-update helper without claiming the entire recording path is complete.
 
 Totals: 680 checked names, 2,092 mapped functions and 7,511 unmapped among 9,603 currently defined. These are code-review counts, not whole-game completion.
+
+
+### Property-event history routing connected to Animation replacement
+
+Saved `RoutePropertyEventToEnabledHistoryStreams` after complete pseudocode review and verification of all 324 original owned instructions. Independent reopening verifies the descriptive name and working nine-argument SysV signature. Original bytes and all other function names/signatures remain unchanged.
+
+216 connected cases execute the original Animation wire replacement, history router and packed-event writer. First, second or both enabled history streams receive exact 22-byte before/after snapshots, byte counts increase by 44 and corresponding pool active flags are set. Missing or disabled history suppresses stream writes while direct replacement and eligible owner inverse-queue writes still occur. The first stream's stable-ID source lookup executes against a controlled current world. This clarifies that the previously probed notification helper routes recording/history events; it did not by itself prove game-event application.
+
+A separate 240-case suite executes the original inverse-queue writer. Wire snapshots contain a 16-bit event ID followed by five 32-bit words: source ID, destination ID, property, record ordinal and flags. Every one of 480 attempts adds 22 bytes, including 144 candidates matching existing snapshots. The original exclusion mask bypasses coalescing for `fdf3`/`fdf5`; the initial hypothesis that these wire events replace matches in place was disproved and corrected before publication.
+
+The history-context resolver returns a fixture and final event application remains a recording probe. Non-wire prehandlers, revision refresh, context lookup, history reclamation/overflow, the full recording producer, disk persistence and gameplay remain unresolved. The generic packed-event writer is still only partially validated; it receives no new name credit.
+
+Totals: 681 checked names, 2,093 mapped functions and 7,510 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.

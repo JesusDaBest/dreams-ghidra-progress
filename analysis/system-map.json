@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2092,
-  "unmapped_total": 7511,
+  "mapped_total": 2093,
+  "unmapped_total": 7510,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52579,6 +52579,33 @@
           ]
         }
       ]
+    },
+    "140b19cc0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared property-event descriptor routing into two recording/history streams.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Routes enabled property-event history streams through the packed-event writer andupdates counters/active flags.",
+      "code_sha256": "0dec0462b27a8c6e21ccf52ace606413500eade531d0379dc3053cf07b159e0c",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RoutePropertyEventToEnabledHistoryStreams",
+          "support": [
+            "Complete pseudocode and324 owned original instructions reviewed, byte-verified andmatched to the1526-byte original unwind extent.",
+            "216 connected original replacement/router/writer cases cover first,second,both history streams, enabled/missing/disabled context, valid stable-ID source lookup andwire snapshots.",
+            "Enabled streams receive exact beforefdf3/afterfdf5 snapshots, byte counts44 andpool active flags. Missing/disabled history suppresses stream writes while direct wire replacement andeligible owner inverse queue still occur.",
+            "Separate240 original replacement/queue-writer cases verify22-byte wire packets and480 append attempts. Both wire IDs are excluded from coalescing by the original mask;144 matching existing candidates stillappend.",
+            "Independent reopening andfresh decompilation verify descriptive name andnine-argument working SysV signature. Original bytes andother function names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
     }
   },
   "hierarchy": [
