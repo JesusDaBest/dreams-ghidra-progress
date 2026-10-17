@@ -4060,3 +4060,14 @@ Totals: 595 checked names; 2,011 mapped and 7,578 unmapped among 9,589 discovere
 The related 458-instruction helper was read and matched to original bytes. 272 cases establish repeated-transform and identity-return paths. Another 170 cases establish inverse fractional translation, scale and pure rotation. 144 coupled cases satisfy the independent matrix relation output^selector = inverse(input)^(selector-step), using matrix multiplication and Gauss-Jordan inversion. This supports the fractional-transform role within sampled branches; the relation alone does not uniquely choose every matrix root.
 
 Tests use valid controlled records, finite transforms and positive scales. Host math adapters supply several imports, so exact PS4 math is unverified. Full selector branches, auxiliary field meanings, flag lifetime, exceptional inputs and real game execution remain unresolved. The selector fixtures were corrected to allocate the entire accessed context; the earlier 224 cases were rerun successfully and their receipts superseded. No new name or completion credit was added for these checkpoints.
+
+
+### Indexed repeat transform helper
+
+Saved ComputeIndexedRepeatTransform with a conservative custom-register working signature after reading and byte matching all 458 original instructions. Negative selectors at most -2 produce the supplied transform raised to step minus one for positive step. Small selector magnitudes and nonpositive steps produce identity. Positive selectors produce identity when step reaches the selector; interior steps produce an inverse fractional transform in the tested branches.
+
+586 original entry-to-return cases cover repetition, identity, translation, scale, rotation and coupled transforms. Independent matrix arithmetic and inversion verify the coupled power relation; separate pure cases constrain the rotation branch. Two additional game-update/physics caller windows confirm signed selector, step and transform-register inputs. Backup and independent project reopening verified the saved name/signature; original game archives remain unchanged.
+
+These are sampled finite positive-scale transforms. Host adapters supplied several math imports; exact PS4 library behavior, extreme integer selectors, exceptional or singular transforms, original field meanings and live-game behavior remain unresolved. No whole-subsystem completion is claimed.
+
+Totals: 596 checked names; 2,012 mapped and 7,577 unmapped among 9,589 discovered functions.

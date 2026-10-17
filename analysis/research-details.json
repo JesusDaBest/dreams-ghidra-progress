@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 595,
+    "checked_and_applied_names": 596,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 595,
+    "verified_names": 596,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "556 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "557 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9862,6 +9862,31 @@
       "Finite unit rotations and positive scales with valid reference and association; exceptional domain and all gate combinations unresolved.",
       "Original __isinff executes; sinf/cosf supplied by host UCRT after import resolution, not exact PS4 math verification.",
       "No live-game, complete caller or whole-subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true
+  },
+  "indexed_repeat_transform_checkpoint": {
+    "name": "ComputeIndexedRepeatTransform",
+    "native_cases": 586,
+    "instructions_read_and_byte_verified": 458,
+    "findings": [
+      "Negative repeat selectors at most-2 produce transform power step-1 for positive step.",
+      "Small selector magnitudes/nonpositive steps and positive selectors with step at least selector produce identity.",
+      "Positive interior selector produces inverse fractional transform in sampled branches, with fraction(selector-step)/selector."
+    ],
+    "evidence": [
+      "Complete 458 original instructions read and byte verified.",
+      "586 original entry-to-return cases:272 repetition/identity,80 translation,36 scale/translation,54 pure rotation,144 coupled matrix checks.",
+      "Independent matrix multiplication and Gauss-Jordan inversion verify coupled fractional-power relation; separate simple cases constrain branch choice.",
+      "Two additional update/physics caller setup/use windows byte verified.",
+      "Compressed project backup verified; name and custom-register working signature independently reopened with only this inventory entry changed."
+    ],
+    "limits": [
+      "Analyst descriptive name and register-container working signature, not recovered source declarations.",
+      "Finite unit rotations and positive scales in sampled branches; extreme integers, singular/negative scales and exceptional floats unresolved.",
+      "Original __isinff executes; other math supplied by host adapters, not exact PS4 math verification.",
+      "Matrix power identity alone does not uniquely choose all matrix roots; original auxiliary field meaning and live-game behavior unresolved."
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true

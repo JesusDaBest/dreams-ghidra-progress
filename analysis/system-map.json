@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2011,
-  "unmapped_total": 7578,
+  "mapped_total": 2012,
+  "unmapped_total": 7577,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50330,6 +50330,31 @@
             "Selects kind-metadata object transform when no runtime body is associated.",
             "Attached-body path optionally interpolates transforms, applies linear/axis-angle corrections and composes association local transform.",
             "Zero translation correction skips angular correction even with nonzero angular input."
+          ]
+        }
+      ]
+    },
+    "140704cf0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Transform-power helper shared by object-transform selection, game update and physics update.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body reviewed and586 scoped native cases.",
+      "code_sha256": "a35b0186d902276bc68a3fb5c9bbec61f0971470591036cb4a182701196d6acb",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeIndexedRepeatTransform",
+          "support": [
+            "Negative repeat selectors at most-2 produce transform power step-1 for positive step.",
+            "Small selector magnitudes/nonpositive steps and positive selectors with step at least selector produce identity.",
+            "Positive interior selector produces inverse fractional transform in sampled branches, with fraction(selector-step)/selector."
           ]
         }
       ]
