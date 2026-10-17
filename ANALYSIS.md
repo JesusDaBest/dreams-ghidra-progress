@@ -4686,3 +4686,14 @@ Saved and independently reopened `PartitionWireRangeByEqualKey`. The complete de
 A working 16-byte return type now records `equal_begin` in RAX and `equal_end` in RDX. A fresh caller decompilation uses both named fields and shows that sorting skips the equal-key span, recurses on the smaller outside range and iterates over the larger. This is a supported working type, not a recovered source declaration.
 
 The movable 52-byte payload multiset, per-slot trailing bytes and external guards were checked; whole world, object and stack-guard storage matched at suite end. Arbitrary mixed packed references, duplicate object sequence values, comparator overflow and ordering invariants, malformed state, production scheduling and live gameplay remain unverified. Totals are 631 checked names and 2,043 mapped functions among 9,591 discovered functions.
+
+
+### Wire max-heap adjustment
+
+Saved and independently reopened `AdjustWireMaxHeap`, with explicit working arguments for array base, hole index, record count, held record and world handle. Its complete 201-instruction assembly and decompiled body were reviewed. The original range sorter calls it while building and popping fallback heaps.
+
+4,176 direct original-code cases cover 16 specified counts from 1 to 257, holes at the root and other tree levels, six comparator profiles, two seeds, consistent packed-reference bits and three held-key choices. Each fixture starts with a valid max heap and bounds the held key by the parent of the original hole. The helper replaces the removed 52-byte record with the held record and restores global heap order under those preconditions.
+
+Independent checks verify the exact removed-plus-held payload multiset and unchanged records outside the original hole's subtree. Per-slot trailing bytes, array guards, immutable held storage and the state handle were checked per call; whole world, object and stack-guard storage matched at suite end. The code promotes larger children, handles a final single child, then moves the held record upward without crossing the original hole.
+
+The range sorter, equal-key partition and heap adjustment now have supported descriptive names and working signatures. Wire creation, arbitrary reference combinations, duplicate object sequences, comparator overflow, malformed/precondition-breaking inputs, production scheduling and live gameplay remain unverified. Totals are 632 checked names and 2,044 mapped functions among 9,591 discovered functions.

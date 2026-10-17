@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 631,
+    "checked_and_applied_names": 632,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 631,
+    "verified_names": 632,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "590 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "591 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11246,6 +11246,47 @@
       "Analyst descriptive name and working return/argument types, not original source declarations.",
       "Counts33..257 as enumerated, consistent packed references and bounded valid objects only.",
       "Arbitrary mixed packed references, duplicate object sequence values, comparator overflow/strict-weak-order invariants, malformed state, producer scheduling and live gameplay remain open."
+    ]
+  },
+  "wire_heap_adjustment_checkpoint": {
+    "address": "140936bb0",
+    "native_cases": 4176,
+    "tested_counts": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      15,
+      16,
+      17,
+      32,
+      33,
+      64,
+      65,
+      128,
+      129,
+      257
+    ],
+    "findings": [
+      "Replaces exactly the removed52-byte record with immutable held record while restoring global max-heap order under stated preconditions.",
+      "Only original hole subtree changes; all slots outside that subtree remain identical.",
+      "Per-slot12-byte tails, external array guards, held-buffer guards, state handle preserved eachcall. Whole world/objects/guard storage unchanged at suite end.",
+      "Complete decompiled and201-instruction original assembly body reviewed; caller uses this to build/pop wire heaps in budget fallback."
+    ],
+    "scope": "Original heap-adjustment entry,16 counts1..257 as listed, root/near-root/middle/leaf holes, six comparator profiles, two seeds, consistent highbits0/400000, held key minimum/removed/parent. Supplied valid max heaps and held-key upper bound at original hole.",
+    "evidence": [
+      "Complete201-instruction original assembly and decompiled body reviewed and bytes verified.",
+      "4176 direct original-code cases cover16 specified counts, root/near-root/middle/leaf holes, six comparator profiles and three held-key choices under explicit valid-heap preconditions.",
+      "Independent checks verify heap order, exact removed-plus-held payload multiset, unchanged outside-subtree records, fixed per-slot tails and buffer guards.",
+      "Held storage and state handle unchanged per call; complete world/object/guard storage unchanged at suite end.",
+      "Name and explicit five-register working argument ABI and void return independently reopened and freshly decompiled."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque working types, not original source declarations.",
+      "Valid supplied max heaps and nonaliasing held record only; held key bounded by parent of original hole.",
+      "Invalid hole/count, precondition violations, arbitrary mixed references, duplicate object sequences, comparator overflow, malformed objects and gameplay remain unverified."
     ]
   }
 }

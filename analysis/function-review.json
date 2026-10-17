@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "590 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "591 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8805,
-    "other_names": 786,
-    "verification": "complete_inventory_matches_baseline_plus_590_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8804,
+    "other_names": 787,
+    "verification": "complete_inventory_matches_baseline_plus_591_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14435,7 +14435,8 @@
         "864 original large-range cases cover budgets0/1/count and partition/heap/insertion combinations, preserving movable payload multiset and expected sorted keys.",
         "320 scenarios connect original SortGameWires to original Microchip input-wire lookup and root resolution, checking the whole world buffer.",
         "Saved descriptive name and explicit begin/RDI8,end/RSI8,signed64-budget/RDX8,world-handle/RCX8,void working ABI independently reopened and freshly decompiled.",
-        "Partition follow-up reviews complete decompiled helper body and verifies1920 direct equal-range cases; typed caller now uses both return fields."
+        "Partition follow-up reviews complete decompiled helper body and verifies1920 direct equal-range cases; typed caller now uses both return fields.",
+        "Heap follow-up reviews the full201-instruction helper and verifies4176 direct removed-record replacement and heap-order cases under stated preconditions."
       ],
       "caveats": [
         "Analyst descriptive name and opaque working ABI, not recovered source declarations.",
@@ -14463,6 +14464,28 @@
         "Analyst descriptive name and working return/argument types, not original source declarations.",
         "Counts33..257 as enumerated, consistent packed references and bounded valid objects only.",
         "Arbitrary mixed packed references, duplicate object sequence values, comparator overflow/strict-weak-order invariants, malformed state, producer scheduling and live gameplay remain open."
+      ]
+    },
+    {
+      "address": "140936bb0",
+      "original_name": "FUN_140936bb0",
+      "applied_name": "AdjustWireMaxHeap",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV AdjustWireMaxHeap(void * base, longlong hole_index, longlong record_count, void * held_record, void * * world_handle)",
+      "evidence": [
+        "Complete201-instruction original assembly and decompiled body reviewed and bytes verified.",
+        "4176 direct original-code cases cover16 specified counts, root/near-root/middle/leaf holes, six comparator profiles and three held-key choices under explicit valid-heap preconditions.",
+        "Independent checks verify heap order, exact removed-plus-held payload multiset, unchanged outside-subtree records, fixed per-slot tails and buffer guards.",
+        "Held storage and state handle unchanged per call; complete world/object/guard storage unchanged at suite end.",
+        "Name and explicit five-register working argument ABI and void return independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque working types, not original source declarations.",
+        "Valid supplied max heaps and nonaliasing held record only; held key bounded by parent of original hole.",
+        "Invalid hole/count, precondition violations, arbitrary mixed references, duplicate object sequences, comparator overflow, malformed objects and gameplay remain unverified."
       ]
     }
   ],

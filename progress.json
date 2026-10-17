@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 585,
+    "done": 586,
     "todo": 1458,
-    "total": 2043,
-    "behavior_or_helpers_reviewed": 518,
+    "total": 2044,
+    "behavior_or_helpers_reviewed": 519,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -27347,12 +27347,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 223,
+        "done": 224,
         "todo": 106,
-        "total": 329,
-        "behavior_or_helpers_reviewed": 208,
+        "total": 330,
+        "behavior_or_helpers_reviewed": 209,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 243,
+        "runtime_functions_identified": 244,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27458,6 +27458,7 @@
           "SortGameWires",
           "SortWireRangeByDestinationAndSource",
           "PartitionWireRangeByEqualKey",
+          "AdjustWireMaxHeap",
           "NormalizeWireBlendModesByDestinationProperty",
           "ResetThingSelectedRuntimeState",
           "PrepareGameAndLinkedWireOrdering",
@@ -27791,6 +27792,7 @@
           "1409345c0",
           "140934640",
           "140934bb0",
+          "140936bb0",
           "140937f90",
           "14093bb60",
           "140956a10",
@@ -28032,12 +28034,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 92,
+            "done": 93,
             "todo": 13,
-            "total": 105,
-            "behavior_or_helpers_reviewed": 92,
+            "total": 106,
+            "behavior_or_helpers_reviewed": 93,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 98,
+            "runtime_functions_identified": 99,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -28071,6 +28073,7 @@
               "SortGameWires",
               "SortWireRangeByDestinationAndSource",
               "PartitionWireRangeByEqualKey",
+              "AdjustWireMaxHeap",
               "NormalizeWireBlendModesByDestinationProperty",
               "ResetThingSelectedRuntimeState",
               "PrepareGameAndLinkedWireOrdering",
@@ -28180,6 +28183,7 @@
               "1409345c0",
               "140934640",
               "140934bb0",
+              "140936bb0",
               "140937f90",
               "14093bb60",
               "140956a10",
@@ -28644,6 +28648,101 @@
                 ]
               },
               {
+                "name": "shared/runtime/gameupdater",
+                "label": "Gameupdater",
+                "done": 11,
+                "todo": 1,
+                "total": 12,
+                "behavior_or_helpers_reviewed": 11,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 12,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindSourcePortWireInDestinationRun",
+                  "EnsureObjectSlotStateAndSetAssociation",
+                  "FindSourcePortWireIndex",
+                  "FindWireIndexByDestinationProperty",
+                  "SortGameWires",
+                  "SortWireRangeByDestinationAndSource",
+                  "PartitionWireRangeByEqualKey",
+                  "AdjustWireMaxHeap",
+                  "NormalizeWireBlendModesByDestinationProperty",
+                  "PrepareGameAndLinkedWireOrdering",
+                  "CheckWirePropertyEligibility"
+                ],
+                "todo_names": [
+                  "0x140958760"
+                ],
+                "done_addresses": [
+                  "140705c30",
+                  "1407d30b0",
+                  "1409063a0",
+                  "140906610",
+                  "1409345c0",
+                  "140934640",
+                  "140934bb0",
+                  "140936bb0",
+                  "140937f90",
+                  "140956a10",
+                  "14126d9f0"
+                ],
+                "todo_addresses": [
+                  "140958760"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/gameupdater/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 11,
+                    "todo": 1,
+                    "total": 12,
+                    "behavior_or_helpers_reviewed": 11,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 12,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindSourcePortWireInDestinationRun",
+                      "EnsureObjectSlotStateAndSetAssociation",
+                      "FindSourcePortWireIndex",
+                      "FindWireIndexByDestinationProperty",
+                      "SortGameWires",
+                      "SortWireRangeByDestinationAndSource",
+                      "PartitionWireRangeByEqualKey",
+                      "AdjustWireMaxHeap",
+                      "NormalizeWireBlendModesByDestinationProperty",
+                      "PrepareGameAndLinkedWireOrdering",
+                      "CheckWirePropertyEligibility"
+                    ],
+                    "todo_names": [
+                      "0x140958760"
+                    ],
+                    "done_addresses": [
+                      "140705c30",
+                      "1407d30b0",
+                      "1409063a0",
+                      "140906610",
+                      "1409345c0",
+                      "140934640",
+                      "140934bb0",
+                      "140936bb0",
+                      "140937f90",
+                      "140956a10",
+                      "14126d9f0"
+                    ],
+                    "todo_addresses": [
+                      "140958760"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/runtime/packed-resource-pages",
                 "label": "Resource pages",
                 "done": 12,
@@ -28729,97 +28828,6 @@
                       "141061af0"
                     ],
                     "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/gameupdater",
-                "label": "Gameupdater",
-                "done": 10,
-                "todo": 1,
-                "total": 11,
-                "behavior_or_helpers_reviewed": 10,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 11,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "FindSourcePortWireInDestinationRun",
-                  "EnsureObjectSlotStateAndSetAssociation",
-                  "FindSourcePortWireIndex",
-                  "FindWireIndexByDestinationProperty",
-                  "SortGameWires",
-                  "SortWireRangeByDestinationAndSource",
-                  "PartitionWireRangeByEqualKey",
-                  "NormalizeWireBlendModesByDestinationProperty",
-                  "PrepareGameAndLinkedWireOrdering",
-                  "CheckWirePropertyEligibility"
-                ],
-                "todo_names": [
-                  "0x140958760"
-                ],
-                "done_addresses": [
-                  "140705c30",
-                  "1407d30b0",
-                  "1409063a0",
-                  "140906610",
-                  "1409345c0",
-                  "140934640",
-                  "140934bb0",
-                  "140937f90",
-                  "140956a10",
-                  "14126d9f0"
-                ],
-                "todo_addresses": [
-                  "140958760"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/gameupdater/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 10,
-                    "todo": 1,
-                    "total": 11,
-                    "behavior_or_helpers_reviewed": 10,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 11,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "FindSourcePortWireInDestinationRun",
-                      "EnsureObjectSlotStateAndSetAssociation",
-                      "FindSourcePortWireIndex",
-                      "FindWireIndexByDestinationProperty",
-                      "SortGameWires",
-                      "SortWireRangeByDestinationAndSource",
-                      "PartitionWireRangeByEqualKey",
-                      "NormalizeWireBlendModesByDestinationProperty",
-                      "PrepareGameAndLinkedWireOrdering",
-                      "CheckWirePropertyEligibility"
-                    ],
-                    "todo_names": [
-                      "0x140958760"
-                    ],
-                    "done_addresses": [
-                      "140705c30",
-                      "1407d30b0",
-                      "1409063a0",
-                      "140906610",
-                      "1409345c0",
-                      "140934640",
-                      "140934bb0",
-                      "140937f90",
-                      "140956a10",
-                      "14126d9f0"
-                    ],
-                    "todo_addresses": [
-                      "140958760"
-                    ],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44786,5 +44794,5 @@
       }
     ]
   },
-  "unmapped": 7548
+  "unmapped": 7547
 }

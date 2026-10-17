@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2043,
-  "unmapped_total": 7548,
+  "mapped_total": 2044,
+  "unmapped_total": 7547,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51195,6 +51195,33 @@
       "component_basis": "Original wire range sorter calls this equal-key partition helper.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Complete decompiled body reviewed with original assembly anchors and direct partition-boundary verification.",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140936bb0": {
+      "system": "shared",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AdjustWireMaxHeap",
+          "support": [
+            "Complete201-instruction original assembly and decompiled body reviewed and bytes verified.",
+            "4176 direct original-code cases cover16 specified counts, root/near-root/middle/leaf holes, six comparator profiles and three held-key choices under explicit valid-heap preconditions.",
+            "Independent checks verify heap order, exact removed-plus-held payload multiset, unchanged outside-subtree records, fixed per-slot tails and buffer guards.",
+            "Held storage and state handle unchanged per call; complete world/object/guard storage unchanged at suite end.",
+            "Name and explicit five-register working argument ABI and void return independently reopened and freshly decompiled."
+          ]
+        }
+      ],
+      "code_sha256": "f05c68e347cfef10a03f074e1042602a37287f059c34e550984d66c50fa8dc73",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original wire range sorter calls this heap adjustment helper when building and popping fallback heaps.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and explicit direct heap invariant checks support the helper role.",
       "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
