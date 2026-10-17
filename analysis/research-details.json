@@ -9773,5 +9773,51 @@
       "Object callback behavior, producer invariants, deeper hierarchies, exceptional values, concurrency and live game unresolved."
     ],
     "name_credit_added": 0
+  },
+  "teleporter_motion_mode_checkpoint": {
+    "bounded_native_cases": 105,
+    "registered_fields": [
+      "TeleportPosition",
+      "TeleportOrientation"
+    ],
+    "mode_formula": "mode = !TeleportPosition | (!TeleportOrientation << 1)",
+    "truth_table": [
+      {
+        "teleport_position": false,
+        "teleport_orientation": false,
+        "mode": 3
+      },
+      {
+        "teleport_position": false,
+        "teleport_orientation": true,
+        "mode": 1
+      },
+      {
+        "teleport_position": true,
+        "teleport_orientation": false,
+        "mode": 2
+      },
+      {
+        "teleport_position": true,
+        "teleport_orientation": true,
+        "mode": 0
+      }
+    ],
+    "contribution_merge": "Prior mode AND incoming mode for values0..3, starting at3.",
+    "motion_effects": {
+      "0": "Clears tested linear and angular motion vectors.",
+      "1": "Preserves linear motion, clears angular motion.",
+      "2": "Clears linear motion, rotates angular motion.",
+      "3": "Rotates linear and angular motion."
+    },
+    "evidence_scope": "Original field-label/offset bindings, bounded flag-to-mode and contribution-merge instructions, accumulator initialization and handoff to separately tested transform dispatcher.",
+    "limits": [
+      "Bounded inline code extracted into isolated wrappers; enclosing20076-instruction routine remains only partially reviewed.",
+      "Valid mode values0..3; complete priority selection, geometry weighting and live game unverified.",
+      "No original enum name recovered or new function boundary/name/type applied.",
+      "Motion effects describe the previously scoped dispatcher fixtures, not full Teleporter game execution."
+    ],
+    "name_credit_added": 0,
+    "project_modified": false
   }
 }
