@@ -9037,5 +9037,25 @@
       "Producer ownership and complete scratch types unresolved."
     ],
     "runtime_game_verified": false
+  },
+  "metadata_sequence_cleanup_followup": {
+    "refresh_bitmap_boundary_cases": 54,
+    "marked_reference_basic_cases": 30,
+    "marked_reference_resource_cases": 8,
+    "marked_reference_auxiliary_cases": 16,
+    "cleanup_preparation_bitmap_cases": 20,
+    "preserved_existing_name": "ReleaseMarkedObjectCacheReferences",
+    "new_name_credit": 0,
+    "findings": [
+      "Registration stores the next sequence value into metadata and increments it; reset and wrap prevent a monotonic completion-counter claim.",
+      "Summary generation snapshot selects a metadata-list head generation or fallback sequence, with one conditional current-entry skip.",
+      "Marked cleanup preserves the current entry and defers it; ordinary entries release references, occupancy and queue membership.",
+      "Overlapping zero stores initialize the optional hash-slot callback to NULL; later alias writes remain unexcluded."
+    ],
+    "limits": [
+      "List-ordering and complete registration/processing lifecycle unresolved.",
+      "Cleanup-preparation hash collisions and bitmap aliases untested.",
+      "Synchronization controlled; no real concurrent lifetime or GPU completion verified."
+    ]
   }
 }

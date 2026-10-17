@@ -3593,3 +3593,11 @@ Saved AdaptiveStableSortSummaryRecords, BufferedStableSortSummaryRecords and Ada
 Valid sorted adjacent runs, consistent counts and nonoverlapping scratch are preconditions. Allocation failure was controlled, not real allocator exhaustion. Runtime producer bounds, complete scratch ownership/types and concurrency remain unresolved.
 
 Totals: 564 reviewed names; 1,987 mapped and 7,601 unmapped among 9,588 discovered functions.
+
+### Metadata sequence and deferred cleanup follow-up
+
+Registration assigns the next sequence to metadata and increments it. The summary generation is selected through a caller snapshot from a metadata-list head, or the sequence fallback when the sentinel is reached; a marked current entry can be skipped once. This is not a demonstrated frame number or whole-build completion percentage. List ordering, reset and wrap behavior still constrain interpretation.
+
+54 cross-word refresh cases passed at IDs 31/32, 63/64 and 127/128. The already named ReleaseMarkedObjectCacheReferences received stronger evidence: 30 basic/current-entry cases, eight connected resource-release cases and 16 auxiliary occupancy cases. Current entries remain requested with a deferred flag; ordinary entries clear state, release volume/item references, queue zero-reference resources and unlink metadata. The existing name was preserved with no additional naming credit.
+
+A 399-instruction preparation helper selects candidates absent from two exclusion bitmaps, removes hash entries and adds release requests. Twenty disjoint-buffer/empty-hash cases verified all bitmap bytes and guards. Its optional callback is initialized to NULL by overlapping stores that exact-address reference lookup missed; later indirect assignments remain unexcluded. Hash collision deletion, alias fallback and real concurrent cleanup remain unverified.
