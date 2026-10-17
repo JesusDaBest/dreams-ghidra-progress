@@ -5013,3 +5013,12 @@ The name/signature persisted after independent reopening and fresh decompilation
 Another 5,202 cases check how old and incoming 16-bit header flags combine. Every individual bit except bit 2, plus zero and all other bits set, is paired across both records in each of the eighteen formats. Under this tested basic-route condition, the saved flags equal `(incoming & 0xff01) | (old & 0x00f8) | ((old | incoming) & 0x0002)`: incoming supplies bit 0 and bits 8..15, old supplies bits 3..7, and bit 1 is the OR of both. No gameplay meanings are assigned to these bits. Bit 2 (value 4) is kept clear because it selects the separate extended-record path.
 
 Tests use mode 0, valid one-leaf sources and finite ordered times. Transform format 4, other modes and extended-record flag behavior retain their separate scopes. These findings add branch evidence without naming or marking the larger updater complete. Checked names remain 654; the full reverse-engineering task is unfinished.
+
+
+### Connected scalar/vector basic-to-extended recording updates
+
+3,900 original-code cases connect the real main converter and byte writers to the real wire dispatcher, lookup, basic-to-extended handler and its four scalar/vector delegates. All thirteen scalar/vector type-code routes are included; type 2 samples one float property route. Existing basic keys and newly converted extended keys pass through the actual transition path rather than a replacement handler.
+
+Under the tested mode-0, zero-auxiliary-flags conditions, retained basic keys expand by four bytes and receive metadata 0x700. Incoming extended records are preserved byte for byte apart from rebased times. Complete stored headers/data match an independent interval model. Original allocation, growth, hashing and finalization execute. Old source nodes, world/source objects, input/context/auxiliary buffers and guards remain unchanged; the dispatcher returns the expected new record index and prior wire index.
+
+These are valid finite-value/time fixtures with one-leaf original sources. Other modes, properties, metadata flags, deeper source trees, full producer integration and playback remain unresolved. Memory imports are adapted and thread/mutex callbacks controlled. The four delegates are newly mapped to Animation by the original call chain and connected execution, but remain unnamed and unreviewed pending complete body review. This adds four gray squares, not checked-name credit. Totals remain 654 checked names, with 2,073 mapped functions among 9,603 discovered functions and 7,530 unmapped.
