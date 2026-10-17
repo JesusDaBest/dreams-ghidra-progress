@@ -3829,3 +3829,15 @@ Six primary-pool scenarios checked exact volume resets, block-release arguments,
 Follow-up evidence for the existing retirement helper covers 288 generation/budget cases and 40 payload-hash cases, including wraparound and collision backshifts. A zero initial budget can still retire an eligible head before the budget check. Eighty callback/pending-list scenarios cover reference counts, allocation rollback and exact links. Pending IDs keep their bitmap bits until the retired drain clears them. This pool is shared with object-cache consumers and is not a sculpt-exclusive allocator. Producer constraints, pressure/wait recovery and malformed-pool behavior remain unresolved.
 
 Totals: 556 reviewed names; 1,979 mapped and 7,609 unmapped among 9,588 discovered functions.
+
+### Multi-item volume build and reuse slots
+
+Saved BuildAndReuseVolumeResourcesForSlot with a uint slot, low-byte reuse flag, uint minimum level count and uint status return. All 2,109 original instructions were read and byte matched, with 347 direct branch targets checked. Both inbound calls, callback initialization, complete cleanup branches and the build-pipeline/output-packing calls were traced. Backed-up trial and independent trial/main reopening verified signature storage, successful decompilation and unchanged original bytes and archives.
+
+Twelve original-code empty-input cases checked both slots and reuse modes, output sentinels and counter resets. Twenty populated reuse-only cases checked previous-slot lookup, duplicate reference retention, inactive-item sentinels, output order and preservation of the previous list. A missing constant page in the first reuse harness run was corrected by mapping original file-backed data; the passing run does not indicate a game fault. New-item GPU build paths received static review, but their resulting geometry has not been executed or verified.
+
+The caller packs relative coordinates, selects build levels, invokes RunBricker2BuildPipeline for new items and transfers successful volume results through CopyAndPackGpuVolumeResource. Its scale uses a quarter-step mantissa with a power-of-two exponent through ldexpf. Failure cleanup and caller retry handling were traced; producer constraints, capacities, ownership, concurrency and retry termination remain unresolved.
+
+A separate follow-up connected the original retired-resource drain to the original brick-block allocator in six scenarios, replacing the earlier block-release fixture. Exact free lists, metadata, links, volume resets and bitmap changes matched for these synthetic pools. Real concurrent integration and producer constraints remain unverified.
+
+Totals: 557 reviewed names; 1,980 mapped and 7,608 unmapped among 9,588 discovered functions.

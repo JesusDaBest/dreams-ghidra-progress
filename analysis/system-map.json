@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1979,
-  "unmapped_total": 7609,
+  "mapped_total": 1980,
+  "unmapped_total": 7608,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49654,6 +49654,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "DrainRetiredVolumeAndItemResources",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1412993c0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "bricker2",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete multi-item slot body traced through RunBricker2BuildPipeline, sweep/sculpt callers and volume-output packing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Coordinates new volume builds, reused IDs, output packing and failure cleanup for one build slot.",
+      "code_sha256": "e631b8fded790f116a3ffd4e062ec2e3311d170feab2963bb3c8d4e2d3e18e6f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildAndReuseVolumeResourcesForSlot",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
