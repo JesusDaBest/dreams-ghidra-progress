@@ -4895,3 +4895,16 @@ Defined and independently reopened `ConvertWordValueAnimationInputKeys`, the com
 Both writer bodies are byte-identical to the bounded 8-byte/12-byte helpers already reviewed. Empty input zeros both range outputs; basic output uses minimum/maximum emitted times, while the tested extended path uses maximum for both outputs. Single-key AutoKeyframe metadata and multi-key metadata follow the observed original rules. Short buffers, nonfinite times, huge counts, aliasing, concurrency and complete producer/playback remain unverified.
 
 All 9,594 previously defined names/signatures remain unchanged. Totals are 640 checked names and 2,052 mapped functions among 9,595 discovered functions. Other converter formats remain incomplete.
+
+
+### 32-bit and floating-point Animation input converters
+
+Defined and independently reopened `ConvertDwordAnimationInputKeys`, `ConvertDwordPropertyAnimationInputKeys` and `ConvertFloatAnimationInputKeys`. Their complete 184/184/181-instruction bodies distinguish raw 32-bit equality from floating-point equality. The two integer routines have the same normalized instruction flow but different dispatch routes and writer copies.
+
+53,760 original-code cases execute the actual primary/secondary dispatcher, helpers and byte writers: 1,920 for the primary integer path, 40,320 across all 21 integer property routes, and 11,520 for all three primary float routes plus three sampled property routes out of 393. Counts 0/1/2/3/7/17, strides 8/16, basic/extended formats, None/AutoKeyframe modes, five auxiliary flag values and eight patterns cover repeated/changing values, equal low words, signed zero, quiet NaN payloads and reversed finite times.
+
+The integer paths distinguish positive/negative-zero bit patterns and collapse identical NaN bit patterns. The float path treats signed zeros as equal and emits repeated NaNs as changes. Complete 8-byte/12-byte output records, lengths, guarded descriptors/time outputs, untouched destination outside output and source/auxiliary immutability match independent models. Empty time outputs are zero; basic time accumulation is minimum/maximum, while the tested extended paths use maximum for both. Original writer copies are byte-identical to the bounded helpers already reviewed. Nonfinite times, signalling NaNs, huge counts, short buffers, aliasing, concurrency and full producer/playback remain unresolved.
+
+Four already identified Animation routines—the large top-level converter and three update handlers—are now mapped to their subsystem while retaining unreviewed status. Their ownership follows original call chains and the registered Animation resource field; this adds gray squares, not name or completion credit. Including known unfinished code makes the subsystem denominator more honest.
+
+The new definitions preserve all 9,595 existing names/signatures. Totals are 643 checked names and 2,059 mapped functions among 9,598 discovered functions; 7,539 remain unmapped. Other formats and the four large routines remain incomplete.

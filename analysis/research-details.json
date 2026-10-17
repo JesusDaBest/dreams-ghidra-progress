@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 640,
+    "checked_and_applied_names": 643,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 640,
-    "function_count": 9595,
+    "verified_names": 643,
+    "function_count": 9598,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "595 existing-function renames,44 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "595 existing-function renames,47 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12046,5 +12046,222 @@
     "writer_identity": "Original callees1410a27f0/1410a2980 are byte-identical to reviewed1410a3390/1410a3520.",
     "new_definitions": 1,
     "new_name_credit": 1
+  },
+  "animation_scalar_family_checkpoint": {
+    "functions": {
+      "1410a00b0": {
+        "name": "ConvertDwordAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertDwordAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      },
+      "1410a07a0": {
+        "name": "ConvertDwordPropertyAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertDwordPropertyAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      },
+      "1410a0a70": {
+        "name": "ConvertFloatAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertFloatAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      }
+    },
+    "native_cases": 53760,
+    "by_helper": {
+      "1410a00b0": 1920,
+      "1410a07a0": 40320,
+      "1410a0a70": 11520
+    },
+    "routes": [
+      {
+        "kind": "dword",
+        "type_code": 23,
+        "property_id": 0,
+        "helper": "1410a00b0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 4,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 12,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 115,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 320,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 325,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1152,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1173,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1182,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1183,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1197,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1198,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1206,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1223,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1229,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1241,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1242,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1243,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1248,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1251,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1280,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "dword",
+        "type_code": 2,
+        "property_id": 1281,
+        "helper": "1410a07a0"
+      },
+      {
+        "kind": "float",
+        "type_code": 5,
+        "property_id": 0,
+        "helper": "1410a0a70"
+      },
+      {
+        "kind": "float",
+        "type_code": 24,
+        "property_id": 0,
+        "helper": "1410a0a70"
+      },
+      {
+        "kind": "float",
+        "type_code": 25,
+        "property_id": 0,
+        "helper": "1410a0a70"
+      },
+      {
+        "kind": "float",
+        "type_code": 2,
+        "property_id": 1,
+        "helper": "1410a0a70"
+      },
+      {
+        "kind": "float",
+        "type_code": 2,
+        "property_id": 581,
+        "helper": "1410a0a70"
+      },
+      {
+        "kind": "float",
+        "type_code": 2,
+        "property_id": 1399,
+        "helper": "1410a0a70"
+      }
+    ],
+    "findings": [
+      "Two complete184-instruction32-bit equality helpers have identical normalized instruction flow;181-instruction float helper uses unordered-aware floating comparisons.",
+      "All retain first/change/last keys. Integer paths distinguish+0/-0 bitpatterns andcollapse repeated identicalNaN payloads; float path treats signedzeroequal andemits repeatedNaNs aschanges.",
+      "Exact complete output bytes/guarded descriptors/timeoutputs checked. No undefined intermediate bytes inthese8/12-byte record layouts. Source/auxiliary unchanged.",
+      "Basic timeoutputsmin/max;extendedbothmax,emptyboth0;singleAutoKeyframe metadata bit andcontext flags verified.",
+      "Original main/secondary dispatch andactual byte writers execute; no record probes."
+    ],
+    "limits": [
+      "Bounded buffers withamplecapacity,finite times andquietNaN valuepatterns; signalingNaN,hugecounts,aliasing,shortbuffers,concurrency andcomplete producer/playback unresolved.",
+      "All21 dword propertyroutes executed;float property routes sampled3of393 plusallthree primary type routes.",
+      "Other vector/transform converters remain partially reviewed."
+    ],
+    "new_definitions": 3,
+    "new_name_credit": 3
+  },
+  "animation_partial_mapping_checkpoint": {
+    "addresses": [
+      "141077240",
+      "1410705f0",
+      "14107ea70",
+      "14109e4e0"
+    ],
+    "scope": "Original Animation call-chain/field-binding assignment; each remains unreviewed. No new names/reviewcredit.",
+    "new_mapping_credit": 4,
+    "new_name_credit": 0
   }
 }
