@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "592 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "594 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8803,
-    "other_names": 788,
-    "verification": "complete_inventory_matches_baseline_plus_592_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8801,
+    "other_names": 790,
+    "verification": "complete_inventory_matches_baseline_plus_594_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -2395,12 +2395,13 @@
         "packed-csg-writer-category-binding-audit.json",
         "packed-csg-metadata-rebuild-audit.json",
         "packed-resource-finalization-release-audit.json",
-        "Full native span matches live SHA256 59485b7e0886d7fb2b62aa0649d0781e1d9afde5842bb69a44f3cc8329a8d8dc"
+        "Full native span matches live SHA256 59485b7e0886d7fb2b62aa0649d0781e1d9afde5842bb69a44f3cc8329a8d8dc",
+        "Original finalizer executes in168 direct and168 through-dispatch Animation header/data append scenarios, covering categories2/3, empty leaves, branches and growth."
       ],
       "caveats": [
         "Descriptive analyst name, not recovered original symbol.",
         "No types, prototypes or calling conventions changed.",
-        "No native runtime validation or full-behavior completion credit."
+        "Scoped original Animation writer execution is now verified; full-category, lifecycle and concurrency behavior remains unverified."
       ],
       "reviewed_scope": "behavior_or_helper",
       "saved_working_signature": "uint PS4_SYSV FinalizePackedResourceTreeWriter(void * writer)",
@@ -14505,12 +14506,58 @@
         "Original Animation HeaderAndDataPages field registration at0x110 independently matched.",
         "2368 dispatcher scenarios execute original97-instruction wire lookup and43-instruction resource leaf iterator;304 select a record handler and2064 select fallback.",
         "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
-        "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result."
+        "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result.",
+        "Subsequent168-case original missing-wire path executes actual append/resource allocation/growth/finalization/hash without fallback probe; three existing-record mutation handlers remain separate."
       ],
       "caveats": [
         "Analyst descriptive dispatcher name and working types, not original declarations.",
         "Three mutation handlers and append fallback are recording probes; their allocation/update algorithms are not validated by this suite.",
-        "Valid Animation objects and acyclic one/two-leaf resource trees only; deeper/cyclic trees, malformed/negative indices, races, full insertion function and gameplay remain unverified."
+        "Valid Animation objects and acyclic one/two-leaf resource trees only; deeper/cyclic trees, malformed/negative indices, races, full insertion function and gameplay remain unverified.",
+        "The initial2368-case dispatcher suite used four probes; later original-fallback verification is bounded to three supported type rows and ample pool. Three update-handler algorithms remain unverified."
+      ]
+    },
+    {
+      "address": "14106de70",
+      "original_name": "FUN_14106de70",
+      "applied_name": "AppendAnimationHeaderAndPayloadRecord",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "int PS4_SYSV AppendAnimationHeaderAndPayloadRecord(void * record_descriptor, uint * header_and_data_pages)",
+      "evidence": [
+        "Complete265-instruction original assembly and decompiled append body read and byte verified.",
+        "168 direct original writer scenarios cover empty/nonempty/full-header/branched trees, code0/1/3 and both original element-size table variants, zero/aligned/unaligned lengths and page growth.",
+        "168 additional scenarios connect original dispatcher and wire lookup to original append, allocator, growth, finalization, interning, release and hash with no fallback probe.",
+        "Exact flattened payload/header contents, stored logical offset, returned last-record index, source-node immutability, descriptor/payload and pair guards checked.",
+        "Saved signed32-bit return and descriptor/pages-pointer working ABI independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working opaque signatures, not original source declarations.",
+        "Bounded valid trees and ample pool only; unsupported type rows, allocation/depth failures, invalid descriptors, races, editing schedule and playback remain unverified.",
+        "Only three of30 type-code entries and two table variants executed; memory imports ABI-adapted and mutex/thread callbacks controlled."
+      ]
+    },
+    {
+      "address": "1410616e0",
+      "original_name": "FUN_1410616e0",
+      "applied_name": "GetPackedResourceTreeLogicalByteExtent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint PS4_SYSV GetPackedResourceTreeLogicalByteExtent(uint root_node)",
+      "evidence": [
+        "Complete115-instruction original helper read and byte verified.",
+        "649 direct original cases verify504*(leaf_count-1)+last_used, including intermediate page gaps, six tree shapes throughdepth4, categories0/2/3, final lengths, root IDs and sentinel.",
+        "Complete64KiB node range and allocation bitmap unchanged on each direct tree case.",
+        "Original Animation append executes the extent helper before and after both168-case writer suites.",
+        "Saved root-ID EDI4,uint EAX4 working ABI independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working opaque signatures, not original source declarations.",
+        "Bounded valid trees and ample pool only; unsupported type rows, allocation/depth failures, invalid descriptors, races, editing schedule and playback remain unverified.",
+        "Logical extent is not sum of payload bytes; malformed/cyclic trees, maximum-size arithmetic and races remain unverified."
       ]
     }
   ],

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2045,
-  "unmapped_total": 7546,
+  "mapped_total": 2047,
+  "unmapped_total": 7544,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51246,6 +51246,60 @@
             "2368 dispatcher scenarios execute original97-instruction wire lookup and43-instruction resource leaf iterator;304 select a record handler and2064 select fallback.",
             "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
             "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "14106de70": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified Animation header/payload append and original record-dispatch caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original helper body and scoped original execution reviewed.",
+      "code_sha256": "34099f90a8832ee7b4d5c07868e7b8560bb04cdf2704d8d5f551742a43ff33fd",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendAnimationHeaderAndPayloadRecord",
+          "support": [
+            "Complete265-instruction original assembly and decompiled append body read and byte verified.",
+            "168 direct original writer scenarios cover empty/nonempty/full-header/branched trees, code0/1/3 and both original element-size table variants, zero/aligned/unaligned lengths and page growth.",
+            "168 additional scenarios connect original dispatcher and wire lookup to original append, allocator, growth, finalization, interning, release and hash with no fallback probe.",
+            "Exact flattened payload/header contents, stored logical offset, returned last-record index, source-node immutability, descriptor/payload and pair guards checked.",
+            "Saved signed32-bit return and descriptor/pages-pointer working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410616e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic packed-resource logical extent, used by Animation append and exercised across resource categories.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original helper body and scoped original execution reviewed.",
+      "code_sha256": "89376fdba381c1cec617a41e6611b15a0f5a259a030abaf298b804bc285c9980",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetPackedResourceTreeLogicalByteExtent",
+          "support": [
+            "Complete115-instruction original helper read and byte verified.",
+            "649 direct original cases verify504*(leaf_count-1)+last_used, including intermediate page gaps, six tree shapes throughdepth4, categories0/2/3, final lengths, root IDs and sentinel.",
+            "Complete64KiB node range and allocation bitmap unchanged on each direct tree case.",
+            "Original Animation append executes the extent helper before and after both168-case writer suites.",
+            "Saved root-ID EDI4,uint EAX4 working ABI independently reopened and freshly decompiled."
           ]
         }
       ],

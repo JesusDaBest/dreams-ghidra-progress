@@ -4719,3 +4719,16 @@ Saved and independently reopened `DispatchAnimationWireRecordUpdate`. Its comple
 The three update handlers and fallback are explicit recording probes. This suite verifies which handler is selected, its register/stack arguments, signed result propagation, the output wire index, and copying the handler-updated 32-byte wire transform to the caller. It does not verify the handlers' record editing or allocation algorithms. Descriptor, page-handle pair, auxiliary, resource, object and output guards were checked per scenario; the whole world matched supplied fixtures plus allowed probe writes after each batch.
 
 A twelve-argument working ABI now replaces the misleading inferred void return. A fresh insertion-caller decompilation consumes the named integer result and typed output transform. Deeper resource trees, malformed/negative indices, races, the full insertion function and live gameplay remain unverified. The larger insertion function remains unnamed. Totals are 633 checked names and 2,045 mapped functions among 9,591 discovered functions.
+
+
+### Original Animation header/payload append and logical offsets
+
+Saved and independently reopened `AppendAnimationHeaderAndPayloadRecord` and `GetPackedResourceTreeLogicalByteExtent`, after reviewing their complete 265- and 115-instruction bodies. The append path now executes real resource writing rather than the earlier fallback probe.
+
+168 direct cases and 168 through the original wire dispatcher/lookup execute the original allocator, writer growth, finalization, interning, release and hashing code. The tests cover empty, nonempty, full-header and branched trees, three supported type-code rows, both element-size table variants, zero/aligned/unaligned payload lengths and growth across pages. Mutex/thread callbacks remain controlled and memory imports use host ABI adapters. This does not verify concurrent allocation or gameplay.
+
+Payload bytes append to category-2 resource pages. Descriptor bytes 8..79 form the 72-byte category-3 header: the input data pointer is omitted, and header offset 4 receives the previous logical payload extent. Valid nonzero element-aligned payloads append a header and payload; tested zero/unaligned payloads preserve logical content. The returned index is total header records minus one, including -1 for an empty header tree. Exact header/payload streams, source-node immutability, descriptor/payload guards and handle-pair guards were checked. Through-dispatch cases also preserve the world and output transform while reporting no existing wire.
+
+649 separate read-only cases establish that logical extent is 504 bytes for every nonfinal leaf plus the final leaf's used bytes. It is not the sum of stored payload bytes. For example, an element-aligned page containing 480 bytes still contributes 504 once another page follows. This distinction explains the stored offsets when alignment leaves gaps.
+
+The three existing-record mutation handlers, other type rows, exhaustion/depth failures, malformed state, editing schedule, full wire insertion and playback remain unverified. Totals are 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
