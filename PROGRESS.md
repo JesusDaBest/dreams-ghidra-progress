@@ -3831,3 +3831,12 @@ These paths were tested with controlled metadata, default group mode, identity a
 The direction uses the state rotation followed by a local X-axis rotation: +45 degrees for sampled modes 0 and 1, -22.5 degrees for mode 2 with its flag clear, and zero for mode 2 with the flag set or mode 3. Independent quaternion/transform equations and source/output guards passed. This 256-case set supersedes the preliminary 128 cases, which are not counted again.
 
 Controlled host sine/cosine uses the corrected calling-convention adapter; exact PS4 math is not claimed. Tests use absent metadata scaling and identity auxiliary gates. Other modes, combined metadata behavior, original field meanings and live-game lifecycle remain unresolved. No new checked-name credit is added.
+
+
+### Auxiliary-gated transform sources
+
+384 original-code scenarios verify the alternate path selected when either auxiliary vector differs from the identity vector. With a stored override, position, scale and rotation come from that stored transform. Without it, position comes from the group and scale/rotation from state. The selected rotation then right-multiplies the mode-dependent local X rotation before object-local composition.
+
+Tests cross three auxiliary-gate patterns, four sampled modes, two flag values, both override states and both scale signs independently. Distinct random transforms, independent equations, unchanged source buffers and output guards passed. The final 384-case set supersedes preliminary sets, which are not counted again.
+
+This establishes sampled branch and source selection, not the original names or types of the auxiliary fields. Default group mode, finite unit rotations and positive local scale were used. Nondefault group combinations, combined metadata behavior, exact PS4 trigonometry and live-game lifecycle remain unresolved. No new checked-name credit is added.
