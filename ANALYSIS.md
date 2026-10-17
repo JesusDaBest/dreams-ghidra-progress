@@ -4580,3 +4580,12 @@ CopyOutput's inputs now link to earlier stage writes. Bootstrap initializes inpu
 RefineSetup copies A minus one into a separate buffer that Refine reads during iteration. These writes and CPU descriptor bindings establish accumulation roles, but do not yet establish the full metric or field-sampling formulas. The atomics compare unsigned bit patterns; interpreting their ordering as ordinary float min/max requires the appropriate finite nonnegative domain, which is not proven for every path.
 
 The archive payload hashes and relevant CPU instruction bytes were rechecked, and Ghidra annotations were saved and independently reopened. GPU execution, synchronization and real-scene behavior remain unverified. No new name or whole-system completion credit was added.
+
+
+### Named region-query shader accessors
+
+Four accessors are now saved as `GetRegionQueryBootstrapShader`, `GetRegionQuerySampleFieldShader`, `GetRegionQueryRefineShader`, and `GetRegionQueryRefineSetupShader`, with opaque descriptor-pointer returns. Their complete 819 instructions were reviewed against the fully read CopyOutput accessor; internal branch targets and identical external call targets were checked, and stage-string copy differences retained. Exact stage literals also agree with the native-hash archive matches above.
+
+Eight original cached-entry calls across the four newly named accessors returned the expected descriptors without changing global state. Two additional cached calls checked the already named CopyOutput accessor, which receives no new naming credit. Saved names and signatures were independently reopened and freshly decompiled. Cold loading, path construction, fallback/error handling, concurrency and GPU execution remain untested; these are accessor-role reviews, not full shader-behavior audits.
+
+Totals: 626 checked names. All four functions were already mapped to region queries, so mapped/unmapped counts remain 2,038/7,553 among 9,591 discovered functions.

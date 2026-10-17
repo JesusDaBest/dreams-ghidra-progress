@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 576,
-    "todo": 1462,
+    "done": 580,
+    "todo": 1458,
     "total": 2038,
-    "behavior_or_helpers_reviewed": 509,
+    "behavior_or_helpers_reviewed": 513,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -41583,10 +41583,10 @@
       {
         "name": "physics",
         "label": "Physics & collision",
-        "done": 16,
-        "todo": 54,
+        "done": 20,
+        "todo": 50,
         "total": 70,
-        "behavior_or_helpers_reviewed": 16,
+        "behavior_or_helpers_reviewed": 20,
         "properties_or_types_reviewed": 0,
         "runtime_functions_identified": 38,
         "property_type_functions_identified": 32,
@@ -41604,6 +41604,10 @@
           "ComputeObjectZoneAndFalloffBounds",
           "GetOrLoadPointQueryRunShader",
           "DispatchPointQueriesAndWait",
+          "GetRegionQuerySampleFieldShader",
+          "GetRegionQueryBootstrapShader",
+          "GetRegionQueryRefineShader",
+          "GetRegionQueryRefineSetupShader",
           "GetTestSpheresAgainstSdfComputeShader",
           "GetSphereVsSphereCheckComputeShader",
           "PopulatePhysicsArrayPointerTable",
@@ -41644,10 +41648,6 @@
           "0x140d0ee70",
           "0x140d54300",
           "0x141274ea0",
-          "0x141275f40",
-          "0x1412762e0",
-          "0x141276670",
-          "0x141276a10",
           "0x141276db0",
           "0x1414f1070",
           "0x1414f1410",
@@ -41678,6 +41678,10 @@
           "1411129d0",
           "141275240",
           "1412755e0",
+          "141275f40",
+          "1412762e0",
+          "141276670",
+          "141276a10",
           "1414f2fd0",
           "1414f3370",
           "141511c90",
@@ -41718,10 +41722,6 @@
           "140d0ee70",
           "140d54300",
           "141274ea0",
-          "141275f40",
-          "1412762e0",
-          "141276670",
-          "141276a10",
           "141276db0",
           "1414f1070",
           "1414f1410",
@@ -41745,10 +41745,10 @@
           {
             "name": "physics/queries",
             "label": "Collision queries",
-            "done": 9,
-            "todo": 24,
+            "done": 13,
+            "todo": 20,
             "total": 33,
-            "behavior_or_helpers_reviewed": 9,
+            "behavior_or_helpers_reviewed": 13,
             "properties_or_types_reviewed": 0,
             "runtime_functions_identified": 15,
             "property_type_functions_identified": 18,
@@ -41763,7 +41763,11 @@
               "PrepareObjectRegionQueryGeometry",
               "ComputeObjectZoneAndFalloffBounds",
               "GetOrLoadPointQueryRunShader",
-              "DispatchPointQueriesAndWait"
+              "DispatchPointQueriesAndWait",
+              "GetRegionQuerySampleFieldShader",
+              "GetRegionQueryBootstrapShader",
+              "GetRegionQueryRefineShader",
+              "GetRegionQueryRefineSetupShader"
             ],
             "todo_names": [
               "0x140111b70",
@@ -41785,10 +41789,6 @@
               "0x140d0eaf0",
               "0x140d0ee70",
               "0x141274ea0",
-              "0x141275f40",
-              "0x1412762e0",
-              "0x141276670",
-              "0x141276a10",
               "0x141276db0"
             ],
             "done_addresses": [
@@ -41800,7 +41800,11 @@
               "141112450",
               "1411129d0",
               "141275240",
-              "1412755e0"
+              "1412755e0",
+              "141275f40",
+              "1412762e0",
+              "141276670",
+              "141276a10"
             ],
             "todo_addresses": [
               "140111b70",
@@ -41822,10 +41826,6 @@
               "140d0eaf0",
               "140d0ee70",
               "141274ea0",
-              "141275f40",
-              "1412762e0",
-              "141276670",
-              "141276a10",
               "141276db0"
             ],
             "unresolved_addresses": [],
@@ -41833,10 +41833,10 @@
               {
                 "name": "physics/queries/region-query",
                 "label": "Region Query",
-                "done": 7,
-                "todo": 5,
+                "done": 11,
+                "todo": 1,
                 "total": 12,
-                "behavior_or_helpers_reviewed": 7,
+                "behavior_or_helpers_reviewed": 11,
                 "properties_or_types_reviewed": 0,
                 "runtime_functions_identified": 12,
                 "property_type_functions_identified": 0,
@@ -41849,13 +41849,13 @@
                   "EnqueueRegionQuery",
                   "ProcessQueuedRegionQueriesForPhase",
                   "PrepareObjectRegionQueryGeometry",
-                  "ComputeObjectZoneAndFalloffBounds"
+                  "ComputeObjectZoneAndFalloffBounds",
+                  "GetRegionQuerySampleFieldShader",
+                  "GetRegionQueryBootstrapShader",
+                  "GetRegionQueryRefineShader",
+                  "GetRegionQueryRefineSetupShader"
                 ],
                 "todo_names": [
-                  "0x141275f40",
-                  "0x1412762e0",
-                  "0x141276670",
-                  "0x141276a10",
                   "0x141276db0"
                 ],
                 "done_addresses": [
@@ -41865,13 +41865,13 @@
                   "140903930",
                   "140e839b0",
                   "141112450",
-                  "1411129d0"
-                ],
-                "todo_addresses": [
+                  "1411129d0",
                   "141275f40",
                   "1412762e0",
                   "141276670",
-                  "141276a10",
+                  "141276a10"
+                ],
+                "todo_addresses": [
                   "141276db0"
                 ],
                 "unresolved_addresses": [],
@@ -41879,10 +41879,10 @@
                   {
                     "name": "physics/queries/region-query/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 7,
-                    "todo": 5,
+                    "done": 11,
+                    "todo": 1,
                     "total": 12,
-                    "behavior_or_helpers_reviewed": 7,
+                    "behavior_or_helpers_reviewed": 11,
                     "properties_or_types_reviewed": 0,
                     "runtime_functions_identified": 12,
                     "property_type_functions_identified": 0,
@@ -41895,13 +41895,13 @@
                       "EnqueueRegionQuery",
                       "ProcessQueuedRegionQueriesForPhase",
                       "PrepareObjectRegionQueryGeometry",
-                      "ComputeObjectZoneAndFalloffBounds"
+                      "ComputeObjectZoneAndFalloffBounds",
+                      "GetRegionQuerySampleFieldShader",
+                      "GetRegionQueryBootstrapShader",
+                      "GetRegionQueryRefineShader",
+                      "GetRegionQueryRefineSetupShader"
                     ],
                     "todo_names": [
-                      "0x141275f40",
-                      "0x1412762e0",
-                      "0x141276670",
-                      "0x141276a10",
                       "0x141276db0"
                     ],
                     "done_addresses": [
@@ -41911,13 +41911,13 @@
                       "140903930",
                       "140e839b0",
                       "141112450",
-                      "1411129d0"
-                    ],
-                    "todo_addresses": [
+                      "1411129d0",
                       "141275f40",
                       "1412762e0",
                       "141276670",
-                      "141276a10",
+                      "141276a10"
+                    ],
+                    "todo_addresses": [
                       "141276db0"
                     ],
                     "unresolved_addresses": [],

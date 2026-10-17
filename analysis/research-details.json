@@ -10967,5 +10967,29 @@
       "Sampling/refinement formulas, synchronization, GPU execution and scene validation remain incomplete."
     ],
     "new_name_credit": 0
+  },
+  "region_query_shader_accessor_names_checkpoint": {
+    "names": {
+      "1412762e0": "GetRegionQueryBootstrapShader",
+      "141275f40": "GetRegionQuerySampleFieldShader",
+      "141276670": "GetRegionQueryRefineShader",
+      "141276a10": "GetRegionQueryRefineSetupShader"
+    },
+    "complete_bodies_read_instructions": 819,
+    "cached_native_cases_newly_named_functions": 8,
+    "cached_native_cases_including_existing_copyoutput_accessor": 10,
+    "findings": [
+      "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
+      "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
+      "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
+      "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
+    ],
+    "limits": [
+      "Analyst descriptive names and working ABI, not recovered original source declarations.",
+      "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
+      "Accessor review does not establish the shader algorithm or full query behavior."
+    ],
+    "mapped_total_unchanged": 2038,
+    "checked_names": 626
   }
 }

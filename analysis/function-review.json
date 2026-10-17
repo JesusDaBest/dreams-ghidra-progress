@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8814,
-    "other_names": 777,
-    "verification": "complete_inventory_matches_baseline_plus_581_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8810,
+    "other_names": 781,
+    "verification": "complete_inventory_matches_baseline_plus_585_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14260,6 +14260,90 @@
         "Analyst descriptive name and working ABI; complete original source declaration not recovered.",
         "Valid category1 graph supplied; other categories, malformed/cyclic graphs, cached/bounded Objects modes and complete callers unresolved.",
         "Query/physics producers, handle lookup and allocation/free modeled; no live gameplay verified."
+      ]
+    },
+    {
+      "address": "1412762e0",
+      "original_name": "FUN_1412762e0",
+      "applied_name": "GetRegionQueryBootstrapShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * PS4_SYSV GetRegionQueryBootstrapShader(void)",
+      "evidence": [
+        "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
+        "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
+        "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
+        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not recovered original source declarations.",
+        "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
+        "Accessor review does not establish the shader algorithm or full query behavior."
+      ]
+    },
+    {
+      "address": "141275f40",
+      "original_name": "FUN_141275f40",
+      "applied_name": "GetRegionQuerySampleFieldShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * PS4_SYSV GetRegionQuerySampleFieldShader(void)",
+      "evidence": [
+        "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
+        "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
+        "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
+        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not recovered original source declarations.",
+        "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
+        "Accessor review does not establish the shader algorithm or full query behavior."
+      ]
+    },
+    {
+      "address": "141276670",
+      "original_name": "FUN_141276670",
+      "applied_name": "GetRegionQueryRefineShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * PS4_SYSV GetRegionQueryRefineShader(void)",
+      "evidence": [
+        "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
+        "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
+        "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
+        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not recovered original source declarations.",
+        "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
+        "Accessor review does not establish the shader algorithm or full query behavior."
+      ]
+    },
+    {
+      "address": "141276a10",
+      "original_name": "FUN_141276a10",
+      "applied_name": "GetRegionQueryRefineSetupShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * PS4_SYSV GetRegionQueryRefineSetupShader(void)",
+      "evidence": [
+        "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
+        "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
+        "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
+        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not recovered original source declarations.",
+        "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
+        "Accessor review does not establish the shader algorithm or full query behavior."
       ]
     }
   ],
