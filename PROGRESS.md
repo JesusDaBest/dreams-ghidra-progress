@@ -3567,3 +3567,9 @@ Native checks covered 85 no-pressure cases, 80 weight callback cases, nine contr
 Pressure fixtures replace retirement, drain and synchronization callees. They establish control flow, not real concurrent execution or connected GPU builds. The volume weight subtractand, upstream bounds and runtime capacity guarantees remain unresolved.
 
 Totals: 560 reviewed names; 1,983 mapped and 7,605 unmapped among 9,588 discovered functions.
+
+### Connected capacity reclamation follow-up
+
+The existing capacity-reclamation review now includes connected original-code checks: 16 cases through retirement and weight callbacks, six through the primary drain, six through original brick-block release, and eight through secondary item compaction. These are separate fixture groups, not 36 end-to-end game runs.
+
+Primary checks verified resource bitmap clearing, retired queue removal, restored self-links and exact block-pool metadata and links. Secondary checks verified item bytes, surviving offsets, total counts, removed records and resource ID release. Insufficient capacity returns failure after reclaiming the available candidates. Synchronization remains controlled; real concurrent scheduling, runtime producer guarantees and GPU workloads remain unverified. No new function names or completion credit were added.

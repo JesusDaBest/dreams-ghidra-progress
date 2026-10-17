@@ -8988,5 +8988,21 @@
       "Volume subtractand meaning, valid IDs and runtime capacity guarantees unresolved."
     ],
     "runtime_game_verified": false
+  },
+  "resource_pressure_connected_followup": {
+    "retirement_and_weight_cases": 16,
+    "primary_drain_cases": 6,
+    "primary_block_release_cases": 6,
+    "item_compaction_cases": 8,
+    "verified_scope": [
+      "Original capacity control connected to original age retirement and weight callbacks.",
+      "Original primary drain connected through original brick-block release; exact pool metadata, links, bitmap and boundary guards checked.",
+      "Original secondary drain connected through item compaction; exact item bytes, offsets, totals, bitmap and list links checked."
+    ],
+    "limits": [
+      "Synchronization remains controlled; no real concurrent scheduling or blocking verified.",
+      "Bounded synthetic valid pools and chains; no complete runtime producer or GPU workload verification.",
+      "No new names or feature completion credit."
+    ]
   }
 }
