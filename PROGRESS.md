@@ -4217,3 +4217,14 @@ Saved and independently reopened `AdjustWireMaxHeap`, with explicit working argu
 Independent checks verify the exact removed-plus-held payload multiset and unchanged records outside the original hole's subtree. Per-slot trailing bytes, array guards, immutable held storage and the state handle were checked per call; whole world, object and stack-guard storage matched at suite end. The code promotes larger children, handles a final single child, then moves the held record upward without crossing the original hole.
 
 The range sorter, equal-key partition and heap adjustment now have supported descriptive names and working signatures. Wire creation, arbitrary reference combinations, duplicate object sequences, comparator overflow, malformed/precondition-breaking inputs, production scheduling and live gameplay remain unverified. Totals are 632 checked names and 2,044 mapped functions among 9,591 discovered functions.
+
+
+### Wire storage callbacks and insertion-path lead
+
+89 original-code cases now verify `AppendGameWireSlot` and `ResizeGameWireStorage`: eight append cases and 81 grow/shrink/no-change combinations, including counts near the fixed storage extent. Complete 1 MiB storage and external guards match the independent expected changes. Both callbacks initialize a 52-byte prefix with two (0,0,0,1) vectors, absent endpoint references, zero property words and packed flags 0x308. Trailing slot bytes remain untouched.
+
+Append returns the previous-count slot and increments the count. Resize initializes newly grown slots, stores the requested count, and leaves old records intact when shrinking. The count field follows 16,383 slots of 64 bytes. That layout arithmetic is not evidence that these callbacks enforce capacity or establish the complete scene-editing contract. Neither callback fills real endpoints or invalidates the Game wire-order flag.
+
+A bounded static trace found an actual insertion path at `1407069d0`. For an already bounded current count, it compares the incoming list count with 0x3fff minus the current wire count. It writes a full 64-byte slot, increments the count, and later clears the sorted-state flag while setting other work flags. The subtraction assumes a bounded current count; no global overflow or capacity guarantee is claimed. The full-slot write differs from the callbacks' 52-byte initialization; trailing-byte meaning remains unresolved.
+
+This producer remains unnamed and only partially reviewed. Selection rules, transforms, special property handling, event calls, cleanup, its full ABI and complete runtime behavior still need tracing. No extra naming or feature-completion credit is added: totals remain 632 checked names and 2,044 mapped functions.

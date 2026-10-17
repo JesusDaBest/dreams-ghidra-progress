@@ -11288,5 +11288,33 @@
       "Valid supplied max heaps and nonaliasing held record only; held key bounded by parent of original hole.",
       "Invalid hole/count, precondition violations, arbitrary mixed references, duplicate object sequences, comparator overflow, malformed objects and gameplay remain unverified."
     ]
+  },
+  "wire_storage_and_insertion_checkpoint": {
+    "callback_native_cases": 89,
+    "callback_profiles": {
+      "append": 8,
+      "resize": 81
+    },
+    "callback_scope": "Original callbacks and original constant vectors, eight valid append counts through16382 and81 grow/shrink/nochange pairs with counts0/1/2/7/31/255/16381/16382/16383. Complete1MiB storage and32-byte external guards compared.",
+    "callback_findings": [
+      "Count is at container+fffc0 after16383 fixed64-byte slots. This arithmetic identifies layout extent, not an enforced runtime capacity check.",
+      "Both callbacks initialize the52-byte record prefix: two(0,0,0,1) vectors, endpointsffffffff, property words0 and flags308. Per-slot12-byte tails remain untouched.",
+      "Append returns prior-count slot and increments count; resize returns container, initializes only newly grown records, and stores requested count even when shrinking.",
+      "Shrink does not erase prior records. These callbacks do not mark the Game sorted-state flag or fill real endpoints."
+    ],
+    "partial_producer": "1407069d0",
+    "partial_producer_scope": "Partial original producer review: capacity guard, record store and dirty/sorted flags. Transform/selection/property/event/cleanup paths remain incompletely reviewed.",
+    "partial_producer_findings": [
+      "For current count<=3fff, an unsigned capacity guard compares remaining3fff-current_wire_count to incoming list count before insertion. Out-of-range current count can underflow; no global invariant claimed.",
+      "Insertion writes full64-byte record, increments wire count and later clears sorted flag27b110 while setting27b154 and27b0e2.",
+      "This establishes a real mutation/dirty-marking path distinct from generic storage callbacks, but no complete function role/name or signature claimed."
+    ],
+    "limits": [
+      "Valid fixed-storage counts only; out-of-capacity/sentinel count behavior, allocator/scene-loader/edit integration and game runtime unverified.",
+      "These are existing callback names; no new naming credit.",
+      "Full producer body/ABI, caller contracts, semantic identity of property231 and complete selection/transform/event paths unresolved.",
+      "No original full-producer runtime execution or scene editing verification."
+    ],
+    "new_name_credit": 0
   }
 }
