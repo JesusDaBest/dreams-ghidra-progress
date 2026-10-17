@@ -11037,5 +11037,37 @@
       "Default float controls and ample capacity only; nondefault controls/refill/concurrency not covered by this connected suite."
     ],
     "reference_correction": "Initial reference omitted the original7DWORD acquire-memory packet. Complete42-instruction helper read; exact packet/cursor included in final cases."
+  },
+  "triggerzone_controlinator_detection_checkpoint": {
+    "native_checks": {
+      "triggerzone-controlinator-modes": {
+        "cases": 720,
+        "scope": "Original full uncached EntireLevel Controlinator modes0/7/8, original kind20 fields Power80,playeridx122,Name128,GameState161,CtrlMode1a0. Glued valid Sculpt root with composed unlabelled graph; source name match. PlayerIdx0/255, five CtrlModes, power0/1, two activation flags, GameState0/1/2 and thresholds1/2."
+      },
+      "triggerzone-controlinator-channels": {
+        "cases": 72,
+        "scope": "Original full uncached EntireLevel Controlinator modes0/7/8, valid PlayerIdx0..3 with deliberately permuted auxiliary channel mapping2/0/3/1, wildcard/exact/missing original Name filter and thresholds1/2. Original Power80=1,CtrlMode1,GameState0,eligible flags and valid glued Sculpt root graph."
+      }
+    },
+    "original_fields": [
+      "Controlinator.Power80",
+      "playeridx122",
+      "Name128",
+      "GameState161",
+      "CtrlMode1a0"
+    ],
+    "findings": [
+      "Normal Controlinator detection requires valid playeridx and bypasses tested Power/activation checks.",
+      "ControlinatorPossessable mode accepts CtrlMode1/2 with Power/activation checks; ControlinatorAll keeps those checks but omits CtrlMode restriction.",
+      "GameState2 rejects in all three tested modes; names support wildcard/exact/missing behavior.",
+      "Valid player index routes through auxiliary channel mapping; invalid255 accepted by modes7/8 writes all five outputs in tested fixtures."
+    ],
+    "boundaries": "Original full processor/root/graph/label helpers execute on valid supplied graph/channel data; handle/allocation/free and host stack boundaries modeled.",
+    "limits": [
+      "PuppetHeart root output/rollback, cached/bounded modes, invalid indices/channels and live gameplay unresolved."
+    ],
+    "annotations": "Saved and independently reopened.",
+    "processor_review": "partial_unnamed",
+    "new_name_credit": 0
   }
 }
