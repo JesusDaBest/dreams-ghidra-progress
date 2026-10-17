@@ -4553,3 +4553,12 @@ Original consumer/helper bodies execute and whole fixture buffers plus allocatio
 Further tracing found that Sculpt's original `Power` field is at `0x4c`; `0x40` is used as a resource handle in the spatial producer. The original property registration and packed metadata initializer independently confirm `Power=0x4c`. Earlier Dream/Objects fixtures supplied `0x40` as a synthetic Power location, so their claim to use the original Power field was incorrect.
 
 All eight affected suites were corrected and rerun: 1,784 cases covering Dream labels/ownership/root ordering and Objects filtering/nested labels/cached output routing. All pass with the corrected original field and the same scoped outcomes. Original fixture scripts and receipts are retained as superseded; these reruns add no test or naming credit. Ghidra correction annotations were saved and independently reopened. Other documented fixture boundaries remain; upstream query production and live gameplay are still incomplete. Checked names remain 622.
+
+
+### Region-query GPU result transfer
+
+The Sculpt query producer invokes five named compute stages: `RegionQueryBootstrap`, `RegionQuerySampleField`, `RegionQueryRefineSetup`, `RegionQueryRefine`, and `RegionQueryCopyOutput`. Reconstructed paths from executable literals match all five entries in the retained local shader archive using the executable's original native resource hash and section extractor. Extracted code ranges are 724, 3,372, 292, 5,924 and 180 bytes respectively. A 64-bit hash-index match alone cannot exclude collisions. Raw shader data remains local.
+
+The CPU transfer trace connects CopyOutput dispatch to a float result stream. Staged query-index/leaf-ordinal pairs map a positive result back to its query and object. Nonpositive and unordered float values are skipped; available slots append a weight/object pair up to the observed 0x3fff cap. Per-query count/start spans match the cached-result layout already tested in TriggerZone.
+
+CopyOutput's bounded static decode reaches its first physical end instruction after 19 instructions: an index/count guard, two buffer reads, floating comparison/conditional selection, and one buffer write. Its conditional exit targets that end instruction. Full buffer meanings, other-stage algorithms, synchronization, positive Sculpt GPU execution and live gameplay are not verified. Static decode counts are not behavior-completion counts. Ghidra trace annotations were saved and independently reopened; checked names remain 622.

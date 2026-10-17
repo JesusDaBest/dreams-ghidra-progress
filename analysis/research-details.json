@@ -10869,5 +10869,59 @@
       "Other fixture boundaries and documented per-suite limits still apply.",
       "Upstream spatial query production and live gameplay remain incomplete."
     ]
+  },
+  "region_query_gpu_transfer_checkpoint": {
+    "stages": [
+      {
+        "name": "RegionQueryBootstrap",
+        "resource_bytes": 888,
+        "extracted_code_bytes": 724,
+        "resource_sha256": "99494f05456fb06b8fbd643e59d6b26905ae54fccfb2189c236e4084d687f42f"
+      },
+      {
+        "name": "RegionQuerySampleField",
+        "resource_bytes": 3560,
+        "extracted_code_bytes": 3372,
+        "resource_sha256": "6c3065e926d96a5b584d73b3ad6b1705ec6799539a5dcc7e8cdc5f52e7b979a8"
+      },
+      {
+        "name": "RegionQueryRefineSetup",
+        "resource_bytes": 456,
+        "extracted_code_bytes": 292,
+        "resource_sha256": "1d3678938c9693d8cfc772f2af2a1610eabebaaacba75b222e8018f7dbf01d02"
+      },
+      {
+        "name": "RegionQueryRefine",
+        "resource_bytes": 6088,
+        "extracted_code_bytes": 5924,
+        "resource_sha256": "2897f732be9fcc1dcec4e498a24dcd237d46c9579bdf3a4ae792773f31893dc0"
+      },
+      {
+        "name": "RegionQueryCopyOutput",
+        "resource_bytes": 344,
+        "extracted_code_bytes": 180,
+        "resource_sha256": "8a7cfd7ef82ed158f175a8c699e09a1988e498e2b393f6d265828d262d386534"
+      }
+    ],
+    "identity_evidence": "Executable stage/path literals and original native hash/section extractor match immutable604-entry local archive. Hash index uses64bits; match alone cannot exclude collisions.",
+    "cpu_findings": [
+      "CopyOutput dispatch precedes read of global147744418 as float result stream.",
+      "Staged query-index/leaf-ordinal pairs link each positive GPU result back through original leaf-to-object mapping.",
+      "Only ordered-positive weights and available result capacity append float weight plus object identifier; cap3fff.",
+      "Per-query result span stores count/start used by cached consumers."
+    ],
+    "copy_output_static_decode": {
+      "decoded_instructions": 19,
+      "physical_end_payload_offset": 192,
+      "flow": "Thread-index/count guard, two buffer DWORD reads, floating comparison/conditional selection and one DWORD buffer write; one conditional exit targets final S_ENDPGM.",
+      "limits": "Full descriptor/buffer meaning and floating exceptional behavior not proven; no GPU execution. Unknown tail after first S_ENDPGM not interpreted as instructions."
+    },
+    "limits": [
+      "Names/path literals, native archive matches and static decode do not prove complete shader algorithms or CPU/GPU synchronization.",
+      "Full producer native entry with positive Sculpt compute workload remains unexecuted.",
+      "No live game or GPU verification; no whole subsystem completion."
+    ],
+    "annotations": "Saved and independently reopened.",
+    "new_name_credit": 0
   }
 }
