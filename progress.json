@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 546,
+    "done": 547,
     "todo": 1462,
-    "total": 2008,
-    "behavior_or_helpers_reviewed": 479,
+    "total": 2009,
+    "behavior_or_helpers_reviewed": 480,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -42683,12 +42683,12 @@
       {
         "name": "animation",
         "label": "Animation & puppets",
-        "done": 12,
+        "done": 13,
         "todo": 44,
-        "total": 56,
-        "behavior_or_helpers_reviewed": 10,
+        "total": 57,
+        "behavior_or_helpers_reviewed": 11,
         "properties_or_types_reviewed": 2,
-        "runtime_functions_identified": 10,
+        "runtime_functions_identified": 11,
         "property_type_functions_identified": 46,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -42698,6 +42698,7 @@
           "RecordTimedByteProperty",
           "SelectGreatestMagnitudeOfFiveFloats",
           "RecordTimedFloatProperty",
+          "ResetPuppetHeartState",
           "QueueRecordedTransformProperty",
           "InitializeAnimationObjectDefaults",
           "RegisterAnimationTypeDescriptor",
@@ -42758,6 +42759,7 @@
           "14076ca60",
           "14076cd70",
           "14076cdf0",
+          "1407727c0",
           "14077ccd0",
           "14093f9d0",
           "140d54650",
@@ -44085,16 +44087,18 @@
           {
             "name": "animation/puppets",
             "label": "Puppet animation",
-            "done": 0,
+            "done": 1,
             "todo": 7,
-            "total": 7,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 8,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 1,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "ResetPuppetHeartState"
+            ],
             "todo_names": [
               "0x14049b410",
               "0x140d547f0",
@@ -44104,7 +44108,9 @@
               "0x140d865d0",
               "0x140d86730"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1407727c0"
+            ],
             "todo_addresses": [
               "14049b410",
               "140d547f0",
@@ -44119,16 +44125,18 @@
               {
                 "name": "animation/puppets/puppetheart",
                 "label": "Puppet Heart",
-                "done": 0,
+                "done": 1,
                 "todo": 7,
-                "total": 7,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 1,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
+                "runtime_functions_identified": 1,
                 "property_type_functions_identified": 7,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "ResetPuppetHeartState"
+                ],
                 "todo_names": [
                   "0x14049b410",
                   "0x140d547f0",
@@ -44138,7 +44146,9 @@
                   "0x140d865d0",
                   "0x140d86730"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "1407727c0"
+                ],
                 "todo_addresses": [
                   "14049b410",
                   "140d547f0",
@@ -44184,6 +44194,29 @@
                     ],
                     "unresolved_addresses": [],
                     "groups": []
+                  },
+                  {
+                    "name": "animation/puppets/puppetheart/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ResetPuppetHeartState"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407727c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
                   }
                 ]
               }
@@ -44193,5 +44226,5 @@
       }
     ]
   },
-  "unmapped": 7580
+  "unmapped": 7579
 }

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 592,
+    "checked_and_applied_names": 593,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 592,
+    "verified_names": 593,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "554 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "555 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9721,5 +9721,22 @@
       "Other category labels, invalid caches, marked root, exceptional values and live game unverified."
     ],
     "name_credit_added": 0
+  },
+  "puppetheart_state_reset_checkpoint": {
+    "name": "ResetPuppetHeartState",
+    "original_instructions_verified": 182,
+    "native_cases": 120,
+    "findings": [
+      "Resets state fields and snapshots current transform into multiple caches.",
+      "Nonzero flag preserves an optional set of fields; zero initializes that set separately.",
+      "Operation is idempotent; preserving reset followed by full reset matches direct full reset in tested cases."
+    ],
+    "limits": [
+      "Analyst descriptive name and conservative working signature, not recovered source declarations.",
+      "Flag name describes observed optional-region preservation; individual state-field meanings unresolved.",
+      "Valid writable storage assumed; full lifecycle, concurrency and live game unverified."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true
   }
 }

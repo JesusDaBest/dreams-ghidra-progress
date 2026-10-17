@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 2008,
-  "unmapped_total": 7580,
+  "mapped_total": 2009,
+  "unmapped_total": 7579,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50266,6 +50266,27 @@
           "support": "Object transforms, parent-relative reconstruction, unique runtime-body updates and callback separation. Full ABI and remaining branches unresolved."
         }
       ]
+    },
+    "1407727c0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "puppets",
+        "puppetheart",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original PuppetHeart kind11 caller checks, enum label and state-reset body.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and native state-preservation/reset cases.",
+      "code_sha256": "d9f14cd88949d49d667055b91748be89a0937cd42b6c54b1783be656b09a3484",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetPuppetHeartState",
+          "support": "120 native reset/preservation cases; individual state fields and full lifecycle unresolved."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -56580,6 +56601,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]
