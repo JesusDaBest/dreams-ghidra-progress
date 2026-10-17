@@ -5109,3 +5109,10 @@ Bits 6–7 select stepped timing: nonzero values 1/2/3 floor elapsed time into a
 Media Molecule’s [Animation Canvas guide](https://docs.indreams.me/en/create/resources/recording-modes) describes blend/ease controls and every-second, third or fourth-frame stop-motion blending. That is consistent with these findings, but the editor control-to-metadata writes still need tracing. It does not establish a coding-livestream/source-code match or identify this executable’s exact build.
 
 Scope is three 56-byte Number records, one data leaf plus a matching header leaf, six key spacings, thirteen query fractions and `AnimStrength = 1`. Alpha-suppression/retirement flags, full output/guards/padding and source/header/resource immutability are checked. Metadata linkage/omission bits, mixed modes, smoothing/springiness, other formats/strengths, library errors, deeper trees and gameplay remain unresolved. No naming or completion credit is added.
+
+
+### Blend names checked against the executable
+
+The original `EBlendType` registration explicitly maps 0–4 to None, Linear, EaseIn, EaseOut and EaseBoth; 5 is the `LAST` sentinel. These names agree with the independently tested extended-key mode behavior. The registration instructions and original literals were checked directly.
+
+The shared editor-action table contains 836 names, including the Animation Canvas blend actions. Its consumer subtracts one from the action ID before a bounded lookup. This avoids treating the table’s zero-based indices as action IDs. The actual callback-to-key-metadata writes remain unresolved; the table alone does not establish that connection. No function was created, renamed or given completion credit in this trace.
