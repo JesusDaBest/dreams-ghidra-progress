@@ -3709,3 +3709,15 @@ Saved InternPackedResourceNodeByFingerprint after reading and byte matching all 
 Valid IDs, table capacity and node lifetimes remain preconditions. Actual concurrency, full-table behavior and adversarial fingerprint collisions remain unverified. Writer append/finalization ownership is still being traced. These results support the descriptive role, not completion of the entire subsystem.
 
 Totals: 574 reviewed names; 1,997 mapped and 7,591 unmapped among 9,588 discovered functions.
+
+### Packed resource tree writer growth
+
+Saved GrowPackedResourceTreeWriter after reading and byte matching all 96 original instructions. It finalizes an active node, updates its parent link, allocates a fresh path node and reserves room in the parent. Full 126-child parents cause growth to cascade upward. Growing beyond the root shifts the writer path and creates a two-child root.
+
+Twelve connected growth cases verified a root leaf split, a parent with room and a full-parent cascade using original allocation, hashing, interning and release. Four full-pool cases checked first replacement allocation failure: the old node is finalized, the active slot becomes UINT_MAX and depth stays unchanged. Backed-up trial and independent trial/main reopening verified the name, signature and unchanged original code and archives.
+
+The complete local CSG rebuild chain also passed 63 scenarios covering 1,305 records, including eighteen requiring growth. Original decoding, clamping, delta encoding, allocation, growth, summaries, hashing, finalization and release ran together. Independent output decoding, node summaries, fingerprints and exact reachable allocation/dirty sets matched; source blocks were unchanged. These cases cover kind-zero records and small valid trees.
+
+Platform synchronization/logging were controlled and host memcpy/memmove ABI-adapted. Other record kinds, real concurrency/game integration, new-root allocation failure and depth-limit contracts remain unresolved. No whole-subsystem completion is claimed.
+
+Totals: 575 reviewed names; 1,998 mapped and 7,590 unmapped among 9,588 discovered functions.

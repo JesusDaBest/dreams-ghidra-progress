@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1997,
-  "unmapped_total": 7591,
+  "mapped_total": 1998,
+  "unmapped_total": 7590,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50032,6 +50032,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "InternPackedResourceNodeByFingerprint",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1410618a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "memory-pools",
+        "runtime-implementation"
+      ],
+      "component_basis": "Packed resource writer growth traced through node allocation,interning,parent links androot splitting.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Grows active packed resource writer path andcascades through full parents.",
+      "code_sha256": "90da2ba81847889b4fe4bf2cdb99e26086468a6fede40a241699f1ebb296ca1f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GrowPackedResourceTreeWriter",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
