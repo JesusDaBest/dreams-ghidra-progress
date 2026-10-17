@@ -11093,5 +11093,43 @@
       "LabelBitmaskComposed": "0x321",
       "IsImp": "0x36c"
     }
+  },
+  "puppetheart_local_user_scope_checkpoint": {
+    "connected_original_cases": 4480,
+    "suites": [
+      {
+        "entry": "140bbf430",
+        "callee": "1408f96a0",
+        "native_cases": 4096,
+        "original_callee_instructions": 94,
+        "scope": "Original connected mask builder and existing player-mask/parent-mode filter; selectors0..3, user enabled byte0/1, user state0/13, all pairs of four-bit object masks; unglued PuppetHeart reference2.",
+        "findings": [
+          "The additional0x10 bit is set when the original filter rejects the selected local user.",
+          "For unglued objects an enabled non-state13 user passes only if its bit is absent from the union of object bytes24/25.",
+          "PuppetHeart storage remained unchanged on every call."
+        ],
+        "limits": [
+          "Parent-mode branches, user selectors outside0..3, real-game producer invariants, concurrency and gameplay remain unverified.",
+          "This supplements rather than replaces the prior2688 scope-skipped helper tests."
+        ],
+        "project_modified": false
+      },
+      {
+        "entry": "140bbf430",
+        "callee": "1408f96a0",
+        "native_cases": 384,
+        "scope": "Connected original helper pair, selectors0..3 and enabled local-user records, parent modes1/2/3, parent-1/3, compact lookup words0/1/100/101 and record modes0..3.",
+        "findings": [
+          "Missing parent or compact lookup passes the filter and omits mask bit10.",
+          "Mode1 resolves the high seven lookup bits; other tested modes resolve the low seven bits and require matching record mode.",
+          "A resolved parent-mode record rejects the filter and adds mask bit10; PuppetHeart bytes unchanged."
+        ],
+        "limits": [
+          "Out-of-range parent fallback linear scan, other modes, invalid references and gameplay not covered."
+        ],
+        "project_modified": false
+      }
+    ],
+    "new_name_credit": 0
   }
 }

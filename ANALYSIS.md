@@ -4625,3 +4625,14 @@ Original property registration identifies PuppetHeart `IsImp` at 0x36c; this is 
 48 root-output cases and 120 inherited-ownership cases passed with the original field metadata installed. Initial fixture omissions in output metadata and parent transform setup were corrected before these passing runs; they were fixture faults, not game faults. These cases cover the stated uncached paths, not the whole processor, every reference invariant, local-user scope or a complete gameplay lifecycle.
 
 628 function names are checked among 9,591 discovered functions; 2,040 functions are mapped to systems. This is evidence about specific code behavior, not a percentage of the entire game being reverse engineered. Raw code and execution fixtures remain local.
+
+
+### PuppetHeart local-user scope follow-up
+
+The earlier selector-255 limitation is now narrowed by 4,480 additional connected original-code cases. `BuildPuppetHeartRegionQueryMask` calls the already named `PassesObjectPlayerMaskAndParentModeFilter`; a false result adds mask bit 0x10. No additional function-name credit is claimed.
+
+4,096 cases cover selectors 0..3, the user-record enable byte, state 0/13, and all pairs of four-bit object masks. For unglued objects, an enabled user outside state 13 passes only when its bit is absent from the union of object bytes 0x24/0x25. Disabled records and state 13 reject.
+
+384 further cases cover parent modes 1/2/3, absent or in-range parents, compact lookup words and matching/mismatching record modes. Mode 1 uses the high seven lookup bits; the other tested modes use the low seven bits and require the resolved record mode to match. A resolved parent-mode record rejects the filter. Missing parents or missing compact records pass. PuppetHeart storage remained unchanged on every call.
+
+The out-of-range parent fallback scan, other parent modes, malformed references, complete producer invariants, concurrency and live gameplay remain unverified. Earlier test receipts retain their original narrower scopes. Counts remain 628 checked names and 2,040 mapped functions.
