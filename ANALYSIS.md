@@ -5740,3 +5740,14 @@ Saved `SerializeTransform32WithNormalizedWriteRotation` after reading and byte-v
 Prepared globals, type key, keyed context and stream pointers remain fixtures. Replay-mode wire creation/deletion, other event branches, full recording producer execution, concurrency, disk persistence and gameplay remain unresolved. This proves the selected original write path, not the complete recording subsystem.
 
 Totals: 684 checked names, 2,096 mapped functions and 7,507 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
+
+
+## Wire-event replay creation and removal checked
+
+The complete original event dispatcher entry now executes both wire replay branches in isolated native checks: 60 creation cases and 24 removal cases. Its 267,374 original bytes remain unchanged; this is branch evidence, not semantic credit for the entire dispatcher.
+
+For `fdf3`, replay resolves stored persistent object IDs through `ResolvePersistentObjectIdToIndex`, appends a 64-byte wire record, restores property, record ordinal and flags, copies the 32-byte transform unchanged and increments the wire count. Counts 0, 1, 17 and 16,382 append successfully. At 16,383, creation is skipped but the transform cursor still advances 32 bytes. Replay preserves the tested scaled quaternion; normalization belongs to the previously checked write path.
+
+For `fdf5`, replay replaces the selected wire's two endpoint indices with invalid values and sets the world and optional owner dirty flags. The wire count, transform, remaining record fields and cursor stay unchanged. Every case checks the complete world and owner buffers against the expected changes.
+
+The host supplies the decoded event ID, header descriptor and removal wire pointer. The upstream packet reader, removal target selection, complete undo/redo lifecycle, malformed chains, concurrency and gameplay remain unverified. No functions were newly named or marked complete. Checked names remain 684. [Sanitized check results](analysis/wire-replay-dispatcher-checks.json).
