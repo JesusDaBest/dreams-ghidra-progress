@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a67a293926661ac9aac117f9cf8c9ef4574485e7/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/13ff8ed686f889c991ef77fa3558ec575f206939/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**606 of 9,589 functions named and checked.** A function is one piece of the game's code.
+**607 of 9,589 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a67a293926661ac9aac117f9cf8c9ef4574485e7/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/13ff8ed686f889c991ef77fa3558ec575f206939/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 133 | 25/94 | 0/39 |
-| Gadgets & logic | 510 | 52/54 | 47/456 |
+| Gadgets & logic | 511 | 53/55 | 47/456 |
 | Physics & collision | 70 | 15/38 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 57 | 11/11 | 2/46 |
@@ -74,12 +74,12 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 107 | 3/31 | 0/76 |
 | Shared engine & object data | 315 | 193/229 | 15/81 |
 
-**2,022 of 9,589 discovered functions are mapped; 7,567 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,023 of 9,589 discovered functions are mapped; 7,566 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 510 functions identified; 56 behavior/helper reviews; 47 property/type reviews
+- **Gadgets & logic** - 511 functions identified; 57 behavior/helper reviews; 47 property/type reviews
   - **Logic & signals** - 124 functions identified; 40 behavior/helper reviews; 20 property/type reviews
     - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
@@ -235,10 +235,10 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Network Spawner Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Movement & possession** - 77 functions identified; 8 behavior/helper reviews; 4 property/type reviews
-    - **Hand Gadget** - 6 functions identified; 3 behavior/helper reviews; 1 property/type reviews
+  - **Movement & possession** - 78 functions identified; 9 behavior/helper reviews; 4 property/type reviews
+    - **Hand Gadget** - 7 functions identified; 4 behavior/helper reviews; 1 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Teleporter** - 6 functions identified; 3 behavior/helper reviews; 2 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
