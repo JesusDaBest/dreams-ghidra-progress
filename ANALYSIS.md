@@ -4174,3 +4174,12 @@ Controlled host sine/cosine uses the corrected calling-convention adapter; exact
 Tests cross three auxiliary-gate patterns, four sampled modes, two flag values, both override states and both scale signs independently. Distinct random transforms, independent equations, unchanged source buffers and output guards passed. The final 384-case set supersedes preliminary sets, which are not counted again.
 
 This establishes sampled branch and source selection, not the original names or types of the auxiliary fields. Default group mode, finite unit rotations and positive local scale were used. Nondefault group combinations, combined metadata behavior, exact PS4 trigonometry and live-game lifecycle remain unresolved. No new checked-name credit is added.
+
+
+### Linked-transform target blending
+
+288 original-code scenarios verify the direct target-transform blend and its gates. When enabled by the metadata boolean, matching state pointer and nonzero auxiliary factor, the helper clamps the factor to 0–1 and applies smoothstep. It blends all position/scale components and uses a normalized, hemisphere-aligned quaternion blend before composing the object-local transform.
+
+Disabling the metadata boolean or mismatching the state pointer suppresses the blend across all sampled factors. Independent equations, distinct transforms, source buffers and output guards passed. Quaternion comparisons account for equivalent signs. This set supersedes the preliminary 96 cases, which are not counted again.
+
+The tests use a stored override, default auxiliary kind/group mode, identity auxiliary gates and finite unit rotations with positive scales. Linked-reference kinds that invoke recursive selection remain unverified, as do original field names, invalid inputs and live-game lifecycle. No checked-name credit is added.
