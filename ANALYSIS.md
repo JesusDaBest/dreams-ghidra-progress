@@ -4183,3 +4183,12 @@ This establishes sampled branch and source selection, not the original names or 
 Disabling the metadata boolean or mismatching the state pointer suppresses the blend across all sampled factors. Independent equations, distinct transforms, source buffers and output guards passed. Quaternion comparisons account for equivalent signs. This set supersedes the preliminary 96 cases, which are not counted again.
 
 The tests use a stored override, default auxiliary kind/group mode, identity auxiliary gates and finite unit rotations with positive scales. Linked-reference kinds that invoke recursive selection remain unverified, as do original field names, invalid inputs and live-game lifecycle. No checked-name credit is added.
+
+
+### Linked-reference target construction and recursion
+
+256 original-code scenarios verify that the two tested linked-reference auxiliary kinds build the target from a referenced object's transform and an auxiliary offset. Missing transform metadata substitutes identity before offset composition. The target then feeds the verified smoothstep blend and local composition.
+
+128 connected scenarios exercise the helper, transform selector and runtime body evaluator together. Distinct stored and runtime transforms show that recursion uses the runtime body result. A matching object-reference field bypasses recursion and uses the stored reference transform instead. Independent equations, source buffers and output guards passed. The final connected set supersedes its preliminary 64 cases.
+
+Tests cover valid reference index one, controlled metadata, finite unit rotations, positive scales and one recursion level. Auxiliary lookup uses the empty-list fallback. Nonempty lookup matching, arbitrary depth, cycles, invalid references, original field meanings and live-game lifecycle remain unresolved. No new checked-name credit is added.
