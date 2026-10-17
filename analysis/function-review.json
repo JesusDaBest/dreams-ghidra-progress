@@ -1182,12 +1182,44 @@
         "Helper140768850 merely selects the starting object index; it is not an iterator constructor."
       ],
       "caveats": [
+        "Existing descriptive name retained; working signature is inferred, not recovered source.",
+        "Controlled graph fixtures with supplied self links; native edge names and graph-producer invariants unresolved.",
+        "All numeric edge kinds tested only across selected flag/filter combinations, not every traversal branch.",
+        "Connected dispatcher uses controlled TLS/scratch allocation and disabled callbacks; root primary transforms only.",
+        "Parent-relative transforms, special object types, malformed inputs, capacity exhaustion, concurrency and live game remain unverified."
+      ],
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "bool PS4_SYSV AdvanceFilteredObjectGraphIterator(void * iterator, int * output_index)",
+      "signature_refinements": [
+        {
+          "working_return": "bool in AL",
+          "parameters": [
+            "opaque iterator pointer in RDI",
+            "32-bit output-index pointer in RSI"
+          ],
+          "persistence": "independently_reopened",
+          "original_declaration_recovered": false
+        }
+      ],
+      "native_validation_update": {
+        "standalone_iterator_cases": 144,
+        "of_which_edge_filter_matrix_cases": 112,
+        "connected_dispatcher_cases": 80,
+        "iterator_instructions_verified": 212,
+        "dispatcher_instructions_verified": 658,
+        "limits": [
+          "Controlled graph fixtures with supplied self links; native edge names and graph-producer invariants unresolved.",
+          "All numeric edge kinds tested only across selected flag/filter combinations, not every traversal branch.",
+          "Connected dispatcher uses controlled TLS/scratch allocation and disabled callbacks; root primary transforms only.",
+          "Parent-relative transforms, special object types, malformed inputs, capacity exhaustion, concurrency and live game remain unverified."
+        ]
+      },
+      "initial_naming_caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
         "Descriptive analyst name; native class and edge enum names unknown.",
         "Static analysis only.",
         "No prototype, types, bytes, calling convention or function boundaries changed."
-      ],
-      "reviewed_scope": "behavior_or_helper"
+      ]
     },
     {
       "address": "140903590",

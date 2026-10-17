@@ -9607,5 +9607,28 @@
     ],
     "name_credit_added": 0,
     "project_modified": false
+  },
+  "transform_graph_iterator_signature_checkpoint": {
+    "retained_name": "AdvanceFilteredObjectGraphIterator",
+    "working_signature": "bool PS4_SYSV AdvanceFilteredObjectGraphIterator(void * iterator, int * output_index)",
+    "standalone_iterator_cases": 144,
+    "of_which_edge_filter_matrix_cases": 112,
+    "connected_dispatcher_cases": 80,
+    "iterator_instructions_verified": 212,
+    "dispatcher_instructions_verified": 658,
+    "limits": [
+      "Controlled graph fixtures with supplied self links; native edge names and graph-producer invariants unresolved.",
+      "All numeric edge kinds tested only across selected flag/filter combinations, not every traversal branch.",
+      "Connected dispatcher uses controlled TLS/scratch allocation and disabled callbacks; root primary transforms only.",
+      "Parent-relative transforms, special object types, malformed inputs, capacity exhaustion, concurrency and live game remain unverified."
+    ],
+    "findings": [
+      "Boolean success is returned in AL and the destination index is written through the second parameter.",
+      "Tested exhausted/disabled/invalid-root paths leave the output untouched; repeated exhausted calls preserve state.",
+      "Original iterator and original transform dispatcher execute together on cyclic/shared controlled graphs.",
+      "Runtime bodies shared by multiple yielded objects are transformed once."
+    ],
+    "new_name_credit": 0,
+    "saved_signature_independently_reopened": true
   }
 }
