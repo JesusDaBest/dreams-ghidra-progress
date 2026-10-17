@@ -4517,3 +4517,10 @@ Original registrations identify `CameraBlender::CameraStatus.focus`, `eye`, `eul
 `ActiveCameraData` registrations identify `id`, `transition_type`, `packed`, `status` and `blend_amount`; `CameraId` identifies `type` and `number`. These agree with the named contribution helper's matching, curve and weight reads. Original `vr_comfort_mode` and `vr_comfort_mode_force_off` fields explain two of its context gates; the third flag still lacks an original name. The fallback ancestry field is registered as `scope_thingref`.
 
 Registration instruction bytes were checked against the original executable, and saved Ghidra annotations were independently reopened. These labels strengthen field semantics without establishing original C++ declarations, every field type, active-space switching or whole-camera behavior. Checked-name count remains 621.
+
+
+### Camera transition enum and working types
+
+Original `ECameraTransition` values are `Smooth=0`, `Cut=1`, `EasyIn=2`, `EasyOut=3`, `Linear=4`, `Crazy=5`, and `LAST=6`. The unusual quadratic observed earlier belongs to `Crazy`; it was not a mislabeled standard smoothstep. `Cut` passes the incoming blend amount in this helper, which does not establish caller-side cut timing.
+
+The enum and partial blend-entry/context layouts are saved in Ghidra and independently reopened. The named helper now takes a typed working context pointer. A fresh decompilation displays blend amounts, the count and VR flags by name; some token and transition reads still use pointer casts. The eight-entry slot footprint is inferred from the next count field, not proven runtime capacity enforcement. Unknown bytes and flag meanings remain explicit. No original code changed and no extra name credit was added; total stays 621.

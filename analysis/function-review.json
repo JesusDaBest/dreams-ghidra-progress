@@ -14224,17 +14224,19 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "float PS4_SYSV ComputeLayeredBlendTokenWeight(void * blend_context, ulonglong token)",
+      "saved_working_signature": "float PS4_SYSV ComputeLayeredBlendTokenWeight(CameraBlendContextWorking439A * blend_context, ulonglong token)",
       "evidence": [
         "Complete126-instruction leaf read and original bytes verified.",
         "3584 full original helper calls match independent layered weight reference; input buffers immutable.",
         "Three call sites establish multiple token types and Camera scope membership use.",
         "90 connected Camera scope cases show positive contribution enables ancestry filtering without scaling region output.",
-        "Name and explicit pointer/RDI,token/RSI,float/XMM0 working ABI verified after independent reopen and fresh decompilation."
+        "Name and explicit pointer/RDI,token/RSI,float/XMM0 working ABI verified after independent reopen and fresh decompilation.",
+        "Original ECameraTransition enum and sparse working entry/context layouts saved and independently reopened."
       ],
       "caveats": [
         "Analyst descriptive name and working ABI, not original source declaration.",
-        "Exceptional weights, duplicate matches, larger counts and complete camera blend lifecycles remain unresolved."
+        "Exceptional weights, duplicate matches, larger counts and complete camera blend lifecycles remain unresolved.",
+        "Sparse working layouts, not complete original declarations; some token and transition reads remain pointer casts in decompiled output."
       ]
     }
   ],

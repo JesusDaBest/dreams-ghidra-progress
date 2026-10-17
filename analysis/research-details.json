@@ -10725,5 +10725,32 @@
       "Original name of context flag4399, multiple-camera ordering and complete lifecycles unresolved."
     ],
     "checked_name_total_unchanged": 621
+  },
+  "camera_transition_working_type_checkpoint": {
+    "original_enum": "ECameraTransition",
+    "values": {
+      "Smooth": 0,
+      "Cut": 1,
+      "EasyIn": 2,
+      "EasyOut": 3,
+      "Linear": 4,
+      "Crazy": 5,
+      "LAST": 6
+    },
+    "original_curve_observation": "Crazy5 computes3*x*x-2*x in this contribution helper; Cut1 passes the incoming blend amount here, so complete transition timing is not established.",
+    "working_layouts": [
+      "Partial entry with registered token fields, transition type/time, packed low byte and blend amount.",
+      "Sparse context covering verified VR flags, first camera-space entries/count and unnamed flag4399."
+    ],
+    "verification": [
+      "Original registration instructions checked; enum values and component offsets independently reopened.",
+      "Only expected helper signature changed; function/name counts unchanged.",
+      "Fresh decompilation displays named count/blend amount/VR fields."
+    ],
+    "limits": [
+      "Eight-entry footprint inferred from next count placement; runtime capacity enforcement unresolved.",
+      "Some token/transition accesses remain pointer casts; complete declarations not recovered.",
+      "No original code or native behavior changed."
+    ]
   }
 }
