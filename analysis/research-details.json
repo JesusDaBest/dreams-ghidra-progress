@@ -13364,5 +13364,50 @@
       4
     ],
     "full_handler_reviewed": false
+  },
+  "animation_boolean_inline_transition_checkpoint": {
+    "handler": "1410705f0",
+    "format": 1,
+    "native_cases": 5280,
+    "batches": [
+      {
+        "native_cases": 2400,
+        "findings": [
+          "Original converter, dispatcher and inline Boolean transition branch execute together.",
+          "Old8-byte keys expand to12-byte records; time,low value bit and metadata match independent model.",
+          "Incoming padding5..7 seeded after conversion and preserved by handler; retained padding excluded from assertions.",
+          "Complete headers,original data prefix,merged lengths,source/world/node/input/context/auxiliary immutability and guards checked."
+        ],
+        "limits": [
+          "One-leaf source;0/1/3/5/63 oldkeys.",
+          "Finite ordered times,valid buffers,scopedbytevalues0/1/7f/80/fe/ff/55/aa.",
+          "Hostmemory adapters;mutex/threadcallbacks controlled.",
+          "Retained padding5..7 opaque;nozero or preservation guarantee.",
+          "Deeper trees,exhaustive rounding,invalid inputs,races,full handler/producer/playback unresolved."
+        ]
+      },
+      {
+        "native_cases": 2880,
+        "findings": [
+          "Original converter, dispatcher and inline Boolean transition branch execute together.",
+          "Old8-byte keys expand to12-byte records; time,low value bit and metadata match independent model.",
+          "Incoming padding5..7 seeded after conversion and preserved by handler; retained padding excluded from assertions.",
+          "Complete headers,original data prefix,merged lengths,source/world/node/input/context/auxiliary immutability and guards checked."
+        ],
+        "limits": [
+          "One parent level;63/64/126/127 sourcekeys at offsets0/8/504.",
+          "Finite ordered times,valid buffers,scopedbytevalues0/1/7f/80/fe/ff/55/aa.",
+          "Hostmemory adapters;hostdoublepow adapter;mutex/threadcallbacks controlled.",
+          "Retained padding5..7 opaque;nozero or preservation guarantee.",
+          "Deeper trees,exhaustive rounding,invalid inputs,races,full handler/producer/playback unresolved."
+        ]
+      }
+    ],
+    "new_name_credit": 0,
+    "remaining_inline_branches": [
+      0,
+      4
+    ],
+    "full_handler_reviewed": false
   }
 }
