@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2a69b175d0bf34a90fb88b75a3b6026fe22e2f47/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/176e1d9edf13bf6d28c8a5a5d086ef0d9477cf15/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**619 of 9,591 functions named and checked.** A function is one piece of the game's code.
+**620 of 9,591 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2a69b175d0bf34a90fb88b75a3b6026fe22e2f47/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/176e1d9edf13bf6d28c8a5a5d086ef0d9477cf15/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -72,9 +72,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 368 | 99/342 | 0/26 |
 | Editor & interface | 390 | 75/181 | 3/207 |
 | Dreamiverse & networking | 109 | 3/31 | 0/78 |
-| Shared engine & object data | 324 | 202/238 | 15/81 |
+| Shared engine & object data | 325 | 203/239 | 15/81 |
 
-**2,035 of 9,591 discovered functions are mapped; 7,556 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,036 of 9,591 discovered functions are mapped; 7,555 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -869,7 +869,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 324 functions identified; 203 behavior/helper reviews; 15 property/type reviews
+- **Shared engine & object data** - 325 functions identified; 204 behavior/helper reviews; 15 property/type reviews
   - **Game state & runtime** - 103 functions identified; 90 behavior/helper reviews; 0 property/type reviews
     - **Saving & loading** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
@@ -940,7 +940,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Numbers & transforms** - 17 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+  - **Numbers & transforms** - 18 functions identified; 6 behavior/helper reviews; 0 property/type reviews
     - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Object hierarchy transforms** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
@@ -959,6 +959,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Transform composition** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
   - **Serialization & upgrades** - 17 functions identified; 10 behavior/helper reviews; 0 property/type reviews
     - **Serialization implementation** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
