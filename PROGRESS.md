@@ -3923,3 +3923,12 @@ Large lists, arbitrary byte values, NaN activation, invalid or aliased pointers,
 64 connected scenarios execute the original selector, head lookup, constructor and composition together. The result is head target × inverse(stored head transform) × supplied transform, with the target drawn from the alternate context's group and auxiliary state. Two groups, both local-scale signs, auxiliary enable states and signed scale factors pass independent equations and guarded source/output checks.
 
 The final standalone sets exclude their superseded preliminary set. Degenerate bases, other modes, original field meanings, invalid references and live-game lifecycle remain unresolved. This behavior evidence adds no checked-name credit.
+
+
+### Verified head target-transform name
+
+Saved ComputeHeadGadgetTargetTransform with a four-input working signature after reading and byte verifying its 482 original instructions. It builds the head target from the selected group and optional auxiliary transform, reconstructs the local basis and combines the inverse local transform. The tested negative-local-scale path adds a local X half-turn; final scale preserves product sign and clamps magnitude to the original float 0.01.
+
+288 scoped original-code scenarios support the role, including 64 connected selector/lookup/constructor cases. A verified compressed backup, independent reopening and fresh decompilation confirm persistence. Context/gadget/record pointers remain opaque; the output reuses the working 32-byte transform type.
+
+Degenerate or nonunit inputs, other modes, original field names, aliasing and full lifecycle remain unresolved. This name does not claim full semantic or subsystem completion. Totals: 605 checked names; 2,021 mapped and 7,568 unmapped among 9,589 discovered functions.

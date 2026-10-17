@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 558,
+    "done": 559,
     "todo": 1462,
-    "total": 2020,
-    "behavior_or_helpers_reviewed": 491,
+    "total": 2021,
+    "behavior_or_helpers_reviewed": 492,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 101,
+        "done": 102,
         "todo": 407,
-        "total": 508,
-        "behavior_or_helpers_reviewed": 54,
+        "total": 509,
+        "behavior_or_helpers_reviewed": 55,
         "properties_or_types_reviewed": 47,
-        "runtime_functions_identified": 52,
+        "runtime_functions_identified": 53,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -71,6 +71,7 @@
           "SetObjectFlag15ByReference",
           "SubmitTeleporterPositionOffsetCommand",
           "TryResolveHeadAuxiliaryRecord",
+          "ComputeHeadGadgetTargetTransform",
           "TryResolveHandAuxiliaryState",
           "AppendRemapperSignalHistory",
           "FindOrInitializeRemapperSignalHistory",
@@ -583,6 +584,7 @@
           "1408f2040",
           "1408f2180",
           "1408f2390",
+          "1408f2510",
           "1408f4240",
           "140907eb0",
           "1409082f0",
@@ -5726,12 +5728,12 @@
           {
             "name": "gadgets-logic/motion",
             "label": "Movement & possession",
-            "done": 10,
+            "done": 11,
             "todo": 65,
-            "total": 75,
-            "behavior_or_helpers_reviewed": 6,
+            "total": 76,
+            "behavior_or_helpers_reviewed": 7,
             "properties_or_types_reviewed": 4,
-            "runtime_functions_identified": 6,
+            "runtime_functions_identified": 7,
             "property_type_functions_identified": 69,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -5741,6 +5743,7 @@
               "SetObjectFlag15ByReference",
               "SubmitTeleporterPositionOffsetCommand",
               "TryResolveHeadAuxiliaryRecord",
+              "ComputeHeadGadgetTargetTransform",
               "TryResolveHandAuxiliaryState",
               "RegisterTeleporterTypeDescriptor",
               "RegisterHandGadgetProperties",
@@ -5820,6 +5823,7 @@
               "1408f2040",
               "1408f2180",
               "1408f2390",
+              "1408f2510",
               "1408f4240",
               "140d55830",
               "140d666b0",
@@ -6076,6 +6080,94 @@
                 ]
               },
               {
+                "name": "gadgets-logic/motion/headgadget",
+                "label": "Head Gadget",
+                "done": 3,
+                "todo": 2,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "TryResolveHeadAuxiliaryRecord",
+                  "ComputeHeadGadgetTargetTransform",
+                  "RegisterHeadGadgetProperties"
+                ],
+                "todo_names": [
+                  "0x1404e6410",
+                  "0x140d58c30"
+                ],
+                "done_addresses": [
+                  "1408f2390",
+                  "1408f2510",
+                  "140d673a0"
+                ],
+                "todo_addresses": [
+                  "1404e6410",
+                  "140d58c30"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/motion/headgadget/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterHeadGadgetProperties"
+                    ],
+                    "todo_names": [
+                      "0x1404e6410",
+                      "0x140d58c30"
+                    ],
+                    "done_addresses": [
+                      "140d673a0"
+                    ],
+                    "todo_addresses": [
+                      "1404e6410",
+                      "140d58c30"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/motion/headgadget/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "TryResolveHeadAuxiliaryRecord",
+                      "ComputeHeadGadgetTargetTransform"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408f2390",
+                      "1408f2510"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/motion/controlinator",
                 "label": "Controlinator",
                 "done": 0,
@@ -6306,90 +6398,6 @@
                       "140ca0690",
                       "140d6e910"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/motion/headgadget",
-                "label": "Head Gadget",
-                "done": 2,
-                "todo": 2,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "TryResolveHeadAuxiliaryRecord",
-                  "RegisterHeadGadgetProperties"
-                ],
-                "todo_names": [
-                  "0x1404e6410",
-                  "0x140d58c30"
-                ],
-                "done_addresses": [
-                  "1408f2390",
-                  "140d673a0"
-                ],
-                "todo_addresses": [
-                  "1404e6410",
-                  "140d58c30"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/motion/headgadget/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 2,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterHeadGadgetProperties"
-                    ],
-                    "todo_names": [
-                      "0x1404e6410",
-                      "0x140d58c30"
-                    ],
-                    "done_addresses": [
-                      "140d673a0"
-                    ],
-                    "todo_addresses": [
-                      "1404e6410",
-                      "140d58c30"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/motion/headgadget/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "TryResolveHeadAuxiliaryRecord"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408f2390"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44399,5 +44407,5 @@
       }
     ]
   },
-  "unmapped": 7569
+  "unmapped": 7568
 }

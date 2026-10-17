@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2020,
-  "unmapped_total": 7569,
+  "mapped_total": 2021,
+  "unmapped_total": 7568,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50559,6 +50559,32 @@
             "1653 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
             "Original HeadGadget/HandGadget registrations traced from selector caller.",
             "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+          ]
+        }
+      ]
+    },
+    "1408f2510": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "motion",
+        "headgadget",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original HeadGadget selector branch,head auxiliary lookup and target constructor.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Body reviewed with288 bounded scenarios.",
+      "code_sha256": "0a6d805f081cfa8b757cf232a8a6fda940edcce740644ca3a05259a53a9d0e20",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeHeadGadgetTargetTransform",
+          "support": [
+            "Builds head target from selected group and optional auxiliary transform.",
+            "Negative local scale adds local X half-turn in tested unit local rotations.",
+            "Final scale preserves product sign and clamps magnitude to original float0.01.",
+            "Connected selector result is head_target*inverse(head_stored)*supplied."
           ]
         }
       ]

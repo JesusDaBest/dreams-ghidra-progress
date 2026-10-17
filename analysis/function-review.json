@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "565 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "566 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8830,
-    "other_names": 759,
-    "verification": "complete_inventory_matches_baseline_plus_565_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8829,
+    "other_names": 760,
+    "verification": "complete_inventory_matches_baseline_plus_566_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13881,6 +13881,27 @@
         "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
         "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
         "No whole-subsystem completion or live-game verification claim."
+      ]
+    },
+    {
+      "address": "1408f2510",
+      "original_name": "FUN_1408f2510",
+      "applied_name": "ComputeHeadGadgetTargetTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ComputeHeadGadgetTargetTransform(PositionScaleQuaternionTransform32 * output_transform, void * thing, void * world, void * auxiliary_record)",
+      "evidence": [
+        "482 original instructions read and byte verified; reconstructed basis and inverse/composition equations traced.",
+        "288 original-code scenarios cover positive/negative local scale,signed factors,auxiliary enable,two groups and64 connected selector cases.",
+        "Verified compressed backup,independent reopening and fresh decompilation confirm name and four-input working signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working signature,not recovered source declaration.",
+        "Opaque gadget/context/record types; output reuses working32-byte transform.",
+        "Degenerate or nonunit input,other modes,field names,aliasing and live-game lifecycle unresolved.",
+        "No full semantic/subsystem completion claim."
       ]
     }
   ],

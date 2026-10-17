@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 604,
+    "checked_and_applied_names": 605,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 604,
+    "verified_names": 605,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "565 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "566 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10107,5 +10107,30 @@
     "new_name_credit": 3,
     "output_behavior": "Success writes record/state;early failure preserves outputs;hand resolver failure writes null state and preserves record.",
     "scope": "Bounded lookup/selection semantics,not complete head/hand transform system."
+  },
+  "head_gadget_target_checkpoint": {
+    "name": "ComputeHeadGadgetTargetTransform",
+    "native_scenarios": 288,
+    "instructions_byte_verified": 482,
+    "findings": [
+      "Builds head target from selected group and optional auxiliary transform.",
+      "Negative local scale adds local X half-turn in tested unit local rotations.",
+      "Final scale preserves product sign and clamps magnitude to original float0.01.",
+      "Connected selector result is head_target*inverse(head_stored)*supplied."
+    ],
+    "evidence": [
+      "482 original instructions read and byte verified; reconstructed basis and inverse/composition equations traced.",
+      "288 original-code scenarios cover positive/negative local scale,signed factors,auxiliary enable,two groups and64 connected selector cases.",
+      "Verified compressed backup,independent reopening and fresh decompilation confirm name and four-input working signature."
+    ],
+    "limits": [
+      "Analyst descriptive name and working signature,not recovered source declaration.",
+      "Opaque gadget/context/record types; output reuses working32-byte transform.",
+      "Degenerate or nonunit input,other modes,field names,aliasing and live-game lifecycle unresolved.",
+      "No full semantic/subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
   }
 }
