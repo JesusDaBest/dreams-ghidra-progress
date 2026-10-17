@@ -3865,7 +3865,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -14748,5 +14748,29 @@
       "project_modified": false,
       "new_name_credit": 0
     }
+  },
+  "animation_producer_format_selection_checkpoint": {
+    "producer": "1407af650",
+    "original_basic_selection_block": {
+      "start": "0x1407affd5",
+      "end_exclusive": "0x1407affed",
+      "sha256": "5ed99bb76b89be0d101fbb17d3cb8ee9481963dd0962c93e82decfc7bb4b571a"
+    },
+    "native_cases": 512,
+    "original_verified_instruction_rows": 163,
+    "findings": [
+      "For existing basic records on the fresh lookup path, both derived extended selection and override byte equal (recordMode==5) OR inheritedSelection.",
+      "Producer passes the derived extended choice to converter and includes choice*4 in descriptor flags.",
+      "Already-extended lookup branch chooses extended=1,override=0; dispatcher independently chooses extended handler from stored-header flag4.",
+      "Insertion wrapper forwards its three byte controls to dispatcher in the inspected call window."
+    ],
+    "limits": [
+      "Only original straight-line basic selection block executed;not complete producer,insertion,converter ordispatcher.",
+      "Native bridge supplies valid local stack/mode fixtures;all256 mode bytes andinheritedSelection0/1 checked.",
+      "Descriptor flags alsoOR an independent baseflag byte;its possiblebit4 andduplicate-key path still needtracing.",
+      "No proof mixed-input basic branches areunreachable;no fullproducer name/completion credit."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

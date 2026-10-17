@@ -4857,3 +4857,12 @@ The new transform suites contribute 3,840 original converter-plus-handler cases,
 Mixed basic/extended input flags and AutoKeyframe-specific normalization/value rewriting remain statically identified but not dynamically established. Typed-value checks establish opaque copying, not semantic decoding. Other modes, exhaustive rounding, deeper trees, malformed inputs, nonfinite/singular transforms, concurrency and full producer/playback behavior remain unresolved; controlled host boundaries remain documented.
 
 Totals: 665 checked names, 2,077 mapped functions among 9,603 discovered, with 7,526 unmapped. All three interval updaters now have descriptive names; this does not establish complete recording, playback or whole-game reverse engineering.
+
+
+### Recording producer: derived format and override selection
+
+Traced the fresh-lookup selection path in producer `1407af650` through converter setup, descriptor construction and insertion-wrapper forwarding. Original bytes were checked for 163 producer instructions plus the wrapper call window. A separate native bridge executes only the original straight-line selection block: all 256 record-mode bytes paired with inherited selection 0/1 passed 512 cases.
+
+When the looked-up stored record is basic, both derived choices equal `(recordMode == AutoKeyframe) OR inheritedSelection`: one choice requests extended converter output, while the other requests the basic-to-extended transition handler. For an already-extended stored record, the inspected branch chooses extended output with override 0; the dispatcher selects the extended updater from the stored header flag. Assembly ties the converter choice to the first stack argument and the descriptor's derived bit 4, then traces the saved override byte through the insertion call to the dispatcher.
+
+This is a partial caller-contract result, not proof that mixed-input basic paths are unreachable. Descriptor flags also inherit a separate base byte whose possible bit 4 still needs tracing; the duplicate-key path also needs review. Only the small selection block ran in this batch, not the full producer, insertion wrapper, converter or dispatcher. No function name or completion credit was added; checked names remains 665.
