@@ -5324,3 +5324,16 @@ Read the format-0 branch and its shared retention/header/index tail in `14107724
 In ordinary descriptor-flag-0/auxiliary-mode-0 merging, the branch treats each 48-byte record as stored bytes: it preserves value bytes 8–44, tag byte 44, and padding 4–7/45–47 while rebasing time. Unknown-tag preservation does not establish that the tag is valid or that its payload has been semantically decoded. Complete headers/data, returned index, retained records, source nodes, arguments, context and guards match the independent interval model.
 
 The batch calls the original handler directly without converter or dispatcher. Controlled host memory/thread callbacks and the double-precision parent-seek pow adapter remain explicit boundaries. Mixed basic/extended flags and their AutoKeyframe-specific value handling remain unresolved, alongside other modes, exhaustive rounding, deeper trees, malformed inputs, races and full producer/playback behavior. The basic updater is still unfinished and unnamed; checked names remains 664.
+
+
+### Basic animation interval updater reviewed and named
+
+Saved the descriptive name `MergeBasicAnimationRecordInterval` after reading its complete 6,588-instruction body. Its working signature takes the old header, incoming descriptor, wire/output frames, page roots and auxiliary state, returning a signed 32-bit index. Independent reopening and fresh decompilation verify persistence; original instruction bytes and all 9,602 other names/signatures remain unchanged.
+
+The function selects 19 formats through the original table: four scalar/vector delegate groups and six inline branches. Recorded suites total 36,582 scoped native executions, including overlapping fixture families. Ordinary flag-0/mode-0 checks cover interval retention, time rebasing, full record preservation and one-parent source traversal. Unsupported-format checks cover all 237 unsupported bytes. This is a descriptive-role review with explicitly bounded execution evidence.
+
+The new transform suites contribute 3,840 original converter-plus-handler cases, including 14/15/28/29 old keys at offsets 0/36/504. Basic keys remain 36 bytes. Retained transforms stay in stored coordinates; incoming transforms match `inverse(H) * D * K * O * inverse(W)` across eight fresh frame profiles. Maximum error was about 0.00001465 under tolerance 0.0005, allowing equivalent quaternion signs. Time, headers, retained bytes, source nodes and guards are checked exactly. These transform batches call the original handler directly after conversion, without dispatcher execution. Unit quaternions and positive uniform scales 0.5/1/2 bound this math evidence.
+
+Mixed basic/extended input flags and AutoKeyframe-specific normalization/value rewriting remain statically identified but not dynamically established. Typed-value checks establish opaque copying, not semantic decoding. Other modes, exhaustive rounding, deeper trees, malformed inputs, nonfinite/singular transforms, concurrency and full producer/playback behavior remain unresolved; controlled host boundaries remain documented.
+
+Totals: 665 checked names, 2,077 mapped functions among 9,603 discovered, with 7,526 unmapped. All three interval updaters now have descriptive names; this does not establish complete recording, playback or whole-game reverse engineering.

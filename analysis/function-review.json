@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "611 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "612 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8784,
-    "other_names": 819,
-    "verification": "complete_inventory_matches_baseline_plus_611_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8783,
+    "other_names": 820,
+    "verification": "complete_inventory_matches_baseline_plus_612_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15329,6 +15329,33 @@
         "Transform suite connects converter directly to original handler;dispatcher not executed in those transform batches.",
         "Other modes,exhaustive rounding,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback remain unresolved.",
         "Controlled hostmemory/pow adapters andmutex/thread callbacks; transform infinity check executes original local libc."
+      ]
+    },
+    {
+      "address": "141077240",
+      "original_name": "FUN_141077240",
+      "applied_name": "MergeBasicAnimationRecordInterval",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeBasicAnimationRecordInterval(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, AnimationTransformFrameWorking32 * wire_frame, AnimationTransformFrameWorking32 * output_frame, AnimationRecordPageRootsWorking8 * page_roots, MachineRecordingPrefixWorkingD7 * auxiliary_state)",
+      "evidence": [
+        "Complete6588-instruction basic Animation updater read across19 formats,four scalar/vector delegates,six inline branches andheader/index/default paths.",
+        "Original30-entry table checked;237 unsupported format bytes return invalid index without changing fixture arguments/resources.",
+        "Recorded suites total36582 scoped native executions,including overlapping fixtures;not unique inputs or gameplay runs.",
+        "Ordinary flag0/mode0 checks cover record preservation,time rebasing,interval retention andone-parent source traversal.",
+        "New3840 converter-plus-transform-handler cases match inverse(H)*D*K*O*inverse(W),maximum error1.464939091633255e-5 below5e-4 tolerance.",
+        "Six-argument working signature andsignedEAX return saved;independent reopen/fresh decompile verifies bytes andall9602 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworking ABI;not recovered source declarations.",
+        "Full-body static review is broader than native fixture coverage. Mixed basic/extended flags andAutoKeyframe-specific normalization/value rewriting are statically identified butnot dynamically established.",
+        "New parent suites call direct original handler;transform connects converter,butnot dispatcher.",
+        "Typed-value tags0..30/255 tested foropaque copying;this doesnot decode orvalidate their semantic payloads.",
+        "Finite ordered times,valid buffers,one parent level;transformunitquaternions andpositive uniform scales0.5/1/2 only.",
+        "Other modes,exhaustive rounding,deeper trees,nonfinite/singular transforms,invalid inputs,races andfull producer/playback unresolved;controlled hostmemory/pow/thread boundaries documented."
       ]
     }
   ],

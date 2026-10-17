@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 664,
+    "checked_and_applied_names": 665,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 664,
+    "verified_names": 665,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "611 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "612 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3865,7 +3865,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -14607,5 +14607,146 @@
     "opaque_copy_scope": "Ordinary flag0/mode0 record preservation; not typed-value semantic validation or mixed basic/extended paths.",
     "whole_handler_reviewed": false,
     "new_name_credit": 0
+  },
+  "animation_basic_handler_review_checkpoint": {
+    "address": "141077240",
+    "name": "MergeBasicAnimationRecordInterval",
+    "native_instructions": 6588,
+    "recorded_native_executions": 36582,
+    "batches": [
+      {
+        "file": "animation-basic-18-format-merge-native-check.json",
+        "native_cases": 5400
+      },
+      {
+        "file": "animation-basic-dispatch-native-check.json",
+        "native_cases": 1422
+      },
+      {
+        "file": "animation-basic-dword-parent-pages-native-check.json",
+        "native_cases": 720
+      },
+      {
+        "file": "animation-basic-qword-parent-pages-native-check.json",
+        "native_cases": 720
+      },
+      {
+        "file": "animation-basic-byte-parent-pages-native-check.json",
+        "native_cases": 720
+      },
+      {
+        "file": "animation-basic-boolean-parent-pages-native-check.json",
+        "native_cases": 720
+      },
+      {
+        "file": "animation-basic-typed-value-parent-pages-native-check.json",
+        "native_cases": 23040
+      },
+      {
+        "file": "animation-basic-transform-native-check.json",
+        "native_cases": 960
+      },
+      {
+        "file": "animation-basic-transform-parent-pages-native-check.json",
+        "native_cases": 2880
+      }
+    ],
+    "transform": {
+      "entry": "141077240",
+      "format": 4,
+      "native_cases": 960,
+      "converter_calls": 960,
+      "frame_profiles": 8,
+      "mode_profiles": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "maximum_absolute_error": 1.464939091633255e-05,
+      "tolerance": 0.0005,
+      "composition": "inverse(H) * D * K * O * inverse(W)",
+      "findings": [
+        "Actual converter and original inline basic transform branch execute together; no handler/math probes.",
+        "Old/incoming36-byte basic records merge without addingmetadata; incoming transforms follow fixed frame-composition formula across fresh unit-quaternion/positive-scale fixtures.",
+        "Exact time/header/retained oldkey bytes,merged lengths,source nodes,input/context/auxiliary immutability and guards checked.",
+        "Ordinary flag0/mode0 incoming position/scale/quaternion checked within tolerance and quaternion sign equivalence; mixed-input AutoKeyframe paths remain unverified."
+      ],
+      "limits": [
+        "Direct original handler plus converter; dispatcher not executed in this batch.",
+        "One-leaf source,unitquaternions,positive uniform scales0.5/1/2,finiteorderedtimes andvalidbuffers.",
+        "Other modes/flags,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback unresolved.",
+        "Hostmemory adapters;mutex/threadcallbacks controlled; __isinff executes byte-verified original libc."
+      ],
+      "project_modified": false
+    },
+    "findings": [
+      "Complete6588-instruction basic Animation updater read across19 formats,four scalar/vector delegates,six inline branches andheader/index/default paths.",
+      "Original30-entry table checked;237 unsupported format bytes return invalid index without changing fixture arguments/resources.",
+      "Recorded suites total36582 scoped native executions,including overlapping fixtures;not unique inputs or gameplay runs.",
+      "Ordinary flag0/mode0 checks cover record preservation,time rebasing,interval retention andone-parent source traversal.",
+      "New3840 converter-plus-transform-handler cases match inverse(H)*D*K*O*inverse(W),maximum error1.464939091633255e-5 below5e-4 tolerance.",
+      "Six-argument working signature andsignedEAX return saved;independent reopen/fresh decompile verifies bytes andall9602 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive role andworking ABI;not recovered source declarations.",
+      "Full-body static review is broader than native fixture coverage. Mixed basic/extended flags andAutoKeyframe-specific normalization/value rewriting are statically identified butnot dynamically established.",
+      "New parent suites call direct original handler;transform connects converter,butnot dispatcher.",
+      "Typed-value tags0..30/255 tested foropaque copying;this doesnot decode orvalidate their semantic payloads.",
+      "Finite ordered times,valid buffers,one parent level;transformunitquaternions andpositive uniform scales0.5/1/2 only.",
+      "Other modes,exhaustive rounding,deeper trees,nonfinite/singular transforms,invalid inputs,races andfull producer/playback unresolved;controlled hostmemory/pow/thread boundaries documented."
+    ],
+    "new_name_credit": 1,
+    "dispatch": {
+      "entry": "141077240",
+      "table_address": "0x1416d5000",
+      "table_sha256": "4c772e3c167851aabc78c1a1b19f32d90555bff1504570b6a08aac22f211698f",
+      "format_targets": {
+        "0": "0x141077301",
+        "1": "0x141077446",
+        "2": "0x141077295",
+        "3": "0x1410772ab",
+        "4": "0x141077556",
+        "5": "0x141077295",
+        "6": "0x1410772d7",
+        "7": "0x1410772ab",
+        "8": "0x1410772c1",
+        "9": "0x14107ea47",
+        "10": "0x14107ea47",
+        "11": "0x1410776be",
+        "12": "0x14107ea47",
+        "13": "0x14107ea47",
+        "14": "0x14107ea47",
+        "15": "0x1410772d7",
+        "16": "0x1410772d7",
+        "17": "0x1410772ab",
+        "18": "0x14107ea47",
+        "19": "0x14107ea47",
+        "20": "0x1410772c1",
+        "21": "0x1410772c1",
+        "22": "0x14107ea47",
+        "23": "0x1410777d7",
+        "24": "0x141077295",
+        "25": "0x141077295",
+        "26": "0x14107ea47",
+        "27": "0x14107ea47",
+        "28": "0x14107ea47",
+        "29": "0x1410778d6"
+      },
+      "native_cases": 1422,
+      "unsupported_type_count": 237,
+      "findings": [
+        "Original30-entry relative table selects19 supported formats:four scalar/vector delegate groups andsix inline formats.",
+        "All237 unsupported byte values return zero-extended0xffffffff across six packed sizes without changing arguments,guards orresource nodes."
+      ],
+      "limits": [
+        "Only unsupported paths executed in this new batch; supported routes have separate prior evidence.",
+        "Whole6588-instruction basic handler remains unfinished andunnamed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    }
   }
 }
