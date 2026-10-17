@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/4df40593cdd9fdc195144105036f50ef80c39e08/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/573e9449143b072c6c43dee3af691f5cf8c3c5c8/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**608 of 9,589 functions named and checked.** A function is one piece of the game's code.
+**610 of 9,591 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/4df40593cdd9fdc195144105036f50ef80c39e08/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/573e9449143b072c6c43dee3af691f5cf8c3c5c8/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -71,10 +71,10 @@ Every square is one actual function and has the same size. All function squares 
 | Animation & puppets | 57 | 11/11 | 2/46 |
 | Rendering & lighting | 368 | 99/342 | 0/26 |
 | Editor & interface | 390 | 75/181 | 3/207 |
-| Dreamiverse & networking | 107 | 3/31 | 0/76 |
+| Dreamiverse & networking | 109 | 3/31 | 0/78 |
 | Shared engine & object data | 316 | 194/230 | 15/81 |
 
-**2,024 of 9,589 discovered functions are mapped; 7,565 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,026 of 9,591 discovered functions are mapped; 7,565 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1093,7 +1093,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Bubbles Brushing** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Dreamiverse & networking** - 107 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+- **Dreamiverse & networking** - 109 functions identified; 7 behavior/helper reviews; 0 property/type reviews
   - **Network state** - 29 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Net Thing** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1154,12 +1154,12 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Uibubbles** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Player sessions** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Player sessions** - 25 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Player** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Player Idx** - 4 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Lobby Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Room Player Idx** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
