@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "552 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "553 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8843,
-    "other_names": 745,
-    "verification": "complete_inventory_matches_baseline_plus_552_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8842,
+    "other_names": 746,
+    "verification": "complete_inventory_matches_baseline_plus_553_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13467,6 +13467,29 @@
         "Property getter, allocation/free and traversal dispatcher controlled in full-routine fixtures.",
         "Emitter-relative transform branches, other value conversions and alternate source-cache resolution remain unverified.",
         "No complete object traversal, concurrency or live-game physics validation."
+      ]
+    },
+    {
+      "address": "1408e8ad0",
+      "original_name": "FUN_1408e8ad0",
+      "applied_name": "ComputeEmitterPivotTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ComputeEmitterPivotTransform(PositionScaleQuaternionTransform32 * output, void * emitter)",
+      "evidence": [
+        "Complete 312-instruction body read and matched to original executable bytes.",
+        "256 native absent-override cases verify transform composition plus pivot with finite unit rotations and zero/half/unit/double scales.",
+        "256 native Position-tag override cases execute the original 32-instruction tagged-value converter and original locally verified libc __isinff.",
+        "Two caller windows byte verified; one stores the complete 32-byte result and the other consumes its position/scale and quaternion in emitter-relative motion preparation.",
+        "Existing conservative 32-byte transform working type reused; signature and name independently reopened after compressed backup."
+      ],
+      "caveats": [
+        "Descriptive analyst name and working output type, not recovered source declarations.",
+        "Property getter controlled; original converter and finite normalization paths execute.",
+        "Other property tags, nonunit and exceptional rotations, and complete caller behavior remain unverified.",
+        "No live-game or full emitter subsystem completion claim."
       ]
     }
   ],

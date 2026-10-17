@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 544,
+    "done": 545,
     "todo": 1462,
-    "total": 2006,
-    "behavior_or_helpers_reviewed": 477,
+    "total": 2007,
+    "behavior_or_helpers_reviewed": 478,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 96,
+        "done": 97,
         "todo": 407,
-        "total": 503,
-        "behavior_or_helpers_reviewed": 49,
+        "total": 504,
+        "behavior_or_helpers_reviewed": 50,
         "properties_or_types_reviewed": 47,
-        "runtime_functions_identified": 47,
+        "runtime_functions_identified": 48,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -61,6 +61,7 @@
           "PrepareHealthModifierZoneQueriesAndImpactTargets",
           "AccumulateHealthModifierDelta",
           "UpdateVariableGadgetValues",
+          "ComputeEmitterPivotTransform",
           "UpdateSignalInspectorChangeCounters",
           "UpdateGateActivationRequests",
           "EvaluateSignalGeneratorPhase",
@@ -568,6 +569,7 @@
           "1408e2910",
           "1408e31c0",
           "1408e4bb0",
+          "1408e8ad0",
           "1408ecaa0",
           "1408ed310",
           "1408ed470",
@@ -8896,12 +8898,12 @@
           {
             "name": "gadgets-logic/gameplay",
             "label": "Gameplay & scoring",
-            "done": 10,
+            "done": 11,
             "todo": 57,
-            "total": 67,
-            "behavior_or_helpers_reviewed": 5,
+            "total": 68,
+            "behavior_or_helpers_reviewed": 6,
             "properties_or_types_reviewed": 5,
-            "runtime_functions_identified": 5,
+            "runtime_functions_identified": 6,
             "property_type_functions_identified": 62,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -8910,6 +8912,7 @@
               "PrepareHealthModifierZoneQueriesAndImpactTargets",
               "AccumulateHealthModifierDelta",
               "UpdateVariableGadgetValues",
+              "ComputeEmitterPivotTransform",
               "InitializeVariableGadgetDefaults",
               "PrepareAndDispatchEmitterMotion",
               "RegisterForceRepulseGadgetTypeDescriptor",
@@ -8981,6 +8984,7 @@
               "1408e2910",
               "1408e31c0",
               "1408e4bb0",
+              "1408e8ad0",
               "140944f20",
               "1409575c0",
               "140d56fc0",
@@ -9049,6 +9053,92 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/gameplay/emitter",
+                "label": "Emitter",
+                "done": 2,
+                "todo": 3,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ComputeEmitterPivotTransform",
+                  "PrepareAndDispatchEmitterMotion"
+                ],
+                "todo_names": [
+                  "0x1404c62c0",
+                  "0x140d566d0",
+                  "0x140d752a0"
+                ],
+                "done_addresses": [
+                  "1408e8ad0",
+                  "1409575c0"
+                ],
+                "todo_addresses": [
+                  "1404c62c0",
+                  "140d566d0",
+                  "140d752a0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/gameplay/emitter/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1404c62c0",
+                      "0x140d566d0",
+                      "0x140d752a0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1404c62c0",
+                      "140d566d0",
+                      "140d752a0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/gameplay/emitter/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ComputeEmitterPivotTransform",
+                      "PrepareAndDispatchEmitterMotion"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408e8ad0",
+                      "1409575c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/gameplay/healthmodifier",
                 "label": "Health Modifier",
@@ -9212,88 +9302,6 @@
                     "done_addresses": [
                       "1408e4bb0",
                       "140944f20"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/gameplay/emitter",
-                "label": "Emitter",
-                "done": 1,
-                "todo": 3,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "PrepareAndDispatchEmitterMotion"
-                ],
-                "todo_names": [
-                  "0x1404c62c0",
-                  "0x140d566d0",
-                  "0x140d752a0"
-                ],
-                "done_addresses": [
-                  "1409575c0"
-                ],
-                "todo_addresses": [
-                  "1404c62c0",
-                  "140d566d0",
-                  "140d752a0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/gameplay/emitter/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1404c62c0",
-                      "0x140d566d0",
-                      "0x140d752a0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1404c62c0",
-                      "140d566d0",
-                      "140d752a0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/gameplay/emitter/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "PrepareAndDispatchEmitterMotion"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1409575c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -44177,5 +44185,5 @@
       }
     ]
   },
-  "unmapped": 7582
+  "unmapped": 7581
 }

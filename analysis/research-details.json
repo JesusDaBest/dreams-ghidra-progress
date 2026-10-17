@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 590,
+    "checked_and_applied_names": 591,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 590,
+    "verified_names": 591,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "552 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "553 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9557,6 +9557,31 @@
       "Property getter, allocation/free and traversal dispatcher controlled in full-routine fixtures.",
       "Emitter-relative transform branches, other value conversions and alternate source-cache resolution remain unverified.",
       "No complete object traversal, concurrency or live-game physics validation."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true
+  },
+  "emitter_pivot_transform_checkpoint": {
+    "name": "ComputeEmitterPivotTransform",
+    "absent_override_native_cases": 256,
+    "position_override_native_cases": 256,
+    "native_instructions_read_and_verified": 312,
+    "output_working_type": "PositionScaleQuaternionTransform32",
+    "findings": [
+      "Without property override, output composes transforms at emitter+0x40 and +0xf0, then applies translated pivot at +0x130.",
+      "Output rotation is normalized product of input rotations; scale is product of input scales.",
+      "Position equals parent position + parent scale * rotated local position + combined scale * rotated pivot.",
+      "Position-tag property override replaces base translation and rotation, retaining multiplicative base scale.",
+      "Tiny override scale uses a signed comparison clamp: nonzero negative values stay negative; zero takes positive epsilon. The clamped scale is multiplied by both base scales.",
+      "Output position is override position plus effective scale times pivot rotated by override quaternion."
+    ],
+    "override_scale_epsilon": 9.999999747378752e-05,
+    "max_abs_error": 4.0086919881332506e-06,
+    "limits": [
+      "Descriptive analyst name and working output type, not recovered source declarations.",
+      "Property getter controlled; original converter and finite normalization paths execute.",
+      "Other property tags, nonunit and exceptional rotations, and complete caller behavior remain unverified.",
+      "No live-game or full emitter subsystem completion claim."
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true
