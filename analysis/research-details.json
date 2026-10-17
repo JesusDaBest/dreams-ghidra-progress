@@ -9671,7 +9671,8 @@
       "No full subsystem completion claim."
     ],
     "new_name_credit": 1,
-    "name_independently_reopened": true
+    "name_independently_reopened": true,
+    "later_working_prototype_applied": true
   },
   "hierarchy_selection_followup_checkpoint": {
     "native_cases": 512,
@@ -9738,5 +9739,39 @@
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true
+  },
+  "object_graph_transform_working_abi_checkpoint": {
+    "retained_name": "TransformObjectGraphAndRuntimeBodies",
+    "working_signature": "void PS4_SYSV TransformObjectGraphAndRuntimeBodies(void * context, uint root_reference, uint motion_mode, uint traversal_filter, void * object_callback_wrapper, void * body_callback_wrapper, Float4RegisterValue16 position_scale, Float4RegisterValue16 rotation_xyzw)",
+    "register_inputs": [
+      "RDI:context pointer",
+      "ESI:packed root reference",
+      "EDX:motion mode",
+      "ECX:traversal filter",
+      "R8:object callback wrapper",
+      "R9:body callback wrapper",
+      "XMM0:position/scale float4",
+      "XMM1:rotation XYZW float4"
+    ],
+    "working_vector_type": {
+      "name": "Float4RegisterValue16",
+      "size": 16,
+      "float_lane_offsets": [
+        0,
+        4,
+        8,
+        12
+      ]
+    },
+    "additional_puppetheart_integration_cases": 80,
+    "decompilation_completed_after_reopening": true,
+    "original_declaration_recovered": false,
+    "limits": [
+      "Custom-register working declaration, not recovered original C++ signature.",
+      "Opaque context and callback wrappers; native mode/filter enum names unresolved.",
+      "Controlled TLS/scratch allocation and valid supplied graphs; finite unit rotations and positive scales.",
+      "Object callback behavior, producer invariants, deeper hierarchies, exceptional values, concurrency and live game unresolved."
+    ],
+    "name_credit_added": 0
   }
 }

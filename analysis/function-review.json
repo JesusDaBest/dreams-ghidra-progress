@@ -13563,19 +13563,52 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "prototype_refinement_status": "deferred",
+      "prototype_refinement_status": "working_custom_registers_verified_after_reopening",
       "evidence": [
         "Complete 658-instruction body read and matched to original executable bytes.",
         "320 connected native cases cover original graph iterator, parent-relative transform helper, runtime-body velocity callback and kind19 copy paths.",
         "Primary and parent-relative transforms match independent composition; shared runtime bodies update once.",
         "Separate object/body callback channels traced; original velocity callback runs after motion mode handling.",
-        "Compressed backup and independent reopening verify the saved descriptive name with unchanged prototype."
+        "Initial naming checkpoint: Compressed backup and independent reopening verify the saved descriptive name with unchanged prototype.",
+        "Later working signature independently reopened and decompiled with all eight named register parameters."
       ],
       "caveats": [
+        "Custom-register working declaration, not recovered original C++ signature.",
+        "Opaque context and callback wrappers; native mode/filter enum names unresolved.",
+        "Controlled TLS/scratch allocation and valid supplied graphs; finite unit rotations and positive scales.",
+        "Object callback behavior, producer invariants, deeper hierarchies, exceptional values, concurrency and live game unresolved."
+      ],
+      "saved_working_signature": "void PS4_SYSV TransformObjectGraphAndRuntimeBodies(void * context, uint root_reference, uint motion_mode, uint traversal_filter, void * object_callback_wrapper, void * body_callback_wrapper, Float4RegisterValue16 position_scale, Float4RegisterValue16 rotation_xyzw)",
+      "initial_naming_caveats": [
         "Analyst descriptive name only; original declaration and full working ABI remain deferred.",
         "TLS and scratch allocation/free controlled; valid supplied graphs, finite unit rotations and positive scales.",
         "Object callback and kind11 helper behavior, deeper hierarchies, actual graph-producer invariants, exceptional values, concurrency and live game unresolved.",
         "No full subsystem completion claim."
+      ],
+      "signature_refinements": [
+        {
+          "working_vector_type": "Float4RegisterValue16",
+          "size": 16,
+          "lane_offsets": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "register_inputs": [
+            "RDI:context pointer",
+            "ESI:packed root reference",
+            "EDX:motion mode",
+            "ECX:traversal filter",
+            "R8:object callback wrapper",
+            "R9:body callback wrapper",
+            "XMM0:position/scale float4",
+            "XMM1:rotation XYZW float4"
+          ],
+          "persistence": "independently_reopened",
+          "decompiler_completed_with_eight_named_parameters": true,
+          "original_declaration_recovered": false
+        }
       ]
     },
     {
@@ -13598,7 +13631,11 @@
         "Analyst descriptive name and conservative working signature, not recovered source declarations.",
         "Flag name describes observed optional-region preservation; individual state-field meanings unresolved.",
         "Valid writable storage assumed; full lifecycle, concurrency and live game unverified."
-      ]
+      ],
+      "connected_dispatcher_validation": {
+        "native_cases": 80,
+        "scope": "Original iterator, transform dispatcher, hierarchy helper and PuppetHeart reset execute together. Controlled TLS/scratch and graph metadata; finite transforms only."
+      }
     }
   ],
   "deferred": [
