@@ -3865,7 +3865,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure \u2014 Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure — Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -14117,6 +14117,51 @@
     "new_name_credit": 0,
     "remaining_inline_branches": [
       0,
+      4
+    ],
+    "full_handler_reviewed": false
+  },
+  "animation_typed_value_inline_extended_checkpoint": {
+    "handler": "14107ea70",
+    "format": 0,
+    "typed_value_types": [
+      1,
+      9,
+      30
+    ],
+    "native_cases": 17640,
+    "batches": [
+      {
+        "native_cases": 14400,
+        "findings": [
+          "Original converter/dispatcher/inline already-extended typed-value branch with actual comparator execute together.",
+          "56-byte old/incoming/output records preserve all typed value bytes and padding4..7/45..47/52..55;incoming padding seeded after conversion.",
+          "Exact complete headers/data,rebasedtimes,metadata,index,source/world/nodes/input/context/auxiliary immutability andguards match independent model."
+        ],
+        "limits": [
+          "One-leaf sources;0/1/3/5/9 oldkeys; typed-value tags1/9/30,four oldmetadata patterns.",
+          "Finite ordered times andvalidbuffers;eight specified mode/control profiles.",
+          "Hostmemory adapters;mutex/threadcallbacks controlled.",
+          "Deeper trees,exhaustive rounding,othermodes/flags,invalidinputs,races,fullhandler/producer/playback unresolved."
+        ]
+      },
+      {
+        "native_cases": 3240,
+        "findings": [
+          "Original converter/dispatcher/inline already-extended typed-value branch with actual comparator execute together.",
+          "56-byte old/incoming/output records preserve all typed value bytes and padding4..7/45..47/52..55;incoming padding seeded after conversion.",
+          "Exact complete headers/data,rebasedtimes,metadata,index,source/world/nodes/input/context/auxiliary immutability andguards match independent model."
+        ],
+        "limits": [
+          "One parent level;9/10/18/19 oldkeys at offsets0/56/504; typed-value tags1/9/30;interleaved metadata patterns.",
+          "Finite ordered times andvalidbuffers;three specified mode/control profiles.",
+          "Hostmemory anddoublepow adapters;mutex/threadcallbacks controlled.",
+          "Deeper trees,exhaustive rounding,othermodes/flags,invalidinputs,races,fullhandler/producer/playback unresolved."
+        ]
+      }
+    ],
+    "new_name_credit": 0,
+    "remaining_inline_branches": [
       4
     ],
     "full_handler_reviewed": false

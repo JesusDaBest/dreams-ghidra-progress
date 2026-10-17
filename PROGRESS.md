@@ -4775,3 +4775,14 @@ Read the format-29 branch through source setup, prefix/incoming/suffix handling,
 Qword fixtures include zero, signed 64-bit boundaries, all ones, high-bit patterns and representations that would be NaN-like or infinity-like if interpreted as doubles; values remain raw bits. Old padding is explicit and incoming padding is seeded after conversion with distinct per-record values. Complete merged records, headers, logical offsets, rebased times, metadata and returned indices match independent models. AutoKeyframe field adjustments match the reviewed already-extended Boolean/byte/dword/scalar/vector paths. Original stored data, source nodes, world state, input/context/auxiliary buffers and guards remain unchanged.
 
 Original resource operations execute with host memory adapters, host double-precision pow for parent traversal, and controlled mutex/thread callbacks. Deeper trees, exhaustive rounding, other modes/flags, invalid inputs, concurrency and full producer/playback remain unresolved. Typed-value and transform inline branches still require complete review. The whole handler remains unnamed and unreviewed; totals stay at 663 checked names, 2,077 mapped functions and 7,526 unmapped functions among 9,603 discovered functions. No Ghidra project data changes in this batch.
+
+
+### Already-extended typed animation values
+
+Read the format-0 merge branch and its shared tail in `14107ea70`. Original converter, typed-value comparator, dispatcher, and inline updater passed 17,640 cases against an independent interval/metadata model: 14,400 one-leaf cases and 3,240 cases with one parent level.
+
+The branch merges 56-byte records. Checks compare every output byte, including typed values, rebased times, metadata, and padding at bytes 4–7, 45–47, and 52–55. Retained records preserve those padding bytes; incoming padding was seeded after conversion. Complete headers, old data, source nodes, descriptor guards, and world/context preservation were also checked.
+
+Coverage is limited to typed-value tags 1, 9, and 30, finite ordered times, valid buffers, and the documented mode/control profiles. Parent fixtures use 9/10/18/19 old keys and offsets 0/56/504. Memory, threading, and the parent-seek `pow` import use controlled host adapters. This does not establish deeper-tree, malformed-input, race, exhaustive rounding, producer, or playback behavior.
+
+No new function name or completion credit: 663 checked names remains unchanged. The containing handler is still unfinished; its inline transform branch remains to be reviewed.
