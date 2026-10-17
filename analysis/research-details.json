@@ -15417,5 +15417,25 @@
       "Mutex/thread controlled andhostmemorycopy adapters explicit.",
       "No proof ofsampler skip,physicalheaderdeletion,wirecompaction,persistence orgameplay."
     ]
+  },
+  "animation_boolean_sampler_checkpoint": {
+    "basic_address": "1411de1b0",
+    "extended_address": "1411e6eb0",
+    "native_cases": 168,
+    "new_name_credit": 0,
+    "project_modified": false,
+    "findings": [
+      "Both original full-entry samplers match an independent three-key boolean step model with AnimStrength set to 1.",
+      "Six key patterns, seven query times, and both header bit-31 states; toggling bit 31 leaves output unchanged in these fixtures.",
+      "Boolean value, alpha, type, padding, output guards and source/header/resource-leaf immutability checked."
+    ],
+    "limits": [
+      "Boolean paths only, one data leaf and one header leaf where required, zero extended key metadata and null optional arguments.",
+      "Other strengths, types, cross-leaf traversal, wrapper behavior, gameplay and whole-function semantics remain unverified."
+    ],
+    "fixture_corrections": [
+      "Extended fixture initially lacked a valid header root and looped through an invalid cyclic test structure; isolated test process stopped, valid interned header/data roots supplied, final 84 cases passed.",
+      "Original typed-record comparison helper and read-only lookup data supplied in the final extended run."
+    ]
   }
 }

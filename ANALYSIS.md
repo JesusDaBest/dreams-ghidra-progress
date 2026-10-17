@@ -5518,3 +5518,12 @@ Fixtures cover empty and 1/7/9-header trees, first/last/no duplicate matches, re
 Separate 31,248 original count-fragment cases show that nine sampler count calculations exclude the high four header bits; they do not execute full sampling and receive no new-name credit. The larger basic/extended samplers remain only partially reviewed.
 
 Totals: 674 checked names, 2,086 mapped functions and 7,517 unmapped functions among 9,603 discovered. Counts describe identified code, not whole-game completion.
+
+
+### Boolean Animation sampling with retired-header flags
+
+168 native cases enter the original basic and extended samplers: 84 per implementation. With `AnimStrength = 1`, both match an independent three-key boolean step model across six value patterns and seven query times, including queries before and after the key range. Toggling header bit 31 leaves the sampled output unchanged in these fixtures. This distinguishes sampling behavior from the duplicate-search helper, which excludes bit-31-marked headers.
+
+The checks compare boolean value, alpha, type and padding, preserve output guards, and verify source, header and resource-leaf immutability. Extended fixtures supply valid interned header/data roots and the original typed-record comparison helper. An earlier invalid fixture omitted the header root and looped; that isolated run was stopped and corrected before the final passing run.
+
+These results cover three-key boolean paths with one data leaf, one header leaf where required, zero extended metadata and null optional arguments. Other strengths, record formats, cross-leaf paths, wrapper behavior and gameplay remain unverified. Neither large sampler receives whole-function review or naming credit. Checked-name and mapping totals are unchanged.
