@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1992,
-  "unmapped_total": 7596,
+  "mapped_total": 1993,
+  "unmapped_total": 7595,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49927,6 +49927,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "AllocateCacheResourceSlotWithRetirement",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14073b640": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Metadata lookup traced through independent registration hash and snapshot-generation filtering.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Finds matching older metadata by descending discriminator under the shared mutex.",
+      "code_sha256": "2540430f2d413049577a2de9b12b683063f6b05fab239953c9aa761f9c12ef6a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindOlderBuildMetadataByDescendingDiscriminator",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

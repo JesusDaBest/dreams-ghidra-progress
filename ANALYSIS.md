@@ -3963,3 +3963,13 @@ Saved AllocateCacheResourceSlotWithRetirement after reading and byte matching al
 Drain, logging and condition wait were controlled in scratch. Actual resource destruction, real concurrency and complete caller constraints remain unverified. Valid bitmap, list and hash invariants are preconditions. An initial test-stub execute-permission error was corrected before the pressure cases passed; it was not a game defect.
 
 Totals: 569 reviewed names; 1,992 mapped and 7,596 unmapped among 9,588 discovered functions.
+
+### Older metadata lookup by descending discriminator
+
+Saved FindOlderBuildMetadataByDescendingDiscriminator after reading and byte matching all 128 original instructions. Under the shared mutex it hashes the indexed object pointer with key variant zero and searches discriminator values from the supplied maximum down through zero. It returns the first matching metadata ID whose unsigned generation is below the snapshot threshold, or low-word FFFF. Two bounded callers supply a zero-extended discriminator byte and compare the returned AX to FFFF, supporting the saved ushort working result type.
+
+1,280 isolated native cases matched the independent registration hash and descending selection model across missing variants, generation thresholds and consistent collision tables. Metadata and hash bytes remained unchanged. Backed-up trial and independent trial/main reopening verified the saved name, signature and unchanged original bytes and archives.
+
+The discriminator remains a descriptive field name; its higher-level Dreams meaning is not established. Tests use four discriminator values, four pointers and controlled synchronization. Malformed state, complete caller constraints and actual concurrent gameplay remain unverified.
+
+Totals: 570 reviewed names; 1,993 mapped and 7,595 unmapped among 9,588 discovered functions.
