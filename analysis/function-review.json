@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "537 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "539 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8858,
-    "other_names": 730,
-    "verification": "complete_inventory_matches_baseline_plus_537_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8856,
+    "other_names": 732,
+    "verification": "complete_inventory_matches_baseline_plus_539_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13117,6 +13117,44 @@
         "Analyst descriptive packed resource tree writer growth role, not original name.",
         "Valid writer depth, node IDs, table capacity and lifetimes remain preconditions.",
         "Synchronization controlled and platform memory imports adapted; new-root allocation failure and depth-limit contracts unresolved."
+      ]
+    },
+    {
+      "address": "140d673a0",
+      "original_name": "FUN_140d673a0",
+      "applied_name": "RegisterHeadGadgetProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "evidence": [
+        "Complete original registrar bodies112/266 instructions read and byte matched.",
+        "Original descriptor labels HeadGadget/HandGadget link to corresponding property registrar through descriptor initialization and tail branch.",
+        "Literal named properties and offsets establish registrar role; Hand additionally registers widget enum metadata.",
+        "Backed-up trial and independent trial/main reopening verified only expected names changed, with original bytes and archives unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive registrar names, not original function names.",
+        "Existing signatures retained; nested helpers, allocation failure paths and full runtime behavior not established."
+      ]
+    },
+    {
+      "address": "140d666b0",
+      "original_name": "FUN_140d666b0",
+      "applied_name": "RegisterHandGadgetProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "evidence": [
+        "Complete original registrar bodies112/266 instructions read and byte matched.",
+        "Original descriptor labels HeadGadget/HandGadget link to corresponding property registrar through descriptor initialization and tail branch.",
+        "Literal named properties and offsets establish registrar role; Hand additionally registers widget enum metadata.",
+        "Backed-up trial and independent trial/main reopening verified only expected names changed, with original bytes and archives unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive registrar names, not original function names.",
+        "Existing signatures retained; nested helpers, allocation failure paths and full runtime behavior not established."
       ]
     }
   ],

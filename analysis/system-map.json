@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1998,
-  "unmapped_total": 7590,
+  "mapped_total": 1999,
+  "unmapped_total": 7589,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50054,6 +50054,27 @@
           "kind": "verified_semantic_review",
           "name": "GrowPackedResourceTreeWriter",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140d673a0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "motion",
+        "headgadget",
+        "properties-types"
+      ],
+      "component_basis": "Original HeadGadget descriptor literal and tail branch to registrar.",
+      "code_role": "properties-types",
+      "code_role_basis": "Named property field registration.",
+      "code_sha256": "53f89c9feb52b48a4de23cf156db16239efda9ec54489536f3a2dfea900ac50a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterHeadGadgetProperties",
+          "support": "Complete original registrar read; descriptor/property linkage verified; independent saved-project reopening."
         }
       ]
     }
