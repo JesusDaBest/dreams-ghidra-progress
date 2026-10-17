@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/07d3080d5d65e1492d37567c18b5c40b17d2d5fe/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c586c9ff9c8615104ab6fb58c8b6a89b16e8c327/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**589 of 9,588 functions named and checked.** A function is one piece of the game's code.
+**590 of 9,588 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/07d3080d5d65e1492d37567c18b5c40b17d2d5fe/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c586c9ff9c8615104ab6fb58c8b6a89b16e8c327/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,21 +65,21 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 133 | 25/94 | 0/39 |
-| Gadgets & logic | 502 | 48/46 | 47/456 |
-| Physics & collision | 70 | 16/38 | 0/32 |
+| Gadgets & logic | 503 | 45/47 | 47/456 |
+| Physics & collision | 70 | 15/38 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 56 | 10/10 | 2/46 |
-| Rendering & lighting | 368 | 100/342 | 0/26 |
-| Editor & interface | 390 | 76/181 | 3/207 |
-| Dreamiverse & networking | 107 | 5/31 | 0/76 |
-| Shared engine & object data | 307 | 186/221 | 15/81 |
+| Rendering & lighting | 368 | 99/342 | 0/26 |
+| Editor & interface | 390 | 75/181 | 3/207 |
+| Dreamiverse & networking | 107 | 3/31 | 0/76 |
+| Shared engine & object data | 307 | 185/221 | 15/81 |
 
-**2,005 of 9,588 discovered functions are mapped; 7,583 still need a system assignment.** Section area counts mapped functions. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,006 of 9,588 discovered functions are mapped; 7,582 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 502 functions identified; 48 behavior/helper reviews; 47 property/type reviews
+- **Gadgets & logic** - 503 functions identified; 49 behavior/helper reviews; 47 property/type reviews
   - **Logic & signals** - 124 functions identified; 40 behavior/helper reviews; 20 property/type reviews
     - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
@@ -343,13 +343,16 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Tumbler** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Gameplay & scoring** - 66 functions identified; 4 behavior/helper reviews; 5 property/type reviews
+  - **Gameplay & scoring** - 67 functions identified; 5 behavior/helper reviews; 5 property/type reviews
     - **Health Modifier** - 5 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Variable Gadget** - 5 functions identified; 2 behavior/helper reviews; 3 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Emitter** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Variable Operation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Variable Update Mode** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -363,8 +366,6 @@ Every square is one actual function and has the same size. All function squares 
     - **Health Mod Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Health Mod Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Emitter** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Force Repulse Gadget** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
