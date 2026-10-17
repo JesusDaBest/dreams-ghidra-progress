@@ -3621,3 +3621,11 @@ Saved GetOrRegisterBuildMetadataEntry after reviewing and byte matching all 522 
 At hash count equal to its mask, synthetic fixtures register metadata without inserting its hash entry. Actual runtime reachability remains unresolved; this is not a confirmed game defect. Optional insertion callback, deferred-request removal, complete caller constraints and real concurrency remain unverified.
 
 Totals: 566 reviewed names; 1,989 mapped and 7,599 unmapped among 9,588 discovered functions.
+
+### Connected registration lifecycle and source leads
+
+Fourteen existing-entry cases verified removal of the first matching object index from the deferred list, including exact compaction and untouched tail bytes. Twenty-four insertion-callback cases verified one call with the selected slot and size 16 before the final fingerprint and ID are installed. Original SELF symbols and relocations resolve the relevant imports to memmove, memcpy and scePthreadCondBroadcast; identity resolution does not establish real platform synchronization.
+
+Eight scenarios connected original registration, release preparation and marked cleanup with two metadata entries and all selection masks. Complete metadata bytes, surviving queue links, freed self-links, hash mappings/counts and allocated/active/request bitmaps matched. Sequence wrap persisted without cleanup incrementing the registration sequence. Cached payload release was tested separately; this combined fixture uses empty resource hashes and controlled synchronization.
+
+Media Molecule's [SIGGRAPH 2015 presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), pages 21 and 110, supplies stage terminology and GPU block-sizing leads. Sweep/bricker terminology supports the independently traced pipeline structure. Its 64-thread GPU blocks do not establish the meaning of this executable's 64-unit CPU allocations. Earlier research material is not an exact source or build match. No new names or completion credit were added.
