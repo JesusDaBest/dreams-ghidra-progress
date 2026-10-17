@@ -4071,3 +4071,10 @@ Saved ComputeIndexedRepeatTransform with a conservative custom-register working 
 These are sampled finite positive-scale transforms. Host adapters supplied several math imports; exact PS4 library behavior, extreme integer selectors, exceptional or singular transforms, original field meanings and live-game behavior remain unresolved. No whole-subsystem completion is claimed.
 
 Totals: 596 checked names; 2,012 mapped and 7,577 unmapped among 9,589 discovered functions.
+
+
+### Existing object-transform getter ABI correction
+
+Retained the existing GetThingTransform name and corrected its saved two-input fastcall declaration to a conservative four-pointer PS4_SYSV working signature: output transform, world, object and optional context. The original record wrapper supplies those inputs in RDI/RSI/RDX/RCX. 64 connected original wrapper/getter/composer cases match independent ordinary object/local-record transform composition with source and output guards preserved.
+
+A verified compressed backup, unchanged original archive hashes, independent project reopening and fresh local decompilation confirm the correction. Special records, packed rotations, invalid inputs, exact source types and complete getter semantics remain unresolved. No naming or semantic-completion credit was added; checked-name total stays 596.

@@ -9890,5 +9890,24 @@
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true
+  },
+  "thing_transform_getter_abi_checkpoint": {
+    "address": "1408fcd70",
+    "existing_name_retained": "GetThingTransform",
+    "saved_working_signature": "void PS4_SYSV GetThingTransform(void * output_transform, void * world, void * thing, void * optional_context)",
+    "native_cases": 64,
+    "getter_instructions_byte_verified": 254,
+    "findings": [
+      "Original record wrapper supplies output/world/object/optional-context in RDI/RSI/RDX/RCX.",
+      "Connected original getter/composer path matches independent ordinary object/local-record transform composition.",
+      "Saved four-pointer PS4_SYSV working signature independently reopened and decompiled; previous fastcall two-input declaration corrected."
+    ],
+    "limits": [
+      "Object metadata path and ordinary record composition tested; special records/packed rotations and complete getter semantics remain unresolved.",
+      "Opaque pointer types and void working result, not recovered source declaration."
+    ],
+    "new_name_credit": 0,
+    "semantic_completion_credit": 0,
+    "original_and_imported_archives_unchanged": true
   }
 }
