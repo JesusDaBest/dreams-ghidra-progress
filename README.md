@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1106714c593d776ce412d52a14725066d734daff/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/bc476da3d342a5c10475fb83179ba3499205759a/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**655 of 9,603 functions named and checked.** A function is one piece of the game's code.
+**656 of 9,603 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1106714c593d776ce412d52a14725066d734daff/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/bc476da3d342a5c10475fb83179ba3499205759a/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -68,7 +68,7 @@ Every square is one actual function and has the same size. All function squares 
 | Gadgets & logic | 512 | 54/56 | 47/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
-| Animation & puppets | 84 | 32/38 | 2/46 |
+| Animation & puppets | 84 | 33/38 | 2/46 |
 | Rendering & lighting | 370 | 101/344 | 0/26 |
 | Editor & interface | 390 | 75/181 | 3/207 |
 | Dreamiverse & networking | 109 | 3/31 | 0/78 |
@@ -1225,10 +1225,10 @@ Every square is one actual function and has the same size. All function squares 
   - **Player identity** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Level & recent records** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-- **Animation & puppets** - 84 functions identified; 32 behavior/helper reviews; 2 property/type reviews
-  - **Animation & keyframes** - 46 functions identified; 31 behavior/helper reviews; 2 property/type reviews
-    - **Animation** - 35 functions identified; 26 behavior/helper reviews; 2 property/type reviews
-      - **Runtime code** - 32 functions identified; 26 behavior/helper reviews; 0 property/type reviews
+- **Animation & puppets** - 84 functions identified; 33 behavior/helper reviews; 2 property/type reviews
+  - **Animation & keyframes** - 46 functions identified; 32 behavior/helper reviews; 2 property/type reviews
+    - **Animation** - 35 functions identified; 27 behavior/helper reviews; 2 property/type reviews
+      - **Runtime code** - 32 functions identified; 27 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
     - **Property recording** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
       - **Runtime code** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
