@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "575 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "577 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8820,
-    "other_names": 771,
-    "verification": "complete_inventory_matches_baseline_plus_575_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8818,
+    "other_names": 773,
+    "verification": "complete_inventory_matches_baseline_plus_577_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14132,6 +14132,46 @@
         "Analyst descriptive name and working ABI, not recovered original source declaration.",
         "Capacity limits, duplicate/nonfinite keys, malformed/cyclic references and complete downstream lifecycles remain unresolved.",
         "Original Key type and Name storage identified; no player-facing feature assignment or complete Name token encoding claimed."
+      ]
+    },
+    {
+      "address": "1407a7e80",
+      "original_name": "FUN_1407a7e80",
+      "applied_name": "GetObjectInnerRadiusOrDefault",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "float PS4_SYSV GetObjectInnerRadiusOrDefault(void * object)",
+      "evidence": [
+        "Complete original body of 28 instructions read and byte verified.",
+        "2560 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Null/invalid object pointers, nonfinite fields and complete targeting lifecycles remain unresolved.",
+        "Original initializer and serialization bind radius fields for Follower and LookAtRotator; other per-kind real offset initialization not fully traced."
+      ]
+    },
+    {
+      "address": "1407a7ee0",
+      "original_name": "FUN_1407a7ee0",
+      "applied_name": "GetObjectOuterRadiusOrDefault",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "float PS4_SYSV GetObjectOuterRadiusOrDefault(void * object)",
+      "evidence": [
+        "Complete original body of 28 instructions read and byte verified.",
+        "2560 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Null/invalid object pointers, nonfinite fields and complete targeting lifecycles remain unresolved.",
+        "Original initializer and serialization bind radius fields for Follower and LookAtRotator; other per-kind real offset initialization not fully traced."
       ]
     }
   ],

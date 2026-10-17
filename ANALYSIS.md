@@ -4399,3 +4399,14 @@ The collector clears Key working fields, filters activation/object flags, builds
 The query matches the original `Name` field at offset 0xf8 and returns the nearest eligible object. With positive maximum distance and spatial context it searches the projection records and applies minimum/maximum distance bounds. Missing context or nonpositive maximum selects a full-list fallback that ignores those bounds in the tested paths. Ancestry filter 0 accepts all; 2 excludes descendants; tested other nonzero modes include descendants. Packed-reference high-bit handling and valid acyclic parent chains were checked across both query paths.
 
 Name remains an opaque 64-bit token; its encoding is not recovered. Tests cover collection sizes 0–40 and finite inputs, not capacity exhaustion, duplicate/nonfinite ordering, cycles, malformed references or a complete gameplay lifecycle. Original code remains local. Totals: 616 checked names; 2,032 mapped and 7,559 unmapped among 9,591 discovered functions. These findings do not claim a completed Dreams feature.
+
+
+### Verified radius getters and targeting-property bindings
+
+Saved and independently reopened `GetObjectInnerRadiusOrDefault` and `GetObjectOuterRadiusOrDefault`, each a complete 28-instruction leaf with object input in RDI and float return in the low XMM0 lane. Fresh decompilations passed; 2,560 calls per getter cover all 128 low-bit kinds, high object flags, zero/negative/max-positive metadata offsets and distinct finite field values without object mutation.
+
+A positive signed16 metadata offset selects the configured float. Otherwise defaults are inner 10 / outer 300 generally, Follower and LookAtRotator 0 / 1000, EffectField 4 / 10, and SpawnplaceGadget 24 / 32. An incorrect initial EffectField outer-default assumption was caught by execution and corrected against its original constant; the complete test set then passed.
+
+Original initializer writes bind the adjacent radius metadata slots to Follower object offsets 0x108/0x10c and LookAtRotator 0x104/0x108, agreeing with the serialized `InnerRadius`/`OuterRadius` properties. The same initializer binds their `DetectName` fields. The traced LookAtRotator branch reads that metadata-selected token and passes it into `FindNearestKeyByName`, connecting the spatial lookup to gadget targeting. This establishes the traced fields and call path, not a complete Follower or LookAtRotator implementation.
+
+Other kinds' real offset initialization, null/invalid pointers, nonfinite field values and complete targeting lifecycles remain unresolved. Totals: 618 checked names; 2,034 mapped and 7,557 unmapped among 9,591 discovered functions. Raw code and private data remain local.
