@@ -4732,3 +4732,14 @@ Payload bytes append to category-2 resource pages. Descriptor bytes 8..79 form t
 649 separate read-only cases establish that logical extent is 504 bytes for every nonfinal leaf plus the final leaf's used bytes. It is not the sum of stored payload bytes. For example, an element-aligned page containing 480 bytes still contributes 504 once another page follows. This distinction explains the stored offsets when alignment leaves gaps.
 
 The three existing-record mutation handlers, other type rows, exhaustion/depth failures, malformed state, editing schedule, full wire insertion and playback remain unverified. Totals are 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
+
+
+### Existing Animation record update: scoped format-1 trace
+
+The existing-record handler at `141077240` remains unnamed. Its format-1 branch now has 300 direct original-code cases and 300 through the original Animation wire dispatcher and lookup, with no replacement handler probe. These cases execute the original resource allocation, growth, finalization, interning, release and hashing code. Memory imports use host ABI adapters; mutex/thread callbacks remain controlled.
+
+In this branch, each tested record contains a float32 time and an opaque 32-bit word. Both streams are rebased to the minimum of their origin times. Old keys at or below the first incoming time minus the original float32 1/60 constant are retained; old keys above the last incoming time plus that constant are retained. Incoming keys replace the intervening window. The result is appended after the previous payload, with a new 72-byte header; the old streams remain intact. Header bytes 36 through 67 are preserved from the old header. These are observed branch semantics, not recovered original source declarations.
+
+Fixtures cover 0, 1, 3, 5 and 63 old records, six origin combinations and ten finite ordered incoming patterns. Exact complete header/payload streams, immutable inputs/source nodes and guards were checked. The connected cases also check the returned new record index, existing-wire index, output transform and unchanged world/source object. The 63-record cases exercise output resource growth while reading a single original source leaf.
+
+Other format branches, flag-4/mode-5 behavior, exact tolerance-edge rounding, nonfinite times, multilevel source reads, malformed state, races, full insertion and playback remain unresolved. Identifying all 6,588 instructions is not a full semantic review. This checkpoint adds no name or completion credit: totals remain 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
