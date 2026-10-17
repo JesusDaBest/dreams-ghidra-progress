@@ -13218,5 +13218,62 @@
     "original_handler_instruction_count": 6254,
     "original_handler_native_sha256": "101194a3d1624d724eee9adabf7bd02b1060e7a7744223bbe80508490b45d7cf",
     "new_name_credit": 0
+  },
+  "animation_dword_inline_transition_checkpoint": {
+    "handler": "1410705f0",
+    "format": 23,
+    "native_cases": 7680,
+    "batches": [
+      {
+        "native_cases": 2400,
+        "findings": [
+          "Original converter, dispatcher and inline dword transition branch execute together.",
+          "Old8-byte time/dword keys expand to12-byte extended records; dword bits preserved exactly.",
+          "Exact complete headers/data, interval selection, rebasing and mode/control metadata match independent model.",
+          "World/source nodes/input/context/auxiliary buffers and guards remain unchanged."
+        ],
+        "limits": [
+          "One-leaf source; finite ordered times and valid buffers.",
+          "Other inline branches and full handler remain unreviewed.",
+          "Exhaustive rounding, deeper trees, invalid inputs, races, full producer/playback unresolved."
+        ]
+      },
+      {
+        "native_cases": 2880,
+        "findings": [
+          "Original inline dword transition branch executes with source63/64/126/127 records at offsets0/8/504.",
+          "One parent level and up tofour sourceleaves; complete headers/data,metadata,rebasing and headerindex match independent model.",
+          "Original nodes/world/input/context/auxiliary buffers and guards remain unchanged."
+        ],
+        "limits": [
+          "Finite ordered times, valid buffers and scoped fixture values.",
+          "Host double pow and memory imports adapted; mutex/thread callbacks controlled.",
+          "Deeper trees, exhaustive rounding, invalid inputs, races, full producer/playback unresolved."
+        ]
+      },
+      {
+        "native_cases": 2400,
+        "findings": [
+          "Original converter, dispatcher and inline dword transition branch execute together.",
+          "Old8-byte keys expand to12-byte records; zero, signed-boundary, all-ones, infinity-like and NaN-like dword payloads are preserved as raw bits.",
+          "Exact complete headers/data, interval selection, rebasing and mode/control metadata match independent model.",
+          "World/source nodes/input/context/auxiliary buffers and guards remain unchanged."
+        ],
+        "limits": [
+          "One-leaf source; finite ordered times and valid buffers.",
+          "Other inline branches and full handler remain unreviewed.",
+          "Exhaustive rounding, deeper trees, invalid inputs, races, full producer/playback unresolved."
+        ]
+      }
+    ],
+    "new_name_credit": 0,
+    "remaining_inline_branches": [
+      0,
+      1,
+      4,
+      11,
+      29
+    ],
+    "full_handler_reviewed": false
   }
 }
