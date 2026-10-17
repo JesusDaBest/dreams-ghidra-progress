@@ -13275,5 +13275,48 @@
       29
     ],
     "full_handler_reviewed": false
+  },
+  "animation_qword_inline_transition_checkpoint": {
+    "handler": "1410705f0",
+    "format": 29,
+    "native_cases": 8160,
+    "batches": [
+      {
+        "native_cases": 2400,
+        "findings": [
+          "Original converter, dispatcher and inline qword transition branch execute together.",
+          "Old16-byte keys expand to24-byte records; exact time/qword/metadata fields match independent model, including high64-bit payloads.",
+          "Incoming opaque padding at4..7 and20..23 preserved; retained-record padding deliberately not asserted.",
+          "Complete headers and original-data prefix match exactly; merged lengths, guards,world/source nodes/input/context/auxiliary immutability checked."
+        ],
+        "limits": [
+          "One-leaf source, finite ordered times and valid buffers.",
+          "Retained output padding4..7/20..23 is stack-carried opaque state; no zero/preservation guarantee.",
+          "Deeper source trees, exhaustive rounding, invalid inputs, races, full handler/producer/playback unresolved."
+        ]
+      },
+      {
+        "native_cases": 5760,
+        "findings": [
+          "Original converter, dispatcher and inline qword transition branch execute together.",
+          "Old16-byte keys expand to24-byte records; exact time/qword/metadata fields match independent model, including high64-bit payloads.",
+          "Incoming padding seeded after conversion with distinct per-record canaries at4..7/20..23; handler preserves these; retained-record padding not asserted.",
+          "Complete headers and original-data prefix match exactly; merged lengths, guards,world/source nodes/input/context/auxiliary immutability checked."
+        ],
+        "limits": [
+          "One parent level, finite ordered times and valid buffers; source31/32/62/63 keys at offsets0/16/504.",
+          "Retained output padding4..7/20..23 is stack-carried opaque state; no zero/preservation guarantee.",
+          "Deeper source trees, exhaustive rounding, invalid inputs, races, full handler/producer/playback unresolved."
+        ]
+      }
+    ],
+    "new_name_credit": 0,
+    "remaining_inline_branches": [
+      0,
+      1,
+      4,
+      11
+    ],
+    "full_handler_reviewed": false
   }
 }
