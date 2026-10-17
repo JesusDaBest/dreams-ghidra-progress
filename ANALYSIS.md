@@ -4052,3 +4052,11 @@ Saved EvaluateObjectBodyTransform with a conservative four-input working signatu
 These are controlled finite inputs with valid references, unit rotations and positive scales. Exact PS4 trigonometric results, exceptional inputs, every world-gate combination, full callers, concurrency and live-game integration remain unverified. The related object flag still has no proven gameplay name.
 
 Totals: 595 checked names; 2,011 mapped and 7,578 unmapped among 9,589 discovered functions. Naming and these scoped checks do not mean whole-game completion.
+
+### Transform selection and indexed transform powers
+
+224 connected selector cases establish supplied-transform, body fallback, cached-parent and recursively evaluated parent paths. In the tested parent paths the result is evaluated-parent times inverse stored-parent times supplied transform. A further 64 cases cover two auxiliary numeric kinds: cached transform is applied before the supplied transform when object flag 15 is clear, while a set flag bypasses that operation. These numeric kinds belong to the auxiliary record and are not automatically object-kind names.
+
+The related 458-instruction helper was read and matched to original bytes. 272 cases establish repeated-transform and identity-return paths. Another 170 cases establish inverse fractional translation, scale and pure rotation. 144 coupled cases satisfy the independent matrix relation output^selector = inverse(input)^(selector-step), using matrix multiplication and Gauss-Jordan inversion. This supports the fractional-transform role within sampled branches; the relation alone does not uniquely choose every matrix root.
+
+Tests use valid controlled records, finite transforms and positive scales. Host math adapters supply several imports, so exact PS4 math is unverified. Full selector branches, auxiliary field meanings, flag lifetime, exceptional inputs and real game execution remain unresolved. The selector fixtures were corrected to allocate the entire accessed context; the earlier 224 cases were rerun successfully and their receipts superseded. No new name or completion credit was added for these checkpoints.
