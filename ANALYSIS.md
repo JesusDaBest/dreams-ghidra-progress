@@ -4452,3 +4452,14 @@ Imp detection now has 88 stored-position cases, 400 eligibility cases and 360 gr
 The segment math import resolves to `logf`. Forty-two full-entry special-position cases execute its original local libc implementation and compare outputs to an independent logarithmic segment reference plus the subsequent category-dependent sample offset. An initial one-dimensional reference missed that offset and failed. A private diagnostic capture isolated it; the final cases were rerun without diagnostic instrumentation, with maximum output error below 0.00000009. The failed expectation and resolution remain in local evidence.
 
 Original processor/helpers execute with explicit handle lookup and allocation/free fixture boundaries. Whole fixture buffers and cleanup are checked within each stated scope. These tests do not establish other detection modes, general rotations/scales, malformed graphs, math error paths or live gameplay. Ghidra notes were independently reopened; the full processor remains partially reviewed and unnamed. Checked-name total remains 619.
+
+
+### EntireLevel Dream-mode checkpoint
+
+Original `DetectObjectId` registration and the Dream dispatch lead to a 40-byte record scan. The observed first 64-bit ID comparison selects a record ordinal, which filters Sculpt word `0x2c`; complete identifier and field representation remain unresolved. Thirty-two full-entry cases cover missing/matching records, empty/populated lists, shared parent roots and thresholds.
+
+Original fields `LabelUnlabelled`, `QueryLabelBitmask` and `LabelAnyOrAll` control filtering. In 324 connected Dream cases, Any accepts a label intersection or permitted unlabelled object; All checks query-bit inclusion and accepts all tested labels for an empty query. This is a mode-specific result.
+
+Another 486 connected ownership cases show that reaching a positive count threshold stops further root/channel accumulation. Forty-eight child-first cases verify that root dedup keeps the first accepted representative's ownership: a child can supply channels while its later parent is skipped despite different ownership. Zero count short-circuits at the first accepted root in the tested EntireLevel Dream path.
+
+Tests execute original processor/helpers and original local libc `isinff`/`memset`, with explicit handle lookup and allocation/free fixture boundaries. Object, world and context preservation and cleanup were checked. Saved Ghidra notes were independently reopened. Cached/bounded Dream detection, complete identifier semantics, broader root/filter combinations and live gameplay remain unresolved. The processor is still partially reviewed and unnamed; 619 checked names unchanged.
