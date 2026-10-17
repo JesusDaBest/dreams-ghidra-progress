@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "559 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "560 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8836,
-    "other_names": 753,
-    "verification": "complete_inventory_matches_baseline_plus_559_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8835,
+    "other_names": 754,
+    "verification": "complete_inventory_matches_baseline_plus_560_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13748,6 +13748,28 @@
         "Controlled host sin/cos adapter; exact PS4 trigonometry and tie ordering unverified.",
         "Finite unit inputs in modes0/4/8/9; nonunit, nonfinite/subnormal inputs and real game unresolved.",
         "No full larger snapping callee or subsystem completion claim."
+      ]
+    },
+    {
+      "address": "140a00020",
+      "original_name": "FUN_140a00020",
+      "applied_name": "SnapRelativeTransformWithHysteresis",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV SnapRelativeTransformWithHysteresis(uint orientation_mode, PositionScaleQuaternionTransform32 * grid_scale_source, PositionScaleQuaternionTransform32 * reference_frame, PositionScaleQuaternionTransform32 * desired_transform, PositionScaleQuaternionTransform32 * previous_transform, PositionScaleQuaternionTransform32 * output_transform, float grid_factor, uchar use_frame_scale)",
+      "evidence": [
+        "Complete690 original instructions read and byte verified.",
+        "372 corrected-adapter full native cases:96 baseline,64 relative frames,84 identity-prior hysteresis,64 transformed frames,64 general previous poses.",
+        "Independent transform inverse/composition, grid rounding and discrete orientation candidate calculations; source/output guards and both mutable buffers checked.",
+        "Verified compressed backup, independent reopening and fresh decompilation confirm eight inputs including typed32-byte transform pointers, low4-byte XMM0 scalar and stack+8 byte flag."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working types, not recovered source declaration.",
+        "Host math uses corrected Windows shadow-space adapters; exact PS4 implementations unverified.",
+        "Finite unit rotations and sampled positive scales; exact ties, exceptional inputs, malformed/aliased buffers and live game unresolved.",
+        "No whole-subsystem completion claim."
       ]
     }
   ],

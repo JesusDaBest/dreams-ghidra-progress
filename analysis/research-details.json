@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 598,
+    "checked_and_applied_names": 599,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 598,
+    "verified_names": 599,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "559 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "560 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9970,5 +9970,31 @@
       "Previous relative pose identity in generalized-frame cases; exact ties/general previous poses unresolved."
     ],
     "new_name_credit": 0
+  },
+  "relative_transform_hysteresis_checkpoint": {
+    "name": "SnapRelativeTransformWithHysteresis",
+    "native_cases": 372,
+    "instructions_read_and_byte_verified": 690,
+    "findings": [
+      "Quantizes desired transform relative to reference frame: power-of-two grid and scale, discrete quaternion orientation.",
+      "Grid source uses fixed factor4 or supplied source transform scale, selected by stack flag.",
+      "Optional prior transform supplies per-axis0.7-cell position retention and tested angular threshold0.9*360/mode degrees.",
+      "Both mutable buffers finish with same transform; desired scale supplies output scale."
+    ],
+    "evidence": [
+      "Complete690 original instructions read and byte verified.",
+      "372 corrected-adapter full native cases:96 baseline,64 relative frames,84 identity-prior hysteresis,64 transformed frames,64 general previous poses.",
+      "Independent transform inverse/composition, grid rounding and discrete orientation candidate calculations; source/output guards and both mutable buffers checked.",
+      "Verified compressed backup, independent reopening and fresh decompilation confirm eight inputs including typed32-byte transform pointers, low4-byte XMM0 scalar and stack+8 byte flag."
+    ],
+    "limits": [
+      "Analyst descriptive name and working types, not recovered source declaration.",
+      "Host math uses corrected Windows shadow-space adapters; exact PS4 implementations unverified.",
+      "Finite unit rotations and sampled positive scales; exact ties, exceptional inputs, malformed/aliased buffers and live game unresolved.",
+      "No whole-subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
   }
 }

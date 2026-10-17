@@ -3773,3 +3773,14 @@ Saved SnapQuaternionToOrientationSet after reading and byte matching all 279 ori
 Additional frame reconstruction evidence now binds original Animation, Microchip, Timeline, Sound and Scripter types to runtime record categories 6, 2, 3, 4 and 5. 200 connected cases verify category/ID matching and world fallback. Another 384 scoped cases examine nonzero extra-field coordinates, rotations, metadata dimensions, offsets and Timeline-specific scaling. These do not establish full frame-helper semantics or original field names. Timeline numerical checks use a documented vector-scale error bound; maximum observed relative vector error was approximately 0.000000505.
 
 Totals: 598 checked names; 2,014 mapped and 7,575 unmapped among 9,589 discovered functions. Only the quaternion helper adds new naming credit here.
+
+
+### Relative transform snapping with hysteresis
+
+Saved SnapRelativeTransformWithHysteresis after reading and byte matching all 690 original instructions. It converts the desired transform into the reference frame, rounds position to a power-of-two grid, rounds scalar scale to a signed power of two, and snaps rotation through the verified quaternion helper. A stack flag selects whether grid size uses the supplied source-frame scale or a fixed factor of four.
+
+With a prior relative transform, the tested position retention window is 0.7 grid cells per axis, and the angular window is 0.9 times 360 divided by orientation mode in physical degrees. The desired scale supplies output scale. Both mutable buffers finish with the final transform.
+
+372 original entry-to-return cases cover baseline, translated/rotated/scaled frames, both grid sources, and independent prior poses. Expected results use independent inverse/composition, grid and orientation-candidate calculations with source/output guards. Host math adapters include the corrected Windows shadow space. Backup, independent reopening and fresh decompilation confirm the working eight-input signature, including typed 32-byte transform pointers, SIMD scalar and stack flag. Exact PS4 math, threshold ties, exceptional inputs, aliasing and real-game integration remain unresolved.
+
+Totals: 599 checked names; 2,015 mapped and 7,574 unmapped among 9,589 discovered functions. This does not establish whole-game or whole-subsystem completion.
