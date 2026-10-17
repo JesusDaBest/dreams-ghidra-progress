@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "516 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "517 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8879,
-    "other_names": 709,
-    "verification": "complete_inventory_matches_baseline_plus_516_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8878,
+    "other_names": 710,
+    "verification": "complete_inventory_matches_baseline_plus_517_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -12658,6 +12658,28 @@
         "Region counters countwrapperattempts evenwithoutAPIcall.",
         "Cachedcontrols advanceafterfailedpacket andunchangedretrydoesnotrepair; actualallocator/recoverypolicy unresolved.",
         "ControlledplatformAPI/refill; noGPU/live-game claim orendorsed exceptional hardware settings."
+      ]
+    },
+    {
+      "address": "141297630",
+      "original_name": "FUN_141297630",
+      "applied_name": "InternAndBeginComputeProfilingRegion",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InternAndBeginComputeProfilingRegion(void * compute_context, char * region_label)",
+      "evidence": [
+        "Complete79 original instructions and70 downstreamcommandwriterinstructions read andbyte matched.",
+        "Originalstringimportrelocations resolved;42nativecalls across6label/storage/capacityscenarios matched state and7DWORD packets.",
+        "Backed-up trial andindependent trial/main reopening verified expected signature, unchanged bytes andarchives."
+      ],
+      "caveats": [
+        "Analyst descriptive profilingregionrole,not originalname.",
+        "64labels/2048bytes established; overallregionarraycapacity andconcurrency unresolved.",
+        "Failed commandemission stilladvancesregionstate.",
+        "HostlibcABIshims onlyinscratch; actualGPUeventmeaning/live-game behavior unverified."
       ]
     }
   ],

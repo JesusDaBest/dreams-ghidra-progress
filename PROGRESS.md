@@ -3507,3 +3507,11 @@ The control writer matched exact packet words, masks and capacity behavior in 50
 Thirty-two capacity/retry scenarios confirmed that cached controls can advance when their packet cannot be written; restoring capacity and retrying unchanged context does not restore that packet. Region counters count wrapper attempts even when no platform call occurs. Actual allocator recovery policy remains unresolved, so these findings do not establish a live-game defect. Exceptional arithmetic tests do not establish supported GPU settings.
 
 Totals: 554 reviewed names; 1,977 mapped and 7,611 unmapped among 9,588 discovered functions.
+
+### Compute profiling-region labels
+
+Saved InternAndBeginComputeProfilingRegion with a working signature using an opaque context and character-pointer label. All 79 original instructions were read and byte matched, plus 70 downstream command-writer instructions. Original imports were linked to strcmp, strlen and memcpy. Backed-up trial and independent trial/main reopening verified persistence, successful decompilation and unchanged original code and archives.
+
+Forty-two native calls across six scenarios checked NULL and duplicate labels, label interning, active-region changes, 64-label and 2,048-byte storage limits, region counters and exact seven-word commands. Scratch ABI shims called the host C runtime for string operations. Failed command emission still advances region state, so repeating the same label does not reemit that command. Overall region-array capacity, concurrency and exact GPU event semantics remain unresolved. Counters represent dispatch-wrapper attempts, not completed GPU work.
+
+Totals: 555 reviewed names; 1,978 mapped and 7,610 unmapped among 9,588 discovered functions.
