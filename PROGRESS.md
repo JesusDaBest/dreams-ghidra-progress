@@ -3867,3 +3867,12 @@ Tests cover valid reference index one, controlled metadata, finite unit rotation
 160 direction-mode scenarios verify a separate geometric path: it places the result a fixed distance from the group origin along the stored-position direction, and applies a shortest-arc rotation from the negative group-forward axis. Changing the object mode, state mode, state pointer or secondary-state gate individually suppresses that adjustment. Independent geometric equations, source buffers and output guards passed.
 
 These final sets supersede their preliminary sets. Nonzero displacement, non-antipodal directions, positive scales and controlled default gates were used. Zero-displacement and antipodal fallbacks, signed group scale, metadata distance, arbitrary recursion and live-game lifecycle remain unresolved. No checked-name credit is added.
+
+
+### Direction-mode degenerate inputs
+
+64 original-code edge scenarios further bound the direction mode. In 32 near-antipodal cases, the routine uses a fixed world-X half-turn before the stored rotation. This fallback must not be described as a general shortest-axis solution. Both group-scale signs were sampled.
+
+In 32 exact-zero-displacement calls, output XYZ became NaN while scale and rotation remained finite. Source buffers and output guards were preserved. This describes an isolated controlled path; it does not establish that live callers permit the input or that the game has a reachable defect.
+
+Threshold-adjacent behavior, exception modes, live caller constraints and complete lifecycle remain unresolved. No function name or completion credit is added.
