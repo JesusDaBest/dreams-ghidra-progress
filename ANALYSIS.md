@@ -3915,3 +3915,13 @@ Saved QueueUnselectedBuildMetadataForRelease after reviewing and byte matching a
 Observed startup initializes the optional callback to NULL through overlapping stores; later alias assignments remain unexcluded. Synthetic alias cases establish instruction behavior, not valid runtime layouts. Partial overlaps, mixed-home/full-table collisions, complete producer ownership and real concurrency remain unverified.
 
 Totals: 565 reviewed names; 1,988 mapped and 7,600 unmapped among 9,588 discovered functions.
+
+### Build metadata lookup and registration
+
+Saved GetOrRegisterBuildMetadataEntry after reviewing and byte matching all 522 original instructions. Three bounded callers support a 16-bit ID result and three unsigned argument registers. The third argument stays uint in the working signature because hashing uses its full value, although observed callers zero-extend a byte or pass zero. Backed-up trial and independent trial/main reopening verified the name, signature and unchanged original code and archives.
+
+217 native scenarios cover 128 lookup/exhausted-ID cases, 24 new registrations, eight append/relookup scenarios, nine resource revivals, 24 insertion-threshold cases and 24 collision insertions. Exact metadata bytes, sequence wrap, queue links, ID bitmaps, dirty flags and independently modeled hash displacement matched. Active cached resources gain references; pending resources revive and unlink before reuse.
+
+At hash count equal to its mask, synthetic fixtures register metadata without inserting its hash entry. Actual runtime reachability remains unresolved; this is not a confirmed game defect. Optional insertion callback, deferred-request removal, complete caller constraints and real concurrency remain unverified.
+
+Totals: 566 reviewed names; 1,989 mapped and 7,599 unmapped among 9,588 discovered functions.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1988,
-  "unmapped_total": 7600,
+  "mapped_total": 1989,
+  "unmapped_total": 7599,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49843,6 +49843,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "QueueUnselectedBuildMetadataForRelease",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14073a240": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Metadata registration traced through object keys,resource cache revival,sequence assignment and processing queue.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Looks up or allocates keyed metadata,retains/revives cached resources and appends sequence-tagged processing entries.",
+      "code_sha256": "531c74a0318d45f81253620939ce7cbef4fd1864525924919fb2b1289be28f15",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrRegisterBuildMetadataEntry",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
