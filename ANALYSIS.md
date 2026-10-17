@@ -4765,3 +4765,14 @@ The tests check the complete masked output against a separate model, exact repla
 A remaining representation gap is now explicit: flag 4 selects a 12-byte divisor for the incoming count, while the format-1 loop reads 8-byte pairs. These synthetic fixtures supply 8N pair bytes followed by 4N sentinel padding, and the observed branch consumes the pair region. This verifies branch behavior, not the real producer's extended input representation. The next-old comparison also uses the stored time against the incoming rebased time; the producer's origin invariants need tracing before interpreting that as a user-visible timing rule.
 
 Other record formats, special-mode behavior for the 48-byte branch, real recording input layout, deeper source trees, nonfinite inputs, malformed state, concurrency, full insertion and playback remain unresolved. No whole-function name or completion credit is added. Totals remain 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
+
+
+### Animation input zero-value filter and converter boundary
+
+Saved and independently reopened `ClearAllZeroAnimationInputForSelectedProperties`, after reviewing its complete 97-instruction body and original Animation producer callers. For selected property IDs, it clears the input buffer's byte count when all complete records have zero values; payload bytes, pointer and capacity remain unchanged. Other properties leave the buffer unchanged. Record times do not determine this filtering.
+
+5,968 original-code cases cover every property ID from 0 through 0x57f, selected/nonselected controls and high-bit aliases, record counts 0/1/2/5/17, length remainders, first/middle/last nonzero values, second float components, NaNs and negative zero. Selected byte-valued properties use 8-byte records; one-float properties use 8-byte records; two-float properties use 12-byte records. Negative zero compares equal to zero, while float NaNs preserve a nonempty length. Complete guarded buffer descriptors and immutable payloads were checked. Huge counts, invalid buffers, concurrency and the complete editor schedule remain unverified.
+
+The caller at `1407af650` groups input by endpoint/property, calls a converter and then this filter before wire insertion. The converter at `14109e4e0` has an unresolved computed jump: its current 37-instruction function body omits branch implementations. It remains unnamed and semantically incomplete. The earlier 12-byte count versus 8-byte read observation is still a producer-layout question; this helper does not resolve it. No completion credit is assigned to either larger function.
+
+Totals are 636 checked names and 2,048 mapped functions among 9,591 discovered functions.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2047,
-  "unmapped_total": 7544,
+  "mapped_total": 2048,
+  "unmapped_total": 7543,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51300,6 +51300,33 @@
             "Complete64KiB node range and allocation bitmap unchanged on each direct tree case.",
             "Original Animation append executes the extent helper before and after both168-case writer suites.",
             "Saved root-ID EDI4,uint EAX4 working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a3770": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Two original calls in Animation kind9 producer before Animation wire-record insertion.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original input-filter helper read and tested.",
+      "code_sha256": "2e94756fee05ee4dac9f82ed8dd77f204d3bbb09dee11c0fdadf374378e11ef1",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ClearAllZeroAnimationInputForSelectedProperties",
+          "support": [
+            "Complete97-instruction assembly and decompiled body read; original bytes verified.",
+            "Original Animation producer has two calls that ignore return register and consume possibly cleared buffer length.",
+            "5968 original-code cases cover all property IDs0..57f, selected/nonselected controls, high-bit aliases,0/1/2/5/17 records, length remainders, negative zero, NaNs, second float component and nonzero positions.",
+            "Complete guarded buffer descriptor and immutable payload checked.",
+            "Saved descriptive name and working void(pointer RDI8,property ESI4) ABI independently reopened and freshly decompiled."
           ]
         }
       ],

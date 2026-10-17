@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 635,
+    "checked_and_applied_names": 636,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 635,
+    "verified_names": 636,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "594 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "595 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11395,5 +11395,43 @@
       "Depth<=4 bounded fixtures; invalid ids, cycles, malformed branches, maximum extent/overflow and races unverified.",
       "This is logical page extent, not sum of payload bytes or a count of Animation records."
     ]
+  },
+  "animation_zero_input_filter_checkpoint": {
+    "native_cases": 5968,
+    "selected_properties": {
+      "byte": [
+        186,
+        187,
+        198,
+        199,
+        200,
+        201,
+        961,
+        962,
+        999
+      ],
+      "two_floats": [
+        184,
+        185,
+        202
+      ],
+      "one_float": [
+        188,
+        197
+      ]
+    },
+    "findings": [
+      "Selected properties: clear buffer uint64 byte length only when every tested value equals zero; other buffer bytes and payload unchanged.",
+      "Byte values use8-byte records and value byte+4; one-float uses8-byte records and float+4; two-float uses12-byte records and floats+4/+8.",
+      "Negative zero compares equal; NaN preserves length in float branches. Zero complete records clears length even with a remainder; nonselected property leaves length unchanged.",
+      "Property selection wraps to low16 bits, verified aliases. Return register has no stable semantic result and caller ignores it."
+    ],
+    "limits": [
+      "Descriptive role and working opaque signature, not original source declarations.",
+      "Valid bounded buffers only; huge length/count truncation, invalid pointers, concurrency and production editing schedule remain unverified.",
+      "Upstream converter has unresolved jump table; its37 captured instructions do not establish complete conversion or extended record layout."
+    ],
+    "producer_entry": "1407af650",
+    "producer_semantically_complete": false
   }
 }

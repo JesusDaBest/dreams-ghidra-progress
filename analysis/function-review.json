@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "594 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "595 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8801,
-    "other_names": 790,
-    "verification": "complete_inventory_matches_baseline_plus_594_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8800,
+    "other_names": 791,
+    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14558,6 +14558,28 @@
         "Analyst descriptive names and working opaque signatures, not original source declarations.",
         "Bounded valid trees and ample pool only; unsupported type rows, allocation/depth failures, invalid descriptors, races, editing schedule and playback remain unverified.",
         "Logical extent is not sum of payload bytes; malformed/cyclic trees, maximum-size arithmetic and races remain unverified."
+      ]
+    },
+    {
+      "address": "1410a3770",
+      "original_name": "FUN_1410a3770",
+      "applied_name": "ClearAllZeroAnimationInputForSelectedProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ClearAllZeroAnimationInputForSelectedProperties(void * input_buffer, uint property_id)",
+      "evidence": [
+        "Complete97-instruction assembly and decompiled body read; original bytes verified.",
+        "Original Animation producer has two calls that ignore return register and consume possibly cleared buffer length.",
+        "5968 original-code cases cover all property IDs0..57f, selected/nonselected controls, high-bit aliases,0/1/2/5/17 records, length remainders, negative zero, NaNs, second float component and nonzero positions.",
+        "Complete guarded buffer descriptor and immutable payload checked.",
+        "Saved descriptive name and working void(pointer RDI8,property ESI4) ABI independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Descriptive role and working opaque signature, not original source declarations.",
+        "Valid bounded buffers only; huge length/count truncation, invalid pointers, concurrency and production editing schedule remain unverified.",
+        "Upstream converter has unresolved jump table; its37 captured instructions do not establish complete conversion or extended record layout."
       ]
     }
   ],
