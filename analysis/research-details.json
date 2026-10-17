@@ -9515,5 +9515,28 @@
       "Verified enum names do not recover original function or structure declarations."
     ],
     "name_applied_and_independently_reopened": true
+  },
+  "emitter_tracking_velocity_checkpoint": {
+    "reader_instructions_verified": 27,
+    "emitter_callee_instructions_read_and_byte_verified": 466,
+    "callback_instructions_verified": 19,
+    "reader_native_cases": 28,
+    "velocity_callback_native_cases": 144,
+    "velocity_formula": "linear_at_position = linear_at_origin + angular cross (position - origin)",
+    "max_velocity_abs_error": 2.5043271030256165e-06,
+    "findings": [
+      "Remapper tracking bits select a later emitter-processing pass, with missing source mappings skipped.",
+      "Selected pass forwards the source object parent reference and destination object index.",
+      "The emitter routine builds a callback capturing an origin, linear vector and angular vector, then submits it to an object traversal dispatcher.",
+      "The callback stores linear-at-position and angular vectors in the runtime record; finite native cases agree with the rigid-body velocity formula."
+    ],
+    "limits": [
+      "Reader fixture captures the callee arguments and redirects the outer update exit; it does not run the full update.",
+      "Callback tests finite XYZ inputs with conventional homogeneous lanes; units and full physics behavior remain unverified.",
+      "Full emitter value conversion, transform branches, dispatch traversal and collision cases remain incomplete.",
+      "No new function names, boundaries, types or whole-function semantic credit added."
+    ],
+    "name_credit_added": 0,
+    "project_modified": false
   }
 }
