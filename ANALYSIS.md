@@ -4156,3 +4156,12 @@ This is scoped behavior evidence, with no new checked name. The linked object ki
 In 96 cases, a present metadata field and nonzero object value replace that position factor with object value divided by group factor, the original float constant 0.4, and group scale. A deliberately different state factor confirms which source is selected. Independent transform equations, distinct inputs and source/output guards passed.
 
 These paths were tested with controlled metadata, default group mode, identity auxiliary gates, finite unit rotations and positive scales. The metadata field's physical meaning and units, nondefault group rotation paths, other object types, zero/nonfinite denominators and live-game lifecycle remain unresolved. No checked-name credit is added.
+
+
+### Linked-transform group offset
+
+256 original-code scenarios verify the nondefault group path across four sampled state modes, two flag values and both signs of state scale. It shifts the state position along a rotated local Z direction, multiplied by the position factor and group scale. Negative state scale reverses that shift. State scale and rotation remain selected for the final local-transform composition.
+
+The direction uses the state rotation followed by a local X-axis rotation: +45 degrees for sampled modes 0 and 1, -22.5 degrees for mode 2 with its flag clear, and zero for mode 2 with the flag set or mode 3. Independent quaternion/transform equations and source/output guards passed. This 256-case set supersedes the preliminary 128 cases, which are not counted again.
+
+Controlled host sine/cosine uses the corrected calling-convention adapter; exact PS4 math is not claimed. Tests use absent metadata scaling and identity auxiliary gates. Other modes, combined metadata behavior, original field meanings and live-game lifecycle remain unresolved. No new checked-name credit is added.
