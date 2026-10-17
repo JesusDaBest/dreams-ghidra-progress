@@ -5655,3 +5655,14 @@ The tested destination starts empty. Nonempty destinations, deeper trees, malfor
 The newly inspected writers of `anim_2_upgraded` lead into larger serialization/world-building routines. Setting that flag alone does not prove these functions convert Animation keys. Their complete roles and the actual migration remain unresolved; no additional name credit is assigned to them.
 
 Totals: 679 checked names, 2,091 mapped functions and 7,512 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
+
+
+### AutoBlend action linked to recording input metadata
+
+Original action-table and dispatch evidence identifies action 818 as `KeyframeModeAutoBlend`. Its case toggles the selected Machine byte at `+0xd6` with XOR 1. The recording input producer selects the same Machine, reads that byte and builds `0x720 | byte | (byte << 3)`: Boolean settings 0/1 produce `0x720`/`0x729`. A separate conditional path writes `0x730` for a later marker, advancing time by the original approximately 1/30-second constant. The marker's full semantics remain unresolved.
+
+1,536 native fragment cases connect the original action dispatch, toggle case and metadata arithmetic across three Machine positions, all 256 initial byte patterns and two toggles. Only the selected byte changes in the world fixture, and the second toggle restores it. All byte patterns are arithmetic probes; only 0/1 are interpreted as Boolean settings. Prepared stack locals and private return continuations bound execution; the complete UI handler and recording commit were not run.
+
+Renamed the working Machine prefix field from `opaque_flags_d6` to descriptive `keyframe_auto_blend`. Independent reopening and fresh typed-consumer decompilation confirm it. The byte datatype, partial prefix size, other fields, function names and signatures remain unchanged. This is a field identification, not a new reviewed-function count.
+
+One input control now has a concrete action-to-input-metadata link. The broader Animation Canvas blend/strength controls, final stored-key conversion, complete producer behavior and gameplay remain unverified. Totals remain 679 checked names and 2,091 mapped functions.

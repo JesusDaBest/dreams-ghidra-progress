@@ -15795,5 +15795,27 @@
       "Shared resource primitive; naming it does not complete Animation migration, the third caller or any enclosing workflow. Descriptive analyst name, not recovered original source."
     ],
     "new_name_credit": 1
+  },
+  "keyframe_auto_blend_input_metadata_checkpoint": {
+    "action": "KeyframeModeAutoBlend",
+    "action_id": 818,
+    "working_type": "MachineRecordingPrefixWorkingD7",
+    "field_offset": "0xd6",
+    "old_field_label": "opaque_flags_d6",
+    "saved_field_label": "keyframe_auto_blend",
+    "native_fragment_cases": 1536,
+    "findings": [
+      "Original action-name table and action dispatch resolve action818 to the case that XOR-toggles selected Machine byte+d6. The action handler and recording producer select the same world/Machine through player slot, context index and43e0 stride.",
+      "The recording input producer reads that byte and emits0x720 | byte | (byte<<3). Boolean settings0/1 produce0x720/0x729. A later conditional path writes0x730 and advances time by the original float constant0.03333333507180214.",
+      "1536 native fragment cases execute the original dispatch table/case and metadata arithmetic for three Machine positions, all256 initial byte patterns and two toggles. Only the selected byte changes in the world fixture; a second toggle restores it.",
+      "The saved one-byte working field label is independently reopened and appears in a freshly decompiled typed consumer. Prefix size, byte datatype, other components, all function names and all signatures are preserved."
+    ],
+    "limits": [
+      "Prepared stack locals and private RET continuations bound native execution; no complete UI handler or recording commit was executed.",
+      "All256 byte patterns test arithmetic; only0/1 are interpreted as the Boolean setting.",
+      "This identifies AutoBlend input metadata, not the broader Animation Canvas blend/strength UI, final stored metadata conversion, full producer semantics or gameplay.",
+      "Original field declaration/name not recovered; the saved field label is descriptive. No function-name or whole-game completion credit."
+    ],
+    "new_name_credit": 0
   }
 }
