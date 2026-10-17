@@ -5221,3 +5221,16 @@ A separate 240-case suite executes the original inverse-queue writer. Wire snaps
 The history-context resolver returns a fixture and final event application remains a recording probe. Non-wire prehandlers, revision refresh, context lookup, history reclamation/overflow, the full recording producer, disk persistence and gameplay remain unresolved. The generic packed-event writer is still only partially validated; it receives no new name credit.
 
 Totals: 681 checked names, 2,093 mapped functions and 7,510 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
+
+
+### Original player history context lookup connected
+
+Saved `FindOrAssignPlayerPropertyHistoryContext` after reviewing complete pseudocode and all 194 owned original instructions, verifying bytes and matching the 862-byte unwind extent. Independent reopening verifies its descriptive name and working pointer-return SysV signature. Original bytes and all other function names/signatures remain unchanged.
+
+306 direct native cases verify existing-key reuse, first-empty assignment, recycling in all four slot positions and world/player/type-key guards. The selected player's Machine must match the configured type key. An existing key returns its context unchanged; assigning an empty ID changes only the ID. Recycling chooses a slot not held by active matching players and resets specific history metadata, counters, scan offsets and the disabled flag. It does not wipe payload bytes. The whole slot arena and world are checked against an independent model.
+
+The earlier 216-case history suite now executes this original lookup as well as the original wire replacement, history router and packed-event writer. First, second or both history streams receive the verified snapshots and counters; blocked lookup or disabled context suppresses stream writes while direct replacement remains active. This removes the substituted lookup return from that tested path.
+
+Globals, the Machine type key, an existing keyed slot and stream pointers are prepared fixtures; final event application remains a recording probe. Empty/recycled slots are tested directly but their complete initialization/lifecycle is not connected. Context exhaustion, invalid Machine indices, concurrency, actual type-key initialization, full recording, disk persistence and gameplay remain unresolved.
+
+Totals: 682 checked names, 2,094 mapped functions and 7,509 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.

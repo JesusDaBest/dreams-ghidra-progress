@@ -15938,5 +15938,70 @@
       "No full recording producer, disk persistence orgameplay claim. Opaque working pointer types anddescriptive analyst name, not recovered original declaration."
     ],
     "new_name_credit": 1
+  },
+  "player_property_history_context_checkpoint": {
+    "address": "14114f8a0",
+    "name": "FindOrAssignPlayerPropertyHistoryContext",
+    "signature": "void * PS4_SYSV FindOrAssignPlayerPropertyHistoryContext(void * world, byte playerIndex)",
+    "native_instructions": 194,
+    "native_check": {
+      "entry": "14114f8a0",
+      "native_cases": 306,
+      "outcomes": {
+        "existing": 23,
+        "empty_slot": 9,
+        "recycled": 20,
+        "blocked_or_invalid": 254
+      },
+      "recycled_slot_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "original_instructions_verified": 194,
+      "finding": "For a valid selected player and matching Machine type, returns an existing keyed history slot, else assigns the first empty ID slot without clearing its payload/state, else recycles the first slot not held by an active matching-type player. Recycling resets specific history metadata/counters andassigns the ID, leaving all other bytes intact. World guard, out-of-range player orforeign Machine type returnsnull.",
+      "limits": [
+        "Four fixed history contexts,0..4 valid players,synthetic matching type-key value, nonnegative player IDs andselected scalar state patterns.",
+        "No all-slots-in-use exhaustion case, invalid Machine indices, concurrency, actual type-key initialization orfull history lifecycle.",
+        "All world bytes andcomplete slot-arena bytes checked per fixture; recycling is metadata reset, not payload wiping."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0,
+      "connected_history_suite": {
+        "native_cases": 216,
+        "enabled_history_cases": 72,
+        "first_stream_written_cases": 48,
+        "second_stream_written_cases": 48,
+        "router_owned_instructions_verified": 324,
+        "original_components": [
+          "ReplaceAnimationWireRecordOrdinalAndNotify",
+          "RoutePropertyEventToEnabledHistoryStreams",
+          "14114f8a0 history context lookup",
+          "140b18fa0 packed-event writer"
+        ],
+        "finding": "Original replacement, original context lookup, original history routing and original writer connect: first, second orboth enabled history streams receive beforefdf3 andafterfdf5 exact22-byte snapshots, increment byte counts44 andset corresponding pool active flags. Missing ordisabled history suppresses history-stream writes while direct wire replacement andeligible owner inverse queue still occur.",
+        "limits": [
+          "Original history-context lookup executes against prepared four-slot globals and matching Machine type key; only low-level event application remains a recording probe.",
+          "Matching revision0, valid stable-ID source lookup anddestination references, one player, no reclamation/overflow orfull producer.",
+          "No disk persistence, special non-wire event prehandlers, event application effects orgameplay claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete pseudocode and194 owned original instructions reviewed, byte-verified andmatched to the862-byte original unwind extent.",
+      "306 direct original-code cases verify keyed reuse, first-empty assignment, recycling in allfour slot positions andworld/player/type-key guards. Complete arena andworld bytes are checked against an independent selection/reset model.",
+      "Matching andempty-ID assignment do not clear other context bytes. Recycling resets specific metadata, counters, scan offsets anddisabled flag while retaining payload bytes.",
+      "216 connected cases execute original Animation wire replacement, context lookup, history routing andpacked-event writing forfirst/second/both streams withenabled/missing/disabled contexts.",
+      "Independent reopening andfresh decompilation verify descriptive name andworking pointer-return two-argument SysV signature. Original bytes andother names/signatures unchanged."
+    ],
+    "limits": [
+      "Prepared four-slot globals, synthetic matching Machine type-key and0..4 players withnonnegative IDs. Full exhaustion, invalid Machine indices, concurrency andactual type-key initialization remain unverified.",
+      "Connected history fixtures use an existing keyed slot andprepared stream pointers; low-level event application isstill a recording probe.",
+      "No full history lifecycle, recording producer, disk persistence orgameplay claim. Opaque working context pointer anddescriptive analyst name, not recovered original declaration."
+    ],
+    "new_name_credit": 1
   }
 }
