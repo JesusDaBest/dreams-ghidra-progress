@@ -3986,3 +3986,12 @@ Saved ComputeHandAuxiliaryTargetTransform with an eight-input working signature,
 1028 direct original-code scenarios exclude superseded sets. Another 512 connected wrapper scenarios separately support the call boundary. The latest lookup cases verify ID/group matching and first-match order under both flags. Direction edge cases establish the fixed X-axis fallback and isolated zero-displacement NaN behavior; the latter is not proof of a reachable game defect. Backup, independent reopening and fresh decompilation confirm the name and signature.
 
 This is a descriptive role, not full semantic or feature completion. Context/state types remain opaque. Arbitrary recursion, threshold-adjacent cases, nonfinite or invalid/aliased inputs, original field meanings, exact PS4 math and full lifecycles remain unresolved. Totals: 607 checked names; 2,023 mapped and 7,566 unmapped among 9,589 discovered functions.
+
+
+### Connected HandGadget selector path
+
+64 original-code scenarios connect the transform selector, hand auxiliary lookup, state resolver, hand wrapper and larger constructor through final composition. The world-side lookup identifies state index 0 or 1; the constructor reads the corresponding alternate-context state. Distinct world and alternate payloads verify the handoff rather than merely observing identical cached values.
+
+The selector result matches hand target × inverse(stored hand transform) × supplied transform. Both selected indices, signed-zero and signed control values, and both local-scale signs pass independent equations. Source buffers and output guards remain unchanged.
+
+Tests use valid auxiliary record/group zero, a body-linked hand at index one and stored-state override. Optional switching, target blending, arbitrary state indices, invalid references and caller lifecycle remain outside this connected scope. No checked-name credit is added.
