@@ -4293,3 +4293,12 @@ This names the small wrapper; most branches of its larger callee remain unreview
 The nondefault group path offsets state position along a mode-rotated local Z direction, using the factor, group scale and state-scale sign. State scale and rotation remain selected for final local composition. Combined tests use a deliberately different state factor to verify metadata selection across the sampled modes, flags and scale signs. Independent equations, source buffers and output guards passed.
 
 These are bounded paths of the still-unnamed larger hand constructor. Auxiliary, linked-target and direction paths, nonfinite inputs, original field meanings and full lifecycle remain unresolved. Host sine/cosine uses the corrected adapter; exact PS4 trigonometry is not claimed. No checked-name credit is added.
+
+
+### Hand targets, flag-selected offsets and recursion
+
+200 scoped original-code scenarios verify direct target blending, linked-reference targets and connected recursion. The direct path requires its metadata boolean and matching state pointer, clamps the factor and applies smoothstep to position/scale and a normalized hemisphere quaternion blend. Disabled gates preserve the ordinary reference path.
+
+For the two tested linked-reference kinds, target composition uses a different auxiliary offset for each extra-flag state. Distinct offset slots prove that selection. The flag-set source is flipped before blending. Missing transform metadata substitutes identity. Connected tests execute the original selector/body evaluator and distinguish runtime body selection from stored-reference bypass.
+
+Tests cover both flags, valid reference one, unit rotations, sampled finite scales and one recursion level. Nonempty lookup, cycles, invalid references, other constructor paths and original field meanings remain unresolved. These behavior scenarios add no checked-name credit.
