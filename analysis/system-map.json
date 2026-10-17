@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2081,
-  "unmapped_total": 7522,
+  "mapped_total": 2083,
+  "unmapped_total": 7520,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52280,6 +52280,56 @@
             "300 full-entry native event-builder cases validate exact22-byte payload,fingerprints,sentinel conversion and dirty bits.",
             "68 connected retirement/resource/event cases retained as separate scoped validation.",
             "Independent reopening and fresh decompilation confirm name and five-argument working signature; all other names/signatures and original code bytes unchanged."
+          ]
+        }
+      ]
+    },
+    "140dc2fc0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original game-wire vector/record serializer; connected exact byte-stream checks and shared serializer state.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Transfers wire-vector count or per-wire fields through version-dependent serialization.",
+      "code_sha256": "f6b2ceefeb83955a45d24258a79ed266341dfa6be16e9fef006f89b350fae294",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeGameWireVector",
+          "support": [
+            "Complete original body and pseudocode reviewed; original instruction bytes verified.",
+            "36 connected native vector/record/property/transform read-write cases cover exact count+50bytes per wire,endpoint conversion,flagbytes,transform,guards and opaque trailing bytes.",
+            "Independent reopening and fresh decompilation confirm saved name and working two-pointer signature; all other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140de91c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original game-wire vector/record serializer; connected exact byte-stream checks and shared serializer state.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Transfers wire-vector count or per-wire fields through version-dependent serialization.",
+      "code_sha256": "bab339e01ac86db9171e16158752a1d72b11a93b7e3bc33248f7384a08356a4f",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeGameWireRecord",
+          "support": [
+            "Complete original body and pseudocode reviewed; original instruction bytes verified.",
+            "36 connected native vector/record/property/transform read-write cases cover exact count+50bytes per wire,endpoint conversion,flagbytes,transform,guards and opaque trailing bytes.",
+            "Independent reopening and fresh decompilation confirm saved name and working two-pointer signature; all other names/signatures unchanged."
           ]
         }
       ]

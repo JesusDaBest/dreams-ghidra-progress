@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 669,
+    "checked_and_applied_names": 671,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 669,
+    "verified_names": 671,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "616 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "618 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15217,5 +15217,49 @@
       "Notification capacity/exhaustion,real concurrency,full dispatcher,persistence andgameplay unverified."
     ],
     "new_name_credit": 0
+  },
+  "game_wire_serialization_checkpoint": {
+    "named": [
+      "SerializeGameWireVector",
+      "SerializeGameWireRecord"
+    ],
+    "connected_native_check": {
+      "native_cases": 36,
+      "entries": [
+        "140dc2fc0",
+        "140de91c0",
+        "140dde370",
+        "140dd1c40"
+      ],
+      "findings": [
+        "Original vector,record,property/flags andtransform serializers connected for formatversion0x500.",
+        "Exact count+50bytes per record match model:destination,source,property,index,twoflagbytes,32-byte transform.",
+        "Nonnegative packed endpoints serialize as sign-extended22-bit indices; negative32-bit endpoints remain unchanged. Write preserves original record;read restores encodedindices.",
+        "Complete vector,serializer,stream andguard bytes match expected;new slots initialized andopaque trailing bytes preserved."
+      ],
+      "limits": [
+        "Version0x500,counts0/1/3,unit quaternion,fast-buffer path; legacyversions,slow/error/marker paths andnonunit quaternion normalization notvalidated.",
+        "Source logging no-op; original local-libc infinity classifier body inserted directly at import thunk; no external runtime dependency.",
+        "No save-file disk persistence,completeworld roundtrip,concurrency or gameplay validation."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 2,
+    "removal_tombstone_native_check": {
+      "native_cases": 96,
+      "event": "0xfdf5",
+      "findings": [
+        "Mode0 original removal branch replaces wire endpoint pair at bytes32..39 with allones,sets worlddirty1/0/1 and optional contextdirty1.",
+        "Wire count,remaining record bytes and all other world/context bytes remain unchanged.",
+        "Modes1/2/255 skip these mutations."
+      ],
+      "limits": [
+        "Isolated original event branch with private continuation; no full dispatcher or later compaction.",
+        "Valid wire pointers and indexfixtures0/1/63; no concurrency or gameplay."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    }
   }
 }

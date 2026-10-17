@@ -4975,3 +4975,16 @@ Totals: 669 checked names and 2,081 mapped functions among 9,603 discovered; 7,5
 A separate 288-case suite exercises object/player dirty membership with valid object IDs. The lookup uses the world referenced by the context, which can differ from the event's world. Direct matches and generation/ID-mismatch chains find the expected object. Missing, out-of-range and sentinel IDs do not change membership. Tracking adds only the selected player's bit and preserves existing bits. Full context and both world buffers match the independent mutation model. This suite suppresses notifications using the previously checked mode/flag combination.
 
 The dispatcher remains a native probe in these full-entry tests. Finite valid pointers and acyclic chains do not establish malformed/cyclic input handling, notification capacity, concurrency, complete dispatch, disk persistence or gameplay. No new checked-name credit is added; totals remain 669 checked names and 2,081 mapped functions.
+
+
+### Game-wire serializers named and connected
+
+Saved `SerializeGameWireVector` and `SerializeGameWireRecord` after reviewing their complete 158- and 308-instruction original bodies. Both two-pointer working signatures and names survived independent reopening and fresh decompilation. Original bytes and other function names/signatures remain unchanged.
+
+36 connected original-code cases include the vector, wire record, property/flag and transform serializers. For tested format version `0x500`, the stream contains a 32-bit count and 50 bytes per wire: destination, source, property, record index, two flag bytes and 32-byte transform. Nonnegative endpoint references serialize as sign-extended 22-bit indices; negative 32-bit values remain unchanged. Write preserves source records. Read initializes newly exposed slots and preserves opaque trailing bytes. Full vector, serializer, stream and guards match independent expectations.
+
+Scope is counts 0/1/3, unit quaternions and the fast-buffer path. Logging is controlled and the verified original local-libc infinity-classifier body is supplied at the import boundary. Legacy formats, nonunit normalization, slow/error/marker paths, full-world roundtrips, disk persistence, concurrency and gameplay remain unverified.
+
+A separate 96-case original removal-branch check confirms endpoint invalidation and dirty flags without decreasing wire count. Later compaction remains unresolved; serializer/resize count writes are not credited as compaction evidence.
+
+Totals: 671 checked names, 2,083 mapped functions and 7,520 unmapped functions among 9,603 discovered. Extraction and inventory counts do not establish whole-game completion.
