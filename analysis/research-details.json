@@ -10553,5 +10553,51 @@
     "boundaries": "Handle lookup, allocation and free explicitly modeled.",
     "processor_review": "partial_unnamed",
     "checked_name_total_unchanged": 619
+  },
+  "triggerzone_entirelevel_labels_checkpoint": {
+    "tests": {
+      "triggerzone-labels-puppetheart-connected": {
+        "cases": 12,
+        "scope": "Full-entry EntireLevel Labels mode, first PuppetHeart list populated/second list empty; wildcard/matching/missing DetectName, active/inactive Power and passing/failing thresholds. ConsiderPlayers disabled, unlabelled allowed. Original helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Second object list, cached/bounded paths, field original names and broader label/player combinations unresolved."
+        ]
+      },
+      "triggerzone-labels-mixed-connected": {
+        "cases": 64,
+        "scope": "Full-entry uncached EntireLevel Labels mode across PuppetHeart and Group lists. Independent presence/name-match booleans and thresholds0/1/2/3; ConsiderPlayers off and unlabelled allowed. Original helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Longer lists and early-stop ordering, original Group field-name bindings, cached/bounded modes and broader player/label combinations unresolved."
+        ]
+      },
+      "triggerzone-labels-players-connected": {
+        "cases": 135,
+        "scope": "Full-entry EntireLevel Labels mode, both PuppetHeart and Group lists populated, original candidate ownership fields and TriggerZone ownership inherited from original Sculpt.PlayerOwnership24c. Five source masks/three masks per candidate type/three thresholds. Original helpers/isinff; allocation boundaries modeled.",
+        "limits": [
+          "Longer list ordering, label/player combinations, cached/bounded Labels modes and malformed inheritance unresolved."
+        ]
+      }
+    },
+    "original_candidate_types": [
+      "PuppetHeart",
+      "Group"
+    ],
+    "original_candidate_fields": [
+      "Name",
+      "LabelBitmask",
+      "OutputPlayerValue",
+      "PlayerOwnership"
+    ],
+    "findings": [
+      "Separate first/second object lists share counter and rollback snapshot buffer.",
+      "Both passes can run even after first pass meets count in tested short lists.",
+      "Inherited source ownership selects candidate output channels; candidate ownership contributes to gadget output union."
+    ],
+    "boundaries": "Original processor/reviewed helpers/isinff; handle lookup and allocation/free modeled.",
+    "limits": [
+      "Longer-list ordering, cached/bounded Labels detection and broader label/player combinations unresolved."
+    ],
+    "processor_review": "partial_unnamed",
+    "checked_name_total_unchanged": 619
   }
 }

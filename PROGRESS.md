@@ -4114,3 +4114,14 @@ Original fields `LabelUnlabelled`, `QueryLabelBitmask` and `LabelAnyOrAll` contr
 Another 486 connected ownership cases show that reaching a positive count threshold stops further root/channel accumulation. Forty-eight child-first cases verify that root dedup keeps the first accepted representative's ownership: a child can supply channels while its later parent is skipped despite different ownership. Zero count short-circuits at the first accepted root in the tested EntireLevel Dream path.
 
 Tests execute original processor/helpers and original local libc `isinff`/`memset`, with explicit handle lookup and allocation/free fixture boundaries. Object, world and context preservation and cleanup were checked. Saved Ghidra notes were independently reopened. Cached/bounded Dream detection, complete identifier semantics, broader root/filter combinations and live gameplay remain unresolved. The processor is still partially reviewed and unnamed; 619 checked names unchanged.
+
+
+### EntireLevel Labels-mode checkpoint
+
+Original Labels detection visits PuppetHeart and Group objects through separate world lists. Their original registrations identify `Name`, `LabelBitmask`, `OutputPlayerValue` and `PlayerOwnership` at type-specific offsets. Metadata initialization agrees with the output and ownership bindings. The mode name does not imply a separate label-gadget object type.
+
+Twelve full-entry first-list cases verify wildcard/exact/missing names, inactive power, output writes and threshold rollback. Sixty-four mixed-list cases verify the shared accepted count and restoration of distinct prior outputs in both types. In the tested short lists, the second pass still runs when the first pass alone meets the count threshold; longer-list ordering is not established.
+
+Another 135 connected ownership cases use the original candidate fields and TriggerZone ownership inherited from Sculpt parents. Source ownership selects provisional candidate output channels, while candidate ownership contributes to the gadget's accumulated output. Threshold failure restores both objects' complete prior values. Whole object/world/context and cleanup checks passed within these fixture scopes.
+
+Original processor/helpers and `isinff` execute, with explicit handle lookup and allocation/free fixture boundaries. Ghidra annotations were independently reopened. Cached/bounded Labels detection and broader label/player/filter combinations remain unresolved. The processor remains partially reviewed and unnamed; 619 checked names unchanged.
