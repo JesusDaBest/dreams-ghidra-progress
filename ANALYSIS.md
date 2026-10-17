@@ -5795,3 +5795,12 @@ Bit-0-clear wires count when either endpoint matches. With no valid selected Mac
 Malformed/null active-Machine object paths, record-table corruption, overflow and gameplay remain unverified. No visibility or keyframe-source meaning is assumed.
 
 Totals: 686 checked names, 2,098 mapped functions and 7,505 unmapped among 9,603 currently defined. Review counts are not whole-game completion.
+
+
+## Optional endpoint cleanup selection connected
+
+256 connected native cases now execute the original removal producer and `CountFilteredWireConnectionsForReference` together. With optional cleanup enabled, the producer separately checks each endpoint: its kind must have a positive offset entry for property `41`, and its filtered connection count must equal 1. Only then does it request a property update with 32 zero bytes. The suite observes 64 such calls across single, duplicated, source-only-extra and destination-only-extra wire configurations and context-dependent flag filtering.
+
+The positive table entry is a property offset in the per-kind property matrix. Byte-verified initializer stores directly establish property `41` offsets `a0` for kind 0, `180` for kind 1 and `110` for kind 17. This is a partial initializer reconstruction; it does not imply other kinds lack the property. The original size table gives this property a 38-byte packet: 6-byte property/object header plus 32-byte payload.
+
+The property updater is an explicit observation boundary. All 32 payload bytes, object selection and property ID are checked; its actual application and field name remain unresolved. Original producer/counter bodies (401 and 146 instructions) are byte-verified, and complete world/owner/object comparisons show only the expected removal and dirty flags when the update is observed. Synthetic support entries, valid object pointers and endpoint class bytes that avoid parent cleanup remain fixtures. No new name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).

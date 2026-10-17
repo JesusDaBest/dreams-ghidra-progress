@@ -143,5 +143,41 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "optional_endpoint_cleanup_selection": {
+    "native_cases": 256,
+    "observed_cleanup_calls": 64,
+    "finding": "Original removal producer calls original filtered counter separately for source and destination. Optional cleanup enabled, positive property41 offset in the per-kind property matrix and count exactly1 are required before property41 update with32 zero bytes. Source-only/destination-only/duplicate additional wires and context-filtered bit0 cases change which endpoint triggers. Full world/owner/object comparisons verify only expected endpoint invalidation and dirty flags when property update is observed.",
+    "limits": [
+      "Property updater is explicit observation probe; its actual mutation and property41 meaning remain unverified.",
+      "Synthetic property-support matrix entries0/1, valid objects, endpoint class bytes0 avoid parent cleanup; no gameplay or full cleanup claim."
+    ],
+    "original_native_instructions_verified": {
+      "140b36750": 401,
+      "140906770": 146
+    },
+    "property41_packet_size": 38,
+    "payload_bytes_verified": 32,
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "property41_offset_leads": {
+    "original_initializer_bytes_verified": true,
+    "scope": "Direct immediate stores only; other kinds may use packed register stores.",
+    "offsets": [
+      {
+        "kind": 0,
+        "offset": "a0"
+      },
+      {
+        "kind": 1,
+        "offset": "180"
+      },
+      {
+        "kind": 17,
+        "offset": "110"
+      }
+    ],
+    "field_name_unresolved": true
   }
 }
