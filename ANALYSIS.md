@@ -5211,3 +5211,14 @@ Old metadata patterns alternate between records and vary low nibbles, low-three-
 Complete original stored data, source nodes, world state, input/context/auxiliary buffers and guards remain unchanged. Original resource growth, hashing and finalization execute; memory and double-precision pow imports use host adapters, while mutex/thread callbacks are controlled. This extends the earlier one-leaf evidence to one parent level. Deeper trees, exhaustive rounding, other mode/control combinations, invalid inputs, concurrency and full producer/playback remain unresolved.
 
 No new function credit is added: totals remain 663 checked names, 2,077 mapped functions and 7,526 unmapped functions among 9,603 discovered functions. The larger already-extended handler still needs a complete branch review. This batch makes no Ghidra project changes.
+
+
+### Inline already-extended dword updates
+
+Read the format-23 branch of the already-extended handler through source setup, prefix/incoming/suffix handling, resource finalization, header append and returned index. Old, incoming and output records are all 12 bytes. Retained dword values and metadata are copied directly except for time rebasing and the scoped AutoKeyframe metadata adjustments.
+
+5,880 connected original-code cases execute the converter, dispatcher and this inline branch. The 4,800 one-leaf cases cover eight mode/auxiliary/control profiles and four old metadata patterns. The 1,080 page-crossing cases cover 42, 43, 84 and 85 old keys at offsets 0, 12 and 504, with interleaved metadata under three mode/control profiles. Full pages hold 504 bytes of complete records; the tested source trees reach one parent level and up to four leaves.
+
+Payload fixtures include zero, signed boundaries, all ones, and NaN-like/infinity-like dword patterns; values remain raw bits. Complete headers and merged data, logical offsets, rebased times, metadata and returned indices match independent models. The AutoKeyframe prefix low-nibble rule and first-incoming transfer of next-old metadata fields match the reviewed scalar/vector delegates. Original stored data, source nodes, world state, input/context/auxiliary buffers and guards remain unchanged.
+
+Original resource operations execute with host memory adapters, host double-precision pow for parent traversal, and controlled mutex/thread callbacks. Deeper trees, exhaustive rounding, other modes/flags, invalid inputs, concurrency and full producer/playback remain unresolved. The five other inline branches still need complete reviews, so the whole handler remains unnamed and unreviewed. No function credit is added; totals remain 663 checked names, 2,077 mapped functions and 7,526 unmapped functions among 9,603 discovered functions. No Ghidra project data changes in this batch.
