@@ -4786,3 +4786,14 @@ The branch merges 56-byte records. Checks compare every output byte, including t
 Coverage is limited to typed-value tags 1, 9, and 30, finite ordered times, valid buffers, and the documented mode/control profiles. Parent fixtures use 9/10/18/19 old keys and offsets 0/56/504. Memory, threading, and the parent-seek `pow` import use controlled host adapters. This does not establish deeper-tree, malformed-input, race, exhaustive rounding, producer, or playback behavior.
 
 No new function name or completion credit: 663 checked names remains unchanged. The containing handler is still unfinished; its inline transform branch remains to be reviewed.
+
+
+### Already-extended animation transforms
+
+Read the format-4 branch and its shared tail in `14107ea70`. Original converter and direct original updater passed 11,520 cases: 2,880 one-leaf cases and 8,640 cases with one parent level. This batch does not execute the dispatcher.
+
+Old and incoming keys are 40-byte extended records. Retained transforms stay in their stored coordinates. Incoming transforms match `inverse(H) * D * K * O * inverse(W)`, where H is the old header frame, D the incoming descriptor frame, K the key transform, O the output frame, and W the wire frame. Eight fresh frame profiles use finite unit quaternions and positive uniform scales 0.5/1/2. Maximum absolute error was 0.00001465 against tolerance 0.0005, allowing equivalent quaternion signs.
+
+Checks cover exact times, metadata, complete headers, retained transform bytes, old data, source nodes, descriptor guards, and context preservation. Parent fixtures use 12/13/24/25 old keys at offsets 0/40/504, including the 24-byte logical gaps after 480-byte record pages. The original byte-verified libc infinity check executes; memory/thread boundaries and the parent-seek pow import use controlled host adapters.
+
+No additional checked name or completion credit. All six inline formats now have scoped review evidence, but the whole handler still needs its entry dispatch, delegated routes, and unsupported-format exits audited. Deeper trees, other mode/control combinations, singular/negative scales, nonunit/nonfinite rotations, malformed inputs, races, full producer behavior, and playback remain unverified.

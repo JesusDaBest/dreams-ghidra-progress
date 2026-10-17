@@ -14165,5 +14165,54 @@
       4
     ],
     "full_handler_reviewed": false
+  },
+  "animation_transform_inline_extended_checkpoint": {
+    "handler": "14107ea70",
+    "format": 4,
+    "native_cases": 11520,
+    "batches": [
+      {
+        "native_cases": 2880,
+        "findings": [
+          "Actual converter and original inline already-extended transform branch execute together; no handler/math probes.",
+          "Old/incoming40-byte records merge with retained metadata; incoming transforms follow fixed frame-composition formula across fresh unit-quaternion/positive-scale fixtures.",
+          "Exact time/metadata/header/retained oldkey bytes,merged lengths,source nodes,input/context/auxiliary immutability and guards checked.",
+          "Scoped AutoKeyframe prefix and first-incoming metadata match independent model; incoming position/scale/quaternion checked within tolerance and quaternion sign equivalence."
+        ],
+        "limits": [
+          "Direct original handler plus converter; dispatcher not executed in this batch.",
+          "One-leaf source,unitquaternions,positive uniform scales0.5/1/2,finiteorderedtimes andvalidbuffers.",
+          "Other modes/flags,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback unresolved.",
+          "Hostmemory adapters;mutex/threadcallbacks controlled; __isinff executes byte-verified original libc."
+        ],
+        "maximum_absolute_error": 1.464939091633255e-05,
+        "tolerance": 0.0005
+      },
+      {
+        "native_cases": 8640,
+        "findings": [
+          "Actual converter and original inline already-extended transform branch execute together; no handler/math probes.",
+          "Old/incoming40-byte records merge with retained metadata; incoming transforms follow fixed frame-composition formula across fresh unit-quaternion/positive-scale fixtures.",
+          "Exact time/metadata/header/retained oldkey bytes,merged lengths,source nodes,input/context/auxiliary immutability and guards checked.",
+          "Scoped AutoKeyframe prefix and first-incoming metadata match independent model; incoming position/scale/quaternion checked within tolerance and quaternion sign equivalence."
+        ],
+        "limits": [
+          "Direct original handler plus converter; dispatcher not executed in this batch.",
+          "One parent level;12/13/24/25 old keys;offsets0/40/504;480-byte record pages with24-byte logical gaps;unitquaternions,positive uniform scales0.5/1/2,finiteorderedtimes andvalidbuffers.",
+          "Other modes/flags,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback unresolved.",
+          "Hostmemory adapters;mutex/threadcallbacks controlled; __isinff executes byte-verified original libc.",
+          "Parent seek pow import uses controlled host double-precision adapter."
+        ],
+        "maximum_absolute_error": 1.464939091633255e-05,
+        "tolerance": 0.0005
+      }
+    ],
+    "composition": "inverse(H) * D * K * O * inverse(W)",
+    "new_name_credit": 0,
+    "remaining_inline_branches": [],
+    "remaining_review": [
+      "Entry dispatch, delegated routes, and unsupported-format exits must be audited before naming the whole handler."
+    ],
+    "full_handler_reviewed": false
   }
 }
