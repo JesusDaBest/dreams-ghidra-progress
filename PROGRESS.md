@@ -4817,3 +4817,12 @@ Read the basic dword format-23 branch and its shared retention/header/index tail
 The original table at `1416d5000` selects 19 formats through four scalar/vector delegate groups and six inline branches. Another 1,422 direct original-code cases cover all 237 unsupported byte values across six packed sizes. Each returned the zero-extended invalid-index sentinel without changing arguments, guards or resource nodes.
 
 These are scoped additions to the earlier basic-merge evidence, not a whole-handler review. Mixed basic/extended input flags and their mode-specific paths still require separate validation. Other modes, exhaustive rounding, deeper trees, malformed inputs, races and full producer/playback behavior remain unresolved. No new name credit: 664 checked names remains unchanged; the basic updater is still unnamed.
+
+
+### Basic animation updater: qword record preservation
+
+Read the format-29 branch and its shared retention/header/index tail in `141077240`. A new 720-case direct-original-handler suite checks 31/32/62/63 old keys at offsets 0/16/504, crossing one parent level and the 8-byte logical gaps after 496-byte record pages.
+
+The 16-byte keys contain a time, four padding bytes, and a qword value. Complete-byte comparisons preserve distinct old/incoming padding and all 64 value bits, including signed boundaries and NaN-like bit patterns. The independent interval model also matches rebased times, complete headers/data, returned index and retained records; source nodes, arguments, context and guards remain unchanged.
+
+This batch uses finite ordered times, descriptor flag 0 and auxiliary mode 0, with controlled host memory/thread callbacks and the documented double-precision pow adapter. Converter and dispatcher are not executed in this batch. Mixed basic/extended flags, other modes, exhaustive rounding, deeper trees, malformed inputs, races and full producer/playback behavior remain unresolved. The whole basic updater remains unfinished and unnamed; checked names remain 664.

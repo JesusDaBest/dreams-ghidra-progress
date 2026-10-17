@@ -14479,5 +14479,29 @@
     ],
     "whole_handler_reviewed": false,
     "new_name_credit": 0
+  },
+  "animation_basic_qword_checkpoint": {
+    "handler": "141077240",
+    "format": 29,
+    "native_check": {
+      "entry": "141077240",
+      "format": 29,
+      "native_cases": 720,
+      "findings": [
+        "Original basic inline qword branch and resource writer execute across parent pages.",
+        "16-byte old and incoming records preserve every qword value bit and distinct padding4..7, including signed boundaries and NaN-like value patterns.",
+        "Independent interval model matches exact complete headers/data, rebased times, index and retained bytes. Source nodes, argument buffers, context and guards remain unchanged."
+      ],
+      "limits": [
+        "Direct original handler; converter and dispatcher not executed in this batch.",
+        "One parent level;31/32/62/63 old keys at offsets0/16/504;496-byte record pages with8-byte logical gaps;finite ordered times;descriptor flag0 andauxiliary mode0.",
+        "Controlled hostmemory/thread callbacks anddoublepow adapter.",
+        "Mixed basic/extended input flags,other modes,exhaustive rounding,deeper trees,invalid inputs,races,fullproducer/playback unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "whole_handler_reviewed": false,
+    "new_name_credit": 0
   }
 }
