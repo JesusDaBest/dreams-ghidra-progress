@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 593,
+    "checked_and_applied_names": 594,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 593,
-    "function_count": 9588,
+    "verified_names": 594,
+    "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
-    "new_functions": [],
-    "scope": "555 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "new_functions": [
+      "1408f2040"
+    ],
+    "scope": "555 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9819,5 +9821,25 @@
     ],
     "name_credit_added": 0,
     "project_modified": false
+  },
+  "teleporter_object_flag_callback_checkpoint": {
+    "name": "SetObjectFlag15ByReference",
+    "new_function_definition": true,
+    "body_bytes": 65,
+    "original_instructions_verified": 16,
+    "adapter_instructions_verified": 4,
+    "native_scenarios": 320,
+    "findings": [
+      "Resolves signed low22 packed reference and ignores null/out-of-range objects.",
+      "Sets only object byte+0xd bit7, i.e. flag15 of DWORD+0xc.",
+      "Original capture adapter supplies world and object reference from wrapper arguments."
+    ],
+    "limits": [
+      "Analyst descriptive name, not recovered original symbol; flag15 meaning remains unresolved.",
+      "Valid world storage assumed; no full Teleporter lifecycle, concurrency or live-game validation.",
+      "New boundary changes discovered function count, not the executable bytes or whole-game completeness."
+    ],
+    "new_name_credit": 1,
+    "independently_reopened_and_decompiled": true
   }
 }

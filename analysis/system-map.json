@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9588,
-  "mapped_total": 2009,
+  "inventory_total": 9589,
+  "mapped_total": 2010,
   "unmapped_total": 7579,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -50285,6 +50285,27 @@
           "kind": "verified_semantic_review",
           "name": "ResetPuppetHeartState",
           "support": "120 native reset/preservation cases; individual state fields and full lifecycle unresolved."
+        }
+      ]
+    },
+    "1408f2040": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "motion",
+        "teleporter",
+        "runtime-implementation"
+      ],
+      "component_basis": "Observed Teleporter installation of original callback and graph object-callback adapter.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Closed native routine and direct/adapter execution scenarios.",
+      "code_sha256": "99d1383d3b9ebb6c8fa89029496bee7d41244b11f967f3b4a5d35edb2420851c",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetObjectFlag15ByReference",
+          "support": "Sets object flag15 by packed reference; exact flag meaning and full lifecycle unresolved."
         }
       ]
     }
