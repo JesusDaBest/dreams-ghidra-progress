@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2088,
-  "unmapped_total": 7515,
+  "mapped_total": 2089,
+  "unmapped_total": 7514,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52466,6 +52466,34 @@
             "Original local-libc acosf body and9 constant spans byte-verified and supplied for in-domain Quaternion conversion tests; independent axis-angle model in degrees.",
             "Original field registration links Animation+134 to IsKeyframe and+14c to AnimStrength; IsKeyframe controls tested secondary header-vector output.",
             "Independent reopening and fresh decompilation verify name; all native bytes and all other names/signatures unchanged. Target parameter/return metadata preserved."
+          ]
+        }
+      ]
+    },
+    "140e6c840": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Kind9 Animation callers, HeaderAndDataPages roots,72-byte headers andAnimation wire-record ordinals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Rebuilds sparse referenced Animation records andremaps active source wires while preserving sharing.",
+      "code_sha256": "5b539c029f31f8bd7f89ce1ff10d489216fc61dba64fe550a37de880f306decc",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RebuildSparseAnimationRecordsAndRemapWires",
+          "support": [
+            "Complete315 owned original instructions and pseudocode reviewed, byte-verified andmatched to original unwind extent.",
+            "108 full-entry native cases connect original compactor,resource extraction,append,allocation/interning/hash;54 rebuild sparse ordinal sets and54 leave roots unchanged.",
+            "Dense sets,no references andtrailing unused records alone skip rebuilding; sparse sets rebuild unique referenced records in first-use order andremap matching active wires while preserving alias sharing.",
+            "Original packed remap stores old index in low32 andnew index in high32 viaVPINSRD; independent duplicate-group cases verify both.",
+            "Both direct caller neighborhoods guard kind9 Animation andpass world/source pointers; native post-call use supports working void return.",
+            "Independent reopening andfresh decompilation verify name andtwo-pointer SysV signature; original bytes andother names/signatures unchanged."
           ]
         }
       ]

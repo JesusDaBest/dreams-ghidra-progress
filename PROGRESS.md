@@ -5127,3 +5127,16 @@ All 676 reviewed names match original unwind starts, with no saved body extendin
 The saved repair adds those 85 original bytes and records the exact six destinations from the original relative jump table. Independent reopening and fresh decompilation confirm 1,678 analyzed instructions, recovered switch targets and removal of the previous jump-table warning. All executable bytes, names, signatures and other function bodies remain unchanged. The mapping fingerprint was refreshed to include the restored instructions.
 
 3,425 original-code fragment cases cover all six hue sectors and agree with an independent HSV-to-RGB model, with maximum RGB error below `0.00000047`. Inputs are finite periodic hues and saturation/value in 0–1, with a zero additive input and a private harness continuation. These are fragment tests, not full Animation delta evaluation or gameplay runs. The enclosing helper remains partially reviewed, and no name or completion credit is added.
+
+
+### Sparse Animation records rebuilt and wires remapped
+
+Saved `RebuildSparseAnimationRecordsAndRemapWires` after complete review of 315 original owned instructions and pseudocode. Both direct caller neighborhoods guard kind-9 Animation objects and pass the world and Animation pointers. Independent reopening verifies the name, working two-pointer SysV signature, unchanged original bytes and unchanged names/signatures elsewhere.
+
+108 full-entry native cases connect the original helper, resource extraction, append and resource allocation/interning. Fifty-four cases rebuild sparse referenced ordinals into first-use order, copy their headers/data and update matching active wire indices. Duplicate references retain sharing. Fifty-four cases leave roots unchanged: dense ordinal sets, no matching references and trailing unused records alone do not trigger rebuilding. Old source nodes and unrelated world/source bytes remain unchanged.
+
+The packed remap contains old/new 32-bit ordinals. The original `VPINSRD` inserts the new ordinal into its high half; the current pseudocode omits that insert. Assembly and independent duplicate-group fixtures verify the actual behavior, so the pseudocode should not be used as a faithful port of this operation.
+
+Fixtures cover five one-key Bool headers in basic, extended and mixed layouts, internal holes, aliases, inactive/foreign wires and high reference bits. Host aligned heap/free/memset and controlled TLS boundaries are explicit. Large/deep resources, complex linked metadata, allocation failure, concurrency, persistence, event propagation and the retirement-to-compaction call chain remain unverified. Rebuilding resource contents does not establish physical cache or disk reclamation. The editor-to-key-metadata write path remains unresolved.
+
+Totals: 677 checked names, 2,089 mapped functions and 7,514 unmapped among 9,603 currently defined. These counts do not include the separate unwind-region candidates and do not measure whole-game completion.

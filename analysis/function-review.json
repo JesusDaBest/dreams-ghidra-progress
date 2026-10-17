@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "623 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "624 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8772,
-    "other_names": 831,
-    "verification": "complete_inventory_matches_baseline_plus_623_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8771,
+    "other_names": 832,
+    "verification": "complete_inventory_matches_baseline_plus_624_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15603,6 +15603,31 @@
         "Typed cases use a single key and AnimStrength1; no general interpolation, cross-leaf, other-strength or gameplay claim.",
         "Finite normalized rotations and positive scales; no nonfinite/degenerate transform or acosf out-of-domain execution.",
         "Original names for special property IDs remain unresolved; floating-register and opaque auxiliary parameter types require caller tracing."
+      ]
+    },
+    {
+      "address": "140e6c840",
+      "original_name": "FUN_140e6c840",
+      "applied_name": "RebuildSparseAnimationRecordsAndRemapWires",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RebuildSparseAnimationRecordsAndRemapWires(void * world, void * animation)",
+      "evidence": [
+        "Complete315 owned original instructions and pseudocode reviewed, byte-verified andmatched to original unwind extent.",
+        "108 full-entry native cases connect original compactor,resource extraction,append,allocation/interning/hash;54 rebuild sparse ordinal sets and54 leave roots unchanged.",
+        "Dense sets,no references andtrailing unused records alone skip rebuilding; sparse sets rebuild unique referenced records in first-use order andremap matching active wires while preserving alias sharing.",
+        "Original packed remap stores old index in low32 andnew index in high32 viaVPINSRD; independent duplicate-group cases verify both.",
+        "Both direct caller neighborhoods guard kind9 Animation andpass world/source pointers; native post-call use supports working void return.",
+        "Independent reopening andfresh decompilation verify name andtwo-pointer SysV signature; original bytes andother names/signatures unchanged."
+      ],
+      "caveats": [
+        "Five one-key Bool headers,basic/extended/mixed,single resource leaves andindices0..4; no large/deep data,complex linked metadata orallocation failure.",
+        "Host aligned heap/free/memset andcontrolled TLS boundary; no concurrency,persistence,event-dispatch orretirement-to-compaction call-chain proof.",
+        "Rebuilt roots omit unreferenced records; old resource nodes remain unchanged. This isnot proof ofphysical cache/disk reclamation.",
+        "Current pseudocode omits the packed remap high32 insert; assembly andnative fixtures are authoritative for that operation. Enclosing workflows remain unreviewed."
       ]
     }
   ],
