@@ -1,5 +1,20 @@
 # Dreams: decompilation results and findings
 
+## Controlinator properties linked to transform selection — 2026-10-17
+
+Original property registration now identifies four fields read by `ResolveObjectTransformForAuxiliaryContext` (`141046d40`). The field offsets, original strings, enum values and runtime instruction bytes were checked against the local executable and the saved Ghidra program. Four instruction annotations persisted after reopening the backed-up project.
+
+| Original property | Offset | Verified use on this branch |
+| --- | --- | --- |
+| `CtrlMode` | `0x1a0` | Must equal `FollowController` (2). The original enum is spelled `EControllinatorMode`. |
+| `InputDisableControls` | `0x1f7` | Must be zero. |
+| `playeridx` | `0x122` | Registered through the `PlayerIdx` helper; 255 rejects this path, otherwise the index selects a record with stride `0x19c50`. |
+| `FollowImpMode` | `0x1a1` | Compared with `Gun` (2), selecting between the already traced transform paths. |
+
+The original `EFollowImpMode` registration maps 0 to `MaintainGrabOrientation`, 1 to `FaceDockToCamera`, 2 to `Gun`, and 3 to the `LAST` sentinel. The original `EControllinatorMode` registration maps 0 to `None`, 1 to `Possessable`, 2 to `FollowController`, 3 to `Remote`, 4 to `FollowRemoteController_Deprecated`, and 5 to `LAST`.
+
+These names come from property and enum registrations, rather than inferred UI wording. Registration helpers preserve the property-name and object-offset arguments and write them into the same field descriptor. The runtime reads then match those offsets on the Controlinator kind branch. These conditions are necessary on this branch; additional state and flag gates remain. This trace does not establish every controller mode, all `PlayerIdx` values, or the complete property registrar's semantics. No function-name review credit or completion percentage was added for these annotations. Raw assembly and backup manifests remain local.
+
 This is the written account behind the status map. The [research data](analysis/research-details.json) records failure addresses, saved signature corrections, proposed names, and matched property fields. [PROGRESS.md](PROGRESS.md) contains the applied naming ledger; [MAPPING.md](MAPPING.md) explains the system assignments.
 
 ## Initial extraction and naming snapshot
