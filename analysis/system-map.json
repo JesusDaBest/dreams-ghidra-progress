@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2091,
-  "unmapped_total": 7512,
+  "mapped_total": 2092,
+  "unmapped_total": 7511,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52552,6 +52552,33 @@
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
+    },
+    "140729f10": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Animation commit caller invokes this helper to replace referenced record ordinals in current and alternate worlds.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Updates an Animation wire record ordinal with before/after notifications and optional queued inverse events.",
+      "code_sha256": "0caa8c7a3244f9ba44277b4ffaba0a5ca3af2c5412a83055f69c08b10bb22b72",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReplaceAnimationWireRecordOrdinalAndNotify",
+          "support": [
+            "Complete pseudocode and all370 owned original instructions reviewed, byte-verified and matched to the1556-byte original unwind extent.",
+            "244 full-entry native cases use recording probes at three event/removal callees:120 replacement cases,120 removal-dispatch cases and4 queue-boundary cases.",
+            "Replacement dispatches eventfdf3 before writing wire+2c andfdf5 after. Eligible recording contexts queue inverse eventsfdf5 before/fdf3 after; callback IDs, source/destination IDs, wire pointer, ordinal timing and control flags are checked.",
+            "New ordinal-1 or absent destination reference dispatches removal instead. Alternate-world mode suppresses owner and queued recording. Queue capacity rejection sets owner status4 but leaves replacement and immediate notifications active.",
+            "Independent reopening verifies the descriptive name and seven-argument working SysV signature, including one stack byte. Original bytes and other names/signatures remain unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [

@@ -15844,5 +15844,41 @@
     "project_modified": false,
     "new_name_credit": 0,
     "scope": "Connected component execution with original action dispatch/case fragment, full converter, zero filter and append/resource interning. The host supplies source records, caller stack locals and final80-byte record framing; this is not full producer execution."
+  },
+  "animation_wire_record_replacement_checkpoint": {
+    "address": "140729f10",
+    "name": "ReplaceAnimationWireRecordOrdinalAndNotify",
+    "signature": "void PS4_SYSV ReplaceAnimationWireRecordOrdinalAndNotify(int newRecordOrdinal, void * world, void * wire, void * owner, byte playerIndex, void * animation, byte alternateWorld)",
+    "native_instructions": 370,
+    "native_check": {
+      "entry": "140729f10",
+      "native_cases": 244,
+      "replacement_cases": 120,
+      "deletion_dispatch_cases": 120,
+      "replacement_cases_with_queued_events": 12,
+      "queue_boundary_cases": 4,
+      "owned_original_instructions_verified": 370,
+      "finding": "On valid destination, dispatches before-change eventfdf3, updates wire record ordinal+2c, then dispatchesfdf5; eligible owner recording adds queued inverse eventsfdf5 before/fdf3 after. Alternate mode omits owner and queue. New ordinal-1 or absent destination dispatches wire removal instead. Capacity checks reject queue writes with owner status4, while immediate notifications and replacement still occur.",
+      "limits": [
+        "Three event/removal entry points are recording spies, not original event engines; queued builder returns0 in240 cases and controlled13 in4 boundary cases.",
+        "Valid destination object lookup, player0/255, context recording profiles, two destination reference generation patterns, four new ordinals; global force-history path not tested.",
+        "No resource append, disk persistence, full producer or gameplay claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete pseudocode and all370 owned original instructions reviewed, byte-verified and matched to the1556-byte original unwind extent.",
+      "244 full-entry native cases use recording probes at three event/removal callees:120 replacement cases,120 removal-dispatch cases and4 queue-boundary cases.",
+      "Replacement dispatches eventfdf3 before writing wire+2c andfdf5 after. Eligible recording contexts queue inverse eventsfdf5 before/fdf3 after; callback IDs, source/destination IDs, wire pointer, ordinal timing and control flags are checked.",
+      "New ordinal-1 or absent destination reference dispatches removal instead. Alternate-world mode suppresses owner and queued recording. Queue capacity rejection sets owner status4 but leaves replacement and immediate notifications active.",
+      "Independent reopening verifies the descriptive name and seven-argument working SysV signature, including one stack byte. Original bytes and other names/signatures remain unchanged."
+    ],
+    "limits": [
+      "Event/removal callees are recording probes with controlled returns, not original event engines; downstream event effects and wire removal are not claimed.",
+      "Valid destination lookups, player0/255, selected owner/recording profiles, high reference bits and queue-boundary counts. Global force-history mode, invalid references and concurrency remain unverified.",
+      "No full recording producer, resource append, disk persistence or gameplay claim. Working opaque-pointer types and descriptive analyst name, not recovered original declarations."
+    ],
+    "new_name_credit": 1
   }
 }

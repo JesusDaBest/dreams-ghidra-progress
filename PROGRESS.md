@@ -5197,3 +5197,14 @@ The converted extended Bool metadata is `0x700` with AutoBlend off or `0x709` wi
 The zero filter examines basic 8-byte positions even when supplied the tested extended 12-byte records; its scoped output matches an independent byte-position model. This observation is not a game-bug claim. Actual producer routing and framing must be established before interpreting its effect on the game.
 
 The host prepares UI stack locals, source records and the final 80-byte record descriptor, and starts append with empty roots. Original components run between those explicit boundaries. Thus the test proves component-level metadata preservation through append, while complete recording-event execution, original caller framing, wire insertion/notifications, other formats, disk persistence and gameplay remain unresolved. No additional names or whole-game completion credit are added; totals remain 679 checked names and 2,091 mapped functions.
+
+
+### Animation wire record replacement and notifications
+
+Saved `ReplaceAnimationWireRecordOrdinalAndNotify` after reviewing all 370 owned original instructions and complete pseudocode, verifying bytes and matching the original 1,556-byte unwind extent. Independent reopening verifies its descriptive name and working seven-argument SysV signature. Original bytes and all other names/signatures remain unchanged.
+
+244 full-entry native cases cover 120 replacements, 120 removal dispatches and four queue-boundary cases. The helper dispatches event `fdf3` before writing the wire record ordinal and `fdf5` afterward. Eligible recording contexts queue inverse events in the opposite order. If the new ordinal or destination is absent, it dispatches removal instead. Alternate-world mode suppresses the owner and queued recording. Queue-capacity rejection sets an owner status flag while replacement and immediate notifications continue. Callback arguments, ordinal timing, source/destination identities, control flags, queue counters and unrelated bytes are checked.
+
+The three event/removal callees are recording probes with controlled returns. Their original event effects and actual removal were not executed here. Global force-history mode, invalid references, full producer execution, resource append, disk persistence and gameplay remain unresolved. This identifies the caller's record-update helper without claiming the entire recording path is complete.
+
+Totals: 680 checked names, 2,092 mapped functions and 7,511 unmapped among 9,603 currently defined. These are code-review counts, not whole-game completion.
