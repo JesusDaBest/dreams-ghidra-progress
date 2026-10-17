@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "595 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "595 existing-function renames,42 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9591,
+    "total": 9593,
     "default_fun_names": 8800,
-    "other_names": 791,
-    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "other_names": 793,
+    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_42_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14582,6 +14582,54 @@
         "Descriptive role and working opaque signature, not original source declarations.",
         "Valid bounded buffers only; huge length/count truncation, invalid pointers, concurrency and production editing schedule remain unverified.",
         "Upstream converter has unresolved jump table; its37 captured instructions do not establish complete conversion or extended record layout."
+      ]
+    },
+    {
+      "address": "1410a3390",
+      "original_name": null,
+      "applied_name": "AppendBytes8ToBoundedBuffer",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendBytes8ToBoundedBuffer(BoundedByteBufferWorking24 * buffer, void * source_bytes)",
+      "evidence": [
+        "Complete128-instruction original helper reviewed and bytes matched.",
+        "4059 original-code cases check capacities0..32,initial lengths0..40 andthree source patterns; exact entire destination/guarded descriptor and immutable source match independent prefix model.",
+        "Partial-capacity and already-over-capacity cases establish bounded partial append, with no allocation or whole-record atomicity.",
+        "Actual original Animation converter and connected update tests already execute the8/12-byte writer pair under ample capacity.",
+        "New nonoverlapping function, typed24-byte buffer and two-pointer working void ABI independently reopened and freshly decompiled; existing function inventory unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive helper names and working layouts, not recovered source declarations.",
+        "No uint64 wraparound, invalid pointers, aliasing, concurrent buffer mutation or complete producer/gameplay guarantee.",
+        "Capacity exhaustion may append a record prefix; these helpers do not make whole-record append atomic."
+      ]
+    },
+    {
+      "address": "1410a3520",
+      "original_name": null,
+      "applied_name": "AppendBytes12ToBoundedBuffer",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendBytes12ToBoundedBuffer(BoundedByteBufferWorking24 * buffer, void * source_bytes)",
+      "evidence": [
+        "Complete192-instruction original helper reviewed and bytes matched.",
+        "4059 original-code cases check capacities0..32,initial lengths0..40 andthree source patterns; exact entire destination/guarded descriptor and immutable source match independent prefix model.",
+        "Partial-capacity and already-over-capacity cases establish bounded partial append, with no allocation or whole-record atomicity.",
+        "Actual original Animation converter and connected update tests already execute the8/12-byte writer pair under ample capacity.",
+        "New nonoverlapping function, typed24-byte buffer and two-pointer working void ABI independently reopened and freshly decompiled; existing function inventory unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive helper names and working layouts, not recovered source declarations.",
+        "No uint64 wraparound, invalid pointers, aliasing, concurrent buffer mutation or complete producer/gameplay guarantee.",
+        "Capacity exhaustion may append a record prefix; these helpers do not make whole-record append atomic."
       ]
     }
   ],

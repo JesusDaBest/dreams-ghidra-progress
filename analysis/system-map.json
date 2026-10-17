@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9591,
-  "mapped_total": 2048,
+  "inventory_total": 9593,
+  "mapped_total": 2050,
   "unmapped_total": 7543,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -51327,6 +51327,60 @@
             "5968 original-code cases cover all property IDs0..57f, selected/nonselected controls, high-bit aliases,0/1/2/5/17 records, length remainders, negative zero, NaNs, second float component and nonzero positions.",
             "Complete guarded buffer descriptor and immutable payload checked.",
             "Saved descriptive name and working void(pointer RDI8,property ESI4) ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a3390": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter directly calls fixed-width byte append helpers; generic bounded-buffer role, not Animation-exclusive ownership.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and direct bounded-capacity native execution reviewed.",
+      "code_sha256": "bdced6aa6a0080ac55da9be03bd5bda6311c9d785f93c72a051560b7cbfbfe3b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendBytes8ToBoundedBuffer",
+          "support": [
+            "Complete128-instruction original helper reviewed and bytes matched.",
+            "4059 original-code cases check capacities0..32,initial lengths0..40 andthree source patterns; exact entire destination/guarded descriptor and immutable source match independent prefix model.",
+            "Partial-capacity and already-over-capacity cases establish bounded partial append, with no allocation or whole-record atomicity.",
+            "Actual original Animation converter and connected update tests already execute the8/12-byte writer pair under ample capacity.",
+            "New nonoverlapping function, typed24-byte buffer and two-pointer working void ABI independently reopened and freshly decompiled; existing function inventory unchanged."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a3520": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter directly calls fixed-width byte append helpers; generic bounded-buffer role, not Animation-exclusive ownership.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and direct bounded-capacity native execution reviewed.",
+      "code_sha256": "d3e056b304e204f95e9290a1263a5644674a73cf6855c6ff576e1c8905b6ef05",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendBytes12ToBoundedBuffer",
+          "support": [
+            "Complete192-instruction original helper reviewed and bytes matched.",
+            "4059 original-code cases check capacities0..32,initial lengths0..40 andthree source patterns; exact entire destination/guarded descriptor and immutable source match independent prefix model.",
+            "Partial-capacity and already-over-capacity cases establish bounded partial append, with no allocation or whole-record atomicity.",
+            "Actual original Animation converter and connected update tests already execute the8/12-byte writer pair under ample capacity.",
+            "New nonoverlapping function, typed24-byte buffer and two-pointer working void ABI independently reopened and freshly decompiled; existing function inventory unchanged."
           ]
         }
       ],

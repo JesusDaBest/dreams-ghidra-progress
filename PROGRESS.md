@@ -4371,3 +4371,14 @@ Saved and independently reopened three explicit working types: the 80-byte input
 Append and dispatch now accept typed descriptor/root pointers. The three partially reviewed update handlers have working pointer/register/stack argument types consistent with the traced dispatcher and original-code suites, including the two extra byte arguments used by override/extended handlers. Their context pointers remain opaque. These are analyst working layouts and calling signatures, not recovered original source declarations.
 
 Independent reopening checks every defined member offset/size, original instruction bytes and fresh decompilation for all five functions. Only the five expected signatures changed; all 9,591 function names remain intact. Prior signatures/comments were saved locally. The larger handlers remain unnamed and partially reviewed, with no extra review or feature-completion credit. Totals remain 636 checked names and 2,048 mapped functions.
+
+
+### Bounded 8-byte and 12-byte input writers
+
+Defined and independently reopened `AppendBytes8ToBoundedBuffer` and `AppendBytes12ToBoundedBuffer`, previously unassigned code called by the Animation input converter. Their complete 128- and 192-instruction bodies form closed routines. A working 24-byte buffer type exposes data pointer, byte length and capacity. Fresh decompilation uses these fields and both descriptive names.
+
+8,118 direct original-code cases cover capacities 0 through 32, initial lengths 0 through 40 and three source byte patterns. Exact complete destination, source and guarded descriptor checks include 1,500 partial-capacity cases and 4,752 already-over-capacity cases. Each helper appends only the available source prefix, stops advancing length at capacity, and performs no allocation or growth. Partial append is not an atomic whole-record operation. Their caller's handling of short capacity still requires tracing.
+
+The preceding connected converter/update suites already execute both original writers with ample capacity. Direct tests add their short/full/overfull-buffer behavior. Uint64 wraparound, pointer aliasing, invalid pointers, concurrency and the complete producer schedule remain unverified.
+
+These new definitions expand the discovered inventory rather than renaming existing functions. All 9,591 previously defined names/signatures remain unchanged. Totals are 638 checked names and 2,050 mapped functions among 9,593 discovered functions. This remains helper review, not whole-game completion.

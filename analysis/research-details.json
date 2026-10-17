@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 636,
+    "checked_and_applied_names": 638,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 636,
-    "function_count": 9591,
+    "verified_names": 638,
+    "function_count": 9593,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "595 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "595 existing-function renames,42 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11847,5 +11847,31 @@
       "Large update handlers remain unnamed/partially reviewed; three opaque context pointers do not define object layouts.",
       "Unknown spans and range values retain neutral field names."
     ]
+  },
+  "animation_byte_writers_checkpoint": {
+    "functions": {
+      "1410a3390": {
+        "name": "AppendBytes8ToBoundedBuffer",
+        "signature": "void PS4_SYSV AppendBytes8ToBoundedBuffer(BoundedByteBufferWorking24 * buffer, void * source_bytes)"
+      },
+      "1410a3520": {
+        "name": "AppendBytes12ToBoundedBuffer",
+        "signature": "void PS4_SYSV AppendBytes12ToBoundedBuffer(BoundedByteBufferWorking24 * buffer, void * source_bytes)"
+      }
+    },
+    "total_direct_cases": 8118,
+    "findings": [
+      "Sequentially appends up to8 or12 source bytes while descriptor length is below capacity; stops advancing atcapacity. No allocation, failure return or capacity growth.",
+      "For bounded initial length above capacity, no write or descriptor change. Partial append preserves only available prefix; this is not an atomic whole-record append.",
+      "Exact complete destination and64-byte guarded descriptor checked; source guarded buffer immutable.",
+      "Original converter call sites use these8/12-byte writers. Scoped connected converter/update suites already execute both with ample capacity."
+    ],
+    "limits": [
+      "Analyst descriptive helper names and working layouts, not recovered source declarations.",
+      "No uint64 wraparound, invalid pointers, aliasing, concurrent buffer mutation or complete producer/gameplay guarantee.",
+      "Capacity exhaustion may append a record prefix; these helpers do not make whole-record append atomic."
+    ],
+    "new_definitions": 2,
+    "new_name_credit": 2
   }
 }
