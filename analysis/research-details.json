@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 630,
+    "checked_and_applied_names": 631,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 630,
+    "verified_names": 631,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "589 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "590 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11208,9 +11208,44 @@
     ],
     "limits": [
       "Analyst descriptive name and opaque working ABI, not recovered source declarations.",
-      "Original1947-instruction partition helper executes but its full internal semantics remain unreviewed; no completion credit for that helper.",
       "Consistent packed refs and bounded source objects only; mixed reference bits per index, duplicate sequence values, comparator overflow, malformed refs, production scene invariants and gameplay remain open.",
-      "Only profiling callback is replaced in connected wrapper tests; no sorting/lookup algorithm callee is replaced."
+      "Only profiling callback is replaced in connected wrapper tests; no sorting/lookup algorithm callee is replaced.",
+      "Subsequent partition checkpoint covers the body and direct equal-range contract; general runtime invariants remain open."
+    ]
+  },
+  "wire_equal_partition_checkpoint": {
+    "address": "140934bb0",
+    "native_cases": 1920,
+    "median_three_cases": 576,
+    "triplet_median_cases": 1344,
+    "working_return_type": "WireEqualRangeWorking",
+    "working_fields": [
+      {
+        "name": "equal_begin",
+        "offset": 0,
+        "register": "RAX"
+      },
+      {
+        "name": "equal_end",
+        "offset": 8,
+        "register": "RDX"
+      }
+    ],
+    "findings": [
+      "Returned half-open equal range is nonempty; keys before are less and after are greater in all tested fixtures.",
+      "Counts<=41 use median(first,middle,last);>=42 use median of three sampled triplet medians with step=floor(count/8).",
+      "Caller recursively sorts the smaller outside range and iterates on the larger, excluding equal keys."
+    ],
+    "evidence": [
+      "Complete decompiled partition body reviewed;1947 original instructions byte verified, with pivot/comparator/scan/return assembly anchors reviewed.",
+      "1920 direct original-code cases verify independent sampled pivot and exact less/equal counts, both return registers, six input shapes, duplicate-heavy/all-equal cases and guarded offset spans.",
+      "Movable52-byte payload multiset, per-slot12-byte tail and external guard storage checked; world/object/stack-guard storage unchanged at suite end.",
+      "Descriptive name and16-byte working return type independently reopened; fresh caller decompilation consumes equal_begin/equal_end."
+    ],
+    "limits": [
+      "Analyst descriptive name and working return/argument types, not original source declarations.",
+      "Counts33..257 as enumerated, consistent packed references and bounded valid objects only.",
+      "Arbitrary mixed packed references, duplicate object sequence values, comparator overflow/strict-weak-order invariants, malformed state, producer scheduling and live gameplay remain open."
     ]
   }
 }

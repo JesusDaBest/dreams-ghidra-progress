@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "589 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "590 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8806,
-    "other_names": 785,
-    "verification": "complete_inventory_matches_baseline_plus_589_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8805,
+    "other_names": 786,
+    "verification": "complete_inventory_matches_baseline_plus_590_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14434,13 +14434,35 @@
         "1584 direct small-range cases match an independent stable tuple sort under consistent-reference fixtures.",
         "864 original large-range cases cover budgets0/1/count and partition/heap/insertion combinations, preserving movable payload multiset and expected sorted keys.",
         "320 scenarios connect original SortGameWires to original Microchip input-wire lookup and root resolution, checking the whole world buffer.",
-        "Saved descriptive name and explicit begin/RDI8,end/RSI8,signed64-budget/RDX8,world-handle/RCX8,void working ABI independently reopened and freshly decompiled."
+        "Saved descriptive name and explicit begin/RDI8,end/RSI8,signed64-budget/RDX8,world-handle/RCX8,void working ABI independently reopened and freshly decompiled.",
+        "Partition follow-up reviews complete decompiled helper body and verifies1920 direct equal-range cases; typed caller now uses both return fields."
       ],
       "caveats": [
         "Analyst descriptive name and opaque working ABI, not recovered source declarations.",
-        "Original1947-instruction partition helper executes but its full internal semantics remain unreviewed; no completion credit for that helper.",
         "Consistent packed refs and bounded source objects only; mixed reference bits per index, duplicate sequence values, comparator overflow, malformed refs, production scene invariants and gameplay remain open.",
-        "Only profiling callback is replaced in connected wrapper tests; no sorting/lookup algorithm callee is replaced."
+        "Only profiling callback is replaced in connected wrapper tests; no sorting/lookup algorithm callee is replaced.",
+        "Partition internals now have body review and scoped direct verification; arbitrary runtime comparator and producer invariants remain unproved."
+      ]
+    },
+    {
+      "address": "140934bb0",
+      "original_name": "FUN_140934bb0",
+      "applied_name": "PartitionWireRangeByEqualKey",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "WireEqualRangeWorking PS4_SYSV PartitionWireRangeByEqualKey(void * begin, void * end, void * * world_handle)",
+      "evidence": [
+        "Complete decompiled partition body reviewed;1947 original instructions byte verified, with pivot/comparator/scan/return assembly anchors reviewed.",
+        "1920 direct original-code cases verify independent sampled pivot and exact less/equal counts, both return registers, six input shapes, duplicate-heavy/all-equal cases and guarded offset spans.",
+        "Movable52-byte payload multiset, per-slot12-byte tail and external guard storage checked; world/object/stack-guard storage unchanged at suite end.",
+        "Descriptive name and16-byte working return type independently reopened; fresh caller decompilation consumes equal_begin/equal_end."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working return/argument types, not original source declarations.",
+        "Counts33..257 as enumerated, consistent packed references and bounded valid objects only.",
+        "Arbitrary mixed packed references, duplicate object sequence values, comparator overflow/strict-weak-order invariants, malformed state, producer scheduling and live gameplay remain open."
       ]
     }
   ],

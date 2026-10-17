@@ -4195,3 +4195,14 @@ The tests establish that the movable record portion is 52 bytes within each 64-b
 320 additional scenarios execute the original `SortGameWires` wrapper, then original Microchip input-wire lookup and root resolution on the actual sorted output. The sort sets its sorted-state flag; the lookup selects the matching destination-property 0x40f endpoint or sentinel, and the root receives that endpoint or its fallback. Only the profiling callback is a counting spy. Sorting, partition, heap, lookup and root algorithms execute original bytes.
 
 Wire creation, arbitrary packed-reference combinations, comparator overflow, malformed references, full partition semantics, production scene invariants and gameplay remain open. Totals are 630 checked names and 2,042 mapped functions among 9,591 discovered functions.
+
+
+### Wire equal-key partition and paired return
+
+Saved and independently reopened `PartitionWireRangeByEqualKey`. The complete decompiled body was reviewed; all 1,947 original instructions were byte verified, with pivot selection, comparator/scan and return assembly anchors checked. This advances the earlier unresolved partition checkpoint.
+
+1,920 direct original-code cases verify an independently calculated pivot and exact less/equal element counts. `RAX` and `RDX` delimit a nonempty half-open equal-key range: preceding keys are smaller and following keys larger. All-equal inputs return the entire input range. Counts up to 41 use the median of first/middle/last keys; counts from 42 use the median of three sampled triplet medians, with sampling step floor(count/8). The suite covers ten specified sizes from 33 to 257, eight seeds, six input shapes, consistent packed-reference bits and guarded offset spans.
+
+A working 16-byte return type now records `equal_begin` in RAX and `equal_end` in RDX. A fresh caller decompilation uses both named fields and shows that sorting skips the equal-key span, recurses on the smaller outside range and iterates over the larger. This is a supported working type, not a recovered source declaration.
+
+The movable 52-byte payload multiset, per-slot trailing bytes and external guards were checked; whole world, object and stack-guard storage matched at suite end. Arbitrary mixed packed references, duplicate object sequence values, comparator overflow and ordering invariants, malformed state, production scheduling and live gameplay remain unverified. Totals are 631 checked names and 2,043 mapped functions among 9,591 discovered functions.

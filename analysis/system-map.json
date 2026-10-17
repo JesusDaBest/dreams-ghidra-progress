@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2042,
-  "unmapped_total": 7549,
+  "mapped_total": 2043,
+  "unmapped_total": 7548,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51169,6 +51169,32 @@
       "component_basis": "Original Game wire-sort wrapper directly calls this range sorter.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Range sorting helper; body read and original connected execution verified within stated fixtures.",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140934bb0": {
+      "system": "shared",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PartitionWireRangeByEqualKey",
+          "support": [
+            "Complete decompiled partition body reviewed;1947 original instructions byte verified, with pivot/comparator/scan/return assembly anchors reviewed.",
+            "1920 direct original-code cases verify independent sampled pivot and exact less/equal counts, both return registers, six input shapes, duplicate-heavy/all-equal cases and guarded offset spans.",
+            "Movable52-byte payload multiset, per-slot12-byte tail and external guard storage checked; world/object/stack-guard storage unchanged at suite end.",
+            "Descriptive name and16-byte working return type independently reopened; fresh caller decompilation consumes equal_begin/equal_end."
+          ]
+        }
+      ],
+      "code_sha256": "c2440c3757a22ce2c093f9865bed00a81b09a209b635900b81c9d2f0181ff62d",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original wire range sorter calls this equal-key partition helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete decompiled body reviewed with original assembly anchors and direct partition-boundary verification.",
       "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },
