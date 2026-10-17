@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1989,
-  "unmapped_total": 7599,
+  "mapped_total": 1990,
+  "unmapped_total": 7598,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49864,6 +49864,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "GetOrRegisterBuildMetadataEntry",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "140739c00": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Explicit metadata cleanup traced through resource references, occupancy masks and processing queue links.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Releases resource references and auxiliary slots, unlinks metadata and clears active/request bits.",
+      "code_sha256": "0610cd5e65fbaa47a8f1a2e86f797c4c29a4d2a5eb408028dcbe453c080c2be6",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReleaseBuildMetadataEntryResources",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

@@ -3933,3 +3933,13 @@ Fourteen existing-entry cases verified removal of the first matching object inde
 Eight scenarios connected original registration, release preparation and marked cleanup with two metadata entries and all selection masks. Complete metadata bytes, surviving queue links, freed self-links, hash mappings/counts and allocated/active/request bitmaps matched. Sequence wrap persisted without cleanup incrementing the registration sequence. Cached payload release was tested separately; this combined fixture uses empty resource hashes and controlled synchronization.
 
 Media Molecule's [SIGGRAPH 2015 presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), pages 21 and 110, supplies stage terminology and GPU block-sizing leads. Sweep/bricker terminology supports the independently traced pipeline structure. Its 64-thread GPU blocks do not establish the meaning of this executable's 64-unit CPU allocations. Earlier research material is not an exact source or build match. No new names or completion credit were added.
+
+### Explicit build metadata resource release
+
+Saved ReleaseBuildMetadataEntryResources after reviewing and byte matching all 148 original instructions. It releases auxiliary occupancy, optional volume-ID lists and direct volume/item references; zero-reference resources enter pending queues. It unlinks metadata and clears allocation/active/request bits. Two bounded caller windows pass a current metadata ID when its deferred flag is set, then reset current globals afterward. The helper itself has no mutex or current-ID deferral guard.
+
+32 isolated native cases cover eight direct release cases, eight connected scanner-to-explicit-cleanup cases and sixteen auxiliary occupancy cases. Current-entry deferral preserves references until explicit cleanup releases them once. Backed-up trial and independent trial/main reopening verified the working void(uint metadata_id) signature, unchanged code and unchanged source archives.
+
+Valid IDs and list links remain preconditions. Complete caller synchronization, lifetime constraints, malformed metadata and actual concurrent gameplay are unverified. This is descriptive semantic review, not proof of subsystem completion.
+
+Totals: 567 reviewed names; 1,990 mapped and 7,598 unmapped among 9,588 discovered functions.
