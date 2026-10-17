@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 666,
+    "checked_and_applied_names": 667,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 666,
+    "verified_names": 667,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "613 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "614 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15071,6 +15071,45 @@
       "Dispatcher/event/rootcommit algorithms notvalidated byprobes inthis suite;wiretail52..63 remainsopaque.",
       "Specialtransformproperty,targetfiltering,oldwirecleanup,overflowdiagnostics,concurrency andrealgame remainunverified.",
       "Context/source/list pointertypes remainopaque;hostmemset andsyntheticcookie explicit."
+    ],
+    "new_name_credit": 1
+  },
+  "animation_wire_retirement_named_checkpoint": {
+    "address": "140703860",
+    "name": "RetireUnsharedAnimationRecordAndDispatchWireRemoval",
+    "signature": "void PS4_SYSV RetireUnsharedAnimationRecordAndDispatchWireRemoval(void * engine_context, void * world, byte player_index, uint wire_index)",
+    "native_instructions": 123,
+    "native_check": {
+      "entry": "140703860",
+      "native_instructions": 123,
+      "native_cases": 816,
+      "findings": [
+        "Whole original sharing-decision/retirement coordinator executes withresource access/update,rootcommit andwire-removal boundaries asnative probes.",
+        "Another active wire sharingfullpacked source andrecordordinal preventsretirement;destination/property differences donot matter.",
+        "Inactive wires,differentordinals orsources,includingdifferent packedgenerations,do notprotectrecord.",
+        "Last reference withAnimationkind9 copies72bytes,ORs packedwordbit31,preserves allotherbytes andcommits newheaderroot witholddata root.",
+        "Removal boundary alwaysreceives requestedwirepointer andtwo1controls;world/input/source/header buffers unchanged bycoordinator whenprobes have no sideeffects."
+      ],
+      "limits": [
+        "Resource/probe andevent/removal algorithms notexecuted;no actualwirearray compaction orresource persistence verified.",
+        "Valid targetindices,count1/2,finite fixtureworlds,Animation/otherkind/missing sources;invalidtargets,concurrency andgameplay unresolved.",
+        "Bit31 describedstructurally asretirementmarker;downstream consumers stillneedtracing."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "findings": [
+      "Whole original sharing-decision/retirement coordinator executes withresource access/update,rootcommit andwire-removal boundaries asnative probes.",
+      "Another active wire sharingfullpacked source andrecordordinal preventsretirement;destination/property differences donot matter.",
+      "Inactive wires,differentordinals orsources,includingdifferent packedgenerations,do notprotectrecord.",
+      "Last reference withAnimationkind9 copies72bytes,ORs packedwordbit31,preserves allotherbytes andcommits newheaderroot witholddata root.",
+      "Removal boundary alwaysreceives requestedwirepointer andtwo1controls;world/input/source/header buffers unchanged bycoordinator whenprobes have no sideeffects.",
+      "Complete 123-instruction body reviewed; saved name and four-argument working signature independently reopened and freshly decompiled; all other names/signatures and native bytes unchanged."
+    ],
+    "limits": [
+      "Resource/probe andevent/removal algorithms notexecuted;no actualwirearray compaction orresource persistence verified.",
+      "Valid targetindices,count1/2,finite fixtureworlds,Animation/otherkind/missing sources;invalidtargets,concurrency andgameplay unresolved.",
+      "Bit31 describedstructurally asretirementmarker;downstream consumers stillneedtracing."
     ],
     "new_name_credit": 1
   }

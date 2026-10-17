@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "613 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "614 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8782,
-    "other_names": 821,
-    "verification": "complete_inventory_matches_baseline_plus_613_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8781,
+    "other_names": 822,
+    "verification": "complete_inventory_matches_baseline_plus_614_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15382,6 +15382,30 @@
         "Dispatcher/event/rootcommit algorithms notvalidated byprobes inthis suite;wiretail52..63 remainsopaque.",
         "Specialtransformproperty,targetfiltering,oldwirecleanup,overflowdiagnostics,concurrency andrealgame remainunverified.",
         "Context/source/list pointertypes remainopaque;hostmemset andsyntheticcookie explicit."
+      ]
+    },
+    {
+      "address": "140703860",
+      "original_name": "FUN_140703860",
+      "applied_name": "RetireUnsharedAnimationRecordAndDispatchWireRemoval",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RetireUnsharedAnimationRecordAndDispatchWireRemoval(void * engine_context, void * world, byte player_index, uint wire_index)",
+      "evidence": [
+        "Whole original sharing-decision/retirement coordinator executes withresource access/update,rootcommit andwire-removal boundaries asnative probes.",
+        "Another active wire sharingfullpacked source andrecordordinal preventsretirement;destination/property differences donot matter.",
+        "Inactive wires,differentordinals orsources,includingdifferent packedgenerations,do notprotectrecord.",
+        "Last reference withAnimationkind9 copies72bytes,ORs packedwordbit31,preserves allotherbytes andcommits newheaderroot witholddata root.",
+        "Removal boundary alwaysreceives requestedwirepointer andtwo1controls;world/input/source/header buffers unchanged bycoordinator whenprobes have no sideeffects.",
+        "Complete 123-instruction body reviewed; saved name and four-argument working signature independently reopened and freshly decompiled; all other names/signatures and native bytes unchanged."
+      ],
+      "caveats": [
+        "Resource/probe andevent/removal algorithms notexecuted;no actualwirearray compaction orresource persistence verified.",
+        "Valid targetindices,count1/2,finite fixtureworlds,Animation/otherkind/missing sources;invalidtargets,concurrency andgameplay unresolved.",
+        "Bit31 describedstructurally asretirementmarker;downstream consumers stillneedtracing."
       ]
     }
   ],

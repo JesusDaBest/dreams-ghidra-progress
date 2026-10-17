@@ -5402,3 +5402,14 @@ The new nonempty suite runs the original insertion function for one, two and thr
 This validates coordination within the stated probe boundaries, not their algorithms. Special transform-property preparation, target filtering, old-wire cleanup, overflow diagnostics, concurrency and real-game behavior remain unverified. Separate empty-list and store-fragment receipts retain their original limits. The descriptive name does not claim all behavior is verified.
 
 Totals: 666 checked names and 2,078 mapped functions among 9,603 discovered; 7,525 remain unmapped. The new mapping is grounded in the Animation producer, record dispatcher and type-9 wire construction.
+
+
+### Shared Animation record retirement traced
+
+Saved `RetireUnsharedAnimationRecordAndDispatchWireRemoval` after reviewing all 123 original instructions. Independent reopening and fresh decompilation confirm its four-argument working signature; original bytes and all 9,602 other names/signatures remain unchanged.
+
+The coordinator protects an animation record while another active wire shares the same full packed source reference and record ordinal. Destination and property differences do not change that decision. When no peer protects it and the source is an Animation object, it copies the 72-byte header, sets packed-word bit 31, and commits the replacement header root while preserving the data root. It then dispatches the requested wire removal.
+
+816 original-function cases cover active/inactive peers, different ordinals, sources and packed generations, source kinds, target positions, header patterns, root pairs and player indices. Resource access/update, root commit and removal are controlled native probes. These checks establish the coordinator's decisions and boundary arguments; they do not verify actual wire compaction, resource persistence, invalid targets, concurrency or gameplay. Downstream consumers of bit 31 still need tracing.
+
+Totals: 667 checked names and 2,079 mapped functions among 9,603 discovered; 7,524 remain unmapped. These are identified-code counts, not a percentage of the entire game understood or reconstructed.
