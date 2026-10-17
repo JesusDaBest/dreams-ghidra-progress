@@ -3905,3 +3905,13 @@ Registration assigns the next sequence to metadata and increments it. The summar
 54 cross-word refresh cases passed at IDs 31/32, 63/64 and 127/128. The already named ReleaseMarkedObjectCacheReferences received stronger evidence: 30 basic/current-entry cases, eight connected resource-release cases and 16 auxiliary occupancy cases. Current entries remain requested with a deferred flag; ordinary entries clear state, release volume/item references, queue zero-reference resources and unlink metadata. The existing name was preserved with no additional naming credit.
 
 A 399-instruction preparation helper selects candidates absent from two exclusion bitmaps, removes hash entries and adds release requests. Twenty disjoint-buffer/empty-hash cases verified all bitmap bytes and guards. Its optional callback is initialized to NULL by overlapping stores that exact-address reference lookup missed; later indirect assignments remain unexcluded. Hash collision deletion, alias fallback and real concurrent cleanup remain unverified.
+
+### Unselected build metadata release queue
+
+Saved QueueUnselectedBuildMetadataForRelease after reviewing and byte matching all 399 original instructions and tracing both mutex-acquiring callers. It selects metadata absent from two exclusion bitmaps, removes corresponding hash entries, clears the selected active bits and adds release requests. Backed-up trial and independent trial/main reopening verified the no-argument working signature and unchanged original code and archives.
+
+108 native cases cover 20 disjoint bitmap selections, 56 exact whole-buffer aliases and 32 three-slot collision/callback scenarios. Exact bitmap bytes, independent metadata hashes, backward shifts, slot values/padding, table counts and guards matched. Collision homes cover all eight positions, including wraparound. The optional recording callback observed the final vacated slot before its fields were cleared.
+
+Observed startup initializes the optional callback to NULL through overlapping stores; later alias assignments remain unexcluded. Synthetic alias cases establish instruction behavior, not valid runtime layouts. Partial overlaps, mixed-home/full-table collisions, complete producer ownership and real concurrency remain unverified.
+
+Totals: 565 reviewed names; 1,988 mapped and 7,600 unmapped among 9,588 discovered functions.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "526 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "527 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8869,
-    "other_names": 719,
-    "verification": "complete_inventory_matches_baseline_plus_526_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8868,
+    "other_names": 720,
+    "verification": "complete_inventory_matches_baseline_plus_527_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -12871,6 +12871,27 @@
         "Analyst descriptive summary-record sorting role, not original name.",
         "Valid count/range consistency, scratch ownership and runtime producer bounds remain preconditions.",
         "Allocation failure controlled in scratch; supplied buffers bounded. Trailing four bytes positional. No real concurrency or GPU build claim."
+      ]
+    },
+    {
+      "address": "14073ada0",
+      "original_name": "FUN_14073ada0",
+      "applied_name": "QueueUnselectedBuildMetadataForRelease",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV QueueUnselectedBuildMetadataForRelease(void)",
+      "evidence": [
+        "Complete 399 original instructions read and byte matched; both callers acquire shared mutex.",
+        "108 native cases:20 bitmap selection,56 whole-buffer aliases and32 hash/backshift/callback scenarios.",
+        "Backed-up trial andindependent trial/main reopening verified expectedsignature, unchangedbytes/archives."
+      ],
+      "caveats": [
+        "Analyst descriptive release-queue preparation role, not original name.",
+        "Partial bitmap overlaps, mixed-home/full-table collisions and producer ownership unresolved.",
+        "Optional callback initialized NULL on observed startup; later aliases unexcluded. Controlled recording callback tested. No real concurrency or GPU build claim."
       ]
     }
   ],

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 564,
+    "checked_and_applied_names": 565,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 564,
+    "verified_names": 565,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "526 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "527 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9057,5 +9057,20 @@
       "Cleanup-preparation hash collisions and bitmap aliases untested.",
       "Synchronization controlled; no real concurrent lifetime or GPU completion verified."
     ]
+  },
+  "metadata_release_queue_checkpoint": {
+    "saved_names": [
+      "QueueUnselectedBuildMetadataForRelease"
+    ],
+    "original_instructions": 399,
+    "bitmap_cases": 20,
+    "exact_alias_cases": 56,
+    "hash_callback_cases": 32,
+    "limits": [
+      "Partial bitmap overlaps and mixed-home/full-table hash collisions unresolved.",
+      "Observed initialized NULL callback; later alias assignments unexcluded.",
+      "Controlled fixtures, no actual concurrency or GPU behavior claim."
+    ],
+    "runtime_game_verified": false
   }
 }
