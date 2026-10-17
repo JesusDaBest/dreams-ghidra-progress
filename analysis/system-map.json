@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2094,
-  "unmapped_total": 7509,
+  "mapped_total": 2095,
+  "unmapped_total": 7508,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52629,6 +52629,33 @@
             "Matching andempty-ID assignment do not clear other context bytes. Recycling resets specific metadata, counters, scan offsets anddisabled flag while retaining payload bytes.",
             "216 connected cases execute original Animation wire replacement, context lookup, history routing andpacked-event writing forfirst/second/both streams withenabled/missing/disabled contexts.",
             "Independent reopening andfresh decompilation verify descriptive name andworking pointer-return two-argument SysV signature. Original bytes andother names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "14114ff40": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared property-history revision synchronization, called bythe verified history router.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Copies world revision, trims defined metadata after the cursor andupdates history end.",
+      "code_sha256": "5181e116972411b47f4cf5a919b602d809551299f0255cf21be68bfb3196e8be",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SyncPropertyHistoryRevisionAndTrimFutureMetadata",
+          "support": [
+            "Complete pseudocode andall33 owned original instructions reviewed, byte-verified andmatched to the137-byte original unwind extent.",
+            "600 original lookup/refresh cases verify world revision copying, end=cursor, selective future metadata clearing, blocked lookup no-op anddisabled-context behavior across indices0/1/2/7/4095 andslots0/3.",
+            "Cursor below old end clears defined metadata fields only; cursor above old end raises end without clearing. Recorded payload andunrelated metadata remain intact.",
+            "216 connected original replacement/lookup/router/writer/refresh cases cover world revision0to7 mismatch, two future metadata entries andfirst/second/both history streams.",
+            "Independent reopening andfresh decompilation verify descriptive name andworking void two-argument SysV signature. Original bytes andother names/signatures unchanged."
           ]
         }
       ],

@@ -16003,5 +16003,62 @@
       "No full history lifecycle, recording producer, disk persistence orgameplay claim. Opaque working context pointer anddescriptive analyst name, not recovered original declaration."
     ],
     "new_name_credit": 1
+  },
+  "property_history_revision_trim_checkpoint": {
+    "address": "14114ff40",
+    "name": "SyncPropertyHistoryRevisionAndTrimFutureMetadata",
+    "signature": "void PS4_SYSV SyncPropertyHistoryRevisionAndTrimFutureMetadata(void * world, byte playerIndex)",
+    "native_instructions": 33,
+    "native_check": {
+      "entry": "14114ff40",
+      "native_cases": 600,
+      "trimmed_cases": 120,
+      "end_raised_without_clear_cases": 120,
+      "blocked_lookup_cases": 300,
+      "disabled_context_updated_cases": 150,
+      "original_instructions_verified": 33,
+      "finding": "Original context lookup followed by revision sync copies world revision to selected history context, sets end tocursor, andwhen cursor<old end clears defined future-entry metadata fields only. Payload andunrelated metadata stay intact. Cursor>old end raises end without clearing. Context disabled flag isnot a guard for this helper; blocked lookup is a no-op.",
+      "limits": [
+        "Existing keyed context in slots0/3, scalar index values0/1/2/7/4095, prepared type key andworld state.",
+        "No allocation/reclamation, new history commit, concurrent editing, full lifecycle orgameplay claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0,
+      "connected_history_suite": {
+        "native_cases": 216,
+        "enabled_history_cases": 72,
+        "first_stream_written_cases": 48,
+        "second_stream_written_cases": 48,
+        "router_owned_instructions_verified": 324,
+        "original_components": [
+          "ReplaceAnimationWireRecordOrdinalAndNotify",
+          "RoutePropertyEventToEnabledHistoryStreams",
+          "14114f8a0 history context lookup",
+          "140b18fa0 packed-event writer",
+          "14114ff40 revision sync/future metadata trim"
+        ],
+        "finding": "Original replacement, context lookup, history routing, event writer andrevision trim connect: enabled history synchronizes world revision7 andclears two future metadata entries; first, second orboth enabled history streams receive beforefdf3 andafterfdf5 exact22-byte snapshots, increment byte counts44 andset corresponding pool active flags. Missing ordisabled history suppresses history-stream writes while direct wire replacement andeligible owner inverse queue still occur.",
+        "limits": [
+          "Original history-context lookup executes against prepared four-slot globals and matching Machine type key; only low-level event application remains a recording probe.",
+          "World revision0to7 mismatch withtwo future metadata entries, valid stable-ID source lookup anddestination references, one player, no reclamation/overflow orfull producer.",
+          "No disk persistence, special non-wire event prehandlers, event application effects orgameplay claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete pseudocode andall33 owned original instructions reviewed, byte-verified andmatched to the137-byte original unwind extent.",
+      "600 original lookup/refresh cases verify world revision copying, end=cursor, selective future metadata clearing, blocked lookup no-op anddisabled-context behavior across indices0/1/2/7/4095 andslots0/3.",
+      "Cursor below old end clears defined metadata fields only; cursor above old end raises end without clearing. Recorded payload andunrelated metadata remain intact.",
+      "216 connected original replacement/lookup/router/writer/refresh cases cover world revision0to7 mismatch, two future metadata entries andfirst/second/both history streams.",
+      "Independent reopening andfresh decompilation verify descriptive name andworking void two-argument SysV signature. Original bytes andother names/signatures unchanged."
+    ],
+    "limits": [
+      "Prepared existing keyed context, four-slot globals, matching Machine type key andscalar index/revision fixtures; malformed indices, context initialization andconcurrency unverified.",
+      "Connected history tests retain a low-level event application probe. Full producer, reclamation, new history commit, disk persistence andgameplay remain unresolved.",
+      "Descriptive analyst name andopaque working pointers; original declaration andfull history lifecycle not recovered."
+    ],
+    "new_name_credit": 1
   }
 }

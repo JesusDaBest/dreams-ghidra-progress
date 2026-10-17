@@ -5234,3 +5234,16 @@ The earlier 216-case history suite now executes this original lookup as well as 
 Globals, the Machine type key, an existing keyed slot and stream pointers are prepared fixtures; final event application remains a recording probe. Empty/recycled slots are tested directly but their complete initialization/lifecycle is not connected. Context exhaustion, invalid Machine indices, concurrency, actual type-key initialization, full recording, disk persistence and gameplay remain unresolved.
 
 Totals: 682 checked names, 2,094 mapped functions and 7,509 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
+
+
+### History revision synchronization and future metadata trimming
+
+Saved `SyncPropertyHistoryRevisionAndTrimFutureMetadata` after complete review and byte verification of its 33 owned original instructions. Independent reopening verifies the descriptive name and working two-argument SysV signature. Original bytes and all other function names/signatures remain unchanged.
+
+600 direct cases execute the original context lookup and refresh helper. The helper copies the world revision into the selected history context and sets its end to the current cursor. When the cursor is below the old end, it clears specific future-entry metadata fields, leaving recorded payload and other metadata untouched. When the cursor is above the old end, it raises the end without clearing. A blocked lookup is a no-op. The context disabled flag does not guard this helper itself; the surrounding router checks that flag before invoking it.
+
+The connected 216-case suite now uses a world revision change from 0 to 7 and two future metadata entries. Original replacement, lookup, history routing, packed-event writing and refresh execute together: enabled histories receive the verified snapshots, synchronize the revision and clear the future metadata. Missing or disabled history still suppresses routing. This removes the earlier matching-revision-only restriction for these fixtures.
+
+Prepared globals, an existing keyed context, a matching Machine type key and bounded index fixtures remain explicit. Final event application is still a recording probe. Malformed indices, context initialization, concurrency, new history commit, reclamation, full recording producer execution, disk persistence and gameplay remain unresolved.
+
+Totals: 683 checked names, 2,095 mapped functions and 7,508 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
