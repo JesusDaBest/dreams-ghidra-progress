@@ -5373,3 +5373,12 @@ Read the complete saved pseudocode for the 938-instruction insertion function `1
 A new 48-case native bridge executes two original fragments: the final 64-byte record copy/count increment and the later dirty-flag stores. Six valid wire counts (0/1/63/64/1023/16382) and eight opaque prepared record patterns match an independent memory model. Every byte of the synthetic world and context is compared, with immutable source-frame/config checks and a positive control for distant world corruption. Exactly one wire slot and count change, followed by the three modeled world flags and one context flag.
 
 The bridge deliberately skips the intervening event/control paths. It does not execute transform preparation, dispatcher, capacity guard, target filtering or cleanup. Prepared opaque record bytes do not validate how their fields were computed. Full pseudocode review and byte provenance therefore add no new checked-function credit yet: the function remains unnamed pending ABI and remaining behavioral validation. Checked names remains 665.
+
+
+### Animation wire insertion: recovered stack descriptor signature
+
+Saved and independently reopened a working signature for `1407069d0`: six register arguments, an 80-byte animation input descriptor passed by value at stack offset 8, and byte controls at offsets 88/96/104. Original caller stack copies and callee accesses support this layout. The return type is working void because callers ignore the return and the function has no established return-value contract. Context, source-object and destination-list pointers remain opaque.
+
+Fresh decompilation now passes `&incoming_record`, `flag_a`, `flag_b` and `override_mode` explicitly to `DispatchAnimationWireRecordUpdate`. This removes the misleading loose stack-variable presentation. The special transform-property path writes three floats to local descriptor bytes 32–43; their precise coordinate meaning remains unresolved. Because the descriptor is passed by value, these writes affect the callee's local copy.
+
+All 938 original instruction bytes and all 9,602 other function names/signatures remain unchanged. Before-state and reopening receipts are preserved locally. This is a type correction, not a new descriptive name: the function remains unnamed while transform, event, filtering and cleanup behavior are investigated. Checked names remains 665.

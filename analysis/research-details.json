@@ -14941,5 +14941,47 @@
       "project_modified": false,
       "new_name_credit": 0
     }
+  },
+  "animation_wire_insertion_abi_checkpoint": {
+    "address": "1407069d0",
+    "name": "FUN_1407069d0",
+    "working_signature": "void PS4_SYSV FUN_1407069d0(void * engine_context, void * world, byte player_index, void * source_animation, ushort * destination_property, void * destination_list, AnimationRecordInputWorking80 incoming_record, byte flag_a, byte flag_b, byte override_mode)",
+    "stack_layout": [
+      {
+        "offset": 8,
+        "size": 80,
+        "role": "incoming descriptor byvalue"
+      },
+      {
+        "offset": 88,
+        "size": 1,
+        "role": "flag_a"
+      },
+      {
+        "offset": 96,
+        "size": 1,
+        "role": "flag_b"
+      },
+      {
+        "offset": 104,
+        "size": 1,
+        "role": "override_mode"
+      }
+    ],
+    "original_instructions": 938,
+    "independent_reopen_decompiled": true,
+    "other_names_signatures_unchanged": true,
+    "native_bytes_unchanged": true,
+    "new_name_credit": 0,
+    "findings": [
+      "Caller80-byte stack copy andthree bytecontrols matchcallee descriptor pointer andstack loads.",
+      "Fresh decompilation explicitly passes address oflocal incoming record plusflag_a/flag_b/override_mode toreviewed dispatcher.",
+      "Special transform-property path writes three floats tolocal descriptorbytes32..43;their coordinate meaning remains unresolved."
+    ],
+    "limits": [
+      "Working signature,not recovered source declaration;context/source/list pointers remainopaque.",
+      "Full insertion transform,event,target filtering,capacity error andcleanup execution remain unverified.",
+      "Function remainsunnamed;no checked-name orwhole-game completion credit."
+    ]
   }
 }
