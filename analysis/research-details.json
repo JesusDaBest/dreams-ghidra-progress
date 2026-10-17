@@ -11163,5 +11163,29 @@
       "Cache construction/equivalence, real-game category/reference invariants, malformed/null/cyclic/negative references, concurrency and gameplay remain unverified."
     ],
     "independently_reopened_and_decompiled": true
+  },
+  "microchip_input_routing_checkpoint": {
+    "native_scenarios": 6144,
+    "direct_resolver_calls": 6144,
+    "connected_root_calls": 6144,
+    "original_field": {
+      "name": "IsGluedGadget",
+      "offset": "0x138",
+      "metadata_store": "140a81bea",
+      "registrar_field_site": "140d84084"
+    },
+    "findings": [
+      "Original Microchip field metadata and registration establish IsGluedGadget at0x138; nonzero selects parent before wire lookup.",
+      "Otherwise destination property0x40f selects opposite wire endpoint; original UI label remains unknown.",
+      "Cached ancestry can normalize the input packed reference before search; uncached ancestry can preserve high bits.",
+      "A matching wire overrides the root result; no matching wire leaves category-dependent parent fallback."
+    ],
+    "test_scope": "Actual IsGluedGadget138 field and original metadata; valid Microchip input1 with parent4 and linked objects5/6. Cached/uncached, sortedflag0/1, input and record/link highbits independently0/400000, independent parent highbit, counts0/1/2/3/5/8, contiguous matching source runs first/middle/last or absent and link-kind patterns none/first/last/all.",
+    "limits": [
+      "Source records are sorted/grouped as supplied; their producer, mixed packed-reference runs, discontiguous groups and search-mode equivalence for arbitrary inputs remain unverified.",
+      "Invalid/null/cyclic/negative references, counts above8, concurrency and gameplay remain unverified."
+    ],
+    "expectation_correction": "Initial cached-reference expectation was rejected by original execution; corrected against the original ESI normalization and checked with independent input/record highbits.",
+    "new_name_credit": 0
   }
 }

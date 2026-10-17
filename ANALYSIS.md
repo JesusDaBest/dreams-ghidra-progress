@@ -4649,3 +4649,16 @@ The optional reflected-parent tests deliberately supply metadata offset 0x60. Th
 The previously open local-user parent fallback scan now has 1,152 connected original-code cases. It skips reference -1 tombstones and requires both the complete packed parent reference and exact mode to match. A match rejects the user filter and adds mask bit 0x10; a missing match passes. Counts 0..5, first/middle/last matches and wrong-mode/reference records were checked. Whole world and context buffers matched explicit fixture writes after each batch. Larger counts and real-game producer invariants remain open.
 
 Totals are 629 checked names and 2,041 mapped functions among 9,591 discovered functions. No completed Dreams feature or in-game verification is claimed. Raw code, native fixtures and private data remain local.
+
+
+### Microchip input routing with original field metadata
+
+Original initialization and registration independently identify Microchip `IsGluedGadget` at offset 0x138. This replaces the synthetic parent-flag offset for this follow-up suite; earlier receipts keep their explicitly narrower scope.
+
+6,144 scenarios each execute the original `ResolveGluedOrMicrochipInputReference` and the connected `ResolvePuppetOrGluedObjectRootReference`: 6,144 direct calls and 6,144 root calls. Tests vary cached/uncached ancestry, sorted/linear search, independent input/record/parent packed-reference bits, record counts 0/1/2/3/5/8, grouped destination placement, property patterns and the actual IsGluedGadget byte. Complete object storage remained unchanged per scenario; the whole world buffer matched explicit fixture writes after each batch.
+
+A nonzero IsGluedGadget selects the full parent reference before searching wires. Otherwise Microchip wire destination property 0x40f selects the opposite endpoint. The property identifier is established; its original user-facing label remains unresolved. Within the supplied contiguous destination runs, both search paths select the first matching property. Missing links return the resolver sentinel and let the root caller use its category-dependent parent fallback.
+
+The first test expectation missed a real distinction: cached ancestry can normalize the input reference before wire search, while the uncached path can retain high packed bits. Original execution rejected that expectation; the corrected model was checked with independently varied input and record bits. No claim of cached/uncached equivalence for arbitrary state is made.
+
+Wire creation/sorting invariants, arbitrary mixed packed-reference runs, discontiguous destinations, counts above eight, malformed state, concurrency and gameplay remain unverified. No extra naming credit is added: totals remain 629 checked names and 2,041 mapped functions.
