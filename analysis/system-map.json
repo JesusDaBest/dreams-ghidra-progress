@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2044,
-  "unmapped_total": 7547,
+  "mapped_total": 2045,
+  "unmapped_total": 7546,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51222,6 +51222,33 @@
       "component_basis": "Original wire range sorter calls this heap adjustment helper when building and popping fallback heaps.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Complete original body and explicit direct heap invariant checks support the helper role.",
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "141070310": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation kind9 and HeaderAndDataPages registration, existing-wire source index and recording-header dispatch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete dispatcher body and scoped connected original lookup/leaf traversal reviewed; mutation algorithms explicit probe boundaries.",
+      "code_sha256": "bfdd09173a3de302941416ff0ef1b53d33ba54e503d33d4567a1fa615695e220",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchAnimationWireRecordUpdate",
+          "support": [
+            "Complete194-instruction original assembly and decompiled body reviewed and bytes verified; original insertion caller traced.",
+            "Original Animation HeaderAndDataPages field registration at0x110 independently matched.",
+            "2368 dispatcher scenarios execute original97-instruction wire lookup and43-instruction resource leaf iterator;304 select a record handler and2064 select fallback.",
+            "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
+            "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result."
+          ]
+        }
+      ],
       "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },

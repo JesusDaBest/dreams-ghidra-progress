@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 632,
+    "checked_and_applied_names": 633,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 632,
+    "verified_names": 633,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "591 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "592 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11316,5 +11316,39 @@
       "No original full-producer runtime execution or scene editing verification."
     ],
     "new_name_credit": 0
+  },
+  "animation_wire_record_dispatch_checkpoint": {
+    "address": "141070310",
+    "native_cases": 2368,
+    "routes": {
+      "base_handler": 76,
+      "record_flag_0x4_handler": 76,
+      "override_handler": 152,
+      "fallback": 2064
+    },
+    "field": "Animation.HeaderAndDataPages at0x110",
+    "header_record_stride": 72,
+    "findings": [
+      "Existing active wire source_property2c selects a flattened72-byte Animation header record from512-byte resource pages.",
+      "Override selects1410705f0; otherwise record bit4 selects14107ea70, else141077240. Missing wire/resource/record selects14106de70 fallback.",
+      "All six handler register arguments and extended flags route correctly; helper propagates handler EAX result and copies updated wire first32bytes to caller output.",
+      "Wire index output, complete descriptor/page-pair/aux/resource/object buffers and output guards checked eachcase; whole world matched fixture plus allowed handler transform writes after each shape/reference batch."
+    ],
+    "boundaries": [
+      "Record mutation handlers1410705f0/141077240/14107ea70 and append fallback14106de70 are explicit recording probes with known returns and transform writes. Their algorithms are not validated by this suite.",
+      "Original source/destination wire lookup and resource leaf traversal execute without probes."
+    ],
+    "evidence": [
+      "Complete194-instruction original assembly and decompiled body reviewed and bytes verified; original insertion caller traced.",
+      "Original Animation HeaderAndDataPages field registration at0x110 independently matched.",
+      "2368 dispatcher scenarios execute original97-instruction wire lookup and43-instruction resource leaf iterator;304 select a record handler and2064 select fallback.",
+      "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
+      "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result."
+    ],
+    "limits": [
+      "Analyst descriptive dispatcher name and working types, not original declarations.",
+      "Three mutation handlers and append fallback are recording probes; their allocation/update algorithms are not validated by this suite.",
+      "Valid Animation objects and acyclic one/two-leaf resource trees only; deeper/cyclic trees, malformed/negative indices, races, full insertion function and gameplay remain unverified."
+    ]
   }
 }

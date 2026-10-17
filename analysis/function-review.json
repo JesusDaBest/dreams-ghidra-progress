@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "591 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "592 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8804,
-    "other_names": 787,
-    "verification": "complete_inventory_matches_baseline_plus_591_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8803,
+    "other_names": 788,
+    "verification": "complete_inventory_matches_baseline_plus_592_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -3060,7 +3060,8 @@
       "evidence": [
         "Complete native body read and matched against current project; explicit Animation literal and descriptor1458a3c50 linkage.",
         "Type initializer installs callbacks and links Thing base before its sole direct tail-call to the field registrar.",
-        "Field registrar307 instructions register named offsets and construct a BlendType field record; independent property-id initialization matches27 named offsets."
+        "Field registrar307 instructions register named offsets and construct a BlendType field record; independent property-id initialization matches27 named offsets.",
+        "Original HeaderAndDataPages literal and field offset0x110 linked to existing-wire Animation record selection in separately bounded dispatcher review."
       ],
       "caveats": [
         "Analyst descriptive name, not recovered original symbol.",
@@ -14488,6 +14489,28 @@
         "Analyst descriptive name and opaque working types, not original source declarations.",
         "Valid supplied max heaps and nonaliasing held record only; held key bounded by parent of original hole.",
         "Invalid hole/count, precondition violations, arbitrary mixed references, duplicate object sequences, comparator overflow, malformed objects and gameplay remain unverified."
+      ]
+    },
+    {
+      "address": "141070310",
+      "original_name": "FUN_141070310",
+      "applied_name": "DispatchAnimationWireRecordUpdate",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, void * record_descriptor, uint * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, void * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)",
+      "evidence": [
+        "Complete194-instruction original assembly and decompiled body reviewed and bytes verified; original insertion caller traced.",
+        "Original Animation HeaderAndDataPages field registration at0x110 independently matched.",
+        "2368 dispatcher scenarios execute original97-instruction wire lookup and43-instruction resource leaf iterator;304 select a record handler and2064 select fallback.",
+        "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
+        "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result."
+      ],
+      "caveats": [
+        "Analyst descriptive dispatcher name and working types, not original declarations.",
+        "Three mutation handlers and append fallback are recording probes; their allocation/update algorithms are not validated by this suite.",
+        "Valid Animation objects and acyclic one/two-leaf resource trees only; deeper/cyclic trees, malformed/negative indices, races, full insertion function and gameplay remain unverified."
       ]
     }
   ],

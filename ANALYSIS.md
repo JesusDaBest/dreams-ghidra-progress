@@ -4708,3 +4708,14 @@ Append returns the previous-count slot and increments the count. Resize initiali
 A bounded static trace found an actual insertion path at `1407069d0`. For an already bounded current count, it compares the incoming list count with 0x3fff minus the current wire count. It writes a full 64-byte slot, increments the count, and later clears the sorted-state flag while setting other work flags. The subtraction assumes a bounded current count; no global overflow or capacity guarantee is claimed. The full-slot write differs from the callbacks' 52-byte initialization; trailing-byte meaning remains unresolved.
 
 This producer remains unnamed and only partially reviewed. Selection rules, transforms, special property handling, event calls, cleanup, its full ABI and complete runtime behavior still need tracing. No extra naming or feature-completion credit is added: totals remain 632 checked names and 2,044 mapped functions.
+
+
+### Animation record dispatch during wire insertion
+
+Saved and independently reopened `DispatchAnimationWireRecordUpdate`. Its complete 194-instruction body was reviewed, including the original insertion caller, wire lookup and resource traversal. Original registration identifies Animation `HeaderAndDataPages` at offset 0x110. An existing active wire's source-property index selects a flattened 72-byte header record from those resource pages.
+
+2,368 controlled scenarios execute the original dispatcher, original wire lookup and original leaf iterator: 304 reach a record handler and 2,064 take fallback. Tests cover one- and two-leaf trees, empty leaves, record boundaries, absent handles, active/inactive wires, sorted/linear lookup, packed-reference bits and property-argument truncation. The override selects one handler; otherwise record flag 0x4 selects between two handlers. Missing usable wire/header records select the fallback resource-writer path.
+
+The three update handlers and fallback are explicit recording probes. This suite verifies which handler is selected, its register/stack arguments, signed result propagation, the output wire index, and copying the handler-updated 32-byte wire transform to the caller. It does not verify the handlers' record editing or allocation algorithms. Descriptor, page-handle pair, auxiliary, resource, object and output guards were checked per scenario; the whole world matched supplied fixtures plus allowed probe writes after each batch.
+
+A twelve-argument working ABI now replaces the misleading inferred void return. A fresh insertion-caller decompilation consumes the named integer result and typed output transform. Deeper resource trees, malformed/negative indices, races, the full insertion function and live gameplay remain unverified. The larger insertion function remains unnamed. Totals are 633 checked names and 2,045 mapped functions among 9,591 discovered functions.
