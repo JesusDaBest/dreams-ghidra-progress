@@ -4134,3 +4134,14 @@ Saved and independently reopened `ComposeSixTransforms`, a complete 464-instruct
 Two hundred fifty-six complete original helper executions, using original local `isinff`, match an independent ordered transform reference with finite unit quaternions, translations and signed scales. Maximum absolute error was below 0.000025; input buffers and output guards were preserved. Five normalization stages were reviewed in the original body. Nonunit, zero and nonfinite quaternion behavior, aliasing, extreme scales and complete caller lifecycles remain unresolved. Camera detection itself is still under review.
 
 Totals: 620 checked names; 2,036 mapped and 7,555 unmapped among 9,591 discovered functions. These are discovered-function review counts, not whole-game completion. Raw code remains local.
+
+
+### PuppetHeart output selection and query mask
+
+`BuildPuppetHeartRegionQueryMask` is now saved and independently reopened with a working register signature. Its complete 67-instruction body and 2,688 controlled original-code calls establish the mask contributions from composed labels, collidability, status bits and power. The conditional local-user scope helper was skipped with selector 255 and remains untested.
+
+Original property registration identifies PuppetHeart `IsImp` at 0x36c; this is not a generic activation flag. The tested Controlinator path uses the composed-label mask for IsImp roots and descendant Sculpt label matching otherwise. Both paths write PuppetHeart `OutputPlayerValue` at 0x30c. With ConsiderPlayers disabled, the selected path writes one to all five channels. With it enabled, inherited source ownership selects the non-player channel or player channels, preserving unselected values. Failed detection thresholds restore all 20 prior output bytes.
+
+48 root-output cases and 120 inherited-ownership cases passed with the original field metadata installed. Initial fixture omissions in output metadata and parent transform setup were corrected before these passing runs; they were fixture faults, not game faults. These cases cover the stated uncached paths, not the whole processor, every reference invariant, local-user scope or a complete gameplay lifecycle.
+
+628 function names are checked among 9,591 discovered functions; 2,040 functions are mapped to systems. This is evidence about specific code behavior, not a percentage of the entire game being reverse engineered. Raw code and execution fixtures remain local.

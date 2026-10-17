@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2039,
-  "unmapped_total": 7552,
+  "mapped_total": 2040,
+  "unmapped_total": 7551,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51085,6 +51085,30 @@
             "Buffer-plus-byte-offset argument routing, boolean mode selection, cached controls, clamp and optional profiling verified within stated fixtures.",
             "Original region-query caller supplies the work-count buffer prepared by RefineSetup.",
             "Name and explicit buffer/RDI,mode/ESI,byte-offset/EDX,void working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ]
+    },
+    "140bbf430": {
+      "system": "physics",
+      "component_path": [
+        "physics",
+        "queries",
+        "region-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Builds the PuppetHeart mask consumed by the region-query label filters.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete mask builder body and scoped native tests.",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildPuppetHeartRegionQueryMask",
+          "support": [
+            "Complete 67-instruction original helper reviewed.",
+            "2688 controlled original-code calls verify composed-label, collidability, status-bit and power contributions.",
+            "168 connected Controlinator/PuppetHeart cases verify output selection and threshold rollback.",
+            "Saved name and explicit working register signature independently reopened and freshly decompiled."
           ]
         }
       ]

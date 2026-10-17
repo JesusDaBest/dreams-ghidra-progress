@@ -4614,3 +4614,14 @@ Seven hundred twenty complete original TriggerZone entry cases distinguish its t
 Another 72 complete-entry cases cover all four player indices with a deliberately permuted auxiliary channel mapping, plus wildcard, matching and missing names. Output follows the mapping byte rather than the player-index ordinal. With a valid index only that player channel is set. Modes 7/8 also accept invalid index 255 under their tested gates and set all five outputs. Failing threshold cases clear gadget output while preserving the accepted count as previously observed.
 
 Whole fixture buffers and cleanup were checked, and Ghidra annotations were saved and independently reopened. Tests use valid glued Sculpt roots; PuppetHeart root writes/rollback, cached/bounded detection and invalid channel domains remain unresolved. No live gameplay or complete processor review is claimed. Checked names stay 627.
+
+
+### PuppetHeart output selection and query mask
+
+`BuildPuppetHeartRegionQueryMask` is now saved and independently reopened with a working register signature. Its complete 67-instruction body and 2,688 controlled original-code calls establish the mask contributions from composed labels, collidability, status bits and power. The conditional local-user scope helper was skipped with selector 255 and remains untested.
+
+Original property registration identifies PuppetHeart `IsImp` at 0x36c; this is not a generic activation flag. The tested Controlinator path uses the composed-label mask for IsImp roots and descendant Sculpt label matching otherwise. Both paths write PuppetHeart `OutputPlayerValue` at 0x30c. With ConsiderPlayers disabled, the selected path writes one to all five channels. With it enabled, inherited source ownership selects the non-player channel or player channels, preserving unselected values. Failed detection thresholds restore all 20 prior output bytes.
+
+48 root-output cases and 120 inherited-ownership cases passed with the original field metadata installed. Initial fixture omissions in output metadata and parent transform setup were corrected before these passing runs; they were fixture faults, not game faults. These cases cover the stated uncached paths, not the whole processor, every reference invariant, local-user scope or a complete gameplay lifecycle.
+
+628 function names are checked among 9,591 discovered functions; 2,040 functions are mapped to systems. This is evidence about specific code behavior, not a percentage of the entire game being reverse engineered. Raw code and execution fixtures remain local.

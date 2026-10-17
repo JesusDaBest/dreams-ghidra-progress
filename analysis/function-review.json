@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "579 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "587 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8809,
-    "other_names": 782,
-    "verification": "complete_inventory_matches_baseline_plus_586_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8808,
+    "other_names": 783,
+    "verification": "complete_inventory_matches_baseline_plus_587_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14368,6 +14368,27 @@
         "Analyst descriptive name and working ABI; original source declaration not recovered.",
         "Platform GNM indirect-dispatch import is a recording spy; dispatch packet encoding and GPU execution unverified.",
         "Default float controls and ample capacity only; nondefault controls/refill/concurrency not covered by this connected suite."
+      ]
+    },
+    {
+      "address": "140bbf430",
+      "original_name": "FUN_140bbf430",
+      "applied_name": "BuildPuppetHeartRegionQueryMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "ushort PS4_SYSV BuildPuppetHeartRegionQueryMask(void * context, void * world, void * puppet_heart)",
+      "evidence": [
+        "Complete 67-instruction original helper reviewed.",
+        "2688 controlled original-code calls verify composed-label, collidability, status-bit and power contributions.",
+        "168 connected Controlinator/PuppetHeart cases verify output selection and threshold rollback.",
+        "Saved name and explicit working register signature independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not an original source declaration.",
+        "Local-user selector was 255; the conditional user-scope helper remains untested.",
+        "Controlled reference indices do not establish all real-game reference invariants; the full TriggerZone processor remains partially reviewed."
       ]
     }
   ],
