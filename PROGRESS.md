@@ -3649,3 +3649,13 @@ Saved RetireAllAgedPendingCacheEntries after reading and byte matching all 151 o
 Valid lists and hash invariants remain preconditions. Full caller synchronization, malformed state and actual concurrent gameplay are unverified. Two metadata processing lists are now observed, but their higher-level phase names and transitions remain under investigation.
 
 Totals: 568 reviewed names; 1,991 mapped and 7,597 unmapped among 9,588 discovered functions.
+
+### Cache slot allocation with retirement
+
+Saved AllocateCacheResourceSlotWithRetirement after reading and byte matching all 318 original instructions. It selects the first free bitmap ID below capacity and initializes a zero payload, one reference, active state and self-links while preserving generation. When full, it retires eligible pending entries, removes state-two hash entries and retries after draining. The capacity+1 pending list has priority; the capacity list is considered when the first list is empty. Young pending entries cause waits until shared generation changes. Empty candidate lists log and return UINT_MAX.
+
+117 isolated native cases cover 22 immediate allocations, 15 pressure/wakeup/exhaustion cases and 80 hash/callback cases across both pending-list branches. Collision wraparound, missing hashes, exact callback slot pointers and repeated unchanged-generation wakeups were checked. Backed-up trial and independent trial/main reopening verified the name, working signature and unchanged original bytes and archives.
+
+Drain, logging and condition wait were controlled in scratch. Actual resource destruction, real concurrency and complete caller constraints remain unverified. Valid bitmap, list and hash invariants are preconditions. An initial test-stub execute-permission error was corrected before the pressure cases passed; it was not a game defect.
+
+Totals: 569 reviewed names; 1,992 mapped and 7,596 unmapped among 9,588 discovered functions.
