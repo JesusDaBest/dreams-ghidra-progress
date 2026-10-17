@@ -5116,3 +5116,14 @@ Scope is three 56-byte Number records, one data leaf plus a matching header leaf
 The original `EBlendType` registration explicitly maps 0–4 to None, Linear, EaseIn, EaseOut and EaseBoth; 5 is the `LAST` sentinel. These names agree with the independently tested extended-key mode behavior. The registration instructions and original literals were checked directly.
 
 The shared editor-action table contains 836 names, including the Animation Canvas blend actions. Its consumer subtracts one from the action ID before a bounded lookup. This avoids treating the table’s zero-based indices as action IDs. The actual callback-to-key-metadata writes remain unresolved; the table alone does not establish that connection. No function was created, renamed or given completion credit in this trace.
+
+
+### Unwind-boundary audit repairs missing colour branches
+
+The original executable’s unwind header yields 20,887 sorted, non-overlapping regions and 78 checked CIE records. 8,951 starts match existing Ghidra function entries; 11,936 lack an exact existing entry. These are boundary records, not additional understood functions, and are kept separate from the project’s 9,603 defined-function inventory. They provide a firmer basis for investigating code that has no current function definition or lies beyond an imported body.
+
+All 676 reviewed names match original unwind starts, with no saved body extending outside its matching region. Examining excluded bytes found 887 NOP regions, 246 `UD2` trap regions and two regions containing actual SIMD code. Those two regions belong to `EvaluateAnimationDeltaOnBaseValue`: five HSV-to-RGB sectors had been omitted from the imported Ghidra body.
+
+The saved repair adds those 85 original bytes and records the exact six destinations from the original relative jump table. Independent reopening and fresh decompilation confirm 1,678 analyzed instructions, recovered switch targets and removal of the previous jump-table warning. All executable bytes, names, signatures and other function bodies remain unchanged. The mapping fingerprint was refreshed to include the restored instructions.
+
+3,425 original-code fragment cases cover all six hue sectors and agree with an independent HSV-to-RGB model, with maximum RGB error below `0.00000047`. Inputs are finite periodic hues and saturation/value in 0–1, with a zero additive input and a private harness continuation. These are fragment tests, not full Animation delta evaluation or gameplay runs. The enclosing helper remains partially reviewed, and no name or completion credit is added.

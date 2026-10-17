@@ -41910,14 +41910,20 @@
       "component_basis": "verified_animation_sampling_and_sole_animation_evaluator_caller",
       "code_role": "runtime-implementation",
       "code_role_basis": "two_timestamp_relative_samples_and_both_direct_argument_result_paths",
-      "code_sha256": "7242071cc71d7a27387dcab22726b1d5b87dcb4bf36a7f2ee561fc64517a9279",
+      "code_sha256": "ed1bba09b926cb651570041f9e983d2975a50da1e829ec293c37b878d22d699d",
       "evidence": [
         {
           "kind": "verified_semantic_review",
           "name": "EvaluateAnimationDeltaOnBaseValue",
           "support": "Two Animation record samples, scalar/vector/quaternion delta application, and both direct references in the Animation property evaluator. Original types and remaining conversion branches unresolved."
+        },
+        {
+          "kind": "verified_analysis_boundary_repair",
+          "name": "EvaluateAnimationDeltaOnBaseValue",
+          "support": "Original unwind FDE and6-target relative table identify85 omitted colour-sector bytes. Body and jump override independently reopened;3425 native fragment cases match HSV-to-RGB model. Original bytes unchanged."
         }
-      ]
+      ],
+      "code_sha256_basis": "native_owned_instructions_after_verified_85_byte_body_repair"
     },
     "1411c0830": {
       "system": "shared",

@@ -15641,5 +15641,36 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "unwind_boundary_and_animation_colour_repair_checkpoint": {
+    "unwind_regions": 20887,
+    "cie_records": 78,
+    "existing_entry_matches": 8951,
+    "regions_without_exact_existing_entry": 11936,
+    "reviewed_names_audited": 676,
+    "reviewed_name_unwind_entry_matches": 676,
+    "reviewed_bodies_outside_matching_unwind": 0,
+    "excluded_region_classification_before_repair": {
+      "nop_regions": 887,
+      "ud2_regions": 246,
+      "simd_regions": 2,
+      "simd_bytes": 85
+    },
+    "repaired_function": "141215810",
+    "repaired_name": "EvaluateAnimationDeltaOnBaseValue",
+    "original_owned_instructions": 1663,
+    "repaired_owned_instructions": 1678,
+    "repair": "Added85 original bytes and exact6-target jump override to Ghidra analysis metadata; no executable byte changes.",
+    "native_fragment_cases": 3425,
+    "maximum_rgb_error": 4.6938657760620117e-07,
+    "independent_reopen_verified": true,
+    "original_bytes_names_signatures_and_other_bodies_unchanged": true,
+    "limits": [
+      "Unwind regions are boundary evidence, not complete discovered/understood-function counts; not all code necessarily has unwind coverage.",
+      "Only the HSV-to-RGB fragment was executed in these3425 cases; enclosing delta evaluator remains partially reviewed.",
+      "Finite periodic hues, S/V0..1, zero additive input and private continuation RET; nonfinite/out-of-domain/runtime-game behavior unverified.",
+      "Editor action-to-key-metadata write path remains unresolved."
+    ],
+    "new_name_credit": 0
   }
 }
