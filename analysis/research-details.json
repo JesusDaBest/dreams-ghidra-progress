@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 662,
+    "checked_and_applied_names": 663,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 662,
+    "verified_names": 663,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "609 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "610 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -13791,6 +13791,74 @@
     "findings": [
       "Original converter/dispatcher/already-extended handler/float4 helper execute allthree vector routes.",
       "Retained24-byte records preserve value and metadata apartfrom explicit scoped AutoKeyframe prefix rule; records stay24bytes.",
+      "Metadata low-nibble andlow-six-bit transfer rules match independent model; upper16bits preserved.",
+      "Complete headers/data,rebasedtimes,metadata,index,world/source/nodes/input/context/auxiliary immutability and guards checked."
+    ],
+    "limits": [
+      "Analyst descriptive role andworking ABI,not recovered source declarations.",
+      "One-leaf sources,finiteorderedtimes,validbuffers;four oldmetadata patterns.",
+      "Deeper source trees,exhaustive rounding,otherformats/flags,invalidinputs,races,fullproducer/playback unresolved.",
+      "Hostmemory imports adapted;mutex/threadcallbacks controlled."
+    ],
+    "new_name_credit": 1
+  },
+  "animation_float2_extended_checkpoint": {
+    "address": "1410891b0",
+    "name": "MergeExtendedFloat2AnimationRecordInterval",
+    "connected_native_cases": 14400,
+    "profiles": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        255,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        255,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        1
+      ],
+      [
+        5,
+        1,
+        1,
+        1
+      ]
+    ],
+    "findings": [
+      "Original converter/dispatcher/already-extended handler/float2 helper execute allthree vector routes.",
+      "Retained16-byte records preserve value and metadata apartfrom explicit scoped AutoKeyframe prefix rule; records stay16bytes.",
       "Metadata low-nibble andlow-six-bit transfer rules match independent model; upper16bits preserved.",
       "Complete headers/data,rebasedtimes,metadata,index,world/source/nodes/input/context/auxiliary immutability and guards checked."
     ],

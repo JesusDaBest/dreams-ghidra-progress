@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "609 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "610 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8786,
-    "other_names": 817,
-    "verification": "complete_inventory_matches_baseline_plus_609_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8785,
+    "other_names": 818,
+    "verification": "complete_inventory_matches_baseline_plus_610_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15267,6 +15267,32 @@
         "Complete1084-instruction original already-extended float4 helper read,including source traversal,prefix/incoming/suffix metadata andheader/index paths.",
         "Original converter/dispatcher/already-extended handler/float4 helper execute allthree vector routes.",
         "Retained24-byte records preserve value and metadata apartfrom explicit scoped AutoKeyframe prefix rule; records stay24bytes.",
+        "Metadata low-nibble andlow-six-bit transfer rules match independent model; upper16bits preserved.",
+        "Complete headers/data,rebasedtimes,metadata,index,world/source/nodes/input/context/auxiliary immutability and guards checked.",
+        "14400 connected original-code cases across three vector routes,eight mode/control profiles andfour oldmetadata patterns.",
+        "Saved sevenargument working signature,signedEAXreturn independently reopened;all9602 othernames/signatures andoriginalbytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworking ABI,not recovered source declarations.",
+        "One-leaf sources,finiteorderedtimes,validbuffers;four oldmetadata patterns.",
+        "Deeper source trees,exhaustive rounding,otherformats/flags,invalidinputs,races,fullproducer/playback unresolved.",
+        "Hostmemory imports adapted;mutex/threadcallbacks controlled."
+      ]
+    },
+    {
+      "address": "1410891b0",
+      "original_name": "FUN_1410891b0",
+      "applied_name": "MergeExtendedFloat2AnimationRecordInterval",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeExtendedFloat2AnimationRecordInterval(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, uint * header_root, uint * data_root, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b)",
+      "evidence": [
+        "Complete1077-instruction original already-extended float2 helper read,including source traversal,prefix/incoming/suffix metadata andheader/index paths.",
+        "Original converter/dispatcher/already-extended handler/float2 helper execute allthree vector routes.",
+        "Retained16-byte records preserve value and metadata apartfrom explicit scoped AutoKeyframe prefix rule; records stay16bytes.",
         "Metadata low-nibble andlow-six-bit transfer rules match independent model; upper16bits preserved.",
         "Complete headers/data,rebasedtimes,metadata,index,world/source/nodes/input/context/auxiliary immutability and guards checked.",
         "14400 connected original-code cases across three vector routes,eight mode/control profiles andfour oldmetadata patterns.",
