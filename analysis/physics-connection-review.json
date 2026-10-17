@@ -16,7 +16,7 @@
   ],
   "limits": [
     "Opaque pointer types are analyst-supported working types, not recovered source declarations.",
-    "Registered property meaning and whole-game valid-object preconditions remain unresolved.",
+    "Movable property linkage is established for six kinds; whole-game valid-object preconditions remain unresolved.",
     "No exact match or mismatch with Media Molecule livestream source established.",
     "Native fixtures do not establish live game, concurrency or feature completion."
   ],
@@ -24,5 +24,30 @@
     "additional_reviewed_names": 0,
     "overall_reverse_engineering_percentage_change": 0
   },
-  "private_data": "Raw code, executable bytes and test fixtures remain local."
+  "private_data": "Raw code, executable bytes and test fixtures remain local.",
+  "registered_property_followup": {
+    "original_property_label": "Movable",
+    "confirmed_kind_ids": [
+      0,
+      1,
+      11,
+      17,
+      95,
+      96
+    ],
+    "confirmed_named_types": [
+      "Sculpt",
+      "PuppetHeart",
+      "Sprite",
+      "HeadGadget",
+      "HandGadget"
+    ],
+    "evidence": "Original initializer stores, boolean field registrations and literal bytes matched; Head/Hand descriptor selections also pair with numeric constructor discriminators95/96.",
+    "interpretation": "After initial gates, unless the context override applies, a movable first endpoint requires a movable second endpoint for these registered kinds.",
+    "limits": [
+      "Other table rows and initialization ordering not exhaustively audited.",
+      "Kind11 fallback applies only when its registered offset is nonpositive; it does not establish unconditional movability.",
+      "No exact livestream IsThingPhysical match established."
+    ]
+  }
 }
