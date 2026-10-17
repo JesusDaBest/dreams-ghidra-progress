@@ -14500,7 +14500,7 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, void * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)",
+      "saved_working_signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)",
       "evidence": [
         "Complete194-instruction original assembly and decompiled body reviewed and bytes verified; original insertion caller traced.",
         "Original Animation HeaderAndDataPages field registration at0x110 independently matched.",
@@ -14508,7 +14508,8 @@
         "Handler register/stack arguments, flattened record selection, signed32-bit result propagation, output wire index and32-byte transform copy verified with explicit recording probes.",
         "Saved name and twelve-argument working register/stack ABI independently reopened; fresh insertion caller consumes the named typed result.",
         "Subsequent168-case original missing-wire path executes actual append/resource allocation/growth/finalization/hash without fallback probe; three existing-record mutation handlers remain separate.",
-        "Subsequent independently reopened working layouts:80-byte input descriptor,72-byte stored header,8-byte header/data page-root pair; fresh decompilation exposes named verified fields. Unknown fields remain opaque; range values do not assert min/max semantics."
+        "Subsequent independently reopened working layouts:80-byte input descriptor,72-byte stored header,8-byte header/data page-root pair; fresh decompilation exposes named verified fields. Unknown fields remain opaque; range values do not assert min/max semantics.",
+        "Revalidated original ERecordMode/Machine field binding:record_mode+b4,mode2Keyframe,mode5AutoKeyframe. Independently reopened working byte enum andpartialMachine recording prefix; fresh decompilation nowusesAutoKeyframe byname. No metadata-bit orfullmode-transition meaning inferred."
       ],
       "caveats": [
         "Analyst descriptive dispatcher name and working types, not original declarations.",
@@ -14642,13 +14643,14 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV ConvertByteValueAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, void * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "saved_working_signature": "void PS4_SYSV ConvertByteValueAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
       "evidence": [
         "Complete192-instruction original closed helper reviewed and byte matched.",
         "1200 original-code cases through top-level type11 converter execute this helper andactual8/12-byte writers; both writer bodies arebyte-identical to independently reviewed bounded helpers.",
         "First/change/last key selection,full-byte comparison inbothformats,defined extendedfields,basic exactpairs,emptybounds andobserved basicmin/max versusextendedmax/max checked.",
         "Counts0/1/2/3/7/17,strides8/16,modes0/5,fiveauxflags,fivevalue/timepatterns; complete guardeddescriptor/bounds,source/aux immutability anduntouched destinationoutside emittedrange checked.",
-        "New nonoverlapping boundary andeight-argument working void ABI independently reopened andfreshly decompiled; existing9593names/signatures unchanged."
+        "New nonoverlapping boundary andeight-argument working void ABI independently reopened andfreshly decompiled; existing9593names/signatures unchanged.",
+        "Revalidated original ERecordMode/Machine field binding:record_mode+b4,mode2Keyframe,mode5AutoKeyframe. Independently reopened working byte enum andpartialMachine recording prefix; fresh decompilation nowusesAutoKeyframe byname. No metadata-bit orfullmode-transition meaning inferred."
       ],
       "caveats": [
         "Analyst descriptive role and working opaque ABI, not recovered source declarations.",

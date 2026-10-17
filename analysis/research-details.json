@@ -11897,5 +11897,121 @@
     "writer_identity": "Original callees1410a2bd0/1410a2d60 are byte-identical to reviewed1410a3390/1410a3520.",
     "new_definitions": 1,
     "new_name_credit": 1
+  },
+  "animation_autokeyframe_binding_checkpoint": {
+    "original_registration": {
+      "program_sha256": "009588c7d00b66a430bad0ec4aa731901821e3b7ce4ac637c1c23a2d2a3fa18f",
+      "original_registration_instruction_counts": {
+        "140cf47a0": 165,
+        "140d01530": 928
+      },
+      "enum_values": [
+        [
+          0,
+          "None"
+        ],
+        [
+          1,
+          "Animation"
+        ],
+        [
+          2,
+          "Keyframe"
+        ],
+        [
+          3,
+          "Microphone"
+        ],
+        [
+          4,
+          "Sound"
+        ],
+        [
+          5,
+          "AutoKeyframe"
+        ],
+        [
+          6,
+          "Possess"
+        ],
+        [
+          7,
+          "Simulation"
+        ],
+        [
+          8,
+          "LAST"
+        ]
+      ],
+      "machine_record_mode_offset": "0xb4",
+      "enum_table_and_field_rechecked_against_original_bytes": true,
+      "animation_producer_connection": "Original producer resolves selected Machine stride0x43e0 andpasses same auxiliary record toconverter andupdate dispatcher; recent handlersreadaux+b4. Mode5 isAutoKeyframe in this chain.",
+      "limits": [
+        "Public recordings/docs are feature-level leads, not proof of metadata bit identities.",
+        "Enum binding does not prove all mode transitions or complete editor behavior."
+      ],
+      "new_name_credit": 0
+    },
+    "working_types": [
+      "ERecordModeWorking:1byte",
+      "MachineRecordingPrefixWorkingD7:partial0xd7-byte prefix, not full0x43e0-byte Machine"
+    ],
+    "saved_signatures": {
+      "14109faf0": {
+        "name": "ConvertByteValueAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertByteValueAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      },
+      "141070310": {
+        "name": "DispatchAnimationWireRecordUpdate",
+        "signature": "int PS4_SYSV DispatchAnimationWireRecordUpdate(void * world, uint source_reference, uint destination_reference, uint destination_property, AnimationRecordInputWorking80 * record_descriptor, AnimationRecordPageRootsWorking8 * header_and_data_pages, PositionScaleQuaternionTransform32 * output_transform, int * output_wire_index, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b, byte override_mode)"
+      },
+      "141077240": {
+        "name": "FUN_141077240",
+        "signature": "int PS4_SYSV FUN_141077240(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, void * wire_context, void * output_context, AnimationRecordPageRootsWorking8 * page_roots, MachineRecordingPrefixWorkingD7 * auxiliary_state)"
+      },
+      "1410705f0": {
+        "name": "FUN_1410705f0",
+        "signature": "int PS4_SYSV FUN_1410705f0(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, void * wire_context, void * output_context, AnimationRecordPageRootsWorking8 * page_roots, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b)"
+      },
+      "14107ea70": {
+        "name": "FUN_14107ea70",
+        "signature": "int PS4_SYSV FUN_14107ea70(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, void * wire_context, void * output_context, AnimationRecordPageRootsWorking8 * page_roots, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b)"
+      }
+    },
+    "reopen_verified": true,
+    "new_name_credit": 0,
+    "primary_source_leads": [
+      {
+        "url": "https://docs.indreams.me/en/whats-happening/updates/release-notes/dreams/v258",
+        "scope": "June2023 animation update describes canvas/recording features; no binary layout or flag-bit proof."
+      },
+      {
+        "url": "https://docs.indreams.me/en/create/resources/recording-modes",
+        "scope": "Official recording-mode usage guide; UI toggle to numeric enum mapping still requires callback trace."
+      },
+      {
+        "url": "https://tadcordle.github.io/projects/dreams.html",
+        "scope": "Animation developer first-hand overview describes invisible wires and2023 optimization; consistent architecture lead, no source/binary identity proof."
+      },
+      {
+        "url": "https://docs.indreams.me/en-US/create/resources/mm-streams-create",
+        "scope": "Official animation stream collection index; embedded VODs located but not visually audited in this checkpoint."
+      }
+    ],
+    "local_package_metadata": {
+      "values": {
+        "APP_VER": "01.00",
+        "TITLE_ID": "CUSA04301",
+        "VERSION": "02.64"
+      },
+      "sfo_sha256": "bf683173fcfaa035c3e64d0e5ebe045475e4cf155cf525717035e3c0f66457ab",
+      "scope": "Package metadata only, not proof of imported executable build identity."
+    },
+    "limits": [
+      "Mode naming derives from original registration, not guessed from video/UI order.",
+      "Metadata bits atd6/in records retain unresolved meanings.",
+      "Package SFO fields APP_VER01.00 andVERSION02.64 do not independently prove imported executable build identity.",
+      "Developer demonstrations/2015coding streams may differ from this binary; no new source-code match established."
+    ]
   }
 }
