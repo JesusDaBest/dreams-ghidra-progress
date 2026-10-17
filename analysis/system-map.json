@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2079,
-  "unmapped_total": 7524,
+  "mapped_total": 2080,
+  "unmapped_total": 7523,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52229,6 +52229,31 @@
             "Last reference withAnimationkind9 copies72bytes,ORs packedwordbit31,preserves allotherbytes andcommits newheaderroot witholddata root.",
             "Removal boundary alwaysreceives requestedwirepointer andtwo1controls;world/input/source/header buffers unchanged bycoordinator whenprobes have no sideeffects.",
             "Complete 123-instruction body reviewed; saved name and four-argument working signature independently reopened and freshly decompiled; all other names/signatures and native bytes unchanged."
+          ]
+        }
+      ]
+    },
+    "14106f350": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "memory-pools",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic packed-resource record replacement through shared tree iterator, allocator and interning; called by Animation retirement.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Replaces one 72-byte resource record by ordinal through a copy-on-write tree update.",
+      "code_sha256": "c487586e8304d73f19c94477662798e6cfda51364886e33472371b658048bf5e",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReplaceResourceTreeRecord72ByOrdinal",
+          "support": [
+            "Complete97-instruction body and callers reviewed; original bytes verified.",
+            "328 connected original-code cases across category3 trees with internal depth1/2/4/6; exact record contents and old-node preservation checked.",
+            "Independent reopening and fresh decompilation confirm name and working signature; all other names/signatures unchanged."
           ]
         }
       ]

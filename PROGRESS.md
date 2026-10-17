@@ -4933,3 +4933,14 @@ The coordinator protects an animation record while another active wire shares th
 816 original-function cases cover active/inactive peers, different ordinals, sources and packed generations, source kinds, target positions, header patterns, root pairs and player indices. Resource access/update, root commit and removal are controlled native probes. These checks establish the coordinator's decisions and boundary arguments; they do not verify actual wire compaction, resource persistence, invalid targets, concurrency or gameplay. Downstream consumers of bit 31 still need tracing.
 
 Totals: 667 checked names and 2,079 mapped functions among 9,603 discovered; 7,524 remain unmapped. These are identified-code counts, not a percentage of the entire game understood or reconstructed.
+
+
+### Record replacement through packed resource trees
+
+Saved `ReplaceResourceTreeRecord72ByOrdinal` after reviewing all 97 original instructions and independently reopening its name and three-argument working signature. The ordinal uses a signed integer, matching the native comparisons; valid nonnegative ordinals are the tested scope. Original code bytes and all 9,602 other function names/signatures remain unchanged.
+
+328 connected native cases run record lookup, replacement selection, the copy-on-write tree writer, allocator, iterator, interning, hashing and candidate release. Category-3 fixtures include one and several leaves, trees with one, two, four and six internal levels, changed/identical replacements and beyond-end requests. Exact record contents match the independent model. Old source nodes and caller replacement buffers stay unchanged; identical replacements and beyond-end requests retain their root. The existing and newly traced accessor return identical pointers in these fixtures.
+
+These are in-memory resource checks. Mutex/thread boundaries are controlled, host memory-copy adapters and a synthetic stack cookie are explicit. Disk persistence, gameplay, concurrency, maximum-depth failures, allocation exhaustion and category-1 summary updates remain unverified. No new completion credit is assigned to the already named comparison accessor or the unnamed tree writer.
+
+Totals: 668 checked names, 2,080 mapped functions and 7,523 unmapped functions among 9,603 discovered. Counts describe identified code, not total game completion.

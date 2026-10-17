@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 667,
+    "checked_and_applied_names": 668,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 667,
+    "verified_names": 668,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "614 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "615 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15112,5 +15112,40 @@
       "Bit31 describedstructurally asretirementmarker;downstream consumers stillneedtracing."
     ],
     "new_name_credit": 1
+  },
+  "resource_record72_replacement_checkpoint": {
+    "address": "14106f350",
+    "name": "ReplaceResourceTreeRecord72ByOrdinal",
+    "signature": "uint PS4_SYSV ReplaceResourceTreeRecord72ByOrdinal(uint root_index, void * replacement_record, int record_ordinal)",
+    "native_instructions": 97,
+    "native_check": {
+      "native_cases": 328,
+      "entries": [
+        "14106fd60",
+        "14106f350",
+        "1410608a0"
+      ],
+      "findings": [
+        "Original accessor and existing named accessor return identical pointers in all fixtures.",
+        "Original replacement, tree writer, allocator, interning, hash and iterator connected; flattened records match exact expected bytes.",
+        "Old allocated source nodes and replacement buffer remain unchanged; identical replacement and beyond-end updates retain original root."
+      ],
+      "limits": [
+        "Valid category3 trees with internal depth1/2/4/6 and available capacity; no category1 summary, exhaustion, maximum-depth or concurrency validation.",
+        "Mutex/thread imports controlled, host memcpy/memmove adapters and synthetic cookie; no disk persistence or gameplay tested."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 1,
+    "evidence": [
+      "Complete97-instruction body and callers reviewed; original bytes verified.",
+      "328 connected original-code cases across category3 trees with internal depth1/2/4/6; exact record contents and old-node preservation checked.",
+      "Independent reopening and fresh decompilation confirm name and working signature; all other names/signatures unchanged."
+    ],
+    "limits": [
+      "Valid nonnegative ordinals; replacement pointer opaque.",
+      "No disk persistence, concurrency, maximum-depth, exhaustion or category1 summary validation."
+    ]
   }
 }

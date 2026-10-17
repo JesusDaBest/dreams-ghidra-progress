@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "614 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "615 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8781,
-    "other_names": 822,
-    "verification": "complete_inventory_matches_baseline_plus_614_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8780,
+    "other_names": 823,
+    "verification": "complete_inventory_matches_baseline_plus_615_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15406,6 +15406,26 @@
         "Resource/probe andevent/removal algorithms notexecuted;no actualwirearray compaction orresource persistence verified.",
         "Valid targetindices,count1/2,finite fixtureworlds,Animation/otherkind/missing sources;invalidtargets,concurrency andgameplay unresolved.",
         "Bit31 describedstructurally asretirementmarker;downstream consumers stillneedtracing."
+      ]
+    },
+    {
+      "address": "14106f350",
+      "original_name": "FUN_14106f350",
+      "applied_name": "ReplaceResourceTreeRecord72ByOrdinal",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ReplaceResourceTreeRecord72ByOrdinal(uint root_index, void * replacement_record, int record_ordinal)",
+      "evidence": [
+        "Complete97-instruction body and callers reviewed; original bytes verified.",
+        "328 connected original-code cases across category3 trees with internal depth1/2/4/6; exact record contents and old-node preservation checked.",
+        "Independent reopening and fresh decompilation confirm name and working signature; all other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Valid nonnegative ordinals; replacement pointer opaque.",
+        "No disk persistence, concurrency, maximum-depth, exhaustion or category1 summary validation."
       ]
     }
   ],
