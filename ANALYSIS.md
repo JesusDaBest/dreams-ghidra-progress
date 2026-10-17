@@ -4302,3 +4302,12 @@ These are bounded paths of the still-unnamed larger hand constructor. Auxiliary,
 For the two tested linked-reference kinds, target composition uses a different auxiliary offset for each extra-flag state. Distinct offset slots prove that selection. The flag-set source is flipped before blending. Missing transform metadata substitutes identity. Connected tests execute the original selector/body evaluator and distinguish runtime body selection from stored-reference bypass.
 
 Tests cover both flags, valid reference one, unit rotations, sampled finite scales and one recursion level. Nonempty lookup, cycles, invalid references, other constructor paths and original field meanings remain unresolved. These behavior scenarios add no checked-name credit.
+
+
+### Hand auxiliary sources and direction adjustment
+
+192 original-code scenarios verify the path selected by either nonidentity auxiliary vector. Stored override selects stored position, scale and rotation; otherwise position comes from the group and scale/rotation from state. A mode-dependent local X rotation modifies the selected orientation. The extra flag adds its half-turn and scale negation afterward. Gate patterns, modes, flags, overrides and scale signs were crossed independently.
+
+160 direction scenarios verify its geometry and four bypasses across both group-scale signs and extra flags. The first auxiliary state's mode enables the direction path, but that pointer need not equal the constructor's selected state pointer. Distinct pointers confirm the difference. The path sets position along normalized group-to-stored displacement at the signed group-factor distance and adjusts stored orientation with a shortest-arc quaternion before the extra-flag operation.
+
+Independent equations, source buffers and output guards passed. Tests use default group mode, unit rotations and finite inputs. Nonempty linked-reference lookup, zero-displacement and antipodal cases, original field names and full lifecycle remain unresolved. No checked-name credit is added.
