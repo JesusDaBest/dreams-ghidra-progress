@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 596,
+    "checked_and_applied_names": 597,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 596,
+    "verified_names": 597,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "557 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "558 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9909,5 +9909,30 @@
     "new_name_credit": 0,
     "semantic_completion_credit": 0,
     "original_and_imported_archives_unchanged": true
+  },
+  "record_transform_resolution_checkpoint": {
+    "name": "ResolveRecordTransform",
+    "native_cases": 208,
+    "instructions_read_and_byte_verified": 50,
+    "findings": [
+      "Resolves record signed-low22 reference, obtains object transform and dispatches original record composition.",
+      "Ordinary record uses object/local transforms; kind3 with optional frame context uses context transform and indexed record slot.",
+      "Negative ordinary product scale becomes positive with quaternion right-multiplied by180-degree X rotation."
+    ],
+    "evidence": [
+      "Complete50 original wrapper instructions read and byte verified.",
+      "208 connected original wrapper/getter/composer cases:64 ordinary,72 optional-frame indexed slots,72 signed-scale cases.",
+      "Independent transform equations with distinct object/local/context/slot inputs and source/output guards.",
+      "Compressed project backup verified; name and four-pointer working signature independently reopened and freshly decompiled with only expected inventory entry changed."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque-pointer working signature, not original source declaration.",
+      "Valid reference and selected slots, finite unit rotations and nonzero signed half/unit/double scales tested.",
+      "Special getter records, packed rotations, invalid references/slot bounds and full callee lifecycles unresolved.",
+      "Negative ordinary scale convention is not general3D negative-scale equivalence; no live-game or full subsystem claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
   }
 }

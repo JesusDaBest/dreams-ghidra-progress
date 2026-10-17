@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "557 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "558 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8838,
-    "other_names": 751,
-    "verification": "complete_inventory_matches_baseline_plus_557_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8837,
+    "other_names": 752,
+    "verification": "complete_inventory_matches_baseline_plus_558_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13704,6 +13704,28 @@
         "Finite unit rotations and positive scales in sampled branches; extreme integers, singular/negative scales and exceptional floats unresolved.",
         "Original __isinff executes; other math supplied by host adapters, not exact PS4 math verification.",
         "Matrix power identity alone does not uniquely choose all matrix roots; original auxiliary field meaning and live-game behavior unresolved."
+      ]
+    },
+    {
+      "address": "140759540",
+      "original_name": "FUN_140759540",
+      "applied_name": "ResolveRecordTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ResolveRecordTransform(void * output_transform, void * record, void * world, void * optional_frame_context)",
+      "evidence": [
+        "Complete50 original wrapper instructions read and byte verified.",
+        "208 connected original wrapper/getter/composer cases:64 ordinary,72 optional-frame indexed slots,72 signed-scale cases.",
+        "Independent transform equations with distinct object/local/context/slot inputs and source/output guards.",
+        "Compressed project backup verified; name and four-pointer working signature independently reopened and freshly decompiled with only expected inventory entry changed."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque-pointer working signature, not original source declaration.",
+        "Valid reference and selected slots, finite unit rotations and nonzero signed half/unit/double scales tested.",
+        "Special getter records, packed rotations, invalid references/slot bounds and full callee lifecycles unresolved.",
+        "Negative ordinary scale convention is not general3D negative-scale equivalence; no live-game or full subsystem claim."
       ]
     }
   ],

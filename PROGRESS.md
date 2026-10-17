@@ -3751,3 +3751,14 @@ Saved ComputeIndexedRepeatTransform with a conservative custom-register working 
 These are sampled finite positive-scale transforms. Host adapters supplied several math imports; exact PS4 library behavior, extreme integer selectors, exceptional or singular transforms, original field meanings and live-game behavior remain unresolved. No whole-subsystem completion is claimed.
 
 Totals: 596 checked names; 2,012 mapped and 7,577 unmapped among 9,589 discovered functions.
+
+
+### Record transform resolution
+
+Saved ResolveRecordTransform after reading and byte matching all 50 original wrapper instructions. It resolves the record object reference, obtains its transform, then calls the existing record-composition helper with an optional frame context. Ordinary records compose object and local transforms; record kind 3 with a frame context instead selects an indexed slot and composes it with the context transform.
+
+208 connected original wrapper/getter/composer cases cover ordinary composition, indexed context selection and signed-scale handling. A negative ordinary product scale becomes positive and its quaternion is right-multiplied by a 180-degree X rotation. This is a specific convention, not equivalence to general negative-scale 3D transforms. Distinct source inputs and output guards were checked. A verified compressed backup, independent reopening and fresh decompilation confirm the saved name and conservative four-pointer working signature.
+
+Special getter records, packed rotations, invalid references or slots, original record field meanings, full lifecycles and live-game integration remain unresolved. This names the wrapper without claiming completion of its callees or subsystem.
+
+Totals: 597 checked names; 2,013 mapped and 7,576 unmapped among 9,589 discovered functions.

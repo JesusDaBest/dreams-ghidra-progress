@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2012,
-  "unmapped_total": 7577,
+  "mapped_total": 2013,
+  "unmapped_total": 7576,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50355,6 +50355,31 @@
             "Negative repeat selectors at most-2 produce transform power step-1 for positive step.",
             "Small selector magnitudes/nonpositive steps and positive selectors with step at least selector produce identity.",
             "Positive interior selector produces inverse fractional transform in sampled branches, with fraction(selector-step)/selector."
+          ]
+        }
+      ]
+    },
+    "140759540": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Record transform resolution wrapper used by original auxiliary frame reconstruction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete wrapper reviewed and208 connected scoped cases.",
+      "code_sha256": "ac4bead89298f0936abb19c732dc64558d9c109c79122a5a3a23d3581e9ee5a0",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolveRecordTransform",
+          "support": [
+            "Resolves record signed-low22 reference, obtains object transform and dispatches original record composition.",
+            "Ordinary record uses object/local transforms; kind3 with optional frame context uses context transform and indexed record slot.",
+            "Negative ordinary product scale becomes positive with quaternion right-multiplied by180-degree X rotation."
           ]
         }
       ]
