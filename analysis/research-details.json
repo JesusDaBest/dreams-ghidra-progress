@@ -10391,5 +10391,31 @@
       "Property original names and general gameplay integration unresolved.",
       "Controlled metadata fixtures do not prove all real metadata rows or complete TriggerZone behavior."
     ]
+  },
+  "triggerzone_key_output_checkpoint": {
+    "scope": "Bounded original-code Key-detection branches and isolated block execution; full processor remains unreviewed.",
+    "original_fields": [
+      "DetectType",
+      "ZoneType",
+      "DetectCnt",
+      "ConsiderPlayers",
+      "OutputPlayerValue"
+    ],
+    "original_detection_enum_key_value": 1,
+    "isolated_native_cases": {
+      "entirelevel_channel_write": 768,
+      "weighted_selected_channels": 20736,
+      "final_gate": 588,
+      "output_propagation": 10240
+    },
+    "ownership_mapping": "Source bits0..3 select PlayerValue.values0..3; zero selects non_player. Intermediate inverted SIMD mask order must not be confused with source bit order.",
+    "correction": "An initial local reversed bit-order expectation failed original execution; corrected reference then passed all cases.",
+    "count_semantics": "Saved gate value is a snapshot of DetectCnt. Positive accepted count required; zero snapshot adds count-equality condition, nonzero threshold requires accepted count>=DetectCnt.",
+    "limits": [
+      "No whole TriggerZone execution or full behavior/helper completion credit.",
+      "Other detection modes, record lifecycle/enable policy, malformed graphs and live integration remain unresolved."
+    ],
+    "ghidra_annotations_independently_reopened": true,
+    "checked_name_total_unchanged": 619
   }
 }
