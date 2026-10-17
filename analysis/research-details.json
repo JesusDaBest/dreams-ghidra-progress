@@ -14548,5 +14548,64 @@
     "conditional_normalization": "Static Boolean branch masks value byte to lowbit only under scoped AutoKeyframe/extended-input conditions; these mixed-input paths are notexecuted by the newflag0/mode0 suite.",
     "whole_handler_reviewed": false,
     "new_name_credit": 0
+  },
+  "animation_basic_typed_value_checkpoint": {
+    "handler": "141077240",
+    "format": 0,
+    "native_check": {
+      "entry": "141077240",
+      "format": 0,
+      "typed_value_tags": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        255
+      ],
+      "native_cases": 23040,
+      "findings": [
+        "Original basic inline typed-value branch and resource writer execute across parent pages.",
+        "48-byte old and incoming records preserve typed value bytes8..44, padding4..7/45..47 and tags0..30/255 exactly; only time is rebased in ordinary flag0/mode0 scope.",
+        "Independent interval model matches exact complete headers/data, rebased times, index and retained bytes. Source nodes, argument buffers, context and guards remain unchanged."
+      ],
+      "limits": [
+        "Direct original handler; converter and dispatcher not executed in this batch.",
+        "One parent level;10/11/20/21 old keys at offsets0/48/504;480-byte record pages with24-byte logical gaps;finite ordered times;descriptor flag0 andauxiliary mode0.",
+        "Controlled hostmemory/thread callbacks anddoublepow adapter.",
+        "Mixed basic/extended input flags,other modes,exhaustive rounding,deeper trees,invalid inputs,races,fullproducer/playback unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "opaque_copy_scope": "Ordinary flag0/mode0 record preservation; not typed-value semantic validation or mixed basic/extended paths.",
+    "whole_handler_reviewed": false,
+    "new_name_credit": 0
   }
 }

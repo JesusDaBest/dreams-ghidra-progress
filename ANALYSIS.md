@@ -5315,3 +5315,12 @@ Read both inline branches and their shared retention/header/index tails in `1410
 In ordinary descriptor-flag-0/auxiliary-mode-0 merging, both formats copy complete 8-byte records except for time rebasing. The value byte at offset 4 and padding at 5–7 remain intact. Boolean bytes other than 0 and 1 are preserved in this scope. Static review identifies low-bit normalization in particular AutoKeyframe/extended-input paths; those paths are not established by these ordinary-merge checks. The input width table changes from 8 to 12 bytes when the extended flag is set, so mixed-input behavior still needs separate tracing rather than assuming the ordinary record model applies.
 
 These batches call the original handler directly; they do not execute converter or dispatcher. Host memory/thread callbacks and the double-precision parent-seek pow adapter remain controlled boundaries. Other mode/flag combinations, deeper trees, exhaustive rounding, malformed inputs, races and full producer/playback behavior remain unresolved. No new checked-function credit: the whole basic updater remains unfinished and unnamed; total checked names remains 664.
+
+
+### Basic animation updater: typed-value record copying
+
+Read the format-0 branch and its shared retention/header/index tail in `141077240`. A new direct-original-handler suite passed 23,040 cases across tags 0–30 and 255. Fixtures use 10/11/20/21 old keys at offsets 0/48/504, including one parent level and the 24-byte logical gaps after 480-byte record pages.
+
+In ordinary descriptor-flag-0/auxiliary-mode-0 merging, the branch treats each 48-byte record as stored bytes: it preserves value bytes 8–44, tag byte 44, and padding 4–7/45–47 while rebasing time. Unknown-tag preservation does not establish that the tag is valid or that its payload has been semantically decoded. Complete headers/data, returned index, retained records, source nodes, arguments, context and guards match the independent interval model.
+
+The batch calls the original handler directly without converter or dispatcher. Controlled host memory/thread callbacks and the double-precision parent-seek pow adapter remain explicit boundaries. Mixed basic/extended flags and their AutoKeyframe-specific value handling remain unresolved, alongside other modes, exhaustive rounding, deeper trees, malformed inputs, races and full producer/playback behavior. The basic updater is still unfinished and unnamed; checked names remains 664.
