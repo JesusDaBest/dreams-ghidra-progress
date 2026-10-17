@@ -4988,3 +4988,14 @@ Scope is counts 0/1/3, unit quaternions and the fast-buffer path. Logging is con
 A separate 96-case original removal-branch check confirms endpoint invalidation and dirty flags without decreasing wire count. Later compaction remains unresolved; serializer/resize count writes are not credited as compaction evidence.
 
 Totals: 671 checked names, 2,083 mapped functions and 7,520 unmapped functions among 9,603 discovered. Extraction and inventory counts do not establish whole-game completion.
+
+
+### Transform serialization normalization verified
+
+Saved `SerializeTransform32WithQuaternionNormalization` after complete review of its 126 original instructions. Independent reopening and fresh decompilation confirm its working two-pointer signature; original bytes and all other function names/signatures remain unchanged.
+
+422 original-code cases cover read and write, 200 supplied random finite quaternions and explicit scaled, zero, infinite and NaN fixtures. Finite nonunit rotations normalize on both directions. The largest component error against the independent model was about 1.2e-7, below the 2e-6 tolerance. Tested zero or infinite squared lengths use the original identity quaternion; tested NaN rotations retain their input bits. Position/scale bytes, source immutability, stream/record guards and serializer cursor match exact expectations.
+
+These are fast-buffer tests with the verified original local-libc classifier supplied at its import boundary. They do not exhaust subnormal values, normalization threshold boundaries, alternative floating-point control modes or slow/error paths, and do not establish full-world save/load, disk persistence or gameplay. The earlier connected wire test retains its unit-quaternion scope.
+
+Totals: 672 checked names, 2,084 mapped functions and 7,519 unmapped functions among 9,603 discovered. Counts describe identified code, not whole-game completion.

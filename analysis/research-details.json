@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 671,
+    "checked_and_applied_names": 672,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 671,
+    "verified_names": 672,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "618 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "619 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15261,5 +15261,47 @@
       "project_modified": false,
       "new_name_credit": 0
     }
+  },
+  "transform32_serialization_checkpoint": {
+    "address": "140dd1c40",
+    "name": "SerializeTransform32WithQuaternionNormalization",
+    "signature": "void PS4_SYSV SerializeTransform32WithQuaternionNormalization(void * serializer, void * transform)",
+    "native_instructions": 126,
+    "native_check": {
+      "entry": "140dd1c40",
+      "native_cases": 422,
+      "profiles": {
+        "within_tolerance": 2,
+        "normalized": 406,
+        "identity_fallback": 12,
+        "nan_preserved": 2
+      },
+      "max_quaternion_component_error": 1.1712615799464032e-07,
+      "tolerance": 2e-06,
+      "findings": [
+        "Original transform serializer normalizes finite nonunit rotations on both write and read while preserving position/scale bytes.",
+        "Zero or overflow-to-infinity squared lengths use original identity quaternion; tested NaN rotations preserve their input bits.",
+        "Write preserves source transform;read modifies exactly32destination bytes; stream/record guards and serializer cursor exact."
+      ],
+      "limits": [
+        "Finite random quaternions bounded[-10,10] plus explicit edge fixtures; no exhaustive subnormal,threshold-boundary or alternative MXCSR coverage.",
+        "Fast buffer only; original local-libc classifier supplied at import thunk.",
+        "No whole-game save/load,persistence or gameplay claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 1,
+    "evidence": [
+      "Complete126-instruction original body and pseudocode reviewed; original bytes verified.",
+      "422 original transform serializer cases cover read/write,finite nonunit normalization,zero/infinite squared length fallback and NaN preservation.",
+      "Exact position/scale bytes,source immutability,guards andserializer cursor checked; max component error1.1713e-7 under2e-6 tolerance.",
+      "Independent reopening and fresh decompilation confirm name/signature; other names/signatures unchanged."
+    ],
+    "limits": [
+      "Fast buffer; finite random values[-10,10] and explicit edge fixtures.",
+      "Subnormal/threshold-boundary/MXCSR coverage notexhaustive; slow/error paths,persistence,gameplay unverified.",
+      "Original local-libc classifier supplied at import thunk."
+    ]
   }
 }

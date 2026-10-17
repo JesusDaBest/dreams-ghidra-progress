@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2083,
-  "unmapped_total": 7520,
+  "mapped_total": 2084,
+  "unmapped_total": 7519,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52330,6 +52330,32 @@
             "Complete original body and pseudocode reviewed; original instruction bytes verified.",
             "36 connected native vector/record/property/transform read-write cases cover exact count+50bytes per wire,endpoint conversion,flagbytes,transform,guards and opaque trailing bytes.",
             "Independent reopening and fresh decompilation confirm saved name and working two-pointer signature; all other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140dd1c40": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared32-byte transform serializer called by game-wire record serialization.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Serializes transform with quaternion normalization on read and write.",
+      "code_sha256": "1ed7ccf92f2b439054db8bed26e1a26f8b7ff554a88f55fd4705b2c91fb8e54a",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeTransform32WithQuaternionNormalization",
+          "support": [
+            "Complete126-instruction original body and pseudocode reviewed; original bytes verified.",
+            "422 original transform serializer cases cover read/write,finite nonunit normalization,zero/infinite squared length fallback and NaN preservation.",
+            "Exact position/scale bytes,source immutability,guards andserializer cursor checked; max component error1.1713e-7 under2e-6 tolerance.",
+            "Independent reopening and fresh decompilation confirm name/signature; other names/signatures unchanged."
           ]
         }
       ]
