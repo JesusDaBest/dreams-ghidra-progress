@@ -10923,5 +10923,26 @@
     ],
     "annotations": "Saved and independently reopened.",
     "new_name_credit": 0
+  },
+  "region_query_copy_output_binding_checkpoint": {
+    "record_bytes": 52,
+    "bindings": [
+      "output descriptor",
+      "inputB descriptor",
+      "inputA descriptor",
+      "staged pair count"
+    ],
+    "static_expression": "For index<count: output[index]=(inputA[index]<1.0)?1.0:inputB[index].",
+    "evidence": [
+      "Original CPU record writes agree with three shader descriptor loads and count offset.",
+      "Original output allocation/descriptor construction links shader destination to CPU float stream.",
+      "Original archived shader operand bits and local decoder enum/selection semantics traced.",
+      "Ghidra annotations saved and independently reopened."
+    ],
+    "limits": [
+      "Static analysis only; no GPU/runtime scene verification.",
+      "Input meanings/provenance, synchronization and exceptional floating behavior remain unresolved."
+    ],
+    "new_name_credit": 0
   }
 }

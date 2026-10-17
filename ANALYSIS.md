@@ -4562,3 +4562,12 @@ The Sculpt query producer invokes five named compute stages: `RegionQueryBootstr
 The CPU transfer trace connects CopyOutput dispatch to a float result stream. Staged query-index/leaf-ordinal pairs map a positive result back to its query and object. Nonpositive and unordered float values are skipped; available slots append a weight/object pair up to the observed 0x3fff cap. Per-query count/start spans match the cached-result layout already tested in TriggerZone.
 
 CopyOutput's bounded static decode reaches its first physical end instruction after 19 instructions: an index/count guard, two buffer reads, floating comparison/conditional selection, and one buffer write. Its conditional exit targets that end instruction. Full buffer meanings, other-stage algorithms, synchronization, positive Sculpt GPU execution and live gameplay are not verified. Static decode counts are not behavior-completion counts. Ghidra trace annotations were saved and independently reopened; checked names remain 622.
+
+
+### CopyOutput bindings and static expression
+
+The final stage receives a 52-byte record containing three buffer descriptors and a staged-pair count. CPU record writes agree with the shader's descriptor/count loads. Output allocation and descriptor construction link its destination to the float stream consumed by the CPU.
+
+For an active index below the count, the static instruction trace yields `output[i] = inputA[i] < 1.0 ? 1.0 : inputB[i]`. This follows the actual operand order and conditional-selection bits, rather than the stage name. The earlier meanings of the two inputs are still unresolved; neither is labeled as a distance or confidence value without that provenance.
+
+Ghidra binding annotations were saved and independently reopened. This is static shader/CPU binding analysis, with no GPU execution, synchronization validation or full scene test. Checked-name count remains 622.
