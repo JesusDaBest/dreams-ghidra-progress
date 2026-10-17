@@ -3679,3 +3679,13 @@ Saved QueueObjectReplacementForMetadataRefresh after reading and byte matching a
 Related local followups also tested original registration followed by query in 48 registration scenarios and 432 queries, and metadata handle promotion in 101 base cases plus 72 dirty-bit/auxiliary cases. Later object replacement and re-registration branches remain under investigation; no additional name credit is assigned for these followups.
 
 Totals: 571 reviewed names; 1,994 mapped and 7,594 unmapped among 9,588 discovered functions.
+
+### Metadata promotion and object resource refresh
+
+Saved PromoteBuildMetadataAndRefreshObjectResources after reading and byte matching all 171 original instructions. It promotes a generation-qualified candidate metadata handle to the stored handle, clears a bounded dirty bit and conditionally invalidates an auxiliary record. A later volume-field comparison can rebuild the CSG object, notify old/new replacement, propagate the replacement to a linked type-one object and re-register metadata with the previous key fields. Two bounded callers supply context/object pointers and a packed object index, and ignore a return value.
+
+247 isolated cases cover 101 base promotions, 72 dirty-bit/auxiliary cases, 28 resource guards, six rebuild orchestration cases, 36 linked-object lookups and four registration-failure cases. Exact handles, relevant state buffers, controlled callee arguments, collision paths and deferred notifications were checked. Backed-up trial and independent trial/main reopening verified the saved name, signature and unchanged original bytes and archives.
+
+Rebuild and registration were controlled in orchestration fixtures. Actual connected CSG execution, complete lifetime/synchronization constraints and source field meanings remain unverified. Valid pointers and the linked type-one object invariant are preconditions. Controlled registration failure preserves the previous stored metadata handle after object replacement; actual failure reachability is unresolved.
+
+Totals: 572 reviewed names; 1,995 mapped and 7,593 unmapped among 9,588 discovered functions.
