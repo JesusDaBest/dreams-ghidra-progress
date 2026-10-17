@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 599,
+    "checked_and_applied_names": 600,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 599,
+    "verified_names": 600,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "560 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "561 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9991,6 +9991,34 @@
       "Analyst descriptive name and working types, not recovered source declaration.",
       "Host math uses corrected Windows shadow-space adapters; exact PS4 implementations unverified.",
       "Finite unit rotations and sampled positive scales; exact ties, exceptional inputs, malformed/aliased buffers and live game unresolved.",
+      "No whole-subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
+  },
+  "object_auxiliary_frame_checkpoint": {
+    "name": "ComputeObjectAuxiliaryFrameTransform",
+    "native_scenarios": 992,
+    "paired_parent_override_scenarios": 200,
+    "instructions_read_and_byte_verified": 669,
+    "findings": [
+      "Selects identity/stored frame or reconstructs auxiliary-relative frame using object/parent data.",
+      "Animation,Microchip,Timeline,Sound,Scripter parent kinds select record categories6,2,3,4,5; matching current-world records precede alternate-world fallback.",
+      "Metadata dimensions,offsets and Timeline parent dimension affect tested coordinate rules.",
+      "Optional snapping calls verified relative-transform/orientation helpers; explicit parent override bypasses child parent lookup."
+    ],
+    "evidence": [
+      "Complete669 original instructions read and byte verified.",
+      "Original type registrations and switch bytes bind five parent kinds to record categories; current/alternate-world ID/category matching tested.",
+      "992 scoped scenarios cover gate/stored/repeat frames,category lookup,dimensions/offsets/rotations,Timeline rule,snapping integration and200 paired parent overrides.",
+      "Verified compressed backup,independent reopening and fresh decompilation confirm seven-input working signature with typed32-byte output and stack parent override."
+    ],
+    "limits": [
+      "Analyst descriptive name and working signature,not recovered source declaration.",
+      "Selected auxiliary index0,valid supplied records,finite unit rotations and sampled positive scales; Timeline uses documented numerical bound.",
+      "Remaining type-specific modes,source field names,arbitrary indices,malformed/aliased buffers and lifecycles unresolved.",
+      "Host math uses corrected Windows shadow-space adapters; exact PS4 math and live game unverified.",
       "No whole-subsystem completion claim."
     ],
     "new_name_credit": 1,

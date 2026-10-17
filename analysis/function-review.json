@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "560 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "561 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8835,
-    "other_names": 754,
-    "verification": "complete_inventory_matches_baseline_plus_560_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8834,
+    "other_names": 755,
+    "verification": "complete_inventory_matches_baseline_plus_561_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13769,6 +13769,29 @@
         "Analyst descriptive name and working types, not recovered source declaration.",
         "Host math uses corrected Windows shadow-space adapters; exact PS4 implementations unverified.",
         "Finite unit rotations and sampled positive scales; exact ties, exceptional inputs, malformed/aliased buffers and live game unresolved.",
+        "No whole-subsystem completion claim."
+      ]
+    },
+    {
+      "address": "1409019a0",
+      "original_name": "FUN_1409019a0",
+      "applied_name": "ComputeObjectAuxiliaryFrameTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ComputeObjectAuxiliaryFrameTransform(PositionScaleQuaternionTransform32 * output_transform, void * world, void * alternate_world, uint object_reference, uint auxiliary_index, void * thing, void * parent_override)",
+      "evidence": [
+        "Complete669 original instructions read and byte verified.",
+        "Original type registrations and switch bytes bind five parent kinds to record categories; current/alternate-world ID/category matching tested.",
+        "992 scoped scenarios cover gate/stored/repeat frames,category lookup,dimensions/offsets/rotations,Timeline rule,snapping integration and200 paired parent overrides.",
+        "Verified compressed backup,independent reopening and fresh decompilation confirm seven-input working signature with typed32-byte output and stack parent override."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working signature,not recovered source declaration.",
+        "Selected auxiliary index0,valid supplied records,finite unit rotations and sampled positive scales; Timeline uses documented numerical bound.",
+        "Remaining type-specific modes,source field names,arbitrary indices,malformed/aliased buffers and lifecycles unresolved.",
+        "Host math uses corrected Windows shadow-space adapters; exact PS4 math and live game unverified.",
         "No whole-subsystem completion claim."
       ]
     }

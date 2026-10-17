@@ -4118,3 +4118,14 @@ With a prior relative transform, the tested position retention window is 0.7 gri
 372 original entry-to-return cases cover baseline, translated/rotated/scaled frames, both grid sources, and independent prior poses. Expected results use independent inverse/composition, grid and orientation-candidate calculations with source/output guards. Host math adapters include the corrected Windows shadow space. Backup, independent reopening and fresh decompilation confirm the working eight-input signature, including typed 32-byte transform pointers, SIMD scalar and stack flag. Exact PS4 math, threshold ties, exceptional inputs, aliasing and real-game integration remain unresolved.
 
 Totals: 599 checked names; 2,015 mapped and 7,574 unmapped among 9,589 discovered functions. This does not establish whole-game or whole-subsystem completion.
+
+
+### Object auxiliary-frame reconstruction
+
+Saved ComputeObjectAuxiliaryFrameTransform after reading and byte matching all 669 original instructions. It selects an identity or stored object frame at initial gates, otherwise reconstructs an auxiliary-relative frame from parent/object data, runtime record lookup, metadata dimensions and offsets. Original type registration binds Animation, Microchip, Timeline, Sound and Scripter parents to record categories 6, 2, 3, 4 and 5. Matching current-world records take priority over alternate-world fallback.
+
+992 scoped scenarios cover stored/repeat frames, category lookup, nonzero extra-field coordinates, rotations, metadata dimensions and offsets, Timeline scaling, snapping integration and 200 paired parent-override cases. The override cases use an invalid child parent reference with a valid explicit parent and match the normal lookup result. Connected snapping tests use the original relative-transform and orientation helpers. Source buffers and output guards were checked.
+
+Backup, independent reopening and fresh decompilation confirm the descriptive name and seven-input working signature, including typed 32-byte output and a stack parent override. Selected auxiliary index zero, finite valid records and sampled positive scales are tested. Remaining type-specific modes, original field names, arbitrary indices, malformed or aliased inputs, full lifecycles, exact PS4 math and live-game integration remain unresolved. Timeline calculations retain their documented numerical bounds; host math uses corrected shadow-space adapters.
+
+Totals: 600 checked names; 2,016 mapped and 7,573 unmapped among 9,589 discovered functions. These counts do not mean whole-game or whole-subsystem completion.
