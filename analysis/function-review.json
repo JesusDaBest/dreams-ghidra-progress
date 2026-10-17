@@ -13321,16 +13321,18 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "void * PS4_SYSV GetParentFromModelPropertyStorage(void * object)",
+      "saved_working_signature": "PositionScaleQuaternionTransform32 * PS4_SYSV GetParentFromModelPropertyStorage(void * object)",
       "evidence": [
         "Complete originalbody read andbyte matched.",
         "Native cases:48.",
         "Owner dirty-propagation caller trace supports lookup role.",
-        "Verified compressed backup andindependent saved-project reopening."
+        "Verified compressed backup andindependent saved-project reopening.",
+        "Typed32-byte storage layout independently reopened:positionXYZ/uniformscale float4 at0;quaternionXYZW float4 at16,supportedbycomposition/relative native-reference comparisons."
       ],
       "caveats": [
         "Analyst descriptive name andworking types;opaque contexts.",
-        "Finite validpointer/list fixtures;cycles,malformed inputs,concurrency andlivegame untested."
+        "Finite validpointer/list fixtures;cycles,malformed inputs,concurrency andlivegame untested.",
+        "Working inferred layout,not recoveredsource type;genericqueuepayload remainsopaque."
       ]
     }
   ],

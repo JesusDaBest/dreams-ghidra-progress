@@ -9406,5 +9406,36 @@
       "Synthetic validgraphs/indices;outerupdate work andmixedgraphs unresolved.",
       "No livegame verification oradditional namingcredit."
     ]
+  },
+  "transform_math_layout_checkpoint": {
+    "type": "PositionScaleQuaternionTransform32",
+    "size_bytes": 32,
+    "components": [
+      {
+        "offset": 0,
+        "field": "position_scale",
+        "format": "four32-bit floats:XYZ plusuniformscale"
+      },
+      {
+        "offset": 16,
+        "field": "rotation_xyzw",
+        "format": "four32-bit quaternion floats"
+      }
+    ],
+    "composition_native_reference_cases": 240,
+    "relative_native_reference_cases": 240,
+    "composition_max_absolute_error": 2.6310436709309215e-06,
+    "relative_max_absolute_error": 2.494234852434829e-06,
+    "original_libc_classification_connected": true,
+    "exceptional_inputs": {
+      "overflowed_squared_norm": "identity quaternion fallback inselectedfixture",
+      "nan_or_infinite_components": "NaNs canpropagate;notgeneralinvalidvalue cleanup"
+    },
+    "applied_scope": "Returntype ofGetParentFromModelPropertyStorage;opaquegenericqueuepayload retained because somecallers selectpropertydynamically.",
+    "limits": [
+      "Isolated inline math regions withunitparent/reference quaternions;relative referencescale positiveandnonzero.",
+      "No completehierarchy,exceptiondomain orlivegame verification.",
+      "No additionalnamecount orwholegame-update completioncredit."
+    ]
   }
 }
