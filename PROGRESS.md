@@ -4587,3 +4587,26 @@ Complete headers/data, original world/source objects, source nodes, input/contex
 The checks cover ordinary mode 0 and AutoKeyframe mode 5 with both controls clear or both set. Scalar and two-component source pages use all 504 payload bytes. Three-component pages hold 496 bytes of complete records and four-component pages hold 500; traversal skips the remaining gaps while preserving logical 504-byte page strides. Exact merged records, metadata, rebased times, complete headers and returned header indices match independent models. Complete source nodes, world data, input/context/auxiliary buffers and guards remain unchanged. Original resource growth, hashing and finalization execute; pow uses a host double-precision adapter, memory imports are adapted, and mutex/thread callbacks are controlled.
 
 This extends the earlier one-leaf checks to one parent level. Deeper trees, exhaustive floating-point rounding, all mode/control combinations, invalid inputs, concurrency and complete producer/playback behavior remain unresolved. No additional function is marked reviewed: the total remains 658 checked names, with 2,073 mapped and 7,530 unmapped functions among 9,603 discovered functions. No Ghidra project changes are made by this test batch.
+
+
+### Animation transition handler format selection
+
+Audited the original 30-entry signed-relative jump table and the four complete scalar/vector forwarding blocks in the 6,254-instruction basic-to-extended handler. All captured instruction bytes match the original executable. The handler reads the old header's format byte at offset 8. Codes above 29, and unsupported entries within that range, reach the same default return path.
+
+| Old format codes | Selected path | Review scope |
+| --- | --- | --- |
+| 2, 5, 24, 25 | Scalar interval transition helper | Helper reviewed; connected cases previously published |
+| 3, 7, 17 | Three-component interval transition helper | Helper reviewed; connected cases previously published |
+| 6, 15, 16 | Four-component interval transition helper | Helper reviewed; connected cases previously published |
+| 8, 20, 21 | Two-component interval transition helper | Helper reviewed; connected cases previously published |
+| 0 | Inline typed-value records | Full branch review unfinished |
+| 1 | Inline Boolean records | Earlier scoped native evidence; full handler review unfinished |
+| 4 | Inline transform records | Full transition-branch review unfinished |
+| 11 | Inline byte records | Full branch review unfinished |
+| 23 | Inline dword records | Full branch review unfinished |
+| 29 | Inline qword records | Full branch review unfinished |
+| Other byte values | Return sentinel | 5,688 original-code cases in this batch |
+
+The four delegate blocks pass the old header and incoming descriptor through, split the page-root pair into pointers at offsets 0 and 4, restore the auxiliary-state pointer, and forward both byte controls unchanged. This connects the helper signatures to their caller in original assembly; it does not establish source-level names for the controls.
+
+The default-path tests cover all 237 unsupported byte values, six packed-size fixtures and four control pairs. The original handler returns the zero-extended value 0xffffffff and preserves all supplied argument buffers, guards and the synthetic resource-node span. These are direct handler tests, not full producer or gameplay tests. The six inline supported formats are the remaining branch-review gap; neither the whole handler nor another function is marked reviewed. The total remains 658 checked names. No Ghidra project changes are made by this batch.

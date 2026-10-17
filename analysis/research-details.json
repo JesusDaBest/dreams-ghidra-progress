@@ -13134,5 +13134,89 @@
     "project_modified": false,
     "new_name_credit": 0,
     "scope": "Connected original-code checks across one parent level; previous one-leaf receipts remain unchanged."
+  },
+  "animation_transition_dispatch_checkpoint": {
+    "entry": "1410705f0",
+    "table_address": "0x1416d4f88",
+    "table_bytes_sha256": "2119d8dac3b2c3b495099bfcdb5fd21c3ea4de935e59f18c074f7e9e19136ee7",
+    "format_targets": {
+      "0": "0x1410706f1",
+      "1": "0x141070829",
+      "2": "0x141070652",
+      "3": "0x141070673",
+      "4": "0x141070923",
+      "5": "0x141070652",
+      "6": "0x1410706b5",
+      "7": "0x141070673",
+      "8": "0x141070694",
+      "9": "0x141077210",
+      "10": "0x141077210",
+      "11": "0x141070a7e",
+      "12": "0x141077210",
+      "13": "0x141077210",
+      "14": "0x141077210",
+      "15": "0x1410706b5",
+      "16": "0x1410706b5",
+      "17": "0x141070673",
+      "18": "0x141077210",
+      "19": "0x141077210",
+      "20": "0x141070694",
+      "21": "0x141070694",
+      "22": "0x141077210",
+      "23": "0x141070b61",
+      "24": "0x141070652",
+      "25": "0x141070652",
+      "26": "0x141077210",
+      "27": "0x141077210",
+      "28": "0x141077210",
+      "29": "0x141070c51"
+    },
+    "native_cases": 5688,
+    "unsupported_type_count": 237,
+    "findings": [
+      "Original30-entry signed-relative jump table matches all19 supported format codes and default target.",
+      "13 scalar/vector codes forward to four reviewed delegates; six formats are handled inline.",
+      "Original unsupported-format paths return zero-extended0xffffffff for all237 unsupported byte values across six packed-size fixtures and four control pairs.",
+      "All argument buffers, guards and synthetic resource-node span remain unchanged."
+    ],
+    "limits": [
+      "Only unsupported branches executed in this new batch; supported-route execution evidence remains in earlier receipts.",
+      "Full6254-instruction handler and all six inline format branches are not yet fully reviewed.",
+      "No full-handler name or review credit added."
+    ],
+    "project_modified": false,
+    "static_forwarding_audit": [
+      {
+        "block": "141070652",
+        "call": "14107066c",
+        "target": "14108f690",
+        "name": "MergeScalarAnimationRecordIntervalAsExtended",
+        "forwarding": "Old header/incoming descriptor remain first arguments; page-root pointer split at +0/+4; auxiliary pointer restored; both byte controls forwarded unchanged."
+      },
+      {
+        "block": "141070673",
+        "call": "14107068d",
+        "target": "1410908d0",
+        "name": "MergeFloat3AnimationRecordIntervalAsExtended",
+        "forwarding": "Old header/incoming descriptor remain first arguments; page-root pointer split at +0/+4; auxiliary pointer restored; both byte controls forwarded unchanged."
+      },
+      {
+        "block": "141070694",
+        "call": "1410706ae",
+        "target": "141092e60",
+        "name": "MergeFloat2AnimationRecordIntervalAsExtended",
+        "forwarding": "Old header/incoming descriptor remain first arguments; page-root pointer split at +0/+4; auxiliary pointer restored; both byte controls forwarded unchanged."
+      },
+      {
+        "block": "1410706b5",
+        "call": "1410706cf",
+        "target": "141091b50",
+        "name": "MergeFloat4AnimationRecordIntervalAsExtended",
+        "forwarding": "Old header/incoming descriptor remain first arguments; page-root pointer split at +0/+4; auxiliary pointer restored; both byte controls forwarded unchanged."
+      }
+    ],
+    "original_handler_instruction_count": 6254,
+    "original_handler_native_sha256": "101194a3d1624d724eee9adabf7bd02b1060e7a7744223bbe80508490b45d7cf",
+    "new_name_credit": 0
   }
 }
