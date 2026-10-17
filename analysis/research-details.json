@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 597,
+    "checked_and_applied_names": 598,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 597,
+    "verified_names": 598,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "558 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "559 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9930,6 +9930,30 @@
       "Valid reference and selected slots, finite unit rotations and nonzero signed half/unit/double scales tested.",
       "Special getter records, packed rotations, invalid references/slot bounds and full callee lifecycles unresolved.",
       "Negative ordinary scale convention is not general3D negative-scale equivalence; no live-game or full subsystem claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
+  },
+  "quaternion_orientation_snap_checkpoint": {
+    "name": "SnapQuaternionToOrientationSet",
+    "native_cases": 128,
+    "instructions_read_and_byte_verified": 279,
+    "findings": [
+      "Selects nearest quaternion among quarter-turn orientations using absolute dot score and input hemisphere.",
+      "Mode8 adds signed45-degree axis offsets to candidate orientations."
+    ],
+    "evidence": [
+      "Complete279 original instructions read and byte verified.",
+      "128 full native cases match an independently generated orientation candidate set, nearest quaternion score, hemisphere and source/output guards.",
+      "EDI mode and XMM0 quaternion input/return verified; existing16-byte analyst register container reused.",
+      "Compressed project backup verified; name and exact custom storage independently reopened and freshly decompiled."
+    ],
+    "limits": [
+      "Analyst descriptive name and register-container working prototype, not recovered source declaration.",
+      "Controlled host sin/cos adapter; exact PS4 trigonometry and tie ordering unverified.",
+      "Finite unit inputs in modes0/4/8/9; nonunit, nonfinite/subnormal inputs and real game unresolved.",
+      "No full larger snapping callee or subsystem completion claim."
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true,

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "558 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "559 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8837,
-    "other_names": 752,
-    "verification": "complete_inventory_matches_baseline_plus_558_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8836,
+    "other_names": 753,
+    "verification": "complete_inventory_matches_baseline_plus_559_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13726,6 +13726,28 @@
         "Valid reference and selected slots, finite unit rotations and nonzero signed half/unit/double scales tested.",
         "Special getter records, packed rotations, invalid references/slot bounds and full callee lifecycles unresolved.",
         "Negative ordinary scale convention is not general3D negative-scale equivalence; no live-game or full subsystem claim."
+      ]
+    },
+    {
+      "address": "1409ff430",
+      "original_name": "FUN_1409ff430",
+      "applied_name": "SnapQuaternionToOrientationSet",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "Float4RegisterValue16 PS4_SYSV SnapQuaternionToOrientationSet(uint orientation_mode, Float4RegisterValue16 rotation_xyzw)",
+      "evidence": [
+        "Complete279 original instructions read and byte verified.",
+        "128 full native cases match an independently generated orientation candidate set, nearest quaternion score, hemisphere and source/output guards.",
+        "EDI mode and XMM0 quaternion input/return verified; existing16-byte analyst register container reused.",
+        "Compressed project backup verified; name and exact custom storage independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive name and register-container working prototype, not recovered source declaration.",
+        "Controlled host sin/cos adapter; exact PS4 trigonometry and tie ordering unverified.",
+        "Finite unit inputs in modes0/4/8/9; nonunit, nonfinite/subnormal inputs and real game unresolved.",
+        "No full larger snapping callee or subsystem completion claim."
       ]
     }
   ],

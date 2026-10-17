@@ -4089,3 +4089,14 @@ Saved ResolveRecordTransform after reading and byte matching all 50 original wra
 Special getter records, packed rotations, invalid references or slots, original record field meanings, full lifecycles and live-game integration remain unresolved. This names the wrapper without claiming completion of its callees or subsystem.
 
 Totals: 597 checked names; 2,013 mapped and 7,576 unmapped among 9,589 discovered functions.
+
+
+### Quaternion orientation snapping
+
+Saved SnapQuaternionToOrientationSet after reading and byte matching all 279 original instructions. It chooses the closest quarter-turn orientation by absolute quaternion dot score and aligns the output sign with the input. Mode 8 also considers positive and negative 45-degree offsets about each axis.
+
+128 original entry-to-return cases match an independently generated candidate set, nearest score and hemisphere, with guarded input/output. A verified compressed backup, independent reopening and fresh decompilation confirm the mode input and XMM0 quaternion input/return. The 16-byte register container is an analyst working type. Host sin/cos supplied the trigonometric import; exact PS4 math, ties, nonunit or exceptional inputs and real-game behavior remain unresolved.
+
+Additional frame reconstruction evidence now binds original Animation, Microchip, Timeline, Sound and Scripter types to runtime record categories 6, 2, 3, 4 and 5. 200 connected cases verify category/ID matching and world fallback. Another 384 scoped cases examine nonzero extra-field coordinates, rotations, metadata dimensions, offsets and Timeline-specific scaling. These do not establish full frame-helper semantics or original field names. Timeline numerical checks use a documented vector-scale error bound; maximum observed relative vector error was approximately 0.000000505.
+
+Totals: 598 checked names; 2,014 mapped and 7,575 unmapped among 9,589 discovered functions. Only the quaternion helper adds new naming credit here.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2013,
-  "unmapped_total": 7576,
+  "mapped_total": 2014,
+  "unmapped_total": 7575,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50383,6 +50383,30 @@
           ]
         }
       ]
+    },
+    "1409ff430": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "math",
+        "orientation-snapping",
+        "runtime-implementation"
+      ],
+      "component_basis": "Discrete quaternion orientation selection used by larger transform quantization path.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body reviewed and128 scoped native cases.",
+      "code_sha256": "fd19ef7a1713c95fdaabf8e97647a6b220188a0d75bfd09ec0ac73c9aae5a427",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SnapQuaternionToOrientationSet",
+          "support": [
+            "Selects nearest quaternion among quarter-turn orientations using absolute dot score and input hemisphere.",
+            "Mode8 adds signed45-degree axis offsets to candidate orientations."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -50535,6 +50559,17 @@
             {
               "id": "object-hierarchy-transform",
               "label": "Object hierarchy transforms",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "orientation-snapping",
+              "label": "Orientation snapping",
               "children": [
                 {
                   "id": "runtime-implementation",
