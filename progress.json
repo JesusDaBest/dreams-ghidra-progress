@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 518,
+    "done": 519,
     "todo": 1463,
-    "total": 1981,
-    "behavior_or_helpers_reviewed": 453,
+    "total": 1982,
+    "behavior_or_helpers_reviewed": 454,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -32899,12 +32899,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 24,
+        "done": 25,
         "todo": 108,
-        "total": 132,
-        "behavior_or_helpers_reviewed": 24,
+        "total": 133,
+        "behavior_or_helpers_reviewed": 25,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 93,
+        "runtime_functions_identified": 94,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -32931,6 +32931,7 @@
           "GetOrLoadGdsCounterReadbackShader",
           "DispatchGdsCounterReadback",
           "BuildAndReuseVolumeResourcesForSlot",
+          "InitializeVolumeBuildTemporaryResources",
           "BuildSweepBlockRanges",
           "DispatchSweepHashBlocksRange"
         ],
@@ -33067,6 +33068,7 @@
           "141297f40",
           "141298670",
           "1412993c0",
+          "1412a19c0",
           "1412a20f0",
           "1412a3b40"
         ],
@@ -33185,12 +33187,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 24,
+            "done": 25,
             "todo": 69,
-            "total": 93,
-            "behavior_or_helpers_reviewed": 24,
+            "total": 94,
+            "behavior_or_helpers_reviewed": 25,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 87,
+            "runtime_functions_identified": 88,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -33217,6 +33219,7 @@
               "GetOrLoadGdsCounterReadbackShader",
               "DispatchGdsCounterReadback",
               "BuildAndReuseVolumeResourcesForSlot",
+              "InitializeVolumeBuildTemporaryResources",
               "BuildSweepBlockRanges",
               "DispatchSweepHashBlocksRange"
             ],
@@ -33314,6 +33317,7 @@
               "141297f40",
               "141298670",
               "1412993c0",
+              "1412a19c0",
               "1412a20f0",
               "1412a3b40"
             ],
@@ -33393,12 +33397,12 @@
               {
                 "name": "sculpting-painting/csg/bricker2",
                 "label": "Sculpt bricks",
-                "done": 11,
+                "done": 12,
                 "todo": 22,
-                "total": 33,
-                "behavior_or_helpers_reviewed": 11,
+                "total": 34,
+                "behavior_or_helpers_reviewed": 12,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 33,
+                "runtime_functions_identified": 34,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -33413,7 +33417,8 @@
                   "RunBricker2BuildPipeline",
                   "BuildVolumeSlotDescriptor",
                   "InitializeGpuHashTableResources",
-                  "BuildAndReuseVolumeResourcesForSlot"
+                  "BuildAndReuseVolumeResourcesForSlot",
+                  "InitializeVolumeBuildTemporaryResources"
                 ],
                 "todo_names": [
                   "0x141278e20",
@@ -33450,7 +33455,8 @@
                   "14127f740",
                   "141295780",
                   "141296330",
-                  "1412993c0"
+                  "1412993c0",
+                  "1412a19c0"
                 ],
                 "todo_addresses": [
                   "141278e20",
@@ -33481,12 +33487,12 @@
                   {
                     "name": "sculpting-painting/csg/bricker2/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 11,
+                    "done": 12,
                     "todo": 22,
-                    "total": 33,
-                    "behavior_or_helpers_reviewed": 11,
+                    "total": 34,
+                    "behavior_or_helpers_reviewed": 12,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 33,
+                    "runtime_functions_identified": 34,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -33501,7 +33507,8 @@
                       "RunBricker2BuildPipeline",
                       "BuildVolumeSlotDescriptor",
                       "InitializeGpuHashTableResources",
-                      "BuildAndReuseVolumeResourcesForSlot"
+                      "BuildAndReuseVolumeResourcesForSlot",
+                      "InitializeVolumeBuildTemporaryResources"
                     ],
                     "todo_names": [
                       "0x141278e20",
@@ -33538,7 +33545,8 @@
                       "14127f740",
                       "141295780",
                       "141296330",
-                      "1412993c0"
+                      "1412993c0",
+                      "1412a19c0"
                     ],
                     "todo_addresses": [
                       "141278e20",
@@ -43946,5 +43954,5 @@
       }
     ]
   },
-  "unmapped": 7607
+  "unmapped": 7606
 }

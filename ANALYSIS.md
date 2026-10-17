@@ -3851,3 +3851,13 @@ The builder counts item entries marked -2 and writes separate sentinel and other
 Follow-up tests entered the original multi-item caller’s new-item failure branch. Twelve zero-capacity cases checked relative 10-bit XYZ packing, status 2, output sentinels and cleanup. Eight partial-allocation cases allocated one ID before exhaustion: rollback left it zero-reference pending with its bitmap bit retained until retirement, while caller output and temporary counters were cleared. These tests used original allocation/release callbacks and controlled synchronization; they did not enter a successful GPU build. Producer constraints, real concurrency and new geometry remain unverified.
 
 Totals: 558 reviewed names; 1,981 mapped and 7,607 unmapped among 9,588 discovered functions.
+
+### Temporary volume build resources
+
+Saved InitializeVolumeBuildTemporaryResources with an opaque context pointer after reviewing and byte matching all 322 original instructions. It initializes ten typed resources, calls the existing hash resource initializer, and requests seven further buffers. Backed-up trial and independent trial/main reopening verified the saved signature, unchanged original code and archives, and successful decompilation.
+
+Original-code fixtures exercised all 512 combinations of nine optional allocation outcomes. They checked ten requests per scenario, selected hash capacity, all 84 hash parameter bytes, zero descriptors after failed allocations, element counts for the seven later successful descriptors, resource headers and boundary guards. Failed optional allocations did not prevent later requests.
+
+The allocator was controlled and format globals were fixture values. The parameter allocation remained successful: the real allocator can return NULL, while subsequent hash setup dereferences the pointer unconditionally. Runtime capacity guarantees remain unresolved; no actual game fault is established. This does not verify actual GPU allocation, complete successful volume builds, resource destruction or concurrency.
+
+Totals: 559 reviewed names; 1,982 mapped and 7,606 unmapped among 9,588 discovered functions.
