@@ -4546,3 +4546,10 @@ Seventy-two full-entry cached-result cases show that a matching result child upd
 Another 54 cases use two distinct result children sharing one query root. The root counts once and its output uses the first encountered result weight; the gadget output still accumulates the strongest weight before root deduplication. Their outputs can therefore differ. A threshold of two fails because only one unique root was accepted, and restores the root's prior value.
 
 Original consumer/helper bodies execute and whole fixture buffers plus allocation cleanup were checked. Physics/contact records and cached spatial results are supplied boundaries; upstream query production and geometry were not executed. Signed/nonfinite weights, multiple distinct roots, player channels and live gameplay remain unresolved. Ghidra annotations were saved and independently reopened. No new name credit: 622 checked names unchanged.
+
+
+### Sculpt Power fixture correction
+
+Further tracing found that Sculpt's original `Power` field is at `0x4c`; `0x40` is used as a resource handle in the spatial producer. The original property registration and packed metadata initializer independently confirm `Power=0x4c`. Earlier Dream/Objects fixtures supplied `0x40` as a synthetic Power location, so their claim to use the original Power field was incorrect.
+
+All eight affected suites were corrected and rerun: 1,784 cases covering Dream labels/ownership/root ordering and Objects filtering/nested labels/cached output routing. All pass with the corrected original field and the same scoped outcomes. Original fixture scripts and receipts are retained as superseded; these reruns add no test or naming credit. Ghidra correction annotations were saved and independently reopened. Other documented fixture boundaries remain; upstream query production and live gameplay are still incomplete. Checked names remain 622.

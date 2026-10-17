@@ -10552,7 +10552,8 @@
     "original_libc_import": "memset NID bound via saved loader and original module bytes/jump table mapped",
     "boundaries": "Handle lookup, allocation and free explicitly modeled.",
     "processor_review": "partial_unnamed",
-    "checked_name_total_unchanged": 619
+    "checked_name_total_unchanged": 619,
+    "sculpt_power_fixture_version": "corrected_original_4c; original40 receipts superseded, not extra test credit"
   },
   "triggerzone_entirelevel_labels_checkpoint": {
     "tests": {
@@ -10778,7 +10779,8 @@
       "Valid category1 graph supplied; other categories, malformed/cyclic graphs, cached/bounded Objects modes and complete callers unresolved.",
       "Query/physics producers, handle lookup and allocation/free modeled; no live gameplay verified."
     ],
-    "processor_review": "partial_unnamed"
+    "processor_review": "partial_unnamed",
+    "sculpt_power_fixture_version": "corrected_original_4c; original40 receipts superseded, not extra test credit"
   },
   "triggerzone_objects_cached_checkpoint": {
     "native_checks": {
@@ -10814,6 +10816,58 @@
       "Multiple distinct query roots, deeper ancestry, ownership channels, signed/nonfinite weights, query production and live gameplay unresolved."
     ],
     "annotations": "Saved and independently reopened in Ghidra.",
-    "checked_name_total_unchanged": 622
+    "checked_name_total_unchanged": 622,
+    "sculpt_power_fixture_version": "corrected_original_4c; original40 receipts superseded, not extra test credit"
+  },
+  "sculpt_power_fixture_correction": {
+    "original_field": "Sculpt.Power",
+    "correct_offset": "0x4c",
+    "old_fixture_offset": "0x40",
+    "evidence": [
+      "Original Power registration offset4c.",
+      "Original packed DWORD metadata initializer decodes transform50 and Power4c."
+    ],
+    "corrected_suites": [
+      {
+        "script": "work\\triggerzone_dream_child_first_connected_native_child.py",
+        "cases": 48
+      },
+      {
+        "script": "work\\triggerzone_dream_connected_native_child.py",
+        "cases": 32
+      },
+      {
+        "script": "work\\triggerzone_dream_labels_connected_native_child.py",
+        "cases": 324
+      },
+      {
+        "script": "work\\triggerzone_dream_players_connected_native_child.py",
+        "cases": 486
+      },
+      {
+        "script": "work\\triggerzone_objects_cached_outputs_native_child.py",
+        "cases": 72
+      },
+      {
+        "script": "work\\triggerzone_objects_cached_shared_root_native_child.py",
+        "cases": 54
+      },
+      {
+        "script": "work\\triggerzone_objects_entirelevel_native_child.py",
+        "cases": 48
+      },
+      {
+        "script": "work\\triggerzone_objects_nested_labels_native_child.py",
+        "cases": 720
+      }
+    ],
+    "total_rerun_cases": 1784,
+    "scope": "Same eight Dream/Objects case sets rerun with corrected original Power field, preserving previous raw fixtures and receipts as superseded.",
+    "result": "All corrected suites pass with previous scoped outcomes.",
+    "additional_test_or_name_credit": false,
+    "remaining_limits": [
+      "Other fixture boundaries and documented per-suite limits still apply.",
+      "Upstream spatial query production and live gameplay remain incomplete."
+    ]
   }
 }
