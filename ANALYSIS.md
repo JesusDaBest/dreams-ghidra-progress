@@ -4129,3 +4129,12 @@ Saved ComputeObjectAuxiliaryFrameTransform after reading and byte matching all 6
 Backup, independent reopening and fresh decompilation confirm the descriptive name and seven-input working signature, including typed 32-byte output and a stack parent override. Selected auxiliary index zero, finite valid records and sampled positive scales are tested. Remaining type-specific modes, original field names, arbitrary indices, malformed or aliased inputs, full lifecycles, exact PS4 math and live-game integration remain unresolved. Timeline calculations retain their documented numerical bounds; host math uses corrected shadow-space adapters.
 
 Totals: 600 checked names; 2,016 mapped and 7,573 unmapped among 9,589 discovered functions. These counts do not mean whole-game or whole-subsystem completion.
+
+
+### Transform selection: cached frames and eligibility gates
+
+368 additional scoped scenarios exercise the original transform selector from entry to return. In 144 cases, a one-based object frame slot selects one of three cached transforms and combines it with the supplied transform. A nonzero object mode or the excluded object kind bypasses that combination. These tests use distinct inputs and check source buffers and output guards.
+
+Another 224 cases check the auxiliary-kind eligibility masks and the secondary record-field condition when the selector equals the repeat step. Nonzero group, global-slot or record gates each bypass cached-frame composition. Synthetic kind codes establish branch behavior, not recovered enum names or proof that every code is valid in-game.
+
+These findings add no checked name and no whole-function completion claim. Tests cover valid object index zero, selected slots, finite unit rotations and positive scales. The body-linked branch, remaining selection modes, exact field meanings, malformed inputs and live-game lifecycle remain unresolved.
