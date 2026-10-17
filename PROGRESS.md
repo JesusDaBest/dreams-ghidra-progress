@@ -3515,3 +3515,13 @@ Saved InternAndBeginComputeProfilingRegion with a working signature using an opa
 Forty-two native calls across six scenarios checked NULL and duplicate labels, label interning, active-region changes, 64-label and 2,048-byte storage limits, region counters and exact seven-word commands. Scratch ABI shims called the host C runtime for string operations. Failed command emission still advances region state, so repeating the same label does not reemit that command. Overall region-array capacity, concurrency and exact GPU event semantics remain unresolved. Counters represent dispatch-wrapper attempts, not completed GPU work.
 
 Totals: 555 reviewed names; 1,978 mapped and 7,610 unmapped among 9,588 discovered functions.
+
+### Shared volume and item resource recycling
+
+Saved DrainRetiredVolumeAndItemResources with an opaque caller-held mutex parameter and void return. All 206 original instructions were read and byte matched. Backed-up trial and independent trial/main reopening verified persistence, successful decompilation, unchanged instruction bytes and unchanged archives. The existing QueueAgedCacheEntriesForRelease name was preserved and is not counted again.
+
+Six primary-pool scenarios checked exact volume resets, block-release arguments, list unlinking and bitmap clearing. Eight secondary-pool scenarios checked 16-byte item compaction, surviving offsets, total counts and bitmap/list state, including multiple releases in different orders. The drain temporarily unlocks for payload cleanup and relocks for list/bitmap changes. Block release and mutex/thread calls were controlled fixtures; actual integration and concurrency remain unverified.
+
+Follow-up evidence for the existing retirement helper covers 288 generation/budget cases and 40 payload-hash cases, including wraparound and collision backshifts. A zero initial budget can still retire an eligible head before the budget check. Eighty callback/pending-list scenarios cover reference counts, allocation rollback and exact links. Pending IDs keep their bitmap bits until the retired drain clears them. This pool is shared with object-cache consumers and is not a sculpt-exclusive allocator. Producer constraints, pressure/wait recovery and malformed-pool behavior remain unresolved.
+
+Totals: 556 reviewed names; 1,979 mapped and 7,609 unmapped among 9,588 discovered functions.

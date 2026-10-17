@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1978,
-  "unmapped_total": 7610,
+  "mapped_total": 1979,
+  "unmapped_total": 7609,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49633,6 +49633,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "InternAndBeginComputeProfilingRegion",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1407300b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared volume/item resource drain traced through reference-counted ID callbacks, age retirement and sculpt/cache callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Releases retired payload storage, compacts item arrays and frees shared resource IDs.",
+      "code_sha256": "28984391123dc839d57b8db1858e70e611a6d55b252d4d2dbe9a67970fc2daab",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DrainRetiredVolumeAndItemResources",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
