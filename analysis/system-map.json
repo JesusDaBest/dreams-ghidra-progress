@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1983,
-  "unmapped_total": 7605,
+  "mapped_total": 1984,
+  "unmapped_total": 7604,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49738,6 +49738,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "ReclaimVolumeAndItemCapacity",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14073b870": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared volume/item summary refresh traced from persistent caller storage, metadata and resource pools.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Refreshes keyed summary records from generation-aware volume and item resource metadata with optional filtering.",
+      "code_sha256": "8939b7a1a2a7f20e2be1af1df9ce45fdaf6e2d15406a022e3c21846a1ffff4e7",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RefreshVolumeAndItemSummaryRecords",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

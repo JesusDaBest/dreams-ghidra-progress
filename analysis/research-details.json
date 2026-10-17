@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 560,
+    "checked_and_applied_names": 561,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 560,
+    "verified_names": 561,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "522 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "523 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9004,5 +9004,19 @@
       "Bounded synthetic valid pools and chains; no complete runtime producer or GPU workload verification.",
       "No new names or feature completion credit."
     ]
+  },
+  "volume_item_refresh_checkpoint": {
+    "saved_names": [
+      "RefreshVolumeAndItemSummaryRecords"
+    ],
+    "original_instructions": 368,
+    "refresh_native_cases": 197,
+    "small_sort_native_cases": 35,
+    "limits": [
+      "Lower-bound retention can preserve a mismatched key in synthetic states; caller key-set invariants unresolved.",
+      "Large sorting paths, producer bounds and concurrency unverified.",
+      "Generated padding bytes unspecified; only defined fields asserted."
+    ],
+    "runtime_game_verified": false
   }
 }
