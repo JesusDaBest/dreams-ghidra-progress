@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "605 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "606 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8790,
-    "other_names": 813,
-    "verification": "complete_inventory_matches_baseline_plus_605_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8789,
+    "other_names": 814,
+    "verification": "complete_inventory_matches_baseline_plus_606_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15173,6 +15173,32 @@
         "One-leaforiginalsource,finiteorderedtimes/values,validbuffers.",
         "Otherproperties/modes,allboundaryrounding,deeperlevels,invalidinputs,races,fullproducer/playback unresolved.",
         "Memoryimports adapted;mutex/threadcallbacks controlled."
+      ]
+    },
+    {
+      "address": "1410705f0",
+      "original_name": "FUN_1410705f0",
+      "applied_name": "MergeAnimationRecordIntervalAsExtended",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeAnimationRecordIntervalAsExtended(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, AnimationTransformFrameWorking32 * wire_frame, AnimationTransformFrameWorking32 * output_frame, AnimationRecordPageRootsWorking8 * page_roots, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b)",
+      "evidence": [
+        "Complete6254-instruction body reviewed across four delegated scalar/vector groups and six inline formats; original30-entry jump table and control forwarding audited.",
+        "All19 supported format codes identified; unsupported-format sentinel checked across237 byte values.",
+        "Recorded suites total96048 scoped native executions, including overlapping fixture families; this is not a count of unique functions or full gameplay runs.",
+        "Connected converter/dispatcher checks cover scalar/vector,Boolean,byte,dword,qword andtyped-value paths; transform suite connects converter directly to original handler.",
+        "Transform branch2880 fresh-frame cases verify inverse(H)*D*K*O*inverse(W), time/metadata/header/retained bytes; maximum error1.464939091633255e-5 below5e-4 tolerance.",
+        "Eight-argument working signature and signedEAX index return saved and independently reopened/freshlydecompiled; all9602 other names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name andworking ABI; not recovered source declarations.",
+        "Transform native scope:one-leaf sources,unitquaternions,positiveuniformscales0.5/1/2,modes0/5 withthree specified control profiles; dispatcher not executed in this transform batch.",
+        "Other format suites cover one parent level; connected typed-value tags1/9/30; retained Boolean/byte/qword/typed-value padding remains opaque.",
+        "Other modes/properties,exhaustive rounding,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback remain unresolved.",
+        "Host memory/pow adapters andcontrolled mutex/thread callbacks; transform __isinff executes original local libc."
       ]
     }
   ],

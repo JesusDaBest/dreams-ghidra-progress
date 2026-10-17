@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 658,
+    "checked_and_applied_names": 659,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 658,
+    "verified_names": 659,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "605 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "606 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -13217,7 +13217,12 @@
     ],
     "original_handler_instruction_count": 6254,
     "original_handler_native_sha256": "101194a3d1624d724eee9adabf7bd02b1060e7a7744223bbe80508490b45d7cf",
-    "new_name_credit": 0
+    "new_name_credit": 0,
+    "subsequent_whole_handler_review": {
+      "address": "1410705f0",
+      "name": "MergeAnimationRecordIntervalAsExtended",
+      "status": "reviewed_and_named_with_scoped_limits"
+    }
   },
   "animation_dword_inline_transition_checkpoint": {
     "handler": "1410705f0",
@@ -13453,5 +13458,144 @@
       4
     ],
     "full_handler_reviewed": false
+  },
+  "animation_transition_handler_review_checkpoint": {
+    "address": "1410705f0",
+    "name": "MergeAnimationRecordIntervalAsExtended",
+    "native_instructions": 6254,
+    "recorded_native_executions": 96048,
+    "batches": [
+      {
+        "file": "animation-scalar-transition-mode-native-check.json",
+        "native_cases": 9600
+      },
+      {
+        "file": "animation-float3-transition-mode-native-check.json",
+        "native_cases": 7200
+      },
+      {
+        "file": "animation-float4-transition-mode-native-check.json",
+        "native_cases": 7200
+      },
+      {
+        "file": "animation-float2-transition-mode-native-check.json",
+        "native_cases": 7200
+      },
+      {
+        "file": "animation-transition-parent-pages-native-check.json",
+        "native_cases": 14040
+      },
+      {
+        "file": "animation-transition-dispatch-native-check.json",
+        "native_cases": 5688
+      },
+      {
+        "file": "animation-dword-inline-transition-native-check.json",
+        "native_cases": 2400
+      },
+      {
+        "file": "animation-dword-inline-transition-parent-pages-native-check.json",
+        "native_cases": 2880
+      },
+      {
+        "file": "animation-dword-inline-transition-bit-pattern-native-check.json",
+        "native_cases": 2400
+      },
+      {
+        "file": "animation-qword-inline-transition-native-check.json",
+        "native_cases": 2400
+      },
+      {
+        "file": "animation-qword-inline-transition-parent-pages-native-check.json",
+        "native_cases": 5760
+      },
+      {
+        "file": "animation-byte-inline-transition-native-check.json",
+        "native_cases": 2400
+      },
+      {
+        "file": "animation-byte-inline-transition-parent-pages-native-check.json",
+        "native_cases": 2880
+      },
+      {
+        "file": "animation-boolean-inline-transition-native-check.json",
+        "native_cases": 2400
+      },
+      {
+        "file": "animation-boolean-inline-transition-parent-pages-native-check.json",
+        "native_cases": 2880
+      },
+      {
+        "file": "animation-typed-value-inline-transition-native-check.json",
+        "native_cases": 7200
+      },
+      {
+        "file": "animation-typed-value-inline-transition-parent-pages-native-check.json",
+        "native_cases": 8640
+      },
+      {
+        "file": "animation-transform-inline-transition-native-check.json",
+        "native_cases": 2880
+      }
+    ],
+    "transform": {
+      "entry": "1410705f0",
+      "format": 4,
+      "native_cases": 2880,
+      "converter_calls": 2880,
+      "frame_profiles": 8,
+      "mode_profiles": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_absolute_error": 1.464939091633255e-05,
+      "tolerance": 0.0005,
+      "composition": "inverse(H) * D * K * O * inverse(W)",
+      "findings": [
+        "Actual converter and original inline transform transition branch execute together; no handler/math probes.",
+        "Old36-byte keys expand to40-byte records; incoming transforms follow fixed frame-composition formula across fresh unit-quaternion/positive-scale fixtures.",
+        "Exact time/metadata/header/retained oldkey bytes,merged lengths,source nodes,input/context/auxiliary immutability and guards checked.",
+        "Scoped AutoKeyframe prefix and first-incoming metadata match independent model; incoming position/scale/quaternion checked within tolerance and quaternion sign equivalence."
+      ],
+      "limits": [
+        "Direct original handler plus converter; dispatcher not executed in this batch.",
+        "One-leaf source,unitquaternions,positive uniform scales0.5/1/2,finiteorderedtimes andvalidbuffers.",
+        "Other modes/flags,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback unresolved.",
+        "Hostmemory adapters;mutex/threadcallbacks controlled; __isinff executes byte-verified original libc."
+      ],
+      "project_modified": false
+    },
+    "findings": [
+      "Complete6254-instruction body reviewed across four delegated scalar/vector groups and six inline formats; original30-entry jump table and control forwarding audited.",
+      "All19 supported format codes identified; unsupported-format sentinel checked across237 byte values.",
+      "Recorded suites total96048 scoped native executions, including overlapping fixture families; this is not a count of unique functions or full gameplay runs.",
+      "Connected converter/dispatcher checks cover scalar/vector,Boolean,byte,dword,qword andtyped-value paths; transform suite connects converter directly to original handler.",
+      "Transform branch2880 fresh-frame cases verify inverse(H)*D*K*O*inverse(W), time/metadata/header/retained bytes; maximum error1.464939091633255e-5 below5e-4 tolerance.",
+      "Eight-argument working signature and signedEAX index return saved and independently reopened/freshlydecompiled; all9602 other names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name andworking ABI; not recovered source declarations.",
+      "Transform native scope:one-leaf sources,unitquaternions,positiveuniformscales0.5/1/2,modes0/5 withthree specified control profiles; dispatcher not executed in this transform batch.",
+      "Other format suites cover one parent level; connected typed-value tags1/9/30; retained Boolean/byte/qword/typed-value padding remains opaque.",
+      "Other modes/properties,exhaustive rounding,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback remain unresolved.",
+      "Host memory/pow adapters andcontrolled mutex/thread callbacks; transform __isinff executes original local libc."
+    ],
+    "new_name_credit": 1
   }
 }
