@@ -5271,3 +5271,14 @@ For `fdf3`, replay resolves stored persistent object IDs through `ResolvePersist
 For `fdf5`, replay replaces the selected wire's two endpoint indices with invalid values and sets the world and optional owner dirty flags. The wire count, transform, remaining record fields and cursor stay unchanged. Every case checks the complete world and owner buffers against the expected changes.
 
 The host supplies the decoded event ID, header descriptor and removal wire pointer. The upstream packet reader, removal target selection, complete undo/redo lifecycle, malformed chains, concurrency and gameplay remain unverified. No functions were newly named or marked complete. Checked names remain 684. [Sanitized check results](analysis/wire-replay-dispatcher-checks.json).
+
+
+## Wire replay connected through the original range reader
+
+The earlier host-decoded dispatcher checks now have an upstream connection: the original range reader (`140b1a750`), packet wrapper (`140b1b7b0`) and dispatcher execute together in 60 creation and 120 removal cases. All 949 reader instructions and 923 wrapper instructions were matched against original executable bytes. These counts describe checked native bodies, not whole-function semantic completion.
+
+The reader identifies the event and supplies decoded inputs itself. Removal searches existing wires by source/destination persistent IDs, property, ordinal and flags bit 0. First/middle/last targets, missing targets and property/ordinal/flag mismatches were checked with complete world/owner buffer comparisons. Missing or mismatched targets leave the world unchanged; the tested higher flag bit does not affect matching.
+
+A separate 120-case observation suite checks inverse notification after creation. It selects the first matching wire, so an older duplicate can be selected instead of the appended wire. Exact duplicates and duplicates differing only in flag bit 16 select the older entry; property, ordinal and bit 0 mismatches select the new entry. This is observed selection behavior, not a claim of a gameplay bug.
+
+Allocation, free and thread-local access remain controlled test boundaries. History output is disabled in the connected reader suites; the inverse-selection suite uses an explicit history-router observation probe. Complete user undo/redo, malformed inputs, dependency cycles, concurrency and gameplay remain unresolved. No checked-name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).

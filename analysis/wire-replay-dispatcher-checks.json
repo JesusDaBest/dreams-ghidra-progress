@@ -20,5 +20,56 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "upstream_creation": {
+    "native_cases": 60,
+    "original_dispatcher_bytes_verified": 267374,
+    "finding": "Original complete range reader, packet wrapper and full dispatcher replay mode0 appends fdf3 wire below16383 entries, resolves source/destination persistent IDs to indices2/1, copies property/ordinal/flags and raw32-byte transform, increments count and marks dirty. At capacity it skips creation but still consumes32 tail bytes. Scaled quaternion remains scaled during replay.",
+    "limits": [
+      "Host supplies packet bounds and prepared valid world. Allocation/free/TLS are controlled. Original reader identifies event, constructs decoded inputs, and invokes original wrapper/dispatcher. History streams disabled; complete undo/redo lifecycle remains unverified.",
+      "Valid acyclic resolver fixtures; no concurrency or gameplay."
+    ],
+    "original_native_instructions_verified": {
+      "140b1a750": 949,
+      "140b1b7b0": 923
+    },
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "upstream_removal": {
+    "native_cases": 120,
+    "finding": "Complete original range reader resolves matching fdf5 wire by endpoint IDs,property,ordinal and flags bit0, then original packet wrapper and dispatcher tombstone exactly that selected wire. Higher flag mismatch is ignored; property/ordinal/bit0 mismatch and missing target leave world unchanged. Counts1/3/17 and first/middle/last targets checked with complete world/owner preservation.",
+    "limits": [
+      "Controlled allocation/free/TLS; prepared valid world objects and packet bounds. History streams disabled and player255 suppresses recording.",
+      "Only finite wire-event fixtures, no malformed packets, dependency cycles, concurrency, complete user undo/redo or gameplay."
+    ],
+    "original_native_instructions_verified": {
+      "140b1a750": 949,
+      "140b1b7b0": 923
+    },
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "duplicate_inverse_selection": {
+    "native_cases": 120,
+    "original_dispatcher_bytes_verified": 267374,
+    "finding": "Across120 original wrapper/dispatcher cases, inverse notification selects the first wire matching endpoint persistent IDs, property, ordinal and flags bit0. An older exact duplicate or a duplicate differing only in flags bit16 is selected before the new wire; property, ordinal or flags bit0 mismatches select the new wire. Creation itself appends a fresh record in every case.",
+    "limits": [
+      "Host supplies packet bounds/eventID and resolved optional inputs; original wrapper constructs header/cursor descriptor and executes dispatcher, then locates matching wire for inverse notification. History router is an explicit observation probe confirming inverse event fdf5 and selected first matching wire pointer; higher-level replay reader and undo/redo lifecycle remain unverified.",
+      "Valid acyclic resolver fixtures; no concurrency or gameplay."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0,
+    "tested_counts": [
+      1,
+      17
+    ],
+    "duplicate_variants": [
+      "exact",
+      "ordinal mismatch",
+      "property mismatch",
+      "flag bit0 mismatch",
+      "flag bit16 mismatch"
+    ]
   }
 }
