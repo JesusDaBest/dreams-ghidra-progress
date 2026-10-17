@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/57ebcc4c9482c150dba0029c53da437fde10ad77/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e6a873d6cd36e7cbf2200d9372dc541256d1c8d4/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**636 of 9,591 functions named and checked.** A function is one piece of the game's code.
+**638 of 9,593 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/57ebcc4c9482c150dba0029c53da437fde10ad77/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e6a873d6cd36e7cbf2200d9372dc541256d1c8d4/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -68,13 +68,13 @@ Every square is one actual function and has the same size. All function squares 
 | Gadgets & logic | 512 | 54/56 | 47/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
-| Animation & puppets | 60 | 14/14 | 2/46 |
+| Animation & puppets | 62 | 16/16 | 2/46 |
 | Rendering & lighting | 370 | 101/344 | 0/26 |
 | Editor & interface | 390 | 75/181 | 3/207 |
 | Dreamiverse & networking | 109 | 3/31 | 0/78 |
 | Shared engine & object data | 331 | 209/245 | 15/81 |
 
-**2,048 of 9,591 discovered functions are mapped; 7,543 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,050 of 9,593 discovered functions are mapped; 7,543 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1341,7 +1341,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Joint** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Animation & puppets** - 60 functions identified; 14 behavior/helper reviews; 2 property/type reviews
+- **Animation & puppets** - 62 functions identified; 16 behavior/helper reviews; 2 property/type reviews
   - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1375,9 +1375,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Animation & keyframes** - 22 functions identified; 13 behavior/helper reviews; 2 property/type reviews
-    - **Animation** - 11 functions identified; 8 behavior/helper reviews; 2 property/type reviews
-      - **Runtime code** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
+  - **Animation & keyframes** - 24 functions identified; 15 behavior/helper reviews; 2 property/type reviews
+    - **Animation** - 13 functions identified; 10 behavior/helper reviews; 2 property/type reviews
+      - **Runtime code** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
     - **Property recording** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
       - **Runtime code** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
