@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1999,
-  "unmapped_total": 7589,
+  "mapped_total": 2000,
+  "unmapped_total": 7588,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50075,6 +50075,27 @@
           "kind": "verified_semantic_review",
           "name": "RegisterHeadGadgetProperties",
           "support": "Complete original registrar read; descriptor/property linkage verified; independent saved-project reopening."
+        }
+      ]
+    },
+    "1407d30b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Per-object state-record initializer; caller/source and consumer traces connect it to game update slot processing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Conditional record initialization and one-based slot association storage.",
+      "code_sha256": "d807fdeeea40d1837e002d76bf8fc6fa4ab6a8623715793543e52f4bb679410d",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EnsureObjectSlotStateAndSetAssociation",
+          "support": "Complete body read and byte matched;4096 native cases;caller and bounded consumer traces;independent saved-project reopening."
         }
       ]
     }
