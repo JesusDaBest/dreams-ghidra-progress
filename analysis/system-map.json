@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 2001,
-  "unmapped_total": 7587,
+  "mapped_total": 2004,
+  "unmapped_total": 7584,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50117,6 +50117,69 @@
           "kind": "verified_semantic_review",
           "name": "QueueRecordedTransformProperty",
           "support": "Complete127 instructions read andbyte matched;1128 native cases;original gate andtype0xff dispatch connected in selected cases;independent saved-project reopening."
+        }
+      ]
+    },
+    "1410ab420": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete verified bodies operate on shared world object-index storage or per-object ParentFromModel property storage;not a particular gadget orrenderfeature.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Runtime object ID/pointer lookup orpacked-property/registered-field resolution.",
+      "code_sha256": "5836009860b1220f90548349d9505b6728eadccd45f2e8c940ab399418306d17",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindObjectIndexByPackedId",
+          "support": "Complete body read andoriginalbytes matched;90 nativecases;callertrace andindependent saved-project reopening."
+        }
+      ]
+    },
+    "140b18cf0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete verified bodies operate on shared world object-index storage or per-object ParentFromModel property storage;not a particular gadget orrenderfeature.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Runtime object ID/pointer lookup orpacked-property/registered-field resolution.",
+      "code_sha256": "5cd42ee33d4c8cf151c609d5bf2a9e39141885625f9ec53b0b613c0ef338f5bf",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindObjectIndexByIdOrPointer",
+          "support": "Complete body read andoriginalbytes matched;96 nativecases;callertrace andindependent saved-project reopening."
+        }
+      ]
+    },
+    "1409130e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete verified bodies operate on shared world object-index storage or per-object ParentFromModel property storage;not a particular gadget orrenderfeature.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Runtime object ID/pointer lookup orpacked-property/registered-field resolution.",
+      "code_sha256": "7a4e34d0fd7e78e7d469397852bdd73ebdb356bb3164318f04d7bb3d57d9a5c3",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetParentFromModelPropertyStorage",
+          "support": "Complete body read andoriginalbytes matched;48 nativecases;callertrace andindependent saved-project reopening."
         }
       ]
     }

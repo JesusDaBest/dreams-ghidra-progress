@@ -9372,7 +9372,7 @@
       "Analyst descriptive name andworking types;opaque table/world context.",
       "Validpointer finitechains;cycles,concurrency andlivegame untested."
     ],
-    "subsystem_mapping": "Deferred pending broader ownership trace."
+    "subsystem_mapping": "Shared engine/object data:runtime objectlookup."
   },
   "transform_owner_dirty_helper_checkpoint": {
     "names": [
@@ -9388,6 +9388,23 @@
     "limits": [
       "Finite validpointer/list fixtures;malformed inputs,cycles,concurrency andlivegame untested."
     ],
-    "subsystem_mapping": "Deferred pending complete ownership trace."
+    "subsystem_mapping": "Shared engine/object data:runtime objectlookup andParentFromModel storage."
+  },
+  "transform_dirty_dependency_checkpoint": {
+    "bounded_consumer_instructions": 207,
+    "flag_promotion_native_cases": 256,
+    "kind1_graph_native_cases": 140,
+    "kind1_parent_group_native_cases": 700,
+    "kind3_gate_native_cases": 512,
+    "findings": [
+      "Transform dirtybit promotesworkflag,then gateddependencyworklist marks relatedobjects.",
+      "Parentgroup relations anddependencytype gatepropagation.",
+      "Kind3 usesregisteredMovable property71 gates,linkedtooriginalThing/Sculpt/PuppetHeart registration andoffsetinitializers."
+    ],
+    "limits": [
+      "Boundedgameupdate regions only;fullfunction notsemantically reviewed.",
+      "Synthetic validgraphs/indices;outerupdate work andmixedgraphs unresolved.",
+      "No livegame verification oradditional namingcredit."
+    ]
   }
 }
