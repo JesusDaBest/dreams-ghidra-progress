@@ -9222,5 +9222,32 @@
       "New-root allocation failure,depth limits andreal concurrency unresolved."
     ],
     "runtime_game_verified": false
+  },
+  "csg_working_signature_refinement": {
+    "saved_functions": [
+      {
+        "name": "RebuildPackedCSGRecordsWithMetadataOffset",
+        "signature": "uint PS4_SYSV RebuildPackedCSGRecordsWithMetadataOffset(uint root_node_id, int metadata_offset, int minimum_metadata)"
+      },
+      {
+        "name": "InitializePackedCSGRecordWriter",
+        "signature": "void PS4_SYSV InitializePackedCSGRecordWriter(void * writer, uint source_root_id)"
+      },
+      {
+        "name": "FinalizePackedResourceTreeWriter",
+        "signature": "uint PS4_SYSV FinalizePackedResourceTreeWriter(void * writer)"
+      }
+    ],
+    "original_instructions": 483,
+    "kind_zero_scenarios": 63,
+    "kind_zero_records": 1305,
+    "mixed_kind_scenarios": 36,
+    "mixed_kind_records": 621,
+    "new_name_credit": 0,
+    "runtime_game_verified": false,
+    "limits": [
+      "Rebuild offset and minimum inputs use signed low bytes of32-bit working arguments.",
+      "Platform memory imports adapted andsynchronization controlled; real game integration,concurrency,OOM/depth limits andall optional formats unverified."
+    ]
   }
 }

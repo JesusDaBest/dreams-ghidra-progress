@@ -4025,3 +4025,11 @@ The complete local CSG rebuild chain also passed 63 scenarios covering 1,305 rec
 Platform synchronization/logging were controlled and host memcpy/memmove ABI-adapted. Other record kinds, real concurrency/game integration, new-root allocation failure and depth-limit contracts remain unresolved. No whole-subsystem completion is claimed.
 
 Totals: 575 reviewed names; 1,998 mapped and 7,590 unmapped among 9,588 discovered functions.
+
+### CSG rebuild working signatures and mixed records
+
+Refined three existing functions without new naming credit: RebuildPackedCSGRecordsWithMetadataOffset now has a uint root ID, two int working metadata arguments and a uint root result; InitializePackedCSGRecordWriter has writer/source-root arguments and a void working result; FinalizePackedResourceTreeWriter has a writer argument and uint root result. Rebuild arithmetic uses only the signed low byte of each int input. Backed-up trial and independent trial/main reopening verified all three signatures, unchanged names and unchanged original code and archives.
+
+The complete original local rebuild chain additionally passed 36 mixed-kind scenarios covering 621 records of kinds 0, 7, 12 and 22. Primary payloads, kind-7 extensions, output order, metadata clamps, summaries, fingerprints and exact reachable allocation/dirty sets matched independent checks. Source blocks stayed unchanged. Together with the earlier kind-zero cases, this covers 99 complete-chain scenarios and 1,926 records.
+
+These are analyst-supported working types and controlled local tests. Full payload field meanings, all optional combinations, real game integration, concurrency, allocation-failure recovery and depth-limit contracts remain unresolved. Reviewed-name total stays 575.
