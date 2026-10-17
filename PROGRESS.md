@@ -3887,3 +3887,12 @@ Saved ComputeObjectAuxiliaryTargetTransform with a seven-input working signature
 Combined modes, exact field names, threshold-adjacent behavior, arbitrary recursion, invalid or aliased inputs, full lifecycles and exact PS4 math remain unresolved. Isolated zero-displacement NaN evidence does not establish a reachable game defect. This name does not mark full semantic or subsystem completion.
 
 Totals: 601 checked names; 2,017 mapped and 7,572 unmapped among 9,589 discovered functions.
+
+
+### Sculpt group rebasing
+
+288 original-code scenarios verify a transform-selector path bound to the original Sculpt type registration. It converts a supplied pose between group frames using new group × inverse(old group) × supplied pose. Initial tests cover the active-reference condition, presence of both groups, a required object-field sentinel and type gating; disabling each condition selects the ordinary fallback in the tested context.
+
+192 further cases use nonzero old/new group indices, four packed-reference high-bit patterns and all combinations of old/new scale signs. Distinct group frames, independent transform equations, source buffers and output guards passed.
+
+The tests use valid object index zero, finite nonzero scales and unit rotations. Original meaning of the object-field sentinel, zero/nonfinite scales, mismatched packed-reference bits, caller lifecycle and malformed inputs remain unresolved. This behavior evidence adds no checked-name credit.
