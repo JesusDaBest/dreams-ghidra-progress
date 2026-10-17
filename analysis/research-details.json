@@ -11433,5 +11433,21 @@
     ],
     "producer_entry": "1407af650",
     "producer_semantically_complete": false
+  },
+  "animation_converter_boundary_recovery_checkpoint": {
+    "entry": "14109e4e0",
+    "previous_assigned_instructions": 37,
+    "recovered_reachable_instructions": 1095,
+    "primary_table_entries": 30,
+    "secondary_table_entries": 23,
+    "verification": "All recovered instruction bytes match original executable; independently reopened body and fresh decompilation show both switches.",
+    "inventory_and_signatures_unchanged": true,
+    "new_name_credit": 0,
+    "semantic_review_complete": false,
+    "remaining": [
+      "Detailed branch/callee semantics and input preconditions remain incomplete.",
+      "Real producer basic/extended routing still needs tracing; earlier synthetic flag4/base-handler fixtures do not establish a production path."
+    ],
+    "correction_scope": "Ghidra analysis boundary and jump-table destination overrides; no executable or original archive changes."
   }
 }

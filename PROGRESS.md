@@ -4296,3 +4296,12 @@ Saved and independently reopened `ClearAllZeroAnimationInputForSelectedPropertie
 The caller at `1407af650` groups input by endpoint/property, calls a converter and then this filter before wire insertion. The converter at `14109e4e0` has an unresolved computed jump: its current 37-instruction function body omits branch implementations. It remains unnamed and semantically incomplete. The earlier 12-byte count versus 8-byte read observation is still a producer-layout question; this helper does not resolve it. No completion credit is assigned to either larger function.
 
 Totals are 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
+
+
+### Animation converter jump-table recovery
+
+Repaired the analysis boundary of the unnamed converter at `14109e4e0`. Its previous 37-instruction body omitted the code reached through the original 30-entry type table. A secondary property-based table has 23 entries. Following both tables and ordinary control flow recovers 1,095 reachable instructions, with no further unresolved indirect branches in that bounded graph. Calls remain separate review targets.
+
+Every recovered instruction was matched against original executable bytes. Previously unassigned code was disassembled, added to the existing function, and given explicit jump-table destination overrides. The prior body/reference state was saved locally. Independent reopening and fresh decompilation now expose both switches and the branch bodies. Function count, names and saved signatures remain unchanged; executable and original archive files were not modified.
+
+The recovered type-1 branch distinguishes basic and extended output paths. Its producer routing conditions and delegated writers still need tracing. Earlier flag-4/base-handler tests establish synthetic branch behavior, not that the real producer uses that combination. This recovery enables semantic work; it does not complete the converter or add naming/progress credit. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
