@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f03272cc2b8d8dce52fb9ebee2ea3dcef2ca423e/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/da642d86bc98711bfccd932f53ff498fbe02aa83/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**622 of 9,591 functions named and checked.** A function is one piece of the game's code.
+**626 of 9,591 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f03272cc2b8d8dce52fb9ebee2ea3dcef2ca423e/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/da642d86bc98711bfccd932f53ff498fbe02aa83/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -66,7 +66,7 @@ Every square is one actual function and has the same size. All function squares 
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 133 | 25/94 | 0/39 |
 | Gadgets & logic | 512 | 54/56 | 47/456 |
-| Physics & collision | 70 | 15/38 | 0/32 |
+| Physics & collision | 70 | 19/38 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 57 | 11/11 | 2/46 |
 | Rendering & lighting | 369 | 100/343 | 0/26 |
@@ -1293,10 +1293,10 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Physics & collision** - 70 functions identified; 16 behavior/helper reviews; 0 property/type reviews
-  - **Collision queries** - 33 functions identified; 9 behavior/helper reviews; 0 property/type reviews
-    - **Region Query** - 12 functions identified; 7 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 12 functions identified; 7 behavior/helper reviews; 0 property/type reviews
+- **Physics & collision** - 70 functions identified; 20 behavior/helper reviews; 0 property/type reviews
+  - **Collision queries** - 33 functions identified; 13 behavior/helper reviews; 0 property/type reviews
+    - **Region Query** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
     - **Hit Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Ray Hit Id** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
