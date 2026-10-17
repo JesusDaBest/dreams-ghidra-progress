@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 559,
+    "done": 560,
     "todo": 1462,
-    "total": 2021,
-    "behavior_or_helpers_reviewed": 492,
+    "total": 2022,
+    "behavior_or_helpers_reviewed": 493,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 102,
+        "done": 103,
         "todo": 407,
-        "total": 509,
-        "behavior_or_helpers_reviewed": 55,
+        "total": 510,
+        "behavior_or_helpers_reviewed": 56,
         "properties_or_types_reviewed": 47,
-        "runtime_functions_identified": 53,
+        "runtime_functions_identified": 54,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -73,6 +73,7 @@
           "TryResolveHeadAuxiliaryRecord",
           "ComputeHeadGadgetTargetTransform",
           "TryResolveHandAuxiliaryState",
+          "ComputeHandGadgetTargetTransform",
           "AppendRemapperSignalHistory",
           "FindOrInitializeRemapperSignalHistory",
           "InitializeEffectFieldDefaults",
@@ -586,6 +587,7 @@
           "1408f2390",
           "1408f2510",
           "1408f4240",
+          "1408f43f0",
           "140907eb0",
           "1409082f0",
           "1409415f0",
@@ -5728,12 +5730,12 @@
           {
             "name": "gadgets-logic/motion",
             "label": "Movement & possession",
-            "done": 11,
+            "done": 12,
             "todo": 65,
-            "total": 76,
-            "behavior_or_helpers_reviewed": 7,
+            "total": 77,
+            "behavior_or_helpers_reviewed": 8,
             "properties_or_types_reviewed": 4,
-            "runtime_functions_identified": 7,
+            "runtime_functions_identified": 8,
             "property_type_functions_identified": 69,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -5745,6 +5747,7 @@
               "TryResolveHeadAuxiliaryRecord",
               "ComputeHeadGadgetTargetTransform",
               "TryResolveHandAuxiliaryState",
+              "ComputeHandGadgetTargetTransform",
               "RegisterTeleporterTypeDescriptor",
               "RegisterHandGadgetProperties",
               "RegisterHeadGadgetProperties",
@@ -5825,6 +5828,7 @@
               "1408f2390",
               "1408f2510",
               "1408f4240",
+              "1408f43f0",
               "140d55830",
               "140d666b0",
               "140d673a0",
@@ -5899,6 +5903,98 @@
             ],
             "unresolved_addresses": [],
             "groups": [
+              {
+                "name": "gadgets-logic/motion/handgadget",
+                "label": "Hand Gadget",
+                "done": 4,
+                "todo": 2,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "SelectAuxiliaryHandState",
+                  "TryResolveHandAuxiliaryState",
+                  "ComputeHandGadgetTargetTransform",
+                  "RegisterHandGadgetProperties"
+                ],
+                "todo_names": [
+                  "0x1404e73e0",
+                  "0x140d58d00"
+                ],
+                "done_addresses": [
+                  "1408efc70",
+                  "1408f4240",
+                  "1408f43f0",
+                  "140d666b0"
+                ],
+                "todo_addresses": [
+                  "1404e73e0",
+                  "140d58d00"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/motion/handgadget/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterHandGadgetProperties"
+                    ],
+                    "todo_names": [
+                      "0x1404e73e0",
+                      "0x140d58d00"
+                    ],
+                    "done_addresses": [
+                      "140d666b0"
+                    ],
+                    "todo_addresses": [
+                      "1404e73e0",
+                      "140d58d00"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/motion/handgadget/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "SelectAuxiliaryHandState",
+                      "TryResolveHandAuxiliaryState",
+                      "ComputeHandGadgetTargetTransform"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408efc70",
+                      "1408f4240",
+                      "1408f43f0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
               {
                 "name": "gadgets-logic/motion/teleporter",
                 "label": "Teleporter",
@@ -5984,94 +6080,6 @@
                       "1408f1dc0",
                       "1408f2040",
                       "1408f2180"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/motion/handgadget",
-                "label": "Hand Gadget",
-                "done": 3,
-                "todo": 2,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "SelectAuxiliaryHandState",
-                  "TryResolveHandAuxiliaryState",
-                  "RegisterHandGadgetProperties"
-                ],
-                "todo_names": [
-                  "0x1404e73e0",
-                  "0x140d58d00"
-                ],
-                "done_addresses": [
-                  "1408efc70",
-                  "1408f4240",
-                  "140d666b0"
-                ],
-                "todo_addresses": [
-                  "1404e73e0",
-                  "140d58d00"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/motion/handgadget/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 2,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterHandGadgetProperties"
-                    ],
-                    "todo_names": [
-                      "0x1404e73e0",
-                      "0x140d58d00"
-                    ],
-                    "done_addresses": [
-                      "140d666b0"
-                    ],
-                    "todo_addresses": [
-                      "1404e73e0",
-                      "140d58d00"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/motion/handgadget/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "SelectAuxiliaryHandState",
-                      "TryResolveHandAuxiliaryState"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408efc70",
-                      "1408f4240"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -44407,5 +44415,5 @@
       }
     ]
   },
-  "unmapped": 7568
+  "unmapped": 7567
 }

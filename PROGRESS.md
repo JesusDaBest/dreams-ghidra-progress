@@ -3941,3 +3941,12 @@ Degenerate or nonunit inputs, other modes, original field names, aliasing and fu
 128 connected wrapper/constructor cases establish scale behavior: a negative control value toggles the extra flag when optional state switching is disabled; negative zero does not. The wrapper keeps the constructor's output scale sign and replaces its magnitude with the control value's absolute magnitude. Original bit masks resolve that distinction. Independent equations, source buffers and output guards passed.
 
 These counts describe separate test scopes, not separate recovered implementation units. Most of the larger constructor's branches remain under review, including unstored state, metadata scaling, auxiliary and linked targets. Other wrapper flag sources, original field meanings, malformed inputs and live-game lifecycle remain unresolved. No checked-name credit is added.
+
+
+### Verified hand target-transform wrapper
+
+Saved ComputeHandGadgetTargetTransform with a seven-input working signature after reading and byte verifying all 51 original wrapper instructions. It selects the auxiliary group, derives a constructor flag from optional hand-state switching and control sign, calls the larger constructor, then combines constructor scale sign with control-field magnitude.
+
+512 connected original-code scenarios verify sampled selector/state/record gates, pointer availability, sign combinations and signed-zero control behavior. State-derived switching requires the enabled gate, selector 0 or 1, clear record flag, both pointers and both state modes non-2. Negative control toggles that flag. Verified backup, independent reopening and fresh decompilation confirm persistence.
+
+This names the small wrapper; most branches of its larger callee remain unreviewed and that callee stays unnamed. Context and state types remain opaque. Arbitrary bytes, NaNs, invalid or aliased inputs, original field meanings and lifecycle remain unresolved. Totals: 606 checked names; 2,022 mapped and 7,567 unmapped among 9,589 discovered functions.
