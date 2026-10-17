@@ -16060,5 +16060,68 @@
       "Descriptive analyst name andopaque working pointers; original declaration andfull history lifecycle not recovered."
     ],
     "new_name_credit": 1
+  },
+  "wire_event_transform_tail_checkpoint": {
+    "address": "140b18e10",
+    "name": "SerializeTransform32WithNormalizedWriteRotation",
+    "signature": "void PS4_SYSV SerializeTransform32WithNormalizedWriteRotation(void * cursor, void * streamBytes, void * transform, uint mode)",
+    "native_instructions": 63,
+    "native_check": {
+      "entry": "140b18e10",
+      "native_cases": 558,
+      "original_instructions_verified": 63,
+      "mode_profiles": {
+        "raw_read": 93,
+        "preserved": 8,
+        "normalized": 170,
+        "identity_fallback": 8,
+        "cursor_only": 279
+      },
+      "max_quaternion_component_error": 1.1060612536972769e-07,
+      "threshold": 4.999999987376214e-07,
+      "finding": "Mode0 reads32raw bytes without quaternion normalization. Nonzero modes whose lowbyte is1 write first16bytes unchanged andnormalized rotation, using identity forzero/infinite norm andpreserving testedNaN/nearunit inputs. Other tested modes only advance cursor. All modes advance exactly32bytes andpreserve source/unrelated guards.",
+      "limits": [
+        "Original helper andverified local-libc classifier execute; no host math in execution, independent math used forcomparison.",
+        "Six modes, explicit edges and80 finite random quaternions; no exhaustive NaN payload/subnormal/MXCSR oraliasing coverage.",
+        "No full replay orgameplay claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0,
+      "complete_wire_write_suite": {
+        "native_cases": 648,
+        "enabled_history_cases": 216,
+        "first_stream_written_cases": 144,
+        "second_stream_written_cases": 144,
+        "dispatcher_original_bytes_verified": 267374,
+        "wire_tail_original_instructions_verified": 63,
+        "complete_packet_sizes": {
+          "fdf3": 54,
+          "fdf5": 22
+        },
+        "finding": "Original replacement, context lookup, history router, event writer, full dispatcher entry, transform-tail writer andrevision trim connect without an event application probe for these mode1 wire paths. fdf3 stores22-byte snapshot plus32-byte transform tail; fdf5 stores22bytes. Each before/after pair adds76bytes, not44. Unit/scaled/zero source rotations store identity rotation in the tail while leaving sourcewire transform unchanged; wire ordinal changes exactly. Missing/disabled history behavior andfuture metadata trim remain verified.",
+        "limits": [
+          "Prepared existing keyed context, stream pointers andmatching Machine type key remain fixtures.",
+          "Only mode1 wire-event paths ofthe267374-byte dispatcher execute; the entire dispatcher isnot semantically reviewed orcredited.",
+          "Original local-libc isinff classifier supplied at import thunk after independent module/byte verification.",
+          "No replay-mode wire creation/deletion, non-wire events, full recording producer, concurrency, disk persistence orgameplay claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete pseudocode and63 owned original instructions reviewed, byte-verified andmatched to the268-byte original unwind extent.",
+      "558 direct cases cover raw mode0 reads, normalized writes when nonzero mode lowbyte=1, andcursor-only modes; source/cursor/guards andindependent quaternion model checked.",
+      "Zero/infinite squared quaternion norm uses identity; testedNaN/nearunit inputs are preserved; finite normalization error below0.00000012. First16bytes remain unchanged.",
+      "648 connected cases execute original replacement, lookup, history router, packet writer, full dispatcher entry, transform-tail writer andrevision trim without a final event probe for thetested mode1 wire paths.",
+      "Complete fdf3 packet is54bytes:22-byte snapshot plus32-byte normalized transform. fdf5 remains22bytes; each full pair adds76bytes. Earlier44-byte results were scoped toheaders withan explicit final dispatcher probe.",
+      "Independent reopening verifies descriptive name andworking four-argument SysV signature; original bytes andother names/signatures unchanged."
+    ],
+    "limits": [
+      "Original independently verified local-libc classifier supplied at import thunk; prepared context globals, type key, existing keyed context andstream pointers remain fixtures.",
+      "Only mode1 wire branches ofthe267374-byte dispatcher execute; the whole dispatcher isnot semantically reviewed orcredited. Replay-mode wire creation/deletion, non-wire events andfull recording producer remain unresolved.",
+      "No exhaustive NaN payload/subnormal/MXCSR, aliasing, malformed buffer, concurrency, disk persistence orgameplay claim. Descriptive analyst name andworking opaque pointers."
+    ],
+    "new_name_credit": 1
   }
 }

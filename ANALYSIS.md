@@ -5727,3 +5727,16 @@ The connected 216-case suite now uses a world revision change from 0 to 7 and tw
 Prepared globals, an existing keyed context, a matching Machine type key and bounded index fixtures remain explicit. Final event application is still a recording probe. Malformed indices, context initialization, concurrency, new history commit, reclamation, full recording producer execution, disk persistence and gameplay remain unresolved.
 
 Totals: 683 checked names, 2,095 mapped functions and 7,508 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
+
+
+### Full wire-event write packets include a normalized transform tail
+
+The final dispatcher probe has now been removed from the tested write path. In 648 connected cases, original wire replacement, context lookup, history routing, packed-event writing, the dispatcher entry, transform-tail writing and revision trimming execute together. Complete `fdf3` packets contain a 22-byte snapshot plus a 32-byte transform tail, totaling **54 bytes**. `fdf5` remains **22 bytes**. Each complete before/after pair therefore adds **76 bytes**. Earlier 44-byte pair results measured only snapshot headers with the final dispatcher explicitly probed; they were not complete packet-size measurements.
+
+Unit, scaled and zero source rotations produce the expected normalized tail while the source wire transform remains unchanged. Exact history/owner queue contents, byte counters, direct ordinal changes, missing/disabled context behavior and future metadata trimming are checked. Only the selected mode-1 wire paths of the 267,374-byte dispatcher execute; the entire dispatcher receives no semantic completion credit.
+
+Saved `SerializeTransform32WithNormalizedWriteRotation` after reading and byte-verifying all 63 owned original instructions. Independent reopening verifies its name and working signature. 558 direct cases cover mode 0 raw reads, writes for nonzero modes whose low byte equals 1, and cursor-only modes. All advance 32 bytes. Writes preserve the first 16 bytes and normalize the last 16-byte quaternion; zero/infinite squared norms use identity, and tested NaN/near-unit values are preserved. Finite normalization error is below 0.00000012. Original verified local-libc classification executes. Original bytes and other names/signatures remain unchanged.
+
+Prepared globals, type key, keyed context and stream pointers remain fixtures. Replay-mode wire creation/deletion, other event branches, full recording producer execution, concurrency, disk persistence and gameplay remain unresolved. This proves the selected original write path, not the complete recording subsystem.
+
+Totals: 684 checked names, 2,096 mapped functions and 7,507 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.
