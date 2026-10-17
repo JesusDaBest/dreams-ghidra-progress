@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "612 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "613 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8783,
-    "other_names": 820,
-    "verification": "complete_inventory_matches_baseline_plus_612_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8782,
+    "other_names": 821,
+    "verification": "complete_inventory_matches_baseline_plus_613_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15356,6 +15356,32 @@
         "Typed-value tags0..30/255 tested foropaque copying;this doesnot decode orvalidate their semantic payloads.",
         "Finite ordered times,valid buffers,one parent level;transformunitquaternions andpositive uniform scales0.5/1/2 only.",
         "Other modes,exhaustive rounding,deeper trees,nonfinite/singular transforms,invalid inputs,races andfull producer/playback unresolved;controlled hostmemory/pow/thread boundaries documented."
+      ]
+    },
+    {
+      "address": "1407069d0",
+      "original_name": "FUN_1407069d0",
+      "applied_name": "InsertAnimationWiresForDestinationList",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InsertAnimationWiresForDestinationList(void * engine_context, void * world, byte player_index, void * source_animation, ushort * destination_property, void * destination_list, AnimationRecordInputWorking80 incoming_record, byte flag_a, byte flag_b, byte override_mode)",
+      "evidence": [
+        "Complete1074-line pseudocode and938 original-instruction byteprovenance reviewed;working ten-argument ABI independently reopened.",
+        "Full original function runs ordinary-property insertion for1/2/3 unique destinations across eight supplied transforms andfour controlprofiles,96cases.",
+        "Original97-instruction wirelookup andoriginal local-libc classification execute;dispatcher,event androotcommit arecontrolled native probes.",
+        "One dispatcher result reused;defined52wirebytes,index/IDs/control forwarding/rootcallback arguments andworld/context mutation bounds match model.",
+        "Separate48empty-list full-entry cases and48recordstore/dirtyfragment cases retained asdistinct scopes.",
+        "Name saved andindependently reopened/freshly decompiled;all9602 other names/signatures andoriginal instruction bytes unchanged."
+      ],
+      "caveats": [
+        "Descriptive coordinator role,not complete behavior ororiginal source declaration.",
+        "Native nonempty scope:ordinary property,player0,initiallyemptywirearray,unique destinations,finite unitquaternions andpositiveuniformscales0.5/1/2.",
+        "Dispatcher/event/rootcommit algorithms notvalidated byprobes inthis suite;wiretail52..63 remainsopaque.",
+        "Specialtransformproperty,targetfiltering,oldwirecleanup,overflowdiagnostics,concurrency andrealgame remainunverified.",
+        "Context/source/list pointertypes remainopaque;hostmemset andsyntheticcookie explicit."
       ]
     }
   ],

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2077,
-  "unmapped_total": 7526,
+  "mapped_total": 2078,
+  "unmapped_total": 7525,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52176,6 +52176,34 @@
         }
       ],
       "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1407069d0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation kind9 recording producer calls this insertion coordinator;it dispatches Animation recordupdates andwrites Animation type9 wire records.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full static coordinator review andscoped original-entry insertion checks.",
+      "code_sha256": "987e7f1043cc6d31b41228c6d62afc799cceee72409c8274bd05da112d4b55f1",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertAnimationWiresForDestinationList",
+          "support": [
+            "Complete1074-line pseudocode and938 original-instruction byteprovenance reviewed;working ten-argument ABI independently reopened.",
+            "Full original function runs ordinary-property insertion for1/2/3 unique destinations across eight supplied transforms andfour controlprofiles,96cases.",
+            "Original97-instruction wirelookup andoriginal local-libc classification execute;dispatcher,event androotcommit arecontrolled native probes.",
+            "One dispatcher result reused;defined52wirebytes,index/IDs/control forwarding/rootcallback arguments andworld/context mutation bounds match model.",
+            "Separate48empty-list full-entry cases and48recordstore/dirtyfragment cases retained asdistinct scopes.",
+            "Name saved andindependently reopened/freshly decompiled;all9602 other names/signatures andoriginal instruction bytes unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [

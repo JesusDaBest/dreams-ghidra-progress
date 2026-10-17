@@ -5391,3 +5391,14 @@ The full original `1407069d0` entry and return path passed 48 empty-destination 
 The original memset thunk executes through a host memset adapter; its saved import binding and original thunk bytes were checked. A synthetic stack-cookie value is supplied. Entire world memory, context, source object, destination list, descriptor/configuration and guards remain unchanged. A positive control confirms that the full-world comparator detects a distant mutation.
 
 This is full-function execution of one no-op control path, not validation of all 938 instructions' behavior. Nonempty target filtering, transform preparation, animation dispatch, events, storage and cleanup remain separate scopes. The existing 48-case store/dirty-fragment evidence is not promoted to end-to-end insertion coverage. No new name credit; checked names remains 665.
+
+
+### Animation wire insertion coordinator named
+
+Saved `InsertAnimationWiresForDestinationList` after complete static pseudocode review, original-byte verification and scoped full-entry coordination tests. Independent reopening and fresh decompilation confirm the name and recovered ten-argument working signature. Original bytes and all 9,602 other names/signatures remain unchanged.
+
+The new nonempty suite runs the original insertion function for one, two and three destinations, eight supplied transforms and four control profiles: 96 cases. Original wire lookup and the original local-libc infinity classifier execute. Controlled native probes supply dispatcher results and record event/root-commit calls. The insertion coordinator reuses the returned record index, forwards controls, stores expected wire IDs/flags/transforms and passes updated roots to the commit boundary. Defined wire bytes 0–51 match the model; trailing bytes 52–63 remain opaque. Full world/context comparisons constrain mutations to inserted records, count and dirty flags; caller inputs remain unchanged. Transform error was zero in these finite unit-quaternion/positive-scale fixtures.
+
+This validates coordination within the stated probe boundaries, not their algorithms. Special transform-property preparation, target filtering, old-wire cleanup, overflow diagnostics, concurrency and real-game behavior remain unverified. Separate empty-list and store-fragment receipts retain their original limits. The descriptive name does not claim all behavior is verified.
+
+Totals: 666 checked names and 2,078 mapped functions among 9,603 discovered; 7,525 remain unmapped. The new mapping is grounded in the Animation producer, record dispatcher and type-9 wire construction.

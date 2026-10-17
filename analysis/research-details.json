@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 665,
+    "checked_and_applied_names": 666,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 665,
+    "verified_names": 666,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "612 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "613 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3865,7 +3865,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -15007,5 +15007,71 @@
       "slot": "141c67068",
       "thunk_bytes": "ff2522ec6500"
     }
+  },
+  "animation_wire_insertion_named_checkpoint": {
+    "address": "1407069d0",
+    "name": "InsertAnimationWiresForDestinationList",
+    "signature": "void PS4_SYSV InsertAnimationWiresForDestinationList(void * engine_context, void * world, byte player_index, void * source_animation, ushort * destination_property, void * destination_list, AnimationRecordInputWorking80 incoming_record, byte flag_a, byte flag_b, byte override_mode)",
+    "native_instructions": 938,
+    "nonempty_native_check": {
+      "entry": "1407069d0",
+      "native_cases": 96,
+      "scope": "Whole original insertion with1/2/3 destinations,original97-instruction lookup andoriginal local libc classification;dispatcher/event/root-commit arecontrolled native probes.",
+      "frame_profiles": 8,
+      "control_profiles": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_absolute_error": 0.0,
+      "tolerance": 0.0005,
+      "findings": [
+        "Dispatcher invokedonce perfixture;returned recordindex reused forlater destinations whileoriginal wirelookup runs.",
+        "Defined first52 wirebytes match returnedtransform/source/destination/property/index/flags model;transform checkedwithin tolerance/quaternion sign equivalence.",
+        "One event boundary pertarget withmatching IDs;updated page roots packedandpassed tocommit callback once.",
+        "Fullworld/context match independent allowed-mutation model;caller inputs unchanged;positivecontrol detects distant corruption."
+      ],
+      "limits": [
+        "Probe boundaries do not validate dispatcher,event orroot-commit algorithms inthis run.",
+        "Wirebytes52..63 opaque;permitted onlyinside each inserted record,notsemantically asserted.",
+        "Ordinary property,player0,initiallyemptywirearray,unique destinations;special transformproperty,targetfiltering,oldwirecleanup,overflow/concurrency andrealgame remainunverified.",
+        "Finite unitquaternions andpositiveuniform scales0.5/1/2;hostmemset adapter/syntheticcookie documented."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "findings": [
+      "Complete1074-line pseudocode and938 original-instruction byteprovenance reviewed;working ten-argument ABI independently reopened.",
+      "Full original function runs ordinary-property insertion for1/2/3 unique destinations across eight supplied transforms andfour controlprofiles,96cases.",
+      "Original97-instruction wirelookup andoriginal local-libc classification execute;dispatcher,event androotcommit arecontrolled native probes.",
+      "One dispatcher result reused;defined52wirebytes,index/IDs/control forwarding/rootcallback arguments andworld/context mutation bounds match model.",
+      "Separate48empty-list full-entry cases and48recordstore/dirtyfragment cases retained asdistinct scopes.",
+      "Name saved andindependently reopened/freshly decompiled;all9602 other names/signatures andoriginal instruction bytes unchanged."
+    ],
+    "limits": [
+      "Descriptive coordinator role,not complete behavior ororiginal source declaration.",
+      "Native nonempty scope:ordinary property,player0,initiallyemptywirearray,unique destinations,finite unitquaternions andpositiveuniformscales0.5/1/2.",
+      "Dispatcher/event/rootcommit algorithms notvalidated byprobes inthis suite;wiretail52..63 remainsopaque.",
+      "Specialtransformproperty,targetfiltering,oldwirecleanup,overflowdiagnostics,concurrency andrealgame remainunverified.",
+      "Context/source/list pointertypes remainopaque;hostmemset andsyntheticcookie explicit."
+    ],
+    "new_name_credit": 1
   }
 }
