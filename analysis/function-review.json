@@ -13193,11 +13193,23 @@
         "Independent backed-up trial/main reopening verified name and unchanged native bytes and archives."
       ],
       "caveats": [
-        "Analyst descriptive name, not original source symbol; existing signature retained pending32-byte stack argument review.",
+        "Analyst descriptive name, not original source symbol; working signature uses an opaque32-byte stack payload; original source fields remain unresolved.",
         "Source-marker helper controlled;malformed records,other eligibility paths,concurrency andlive game integration unresolved."
       ],
       "preexisting_unresolved_signature": "undefined PS4_SYSV QueueRecordedTransformProperty(void)",
-      "signature_status": "retained_pending_separate_stack_argument_type_review"
+      "signature_status": "working_register_and_opaque_stack_payload_types_independently_reopened",
+      "saved_working_signature": "void PS4_SYSV QueueRecordedTransformProperty(void * owner, void * context, uchar slot, uint object_id, ushort property_id, uchar mode, RecordedTransformPayload32 payload)",
+      "signature_refinement_evidence": {
+        "body_instructions": 127,
+        "bounded_caller_instructions": 1018,
+        "call_sites": 17,
+        "stack_offset": 8,
+        "stack_bytes": 32,
+        "limits": [
+          "Opaque analyst payload container; source fields unresolved.",
+          "Void working return supported by body and observed suffixes; full caller liveness not claimed."
+        ]
+      }
     }
   ],
   "deferred": [

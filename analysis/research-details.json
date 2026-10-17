@@ -9286,7 +9286,14 @@
     "limits": [
       "Source-marker helper controlled.",
       "Malformed entries,other eligibility branches,real concurrency andlive game behavior unverified.",
-      "Existing signature retained pending32-byte stack argument review."
-    ]
+      "Working signature now represents opaque32-byte stack payload; original source fields and complete caller liveness remain unresolved."
+    ],
+    "working_signature_refinement": {
+      "caller_sites": 17,
+      "bounded_caller_instructions": 1018,
+      "opaque_payload_bytes": 32,
+      "independent_trial_main_reopen_verified": true,
+      "new_name_credit": 0
+    }
   }
 }
