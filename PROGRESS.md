@@ -4826,3 +4826,12 @@ Read the format-29 branch and its shared retention/header/index tail in `1410772
 The 16-byte keys contain a time, four padding bytes, and a qword value. Complete-byte comparisons preserve distinct old/incoming padding and all 64 value bits, including signed boundaries and NaN-like bit patterns. The independent interval model also matches rebased times, complete headers/data, returned index and retained records; source nodes, arguments, context and guards remain unchanged.
 
 This batch uses finite ordered times, descriptor flag 0 and auxiliary mode 0, with controlled host memory/thread callbacks and the documented double-precision pow adapter. Converter and dispatcher are not executed in this batch. Mixed basic/extended flags, other modes, exhaustive rounding, deeper trees, malformed inputs, races and full producer/playback behavior remain unresolved. The whole basic updater remains unfinished and unnamed; checked names remain 664.
+
+
+### Basic animation updater: byte and Boolean records
+
+Read both inline branches and their shared retention/header/index tails in `141077240`. New direct-original-handler suites passed 720 cases per branch, checking 63/64/126/127 old keys at offsets 0/8/504 across one parent level. Independent models match exact complete headers/data, rebased times, returned index, retained records, source nodes, argument/context preservation and guards.
+
+In ordinary descriptor-flag-0/auxiliary-mode-0 merging, both formats copy complete 8-byte records except for time rebasing. The value byte at offset 4 and padding at 5–7 remain intact. Boolean bytes other than 0 and 1 are preserved in this scope. Static review identifies low-bit normalization in particular AutoKeyframe/extended-input paths; those paths are not established by these ordinary-merge checks. The input width table changes from 8 to 12 bytes when the extended flag is set, so mixed-input behavior still needs separate tracing rather than assuming the ordinary record model applies.
+
+These batches call the original handler directly; they do not execute converter or dispatcher. Host memory/thread callbacks and the double-precision parent-seek pow adapter remain controlled boundaries. Other mode/flag combinations, deeper trees, exhaustive rounding, malformed inputs, races and full producer/playback behavior remain unresolved. No new checked-function credit: the whole basic updater remains unfinished and unnamed; total checked names remains 664.

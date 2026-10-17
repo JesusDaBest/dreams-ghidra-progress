@@ -14503,5 +14503,50 @@
     },
     "whole_handler_reviewed": false,
     "new_name_credit": 0
+  },
+  "animation_basic_byte_boolean_checkpoint": {
+    "handler": "141077240",
+    "native_cases": 1440,
+    "batches": [
+      {
+        "entry": "141077240",
+        "format": 11,
+        "native_cases": 720,
+        "findings": [
+          "Original basic inline byte branch and resource writer execute across parent pages.",
+          "8-byte old and incoming byte records preserve the value byte at4 and padding5..7 exactly in ordinary flag0/mode0 merging, including byte values0/1/127/128/254/255 anddistinctpadding.",
+          "Independent interval model matches exact complete headers/data, rebased times, index and retained bytes. Source nodes, argument buffers, context and guards remain unchanged."
+        ],
+        "limits": [
+          "Direct original handler; converter and dispatcher not executed in this batch.",
+          "One parent level;63/64/126/127 old keys at offsets0/8/504;finite ordered times;descriptor flag0 andauxiliary mode0.",
+          "Controlled hostmemory/thread callbacks anddoublepow adapter.",
+          "Mixed basic/extended input flags,other modes,exhaustive rounding,deeper trees,invalid inputs,races,fullproducer/playback unresolved."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "entry": "141077240",
+        "format": 1,
+        "native_cases": 720,
+        "findings": [
+          "Original basic inline boolean branch and resource writer execute across parent pages.",
+          "8-byte old and incoming boolean records preserve the value byte at4 and padding5..7 exactly in ordinary flag0/mode0 merging, including noncanonical Boolean byte patterns.",
+          "Independent interval model matches exact complete headers/data, rebased times, index and retained bytes. Source nodes, argument buffers, context and guards remain unchanged."
+        ],
+        "limits": [
+          "Direct original handler; converter and dispatcher not executed in this batch.",
+          "One parent level;63/64/126/127 old keys at offsets0/8/504;finite ordered times;descriptor flag0 andauxiliary mode0.",
+          "Controlled hostmemory/thread callbacks anddoublepow adapter.",
+          "Mixed basic/extended input flags,other modes,exhaustive rounding,deeper trees,invalid inputs,races,fullproducer/playback unresolved."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    ],
+    "conditional_normalization": "Static Boolean branch masks value byte to lowbit only under scoped AutoKeyframe/extended-input conditions; these mixed-input paths are notexecuted by the newflag0/mode0 suite.",
+    "whole_handler_reviewed": false,
+    "new_name_credit": 0
   }
 }
