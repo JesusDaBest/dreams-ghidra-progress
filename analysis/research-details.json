@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 649,
+    "checked_and_applied_names": 650,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 649,
+    "verified_names": 650,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "596 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "597 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12262,7 +12262,17 @@
     ],
     "scope": "Original Animation call-chain/field-binding assignment; each remains unreviewed. No new names/reviewcredit.",
     "new_mapping_credit": 4,
-    "new_name_credit": 0
+    "new_name_credit": 0,
+    "subsequent_main_converter_review": {
+      "address": "14109e4e0",
+      "name": "ConvertAndReduceAnimationInputKeys",
+      "status": "reviewed_and_named_after_complete_converter_review",
+      "remaining_unreviewed": [
+        "141077240",
+        "1410705f0",
+        "14107ea70"
+      ]
+    }
   },
   "animation_vector_family_checkpoint": {
     "functions": {
@@ -12496,6 +12506,42 @@
     "limits": [
       "Ample output capacity; finite times and quiet NaN values only.",
       "No claim about playback, full producer behavior, invalid pointers, concurrency or undefined padding."
+    ],
+    "project_modified": false
+  },
+  "animation_main_converter_checkpoint": {
+    "address": "14109e4e0",
+    "name": "ConvertAndReduceAnimationInputKeys",
+    "generic_native_cases": 74400,
+    "dispatch_native_cases": 16824,
+    "findings": [
+      "Original top-level converter invokes actual77-instruction typed-value comparator; no comparison probes.",
+      "First/change/last selection agrees with independently checked type-dependent equality, including ignored payload fields,commonfloat/type changes,signedzero,quietNaNs andpadding-only changes.",
+      "Both input formats use48-byte strided source records:time0,padding4,typedvalue8. Basic48-byte output copiescomplete selected source records.",
+      "Extended56-byte output preserves time0 andtypedvaluebytes8..44 andadds metadata48..51; padding4..7,45..47,52..55 intentionally notasserted.",
+      "Emptytimeoutputs0,basicmin/max,extendedbothmax,singleAutoKeyframe bit,auxflags,guarded descriptors anddestinationbounds verified.",
+      "Source andauxiliary buffers unchanged."
+    ],
+    "limits": [
+      "Finite times,validbuffers,amplecapacity; invalidpointers,aliasing,concurrency,fullproducer andplayback remain unresolved.",
+      "All31 in-range typebyte values tested; meanings oftypecodes andcommonfloatfield remain unresolved."
+    ],
+    "new_name_credit": 1
+  },
+  "animation_main_dispatch_checkpoint": {
+    "entry": "14109e4e0",
+    "native_cases": 16824,
+    "primary_cases": 2952,
+    "property_cases": 13872,
+    "findings": [
+      "All256 primary bytecodes andall1408 in-range property IDs exercised through originaldispatch.",
+      "Recognizedemptyformat paths clearboth timeoutputs; unsupported primary/property routes leave them unchanged andemitnothing evenwithcount1.",
+      "Property lookup masks index tolow16bits; two high-bit aliases perproperty tested.",
+      "Source,destination,bufferdescriptor andauxiliary unchanged for these no-output paths."
+    ],
+    "limits": [
+      "Only in-range low16 propertyindices; out-of-range table reads are not given a safety contract.",
+      "Recognized nonempty format behavior covered by separate connected-code suites."
     ],
     "project_modified": false
   }

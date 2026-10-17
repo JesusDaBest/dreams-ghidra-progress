@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "596 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "597 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8799,
-    "other_names": 804,
-    "verification": "complete_inventory_matches_baseline_plus_596_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8798,
+    "other_names": 805,
+    "verification": "complete_inventory_matches_baseline_plus_597_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14582,7 +14582,7 @@
       "caveats": [
         "Descriptive role and working opaque signature, not original source declarations.",
         "Valid bounded buffers only; huge length/count truncation, invalid pointers, concurrency and production editing schedule remain unverified.",
-        "At the original review, the upstream converter capture had only37instructions. Its boundary andtwo jump tables have since been recovered to1095instructions; delegated andsomeinline formats are verified,while generic-value conversion remains partly reviewed."
+        "The original37-instruction upstream capture was incomplete. Its1095-instruction body andtwo dispatch tables were later recovered andreviewed; it isnow namedConvertAndReduceAnimationInputKeys. Nativegeneric/delegatedformat checks are scoped tovalidbuffers,amplecapacity andfinite times; fullproducer/playback remains unresolved."
       ]
     },
     {
@@ -14932,6 +14932,36 @@
         "Analyst descriptive role andworking opaque ABI,not recoveredsource declarations.",
         "Field32 meaning,formal source type names,invalid pointers,concurrency andgame/playback remain unresolved.",
         "Only thelowbyteAL is thebooleanreturn; upperRAX isnot meaningful."
+      ]
+    },
+    {
+      "address": "14109e4e0",
+      "original_name": "FUN_14109e4e0",
+      "applied_name": "ConvertAndReduceAnimationInputKeys",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertAndReduceAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, ushort property_id, BoundedByteBufferWorking24 * output_buffer, byte type_code, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "evidence": [
+        "Complete1095-instruction original mainconverter andboth dispatchtables reviewed andbytesmatched.",
+        "74400 connected original genericvalue cases invokeactualtypedcomparison;type-dependentfirst/change/last selection and48/56-byte layouts matchindependentmodels.",
+        "Original top-level converter invokes actual77-instruction typed-value comparator; no comparison probes.",
+        "First/change/last selection agrees with independently checked type-dependent equality, including ignored payload fields,commonfloat/type changes,signedzero,quietNaNs andpadding-only changes.",
+        "Both input formats use48-byte strided source records:time0,padding4,typedvalue8. Basic48-byte output copiescomplete selected source records.",
+        "Extended56-byte output preserves time0 andtypedvaluebytes8..44 andadds metadata48..51; padding4..7,45..47,52..55 intentionally notasserted.",
+        "Emptytimeoutputs0,basicmin/max,extendedbothmax,singleAutoKeyframe bit,auxflags,guarded descriptors anddestinationbounds verified.",
+        "Source andauxiliary buffers unchanged.",
+        "16824 exhaustive empty/default route cases coverall256primarybytecodes,all1408in-rangepropertyIDs andhigh16aliases; unsupported routes leavebounds unchanged.",
+        "Earlier inlineBoolean2400,wideformats8160 anddelegated helper suites establish other formats; floatpropertyroutes sampled ratherthanexhaustive.",
+        "Producer calls1407af650 ignore return; supported workingvoid tenargument ABI independently reopened andfreshly decompiled. Other9602names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworking opaque ABI,not recoveredsource declarations.",
+        "Validbuffers,amplecapacity andfinite times only. Undefinedpadding isnot asserted.",
+        "Out-of-rangepropertyindices,invalidpointers,aliasing,concurrency,completeproducer andplayback remain unresolved.",
+        "Exact roles oftypedvaluecommonfloat/typecodes andmetadata flags remain partly unresolved."
       ]
     }
   ],
