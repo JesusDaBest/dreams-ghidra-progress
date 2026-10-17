@@ -3905,3 +3905,12 @@ Original type registrations bind the selector's remaining linked kinds to HeadGa
 The hand lookup calls a separate state selector. 1536 original-code cases cover six selector codes, all pointer-presence combinations, four sampled state modes and both boolean inputs. Exact pointer identity and source preservation passed. The selectors differ in how they choose between two available non-mode-2 states; a sole first state is eligible only in mode 2 for the tested default/sole-state selectors. Original physical state/selector names remain unresolved.
 
 These are bounded lookup semantics, without new checked-name credit. Connected hand output behavior, downstream transform construction, large-list behavior, arbitrary byte values, invalid pointers and live-game lifecycle remain under review.
+
+
+### Verified head and hand lookup names
+
+Saved TryResolveHeadAuxiliaryRecord, SelectAuxiliaryHandState and TryResolveHandAuxiliaryState with explicit working parameter and return storage. The first lookup returns a boolean and record output; the state selector returns a pointer; the hand lookup returns a boolean with separate record/state outputs. Context and state structures remain opaque.
+
+Evidence includes 328 head-lookup scenarios, 1536 state-selection scenarios and 1653 connected hand-lookup/gate scenarios. The connected tests exercise the original resolver again; these counts describe test scopes, not separate implementation units. Original type registrations bind the caller kinds to HeadGadget and HandGadget. A verified compressed backup, independent reopening and fresh decompilation confirm all three names and signatures; only their intended inventory entries changed.
+
+Large lists, arbitrary byte values, NaN activation, invalid or aliased pointers, original field names and full lifecycles remain unresolved. These names do not complete the head/hand transform subsystem. Totals: 604 checked names; 2,020 mapped and 7,569 unmapped among 9,589 discovered functions.

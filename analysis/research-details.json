@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 601,
+    "checked_and_applied_names": 604,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 601,
+    "verified_names": 604,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "562 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "565 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10049,5 +10049,63 @@
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true,
     "fresh_decompilation_verified": true
+  },
+  "head_hand_lookup_checkpoint": {
+    "functions": {
+      "1408f2390": {
+        "name": "TryResolveHeadAuxiliaryRecord",
+        "native_scenarios": 328,
+        "evidence": [
+          "88 original instructions read and byte verified.",
+          "328 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
+          "Original HeadGadget/HandGadget registrations traced from selector caller.",
+          "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+        ],
+        "limits": [
+          "Analyst descriptive name and working ABI,not recovered source declaration.",
+          "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
+          "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
+          "No whole-subsystem completion or live-game verification claim."
+        ],
+        "new_name_credit": 1
+      },
+      "1408efc70": {
+        "name": "SelectAuxiliaryHandState",
+        "native_scenarios": 1536,
+        "evidence": [
+          "93 original instructions read and byte verified.",
+          "1536 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
+          "Original HeadGadget/HandGadget registrations traced from selector caller.",
+          "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+        ],
+        "limits": [
+          "Analyst descriptive name and working ABI,not recovered source declaration.",
+          "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
+          "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
+          "No whole-subsystem completion or live-game verification claim."
+        ],
+        "new_name_credit": 1
+      },
+      "1408f4240": {
+        "name": "TryResolveHandAuxiliaryState",
+        "native_scenarios": 1653,
+        "evidence": [
+          "108 original instructions read and byte verified.",
+          "1653 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
+          "Original HeadGadget/HandGadget registrations traced from selector caller.",
+          "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+        ],
+        "limits": [
+          "Analyst descriptive name and working ABI,not recovered source declaration.",
+          "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
+          "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
+          "No whole-subsystem completion or live-game verification claim."
+        ],
+        "new_name_credit": 1
+      }
+    },
+    "new_name_credit": 3,
+    "output_behavior": "Success writes record/state;early failure preserves outputs;hand resolver failure writes null state and preserves record.",
+    "scope": "Bounded lookup/selection semantics,not complete head/hand transform system."
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "562 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "565 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8833,
-    "other_names": 756,
-    "verification": "complete_inventory_matches_baseline_plus_562_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8830,
+    "other_names": 759,
+    "verification": "complete_inventory_matches_baseline_plus_565_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13815,6 +13815,72 @@
         "Combined modes,threshold-adjacent inputs,arbitrary recursion,invalid/aliased inputs,lifecycles and exact PS4 math unresolved.",
         "Zero-displacement NaN observation is isolated and does not establish a reachable game defect.",
         "No full semantic or subsystem completion claim."
+      ]
+    },
+    {
+      "address": "1408f2390",
+      "original_name": "FUN_1408f2390",
+      "applied_name": "TryResolveHeadAuxiliaryRecord",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "bool PS4_SYSV TryResolveHeadAuxiliaryRecord(void * thing, void * world, void * * output_record)",
+      "evidence": [
+        "88 original instructions read and byte verified.",
+        "328 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
+        "Original HeadGadget/HandGadget registrations traced from selector caller.",
+        "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI,not recovered source declaration.",
+        "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
+        "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
+        "No whole-subsystem completion or live-game verification claim."
+      ]
+    },
+    {
+      "address": "1408efc70",
+      "original_name": "FUN_1408efc70",
+      "applied_name": "SelectAuxiliaryHandState",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * PS4_SYSV SelectAuxiliaryHandState(uchar selector, void * auxiliary_record, uchar selection_flag)",
+      "evidence": [
+        "93 original instructions read and byte verified.",
+        "1536 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
+        "Original HeadGadget/HandGadget registrations traced from selector caller.",
+        "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI,not recovered source declaration.",
+        "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
+        "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
+        "No whole-subsystem completion or live-game verification claim."
+      ]
+    },
+    {
+      "address": "1408f4240",
+      "original_name": "FUN_1408f4240",
+      "applied_name": "TryResolveHandAuxiliaryState",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "bool PS4_SYSV TryResolveHandAuxiliaryState(void * thing, void * world, void * * output_record, void * * output_state, uchar selection_flag)",
+      "evidence": [
+        "108 original instructions read and byte verified.",
+        "1653 scoped original-code scenarios support descriptive lookup/selection role and pointer outputs.",
+        "Original HeadGadget/HandGadget registrations traced from selector caller.",
+        "Verified backup,independent reopening and fresh decompilation confirm name,parameter storage and return storage."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI,not recovered source declaration.",
+        "Opaque context/state types;tested selectors,masks and boolean domains are bounded.",
+        "Large-list/index wrapping,arbitrary bytes,NaN activation,invalid or aliased pointers and full lifecycle unresolved.",
+        "No whole-subsystem completion or live-game verification claim."
       ]
     }
   ],
