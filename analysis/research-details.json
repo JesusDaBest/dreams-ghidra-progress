@@ -13409,5 +13409,49 @@
       4
     ],
     "full_handler_reviewed": false
+  },
+  "animation_typed_value_inline_transition_checkpoint": {
+    "handler": "1410705f0",
+    "format": 0,
+    "native_cases": 15840,
+    "batches": [
+      {
+        "native_cases": 7200,
+        "findings": [
+          "Original converter with actual typed-value comparator, dispatcher and inline format0 transition branch execute together.",
+          "48-byte basic keys expand to56-byte records; exact time,typedvaluebytes8..44 and metadata48..51 match independent model.",
+          "Incoming padding4..7/45..47/52..55 seeded after conversion and preserved by handler; retained padding not asserted.",
+          "Complete headers,original data prefix,merged lengths,source/world/node/input/context/auxiliary immutability and guards checked."
+        ],
+        "limits": [
+          "One-leaf source;0/1/3/5/10 oldkeys.",
+          "Finite ordered times,valid buffers;typed-value tags1/9/30, commonfloat changes keep converter inputs distinct.",
+          "Hostmemory adapters;mutex/threadcallbacks controlled.",
+          "Retained padding4..7/45..47/52..55 opaque;nozero or preservation guarantee.",
+          "Deeper trees,exhaustive rounding,invalid inputs,races,full handler/producer/playback unresolved."
+        ]
+      },
+      {
+        "native_cases": 8640,
+        "findings": [
+          "Original converter with actual typed-value comparator, dispatcher and inline format0 transition branch execute together.",
+          "48-byte basic keys expand to56-byte records; exact time,typedvaluebytes8..44 and metadata48..51 match independent model.",
+          "Incoming padding4..7/45..47/52..55 seeded after conversion and preserved by handler; retained padding not asserted.",
+          "Complete headers,original data prefix,merged lengths,source/world/node/input/context/auxiliary immutability and guards checked."
+        ],
+        "limits": [
+          "One parent level;10/11/20/21 sourcekeys at offsets0/48/504; record leaves use480of504bytes.",
+          "Finite ordered times,valid buffers;typed-value tags1/9/30, commonfloat changes keep converter inputs distinct.",
+          "Hostmemory anddoublepow adapters;mutex/threadcallbacks controlled.",
+          "Retained padding4..7/45..47/52..55 opaque;nozero or preservation guarantee.",
+          "Deeper trees,exhaustive rounding,invalid inputs,races,full handler/producer/playback unresolved."
+        ]
+      }
+    ],
+    "new_name_credit": 0,
+    "remaining_inline_branches": [
+      4
+    ],
+    "full_handler_reviewed": false
   }
 }
