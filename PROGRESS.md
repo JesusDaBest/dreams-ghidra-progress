@@ -3813,3 +3813,12 @@ These findings add no checked name and no whole-function completion claim. Tests
 The two tested object modes differ in that reference: mode 2 uses the parent transform; mode 1 substitutes the runtime body's XYZ position while retaining the parent's scale and rotation. Distinct random inputs, independent transform equations, unchanged source buffers and output guards were checked. The connected 128-case set supersedes the preliminary 64-case set; those preliminary cases are not counted again.
 
 This is scoped behavior evidence, with no new checked name. The linked object kind, metadata offsets, auxiliary slot/group, association and stored-state gates were controlled. Finite unit rotations and positive scales were sampled. Other linked types, modes, original field meanings, full lifecycles, malformed inputs and live-game behavior remain unresolved.
+
+
+### Linked-transform position factors
+
+176 additional original-code scenarios verify two unstored transform paths. In 80 cases, position blends from the group position toward the state position, while scale and rotation come from the state transform. Sampled factors from -0.5 to 1.5 show extrapolation as well as interpolation. The resulting reference transform combines with the object's local transform.
+
+In 96 cases, a present metadata field and nonzero object value replace that position factor with object value divided by group factor, the original float constant 0.4, and group scale. A deliberately different state factor confirms which source is selected. Independent transform equations, distinct inputs and source/output guards passed.
+
+These paths were tested with controlled metadata, default group mode, identity auxiliary gates, finite unit rotations and positive scales. The metadata field's physical meaning and units, nondefault group rotation paths, other object types, zero/nonfinite denominators and live-game lifecycle remain unresolved. No checked-name credit is added.
