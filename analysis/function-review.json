@@ -13219,16 +13219,17 @@
       "persistence_verification": "verified_after_independent_offline_reopening",
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "undefined PS4_SYSV DiscardPropertyHistoryPrefix(void)",
+      "saved_working_signature": "void PS4_SYSV DiscardPropertyHistoryPrefix(void * history, uint entry_count, uint * first_removed_bytes, uint * second_removed_bytes)",
       "evidence": [
         "Complete329 original instructions read and byte matched.",
         "281 controlled native cases verify two-stream history prefix compaction, retained boundaries, metadata, indices, counters and discarded-byte outputs.",
-        "Verified compressed project backup and independent saved-project reopening."
+        "Verified compressed project backup and independent saved-project reopening.",
+        "Four working parameters verified after independent project reopening: opaque history pointer, unsigned entry count and two unsigned byte-count output pointers."
       ],
       "caveats": [
         "Analyst descriptive name; original source name not recovered.",
         "Valid discard counts and synthetic nonwrapped buffers; memmove ABI-adapted.",
-        "Exact stream consumer meanings and live game behavior unresolved; signature retained."
+        "Exact stream consumer meanings and live game behavior unresolved; opaque context structure remains unresolved."
       ]
     }
   ],

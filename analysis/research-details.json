@@ -9306,6 +9306,13 @@
       "Valid discard counts and synthetic nonwrapped buffers; memmove ABI-adapted.",
       "Exact stream consumer meanings and live game behavior unresolved; signature retained."
     ],
-    "subsystem_mapping": "Deferred until consumers establish user-facing subsystem ownership."
+    "subsystem_mapping": "Deferred until consumers establish user-facing subsystem ownership.",
+    "working_signature": "void PS4_SYSV DiscardPropertyHistoryPrefix(void * history, uint entry_count, uint * first_removed_bytes, uint * second_removed_bytes)",
+    "caller_followup": {
+      "caller_instructions": 293,
+      "bounded_game_update_instructions": 156,
+      "finding": "Original diagnostic strings identify an undo/redo stack with separate IC and Game target streams. These streams are not simply undo versus redo.",
+      "limits": "IC expansion and full consumer/UI trigger trace unresolved; caller native execution not performed."
+    }
   }
 }
