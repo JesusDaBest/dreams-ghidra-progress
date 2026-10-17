@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 2007,
-  "unmapped_total": 7581,
+  "mapped_total": 2008,
+  "unmapped_total": 7580,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50243,6 +50243,27 @@
           "kind": "verified_semantic_review",
           "name": "ComputeEmitterPivotTransform",
           "support": "Composes emitter transforms and pivot or applies Position-tag override with scale clamping. Finite unit rotation scope; full emitter behavior unresolved."
+        }
+      ]
+    },
+    "1408fa380": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic object graph and runtime-body transform dispatch, including emitter and parent-relative callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body read and 320 connected scoped cases.",
+      "code_sha256": "9d4e4117a7eb486d7d53cd569456385b1bb675fcd7c9363de9c687c1f039ead2",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransformObjectGraphAndRuntimeBodies",
+          "support": "Object transforms, parent-relative reconstruction, unique runtime-body updates and callback separation. Full ABI and remaining branches unresolved."
         }
       ]
     }

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 591,
+    "checked_and_applied_names": 592,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 591,
+    "verified_names": 592,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "553 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "554 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9652,5 +9652,74 @@
     ],
     "name_credit_added": 0,
     "saved_signature_independently_reopened": true
+  },
+  "object_graph_transform_dispatch_checkpoint": {
+    "name": "TransformObjectGraphAndRuntimeBodies",
+    "original_instructions_read_and_verified": 658,
+    "connected_native_cases": 320,
+    "prototype_changed": false,
+    "findings": [
+      "Traverses a selected object graph and updates object primary/parent-relative transforms.",
+      "Deduplicates runtime bodies before transforming them.",
+      "Applies mode-dependent vector handling and distinct object/body callback channels.",
+      "Kind19 path copies exactly 32 bytes between two object fields."
+    ],
+    "limits": [
+      "Analyst descriptive name only; original declaration and full working ABI remain deferred.",
+      "TLS and scratch allocation/free controlled; valid supplied graphs, finite unit rotations and positive scales.",
+      "Object callback and kind11 helper behavior, deeper hierarchies, actual graph-producer invariants, exceptional values, concurrency and live game unresolved.",
+      "No full subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_independently_reopened": true
+  },
+  "hierarchy_selection_followup_checkpoint": {
+    "native_cases": 512,
+    "max_abs_error": 9.50340282201978e-06,
+    "scenarios": [
+      {
+        "scenario": "cache_default",
+        "selected_chain_end": 3
+      },
+      {
+        "scenario": "cache_skip_one",
+        "selected_chain_end": 2
+      },
+      {
+        "scenario": "cache_skip_two",
+        "selected_chain_end": 1
+      },
+      {
+        "scenario": "cache_reach_zero",
+        "selected_chain_end": 3
+      },
+      {
+        "scenario": "fallback_default",
+        "selected_chain_end": 3
+      },
+      {
+        "scenario": "fallback_skip_one",
+        "selected_chain_end": 2
+      },
+      {
+        "scenario": "fallback_skip_two",
+        "selected_chain_end": 1
+      },
+      {
+        "scenario": "fallback_skip_three",
+        "selected_chain_end": 0
+      }
+    ],
+    "findings": [
+      "Original cache-valid and fallback selection branches execute entry-to-return.",
+      "Category13 cached ancestors can shorten the starting chain; reaching cached index0 follows the original-reference fallback.",
+      "Fallback byte+0x2e skips marked starting nodes to an unmarked ancestor.",
+      "Four packed-reference high-bit patterns and whole object/output guards checked."
+    ],
+    "limits": [
+      "Controlled valid cache maps and finite acyclic four-object chains.",
+      "Other category labels, invalid caches, marked root, exceptional values and live game unverified."
+    ],
+    "name_credit_added": 0
   }
 }

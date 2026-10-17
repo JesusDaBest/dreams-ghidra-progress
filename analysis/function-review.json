@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "553 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "554 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8842,
-    "other_names": 746,
-    "verification": "complete_inventory_matches_baseline_plus_553_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8841,
+    "other_names": 747,
+    "verification": "complete_inventory_matches_baseline_plus_554_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1239,7 +1239,7 @@
       "caveats": [
         "Existing descriptive name retained; output layout and signature are analyst working types.",
         "Controlled transform metadata, valid acyclic parent chains, finite unit rotations and positive scales.",
-        "Cache-selection and skip-marked-parent paths, missing metadata and exceptional values remain unverified.",
+        "Selected cached and skip-marked-node paths tested with controlled maps; other categories, invalid/missing metadata and exceptional values remain unverified.",
         "Connected dispatch uses original iterator/helper but controlled TLS/scratch allocation, disabled callbacks and supplied graph links.",
         "Special object kinds, deeper dispatcher hierarchies, concurrency and live game remain unverified."
       ],
@@ -1262,10 +1262,11 @@
         "max_connected_dispatch_abs_error": 2.271279690546635e-06,
         "limits": [
           "Controlled transform metadata, valid acyclic parent chains, finite unit rotations and positive scales.",
-          "Cache-selection and skip-marked-parent paths, missing metadata and exceptional values remain unverified.",
+          "Selected cached and skip-marked-node paths tested with controlled maps; other categories, invalid/missing metadata and exceptional values remain unverified.",
           "Connected dispatch uses original iterator/helper but controlled TLS/scratch allocation, disabled callbacks and supplied graph links.",
           "Special object kinds, deeper dispatcher hierarchies, concurrency and live game remain unverified."
-        ]
+        ],
+        "later_hierarchy_selection_cases": 512
       },
       "initial_naming_caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
@@ -13552,6 +13553,29 @@
         "Property getter controlled; original converter and finite normalization paths execute.",
         "Other property tags, nonunit and exceptional rotations, and complete caller behavior remain unverified.",
         "No live-game or full emitter subsystem completion claim."
+      ]
+    },
+    {
+      "address": "1408fa380",
+      "original_name": "FUN_1408fa380",
+      "applied_name": "TransformObjectGraphAndRuntimeBodies",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "prototype_refinement_status": "deferred",
+      "evidence": [
+        "Complete 658-instruction body read and matched to original executable bytes.",
+        "320 connected native cases cover original graph iterator, parent-relative transform helper, runtime-body velocity callback and kind19 copy paths.",
+        "Primary and parent-relative transforms match independent composition; shared runtime bodies update once.",
+        "Separate object/body callback channels traced; original velocity callback runs after motion mode handling.",
+        "Compressed backup and independent reopening verify the saved descriptive name with unchanged prototype."
+      ],
+      "caveats": [
+        "Analyst descriptive name only; original declaration and full working ABI remain deferred.",
+        "TLS and scratch allocation/free controlled; valid supplied graphs, finite unit rotations and positive scales.",
+        "Object callback and kind11 helper behavior, deeper hierarchies, actual graph-producer invariants, exceptional values, concurrency and live game unresolved.",
+        "No full subsystem completion claim."
       ]
     }
   ],
