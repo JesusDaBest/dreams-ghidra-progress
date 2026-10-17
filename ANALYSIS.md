@@ -4743,3 +4743,14 @@ In this branch, each tested record contains a float32 time and an opaque 32-bit 
 Fixtures cover 0, 1, 3, 5 and 63 old records, six origin combinations and ten finite ordered incoming patterns. Exact complete header/payload streams, immutable inputs/source nodes and guards were checked. The connected cases also check the returned new record index, existing-wire index, output transform and unchanged world/source object. The 63-record cases exercise output resource growth while reading a single original source leaf.
 
 Other format branches, flag-4/mode-5 behavior, exact tolerance-edge rounding, nonfinite times, multilevel source reads, malformed state, races, full insertion and playback remain unresolved. Identifying all 6,588 instructions is not a full semantic review. This checkpoint adds no name or completion credit: totals remain 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
+
+
+### Neighboring 48-byte Animation records and tolerance samples
+
+The neighboring format-0 branch of the same unnamed handler now passes 300 direct original-code cases and 300 through the original Animation wire dispatcher and lookup. With flag 0 and auxiliary mode 0, records consist of a first float32 time followed by 44 bytes preserved exactly in these fixtures. They follow the same tested window replacement and origin rebasing model as format 1. The remaining fields are intentionally opaque; no transform-field meaning is inferred from their size.
+
+Fixtures use 0, 1, 3, 5 or 10 old records in one source leaf, six origin combinations and ten incoming patterns. Full stored streams, preserved old/source bytes, replacement headers, output growth, inputs and guards match the independent model. The connected cases additionally check unchanged world/source object, returned record/wire indices and output transform. Original resource operations execute with the same controlled synchronization and host memory-import adapters as the previous checkpoint. Static inspection identifies additional code gated by auxiliary byte 0xb4 equal to 5 together with descriptor flag 4; that mode remains unverified.
+
+Separately, 420 direct format-1 cases sample four float32 threshold centres, their adjacent representable input values and two intervals around old keys at 0.5 and 1.0. Original results match the explicit float32 arithmetic model. This closes the selected sampled boundary cases, not every rounding case or nonfinite input.
+
+Other branches, special modes, deeper original source trees, malformed state, concurrency, full insertion and playback remain open. These branch findings add no whole-function review credit or inferred feature-completion percentage. Totals remain 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
