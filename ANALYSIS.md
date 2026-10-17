@@ -4589,3 +4589,10 @@ Four accessors are now saved as `GetRegionQueryBootstrapShader`, `GetRegionQuery
 Eight original cached-entry calls across the four newly named accessors returned the expected descriptors without changing global state. Two additional cached calls checked the already named CopyOutput accessor, which receives no new naming credit. Saved names and signatures were independently reopened and freshly decompiled. Cold loading, path construction, fallback/error handling, concurrency and GPU execution remain untested; these are accessor-role reviews, not full shader-behavior audits.
 
 Totals: 626 checked names. All four functions were already mapped to region queries, so mapped/unmapped counts remain 2,038/7,553 among 9,591 discovered functions.
+
+
+### Refine accessor correction and work scheduling
+
+The preceding naming batch transposed two accessor identities: `0x141276670` is `GetRegionQueryRefineSetupShader`; `0x141276a10` is `GetRegionQueryRefineShader`. Each accessor's own embedded stage label and compiled shader filename proves the corrected mapping. All five accessor-to-literal mappings are now explicitly checked. Both corrected names were saved and independently reopened; this adds no naming credit.
+
+The CPU compute path prepares Setup and Refine work in a ten-pass loop before CopyOutput. A three-word work buffer begins as `(0,1,1)`, and Setup writes its first element. For valid ordered counters, the static Setup trace advances a cursor by the previous batch, subtracts it from the capacity-clamped total, and computes the next group count as `(batch + 63) >> 6`. The observed capacity uniform is 2,097,152. Counter names are analyst descriptions; wrap prevention, shared-data ordering and GPU execution remain unverified. Ghidra scheduling annotations were saved and independently reopened. Checked names remain 626.

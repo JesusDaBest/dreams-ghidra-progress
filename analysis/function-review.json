@@ -14307,27 +14307,6 @@
     {
       "address": "141276670",
       "original_name": "FUN_141276670",
-      "applied_name": "GetRegionQueryRefineShader",
-      "status": "applied_read_back_verified",
-      "persistence_verification": "verified_after_independent_offline_reopening",
-      "confidence": "high_for_descriptive_role",
-      "reviewed_scope": "behavior_or_helper",
-      "saved_working_signature": "void * PS4_SYSV GetRegionQueryRefineShader(void)",
-      "evidence": [
-        "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
-        "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
-        "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
-        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
-      ],
-      "caveats": [
-        "Analyst descriptive names and working ABI, not recovered original source declarations.",
-        "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
-        "Accessor review does not establish the shader algorithm or full query behavior."
-      ]
-    },
-    {
-      "address": "141276a10",
-      "original_name": "FUN_141276a10",
       "applied_name": "GetRegionQueryRefineSetupShader",
       "status": "applied_read_back_verified",
       "persistence_verification": "verified_after_independent_offline_reopening",
@@ -14338,7 +14317,30 @@
         "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
         "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
         "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
-        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation."
+        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation.",
+        "Corrected earlier Refine/RefineSetup name swap against exact original per-function shader literals; saved/reopen verified, no extra credit."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not recovered original source declarations.",
+        "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
+        "Accessor review does not establish the shader algorithm or full query behavior."
+      ]
+    },
+    {
+      "address": "141276a10",
+      "original_name": "FUN_141276a10",
+      "applied_name": "GetRegionQueryRefineShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void * PS4_SYSV GetRegionQueryRefineShader(void)",
+      "evidence": [
+        "Complete accessor bodies read and compared to fully read CopyOutput accessor; stage-string differences retained and internal branch targets checked.",
+        "Exact stage/source literals independently match local shader archive via original native hash and section extractor.",
+        "Two original cached-entry calls per newly named accessor return correct descriptor with complete global page unchanged.",
+        "Explicit opaque pointer return ABI and names verified after independent reopening and fresh decompilation.",
+        "Corrected earlier Refine/RefineSetup name swap against exact original per-function shader literals; saved/reopen verified, no extra credit."
       ],
       "caveats": [
         "Analyst descriptive names and working ABI, not recovered original source declarations.",

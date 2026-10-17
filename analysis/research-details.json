@@ -10972,8 +10972,8 @@
     "names": {
       "1412762e0": "GetRegionQueryBootstrapShader",
       "141275f40": "GetRegionQuerySampleFieldShader",
-      "141276670": "GetRegionQueryRefineShader",
-      "141276a10": "GetRegionQueryRefineSetupShader"
+      "141276670": "GetRegionQueryRefineSetupShader",
+      "141276a10": "GetRegionQueryRefineShader"
     },
     "complete_bodies_read_instructions": 819,
     "cached_native_cases_newly_named_functions": 8,
@@ -10991,5 +10991,33 @@
     ],
     "mapped_total_unchanged": 2038,
     "checked_names": 626
+  },
+  "region_query_accessor_name_correction": {
+    "correct_mapping": {
+      "141276670": "GetRegionQueryRefineSetupShader",
+      "141276a10": "GetRegionQueryRefineShader"
+    },
+    "cause": "Earlier Refine/RefineSetup address-to-stage mapping was transposed.",
+    "evidence": "Each original accessor embeds its own exact stage label and compiled shader filename; all five mappings now explicitly checked. Saved corrections independently reopened.",
+    "new_name_credit": 0
+  },
+  "region_query_refine_scheduling_checkpoint": {
+    "cpu_passes": 10,
+    "static_setup_arithmetic": [
+      "next_start=previous_start+previous_batch",
+      "batch=min(total,capacity)-next_start",
+      "groups=(batch+63)>>6"
+    ],
+    "work_buffer_initial_values": [
+      0,
+      1,
+      1
+    ],
+    "capacity_uniform": 2097152,
+    "limits": [
+      "Analyst counter names and valid-order/no-wrap assumptions; synchronization unproven.",
+      "No GPU execution or complete refinement-formula verification."
+    ],
+    "annotations": "Saved and independently reopened."
   }
 }
