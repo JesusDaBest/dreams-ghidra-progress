@@ -3995,3 +3995,12 @@ This is a descriptive role, not full semantic or feature completion. Context/sta
 The selector result matches hand target × inverse(stored hand transform) × supplied transform. Both selected indices, signed-zero and signed control values, and both local-scale signs pass independent equations. Source buffers and output guards remain unchanged.
 
 Tests use valid auxiliary record/group zero, a body-linked hand at index one and stored-state override. Optional switching, target blending, arbitrary state indices, invalid references and caller lifecycle remain outside this connected scope. No checked-name credit is added.
+
+
+### Verified auxiliary-context transform selector
+
+Saved ResolveObjectTransformForAuxiliaryContext with a six-input working signature: five register inputs and a 32-byte supplied transform passed by value on the stack. Its 1024-instruction body resolves supplied, runtime-body, cached, parent-relative and repeated transforms; it can rebase Sculpt group frames or apply Controlinator, HeadGadget and HandGadget targets.
+
+1344 scoped entry-to-return scenarios support the descriptive role, excluding superseded sets. They cover source and eligibility gates, cached and recursive parent paths, repeats, packed references, signed group rebasing and connected gadget targets. Verified backup, independent reopening and fresh decompilation confirm the name and signature.
+
+The context remains opaque and the transform is an analyst working type. Original field names, unexplored state combinations, arbitrary recursion/cycles, nonfinite or invalid/aliased inputs and full lifecycles remain unresolved. This is not full semantic or feature completion. Totals: 608 checked names; 2,024 mapped and 7,565 unmapped among 9,589 discovered functions.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2023,
-  "unmapped_total": 7566,
+  "mapped_total": 2024,
+  "unmapped_total": 7565,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50634,6 +50634,31 @@
             "Builds hand auxiliary target from stored/group/state sources with metadata factors,mode offsets and direction adjustment.",
             "Extra flag flips source frame and chooses linked-reference offset; lookup/recursion feed smoothstep target blending.",
             "Direction-enable state can differ from selected transform state."
+          ]
+        }
+      ]
+    },
+    "141046d40": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared object transform selector with runtime,group,parent and gadget target callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole selector role audited with1344 bounded original-code scenarios.",
+      "code_sha256": "9e2864718b64f2e4a307b08fda285c31ed05b953a22a4968c88e5dc532d757a9",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResolveObjectTransformForAuxiliaryContext",
+          "support": [
+            "Resolves supplied/body/cached/parent-relative/repeated transform according to object and auxiliary context.",
+            "Can rebase Sculpt group frames or apply Controlinator/HeadGadget/HandGadget target transforms.",
+            "Five register inputs and32-byte stack-by-value supplied transform are supported by original callers and connected scenarios."
           ]
         }
       ]

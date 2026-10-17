@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "568 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "569 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9589,
-    "default_fun_names": 8827,
-    "other_names": 762,
-    "verification": "complete_inventory_matches_baseline_plus_568_renames_and_38_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8826,
+    "other_names": 763,
+    "verification": "complete_inventory_matches_baseline_plus_569_renames_and_38_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13945,6 +13945,27 @@
         "Arbitrary recursion,nonfinite/invalid/aliased inputs,threshold-adjacent behavior,original field meanings,exact PS4 math and lifecycle unresolved.",
         "Isolated zero-displacement NaN does not establish a reachable game defect.",
         "No full semantic/subsystem completion claim."
+      ]
+    },
+    {
+      "address": "141046d40",
+      "original_name": "FUN_141046d40",
+      "applied_name": "ResolveObjectTransformForAuxiliaryContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ResolveObjectTransformForAuxiliaryContext(PositionScaleQuaternionTransform32 * output_transform, void * selector_context, uint object_reference, uchar auxiliary_index, uchar use_cached_parent, PositionScaleQuaternionTransform32 supplied_transform)",
+      "evidence": [
+        "1024 original instructions read and byte verified;complete selector role,callers and helper dataflow audited.",
+        "1344 scoped original-code entry-to-return scenarios exclude superseded sets and cover major selection paths.",
+        "Verified backup,independent reopening and fresh decompilation confirm name,five register inputs and32-byte stack-by-value transform."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working ABI,not recovered source declaration.",
+        "Opaque selector context; output/input reuse working32-byte transform type.",
+        "Original fields,unexplored state combinations,arbitrary recursion/cycles,nonfinite/invalid/aliased inputs and lifecycle unresolved.",
+        "No full semantic/subsystem completion or live-game verification claim."
       ]
     }
   ],

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 607,
+    "checked_and_applied_names": 608,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 607,
+    "verified_names": 608,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "568 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "569 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10177,6 +10177,30 @@
       "Arbitrary recursion,nonfinite/invalid/aliased inputs,threshold-adjacent behavior,original field meanings,exact PS4 math and lifecycle unresolved.",
       "Isolated zero-displacement NaN does not establish a reachable game defect.",
       "No full semantic/subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
+  },
+  "object_auxiliary_transform_selector_checkpoint": {
+    "name": "ResolveObjectTransformForAuxiliaryContext",
+    "native_scenarios": 1344,
+    "instructions_byte_verified": 1024,
+    "findings": [
+      "Resolves supplied/body/cached/parent-relative/repeated transform according to object and auxiliary context.",
+      "Can rebase Sculpt group frames or apply Controlinator/HeadGadget/HandGadget target transforms.",
+      "Five register inputs and32-byte stack-by-value supplied transform are supported by original callers and connected scenarios."
+    ],
+    "evidence": [
+      "1024 original instructions read and byte verified;complete selector role,callers and helper dataflow audited.",
+      "1344 scoped original-code entry-to-return scenarios exclude superseded sets and cover major selection paths.",
+      "Verified backup,independent reopening and fresh decompilation confirm name,five register inputs and32-byte stack-by-value transform."
+    ],
+    "limits": [
+      "Analyst descriptive role and working ABI,not recovered source declaration.",
+      "Opaque selector context; output/input reuse working32-byte transform type.",
+      "Original fields,unexplored state combinations,arbitrary recursion/cycles,nonfinite/invalid/aliased inputs and lifecycle unresolved.",
+      "No full semantic/subsystem completion or live-game verification claim."
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true,
