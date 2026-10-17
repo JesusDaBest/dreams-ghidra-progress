@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2089,
-  "unmapped_total": 7514,
+  "mapped_total": 2090,
+  "unmapped_total": 7513,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52494,6 +52494,34 @@
             "Original packed remap stores old index in low32 andnew index in high32 viaVPINSRD; independent duplicate-group cases verify both.",
             "Both direct caller neighborhoods guard kind9 Animation andpass world/source pointers; native post-call use supports working void return.",
             "Independent reopening andfresh decompilation verify name andtwo-pointer SysV signature; original bytes andother names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140e6c560": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Kind9 Animation callers, HeaderAndDataPages roots,72-byte headers andAnimation wire-record ordinals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Rebuilds Animation header/data records per active source wire and rewrites their ordinals.",
+      "code_sha256": "59245484a9c8765cc6530b9e7877f719dafea46e6b090926fed1ba409e9c94aa",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RebuildAnimationRecordsPerActiveWire",
+          "support": [
+            "Complete pseudocode and all 151 owned original instructions reviewed; native fixtures independently verify the original instruction bytes.",
+            "145 connected native cases exercise the original per-wire rebuild, copy, time-range calculation, append and resource allocation/interning paths.",
+            "Null world or nonzero world guard byte skips rebuilding. Otherwise each active source-matching wire with a resolved header gets a separately appended record in wire order; duplicate old ordinals become separate new ordinals.",
+            "Basic three-key Bool payloads and reference frames remain intact; first/last key times replace header ranges, only low two header flag bits remain, roots are replaced and three Animation runtime fields reset.",
+            "Empty matching sets produce invalid header/data roots. Foreign, inactive and invalid-source wires, unrelated world/source bytes and old resource nodes remain unchanged in the fixtures.",
+            "Both direct caller neighborhoods guard kind-9 Animation and call this helper before the sparse-record compactor. Independent reopening verifies the saved name and working two-pointer SysV signature."
           ]
         }
       ]

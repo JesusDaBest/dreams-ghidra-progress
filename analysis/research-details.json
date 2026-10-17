@@ -15706,5 +15706,38 @@
       "Current pseudocode omits the packed remap high32 insert; assembly andnative fixtures are authoritative for that operation. Enclosing workflows remain unreviewed."
     ],
     "new_name_credit": 1
+  },
+  "animation_per_wire_record_rebuild_checkpoint": {
+    "address": "140e6c560",
+    "name": "RebuildAnimationRecordsPerActiveWire",
+    "signature": "void PS4_SYSV RebuildAnimationRecordsPerActiveWire(void * world, void * animation)",
+    "native_instructions": 151,
+    "native_check": {
+      "entry": "140e6c560",
+      "native_cases": 145,
+      "original_owned_instructions_verified": 151,
+      "findings": "Guarded no-op or active wire-order resource rebuild; repeated old header references become separate new records. Empty input replaces roots with invalid sentinels. Three-key basic Bool payloads preserved, ranges recomputed from first/last key times, only low two header flag bits retained; original nodes unchanged.",
+      "limits": [
+        "Basic Bool only; valid ordinals 0..2; single leaves.",
+        "Host aligned allocator/free/memset, controlled TLS and two synthetic runtime defaults.",
+        "No persistence, gameplay, error paths, extended inputs or all-format claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete pseudocode and all 151 owned original instructions reviewed; native fixtures independently verify the original instruction bytes.",
+      "145 connected native cases exercise the original per-wire rebuild, copy, time-range calculation, append and resource allocation/interning paths.",
+      "Null world or nonzero world guard byte skips rebuilding. Otherwise each active source-matching wire with a resolved header gets a separately appended record in wire order; duplicate old ordinals become separate new ordinals.",
+      "Basic three-key Bool payloads and reference frames remain intact; first/last key times replace header ranges, only low two header flag bits remain, roots are replaced and three Animation runtime fields reset.",
+      "Empty matching sets produce invalid header/data roots. Foreign, inactive and invalid-source wires, unrelated world/source bytes and old resource nodes remain unchanged in the fixtures.",
+      "Both direct caller neighborhoods guard kind-9 Animation and call this helper before the sparse-record compactor. Independent reopening verifies the saved name and working two-pointer SysV signature."
+    ],
+    "limits": [
+      "Basic Bool data only, three keys per header, single resource leaves and valid header ordinals 0..2; extended inputs, other formats and deep resources remain unverified.",
+      "Host aligned allocator/free/memset, controlled TLS and two synthetic runtime-default values are explicit harness boundaries.",
+      "No persistence, gameplay, allocation-failure, concurrency, UI-to-key-metadata or complete enclosing-workflow claim. Descriptive analyst name, not a recovered original source name."
+    ],
+    "new_name_credit": 1
   }
 }

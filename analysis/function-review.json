@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "624 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "625 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8771,
-    "other_names": 832,
-    "verification": "complete_inventory_matches_baseline_plus_624_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8770,
+    "other_names": 833,
+    "verification": "complete_inventory_matches_baseline_plus_625_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15628,6 +15628,30 @@
         "Host aligned heap/free/memset andcontrolled TLS boundary; no concurrency,persistence,event-dispatch orretirement-to-compaction call-chain proof.",
         "Rebuilt roots omit unreferenced records; old resource nodes remain unchanged. This isnot proof ofphysical cache/disk reclamation.",
         "Current pseudocode omits the packed remap high32 insert; assembly andnative fixtures are authoritative for that operation. Enclosing workflows remain unreviewed."
+      ]
+    },
+    {
+      "address": "140e6c560",
+      "original_name": "FUN_140e6c560",
+      "applied_name": "RebuildAnimationRecordsPerActiveWire",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RebuildAnimationRecordsPerActiveWire(void * world, void * animation)",
+      "evidence": [
+        "Complete pseudocode and all 151 owned original instructions reviewed; native fixtures independently verify the original instruction bytes.",
+        "145 connected native cases exercise the original per-wire rebuild, copy, time-range calculation, append and resource allocation/interning paths.",
+        "Null world or nonzero world guard byte skips rebuilding. Otherwise each active source-matching wire with a resolved header gets a separately appended record in wire order; duplicate old ordinals become separate new ordinals.",
+        "Basic three-key Bool payloads and reference frames remain intact; first/last key times replace header ranges, only low two header flag bits remain, roots are replaced and three Animation runtime fields reset.",
+        "Empty matching sets produce invalid header/data roots. Foreign, inactive and invalid-source wires, unrelated world/source bytes and old resource nodes remain unchanged in the fixtures.",
+        "Both direct caller neighborhoods guard kind-9 Animation and call this helper before the sparse-record compactor. Independent reopening verifies the saved name and working two-pointer SysV signature."
+      ],
+      "caveats": [
+        "Basic Bool data only, three keys per header, single resource leaves and valid header ordinals 0..2; extended inputs, other formats and deep resources remain unverified.",
+        "Host aligned allocator/free/memset, controlled TLS and two synthetic runtime-default values are explicit harness boundaries.",
+        "No persistence, gameplay, allocation-failure, concurrency, UI-to-key-metadata or complete enclosing-workflow claim. Descriptive analyst name, not a recovered original source name."
       ]
     }
   ],

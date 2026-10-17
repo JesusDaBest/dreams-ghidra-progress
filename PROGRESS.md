@@ -5140,3 +5140,14 @@ The packed remap contains old/new 32-bit ordinals. The original `VPINSRD` insert
 Fixtures cover five one-key Bool headers in basic, extended and mixed layouts, internal holes, aliases, inactive/foreign wires and high reference bits. Host aligned heap/free/memset and controlled TLS boundaries are explicit. Large/deep resources, complex linked metadata, allocation failure, concurrency, persistence, event propagation and the retirement-to-compaction call chain remain unverified. Rebuilding resource contents does not establish physical cache or disk reclamation. The editor-to-key-metadata write path remains unresolved.
 
 Totals: 677 checked names, 2,089 mapped functions and 7,514 unmapped among 9,603 currently defined. These counts do not include the separate unwind-region candidates and do not measure whole-game completion.
+
+
+### Animation records rebuilt separately for each active wire
+
+Saved `RebuildAnimationRecordsPerActiveWire` after reviewing all 151 owned instructions and complete pseudocode. Both original caller neighborhoods invoke it before the sparse-record compactor for kind-9 Animation objects. Independent reopening verifies the descriptive name and working two-pointer SysV signature, with original bytes and other names/signatures unchanged.
+
+145 connected native cases cover the null-world and world-byte guards, wire ordering, duplicate references, empty matching sets, inactive/foreign/invalid-source wires, high source-reference bits, header flag stripping and two key-time ranges. In the tested basic Bool layout, each matching active wire receives its own appended record—even if several wires previously shared one. Payloads and reference frames remain intact, header time bounds are recomputed, only the low two header flag bits survive, roots are replaced and three Animation runtime fields reset. An empty matching set yields invalid roots. Old resource nodes remain unchanged.
+
+This differs from the following sparse compactor, which preserves shared references and skips dense ordinal sets. The fixtures execute the original rebuild, copy, range, append and resource-interning paths, with explicit host allocator/free/memset, controlled TLS and two synthetic runtime defaults. Extended inputs, other formats, deep resources, failures, persistence, gameplay and the full enclosing workflows remain unverified. No UI-to-key-metadata connection is claimed.
+
+Totals: 678 checked names, 2,090 mapped functions and 7,513 unmapped among 9,603 currently defined. These are code-review counts, not whole-game completion.
