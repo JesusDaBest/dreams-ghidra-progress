@@ -5538,3 +5538,12 @@ A further 168 cases exercise property `0x231` with boolean samples. The wrapper 
 The related 85-instruction target lookup was fully read and matched to original bytes. In 120 native cases, it follows inheritance-marked ancestors using signed low-22-bit parent indices, then returns kind `11` immediately or follows at most two additional parents. The final returned parent need not be kind `11`. Invalid links in the tested non-inherited traversal return null; invalid inherited links are dereferenced before a null check and were not executed. Valid acyclic chains only; generation bits are ignored by this lookup. Its original type names and the original name of property `0x231` are not established here.
 
 These are local original-code fixtures, not gameplay runs. No function name, type or whole-function completion credit was added.
+
+
+### PuppetHeart or fallback ancestor lookup named
+
+Saved `ResolvePuppetHeartOrFallbackAncestor` after full review of its 85 original instructions and pseudocode. Original enum registration identifies kind `11` as `PuppetHeart`; both its literal and registration instructions were independently matched to the original executable. This resolves the previously unnamed kind in the wrapper lookup findings.
+
+The helper follows inheritance-marked ancestors, then returns PuppetHeart immediately or follows at most two additional parents. Its final fallback can be another type. 120 native cases validate valid acyclic inherited chains, early matches, fallback, ignored high reference bits and null results for invalid non-inherited links. Invalid inherited links are dereferenced before a null check and were not executed. Independent reopening and fresh decompilation verify the saved two-pointer working ABI, pointer return and unchanged original bytes; all other names/signatures remain unchanged.
+
+Mapped under shared object references. Totals are 675 checked names and 2,087 mapped functions, with 7,516 still unmapped among 9,603 discovered. This does not establish complete object layouts, gameplay behavior or whole-game completion.

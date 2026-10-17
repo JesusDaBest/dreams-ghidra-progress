@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 674,
+    "checked_and_applied_names": 675,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 674,
+    "verified_names": 675,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "621 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "622 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15458,5 +15458,24 @@
       "Resolver tests cover valid acyclic inheritance chains; invalid inherited parents are dereferenced before a null check and were not executed.",
       "Property0x231 original name and kind11 original type name not established here."
     ]
+  },
+  "puppet_heart_fallback_ancestor_checkpoint": {
+    "address": "1408f81e0",
+    "name": "ResolvePuppetHeartOrFallbackAncestor",
+    "signature": "void * PS4_SYSV ResolvePuppetHeartOrFallbackAncestor(void * world, void * object)",
+    "native_instructions": 85,
+    "native_cases": 120,
+    "evidence": [
+      "Complete 85-instruction body and pseudocode reviewed; original bytes match.",
+      "120 full-entry native cases cover inherited-chain depths0/1/3/8, early PuppetHeart matches, fallback parents, ignored high10 reference bits and invalid non-inherited links; world and objects unchanged.",
+      "Original enum registration directly links value11 to PuppetHeart; literal and registering instructions independently verified against original executable.",
+      "Independent project reopening and fresh decompilation verify working two-pointer SysV arguments and pointer return; all other names/signatures unchanged."
+    ],
+    "limits": [
+      "Final fallback may be a non-PuppetHeart ancestor; name does not guarantee returned type.",
+      "Inherited parents must be valid and acyclic; invalid inherited pointers are dereferenced before a null check.",
+      "Concrete object layouts, gameplay, ownership and generation validation are not established."
+    ],
+    "new_name_credit": 1
   }
 }
