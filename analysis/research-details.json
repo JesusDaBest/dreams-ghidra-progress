@@ -9585,5 +9585,27 @@
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true
+  },
+  "emitter_relative_dispatch_checkpoint": {
+    "connected_relative_motion_cases": 144,
+    "dispatcher_cases": 80,
+    "dispatcher_body_instructions_read_and_verified": 658,
+    "relative_motion_max_abs_error": 3.291403581684449e-06,
+    "dispatcher_max_abs_error": 1.573216612094086e-06,
+    "findings": [
+      "Connected motion preparation and original pivot helper produce new-reference times inverse-old-reference transform on finite unit-rotation inputs.",
+      "Callback origin follows that transform; selected configured linear/angular captures retain their previously tested preparation rules.",
+      "Dispatcher applies transform composition to root-object primary transforms and unique runtime bodies.",
+      "Multiple yielded objects sharing a body do not transform that body twice.",
+      "Tested numeric modes0..4 preserve, rotate or clear four runtime vector fields; native enum labels remain unresolved."
+    ],
+    "limits": [
+      "Motion fixture controls property lookup, allocation/free and dispatcher capture; pivot override absent.",
+      "Dispatcher fixture controls graph traversal yields, TLS and scratch allocation/free; callbacks disabled.",
+      "Parent-relative secondary transforms, special object kinds, actual hierarchy selection, exceptional domains and live game remain unverified.",
+      "No new names, types or whole-dispatcher completion credit."
+    ],
+    "name_credit_added": 0,
+    "project_modified": false
   }
 }
