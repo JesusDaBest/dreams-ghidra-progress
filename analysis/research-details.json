@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 614,
+    "checked_and_applied_names": 616,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 614,
+    "verified_names": 616,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "573 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "575 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10305,6 +10305,40 @@
         "Analyst descriptive name and working ABI, not recovered original source declaration.",
         "Nonfinite/aliased inputs, malformed references and complete caller lifecycles remain unresolved.",
         "Untested hierarchy/cache paths, failed prior-reference lookup variants, auxiliary nonidentity gates and complete lifecycle remain unresolved. Gun position tolerance propagates world-space tolerance through inverse-parent scale."
+      ],
+      "independently_reopened_and_decompiled": true
+    }
+  },
+  "key_spatial_collection_and_query_checkpoint": {
+    "1408d2b10": {
+      "name": "CollectAndSortKeySpatialProjections",
+      "native_cases": 96,
+      "instructions_byte_verified": 163,
+      "evidence": [
+        "Complete original body of 163 instructions read and byte verified.",
+        "96 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "limits": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Capacity limits, duplicate/nonfinite keys, malformed/cyclic references and complete downstream lifecycles remain unresolved.",
+        "Original Key type and Name storage identified; no player-facing feature assignment or complete Name token encoding claimed."
+      ],
+      "independently_reopened_and_decompiled": true
+    },
+    "1408d3ba0": {
+      "name": "FindNearestKeyByName",
+      "native_cases": 768,
+      "instructions_byte_verified": 204,
+      "evidence": [
+        "Complete original body of 204 instructions read and byte verified.",
+        "768 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "limits": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Capacity limits, duplicate/nonfinite keys, malformed/cyclic references and complete downstream lifecycles remain unresolved.",
+        "Original Key type and Name storage identified; no player-facing feature assignment or complete Name token encoding claimed."
       ],
       "independently_reopened_and_decompiled": true
     }

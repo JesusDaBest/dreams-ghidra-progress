@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2030,
-  "unmapped_total": 7561,
+  "mapped_total": 2032,
+  "unmapped_total": 7559,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50814,6 +50814,56 @@
           ]
         }
       ]
+    },
+    "1408d2b10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "key-spatial",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified Key object spatial projection collection or nearest spatial query.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and scoped original execution reviewed.",
+      "code_sha256": "e14156570dd364aba7274f885d82eb18b55791d55a01cb1fa38ab9417b46643c",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CollectAndSortKeySpatialProjections",
+          "support": [
+            "Complete original body of 163 instructions read and byte verified.",
+            "96 bounded original-code entry-to-return scenarios support the descriptive role.",
+            "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+          ]
+        }
+      ]
+    },
+    "1408d3ba0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "key-spatial",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified Key object spatial projection collection or nearest spatial query.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and scoped original execution reviewed.",
+      "code_sha256": "f13d238bd374cda40197aa5f374054dc2d2107ebd13020f6c2f51c30aaeb1270",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindNearestKeyByName",
+          "support": [
+            "Complete original body of 204 instructions read and byte verified.",
+            "768 bounded original-code entry-to-return scenarios support the descriptive role.",
+            "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -51185,6 +51235,17 @@
                 {
                   "id": "runtime-implementation",
                   "label": "Runtime implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "key-spatial",
+              "label": "Key spatial lookup",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

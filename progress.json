@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 568,
+    "done": 570,
     "todo": 1462,
-    "total": 2030,
-    "behavior_or_helpers_reviewed": 501,
+    "total": 2032,
+    "behavior_or_helpers_reviewed": 503,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -27286,12 +27286,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 213,
+        "done": 215,
         "todo": 106,
-        "total": 319,
-        "behavior_or_helpers_reviewed": 198,
+        "total": 321,
+        "behavior_or_helpers_reviewed": 200,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 233,
+        "runtime_functions_identified": 235,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27367,6 +27367,8 @@
           "EnsureObjectSlotStateAndSetAssociation",
           "AcquireLeastUsedThreadBufferLane",
           "PassesThingUpdateStateAndPowerGate",
+          "CollectAndSortKeySpatialProjections",
+          "FindNearestKeyByName",
           "GetPowerOrResolvedObjectPlayerMask",
           "ResolveGluedOrMicrochipInputReference",
           "ReadResolvedObjectPlayerMask",
@@ -27690,6 +27692,8 @@
           "1407d30b0",
           "1408c6390",
           "1408cc990",
+          "1408d2b10",
+          "1408d3ba0",
           "1408e2790",
           "1408f8330",
           "1408f85b0",
@@ -28988,12 +28992,12 @@
           {
             "name": "shared/objects",
             "label": "Object refs",
-            "done": 52,
+            "done": 54,
             "todo": 11,
-            "total": 63,
-            "behavior_or_helpers_reviewed": 50,
+            "total": 65,
+            "behavior_or_helpers_reviewed": 52,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 50,
+            "runtime_functions_identified": 52,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -29026,6 +29030,8 @@
               "ComputeIndexedRepeatTransform",
               "ResolveRecordTransform",
               "ComputeObjectAuxiliaryTargetTransform",
+              "CollectAndSortKeySpatialProjections",
+              "FindNearestKeyByName",
               "GetPowerOrResolvedObjectPlayerMask",
               "ResolveGluedOrMicrochipInputReference",
               "ReadResolvedObjectPlayerMask",
@@ -29093,6 +29099,8 @@
               "140704cf0",
               "140759540",
               "140771250",
+              "1408d2b10",
+              "1408d3ba0",
               "1408e2790",
               "1408f8330",
               "1408f85b0",
@@ -29559,6 +29567,57 @@
                       "1404901a0",
                       "140d53ef0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/key-spatial",
+                "label": "Key spatial lookup",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CollectAndSortKeySpatialProjections",
+                  "FindNearestKeyByName"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1408d2b10",
+                  "1408d3ba0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/key-spatial/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "CollectAndSortKeySpatialProjections",
+                      "FindNearestKeyByName"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408d2b10",
+                      "1408d3ba0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44508,5 +44567,5 @@
       }
     ]
   },
-  "unmapped": 7561
+  "unmapped": 7559
 }

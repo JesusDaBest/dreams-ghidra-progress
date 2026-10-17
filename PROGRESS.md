@@ -1717,7 +1717,7 @@ Cold backup, isolated trial and independent reopening verify the saved name and 
 
 ### Spatial-query working types
 
-Recovered explicit register/stack signatures for the two BVH query helpers and EnqueueRegionQuery. Both collectors return the output-end pointer in RAX, receive the root as16 bits in SI, and read two16-byte SIMD inputs in XMM0/XMM1. The enqueue function returns its32-bit packed handle in EAX, reads six SIMD inputs in XMM0..XMM5, and receives a second opaque64-bit value at incoming stack offset8. Its former local_res8 was the incoming argument and is now represented as a parameter.
+Recovered explicit register/stack signatures for the two BVH query helpers and EnqueueRegionQuery. Both collectors return the output-end pointer in RAX, receive the root as16 bits in SI, and read two16-byte SIMD inputs in XMM0/XMM1. The enqueue function returns its32-bit packed handle in EAX, reads six SIMD inputs in XMM0..XMM5, and receives a second opaque 64-bit value at incoming stack offset8. Its former local_res8 was the incoming argument and is now represented as a parameter.
 
 The working types expose the32-byte BVH node and6-byte query-mask record. They preserve unknown state and opaque values. Cold backup, isolated trial, promotion and independent reopening verify exactly three signature changes and unchanged original instructions/archives; both large query consumers still decompile. Displayed argument order and record names are analyst representations, not original C++ declarations. Existing controlled native evidence remains scoped; there is no new gameplay validation or name-count increase. Total stays289 checked names.
 
@@ -4039,3 +4039,14 @@ The application helper converts a requested world transform to its parent-relati
 An initial Gun comparison exceeded a fixed local-position tolerance. Input-capture instrumentation showed world-position error below 0.00005, amplified by conversion through parent scale -0.5. The final uninstrumented test propagates that world-space tolerance through inverse-parent rotation/scale while retaining 0.00005 quaternion/scale checks. The initial failure, diagnosis and explicit tolerance remain in local evidence; this is not exact numerical equivalence with every PS4 math result.
 
 Untested hierarchy/cache paths, failed prior-reference lookup variants, auxiliary nonidentity gates, invalid/cyclic or nonfinite inputs and complete caller lifecycles remain open. Totals: 614 checked names; 2,030 mapped and 7,561 unmapped among 9,591 discovered functions. This is scoped reverse-engineering progress, not full Controlinator or game completion.
+
+
+### Verified Key spatial collection and nearest lookup
+
+Saved and independently reopened `CollectAndSortKeySpatialProjections` (163 instructions, 96 scoped cases) and `FindNearestKeyByName` (204 instructions, 768 scoped cases), with explicit working register signatures and fresh decompilations. These are shared spatial lookup routines for original kind3 `Key` objects. The original enum, dispatcher and serialization wrapper establish the internal type; its player-facing Dreams feature remains unidentified.
+
+The collector clears Key working fields, filters activation/object flags, builds 16-byte pointer/projection records, and orders them by ascending projection. An initial four-lane dot-product assumption failed; assembly establishes dot3 over transformed XYZ, excluding W. The corrected independent equations pass with varied nonzero W inputs. A direct static initializer normalizes constant (13, 23, 7) for the projection vector; indirect writes and other startup paths are not ruled out.
+
+The query matches the original `Name` field at offset 0xf8 and returns the nearest eligible object. With positive maximum distance and spatial context it searches the projection records and applies minimum/maximum distance bounds. Missing context or nonpositive maximum selects a full-list fallback that ignores those bounds in the tested paths. Ancestry filter 0 accepts all; 2 excludes descendants; tested other nonzero modes include descendants. Packed-reference high-bit handling and valid acyclic parent chains were checked across both query paths.
+
+Name remains an opaque 64-bit token; its encoding is not recovered. Tests cover collection sizes 0–40 and finite inputs, not capacity exhaustion, duplicate/nonfinite ordering, cycles, malformed references or a complete gameplay lifecycle. Original code remains local. Totals: 616 checked names; 2,032 mapped and 7,559 unmapped among 9,591 discovered functions. These findings do not claim a completed Dreams feature.
