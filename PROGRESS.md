@@ -4026,3 +4026,16 @@ Original Controlinator property registration also identifies `tip_from_controlin
 The shared state helper has22 direct call sites; only the writer's argument preparation was traced here. Exceptional normalization inputs, other overlaps, exact PS4 trigonometry and complete caller lifecycles remain unresolved. Host-adapted trigonometry is used in the isolated tests, not claimed equivalent to every PS4 result. Original code and private data remain local.
 
 Totals: 612 checked names; 2,028 mapped and 7,563 unmapped among 9,591 discovered functions. These are scoped code-review results, not full-game completion.
+
+
+### Verified Controlinator follow updater and runtime transform application
+
+Saved and independently reopened `UpdateControlinatorFollowTransforms` (992 instructions, 802 scoped writer cases) and `ApplyObjectWorldTransformToRuntimeContext` (288 instructions, 524 scoped cases), including explicit register signatures and fresh decompilations. Only the verified updater is mapped into Controlinator runtime code; the application helper remains shared object code.
+
+The updater resets ineligible follow offsets, initializes or transfers them from a prior referenced object, builds transition transforms for eligible categories, applies ordinary follow and direction-aligned Gun transforms, and expires eligible auxiliary timestamps. Tests establish the orientation-capture difference between `MaintainGrabOrientation` and `FaceDockToCamera`, the referenced-transform composition used for transitions, and the float32 comparison at the timer threshold. Timer clock units remain unresolved. Writer scenario totals exclude diagnostic probes, instrumented observations and helper-only tests.
+
+The application helper converts a requested world transform to its parent-relative form, updates the metadata-selected object field and context pose cache, and conditionally forwards the supplied reference's low 16 bits to body status. Separate transform, early-rejection and scalar/SIMD/remainder status tests support that role. Metadata offsets in these fixtures are controlled inputs, not complete recovered object layouts.
+
+An initial Gun comparison exceeded a fixed local-position tolerance. Input-capture instrumentation showed world-position error below 0.00005, amplified by conversion through parent scale -0.5. The final uninstrumented test propagates that world-space tolerance through inverse-parent rotation/scale while retaining 0.00005 quaternion/scale checks. The initial failure, diagnosis and explicit tolerance remain in local evidence; this is not exact numerical equivalence with every PS4 math result.
+
+Untested hierarchy/cache paths, failed prior-reference lookup variants, auxiliary nonidentity gates, invalid/cyclic or nonfinite inputs and complete caller lifecycles remain open. Totals: 614 checked names; 2,030 mapped and 7,561 unmapped among 9,591 discovered functions. This is scoped reverse-engineering progress, not full Controlinator or game completion.

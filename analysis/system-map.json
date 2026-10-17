@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2028,
-  "unmapped_total": 7563,
+  "mapped_total": 2030,
+  "unmapped_total": 7561,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50764,6 +50764,56 @@
           ]
         }
       ]
+    },
+    "1408fb140": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared auxiliary transform helper used by object runtime update paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and scoped original execution reviewed.",
+      "code_sha256": "31050ce6c581504a860c9957b278f88edbdb0f2405116d3e9293985bc547a9f2",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyObjectWorldTransformToRuntimeContext",
+          "support": [
+            "Complete original body of 288 instructions read and byte verified.",
+            "524 bounded original-code entry-to-return scenarios support the descriptive role.",
+            "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+          ]
+        }
+      ]
+    },
+    "14076fe00": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "motion",
+        "controlinator",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind20 Controlinator loop and verified property/runtime transforms.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and scoped original execution reviewed.",
+      "code_sha256": "ffba53f4bad569ff86ed664de392dfb784d007db1faa65dc231228ec1bbb8862",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateControlinatorFollowTransforms",
+          "support": [
+            "Complete original body of 992 instructions read and byte verified.",
+            "802 bounded original-code entry-to-return scenarios support the descriptive role.",
+            "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -56088,6 +56138,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

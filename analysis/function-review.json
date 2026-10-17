@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "571 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "573 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8824,
-    "other_names": 767,
-    "verification": "complete_inventory_matches_baseline_plus_571_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8822,
+    "other_names": 769,
+    "verification": "complete_inventory_matches_baseline_plus_573_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14052,6 +14052,46 @@
         "Analyst descriptive name and working ABI, not recovered original source declaration.",
         "Zero/nonfinite inputs, partial overlap, exact PS4 trig and complete caller lifecycles remain unresolved.",
         "432-case set supersedes overlapping216-case set; exact alias matches both observed callers. Other byte modes not exhaustively tested."
+      ]
+    },
+    {
+      "address": "1408fb140",
+      "original_name": "FUN_1408fb140",
+      "applied_name": "ApplyObjectWorldTransformToRuntimeContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ApplyObjectWorldTransformToRuntimeContext(void * runtime_context, void * world, void * object, void * association, uint object_reference, float[4] position_scale, float[4] rotation_xyzw)",
+      "evidence": [
+        "Complete original body of 288 instructions read and byte verified.",
+        "524 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Nonfinite/aliased inputs, malformed references and complete caller lifecycles remain unresolved.",
+        "Metadata offsets are controlled fixture values, not recovered full object layout; malformed graph and pointer bounds remain unresolved."
+      ]
+    },
+    {
+      "address": "14076fe00",
+      "original_name": "FUN_14076fe00",
+      "applied_name": "UpdateControlinatorFollowTransforms",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV UpdateControlinatorFollowTransforms(void * runtime_context)",
+      "evidence": [
+        "Complete original body of 992 instructions read and byte verified.",
+        "802 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Nonfinite/aliased inputs, malformed references and complete caller lifecycles remain unresolved.",
+        "Untested hierarchy/cache paths, failed prior-reference lookup variants, auxiliary nonidentity gates and complete lifecycle remain unresolved. Gun position tolerance propagates world-space tolerance through inverse-parent scale."
       ]
     }
   ],
