@@ -12701,5 +12701,29 @@
       "Parenttree powerimport useshostdoublepow ABI adapter; merge,resourcegrowth/hash/finalization remainoriginal."
     ],
     "new_name_credit": 1
+  },
+  "animation_basic_boundaries_flags_checkpoint": {
+    "entry": "141077240",
+    "interval_native_cases": 864,
+    "header_flag_native_cases": 5202,
+    "interval_findings": [
+      "Eighteen basicformats exercise originalhandler anddelegatedhelpers atboth replacementboundaries andadjacent float32 values.",
+      "First/last incomingtime rebased thenoffset byoriginalfloat32 -1/60,+1/60. Oldkeys at/belowleft survive; oldkeys exactlyright are removed,strictlyabove survive.",
+      "Negative/zero/positive incomingtimes anddifferent origins tested; completeheader/data,time/valuebits,sourceimmutability andguards checked."
+    ],
+    "flag_formula": "(incoming_flags & 0xff01) | (old_flags & 0x00f8) | ((old_flags | incoming_flags) & 0x0002)",
+    "flag_findings": [
+      "Allindividual16-bit flagpositions exceptbit2,pluszeroandall-other-bits-set,paired acrossold/incoming records foreighteenbasicformats.",
+      "Incoming suppliesbit0andbits8..15;old suppliesbits3..7;bit1 isORofboth. Bit2 keptclear tostayinthetestedbasicformatroute.",
+      "Exact completeheaders/data,sourceimmutability andguards verified."
+    ],
+    "limits": [
+      "Finiteorderedtimes,flag0,mode0,one-leafoldsource; transformformat4 andotherflags/modes remainseparate scopes.",
+      "These are storedkeyreplacement conditions,not a claim aboutUI snapping orplayback interpolation.",
+      "Flagmeaningnames areunknown. Incoming/oldbit2=4 extendedrecordroute isnotcovered.",
+      "Mode0,oneold/oneincomingkey,one-leafsource,finite times; transformformat4 andothermodes remainseparate scopes."
+    ],
+    "new_name_credit": 0,
+    "project_modified": false
   }
 }
