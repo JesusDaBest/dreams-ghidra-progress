@@ -3537,3 +3537,13 @@ The caller packs relative coordinates, selects build levels, invokes RunBricker2
 A separate follow-up connected the original retired-resource drain to the original brick-block allocator in six scenarios, replacing the earlier block-release fixture. Exact free lists, metadata, links, volume resets and bitmap changes matched for these synthetic pools. Real concurrent integration and producer constraints remain unverified.
 
 Totals: 557 reviewed names; 1,980 mapped and 7,608 unmapped among 9,588 discovered functions.
+
+### Volume-slot build descriptors and allocation rollback
+
+Saved BuildVolumeSlotDescriptor with a uint slot and opaque output pointer. All 116 original instructions were read and byte matched. Fifty-four original-code cases covered both slots, three sentinel patterns and counts around vector/scalar boundaries. All 268 output bytes, untouched holes, guards and source preservation matched. Backed-up trial and independent trial/main reopening verified persistence, signature storage, successful decompilation and unchanged original code and archives.
+
+The builder counts item entries marked -2 and writes separate sentinel and other-item counts, then copies selected slot/global fields. Some source loads extend beyond the indexing stride; aggregate ownership remains unresolved. This is not evidence of an overflow defect. The output remains opaque rather than asserting an unproven full structure layout.
+
+Follow-up tests entered the original multi-item caller’s new-item failure branch. Twelve zero-capacity cases checked relative 10-bit XYZ packing, status 2, output sentinels and cleanup. Eight partial-allocation cases allocated one ID before exhaustion: rollback left it zero-reference pending with its bitmap bit retained until retirement, while caller output and temporary counters were cleared. These tests used original allocation/release callbacks and controlled synchronization; they did not enter a successful GPU build. Producer constraints, real concurrency and new geometry remain unverified.
+
+Totals: 558 reviewed names; 1,981 mapped and 7,607 unmapped among 9,588 discovered functions.
