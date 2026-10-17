@@ -4508,3 +4508,12 @@ Two incorrect reference assumptions were retained and corrected: zero threshold 
 The contribution helper is now saved as `ComputeLayeredBlendTokenWeight`, with explicit pointer/token inputs and a float return. Its complete 126-instruction body and all three call sites were read at the relevant calls: token types 0 and 1 are observed, so the descriptive name does not imply a Camera-only token. Independent reopening and fresh decompilation verify persistence. The 3,584 helper checks and 90 connected Camera scope cases above support this role; exceptional weights, duplicates, larger counts and complete blend lifecycles remain unresolved.
 
 Totals: 621 checked names, 2,037 mapped and 7,554 unmapped among 9,591 discovered functions. These counts do not establish whole-game completion.
+
+
+### Original camera field names recovered
+
+Original registrations identify `CameraBlender::CameraStatus.focus`, `eye`, `euler`, `scale` and `focus_scale`. Nested `cb_data`, `camera_space_list` and `camera_blend_result` offsets agree with the processor reads: this detection path uses **focus**, not the separate **eye** field. The previously tested forward offset is `0.4 * focus_scale * scale`, rotated by the observed Euler composition and added to focus. The earlier fixtures remain valid; their anonymous offset-field descriptions are now resolved.
+
+`ActiveCameraData` registrations identify `id`, `transition_type`, `packed`, `status` and `blend_amount`; `CameraId` identifies `type` and `number`. These agree with the named contribution helper's matching, curve and weight reads. Original `vr_comfort_mode` and `vr_comfort_mode_force_off` fields explain two of its context gates; the third flag still lacks an original name. The fallback ancestry field is registered as `scope_thingref`.
+
+Registration instruction bytes were checked against the original executable, and saved Ghidra annotations were independently reopened. These labels strengthen field semantics without establishing original C++ declarations, every field type, active-space switching or whole-camera behavior. Checked-name count remains 621.

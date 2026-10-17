@@ -10699,5 +10699,31 @@
       "Analyst descriptive name and working ABI, not original source declaration.",
       "Exceptional weights, duplicate matches, larger counts and complete camera blend lifecycles remain unresolved."
     ]
+  },
+  "camera_original_field_checkpoint": {
+    "original_types": [
+      "CameraBlender::PersistentData",
+      "CameraBlender::CameraSpace",
+      "CameraBlender::ActiveCameraData",
+      "CameraBlender::CameraStatus",
+      "CameraBlender::CameraId"
+    ],
+    "bindings": [
+      "cb_data -> camera_space_list -> camera_blend_result -> focus/euler/scale/focus_scale",
+      "active_camera_list -> id/transition_type/packed/status/blend_amount",
+      "scope_thingref",
+      "vr_comfort_mode / vr_comfort_mode_force_off"
+    ],
+    "finding": "Camera detection samples original focus plus rotated forward offset using scale and focus_scale. It does not directly read original eye field. Earlier numeric fixtures remain valid; their anonymous field labels are now resolved.",
+    "evidence": [
+      "Original registration instructions byte verified against retained executable.",
+      "Nested registration offsets agree with camera processor reads and blend-token helper fields.",
+      "Ghidra annotations saved and independently reopened."
+    ],
+    "limits": [
+      "Original C++ declarations/complete field types and active-space switching not established.",
+      "Original name of context flag4399, multiple-camera ordering and complete lifecycles unresolved."
+    ],
+    "checked_name_total_unchanged": 621
   }
 }
