@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "597 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "598 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8798,
-    "other_names": 805,
-    "verification": "complete_inventory_matches_baseline_plus_597_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8797,
+    "other_names": 806,
+    "verification": "complete_inventory_matches_baseline_plus_598_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14962,6 +14962,31 @@
         "Validbuffers,amplecapacity andfinite times only. Undefinedpadding isnot asserted.",
         "Out-of-rangepropertyindices,invalidpointers,aliasing,concurrency,completeproducer andplayback remain unresolved.",
         "Exact roles oftypedvaluecommonfloat/typecodes andmetadata flags remain partly unresolved."
+      ]
+    },
+    {
+      "address": "14108af70",
+      "original_name": "FUN_14108af70",
+      "applied_name": "MergeScalarAnimationRecordInterval",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeScalarAnimationRecordInterval(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, uint * header_root, uint * data_root, MachineRecordingPrefixWorkingD7 * auxiliary_state)",
+      "evidence": [
+        "Complete1022-instruction original scalarmergebody read,includingtree-seek,metadata andAutoKeyframeconditions;originalbytesmatched.",
+        "Originalscalarmergehelper executed throughallfour delegatedtypecodes,withold63/64/126/127keys and0/16/504-byte logicalpayload offsets.",
+        "One-to-four sourceleaves,includingparentbranches, exerciseparent-node seeks andcross-leaf recordreads; completeoutputheaders/data andsourceimmutability match independentintervalmodel.",
+        "Original outputgrowth/hash/finalization execute; guards/descriptor/payload/context/aux remain unchanged.",
+        "Priorone-leaffamily suite contributes1200 cases acrossscalarcodes2/5/24/25; additional3744parenttree cases include63/64/126/127 oldkeys,0/16/504-byte offsets and13incomingpatterns.",
+        "Saved fivepointerarguments andsignedEAX lastheaderindex return independently reopened andfreshlydecompiled; other9602names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworkingrecord/prefix types,not recoveredsource declarations.",
+        "Nativefixtures usefiniteorderedkeys,flag0,mode0,validbuffers andamplecapacity.",
+        "AutoKeyframe/flag4 branches staticallyread butnotclaimed production-verified; deeperparentlevels,nonfinite/invalidinputs,concurrency,fullproducer/playback unresolved.",
+        "Parenttree powerimport useshostdoublepow ABI adapter; merge,resourcegrowth/hash/finalization remainoriginal."
       ]
     }
   ],

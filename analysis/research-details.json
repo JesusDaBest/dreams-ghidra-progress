@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 650,
+    "checked_and_applied_names": 651,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 650,
+    "verified_names": 651,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "597 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "598 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12626,5 +12626,23 @@
     "type_persisted_after_independent_reopening": true,
     "all_names_signatures_unchanged": true,
     "new_name_credit": 0
+  },
+  "animation_scalar_merge_checkpoint": {
+    "address": "14108af70",
+    "name": "MergeScalarAnimationRecordInterval",
+    "parent_tree_native_cases": 3744,
+    "prior_one_leaf_cases": 1200,
+    "findings": [
+      "Originalscalarmergehelper executed throughallfour delegatedtypecodes,withold63/64/126/127keys and0/16/504-byte logicalpayload offsets.",
+      "One-to-four sourceleaves,includingparentbranches, exerciseparent-node seeks andcross-leaf recordreads; completeoutputheaders/data andsourceimmutability match independentintervalmodel.",
+      "Original outputgrowth/hash/finalization execute; guards/descriptor/payload/context/aux remain unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive role andworkingrecord/prefix types,not recoveredsource declarations.",
+      "Nativefixtures usefiniteorderedkeys,flag0,mode0,validbuffers andamplecapacity.",
+      "AutoKeyframe/flag4 branches staticallyread butnotclaimed production-verified; deeperparentlevels,nonfinite/invalidinputs,concurrency,fullproducer/playback unresolved.",
+      "Parenttree powerimport useshostdoublepow ABI adapter; merge,resourcegrowth/hash/finalization remainoriginal."
+    ],
+    "new_name_credit": 1
   }
 }
