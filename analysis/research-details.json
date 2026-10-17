@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 618,
+    "checked_and_applied_names": 619,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 618,
+    "verified_names": 619,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "577 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "578 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10376,5 +10376,20 @@
       ],
       "independently_reopened_and_decompiled": true
     }
+  },
+  "object_region_shape_selector_checkpoint": {
+    "name": "GetObjectRegionShapeMode",
+    "native_cases": 65537,
+    "evidence": [
+      "Original119-byte selector decoded through final return and matched against saved project bytes.",
+      "65537 controlled original-code calls verified low-byte result, low7 type selection, signed-positive field offsets, clamping, second-field override, null and unchanged object bytes.",
+      "TriggerZone caller1408d7d2b passes result to EvaluateRegionShapeWeight at1408d7d68.",
+      "Saved name and working object-pointer/byte-return ABI independently reopened; only expected inventory entry changed."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not original symbol/prototype.",
+      "Property original names and general gameplay integration unresolved.",
+      "Controlled metadata fixtures do not prove all real metadata rows or complete TriggerZone behavior."
+    ]
   }
 }

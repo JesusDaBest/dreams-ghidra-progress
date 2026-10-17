@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "577 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "578 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8818,
-    "other_names": 773,
-    "verification": "complete_inventory_matches_baseline_plus_577_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8817,
+    "other_names": 774,
+    "verification": "complete_inventory_matches_baseline_plus_578_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14172,6 +14172,27 @@
         "Analyst descriptive name and working ABI, not recovered original source declaration.",
         "Null/invalid object pointers, nonfinite fields and complete targeting lifecycles remain unresolved.",
         "Original initializer and serialization bind radius fields for Follower and LookAtRotator; other per-kind real offset initialization not fully traced."
+      ]
+    },
+    {
+      "address": "140774270",
+      "original_name": "FUN_140774270",
+      "applied_name": "GetObjectRegionShapeMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uchar PS4_SYSV GetObjectRegionShapeMode(void * object)",
+      "evidence": [
+        "Original119-byte selector decoded through final return and matched against saved project bytes.",
+        "65537 controlled original-code calls verified low-byte result, low7 type selection, signed-positive field offsets, clamping, second-field override, null and unchanged object bytes.",
+        "TriggerZone caller1408d7d2b passes result to EvaluateRegionShapeWeight at1408d7d68.",
+        "Saved name and working object-pointer/byte-return ABI independently reopened; only expected inventory entry changed."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not original symbol/prototype.",
+        "Property original names and general gameplay integration unresolved.",
+        "Controlled metadata fixtures do not prove all real metadata rows or complete TriggerZone behavior."
       ]
     }
   ],

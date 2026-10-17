@@ -4061,3 +4061,12 @@ A positive signed16 metadata offset selects the configured float. Otherwise defa
 Original initializer writes bind the adjacent radius metadata slots to Follower object offsets 0x108/0x10c and LookAtRotator 0x104/0x108, agreeing with the serialized `InnerRadius`/`OuterRadius` properties. The same initializer binds their `DetectName` fields. The traced LookAtRotator branch reads that metadata-selected token and passes it into `FindNearestKeyByName`, connecting the spatial lookup to gadget targeting. This establishes the traced fields and call path, not a complete Follower or LookAtRotator implementation.
 
 Other kinds' real offset initialization, null/invalid pointers, nonfinite field values and complete targeting lifecycles remain unresolved. Totals: 618 checked names; 2,034 mapped and 7,557 unmapped among 9,591 discovered functions. Raw code and private data remain local.
+
+
+### Object region-shape selector and TriggerZone output trace
+
+`GetObjectRegionShapeMode` is saved with an explicit object-pointer input and byte return, independently reopened and freshly decompiled. Its original 119-byte body passed 65,537 controlled calls covering all 128 low-bit kinds, high flags, null input, signed metadata offsets, selected field values and second-field override precedence. Object inputs stayed unchanged. Original property names and whole-game integration remain unresolved.
+
+The traced TriggerZone call passes this selector into the previously reviewed region-shape weight evaluator, whose result feeds Key output channels. The recovered 20-byte `PlayerValue` layout contains `non_player` and four `values` floats. Original `ConsiderPlayers` selects all-channel versus ownership-mask-controlled writes. The bounded all-channel block replaces ties; selected-channel instructions preserve ties. These findings do not constitute a complete TriggerZone review or add another checked function. User-facing player numbering and complete strength/lifecycle behavior remain unresolved.
+
+Totals: 619 checked names; 2,035 mapped and 7,556 unmapped among 9,591 discovered functions. These are discovered-function review counts, not whole-game completion. Raw code and private data remain local.

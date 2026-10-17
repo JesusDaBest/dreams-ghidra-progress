@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2034,
-  "unmapped_total": 7557,
+  "mapped_total": 2035,
+  "unmapped_total": 7556,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50911,6 +50911,32 @@
             "Complete original body of 28 instructions read and byte verified.",
             "2560 bounded original-code entry-to-return scenarios support the descriptive role.",
             "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+          ]
+        }
+      ]
+    },
+    "140774270": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared per-object region-shape selector, directly traced into TriggerZone region-weight evaluation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete selector and controlled original execution reviewed.",
+      "code_sha256": "b3fc95d07fe6fdf58a61223cba1b9647bd41309d302e566102840f68e3886066",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetObjectRegionShapeMode",
+          "support": [
+            "Original119-byte selector decoded through final return and matched against saved project bytes.",
+            "65537 controlled original-code calls verified low-byte result, low7 type selection, signed-positive field offsets, clamping, second-field override, null and unchanged object bytes.",
+            "TriggerZone caller1408d7d2b passes result to EvaluateRegionShapeWeight at1408d7d68.",
+            "Saved name and working object-pointer/byte-return ABI independently reopened; only expected inventory entry changed."
           ]
         }
       ]
