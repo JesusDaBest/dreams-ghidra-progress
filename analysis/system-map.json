@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2038,
-  "unmapped_total": 7553,
+  "mapped_total": 2039,
+  "unmapped_total": 7552,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51058,6 +51058,33 @@
             "Child-only label matches qualify query roots; All requires requested bits on one visited Sculpt, rather than union across nodes.",
             "48 additional full-entry query record-kind/Power/threshold cases pass.",
             "Saved descriptive name and explicit world/RDI,root/ESI,packed query/DX,bool/AL working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ]
+    },
+    "141298c90": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared global compute-control and indirect command preparation used by region-query refinement.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete wrapper read and connected original command preparation tests.",
+      "code_sha256": "674bf7e875cbdbf9c0c9f995db6d58238e15fea1c54fb52bc13675cac0987348",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchComputeIndirectWithCachedControls",
+          "support": [
+            "Complete91-instruction wrapper read and original bytes verified.",
+            "1296 connected original wrapper/acquire-memory/control-cache/indirect-writer cases pass, checking whole context and guarded command buffer.",
+            "Buffer-plus-byte-offset argument routing, boolean mode selection, cached controls, clamp and optional profiling verified within stated fixtures.",
+            "Original region-query caller supplies the work-count buffer prepared by RefineSetup.",
+            "Name and explicit buffer/RDI,mode/ESI,byte-offset/EDX,void working ABI independently reopened and freshly decompiled."
           ]
         }
       ]

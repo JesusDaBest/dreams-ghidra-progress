@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8810,
-    "other_names": 781,
-    "verification": "complete_inventory_matches_baseline_plus_585_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8809,
+    "other_names": 782,
+    "verification": "complete_inventory_matches_baseline_plus_586_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14346,6 +14346,28 @@
         "Analyst descriptive names and working ABI, not recovered original source declarations.",
         "Cold initialization, path construction/loaders, fallback/error/concurrency and GPU execution untested.",
         "Accessor review does not establish the shader algorithm or full query behavior."
+      ]
+    },
+    {
+      "address": "141298c90",
+      "original_name": "FUN_141298c90",
+      "applied_name": "DispatchComputeIndirectWithCachedControls",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV DispatchComputeIndirectWithCachedControls(void * argument_buffer, uint mode, uint byte_offset)",
+      "evidence": [
+        "Complete91-instruction wrapper read and original bytes verified.",
+        "1296 connected original wrapper/acquire-memory/control-cache/indirect-writer cases pass, checking whole context and guarded command buffer.",
+        "Buffer-plus-byte-offset argument routing, boolean mode selection, cached controls, clamp and optional profiling verified within stated fixtures.",
+        "Original region-query caller supplies the work-count buffer prepared by RefineSetup.",
+        "Name and explicit buffer/RDI,mode/ESI,byte-offset/EDX,void working ABI independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI; original source declaration not recovered.",
+        "Platform GNM indirect-dispatch import is a recording spy; dispatch packet encoding and GPU execution unverified.",
+        "Default float controls and ample capacity only; nondefault controls/refill/concurrency not covered by this connected suite."
       ]
     }
   ],

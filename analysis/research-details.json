@@ -11019,5 +11019,23 @@
       "No GPU execution or complete refinement-formula verification."
     ],
     "annotations": "Saved and independently reopened."
+  },
+  "global_indirect_compute_dispatch_checkpoint": {
+    "name": "DispatchComputeIndirectWithCachedControls",
+    "original_instructions": 91,
+    "native_cases": 1296,
+    "findings": [
+      "Complete91-instruction wrapper read and original bytes verified.",
+      "1296 connected original wrapper/acquire-memory/control-cache/indirect-writer cases pass, checking whole context and guarded command buffer.",
+      "Buffer-plus-byte-offset argument routing, boolean mode selection, cached controls, clamp and optional profiling verified within stated fixtures.",
+      "Original region-query caller supplies the work-count buffer prepared by RefineSetup.",
+      "Name and explicit buffer/RDI,mode/ESI,byte-offset/EDX,void working ABI independently reopened and freshly decompiled."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI; original source declaration not recovered.",
+      "Platform GNM indirect-dispatch import is a recording spy; dispatch packet encoding and GPU execution unverified.",
+      "Default float controls and ample capacity only; nondefault controls/refill/concurrency not covered by this connected suite."
+    ],
+    "reference_correction": "Initial reference omitted the original7DWORD acquire-memory packet. Complete42-instruction helper read; exact packet/cursor included in final cases."
   }
 }

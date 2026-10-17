@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 580,
+    "done": 581,
     "todo": 1458,
-    "total": 2038,
-    "behavior_or_helpers_reviewed": 513,
+    "total": 2039,
+    "behavior_or_helpers_reviewed": 514,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -21710,12 +21710,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 101,
+        "done": 102,
         "todo": 268,
-        "total": 369,
-        "behavior_or_helpers_reviewed": 101,
+        "total": 370,
+        "behavior_or_helpers_reviewed": 102,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 343,
+        "runtime_functions_identified": 344,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -21809,6 +21809,7 @@
           "SubmitComputeQueueAndWaitForFence",
           "AppendComputeCompletionFence",
           "DispatchComputeWithCachedControls",
+          "DispatchComputeIndirectWithCachedControls",
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
           "RegisterDeferredShaderConstants",
@@ -22182,6 +22183,7 @@
           "141297bd0",
           "141297cf0",
           "141298870",
+          "141298c90",
           "14131e560",
           "14131eca0",
           "14139fbf0",
@@ -25919,12 +25921,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 27,
+            "done": 28,
             "todo": 0,
-            "total": 27,
-            "behavior_or_helpers_reviewed": 27,
+            "total": 28,
+            "behavior_or_helpers_reviewed": 28,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 27,
+            "runtime_functions_identified": 28,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -25950,6 +25952,7 @@
               "SubmitComputeQueueAndWaitForFence",
               "AppendComputeCompletionFence",
               "DispatchComputeWithCachedControls",
+              "DispatchComputeIndirectWithCachedControls",
               "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
@@ -25980,6 +25983,7 @@
               "141297bd0",
               "141297cf0",
               "141298870",
+              "141298c90",
               "14139fbf0",
               "14139fd80",
               "1413a00c0",
@@ -26076,12 +26080,12 @@
               {
                 "name": "rendering/compute/command-dispatch",
                 "label": "Compute dispatch",
-                "done": 5,
+                "done": 6,
                 "todo": 0,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 5,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 6,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
+                "runtime_functions_identified": 6,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -26090,7 +26094,8 @@
                   "AppendGnmDispatchIndirectOnMecWithMode",
                   "AppendComputeDispatchControl",
                   "InternAndBeginComputeProfilingRegion",
-                  "DispatchComputeWithCachedControls"
+                  "DispatchComputeWithCachedControls",
+                  "DispatchComputeIndirectWithCachedControls"
                 ],
                 "todo_names": [],
                 "done_addresses": [
@@ -26098,7 +26103,8 @@
                   "14003af30",
                   "14003b090",
                   "141297630",
-                  "141298870"
+                  "141298870",
+                  "141298c90"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -26106,12 +26112,12 @@
                   {
                     "name": "rendering/compute/command-dispatch/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 5,
+                    "done": 6,
                     "todo": 0,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 5,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 6,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 5,
+                    "runtime_functions_identified": 6,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -26120,7 +26126,8 @@
                       "AppendGnmDispatchIndirectOnMecWithMode",
                       "AppendComputeDispatchControl",
                       "InternAndBeginComputeProfilingRegion",
-                      "DispatchComputeWithCachedControls"
+                      "DispatchComputeWithCachedControls",
+                      "DispatchComputeIndirectWithCachedControls"
                     ],
                     "todo_names": [],
                     "done_addresses": [
@@ -26128,7 +26135,8 @@
                       "14003af30",
                       "14003b090",
                       "141297630",
-                      "141298870"
+                      "141298870",
+                      "141298c90"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -44746,5 +44754,5 @@
       }
     ]
   },
-  "unmapped": 7553
+  "unmapped": 7552
 }

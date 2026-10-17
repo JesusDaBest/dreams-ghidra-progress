@@ -4596,3 +4596,12 @@ Totals: 626 checked names. All four functions were already mapped to region quer
 The preceding naming batch transposed two accessor identities: `0x141276670` is `GetRegionQueryRefineSetupShader`; `0x141276a10` is `GetRegionQueryRefineShader`. Each accessor's own embedded stage label and compiled shader filename proves the corrected mapping. All five accessor-to-literal mappings are now explicitly checked. Both corrected names were saved and independently reopened; this adds no naming credit.
 
 The CPU compute path prepares Setup and Refine work in a ten-pass loop before CopyOutput. A three-word work buffer begins as `(0,1,1)`, and Setup writes its first element. For valid ordered counters, the static Setup trace advances a cursor by the previous batch, subtracts it from the capacity-clamped total, and computes the next group count as `(batch + 63) >> 6`. The observed capacity uniform is 2,097,152. Counter names are analyst descriptions; wrap prevention, shared-data ordering and GPU execution remain unverified. Ghidra scheduling annotations were saved and independently reopened. Checked names remain 626.
+
+
+### Indirect compute dispatch preparation
+
+The 91-instruction wrapper is saved as `DispatchComputeIndirectWithCachedControls`. It takes an argument-buffer pointer, a mode and a 32-bit byte offset, and uses the global compute context. Region-query refinement supplies the work-count buffer prepared by RefineSetup.
+
+In 1,296 connected original-code cases, effective argument addressing is buffer plus zero-extended offset; any nonzero mode selects the underlying writer's fixed mode 1. Preparation emits a seven-DWORD acquire-memory packet. Stale controls add a three-DWORD update; the indirect writer reserves eight DWORDs and advances its cursor only on platform-call success. Optional profiling still records the attempt on the tested error returns. Whole context, command-buffer bytes and guards were checked. The initial reference omitted the acquire-memory packet; its original helper was read and the reference corrected before the final run.
+
+The actual GNM indirect-dispatch import is replaced by an argument recorder, so its packet encoding and GPU execution are not verified. Tests use default float controls and ample capacity; other limits remain explicit. Saved name/signature were independently reopened and freshly decompiled. Totals: 627 checked names, 2,039 mapped and 7,552 unmapped among 9,591 discovered functions.
