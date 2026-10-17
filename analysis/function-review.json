@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "569 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "571 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8826,
-    "other_names": 765,
-    "verification": "complete_inventory_matches_baseline_plus_569_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8824,
+    "other_names": 767,
+    "verification": "complete_inventory_matches_baseline_plus_571_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14012,6 +14012,46 @@
         "Analyst descriptive function names; original type and member names recovered separately.",
         "Real allocator/deallocator behavior, allocation failure and complete player lifecycle not tested.",
         "One-byte PlayerIdx layout does not establish higher-level player identity semantics."
+      ]
+    },
+    {
+      "address": "140a01460",
+      "original_name": "FUN_140a01460",
+      "applied_name": "ComputeAuxiliaryStateTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ComputeAuxiliaryStateTransform(PositionScaleQuaternionTransform32 * output_transform, void * auxiliary_state, void * group)",
+      "evidence": [
+        "Complete original body of 142 instructions read and byte verified.",
+        "288 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Zero/nonfinite inputs, partial overlap, exact PS4 trig and complete caller lifecycles remain unresolved.",
+        "One of22 direct caller argument preparations reviewed; remaining callers identified, not fully traced. State/group remain opaque."
+      ]
+    },
+    {
+      "address": "140a01270",
+      "original_name": "FUN_140a01270",
+      "applied_name": "RotateTransformForAuxiliaryMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV RotateTransformForAuxiliaryMode(PositionScaleQuaternionTransform32 * output_transform, uchar mode, uchar mode_flag, float[4] position_scale, float[4] rotation_xyzw)",
+      "evidence": [
+        "Complete original body of 107 instructions read and byte verified.",
+        "432 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Zero/nonfinite inputs, partial overlap, exact PS4 trig and complete caller lifecycles remain unresolved.",
+        "432-case set supersedes overlapping216-case set; exact alias matches both observed callers. Other byte modes not exhaustively tested."
       ]
     }
   ],

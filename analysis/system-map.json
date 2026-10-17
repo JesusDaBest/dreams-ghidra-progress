@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2026,
-  "unmapped_total": 7565,
+  "mapped_total": 2028,
+  "unmapped_total": 7563,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50711,6 +50711,56 @@
             "Complete original bodies and type/field registrations byte-verified against the saved program.",
             "513 isolated original-callback scenarios verify allocation size, default byte, full pointer return, guards, release forwarding and null skip using controlled library substitutes.",
             "Independent reopening verifies the two new nonoverlapping function definitions, typed signatures and fresh decompilations."
+          ]
+        }
+      ]
+    },
+    "140a01460": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared auxiliary transform helper used by object runtime update paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and scoped original execution reviewed.",
+      "code_sha256": "2a5056f34d6395bab03e363735cfc6a91eb1131b74cfc1afddafb791c52a06ea",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeAuxiliaryStateTransform",
+          "support": [
+            "Complete original body of 142 instructions read and byte verified.",
+            "288 bounded original-code entry-to-return scenarios support the descriptive role.",
+            "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+          ]
+        }
+      ]
+    },
+    "140a01270": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared auxiliary transform helper used by object runtime update paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper body and scoped original execution reviewed.",
+      "code_sha256": "6f9f1b15d5929b83988558536299309e3b22cbc96c25b67b521a6545963c4034",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RotateTransformForAuxiliaryMode",
+          "support": [
+            "Complete original body of 107 instructions read and byte verified.",
+            "432 bounded original-code entry-to-return scenarios support the descriptive role.",
+            "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
           ]
         }
       ]

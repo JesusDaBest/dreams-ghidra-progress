@@ -4364,3 +4364,14 @@ Recovered `PlayerIdx` as a one-byte structure with original `u8 idx` at offset z
 The original Controlinator enums are also saved as types. A connected 192-case mode set confirms the tested transform branch uses the parent reference for `Gun` and substitutes runtime-body position for `MaintainGrabOrientation` and `FaceDockToCamera`, retaining parent scale and rotation. This set supersedes the overlapping earlier 128 cases. Its metadata offsets, valid associations, positive scales and finite rotations are controlled fixture inputs, not a complete in-game mode test.
 
 Totals: 610 checked names, 2,026 mapped and 7,565 unmapped among 9,591 discovered functions. Type recovery and annotation alone receive no additional name-review credit. These counts do not measure whole-game semantic completion.
+
+
+### Verified shared auxiliary transform helpers
+
+Saved and independently reopened `ComputeAuxiliaryStateTransform` (142 instructions, 288 scoped cases) and `RotateTransformForAuxiliaryMode` (107 instructions, 432 scoped cases), including explicit working register signatures and fresh decompilations. The former selects a stored pose, blends group/state position, or offsets state position along a mode-adjusted direction while retaining state scale and rotation. The latter preserves finite position and signed scale while applying and normalizing a mode-dependent local-X quaternion rotation. Both mode-helper callers use in-place output; exact alias cases pass. The 432-case set supersedes its overlapping 216-case set.
+
+Original Controlinator property registration also identifies `tip_from_controlinator_for_follow` at `0x240` and `world_from_grip_for_transition` at `0x260`; the relevant reads are annotated in the saved project. A still-unnamed writer has 152 passing reset/skip scenarios: tested eligibility failures clear only the follow transform, while earlier world, activation, object-flag or frame gates preserve the object. Its successful update and transition behavior remain under investigation, so it receives no naming credit.
+
+The shared state helper has22 direct call sites; only the writer's argument preparation was traced here. Exceptional normalization inputs, other overlaps, exact PS4 trigonometry and complete caller lifecycles remain unresolved. Host-adapted trigonometry is used in the isolated tests, not claimed equivalent to every PS4 result. Original code and private data remain local.
+
+Totals: 612 checked names; 2,028 mapped and 7,563 unmapped among 9,591 discovered functions. These are scoped code-review results, not full-game completion.

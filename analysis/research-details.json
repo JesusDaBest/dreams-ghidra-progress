@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 610,
+    "checked_and_applied_names": 612,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 610,
+    "verified_names": 612,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "569 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "571 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10240,5 +10240,39 @@
       "One-byte PlayerIdx layout does not establish higher-level player identity semantics."
     ],
     "name_types_and_signatures_independently_reopened": true
+  },
+  "auxiliary_state_and_mode_transform_checkpoint": {
+    "140a01460": {
+      "name": "ComputeAuxiliaryStateTransform",
+      "native_cases": 288,
+      "instructions_byte_verified": 142,
+      "evidence": [
+        "Complete original body of 142 instructions read and byte verified.",
+        "288 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "limits": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Zero/nonfinite inputs, partial overlap, exact PS4 trig and complete caller lifecycles remain unresolved.",
+        "One of22 direct caller argument preparations reviewed; remaining callers identified, not fully traced. State/group remain opaque."
+      ],
+      "independently_reopened_and_decompiled": true
+    },
+    "140a01270": {
+      "name": "RotateTransformForAuxiliaryMode",
+      "native_cases": 432,
+      "instructions_byte_verified": 107,
+      "evidence": [
+        "Complete original body of 107 instructions read and byte verified.",
+        "432 bounded original-code entry-to-return scenarios support the descriptive role.",
+        "Independent reopening and fresh decompilation verify the saved name and explicit register signature."
+      ],
+      "limits": [
+        "Analyst descriptive name and working ABI, not recovered original source declaration.",
+        "Zero/nonfinite inputs, partial overlap, exact PS4 trig and complete caller lifecycles remain unresolved.",
+        "432-case set supersedes overlapping216-case set; exact alias matches both observed callers. Other byte modes not exhaustively tested."
+      ],
+      "independently_reopened_and_decompiled": true
+    }
   }
 }
