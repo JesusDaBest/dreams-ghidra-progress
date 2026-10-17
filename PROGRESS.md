@@ -4808,3 +4808,12 @@ The original table selects 19 formats: four scalar/vector delegate groups and si
 Recorded suites total 134,808 scoped native executions, including overlapping fixture families. They cover interval retention, time-origin rebasing, recording metadata, retained record preservation, resource/header updates and one-parent traversal. Transform coverage contributes 11,520 direct converter-plus-handler cases; maximum coordinate-composition error was about 0.00001465 under tolerance 0.0005. Those transform batches do not execute the dispatcher. Connected typed-value fixtures cover tags 1, 9 and 30.
 
 This is one reviewed function, not whole-game completion. Other modes, exhaustive rounding, deeper trees, malformed inputs, concurrency, singular/negative scales, nonunit/nonfinite rotations and full producer/playback behavior remain unresolved. Controlled host adapters remain documented. Totals: 664 checked names, 2,077 mapped functions among 9,603 discovered functions, and 7,526 still unmapped. The large basic-record updater still needs full review.
+
+
+### Basic animation updater: dword pages and dispatch
+
+Read the basic dword format-23 branch and its shared retention/header/index tail in `141077240`. A new 720-case direct-original-handler suite checks 63/64/126/127 old keys at offsets 0/8/504, crossing one parent level. The 8-byte records preserve every dword value bit, including signed boundaries and NaN-like bit patterns, while rebasing times and replacing the incoming interval. Complete headers/data, retained keys, source nodes, argument buffers and guards match the independent model. This suite uses finite ordered times, descriptor flag 0 and auxiliary mode 0; it does not execute converter or dispatcher. Parent seeks use the documented controlled host pow adapter.
+
+The original table at `1416d5000` selects 19 formats through four scalar/vector delegate groups and six inline branches. Another 1,422 direct original-code cases cover all 237 unsupported byte values across six packed sizes. Each returned the zero-extended invalid-index sentinel without changing arguments, guards or resource nodes.
+
+These are scoped additions to the earlier basic-merge evidence, not a whole-handler review. Mixed basic/extended input flags and their mode-specific paths still require separate validation. Other modes, exhaustive rounding, deeper trees, malformed inputs, races and full producer/playback behavior remain unresolved. No new name credit: 664 checked names remains unchanged; the basic updater is still unnamed.

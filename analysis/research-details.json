@@ -3865,7 +3865,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -14404,5 +14404,80 @@
       ],
       "project_modified": false
     }
+  },
+  "animation_basic_dword_dispatch_checkpoint": {
+    "handler": "141077240",
+    "scoped_native_cases": 2142,
+    "batches": [
+      {
+        "entry": "141077240",
+        "format": 23,
+        "native_cases": 720,
+        "findings": [
+          "Original basic inline dword branch and resource writer execute across parent pages.",
+          "8-byte old and incoming records preserve every value bit, including signed-boundary and float-NaN-like bit patterns without treating them as float values.",
+          "Independent interval model matches exact complete headers/data, rebased times, index and retained bytes. Source nodes, argument buffers, context and guards remain unchanged."
+        ],
+        "limits": [
+          "Direct original handler; converter and dispatcher not executed in this batch.",
+          "One parent level;63/64/126/127 old keys at offsets0/8/504;finite ordered times;descriptor flag0 andauxiliary mode0.",
+          "Controlled hostmemory/thread callbacks anddoublepow adapter.",
+          "Mixed basic/extended input flags,other modes,exhaustive rounding,deeper trees,invalid inputs,races,fullproducer/playback unresolved."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "entry": "141077240",
+        "table_address": "0x1416d5000",
+        "table_sha256": "4c772e3c167851aabc78c1a1b19f32d90555bff1504570b6a08aac22f211698f",
+        "format_targets": {
+          "0": "0x141077301",
+          "1": "0x141077446",
+          "2": "0x141077295",
+          "3": "0x1410772ab",
+          "4": "0x141077556",
+          "5": "0x141077295",
+          "6": "0x1410772d7",
+          "7": "0x1410772ab",
+          "8": "0x1410772c1",
+          "9": "0x14107ea47",
+          "10": "0x14107ea47",
+          "11": "0x1410776be",
+          "12": "0x14107ea47",
+          "13": "0x14107ea47",
+          "14": "0x14107ea47",
+          "15": "0x1410772d7",
+          "16": "0x1410772d7",
+          "17": "0x1410772ab",
+          "18": "0x14107ea47",
+          "19": "0x14107ea47",
+          "20": "0x1410772c1",
+          "21": "0x1410772c1",
+          "22": "0x14107ea47",
+          "23": "0x1410777d7",
+          "24": "0x141077295",
+          "25": "0x141077295",
+          "26": "0x14107ea47",
+          "27": "0x14107ea47",
+          "28": "0x14107ea47",
+          "29": "0x1410778d6"
+        },
+        "native_cases": 1422,
+        "unsupported_type_count": 237,
+        "findings": [
+          "Original30-entry relative table selects19 supported formats:four scalar/vector delegate groups andsix inline formats.",
+          "All237 unsupported byte values return zero-extended0xffffffff across six packed sizes without changing arguments,guards orresource nodes."
+        ],
+        "limits": [
+          "Only unsupported paths executed in this new batch; supported routes have separate prior evidence.",
+          "Whole6588-instruction basic handler remains unfinished andunnamed."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    ],
+    "whole_handler_reviewed": false,
+    "new_name_credit": 0
   }
 }
