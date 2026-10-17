@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 2000,
-  "unmapped_total": 7588,
+  "mapped_total": 2001,
+  "unmapped_total": 7587,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50096,6 +50096,27 @@
           "kind": "verified_semantic_review",
           "name": "EnsureObjectSlotStateAndSetAssociation",
           "support": "Complete body read and byte matched;4096 native cases;caller and bounded consumer traces;independent saved-project reopening."
+        }
+      ]
+    },
+    "14077ccd0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "property-recording",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original recording-eligibility gate and per-slot transform/property recording buffer traced together.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Append/coalesce transform-property records with frame timing and buffer limits.",
+      "code_sha256": "5cdc5cad652880b0a59141fda1190e12679ff1413b7b1b39019623832a4798ed",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueueRecordedTransformProperty",
+          "support": "Complete127 instructions read andbyte matched;1128 native cases;original gate andtype0xff dispatch connected in selected cases;independent saved-project reopening."
         }
       ]
     }
