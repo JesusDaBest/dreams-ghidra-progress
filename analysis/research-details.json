@@ -10752,5 +10752,32 @@
       "Some token/transition accesses remain pointer casts; complete declarations not recovered.",
       "No original code or native behavior changed."
     ]
+  },
+  "triggerzone_objects_entirelevel_checkpoint": {
+    "name": "ObjectGraphHasMatchingLabels",
+    "original_helper_instructions": 104,
+    "native_checks": {
+      "triggerzone-objects-entirelevel": {
+        "cases": 48,
+        "scope": "Original full EntireLevel Objects detection,0/1/2 query records, record kind114/115, original Sculpt Power0/1, thresholds0/1/2/3. Unlabelled permitted, wildcard name, self-linked valid graph nodes/category1. Original label-query helper104instructions, graph iterator212instructions, local memset/isinff and preparation helpers execute."
+      },
+      "triggerzone-objects-nested-labels": {
+        "cases": 720,
+        "scope": "Original full EntireLevel Objects mode with one query candidate whose valid graph contains itself and a child Sculpt. Four root labels, three child labels, five query masks, Any/All modes, unlabelled off/on and thresholds0/1/2. Original graph iterator and104-instruction label helper execute."
+      }
+    },
+    "findings": [
+      "Complete104-instruction original helper read and bytes verified.",
+      "720 full original EntireLevel Objects-mode cases connect label helper and original graph iterator across root/child labels, Any/All, unlabelled flag and thresholds.",
+      "Child-only label matches qualify query roots; All requires requested bits on one visited Sculpt, rather than union across nodes.",
+      "48 additional full-entry query record-kind/Power/threshold cases pass.",
+      "Saved descriptive name and explicit world/RDI,root/ESI,packed query/DX,bool/AL working ABI independently reopened and freshly decompiled."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI; complete original source declaration not recovered.",
+      "Valid category1 graph supplied; other categories, malformed/cyclic graphs, cached/bounded Objects modes and complete callers unresolved.",
+      "Query/physics producers, handle lookup and allocation/free modeled; no live gameplay verified."
+    ],
+    "processor_review": "partial_unnamed"
   }
 }

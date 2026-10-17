@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2037,
-  "unmapped_total": 7554,
+  "mapped_total": 2038,
+  "unmapped_total": 7553,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50994,6 +50994,33 @@
           ]
         }
       ]
+    },
+    "1408d5b10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "graph-label-query",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original filtered object graph traversal and Sculpt label matching reused across TriggerZone paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper read and scoped original connected execution reviewed.",
+      "code_sha256": "ccf5ffdb2327eba664afb310be5fb6ab7fe1dec789051f4c307de3b3c10f6548",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ObjectGraphHasMatchingLabels",
+          "support": [
+            "Complete104-instruction original helper read and bytes verified.",
+            "720 full original EntireLevel Objects-mode cases connect label helper and original graph iterator across root/child labels, Any/All, unlabelled flag and thresholds.",
+            "Child-only label matches qualify query roots; All requires requested bits on one visited Sculpt, rather than union across nodes.",
+            "48 additional full-entry query record-kind/Power/threshold cases pass.",
+            "Saved descriptive name and explicit world/RDI,root/ESI,packed query/DX,bool/AL working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -51383,6 +51410,17 @@
             {
               "id": "key-spatial",
               "label": "Key spatial lookup",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "graph-label-query",
+              "label": "Graph label query",
               "children": [
                 {
                   "id": "runtime-implementation",

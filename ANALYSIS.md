@@ -4524,3 +4524,14 @@ Registration instruction bytes were checked against the original executable, and
 Original `ECameraTransition` values are `Smooth=0`, `Cut=1`, `EasyIn=2`, `EasyOut=3`, `Linear=4`, `Crazy=5`, and `LAST=6`. The unusual quadratic observed earlier belongs to `Crazy`; it was not a mislabeled standard smoothstep. `Cut` passes the incoming blend amount in this helper, which does not establish caller-side cut timing.
 
 The enum and partial blend-entry/context layouts are saved in Ghidra and independently reopened. The named helper now takes a typed working context pointer. A fresh decompilation displays blend amounts, the count and VR flags by name; some token and transition reads still use pointer casts. The eight-entry slot footprint is inferred from the next count field, not proven runtime capacity enforcement. Unknown bytes and flag meanings remain explicit. No original code changed and no extra name credit was added; total stays 621.
+
+
+### EntireLevel Objects detection and graph labels
+
+Objects detection gathers candidates from supplied query records before graph-label filtering. Forty-eight complete original entry cases cover zero/one/two records, two record-kind values, original Sculpt Power off/on and thresholds 0/1/2/3. Only tested record kind 0x115 contributes; its producer-side semantic name remains unresolved.
+
+Another 720 complete entry cases connect the original label helper and graph iterator using a query root and child Sculpt. A child-only match can qualify the root. Any accepts a label intersection or permitted unlabelled visited Sculpt. All requires every requested bit on one visited Sculpt; labels are not combined across different nodes. Empty All queries accept a visited Sculpt. Threshold output and stored-counter behavior, complete fixture buffers and cleanup were checked.
+
+The complete 104-instruction helper is saved as `ObjectGraphHasMatchingLabels`, with explicit root-reference/packed-query inputs and a boolean return. Independent reopening and fresh decompilation verify persistence. The physics/query producer and valid graph are supplied fixture boundaries; host stack pages are prepared for original large stack frames. An initial nested fixture omitted its candidate-reference field; correcting that setup allowed the full cases to run. No original code was changed. Other graph categories, malformed/cyclic graphs, cached/bounded Objects detection and running-game behavior remain unresolved. The enclosing processor is still partially reviewed and unnamed.
+
+Totals: 622 checked names, 2,038 mapped and 7,553 unmapped among 9,591 discovered functions.

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 575,
+    "done": 576,
     "todo": 1462,
-    "total": 2037,
-    "behavior_or_helpers_reviewed": 508,
+    "total": 2038,
+    "behavior_or_helpers_reviewed": 509,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -27339,12 +27339,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 219,
+        "done": 220,
         "todo": 106,
-        "total": 325,
-        "behavior_or_helpers_reviewed": 204,
+        "total": 326,
+        "behavior_or_helpers_reviewed": 205,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 239,
+        "runtime_functions_identified": 240,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27426,6 +27426,7 @@
           "PassesThingUpdateStateAndPowerGate",
           "CollectAndSortKeySpatialProjections",
           "FindNearestKeyByName",
+          "ObjectGraphHasMatchingLabels",
           "GetPowerOrResolvedObjectPlayerMask",
           "ResolveGluedOrMicrochipInputReference",
           "ReadResolvedObjectPlayerMask",
@@ -27755,6 +27756,7 @@
           "1408cc990",
           "1408d2b10",
           "1408d3ba0",
+          "1408d5b10",
           "1408e2790",
           "1408f8330",
           "1408f85b0",
@@ -29053,12 +29055,12 @@
           {
             "name": "shared/objects",
             "label": "Object refs",
-            "done": 57,
+            "done": 58,
             "todo": 11,
-            "total": 68,
-            "behavior_or_helpers_reviewed": 55,
+            "total": 69,
+            "behavior_or_helpers_reviewed": 56,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 55,
+            "runtime_functions_identified": 56,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -29096,6 +29098,7 @@
               "GetObjectOuterRadiusOrDefault",
               "CollectAndSortKeySpatialProjections",
               "FindNearestKeyByName",
+              "ObjectGraphHasMatchingLabels",
               "GetPowerOrResolvedObjectPlayerMask",
               "ResolveGluedOrMicrochipInputReference",
               "ReadResolvedObjectPlayerMask",
@@ -29168,6 +29171,7 @@
               "1407a7ee0",
               "1408d2b10",
               "1408d3ba0",
+              "1408d5b10",
               "1408e2790",
               "1408f8330",
               "1408f85b0",
@@ -29748,6 +29752,53 @@
                       "140cde180",
                       "140d1a240"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/objects/graph-label-query",
+                "label": "Graph label query",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ObjectGraphHasMatchingLabels"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1408d5b10"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/graph-label-query/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ObjectGraphHasMatchingLabels"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408d5b10"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44695,5 +44746,5 @@
       }
     ]
   },
-  "unmapped": 7554
+  "unmapped": 7553
 }
