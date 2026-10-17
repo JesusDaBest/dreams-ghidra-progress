@@ -5277,3 +5277,14 @@ Old and incoming keys are 40-byte extended records. Retained transforms stay in 
 Checks cover exact times, metadata, complete headers, retained transform bytes, old data, source nodes, descriptor guards, and context preservation. Parent fixtures use 12/13/24/25 old keys at offsets 0/40/504, including the 24-byte logical gaps after 480-byte record pages. The original byte-verified libc infinity check executes; memory/thread boundaries and the parent-seek pow import use controlled host adapters.
 
 No additional checked name or completion credit. All six inline formats now have scoped review evidence, but the whole handler still needs its entry dispatch, delegated routes, and unsupported-format exits audited. Deeper trees, other mode/control combinations, singular/negative scales, nonunit/nonfinite rotations, malformed inputs, races, full producer behavior, and playback remain unverified.
+
+
+### Already-extended animation handler reviewed and named
+
+Completed the 6,366-instruction body review and saved `MergeExtendedAnimationRecordInterval` with a working eight-argument signature and signed 32-bit index return. Independent reopening and fresh decompilation confirm persistence. Original bytes and all 9,602 other names/signatures are unchanged.
+
+The original table selects 19 formats: four scalar/vector delegate groups and six inline branches (typed value, Boolean, transform, byte, dword, qword). All 237 unsupported byte values returned the invalid-index sentinel across six size fixtures and four control pairs without changing test arguments or resource nodes. Assembly confirms both byte controls are forwarded unchanged to the delegates.
+
+Recorded suites total 134,808 scoped native executions, including overlapping fixture families. They cover interval retention, time-origin rebasing, recording metadata, retained record preservation, resource/header updates and one-parent traversal. Transform coverage contributes 11,520 direct converter-plus-handler cases; maximum coordinate-composition error was about 0.00001465 under tolerance 0.0005. Those transform batches do not execute the dispatcher. Connected typed-value fixtures cover tags 1, 9 and 30.
+
+This is one reviewed function, not whole-game completion. Other modes, exhaustive rounding, deeper trees, malformed inputs, concurrency, singular/negative scales, nonunit/nonfinite rotations and full producer/playback behavior remain unresolved. Controlled host adapters remain documented. Totals: 664 checked names, 2,077 mapped functions among 9,603 discovered functions, and 7,526 still unmapped. The large basic-record updater still needs full review.

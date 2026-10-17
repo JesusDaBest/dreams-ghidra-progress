@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "610 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "611 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8785,
-    "other_names": 818,
-    "verification": "complete_inventory_matches_baseline_plus_610_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8784,
+    "other_names": 819,
+    "verification": "complete_inventory_matches_baseline_plus_611_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15303,6 +15303,32 @@
         "One-leaf sources,finiteorderedtimes,validbuffers;four oldmetadata patterns.",
         "Deeper source trees,exhaustive rounding,otherformats/flags,invalidinputs,races,fullproducer/playback unresolved.",
         "Hostmemory imports adapted;mutex/threadcallbacks controlled."
+      ]
+    },
+    {
+      "address": "14107ea70",
+      "original_name": "FUN_14107ea70",
+      "applied_name": "MergeExtendedAnimationRecordInterval",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeExtendedAnimationRecordInterval(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, AnimationTransformFrameWorking32 * wire_frame, AnimationTransformFrameWorking32 * output_frame, AnimationRecordPageRootsWorking8 * page_roots, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b)",
+      "evidence": [
+        "Complete6366-instruction already-extended handler reviewed across four delegated scalar/vector groups and six inline formats; original30-entry jump table and control forwarding audited.",
+        "All19 supported formats identified; all237 unsupported byte values return invalid-index sentinel without modifying test arguments/resources.",
+        "Recorded suites total134808 scoped native executions across overlapping fixture families; not unique inputs or gameplay runs.",
+        "Original converter/dispatcher connections,AutoKeyframe metadata,retained record bytes,headers,time rebasing and one-parent source traversal checked within documented fixture scope.",
+        "Transform suite11520 cases verifies inverse(H)*D*K*O*inverse(W), with maximum error1.464939091633255e-5 below5e-4 tolerance.",
+        "Working eight-argument signedEAX signature saved and independently reopened/freshly decompiled; original bytes and all9602 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name andworking ABI; not recovered source declarations.",
+        "One parent level; connected typed-value tags1/9/30; finite ordered times,valid buffers and specified mode/control profiles.",
+        "Transform suite connects converter directly to original handler;dispatcher not executed in those transform batches.",
+        "Other modes,exhaustive rounding,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback remain unresolved.",
+        "Controlled hostmemory/pow adapters andmutex/thread callbacks; transform infinity check executes original local libc."
       ]
     }
   ],

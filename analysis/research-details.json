@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 663,
+    "checked_and_applied_names": 664,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 663,
+    "verified_names": 664,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "610 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "611 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3865,7 +3865,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure — Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -14214,5 +14214,195 @@
       "Entry dispatch, delegated routes, and unsupported-format exits must be audited before naming the whole handler."
     ],
     "full_handler_reviewed": false
+  },
+  "animation_extended_handler_review_checkpoint": {
+    "address": "14107ea70",
+    "name": "MergeExtendedAnimationRecordInterval",
+    "native_instructions": 6366,
+    "recorded_native_executions": 134808,
+    "batches": [
+      {
+        "file": "animation-scalar-extended-mode-native-check.json",
+        "native_cases": 19200
+      },
+      {
+        "file": "animation-float3-extended-mode-native-check.json",
+        "native_cases": 14400
+      },
+      {
+        "file": "animation-float4-extended-mode-native-check.json",
+        "native_cases": 14400
+      },
+      {
+        "file": "animation-float2-extended-mode-native-check.json",
+        "native_cases": 14400
+      },
+      {
+        "file": "animation-extended-parent-pages-native-check.json",
+        "native_cases": 14040
+      },
+      {
+        "file": "animation-extended-dispatch-native-check.json",
+        "native_cases": 5688
+      },
+      {
+        "file": "animation-dword-inline-extended-native-check.json",
+        "native_cases": 4800
+      },
+      {
+        "file": "animation-dword-inline-extended-parent-pages-native-check.json",
+        "native_cases": 1080
+      },
+      {
+        "file": "animation-byte-inline-extended-native-check.json",
+        "native_cases": 4800
+      },
+      {
+        "file": "animation-byte-inline-extended-parent-pages-native-check.json",
+        "native_cases": 1080
+      },
+      {
+        "file": "animation-boolean-inline-extended-native-check.json",
+        "native_cases": 4800
+      },
+      {
+        "file": "animation-boolean-inline-extended-parent-pages-native-check.json",
+        "native_cases": 1080
+      },
+      {
+        "file": "animation-qword-inline-extended-native-check.json",
+        "native_cases": 4800
+      },
+      {
+        "file": "animation-qword-inline-extended-parent-pages-native-check.json",
+        "native_cases": 1080
+      },
+      {
+        "file": "animation-typed-value-inline-extended-native-check.json",
+        "native_cases": 14400
+      },
+      {
+        "file": "animation-typed-value-inline-extended-parent-pages-native-check.json",
+        "native_cases": 3240
+      },
+      {
+        "file": "animation-transform-inline-extended-native-check.json",
+        "native_cases": 2880
+      },
+      {
+        "file": "animation-transform-inline-extended-parent-pages-native-check.json",
+        "native_cases": 8640
+      }
+    ],
+    "transform": {
+      "entry": "14107ea70",
+      "format": 4,
+      "native_cases": 2880,
+      "converter_calls": 2880,
+      "frame_profiles": 8,
+      "mode_profiles": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_absolute_error": 1.464939091633255e-05,
+      "tolerance": 0.0005,
+      "composition": "inverse(H) * D * K * O * inverse(W)",
+      "findings": [
+        "Actual converter and original inline already-extended transform branch execute together; no handler/math probes.",
+        "Old/incoming40-byte records merge with retained metadata; incoming transforms follow fixed frame-composition formula across fresh unit-quaternion/positive-scale fixtures.",
+        "Exact time/metadata/header/retained oldkey bytes,merged lengths,source nodes,input/context/auxiliary immutability and guards checked.",
+        "Scoped AutoKeyframe prefix and first-incoming metadata match independent model; incoming position/scale/quaternion checked within tolerance and quaternion sign equivalence."
+      ],
+      "limits": [
+        "Direct original handler plus converter; dispatcher not executed in this batch.",
+        "One-leaf source,unitquaternions,positive uniform scales0.5/1/2,finiteorderedtimes andvalidbuffers.",
+        "Other modes/flags,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback unresolved.",
+        "Hostmemory adapters;mutex/threadcallbacks controlled; __isinff executes byte-verified original libc."
+      ],
+      "project_modified": false
+    },
+    "findings": [
+      "Complete6366-instruction already-extended handler reviewed across four delegated scalar/vector groups and six inline formats; original30-entry jump table and control forwarding audited.",
+      "All19 supported formats identified; all237 unsupported byte values return invalid-index sentinel without modifying test arguments/resources.",
+      "Recorded suites total134808 scoped native executions across overlapping fixture families; not unique inputs or gameplay runs.",
+      "Original converter/dispatcher connections,AutoKeyframe metadata,retained record bytes,headers,time rebasing and one-parent source traversal checked within documented fixture scope.",
+      "Transform suite11520 cases verifies inverse(H)*D*K*O*inverse(W), with maximum error1.464939091633255e-5 below5e-4 tolerance.",
+      "Working eight-argument signedEAX signature saved and independently reopened/freshly decompiled; original bytes and all9602 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name andworking ABI; not recovered source declarations.",
+      "One parent level; connected typed-value tags1/9/30; finite ordered times,valid buffers and specified mode/control profiles.",
+      "Transform suite connects converter directly to original handler;dispatcher not executed in those transform batches.",
+      "Other modes,exhaustive rounding,deeper trees,singular/negative scales,nonunit/nonfinite rotations,invalid inputs,races,full producer/playback remain unresolved.",
+      "Controlled hostmemory/pow adapters andmutex/thread callbacks; transform infinity check executes original local libc."
+    ],
+    "new_name_credit": 1,
+    "dispatch": {
+      "entry": "14107ea70",
+      "table_address": "0x1416d5078",
+      "table_bytes_sha256": "c84397174334c10c88c0bb2abb9c1b2e5922d2dec97c4a0b40c1aa737c585c12",
+      "format_targets": {
+        "0": "0x14107eb6a",
+        "1": "0x14107eca9",
+        "2": "0x14107ead2",
+        "3": "0x14107eaf3",
+        "4": "0x14107edeb",
+        "5": "0x14107ead2",
+        "6": "0x14107eb35",
+        "7": "0x14107eaf3",
+        "8": "0x14107eb14",
+        "9": "0x141085987",
+        "10": "0x141085987",
+        "11": "0x14107ef70",
+        "12": "0x141085987",
+        "13": "0x141085987",
+        "14": "0x141085987",
+        "15": "0x14107eb35",
+        "16": "0x14107eb35",
+        "17": "0x14107eaf3",
+        "18": "0x141085987",
+        "19": "0x141085987",
+        "20": "0x14107eb14",
+        "21": "0x14107eb14",
+        "22": "0x141085987",
+        "23": "0x14107f0ab",
+        "24": "0x14107ead2",
+        "25": "0x14107ead2",
+        "26": "0x141085987",
+        "27": "0x141085987",
+        "28": "0x141085987",
+        "29": "0x14107f1f0"
+      },
+      "native_cases": 5688,
+      "unsupported_type_count": 237,
+      "findings": [
+        "Original30-entry signed-relative jump table matches all19 supported format codes and default target.",
+        "13 scalar/vector codes forward to four reviewed delegates; six formats are handled inline.",
+        "Original unsupported-format paths return zero-extended0xffffffff for all237 unsupported byte values across six packed-size fixtures and four control pairs.",
+        "All argument buffers, guards and synthetic resource-node span remain unchanged."
+      ],
+      "limits": [
+        "Only unsupported branches executed in this new batch; supported-route execution evidence remains in earlier receipts.",
+        "All six inline branches have separate scoped evidence; aggregate whole-handler review and naming follow this audit.",
+        "No full-handler name or review credit added."
+      ],
+      "project_modified": false
+    }
   }
 }
