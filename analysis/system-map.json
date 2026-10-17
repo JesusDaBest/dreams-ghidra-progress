@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1995,
-  "unmapped_total": 7593,
+  "mapped_total": 1996,
+  "unmapped_total": 7592,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49990,6 +49990,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "PromoteBuildMetadataAndRefreshObjectResources",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "1410609e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "memory-pools",
+        "runtime-implementation"
+      ],
+      "component_basis": "Packed resource node allocator traced through shared pool bitmaps, header category flags and writer callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Allocates or copies 512-byte packed resource nodes and marks allocation/dirty bitmaps.",
+      "code_sha256": "2a2d10303a1e5cfd7416e882cd9a4e83c4c5914858b6febcdb9fd395269142d4",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AllocateOrCopyPackedResourceNode",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]

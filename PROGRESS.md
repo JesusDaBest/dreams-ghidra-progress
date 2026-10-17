@@ -3689,3 +3689,13 @@ Saved PromoteBuildMetadataAndRefreshObjectResources after reading and byte match
 Rebuild and registration were controlled in orchestration fixtures. Actual connected CSG execution, complete lifetime/synchronization constraints and source field meanings remain unverified. Valid pointers and the linked type-one object invariant are preconditions. Controlled registration failure preserves the previous stored metadata handle after object replacement; actual failure reachability is unresolved.
 
 Totals: 572 reviewed names; 1,995 mapped and 7,593 unmapped among 9,588 discovered functions.
+
+### Packed resource node allocation and copying
+
+Saved AllocateOrCopyPackedResourceNode after reading and byte matching all 209 original instructions. Under the shared node-pool mutex it searches 4,096 bitmap words from a rotating cursor, allocates the first clear bit and marks both allocation and dirty bitmaps. Nodes are 512 bytes. A supplied source ID copies the node and replaces header category bits; a missing source creates a zeroed node with requested leaf/category flags. No reference-count operation appears in this body.
+
+387 isolated cases cover 384 allocation/copy combinations and three exhausted-pool diagnostics. Exact node bytes, preserved source, complete bitmaps, cursor and thread-owner fields were checked, including final node ID 262143 and cursor wraparound. Exhaustion returns UINT_MAX, preserves allocation state and counts fourteen header categories plus other entries across the original diagnostic scan. Backed-up trial and independent trial/main reopening verified the name, working signature and unchanged original bytes and archives.
+
+Host memcpy was ABI-adapted; synchronization and logging were controlled. Valid source IDs and lifetimes remain preconditions. Actual allocation races, complete caller flag bounds and end-to-end writer ownership remain unverified. Related local followups read writer initialization and finalization and tested multi-leaf rebuild traversal without additional name credit.
+
+Totals: 573 reviewed names; 1,996 mapped and 7,592 unmapped among 9,588 discovered functions.

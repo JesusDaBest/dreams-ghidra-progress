@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "534 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "535 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8861,
-    "other_names": 727,
-    "verification": "complete_inventory_matches_baseline_plus_534_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8860,
+    "other_names": 728,
+    "verification": "complete_inventory_matches_baseline_plus_535_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13039,6 +13039,27 @@
         "Analyst descriptive metadata promotion and resource refresh role, not original name.",
         "Valid object pointers, linked type-one object invariant and caller lifetimes remain preconditions.",
         "CSG rebuild and registration controlled in orchestration fixtures; complete connected implementations, caller constraints and real concurrent execution unverified."
+      ]
+    },
+    {
+      "address": "1410609e0",
+      "original_name": "FUN_1410609e0",
+      "applied_name": "AllocateOrCopyPackedResourceNode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV AllocateOrCopyPackedResourceNode(uint header_flags, uint leaf_flag, uint source_node_id)",
+      "evidence": [
+        "Complete 209 original instructions read and byte matched; consumes header flags, leaf flag and source node ID, returns allocated ID or UINT_MAX.",
+        "387 isolated native cases cover allocation, copying, bitmap/cursor boundaries and exhausted-pool diagnostic counts.",
+        "Backed-up trial andindependent trial/main reopening verified expectedsignature, unchangedbytes/archives."
+      ],
+      "caveats": [
+        "Analyst descriptive packed resource node allocation/copy role, not original name.",
+        "Valid source node IDs and lifetimes remain preconditions.",
+        "Memcpy ABI-adapted; synchronization, logging controlled. Complete caller bounds and real allocation races unverified."
       ]
     }
   ],
