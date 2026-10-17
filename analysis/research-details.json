@@ -12593,5 +12593,38 @@
       "14108e4b0"
     ],
     "original_libc_classification": "__isinff"
+  },
+  "animation_transform_frames_checkpoint": {
+    "native_cases": 3840,
+    "composition": "inverse(H) * D * K * O * inverse(W)",
+    "labels": {
+      "H": "storedheader frame at36",
+      "D": "incomingdescriptor frame at44",
+      "K": "incoming key transform",
+      "W": "thirdargument frame",
+      "O": "fourthargument frame"
+    },
+    "maximum_absolute_error": 4.989120490961341e-06,
+    "tolerance": 0.0005,
+    "findings": [
+      "Freshseed independent fixtures validate fixedcompositionformula; no orderfitting duringthissuite.",
+      "Unitquaternions,translatedframes andpositiveuniformscales0.5/1/2; incomingkeys differ inallthreepositioncoordinates.",
+      "Oldkeys outsideupdatedinterval remainintheirstoredframe; incomingkeys areconverted withtheframecorrections andtimeoriginsrebased.",
+      "Exactheaders,olddata prefix,oldkeybytes andtimes checked; incomingposition/scale/quaternion checked withtoleranceandquaternion sign equivalence.",
+      "Originalcompleteentry,transformmath,resourcegrowth/hash/finalization andlocallybyteverified libc __isinff execute.",
+      "Sourcebuffers,oldnodes andallguards unchanged."
+    ],
+    "limits": [
+      "Format4basic,flag0,auxmode0,one-leafsource only; whole6588-instruction updater remainspartlyreviewed.",
+      "Positiveuniformscales andunitquaternions only; singular/negative scales,nonunit/nonfinite rotations,specialmodes,deeptrees,fullproducer/playback unresolved.",
+      "Frame labels areanalyst descriptions,not recovered source names."
+    ],
+    "working_frame_type": "AnimationTransformFrameWorking32",
+    "record_field": "reference_frame_format4",
+    "stored_header_offset": 36,
+    "input_descriptor_offset": 44,
+    "type_persisted_after_independent_reopening": true,
+    "all_names_signatures_unchanged": true,
+    "new_name_credit": 0
   }
 }
