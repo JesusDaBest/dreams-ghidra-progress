@@ -10647,5 +10647,41 @@
       "No running-game or whole-system completion claimed."
     ],
     "checked_name_total_unchanged": 620
+  },
+  "triggerzone_camera_scope_checkpoint": {
+    "native_checks": {
+      "triggerzone-camera-scope-connected": {
+        "cases": 45,
+        "scope": "Full-entry Camera detection All/Me/Others, five fallback camera ancestry references (direct/deep matching, other tree and rootless), thresholds0/1/2. Empty candidate Camera list and Controlinator list, group434c zero, group0 camera, sphere weight0.5. Original helpers/local math; allocation and stack-canary boundary models."
+      },
+      "triggerzone-camera-controlinator-scope": {
+        "cases": 90,
+        "scope": "Original full Camera detection; group434c nonzero, empty Camera list, one original kind20 Controlinator in second candidate list, original PlayerIdx offset122 tested0/255. Five candidate ancestry references, All/Me/Others and thresholds0/1/2; fallback group ancestry rootless. Sphere weight0.5."
+      },
+      "triggerzone-camera-candidate-scope": {
+        "cases": 90,
+        "scope": "Original full Camera detection and original126-instruction candidate-weight helper; one kind19 candidate, matching token type1/object123, weight0/0.5, five ancestry profiles, All/Me/Others, thresholds0/1/2. Rootless group fallback, Controlinator scope branch disabled."
+      },
+      "camera-candidate-weight": {
+        "cases": 3584,
+        "scope": "Complete original helper with count0..3, matching index0..3, modes0..6, eligibility flags0/1/8/16, all eight combinations of three context flags; weights0.25/0.5/0.75. Input buffer immutable. No modeled callees."
+      }
+    },
+    "findings": [
+      "Fallback camera reference uses direct/deep ancestry for Me/Others.",
+      "A valid Controlinator player index and matching ancestry can establish camera scope membership. Invalid255 is skipped.",
+      "Positive Camera candidate blend contribution gates ancestry; it does not multiply region weight in tested fixtures.",
+      "Original126-instruction contribution helper attenuates initial matching weight by later entries; mode5 observed polynomial is3*x*x-2*x."
+    ],
+    "corrections": [
+      "Initial threshold0 reference omitted final stored-counter cap; corrected reference passed all45 fallback cases.",
+      "Initial helper reference assumed cubic smoothstep for mode5; original assembly proves quadratic3*x*x-2*x and corrected3584 cases pass."
+    ],
+    "limits": [
+      "Multiple candidates/order, other token types, broader blend weights, invalid/group indices, malformed ancestry and live gameplay remain unresolved."
+    ],
+    "processor_review": "partial_unnamed",
+    "helper_review": "body_and_scoped_native_cases_read; name_and_type_pending",
+    "checked_name_total_unchanged": 620
   }
 }

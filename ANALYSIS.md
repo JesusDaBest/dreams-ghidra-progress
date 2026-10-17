@@ -4492,3 +4492,12 @@ Camera detection now has 198 zero-offset and 576 nonzero-offset full-entry cases
 With scope set to All, successful detection writes the weight to all five output components in these fixtures, including when player consideration is enabled. Failing the count threshold clears outputs while preserving the accepted count. Whole object, world and context buffers and cleanup were checked. The original processor, composition and region helpers, and local libc `sincosf`/`isinff` execute; handle lookup, allocation/free and the platform stack-canary pointer are explicit fixture boundaries.
 
 Saved Ghidra annotations were independently reopened. Camera offset field names, scope filtering, invalid/group indices, other shapes, large/nonfinite angles and live gameplay remain unresolved. The enclosing processor is still partially reviewed and unnamed. Checked names remain 620; these cases do not increase whole-game coverage by themselves.
+
+
+### Camera scope and blend-contribution checkpoint
+
+Forty-five full-entry cases establish fallback camera ancestry behavior for All, Me and Others. Another 90 cases exercise the Controlinator candidate branch using original PlayerIdx values 0 and invalid 255; another 90 connect the original Camera candidate blend-contribution helper to scope filtering. Positive candidate contribution enables ancestry filtering; it does not multiply the region weight in these fixtures. Direct and transitive matching ancestry, other trees, rootless references and thresholds 0/1/2 were covered.
+
+The complete 126-instruction contribution helper was read. In 3,584 original-code cases, the first eligible matching token contributes an eased weight, attenuated by one minus each later entry's eased weight. Counts 0..3, modes 0..6, four eligibility flag patterns and all eight combinations of three context flags were covered; input bytes stayed unchanged. This does not establish every weight, token type or list ordering.
+
+Two incorrect reference assumptions were retained and corrected: zero threshold caps the stored accepted counter to zero, and observed curve mode 5 computes `3*x*x - 2*x`, rather than cubic smoothstep. Corrected references pass; original code was not changed. Ghidra scope annotations were saved and independently reopened. Multiple candidates/order, other groups, malformed ancestry and live gameplay remain unresolved. Processor and contribution helper remain unnamed; checked-name total stays 620.
