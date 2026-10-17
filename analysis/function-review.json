@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "549 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "550 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8846,
-    "other_names": 742,
-    "verification": "complete_inventory_matches_baseline_plus_549_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8845,
+    "other_names": 743,
+    "verification": "complete_inventory_matches_baseline_plus_550_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1120,7 +1120,30 @@
         "No signatures, types, layout, or calling convention edits.",
         "Model examples do not execute original game code."
       ],
-      "reviewed_scope": "behavior_or_helper"
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint PS4_SYSV LookupU32HashTableValue(void * table, uint key)",
+      "native_validation_update": {
+        "cases": 846,
+        "successful_probe_depths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "scope": "Original full lookup body; valid table sizes and reserved-key exclusion; no game runtime validation."
+      }
     },
     {
       "address": "140912670",
@@ -13375,6 +13398,27 @@
         "Analyst descriptive name andworking types;opaque vector/record fields.",
         "Allocation/free controlled;memcpy ABI-adapted.",
         "Overflow,concurrency,realOOM andfullgame-merger behavior unresolved."
+      ]
+    },
+    {
+      "address": "140912fd0",
+      "original_name": "FUN_140912fd0",
+      "applied_name": "ConfigureU32RemapTableSize",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ConfigureU32RemapTableSize(void * table, uint element_count)",
+      "evidence": [
+        "Complete 69-instruction sizing body and 324-instruction lookup body read and matched against original bytes.",
+        "396 native sizing cases and 846 native lookup cases; all 16 successful probe depths covered.",
+        "127 bounded caller instructions trace stack-table initialization, key/value insertion and identifier remapping.",
+        "Verified compressed backup and independent saved-project reopening."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working signature; original source declarations unknown.",
+        "Valid prior active counts and nonzero power-of-two lookup sizes assumed.",
+        "Host memset ABI adapted; full insertion policy, merge modes, concurrency and live game remain unverified."
       ]
     }
   ],
