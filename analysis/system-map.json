@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2084,
-  "unmapped_total": 7519,
+  "mapped_total": 2085,
+  "unmapped_total": 7518,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52356,6 +52356,31 @@
             "422 original transform serializer cases cover read/write,finite nonunit normalization,zero/infinite squared length fallback and NaN preservation.",
             "Exact position/scale bytes,source immutability,guards andserializer cursor checked; max component error1.1713e-7 under2e-6 tolerance.",
             "Independent reopening and fresh decompilation confirm name/signature; other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140dde370": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared game-wire property/index/flag serializer called by game-wire record serialization.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Transfers wire property,index and flags with version-specific schema migration.",
+      "code_sha256": "6cb99d42b9687d43256deff4eecd4ca1e45b36e8a606b54dd1cb588cfa13791b",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeWirePropertyIndexAndFlags",
+          "support": [
+            "Complete171-instruction original body and pseudocode reviewed and byte-verified.",
+            "256 native cases across eight version boundaries validate packed/full-width property/index,flagbyte migration,exact buffers andcursor.",
+            "Independent reopening and fresh decompilation confirm name and working two-pointer ABI; all other names/signatures unchanged."
           ]
         }
       ]

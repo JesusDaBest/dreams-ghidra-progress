@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 672,
+    "checked_and_applied_names": 673,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 672,
+    "verified_names": 673,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "619 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "620 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15302,6 +15302,51 @@
       "Fast buffer; finite random values[-10,10] and explicit edge fixtures.",
       "Subnormal/threshold-boundary/MXCSR coverage notexhaustive; slow/error paths,persistence,gameplay unverified.",
       "Original local-libc classifier supplied at import thunk."
+    ]
+  },
+  "wire_property_flags_serialization_checkpoint": {
+    "address": "140dde370",
+    "name": "SerializeWirePropertyIndexAndFlags",
+    "signature": "void PS4_SYSV SerializeWirePropertyIndexAndFlags(void * serializer, void * wire_property_fields)",
+    "native_instructions": 171,
+    "native_check": {
+      "entry": "140dde370",
+      "native_instructions": 171,
+      "native_cases": 256,
+      "version_profiles": {
+        "0xc5": 32,
+        "0x10c": 32,
+        "0x10d": 32,
+        "0x3e4": 32,
+        "0x3e5": 32,
+        "0x449": 32,
+        "0x44a": 32,
+        "0x500": 32
+      },
+      "findings": [
+        "Original property/flag serializer at versionsc5..10c reads12-bit property and12-bit ordinal frompacked32-bit word,derivesflagbit0 andsetssecondflagbyte1. Testedwrite path emitszero legacyword.",
+        "Versions10d+ transfer full32-bit property andordinal plusfirstflagbyte;3e5+ addssecondflagbyte.",
+        "Readbelow44a clearsfirstflagbytebit1;44a+ preservesit. Opaque remainingflagbytes andallguards unchanged.",
+        "Exactfield buffers,stream bytes andcursor verified across eight schema boundaries in bothdirections."
+      ],
+      "limits": [
+        "Standalone helper withvalidfastbuffer; record-level pre-c5 one-byte legacy path notcovered.",
+        "No slow/errorpaths,whole-record legacy roundtrip,save-file persistence orgameplay claim.",
+        "Historicalversionwriting observed fromcurrent executable,not an assurance ofsupported oldsave output."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 1,
+    "evidence": [
+      "Complete171-instruction original body and pseudocode reviewed and byte-verified.",
+      "256 native cases across eight version boundaries validate packed/full-width property/index,flagbyte migration,exact buffers andcursor.",
+      "Independent reopening and fresh decompilation confirm name and working two-pointer ABI; all other names/signatures unchanged."
+    ],
+    "limits": [
+      "Valid fast buffer only; no slow/error paths or pre-c5 record path.",
+      "Historicalwrite emitszero legacyword in testedcurrentcode; no oldsave compatibility claim.",
+      "Whole-record legacyroundtrip,persistence,concurrency andgameplay unverified."
     ]
   }
 }

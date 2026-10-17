@@ -4999,3 +4999,14 @@ Saved `SerializeTransform32WithQuaternionNormalization` after complete review of
 These are fast-buffer tests with the verified original local-libc classifier supplied at its import boundary. They do not exhaust subnormal values, normalization threshold boundaries, alternative floating-point control modes or slow/error paths, and do not establish full-world save/load, disk persistence or gameplay. The earlier connected wire test retains its unit-quaternion scope.
 
 Totals: 672 checked names, 2,084 mapped functions and 7,519 unmapped functions among 9,603 discovered. Counts describe identified code, not whole-game completion.
+
+
+### Wire property/index/flag version migration named
+
+Saved `SerializeWirePropertyIndexAndFlags` after complete review of its 171 original instructions. Independent reopening and fresh decompilation confirm the name and working two-pointer signature; original bytes and all other names/signatures remain unchanged.
+
+256 original-code cases cover both directions at versions `0xc5`, `0x10c`, `0x10d`, `0x3e4`, `0x3e5`, `0x449`, `0x44a` and `0x500`. Older reads unpack 12-bit property and ordinal fields, derive flag bit 0 and set the second flag byte to 1. Version `0x10d` introduces separate full-width property/index values and a flag byte; `0x3e5` adds the second flag byte. Loads before `0x44a` clear flag bit 1. Exact buffers, guards, untouched flag bytes and stream cursor match the independent model.
+
+The tested oldest write branch emits a zero legacy word in this executable. That observation is not a guarantee of supported historical save output. Tests use valid fast buffers and do not establish the record-level pre-`0xc5` layout, slow/error paths, complete legacy record roundtrips, persistence, concurrency or gameplay.
+
+Totals: 673 checked names, 2,085 mapped functions and 7,518 unmapped functions among 9,603 discovered. Counts describe reviewed code, not whole-game completion.
