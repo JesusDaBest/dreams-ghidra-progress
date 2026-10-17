@@ -178,6 +178,28 @@
         "offset": "110"
       }
     ],
-    "field_name_unresolved": true
+    "field_name_unresolved": true,
+    "field_name_scope": "Sculpt linkage now established as GadgetConnector; names for other kinds remain unresolved."
+  },
+  "sculpt_gadget_connector_property41_linkage": {
+    "property_id": "0x41",
+    "kind": 1,
+    "kind_name": "Sculpt",
+    "field_offset": "0x180",
+    "registered_field_name": "GadgetConnector",
+    "packet_size": 38,
+    "payload_size": 32,
+    "evidence": [
+      "Original initializer immediate assigns property41 offset180 in kind1 matrix row.",
+      "Original RegisterSculptProperties sequence passes literal GadgetConnector andoffset180 to registration helper140cdbb80.",
+      "Exact literal bytes andall four registration instructions match original executable.",
+      "Original packet-size table gives38bytes including6-byte header."
+    ],
+    "limits": [
+      "Registration linkage is static evidence. Field layout members and actual update behavior remain unresolved.",
+      "No source livestream/build match or recovered original function name claimed."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
