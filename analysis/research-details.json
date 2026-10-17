@@ -9958,5 +9958,17 @@
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true,
     "fresh_decompilation_verified": true
+  },
+  "native_host_math_abi_audit": {
+    "affected_cases_rerun": 924,
+    "additional_generalized_frame_cases": 64,
+    "all_passed": true,
+    "correction": "Adapters reserve Windows32-byte shadow area and alignment for host scalar math calls.",
+    "retracted_inference": "Nonidentity-frame counterexample from prior harness.",
+    "limits": [
+      "Host math remains a substitute for exact PS4 libraries.",
+      "Previous relative pose identity in generalized-frame cases; exact ties/general previous poses unresolved."
+    ],
+    "new_name_credit": 0
   }
 }

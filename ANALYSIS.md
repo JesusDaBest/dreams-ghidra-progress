@@ -4100,3 +4100,10 @@ Saved SnapQuaternionToOrientationSet after reading and byte matching all 279 ori
 Additional frame reconstruction evidence now binds original Animation, Microchip, Timeline, Sound and Scripter types to runtime record categories 6, 2, 3, 4 and 5. 200 connected cases verify category/ID matching and world fallback. Another 384 scoped cases examine nonzero extra-field coordinates, rotations, metadata dimensions, offsets and Timeline-specific scaling. These do not establish full frame-helper semantics or original field names. Timeline numerical checks use a documented vector-scale error bound; maximum observed relative vector error was approximately 0.000000505.
 
 Totals: 598 checked names; 2,014 mapped and 7,575 unmapped among 9,589 discovered functions. Only the quaternion helper adds new naming credit here.
+
+
+### Native test harness math ABI audit
+
+An additional frame test exposed a harness error: Windows scalar math functions had been called directly from PS4 code without the Windows 32-byte shadow area. Some host calls could overwrite the PS4 caller scratch data. Scalar math adapters now reserve the required area and stack alignment before calling the host implementation.
+
+All 924 affected cases were rerun successfully with corrected adapters, including body correction, indexed transform powers and transform snapping. The additional 64 translated/rotated/scaled-frame hysteresis cases also pass. The apparent nonidentity-frame counterexample and its old register traces are superseded as harness artifacts, not game behavior. Earlier naming credit is unchanged; these are revalidation checks, not additional reviewed functions. Exact PS4 math implementations and untested input domains remain unresolved.
