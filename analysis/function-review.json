@@ -1237,13 +1237,43 @@
         "Complete independent caller1408f1dc0 (136 instructions) passes object index/context/output and consumes the 32-byte position-scale/quaternion result. Emitter dispatcher1408fa380 uses the same helper for parent-relative transform processing."
       ],
       "caveats": [
+        "Existing descriptive name retained; output layout and signature are analyst working types.",
+        "Controlled transform metadata, valid acyclic parent chains, finite unit rotations and positive scales.",
+        "Cache-selection and skip-marked-parent paths, missing metadata and exceptional values remain unverified.",
+        "Connected dispatch uses original iterator/helper but controlled TLS/scratch allocation, disabled callbacks and supplied graph links.",
+        "Special object kinds, deeper dispatcher hierarchies, concurrency and live game remain unverified."
+      ],
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ComputeObjectHierarchyTransform(PositionScaleQuaternionTransform32 * output, void * world, uint object_reference)",
+      "signature_refinements": [
+        {
+          "working_output_type": "PositionScaleQuaternionTransform32 pointer in RDI",
+          "world": "opaque pointer in RSI",
+          "packed_object_reference": "uint in EDX",
+          "persistence": "independently_reopened",
+          "original_declaration_recovered": false
+        }
+      ],
+      "native_validation_update": {
+        "parent_chain_cases": 256,
+        "connected_parent_relative_dispatch_cases": 80,
+        "helper_instructions_verified": 210,
+        "max_parent_chain_abs_error": 2.6661455976295656e-06,
+        "max_connected_dispatch_abs_error": 2.271279690546635e-06,
+        "limits": [
+          "Controlled transform metadata, valid acyclic parent chains, finite unit rotations and positive scales.",
+          "Cache-selection and skip-marked-parent paths, missing metadata and exceptional values remain unverified.",
+          "Connected dispatch uses original iterator/helper but controlled TLS/scratch allocation, disabled callbacks and supplied graph links.",
+          "Special object kinds, deeper dispatcher hierarchies, concurrency and live game remain unverified."
+        ]
+      },
+      "initial_naming_caveats": [
         "Descriptive analyst name, not a recovered original symbol.",
         "Descriptive analyst name, not recovered original symbol.",
         "Native category names, hierarchy-cache invariants, external coordinate handedness and runtime validation remain unresolved.",
         "NaN values are not guaranteed sanitized; static exceptional-path findings are recorded separately.",
         "No signature, datatype, calling convention, byte or function-boundary edits."
-      ],
-      "reviewed_scope": "behavior_or_helper"
+      ]
     },
     {
       "address": "1408f1dc0",

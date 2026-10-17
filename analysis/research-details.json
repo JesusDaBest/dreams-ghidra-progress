@@ -9630,5 +9630,27 @@
     ],
     "new_name_credit": 0,
     "saved_signature_independently_reopened": true
+  },
+  "object_hierarchy_transform_signature_checkpoint": {
+    "retained_name": "ComputeObjectHierarchyTransform",
+    "working_signature": "void PS4_SYSV ComputeObjectHierarchyTransform(PositionScaleQuaternionTransform32 * output, void * world, uint object_reference)",
+    "parent_chain_cases": 256,
+    "connected_parent_relative_dispatch_cases": 80,
+    "helper_instructions_verified": 210,
+    "max_parent_chain_abs_error": 2.6661455976295656e-06,
+    "max_connected_dispatch_abs_error": 2.271279690546635e-06,
+    "limits": [
+      "Controlled transform metadata, valid acyclic parent chains, finite unit rotations and positive scales.",
+      "Cache-selection and skip-marked-parent paths, missing metadata and exceptional values remain unverified.",
+      "Connected dispatch uses original iterator/helper but controlled TLS/scratch allocation, disabled callbacks and supplied graph links.",
+      "Special object kinds, deeper dispatcher hierarchies, concurrency and live game remain unverified."
+    ],
+    "findings": [
+      "Hierarchy result composes root primary transform with parent-relative transforms through the selected parent chain.",
+      "Packed-reference high bits do not change the selected signed low22 object index in tested cases.",
+      "Connected dispatcher secondary transform equals inverse moved-parent transform times moved-child transform."
+    ],
+    "name_credit_added": 0,
+    "saved_signature_independently_reopened": true
   }
 }
