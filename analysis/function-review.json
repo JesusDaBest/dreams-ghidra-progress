@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "578 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "579 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8817,
-    "other_names": 774,
-    "verification": "complete_inventory_matches_baseline_plus_578_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8816,
+    "other_names": 775,
+    "verification": "complete_inventory_matches_baseline_plus_579_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14193,6 +14193,27 @@
         "Analyst descriptive name and working ABI, not original symbol/prototype.",
         "Property original names and general gameplay integration unresolved.",
         "Controlled metadata fixtures do not prove all real metadata rows or complete TriggerZone behavior."
+      ]
+    },
+    {
+      "address": "1407511c0",
+      "original_name": "FUN_1407511c0",
+      "applied_name": "ComposeSixTransforms",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV ComposeSixTransforms(void * transform_out, SpatialQueryFloat4Working16 position_scale_0, SpatialQueryFloat4Working16 rotation_0, SpatialQueryFloat4Working16 position_scale_1, SpatialQueryFloat4Working16 rotation_1, SpatialQueryFloat4Working16 position_scale_2, SpatialQueryFloat4Working16 rotation_2, SpatialQueryFloat4Working16 position_scale_3, SpatialQueryFloat4Working16 rotation_3, SpatialQueryFloat4Working16 position_scale_4, SpatialQueryFloat4Working16 rotation_4, SpatialQueryFloat4Working16 position_scale_5, SpatialQueryFloat4Working16 rotation_5)",
+      "evidence": [
+        "Complete464-instruction original body read and byte verified, including five normalization stages.",
+        "256 full original helper entry-to-return cases with original local isinff match independent ordered six-transform reference for finite unit quaternions and signed scales.",
+        "Exact input and output guards preserved.",
+        "Independent reopening and fresh decompilation verify saved name and explicit output/RDI,8 SIMD and4 stack-container working ABI.",
+        "Camera caller1408d6f8e and many independent callers establish shared transform-composition use."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not original symbol/declaration.",
+        "Nonunit/zero/nonfinite quaternions, aliasing, extreme scales and complete caller lifecycles remain unresolved."
       ]
     }
   ],

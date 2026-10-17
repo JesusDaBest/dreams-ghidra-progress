@@ -4474,3 +4474,12 @@ Twelve full-entry first-list cases verify wildcard/exact/missing names, inactive
 Another 135 connected ownership cases use the original candidate fields and TriggerZone ownership inherited from Sculpt parents. Source ownership selects provisional candidate output channels, while candidate ownership contributes to the gadget's accumulated output. Threshold failure restores both objects' complete prior values. Whole object/world/context and cleanup checks passed within these fixture scopes.
 
 Original processor/helpers and `isinff` execute, with explicit handle lookup and allocation/free fixture boundaries. Ghidra annotations were independently reopened. Cached/bounded Labels detection and broader label/player/filter combinations remain unresolved. The processor remains partially reviewed and unnamed; 619 checked names unchanged.
+
+
+### Verified shared six-transform composition
+
+Saved and independently reopened `ComposeSixTransforms`, a complete 464-instruction helper used by the Camera detection branch and numerous other callers. Its working signature records a 32-byte output through RDI, eight 16-byte SIMD inputs, and four 16-byte incoming stack containers. These represent six ordered position/scale and quaternion pairs; the name and signature are analyst descriptions, not recovered source symbols.
+
+Two hundred fifty-six complete original helper executions, using original local `isinff`, match an independent ordered transform reference with finite unit quaternions, translations and signed scales. Maximum absolute error was below 0.000025; input buffers and output guards were preserved. Five normalization stages were reviewed in the original body. Nonunit, zero and nonfinite quaternion behavior, aliasing, extreme scales and complete caller lifecycles remain unresolved. Camera detection itself is still under review.
+
+Totals: 620 checked names; 2,036 mapped and 7,555 unmapped among 9,591 discovered functions. These are discovered-function review counts, not whole-game completion. Raw code remains local.

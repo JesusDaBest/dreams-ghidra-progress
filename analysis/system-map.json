@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2035,
-  "unmapped_total": 7556,
+  "mapped_total": 2036,
+  "unmapped_total": 7555,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50940,6 +50940,33 @@
           ]
         }
       ]
+    },
+    "1407511c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "math",
+        "transform-composition",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared ordered six-transform composition used by camera and numerous other callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete helper read and bounded original execution reviewed.",
+      "code_sha256": "3075099e06239dd05f532993e63730986b5f79ba72be6ed37268296452823f75",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComposeSixTransforms",
+          "support": [
+            "Complete464-instruction original body read and byte verified, including five normalization stages.",
+            "256 full original helper entry-to-return cases with original local isinff match independent ordered six-transform reference for finite unit quaternions and signed scales.",
+            "Exact input and output guards preserved.",
+            "Independent reopening and fresh decompilation verify saved name and explicit output/RDI,8 SIMD and4 stack-container working ABI.",
+            "Camera caller1408d6f8e and many independent callers establish shared transform-composition use."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -51107,6 +51134,17 @@
                 {
                   "id": "runtime-implementation",
                   "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "transform-composition",
+              "label": "Transform composition",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime implementation",
                   "children": []
                 }
               ]

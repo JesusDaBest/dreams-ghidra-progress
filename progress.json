@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 573,
+    "done": 574,
     "todo": 1462,
-    "total": 2035,
-    "behavior_or_helpers_reviewed": 506,
+    "total": 2036,
+    "behavior_or_helpers_reviewed": 507,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -27286,12 +27286,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 218,
+        "done": 219,
         "todo": 106,
-        "total": 324,
-        "behavior_or_helpers_reviewed": 203,
+        "total": 325,
+        "behavior_or_helpers_reviewed": 204,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 238,
+        "runtime_functions_identified": 239,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27359,6 +27359,7 @@
           "AdaptiveStableSortSummaryRecords",
           "BufferedStableSortSummaryRecords",
           "AdaptiveMergeSummaryRecordRuns",
+          "ComposeSixTransforms",
           "ResolveRecordTransform",
           "ComputeThingTimelineIntervalFromTimeBounds",
           "AdvanceFilteredObjectGraphIterator",
@@ -27687,6 +27688,7 @@
           "14073bf10",
           "14073c1a0",
           "14073caf0",
+          "1407511c0",
           "140759540",
           "14075f490",
           "140769150",
@@ -30884,17 +30886,18 @@
           {
             "name": "shared/math",
             "label": "Numbers & transforms",
-            "done": 5,
+            "done": 6,
             "todo": 12,
-            "total": 17,
-            "behavior_or_helpers_reviewed": 5,
+            "total": 18,
+            "behavior_or_helpers_reviewed": 6,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 5,
+            "runtime_functions_identified": 6,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "ComposeRigidTransform",
+              "ComposeSixTransforms",
               "CopyTransformWithNormalizedRotation",
               "ComputeObjectHierarchyTransform",
               "SnapQuaternionToOrientationSet",
@@ -30916,6 +30919,7 @@
             ],
             "done_addresses": [
               "1401ac7b0",
+              "1407511c0",
               "1407a6bb0",
               "140903590",
               "1409ff430",
@@ -31387,6 +31391,53 @@
                     "todo_addresses": [
                       "140cda120"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/math/transform-composition",
+                "label": "Transform composition",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ComposeSixTransforms"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1407511c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/math/transform-composition/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ComposeSixTransforms"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407511c0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44591,5 +44642,5 @@
       }
     ]
   },
-  "unmapped": 7556
+  "unmapped": 7555
 }

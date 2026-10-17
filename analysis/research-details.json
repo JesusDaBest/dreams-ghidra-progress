@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 619,
+    "checked_and_applied_names": 620,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 619,
+    "verified_names": 620,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "578 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "579 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10599,5 +10599,22 @@
     ],
     "processor_review": "partial_unnamed",
     "checked_name_total_unchanged": 619
+  },
+  "six_transform_composition_checkpoint": {
+    "name": "ComposeSixTransforms",
+    "native_cases": 256,
+    "original_instructions": 464,
+    "maximum_absolute_error": 2.455870020412476e-05,
+    "evidence": [
+      "Complete464-instruction original body read and byte verified, including five normalization stages.",
+      "256 full original helper entry-to-return cases with original local isinff match independent ordered six-transform reference for finite unit quaternions and signed scales.",
+      "Exact input and output guards preserved.",
+      "Independent reopening and fresh decompilation verify saved name and explicit output/RDI,8 SIMD and4 stack-container working ABI.",
+      "Camera caller1408d6f8e and many independent callers establish shared transform-composition use."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not original symbol/declaration.",
+      "Nonunit/zero/nonfinite quaternions, aliasing, extreme scales and complete caller lifecycles remain unresolved."
+    ]
   }
 }
