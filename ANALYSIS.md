@@ -4535,3 +4535,14 @@ Another 720 complete entry cases connect the original label helper and graph ite
 The complete 104-instruction helper is saved as `ObjectGraphHasMatchingLabels`, with explicit root-reference/packed-query inputs and a boolean return. Independent reopening and fresh decompilation verify persistence. The physics/query producer and valid graph are supplied fixture boundaries; host stack pages are prepared for original large stack frames. An initial nested fixture omitted its candidate-reference field; correcting that setup allowed the full cases to run. No original code was changed. Other graph categories, malformed/cyclic graphs, cached/bounded Objects detection and running-game behavior remain unresolved. The enclosing processor is still partially reviewed and unnamed.
 
 Totals: 622 checked names, 2,038 mapped and 7,553 unmapped among 9,591 discovered functions.
+
+
+### Cached Objects results and root-output routing
+
+Original Sculpt registrations distinguish `LabelBitmaskComposed` from `LabelBitmask`. The graph helper reads the composed field. Registrations and metadata initialization also identify `Name`, `OutputPlayerValue` and `PlayerOwnership`, allowing output tests to use actual field bindings.
+
+Seventy-two full-entry cached-result cases show that a matching result child updates the **gathered query root's** output, leaving the child's prior output unchanged. With player consideration disabled, incoming magnitude ties replace old values. Count-threshold failure restores the complete prior root output from its snapshot. The initial reference incorrectly targeted the child and retained ties; both assumptions were corrected against original assembly before the final runs.
+
+Another 54 cases use two distinct result children sharing one query root. The root counts once and its output uses the first encountered result weight; the gadget output still accumulates the strongest weight before root deduplication. Their outputs can therefore differ. A threshold of two fails because only one unique root was accepted, and restores the root's prior value.
+
+Original consumer/helper bodies execute and whole fixture buffers plus allocation cleanup were checked. Physics/contact records and cached spatial results are supplied boundaries; upstream query production and geometry were not executed. Signed/nonfinite weights, multiple distinct roots, player channels and live gameplay remain unresolved. Ghidra annotations were saved and independently reopened. No new name credit: 622 checked names unchanged.

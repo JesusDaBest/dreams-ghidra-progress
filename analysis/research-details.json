@@ -10779,5 +10779,41 @@
       "Query/physics producers, handle lookup and allocation/free modeled; no live gameplay verified."
     ],
     "processor_review": "partial_unnamed"
+  },
+  "triggerzone_objects_cached_checkpoint": {
+    "native_checks": {
+      "triggerzone-objects-cached-outputs": {
+        "cases": 72,
+        "scope": "Full original Objects mode with cached spatial results supplied: one query root, one result child, weight0.25/0.5/1, matching/missing ancestry, result kind1/3, zero/distinct prior query-root Sculpt.OutputPlayerValue20c and a distinct child sentinel and thresholds0/1/2. Original output metadata binding and property registrations; ConsiderPlayers disabled."
+      },
+      "triggerzone-objects-cached-shared-root": {
+        "cases": 54,
+        "scope": "Original Objects cached path with two distinct Sculpt result children sharing one gathered query root. Nine ordered positive-weight pairs, zero/distinct root priors, distinct child sentinels and thresholds0/1/2; ConsiderPlayers disabled."
+      }
+    },
+    "original_fields": [
+      "Sculpt.Name",
+      "Sculpt.LabelBitmaskComposed",
+      "Sculpt.OutputPlayerValue",
+      "Sculpt.LabelBitmask",
+      "Sculpt.PlayerOwnership"
+    ],
+    "findings": [
+      "Cached result children qualify through ancestry to gathered query roots.",
+      "Output writes/snapshots target matched query roots, leaving cached result children unchanged.",
+      "ConsiderPlayers-off magnitude ties take incoming value.",
+      "Shared root counts once and uses first result weight for root output; gadget output still takes strongest across matching child results.",
+      "Failed threshold restores complete prior root output."
+    ],
+    "reference_corrections": [
+      "Initial reference incorrectly routed output to result child.",
+      "Initial reference incorrectly retained old magnitude ties in ConsiderPlayers-off path."
+    ],
+    "boundaries": "Original consumer and helpers execute; query/cache/physics producer buffers are supplied. Handle lookup/allocation/free and host stack preparation modeled.",
+    "limits": [
+      "Multiple distinct query roots, deeper ancestry, ownership channels, signed/nonfinite weights, query production and live gameplay unresolved."
+    ],
+    "annotations": "Saved and independently reopened in Ghidra.",
+    "checked_name_total_unchanged": 622
   }
 }
