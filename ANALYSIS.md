@@ -4138,3 +4138,12 @@ Totals: 600 checked names; 2,016 mapped and 7,573 unmapped among 9,589 discovere
 Another 224 cases check the auxiliary-kind eligibility masks and the secondary record-field condition when the selector equals the repeat step. Nonzero group, global-slot or record gates each bypass cached-frame composition. Synthetic kind codes establish branch behavior, not recovered enum names or proof that every code is valid in-game.
 
 These findings add no checked name and no whole-function completion claim. Tests cover valid object index zero, selected slots, finite unit rotations and positive scales. The body-linked branch, remaining selection modes, exact field meanings, malformed inputs and live-game lifecycle remain unresolved.
+
+
+### Body-linked transform selection
+
+64 isolated helper scenarios and 128 connected selector scenarios verify a stored-transform path using original code. The helper combines a stored transform with the linked object's local transform. The selector replaces the resulting scale with the parent scale, then applies the inverse reference transform and supplied transform.
+
+The two tested object modes differ in that reference: mode 2 uses the parent transform; mode 1 substitutes the runtime body's XYZ position while retaining the parent's scale and rotation. Distinct random inputs, independent transform equations, unchanged source buffers and output guards were checked. The connected 128-case set supersedes the preliminary 64-case set; those preliminary cases are not counted again.
+
+This is scoped behavior evidence, with no new checked name. The linked object kind, metadata offsets, auxiliary slot/group, association and stored-state gates were controlled. Finite unit rotations and positive scales were sampled. Other linked types, modes, original field meanings, full lifecycles, malformed inputs and live-game behavior remain unresolved.
