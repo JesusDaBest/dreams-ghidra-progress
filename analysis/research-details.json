@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 652,
+    "checked_and_applied_names": 653,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 652,
+    "verified_names": 653,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "599 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "600 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12655,6 +12655,25 @@
       "Old31/32/62/63 keys cross16-byte-record page boundaries:fullrecord leaves use496of504bytes,leaving8-byte gaps.",
       "Offsets0/16/504 andone-to-four sourceleaves tested. Reader skipsgaps;newheader useslogical504-byte extent ratherthanflattened payloadlength.",
       "Exactcompleteheaders/data,sourceimmutability,guards andresourcegrowth/hash/finalization match independentintervalmodel."
+    ],
+    "limits": [
+      "Analyst descriptive role andworkingrecord/prefix types,not recoveredsource declarations.",
+      "Nativefixtures usefiniteorderedkeys,flag0,mode0,validbuffers andamplecapacity.",
+      "AutoKeyframe/flag4 branches staticallyread butnotclaimed production-verified; deeperparentlevels,nonfinite/invalidinputs,concurrency,fullproducer/playback unresolved.",
+      "Parenttree powerimport useshostdoublepow ABI adapter; merge,resourcegrowth/hash/finalization remainoriginal."
+    ],
+    "new_name_credit": 1
+  },
+  "animation_float2_merge_checkpoint": {
+    "address": "14108e4b0",
+    "name": "MergeFloat2AnimationRecordInterval",
+    "parent_tree_native_cases": 2808,
+    "prior_one_leaf_cases": 900,
+    "findings": [
+      "Originalfloat2mergehelper executesallthree typecodes8/20/21.",
+      "Old42/43/84/85 keys,0/12/504-byte offsets andone-to-four sourceleaves exerciseparent-node seeks andcross-leaf reads.",
+      "Each12-byte key fits42times into504-byte leaves without a recordgap.",
+      "Exactcompleteheaders/data,sourceimmutability,guards andoriginalresourcegrowth/hash/finalization match independentintervalmodel."
     ],
     "limits": [
       "Analyst descriptive role andworkingrecord/prefix types,not recoveredsource declarations.",
