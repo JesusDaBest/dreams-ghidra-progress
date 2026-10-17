@@ -10417,5 +10417,31 @@
     ],
     "ghidra_annotations_independently_reopened": true,
     "checked_name_total_unchanged": 619
+  },
+  "triggerzone_connected_key_checkpoint": {
+    "full_entry_to_return_cases": {
+      "triggerzone-entirelevel-connected": 66,
+      "triggerzone-entirelevel-players-connected": 162,
+      "triggerzone-entirelevel-inherited-connected": 162,
+      "triggerzone-bounded-sphere-connected": 66,
+      "triggerzone-sphere-multiple-connected": 48
+    },
+    "scope": "Scoped EntireLevel and bounded spherical Key detection, not complete5247-instruction processor behavior.",
+    "original_inherited_field": "Sculpt.PlayerOwnership+24c via original glued-parent path",
+    "isolated_rollback_cases": 10240,
+    "findings": [
+      "Key output writes are provisional; threshold failure restores recorded prior values.",
+      "Reviewed Key success paths clearAL and skip separate success-propagation loop; compatible metadata alone does not establish enablement.",
+      "Zero DetectCnt requires all globally name-matching Keys to pass bounded detection in tested fixtures.",
+      "Source and candidate ownership masks select different output destinations."
+    ],
+    "boundaries": [
+      "Handle lookup, snapshot allocation and free modeled explicitly.",
+      "Original reviewed helpers and original isinff execute."
+    ],
+    "limits": [
+      "Other detection modes, full shape/transform/filter combinations, malformed graphs, allocator implementation and live gameplay unresolved."
+    ],
+    "checked_name_total_unchanged": 619
   }
 }
