@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2cca0e0f826d048824336dcafd14f3e8cad17347/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9f3278333a82d728d292388a8538d735e26a5636/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**597 of 9,589 functions named and checked.** A function is one piece of the game's code.
+**598 of 9,589 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2cca0e0f826d048824336dcafd14f3e8cad17347/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9f3278333a82d728d292388a8538d735e26a5636/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -72,9 +72,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 368 | 99/342 | 0/26 |
 | Editor & interface | 390 | 75/181 | 3/207 |
 | Dreamiverse & networking | 107 | 3/31 | 0/76 |
-| Shared engine & object data | 311 | 189/225 | 15/81 |
+| Shared engine & object data | 312 | 190/226 | 15/81 |
 
-**2,013 of 9,589 discovered functions are mapped; 7,576 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,014 of 9,589 discovered functions are mapped; 7,575 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -866,7 +866,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Visibility** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Label Visible** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 311 functions identified; 190 behavior/helper reviews; 15 property/type reviews
+- **Shared engine & object data** - 312 functions identified; 191 behavior/helper reviews; 15 property/type reviews
   - **Game state & runtime** - 103 functions identified; 90 behavior/helper reviews; 0 property/type reviews
     - **Saving & loading** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 55 functions identified; 55 behavior/helper reviews; 0 property/type reviews
@@ -946,20 +946,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Properties & variants** - 16 functions identified; 4 behavior/helper reviews; 4 property/type reviews
-    - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-    - **Interpolation modes** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Property payloads** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Property metadata** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-  - **Numbers & transforms** - 15 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+  - **Numbers & transforms** - 16 functions identified; 4 behavior/helper reviews; 0 property/type reviews
     - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Object hierarchy transforms** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
@@ -974,8 +961,23 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Orientation snapping** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Properties & variants** - 16 functions identified; 4 behavior/helper reviews; 4 property/type reviews
+    - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Interpolation modes** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Property payloads** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Property metadata** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
   - **Shared signal data** - 12 functions identified; 8 behavior/helper reviews; 2 property/type reviews
     - **Signal values** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
