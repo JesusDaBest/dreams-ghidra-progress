@@ -14842,5 +14842,55 @@
     ],
     "new_name_credit": 0,
     "project_modified": false
+  },
+  "animation_zero_filter_selector_extension_checkpoint": {
+    "address": "1410a3770",
+    "existing_name": "ClearAllZeroAnimationInputForSelectedProperties",
+    "native_check": {
+      "entry": "1410a3770",
+      "native_instructions": 97,
+      "original_sha256": "2e94756fee05ee4dac9f82ed8dd77f204d3bbb09dee11c0fdadf374378e11ef1",
+      "native_cases": 131842,
+      "selector_cases": 131072,
+      "property_groups": {
+        "184": "float2",
+        "185": "float2",
+        "186": "byte",
+        "187": "byte",
+        "188": "float",
+        "197": "float",
+        "198": "byte",
+        "199": "byte",
+        "200": "byte",
+        "201": "byte",
+        "202": "float2",
+        "961": "byte",
+        "962": "byte",
+        "999": "byte"
+      },
+      "findings": [
+        "All65536 ushort properties classified against independent mask model using zero andnonzero three-key fixtures.",
+        "Selected properties clear buffer length only when every examined byte/scalar/float2 value iszero;other properties areunchanged.",
+        "Float checks treat both signedzeros aszero andNaNs/infinities asnonzero;byte checks inspect only lowbyte.",
+        "Complete descriptor including pointer/capacity/guards andpayload immutability checked;onlylength changes."
+      ],
+      "limits": [
+        "Direct original filter only;not complete producer orconverter chain.",
+        "Valid basic-width buffers,counts0/1/2/3/7 andspecified float/byte patterns;malformed lengths,huge counts,invalid pointers andconcurrency unresolved.",
+        "Return-register contents notinterpreted;caller ignores them.",
+        "No whole-recording/playback orruntimegame verification."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0,
+    "project_modified": false,
+    "inherited_flag_search": {
+      "scope": "Executable SELF segments;constant positive32-bit displacement covering target withwrites up to64 bytes.",
+      "candidate_count": 2,
+      "validated_store_count": 0,
+      "reason": "Both candidates begin inside existing MOVZX instructions and are false overlapping decodes.",
+      "limits": "Indirect bases,bulk initialization andother address expressions remain unresolved;not a proof the byte isunwritten."
+    }
   }
 }
