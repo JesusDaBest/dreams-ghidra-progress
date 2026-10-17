@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "543 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "544 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8852,
-    "other_names": 736,
-    "verification": "complete_inventory_matches_baseline_plus_543_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8851,
+    "other_names": 737,
+    "verification": "complete_inventory_matches_baseline_plus_544_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13251,6 +13251,26 @@
         "Analyst descriptive name and working types, not recovered source declarations.",
         "Synthetic payloads; onlykind1 dynamic demand costs tested.",
         "Malformed input, negativekind costs, overflow and live game unresolved."
+      ]
+    },
+    {
+      "address": "1409574a0",
+      "original_name": "FUN_1409574a0",
+      "applied_name": "DrainPendingRecordedOperations",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "uint PS4_SYSV DrainPendingRecordedOperations(void * owner)",
+      "evidence": [
+        "89 original instructions read andbyte matched.",
+        "700 isolated wrapper cases;100 connected capacity-check cases;100 connected drain/capacity/replay cases.",
+        "Checks both available targets before replay,returns first error,andclears pending bytecount on all outcomes.",
+        "Verified compressed recovery backup and independent saved-project reopening."
+      ],
+      "caveats": [
+        "Analyst descriptive name andworking types;opaque owner context.",
+        "Final submission controlled;no live game orspecial-command chain verified."
       ]
     }
   ],
