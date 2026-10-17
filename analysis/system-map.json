@@ -51867,14 +51867,23 @@
         "animation",
         "runtime-implementation"
       ],
-      "component_basis": "Original Animation basic-update type dispatch directlyselects thisscalar/vector mergehelper.",
+      "component_basis": "Original Animation basicupdatehandler selects float4mergehelper forcodes6/15/16.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Subsystemownership fromoriginalcallchain andconnectedbasicmerge execution; fullbody semanticreview remains incomplete.",
+      "code_role_basis": "Complete float4mergebody staticallyreviewed; originalintervalmerge andparentleveltreebehavior checked.",
       "code_sha256": "0b2c4c18ac4a18ece1bede6eee7487a0349f35326efc10e01dd507fd00f4a340",
       "evidence": [
         {
-          "kind": "source_reference",
-          "support": "Original Animation updater141077240 delegates scalar/vector typecodes tothisfunction. Completehelperbytes matchoriginal andexecute inbasicmergefixtures. No name orcompletioncredit."
+          "kind": "verified_semantic_review",
+          "name": "MergeFloat4AnimationRecordInterval",
+          "support": [
+            "Complete1011-instruction original float4mergebody read,including500-bytepagepayload/4-bytegap correction,tree-seek,metadata andAutoKeyframeconditions;originalbytesmatched.",
+            "Originalfloat4mergehelper executesallthree caller typecodes6/15/16.",
+            "Old25/26/50/51 keys cross20-byte-record page boundaries:fullrecord leaves use500of504bytes,leaving4-byte gaps.",
+            "Offsets0/20/504 andone-to-four sourceleaves tested. Reader skipsgaps;newheader useslogical504-byte extent ratherthanflattened payloadlength.",
+            "Exactcompleteheaders/data,sourceimmutability,guards andresourcegrowth/hash/finalization match independentintervalmodel.",
+            "Priorone-leaffamily suite contributes900 cases acrosscodes6/15/16; additional2808parenttree cases cover25/26/50/51keys and0/20/504-byte offsets.",
+            "Savedfivepointerarguments andsignedEAX headerindexreturn independentlyreopened andfreshlydecompiled; other9602names/signatures unchanged."
+          ]
         }
       ],
       "code_hash_basis": "concatenated_original_instruction_bytes"

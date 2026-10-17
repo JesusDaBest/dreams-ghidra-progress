@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "600 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "601 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8795,
-    "other_names": 808,
-    "verification": "complete_inventory_matches_baseline_plus_600_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8794,
+    "other_names": 809,
+    "verification": "complete_inventory_matches_baseline_plus_601_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15032,6 +15032,32 @@
         "Each12-byte key fits42times into504-byte leaves without a recordgap.",
         "Exactcompleteheaders/data,sourceimmutability,guards andoriginalresourcegrowth/hash/finalization match independentintervalmodel.",
         "Priorone-leaffamily suite contributes900 cases acrosscodes8/20/21; additional2808parenttree cases cover42/43/84/85keys and0/12/504-byte offsets.",
+        "Savedfivepointerarguments andsignedEAX headerindexreturn independentlyreopened andfreshlydecompiled; other9602names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworkingrecord/prefix types,not recoveredsource declarations.",
+        "Nativefixtures usefiniteorderedkeys,flag0,mode0,validbuffers andamplecapacity.",
+        "AutoKeyframe/flag4 branches staticallyread butnotclaimed production-verified; deeperparentlevels,nonfinite/invalidinputs,concurrency,fullproducer/playback unresolved.",
+        "Parenttree powerimport useshostdoublepow ABI adapter; merge,resourcegrowth/hash/finalization remainoriginal."
+      ]
+    },
+    {
+      "address": "14108d2e0",
+      "original_name": "FUN_14108d2e0",
+      "applied_name": "MergeFloat4AnimationRecordInterval",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeFloat4AnimationRecordInterval(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, uint * header_root, uint * data_root, MachineRecordingPrefixWorkingD7 * auxiliary_state)",
+      "evidence": [
+        "Complete1011-instruction original float4mergebody read,including500-bytepagepayload/4-bytegap correction,tree-seek,metadata andAutoKeyframeconditions;originalbytesmatched.",
+        "Originalfloat4mergehelper executesallthree caller typecodes6/15/16.",
+        "Old25/26/50/51 keys cross20-byte-record page boundaries:fullrecord leaves use500of504bytes,leaving4-byte gaps.",
+        "Offsets0/20/504 andone-to-four sourceleaves tested. Reader skipsgaps;newheader useslogical504-byte extent ratherthanflattened payloadlength.",
+        "Exactcompleteheaders/data,sourceimmutability,guards andresourcegrowth/hash/finalization match independentintervalmodel.",
+        "Priorone-leaffamily suite contributes900 cases acrosscodes6/15/16; additional2808parenttree cases cover25/26/50/51keys and0/20/504-byte offsets.",
         "Savedfivepointerarguments andsignedEAX headerindexreturn independentlyreopened andfreshlydecompiled; other9602names/signatures unchanged."
       ],
       "caveats": [
