@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "595 existing-function renames,47 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "595 existing-function renames,51 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9598,
+    "total": 9602,
     "default_fun_names": 8800,
-    "other_names": 798,
-    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_47_created_functions_and_1_reviewed_existing_name"
+    "other_names": 802,
+    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_51_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14756,6 +14756,126 @@
         "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
         "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
         "Exact complete8/12-byte output records checked; original source valuebits preserved.",
+        "Top-level converter and other delegated formats remain partially reviewed."
+      ]
+    },
+    {
+      "address": "1410a0380",
+      "original_name": null,
+      "applied_name": "ConvertQwordAnimationInputKeys",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertQwordAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "evidence": [
+        "Complete original helper body reviewed and matched against executable bytes.",
+        "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+        "Original top-level and secondary dispatch execute all listed routes.",
+        "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+        "Qword comparison includes high bits and ignores source padding.",
+        "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+        "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+        "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+        "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
+        "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
+        "Vector output records checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Top-level converter and other delegated formats remain partially reviewed."
+      ]
+    },
+    {
+      "address": "1410a1640",
+      "original_name": null,
+      "applied_name": "ConvertFloat2AnimationInputKeys",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertFloat2AnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "evidence": [
+        "Complete original helper body reviewed and matched against executable bytes.",
+        "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+        "Original top-level and secondary dispatch execute all listed routes.",
+        "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+        "Qword comparison includes high bits and ignores source padding.",
+        "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+        "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+        "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+        "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
+        "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
+        "Vector output records checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Top-level converter and other delegated formats remain partially reviewed."
+      ]
+    },
+    {
+      "address": "1410a0d70",
+      "original_name": null,
+      "applied_name": "ConvertFloat3AnimationInputKeys",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertFloat3AnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "evidence": [
+        "Complete original helper body reviewed and matched against executable bytes.",
+        "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+        "Original top-level and secondary dispatch execute all listed routes.",
+        "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+        "Qword comparison includes high bits and ignores source padding.",
+        "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+        "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+        "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+        "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
+        "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
+        "Vector output records checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Top-level converter and other delegated formats remain partially reviewed."
+      ]
+    },
+    {
+      "address": "1410a11e0",
+      "original_name": null,
+      "applied_name": "ConvertFloat4AnimationInputKeys",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertFloat4AnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "evidence": [
+        "Complete original helper body reviewed and matched against executable bytes.",
+        "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+        "Original top-level and secondary dispatch execute all listed routes.",
+        "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+        "Qword comparison includes high bits and ignores source padding.",
+        "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+        "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+        "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+        "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
+        "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
+        "Vector output records checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
         "Top-level converter and other delegated formats remain partially reviewed."
       ]
     }

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 597,
+    "done": 601,
     "todo": 1462,
-    "total": 2059,
-    "behavior_or_helpers_reviewed": 530,
+    "total": 2063,
+    "behavior_or_helpers_reviewed": 534,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -39602,6 +39602,1696 @@
         ]
       },
       {
+        "name": "animation",
+        "label": "Animation & puppets",
+        "done": 27,
+        "todo": 48,
+        "total": 75,
+        "behavior_or_helpers_reviewed": 25,
+        "properties_or_types_reviewed": 2,
+        "runtime_functions_identified": 29,
+        "property_type_functions_identified": 46,
+        "code_role_unresolved": 0,
+        "whole_feature_completion": null,
+        "done_names": [
+          "HasAnimationKeyframeMaskOrEligibleInput",
+          "EvaluateAnimationEasingCurve",
+          "RecordTimedByteProperty",
+          "SelectGreatestMagnitudeOfFiveFloats",
+          "RecordTimedFloatProperty",
+          "ResetPuppetHeartState",
+          "QueueRecordedTransformProperty",
+          "InitializeAnimationObjectDefaults",
+          "RegisterAnimationTypeDescriptor",
+          "RegisterAnimationFieldOffsets",
+          "AppendAnimationHeaderAndPayloadRecord",
+          "DispatchAnimationWireRecordUpdate",
+          "ConvertByteValueAnimationInputKeys",
+          "ConvertWordValueAnimationInputKeys",
+          "ConvertDwordAnimationInputKeys",
+          "ConvertQwordAnimationInputKeys",
+          "ConvertDwordPropertyAnimationInputKeys",
+          "ConvertFloatAnimationInputKeys",
+          "ConvertFloat3AnimationInputKeys",
+          "ConvertFloat4AnimationInputKeys",
+          "ConvertFloat2AnimationInputKeys",
+          "AppendBytes8ToBoundedBuffer",
+          "AppendBytes12ToBoundedBuffer",
+          "ClearAllZeroAnimationInputForSelectedProperties",
+          "PreparePropertyRecordingIfEligible",
+          "InterpolateTaggedValueFromBase",
+          "EvaluateAnimationDeltaOnBaseValue"
+        ],
+        "todo_names": [
+          "0x1404984f0",
+          "0x14049b410",
+          "0x140c910f0",
+          "0x140c99520",
+          "0x140c995d0",
+          "0x140c99ac0",
+          "0x140cb5080",
+          "0x140cb5130",
+          "0x140cb5190",
+          "0x140cf85c0",
+          "0x140cf8980",
+          "0x140cfa310",
+          "0x140cfaa70",
+          "0x140d1dac0",
+          "0x140d2ebc0",
+          "0x140d30a40",
+          "0x140d30d80",
+          "0x140d547f0",
+          "0x140d84300",
+          "0x140d85f70",
+          "0x140d86230",
+          "0x140d865d0",
+          "0x140d86730",
+          "0x1410705f0",
+          "0x141077240",
+          "0x14107ea70",
+          "0x14109e4e0",
+          "0x1414e1820",
+          "0x1414e2800",
+          "0x1414e2ac0",
+          "0x1414e3300",
+          "0x1414e3da0",
+          "0x1414e4050",
+          "0x1414e4390",
+          "0x1414e46b0",
+          "0x1414e49a0",
+          "0x1414e4c90",
+          "0x1414e4fd0",
+          "0x1414e5110",
+          "0x1414e5290",
+          "0x1414e5410",
+          "0x1414e5590",
+          "0x1414e5710",
+          "0x1414e5920",
+          "0x1414e5bc0",
+          "0x1414e5d30",
+          "0x1414e5eb0",
+          "0x1414e6000"
+        ],
+        "done_addresses": [
+          "1407032a0",
+          "140705ae0",
+          "14076ca60",
+          "14076cd70",
+          "14076cdf0",
+          "1407727c0",
+          "14077ccd0",
+          "14093f9d0",
+          "140d54650",
+          "140d86c30",
+          "14106de70",
+          "141070310",
+          "14109faf0",
+          "14109fdd0",
+          "1410a00b0",
+          "1410a0380",
+          "1410a07a0",
+          "1410a0a70",
+          "1410a0d70",
+          "1410a11e0",
+          "1410a1640",
+          "1410a3390",
+          "1410a3520",
+          "1410a3770",
+          "1410a4e20",
+          "1411dd230",
+          "141215810"
+        ],
+        "todo_addresses": [
+          "1404984f0",
+          "14049b410",
+          "140c910f0",
+          "140c99520",
+          "140c995d0",
+          "140c99ac0",
+          "140cb5080",
+          "140cb5130",
+          "140cb5190",
+          "140cf85c0",
+          "140cf8980",
+          "140cfa310",
+          "140cfaa70",
+          "140d1dac0",
+          "140d2ebc0",
+          "140d30a40",
+          "140d30d80",
+          "140d547f0",
+          "140d84300",
+          "140d85f70",
+          "140d86230",
+          "140d865d0",
+          "140d86730",
+          "1410705f0",
+          "141077240",
+          "14107ea70",
+          "14109e4e0",
+          "1414e1820",
+          "1414e2800",
+          "1414e2ac0",
+          "1414e3300",
+          "1414e3da0",
+          "1414e4050",
+          "1414e4390",
+          "1414e46b0",
+          "1414e49a0",
+          "1414e4c90",
+          "1414e4fd0",
+          "1414e5110",
+          "1414e5290",
+          "1414e5410",
+          "1414e5590",
+          "1414e5710",
+          "1414e5920",
+          "1414e5bc0",
+          "1414e5d30",
+          "1414e5eb0",
+          "1414e6000"
+        ],
+        "unresolved_addresses": [],
+        "groups": [
+          {
+            "name": "animation/keyframes",
+            "label": "Animation & keyframes",
+            "done": 26,
+            "todo": 11,
+            "total": 37,
+            "behavior_or_helpers_reviewed": 24,
+            "properties_or_types_reviewed": 2,
+            "runtime_functions_identified": 28,
+            "property_type_functions_identified": 9,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "HasAnimationKeyframeMaskOrEligibleInput",
+              "EvaluateAnimationEasingCurve",
+              "RecordTimedByteProperty",
+              "SelectGreatestMagnitudeOfFiveFloats",
+              "RecordTimedFloatProperty",
+              "QueueRecordedTransformProperty",
+              "InitializeAnimationObjectDefaults",
+              "RegisterAnimationTypeDescriptor",
+              "RegisterAnimationFieldOffsets",
+              "AppendAnimationHeaderAndPayloadRecord",
+              "DispatchAnimationWireRecordUpdate",
+              "ConvertByteValueAnimationInputKeys",
+              "ConvertWordValueAnimationInputKeys",
+              "ConvertDwordAnimationInputKeys",
+              "ConvertQwordAnimationInputKeys",
+              "ConvertDwordPropertyAnimationInputKeys",
+              "ConvertFloatAnimationInputKeys",
+              "ConvertFloat3AnimationInputKeys",
+              "ConvertFloat4AnimationInputKeys",
+              "ConvertFloat2AnimationInputKeys",
+              "AppendBytes8ToBoundedBuffer",
+              "AppendBytes12ToBoundedBuffer",
+              "ClearAllZeroAnimationInputForSelectedProperties",
+              "PreparePropertyRecordingIfEligible",
+              "InterpolateTaggedValueFromBase",
+              "EvaluateAnimationDeltaOnBaseValue"
+            ],
+            "todo_names": [
+              "0x1404984f0",
+              "0x140cb5080",
+              "0x140cb5130",
+              "0x140cb5190",
+              "0x140cf85c0",
+              "0x140cf8980",
+              "0x140d2ebc0",
+              "0x1410705f0",
+              "0x141077240",
+              "0x14107ea70",
+              "0x14109e4e0"
+            ],
+            "done_addresses": [
+              "1407032a0",
+              "140705ae0",
+              "14076ca60",
+              "14076cd70",
+              "14076cdf0",
+              "14077ccd0",
+              "14093f9d0",
+              "140d54650",
+              "140d86c30",
+              "14106de70",
+              "141070310",
+              "14109faf0",
+              "14109fdd0",
+              "1410a00b0",
+              "1410a0380",
+              "1410a07a0",
+              "1410a0a70",
+              "1410a0d70",
+              "1410a11e0",
+              "1410a1640",
+              "1410a3390",
+              "1410a3520",
+              "1410a3770",
+              "1410a4e20",
+              "1411dd230",
+              "141215810"
+            ],
+            "todo_addresses": [
+              "1404984f0",
+              "140cb5080",
+              "140cb5130",
+              "140cb5190",
+              "140cf85c0",
+              "140cf8980",
+              "140d2ebc0",
+              "1410705f0",
+              "141077240",
+              "14107ea70",
+              "14109e4e0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "animation/keyframes/animation",
+                "label": "Animation",
+                "done": 21,
+                "todo": 5,
+                "total": 26,
+                "behavior_or_helpers_reviewed": 19,
+                "properties_or_types_reviewed": 2,
+                "runtime_functions_identified": 23,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "HasAnimationKeyframeMaskOrEligibleInput",
+                  "EvaluateAnimationEasingCurve",
+                  "InitializeAnimationObjectDefaults",
+                  "RegisterAnimationTypeDescriptor",
+                  "RegisterAnimationFieldOffsets",
+                  "AppendAnimationHeaderAndPayloadRecord",
+                  "DispatchAnimationWireRecordUpdate",
+                  "ConvertByteValueAnimationInputKeys",
+                  "ConvertWordValueAnimationInputKeys",
+                  "ConvertDwordAnimationInputKeys",
+                  "ConvertQwordAnimationInputKeys",
+                  "ConvertDwordPropertyAnimationInputKeys",
+                  "ConvertFloatAnimationInputKeys",
+                  "ConvertFloat3AnimationInputKeys",
+                  "ConvertFloat4AnimationInputKeys",
+                  "ConvertFloat2AnimationInputKeys",
+                  "AppendBytes8ToBoundedBuffer",
+                  "AppendBytes12ToBoundedBuffer",
+                  "ClearAllZeroAnimationInputForSelectedProperties",
+                  "InterpolateTaggedValueFromBase",
+                  "EvaluateAnimationDeltaOnBaseValue"
+                ],
+                "todo_names": [
+                  "0x1404984f0",
+                  "0x1410705f0",
+                  "0x141077240",
+                  "0x14107ea70",
+                  "0x14109e4e0"
+                ],
+                "done_addresses": [
+                  "1407032a0",
+                  "140705ae0",
+                  "14093f9d0",
+                  "140d54650",
+                  "140d86c30",
+                  "14106de70",
+                  "141070310",
+                  "14109faf0",
+                  "14109fdd0",
+                  "1410a00b0",
+                  "1410a0380",
+                  "1410a07a0",
+                  "1410a0a70",
+                  "1410a0d70",
+                  "1410a11e0",
+                  "1410a1640",
+                  "1410a3390",
+                  "1410a3520",
+                  "1410a3770",
+                  "1411dd230",
+                  "141215810"
+                ],
+                "todo_addresses": [
+                  "1404984f0",
+                  "1410705f0",
+                  "141077240",
+                  "14107ea70",
+                  "14109e4e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/keyframes/animation/runtime-implementation",
+                    "label": "Runtime code",
+                    "done": 19,
+                    "todo": 4,
+                    "total": 23,
+                    "behavior_or_helpers_reviewed": 19,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 23,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "HasAnimationKeyframeMaskOrEligibleInput",
+                      "EvaluateAnimationEasingCurve",
+                      "InitializeAnimationObjectDefaults",
+                      "AppendAnimationHeaderAndPayloadRecord",
+                      "DispatchAnimationWireRecordUpdate",
+                      "ConvertByteValueAnimationInputKeys",
+                      "ConvertWordValueAnimationInputKeys",
+                      "ConvertDwordAnimationInputKeys",
+                      "ConvertQwordAnimationInputKeys",
+                      "ConvertDwordPropertyAnimationInputKeys",
+                      "ConvertFloatAnimationInputKeys",
+                      "ConvertFloat3AnimationInputKeys",
+                      "ConvertFloat4AnimationInputKeys",
+                      "ConvertFloat2AnimationInputKeys",
+                      "AppendBytes8ToBoundedBuffer",
+                      "AppendBytes12ToBoundedBuffer",
+                      "ClearAllZeroAnimationInputForSelectedProperties",
+                      "InterpolateTaggedValueFromBase",
+                      "EvaluateAnimationDeltaOnBaseValue"
+                    ],
+                    "todo_names": [
+                      "0x1410705f0",
+                      "0x141077240",
+                      "0x14107ea70",
+                      "0x14109e4e0"
+                    ],
+                    "done_addresses": [
+                      "1407032a0",
+                      "140705ae0",
+                      "14093f9d0",
+                      "14106de70",
+                      "141070310",
+                      "14109faf0",
+                      "14109fdd0",
+                      "1410a00b0",
+                      "1410a0380",
+                      "1410a07a0",
+                      "1410a0a70",
+                      "1410a0d70",
+                      "1410a11e0",
+                      "1410a1640",
+                      "1410a3390",
+                      "1410a3520",
+                      "1410a3770",
+                      "1411dd230",
+                      "141215810"
+                    ],
+                    "todo_addresses": [
+                      "1410705f0",
+                      "141077240",
+                      "14107ea70",
+                      "14109e4e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "animation/keyframes/animation/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 2,
+                    "todo": 1,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 2,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterAnimationTypeDescriptor",
+                      "RegisterAnimationFieldOffsets"
+                    ],
+                    "todo_names": [
+                      "0x1404984f0"
+                    ],
+                    "done_addresses": [
+                      "140d54650",
+                      "140d86c30"
+                    ],
+                    "todo_addresses": [
+                      "1404984f0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/keyframes/property-recording",
+                "label": "Property recording",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RecordTimedByteProperty",
+                  "SelectGreatestMagnitudeOfFiveFloats",
+                  "RecordTimedFloatProperty",
+                  "QueueRecordedTransformProperty",
+                  "PreparePropertyRecordingIfEligible"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14076ca60",
+                  "14076cd70",
+                  "14076cdf0",
+                  "14077ccd0",
+                  "1410a4e20"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/keyframes/property-recording/runtime-implementation",
+                    "label": "Runtime code",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RecordTimedByteProperty",
+                      "SelectGreatestMagnitudeOfFiveFloats",
+                      "RecordTimedFloatProperty",
+                      "QueueRecordedTransformProperty",
+                      "PreparePropertyRecordingIfEligible"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14076ca60",
+                      "14076cd70",
+                      "14076cdf0",
+                      "14077ccd0",
+                      "1410a4e20"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/keyframes/espritestopmotionanimation",
+                "label": "Sprite Stop Motion Animation",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cb5080",
+                  "0x140cb5130",
+                  "0x140cb5190"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cb5080",
+                  "140cb5130",
+                  "140cb5190"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/keyframes/espritestopmotionanimation/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cb5080",
+                      "0x140cb5130",
+                      "0x140cb5190"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cb5080",
+                      "140cb5130",
+                      "140cb5190"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/keyframes/strokekeyframe",
+                "label": "Stroke Keyframe",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cf85c0",
+                  "0x140cf8980"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cf85c0",
+                  "140cf8980"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/keyframes/strokekeyframe/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cf85c0",
+                      "0x140cf8980"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cf85c0",
+                      "140cf8980"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/keyframes/confirmretakeanimationmessage",
+                "label": "Confirm Retake Animation Message",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d2ebc0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d2ebc0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/keyframes/confirmretakeanimationmessage/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d2ebc0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d2ebc0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "animation/avatars",
+            "label": "Avatars",
+            "done": 0,
+            "todo": 30,
+            "total": 30,
+            "behavior_or_helpers_reviewed": 0,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 0,
+            "property_type_functions_identified": 30,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [],
+            "todo_names": [
+              "0x140c910f0",
+              "0x140c99520",
+              "0x140c995d0",
+              "0x140c99ac0",
+              "0x140cfa310",
+              "0x140cfaa70",
+              "0x140d1dac0",
+              "0x140d30a40",
+              "0x140d30d80",
+              "0x1414e1820",
+              "0x1414e2800",
+              "0x1414e2ac0",
+              "0x1414e3300",
+              "0x1414e3da0",
+              "0x1414e4050",
+              "0x1414e4390",
+              "0x1414e46b0",
+              "0x1414e49a0",
+              "0x1414e4c90",
+              "0x1414e4fd0",
+              "0x1414e5110",
+              "0x1414e5290",
+              "0x1414e5410",
+              "0x1414e5590",
+              "0x1414e5710",
+              "0x1414e5920",
+              "0x1414e5bc0",
+              "0x1414e5d30",
+              "0x1414e5eb0",
+              "0x1414e6000"
+            ],
+            "done_addresses": [],
+            "todo_addresses": [
+              "140c910f0",
+              "140c99520",
+              "140c995d0",
+              "140c99ac0",
+              "140cfa310",
+              "140cfaa70",
+              "140d1dac0",
+              "140d30a40",
+              "140d30d80",
+              "1414e1820",
+              "1414e2800",
+              "1414e2ac0",
+              "1414e3300",
+              "1414e3da0",
+              "1414e4050",
+              "1414e4390",
+              "1414e46b0",
+              "1414e49a0",
+              "1414e4c90",
+              "1414e4fd0",
+              "1414e5110",
+              "1414e5290",
+              "1414e5410",
+              "1414e5590",
+              "1414e5710",
+              "1414e5920",
+              "1414e5bc0",
+              "1414e5d30",
+              "1414e5eb0",
+              "1414e6000"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "animation/avatars/primavatarstylecustomisation",
+                "label": "Prim Avatar Style Customisation",
+                "done": 0,
+                "todo": 6,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 6,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e3300",
+                  "0x1414e3da0",
+                  "0x1414e4390",
+                  "0x1414e46b0",
+                  "0x1414e49a0",
+                  "0x1414e4c90"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e3300",
+                  "1414e3da0",
+                  "1414e4390",
+                  "1414e46b0",
+                  "1414e49a0",
+                  "1414e4c90"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/primavatarstylecustomisation/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 6,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 6,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e3300",
+                      "0x1414e3da0",
+                      "0x1414e4390",
+                      "0x1414e46b0",
+                      "0x1414e49a0",
+                      "0x1414e4c90"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e3300",
+                      "1414e3da0",
+                      "1414e4390",
+                      "1414e46b0",
+                      "1414e49a0",
+                      "1414e4c90"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eavataranim",
+                "label": "Avatar Anim",
+                "done": 0,
+                "todo": 4,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140c99520",
+                  "0x140c995d0",
+                  "0x140c99ac0",
+                  "0x140cfa310"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140c99520",
+                  "140c995d0",
+                  "140c99ac0",
+                  "140cfa310"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eavataranim/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 4,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140c99520",
+                      "0x140c995d0",
+                      "0x140c99ac0",
+                      "0x140cfa310"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140c99520",
+                      "140c995d0",
+                      "140c99ac0",
+                      "140cfa310"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/primavatarcustomisation",
+                "label": "Prim Avatar Customisation",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e1820",
+                  "0x1414e2800",
+                  "0x1414e2ac0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e1820",
+                  "1414e2800",
+                  "1414e2ac0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/primavatarcustomisation/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e1820",
+                      "0x1414e2800",
+                      "0x1414e2ac0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e1820",
+                      "1414e2800",
+                      "1414e2ac0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/e-pu-avataranimnetsyncmode",
+                "label": "E PU Avatar Anim Net Sync Mode",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140c910f0",
+                  "0x140cfaa70"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140c910f0",
+                  "140cfaa70"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/e-pu-avataranimnetsyncmode/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140c910f0",
+                      "0x140cfaa70"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140c910f0",
+                      "140cfaa70"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavataranimationset",
+                "label": "Prim Avatar Animation Set",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5eb0",
+                  "0x1414e6000"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5eb0",
+                  "1414e6000"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavataranimationset/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5eb0",
+                      "0x1414e6000"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5eb0",
+                      "1414e6000"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavatarcostumetype",
+                "label": "Prim Avatar Costume Type",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5bc0",
+                  "0x1414e5d30"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5bc0",
+                  "1414e5d30"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavatarcostumetype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5bc0",
+                      "0x1414e5d30"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5bc0",
+                      "1414e5d30"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavatarpettype",
+                "label": "Prim Avatar Pet Type",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e4fd0",
+                  "0x1414e5110"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e4fd0",
+                  "1414e5110"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavatarpettype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e4fd0",
+                      "0x1414e5110"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e4fd0",
+                      "1414e5110"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/doavataranimmessage",
+                "label": "Do Avatar Anim Message",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d30a40"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d30a40"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/doavataranimmessage/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d30a40"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d30a40"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavatareyebrowtype",
+                "label": "Prim Avatar Eyebrow Type",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5590"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5590"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavatareyebrowtype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5590"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5590"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavatareyetype",
+                "label": "Prim Avatar Eye Type",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5710"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5710"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavatareyetype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5710"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5710"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavatarmouthtype",
+                "label": "Prim Avatar Mouth Type",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5290"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5290"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavatarmouthtype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5290"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5290"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/eprimavatarpupiltype",
+                "label": "Prim Avatar Pupil Type",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5410"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5410"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/eprimavatarpupiltype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5410"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5410"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/primavatarcustommesh",
+                "label": "Prim Avatar Custom Mesh",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e5920"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e5920"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/primavatarcustommesh/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e5920"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e5920"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/primavatarpuppettweaks",
+                "label": "Prim Avatar Puppet Tweaks",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d1dac0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d1dac0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/primavatarpuppettweaks/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d1dac0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d1dac0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/primavatarsubstancedata",
+                "label": "Prim Avatar Substance Data",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1414e4050"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1414e4050"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/primavatarsubstancedata/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1414e4050"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1414e4050"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "animation/avatars/setpuppetavataranimationsetmessage",
+                "label": "Set Puppet Avatar Animation Set Message",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140d30d80"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140d30d80"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/avatars/setpuppetavataranimationsetmessage/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140d30d80"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140d30d80"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "animation/puppets",
+            "label": "Puppet animation",
+            "done": 1,
+            "todo": 7,
+            "total": 8,
+            "behavior_or_helpers_reviewed": 1,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 1,
+            "property_type_functions_identified": 7,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "ResetPuppetHeartState"
+            ],
+            "todo_names": [
+              "0x14049b410",
+              "0x140d547f0",
+              "0x140d84300",
+              "0x140d85f70",
+              "0x140d86230",
+              "0x140d865d0",
+              "0x140d86730"
+            ],
+            "done_addresses": [
+              "1407727c0"
+            ],
+            "todo_addresses": [
+              "14049b410",
+              "140d547f0",
+              "140d84300",
+              "140d85f70",
+              "140d86230",
+              "140d865d0",
+              "140d86730"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "animation/puppets/puppetheart",
+                "label": "Puppet Heart",
+                "done": 1,
+                "todo": 7,
+                "total": 8,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 7,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ResetPuppetHeartState"
+                ],
+                "todo_names": [
+                  "0x14049b410",
+                  "0x140d547f0",
+                  "0x140d84300",
+                  "0x140d85f70",
+                  "0x140d86230",
+                  "0x140d865d0",
+                  "0x140d86730"
+                ],
+                "done_addresses": [
+                  "1407727c0"
+                ],
+                "todo_addresses": [
+                  "14049b410",
+                  "140d547f0",
+                  "140d84300",
+                  "140d85f70",
+                  "140d86230",
+                  "140d865d0",
+                  "140d86730"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "animation/puppets/puppetheart/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 7,
+                    "total": 7,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 7,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x14049b410",
+                      "0x140d547f0",
+                      "0x140d84300",
+                      "0x140d85f70",
+                      "0x140d86230",
+                      "0x140d865d0",
+                      "0x140d86730"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "14049b410",
+                      "140d547f0",
+                      "140d84300",
+                      "140d85f70",
+                      "140d86230",
+                      "140d865d0",
+                      "140d86730"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "animation/puppets/puppetheart/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ResetPuppetHeartState"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407727c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "audio",
         "label": "Sound & music",
         "done": 10,
@@ -41619,1664 +43309,6 @@
                     "todo_addresses": [
                       "140d12360"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "animation",
-        "label": "Animation & puppets",
-        "done": 23,
-        "todo": 48,
-        "total": 71,
-        "behavior_or_helpers_reviewed": 21,
-        "properties_or_types_reviewed": 2,
-        "runtime_functions_identified": 25,
-        "property_type_functions_identified": 46,
-        "code_role_unresolved": 0,
-        "whole_feature_completion": null,
-        "done_names": [
-          "HasAnimationKeyframeMaskOrEligibleInput",
-          "EvaluateAnimationEasingCurve",
-          "RecordTimedByteProperty",
-          "SelectGreatestMagnitudeOfFiveFloats",
-          "RecordTimedFloatProperty",
-          "ResetPuppetHeartState",
-          "QueueRecordedTransformProperty",
-          "InitializeAnimationObjectDefaults",
-          "RegisterAnimationTypeDescriptor",
-          "RegisterAnimationFieldOffsets",
-          "AppendAnimationHeaderAndPayloadRecord",
-          "DispatchAnimationWireRecordUpdate",
-          "ConvertByteValueAnimationInputKeys",
-          "ConvertWordValueAnimationInputKeys",
-          "ConvertDwordAnimationInputKeys",
-          "ConvertDwordPropertyAnimationInputKeys",
-          "ConvertFloatAnimationInputKeys",
-          "AppendBytes8ToBoundedBuffer",
-          "AppendBytes12ToBoundedBuffer",
-          "ClearAllZeroAnimationInputForSelectedProperties",
-          "PreparePropertyRecordingIfEligible",
-          "InterpolateTaggedValueFromBase",
-          "EvaluateAnimationDeltaOnBaseValue"
-        ],
-        "todo_names": [
-          "0x1404984f0",
-          "0x14049b410",
-          "0x140c910f0",
-          "0x140c99520",
-          "0x140c995d0",
-          "0x140c99ac0",
-          "0x140cb5080",
-          "0x140cb5130",
-          "0x140cb5190",
-          "0x140cf85c0",
-          "0x140cf8980",
-          "0x140cfa310",
-          "0x140cfaa70",
-          "0x140d1dac0",
-          "0x140d2ebc0",
-          "0x140d30a40",
-          "0x140d30d80",
-          "0x140d547f0",
-          "0x140d84300",
-          "0x140d85f70",
-          "0x140d86230",
-          "0x140d865d0",
-          "0x140d86730",
-          "0x1410705f0",
-          "0x141077240",
-          "0x14107ea70",
-          "0x14109e4e0",
-          "0x1414e1820",
-          "0x1414e2800",
-          "0x1414e2ac0",
-          "0x1414e3300",
-          "0x1414e3da0",
-          "0x1414e4050",
-          "0x1414e4390",
-          "0x1414e46b0",
-          "0x1414e49a0",
-          "0x1414e4c90",
-          "0x1414e4fd0",
-          "0x1414e5110",
-          "0x1414e5290",
-          "0x1414e5410",
-          "0x1414e5590",
-          "0x1414e5710",
-          "0x1414e5920",
-          "0x1414e5bc0",
-          "0x1414e5d30",
-          "0x1414e5eb0",
-          "0x1414e6000"
-        ],
-        "done_addresses": [
-          "1407032a0",
-          "140705ae0",
-          "14076ca60",
-          "14076cd70",
-          "14076cdf0",
-          "1407727c0",
-          "14077ccd0",
-          "14093f9d0",
-          "140d54650",
-          "140d86c30",
-          "14106de70",
-          "141070310",
-          "14109faf0",
-          "14109fdd0",
-          "1410a00b0",
-          "1410a07a0",
-          "1410a0a70",
-          "1410a3390",
-          "1410a3520",
-          "1410a3770",
-          "1410a4e20",
-          "1411dd230",
-          "141215810"
-        ],
-        "todo_addresses": [
-          "1404984f0",
-          "14049b410",
-          "140c910f0",
-          "140c99520",
-          "140c995d0",
-          "140c99ac0",
-          "140cb5080",
-          "140cb5130",
-          "140cb5190",
-          "140cf85c0",
-          "140cf8980",
-          "140cfa310",
-          "140cfaa70",
-          "140d1dac0",
-          "140d2ebc0",
-          "140d30a40",
-          "140d30d80",
-          "140d547f0",
-          "140d84300",
-          "140d85f70",
-          "140d86230",
-          "140d865d0",
-          "140d86730",
-          "1410705f0",
-          "141077240",
-          "14107ea70",
-          "14109e4e0",
-          "1414e1820",
-          "1414e2800",
-          "1414e2ac0",
-          "1414e3300",
-          "1414e3da0",
-          "1414e4050",
-          "1414e4390",
-          "1414e46b0",
-          "1414e49a0",
-          "1414e4c90",
-          "1414e4fd0",
-          "1414e5110",
-          "1414e5290",
-          "1414e5410",
-          "1414e5590",
-          "1414e5710",
-          "1414e5920",
-          "1414e5bc0",
-          "1414e5d30",
-          "1414e5eb0",
-          "1414e6000"
-        ],
-        "unresolved_addresses": [],
-        "groups": [
-          {
-            "name": "animation/keyframes",
-            "label": "Animation & keyframes",
-            "done": 22,
-            "todo": 11,
-            "total": 33,
-            "behavior_or_helpers_reviewed": 20,
-            "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 24,
-            "property_type_functions_identified": 9,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "HasAnimationKeyframeMaskOrEligibleInput",
-              "EvaluateAnimationEasingCurve",
-              "RecordTimedByteProperty",
-              "SelectGreatestMagnitudeOfFiveFloats",
-              "RecordTimedFloatProperty",
-              "QueueRecordedTransformProperty",
-              "InitializeAnimationObjectDefaults",
-              "RegisterAnimationTypeDescriptor",
-              "RegisterAnimationFieldOffsets",
-              "AppendAnimationHeaderAndPayloadRecord",
-              "DispatchAnimationWireRecordUpdate",
-              "ConvertByteValueAnimationInputKeys",
-              "ConvertWordValueAnimationInputKeys",
-              "ConvertDwordAnimationInputKeys",
-              "ConvertDwordPropertyAnimationInputKeys",
-              "ConvertFloatAnimationInputKeys",
-              "AppendBytes8ToBoundedBuffer",
-              "AppendBytes12ToBoundedBuffer",
-              "ClearAllZeroAnimationInputForSelectedProperties",
-              "PreparePropertyRecordingIfEligible",
-              "InterpolateTaggedValueFromBase",
-              "EvaluateAnimationDeltaOnBaseValue"
-            ],
-            "todo_names": [
-              "0x1404984f0",
-              "0x140cb5080",
-              "0x140cb5130",
-              "0x140cb5190",
-              "0x140cf85c0",
-              "0x140cf8980",
-              "0x140d2ebc0",
-              "0x1410705f0",
-              "0x141077240",
-              "0x14107ea70",
-              "0x14109e4e0"
-            ],
-            "done_addresses": [
-              "1407032a0",
-              "140705ae0",
-              "14076ca60",
-              "14076cd70",
-              "14076cdf0",
-              "14077ccd0",
-              "14093f9d0",
-              "140d54650",
-              "140d86c30",
-              "14106de70",
-              "141070310",
-              "14109faf0",
-              "14109fdd0",
-              "1410a00b0",
-              "1410a07a0",
-              "1410a0a70",
-              "1410a3390",
-              "1410a3520",
-              "1410a3770",
-              "1410a4e20",
-              "1411dd230",
-              "141215810"
-            ],
-            "todo_addresses": [
-              "1404984f0",
-              "140cb5080",
-              "140cb5130",
-              "140cb5190",
-              "140cf85c0",
-              "140cf8980",
-              "140d2ebc0",
-              "1410705f0",
-              "141077240",
-              "14107ea70",
-              "14109e4e0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "animation/keyframes/animation",
-                "label": "Animation",
-                "done": 17,
-                "todo": 5,
-                "total": 22,
-                "behavior_or_helpers_reviewed": 15,
-                "properties_or_types_reviewed": 2,
-                "runtime_functions_identified": 19,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "HasAnimationKeyframeMaskOrEligibleInput",
-                  "EvaluateAnimationEasingCurve",
-                  "InitializeAnimationObjectDefaults",
-                  "RegisterAnimationTypeDescriptor",
-                  "RegisterAnimationFieldOffsets",
-                  "AppendAnimationHeaderAndPayloadRecord",
-                  "DispatchAnimationWireRecordUpdate",
-                  "ConvertByteValueAnimationInputKeys",
-                  "ConvertWordValueAnimationInputKeys",
-                  "ConvertDwordAnimationInputKeys",
-                  "ConvertDwordPropertyAnimationInputKeys",
-                  "ConvertFloatAnimationInputKeys",
-                  "AppendBytes8ToBoundedBuffer",
-                  "AppendBytes12ToBoundedBuffer",
-                  "ClearAllZeroAnimationInputForSelectedProperties",
-                  "InterpolateTaggedValueFromBase",
-                  "EvaluateAnimationDeltaOnBaseValue"
-                ],
-                "todo_names": [
-                  "0x1404984f0",
-                  "0x1410705f0",
-                  "0x141077240",
-                  "0x14107ea70",
-                  "0x14109e4e0"
-                ],
-                "done_addresses": [
-                  "1407032a0",
-                  "140705ae0",
-                  "14093f9d0",
-                  "140d54650",
-                  "140d86c30",
-                  "14106de70",
-                  "141070310",
-                  "14109faf0",
-                  "14109fdd0",
-                  "1410a00b0",
-                  "1410a07a0",
-                  "1410a0a70",
-                  "1410a3390",
-                  "1410a3520",
-                  "1410a3770",
-                  "1411dd230",
-                  "141215810"
-                ],
-                "todo_addresses": [
-                  "1404984f0",
-                  "1410705f0",
-                  "141077240",
-                  "14107ea70",
-                  "14109e4e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/keyframes/animation/runtime-implementation",
-                    "label": "Runtime code",
-                    "done": 15,
-                    "todo": 4,
-                    "total": 19,
-                    "behavior_or_helpers_reviewed": 15,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 19,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "HasAnimationKeyframeMaskOrEligibleInput",
-                      "EvaluateAnimationEasingCurve",
-                      "InitializeAnimationObjectDefaults",
-                      "AppendAnimationHeaderAndPayloadRecord",
-                      "DispatchAnimationWireRecordUpdate",
-                      "ConvertByteValueAnimationInputKeys",
-                      "ConvertWordValueAnimationInputKeys",
-                      "ConvertDwordAnimationInputKeys",
-                      "ConvertDwordPropertyAnimationInputKeys",
-                      "ConvertFloatAnimationInputKeys",
-                      "AppendBytes8ToBoundedBuffer",
-                      "AppendBytes12ToBoundedBuffer",
-                      "ClearAllZeroAnimationInputForSelectedProperties",
-                      "InterpolateTaggedValueFromBase",
-                      "EvaluateAnimationDeltaOnBaseValue"
-                    ],
-                    "todo_names": [
-                      "0x1410705f0",
-                      "0x141077240",
-                      "0x14107ea70",
-                      "0x14109e4e0"
-                    ],
-                    "done_addresses": [
-                      "1407032a0",
-                      "140705ae0",
-                      "14093f9d0",
-                      "14106de70",
-                      "141070310",
-                      "14109faf0",
-                      "14109fdd0",
-                      "1410a00b0",
-                      "1410a07a0",
-                      "1410a0a70",
-                      "1410a3390",
-                      "1410a3520",
-                      "1410a3770",
-                      "1411dd230",
-                      "141215810"
-                    ],
-                    "todo_addresses": [
-                      "1410705f0",
-                      "141077240",
-                      "14107ea70",
-                      "14109e4e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "animation/keyframes/animation/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 2,
-                    "todo": 1,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 2,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterAnimationTypeDescriptor",
-                      "RegisterAnimationFieldOffsets"
-                    ],
-                    "todo_names": [
-                      "0x1404984f0"
-                    ],
-                    "done_addresses": [
-                      "140d54650",
-                      "140d86c30"
-                    ],
-                    "todo_addresses": [
-                      "1404984f0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/keyframes/property-recording",
-                "label": "Property recording",
-                "done": 5,
-                "todo": 0,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RecordTimedByteProperty",
-                  "SelectGreatestMagnitudeOfFiveFloats",
-                  "RecordTimedFloatProperty",
-                  "QueueRecordedTransformProperty",
-                  "PreparePropertyRecordingIfEligible"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14076ca60",
-                  "14076cd70",
-                  "14076cdf0",
-                  "14077ccd0",
-                  "1410a4e20"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/keyframes/property-recording/runtime-implementation",
-                    "label": "Runtime code",
-                    "done": 5,
-                    "todo": 0,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 5,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 5,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RecordTimedByteProperty",
-                      "SelectGreatestMagnitudeOfFiveFloats",
-                      "RecordTimedFloatProperty",
-                      "QueueRecordedTransformProperty",
-                      "PreparePropertyRecordingIfEligible"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14076ca60",
-                      "14076cd70",
-                      "14076cdf0",
-                      "14077ccd0",
-                      "1410a4e20"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/keyframes/espritestopmotionanimation",
-                "label": "Sprite Stop Motion Animation",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cb5080",
-                  "0x140cb5130",
-                  "0x140cb5190"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cb5080",
-                  "140cb5130",
-                  "140cb5190"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/keyframes/espritestopmotionanimation/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cb5080",
-                      "0x140cb5130",
-                      "0x140cb5190"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cb5080",
-                      "140cb5130",
-                      "140cb5190"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/keyframes/strokekeyframe",
-                "label": "Stroke Keyframe",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cf85c0",
-                  "0x140cf8980"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cf85c0",
-                  "140cf8980"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/keyframes/strokekeyframe/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cf85c0",
-                      "0x140cf8980"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cf85c0",
-                      "140cf8980"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/keyframes/confirmretakeanimationmessage",
-                "label": "Confirm Retake Animation Message",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d2ebc0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d2ebc0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/keyframes/confirmretakeanimationmessage/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d2ebc0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d2ebc0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "animation/avatars",
-            "label": "Avatars",
-            "done": 0,
-            "todo": 30,
-            "total": 30,
-            "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
-            "property_type_functions_identified": 30,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [],
-            "todo_names": [
-              "0x140c910f0",
-              "0x140c99520",
-              "0x140c995d0",
-              "0x140c99ac0",
-              "0x140cfa310",
-              "0x140cfaa70",
-              "0x140d1dac0",
-              "0x140d30a40",
-              "0x140d30d80",
-              "0x1414e1820",
-              "0x1414e2800",
-              "0x1414e2ac0",
-              "0x1414e3300",
-              "0x1414e3da0",
-              "0x1414e4050",
-              "0x1414e4390",
-              "0x1414e46b0",
-              "0x1414e49a0",
-              "0x1414e4c90",
-              "0x1414e4fd0",
-              "0x1414e5110",
-              "0x1414e5290",
-              "0x1414e5410",
-              "0x1414e5590",
-              "0x1414e5710",
-              "0x1414e5920",
-              "0x1414e5bc0",
-              "0x1414e5d30",
-              "0x1414e5eb0",
-              "0x1414e6000"
-            ],
-            "done_addresses": [],
-            "todo_addresses": [
-              "140c910f0",
-              "140c99520",
-              "140c995d0",
-              "140c99ac0",
-              "140cfa310",
-              "140cfaa70",
-              "140d1dac0",
-              "140d30a40",
-              "140d30d80",
-              "1414e1820",
-              "1414e2800",
-              "1414e2ac0",
-              "1414e3300",
-              "1414e3da0",
-              "1414e4050",
-              "1414e4390",
-              "1414e46b0",
-              "1414e49a0",
-              "1414e4c90",
-              "1414e4fd0",
-              "1414e5110",
-              "1414e5290",
-              "1414e5410",
-              "1414e5590",
-              "1414e5710",
-              "1414e5920",
-              "1414e5bc0",
-              "1414e5d30",
-              "1414e5eb0",
-              "1414e6000"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "animation/avatars/primavatarstylecustomisation",
-                "label": "Prim Avatar Style Customisation",
-                "done": 0,
-                "todo": 6,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 6,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e3300",
-                  "0x1414e3da0",
-                  "0x1414e4390",
-                  "0x1414e46b0",
-                  "0x1414e49a0",
-                  "0x1414e4c90"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e3300",
-                  "1414e3da0",
-                  "1414e4390",
-                  "1414e46b0",
-                  "1414e49a0",
-                  "1414e4c90"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/primavatarstylecustomisation/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 6,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 6,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e3300",
-                      "0x1414e3da0",
-                      "0x1414e4390",
-                      "0x1414e46b0",
-                      "0x1414e49a0",
-                      "0x1414e4c90"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e3300",
-                      "1414e3da0",
-                      "1414e4390",
-                      "1414e46b0",
-                      "1414e49a0",
-                      "1414e4c90"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eavataranim",
-                "label": "Avatar Anim",
-                "done": 0,
-                "todo": 4,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140c99520",
-                  "0x140c995d0",
-                  "0x140c99ac0",
-                  "0x140cfa310"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140c99520",
-                  "140c995d0",
-                  "140c99ac0",
-                  "140cfa310"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eavataranim/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 4,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140c99520",
-                      "0x140c995d0",
-                      "0x140c99ac0",
-                      "0x140cfa310"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140c99520",
-                      "140c995d0",
-                      "140c99ac0",
-                      "140cfa310"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/primavatarcustomisation",
-                "label": "Prim Avatar Customisation",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e1820",
-                  "0x1414e2800",
-                  "0x1414e2ac0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e1820",
-                  "1414e2800",
-                  "1414e2ac0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/primavatarcustomisation/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e1820",
-                      "0x1414e2800",
-                      "0x1414e2ac0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e1820",
-                      "1414e2800",
-                      "1414e2ac0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/e-pu-avataranimnetsyncmode",
-                "label": "E PU Avatar Anim Net Sync Mode",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140c910f0",
-                  "0x140cfaa70"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140c910f0",
-                  "140cfaa70"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/e-pu-avataranimnetsyncmode/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140c910f0",
-                      "0x140cfaa70"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140c910f0",
-                      "140cfaa70"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavataranimationset",
-                "label": "Prim Avatar Animation Set",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5eb0",
-                  "0x1414e6000"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5eb0",
-                  "1414e6000"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavataranimationset/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5eb0",
-                      "0x1414e6000"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5eb0",
-                      "1414e6000"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavatarcostumetype",
-                "label": "Prim Avatar Costume Type",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5bc0",
-                  "0x1414e5d30"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5bc0",
-                  "1414e5d30"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavatarcostumetype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5bc0",
-                      "0x1414e5d30"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5bc0",
-                      "1414e5d30"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavatarpettype",
-                "label": "Prim Avatar Pet Type",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e4fd0",
-                  "0x1414e5110"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e4fd0",
-                  "1414e5110"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavatarpettype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e4fd0",
-                      "0x1414e5110"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e4fd0",
-                      "1414e5110"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/doavataranimmessage",
-                "label": "Do Avatar Anim Message",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d30a40"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d30a40"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/doavataranimmessage/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d30a40"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d30a40"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavatareyebrowtype",
-                "label": "Prim Avatar Eyebrow Type",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5590"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5590"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavatareyebrowtype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5590"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5590"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavatareyetype",
-                "label": "Prim Avatar Eye Type",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5710"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5710"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavatareyetype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5710"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5710"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavatarmouthtype",
-                "label": "Prim Avatar Mouth Type",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5290"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5290"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavatarmouthtype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5290"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5290"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/eprimavatarpupiltype",
-                "label": "Prim Avatar Pupil Type",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5410"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5410"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/eprimavatarpupiltype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5410"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5410"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/primavatarcustommesh",
-                "label": "Prim Avatar Custom Mesh",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e5920"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e5920"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/primavatarcustommesh/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e5920"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e5920"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/primavatarpuppettweaks",
-                "label": "Prim Avatar Puppet Tweaks",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d1dac0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d1dac0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/primavatarpuppettweaks/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d1dac0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d1dac0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/primavatarsubstancedata",
-                "label": "Prim Avatar Substance Data",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1414e4050"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1414e4050"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/primavatarsubstancedata/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1414e4050"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1414e4050"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "animation/avatars/setpuppetavataranimationsetmessage",
-                "label": "Set Puppet Avatar Animation Set Message",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d30d80"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140d30d80"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/avatars/setpuppetavataranimationsetmessage/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d30d80"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140d30d80"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "animation/puppets",
-            "label": "Puppet animation",
-            "done": 1,
-            "todo": 7,
-            "total": 8,
-            "behavior_or_helpers_reviewed": 1,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 1,
-            "property_type_functions_identified": 7,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "ResetPuppetHeartState"
-            ],
-            "todo_names": [
-              "0x14049b410",
-              "0x140d547f0",
-              "0x140d84300",
-              "0x140d85f70",
-              "0x140d86230",
-              "0x140d865d0",
-              "0x140d86730"
-            ],
-            "done_addresses": [
-              "1407727c0"
-            ],
-            "todo_addresses": [
-              "14049b410",
-              "140d547f0",
-              "140d84300",
-              "140d85f70",
-              "140d86230",
-              "140d865d0",
-              "140d86730"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "animation/puppets/puppetheart",
-                "label": "Puppet Heart",
-                "done": 1,
-                "todo": 7,
-                "total": 8,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 7,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ResetPuppetHeartState"
-                ],
-                "todo_names": [
-                  "0x14049b410",
-                  "0x140d547f0",
-                  "0x140d84300",
-                  "0x140d85f70",
-                  "0x140d86230",
-                  "0x140d865d0",
-                  "0x140d86730"
-                ],
-                "done_addresses": [
-                  "1407727c0"
-                ],
-                "todo_addresses": [
-                  "14049b410",
-                  "140d547f0",
-                  "140d84300",
-                  "140d85f70",
-                  "140d86230",
-                  "140d865d0",
-                  "140d86730"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "animation/puppets/puppetheart/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 7,
-                    "total": 7,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 7,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x14049b410",
-                      "0x140d547f0",
-                      "0x140d84300",
-                      "0x140d85f70",
-                      "0x140d86230",
-                      "0x140d865d0",
-                      "0x140d86730"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "14049b410",
-                      "140d547f0",
-                      "140d84300",
-                      "140d85f70",
-                      "140d86230",
-                      "140d865d0",
-                      "140d86730"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "animation/puppets/puppetheart/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ResetPuppetHeartState"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1407727c0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

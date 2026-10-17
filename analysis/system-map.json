@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9598,
-  "mapped_total": 2059,
+  "inventory_total": 9602,
+  "mapped_total": 2063,
   "unmapped_total": 7539,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -51597,6 +51597,134 @@
         {
           "kind": "source_reference",
           "support": "Original Animation converter/dispatcher selects this body. Assignment does not add semantic-review or completion credit."
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a0380": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter primary/secondary type dispatch selects these vector and64-bit converters.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete vector or64-bit converter body and original dispatch execution reviewed.",
+      "code_sha256": "1ed3971325b661eb78d613086e27e5ae1e21a007531407fe77973be48e92155b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertQwordAnimationInputKeys",
+          "support": [
+            "Complete original helper body reviewed and matched against executable bytes.",
+            "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+            "Original top-level and secondary dispatch execute all listed routes.",
+            "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+            "Qword comparison includes high bits and ignores source padding.",
+            "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+            "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+            "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+            "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+            "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a1640": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter primary/secondary type dispatch selects these vector and64-bit converters.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete vector or64-bit converter body and original dispatch execution reviewed.",
+      "code_sha256": "55ebcddaae4a79df97c5a4e3f7dd03a3659ffed3bc4a79b034ef442cc8998dec",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertFloat2AnimationInputKeys",
+          "support": [
+            "Complete original helper body reviewed and matched against executable bytes.",
+            "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+            "Original top-level and secondary dispatch execute all listed routes.",
+            "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+            "Qword comparison includes high bits and ignores source padding.",
+            "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+            "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+            "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+            "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+            "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a0d70": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter primary/secondary type dispatch selects these vector and64-bit converters.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete vector or64-bit converter body and original dispatch execution reviewed.",
+      "code_sha256": "a969938cbdc805cee93eabb0fdd0e97f56ef726002a29c602e5bc9205889cf84",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertFloat3AnimationInputKeys",
+          "support": [
+            "Complete original helper body reviewed and matched against executable bytes.",
+            "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+            "Original top-level and secondary dispatch execute all listed routes.",
+            "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+            "Qword comparison includes high bits and ignores source padding.",
+            "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+            "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+            "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+            "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+            "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1410a11e0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter primary/secondary type dispatch selects these vector and64-bit converters.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete vector or64-bit converter body and original dispatch execution reviewed.",
+      "code_sha256": "f3258418fedd23da7afc783523545fd1ba273eedff97765df2cf7c0a883dfd70",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertFloat4AnimationInputKeys",
+          "support": [
+            "Complete original helper body reviewed and matched against executable bytes.",
+            "31200 original-code cases across all ten dispatch routes, including independent per-lane changes, signed zero, quiet NaNs, high64-bit changes, source-padding-only changes and reversed times.",
+            "Original top-level and secondary dispatch execute all listed routes.",
+            "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+            "Qword comparison includes high bits and ignores source padding.",
+            "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+            "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+            "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+            "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
+            "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+          ]
         }
       ],
       "code_hash_basis": "concatenated_original_instruction_bytes"

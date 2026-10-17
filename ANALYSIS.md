@@ -4908,3 +4908,14 @@ The integer paths distinguish positive/negative-zero bit patterns and collapse i
 Four already identified Animation routines—the large top-level converter and three update handlers—are now mapped to their subsystem while retaining unreviewed status. Their ownership follows original call chains and the registered Animation resource field; this adds gray squares, not name or completion credit. Including known unfinished code makes the subsystem denominator more honest.
 
 The new definitions preserve all 9,595 existing names/signatures. Totals are 643 checked names and 2,059 mapped functions among 9,598 discovered functions; 7,539 remain unmapped. Other formats and the four large routines remain incomplete.
+
+
+### Vector and 64-bit Animation input converters
+
+Defined and independently reopened `ConvertFloat2AnimationInputKeys`, `ConvertFloat3AnimationInputKeys`, `ConvertFloat4AnimationInputKeys` and `ConvertQwordAnimationInputKeys`. Complete original bodies contain 233, 269, 268 and 253 instructions respectively.
+
+31,200 original-code cases exercise all nine primary vector routes and the one 64-bit property route through the actual main/secondary dispatcher. Counts 0/1/2/3/7/17, two source strides, basic/extended formats, None/AutoKeyframe modes and five auxiliary flag values cover repeated/changing values, each individual vector component, signed zero, quiet NaNs, reversed finite times, high 64-bit changes and source-padding-only changes.
+
+All retain first/change/last keys. Every vector component participates in floating comparisons: signed zeros compare equal and repeated quiet NaNs produce changes. The 64-bit path compares the entire value and ignores source padding when selecting keys. Basic vector records occupy 12/16/20 bytes; extended records occupy 16/20/24 bytes. The 64-bit records occupy 16/24 bytes. Vector records are checked completely. The 64-bit extended record has opaque padding at offsets 4..7 and 20..23; these bytes are deliberately excluded from assertions. Original source bits, metadata fields, bounded-buffer descriptors, destination guards and time outputs match independent models; source and auxiliary buffers remain unchanged. The float2 basic writer is byte-identical to the independently reviewed bounded 12-byte writer.
+
+Tests use ample capacity and finite times. Invalid pointers, signalling NaNs, aliasing, concurrency, full producer behavior and playback remain unresolved. These are descriptive working signatures, not recovered source declarations. All 9,598 existing names/signatures are preserved. Totals are 647 checked names and 2,063 mapped functions among 9,602 discovered functions; 7,539 remain unmapped. The larger converter and update handlers remain partially reviewed.

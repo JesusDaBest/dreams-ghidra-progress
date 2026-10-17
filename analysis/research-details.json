@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 643,
+    "checked_and_applied_names": 647,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 643,
-    "function_count": 9598,
+    "verified_names": 647,
+    "function_count": 9602,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "595 existing-function renames,47 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "595 existing-function renames,51 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12263,5 +12263,99 @@
     "scope": "Original Animation call-chain/field-binding assignment; each remains unreviewed. No new names/reviewcredit.",
     "new_mapping_credit": 4,
     "new_name_credit": 0
+  },
+  "animation_vector_family_checkpoint": {
+    "functions": {
+      "1410a0380": {
+        "name": "ConvertQwordAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertQwordAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      },
+      "1410a1640": {
+        "name": "ConvertFloat2AnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertFloat2AnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      },
+      "1410a0d70": {
+        "name": "ConvertFloat3AnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertFloat3AnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      },
+      "1410a11e0": {
+        "name": "ConvertFloat4AnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertFloat4AnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      }
+    },
+    "native_cases": 31200,
+    "by_helper": {
+      "1410a0380": 3120,
+      "1410a1640": 9360,
+      "1410a0d70": 9360,
+      "1410a11e0": 9360
+    },
+    "routes": [
+      [
+        "qword",
+        2,
+        1041
+      ],
+      [
+        "float2",
+        8,
+        0
+      ],
+      [
+        "float2",
+        20,
+        0
+      ],
+      [
+        "float2",
+        21,
+        0
+      ],
+      [
+        "float3",
+        3,
+        0
+      ],
+      [
+        "float3",
+        7,
+        0
+      ],
+      [
+        "float3",
+        17,
+        0
+      ],
+      [
+        "float4",
+        6,
+        0
+      ],
+      [
+        "float4",
+        15,
+        0
+      ],
+      [
+        "float4",
+        16,
+        0
+      ]
+    ],
+    "findings": [
+      "Original top-level and secondary dispatch execute all listed routes.",
+      "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+      "Qword comparison includes high bits and ignores source padding.",
+      "Basic records are 12/16/20 bytes for float2/3/4 and 16 bytes for qword; extended records add four bytes for vectors and eight for qword.",
+      "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+      "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
+      "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer."
+    ],
+    "limits": [
+      "Ample output capacity; finite times and quiet NaN values only.",
+      "No claim about playback, full producer behavior, invalid pointers, concurrency or undefined padding."
+    ],
+    "new_definitions": 4,
+    "new_name_credit": 4
   }
 }
