@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/15a7d678341fb9311a6066fea3f4c70fba56d5ed/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2f315b6fd1d8ab15b8b610f5691e428813e3380b/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**643 of 9,598 functions named and checked.** A function is one piece of the game's code.
+**647 of 9,602 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/15a7d678341fb9311a6066fea3f4c70fba56d5ed/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2f315b6fd1d8ab15b8b610f5691e428813e3380b/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -68,13 +68,13 @@ Every square is one actual function and has the same size. All function squares 
 | Gadgets & logic | 512 | 54/56 | 47/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
-| Animation & puppets | 71 | 21/25 | 2/46 |
+| Animation & puppets | 75 | 25/29 | 2/46 |
 | Rendering & lighting | 370 | 101/344 | 0/26 |
 | Editor & interface | 390 | 75/181 | 3/207 |
 | Dreamiverse & networking | 109 | 3/31 | 0/78 |
 | Shared engine & object data | 331 | 209/245 | 15/81 |
 
-**2,059 of 9,598 discovered functions are mapped; 7,539 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,063 of 9,602 discovered functions are mapped; 7,539 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1225,6 +1225,56 @@ Every square is one actual function and has the same size. All function squares 
   - **Player identity** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Level & recent records** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+- **Animation & puppets** - 75 functions identified; 25 behavior/helper reviews; 2 property/type reviews
+  - **Animation & keyframes** - 37 functions identified; 24 behavior/helper reviews; 2 property/type reviews
+    - **Animation** - 26 functions identified; 19 behavior/helper reviews; 2 property/type reviews
+      - **Runtime code** - 23 functions identified; 19 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+    - **Property recording** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+      - **Runtime code** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+    - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Avatar Anim** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Customisation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **E PU Avatar Anim Net Sync Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Animation Set** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Costume Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Pet Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Do Avatar Anim Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Eyebrow Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Eye Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Mouth Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Pupil Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Custom Mesh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Puppet Tweaks** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Prim Avatar Substance Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Puppet animation** - 8 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Puppet Heart** - 8 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
 - **Sound & music** - 72 functions identified; 10 behavior/helper reviews; 0 property/type reviews
   - **Sound editing** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Audio UISpreadsheet** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -1293,56 +1343,6 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sound Stroke Frame With Stroke Idx** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Animation & puppets** - 71 functions identified; 21 behavior/helper reviews; 2 property/type reviews
-  - **Animation & keyframes** - 33 functions identified; 20 behavior/helper reviews; 2 property/type reviews
-    - **Animation** - 22 functions identified; 15 behavior/helper reviews; 2 property/type reviews
-      - **Runtime code** - 19 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-    - **Property recording** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
-      - **Runtime code** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
-    - **Sprite Stop Motion Animation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Stroke Keyframe** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Confirm Retake Animation Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Avatars** - 30 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Style Customisation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Avatar Anim** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Customisation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **E PU Avatar Anim Net Sync Mode** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Animation Set** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Costume Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Pet Type** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Do Avatar Anim Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Eyebrow Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Eye Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Mouth Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Pupil Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Custom Mesh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Puppet Tweaks** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Prim Avatar Substance Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Set Puppet Avatar Animation Set Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Puppet animation** - 8 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Puppet Heart** - 8 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
 - **Physics & collision** - 71 functions identified; 21 behavior/helper reviews; 0 property/type reviews
   - **Collision queries** - 34 functions identified; 14 behavior/helper reviews; 0 property/type reviews
     - **Region Query** - 13 functions identified; 12 behavior/helper reviews; 0 property/type reviews
