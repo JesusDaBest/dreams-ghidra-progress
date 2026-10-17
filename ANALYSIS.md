@@ -5346,3 +5346,12 @@ Traced the fresh-lookup selection path in producer `1407af650` through converter
 When the looked-up stored record is basic, both derived choices equal `(recordMode == AutoKeyframe) OR inheritedSelection`: one choice requests extended converter output, while the other requests the basic-to-extended transition handler. For an already-extended stored record, the inspected branch chooses extended output with override 0; the dispatcher selects the extended updater from the stored header flag. Assembly ties the converter choice to the first stack argument and the descriptor's derived bit 4, then traces the saved override byte through the insertion call to the dispatcher.
 
 This is a partial caller-contract result, not proof that mixed-input basic paths are unreachable. Descriptor flags also inherit a separate base byte whose possible bit 4 still needs tracing; the duplicate-key path also needs review. Only the small selection block ran in this batch, not the full producer, insertion wrapper, converter or dispatcher. No function name or completion credit was added; checked names remains 665.
+
+
+### Recording producer: duplicate shortcut and inherited flag boundary
+
+Original duplicate-selection and processed-bitmap instruction fragments passed 514 scoped native checks: two inherited-choice cases and 512 bitmap fixtures covering indices 0–127. The shortcut clears override while retaining the inherited extended choice. The following bitmap calculation selects the indexed bit; the enclosing conditional jump skips processing when it is set. These fragment checks do not prove that every duplicate group has already set that bit.
+
+An original executable search for the inherited flag displacement was validated against saved Ghidra instruction boundaries, excluding overlapping false decodes. Five true sites remain: two address computations in the recording producer and three reads/tests in `140a0baa0`. No direct writer was found by this exact-displacement search. That does not exclude indirect or wider stores, and the byte's possible extended-format bit remains unresolved.
+
+The second owner has 46,227 saved instructions; decompilation did not complete within 60 seconds. Only local instruction windows were inspected, so no whole-owner role or name is claimed. Full producer execution, complete duplicate-group dataflow, inherited-flag origin and mixed-input reachability remain open. Checked names remains 665; no new name or completion credit was added.

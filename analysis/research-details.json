@@ -14772,5 +14772,75 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "animation_duplicate_selection_checkpoint": {
+    "producer": "1407af650",
+    "native_check": {
+      "producer": "1407af650",
+      "native_cases": 514,
+      "batches": {
+        "duplicate_selection": 2,
+        "processed_bitmap": 512
+      },
+      "original_blocks": [
+        {
+          "start": "1407aff63",
+          "end_exclusive": "1407aff6b",
+          "sha256": "1592e4ab7524816a06aa8d184d54924636f2a3e389af57dfd705aaaf0b47eafb"
+        },
+        {
+          "start": "1407b0030",
+          "end_exclusive": "1407b0042",
+          "sha256": "87e57ea65d4eed211c8332e2357f57b6d25588bbf6d0571e18e25d4ab33ec5bb"
+        }
+      ],
+      "findings": [
+        "Duplicate-key selection shortcut clears override and preserves inherited extended choice for0/1.",
+        "Immediately following original bitmap calculation selects the indexed bit; enclosingJC skips processing when set.",
+        "Both original instruction fragments execute without modifying supplied fixture buffers."
+      ],
+      "limits": [
+        "Fragments only;not fullproducer execution.",
+        "Bitmap fixtures cover indices0..127,notcompleteproducerboundsorconcurrency.",
+        "Whether every duplicate hits an already-set bit still needs whole-group dataflow confirmation.",
+        "Inherited descriptor baseflag origin andpossiblebit4 remain unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "inherited_flag_displacement": "0x3593d",
+    "validated_sites": [
+      {
+        "address": "1407af948",
+        "owner": "1407af650"
+      },
+      {
+        "address": "1407afe6c",
+        "owner": "1407af650"
+      },
+      {
+        "address": "140a108d5",
+        "owner": "140a0baa0"
+      },
+      {
+        "address": "140a13a07",
+        "owner": "140a0baa0"
+      },
+      {
+        "address": "140a13b90",
+        "owner": "140a0baa0"
+      }
+    ],
+    "findings": [
+      "Exact-displacement search produced overlapping false decodes; saved Ghidra instruction boundaries leavefive true instruction sites.",
+      "Two producer address computations andthree reads/tests in owner140a0baa0 identified;no directstore located bythis exact-displacement search."
+    ],
+    "limits": [
+      "Exact displacement search doesnot locate all indirect orwide stores;flagwriter andpossiblebit4 remain unresolved.",
+      "Large owner140a0baa0 has46227 saved instructions;decompilation didnot complete within60seconds. Only local listing windows inspected,notfullownerreview.",
+      "Duplicate/bitmap fragments do not prove all duplicategroups arealreadyprocessed."
+    ],
+    "new_name_credit": 0,
+    "project_modified": false
   }
 }
