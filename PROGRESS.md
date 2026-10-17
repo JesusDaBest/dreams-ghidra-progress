@@ -5047,3 +5047,14 @@ Totals: 674 checked names, 2,086 mapped functions and 7,517 unmapped functions a
 The checks compare boolean value, alpha, type and padding, preserve output guards, and verify source, header and resource-leaf immutability. Extended fixtures supply valid interned header/data roots and the original typed-record comparison helper. An earlier invalid fixture omitted the header root and looped; that isolated run was stopped and corrected before the final passing run.
 
 These results cover three-key boolean paths with one data leaf, one header leaf where required, zero extended metadata and null optional arguments. Other strengths, record formats, cross-leaf paths, wrapper behavior and gameplay remain unverified. Neither large sampler receives whole-function review or naming credit. Checked-name and mapping totals are unchanged.
+
+
+### Animation sampling wrapper and parent lookup
+
+168 basic-path and 168 extended-path native cases enter the original wrapper and sampler together. Header flag `8` forces output alpha to zero after sampling. On the tested extended path, it also sets an optional output byte to `1`; without the flag, that byte stays untouched. The retirement marker does not change the tested boolean results.
+
+A further 168 cases exercise property `0x231` with boolean samples. The wrapper uses an identity transform fallback and composes the header and wire transforms. Forty-two seeded finite pose pairs with normalized rotations and positive scales match an independent quaternion, translation and scale model within `2e-5` absolute/relative tolerance, across both alpha-suppression and retirement flags. Source, header, data leaf and wire remain unchanged, with output guards and padding checked. Other Variant conversions, degenerate rotations, secondary output and the other special properties remain unresolved.
+
+The related 85-instruction target lookup was fully read and matched to original bytes. In 120 native cases, it follows inheritance-marked ancestors using signed low-22-bit parent indices, then returns kind `11` immediately or follows at most two additional parents. The final returned parent need not be kind `11`. Invalid links in the tested non-inherited traversal return null; invalid inherited links are dereferenced before a null check and were not executed. Valid acyclic chains only; generation bits are ignored by this lookup. Its original type names and the original name of property `0x231` are not established here.
+
+These are local original-code fixtures, not gameplay runs. No function name, type or whole-function completion credit was added.
