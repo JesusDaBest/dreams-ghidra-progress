@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2016,
-  "unmapped_total": 7573,
+  "mapped_total": 2017,
+  "unmapped_total": 7572,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50456,6 +50456,31 @@
             "Animation,Microchip,Timeline,Sound,Scripter parent kinds select record categories6,2,3,4,5; matching current-world records precede alternate-world fallback.",
             "Metadata dimensions,offsets and Timeline parent dimension affect tested coordinate rules.",
             "Optional snapping calls verified relative-transform/orientation helpers; explicit parent override bypasses child parent lookup."
+          ]
+        }
+      ]
+    },
+    "140771250": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Auxiliary target transform with shared selector and linked-object callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reviewed control flow and2032 scoped scenarios.",
+      "code_sha256": "c5b17b8805fa10f7c314a05cbc868a2eecb84976d0c12cb545a53a3d827b5416",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeObjectAuxiliaryTargetTransform",
+          "support": [
+            "Builds auxiliary target from stored or group/state sources and applies object-local transform.",
+            "Optional offsets,rotations,smoothstep targets,linked references and recursive selection are bounded by scoped evidence.",
+            "Lookup requires ID/group match and first matching entry wins."
           ]
         }
       ]

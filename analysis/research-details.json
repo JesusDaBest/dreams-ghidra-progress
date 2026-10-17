@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 600,
+    "checked_and_applied_names": 601,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 600,
+    "verified_names": 601,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "561 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "562 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -10020,6 +10020,31 @@
       "Remaining type-specific modes,source field names,arbitrary indices,malformed/aliased buffers and lifecycles unresolved.",
       "Host math uses corrected Windows shadow-space adapters; exact PS4 math and live game unverified.",
       "No whole-subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true,
+    "fresh_decompilation_verified": true
+  },
+  "object_auxiliary_target_checkpoint": {
+    "name": "ComputeObjectAuxiliaryTargetTransform",
+    "native_scenarios": 2032,
+    "instructions_byte_verified": 1016,
+    "findings": [
+      "Builds auxiliary target from stored or group/state sources and applies object-local transform.",
+      "Optional offsets,rotations,smoothstep targets,linked references and recursive selection are bounded by scoped evidence.",
+      "Lookup requires ID/group match and first matching entry wins."
+    ],
+    "evidence": [
+      "Original1016 instructions byte verified; control flow, transform equations, callers and metadata traced.",
+      "2032 scoped original-code scenarios, excluding superseded sets, support source selection, composition, blending, mode offsets, lookup and recursion.",
+      "Verified backup,independent reopening and fresh decompilation confirm descriptive name and seven-input working signature."
+    ],
+    "limits": [
+      "Analyst name and working signature,not recovered source declaration.",
+      "Contexts and state/object fields remain opaque; original Controlinator registration binds one caller only.",
+      "Combined modes,threshold-adjacent inputs,arbitrary recursion,invalid/aliased inputs,lifecycles and exact PS4 math unresolved.",
+      "Zero-displacement NaN observation is isolated and does not establish a reachable game defect.",
+      "No full semantic or subsystem completion claim."
     ],
     "new_name_credit": 1,
     "name_and_signature_independently_reopened": true,

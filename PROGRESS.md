@@ -3876,3 +3876,14 @@ These final sets supersede their preliminary sets. Nonzero displacement, non-ant
 In 32 exact-zero-displacement calls, output XYZ became NaN while scale and rotation remained finite. Source buffers and output guards were preserved. This describes an isolated controlled path; it does not establish that live callers permit the input or that the game has a reachable defect.
 
 Threshold-adjacent behavior, exception modes, live caller constraints and complete lifecycle remain unresolved. No function name or completion credit is added.
+
+
+### Object auxiliary target-transform helper
+
+Saved ComputeObjectAuxiliaryTargetTransform with a seven-input working signature after tracing original control flow, callers, metadata and transform equations. It builds an auxiliary target from stored or group/state sources, optional mode offsets, linked targets and recursive selection, then applies the object-local transform.
+
+2032 scoped scenarios support the descriptive role, excluding superseded sets. Backup, independent reopening and fresh decompilation verify persistence. The output uses the existing working 32-byte transform type; context/state/object pointers remain opaque. Original Controlinator registration binds one selector caller, without establishing exclusive use.
+
+Combined modes, exact field names, threshold-adjacent behavior, arbitrary recursion, invalid or aliased inputs, full lifecycles and exact PS4 math remain unresolved. Isolated zero-displacement NaN evidence does not establish a reachable game defect. This name does not mark full semantic or subsystem completion.
+
+Totals: 601 checked names; 2,017 mapped and 7,572 unmapped among 9,589 discovered functions.
