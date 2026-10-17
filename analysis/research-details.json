@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 647,
+    "checked_and_applied_names": 648,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 647,
-    "function_count": 9602,
+    "verified_names": 648,
+    "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "595 existing-function renames,51 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "595 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12357,5 +12357,76 @@
     ],
     "new_definitions": 4,
     "new_name_credit": 4
+  },
+  "animation_signed_byte_checkpoint": {
+    "functions": {
+      "14109f7b0": {
+        "name": "ConvertSignedByteAnimationInputKeys",
+        "signature": "void PS4_SYSV ConvertSignedByteAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)"
+      }
+    },
+    "native_cases": 45600,
+    "routes": [
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      813,
+      814,
+      815
+    ],
+    "findings": [
+      "Complete211-instruction original helper; all19 secondary property routes executed.",
+      "Comparison sign-extends low bytes, converts to float and multiplies each by0.01; output retains original byte, not scaled float. Signed-byte boundary and upper-source-byte changes tested.",
+      "First/change/last selection; basic8/extended12 bytes. Offsets5..7 opaque, intentionally not asserted.",
+      "Timeoutputs, metadata, destination guards/descriptors andsource/aux immutability verified.",
+      "Both actual writer copies byte-identical to independently reviewed bounded8/12-byte writers."
+    ],
+    "limits": [
+      "Ample capacity, finite times; invalid input, aliasing, concurrency and fullproducer/playback unresolved."
+    ],
+    "new_definitions": 1,
+    "new_name_credit": 1
+  },
+  "animation_boolean_inline_checkpoint": {
+    "entry": "14109e4e0",
+    "branch": "inline type1 Boolean",
+    "native_cases": 2400,
+    "by_pattern": {
+      "constant": 240,
+      "alternate": 240,
+      "run": 240,
+      "same_low_word": 240,
+      "signed_zero": 240,
+      "nan_identical": 240,
+      "nan_mixed": 240,
+      "reversed_time": 240,
+      "same_low_bit": 240,
+      "high_bytes": 240
+    },
+    "findings": [
+      "Basic compares full low byte; extended compares only low bit and emits canonical0/1 values. Upper source bytes do not affect comparisons.",
+      "First/change/last selection verified, including noncanonical bytes1/3 sharing low bit.",
+      "Basic8-byte andextended12-byte layouts checked for defined time/value/metadata fields. Offsets5..7 opaque and not asserted.",
+      "Emptybounds0; basicmin/max, extendedmax/max; singleAutoKeyframe metadata bit andauxflags verified.",
+      "Original top-level dispatcher andbytewriters execute; guards/descriptors/timeoutputs andsource/aux immutability checked."
+    ],
+    "limits": [
+      "Only inline type1 branch, not full1095-instruction converter. No new name credit.",
+      "Ample capacity, finite times, counts0/1/2/3/7/17, strides8/16; invalid input, concurrency, fullproducer/playback unresolved."
+    ],
+    "project_modified": false
   }
 }

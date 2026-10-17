@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "595 existing-function renames,51 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "595 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9602,
+    "total": 9603,
     "default_fun_names": 8800,
-    "other_names": 802,
-    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_51_created_functions_and_1_reviewed_existing_name"
+    "other_names": 803,
+    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14876,6 +14876,34 @@
         "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
         "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
         "Vector output records checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+        "Top-level converter and other delegated formats remain partially reviewed."
+      ]
+    },
+    {
+      "address": "14109f7b0",
+      "original_name": null,
+      "applied_name": "ConvertSignedByteAnimationInputKeys",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertSignedByteAnimationInputKeys(void * input_keys, uint key_count, uint source_stride, BoundedByteBufferWorking24 * output_buffer, byte extended_format, MachineRecordingPrefixWorkingD7 * auxiliary_state, float * range_output_a, float * range_output_b)",
+      "evidence": [
+        "Complete211-instruction original helper reviewed andoriginalbytesmatched.",
+        "Complete211-instruction original helper; all19 secondary property routes executed.",
+        "Comparison sign-extends low bytes, converts to float and multiplies each by0.01; output retains original byte, not scaled float. Signed-byte boundary and upper-source-byte changes tested.",
+        "First/change/last selection; basic8/extended12 bytes. Offsets5..7 opaque, intentionally not asserted.",
+        "Timeoutputs, metadata, destination guards/descriptors andsource/aux immutability verified.",
+        "Both actual writer copies byte-identical to independently reviewed bounded8/12-byte writers.",
+        "All19 property routes executeoriginalhelper andactual boundedwriters in45600 cases.",
+        "Independent reopening and freshdecompilation; all9602 existing names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working opaque ABI, not recovered source declarations.",
+        "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
+        "Valuebyte andtime/metadata checked; offsets5..7 opaque and intentionally unasserted.",
         "Top-level converter and other delegated formats remain partially reviewed."
       ]
     }

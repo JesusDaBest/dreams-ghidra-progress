@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9602,
-  "mapped_total": 2063,
+  "inventory_total": 9603,
+  "mapped_total": 2064,
   "unmapped_total": 7539,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -51724,6 +51724,36 @@
             "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked.",
             "Float2 basic writer is byte-identical to independently reviewed 584-byte bounded writer.",
             "Four nonoverlapping definitions independently reopened and freshly decompiled; all9598 existing names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "14109f7b0": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Animation input converter primary/secondary type dispatch selects this signed-byte converter.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete signed-byte converter body and original dispatch execution reviewed.",
+      "code_sha256": "19c09987d12bb840f1b55aa2d2da6d7696a6da8a07ced263cf6d86539a5b8841",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertSignedByteAnimationInputKeys",
+          "support": [
+            "Complete211-instruction original helper reviewed andoriginalbytesmatched.",
+            "Complete211-instruction original helper; all19 secondary property routes executed.",
+            "Comparison sign-extends low bytes, converts to float and multiplies each by0.01; output retains original byte, not scaled float. Signed-byte boundary and upper-source-byte changes tested.",
+            "First/change/last selection; basic8/extended12 bytes. Offsets5..7 opaque, intentionally not asserted.",
+            "Timeoutputs, metadata, destination guards/descriptors andsource/aux immutability verified.",
+            "Both actual writer copies byte-identical to independently reviewed bounded8/12-byte writers.",
+            "All19 property routes executeoriginalhelper andactual boundedwriters in45600 cases.",
+            "Independent reopening and freshdecompilation; all9602 existing names/signatures unchanged."
           ]
         }
       ],
