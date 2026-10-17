@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 648,
+    "checked_and_applied_names": 649,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 648,
+    "verified_names": 649,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "595 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "596 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12426,6 +12426,76 @@
     "limits": [
       "Only inline type1 branch, not full1095-instruction converter. No new name credit.",
       "Ample capacity, finite times, counts0/1/2/3/7/17, strides8/16; invalid input, concurrency, fullproducer/playback unresolved."
+    ],
+    "project_modified": false
+  },
+  "typed_value_comparator_checkpoint": {
+    "address": "1408ad070",
+    "name": "AreTypedValueRecordsEqual",
+    "native_cases": 40192,
+    "findings": [
+      "Typebyte36 and floating field32 must match first; unordered float comparison rejects quietNaN even against identical bits.",
+      "Special types compare exact4/8/12/16-byte payloads. Type30 compares only floatoffset4 andbyte8 aftercommonheader; its payloadfloat0 is ignored.",
+      "Other supported types compare table-selected floatcomponents; type0,type29 andcodesabove30 ignorepayload aftercommonheader.",
+      "All40 source bytes independently varied for eachtype; signedzero,quietNaN andordinary unequal floats tested ineachfloat position.",
+      "Both inputbuffers remainunchanged; exactboolean lowbyte checked."
+    ],
+    "limits": [
+      "Meaning of field32 andformal source type names remain unresolved.",
+      "No game/playback verification, invalid pointers orconcurrency."
+    ],
+    "new_name_credit": 1
+  },
+  "animation_inline_wide_checkpoint": {
+    "entry": "14109e4e0",
+    "review_scope": "Inline type4 and29 only; larger function remains partly reviewed.",
+    "native_cases": 8160,
+    "by_helper": {
+      "14109e4e0:type29": 4080,
+      "14109e4e0:type4": 4080
+    },
+    "by_pattern": {
+      "constant": 480,
+      "alternate": 480,
+      "run": 480,
+      "last_lane": 480,
+      "signed_zero": 480,
+      "nan_identical": 480,
+      "nan_mixed": 480,
+      "reversed_time": 480,
+      "padding_only": 480,
+      "lane0": 480,
+      "lane1": 480,
+      "lane2": 480,
+      "lane3": 480,
+      "lane4": 480,
+      "lane5": 480,
+      "lane6": 480,
+      "lane7": 480
+    },
+    "routes": [
+      [
+        "qword",
+        29,
+        0
+      ],
+      [
+        "float8",
+        4,
+        0
+      ]
+    ],
+    "findings": [
+      "Original primary dispatcher executes both listed inline formats; no helper probes.",
+      "First/change/last retention; every vector lane participates in comparisons; signed zero compares equal and repeated quiet NaNs emit changes.",
+      "Qword comparison includes high bits and ignores source padding.",
+      "Inline eight-float basic/extended records occupy36/40bytes; inline64-bit records occupy16/24bytes.",
+      "Vector output bytes checked completely; qword extended padding at offsets4..7 and20..23 intentionally unasserted.",
+      "Guarded descriptors, time outputs, source immutability and auxiliary immutability checked."
+    ],
+    "limits": [
+      "Ample output capacity; finite times and quiet NaN values only.",
+      "No claim about playback, full producer behavior, invalid pointers, concurrency or undefined padding."
     ],
     "project_modified": false
   }

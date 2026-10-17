@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 602,
+    "done": 603,
     "todo": 1462,
-    "total": 2064,
-    "behavior_or_helpers_reviewed": 535,
+    "total": 2065,
+    "behavior_or_helpers_reviewed": 536,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -27347,12 +27347,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 225,
+        "done": 226,
         "todo": 106,
-        "total": 331,
-        "behavior_or_helpers_reviewed": 210,
+        "total": 332,
+        "behavior_or_helpers_reviewed": 211,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 245,
+        "runtime_functions_identified": 246,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27431,6 +27431,7 @@
           "GetObjectInnerRadiusOrDefault",
           "GetObjectOuterRadiusOrDefault",
           "EnsureObjectSlotStateAndSetAssociation",
+          "AreTypedValueRecordsEqual",
           "AcquireLeastUsedThreadBufferLane",
           "PassesThingUpdateStateAndPowerGate",
           "CollectAndSortKeySpatialProjections",
@@ -27766,6 +27767,7 @@
           "1407a7e80",
           "1407a7ee0",
           "1407d30b0",
+          "1408ad070",
           "1408c6390",
           "1408cc990",
           "1408d2b10",
@@ -32335,16 +32337,17 @@
           {
             "name": "shared/signals",
             "label": "Shared signal data",
-            "done": 10,
+            "done": 11,
             "todo": 2,
-            "total": 12,
-            "behavior_or_helpers_reviewed": 8,
+            "total": 13,
+            "behavior_or_helpers_reviewed": 9,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 8,
+            "runtime_functions_identified": 9,
             "property_type_functions_identified": 4,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "AreTypedValueRecordsEqual",
               "RegisterWireHeaderFieldOffset",
               "RegisterWireBlendOpField",
               "ReduceTypedSignalToScalar",
@@ -32361,6 +32364,7 @@
               "0x140d1b8a0"
             ],
             "done_addresses": [
+              "1408ad070",
               "140ce6330",
               "140ce6ad0",
               "1411bfe20",
@@ -32381,16 +32385,17 @@
               {
                 "name": "shared/signals/signal-values",
                 "label": "Signal values",
-                "done": 8,
+                "done": 9,
                 "todo": 0,
-                "total": 8,
-                "behavior_or_helpers_reviewed": 8,
+                "total": 9,
+                "behavior_or_helpers_reviewed": 9,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 8,
+                "runtime_functions_identified": 9,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
+                  "AreTypedValueRecordsEqual",
                   "ReduceTypedSignalToScalar",
                   "DecodeImpactFromVariant",
                   "ExtractVariantVectorComponents",
@@ -32402,6 +32407,7 @@
                 ],
                 "todo_names": [],
                 "done_addresses": [
+                  "1408ad070",
                   "1411bfe20",
                   "1411c00e0",
                   "1411c0250",
@@ -32417,16 +32423,17 @@
                   {
                     "name": "shared/signals/signal-values/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 8,
+                    "done": 9,
                     "todo": 0,
-                    "total": 8,
-                    "behavior_or_helpers_reviewed": 8,
+                    "total": 9,
+                    "behavior_or_helpers_reviewed": 9,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 8,
+                    "runtime_functions_identified": 9,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
+                      "AreTypedValueRecordsEqual",
                       "ReduceTypedSignalToScalar",
                       "DecodeImpactFromVariant",
                       "ExtractVariantVectorComponents",
@@ -32438,6 +32445,7 @@
                     ],
                     "todo_names": [],
                     "done_addresses": [
+                      "1408ad070",
                       "1411bfe20",
                       "1411c00e0",
                       "1411c0250",
@@ -44956,5 +44964,5 @@
       }
     ]
   },
-  "unmapped": 7539
+  "unmapped": 7538
 }

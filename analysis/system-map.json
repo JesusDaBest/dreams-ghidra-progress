@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2064,
-  "unmapped_total": 7539,
+  "mapped_total": 2065,
+  "unmapped_total": 7538,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -51758,6 +51758,36 @@
         }
       ],
       "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "1408ad070": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "signal-values",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared typed-value record comparison called by generic Animation conversion andother native routines.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original comparison anddispatch table reviewed;exactbooleanoutput andrecordimmutability tested.",
+      "code_sha256": "db6c002209bf607be58fee66e6553709c020a78fe5a298c3d7d964e482e77c31",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AreTypedValueRecordsEqual",
+          "support": [
+            "Complete77-instruction original body and22-entry dispatch table reviewed andbytesmatched.",
+            "Typebyte36 and floating field32 must match first; unordered float comparison rejects quietNaN even against identical bits.",
+            "Special types compare exact4/8/12/16-byte payloads. Type30 compares only floatoffset4 andbyte8 aftercommonheader; its payloadfloat0 is ignored.",
+            "Other supported types compare table-selected floatcomponents; type0,type29 andcodesabove30 ignorepayload aftercommonheader.",
+            "All40 source bytes independently varied for eachtype; signedzero,quietNaN andordinary unequal floats tested ineachfloat position.",
+            "Both inputbuffers remainunchanged; exactboolean lowbyte checked.",
+            "40192 original-code cases cover everytypebyte andeach40-byte record position; signedzero/quietNaN andunequalfloat cases covereachfloat slot.",
+            "Existing Animation converter passes typed-value subrecords;32 native callreferences establish shared use.",
+            "Saved boolAL:1 return andtwo opaque pointer arguments RDI/RSI independently reopened andfreshly decompiled; other9602names/signatures unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [

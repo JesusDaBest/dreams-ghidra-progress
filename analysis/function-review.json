@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "595 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "596 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8800,
-    "other_names": 803,
-    "verification": "complete_inventory_matches_baseline_plus_595_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8799,
+    "other_names": 804,
+    "verification": "complete_inventory_matches_baseline_plus_596_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -14582,7 +14582,7 @@
       "caveats": [
         "Descriptive role and working opaque signature, not original source declarations.",
         "Valid bounded buffers only; huge length/count truncation, invalid pointers, concurrency and production editing schedule remain unverified.",
-        "Upstream converter has unresolved jump table; its37 captured instructions do not establish complete conversion or extended record layout."
+        "At the original review, the upstream converter capture had only37instructions. Its boundary andtwo jump tables have since been recovered to1095instructions; delegated andsomeinline formats are verified,while generic-value conversion remains partly reviewed."
       ]
     },
     {
@@ -14905,6 +14905,33 @@
         "Valid bounded buffers and ample capacity; hugecounts,nonfinite times,aliasing,shortbuffers,concurrency andfullproducer/playback unresolved.",
         "Valuebyte andtime/metadata checked; offsets5..7 opaque and intentionally unasserted.",
         "Top-level converter and other delegated formats remain partially reviewed."
+      ]
+    },
+    {
+      "address": "1408ad070",
+      "original_name": "FUN_1408ad070",
+      "applied_name": "AreTypedValueRecordsEqual",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV AreTypedValueRecordsEqual(void * left_value, void * right_value)",
+      "evidence": [
+        "Complete77-instruction original body and22-entry dispatch table reviewed andbytesmatched.",
+        "Typebyte36 and floating field32 must match first; unordered float comparison rejects quietNaN even against identical bits.",
+        "Special types compare exact4/8/12/16-byte payloads. Type30 compares only floatoffset4 andbyte8 aftercommonheader; its payloadfloat0 is ignored.",
+        "Other supported types compare table-selected floatcomponents; type0,type29 andcodesabove30 ignorepayload aftercommonheader.",
+        "All40 source bytes independently varied for eachtype; signedzero,quietNaN andordinary unequal floats tested ineachfloat position.",
+        "Both inputbuffers remainunchanged; exactboolean lowbyte checked.",
+        "40192 original-code cases cover everytypebyte andeach40-byte record position; signedzero/quietNaN andunequalfloat cases covereachfloat slot.",
+        "Existing Animation converter passes typed-value subrecords;32 native callreferences establish shared use.",
+        "Saved boolAL:1 return andtwo opaque pointer arguments RDI/RSI independently reopened andfreshly decompiled; other9602names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworking opaque ABI,not recoveredsource declarations.",
+        "Field32 meaning,formal source type names,invalid pointers,concurrency andgame/playback remain unresolved.",
+        "Only thelowbyteAL is thebooleanreturn; upperRAX isnot meaningful."
       ]
     }
   ],
