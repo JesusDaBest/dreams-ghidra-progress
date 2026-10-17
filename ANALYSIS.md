@@ -4230,3 +4230,12 @@ Totals: 601 checked names; 2,017 mapped and 7,572 unmapped among 9,589 discovere
 192 further cases use nonzero old/new group indices, four packed-reference high-bit patterns and all combinations of old/new scale signs. Distinct group frames, independent transform equations, source buffers and output guards passed.
 
 The tests use valid object index zero, finite nonzero scales and unit rotations. Original meaning of the object-field sentinel, zero/nonfinite scales, mismatched packed-reference bits, caller lifecycle and malformed inputs remain unresolved. This behavior evidence adds no checked-name credit.
+
+
+### Head and hand auxiliary lookup
+
+Original type registrations bind the selector's remaining linked kinds to HeadGadget and HandGadget. 328 original-code head-lookup scenarios test every 8-bit mask plus twelve gate variations. The least-significant set bit selects the requested auxiliary slot, with empty masks and the reserved tested bit rejected. Duplicate matches choose the first record. Success writes the record pointer; failure preserves the caller's output pointer.
+
+The hand lookup calls a separate state selector. 1536 original-code cases cover six selector codes, all pointer-presence combinations, four sampled state modes and both boolean inputs. Exact pointer identity and source preservation passed. The selectors differ in how they choose between two available non-mode-2 states; a sole first state is eligible only in mode 2 for the tested default/sole-state selectors. Original physical state/selector names remain unresolved.
+
+These are bounded lookup semantics, without new checked-name credit. Connected hand output behavior, downstream transform construction, large-list behavior, arbitrary byte values, invalid pointers and live-game lifecycle remain under review.
