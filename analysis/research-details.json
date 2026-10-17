@@ -11449,5 +11449,35 @@
       "Real producer basic/extended routing still needs tracing; earlier synthetic flag4/base-handler fixtures do not establish a production path."
     ],
     "correction_scope": "Ghidra analysis boundary and jump-table destination overrides; no executable or original archive changes."
+  },
+  "animation_converter_type1_checkpoint": {
+    "entry": "14109e4e0",
+    "review_scope": "Type1 branch only with original8/12-byte append writers; full converter remains incomplete.",
+    "native_cases": 1200,
+    "input_counts": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      17
+    ],
+    "strides": [
+      8,
+      16
+    ],
+    "extended_lower_accumulator_differs_from_minimum_cases": 400,
+    "findings": [
+      "Basic path emits first key, value-byte changes and last key, preserving complete8-byte emitted input pairs. Extended path compares low bit, emits12-byte records with observed metadata; three intermediate bytes are not assigned semantic meaning or asserted.",
+      "Empty input leaves buffer unchanged and sets both bound outputs to zero. Exact output length, defined output fields, unchanged destination outside emitted range, guarded descriptor/bounds, source/aux immutability checked.",
+      "Basic lower/upper accumulators use min/max. In tested extended path both accumulators track maximum emitted time; this is observed behavior, not an intended minimum-bound contract.",
+      "Single-record extended metadata includes mode5 bit0x20; multi-record metadata omits it in these fixtures. Flags ataux+d6 contribute flags OR(flags*8), with0x700."
+    ],
+    "limits": [
+      "Valid bounded pointers and ample capacity; no undersized buffer, nonfinite time, actual producer routing or live gameplay claim.",
+      "Three extended bytes between value byte and metadata are not asserted; stack-derived contents are not a recovered data definition.",
+      "Whole converter, delegated formats and surrounding producer remain unnamed/partially reviewed."
+    ],
+    "project_modified": false
   }
 }

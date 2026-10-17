@@ -4785,3 +4785,14 @@ Repaired the analysis boundary of the unnamed converter at `14109e4e0`. Its prev
 Every recovered instruction was matched against original executable bytes. Previously unassigned code was disassembled, added to the existing function, and given explicit jump-table destination overrides. The prior body/reference state was saved locally. Independent reopening and fresh decompilation now expose both switches and the branch bodies. Function count, names and saved signatures remain unchanged; executable and original archive files were not modified.
 
 The recovered type-1 branch distinguishes basic and extended output paths. Its producer routing conditions and delegated writers still need tracing. Earlier flag-4/base-handler tests establish synthetic branch behavior, not that the real producer uses that combination. This recovery enables semantic work; it does not complete the converter or add naming/progress credit. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
+
+
+### Animation converter basic/extended type-1 records
+
+1,200 controlled cases now execute the original recovered converter's type-1 branch and its original 8-byte and 12-byte append writers. The basic path preserves complete emitted input pairs and compares the full value byte; the extended path compares only bit 0 and writes a 12-byte record with additional metadata. Both retain the first key, value changes and the final key in the supplied fixtures. This establishes actual converter output sizes, not the complete producer-to-update routing contract.
+
+Tests cover counts 0/1/2/3/7/17, source strides 8/16, constant/alternating/run/low-bit-equivalent values, reversed finite times, modes 0/5 and five auxiliary flag values. Exact output lengths, basic output bytes, defined extended fields, buffer/bounds guards, unchanged destination outside emitted records and source/auxiliary immutability were checked. Three extended bytes between the value byte and metadata are not asserted or assigned a field meaning. Tests use ample capacity; short buffers and nonfinite times remain unverified.
+
+The empty type-1 path appends nothing and zeros both supplied time outputs. Basic records accumulate minimum/maximum emitted times. The tested extended path uses maximum for both outputs: 400 cases distinguish its first output from the minimum emitted time, matching the original VMAXSS instructions. This is recorded as observed behavior, without assuming either an intended minimum-bound contract or a game bug. Single-record extended metadata includes the mode-5 bit; the tested multi-record path omits it.
+
+The converter's other branches/callees, producer routing, mixed-format update eligibility and live editing remain unresolved. No whole-function name or completion credit is added. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
