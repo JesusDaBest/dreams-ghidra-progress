@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "601 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "602 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8794,
-    "other_names": 809,
-    "verification": "complete_inventory_matches_baseline_plus_601_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8793,
+    "other_names": 810,
+    "verification": "complete_inventory_matches_baseline_plus_602_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15065,6 +15065,33 @@
         "Nativefixtures usefiniteorderedkeys,flag0,mode0,validbuffers andamplecapacity.",
         "AutoKeyframe/flag4 branches staticallyread butnotclaimed production-verified; deeperparentlevels,nonfinite/invalidinputs,concurrency,fullproducer/playback unresolved.",
         "Parenttree powerimport useshostdoublepow ABI adapter; merge,resourcegrowth/hash/finalization remainoriginal."
+      ]
+    },
+    {
+      "address": "14108f690",
+      "original_name": "FUN_14108f690",
+      "applied_name": "MergeScalarAnimationRecordIntervalAsExtended",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV MergeScalarAnimationRecordIntervalAsExtended(AnimationRecordHeaderWorking72 * old_header, AnimationRecordInputWorking80 * incoming_record, uint * header_root, uint * data_root, MachineRecordingPrefixWorkingD7 * auxiliary_state, byte flag_a, byte flag_b)",
+      "evidence": [
+        "Complete1053-instruction originalscalartransitionbody read,includingresourceparentseek,metadata/controlconditions andheaderindexcalculation;originalbytesmatched.",
+        "Originalconverter/dispatcher/transitionhandler executeactualscalarhelper acrosscodes2/5/24/25 andmodes0/AutoKeyframe5.",
+        "Lastretainedprefix metadata becomes0x709 whenauxflags nonzero andboth controlflags clear;eithercontrolflag suppresseschange.",
+        "Firstincomingmetadata low16 becomes0x700|(incoming&0x3f) whennextoldrawtime iswithin originaltolerance ofincomingrebasedtime.",
+        "Old8-byte records become12-byte records; completeheaders/data includingvalues/metadata/time matchindependentmodel.",
+        "Originalworld/source/nodes/input/context/auximmutability andguards checked; originalresourcegrowth/hash/finalization execute.",
+        "9600connectedconverter/dispatcher/handler cases acrossfour scalarcoderoutes andeightmode/aux/controlprofiles verifycompleteheader/data andallguards.",
+        "Savedfivepointerarguments,R9Bcontrolflag andstack8bytecontrolflag,signedEAXreturn independently reopened andfreshlydecompiled;other9602names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role andworkingrecord/prefix ABI,not recoveredsource declarations.",
+        "One-leaforiginalsource,finiteorderedtimes/values,validbuffers;onefloatpropertyroute sampled fortype2.",
+        "Otherproperties/modes,allboundaryrounding,deeperlevels,invalidinputs,races,fullproducer/playback unresolved.",
+        "Memoryimports adapted;mutex/threadcallbacks controlled."
       ]
     }
   ],

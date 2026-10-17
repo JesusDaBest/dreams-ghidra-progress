@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 654,
+    "checked_and_applied_names": 655,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 654,
+    "verified_names": 655,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "601 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "602 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -12763,6 +12763,85 @@
       "141092e60": 1040
     },
     "new_name_credit": 0,
-    "project_modified": false
+    "project_modified": false,
+    "subsequent_scalar_review": {
+      "address": "14108f690",
+      "name": "MergeScalarAnimationRecordIntervalAsExtended",
+      "status": "reviewed_and_named",
+      "remaining_unreviewed": [
+        "1410908d0",
+        "141091b50",
+        "141092e60"
+      ]
+    }
+  },
+  "animation_scalar_transition_checkpoint": {
+    "address": "14108f690",
+    "name": "MergeScalarAnimationRecordIntervalAsExtended",
+    "connected_native_cases": 9600,
+    "profiles": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        255,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        255,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        1
+      ],
+      [
+        5,
+        1,
+        1,
+        1
+      ]
+    ],
+    "findings": [
+      "Originalconverter/dispatcher/transitionhandler executeactualscalarhelper acrosscodes2/5/24/25 andmodes0/AutoKeyframe5.",
+      "Lastretainedprefix metadata becomes0x709 whenauxflags nonzero andboth controlflags clear;eithercontrolflag suppresseschange.",
+      "Firstincomingmetadata low16 becomes0x700|(incoming&0x3f) whennextoldrawtime iswithin originaltolerance ofincomingrebasedtime.",
+      "Old8-byte records become12-byte records; completeheaders/data includingvalues/metadata/time matchindependentmodel.",
+      "Originalworld/source/nodes/input/context/auximmutability andguards checked; originalresourcegrowth/hash/finalization execute."
+    ],
+    "limits": [
+      "Analyst descriptive role andworkingrecord/prefix ABI,not recoveredsource declarations.",
+      "One-leaforiginalsource,finiteorderedtimes/values,validbuffers;onefloatpropertyroute sampled fortype2.",
+      "Otherproperties/modes,allboundaryrounding,deeperlevels,invalidinputs,races,fullproducer/playback unresolved.",
+      "Memoryimports adapted;mutex/threadcallbacks controlled."
+    ],
+    "new_name_credit": 1
   }
 }
