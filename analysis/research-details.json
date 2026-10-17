@@ -15147,5 +15147,25 @@
       "Valid nonnegative ordinals; replacement pointer opaque.",
       "No disk persistence, concurrency, maximum-depth, exhaustion or category1 summary validation."
     ]
+  },
+  "animation_resource_property_commit_checkpoint": {
+    "property_id": 766,
+    "field": "HeaderAndDataPages",
+    "offset": "0x110",
+    "kind": 9,
+    "evidence": [
+      "Original initializer writes0x110 at reflected kind9/property766 slot; original field registration literal names HeaderAndDataPages.",
+      "172 original fingerprint-pair conversion cases, including collision wraparound and missing fingerprints.",
+      "196 connected original property-branch cases cover present and absent property-list entries, exact roots, buffer guards,stream cursor and dirty bits."
+    ],
+    "findings": [
+      "Existing property-list entry gets resolved roots; reflected roots follow only if still equal to previous entry value.",
+      "Absent property-list entry writes resolved roots directly to reflected field."
+    ],
+    "limits": [
+      "Isolated native branch, mode0 and non-null Animation objects; runtime metadata slot populated from original initializer evidence.",
+      "Synchronization controlled; full event dispatcher, other modes, null objects, disk persistence and gameplay unverified."
+    ],
+    "new_name_credit": 0
   }
 }

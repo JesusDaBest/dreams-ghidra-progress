@@ -5424,3 +5424,12 @@ Saved `ReplaceResourceTreeRecord72ByOrdinal` after reviewing all 97 original ins
 These are in-memory resource checks. Mutex/thread boundaries are controlled, host memory-copy adapters and a synthetic stack cookie are explicit. Disk persistence, gameplay, concurrency, maximum-depth failures, allocation exhaustion and category-1 summary updates remain unverified. No new completion credit is assigned to the already named comparison accessor or the unnamed tree writer.
 
 Totals: 668 checked names, 2,080 mapped functions and 7,523 unmapped functions among 9,603 discovered. Counts describe identified code, not total game completion.
+
+
+### Animation resource event reaches the registered field
+
+Original metadata initialization confirms Animation property 766 is `HeaderAndDataPages` at object offset `0x110`. The event uses two resource fingerprints rather than assuming local node indices are portable. The original resolver converts incoming fingerprints into local roots and marks found resources dirty; 172 native cases cover both conversion directions, missing/zero fingerprints and collision chains wrapping around the hash table.
+
+196 connected native branch cases cover the property-list and missing-property paths. With a property-list entry, the branch replaces its roots and updates the reflected field only when it still equals the entry's previous roots. A different reflected value remains unchanged. Without a property-list entry, the branch resolves directly into the reflected field. Exact object/property buffers, input stream, 16-byte cursor advance and dirty bitmap match the model.
+
+The fixture metadata slot is populated from the verified original initializer instruction. These checks use original branch, lookup and resolver code, with controlled synchronization and explicit private-clone continuations. They do not execute the entire event dispatcher or establish other modes, null-object handling, disk persistence or gameplay behavior. No additional checked-name credit is claimed; totals remain 668 checked names and 2,080 mapped functions.
