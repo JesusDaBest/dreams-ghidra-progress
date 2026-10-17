@@ -5302,3 +5302,16 @@ A 72-case connected suite enables the first history stream, second stream or bot
 The final suite byte-verifies all eight captured native bodies (producer, router, packet writer, context lookup, revision synchronization, transform writer, range reader and wrapper), plus the unchanged 267,374-byte dispatcher. Earlier suites overlap this final suite and are not additive semantic-coverage counts.
 
 Prepared history contexts, stream buffers, Machine key and globals remain fixtures. Optional endpoint and parent cleanup are disabled; allocation/free/thread-local access are controlled during replay. Initial harness gaps in pool-global and destination-ID table setup were corrected before the passing suite. Capacity exhaustion, malformed references, concurrency, gameplay and the complete user-facing undo/redo lifecycle remain unverified. No function-completion or checked-name credit was added. [Sanitized receipts](analysis/wire-replay-dispatcher-checks.json).
+
+
+### Context-filtered wire connection counting named
+
+Saved `CountFilteredWireConnectionsForReference` after reading and byte-verifying its complete 146-instruction body. It compares full 32-bit packed endpoint references and counts each matching wire once, including self-connections. A generation-bit mismatch does not match merely because the underlying object index is the same.
+
+Bit-0-clear wires count when either endpoint matches. With no valid selected Machine, bit-0-set matches are excluded. With a valid Machine, its byte at offset `bbd` suppresses flagged matches. Otherwise they count if an endpoint state byte at offset `22` is nonzero, or if the source matches the Machine reference at offset `b8` and a type-6 record resolves. Both direct mapping and fallback linear record lookup were checked. The meanings of those state bytes and record type remain unresolved.
+
+1,584 native cases compare an independent predicate and verify complete world/object preservation. Coverage includes missing/non-type-6 records, Machine validity and suppression, endpoint states, high flags, packed generation bits, empty lists and source/destination/self/sentinel cases within the stated valid-pointer boundaries. Removal callers compare the count with 1 before optional endpoint cleanup; the function itself changes no world/object data. Independent reopening confirms the descriptive name and working `uint` return with world pointer and 32-bit reference inputs. Other names/signatures and original bytes are unchanged.
+
+Malformed/null active-Machine object paths, record-table corruption, overflow and gameplay remain unverified. No visibility or keyframe-source meaning is assumed.
+
+Totals: 686 checked names, 2,098 mapped functions and 7,505 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

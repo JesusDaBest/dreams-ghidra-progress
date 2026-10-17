@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2097,
-  "unmapped_total": 7506,
+  "mapped_total": 2098,
+  "unmapped_total": 7505,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52710,6 +52710,33 @@
             "131072 native cases exhaust every16-bit input with two upper-half patterns; applying mapping twice restores every value.",
             "Seven inverse event pairs exchange; all other values unchanged. Sole captured caller uses result for inverse history notification after application.",
             "Independent saved-project reopening confirms descriptive name and ushort SysV input/return; all other9602 names/signatures and original bytes unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140906770": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared wire-connection counting used by endpoint cleanup and an editor caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Counts exact packed-reference endpoint matches under current Machine and endpoint/record filters.",
+      "code_sha256": "79ca76ac96d43887665b8a046e825bf589b64ecc27696e4121d8bf9124edb227",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CountFilteredWireConnectionsForReference",
+          "support": [
+            "Complete146-instruction original body and pseudocode reviewed and matched against executable bytes.",
+            "1584 original native cases verify an independent connection-count predicate, full world/object preservation, direct/fallback type6 record resolution, missing/non6 records and selected Machine filters.",
+            "Includes empty and1/3/17-wire lists, source/destination/self matches, generation-bit mismatch and sentinel inputs in the no-selected-Machine branch. Self-connections count once per wire.",
+            "Removal producer callers compare count1 before optional endpoint cleanup. Exact endpoint-state and type6-record meanings remain unresolved.",
+            "Independent saved-project reopening confirms name and uint SysV(world pointer,32-bit reference) signature, with all other9602 names/signatures and native bytes unchanged."
           ]
         }
       ],

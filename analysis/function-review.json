@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "632 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "633 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8763,
-    "other_names": 840,
-    "verification": "complete_inventory_matches_baseline_plus_632_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8762,
+    "other_names": 841,
+    "verification": "complete_inventory_matches_baseline_plus_633_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15812,6 +15812,29 @@
       "caveats": [
         "Analyst descriptive name and working16-bit types, not original source declarations.",
         "Mapping proves code exchange only, not complete event semantics or user undo/redo correctness."
+      ]
+    },
+    {
+      "address": "140906770",
+      "original_name": "FUN_140906770",
+      "applied_name": "CountFilteredWireConnectionsForReference",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV CountFilteredWireConnectionsForReference(void * world, uint objectReference)",
+      "evidence": [
+        "Complete146-instruction original body and pseudocode reviewed and matched against executable bytes.",
+        "1584 original native cases verify an independent connection-count predicate, full world/object preservation, direct/fallback type6 record resolution, missing/non6 records and selected Machine filters.",
+        "Includes empty and1/3/17-wire lists, source/destination/self matches, generation-bit mismatch and sentinel inputs in the no-selected-Machine branch. Self-connections count once per wire.",
+        "Removal producer callers compare count1 before optional endpoint cleanup. Exact endpoint-state and type6-record meanings remain unresolved.",
+        "Independent saved-project reopening confirms name and uint SysV(world pointer,32-bit reference) signature, with all other9602 names/signatures and native bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working types, not recovered original C++ declarations.",
+        "Valid object pointers and finite record tables in active-Machine tests; malformed/null object paths, capacity overflow and gameplay untested.",
+        "No assertion that filtering means visibility or that type6 is a keyframe source; these meanings need separate evidence."
       ]
     }
   ],

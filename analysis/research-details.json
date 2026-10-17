@@ -16181,5 +16181,44 @@
       "Mapping proves code exchange only, not complete event semantics or user undo/redo correctness."
     ],
     "new_name_credit": 1
+  },
+  "filtered_wire_connection_count_checkpoint": {
+    "address": "140906770",
+    "name": "CountFilteredWireConnectionsForReference",
+    "signature": "uint PS4_SYSV CountFilteredWireConnectionsForReference(void * world, uint objectReference)",
+    "native_instructions": 146,
+    "native_check": {
+      "native_cases": 1584,
+      "native_instructions_verified": 146,
+      "counts": {
+        "2": 920,
+        "0": 652,
+        "1": 4,
+        "3": 4,
+        "17": 4
+      },
+      "edge_cases": 48,
+      "edge_scope": "Empty and1/3/17-wire lists; source-only,destination-only,self-connection,generation-mismatch,nonmatch andsentinel references with invalid selected Machine. Self-connection counts once per wire.",
+      "finding": "Pure connection count compares full packed endpoint references. Flags bit0 clear always counts a match. With no valid selected Machine, bit0-set matches are excluded. With valid Machine, bit0-set matches are excluded by Machine byte+bbd; otherwise counted when either endpoint byte+22 is nonzero or source equals Machine+b8 and a type6 record resolves. Direct mapping and fallback linear record lookup checked; nonmatching wires excluded.",
+      "limits": [
+        "Valid object indices and finite record tables; malformed/null object dereferences, cycles, capacity overflow and gameplay untested.",
+        "Type6 record semantic class and state byte meanings remain unresolved; no visibility or keyframe-source claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete146-instruction original body and pseudocode reviewed and matched against executable bytes.",
+      "1584 original native cases verify an independent connection-count predicate, full world/object preservation, direct/fallback type6 record resolution, missing/non6 records and selected Machine filters.",
+      "Includes empty and1/3/17-wire lists, source/destination/self matches, generation-bit mismatch and sentinel inputs in the no-selected-Machine branch. Self-connections count once per wire.",
+      "Removal producer callers compare count1 before optional endpoint cleanup. Exact endpoint-state and type6-record meanings remain unresolved.",
+      "Independent saved-project reopening confirms name and uint SysV(world pointer,32-bit reference) signature, with all other9602 names/signatures and native bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive role and working types, not recovered original C++ declarations.",
+      "Valid object pointers and finite record tables in active-Machine tests; malformed/null object paths, capacity overflow and gameplay untested.",
+      "No assertion that filtering means visibility or that type6 is a keyframe source; these meanings need separate evidence."
+    ],
+    "new_name_credit": 1
   }
 }
