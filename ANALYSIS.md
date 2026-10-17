@@ -3943,3 +3943,13 @@ Saved ReleaseBuildMetadataEntryResources after reviewing and byte matching all 1
 Valid IDs and list links remain preconditions. Complete caller synchronization, lifetime constraints, malformed metadata and actual concurrent gameplay are unverified. This is descriptive semantic review, not proof of subsystem completion.
 
 Totals: 567 reviewed names; 1,990 mapped and 7,598 unmapped among 9,588 discovered functions.
+
+### Retirement of all aged pending cache entries
+
+Saved RetireAllAgedPendingCacheEntries after reading and byte matching all 151 original instructions. It traverses the pending list at sentinel capacity+1, selects records whose unsigned generation age is at least two, clears their state and appends them to the retired list at capacity+2. It continues past younger records and has no retirement budget or weight callback. Selected state-two records also lose their hash entry through collision backshifting and an optional deletion callback.
+
+88 isolated native cases cover 48 age/list cases and 40 hash/callback cases, including generation wrap, young entries preceding old entries, collision wraparound and missing hashes. Exact queue links, hash key/value slots, occupied counts and callback slot pointers matched the independent fixture model. Backed-up trial and independent trial/main reopening verified the saved working signature and unchanged original code and archives.
+
+Valid lists and hash invariants remain preconditions. Full caller synchronization, malformed state and actual concurrent gameplay are unverified. Two metadata processing lists are now observed, but their higher-level phase names and transitions remain under investigation.
+
+Totals: 568 reviewed names; 1,991 mapped and 7,597 unmapped among 9,588 discovered functions.

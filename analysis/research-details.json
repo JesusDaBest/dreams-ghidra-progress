@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 567,
+    "checked_and_applied_names": 568,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 567,
+    "verified_names": 568,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "529 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "530 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9119,6 +9119,18 @@
     "native_cases": 32,
     "limits": [
       "Valid metadata IDs and list links assumed.",
+      "Full caller synchronization and actual concurrent execution unverified."
+    ],
+    "runtime_game_verified": false
+  },
+  "all_aged_resource_retirement_checkpoint": {
+    "saved_names": [
+      "RetireAllAgedPendingCacheEntries"
+    ],
+    "original_instructions": 151,
+    "native_cases": 88,
+    "limits": [
+      "Valid resource list and hash invariants assumed.",
       "Full caller synchronization and actual concurrent execution unverified."
     ],
     "runtime_game_verified": false

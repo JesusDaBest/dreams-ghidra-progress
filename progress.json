@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 527,
+    "done": 528,
     "todo": 1463,
-    "total": 1990,
-    "behavior_or_helpers_reviewed": 462,
+    "total": 1991,
+    "behavior_or_helpers_reviewed": 463,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -27102,12 +27102,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 188,
+        "done": 189,
         "todo": 106,
-        "total": 294,
-        "behavior_or_helpers_reviewed": 173,
+        "total": 295,
+        "behavior_or_helpers_reviewed": 174,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 208,
+        "runtime_functions_identified": 209,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27252,6 +27252,7 @@
           "BlendTypedSignalsByWeight",
           "CheckWirePropertyEligibility",
           "QueueAgedCacheEntriesForRelease",
+          "RetireAllAgedPendingCacheEntries",
           "ReadShaderFileToAllocatedBuffer",
           "ReadUnsignedVarint64OrZero",
           "FindRequestSlotByStreamId",
@@ -27550,6 +27551,7 @@
           "1411c1590",
           "14126d9f0",
           "14129c290",
+          "14129c500",
           "1413c3150",
           "1413f33c0",
           "1413f6970",
@@ -29996,6 +29998,443 @@
             ]
           },
           {
+            "name": "shared/support",
+            "label": "Engine support",
+            "done": 13,
+            "todo": 5,
+            "total": 18,
+            "behavior_or_helpers_reviewed": 13,
+            "properties_or_types_reviewed": 0,
+            "runtime_functions_identified": 18,
+            "property_type_functions_identified": 0,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "HashBytesMurmur3X64_128",
+              "AllocateAlignedBlockFromPool",
+              "DrainRetiredVolumeAndItemResources",
+              "ReclaimVolumeAndItemCapacity",
+              "ReleaseBuildMetadataEntryResources",
+              "GetOrRegisterBuildMetadataEntry",
+              "QueueUnselectedBuildMetadataForRelease",
+              "RefreshVolumeAndItemSummaryRecords",
+              "AdaptiveStableSortSummaryRecords",
+              "BufferedStableSortSummaryRecords",
+              "AdaptiveMergeSummaryRecordRuns",
+              "QueueAgedCacheEntriesForRelease",
+              "RetireAllAgedPendingCacheEntries"
+            ],
+            "todo_names": [
+              "0x140909150",
+              "0x140a69070",
+              "0x140e900e0",
+              "0x1410c9720",
+              "0x14124f9d0"
+            ],
+            "done_addresses": [
+              "14011a4e0",
+              "1401657d0",
+              "1407300b0",
+              "140736cf0",
+              "140739c00",
+              "14073a240",
+              "14073ada0",
+              "14073b870",
+              "14073bf10",
+              "14073c1a0",
+              "14073caf0",
+              "14129c290",
+              "14129c500"
+            ],
+            "todo_addresses": [
+              "140909150",
+              "140a69070",
+              "140e900e0",
+              "1410c9720",
+              "14124f9d0"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/support/cache-lists",
+                "label": "Cache lists",
+                "done": 11,
+                "todo": 0,
+                "total": 11,
+                "behavior_or_helpers_reviewed": 11,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 11,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "DrainRetiredVolumeAndItemResources",
+                  "ReclaimVolumeAndItemCapacity",
+                  "ReleaseBuildMetadataEntryResources",
+                  "GetOrRegisterBuildMetadataEntry",
+                  "QueueUnselectedBuildMetadataForRelease",
+                  "RefreshVolumeAndItemSummaryRecords",
+                  "AdaptiveStableSortSummaryRecords",
+                  "BufferedStableSortSummaryRecords",
+                  "AdaptiveMergeSummaryRecordRuns",
+                  "QueueAgedCacheEntriesForRelease",
+                  "RetireAllAgedPendingCacheEntries"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1407300b0",
+                  "140736cf0",
+                  "140739c00",
+                  "14073a240",
+                  "14073ada0",
+                  "14073b870",
+                  "14073bf10",
+                  "14073c1a0",
+                  "14073caf0",
+                  "14129c290",
+                  "14129c500"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/cache-lists/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 11,
+                    "todo": 0,
+                    "total": 11,
+                    "behavior_or_helpers_reviewed": 11,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 11,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "DrainRetiredVolumeAndItemResources",
+                      "ReclaimVolumeAndItemCapacity",
+                      "ReleaseBuildMetadataEntryResources",
+                      "GetOrRegisterBuildMetadataEntry",
+                      "QueueUnselectedBuildMetadataForRelease",
+                      "RefreshVolumeAndItemSummaryRecords",
+                      "AdaptiveStableSortSummaryRecords",
+                      "BufferedStableSortSummaryRecords",
+                      "AdaptiveMergeSummaryRecordRuns",
+                      "QueueAgedCacheEntriesForRelease",
+                      "RetireAllAgedPendingCacheEntries"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407300b0",
+                      "140736cf0",
+                      "140739c00",
+                      "14073a240",
+                      "14073ada0",
+                      "14073b870",
+                      "14073bf10",
+                      "14073c1a0",
+                      "14073caf0",
+                      "14129c290",
+                      "14129c500"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/common-routines",
+                "label": "Support implementation",
+                "done": 1,
+                "todo": 1,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "HashBytesMurmur3X64_128"
+                ],
+                "todo_names": [
+                  "0x140a69070"
+                ],
+                "done_addresses": [
+                  "14011a4e0"
+                ],
+                "todo_addresses": [
+                  "140a69070"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/common-routines/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "HashBytesMurmur3X64_128"
+                    ],
+                    "todo_names": [
+                      "0x140a69070"
+                    ],
+                    "done_addresses": [
+                      "14011a4e0"
+                    ],
+                    "todo_addresses": [
+                      "140a69070"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/game",
+                "label": "Game",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140909150"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140909150"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/game/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140909150"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140909150"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/memory-pools",
+                "label": "Memory pools",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AllocateAlignedBlockFromPool"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1401657d0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/memory-pools/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AllocateAlignedBlockFromPool"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1401657d0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/sillyrender",
+                "label": "Sillyrender",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140e900e0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140e900e0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/sillyrender/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140e900e0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140e900e0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/tweak",
+                "label": "Tweak",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x1410c9720"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "1410c9720"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/tweak/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x1410c9720"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "1410c9720"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/support/widgets",
+                "label": "Widgets",
+                "done": 0,
+                "todo": 1,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x14124f9d0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "14124f9d0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/widgets/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 0,
+                    "todo": 1,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x14124f9d0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "14124f9d0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/serialization",
             "label": "Serialization & upgrades",
             "done": 10,
@@ -30336,437 +30775,6 @@
                     "done_addresses": [],
                     "todo_addresses": [
                       "140da0600"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/support",
-            "label": "Engine support",
-            "done": 12,
-            "todo": 5,
-            "total": 17,
-            "behavior_or_helpers_reviewed": 12,
-            "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 17,
-            "property_type_functions_identified": 0,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "HashBytesMurmur3X64_128",
-              "AllocateAlignedBlockFromPool",
-              "DrainRetiredVolumeAndItemResources",
-              "ReclaimVolumeAndItemCapacity",
-              "ReleaseBuildMetadataEntryResources",
-              "GetOrRegisterBuildMetadataEntry",
-              "QueueUnselectedBuildMetadataForRelease",
-              "RefreshVolumeAndItemSummaryRecords",
-              "AdaptiveStableSortSummaryRecords",
-              "BufferedStableSortSummaryRecords",
-              "AdaptiveMergeSummaryRecordRuns",
-              "QueueAgedCacheEntriesForRelease"
-            ],
-            "todo_names": [
-              "0x140909150",
-              "0x140a69070",
-              "0x140e900e0",
-              "0x1410c9720",
-              "0x14124f9d0"
-            ],
-            "done_addresses": [
-              "14011a4e0",
-              "1401657d0",
-              "1407300b0",
-              "140736cf0",
-              "140739c00",
-              "14073a240",
-              "14073ada0",
-              "14073b870",
-              "14073bf10",
-              "14073c1a0",
-              "14073caf0",
-              "14129c290"
-            ],
-            "todo_addresses": [
-              "140909150",
-              "140a69070",
-              "140e900e0",
-              "1410c9720",
-              "14124f9d0"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/support/cache-lists",
-                "label": "Cache lists",
-                "done": 10,
-                "todo": 0,
-                "total": 10,
-                "behavior_or_helpers_reviewed": 10,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 10,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "DrainRetiredVolumeAndItemResources",
-                  "ReclaimVolumeAndItemCapacity",
-                  "ReleaseBuildMetadataEntryResources",
-                  "GetOrRegisterBuildMetadataEntry",
-                  "QueueUnselectedBuildMetadataForRelease",
-                  "RefreshVolumeAndItemSummaryRecords",
-                  "AdaptiveStableSortSummaryRecords",
-                  "BufferedStableSortSummaryRecords",
-                  "AdaptiveMergeSummaryRecordRuns",
-                  "QueueAgedCacheEntriesForRelease"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1407300b0",
-                  "140736cf0",
-                  "140739c00",
-                  "14073a240",
-                  "14073ada0",
-                  "14073b870",
-                  "14073bf10",
-                  "14073c1a0",
-                  "14073caf0",
-                  "14129c290"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/cache-lists/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 10,
-                    "todo": 0,
-                    "total": 10,
-                    "behavior_or_helpers_reviewed": 10,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 10,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "DrainRetiredVolumeAndItemResources",
-                      "ReclaimVolumeAndItemCapacity",
-                      "ReleaseBuildMetadataEntryResources",
-                      "GetOrRegisterBuildMetadataEntry",
-                      "QueueUnselectedBuildMetadataForRelease",
-                      "RefreshVolumeAndItemSummaryRecords",
-                      "AdaptiveStableSortSummaryRecords",
-                      "BufferedStableSortSummaryRecords",
-                      "AdaptiveMergeSummaryRecordRuns",
-                      "QueueAgedCacheEntriesForRelease"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1407300b0",
-                      "140736cf0",
-                      "140739c00",
-                      "14073a240",
-                      "14073ada0",
-                      "14073b870",
-                      "14073bf10",
-                      "14073c1a0",
-                      "14073caf0",
-                      "14129c290"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/common-routines",
-                "label": "Support implementation",
-                "done": 1,
-                "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "HashBytesMurmur3X64_128"
-                ],
-                "todo_names": [
-                  "0x140a69070"
-                ],
-                "done_addresses": [
-                  "14011a4e0"
-                ],
-                "todo_addresses": [
-                  "140a69070"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/common-routines/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "HashBytesMurmur3X64_128"
-                    ],
-                    "todo_names": [
-                      "0x140a69070"
-                    ],
-                    "done_addresses": [
-                      "14011a4e0"
-                    ],
-                    "todo_addresses": [
-                      "140a69070"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/game",
-                "label": "Game",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140909150"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140909150"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/game/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140909150"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140909150"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/memory-pools",
-                "label": "Memory pools",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AllocateAlignedBlockFromPool"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1401657d0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/memory-pools/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AllocateAlignedBlockFromPool"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1401657d0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/sillyrender",
-                "label": "Sillyrender",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140e900e0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140e900e0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/sillyrender/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140e900e0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140e900e0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/tweak",
-                "label": "Tweak",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x1410c9720"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "1410c9720"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/tweak/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x1410c9720"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "1410c9720"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/widgets",
-                "label": "Widgets",
-                "done": 0,
-                "todo": 1,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x14124f9d0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "14124f9d0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/widgets/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 0,
-                    "todo": 1,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x14124f9d0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "14124f9d0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -44018,5 +44026,5 @@
       }
     ]
   },
-  "unmapped": 7598
+  "unmapped": 7597
 }
