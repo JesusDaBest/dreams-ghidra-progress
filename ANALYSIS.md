@@ -3973,3 +3973,13 @@ Saved FindOlderBuildMetadataByDescendingDiscriminator after reading and byte mat
 The discriminator remains a descriptive field name; its higher-level Dreams meaning is not established. Tests use four discriminator values, four pointers and controlled synchronization. Malformed state, complete caller constraints and actual concurrent gameplay remain unverified.
 
 Totals: 570 reviewed names; 1,993 mapped and 7,595 unmapped among 9,588 discovered functions.
+
+### Object replacement notification for metadata refresh
+
+Saved QueueObjectReplacementForMetadataRefresh after reading and byte matching all 94 original instructions. Under the shared mutex it processes old then new object IDs, skipping FFFFFFFF and duplicates. The 16-entry deferred-request list evicts its oldest entry before appending when full. If the current-object ID equals the old ID, it changes to the new ID. This connects object replacement to deferred filtering already observed in registration and scheduling.
+
+784 isolated native cases matched an independent bounded-list model for counts zero, one, fifteen and sixteen; sentinel IDs, duplicate ordering, eviction and current-object equality were checked against exact full list storage. Backed-up trial and independent trial/main reopening verified the name, signature and unchanged original code and archives. Host memmove was adapted to the original calling convention; synchronization was controlled. Valid list counts and object lifetimes remain preconditions, and actual concurrent mutation is unverified.
+
+Related local followups also tested original registration followed by query in 48 registration scenarios and 432 queries, and metadata handle promotion in 101 base cases plus 72 dirty-bit/auxiliary cases. Later object replacement and re-registration branches remain under investigation; no additional name credit is assigned for these followups.
+
+Totals: 571 reviewed names; 1,994 mapped and 7,594 unmapped among 9,588 discovered functions.

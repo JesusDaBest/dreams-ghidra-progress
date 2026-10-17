@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 1993,
-  "unmapped_total": 7595,
+  "mapped_total": 1994,
+  "unmapped_total": 7594,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -49948,6 +49948,27 @@
         {
           "kind": "verified_semantic_review",
           "name": "FindOlderBuildMetadataByDescendingDiscriminator",
+          "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
+        }
+      ]
+    },
+    "14073aac0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "cache-lists",
+        "runtime-implementation"
+      ],
+      "component_basis": "Object replacement notification traced through deferred-request list and current-object state.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Queues old and new object IDs uniquely with bounded eviction and updates matching current-object ID.",
+      "code_sha256": "af85d5a2d2af5fc84f01eb8505f1cfc6cb82ad7d1b21f520ad4e7e8f0f189cc2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueueObjectReplacementForMetadataRefresh",
           "support": "Complete original function reviewed; relevant isolated native fixtures and independent signature reopening."
         }
       ]
