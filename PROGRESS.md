@@ -4316,3 +4316,14 @@ Tests cover counts 0/1/2/3/7/17, source strides 8/16, constant/alternating/run/l
 The empty type-1 path appends nothing and zeros both supplied time outputs. Basic records accumulate minimum/maximum emitted times. The tested extended path uses maximum for both outputs: 400 cases distinguish its first output from the minimum emitted time, matching the original VMAXSS instructions. This is recorded as observed behavior, without assuming either an intended minimum-bound contract or a game bug. Single-record extended metadata includes the mode-5 bit; the tested multi-record path omits it.
 
 The converter's other branches/callees, producer routing, mixed-format update eligibility and live editing remain unresolved. No whole-function name or completion credit is added. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
+
+
+### Producer routing separates mixed-format conversion from base updates
+
+A scoped static assembly trace now follows the producer's final override argument through insertion into the Animation dispatcher. When the producer finds an existing basic header, mode 5 or its initial extended-input condition sets both the extended indicator and override low byte. An existing extended header takes extended=1 and override=0 in that selection block.
+
+The override is saved in the producer's stack frame, loaded after allocating the outgoing argument area, and passed as the final insertion stack argument. Insertion forwards that argument to the dispatcher. The already reviewed dispatcher selects handler `1410705f0` for a nonzero override, ahead of its ordinary old-header flag selection.
+
+This constrains the earlier experiments: forced flag-4/base-handler cases verify synthetic branch behavior, but do not establish this producer's real mixed-format update path. The converter's actual 12-byte extended output therefore needs to be traced through the override handler, rather than interpreted using only the base handler's 8-byte reads. The earlier representation gap is narrowed to that transition path; it is not evidence that the game stores malformed records.
+
+Original bytes for the producer and insertion captures were rechecked while saving the scoped annotations. This is static data-flow evidence, not full producer execution. Repeated endpoint/property groups, missing records, alternate producer branches and override-handler mutation algorithms remain unresolved. No whole-function name or completion credit is added; totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
