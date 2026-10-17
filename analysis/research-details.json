@@ -11514,5 +11514,78 @@
       "Memory imports adapted; mutex/thread callbacks controlled."
     ],
     "new_name_credit": 0
+  },
+  "animation_type1_mode5_transition_checkpoint": {
+    "entry": "141070310",
+    "real_handler": "1410705f0",
+    "profiles": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        255,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        255,
+        0,
+        0
+      ],
+      [
+        5,
+        1,
+        1,
+        0
+      ],
+      [
+        5,
+        1,
+        0,
+        1
+      ],
+      [
+        5,
+        1,
+        1,
+        1
+      ]
+    ],
+    "native_cases": 2400,
+    "converter_calls": 2400,
+    "dispatch_calls": 2400,
+    "scope": "Original type1 converter with actual byte writers generates extended input; original dispatcher/lookup route override1 into original override type1 branch. Existing8-byte basic pairs, incoming12-byte extended records, auxiliary modes0/5 and8 specified auxiliary/dispatcher flag profiles. Oldcounts0/1/3/5/63, sixorigincombinations, tenfiniteincomingpatterns.",
+    "findings": [
+      "Mode5 changes last retained prefix metadata to0709 if auxiliary flags nonzero and both dispatcher flags clear; either dispatcher flag suppresses that change. First incoming metadata is masked to0700 OR(oldmetadata AND003f) when next old raw time lies within original tolerance of incoming rebased time.",
+      "Retained old8-byte pairs convert to12-byte records: low value bit and modelled metadata0700/0709 checked; three intermediate bytes unasserted. Incoming full12-byte fields preserved except rebased time and the explicitly modelled first-record metadata mask.",
+      "Merged records append after immutable original payload; new72-byte header records12-byte output length and prior data extent. Exact complete stored headers verified.",
+      "Window retention matches original float32 +/-1/60 tolerance model; origins rebased to minimum.",
+      "Original dispatcher returns newrecordindex1 andexistingwireindex0, output transform copied; original world/sourceobject, inputs, resource source nodes, auxiliary and guards unchanged.",
+      "Actual original allocation/growth/finalization/intern/release/hash executes; no record handler probe."
+    ],
+    "limits": [
+      "Only type1, one-leaf original sources; exhaustive mode5 boundary rounding, otherformats/flags, multilevel source reads, fullproducer/insertion, invalidinput/concurrency/playback unresolved.",
+      "Three bytes in converted old records remain unasserted; this is scoped field validation, not exact whole-payload equality.",
+      "Memory imports adapted; mutex/thread callbacks controlled."
+    ],
+    "new_name_credit": 0,
+    "project_modified": false
   }
 }

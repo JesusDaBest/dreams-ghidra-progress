@@ -4818,3 +4818,14 @@ Retained old 8-byte pairs become 12-byte records with rebased time, the low valu
 Fixtures cover 0/1/3/5/63 old records in one source leaf, six origin combinations and ten finite incoming patterns with auxiliary mode 0 and zero auxiliary flags. Tests check original source-node/input immutability, output growth, existing-wire and new-record indices, output transform, unchanged world/source object and guards. Original allocation, growth, finalization, interning, release and hashing execute; memory imports use ABI adapters and mutex/thread callbacks remain controlled.
 
 This resolves the 8-byte-versus-12-byte representation question for this bounded transition: the producer's override path converts retained basic records and consumes extended incoming records. Full producer/insertion execution, mode 5, other formats/flags, deeper source trees, malformed state, concurrency and playback remain unresolved. The 6,254-instruction override handler remains partially reviewed and unnamed. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
+
+
+### Connected mode-5 transition metadata
+
+2,400 additional cases execute the original type-1 converter, original byte writers, original wire dispatcher/lookup and actual override handler with eight specified auxiliary/dispatcher flag profiles. The tests vary modes 0/5, auxiliary flag values 0/1/255 and both dispatcher flags, alongside the prior five old-record counts, six origin combinations and ten finite incoming patterns.
+
+In the tested mode-5 branch, the last retained prefix key receives metadata 0x709 when auxiliary flags are nonzero and both dispatcher flags are clear. Either dispatcher flag suppresses that change, leaving the ordinary 0x700 metadata in these fixtures. The first incoming key has a separate rule: when the next old stored time is within the original float32 tolerance of its rebased time, its metadata becomes 0x700 OR (metadata AND 0x3f). Original assembly and the independent field model agree. No user-facing flag names are inferred.
+
+Checks cover exact complete headers, expected output length, rebased times, defined old-record fields and all incoming fields including the conditional metadata mask, original input/source-node/world immutability, guards, returned indices and output transform. Three padding bytes in converted old records remain unasserted. Real resource growth/finalization/interning/release/hash executes with controlled mutex/thread callbacks and host memory-import adapters.
+
+This extends the connected transition to selected mode-5 flag combinations. Exhaustive rounding, other record formats/flags, deeper original source trees, full producer/insertion scheduling, malformed state, concurrency and playback remain unresolved. The handler remains unnamed and partially reviewed. Totals remain 636 checked names and 2,048 mapped functions among 9,591 discovered functions.
