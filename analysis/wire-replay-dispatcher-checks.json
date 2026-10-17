@@ -1,0 +1,24 @@
+{
+  "creation": {
+    "native_cases": 60,
+    "original_dispatcher_bytes_verified": 267374,
+    "finding": "Original full dispatcher replay mode0 appends fdf3 wire below16383 entries, resolves source/destination persistent IDs to indices2/1, copies property/ordinal/flags and raw32-byte transform, increments count and marks dirty. At capacity it skips creation but still consumes32 tail bytes. Scaled quaternion remains scaled during replay.",
+    "limits": [
+      "Host prepares decoded22-byte header and cursor/descriptor; upstream packet parser and undo/redo lifecycle remain unverified.",
+      "Valid acyclic resolver fixtures; no concurrency or gameplay."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "removal": {
+    "native_cases": 24,
+    "original_dispatcher_bytes_verified": 267374,
+    "finding": "Full original dispatcher entry in replay mode0 tombstones exactly the selected wire endpoint pair, sets world dirty flags1/0/1 and optional owner dirty flag. Count, payload, other world/owner bytes and cursor remain unchanged.",
+    "limits": [
+      "Host supplies decoded event identifier and selected wire pointer; upstream packet decoding and wire selection are not tested.",
+      "Only fdf5 mode0 branch; creation, full undo/redo, gameplay and concurrency remain unverified."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
+  }
+}
