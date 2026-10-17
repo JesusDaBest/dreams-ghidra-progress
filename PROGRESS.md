@@ -5025,3 +5025,16 @@ Totals: 673 checked names, 2,085 mapped functions and 7,518 unmapped functions a
 The connected results confirm the added second flag byte, its preservation from existing/default storage when absent, and the pre-`0x44a` load-time clearing of flag bit 1. Endpoint conversion and all defined fields match the independent model. Below `0x438`, two obsolete bytes before the transform are consumed; their meaning remains unknown and their write values are excluded from byte-content assertions. Exact stream length/cursor, full vector/serializer buffers and guards remain checked.
 
 Scope is counts 0/1/3, unit quaternions and fast buffers. Pre-`0x10d` records, the special `0x1c7`–`0x1cf` branches, slow/error/marker paths and complete historical save compatibility remain unresolved. Source logging is controlled and the verified local-libc classifier is supplied at its import boundary. These checks do not establish full-world disk persistence or gameplay. No additional checked-name credit is added.
+
+
+### Retired Animation headers excluded from duplicate matching
+
+Saved `FindActiveOrAppendAnimationHeaderRecord72` after complete review of 319 original instructions and pseudocode. Independent reopening and fresh decompilation confirm its working header-pointer/root-pointer/control arguments and signed ordinal return. Original bytes and all other names/signatures remain unchanged.
+
+64 full-entry connected native cases establish a concrete consumer of the retirement marker: with duplicate matching enabled, the helper reuses the first byte-identical header whose first word has bit 31 clear. A bit-31-marked header is skipped even when byte-identical to the incoming record. Otherwise it appends the full 72-byte header and returns its new ordinal. Existing source nodes and caller input remain unchanged. Original iterator, copy-on-write allocator/growth/finalization, interning/hash and independently bound local-libc byte comparison execute together.
+
+Fixtures cover empty and 1/7/9-header trees, first/last/no duplicate matches, retired duplicates, active/retired input and controls 0/1. Synchronization is controlled and memory-copy adapters are explicit. Exhaustion, maximum depth, concurrency, disk persistence and gameplay are unverified. This establishes exclusion from duplicate reuse, not sampler skipping, physical record deletion or wire compaction.
+
+Separate 31,248 original count-fragment cases show that nine sampler count calculations exclude the high four header bits; they do not execute full sampling and receive no new-name credit. The larger basic/extended samplers remain only partially reviewed.
+
+Totals: 674 checked names, 2,086 mapped functions and 7,517 unmapped functions among 9,603 discovered. Counts describe identified code, not whole-game completion.

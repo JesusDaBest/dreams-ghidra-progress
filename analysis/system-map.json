@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2085,
-  "unmapped_total": 7518,
+  "mapped_total": 2086,
+  "unmapped_total": 7517,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52381,6 +52381,32 @@
             "Complete171-instruction original body and pseudocode reviewed and byte-verified.",
             "256 native cases across eight version boundaries validate packed/full-width property/index,flagbyte migration,exact buffers andcursor.",
             "Independent reopening and fresh decompilation confirm name and working two-pointer ABI; all other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "14106f740": {
+      "system": "animation",
+      "component_path": [
+        "animation",
+        "keyframes",
+        "animation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Category3 72-byte Animation header insertion; Animation editor callers pass source HeaderAndDataPages root and copied record.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Reuses an active byte-identical Animation header when enabled,or appends header andreturnsordinal.",
+      "code_sha256": "b52f26e8ec5e59d6c0c990bcae991d431ed387fcf47ae7bddb67b0b9e1fd0424",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindActiveOrAppendAnimationHeaderRecord72",
+          "support": [
+            "Complete319 original instructions and pseudocode reviewed and byte-verified.",
+            "64 connected native cases establish byte-identical active-header reuse when enabled andappend otherwise;bit31-marked headers excluded fromduplicate search.",
+            "Original resource iterator,allocator/growth/finalization,interning/hash andboundlocal-libcbcmp execute;oldtree,input andguards unchanged.",
+            "Independent reopening and fresh decompilation confirm name andworking three-argument signedordinal ABI;othernames/signatures unchanged."
           ]
         }
       ]

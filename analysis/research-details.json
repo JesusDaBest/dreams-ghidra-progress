@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 673,
+    "checked_and_applied_names": 674,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 673,
+    "verified_names": 674,
     "function_count": 9603,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "620 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "621 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -15375,5 +15375,47 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "animation_header_active_or_append_checkpoint": {
+    "address": "14106f740",
+    "name": "FindActiveOrAppendAnimationHeaderRecord72",
+    "signature": "int PS4_SYSV FindActiveOrAppendAnimationHeaderRecord72(void * header_record, uint * root_index, int allow_existing)",
+    "native_instructions": 319,
+    "native_check": {
+      "entry": "14106f740",
+      "native_instructions": 319,
+      "native_cases": 64,
+      "profiles": {
+        "none": 16,
+        "first": 16,
+        "last": 16,
+        "retired_duplicates": 16
+      },
+      "findings": [
+        "Full original helper reuses first byte-identical nonnegative-header record onlywhen dedup control enabled; returns existing ordinal and keeps root.",
+        "Negativefirstword(bit31set) records excluded fromduplicate matching evenwhen byte-identical to incoming retired record.",
+        "Otherwise appends all72inputbytes andreturnsnewordinal;original source tree andinput immutable.",
+        "Original iterator,copy-on-write allocator/growth/finalization/interning/hash and bound original libc bcmp execute together."
+      ],
+      "limits": [
+        "Category3 roots,0/1/7/9headers,finitevalidtrees andamplecapacity; noexhaustion/depth-limit/concurrency.",
+        "Mutex/thread controlled,hostmemorycopy adapters; bcmp originalposition-independent34bytes suppliedatthunk.",
+        "Does notprove sampler skipsretiredrecords,physicaldeletion,wirecompaction orpersistence."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 1,
+    "evidence": [
+      "Complete319 original instructions and pseudocode reviewed and byte-verified.",
+      "64 connected native cases establish byte-identical active-header reuse when enabled andappend otherwise;bit31-marked headers excluded fromduplicate search.",
+      "Original resource iterator,allocator/growth/finalization,interning/hash andboundlocal-libcbcmp execute;oldtree,input andguards unchanged.",
+      "Independent reopening and fresh decompilation confirm name andworking three-argument signedordinal ABI;othernames/signatures unchanged."
+    ],
+    "limits": [
+      "Valid category3 trees,0/1/7/9headers,amplecapacity; noexhaustion,maximumdepth orconcurrency.",
+      "Mutex/thread controlled andhostmemorycopy adapters explicit.",
+      "No proof ofsampler skip,physicalheaderdeletion,wirecompaction,persistence orgameplay."
+    ]
   }
 }
