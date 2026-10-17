@@ -10616,5 +10616,36 @@
       "Analyst descriptive name and working ABI, not original symbol/declaration.",
       "Nonunit/zero/nonfinite quaternions, aliasing, extreme scales and complete caller lifecycles remain unresolved."
     ]
+  },
+  "triggerzone_camera_checkpoint": {
+    "native_checks": {
+      "triggerzone-camera-connected": {
+        "cases": 198,
+        "scope": "Full-entry Camera detection; valid camera index0, sphere inner2/outer4, three centres, eleven signed distances, three small finite Euler rotations, thresholds1/2. Camera scale1 and depth-offset field0; player consideration and scope off. Original composition, region helpers, isinff and local libc sincosf execute. Allocation/free and platform stack-canary pointer modeled.",
+        "maximum_output_error": 0.0
+      },
+      "triggerzone-camera-offset-connected": {
+        "cases": 288,
+        "scope": "Original full Camera entry with nonzero depth field, finite small Euler rotations and camera scale. Four off-axis positions, three rotations, three positive scales, four signed depths and two thresholds. Independent Y*X*Z quaternion reference and rotated Z offset; unit spherical region inner2/outer4.",
+        "maximum_output_error": 1.7262253937389005e-07
+      },
+      "triggerzone-camera-players-connected": {
+        "cases": 288,
+        "scope": "Original full Camera entry with nonzero depth field, finite small Euler rotations and camera scale. Four off-axis positions, three rotations, three positive scales, four signed depths and two thresholds. Independent Y*X*Z quaternion reference and rotated Z offset; unit spherical region inner2/outer4.",
+        "maximum_output_error": 1.7262253937389005e-07
+      }
+    },
+    "findings": [
+      "Camera position plus a rotated forward offset feeds the shared region evaluator. Small finite Euler angles compose in observed Y*X*Z order.",
+      "Successful spherical detection writes the same weight to all five output components in tested ConsiderPlayers disabled/enabled fixtures; failing threshold clears outputs while accepted count remains.",
+      "Ghidra annotations saved and independently reopened; complete processor remains partially reviewed and unnamed."
+    ],
+    "boundaries": "Original processor, transform/region helpers and local libc sincosf/isinff execute. Handle lookup, allocation/free and platform stack-canary pointer modeled. Whole fixture buffers and cleanup checked.",
+    "limits": [
+      "Camera offset field semantic names remain unconfirmed.",
+      "Scope filters, invalid/group indices, other shapes, large/nonfinite angles and complete caller lifecycles unresolved.",
+      "No running-game or whole-system completion claimed."
+    ],
+    "checked_name_total_unchanged": 620
   }
 }

@@ -4483,3 +4483,12 @@ Saved and independently reopened `ComposeSixTransforms`, a complete 464-instruct
 Two hundred fifty-six complete original helper executions, using original local `isinff`, match an independent ordered transform reference with finite unit quaternions, translations and signed scales. Maximum absolute error was below 0.000025; input buffers and output guards were preserved. Five normalization stages were reviewed in the original body. Nonunit, zero and nonfinite quaternion behavior, aliasing, extreme scales and complete caller lifecycles remain unresolved. Camera detection itself is still under review.
 
 Totals: 620 checked names; 2,036 mapped and 7,555 unmapped among 9,591 discovered functions. These are discovered-function review counts, not whole-game completion. Raw code remains local.
+
+
+### Camera detection checkpoint
+
+Camera detection now has 198 zero-offset and 576 nonzero-offset full-entry cases. The latter cover four off-axis positions, three small finite Euler rotations, three positive scales, four signed depths and passing/failing thresholds, with player consideration disabled and enabled. Original code constructs a rotated forward offset before calling the shared region evaluator. The independent quaternion and spherical-falloff reference agrees within 0.00000018.
+
+With scope set to All, successful detection writes the weight to all five output components in these fixtures, including when player consideration is enabled. Failing the count threshold clears outputs while preserving the accepted count. Whole object, world and context buffers and cleanup were checked. The original processor, composition and region helpers, and local libc `sincosf`/`isinff` execute; handle lookup, allocation/free and the platform stack-canary pointer are explicit fixture boundaries.
+
+Saved Ghidra annotations were independently reopened. Camera offset field names, scope filtering, invalid/group indices, other shapes, large/nonfinite angles and live gameplay remain unresolved. The enclosing processor is still partially reviewed and unnamed. Checked names remain 620; these cases do not increase whole-game coverage by themselves.
