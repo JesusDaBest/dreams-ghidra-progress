@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 573,
+    "checked_and_applied_names": 574,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,12 +1920,12 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 573,
+    "verified_names": 574,
     "function_count": 9588,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [],
-    "scope": "535 renames,37 created functions and1 retained existing-name review independently reopened.",
+    "scope": "536 renames,37 created functions and1 retained existing-name review independently reopened.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9192,6 +9192,19 @@
     "limits": [
       "Valid source node IDs and lifetimes assumed.",
       "Memcpy ABI-adapted and synchronization/logging controlled; actual allocation races unverified."
+    ],
+    "runtime_game_verified": false
+  },
+  "packed_node_interning_checkpoint": {
+    "saved_names": [
+      "InternPackedResourceNodeByFingerprint"
+    ],
+    "original_instructions": 119,
+    "native_scenarios": 121,
+    "original_interning_calls": 248,
+    "limits": [
+      "Valid candidate IDs,table capacity andlifetimes assumed.",
+      "Synchronization controlled; no full-table,adversarial fingerprint collision orreal concurrency proof."
     ],
     "runtime_game_verified": false
   }

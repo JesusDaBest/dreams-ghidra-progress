@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-15",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 533,
+    "done": 534,
     "todo": 1463,
-    "total": 1996,
-    "behavior_or_helpers_reviewed": 468,
+    "total": 1997,
+    "behavior_or_helpers_reviewed": 469,
     "properties_or_types_reviewed": 65,
     "whole_feature_completion": null,
     "groups": [
@@ -27102,12 +27102,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 194,
+        "done": 195,
         "todo": 106,
-        "total": 300,
-        "behavior_or_helpers_reviewed": 179,
+        "total": 301,
+        "behavior_or_helpers_reviewed": 180,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 214,
+        "runtime_functions_identified": 215,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27237,6 +27237,7 @@
           "MarkObjectPackedResourceRoots",
           "MarkContainerPackedResourceRoots",
           "AllocateOrCopyPackedResourceNode",
+          "InternPackedResourceNodeByFingerprint",
           "ReleasePackedResourcePage",
           "MarkPackedResourceTreeReachable",
           "FinalizePackedResourceTreeWriter",
@@ -27541,6 +27542,7 @@
           "141060410",
           "141060640",
           "1410609e0",
+          "141060d80",
           "141060f40",
           "1410614b0",
           "141061af0",
@@ -29665,12 +29667,12 @@
           {
             "name": "shared/support",
             "label": "Engine support",
-            "done": 18,
+            "done": 19,
             "todo": 5,
-            "total": 23,
-            "behavior_or_helpers_reviewed": 18,
+            "total": 24,
+            "behavior_or_helpers_reviewed": 19,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 23,
+            "runtime_functions_identified": 24,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -29691,6 +29693,7 @@
               "AdaptiveMergeSummaryRecordRuns",
               "PromoteBuildMetadataAndRefreshObjectResources",
               "AllocateOrCopyPackedResourceNode",
+              "InternPackedResourceNodeByFingerprint",
               "QueueAgedCacheEntriesForRelease",
               "RetireAllAgedPendingCacheEntries"
             ],
@@ -29718,6 +29721,7 @@
               "14073caf0",
               "140bbf8b0",
               "1410609e0",
+              "141060d80",
               "14129c290",
               "14129c500"
             ],
@@ -29834,6 +29838,61 @@
                 ]
               },
               {
+                "name": "shared/support/memory-pools",
+                "label": "Memory pools",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AllocateAlignedBlockFromPool",
+                  "AllocateOrCopyPackedResourceNode",
+                  "InternPackedResourceNodeByFingerprint"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1401657d0",
+                  "1410609e0",
+                  "141060d80"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/support/memory-pools/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AllocateAlignedBlockFromPool",
+                      "AllocateOrCopyPackedResourceNode",
+                      "InternPackedResourceNodeByFingerprint"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1401657d0",
+                      "1410609e0",
+                      "141060d80"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/support/common-routines",
                 "label": "Support implementation",
                 "done": 1,
@@ -29883,57 +29942,6 @@
                     "todo_addresses": [
                       "140a69070"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/support/memory-pools",
-                "label": "Memory pools",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AllocateAlignedBlockFromPool",
-                  "AllocateOrCopyPackedResourceNode"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1401657d0",
-                  "1410609e0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/support/memory-pools/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AllocateAlignedBlockFromPool",
-                      "AllocateOrCopyPackedResourceNode"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1401657d0",
-                      "1410609e0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44066,5 +44074,5 @@
       }
     ]
   },
-  "unmapped": 7592
+  "unmapped": 7591
 }

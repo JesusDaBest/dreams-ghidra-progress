@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "535 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "536 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8860,
-    "other_names": 728,
-    "verification": "complete_inventory_matches_baseline_plus_535_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8859,
+    "other_names": 729,
+    "verification": "complete_inventory_matches_baseline_plus_536_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13060,6 +13060,27 @@
         "Analyst descriptive packed resource node allocation/copy role, not original name.",
         "Valid source node IDs and lifetimes remain preconditions.",
         "Memcpy ABI-adapted; synchronization, logging controlled. Complete caller bounds and real allocation races unverified."
+      ]
+    },
+    {
+      "address": "141060d80",
+      "original_name": "FUN_141060d80",
+      "applied_name": "InternPackedResourceNodeByFingerprint",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV InternPackedResourceNodeByFingerprint(uint candidate_node_id)",
+      "evidence": [
+        "Complete 119 original instructions read and byte matched; consumes candidate node ID and returns selected interned ID used by finalizer.",
+        "121 isolated scenarios / 248 original calls cover lookup/insertion, original hash/release, internal nodes and mixed/long displacement.",
+        "Backed-up trial andindependent trial/main reopening verified expectedsignature, unchangedbytes/archives."
+      ],
+      "caveats": [
+        "Analyst descriptive packed resource node fingerprint interning role, not original name.",
+        "Valid candidate node IDs, table capacity and lifetimes remain preconditions.",
+        "Synchronization controlled; full table, fingerprint collision guarantees and real concurrent mutation unverified."
       ]
     }
   ],

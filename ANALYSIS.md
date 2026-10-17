@@ -4003,3 +4003,13 @@ Saved AllocateOrCopyPackedResourceNode after reading and byte matching all 209 o
 Host memcpy was ABI-adapted; synchronization and logging were controlled. Valid source IDs and lifetimes remain preconditions. Actual allocation races, complete caller flag bounds and end-to-end writer ownership remain unverified. Related local followups read writer initialization and finalization and tested multi-leaf rebuild traversal without additional name credit.
 
 Totals: 573 reviewed names; 1,996 mapped and 7,592 unmapped among 9,588 discovered functions.
+
+### Packed resource node interning
+
+Saved InternPackedResourceNodeByFingerprint after reading and byte matching all 119 original instructions. It hashes complete leaf nodes or ordered child fingerprints, inserts a candidate into the shared fingerprint table, or selects an existing matching node. Existing selection marks the node dirty and releases a different candidate. The routine does not perform a full byte-equality check after a fingerprint match.
+
+121 isolated scenarios cover 248 original interning calls: forty controlled hash/release cases, forty with original release, thirty-two connected original-hash/release scenarios and nine longer/mixed collision sequences. Full table state was compared against an independent Robin Hood model, including wraparound and displacement. The original XXH64 routine separately matched 600 independent reference cases. Backed-up trial and independent trial/main reopening verified the name, signature and unchanged original bytes and archives.
+
+Valid IDs, table capacity and node lifetimes remain preconditions. Actual concurrency, full-table behavior and adversarial fingerprint collisions remain unverified. Writer append/finalization ownership is still being traced. These results support the descriptive role, not completion of the entire subsystem.
+
+Totals: 574 reviewed names; 1,997 mapped and 7,591 unmapped among 9,588 discovered functions.
