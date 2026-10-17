@@ -3914,3 +3914,12 @@ Saved TryResolveHeadAuxiliaryRecord, SelectAuxiliaryHandState and TryResolveHand
 Evidence includes 328 head-lookup scenarios, 1536 state-selection scenarios and 1653 connected hand-lookup/gate scenarios. The connected tests exercise the original resolver again; these counts describe test scopes, not separate implementation units. Original type registrations bind the caller kinds to HeadGadget and HandGadget. A verified compressed backup, independent reopening and fresh decompilation confirm all three names and signatures; only their intended inventory entries changed.
 
 Large lists, arbitrary byte values, NaN activation, invalid or aliased pointers, original field names and full lifecycles remain unresolved. These names do not complete the head/hand transform subsystem. Totals: 604 checked names; 2,020 mapped and 7,569 unmapped among 9,589 discovered functions.
+
+
+### Head transform construction and connected selection
+
+112 positive-local-scale and 112 negative-local-scale scenarios verify the head constructor's selected group pose and optional auxiliary composition. In sampled finite unit rotations, its reconstructed local basis and inverse cancel. Negative local scale adds a local X half-turn to the selected output orientation. Final scale preserves the sign of local scale times factor and clamps magnitude to the original float 0.01, including signed-zero factors.
+
+64 connected scenarios execute the original selector, head lookup, constructor and composition together. The result is head target × inverse(stored head transform) × supplied transform, with the target drawn from the alternate context's group and auxiliary state. Two groups, both local-scale signs, auxiliary enable states and signed scale factors pass independent equations and guarded source/output checks.
+
+The final standalone sets exclude their superseded preliminary set. Degenerate bases, other modes, original field meanings, invalid references and live-game lifecycle remain unresolved. This behavior evidence adds no checked-name credit.
