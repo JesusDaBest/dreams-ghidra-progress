@@ -4274,3 +4274,14 @@ Fixtures use 0, 1, 3, 5 or 10 old records in one source leaf, six origin combina
 Separately, 420 direct format-1 cases sample four float32 threshold centres, their adjacent representable input values and two intervals around old keys at 0.5 and 1.0. Original results match the explicit float32 arithmetic model. This closes the selected sampled boundary cases, not every rounding case or nonfinite input.
 
 Other branches, special modes, deeper original source trees, malformed state, concurrency, full insertion and playback remain open. These branch findings add no whole-function review credit or inferred feature-completion percentage. Totals remain 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
+
+
+### Animation format-1 special-mode flags and producer-layout gap
+
+600 direct original-code cases and 600 through the original Animation wire dispatcher now exercise descriptor flag 4 with auxiliary modes 0 and 5. Static assembly confirms two low-byte AND-with-1 operations. In the supplied mode-5 fixtures, the last retained old prefix pair has bits 1 through 7 of its second word cleared. The first incoming pair receives the same mask when the absolute float32 difference between the next old stored time and incoming rebased time is below the original +1/60 constant. Higher bytes and bit 0 remain intact. No original meaning is assigned to these flag bits.
+
+The tests check the complete masked output against a separate model, exact replacement headers, preserved source nodes/input buffers, guards and original resource growth/finalization/hash behavior. Connected cases also validate the existing-wire result, returned new record index, output transform and unchanged world/source object. Mutex/thread callbacks remain controlled; memory imports use host ABI adapters.
+
+A remaining representation gap is now explicit: flag 4 selects a 12-byte divisor for the incoming count, while the format-1 loop reads 8-byte pairs. These synthetic fixtures supply 8N pair bytes followed by 4N sentinel padding, and the observed branch consumes the pair region. This verifies branch behavior, not the real producer's extended input representation. The next-old comparison also uses the stored time against the incoming rebased time; the producer's origin invariants need tracing before interpreting that as a user-visible timing rule.
+
+Other record formats, special-mode behavior for the 48-byte branch, real recording input layout, deeper source trees, nonfinite inputs, malformed state, concurrency, full insertion and playback remain unresolved. No whole-function name or completion credit is added. Totals remain 635 checked names and 2,047 mapped functions among 9,591 discovered functions.
