@@ -15202,5 +15202,20 @@
       "688 downstream property-branch cases verify tested modes only; not full handler integration.",
       "No disk persistence,concurrency or gameplay claim."
     ]
+  },
+  "header_data_pages_tracking_checkpoint": {
+    "notification_native_cases": 1152,
+    "object_membership_native_cases": 288,
+    "evidence": [
+      "Full original event builder executed; dispatcher remains native probe.",
+      "Notification tests vary mode0..8,editing flag,existing notification,player0..3,global mode,player state andactive record.",
+      "Membership tests cover direct match, generation and ID mismatch chains, missing/out-of-range/sentinel IDs,preexisting membership bits and tracking enable.",
+      "Context lookup world may differ from event world; full buffer comparisons constrain side effects."
+    ],
+    "limits": [
+      "Finite valid chains and non-null object pointers;no cyclic/malformed structures.",
+      "Notification capacity/exhaustion,real concurrency,full dispatcher,persistence andgameplay unverified."
+    ],
+    "new_name_credit": 0
   }
 }

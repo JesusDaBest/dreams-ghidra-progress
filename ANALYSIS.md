@@ -5446,3 +5446,12 @@ Saved `DispatchHeaderAndDataPagesChangeEvent` with its five-argument working sig
 The event dispatcher and wire removal remain probes in the connected retirement suite. Optional object/player tracking branches, non-default player-state gates, full dispatcher integration, wire compaction, concurrency, persistence and gameplay remain unverified. The separate downstream tests stop at explicit private-clone continuations and retain their own limits.
 
 Totals: 669 checked names and 2,081 mapped functions among 9,603 discovered; 7,522 remain unmapped. This is code-review inventory, not whole-game completion.
+
+
+### Resource-event tracking side effects checked
+
+1,152 full-entry native cases check the event builder's per-player property notification queue. Across the tested recording-mode/editing/state combinations, property 766 is appended only when the native mode/flag gate allows it and it is not already present. Full world/context comparisons allow exactly the expected queue entry/count updates. These cases use a sentinel object ID to isolate notifications.
+
+A separate 288-case suite exercises object/player dirty membership with valid object IDs. The lookup uses the world referenced by the context, which can differ from the event's world. Direct matches and generation/ID-mismatch chains find the expected object. Missing, out-of-range and sentinel IDs do not change membership. Tracking adds only the selected player's bit and preserves existing bits. Full context and both world buffers match the independent mutation model. This suite suppresses notifications using the previously checked mode/flag combination.
+
+The dispatcher remains a native probe in these full-entry tests. Finite valid pointers and acyclic chains do not establish malformed/cyclic input handling, notification capacity, concurrency, complete dispatch, disk persistence or gameplay. No new checked-name credit is added; totals remain 669 checked names and 2,081 mapped functions.
