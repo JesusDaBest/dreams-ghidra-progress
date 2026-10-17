@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2010,
-  "unmapped_total": 7579,
+  "mapped_total": 2011,
+  "unmapped_total": 7578,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50306,6 +50306,31 @@
           "kind": "verified_semantic_review",
           "name": "SetObjectFlag15ByReference",
           "support": "Sets object flag15 by packed reference; exact flag meaning and full lifecycle unresolved."
+        }
+      ]
+    },
+    "141046780": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "thing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared runtime-body/object transform helper reached from transform-selection routine.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body reviewed and560 scoped native cases.",
+      "code_sha256": "0e1a688e02e5d3e72ce70451314bd63a1a0b40e47a9b1baf8c497b163a40375d",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvaluateObjectBodyTransform",
+          "support": [
+            "Selects kind-metadata object transform when no runtime body is associated.",
+            "Attached-body path optionally interpolates transforms, applies linear/axis-angle corrections and composes association local transform.",
+            "Zero translation correction skips angular correction even with nonzero angular input."
+          ]
         }
       ]
     }

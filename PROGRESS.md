@@ -3729,3 +3729,14 @@ Refined three existing functions without new naming credit: RebuildPackedCSGReco
 The complete original local rebuild chain additionally passed 36 mixed-kind scenarios covering 621 records of kinds 0, 7, 12 and 22. Primary payloads, kind-7 extensions, output order, metadata clamps, summaries, fingerprints and exact reachable allocation/dirty sets matched independent checks. Source blocks stayed unchanged. Together with the earlier kind-zero cases, this covers 99 complete-chain scenarios and 1,926 records.
 
 These are analyst-supported working types and controlled local tests. Full payload field meanings, all optional combinations, real game integration, concurrency, allocation-failure recovery and depth-limit contracts remain unresolved. Reviewed-name total stays 575.
+
+
+### Object and runtime-body transform evaluation
+
+Saved EvaluateObjectBodyTransform with a conservative four-input working signature after reading and byte matching all 290 original instructions. Without an associated body, it copies the object transform selected by kind metadata. With a body, it can interpolate transforms, apply translation and axis-angle corrections, then compose the association local transform. Zero translation correction skips angular correction even with nonzero angular inputs.
+
+560 original entry-to-return scenarios matched independent equations: 192 baseline, 112 interpolation, 128 correction and 128 combined cases. Source buffers and output guards were preserved. Original __isinff ran; sinf/cosf were supplied by host UCRT after import resolution. A compressed project backup and independent reopening verified the saved name/signature and unchanged original game archives.
+
+These are controlled finite inputs with valid references, unit rotations and positive scales. Exact PS4 trigonometric results, exceptional inputs, every world-gate combination, full callers, concurrency and live-game integration remain unverified. The related object flag still has no proven gameplay name.
+
+Totals: 595 checked names; 2,011 mapped and 7,578 unmapped among 9,589 discovered functions. Naming and these scoped checks do not mean whole-game completion.

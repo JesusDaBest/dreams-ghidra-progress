@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 594,
+    "checked_and_applied_names": 595,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 594,
+    "verified_names": 595,
     "function_count": 9589,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1408f2040"
     ],
-    "scope": "555 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "556 existing-function renames,38 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -9841,5 +9841,29 @@
     ],
     "new_name_credit": 1,
     "independently_reopened_and_decompiled": true
+  },
+  "body_transform_evaluation_checkpoint": {
+    "name": "EvaluateObjectBodyTransform",
+    "native_cases": 560,
+    "instructions_read_and_byte_verified": 290,
+    "findings": [
+      "Selects kind-metadata object transform when no runtime body is associated.",
+      "Attached-body path optionally interpolates transforms, applies linear/axis-angle corrections and composes association local transform.",
+      "Zero translation correction skips angular correction even with nonzero angular input."
+    ],
+    "evidence": [
+      "Complete 290 original instructions read and byte verified.",
+      "560 original entry-to-return native scenarios match independent transform equations: 192 baseline,112 interpolation,128 correction and128 combined.",
+      "Source object, association and body buffers and output guards preserved in tested paths.",
+      "Compressed project backup verified; name and four-input working signature independently reopened with only this inventory entry changed."
+    ],
+    "limits": [
+      "Analyst descriptive name and working signature, not recovered original source declarations.",
+      "Finite unit rotations and positive scales with valid reference and association; exceptional domain and all gate combinations unresolved.",
+      "Original __isinff executes; sinf/cosf supplied by host UCRT after import resolution, not exact PS4 math verification.",
+      "No live-game, complete caller or whole-subsystem completion claim."
+    ],
+    "new_name_credit": 1,
+    "name_and_signature_independently_reopened": true
   }
 }

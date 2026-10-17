@@ -4041,3 +4041,14 @@ The original transform dispatcher, graph iterator, hierarchy helper, object call
 A separate seven-instruction block passed 120 native scenarios. It conditionally copies bit 15 from a nonnull source object's flags into destination flags using OR, preserving existing destination bits, unrelated bytes and source data. Static pointer setup links the source to a cached world object and the destination to incoming storage plus the flags offset. The enclosing 5,457-instruction routine has not been fully reviewed, so its role and the gameplay meaning/lifetime of bit 15 remain unresolved.
 
 No additional function names or completion credit were added. Current totals remain 594 checked names and 2,010 mapped functions among 9,589 discovered functions.
+
+
+### Object and runtime-body transform evaluation
+
+Saved EvaluateObjectBodyTransform with a conservative four-input working signature after reading and byte matching all 290 original instructions. Without an associated body, it copies the object transform selected by kind metadata. With a body, it can interpolate transforms, apply translation and axis-angle corrections, then compose the association local transform. Zero translation correction skips angular correction even with nonzero angular inputs.
+
+560 original entry-to-return scenarios matched independent equations: 192 baseline, 112 interpolation, 128 correction and 128 combined cases. Source buffers and output guards were preserved. Original __isinff ran; sinf/cosf were supplied by host UCRT after import resolution. A compressed project backup and independent reopening verified the saved name/signature and unchanged original game archives.
+
+These are controlled finite inputs with valid references, unit rotations and positive scales. Exact PS4 trigonometric results, exceptional inputs, every world-gate combination, full callers, concurrency and live-game integration remain unverified. The related object flag still has no proven gameplay name.
+
+Totals: 595 checked names; 2,011 mapped and 7,578 unmapped among 9,589 discovered functions. Naming and these scoped checks do not mean whole-game completion.
