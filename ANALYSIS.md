@@ -4033,3 +4033,11 @@ Refined three existing functions without new naming credit: RebuildPackedCSGReco
 The complete original local rebuild chain additionally passed 36 mixed-kind scenarios covering 621 records of kinds 0, 7, 12 and 22. Primary payloads, kind-7 extensions, output order, metadata clamps, summaries, fingerprints and exact reachable allocation/dirty sets matched independent checks. Source blocks stayed unchanged. Together with the earlier kind-zero cases, this covers 99 complete-chain scenarios and 1,926 records.
 
 These are analyst-supported working types and controlled local tests. Full payload field meanings, all optional combinations, real game integration, concurrency, allocation-failure recovery and depth-limit contracts remain unresolved. Reviewed-name total stays 575.
+
+### Teleporter object callback integration and flag propagation
+
+The original transform dispatcher, graph iterator, hierarchy helper, object callback adapter and object flag setter passed 80 connected native scenarios. All three supplied graph objects received flag bit 15 while the two shared runtime bodies retained their expected mode-specific transform and vector results. The separate body callback channel was disabled. These fixtures use controlled platform services, valid supplied graphs, finite unit rotations and positive scales; they are not live-game tests.
+
+A separate seven-instruction block passed 120 native scenarios. It conditionally copies bit 15 from a nonnull source object's flags into destination flags using OR, preserving existing destination bits, unrelated bytes and source data. Static pointer setup links the source to a cached world object and the destination to incoming storage plus the flags offset. The enclosing 5,457-instruction routine has not been fully reviewed, so its role and the gameplay meaning/lifetime of bit 15 remain unresolved.
+
+No additional function names or completion credit were added. Current totals remain 594 checked names and 2,010 mapped functions among 9,589 discovered functions.
