@@ -4284,3 +4284,12 @@ Saved ComputeHandGadgetTargetTransform with a seven-input working signature afte
 512 connected original-code scenarios verify sampled selector/state/record gates, pointer availability, sign combinations and signed-zero control behavior. State-derived switching requires the enabled gate, selector 0 or 1, clear record flag, both pointers and both state modes non-2. Negative control toggles that flag. Verified backup, independent reopening and fresh decompilation confirm persistence.
 
 This names the small wrapper; most branches of its larger callee remain unreviewed and that callee stays unnamed. Context and state types remain opaque. Arbitrary bytes, NaNs, invalid or aliased inputs, original field meanings and lifecycle remain unresolved. Totals: 606 checked names; 2,022 mapped and 7,567 unmapped among 9,589 discovered functions.
+
+
+### Hand position factors and group offsets
+
+252 additional scoped hand-constructor scenarios cover unstored position blending, metadata factors, nondefault group geometry and their combination. The default group path blends group XYZ toward state XYZ without clamping the sampled factor, while retaining state scale and rotation. A present, nonzero metadata field replaces that factor with object value divided by group factor, the original float 0.4 and group scale. Zero field value falls back to the state factor.
+
+The nondefault group path offsets state position along a mode-rotated local Z direction, using the factor, group scale and state-scale sign. State scale and rotation remain selected for final local composition. Combined tests use a deliberately different state factor to verify metadata selection across the sampled modes, flags and scale signs. Independent equations, source buffers and output guards passed.
+
+These are bounded paths of the still-unnamed larger hand constructor. Auxiliary, linked-target and direction paths, nonfinite inputs, original field meanings and full lifecycle remain unresolved. Host sine/cosine uses the corrected adapter; exact PS4 trigonometry is not claimed. No checked-name credit is added.
