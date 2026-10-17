@@ -5642,3 +5642,16 @@ When `anim_2_upgraded` is set, the first helper skips rebuilding. In 108 connect
 The original copy helper moves raw resource bytes. Its stride argument aligns capacity truncation; it does not convert each key. Together with the registered upgrade guard, this rules out treating the first helper as a general extended-to-basic converter. One original caller places the pair in a serialization-upgrade path, but the complete format migration and the second enclosing caller remain unresolved.
 
 These are 180 connected pair cases with single-leaf Bool fixtures, explicit host allocator/free/memset and controlled TLS/runtime boundaries. They do not prove all formats, deep resources, persistence, whole-caller execution, UI metadata writes or gameplay. No new names or completion credit are added; totals remain 678 checked names and 2,090 mapped functions.
+
+
+### Bounded record resource payload copy
+
+Saved `CopyRecordResourcePayloadToBoundedBuffer` after reading its complete pseudocode and all 168 owned original instructions, verifying the bytes and matching the original unwind extent. Independent reopening verifies its descriptive name and working four-argument SysV signature; original bytes and other names/signatures remain unchanged.
+
+10,200 native cases check exact output and buffer guards across one leaf and a branch over three full 504-byte leaves. They vary byte offsets, requested lengths, capacity, positive strides 1/8/12/48 and the high four length bits. The helper copies raw bytes using the low 28-bit count and offset. If capacity is too small, the copied total is rounded down to a stride multiple. It does not convert key formats. Header, source nodes, destination pointer and capacity remain unchanged in the fixtures; output length is updated.
+
+The tested destination starts empty. Nonempty destinations, deeper trees, malformed inputs, zero-stride truncation, concurrency and gameplay remain unresolved. Host memmove and double pow boundaries are explicit. Two direct callers are the Animation rebuild helpers; a third caller remains unreviewed.
+
+The newly inspected writers of `anim_2_upgraded` lead into larger serialization/world-building routines. Setting that flag alone does not prove these functions convert Animation keys. Their complete roles and the actual migration remain unresolved; no additional name credit is assigned to them.
+
+Totals: 679 checked names, 2,091 mapped functions and 7,512 unmapped among 9,603 currently defined. These are review counts, not whole-game completion.

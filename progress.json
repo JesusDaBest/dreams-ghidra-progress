@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 632,
+    "done": 633,
     "todo": 1458,
-    "total": 2090,
-    "behavior_or_helpers_reviewed": 565,
+    "total": 2091,
+    "behavior_or_helpers_reviewed": 566,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
@@ -27347,12 +27347,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 233,
+        "done": 234,
         "todo": 106,
-        "total": 339,
-        "behavior_or_helpers_reviewed": 218,
+        "total": 340,
+        "behavior_or_helpers_reviewed": 219,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 253,
+        "runtime_functions_identified": 254,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27523,6 +27523,7 @@
           "GrowPackedResourceTreeWriter",
           "FinalizePackedResourceTreeWriter",
           "ReplaceResourceTreeRecord72ByOrdinal",
+          "CopyRecordResourcePayloadToBoundedBuffer",
           "AppendSizedRecordToThreadBuffer",
           "FindObjectIndexByPackedId",
           "ResolvePersistentObjectIdToIndex",
@@ -27866,6 +27867,7 @@
           "1410618a0",
           "141061af0",
           "14106f350",
+          "1410a4bd0",
           "1410aa730",
           "1410ab420",
           "1410ab490",
@@ -28052,12 +28054,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 99,
+            "done": 100,
             "todo": 13,
-            "total": 112,
-            "behavior_or_helpers_reviewed": 99,
+            "total": 113,
+            "behavior_or_helpers_reviewed": 100,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 105,
+            "runtime_functions_identified": 106,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -28127,6 +28129,7 @@
               "MarkPackedResourceTreeReachable",
               "GetPackedResourceTreeLogicalByteExtent",
               "FinalizePackedResourceTreeWriter",
+              "CopyRecordResourcePayloadToBoundedBuffer",
               "AppendSizedRecordToThreadBuffer",
               "CheckWirePropertyEligibility",
               "ReadShaderFileToAllocatedBuffer",
@@ -28243,6 +28246,7 @@
               "1410614b0",
               "1410616e0",
               "141061af0",
+              "1410a4bd0",
               "1410aa730",
               "14126d9f0",
               "1413c3150",
@@ -28696,12 +28700,12 @@
               {
                 "name": "shared/runtime/packed-resource-pages",
                 "label": "Resource pages",
-                "done": 14,
+                "done": 15,
                 "todo": 0,
-                "total": 14,
-                "behavior_or_helpers_reviewed": 14,
+                "total": 15,
+                "behavior_or_helpers_reviewed": 15,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 14,
+                "runtime_functions_identified": 15,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -28719,7 +28723,8 @@
                   "ReleasePackedResourcePage",
                   "MarkPackedResourceTreeReachable",
                   "GetPackedResourceTreeLogicalByteExtent",
-                  "FinalizePackedResourceTreeWriter"
+                  "FinalizePackedResourceTreeWriter",
+                  "CopyRecordResourcePayloadToBoundedBuffer"
                 ],
                 "todo_names": [],
                 "done_addresses": [
@@ -28736,7 +28741,8 @@
                   "141060f40",
                   "1410614b0",
                   "1410616e0",
-                  "141061af0"
+                  "141061af0",
+                  "1410a4bd0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -28744,12 +28750,12 @@
                   {
                     "name": "shared/runtime/packed-resource-pages/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 14,
+                    "done": 15,
                     "todo": 0,
-                    "total": 14,
-                    "behavior_or_helpers_reviewed": 14,
+                    "total": 15,
+                    "behavior_or_helpers_reviewed": 15,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 14,
+                    "runtime_functions_identified": 15,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -28767,7 +28773,8 @@
                       "ReleasePackedResourcePage",
                       "MarkPackedResourceTreeReachable",
                       "GetPackedResourceTreeLogicalByteExtent",
-                      "FinalizePackedResourceTreeWriter"
+                      "FinalizePackedResourceTreeWriter",
+                      "CopyRecordResourcePayloadToBoundedBuffer"
                     ],
                     "todo_names": [],
                     "done_addresses": [
@@ -28784,7 +28791,8 @@
                       "141060f40",
                       "1410614b0",
                       "1410616e0",
-                      "141061af0"
+                      "141061af0",
+                      "1410a4bd0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -45185,5 +45193,5 @@
       }
     ]
   },
-  "unmapped": 7513
+  "unmapped": 7512
 }

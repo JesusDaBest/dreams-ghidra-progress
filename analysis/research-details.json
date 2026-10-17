@@ -15759,5 +15759,41 @@
       "No new names or whole-game completion credit."
     ],
     "new_name_credit": 0
+  },
+  "record_resource_payload_copy_checkpoint": {
+    "address": "1410a4bd0",
+    "name": "CopyRecordResourcePayloadToBoundedBuffer",
+    "signature": "void PS4_SYSV CopyRecordResourcePayloadToBoundedBuffer(void * recordHeader, uint dataRoot, void * destination, uint recordStride)",
+    "native_instructions": 168,
+    "native_check": {
+      "entry": "1410a4bd0",
+      "native_cases": 10200,
+      "layouts": {
+        "leaf": 3000,
+        "branch": 7200
+      },
+      "owned_original_instructions_verified": 168,
+      "finding": "Copies raw resource bytes described by low28-bit length and byte offset into an initially empty pointer/length/capacity buffer. If capacity is too small, truncates total to the largest stride multiple that fits. High four length bits do not affect byte count; no per-key conversion occurs.",
+      "limits": [
+        "Initially empty destination only, positive strides1/8/12/48, at most three full504-byte leaves under one branch.",
+        "Original copy/tree traversal execute with host memmove and host double pow boundaries.",
+        "No malformed roots, zero stride under truncation, allocation failures, concurrency, deeper trees or nonempty destination contract."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete pseudocode and all 168 owned original instructions reviewed, byte-verified and matched to the original unwind extent.",
+      "10200 native cases execute the original payload copy: 3000 single-leaf and 7200 branched cases, with exact independent expected bytes, buffer guards, unchanged header/state pointer/capacity and unchanged original source nodes.",
+      "Reads low28-bit payload byte count and byte offset from the first two header words. High four count bits are ignored. Capacity shortfall rounds the target count down to a stride multiple; no key-wise conversion is performed.",
+      "Two direct callers are the named Animation per-wire rebuild and sparse compactor. The third direct caller is not semantically reviewed here.",
+      "Independent reopening and fresh decompilation confirm the descriptive name and four-argument working SysV signature. Original bytes and all other names/signatures remain unchanged."
+    ],
+    "limits": [
+      "Initially empty destination only; positive strides 1/8/12/48, one leaf or one branch above three full 504-byte leaves. Nonempty destination semantics, deeper trees and malformed data remain unresolved.",
+      "Original copy and tree traversal execute with host memmove and double pow boundaries. No zero-stride truncation, concurrency, allocation-failure or gameplay claim.",
+      "Shared resource primitive; naming it does not complete Animation migration, the third caller or any enclosing workflow. Descriptive analyst name, not recovered original source."
+    ],
+    "new_name_credit": 1
   }
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2090,
-  "unmapped_total": 7513,
+  "mapped_total": 2091,
+  "unmapped_total": 7512,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52525,6 +52525,33 @@
           ]
         }
       ]
+    },
+    "1410a4bd0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "packed-resource-pages",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared packed-resource byte copying, used by both named Animation record rebuild helpers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Copies raw record payload bytes into a caller-provided bounded buffer.",
+      "code_sha256": "d60de9f040290e773076f79fc9e973061f46feb3aa276c7bcdafce44e7b752b5",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopyRecordResourcePayloadToBoundedBuffer",
+          "support": [
+            "Complete pseudocode and all 168 owned original instructions reviewed, byte-verified and matched to the original unwind extent.",
+            "10200 native cases execute the original payload copy: 3000 single-leaf and 7200 branched cases, with exact independent expected bytes, buffer guards, unchanged header/state pointer/capacity and unchanged original source nodes.",
+            "Reads low28-bit payload byte count and byte offset from the first two header words. High four count bits are ignored. Capacity shortfall rounds the target count down to a stride multiple; no key-wise conversion is performed.",
+            "Two direct callers are the named Animation per-wire rebuild and sparse compactor. The third direct caller is not semantically reviewed here.",
+            "Independent reopening and fresh decompilation confirm the descriptive name and four-argument working SysV signature. Original bytes and all other names/signatures remain unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
     }
   },
   "hierarchy": [

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "625 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "626 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8770,
-    "other_names": 833,
-    "verification": "complete_inventory_matches_baseline_plus_625_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8769,
+    "other_names": 834,
+    "verification": "complete_inventory_matches_baseline_plus_626_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15652,6 +15652,29 @@
         "Basic Bool data only, three keys per header, single resource leaves and valid header ordinals 0..2; extended inputs, other formats and deep resources remain unverified.",
         "Host aligned allocator/free/memset, controlled TLS and two synthetic runtime-default values are explicit harness boundaries.",
         "No persistence, gameplay, allocation-failure, concurrency, UI-to-key-metadata or complete enclosing-workflow claim. Descriptive analyst name, not a recovered original source name."
+      ]
+    },
+    {
+      "address": "1410a4bd0",
+      "original_name": "FUN_1410a4bd0",
+      "applied_name": "CopyRecordResourcePayloadToBoundedBuffer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CopyRecordResourcePayloadToBoundedBuffer(void * recordHeader, uint dataRoot, void * destination, uint recordStride)",
+      "evidence": [
+        "Complete pseudocode and all 168 owned original instructions reviewed, byte-verified and matched to the original unwind extent.",
+        "10200 native cases execute the original payload copy: 3000 single-leaf and 7200 branched cases, with exact independent expected bytes, buffer guards, unchanged header/state pointer/capacity and unchanged original source nodes.",
+        "Reads low28-bit payload byte count and byte offset from the first two header words. High four count bits are ignored. Capacity shortfall rounds the target count down to a stride multiple; no key-wise conversion is performed.",
+        "Two direct callers are the named Animation per-wire rebuild and sparse compactor. The third direct caller is not semantically reviewed here.",
+        "Independent reopening and fresh decompilation confirm the descriptive name and four-argument working SysV signature. Original bytes and all other names/signatures remain unchanged."
+      ],
+      "caveats": [
+        "Initially empty destination only; positive strides 1/8/12/48, one leaf or one branch above three full 504-byte leaves. Nonempty destination semantics, deeper trees and malformed data remain unresolved.",
+        "Original copy and tree traversal execute with host memmove and double pow boundaries. No zero-stride truncation, concurrency, allocation-failure or gameplay claim.",
+        "Shared resource primitive; naming it does not complete Animation migration, the third caller or any enclosing workflow. Descriptive analyst name, not recovered original source."
       ]
     }
   ],
