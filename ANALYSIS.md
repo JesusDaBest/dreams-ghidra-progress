@@ -4192,3 +4192,12 @@ The tests use a stored override, default auxiliary kind/group mode, identity aux
 128 connected scenarios exercise the helper, transform selector and runtime body evaluator together. Distinct stored and runtime transforms show that recursion uses the runtime body result. A matching object-reference field bypasses recursion and uses the stored reference transform instead. Independent equations, source buffers and output guards passed. The final connected set supersedes its preliminary 64 cases.
 
 Tests cover valid reference index one, controlled metadata, finite unit rotations, positive scales and one recursion level. Auxiliary lookup uses the empty-list fallback. Nonempty lookup matching, arbitrary depth, cycles, invalid references, original field meanings and live-game lifecycle remain unresolved. No new checked-name credit is added.
+
+
+### Auxiliary lookup order and direction adjustment
+
+128 connected lookup scenarios verify that auxiliary ID and group identity must both match. A mismatched first entry is skipped; when both entries match, the first wins. Distinct cached transforms prove which index reaches the selector. ID and group misses use the runtime-body fallback. Tests cover a controlled two-entry list and valid indices.
+
+160 direction-mode scenarios verify a separate geometric path: it places the result a fixed distance from the group origin along the stored-position direction, and applies a shortest-arc rotation from the negative group-forward axis. Changing the object mode, state mode, state pointer or secondary-state gate individually suppresses that adjustment. Independent geometric equations, source buffers and output guards passed.
+
+These final sets supersede their preliminary sets. Nonzero displacement, non-antipodal directions, positive scales and controlled default gates were used. Zero-displacement and antipodal fallbacks, signed group scale, metadata distance, arbitrary recursion and live-game lifecycle remain unresolved. No checked-name credit is added.
