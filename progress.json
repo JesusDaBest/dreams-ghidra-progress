@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 560,
+    "done": 561,
     "todo": 1462,
-    "total": 2022,
-    "behavior_or_helpers_reviewed": 493,
+    "total": 2023,
+    "behavior_or_helpers_reviewed": 494,
     "properties_or_types_reviewed": 67,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 103,
+        "done": 104,
         "todo": 407,
-        "total": 510,
-        "behavior_or_helpers_reviewed": 56,
+        "total": 511,
+        "behavior_or_helpers_reviewed": 57,
         "properties_or_types_reviewed": 47,
-        "runtime_functions_identified": 54,
+        "runtime_functions_identified": 55,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -40,6 +40,7 @@
           "VisitGateProperties",
           "VisitVariableGadgetProperties",
           "MarkLogicCycleWireEdges",
+          "ComputeHandAuxiliaryTargetTransform",
           "UpdateCounterFromInputTransitions",
           "ReadCounterOutputVariant",
           "UpdateTimerFromControlInputs",
@@ -554,6 +555,7 @@
           "1404dfa70",
           "1404e33a0",
           "14073de90",
+          "14076e550",
           "1408cca60",
           "1408ccc60",
           "1408cccf0",
@@ -5730,16 +5732,17 @@
           {
             "name": "gadgets-logic/motion",
             "label": "Movement & possession",
-            "done": 12,
+            "done": 13,
             "todo": 65,
-            "total": 77,
-            "behavior_or_helpers_reviewed": 8,
+            "total": 78,
+            "behavior_or_helpers_reviewed": 9,
             "properties_or_types_reviewed": 4,
-            "runtime_functions_identified": 8,
+            "runtime_functions_identified": 9,
             "property_type_functions_identified": 69,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "ComputeHandAuxiliaryTargetTransform",
               "SelectAuxiliaryHandState",
               "ComputeTeleporterTransformWithOffset",
               "SetObjectFlag15ByReference",
@@ -5821,6 +5824,7 @@
               "0x140d7da30"
             ],
             "done_addresses": [
+              "14076e550",
               "1408efc70",
               "1408f1dc0",
               "1408f2040",
@@ -5906,16 +5910,17 @@
               {
                 "name": "gadgets-logic/motion/handgadget",
                 "label": "Hand Gadget",
-                "done": 4,
+                "done": 5,
                 "todo": 2,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 3,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 4,
                 "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 3,
+                "runtime_functions_identified": 4,
                 "property_type_functions_identified": 3,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
+                  "ComputeHandAuxiliaryTargetTransform",
                   "SelectAuxiliaryHandState",
                   "TryResolveHandAuxiliaryState",
                   "ComputeHandGadgetTargetTransform",
@@ -5926,6 +5931,7 @@
                   "0x140d58d00"
                 ],
                 "done_addresses": [
+                  "14076e550",
                   "1408efc70",
                   "1408f4240",
                   "1408f43f0",
@@ -5937,6 +5943,35 @@
                 ],
                 "unresolved_addresses": [],
                 "groups": [
+                  {
+                    "name": "gadgets-logic/motion/handgadget/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ComputeHandAuxiliaryTargetTransform",
+                      "SelectAuxiliaryHandState",
+                      "TryResolveHandAuxiliaryState",
+                      "ComputeHandGadgetTargetTransform"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14076e550",
+                      "1408efc70",
+                      "1408f4240",
+                      "1408f43f0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
                   {
                     "name": "gadgets-logic/motion/handgadget/properties-types",
                     "label": "Properties & type definitions",
@@ -5963,33 +5998,6 @@
                       "1404e73e0",
                       "140d58d00"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  },
-                  {
-                    "name": "gadgets-logic/motion/handgadget/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "SelectAuxiliaryHandState",
-                      "TryResolveHandAuxiliaryState",
-                      "ComputeHandGadgetTargetTransform"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408efc70",
-                      "1408f4240",
-                      "1408f43f0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -44415,5 +44423,5 @@
       }
     ]
   },
-  "unmapped": 7567
+  "unmapped": 7566
 }

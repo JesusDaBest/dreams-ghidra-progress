@@ -3977,3 +3977,12 @@ Tests cover both flags, valid reference one, unit rotations, sampled finite scal
 160 direction scenarios verify its geometry and four bypasses across both group-scale signs and extra flags. The first auxiliary state's mode enables the direction path, but that pointer need not equal the constructor's selected state pointer. Distinct pointers confirm the difference. The path sets position along normalized group-to-stored displacement at the signed group-factor distance and adjusts stored orientation with a shortest-arc quaternion before the extra-flag operation.
 
 Independent equations, source buffers and output guards passed. Tests use default group mode, unit rotations and finite inputs. Nonempty linked-reference lookup, zero-displacement and antipodal cases, original field names and full lifecycle remain unresolved. No checked-name credit is added.
+
+
+### Verified hand auxiliary target constructor
+
+Saved ComputeHandAuxiliaryTargetTransform with an eight-input working signature, including the stack object pointer and one-byte extra flag. The 1160-instruction body selects stored/group/state transforms, metadata factors, mode offsets, direction geometry, auxiliary gates and optional linked targets, then applies gadget-local composition. The extra flag flips its source frame and selects the linked-reference offset slot.
+
+1028 direct original-code scenarios exclude superseded sets. Another 512 connected wrapper scenarios separately support the call boundary. The latest lookup cases verify ID/group matching and first-match order under both flags. Direction edge cases establish the fixed X-axis fallback and isolated zero-displacement NaN behavior; the latter is not proof of a reachable game defect. Backup, independent reopening and fresh decompilation confirm the name and signature.
+
+This is a descriptive role, not full semantic or feature completion. Context/state types remain opaque. Arbitrary recursion, threshold-adjacent cases, nonfinite or invalid/aliased inputs, original field meanings, exact PS4 math and full lifecycles remain unresolved. Totals: 607 checked names; 2,023 mapped and 7,566 unmapped among 9,589 discovered functions.

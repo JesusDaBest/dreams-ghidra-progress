@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9589,
-  "mapped_total": 2022,
-  "unmapped_total": 7567,
+  "mapped_total": 2023,
+  "unmapped_total": 7566,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50609,6 +50609,31 @@
           "support": [
             "Selects alternate-world group and derives constructor flag from optional switching,state modes and control sign.",
             "Delegates to larger unnamed constructor,then preserves result scale sign and takes magnitude from gadget control field."
+          ]
+        }
+      ]
+    },
+    "14076e550": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "motion",
+        "handgadget",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original HandGadget lookup,wrapper and target constructor chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Body role audited with1028 direct scenarios and separate wrapper evidence.",
+      "code_sha256": "9a415d63f24f50803beca4d2fa05b677978449a4f3f7bd971462d8ba3f0ab84f",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeHandAuxiliaryTargetTransform",
+          "support": [
+            "Builds hand auxiliary target from stored/group/state sources with metadata factors,mode offsets and direction adjustment.",
+            "Extra flag flips source frame and chooses linked-reference offset; lookup/recursion feed smoothstep target blending.",
+            "Direction-enable state can differ from selected transform state."
           ]
         }
       ]
