@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-15",
   "status": "applied_verified_after_reopening",
-  "review_scope": "544 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "545 existing-function renames,37 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9588,
-    "default_fun_names": 8851,
-    "other_names": 737,
-    "verification": "complete_inventory_matches_baseline_plus_544_renames_and_37_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8850,
+    "other_names": 738,
+    "verification": "complete_inventory_matches_baseline_plus_545_renames_and_37_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -13271,6 +13271,26 @@
       "caveats": [
         "Analyst descriptive name andworking types;opaque owner context.",
         "Final submission controlled;no live game orspecial-command chain verified."
+      ]
+    },
+    {
+      "address": "1410ab420",
+      "original_name": "FUN_1410ab420",
+      "applied_name": "FindObjectIndexByPackedId",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "int PS4_SYSV FindObjectIndexByPackedId(void * lookup_table, void * world, uint object_id)",
+      "evidence": [
+        "26 original instructions read andbyte matched.",
+        "90 native cases cover generation/full-ID collisions,invalid indices andchain exhaustion with high-bitIDs.",
+        "Original lookup also executes in15 connected transform post-update cases.",
+        "Verified compressed project backup andindependent saved-project reopening."
+      ],
+      "caveats": [
+        "Analyst descriptive name andworking types;opaque table/world context.",
+        "Validpointer finitechains;cycles,concurrency andlivegame untested."
       ]
     }
   ],
