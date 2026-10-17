@@ -516,8 +516,12 @@ def render_area_table(status, mapping):
     for area_id, title, _, rows in areas:
         checked = sum(row['review'] == 'verified_name' for row in rows)
         progress = f'{checked:,}' if rows else 'No functions mapped yet'
-        behavior=sum(scopes.get(r['address'])=='behavior_or_helper' for r in rows)
-        properties=sum(scopes.get(r['address'])=='properties_or_type_registration' for r in rows)
+        behavior=sum(scopes.get(r['address'])=='behavior_or_helper'
+                     and mapping['assignments'][r['address']].get('code_role')=='runtime-implementation'
+                     for r in rows)
+        properties=sum(scopes.get(r['address'])=='properties_or_type_registration'
+                       and mapping['assignments'][r['address']].get('code_role')=='properties-types'
+                       for r in rows)
         runtime_total=sum(mapping['assignments'][r['address']].get('code_role')=='runtime-implementation' for r in rows)
         property_total=sum(mapping['assignments'][r['address']].get('code_role')=='properties-types' for r in rows)
         runtime_count=f'{behavior}/{runtime_total}' if runtime_total else 'None mapped'
@@ -526,7 +530,8 @@ def render_area_table(status, mapping):
     mapped = sum(len(rows) for _,_,_,rows in areas)
     unassigned = status['inventory_total'] - mapped
     lines.extend(['', f'**{mapped:,} of {status["inventory_total"]:,} discovered functions are mapped; {unassigned:,} still need a system assignment.** '
-                  'Section area counts mapped functions. Property/type reviews do not count as behavior reviews. '
+                  'Section area counts mapped functions. Each table column counts reviews matching that mapped code role. '
+                  'Property/type reviews do not count as behavior reviews. '
                   'Whole-system coverage and completion remain unknown.'])
     lines.extend(['','<details>','<summary>Explore the systems and their components</summary>',''])
     def list_nodes(nodes,depth=0):

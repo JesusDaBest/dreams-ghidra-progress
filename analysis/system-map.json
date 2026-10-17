@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9588,
-  "mapped_total": 2005,
-  "unmapped_total": 7583,
+  "mapped_total": 2006,
+  "unmapped_total": 7582,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -50203,6 +50203,27 @@
           "support": "Remaps kind-specific object references and parent field; 1060 native cases with controlled metadata and valid objects. Full game execution unresolved."
         }
       ]
+    },
+    "1409575c0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "gameplay",
+        "emitter",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Emitter kind49 selection, two game-update callers and callback velocity writes.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native body read and scoped execution validation.",
+      "code_sha256": "585d2230a90d8ba97ad9f92be06f8700b008122b0c072852962d3a11a019e3f6",
+      "code_hash_basis": "concatenated_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PrepareAndDispatchEmitterMotion",
+          "support": "Emitter motion preparation and dispatch; 324 scoped routine cases. Relative-transform branches and live game incomplete."
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -56182,6 +56203,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]
