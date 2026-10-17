@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9591,
-  "mapped_total": 2041,
-  "unmapped_total": 7550,
+  "mapped_total": 2042,
+  "unmapped_total": 7549,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -5561,6 +5561,11 @@
           "kind": "verified_semantic_review",
           "name": "SortGameWires",
           "support": "Game wire lookup or sorting-wrapper body and working signature verified after clean reopening; sorted execution unresolved."
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortGameWires",
+          "support": "320 connected original sort-to-Microchip/root scenarios; profiling callback is a counting spy, algorithms original. Earlier sorted-execution limitation narrowed to this fixture scope."
         }
       ],
       "code_sha256": "28161e2076510960f76a442a1c887c15dede21a5ce3fbedf3cb580a06b892201",
@@ -51137,6 +51142,33 @@
           ]
         }
       ],
+      "code_hash_basis": "concatenated_original_instruction_bytes"
+    },
+    "140934640": {
+      "system": "shared",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortWireRangeByDestinationAndSource",
+          "support": [
+            "Complete336-instruction range-sort body read and original bytes verified.",
+            "1584 direct small-range cases match an independent stable tuple sort under consistent-reference fixtures.",
+            "864 original large-range cases cover budgets0/1/count and partition/heap/insertion combinations, preserving movable payload multiset and expected sorted keys.",
+            "320 scenarios connect original SortGameWires to original Microchip input-wire lookup and root resolution, checking the whole world buffer.",
+            "Saved descriptive name and explicit begin/RDI8,end/RSI8,signed64-budget/RDX8,world-handle/RCX8,void working ABI independently reopened and freshly decompiled."
+          ]
+        }
+      ],
+      "code_sha256": "e4973d7e9e712add5cd39196dec794eabd356bc9870c1f84333760912a5f9c5d",
+      "component_path": [
+        "shared",
+        "runtime",
+        "gameupdater",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Game wire-sort wrapper directly calls this range sorter.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Range sorting helper; body read and original connected execution verified within stated fixtures.",
       "code_hash_basis": "concatenated_original_instruction_bytes"
     }
   },

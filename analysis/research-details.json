@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 629,
+    "checked_and_applied_names": 630,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 629,
+    "verified_names": 630,
     "function_count": 9591,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "140ced9c0",
       "140ced9e0"
     ],
-    "scope": "588 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "589 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -11187,5 +11187,30 @@
     ],
     "expectation_correction": "Initial cached-reference expectation was rejected by original execution; corrected against the original ESI normalization and checked with independent input/record highbits.",
     "new_name_credit": 0
+  },
+  "wire_sort_and_microchip_checkpoint": {
+    "address": "140934640",
+    "small_range_cases": 1584,
+    "large_range_cases": 864,
+    "connected_sort_to_lookup_scenarios": 320,
+    "findings": [
+      "Under consistent-reference fixtures, ordering is destination index/property then source-object sequence/source property.",
+      "Movable52-byte prefix permutes while12-byte per-slot tail remains unchanged; no original meaning assigned to tail bytes.",
+      "Budget update is floor(budget/2)+floor(budget/4), with large-range heap fallback for nonpositive budget.",
+      "Original Game sort sets sorted flag; Microchip lookup and root then consume actual sorted records."
+    ],
+    "evidence": [
+      "Complete336-instruction range-sort body read and original bytes verified.",
+      "1584 direct small-range cases match an independent stable tuple sort under consistent-reference fixtures.",
+      "864 original large-range cases cover budgets0/1/count and partition/heap/insertion combinations, preserving movable payload multiset and expected sorted keys.",
+      "320 scenarios connect original SortGameWires to original Microchip input-wire lookup and root resolution, checking the whole world buffer.",
+      "Saved descriptive name and explicit begin/RDI8,end/RSI8,signed64-budget/RDX8,world-handle/RCX8,void working ABI independently reopened and freshly decompiled."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque working ABI, not recovered source declarations.",
+      "Original1947-instruction partition helper executes but its full internal semantics remain unreviewed; no completion credit for that helper.",
+      "Consistent packed refs and bounded source objects only; mixed reference bits per index, duplicate sequence values, comparator overflow, malformed refs, production scene invariants and gameplay remain open.",
+      "Only profiling callback is replaced in connected wrapper tests; no sorting/lookup algorithm callee is replaced."
+    ]
   }
 }

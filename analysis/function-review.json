@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "588 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "589 existing-function renames,40 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9591,
-    "default_fun_names": 8807,
-    "other_names": 784,
-    "verification": "complete_inventory_matches_baseline_plus_588_renames_and_40_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8806,
+    "other_names": 785,
+    "verification": "complete_inventory_matches_baseline_plus_589_renames_and_40_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -4620,11 +4620,12 @@
       "evidence": [
         "Complete lookup or sorting-wrapper body reviewed against registered Game/Wire fields.",
         "Lookup checks cover1280 destination-run cases and4000 unsorted search cases; wrapper is statically traced to sort implementation.",
-        "Cold backup, isolated trial and fresh-reopen verification preserve native bytes and originals."
+        "Cold backup, isolated trial and fresh-reopen verification preserve native bytes and originals.",
+        "320 original sort-wrapper-to-Microchip/root scenarios now exercise sorted execution; only profiling callback is a counting spy."
       ],
       "caveats": [
         "Descriptive role and opaque-pointer working type; original source declaration not recovered.",
-        "Sorted execution, packed-reference invariants and game runtime remain unverified.",
+        "Sorted execution is bounded to supplied coherent records; packed-reference producer invariants and game runtime remain unverified.",
         "No audited-byte credit."
       ]
     },
@@ -14417,6 +14418,29 @@
         "Initial root suite offset0x60 is synthetic test metadata; the subsequent Microchip suite uses the original IsGluedGadget138 field and metadata.",
         "Cache construction/equivalence, real-game category/reference invariants, malformed/null/cyclic/negative references, concurrency and gameplay remain unverified.",
         "Microchip wire lookup is tested on bounded grouped records; original property0x40f label, wire producer/order invariants, arbitrary mixed packed-reference groups and gameplay remain unresolved."
+      ]
+    },
+    {
+      "address": "140934640",
+      "original_name": "FUN_140934640",
+      "applied_name": "SortWireRangeByDestinationAndSource",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "saved_working_signature": "void PS4_SYSV SortWireRangeByDestinationAndSource(void * begin, void * end, longlong sort_budget, void * * world_handle)",
+      "evidence": [
+        "Complete336-instruction range-sort body read and original bytes verified.",
+        "1584 direct small-range cases match an independent stable tuple sort under consistent-reference fixtures.",
+        "864 original large-range cases cover budgets0/1/count and partition/heap/insertion combinations, preserving movable payload multiset and expected sorted keys.",
+        "320 scenarios connect original SortGameWires to original Microchip input-wire lookup and root resolution, checking the whole world buffer.",
+        "Saved descriptive name and explicit begin/RDI8,end/RSI8,signed64-budget/RDX8,world-handle/RCX8,void working ABI independently reopened and freshly decompiled."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque working ABI, not recovered source declarations.",
+        "Original1947-instruction partition helper executes but its full internal semantics remain unreviewed; no completion credit for that helper.",
+        "Consistent packed refs and bounded source objects only; mixed reference bits per index, duplicate sequence values, comparator overflow, malformed refs, production scene invariants and gameplay remain open.",
+        "Only profiling callback is replaced in connected wrapper tests; no sorting/lookup algorithm callee is replaced."
       ]
     }
   ],

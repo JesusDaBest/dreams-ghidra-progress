@@ -4662,3 +4662,16 @@ A nonzero IsGluedGadget selects the full parent reference before searching wires
 The first test expectation missed a real distinction: cached ancestry can normalize the input reference before wire search, while the uncached path can retain high packed bits. Original execution rejected that expectation; the corrected model was checked with independently varied input and record bits. No claim of cached/uncached equivalence for arbitrary state is made.
 
 Wire creation/sorting invariants, arbitrary mixed packed-reference runs, discontiguous destinations, counts above eight, malformed state, concurrency and gameplay remain unverified. No extra naming credit is added: totals remain 629 checked names and 2,041 mapped functions.
+
+
+### Original wire sorting connected to Microchip input lookup
+
+Saved and independently reopened `SortWireRangeByDestinationAndSource`, with an explicit opaque working signature. Its complete 336-instruction body was read. 1,584 direct cases cover zero through 32 records; 864 larger-range cases cover counts up to 257 with budgets zero, one and the record count. The original partition and heap helpers execute in those larger tests. The partition helper's internal algorithm is not yet fully semantically reviewed and receives no naming credit.
+
+For the supplied consistent-reference fixtures, results match independent ordering by destination index, destination property, source-object sequence and source property. The comparator distinguishes full-reference equality from normalized indices, so this tuple description is not a claim about arbitrary mixed packed references or duplicate object sequences. Small-range equality order was checked; stability is not claimed for larger ranges.
+
+The tests establish that the movable record portion is 52 bytes within each 64-byte slot. The trailing 12 bytes remain in their original slot on the tested paths; their original meaning is not assigned. Payload multisets, expected order, external guards, objects and whole world storage were checked. The positive sort budget updates as floor(budget/2) plus floor(budget/4), with heap fallback when the remaining budget is nonpositive.
+
+320 additional scenarios execute the original `SortGameWires` wrapper, then original Microchip input-wire lookup and root resolution on the actual sorted output. The sort sets its sorted-state flag; the lookup selects the matching destination-property 0x40f endpoint or sentinel, and the root receives that endpoint or its fallback. Only the profiling callback is a counting spy. Sorting, partition, heap, lookup and root algorithms execute original bytes.
+
+Wire creation, arbitrary packed-reference combinations, comparator overflow, malformed references, full partition semantics, production scene invariants and gameplay remain open. Totals are 630 checked names and 2,042 mapped functions among 9,591 discovered functions.
