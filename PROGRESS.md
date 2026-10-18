@@ -5415,3 +5415,12 @@ With nearby mode disabled, it builds event `fe08` from a 16-byte key and the rec
 Owner/history output stays disabled in these fixtures. Recording flag logic is statically traced but active history output, malformed structures, nonfinite coordinates, concurrency and gameplay remain unverified.
 
 Totals: 689 checked names, 2,101 mapped functions and 7,502 unmapped among 9,603 currently defined. Review counts are not whole-game completion.
+
+
+## Keyed-record active history output verified
+
+72 connected native cases now enable player 0 recording/history for `RemoveKeyedRecordOrNearbyRecords`. The owner queue receives a 22-byte `fe08` event when recording is enabled, including the tested quiet mode. Selected enabled history streams receive a 30-byte inverse `fe06` event before deletion: event ID, 16-byte key, order float, then the two coordinate floats. Original executable size-table entries independently agree with those packet sizes.
+
+Both-stream, second-stream and quiet routing are checked across enabled, missing and disabled history contexts, two finite order values and coordinate combinations. Complete world, owner and history comparisons verify exact packet bytes, counters, activity flags, revision synchronization and deletion. All seven captured bodies and the full dispatcher remain byte-identical to the original executable. The function's current review caveat now reflects this active-history evidence.
+
+Existing contexts, Machine key, globals and stream buffers remain fixtures. Inverse replay of these `fe06` packets, capacity exhaustion, malformed input, concurrency and gameplay remain unresolved. No additional checked name or completion credit was added. [Sanitized receipts](analysis/wire-replay-dispatcher-checks.json).
