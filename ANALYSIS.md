@@ -7148,3 +7148,13 @@ The normal primitive path can independently fold two coordinates by absolute val
 Two additional dispatch bodies evaluate a **torus distance expression** and a **plane-like scalar**. Another produces a **triangular-prism zero/subzero set for positive extents**. The plane normalization and prism's sloped plane use an L1 magnitude, so those scalars are not claimed to be exact Euclidean distances. Decoded-operation diagnostics check 600 cases for each of these three bodies; they do not emulate GPU rounding.
 
 These are bounded mathematical identifications before shared optional modifiers. Original enum names, CPU record construction, exceptional inputs, other primitive cases and the alternate command path remain unresolved. Checked-function totals and the graph are unchanged.
+
+### Soft-blend gather index list and box wall variants
+
+Fully read the executable ranges of `ChunkSoftBlendGatherPre` (5 instructions) and `ChunkSoftBlendGather` (53 instructions), with exact encoding roundtrips of 28 and 280 bytes. The gather selects command indices whose mode field is 1 or 2 and whose blend radius is positive. It uses wave counts and prefixes to compact the indices, appends the input count as a sentinel, and records the sentinel slot. **It writes indices, not 96-byte command records.** GPU execution and ordered-count behavior remain unverified.
+
+The observed dispatch uses `(count + 64) >> 6`, supplying the sentinel lane even when the input count is a multiple of 64. Its coverage was checked for every count from 0 through 120,000; 6,144 cases check the selection predicate. These checks do not establish caller count guarantees or over-capacity behavior.
+
+Further primitive reading distinguishes the rounded disk from the torus. Three box paths use a positive extra parameter to produce rectangular-frame, U-shaped, and L-shaped cross-sections within the reviewed extent range. Their decoded branches matched derived expressions in 1,600 exact rational cases each. These are geometric descriptions before shared modifiers, not recovered source names.
+
+The CPU helper receiving the sculpt records reads them to compute affected bounds and queue grid blocks. Assembly distinguishes its command-array pointer from a separate pointer forwarded to GPU preparation; the decompiler's displayed argument list is not a reliable prototype. **The writer and conversion path for the separate command-record buffer remain unresolved.** No checked-function credit or whole-game percentage is added.

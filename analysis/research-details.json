@@ -22876,5 +22876,59 @@
     ],
     "reviewed_name_count_increment": 0,
     "runtime_gpu_verified": false
+  },
+  "chunk_gather_index_checkpoint": {
+    "programs": [
+      {
+        "shader": "ChunkSoftBlendGather",
+        "executable_bytes": 280,
+        "instructions": 53,
+        "exact_encoding_roundtrip": true,
+        "excluded_trailer_bytes": 76
+      },
+      {
+        "shader": "ChunkSoftBlendGatherPre",
+        "executable_bytes": 28,
+        "instructions": 5,
+        "exact_encoding_roundtrip": true,
+        "excluded_trailer_bytes": 40
+      }
+    ],
+    "findings": [
+      "GatherPre writes zero to GDS offset10496.",
+      "Gather forms index=(groupIDx<<6)+laneID, and only loads flags and radius when index<inputCount.",
+      "A record qualifies when command bits7..8 are1 or2 and float radius at byte12 is ordered-greater-than0. NaN and signed zeros do not qualify in the comparison model.",
+      "Wave mask popcount, ordered GDS count and lane prefix counts assign compact output slots; output stores the original command index, not96-byte record data.",
+      "Lane whose global index equals inputCount writes inputCount as terminal sentinel and its compact slot to GDS offset3084. Descriptor record-count comparisons guard output stores.",
+      "CPU dispatch(count+64)>>6 supplies a sentinel lane even for count divisible by64, within checked no-overflow domain0..120000."
+    ],
+    "dispatch_count_cases": 120001,
+    "selection_cases": 6144,
+    "limits": [
+      "GPU ordered-count ordering and startup lane ABI not executed.",
+      "Actual buffer capacity, caller count guarantees and over-capacity behavior need further validation.",
+      "This index gather does not identify the writer of the separate96-byte command buffer."
+    ],
+    "cpu_context": "The pre-dispatch helper supplies a96-byte input descriptor and count; the gather output is an index list, not the separate command-record buffer.",
+    "reviewed_name_count_increment": 0,
+    "runtime_gpu_verified": false
+  },
+  "chunk_box_wall_checkpoint": {
+    "scope": "Selectors1,18,19 with 0<t<min(a,b), before shared modifiers",
+    "exact_rational_cases_each": 1600,
+    "findings": [
+      "Parameter t changes these box bodies into wall/frame cross-sections, not rounded Euclidean boxes.",
+      "Selector1 removes the centered inner rectangle, leaving a rectangular frame.",
+      "Selector18 leaves a U-shaped cross-section: x>=a-t, or x>=0 and abs(y)>=b-t, within the outer rectangle.",
+      "Selector19 leaves an L-shaped cross-section: x>=0,y>=0 and either x>=a-t or y>=b-t, within the outer rectangle.",
+      "All three cross-sections are extruded over -c<=z<=c.",
+      "The affine setup selects this t from record offset80 when command bit11 is set; otherwise t=0."
+    ],
+    "limits": [
+      "Original field name and CPU construction unresolved.",
+      "Nonpositive or oversized t and later shared modifiers not covered.",
+      "Exact rational algebra does not verify GPU rounding or exact Euclidean distance."
+    ],
+    "reviewed_name_count_increment": 0
   }
 }
