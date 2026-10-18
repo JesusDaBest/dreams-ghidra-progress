@@ -7338,3 +7338,12 @@ Applied and independently reopened **AppendConvertedPackedResourceTreeRecords** 
 The conversion maps the older first-byte bit 1 into the current first-byte bit 7, which the command expander can later map into shader flag 14. Shape-specific payload routes retain their separate extents. The observed caller gate is an unsigned comparison against `0x9e`; its exact source-format version declaration remains unverified.
 
 The descriptive name and explanatory comment are the only project changes. Original bytes and the inferred prototype are unchanged; reopening/decompilation passed, with all 9,611 other names/signatures unchanged. Malformed pages, cycles, allocation failure and runtime behavior remain untested. This adds one checked CPU helper to packed CSG records, without claiming complete shader understanding or a recovered user-facing flag name.
+
+
+### Packed CSG minimum scale named
+
+Applied and independently reopened **AppendPackedResourceTreeWithMinimumScale** after reading all **201 CPU instructions** and its pseudocode. It recursively visits tree pages, decodes leaf records with retained delta state, and reappends them while raising only the signed scale byte to a supplied minimum. It preserves the other header flags. The caller owns writer initialization and finalization.
+
+The comparison uses signed 8-bit CPU flags even though later moves zero-extend the selected bytes. **65,536 logical byte-pair cases** checked that comparison against signed maximum. All **255 adjacent signed scale codes** preserve ordering under the downstream packed-scale decode. These are bounded arithmetic checks, not execution of the whole original routine.
+
+The descriptive name and comment are the only project changes. Bytes and the inferred prototype are unchanged; reopening/decompilation passed and all 9,611 other names/signatures remain unchanged. Malformed pages, cycles, allocation failure and runtime behavior remain unverified. This adds one checked CPU helper to packed CSG records, not shader completion.

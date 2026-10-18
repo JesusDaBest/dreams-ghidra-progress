@@ -317,7 +317,7 @@ def render_hierarchy(nodes, bounds, depth=0):
         height=max(y for x,y in positions)-min(y for x,y in positions)+1
         # Small child regions need a compact footprint so their labels fit.
         # Carve only existing lattice cells; counts and square sizes stay exact.
-        compact=[n for n in items if n['id']=='prim-text' and 5<=len(n['rows'])<=20]
+        compact=[n for n in items if n['id'] in {'prim-text','sweep'} and 5<=len(n['rows'])<=20]
         if compact:
             small=max(compact,key=lambda n:len(n['rows']))
             amount=len(small['rows']);span=math.ceil(math.sqrt(amount))
