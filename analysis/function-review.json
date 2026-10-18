@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "731 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "732 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9614,
-    "default_fun_names": 8664,
-    "other_names": 950,
-    "verification": "complete_inventory_matches_baseline_plus_731_renames_and_63_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8663,
+    "other_names": 951,
+    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_63_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18494,6 +18494,28 @@
       ],
       "caveats": [
         "Original source declaration unknown; no real GPU/GNM execution, allocator concurrency or whole caller behavior proof."
+      ]
+    },
+    {
+      "address": "1413dc180",
+      "original_name": "FUN_1413dc180",
+      "applied_name": "TryComputeSpriteBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryComputeSpriteBounds(int cache_index, pointer64 sprite_component, float * center_radius_out, undefined1[16] translation_scale, undefined1[16] rotation_quaternion)",
+      "evidence": [
+        "Complete685-byte original region,148 owned instructions and full captured C reviewed.",
+        "Indexed caller and separately traced unindexed producer call consume cache index, component/output pointers and packed translation-scale/quaternion inputs.",
+        "Property registrations establish duplicate controls, jitter, Physical, attachments, glow-light enum and size boost.",
+        "Separate original-code suites:192 transform,1440 copy/jitter/physical,1944 glow and96 gate cases; host expf adapter only.",
+        "Name, bool return and explicit EDI/RSI/RDX/XMM0/XMM1 storage independently reopened; original bytes and other9613 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Source symbol/types unknown; packed vectors remain opaque16-byte working values.",
+        "Cache bound/extents producers, nonfinite/extreme values, original PS4 expf, mutable defaults and real GPU/game/concurrency behavior unverified."
       ]
     }
   ],

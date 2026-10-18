@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9614,
-  "mapped_total": 2196,
-  "unmapped_total": 7418,
+  "mapped_total": 2197,
+  "unmapped_total": 7417,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55648,6 +55648,33 @@
           ]
         }
       ]
+    },
+    "1413dc180": {
+      "system": "sculpting-painting",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TryComputeSpriteBounds",
+          "support": [
+            "Complete685-byte original region,148 owned instructions and full captured C reviewed.",
+            "Indexed caller and separately traced unindexed producer call consume cache index, component/output pointers and packed translation-scale/quaternion inputs.",
+            "Property registrations establish duplicate controls, jitter, Physical, attachments, glow-light enum and size boost.",
+            "Separate original-code suites:192 transform,1440 copy/jitter/physical,1944 glow and96 gate cases; host expf adapter only.",
+            "Name, bool return and explicit EDI/RSI/RDX/XMM0/XMM1 storage independently reopened; original bytes and other9613 names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_sha256": "5be316fe2261c4a4e89fce955fa83af681b4b2683cf7f19fe9ae40ab22eeb38b",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Sprite bounds computation, original component property registration and source-to-GPU record trace.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Transforms cached center/radius and expands for duplication, jitter, physical and glow-light settings.",
+      "code_sha256_basis": "original_eh_region"
     }
   },
   "hierarchy": [

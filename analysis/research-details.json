@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 795,
+    "checked_and_applied_names": 796,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 795,
+    "verified_names": 796,
     "function_count": 9614,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "731 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "732 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25408,5 +25408,29 @@
       "Static shader/CPU trace, no live GPU synchronization or complete rendering proof."
     ],
     "new_name_credit": 0
+  },
+  "sprite_bounds_helper_checkpoint": {
+    "name": "TryComputeSpriteBounds",
+    "working_signature": "bool PS4_SYSV TryComputeSpriteBounds(int cache_index, pointer64 sprite_component, float * center_radius_out, undefined1[16] translation_scale, undefined1[16] rotation_quaternion)",
+    "parameter_storage": [
+      "EDI:4",
+      "RSI:8",
+      "RDX:8",
+      "XMM0:16",
+      "XMM1:16"
+    ],
+    "scope": "Complete685-byte CPU helper, full captured decompilation, indexed caller and separately traced original producer call; property/type registration and GPU-record consumer links.",
+    "native_suites": {
+      "basic_transform": 192,
+      "duplication_jitter_physical": 1440,
+      "glow_expansion": 1944,
+      "attachment_gates": 96
+    },
+    "finding": "Computes transformed center/radius or returnsfalse without output writes; optional glow-light mode expands radius. Explicit packed SIMD inputs corrected.",
+    "limits": [
+      "Source symbol/types unknown; packed vectors remain opaque16-byte working values.",
+      "Cache bound/extents producers, nonfinite/extreme values, original PS4 expf, mutable defaults and real GPU/game/concurrency behavior unverified."
+    ],
+    "new_name_credit": 1
   }
 }

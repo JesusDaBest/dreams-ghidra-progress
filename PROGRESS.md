@@ -7297,3 +7297,12 @@ The earlier saved-offset question is explained for ordinary sequential preparati
 `AppendIndirectArgumentBufferBase` and `AppendGnmDispatchIndirect` now identify the complete argument-base packet writer and graphics-queue indirect-dispatch wrapper. All indexed caller windows and original bodies were read. Isolated original-code fixtures covered **160 base-writer cases** and **384 dispatch cases**, including capacity boundaries, refill failure/relocation and import failure. The dispatch wrapper's unsupported extra parameters were removed: its working inputs are the command buffer and a 32-bit byte offset. Independent reopening verified both names and signatures; executable bytes and other function names/signatures remained unchanged.
 
 Sprite's 16 workload buckets use matching list bases in culling and emission. Small buckets pack multiple records into a wave; large buckets allocate multiple waves per record. Their indirect dispatch arithmetic matches those index partitions. Reservation counters can include attempts that spill onward, so complete saturation handling remains an open question. No runtime defect or GPU execution is claimed. These two helpers bring the checked-name total to **795**.
+
+
+### Sprite bounds helper named and typed
+
+`TryComputeSpriteBounds` now identifies the complete 685-byte CPU helper that transforms cached center/radius data and expands it for duplication, random scale jitter, physical settings and glow-light emission. Registered property names establish those controls. Jet Trail, an unsupported duplicate-position mode and a physical attached-end case reject this path without writing output.
+
+The working signature now includes both previously missing packed SIMD inputs: translation/uniform scale and rotation quaternion. The original body, full decompilation, indexed caller and a separately traced producer call were reviewed. Separate isolated suites covered 192 basic transform cases, 1,440 duplication/jitter/physical cases, 1,944 glow cases and 96 gate cases. Exponential calls used an explicit host-library adapter; mutable gains were fixture inputs. These are bounded code checks, not game execution.
+
+Independent reopening verified the descriptive name, Boolean result and five input storage locations. Executable bytes and all other function names/signatures remained unchanged. Cache-bound producers, extreme/nonfinite values, original platform math and actual GPU behavior remain unverified. The checked-name total is **796**.
