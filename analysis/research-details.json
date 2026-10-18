@@ -24285,5 +24285,28 @@
       "Analyst descriptive name; original struct and working ABI refinement remain pending."
     ],
     "new_name_credit": 1
+  },
+  "sprite_resource_pair_summary_partial_checkpoint": {
+    "scope": "Bounded entry,packed-layout connection,summary writeback and finite/radius arithmetic;full miss path unresolved.",
+    "checked_name_credit": 0,
+    "findings": [
+      "Two4096-slot cache candidates keyed by XOR of resource fingerprints,56-byte entries.",
+      "Bulk traversal connects44-byte stroke metadata to40-byte point data.",
+      "Entry stores midpoint-related center/radius,XYZ extrema,descriptor count andpoint count;both selectedslots receive full entry.",
+      "Separate second pass accumulates max(distance(transformedpoint,center)+abs(scaledradius)) for admitted points.",
+      "Bothpasses reject nonfiniteXYZ through exponent masks andnonfiniteradius through__isfinitef.",
+      "Mode4 stroke edit loop connects signed repetition setting to already-reviewed ComputeIndexedRepeatTransform,independently ofkaleidoscope flags."
+    ],
+    "models": {
+      "cache_index_pairs": 4096,
+      "host_sphere_enclosure_samples": 18000,
+      "float_class_gate_cases": 2048
+    },
+    "limits": [
+      "Host models are not native game validation.",
+      "Full pointselection,transforms,malformed traversal,cache collisions andlifetime remain unresolved.",
+      "Finiteinputs can overflowdistance/addition;firstpassextrema mustnotbe assumed full radius-expanded AABB.",
+      "No confirmedkaleidoscope geometryconsumer orcompletefunction credit."
+    ]
   }
 }

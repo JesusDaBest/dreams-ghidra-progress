@@ -7479,3 +7479,12 @@ The cursor pointer remains a working view of a mixed-layout object, not a recove
 Applied and independently reopened **GetPackedStrokeMetadataByIndex** after reading its complete **102-instruction defined body** and original unwind bytes. It traverses resource leaves and returns a direct pointer to the requested 44-byte descriptor. All 65,536 header words match the decoded per-leaf record-count arithmetic. Seven direct original-byte callers connect the result to descriptor editing, transforms, point-data traversal and per-player command buffering.
 
 Negative signed indices are not explicitly rejected; valid nonnegative indices remain a caller precondition. Direct-pointer lifetime, malformed trees, all-caller bounds and the geometry consumer of kaleidoscope flags remain unresolved. Only the name and comment changed; reopening/decompilation passed, and bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. This adds one checked helper, not full stroke or paint completion.
+
+
+### Sprite resource summary cache: partial trace
+
+Traced a bulk sprite routine connecting 44-byte stroke metadata with 40-byte point data. It checks two slots in a 4,096-entry cache using the XOR of resource fingerprints. Each 56-byte entry holds a center/radius summary, two XYZ extrema and descriptor/point counts; a miss writes the result into both selected slots.
+
+The second pass accumulates the largest distance from the chosen center to a transformed point, plus the absolute scaled point radius. Both passes reject nonfinite transformed XYZ and radius at the reviewed gates. Checks cover 4,096 cache-index pairs, 18,000 host enclosure samples and 2,048 floating-point class cases. These are host models, not live game validation. Large finite inputs can still overflow the distance arithmetic. The first-pass extrema use a point-minus-radius sample and must not be presented as a conventional radius-expanded bounding box.
+
+The stroke editing loop also connects to the previously reviewed ComputeIndexedRepeatTransform through a separate signed repetition setting. It preserves the stored kaleidoscope flags; this is not proof of the geometry consumer for those flags. Full cache-miss traversal, point selection, transform conventions, cache collisions and malformed-data behavior remain unresolved. No new checked-function credit is added.
