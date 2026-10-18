@@ -283,5 +283,27 @@
       "property:u16"
     ],
     "ancestor_kind_registered_name": "Microchip"
+  },
+  "parent_key_lookup": {
+    "native_cases": 216,
+    "finding": "Original16-byte-key lookup uses modeled2048-bucket hash and exact full-key matching through collision chains. Original sort helper also executes. Normal input output-count0/99 collects all matches up to100 fixture records; initial count100 selects first match only. Arena/key preserved and output count,pointer multiset,unused slots/guards verified.",
+    "limits": [
+      "Mode0 only; optional coordinate dedup mode and exact output ordering not yet verified.",
+      "Finite acyclic chains up to100 records; overflow, malformed indices, concurrency and gameplay untested."
+    ],
+    "original_lookup_instructions_verified": 210,
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "parent_original_lookup_chain": {
+    "native_cases": 48,
+    "finding": "Original parent traversal,16-byte-key hash lookup and sorting select matching record and pass its pointer to downstream cleanup with recursion flag0. Hash-colliding mismatched keys are rejected. Main wire endpoints invalidate; all other world/object bytes preserved with downstream deletion observed.",
+    "limits": [
+      "Downstream producer140b35ec0 is explicit observation probe, not original deletion execution.",
+      "One valid table record, finite acyclic parent fixtures; malformed structures, multiple matches and gameplay unverified."
+    ],
+    "original_lookup_instructions_verified": 210,
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

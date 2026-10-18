@@ -5838,3 +5838,12 @@ The previously excluded parent branch now has 24 native traversal checks. When b
 Direct and one-intermediate destination parent chains produce the same expected key. Wrong ancestor type, unrelated destination ancestry or either class byte differing from 2 skip the lookup. Complete world and object comparisons confirm that the ordinary wire endpoint invalidation still occurs. The meaning of class byte 2 is not inferred from this test.
 
 The lookup is an explicit observation probe returning no matches; hash-chain matching and downstream deletion are not executed here. Static reading and original-byte checks cover the lookup's 210 instructions and the downstream producer's 132 instructions, which builds event `fe08`; neither receives semantic completion credit. Parent cycles, malformed references and gameplay remain unverified. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
+
+
+## Original Microchip cleanup lookup connected
+
+The lookup observation probe has now been replaced by original code. 216 direct native checks verify a separately modeled 2,048-bucket hash, exact 16-byte key matching and collision-chain traversal. Fixtures contain up to 100 records, including genuine same-bucket keys that differ from the target. Matching pointer sets, output counts, unused slots, guards and complete key/table preservation are checked. Initial output counts 0 and 99 collect all fixture matches; initial count 100 selects only the first match. The original sorting helper executes, but exact ordering and optional coordinate deduplication are not yet verified.
+
+Another 48 checks connect original parent traversal, lookup and sorting to the final cleanup call. A matching record is selected and passed with recursion disabled; a hash-colliding mismatched key is rejected. Wrong ancestor type, unrelated ancestry and endpoint-class gates still skip selection. Ordinary wire removal continues with complete world/object comparisons.
+
+All 210 lookup instructions match the original executable. The final deletion producer remains an explicit observer in the connected suite, so event `fe08` application is still unresolved. These tests cover finite valid chains and parent graphs, not malformed tables, cycles, overflow or gameplay. No new checked name or completion credit was added. [Sanitized receipts](analysis/wire-replay-dispatcher-checks.json).
