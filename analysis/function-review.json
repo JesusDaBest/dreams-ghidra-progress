@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "679 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "680 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8716,
-    "other_names": 890,
-    "verification": "complete_inventory_matches_baseline_plus_679_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8715,
+    "other_names": 891,
+    "verification": "complete_inventory_matches_baseline_plus_680_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17079,6 +17079,30 @@
         "Finite selected transforms and plane fixtures only;nonfinite behavior reviewed statically,not dynamically tested.",
         "Full projection initialization,exact bound-shape terminology,live game,asynchronous loading and concurrency remain unverified.",
         "Descriptive name and working SIMD containers are not original C++ declarations;no exact MM source/build match."
+      ]
+    },
+    {
+      "address": "141006bd0",
+      "original_name": "FUN_141006bd0",
+      "applied_name": "BuildSpriteRuntimeRecord96",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV BuildSpriteRuntimeRecord96(void * output, void * sprite, SpatialQueryFloat4Working16 color, float colorMultiplier, SpatialQueryFloat4Working16 positionScale, SpatialQueryFloat4Working16 rotation)",
+      "evidence": [
+        "Complete 116-instruction Sprite runtime-record builder reviewed against original instructions.",
+        "2160 null-resource executions check output gates,untouched gaps,clamps,color multiplication and RGB-dependent boolean return.",
+        "256 connected executions use original view-plane predicate and original image-cache hit helper;both atlas contexts,ready/pending/busy flags and view acceptance/rejection checked.",
+        "Original kind17 Sprite enum/dispatch binding and producer caller connect this helper to Sprite objects.",
+        "Independent reopening verifies saved GP/SIMD/stack inputs,boolean AL,decompilation,unchanged bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Working96-byte region includes untouched gaps;original source struct declaration and allocation stride are not claimed.",
+        "False return can occur after record writes for zero RGB;pending cache status alone does not suppress positive-color output.",
+        "Connected geometric tangent uses local CRT adapter;actual resource loading,asynchronous completion,full producer,nonfinite/malformed inputs and live game remain unverified.",
+        "Analyst descriptive name and working signature are not original C++ declarations;no exact MM source/build match."
       ]
     }
   ],

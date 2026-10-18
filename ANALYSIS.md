@@ -6793,3 +6793,16 @@ Verification comprises **2,592 identity-transform executions**, **18,432 rotated
 Independent reopening verifies the saved context/SIMD working signature, boolean AL return, successful decompilation, unchanged original instructions and all 9,605 other names/signatures. Nonfinite branch behavior is recorded from assembly but is not dynamically tested. Full projection initialization, exact bound-shape terminology, live-game behavior, asynchronous loading and concurrency remain unverified. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **735 checked names** (655 behavior/helper and 80 property/type), **2,141 mapped**, **7,465 unmapped**, among 9,606 defined functions.
+
+
+### Sprite runtime-record builder reviewed and named
+
+`BuildSpriteRuntimeRecord96` names the complete 116-instruction helper called by the buffered producer for Sprite objects. Its 96-byte working output region contains the forwarded transform, source extent, multiplied and nonnegative color, clamped bounds, image-cache slice or sentinel, source extras and object ID. Untouched gaps are preserved; this is not a claim about the original C++ struct declaration or allocation stride.
+
+**2,160 null-resource executions** check write/rejection gates, complete guarded output, color, clamps and untouched fields. **256 connected executions** run the original Sprite builder, original view-plane predicate and original cache-hit helper together. Tangent uses a local CRT adapter. View rejection skips cache lookup; ready/pending/busy results and both atlas contexts are checked.
+
+A false return does not always mean untouched output: zero RGB can return false after writing the record. Pending image data alone does not suppress tested positive-color output. The actual loading worker, asynchronous completion, full buffered producer, malformed/nonfinite cases and live game remain unverified. Original kind-17 enum/dispatch evidence identifies Sprite; no exact Media Molecule source/build match is claimed.
+
+Independent reopening verifies the saved register/SIMD/stack working signature, boolean AL return, decompilation, unchanged original instructions and all 9,605 other names/signatures. The two default stack locals were preserved privately before their storage was described as input transform vectors.
+
+Totals: **736 checked names** (656 behavior/helper and 80 property/type), **2,142 mapped**, **7,464 unmapped**, among 9,606 defined functions.

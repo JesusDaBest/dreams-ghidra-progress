@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 735,
+    "checked_and_applied_names": 736,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 735,
+    "verified_names": 736,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "679 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "680 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20111,6 +20111,47 @@
       "Finite selected transforms and plane fixtures only;nonfinite behavior reviewed statically,not dynamically tested.",
       "Full projection initialization,exact bound-shape terminology,live game,asynchronous loading and concurrency remain unverified.",
       "Descriptive name and working SIMD containers are not original C++ declarations;no exact MM source/build match."
+    ],
+    "new_name_credit": 1
+  },
+  "sprite_runtime_record_name_checkpoint": {
+    "target": {
+      "name": "BuildSpriteRuntimeRecord96",
+      "signature": "bool PS4_SYSV BuildSpriteRuntimeRecord96(void * output, void * sprite, SpatialQueryFloat4Working16 color, float colorMultiplier, SpatialQueryFloat4Working16 positionScale, SpatialQueryFloat4Working16 rotation)"
+    },
+    "native_check": {
+      "native_cases": 2160,
+      "record_writes": 540,
+      "positive_color_returns": 144,
+      "scalar_clamp": [
+        0.0017453293548896909,
+        0.7853981852531433
+      ],
+      "findings": [
+        "Complete116-instruction builder executes null resource-handle path. Positive finite source scalar and finite first transform vector permit record writes;invalid first-vector exponent patterns or nonpositive finite scalar leave output unchanged.",
+        "Output is a96-byte working region:32-byte forwarded transform,source scalar,clamped scaled color,clamped scalar/falloff,mode-minus-one,resource sentinel,scaled extra,source byte and ID;padding remains untouched.",
+        "Return AL reports any positive XYZ color after clamping;false may still accompany a written record.2160 cases cover scalar,falloff,color including NaN,multiplier,transform validity and mode boundaries."
+      ],
+      "limits": [
+        "Both source resource handles are zero;resource-resolution branches not executed.",
+        "Source scalar finite,second transform vector forwarded only;full producer,type binding,nonfinite scalar and live game remain unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0,
+      "source_f4_scale": 4.5
+    },
+    "evidence": [
+      "Complete 116-instruction Sprite runtime-record builder reviewed against original instructions.",
+      "2160 null-resource executions check output gates,untouched gaps,clamps,color multiplication and RGB-dependent boolean return.",
+      "256 connected executions use original view-plane predicate and original image-cache hit helper;both atlas contexts,ready/pending/busy flags and view acceptance/rejection checked.",
+      "Original kind17 Sprite enum/dispatch binding and producer caller connect this helper to Sprite objects.",
+      "Independent reopening verifies saved GP/SIMD/stack inputs,boolean AL,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Working96-byte region includes untouched gaps;original source struct declaration and allocation stride are not claimed.",
+      "False return can occur after record writes for zero RGB;pending cache status alone does not suppress positive-color output.",
+      "Connected geometric tangent uses local CRT adapter;actual resource loading,asynchronous completion,full producer,nonfinite/malformed inputs and live game remain unverified.",
+      "Analyst descriptive name and working signature are not original C++ declarations;no exact MM source/build match."
     ],
     "new_name_credit": 1
   }
