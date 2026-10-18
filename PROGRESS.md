@@ -6939,4 +6939,11 @@ These handler ranges were absent from the saved Ghidra function body. Original-b
 
 Applied and independently reopened **WritePackedResourceBytesThroughCursor** after reading all **87 original instructions** and its decompilation. It copies a resource node, replaces bytes at a payload offset, refreshes category-1 summaries and interns the candidate. If its identity changes, the cursor receives the new handle and the parent receives a four-byte child-handle replacement; unchanged identity stops propagation. It returns the cursor root.
 
-The indexed stroke metadata helper uses this operation to replace a 44-byte descriptor, confirming write direction rather than geometry reading. Only the name and explanatory comment changed. Reopening/decompilation passed; bytes, the existing inferred prototype and all 9,611 other names/signatures are unchanged. Working parameter types, caller bounds, malformed cursors, allocation/concurrency and live game behavior remain unresolved. This adds one verified shared resource helper, not completion of the stroke-rendering path.
+The indexed stroke metadata helper uses this operation to replace a 44-byte descriptor, confirming write direction rather than geometry reading. Only the name and explanatory comment changed. Reopening/decompilation passed; bytes, the existing inferred prototype and all 9,611 other names/signatures are unchanged. Working parameter types were pending at this naming checkpoint and are refined below; caller bounds, malformed cursors, allocation/concurrency and live game behavior remain unresolved. This adds one verified shared resource helper, not completion of the stroke-rendering path.
+
+
+### Packed resource cursor writer working types verified
+
+Corrected the previously inferred `void()` declaration of **WritePackedResourceBytesThroughCursor** to return a 32-bit resource ID and accept a cursor pointer, signed 32-bit payload byte offset, replacement-data pointer and unsigned 32-bit byte count. Assembly establishes the signed offset extension, zero-extended length and root-ID return; independent reopening verifies argument storage in RDI/ESI/RDX/ECX and return storage in EAX.
+
+The cursor pointer remains a working view of a mixed-layout object, not a recovered original struct. Bytes and all 9,611 other names/signatures are unchanged; decompilation passes. No additional checked-function credit or native game validation is claimed.

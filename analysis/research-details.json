@@ -24242,5 +24242,29 @@
       "No malformed cursor, caller bounds, allocation/concurrency or native game proof."
     ],
     "new_name_credit": 1
+  },
+  "packed_resource_cursor_byte_write_types_checkpoint": {
+    "address": "1410608a0",
+    "after": {
+      "name": "WritePackedResourceBytesThroughCursor",
+      "signature": "uint PS4_SYSV WritePackedResourceBytesThroughCursor(uint * cursor, int byte_offset, uchar * replacement_bytes, uint byte_count)"
+    },
+    "working_declaration": true,
+    "parameter_storage": [
+      "RDI:8",
+      "ESI:4",
+      "RDX:8",
+      "ECX:4"
+    ],
+    "return_storage": "EAX:4",
+    "evidence": [
+      "Entry register preservation, signed offset extension, zero-extended32-bit byte count, four-byte child propagation and first cursor DWORD return read in87 original instructions.",
+      "Independent reopening/decompilation passed; original bytes and9611 unrelated names/signatures unchanged."
+    ],
+    "limits": [
+      "Cursor pointer is a working view over a mixed-layout object, not recovered original struct.",
+      "No caller bounds, malformed cursor, allocator/concurrency or runtime proof."
+    ],
+    "new_name_credit": 0
   }
 }

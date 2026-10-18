@@ -18043,17 +18043,18 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV WritePackedResourceBytesThroughCursor(void)",
+      "saved_working_signature": "uint PS4_SYSV WritePackedResourceBytesThroughCursor(uint * cursor, int byte_offset, uchar * replacement_bytes, uint byte_count)",
       "evidence": [
         "Complete87 owned original instructions and decompilation read.",
         "Cursor copy/write, category1 summary refresh, fingerprint interning, unchanged-identity stop and four-byte parent propagation traced.",
         "Indexed44-byte stroke metadata replacement caller independently confirms write direction.",
-        "Independent reopening/decompilation passed; bytes, prototype and9611 other names/signatures unchanged."
+        "Independent reopening/decompilation passed; bytes, prototype and9611 other names/signatures unchanged.",
+        "Entry register preservation, signed offset extension, zero-extended32-bit byte count, four-byte child propagation and first cursor DWORD return read in87 original instructions."
       ],
       "caveats": [
         "Analyst descriptive name, not original symbol.",
-        "Existing inferred prototype retained; justified working parameter types remain pending.",
-        "No malformed cursor, caller bounds, allocation/concurrency or native game proof."
+        "No malformed cursor, caller bounds, allocation/concurrency or native game proof.",
+        "Cursor pointer is a working view over a mixed-layout object, not recovered original struct."
       ]
     }
   ],
