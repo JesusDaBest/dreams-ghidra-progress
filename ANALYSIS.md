@@ -7781,3 +7781,12 @@ The linked forward update processes **eight samples**, preserving an eight-recor
 **150 bounded native cases** verify the later-sample vector calculation: blend two vectors with a per-sample weight, then apply a correction along the blended direction proportional to the difference between the original and blended lengths. The independent model agrees for finite nonzero vectors, including negative and greater-than-one correction factors. The initial test cut stopped before the final vector addition; extending through that original instruction corrected the harness.
 
 The eight weights come from `powf` applied along eight evenly spaced parameter values from zero to one. Original import relocation data independently confirms the `powf` binding. The exponent blends a configuration value toward one using an emission-source scalar. Runtime configuration values and that scalar's meaning remain unknown. Orientation reconstruction and the complete sample-update pipeline still require verification. No additional name credit is taken.
+
+
+### Complete linked-sprite forward pass checked
+
+**324 complete forward-pass fixtures** check **2,592 world poses**: the linked first anchor and all seven following samples execute together in the original code. An independent sequential affine/vector/quaternion model agrees with every sample's world position, uniform scale and orientation. Tests vary the linked local/world frames, interpolation coordinate including the final endpoint, base rotation, blend weight and length-correction factor. Only the eight world-pose fields change; saved local poses, linked target and input arguments remain unchanged.
+
+This connects the earlier isolated calculations. The first anchor uses interpolated linked frames; following samples construct relative vectors from saved local and updated world frames, blend/correct their direction and length, reconstruct orientation, and write the next world pose. Supporting isolated and connected tests overlap this arithmetic and are not additive whole-function coverage.
+
+The fixture stops before the pass-repeat decision. Positive finite scales and nondegenerate inputs are tested, with a constant sample weight per fixture and the optional directional term disabled. Repeated-pass convergence, varying sample weights, the directional term, link creation, full-emitter behavior and actual GPU execution remain unverified. No additional name or completion credit is taken.

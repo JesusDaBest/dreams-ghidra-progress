@@ -25192,5 +25192,32 @@
       "No GPU execution, live platform synchronization, complete lifetime or nonfinite-domain verification."
     ],
     "new_name_credit": 0
+  },
+  "sprite_complete_forward_pass_followup": {
+    "native": {
+      "cases": 324,
+      "sample_world_poses_checked": 2592,
+      "scope": "Original full forward pass2640..3bbf with constant/varying linked local/world position-scale and quaternion frames; first anchor interpolation and all seven later updates execute together. RET at3bc0, finite classifier adapter, explicit sample weights/correction factor and disabled optional directional mode.",
+      "checked": [
+        "Independent linked-frame interpolation/composition plus seven-step sequential model matches all eight output world poses.",
+        "Three linked-frame profiles, four coordinates including end7, three base rotations, three weights and three correction factors.",
+        "Only eight world-pose fields change; source-local poses, linked target and arguments preserved."
+      ],
+      "limits": [
+        "Positive finite scales and nondegenerate inputs; constant per-sample weights in each fixture.",
+        "No repeated-pass convergence, optional directional term, link creation or actual GPU execution."
+      ],
+      "case_accounting": "324 full-pass fixtures /2592 sample poses; report separately from earlier27 constant-target fixtures.",
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "interpretation": "Linked first anchor is interpolated from linked local/world frames; seven following samples use previous saved-local and updated-world frames, weighted relative-vector correction and reconstructed orientation.",
+    "supporting_domains": [
+      "35 isolated basis-to-quaternion cases;96 basis construction cases;600 connected blend/orientation cases.",
+      "144 world-composition and216 connected intermediate-to-world cases.",
+      "2592 expanded individual later-sample cases;27 earlier constant-target full-pass fixtures."
+    ],
+    "case_accounting": "Supporting tests overlap staged arithmetic; do not sum as disjoint whole-function coverage.",
+    "new_name_credit": 0
   }
 }

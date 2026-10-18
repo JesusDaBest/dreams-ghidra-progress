@@ -7242,3 +7242,6 @@ Linked sprite anchor composition: 112 bounded native cases match an independent 
 
 
 Sprite sample-update follow-up:168 bounded iteration-selector cases and150 bounded vector-correction cases verified; eight-sample loop and powf weight origin traced statically. Full update remains unverified; no name credit.
+
+
+Linked sprite forward pass:324 complete fixtures /2592 sample world poses match an independent sequential model. Repetition, optional directional term and GPU integration remain open; no name credit.
