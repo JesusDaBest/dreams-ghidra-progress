@@ -6888,3 +6888,12 @@ The newer-version dispatch branch corrects an earlier overbroad statement: versi
 Applied and independently reopened **RebuildPackedResourceTreeWithRefreshedSummaries** after reading all **55 CPU instructions** and normal control paths. It clones resource pages, recursively replaces child IDs, invokes the reviewed node-summary helper for category-1 pages and interns the resulting node. The loader uses this stage through scene-format version 1231.
 
 Only the descriptive name and comment changed. Independent reopening and decompilation passed; native bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. The summary algorithm has its own earlier review. Malformed trees, cycles, allocation failures, concurrency and runtime behavior remain unverified. This adds one checked CPU helper, not complete resource loading or sculpting.
+
+
+### Later flagged CSG rotation conversion named
+
+Applied and independently reopened **RebuildPackedResourceTreeWithConvertedFlaggedRotations** after reading its full **486-instruction CPU body**. It recursively rebuilds resource pages and converts ordinary packed rotations only when bit 47 is set; three special record selectors and unflagged rotations bypass that transformation. It preserves the high bit, re-encodes records with the current delta writer and interns the rebuilt node.
+
+For a finite unit quaternion [x,y,z,w], the traced matrix conversion is equivalent up to global quaternion sign to [w,z,-y,-x]. Under Hamilton quaternion multiplication this is a half-turn about the first quaternion axis applied on the right. That is an algebraic description, not a recovered source convention name. All four matrix branches matched across 5,004 fixtures; 12,000 connected decode/transform/repack cases also passed. The matrix model uses host double arithmetic and the scalar codec uses float32 transcription. These checks do not execute the native game or prove arbitrary packed inputs.
+
+Only the name and comment changed; reopening/decompilation passed and bytes, the existing prototype and all 9,611 other names/signatures are unchanged. The caller ignores the writer result, so arbitrary-input capacity success is not established. Malformed streams, cycles, allocation and runtime behavior remain unresolved. This adds one checked CPU helper, not full sculpting completion.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "713 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "714 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8682,
-    "other_names": 930,
-    "verification": "complete_inventory_matches_baseline_plus_713_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8681,
+    "other_names": 931,
+    "verification": "complete_inventory_matches_baseline_plus_714_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18010,6 +18010,28 @@
       "caveats": [
         "Descriptive analyst name, not original symbol.",
         "Underlying summary and hashing have separate reviews; no full runtime, malformed tree, cycle, allocation or concurrency proof."
+      ]
+    },
+    {
+      "address": "140c6d1d0",
+      "original_name": "FUN_140c6d1d0",
+      "applied_name": "RebuildPackedResourceTreeWithConvertedFlaggedRotations",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV RebuildPackedResourceTreeWithConvertedFlaggedRotations(void)",
+      "evidence": [
+        "Complete486-instruction native body and pseudocode read; bytes verified against original executable.",
+        "Current shape/highbit predicate, decode, allfour matrix branches, repack, output writer and interning traced.",
+        "5004 finite unit-quaternion matrix fixtures and12000 connected codec fixtures passed as host arithmetic models.",
+        "Independent reopening/decompilation passed; bytes, inferred prototype and all9611 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Descriptive analyst name, no original source axis/convention name claim.",
+        "Matrix host double and scalar codec float32 transcription are not native execution or universal exact packed roundtrip.",
+        "Writer result ignored by caller; no arbitrary-input capacity, malformed stream/cycle/allocation/runtime proof."
       ]
     }
   ],
