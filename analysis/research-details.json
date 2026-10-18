@@ -24404,5 +24404,35 @@
       "Import implementations, real file failures, concurrent path initialization and real GPU execution not exercised.",
       "Archive lookup compares only first64 bits of128-bit path hash; collision policy is not established."
     ]
+  },
+  "sprite_emission_source_flag_checkpoint": {
+    "source_producer_entry": "141015bb0",
+    "producer_status": "Original unwind-aligned code; Ghidra function definition missing. Bounded path review only.",
+    "source_record_stride": 416,
+    "emission_record_stride": 336,
+    "original_registered_fields": {
+      "0xc9": "SpriteFlagFadeIn",
+      "0xca": "SpriteFlagFadeOut",
+      "0xcb": "SpriteFlagLooping",
+      "0xf8": "SpriteFlagSpark",
+      "0xf9": "SpriteFlagPhysical"
+    },
+    "traced_contributions": {
+      "bit2": "FadeIn shifted2",
+      "bit3": "FadeOut nonzero OR contribution",
+      "bit5": "Looping nonzero OR contribution",
+      "bit1": "Spark nonzero OR contribution on reviewed path",
+      "bit13": "Physical contribution with additional gates"
+    },
+    "evidence": [
+      "Original field literals, registration offsets, shared bool helper offset storage and kind17 Sprite input selection checked.",
+      "Original executable reference scan locates two source record producers missed by earlier Ghidra reference results.",
+      "Producer appends416-byte source records; emission stage constructs336-byte records and preserves selected flag bits on reviewed routes."
+    ],
+    "limits": [
+      "Full producer, other contributors, malformed boolean values, later masks and buffer relocation remain partial.",
+      "Matching GPU flag bit numbers do not establish kaleidoscope or mirror behavior.",
+      "No GPU execution, new function creation, name or completion credit."
+    ]
   }
 }
