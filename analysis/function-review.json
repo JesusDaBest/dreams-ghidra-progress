@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "653 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "655 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8742,
-    "other_names": 861,
-    "verification": "complete_inventory_matches_baseline_plus_653_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8740,
+    "other_names": 863,
+    "verification": "complete_inventory_matches_baseline_plus_655_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16334,6 +16334,56 @@
         "Analyst descriptive name and working ABI, not original C++ declaration. Auxiliary table meaning and some flags remain unresolved.",
         "The function follows the queue failure reset at one caller, but its role does not establish complete overflow repair.",
         "No exact MM developer-source/build match or live game verification."
+      ]
+    },
+    {
+      "address": "14093ac60",
+      "original_name": "FUN_14093ac60",
+      "applied_name": "RemapTaggedValueObjectIndices",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RemapTaggedValueObjectIndices(void * indexMap, void * value)",
+      "evidence": [
+        "Complete77-instruction bodies and fresh pseudocode read, original bytes matched.",
+        "4608native cases per function cover all256tag bytes,selected packed indices and sentinel-1 with three mapping layouts.",
+        "Selected reference fields use signedlow26-bit indices into signed16-bit mapping entries with8-byte stride. Results sign-extend to32bits; sentinel-1 and every other record byte preserved.",
+        "Independent project reopening verifies names,two-pointer SysV working signatures and decompilation. Native bytes and all9601 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Prepared valid indices0/1/7/31 plus high packed bits and sentinel-1; arbitrary invalid/negative non-sentinel indices excluded.",
+        "Mappings include reversed slots,all-1,and signed16-bit extremes; those extremes test conversion only,not valid destination worlds.",
+        "Unknown tagged-value source type remains unresolved. Whole reorder,job scheduling,object callback and live game behavior not executed.",
+        "Descriptive analyst names and working two-opaque-pointer signatures, not recovered original C++ declarations.",
+        "Address suffix identifies the second implementation without claiming a distinct semantic role.",
+        "No exact MM livestream source/build match."
+      ]
+    },
+    {
+      "address": "1409a1fb0",
+      "original_name": "FUN_1409a1fb0",
+      "applied_name": "RemapTaggedValueObjectIndices_1409a1fb0",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RemapTaggedValueObjectIndices_1409a1fb0(void * indexMap, void * value)",
+      "evidence": [
+        "Complete77-instruction bodies and fresh pseudocode read, original bytes matched.",
+        "4608native cases per function cover all256tag bytes,selected packed indices and sentinel-1 with three mapping layouts.",
+        "Selected reference fields use signedlow26-bit indices into signed16-bit mapping entries with8-byte stride. Results sign-extend to32bits; sentinel-1 and every other record byte preserved.",
+        "Independent project reopening verifies names,two-pointer SysV working signatures and decompilation. Native bytes and all9601 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Prepared valid indices0/1/7/31 plus high packed bits and sentinel-1; arbitrary invalid/negative non-sentinel indices excluded.",
+        "Mappings include reversed slots,all-1,and signed16-bit extremes; those extremes test conversion only,not valid destination worlds.",
+        "Unknown tagged-value source type remains unresolved. Whole reorder,job scheduling,object callback and live game behavior not executed.",
+        "Descriptive analyst names and working two-opaque-pointer signatures, not recovered original C++ declarations.",
+        "Address suffix identifies the second implementation without claiming a distinct semantic role.",
+        "No exact MM livestream source/build match."
       ]
     }
   ],

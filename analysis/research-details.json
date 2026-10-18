@@ -17571,5 +17571,57 @@
       "Whole reorder,job scheduling,malformed/cyclic hierarchies and live editor behavior unverified.",
       "No exact MM livestream source/build match."
     ]
+  },
+  "tagged_value_index_remap_names_checkpoint": {
+    "targets": {
+      "14093ac60": {
+        "name": "RemapTaggedValueObjectIndices",
+        "signature": "void PS4_SYSV RemapTaggedValueObjectIndices(void * indexMap, void * value)"
+      },
+      "1409a1fb0": {
+        "name": "RemapTaggedValueObjectIndices_1409a1fb0",
+        "signature": "void PS4_SYSV RemapTaggedValueObjectIndices_1409a1fb0(void * indexMap, void * value)"
+      }
+    },
+    "native_check": {
+      "native_cases": {
+        "14093ac60": 4608,
+        "1409a1fb0": 4608,
+        "14093b900": 108
+      },
+      "original_native_instructions_verified": {
+        "14093ac60": 77,
+        "1409a1fb0": 77
+      },
+      "wire_callback_bytes_verified": 114,
+      "findings": [
+        "Both complete tagged-value helpers remap the same selected fields for all256 tag bytes, preserving every other record byte.",
+        "Tags1 select+20/+24; tags2/16 select+0/+4; tags3/7/8/18/19/20/25/26/29/36/39/45 select+0. Other tags preserve entire record.",
+        "Signedlow26-bit packed indices select signed16-bit mapping entries and store sign-extended32-bit results; sentinel-1 preserved.",
+        "Original wire-job callback remaps only endpoint fields+20/+24 in selected64-byte wire record; complete prepared world,closure and mapping comparisons pass."
+      ],
+      "limits": [
+        "Prepared valid indices0/1/7/31 plus high packed bits and sentinel-1; arbitrary invalid/negative non-sentinel indices excluded.",
+        "Mappings include reversed slots,all-1,and signed16-bit extremes; those extremes test conversion only,not valid destination worlds.",
+        "Unknown tagged-value source type remains unresolved. Whole reorder,job scheduling,object callback and live game behavior not executed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete77-instruction bodies and fresh pseudocode read, original bytes matched.",
+      "4608native cases per function cover all256tag bytes,selected packed indices and sentinel-1 with three mapping layouts.",
+      "Selected reference fields use signedlow26-bit indices into signed16-bit mapping entries with8-byte stride. Results sign-extend to32bits; sentinel-1 and every other record byte preserved.",
+      "Independent project reopening verifies names,two-pointer SysV working signatures and decompilation. Native bytes and all9601 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Prepared valid indices0/1/7/31 plus high packed bits and sentinel-1; arbitrary invalid/negative non-sentinel indices excluded.",
+      "Mappings include reversed slots,all-1,and signed16-bit extremes; those extremes test conversion only,not valid destination worlds.",
+      "Unknown tagged-value source type remains unresolved. Whole reorder,job scheduling,object callback and live game behavior not executed.",
+      "Descriptive analyst names and working two-opaque-pointer signatures, not recovered original C++ declarations.",
+      "Address suffix identifies the second implementation without claiming a distinct semantic role.",
+      "No exact MM livestream source/build match."
+    ],
+    "new_name_credit": 2
   }
 }

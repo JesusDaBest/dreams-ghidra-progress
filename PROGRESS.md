@@ -5672,3 +5672,12 @@ Two complete 77-instruction tagged-value helpers, `14093ac60` and `1409a1fb0`, e
 The `RemapWires` job callback at `14093b900` passed **108 native cases**. It rewrites the two endpoint reference fields of a selected 64-byte wire record, preserving the absent-reference sentinel and every other byte of the prepared world, closure and mapping. Its complete 114-byte body was compared with the original executable. The adjacent `RemapThings` callback has kind-specific branches, metadata-selected fields and persistent-object lookups; those branches have been read in assembly but are not yet behaviorally verified.
 
 These checks add evidence, **zero checked names**, and no new subsystem completion credit. Allocation, job scheduling, complete parallel-table permutation, complete object-reference remapping, malformed or cyclic hierarchies and live editor behavior remain unverified. Signed mapping extremes test conversion only, not valid destination worlds. No exact Media Molecule source/build match is claimed.
+
+
+### Two tagged-value object-index remappers named
+
+`RemapTaggedValueObjectIndices` and `RemapTaggedValueObjectIndices_1409a1fb0` now name two separate implementations of the same verified role. Each complete 77-instruction body switches on the tag at byte 0x54 to select reference fields, extracts a signed low-26-bit index, reads a signed 16-bit result from an eight-byte-stride map and writes a sign-extended 32-bit reference. The absent-reference sentinel stays absent. The address suffix distinguishes implementations without inventing a separate purpose.
+
+Each passed 4,608 original native cases across all 256 tags, selected valid packed indices, sentinel -1 and three mapping layouts. All other record bytes and the mapping remained unchanged. The original tagged-value source type is unresolved, so the working signature uses two opaque pointers rather than inventing a source type. Independent reopening and decompilation verified both names and signatures, unchanged machine code and all 9,601 other names/signatures.
+
+Totals: **708 checked names** (631 behavior/helper and 77 property/type reviews), **2,117 mapped** and **7,486 unmapped** among 9,603 defined functions. Whole object reordering, parallel-table permutation and kind-specific object-remapping behavior remain incomplete. These names do not establish full subsystem completion, live editor correctness or an exact Media Molecule source/build match.

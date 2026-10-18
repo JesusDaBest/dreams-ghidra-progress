@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2115,
-  "unmapped_total": 7488,
+  "mapped_total": 2117,
+  "unmapped_total": 7486,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53367,6 +53367,58 @@
             "Exact world/owner/source-world/object/input comparisons pass. Parent-before-child fixtures verify cached flags combine inherited parent flags only for class-byte0; root cached byte becomes0. Auxiliary8-byte table copy preserves trailing entries beyond the new count.",
             "Cache-range and finalization callees are explicit observers; kind-specific index/timeline/full rebuild branches not executed in this batch.",
             "Independent reopening verifies descriptive name, void/owner-pointer/two-byte-mode working signature and successful decompilation; original bytes and other9602 names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "14093ac60": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Object-index remapping helpers called by world-reference remapping after object ordering; original tagged-value source type unresolved.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and original native behavior checks.",
+      "code_sha256": "dfd9a636122934ffb603d62f03049a52feff03bdae3dc2e0d45dc88d2361812f",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapTaggedValueObjectIndices",
+          "support": [
+            "Complete77-instruction bodies and fresh pseudocode read, original bytes matched.",
+            "4608native cases per function cover all256tag bytes,selected packed indices and sentinel-1 with three mapping layouts.",
+            "Selected reference fields use signedlow26-bit indices into signed16-bit mapping entries with8-byte stride. Results sign-extend to32bits; sentinel-1 and every other record byte preserved.",
+            "Independent project reopening verifies names,two-pointer SysV working signatures and decompilation. Native bytes and all9601 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1409a1fb0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Object-index remapping helpers called by world-reference remapping after object ordering; original tagged-value source type unresolved.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and original native behavior checks.",
+      "code_sha256": "8840126bacf36e282dce45d3c5276dc19c49a81e52481dc26730653361407b55",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapTaggedValueObjectIndices_1409a1fb0",
+          "support": [
+            "Complete77-instruction bodies and fresh pseudocode read, original bytes matched.",
+            "4608native cases per function cover all256tag bytes,selected packed indices and sentinel-1 with three mapping layouts.",
+            "Selected reference fields use signedlow26-bit indices into signed16-bit mapping entries with8-byte stride. Results sign-extend to32bits; sentinel-1 and every other record byte preserved.",
+            "Independent project reopening verifies names,two-pointer SysV working signatures and decompilation. Native bytes and all9601 other names/signatures unchanged."
           ]
         }
       ]
