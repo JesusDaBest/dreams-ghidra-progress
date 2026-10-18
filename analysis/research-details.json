@@ -24120,7 +24120,7 @@
       "Scene input context initializes format version to99999, then the header-present route reads marker and version DWORDs.",
       "Accepted scene version is below100000 and is stored in context offset0x14.",
       "Assembly follows the context through scene serialization, object iteration, object record decoding and packed resource conversion.",
-      "Category1 versions<=0x74 receive rotation conversion before metadata compaction, marked-record rebuilding and header conversion. Versions0x75..0x9e enter the latter chain; higher versions bypass that legacy chain."
+      "Separate category1 ceilings: rotation116,metadata158,marked-record281,header347; newer versions can enter later stages directly."
     ],
     "verification": "77 setup/header anchors and79 forwarding/threshold anchors matched original executable bytes.",
     "limits": [
@@ -24128,6 +24128,17 @@
       "Original version enum labels, game release mapping, older headerless format and malformed-input behavior remain unresolved.",
       "No runtime or complete compatibility claim."
     ],
-    "new_name_credit": 0
+    "new_name_credit": 0,
+    "staged_threshold_correction": {
+      "basis": "Newer dispatch140dd9391..140dd93b5 inspected in original executable.",
+      "stage_upper_bounds": {
+        "rotation_upgrade": 116,
+        "metadata_compaction": 158,
+        "bit0_marked_record_rebuild": 281,
+        "header_conversion": 347,
+        "additional_bounds_scale_stage": 482
+      },
+      "supersedes": "Prior statement that all versions above158 bypass the legacy chain."
+    }
   }
 }

@@ -7335,7 +7335,7 @@ No additional checked-function credit is added. These are partial shader and con
 
 Applied and independently reopened **AppendConvertedPackedResourceTreeRecords** after reading its complete **200-instruction** CPU body and pseudocode. It recursively visits 512-byte tree pages, decodes leaf records with retained delta state, converts the packed header layout, and appends through the reviewed CSG record writer. The caller initializes and finalizes that writer separately.
 
-The conversion maps the older first-byte bit 1 into the current first-byte bit 7, which the command expander can later map into shader flag 14. Shape-specific payload routes retain their separate extents. The observed caller gate is an unsigned comparison against `0x9e`; its exact source-format version declaration remains unverified.
+The conversion maps the older first-byte bit 1 into the current first-byte bit 7, which the command expander can later map into shader flag 14. Shape-specific payload routes retain their separate extents. The initial caller route compares against `0x9e`; the newer dispatch branch separately enters header conversion through version `0x15b`. Scene-format version provenance is now traced, while original enum labels remain unknown.
 
 The descriptive name and explanatory comment are the only project changes. Original bytes and the inferred prototype are unchanged; reopening/decompilation passed, with all 9,611 other names/signatures unchanged. Malformed pages, cycles, allocation failure and runtime behavior remain untested. This adds one checked CPU helper to packed CSG records, without claiming complete shader understanding or a recovered user-facing flag name.
 
@@ -7398,6 +7398,11 @@ Only the descriptive name and comment changed. Independent reopening and decompi
 
 The legacy CSG thresholds now have traced provenance: they use the serialized **scene-format version** carried by the shared serializer context. The input context starts with sentinel 99,999. On the header-present input route, the scene serializer checks a marker, reads a version below 100,000 and stores it in the context. Native caller moves connect that context to packed resource conversion.
 
-For category-1 resources, versions through **116 (0x74)** receive rotation conversion before metadata compaction, marked-record rebuilding and header conversion. Versions **117 through 158 (0x75..0x9e)** enter the latter chain; higher versions bypass this legacy chain. These are format codes, not game release numbers.
+For category-1 resources, the stages have separate version ceilings: rotation conversion through **116 (0x74)**, metadata compaction through **158 (0x9e)**, marked-record rebuilding through **281 (0x119)**, and header conversion through **347 (0x15b)**. Newer versions skip earlier stages but can still enter later ones. These are format codes, not game release numbers.
 
 This is bounded header and call-chain analysis, with original-byte verification. Original version labels, release mapping, older headerless behavior and malformed-input handling remain unresolved. No additional reviewed-function or completion credit is added.
+
+
+### Staged CSG version gates corrected
+
+The newer-version dispatch branch corrects an earlier overbroad statement: versions above 158 skip the metadata prepass, but do not necessarily skip later legacy conversions. The separate ceilings above are verified in assembly. An additional bounds/scale stage is entered through version 482; its complete arithmetic is still under review. This correction adds no checked-function credit.
