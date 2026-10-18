@@ -19967,5 +19967,67 @@
       "Working float4 containers and analyst descriptive name are not original C++ declarations."
     ],
     "new_name_credit": 1
+  },
+  "buffered_region_runtime_connected_checkpoint": {
+    "checks": [
+      {
+        "native_cases": 18,
+        "findings": [
+          "Original runtime preparation stores the supplied preceding-call result in the global result field;nonzero rebuild marker clears nineteen32-bit counters,five byte markers,five0x40000-byte hash arrays and selected globals.",
+          "18 complete runtime/global comparisons verify zero/nonzero marker,three prior patterns and two supplied preceding-call results. No-reset leaves runtime state unchanged."
+        ],
+        "limits": [
+          "Entry begins after preceding external calls;their identities/behavior and lock ownership are not tested.",
+          "Selected-object generation and full producer remain unverified;no concurrency or live-game claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "native_cases": 384,
+        "findings": [
+          "Original kind68 producer path calls original region builder and appends its120-byte record plus16-byte auxiliary record. Capacity128 and nonpositive finite strength reject without runtime writes.",
+          "Signed IDs below-1 enter ID hash/next/array registration;positive and-1 IDs skip that registration while accepted records still append.384 complete-state cases cover capacity boundaries,ID classes,ID-array growth,power,auxiliary count and flags."
+        ],
+        "models": [
+          "Imported memset uses explicit standard fill model;geometry,bounds and libc isinff remain original."
+        ],
+        "limits": [
+          "Entry begins after inherited-transform resolution;prepared identity transforms/finite data and original bounded metadata stores.",
+          "Full producer,invalid data,concurrency and live game remain unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 256,
+        "findings": [
+          "Original kind68 inherited-transform resolution feeds original geometry record construction and runtime ID/record insertion.",
+          "256 complete-state executions cover cached parent-kind traversal through13/14/15,fallback byte2e ancestry walks,tagged parent references and distinct ancestor transforms. Outputs use the independently predicted ancestor position/scale.",
+          "Parent transform offsets are supplied by original initializer stores."
+        ],
+        "models": [
+          "Imported memset uses explicit standard fill model;record builder,geometry,bounds and libc isinff remain original."
+        ],
+        "limits": [
+          "Prepared valid4-node trees and identity rotations;some mode dimensions repeat for the cached branch.",
+          "Full producer,malformed/cyclic data,concurrency and live game remain unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "resolved_platform_calls": [
+      "scePthreadMutexLock",
+      "scePthreadGetthreadid",
+      "scePthreadMutexUnlock",
+      "__isinff",
+      "powf",
+      "__cxa_guard_acquire",
+      "__cxa_guard_release"
+    ],
+    "platform_binding_basis": "Original SELF JUMP_SLOT imports linked to local NID database;platform synchronization not executed.",
+    "new_name_credit": 0,
+    "full_producer_named": false
   }
 }

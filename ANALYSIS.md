@@ -6755,3 +6755,12 @@ Original kind-68 initialization stores supply local-transform, alternate-shape a
 Saved working storage explicitly describes three GP arguments, two full float4 SIMD inputs, one scalar SIMD input and boolean AL return. Independent reopening verifies decompilation, unchanged original bytes and all 9,605 other names/signatures. Finite unit parent transforms, identity local offset and selected shapes/colors only; nonidentity local offset, nonfinite/malformed inputs, full startup, runtime insertion, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **733 checked names** (653 behavior/helper and 80 property/type), **2,139 mapped**, **7,467 unmapped**, among 9,606 defined functions.
+
+
+### Region construction connected to runtime insertion
+
+The producer's kind-68 path now executes original inherited-transform resolution, geometry construction and runtime insertion together. **256 executions** compare the complete runtime buffer, world, source objects and metadata across cached parent-kind traversal, fallback attachment-mode walks, tagged references and distinct ancestor positions/scales. Original initializer stores supply ancestor transform offsets. Some cached-path mode dimensions repeat behavior.
+
+A separate **384-case** check verifies the 128-record capacity gate, finite-strength rejection, the 120-byte region record and a 16-byte auxiliary record. Signed IDs below -1 enter runtime hash/next/ID-array registration; positive IDs and -1 skip that registration while accepted records still append. ID-array growth, auxiliary counts and source flags are compared. **18 reset cases** verify rebuild-marker-dependent clearing of counters, markers, five hash arrays and selected globals, starting after external calls.
+
+Original import records identify mutex lock/unlock, thread-ID lookup, infinity checking, power and C++ static-initialization guards. That identification does not test platform locking or concurrency. Runtime fixtures use a standard byte-fill model where needed; geometry, bounds, record builder and libc infinity checking remain original. Prepared valid trees and finite identity rotations only; malformed/cyclic data, other object-kind generation paths, full producer and live-game behavior remain unverified. **733 checked names** remains the total.
