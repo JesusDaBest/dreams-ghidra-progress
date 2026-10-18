@@ -6906,3 +6906,10 @@ The older-format scale upgrade now has traced command admission, four-point geom
 One gap remains explicit: an alternate radial path derives its radius from the upper X/Z coordinates. That does not enclose every arbitrary mathematical bounding box; the reachable geometry constraints must justify it. A generic counterexample is not evidence of a reachable game bug. The gate comes from expanded bits 15–19, traced to packed record byte 2 and checked over all 256 byte values. Original field names and the required geometry constraints remain unresolved.
 
 This is partial analysis inside the larger loader. It adds no checked-name or completion credit. Special-shape behavior, invalid values, integer conversion limits, scale narrowing, allocation and runtime behavior still need verification.
+
+
+### Radial-bounds constraint connected to shader folding
+
+The packed-field producer and the reviewed geometry shader now supply the missing **ideal coordinate-domain constraint**. Active radial counts range from 2 through 31. The shader folds angles into 0 through half a turn divided by that count, so the resulting plane coordinates lie in the nonnegative quadrant before center subtraction and the affine transform. Within that domain, the upper-coordinate radius encloses points inside the corresponding bounding box. The earlier generic negative-coordinate counterexample is outside this ideal folded domain.
+
+Host models checked 12,000 angular-folding cases and 2,249 conditional enclosure cases. This supports the geometric rationale; it does not prove exact GPU trigonometric rounding, origin exceptions, complete source-shape bounds, padding interactions or every evaluator. The earlier unconditional-enclosure concern is narrowed, not replaced by a full runtime correctness claim. No checked-function credit is added.

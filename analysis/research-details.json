@@ -24191,6 +24191,22 @@
       "Generic AABB counterexample disproves unconditional radial enclosure, but does not establish a reachable game bug.",
       "Special-shape constraints, source field labels, exceptional values, scale narrowing and full loader behavior remain unresolved."
     ],
-    "new_name_credit": 0
+    "new_name_credit": 0,
+    "radial_constraint_followup": {
+      "findings": [
+        "Producer emits active radial counts2..31.",
+        "Reviewed shader folds turns to0..1/(2n), placing ideal folded coordinates in nonnegativeX/Z quadrant before center subtraction and affine transform.",
+        "For points in that quadrant inside an AABB, hypot(upperX,upperZ) bounds radial distance. Earlier arbitrary-negative-box example lies outside ideal folded domain."
+      ],
+      "host_cases": {
+        "angular_fold": 12000,
+        "conditional_enclosure": 2249
+      },
+      "remaining": [
+        "GPU trig approximation/rounding and origin exceptions.",
+        "Full source-shape enclosure, margin/quantization interaction and alternate evaluators."
+      ],
+      "new_name_credit": 0
+    }
   }
 }
