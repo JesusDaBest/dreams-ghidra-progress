@@ -23114,5 +23114,28 @@
     ],
     "new_name_credit": 0,
     "runtime_gpu_verified": false
+  },
+  "sculpt_oriented_box_center_checkpoint": {
+    "caller": "141292230",
+    "window_start": "0x1412934e4",
+    "window_end_exclusive": "0x14129356b",
+    "original_file_backed": true,
+    "exact_rational_cases": 360,
+    "independent_cube_corners_checked": 18720,
+    "findings": [
+      "Candidate center is scale*(64*gridOrigin + axisA*midProjectedA + axisB*midProjectedB + axisC*midProjectedC). The grid-origin multiply is signed32-bit left shift before float conversion.",
+      "Candidate axis vectors stored downstream are normalizedAxis[j]*candidateHalfExtent[j]. This differs from storing unscaled directions or the helper original equivalent-box lengths.",
+      "The padding 3*sum(abs(axis.xyz)) is exactly the support radius of a coordinate-aligned cube with half width3 along that axis.",
+      "Conditional on an orthonormal basis and consistent grid origins, the padded projected box contains every half-width3 cube centered at each selected decoded record center.",
+      "The exact-rational model independently checks transformed centers, stored axis vectors and all eight corners for each selected point in360 cases."
+    ],
+    "limits": [
+      "No proof that half-width3 cubes enclose all actual game geometry or that every record producer uses the assumed origin.",
+      "Containment is conditional on orthonormal axes. The actual fixed-iteration solver and reciprocal-square-root normalization do not provide an exact orthonormality guarantee.",
+      "Model deliberately avoids signed-shift overflow; arbitrary grid origins, original float rounding, exceptional values and GPU execution remain unverified.",
+      "Pointer setup and existing AABB temporaries are outside the numerical candidate-center model; no full-caller completion or new name credit."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

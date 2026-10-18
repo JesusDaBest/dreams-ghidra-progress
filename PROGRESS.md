@@ -6683,3 +6683,12 @@ The candidate half extent along each axis is `scale * ((projectedMax - projected
 Matched the loader's source path and shader suffix to the immutable local archive. The complete **173-instruction, 1,020-byte** `ChunkGetOrientedBounds` program reassembles exactly; 72 trailing bytes were excluded. It decodes three packed 10-bit coordinates into record centers `4*coordinate + 2`, projects them along the three CPU axes, then reduces minima and maxima. Out-of-range or zero-mask records retain neutral extrema. A provenance model covering **82 tail/sparse-validity patterns** verifies that the two half-wave reductions combine in axis order before six GDS min/max updates.
 
 The mask producer's complete meaning, the geometric justification for the padding factor, coordinate-origin coverage, synchronization and actual GPU execution remain unverified. This closes a static link between the inertia-derived axes, projected bounds and the CPU choice; it adds no checked-function credit. The total remains **765 checked functions**.
+
+
+### Sculpt oriented-box center and padding geometry
+
+The oriented candidate's center is `scale * (64*gridOrigin + axisA*midA + axisB*midB + axisC*midC)`, where each midpoint is halfway between that axis's projected minimum and maximum. The stored axis vectors are the normalized directions multiplied by the candidate half extents; they are not the earlier equivalent-box lengths returned by the inertia helper. The grid-origin shift occurs in signed 32-bit storage before conversion to float.
+
+The padding term `3*sum(abs(axis.xyz))` is the support radius of a coordinate-aligned cube with half-width 3 projected onto that axis. **360 exact-rational cases** checked the candidate center and axis storage against the reviewed CPU instructions, then independently checked **18,720 cube corners** for containment. This supplies a conditional geometric interpretation of the padding.
+
+The containment statement assumes an orthonormal basis and consistent coordinate origins. It does **not** prove that the actual approximate solver always meets that assumption, or that these cubes contain all geometry represented by the game records. Producer mask semantics, original floating-point behavior, signed-shift overflow and GPU execution remain unresolved. No additional checked-function credit is added.
