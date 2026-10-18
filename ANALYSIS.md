@@ -6045,3 +6045,16 @@ The 26-instruction message-specific helper is saved as `WriteCreateWireNodeMessa
 Controlled streams, a one-slot type dictionary and an already-ready wrapper descriptor remain fixtures. Fresh initialization, real output devices, full reflected message payloads, end-to-end delivery and gameplay remain unverified. The previous published import descriptions are corrected, including the metadata function's project comment. Independent reopening verifies both names and working signatures, with original native bytes and the other 9,601 names/signatures unchanged.
 
 Totals: 699 checked names, 2,110 mapped functions and 7,493 unmapped among 9,603 currently defined. These helper reviews do not establish complete wire-node delivery or editor behavior.
+
+
+### CreateWireNodeMessage payload: field encoding checked
+
+The registration helpers identify `Seq`, `PlayerId`, `EditOp` and `float2_packed` descriptors. `Seq` and `PlayerId` each wrap a signed 32-bit field; the port descriptor uses unsigned 16-bit encoding; packed XY registers float `x` and `y` at offsets 0 and 4. These establish serialization types, not every original C++ declaration or enum meaning.
+
+The message registers fields in this order: `canvas_seq`, `src_thing_seq`, `dst_thing_seq`, `src_port`, `dst_port`, `pos_along_wire`, `pos_xy`, then `playerid`. Memory offsets are respectively 4, 8, 12, 16, 18, 20, 24 and 0. The player ID is serialized last despite occupying the first four bytes in memory. Each sequence/player wrapper writes its signed32 value with seven-bit zigzag encoding; ports use unsigned seven-bit encoding. Position-along-wire and XY preserve their float32 bit patterns, with X before Y.
+
+96 offline cases now execute the original prefix, general, field and primitive writers without a payload callback. Reconstructed descriptors follow the captured registrations; they are not metadata obtained by running the game's initialization. Tests check exact bytes and write counts, signed ID and port boundaries, signed zero and NaN/infinity float bits, type-ID prefix boundaries, and per-call stream acceptance limits. Descriptor fixtures, source and writer context remain unchanged.
+
+A short type prefix returns status 1 and performs no body writes. Once the prefix is accepted, truncated primitive writes still return status 0 through this field chain. This describes the controlled stream result; wider stream-error handling has not been traced, so it does not establish an application defect.
+
+The earlier callback-only test did not execute these payload fields. This follow-up closes that fixture-level gap. Actual guarded descriptor initialization, real output devices, message transport/delivery and live editor behavior remain unverified. No names or progress counts increase: 699 names remain checked among 9,603 defined functions.

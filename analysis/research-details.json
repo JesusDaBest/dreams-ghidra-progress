@@ -17107,5 +17107,78 @@
     ],
     "corrected_assumption": "141603370 was incorrectly called an imported forwarding routine; original82-instruction body and connected native checks establish internal reflection writing.",
     "new_name_credit": 2
+  },
+  "create_wire_node_payload_checkpoint": {
+    "native_check": {
+      "cases": 96,
+      "finding": "Original type-prefix, general, field and primitive writers serialize the eight-field registration order, including nested signed32 wrappers and packed XY floats. A short type prefix returns1 without body writes; accepted prefix followed by truncated primitive writes still returns0 through the full field chain.",
+      "limits": [
+        "Descriptor fixture reconstructed from static registration; actual guarded registration not executed.",
+        "Controlled per-call-limited output stream; wider stream-error handling, transport and live-game behavior not established."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false,
+      "original_native_instructions_verified": {
+        "141603370": 82,
+        "141603480": 189,
+        "141603860": 436,
+        "141603fe0": 352
+      }
+    },
+    "registration_order": [
+      {
+        "name": "canvas_seq",
+        "offset": 4,
+        "encoding": "Seq wrapper: signed32 seven-bit zigzag"
+      },
+      {
+        "name": "src_thing_seq",
+        "offset": 8,
+        "encoding": "Seq wrapper: signed32 seven-bit zigzag"
+      },
+      {
+        "name": "dst_thing_seq",
+        "offset": 12,
+        "encoding": "Seq wrapper: signed32 seven-bit zigzag"
+      },
+      {
+        "name": "src_port",
+        "offset": 16,
+        "encoding": "EditOp descriptor: unsigned16 seven-bit"
+      },
+      {
+        "name": "dst_port",
+        "offset": 18,
+        "encoding": "EditOp descriptor: unsigned16 seven-bit"
+      },
+      {
+        "name": "pos_along_wire",
+        "offset": 20,
+        "encoding": "raw float32 bits"
+      },
+      {
+        "name": "pos_xy",
+        "offset": 24,
+        "encoding": "float2_packed: raw x then y float32 bits"
+      },
+      {
+        "name": "playerid",
+        "offset": 0,
+        "encoding": "PlayerId wrapper: signed32 seven-bit zigzag"
+      }
+    ],
+    "evidence": [
+      "Complete registration helper bodies read:146 instructions for Seq,139 for EditOp,145 for PlayerId,150 for float2_packed; all original instruction bytes matched the local executable.",
+      "Seq and PlayerId each register a signed32 field at offset0; float2_packed registers float x/y at offsets0/4; EditOp primitive descriptor kind3 is unsigned16.",
+      "Original type-prefix82, primitive189, general436 and field352 instructions byte-checked in the executing fixture.",
+      "96 combinations cover signed ID boundaries, unsigned16 boundaries, signed-zero/NaN/infinity float bits, one-/two-/five-byte type IDs and per-call acceptance limits0/1/2/unlimited.",
+      "Exact bytes, write counts, unchanged descriptor fixtures, input and writer context verified. No custom payload callback used."
+    ],
+    "limits": [
+      "Descriptor fixture reconstructed from static registration; actual guarded registration not executed.",
+      "Controlled per-call-limited output stream; wider stream-error handling, transport and live-game behavior not established.",
+      "The field layout and encoding are supported here; exact original C++ declarations and enum meanings remain unresolved. Existing unsigned storage-carrier layout labels are not proof of original signedness.",
+      "No new names, project mutations, semantic feature-completion credit or subsystem-size estimates."
+    ]
   }
 }
