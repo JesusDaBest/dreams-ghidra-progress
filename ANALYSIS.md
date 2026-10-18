@@ -7875,3 +7875,14 @@ Sprite's 16 workload buckets use matching list bases in culling and emission. Sm
 The working signature now includes both previously missing packed SIMD inputs: translation/uniform scale and rotation quaternion. The original body, full decompilation, indexed caller and a separately traced producer call were reviewed. Separate isolated suites covered 192 basic transform cases, 1,440 duplication/jitter/physical cases, 1,944 glow cases and 96 gate cases. Exponential calls used an explicit host-library adapter; mutable gains were fixture inputs. These are bounded code checks, not game execution.
 
 Independent reopening verified the descriptive name, Boolean result and five input storage locations. Executable bytes and all other function names/signatures remained unchanged. Cache-bound producers, extreme/nonfinite values, original platform math and actual GPU behavior remain unverified. The checked-name total is **796**.
+
+
+### Sprite cache bounds and glow inputs
+
+The partial assembly trace now connects the cached glow factors to their point data. One factor tracks the largest of three channels decoded from a packed word: three unsigned 9-bit mantissas share a five-bit exponent, with each value scaled by `2^(exponent - 24)`. This matches the structure of a shared-exponent color encoding, but the original channel names have not been established.
+
+The second factor traces to the product of outer and nested point fields. The separate radius pass uses twice the absolute value of the same product as an extent term. The center is formed from accumulated minimum/maximum coordinates; a second traversal accumulates distance from that center plus the extent term.
+
+The identified intervening imports are scalar math calls. The three internal helper calls and the eight-record indexed stack loop write ranges separate from the cached input. This narrows the alias question; it does not exclude every possible pointer alias or establish correct behavior for malformed data.
+
+This is additional understanding of one processor, with **no new checked-function credit**. Exact field names and units, the complete processor, original platform math and actual GPU/game behavior remain unverified.

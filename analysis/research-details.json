@@ -25432,5 +25432,21 @@
       "Cache bound/extents producers, nonfinite/extreme values, original PS4 expf, mutable defaults and real GPU/game/concurrency behavior unverified."
     ],
     "new_name_credit": 1
+  },
+  "sprite_cache_glow_origin_checkpoint": {
+    "scope": "Partial original-assembly trace of the Sprite frame-cache processor; no whole-function completion credit.",
+    "findings": [
+      "Cached glow-channel factor accumulates the maximum of three shared-exponent decoded point channels. Each channel is a 9-bit unsigned mantissa scaled by 2^(shared five-bit exponent minus 24). Original channel names remain unconfirmed.",
+      "The second glow-bound factor traces to the product of outer and nested point floats at offset 0x14. The separate bounds-radius pass uses twice the absolute value of that product as its extent term.",
+      "Identified intervening imports resolve to scalar pow, ldexpf and __isinff. Three internal helper calls write output/progress/cursor ranges separate from the outer extent spill.",
+      "The identified indexed stack loop fills eight 32-byte sample records; its computed write range does not overlap the outer extent spill."
+    ],
+    "limits": [
+      "Static trace and identified write ranges only; arbitrary pointer aliases and malformed traversal state are not fully excluded.",
+      "Exact source field names, original units, full processor semantics, original platform math and real GPU/game behavior remain unverified."
+    ],
+    "new_name_credit": 0,
+    "project_modified": false,
+    "runtime_game_verified": false
   }
 }
