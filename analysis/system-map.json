@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9614,
-  "mapped_total": 2194,
-  "unmapped_total": 7420,
+  "mapped_total": 2196,
+  "unmapped_total": 7418,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55593,6 +55593,58 @@
             "All25 indexed direct caller argument/use windows checked against original bytes.",
             "Two bank allocations use aligned stride*capacity size and matching per-bank descriptor inputs; failure branches remain distinct.",
             "Working void signature andRDI/ESI/EDX storage reopened; other9613 names/signatures and original bytes unchanged."
+          ]
+        }
+      ]
+    },
+    "1400230e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared GPU command-buffer support; original packet/import wrapper and renderer callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Appends indirect argument base packet or GNM graphics-queue indirect dispatch.",
+      "code_sha256": "4c0ae08968882867a11b11ac58d81214ad763b13be14fcdb44b9e4ed6911f4b4",
+      "code_sha256_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendIndirectArgumentBufferBase",
+          "support": [
+            "Complete original native body and captured C reviewed.",
+            "All indexed caller windows checked; SET_BASE helper also serves draw callers, so name covers indirect argument buffers generally.",
+            "Original native fixture cases:160 for base packet and384 for graphics indirect dispatch, with controlled refill and import spy.",
+            "Working parameters/RDI-ESI[-RDX] storage verified after independent reopen; original bytes and other9612 names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140023b70": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "command-dispatch",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared GPU command-buffer support; original packet/import wrapper and renderer callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Appends indirect argument base packet or GNM graphics-queue indirect dispatch.",
+      "code_sha256": "bfaf42ee81312e7a57c6d05003aeefdbab752eae88a67376fb2b6a8046c1eb5d",
+      "code_sha256_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendGnmDispatchIndirect",
+          "support": [
+            "Complete original native body and captured C reviewed.",
+            "All indexed caller windows checked; SET_BASE helper also serves draw callers, so name covers indirect argument buffers generally.",
+            "Original native fixture cases:160 for base packet and384 for graphics indirect dispatch, with controlled refill and import spy.",
+            "Working parameters/RDI-ESI[-RDX] storage verified after independent reopen; original bytes and other9612 names/signatures unchanged."
           ]
         }
       ]

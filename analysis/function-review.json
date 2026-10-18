@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "729 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "731 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9614,
-    "default_fun_names": 8666,
-    "other_names": 948,
-    "verification": "complete_inventory_matches_baseline_plus_729_renames_and_63_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8664,
+    "other_names": 950,
+    "verification": "complete_inventory_matches_baseline_plus_731_renames_and_63_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18454,6 +18454,46 @@
       ],
       "caveats": [
         "Original source declaration unknown; no real GPU/platform-failure/concurrency or complete resource lifetime proof."
+      ]
+    },
+    {
+      "address": "1400230e0",
+      "original_name": "FUN_1400230e0",
+      "applied_name": "AppendIndirectArgumentBufferBase",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendIndirectArgumentBufferBase(pointer command_buffer, uint header_flag, ulonglong base_address)",
+      "evidence": [
+        "Complete original native body and captured C reviewed.",
+        "All indexed caller windows checked; SET_BASE helper also serves draw callers, so name covers indirect argument buffers generally.",
+        "Original native fixture cases:160 for base packet and384 for graphics indirect dispatch, with controlled refill and import spy.",
+        "Working parameters/RDI-ESI[-RDX] storage verified after independent reopen; original bytes and other9612 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Original source declaration unknown; no real GPU/GNM execution, allocator concurrency or whole caller behavior proof."
+      ]
+    },
+    {
+      "address": "140023b70",
+      "original_name": "FUN_140023b70",
+      "applied_name": "AppendGnmDispatchIndirect",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendGnmDispatchIndirect(pointer command_buffer, uint argument_byte_offset)",
+      "evidence": [
+        "Complete original native body and captured C reviewed.",
+        "All indexed caller windows checked; SET_BASE helper also serves draw callers, so name covers indirect argument buffers generally.",
+        "Original native fixture cases:160 for base packet and384 for graphics indirect dispatch, with controlled refill and import spy.",
+        "Working parameters/RDI-ESI[-RDX] storage verified after independent reopen; original bytes and other9612 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Original source declaration unknown; no real GPU/GNM execution, allocator concurrency or whole caller behavior proof."
       ]
     }
   ],

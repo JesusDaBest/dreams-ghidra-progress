@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 793,
+    "checked_and_applied_names": 795,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 793,
+    "verified_names": 795,
     "function_count": 9614,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "729 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "731 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25377,6 +25377,35 @@
     "limits": [
       "Calls modeled as returning; reentry, interprocedural counter changes and live GPU behavior unproven.",
       "Explains ordinary sequential lifecycle, not every runtime path."
+    ],
+    "new_name_credit": 0
+  },
+  "graphics_indirect_wrapper_checkpoint": {
+    "functions": {
+      "1400230e0": [
+        "AppendIndirectArgumentBufferBase",
+        "void PS4_SYSV AppendIndirectArgumentBufferBase(pointer command_buffer, uint header_flag, ulonglong base_address)"
+      ],
+      "140023b70": [
+        "AppendGnmDispatchIndirect",
+        "void PS4_SYSV AppendGnmDispatchIndirect(pointer command_buffer, uint argument_byte_offset)"
+      ]
+    },
+    "original_native_cases": {
+      "argument_base": 160,
+      "graphics_indirect_dispatch": 384
+    },
+    "signature_correction": "Dispatch wrapper consumes command buffer and32-bit byte offset; unsupported extra parameters removed.",
+    "limits": [
+      "Controlled refill/import spy, no live GNM/GPU execution or allocator concurrency."
+    ],
+    "new_name_credit": 2
+  },
+  "sprite_bucket_dispatch_contract_followup": {
+    "finding": "Sixteen workload buckets share list bases between occlusion allocation and emission. Vector path handles buckets below64 work items per record; scalar path handles64 and above. Indirect group-count arithmetic matches their record-index partition.",
+    "capacity_limit": "Counters include reservations that spill to a later bucket. Complete saturation policy and runtime input constraints remain unresolved; no game defect is claimed.",
+    "limits": [
+      "Static shader/CPU trace, no live GPU synchronization or complete rendering proof."
     ],
     "new_name_credit": 0
   }
