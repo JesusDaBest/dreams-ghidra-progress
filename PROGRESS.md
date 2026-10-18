@@ -6759,3 +6759,12 @@ The writer's primary command-loop gate combines a positive smoothing weight, com
 Another command-loop branch records the current command index when smoothing weight reaches at least 1 and the corresponding flag is enabled. These full-weight markers are preserved in per-voxel scratch storage and used as thresholds by the paint-usage path. **1,040 finite command sequences** checked that update rule. This supports a marker-based pruning interpretation, without proving that every marked command changes the final rendered result or that every earlier command has no contribution.
 
 The paint shader contains **8,114 decoded instructions** and has an exact byte roundtrip, but most of its shape/paint evaluation remains unreviewed. Complete pass sequencing, initial scratch ownership, resumable state, partial lane masks, GPU visibility and actual rendering remain unresolved. No additional checked-function credit is added.
+
+
+### Sculpt replay refinement and saved work
+
+The CPU pipeline selects regular or surface-only block replay on intermediate levels. On the final level, paint-usage replay takes priority when enabled, followed by surface-only replay and ordinary voxel replay. **512 low-byte selector cases** checked this branch model. The CPU begins at refinement level 2 and advances through 1 and 0, saving produced ranges for later slot statistics. **4,554 ordered-boundary cases** checked that the three recorded ranges partition the span when counters remain monotone and do not wrap.
+
+The paint replay shader has command-budget exits that save a resume header and per-voxel scratch values. The CPU binds a first-dispatch/repeat flag; a repeated dispatch can reload saved state and skip records already marked complete. The command budget is copied into the first constant context and read by the shader at the matching offset. Completion increments the shared progress counter through the participating lane with local ID 0, rather than every voxel lane. **24 mask cases** checked this conditional selection. An earlier local interpretation of that mask as a resume mask was corrected after tracing its overwrite.
+
+This explains the repeated-dispatch mechanism without proving termination: complete command-pointer advancement, every branch join, valid capacities, counter wrapping, GPU visibility and all replay geometry remain under review. Batch-overflow retries restore saved readback counters and halve the input batch; this is not proof of complete GPU rollback. No function has been counted as newly understood from these partial findings.

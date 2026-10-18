@@ -3870,7 +3870,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -23706,6 +23706,72 @@
         "new_name_credit": 0,
         "project_modified": false
       }
+    ],
+    "new_name_credit": 0
+  },
+  "chunk_replay_refinement_resume_checkpoint": {
+    "scope": "CPU replay selection, refinement ranges and bounded shader resumption; no additional function completion credit",
+    "reviews": [
+      {
+        "function": "141290290",
+        "scope": "CPU replay selection and descriptor strides; not complete shader semantics",
+        "findings": [
+          "Nonfinal refinement selects Blocks or BlocksOnlySurfaceGeo using flag bit3. Flag bit1 does not select the paint variant on this branch.",
+          "Final refinement gives flag bit1 priority over bit3: MarkUsedPaint, otherwise OnlySurfaceGeo, otherwise ordinary Voxels.",
+          "Per-item temporary attribute strides are 0x600 for ordinary blocks/voxels, 0x800 for surface-only blocks, 0x300 for paint voxels, and 0x500 for surface-only voxels; descriptor capacity is 0x800 items.",
+          "Final input records use stride0x10; nonfinal records use stride0x48. These are recording layouts, not reconstructed source types."
+        ],
+        "limits": [
+          "The 512 cases exhaust the low-byte selector model, not execution of the game or GPU.",
+          "Large replay shader bodies remain partially reviewed; no full-function name/type credit.",
+          "Original executable bytes checked read-only; no game launch, credentials, network service requests or project mutation."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "function": "141290290",
+        "scope": "CPU refinement-level transition and three output-range lists",
+        "range_model_cases": 4554,
+        "findings": [
+          "Initial refinement level is2. Each iteration saves level-1; when current level is nonzero the saved level becomes the next level. The level0 branch exits refinement instead of using unsigned underflow as another level.",
+          "At each transition the produced-root counter is stored in the boundary array indexed by next level; input range for the following level is the difference between adjacent boundaries.",
+          "Descriptor buffer selection toggles using1-previous index at loop entry. This identifies alternating recording inputs, not complete buffer lifetime safety.",
+          "Three output lists receive (boundary1,boundary0-boundary1), (boundary2,boundary1-boundary2), (boundary3,boundary2-boundary3). They partition the total span only if boundaries are ordered without uint32 wrap.",
+          "Normal completion returns0 and explicit capacity failures return2. The initial zero-work branch retains ECX=0 and jumps directly to the common stack guard comparison.",
+          "The segment progress test compares shared readback+0x1c against segment end for equality. CPU control alone does not prove the shader counter reaches that value."
+        ],
+        "limits": [
+          "Counter monotonicity, no-wrap guarantees, GPU completion and retry termination remain unproven.",
+          "Range model validates conditional arithmetic, not runtime shader production.",
+          "No project mutation, new descriptive-name credit, or whole-game completion claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "shader": "ChunkReplayVoxelsMarkUsedPaint",
+        "scope": "Completion-lane mask and two command-budget save paths; partial shader review",
+        "mask_cases": 24,
+        "findings": [
+          "At0x4f4 s12:s13 is overwritten with the predicate localID!=0. No scalar destination overlaps s12:s13 between this write and the completion increment.",
+          "At0x998 its complement is intersected with the current execution mask, selecting localID0 if participating. That selected lane issues GDS0xc1c +=1. This is not a non-resume mask.",
+          "The primary evaluation loop increments s42 and compares it with first-context DWORD0x14 (byte0x50). At budget exhaustion it stores a four-DWORD resume header beginning with1 using localID0, then scratch planes at0,+0x100,+0x200 and exits.",
+          "The earlier evaluation loop increments s40 and uses the same first-context DWORD0x14 budget. Its budget exit writes a zero-leading resume header, saves the same scratch planes and exits.",
+          "Completion sentinel handling stores status2 and increments0xc1c; a later resumed dispatch can skip status2 records at entry. This supports retained completion state across dispatches, but does not prove whole-loop liveness."
+        ],
+        "limits": [
+          "Conditional lane model assumes v0 denotes localID on entry to the reviewed completion block; prior bounded live-path review supports this, not a formal complete CFG proof.",
+          "Resumption header remaining fields, pointer advancement, all branch joins and CPU flag binding still need complete reconciliation.",
+          "Finite budgets do not alone prove eventual termination or correctness of replay geometry."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "cpu_binding_findings": [
+      "The CPU places the global per-dispatch command budget into first-context byte0x50, read by the shader using scalar immediate DWORD0x14.",
+      "CPU user-data DWORD5 is the boolean of the repeat-pass counter: zero for the first dispatch of a segment and nonzero on subsequent dispatches. The paint shader uses s5 to load saved state and skip status2 records."
     ],
     "new_name_credit": 0
   }
