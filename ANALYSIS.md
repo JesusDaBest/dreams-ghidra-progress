@@ -7365,3 +7365,12 @@ Applied and independently reopened **RebuildPackedResourceTreeWithCompactedMetad
 The following stage decodes every record but emits only records with original flag bit 0 set. Skipped records still update inherited decoding state. The meaning of that selection flag is unknown; it is not labeled enabled, deleted or visible. Rotation conversion, metadata compaction, flag-based selection and header conversion are distinct stages in the traced legacy load path.
 
 All 65,536 metadata/flag combinations passed the bounded bit and record-size model. Reopening and decompilation passed; only the descriptive name and comment changed, with bytes, prototype and all 9,611 other names/signatures unchanged. These checks do not execute the original routine or prove malformed-input, allocation or whole-game behavior. No developer livestream source match has been established for these functions.
+
+
+### Legacy packed CSG record selection named
+
+Applied and independently reopened **RebuildPackedResourceTreeFromBit0MarkedRecords** after reviewing all **178 CPU instructions** and pseudocode. It snapshots each leaf payload, decodes every source record, and emits only records whose original flag byte has bit 0 set. The original meaning of that flag is unknown.
+
+Skipped records still update inherited input fields. Kept records are re-encoded against a separate previous-output state, so simply copying marked raw records would lose changes inherited from skipped records. A bounded model of 1,728 three-record sequences checked byte-field inheritance; 162 sequences exposed that incorrect skip-decoding interpretation. The model does not execute the native routine or cover every field.
+
+Only the descriptive name and comment changed. Reopening and decompilation passed; native bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. Malformed streams, cycles, allocation/capacity failure and runtime behavior remain unverified. This adds one reviewed CPU helper to packed CSG records, not whole-game completion.

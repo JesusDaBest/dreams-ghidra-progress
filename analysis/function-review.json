@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "710 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "711 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8685,
-    "other_names": 927,
-    "verification": "complete_inventory_matches_baseline_plus_710_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8684,
+    "other_names": 928,
+    "verification": "complete_inventory_matches_baseline_plus_711_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17932,6 +17932,28 @@
         "Descriptive analyst name, not original source symbol.",
         "Original metadata field and version names unknown; no malformed stream, cycle, allocation or runtime safety proof.",
         "Logical models are not execution of the original game."
+      ]
+    },
+    {
+      "address": "140c6c840",
+      "original_name": "FUN_140c6c840",
+      "applied_name": "RebuildPackedResourceTreeFromBit0MarkedRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV RebuildPackedResourceTreeFromBit0MarkedRecords(void)",
+      "evidence": [
+        "All178 owned CPU instructions and pseudocode read; bytes verified against original executable.",
+        "Recursive rebuild, source snapshot, decode-before-selection and separate output delta state traced.",
+        "1728 bounded three-record byte2-inheritance fixtures; independent reopening/decompilation passed.",
+        "Native bytes, inferred prototype and all9611 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Bit0 meaning unknown; descriptive name refers only to observed flag gate.",
+        "Synthetic model covers ordinary-record byte2 inheritance, not native execution or all fields.",
+        "No malformed input/cycle/capacity/allocation/runtime safety proof."
       ]
     }
   ],
