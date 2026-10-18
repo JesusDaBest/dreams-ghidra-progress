@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "696 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "697 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9608,
-    "default_fun_names": 8699,
-    "other_names": 909,
-    "verification": "complete_inventory_matches_baseline_plus_696_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8698,
+    "other_names": 910,
+    "verification": "complete_inventory_matches_baseline_plus_697_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17522,6 +17522,31 @@
         "Valid versions only; invalid inputs, canary failure and live-game execution unverified.",
         "Verified memset import uses local CRT adapter; original layout instructions otherwise execute.",
         "Full encoder scoring and error-correction generation remain under review; no exact original library/MM source match."
+      ]
+    },
+    {
+      "address": "140155630",
+      "original_name": "FUN_140155630",
+      "applied_name": "EncodeSingleSegmentQrHighCorrection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV EncodeSingleSegmentQrHighCorrection(void * segment, ulonglong segmentPresence, uchar * scratch, uchar * matrix)",
+      "evidence": [
+        "Complete 2310-instruction encoder reviewed against original bytes, original block tables and both image-worker callsites.",
+        "120 complete-matrix cases cover prepacked numeric/alphanumeric/byte segments across all40 versions: independent headers,padding,GF256 parity,interleaving,fixed pixels and remainder bits.",
+        "264 full-encoder mask-selection cases independently reconstruct and score all8 candidates,including3 tied minima; first tied mask retained.",
+        "40 isolated original-score cases independently verify four penalty components.18 presence/failure cases establish zero/nonzero segment selection and oversize rejection.",
+        "Independent offline reopening verifies saved bool-AL working ABI, unchanged original bytes and all9607 other function names/signatures."
+      ],
+      "caveats": [
+        "Only first segment encoded for nonzero presence; original source declaration and specialization cause unrecovered.",
+        "Fixture payload bits are prepacked; caller text packing was checked separately and is not implied by these cases.",
+        "Kanji/ECI,malformed modes/lengths/pointers,aliasing and live-game execution unverified.",
+        "Some optimized branches outside valid fixed-table domain are statically reviewed but not dynamically exercised.",
+        "No exact original library version or Media Molecule source/build match claimed."
       ]
     }
   ],

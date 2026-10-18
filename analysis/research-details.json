@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 754,
+    "checked_and_applied_names": 755,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 754,
+    "verified_names": 755,
     "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1929,7 +1929,7 @@
       "141330c40",
       "14021b300"
     ],
-    "scope": "696 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "697 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22255,6 +22255,96 @@
       "Valid versions only; invalid inputs, canary failure and live-game execution unverified.",
       "Verified memset import uses local CRT adapter; original layout instructions otherwise execute.",
       "Full encoder scoring and error-correction generation remain under review; no exact original library/MM source match."
+    ],
+    "new_name_credit": 1
+  },
+  "qr_single_segment_encoder_checkpoint": {
+    "target": {
+      "name": "EncodeSingleSegmentQrHighCorrection",
+      "signature": "bool PS4_SYSV EncodeSingleSegmentQrHighCorrection(void * segment, ulonglong segmentPresence, uchar * scratch, uchar * matrix)"
+    },
+    "checks": {
+      "qr-fixed-patterns-native-check.json": {
+        "native_cases": 120,
+        "findings": [
+          "Original high-correction block-count and ECC-length tables match reference values for all40 versions.",
+          "Original full encoder output for numeric, alphanumeric and byte segments across all40 versions yields exact independently packed, padded, Reed-Solomon-protected and interleaved codewords, including character-count width transitions at versions10 and27.",
+          "Independent GF(256) polynomial long division uses primitive polynomial0x11d and consecutive roots starting1; verifies every parity byte for all40 versions.",
+          "Every reserved module independently checked: exact finder/separator pixels, timing lines, alignment rings, both version BCH words, both format copies and fixed dark module.",
+          "Fixed-coordinate coverage equals the full reservation set; combined with codeword/remainder checks, all matrix modules are checked.",
+          "Remainder module bits are zero; payload, segment, argument and output guards preserved."
+        ],
+        "limits": [
+          "Single numeric, alphanumeric or byte segment per version at selected near-capacity length. Kanji/ECI, malformed segments and additional boundary/failure cases remain unverified.",
+          "Fixtures supply prepacked segment payload bits; these cases verify encoder mode/count headers and downstream codewords, not caller text-to-segment packing.",
+          "Full encoder static review remains unfinished, including optimized SIMD implementation details; no new name credit or exact source identity claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-mask-selection-native-check.json": {
+        "native_cases": 264,
+        "minimum_tie_cases": 3,
+        "findings": [
+          "Original full encoder selected the first minimum-scoring candidate among all eight independently reconstructed and scored masks.",
+          "Both format copies identify the same selected mask; entire final matrix equals independently transformed winning candidate.",
+          "Original encoder and all three original helpers execute; only verified standard memset/memmove imports use local CRT adapters."
+        ],
+        "limits": [
+          "Synthetic byte-mode segments only; candidate reconstruction starts from final encoded data, so this does not independently verify payload/error-correction bits.",
+          "No live-game run or complete encoder static review; no new name credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-penalty-score-native-check.json": {
+        "native_cases": 40,
+        "findings": [
+          "Original inline QR penalty block matches independent run-length, 2x2, scaled finder-pattern and dark-balance calculations.",
+          "Five valid sizes and eight synthetic patterns include both uniform colors, checkerboard, stripes, deterministic noise and scaled finder-like runs.",
+          "Input and argument guards remain unchanged."
+        ],
+        "models": [
+          "Shim initializes parent frame and matrix register; original block entry140157340 exits before comparison at1401572ff via local test-only jump. No executable/project file modified."
+        ],
+        "limits": [
+          "This isolates scoring, not complete encoder mask selection; exact candidate tie behavior remains a separate assembly finding.",
+          "Only selected valid sizes and patterns; malformed inputs and live game unverified.",
+          "Full encoder semantic review incomplete; no new name credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-segment-presence-native-check.json": {
+        "native_cases": 18,
+        "findings": [
+          "RSI is tested only as zero/nonzero in reviewed encoder entry and segment packing; nonzero values1,2,3,0xffffffff and uint64max encode only the first segment identically.",
+          "A second allocated segment with different text is ignored in these fixtures; this executable routine is not established as a general multi-segment encoder.",
+          "Zero count/presence ignores supplied segment and accepts a null segment pointer, producing the same empty QR matrix.",
+          "1300-byte byte-mode segment exceeds capacity: nonzero presence returns AL0, writes only output dimension byte0, leaves scratch and remaining output sentinel bytes unchanged."
+        ],
+        "limits": [
+          "Observed specialization may result from compiler optimization or a custom single-segment wrapper; original declaration is not recovered.",
+          "No invalid pointers for nonzero presence, malformed lengths, arbitrary modes or live-game execution tested.",
+          "Complete encoder body review remains unfinished; no new name credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete 2310-instruction encoder reviewed against original bytes, original block tables and both image-worker callsites.",
+      "120 complete-matrix cases cover prepacked numeric/alphanumeric/byte segments across all40 versions: independent headers,padding,GF256 parity,interleaving,fixed pixels and remainder bits.",
+      "264 full-encoder mask-selection cases independently reconstruct and score all8 candidates,including3 tied minima; first tied mask retained.",
+      "40 isolated original-score cases independently verify four penalty components.18 presence/failure cases establish zero/nonzero segment selection and oversize rejection.",
+      "Independent offline reopening verifies saved bool-AL working ABI, unchanged original bytes and all9607 other function names/signatures."
+    ],
+    "limits": [
+      "Only first segment encoded for nonzero presence; original source declaration and specialization cause unrecovered.",
+      "Fixture payload bits are prepacked; caller text packing was checked separately and is not implied by these cases.",
+      "Kanji/ECI,malformed modes/lengths/pointers,aliasing and live-game execution unverified.",
+      "Some optimized branches outside valid fixed-table domain are statically reviewed but not dynamically exercised.",
+      "No exact original library version or Media Molecule source/build match claimed."
     ],
     "new_name_credit": 1
   }

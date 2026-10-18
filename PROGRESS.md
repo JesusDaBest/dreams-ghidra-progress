@@ -6488,3 +6488,14 @@ Totals: **753 checked names** (673 behavior/helper and 80 property/type), **2,15
 **80 original-native cases** cover all 40 valid QR versions and two initial byte patterns, matching complete output, zero padding and external guards against an independent geometric calculation. Assembly confirms the version-32 alignment-spacing special case and that the vectorized position-generation branch cannot run for valid versions. Independent reopening verifies its saved working ABI, unchanged code and all 9,607 other function names/signatures. Invalid versions, canary failure and live-game execution remain unverified. Full encoder error correction and scoring are still under review.
 
 Totals: **754 checked names** (674 behavior/helper and 80 property/type), **2,160 mapped**, **7,448 unmapped**, among **9,608 defined functions**.
+
+
+### Single-segment QR encoder reviewed and named
+
+`EncodeSingleSegmentQrHighCorrection` names the complete 2,310-instruction encoder. It chooses the smallest fitting QR version, writes a zero-or-one segment header and payload, pads data, computes high-level Reed–Solomon error correction, interleaves blocks, places codewords and fixed patterns, and selects the lowest-penalty mask. **The apparent segment count is only tested as zero/nonzero; nonzero values encode the first segment and ignore a second.** The working ABI preserves that observed behavior without claiming the original declaration.
+
+**120 complete-matrix cases** cover numeric, alphanumeric and byte segments across all 40 versions. Every module matches independent header, padding, parity, interleave, fixed-pattern and remainder calculations. Fixtures supply prepacked segment bits. **264 mask-selection cases**, including three tied minima, verify all eight candidate scores and the final chosen matrix; ties keep the earlier mask. Another 40 isolated scoring cases and 18 presence/failure cases support the review. Oversize byte input returns false and clears the output dimension in the tested rejection path.
+
+Independent reopening verifies the saved name and bool-return ABI, unchanged native code and all 9,607 other function names/signatures. Kanji/ECI, malformed inputs, aliasing and live-game behavior remain unverified. No exact original library/MM source match is claimed. Completing this helper review does not establish whole-game completion.
+
+Totals: **755 checked names** (675 behavior/helper and 80 property/type), **2,161 mapped**, **7,447 unmapped**, among **9,608 defined functions**.

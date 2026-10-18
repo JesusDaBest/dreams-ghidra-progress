@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9608,
-  "mapped_total": 2160,
-  "unmapped_total": 7448,
+  "mapped_total": 2161,
+  "unmapped_total": 7447,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54635,6 +54635,33 @@
             "Verified timing lines, finder/format regions, alignment squares and version-information reservations; zero padding and full reset confirmed.",
             "Alignment scalar/vector guards reviewed: optimized vector branch is unreachable for valid versions; version32 uses spacing26.",
             "Independent reopening verifies saved two-parameter working ABI, unchanged original bytes and all 9607 other function names/signatures."
+          ]
+        }
+      ]
+    },
+    "140155630": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete QR encoder used by the image-cache QR pixel worker; original calls and entire body reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "9068a565f90cf77b2c35ff77d538c2b2c830a6e702f3f81b722d10b02440ea3b",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EncodeSingleSegmentQrHighCorrection",
+          "support": [
+            "Complete 2310-instruction encoder reviewed against original bytes, original block tables and both image-worker callsites.",
+            "120 complete-matrix cases cover prepacked numeric/alphanumeric/byte segments across all40 versions: independent headers,padding,GF256 parity,interleaving,fixed pixels and remainder bits.",
+            "264 full-encoder mask-selection cases independently reconstruct and score all8 candidates,including3 tied minima; first tied mask retained.",
+            "40 isolated original-score cases independently verify four penalty components.18 presence/failure cases establish zero/nonzero segment selection and oversize rejection.",
+            "Independent offline reopening verifies saved bool-AL working ABI, unchanged original bytes and all9607 other function names/signatures."
           ]
         }
       ]
