@@ -23078,5 +23078,41 @@
     "diagnostic_edge_cases": 14,
     "max_regular_rotated_relative_tensor_error": 2.487746094064234e-07,
     "new_name_credit": 1
+  },
+  "sculpt_oriented_bounds_selection_checkpoint": {
+    "cpu_caller": "141292230",
+    "shader": "ChunkGetOrientedBounds",
+    "cpu_exact_rational_cases": 1200,
+    "reduction_provenance_patterns": 82,
+    "shader_program_bytes": 1020,
+    "shader_decoded_instructions": 173,
+    "exact_encoding_roundtrip": true,
+    "findings": [
+      "The caller normalizes all three helper output axes before the reviewed selection window, using reciprocal-square-root estimate plus one Newton step.",
+      "Candidate half extents are scale*((projectedUpper-projectedLower)/2 + 3*L1(normalizedAxis)), componentwise for the three axes.",
+      "The 3*L1(axis) term is orientation-dependent padding; its geometric justification and the projected-bound shader producer remain separate proof obligations.",
+      "Comparison is old.x*old.y + old.y*old.z + old.z*old.x against the same expression for candidate half extents, proportional to box surface area rather than volume.",
+      "Candidate branch is taken only for ordered strict old-score greater than candidate-score. JBE selects fallback for equality, lower old score, or unordered comparison.",
+      "Candidate branch scales the three normalized axes by its half extents; fallback constructs three coordinate-aligned axes from old half extents. Final stores place those axes at slot-relative offsets 0x202a0,0x202b0,0x202c0 and center at0x202d0.",
+      "Entry index is (workgroup<<6)+lane. Unsigned index<count masks buffer reads; indexed record additionally requires a nonzero 64-bit mask at record+16.",
+      "Record DWORD0 packs three unsigned10-bit coordinates. Each is converted to position 4*coordinate+2.",
+      "First context byte0 is a four-DWORD descriptor. Bytes0x10 through0x30 hold three packed normalized CPU axes, not another descriptor. SMRD immediate offsets are DWORD units.",
+      "Projects the decoded position onto all three axes using multiply/mad/mac. Invalid lanes retain positive-max-float minima and negative-max-float maxima, then original entry EXEC is restored.",
+      "Five XOR shuffle stages reduce each half-wave; explicit reads from lanes0 and32 combine both halves. The provenance model covers all tail counts0..64 and additional sparse validity patterns.",
+      "Lane0 writes float GDS minima at offsets3228,3232,3236 and maxima3240,3244,3248, ordered by CPU axes A,B,C. These match stats offsets0x9c..0xb0 relative to the reviewed GDS base0xc00.",
+      "This supports the CPU interpretation as projected record-center bounds followed by padding and comparison with an axis-aligned candidate."
+    ],
+    "limits": [
+      "Rational lane model covers finite ordinary values and algebra, not original binary32 rounding or RSQRT approximation.",
+      "No game or GPU execution; complete projection dispatch, allocation/lifetime, output-center lineage and all surrounding caller behavior remain incomplete.",
+      "Candidate score comparison does not prove minimal-volume, globally optimal or conservative bounds.",
+      "No new function-name credit or Ghidra mutation.",
+      "Provenance model checks reduction coverage and component order, not numerical rounding, wait-counter timing or hardware execution.",
+      "Full64-lane entry participation, descriptor stride/bounds, GDS address units/base binding and synchronization are not validated on hardware.",
+      "Mask producer meaning, geometric conservativeness of factor3 padding, all coordinate origins and empty-workgroup behavior remain separate obligations.",
+      "No new CPU function-name credit, Ghidra modification or whole-system completion."
+    ],
+    "new_name_credit": 0,
+    "runtime_gpu_verified": false
   }
 }
