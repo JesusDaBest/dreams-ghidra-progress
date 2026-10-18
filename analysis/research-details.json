@@ -23171,5 +23171,34 @@
     ],
     "new_name_credit": 0,
     "runtime_gpu_verified": false
+  },
+  "sculpt_colour_input_format_checkpoint": {
+    "format_literal": "0xfac00a",
+    "initial_descriptor_offset": "0x194",
+    "initial_record_capacity": 16777216,
+    "fresh_original_constructor_native_cases": 768,
+    "decoded_descriptor": {
+      "stride_bytes": 4,
+      "data_format": 10,
+      "number_format": 0,
+      "component_selectors": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "findings": [
+      "Successful startup path builds1477fd964 via14001d890 with original format1428f3cc8 and record capacity0x1000000.",
+      "Descriptor equals initial slot base+0x194, matching the16bytes copied into ChunkReduceColours constants before its count field.",
+      "Existing native constructor receipt for the same format records four-byte stride,data format10,numeric format0,and identity XYZW selection; earlier primary ISA review identifies unsigned normalized8-bit components.",
+      "This links initial stored-byte normalization to the reviewed channel-square reduction, without establishing exactsRGB semantics."
+    ],
+    "limits": [
+      "Runtime descriptor contents, later mutations andnonzero slot initialization remain unobserved.",
+      "Capacity is not proof of a reachable count or successful allocation.",
+      "No liveGPUload execution,project mutation or newnamecredit."
+    ],
+    "new_name_credit": 0
   }
 }

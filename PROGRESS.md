@@ -6701,3 +6701,10 @@ Read the complete **159-instruction** `ChunkReduceColours` shader and connected 
 The CPU converts those unsigned sums using a split high/low-16-bit float-bias construction; **200,704 binary32 model cases** match direct unsigned-to-float conversion. For ordinary nonzero, nonwrapping counts, it divides by `256*recordCount`, square-roots each channel, multiplies by 255, rounds and saturating-packs the result, forcing alpha to 255. This supports a **quantized root-mean-square color** interpretation. It does not establish an exact sRGB transfer function.
 
 The divisor uses a 32-bit left shift and the GDS accumulators use 32-bit addition. Count limits and overflow reachability remain unproven; for example, the shift itself yields zero at count `0x1000000`, without establishing that the game can reach that count. The formatted descriptor's component type, complete producer behavior, exceptional inputs, rounding modes, synchronization and actual GPU execution remain open. No new checked-function credit is added.
+
+
+### Sculpt color input format connected
+
+The successful initial allocation path constructs the descriptor consumed by `ChunkReduceColours` at the first slot's offset `0x194`, using the original packed format `0x00fac00a`. A fresh isolated run of the original descriptor constructor, format-size helper and flag setter passed **768 cases**, checking the entire descriptor, guards and preserved inputs. It produces a four-byte stride, data format 10, numeric format 0 and identity XYZW channel selection: four unsigned normalized 8-bit components under the previously reviewed ISA format tables.
+
+This links stored byte channels to normalized shader inputs before the already traced square-and-sum operation. The initial descriptor has capacity 16,777,216 records; capacity alone establishes neither a reachable reduction count nor successful allocation. Later descriptor changes, initialization of other slots, actual GPU formatted conversion and exact color-space semantics remain unverified. No new checked-function credit is added.
