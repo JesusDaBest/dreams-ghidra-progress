@@ -430,13 +430,30 @@
     "finder_pointer_and_purity_cases": 90,
     "finding": "Finder pointer equals exact existing matched slot ornull,andpreserves complete table/input bytes. Original insertion andduplicate finder execute together. Existing exact key/equal order suppresses insertion andpreserves old coordinates; signed zeros match,NaN doesnot. Below8192 appends even with earlier tombstones,count increments andnew record prepends bucket. At8192 scans rotating cursor forinvalid-key slot,reuses it without count increment,andretains its final2padding bytes; nofree slot leaves table unchanged after fullscan. Full arena/candidate bytes checked.",
     "limits": [
-      "Direct helper only; dispatcher-level full-table compaction not executed.",
+      "Direct helper suite only; separately scoped capacity replay now verifies validity pruning before insertion.",
       "Finite acyclic coherent collision chain; malformed links,aliasing,concurrency andgameplay untested."
     ],
     "original_native_instructions_verified": {
       "140767e80": 112,
       "1407678d0": 91
     },
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "keyed_record_capacity_replay": {
+    "native_cases": 3,
+    "records_per_case": 8192,
+    "finding": "Full original fe06 replay atcapacity runs validity pruning,then insertion. Allvalid table remains unchanged andno new record is inserted. Allinvalid entries are unlinked/cleared andcursor reuses124. Alternating valid/invalid retains valid chain andinserts at125. Allocation count stays8192; no packing orslot movement. Full world/object andinput guards compared.",
+    "limits": [
+      "Prepared coherent acyclic hash/identity tables anddirect Microchip parents; owner/history disabled.",
+      "Broader validity predicates,duplicate-fulltable behavior,malformed tables,concurrency andgameplay untested."
+    ],
+    "original_native_instructions_verified": {
+      "140767c70": 32,
+      "140767a60": 138,
+      "140767e80": 112
+    },
+    "dispatcher_original_bytes_verified": 267374,
     "project_modified": false,
     "new_name_credit": 0
   }

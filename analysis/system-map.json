@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2102,
-  "unmapped_total": 7501,
+  "mapped_total": 2103,
+  "unmapped_total": 7500,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52842,6 +52842,32 @@
             "90 direct pointer/purity cases verify exact record pointer ornull,complete table/key preservation andreal hash collisions across0/1/3/17/8191/8192 slots.",
             "Signedzero matches,NaN doesnot. Same90 cases connect original insertion andverify duplicate suppression,append/full-table reuse andunchanged table on nofree slot.",
             "Independent reopening verifies pointer-return SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged other9602 names/signatures andnative bytes."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140767c70": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Capacity-triggered keyed record validity pruning beforefe06 insertion.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Walks allocated world records anddeletes those rejected byvalidity predicate withoutpacking ordecrementing allocation count.",
+      "code_sha256": "4fa280a82a351865ed3b6052939b9e9628bbe955961c34bcdd1f5a17004d70e9",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PruneInvalidKeyedRecords",
+          "support": [
+            "Complete32-instruction original body andpseudocode reviewed andoriginal bytes matched.",
+            "Three full original fe06 replay cases each8192records execute validity pruning,insertion,reader/wrapper/dispatcher. Allvalid table doesnotinsert; allinvalid andalternating tables prune invalid records androtating cursor reuses124/125.",
+            "Full world/object/input guard comparisons verify reduced hash links,cleared payloads,preserved padding andunchanged allocation count withno slot movement.",
+            "Independent reopening verifies descriptive name andtwo-pointer void SysV signature; other9602 names/signatures andnative bytes unchanged."
           ]
         }
       ],

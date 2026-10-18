@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "637 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "638 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8758,
-    "other_names": 845,
-    "verification": "complete_inventory_matches_baseline_plus_637_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8757,
+    "other_names": 846,
+    "verification": "complete_inventory_matches_baseline_plus_638_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15925,7 +15925,29 @@
       "caveats": [
         "Analyst descriptive name andopaque pointers,not recovered original source declarations.",
         "Finite acyclic coherent collision chains; malformed links,aliasing,concurrency andgameplay untested.",
-        "Direct helper full-table tests do not execute dispatcher compaction before insertion."
+        "Direct helper insertion suite is complemented by separate three-table capacity-pruning replay evidence; broader validity behavior remains unresolved."
+      ]
+    },
+    {
+      "address": "140767c70",
+      "original_name": "FUN_140767c70",
+      "applied_name": "PruneInvalidKeyedRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV PruneInvalidKeyedRecords(void * recordTable, void * world)",
+      "evidence": [
+        "Complete32-instruction original body andpseudocode reviewed andoriginal bytes matched.",
+        "Three full original fe06 replay cases each8192records execute validity pruning,insertion,reader/wrapper/dispatcher. Allvalid table doesnotinsert; allinvalid andalternating tables prune invalid records androtating cursor reuses124/125.",
+        "Full world/object/input guard comparisons verify reduced hash links,cleared payloads,preserved padding andunchanged allocation count withno slot movement.",
+        "Independent reopening verifies descriptive name andtwo-pointer void SysV signature; other9602 names/signatures andnative bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name andworking opaque pointers,not original source declarations.",
+        "Prepared coherent hash/identity tables,direct Microchip parent fixtures anddisabled owner/history.",
+        "Broader validity predicate branches,duplicate-fulltable behavior,malformed graphs,concurrency andgameplay unresolved."
       ]
     }
   ],

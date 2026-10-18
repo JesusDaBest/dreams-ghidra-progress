@@ -5926,3 +5926,16 @@ Below 8,192 slots, insertion appends and increments the count even when an earli
 These are direct helper tests; dispatcher-level compaction before full-table insertion remains unverified. Malformed chains, aliasing, concurrency and gameplay remain unresolved.
 
 Totals: 690 checked names, 2,102 mapped functions and 7,501 unmapped among 9,603 currently defined. Review counts are not whole-game completion.
+
+
+### Capacity helper identified as pruning, not compaction
+
+Saved `PruneInvalidKeyedRecords` after reading and byte-verifying its complete 32-instruction body. It walks allocated world records, calls a validity predicate and deletes rejected key/order matches. It does not pack records, move surviving slots or decrement the allocation count. The previous “compaction” description was an unverified lead; the current code and checks establish pruning instead. Independent reopening confirms the descriptive name and two-pointer void SysV signature, with original bytes and other names/signatures preserved.
+
+Three connected original `fe06` replay cases each exercise a full 8,192-slot table. All-valid records remain unchanged and no new record is inserted. With all records invalid, pruning clears/unlinks them and insertion reuses cursor-selected slot 124. With alternating valid/invalid records, it preserves the valid chain and reuses slot 125. Full world/object comparisons and packet guards verify exact changes; allocation count stays 8,192 and no record packing occurs.
+
+The validity code resolves three persistent IDs, checks the Microchip ancestor kind, endpoint class conditions and ancestry. This suite covers direct valid ancestry versus a missing source ID, not its full predicate domain. Original pruning (32 instructions), validity (138), insertion (112) and complete dispatcher bytes are matched.
+
+Prepared coherent tables, valid object pointers and direct parent links remain fixtures. Owner/history output is disabled. Other validity branches, duplicate-at-capacity replay, malformed graphs, concurrency and gameplay remain unverified.
+
+Totals: 691 checked names, 2,103 mapped functions and 7,500 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

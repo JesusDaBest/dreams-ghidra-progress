@@ -16373,7 +16373,7 @@
       "finder_pointer_and_purity_cases": 90,
       "finding": "Finder pointer equals exact existing matched slot ornull,andpreserves complete table/input bytes. Original insertion andduplicate finder execute together. Existing exact key/equal order suppresses insertion andpreserves old coordinates; signed zeros match,NaN doesnot. Below8192 appends even with earlier tombstones,count increments andnew record prepends bucket. At8192 scans rotating cursor forinvalid-key slot,reuses it without count increment,andretains its final2padding bytes; nofree slot leaves table unchanged after fullscan. Full arena/candidate bytes checked.",
       "limits": [
-        "Direct helper only; dispatcher-level full-table compaction not executed.",
+        "Direct helper suite only; capacity-level validity pruning covered separately.",
         "Finite acyclic coherent collision chain; malformed links,aliasing,concurrency andgameplay untested."
       ],
       "original_native_instructions_verified": {
@@ -16392,7 +16392,42 @@
     "limits": [
       "Analyst descriptive name andopaque pointers,not recovered original source declarations.",
       "Finite acyclic coherent collision chains; malformed links,aliasing,concurrency andgameplay untested.",
-      "Direct helper full-table tests do not execute dispatcher compaction before insertion."
+      "Direct helper insertion suite is complemented by separate three-table capacity-pruning replay evidence; broader validity behavior remains unresolved."
+    ],
+    "new_name_credit": 1
+  },
+  "keyed_record_pruning_checkpoint": {
+    "address": "140767c70",
+    "name": "PruneInvalidKeyedRecords",
+    "signature": "void PS4_SYSV PruneInvalidKeyedRecords(void * recordTable, void * world)",
+    "native_instructions": 32,
+    "native_check": {
+      "native_cases": 3,
+      "records_per_case": 8192,
+      "finding": "Full original fe06 replay atcapacity runs validity pruning,then insertion. Allvalid table remains unchanged andno new record is inserted. Allinvalid entries are unlinked/cleared andcursor reuses124. Alternating valid/invalid retains valid chain andinserts at125. Allocation count stays8192; no packing orslot movement. Full world/object andinput guards compared.",
+      "limits": [
+        "Prepared coherent acyclic hash/identity tables anddirect Microchip parents; owner/history disabled.",
+        "Broader validity predicates,duplicate-fulltable behavior,malformed tables,concurrency andgameplay untested."
+      ],
+      "original_native_instructions_verified": {
+        "140767c70": 32,
+        "140767a60": 138,
+        "140767e80": 112
+      },
+      "dispatcher_original_bytes_verified": 267374,
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete32-instruction original body andpseudocode reviewed andoriginal bytes matched.",
+      "Three full original fe06 replay cases each8192records execute validity pruning,insertion,reader/wrapper/dispatcher. Allvalid table doesnotinsert; allinvalid andalternating tables prune invalid records androtating cursor reuses124/125.",
+      "Full world/object/input guard comparisons verify reduced hash links,cleared payloads,preserved padding andunchanged allocation count withno slot movement.",
+      "Independent reopening verifies descriptive name andtwo-pointer void SysV signature; other9602 names/signatures andnative bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name andworking opaque pointers,not original source declarations.",
+      "Prepared coherent hash/identity tables,direct Microchip parent fixtures anddisabled owner/history.",
+      "Broader validity predicate branches,duplicate-fulltable behavior,malformed graphs,concurrency andgameplay unresolved."
     ],
     "new_name_credit": 1
   }
