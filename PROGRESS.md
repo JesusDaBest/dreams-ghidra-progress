@@ -6084,3 +6084,16 @@ Original Sculpt boolean registrations bind `Movable` to object `+0x44` and `Coll
 **96 native cases** execute that original initializer store and complete owner helper. Owner-cache bit 13 reflects Sculpt Movable; bit 15 records positive Movable metadata. Collidable true sets bit 18, while false preserves its prior value rather than clearing it. Full world, owner, Thing and metadata comparisons pass across indices 63/64/127, both property values, prior bit-18 states, common-byte states and selected headers. The original caller registration instructions and literal bytes are also checked against the executable.
 
 Power/enabled metadata remain controlled and valid world object-table entries are supplied. Common byte +0x2E, other kinds without their own registration linkage, full initialization, concurrency and live game remain unresolved. This is direct binary property evidence, not proof of a published source/build match. No new naming credit: **725 checked names** remains the total.
+
+
+### Parent eligibility and attachment-mode predicate reviewed and named
+
+`IsThingParentAllowedForAttachmentMode` names the complete 74-instruction predicate. Null child or proposed parent returns true. Equal sequence IDs or finding the child in the proposed parent's ancestry returns false. Mode 1 bypasses the kind restriction after those checks; other modes must match the parent-kind mapping and allowed-kind filter. This is not a guarantee against arbitrary preexisting ancestry cycles.
+
+**2,069 native cases** cover all 128 low kind values, the high kind bit, modes 0–7, selected tagged ancestry chains and null inputs. Complete prepared world/child/parent/ancestor comparisons pass. Both direct callers read child +0x2E into the mode argument, test the boolean result in AL and climb parent on rejection.
+
+An original upgrade stage writes 2/3/4 into +0x2E from parent kinds 13/14/15. This resolves a useful role for the byte in this path and rules out treating it universally as a boolean. Its original source name, all user-facing mode meanings, full migration/caller behavior and live game remain unverified. No exact Media Molecule source/build match is claimed.
+
+Independent reopening verifies the descriptive name, bool return, three opaque-pointer arguments plus byte mode, decompilation, original bytes and all 9,605 other names/signatures.
+
+Totals: **726 checked names** (646 behavior/helper and 80 property/type), **2,132 mapped**, **7,474 unmapped**, among 9,606 defined functions.

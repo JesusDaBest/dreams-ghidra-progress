@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "669 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "670 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8726,
-    "other_names": 880,
-    "verification": "complete_inventory_matches_baseline_plus_669_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8725,
+    "other_names": 881,
+    "verification": "complete_inventory_matches_baseline_plus_670_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16833,6 +16833,30 @@
         "Optional thread-specific-slot branch disabled;valid prepared eight-object world and bounded auxiliary counts only.",
         "Stack canary pointer supplied;standard byte fill modeled. Original kind-chain builder executes.",
         "Malformed indices/capacities,concurrency,full callers/startup and live game unverified.",
+        "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "140908b10",
+      "original_name": "FUN_140908b10",
+      "applied_name": "IsThingParentAllowedForAttachmentMode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IsThingParentAllowedForAttachmentMode(void * world, void * child, void * proposedParent, uchar attachmentMode)",
+      "evidence": [
+        "Complete74-instruction body and pseudocode reviewed;original bytes verified.",
+        "Two direct callers pass world/child/proposed-parent/mode,read mode from child2e,test AL and climb parent on false.",
+        "2069 native cases cover all128 low kinds,high kind bit,modes0..7,selected tagged ancestry and null cases;full prepared inputs unchanged.",
+        "Equal sequence IDs or child in proposed-parent ancestry reject before kind check;mode1 bypasses kind restriction only after those checks.",
+        "Original upgrade writer stores2/3/4 to commonbyte2e from parent kinds13/14/15;this input is not universally a boolean.",
+        "Independent reopening verifies bool return,four-argument opaque-pointer/byte ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Finite valid ancestry chains only;general preexisting cycles may not terminate.",
+        "Source name and exact user-facing mode meanings unresolved;no full migration/caller or game claim.",
         "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
       ]
     }

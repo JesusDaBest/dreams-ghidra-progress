@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2131,
-  "unmapped_total": 7475,
+  "mapped_total": 2132,
+  "unmapped_total": 7474,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53841,6 +53841,34 @@
             "Original kind-chain builder executes;standard byte fill modeled and stack canary pointer supplied.",
             "Original import relocation and local NID database identify optional1416084d0 as scePthreadGetspecific,not randomness;branch remains unexecuted.",
             "Independent reopening verifies name,void two-pointer ABI,decompilation,unchanged original bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "140908b10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Proposed-parent ancestry and attachment-mode eligibility.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete list traversal body and scoped independent native state comparisons.",
+      "code_sha256": "8b83cc0a8f0850a29b3a6bb69c088a046016fe891f10b27fb2070854a710bf86",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IsThingParentAllowedForAttachmentMode",
+          "support": [
+            "Complete74-instruction body and pseudocode reviewed;original bytes verified.",
+            "Two direct callers pass world/child/proposed-parent/mode,read mode from child2e,test AL and climb parent on false.",
+            "2069 native cases cover all128 low kinds,high kind bit,modes0..7,selected tagged ancestry and null cases;full prepared inputs unchanged.",
+            "Equal sequence IDs or child in proposed-parent ancestry reject before kind check;mode1 bypasses kind restriction only after those checks.",
+            "Original upgrade writer stores2/3/4 to commonbyte2e from parent kinds13/14/15;this input is not universally a boolean.",
+            "Independent reopening verifies bool return,four-argument opaque-pointer/byte ABI,decompilation,unchanged bytes and all9605 other names/signatures."
           ]
         }
       ]

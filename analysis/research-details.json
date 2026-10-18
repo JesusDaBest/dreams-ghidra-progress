@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 725,
+    "checked_and_applied_names": 726,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 725,
+    "verified_names": 726,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "669 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "670 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19265,5 +19265,40 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "parent_attachment_predicate_name_checkpoint": {
+    "target": {
+      "name": "IsThingParentAllowedForAttachmentMode",
+      "signature": "bool PS4_SYSV IsThingParentAllowedForAttachmentMode(void * world, void * child, void * proposedParent, uchar attachmentMode)"
+    },
+    "native_check": {
+      "native_cases": 2069,
+      "original_instructions": 74,
+      "findings": [
+        "Original predicate rejects equal sequence IDs or child appearing in proposed parent ancestry before checking attachment mode. Null child/parent returns true.",
+        "Mode1 bypasses kind restriction after ancestry checks;other modes map parent kinds9/13/14/15/98 to6/2/3/4/5,others0,then require allowed-kind mask or95/96.",
+        "All128 low kinds,high kind bit,modes0..7 and selected tagged ancestry/null cases pass;full prepared inputs unchanged."
+      ],
+      "limits": [
+        "Finite valid ancestry chains only;general preexisting cycles may not terminate.",
+        "Source name and exact user-facing mode meanings unresolved;no full migration/caller or game claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete74-instruction body and pseudocode reviewed;original bytes verified.",
+      "Two direct callers pass world/child/proposed-parent/mode,read mode from child2e,test AL and climb parent on false.",
+      "2069 native cases cover all128 low kinds,high kind bit,modes0..7,selected tagged ancestry and null cases;full prepared inputs unchanged.",
+      "Equal sequence IDs or child in proposed-parent ancestry reject before kind check;mode1 bypasses kind restriction only after those checks.",
+      "Original upgrade writer stores2/3/4 to commonbyte2e from parent kinds13/14/15;this input is not universally a boolean.",
+      "Independent reopening verifies bool return,four-argument opaque-pointer/byte ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Finite valid ancestry chains only;general preexisting cycles may not terminate.",
+      "Source name and exact user-facing mode meanings unresolved;no full migration/caller or game claim.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }
