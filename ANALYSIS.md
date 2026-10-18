@@ -7601,3 +7601,14 @@ Separately, **12 compaction cases** check two live ranges copied with 44-byte ou
 A 92-instruction packing slice establishes the processed 44-byte record layout: three 32-bit lanes, eight half-precision values and four packed words. Several vector and bitfield meanings remain unresolved; this is not a recovered original struct or a complete processor review.
 
 Totals: **786 checked names**, **2,188 mapped functions**, **7,425 unmapped**, among **9,613 defined functions**. Only the reviewed helper adds a checked name; the partial compaction and format findings add no whole-processor completion credit.
+
+
+### Sprite point conversion: connected output and displacement checks
+
+The complete original cache processor now runs on controlled two-point, frame-one fixtures through allocation, geometry conversion and the ready-state write. The first simple-transform expectation failed for 12 outputs. That failure is retained: the original code adds a deterministic hash-based local displacement, so a plain transform was an incomplete model.
+
+The displacement follows point orientation before the metadata orientation, scale and translation. Metadata bit 28 or a particular masked source-point flag disables it. **162 input cases check 324 XYZ outputs**, including three selected metadata orientations, three point orientations, the two bypasses, scales and translations. The first four half-precision values at output offset 12 also match the composed orientation for those cases. Earlier 18 identity cases are a subset; overlapping receipts are not added as independent coverage.
+
+The source format is clearer: offset 16 contains four half-precision orientation components; offset 24 contains another half-precision vector whose semantic names remain unresolved; offset 32 supplies packed fields; offset 36 contains three 9-bit components sharing a 5-bit exponent, decoded through the linked `ldexpf` import. Calling those components editor colors is not independently established here. The other resolved math import is `__isinff`.
+
+Fixtures adapt mutex/thread-ID and math imports. They check ready state, cleared roots, timestamp, allocation handle, unchanged source pool and output guards. They do not establish all source-attribute validity or running-game reachability. Other metadata ordinals, interpolation and scratch-selection paths, replication, general trees, malformed inputs, concurrency and GPU behavior remain incomplete. No new name or whole-processor completion credit is added.
