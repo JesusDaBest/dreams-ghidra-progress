@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 791,
+    "checked_and_applied_names": 792,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 791,
+    "verified_names": 792,
     "function_count": 9614,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "727 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "728 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25301,5 +25301,19 @@
       "Nonzero-gravity full-chain numerical comparison remains unresolved; this follow-up does not close it."
     ],
     "new_name_credit": 0
+  },
+  "gpu_record_initializer_checkpoint": {
+    "name": "InitializeDoubleBufferedGpuRecordStorage",
+    "signature": "void PS4_SYSV InitializeDoubleBufferedGpuRecordStorage(pointer buffer_storage, uint record_stride, uint record_capacity)",
+    "evidence": [
+      "Complete312-byte original assembly and complete captured C reviewed.",
+      "All25 indexed direct caller argument/use windows checked against original bytes.",
+      "Two bank allocations use aligned stride*capacity size and matching per-bank descriptor inputs; failure branches remain distinct.",
+      "Working void signature andRDI/ESI/EDX storage reopened; other9613 names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Original source name/type unknown; no real graphics allocation, allocation-failure execution or GPU coherence proof."
+    ],
+    "new_name_credit": 1
   }
 }

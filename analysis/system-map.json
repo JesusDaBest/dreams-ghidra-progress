@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9614,
-  "mapped_total": 2193,
-  "unmapped_total": 7421,
+  "mapped_total": 2194,
+  "unmapped_total": 7420,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55569,6 +55569,32 @@
             "Original SELF thunks/relocations linked through local NID database to thread self/name, mutex, condition broadcast, usleep and C++ guard imports.",
             "Idle/gated path marks pending resource IDs, sets coordination bit0x2000, optionally broadcasts condition and calls sceKernelUsleep(1000).",
             "New nonoverlapping definition and no-input/noreturn working ABI independently reopened and decompiled; all9613 existing names/signatures and all original bytes unchanged."
+          ]
+        }
+      ]
+    },
+    "14139f160": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete double-bank graphics storage initializer and25 indexed graphics/resource caller windows; shared GPU resource support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Allocates two record-storage banks and initializes matching stride/capacity descriptors.",
+      "code_sha256": "9a105abf057c212d554ed168143ffd8539e8e04acb6a7c9eb919f9123e967563",
+      "code_sha256_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeDoubleBufferedGpuRecordStorage",
+          "support": [
+            "Complete312-byte original assembly and complete captured C reviewed.",
+            "All25 indexed direct caller argument/use windows checked against original bytes.",
+            "Two bank allocations use aligned stride*capacity size and matching per-bank descriptor inputs; failure branches remain distinct.",
+            "Working void signature andRDI/ESI/EDX storage reopened; other9613 names/signatures and original bytes unchanged."
           ]
         }
       ]

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 745,
+    "done": 746,
     "todo": 1448,
-    "total": 2193,
-    "behavior_or_helpers_reviewed": 671,
+    "total": 2194,
+    "behavior_or_helpers_reviewed": 672,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -22151,12 +22151,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 121,
+        "done": 122,
         "todo": 268,
-        "total": 389,
-        "behavior_or_helpers_reviewed": 121,
+        "total": 390,
+        "behavior_or_helpers_reviewed": 122,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 363,
+        "runtime_functions_identified": 364,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -22268,6 +22268,7 @@
           "LookupOrRequestImageCacheSlice",
           "TryGetCachedImageColorSample",
           "TestSpriteBoundsAgainstViewPlanes",
+          "InitializeDoubleBufferedGpuRecordStorage",
           "RegisterDeferredShaderConstants",
           "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
@@ -22661,6 +22662,7 @@
           "141331520",
           "1413317f0",
           "141361110",
+          "14139f160",
           "14139fbf0",
           "14139fd80",
           "1413a00c0",
@@ -26400,12 +26402,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 46,
+            "done": 47,
             "todo": 0,
-            "total": 46,
-            "behavior_or_helpers_reviewed": 46,
+            "total": 47,
+            "behavior_or_helpers_reviewed": 47,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 46,
+            "runtime_functions_identified": 47,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -26446,6 +26448,7 @@
               "LoadPhotoCacheImagePixels",
               "LookupOrRequestImageCacheSlice",
               "TryGetCachedImageColorSample",
+              "InitializeDoubleBufferedGpuRecordStorage",
               "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
@@ -26495,6 +26498,7 @@
               "141331220",
               "141331520",
               "1413317f0",
+              "14139f160",
               "14139fbf0",
               "14139fd80",
               "1413a00c0",
@@ -26983,6 +26987,57 @@
                 ]
               },
               {
+                "name": "rendering/compute/resource-storage",
+                "label": "Resource storage",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InitializeDoubleBufferedGpuRecordStorage",
+                  "TryAllocateGraphicsResourceStorage"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14139f160",
+                  "1413c2ee0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/resource-storage/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "InitializeDoubleBufferedGpuRecordStorage",
+                      "TryAllocateGraphicsResourceStorage"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14139f160",
+                      "1413c2ee0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/shader-sections",
                 "label": "Shader binary sections",
                 "done": 2,
@@ -27026,53 +27081,6 @@
                     "done_addresses": [
                       "140011fb0",
                       "1413c31e0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/resource-storage",
-                "label": "Resource storage",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "TryAllocateGraphicsResourceStorage"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1413c2ee0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/resource-storage/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "TryAllocateGraphicsResourceStorage"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1413c2ee0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -46575,5 +46583,5 @@
       }
     ]
   },
-  "unmapped": 7421
+  "unmapped": 7420
 }

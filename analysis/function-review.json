@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "727 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "728 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9614,
-    "default_fun_names": 8668,
-    "other_names": 946,
-    "verification": "complete_inventory_matches_baseline_plus_727_renames_and_63_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8667,
+    "other_names": 947,
+    "verification": "complete_inventory_matches_baseline_plus_728_renames_and_63_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18414,6 +18414,26 @@
         "Downstream resource processor remains incomplete; queue ownership/lifetime and32-bit counter wrap unverified.",
         "Original source symbol not recovered; working void/no-input signature reflects no incoming register reads and no return path.",
         "First two definition attempts rolled back because strict instruction-list check included unreachable NOP padding; final gate permits only four verified NOP gaps and checks every original byte."
+      ]
+    },
+    {
+      "address": "14139f160",
+      "original_name": "FUN_14139f160",
+      "applied_name": "InitializeDoubleBufferedGpuRecordStorage",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeDoubleBufferedGpuRecordStorage(pointer buffer_storage, uint record_stride, uint record_capacity)",
+      "evidence": [
+        "Complete312-byte original assembly and complete captured C reviewed.",
+        "All25 indexed direct caller argument/use windows checked against original bytes.",
+        "Two bank allocations use aligned stride*capacity size and matching per-bank descriptor inputs; failure branches remain distinct.",
+        "Working void signature andRDI/ESI/EDX storage reopened; other9613 names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Original source name/type unknown; no real graphics allocation, allocation-failure execution or GPU coherence proof."
       ]
     }
   ],

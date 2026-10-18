@@ -7823,3 +7823,14 @@ Original registration binds **`SpriteFloppiness` to float field `+0x10c`**. The 
 The stopping threshold is the square of **state factor × caller uniform scale × local path length × 0.0625 × configuration gain**. Original source-field and SIMD-lane dataflow establish the scale input. **756 bounded native cases** verify the formula across seven states, three flag values, four scales including zero/negative, three path lengths and three gains. The state factor is one or two. Runtime gain, state meanings and physical units remain unresolved.
 
 Five evidence-supported comments were added reversibly to the backed-up Ghidra project and verified after independent reopening. Existing comments were preserved; function names/signatures and target instruction bytes remained unchanged. These annotations add no checked-name credit. The full nonzero-gravity chain numerical discrepancy remains open.
+
+
+### Double-buffered GPU record initializer named
+
+`InitializeDoubleBufferedGpuRecordStorage` identifies the complete 312-byte helper used at 25 indexed direct call sites. It allocates two banks using the aligned product of record stride and capacity, then initializes each successful bank's descriptor from that same allocation and the original stride/count. Each bank has a separate success branch; failure of the first does not prevent the second allocation attempt. Its working signature is void with storage pointer, unsigned record stride and unsigned capacity inputs.
+
+The complete original assembly and captured C were read, and all indexed caller argument/use windows were checked against original bytes. The descriptive name and three-parameter signature persisted after independent reopening; original bytes and all other function names/signatures remained unchanged. Real graphics allocation, failure execution, overflow/lifetime behavior and GPU coherence remain unverified.
+
+The Sprite record writer uses the same parity allocation as the copied shader descriptor; active-pointer selection adds a preserved record offset. Nonzero-offset shader indexing still needs tracing. A selected frame of Media Molecule's 2016 coding stream was inspected: it shows wave-displacement source. A trigonometric shader candidate is under review, but no exact source/build match is established.
+
+Totals: **792 checked names**, **2,194 mapped functions**, **7,420 unmapped**, among **9,614 defined functions**. These are review counts, not whole-game completion.
