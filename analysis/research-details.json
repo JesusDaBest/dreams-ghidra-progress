@@ -18759,7 +18759,8 @@
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1,
-    "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint"
+    "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint",
+    "later_owner_validation": "world_insertion_owner_connected_checkpoint"
   },
   "xyz_connected_conversion_actual_base_checkpoint": {
     "native_checks": {
@@ -18969,6 +18970,30 @@
       "Atomic OR tested single-threaded;clearing behavior elsewhere and live game unverified.",
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "later_connected_validation": "world_insertion_owner_connected_checkpoint"
+  },
+  "world_insertion_owner_connected_checkpoint": {
+    "native_check": {
+      "native_cases": 216,
+      "world_bit_set_cases": 24,
+      "original_registration_instructions": 209,
+      "original_owner_helper_instructions": 209,
+      "findings": [
+        "Original registration calls original owner-state helper with a real owner pointer,index and Thing;no substitution at the owner-helper call.",
+        "Per-kind intrusive-list append updates either an external empty head or prior world link,then moves owner tail to new object link and clears cached pointer.",
+        "Complete world/owner/object/metadata and external-head comparisons verify registration effects plus owner flags and conditional world bitset;selected child indices63/64/127,parent/activity/header/power/inheritance states and preserved existing bits."
+      ],
+      "models": [
+        "Only standard imported byte-fill routine modeled;no owner-state model."
+      ],
+      "limits": [
+        "Key kind and controlled metadata only;other per-kind parent lists,real metadata startup,concurrency,malformed tails/indices and complete game unverified.",
+        "Byte2e and metadata source names remain unresolved;observed bit behavior only."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0
   }
 }

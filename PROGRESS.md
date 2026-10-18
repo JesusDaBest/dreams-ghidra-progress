@@ -5977,3 +5977,14 @@ The exact user-facing meaning of byte +0x2E remains unproven. Cycles, invalid/mi
 Independent reopening verifies the saved name, working owner/unsigned-index/Thing signature, complete decompilation, original bytes and all 9,605 other names/signatures. Atomic operations are tested single-threaded. Real registration with a nonnull owner, malformed indices, full startup and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **722 checked names** (642 behavior/helper and 80 property/type), **2,128 mapped**, **7,478 unmapped**, among 9,606 defined functions.
+
+
+### Registration connected to original owner-state update
+
+**216 native cases** execute original registration with a nonnull owner and its original `UpdateThingOwnerFlagsAndWorldBitset` callee. Both empty per-kind heads and append-through-existing-link states are covered. The append writes the new index through the previous tail pointer, moves the owner's tail to the new object's world link and clears its cached object pointer.
+
+Complete world, owner, object, metadata and external-head comparisons verify those writes alongside primary registration, sequence links, cached flags and conditional world-bit updates. Cases cover indices 63/64/127, selected header/power/parent/byte-0x2E states, prior flag patterns and preserved existing world bits. Twenty-four cases satisfy the world-bit-setting predicate.
+
+The owner helper is original code, not a callback model. Only the imported standard byte-fill routine remains modeled. These are prepared Key records and controlled metadata; other per-kind parent lists, malformed tails/indices, real metadata startup, concurrency and complete scene/game behavior remain unverified. The original meaning and writer of byte +0x2E are still unresolved. No exact Media Molecule source/build match is claimed.
+
+No new naming credit: **722 checked names**, 2,128 mapped and 7,478 unmapped among 9,606 defined functions remain the totals.
