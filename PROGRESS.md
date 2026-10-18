@@ -5526,3 +5526,16 @@ Two further local caller branches were byte-checked (55 and 62 instructions). A 
 Independent reopening verifies the descriptive name and six-input custom SysV signature, with original bytes and other 9,602 function names/signatures unchanged. Direct tests use prepared player0/globals/history; nearby tests disable owner/history with player255. Every routing flag, nearby NaN/inf cases, malformed graphs, concurrency and gameplay remain untested.
 
 Totals: 696 checked names, 2,108 mapped functions and 7,495 unmapped among 9,603 currently defined. Review and mapping counts are not whole-game completion.
+
+
+### Ordered XY records identified as canvas wire nodes
+
+The executable's reflection metadata now ties the previously generic keyed-record table to `CanvasWireNodes`: world field `canvas_wire_nodes` is registered at `+0x1aeb560`, matching the tested table base. Its `my_canvas_wire_node_array` starts at `+0x1000`, uses the `CanvasWireNode` element descriptor and a 32-byte stride. Original array callbacks independently agree with the count at array `+0x40000` (table `+0x41000`). The cursor field is reflected as `my_last_check_for_invalid_index` at table `+0x41004`.
+
+The node contains `canvas_wire_id` at offset 0, `pos_xy` at 16, `pos_along_wire` at 24 and `next_in_hash_table` at 28. Its nested 16-byte `CanvasWireId` registers `seq_of_canvas_thing`, `seq_of_src_thing` and `seq_of_dst_thing` at 0/4/8, followed by `prop_of_src_port` and `prop_of_dst_port` at 12/14. Earlier descriptions of those final key words as “ordinal” and generic “property” were tentative; the reflected source field names supersede them. The float previously called “order” is the reflected position along the wire.
+
+Applied three working layout types and refined seven existing pointer signatures, including the lookup return pointer and node inputs to insertion, deletion and coordinate editing. Field widths come from the original operations and registered offsets; unsigned integer carriers and the XY component labels are analyst choices, not recovered C++ declarations. The final two bytes remain explicitly unresolved padding. Independent reopening verifies every field offset/width, all seven signatures, unchanged parameter storage, original native bytes and every function name; the other 9,596 signatures remain unchanged. All seven affected functions decompile with the layouts.
+
+Nine already reviewed table-specific functions now belong under Editor & interface / Canvases & wires / Canvas Wire Node / Storage & edits instead of shared runtime. The generic parent-chain helper stays in shared runtime. This is evidence-based classification and type refinement, with no additional naming or completion credit.
+
+The existing insertion, coordinate-edit, inverse-history, pruning and hash-chain native checks now have a concrete canvas-wire-node interpretation. This does not establish complete editor behavior, all wire-node operations, a livestream/source build match or live-game correctness. Totals remain 696 checked names, 2,108 mapped functions and 7,495 unmapped among 9,603 currently defined.

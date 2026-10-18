@@ -52743,16 +52743,16 @@
       "code_sha256_basis": "native_owned_instructions"
     },
     "140766e30": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Shared keyed record collection called by Microchip ancestor cleanup during wire removal.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Collects exact16-byte-key matches,sorts by record float+24 andoptionally filters adjacent half-unit coordinate cells.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "4f46bf07ce69f765a4d2ffd3a157a464b92bb8549fcd4983cc4c19e856259b3d",
       "evidence": [
         {
@@ -52765,21 +52765,37 @@
             "48 connected cases execute original parent traversal,lookup andsort; selected pointer reaches downstream cleanup observer,while colliding mismatched keys are rejected.",
             "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "140767ce0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Shared keyed-record deletion reached by fe08 during Microchip ancestor cleanup.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Unlinks first exact16-byte-key andfloat-order match,then clears record payload while preserving table allocation count.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "5f435dd6fdfecba0b2b7c6efd571d1fc016253bbdc0546b828390c4b038c3466",
       "evidence": [
         {
@@ -52791,21 +52807,37 @@
             "48 connected cases execute original parent traversal,key lookup,sort,fe08 producer,wrapper,full dispatcher andactual keyed deletion. Wrong key/ancestry/type/class leaves record unchanged while main wire removal continues.",
             "Independent reopening verifies void SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged original bytes/other9602 names andsignatures."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "140b35ec0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Keyed-record removal producer called by Microchip ancestor cleanup andits own nearby-selection branch.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Builds fe08 removal event forone record orselects up to128nearby records sharingfirst key field andsubmits each.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "b6d30a908377918940e455423604eba1611e117ecd596d5322147bd34de4a0a7",
       "evidence": [
         {
@@ -52817,21 +52849,37 @@
             "48 single-record and60 multi-record parent cleanup cases execute original direct producer,wrapper,dispatcher andkeyed deletion; complete world/object comparisons preserve table counts andpadding.",
             "Independent reopening verifies descriptive name andfive-argument void SysV signature,with unchanged native bytes andother9602 names/signatures."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "1407678d0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Shared keyed-record exact lookup used by insertion duplicate detection andevent history matching.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Returns pointer ornull forfull16-byte key andequal float order value withoutmutating table.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "e4ad0294052a4f5b9db9cceb05c61de1be40a28fdf3c79184f1da572ea03ab6e",
       "evidence": [
         {
@@ -52843,21 +52891,37 @@
             "Signedzero matches,NaN doesnot. Same90 cases connect original insertion andverify duplicate suppression,append/full-table reuse andunchanged table on nofree slot.",
             "Independent reopening verifies pointer-return SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged other9602 names/signatures andnative bytes."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "140767c70": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Capacity-triggered keyed record validity pruning beforefe06 insertion.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Walks allocated world records anddeletes those rejected byvalidity predicate withoutpacking ordecrementing allocation count.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "4fa280a82a351865ed3b6052939b9e9628bbe955961c34bcdd1f5a17004d70e9",
       "evidence": [
         {
@@ -52869,21 +52933,37 @@
             "Full world/object/input guard comparisons verify reduced hash links,cleared payloads,preserved padding andunchanged allocation count withno slot movement.",
             "Independent reopening verifies descriptive name andtwo-pointer void SysV signature; other9602 names/signatures andnative bytes unchanged."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "140767e80": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Duplicate-suppressing keyed record insertion used by fe06 replay and game-update record remapping.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Appends or reuses an invalid-key slot unless exact 16-byte key and equal float order already exist; prepends hash chain.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "5151112c10ef36b1fe0057294e1e36e5a86a8a8206c8848d697942508432a372",
       "evidence": [
         {
@@ -52896,21 +52976,37 @@
             "Both static caller branches byte-verified: 30 instructions in the event dispatcher and 147 in the game-update remapping loop. Only these local branches reviewed.",
             "Independent reopening verifies descriptive name and opaque two-pointer void SysV signature; other 9602 names/signatures and original bytes unchanged."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "140767a60": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Key validity predicate used by pruning and other local callers.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Resolves three persistent IDs, tests Microchip kind and endpoint classes, then requires at least one parent chain to reach the ancestor.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "1b2feab8ccf8e4ae2ce85a25430d040952083cd46a6eaec05e03a244a691d9a2",
       "evidence": [
         {
@@ -52921,6 +53017,22 @@
             "284 native cases execute original predicate and 98-byte ancestry helper: kind mask, endpoint class pairs, direct/indirect/source-only/destination-only ancestry, sentinel fields, missing IDs, wrong-ID and wrong-generation collision traversal, high-bit generations and non-sentinel key words.",
             "Full world/object/key bytes unchanged in every case. Valid results occur with no main wire record; this predicate alone does not prove connection existence.",
             "Independent reopening confirms descriptive name and one-byte bool return with opaque key/world pointers; other 9602 names/signatures and native bytes unchanged."
+          ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
           ]
         }
       ],
@@ -52953,16 +53065,16 @@
       "code_sha256_basis": "native_owned_instructions"
     },
     "140b35aa0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Keyed record insertion event producer used by game-merger and other local callers.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Builds30-byte fe06 packet from key/order/XY carriers and applies through recording/history-aware event wrapper.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "badcc278d4f8535ef8df24ae0c18e22ca18c37de9a3ef15f749c37c5827b8c92",
       "evidence": [
         {
@@ -52974,21 +53086,37 @@
             "48 actual history packets replay through original range reader/wrapper/dispatcher/deletion:32 remove new records and16 remove preexisting duplicates. Full world/owner/history/input checks except two unassigned append padding bytes.",
             "Independent reopening confirms descriptive name and seven-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
           ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+          ]
         }
       ],
       "code_sha256_basis": "native_owned_instructions"
     },
     "140b35bd0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "common-routines",
+        "interface",
+        "canvas",
+        "canvaswirenode",
         "runtime-implementation"
       ],
-      "component_basis": "Keyed record absolute-XY update event producer with optional grouped nearby recursion.",
+      "component_basis": "Binary reflection binds world canvas_wire_nodes at1aeb560 toCanvasWireNodes, its array at1000 to32-byte CanvasWireNode, andmember names/offsets tothis tested table.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "Builds30-byte fe07 coordinate event; nearby mode selects by ancestor/radius before identity/order filtering and recursively applies absolute XY.",
+      "code_role_basis": "Verified canvas wire-node lookup,validation,pruning,insertion,deletion orcoordinate event behavior.",
       "code_sha256": "d1c14355da7d505e0d62436a42a04d37bf5c70de0fdc586f058c242080fe1bdf",
       "evidence": [
         {
@@ -53000,6 +53128,22 @@
             "56 original nearby-recursion cases verify strict0.2 radius, first-key-field grouping, prefilter128 selection limit, same-key/different-order exclusion, signedzero and exact XY changes across1432 moved records.",
             "Two local caller branches (55/62instructions) read and byte-matched: tagged payload insertion and absent/unchanged/changed XY remapping decisions.",
             "Independent reopening verifies name and six-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
+          ]
+        },
+        {
+          "kind": "binary_reflection_layout_identity",
+          "type_name": "CanvasWireNode",
+          "world_field": "canvas_wire_nodes",
+          "world_offset": 28226912,
+          "array_offset": 4096,
+          "stride": 32,
+          "key_type": "CanvasWireId",
+          "support": [
+            "World field name and exact table offset registered together.",
+            "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+            "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+            "CanvasWireId nested metadata names allfive key fields.",
+            "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
           ]
         }
       ],
@@ -55940,6 +56084,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Storage & edits",
                   "children": []
                 }
               ]

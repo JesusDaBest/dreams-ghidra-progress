@@ -15846,18 +15846,20 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV CollectSortedKey16RecordMatches(void * recordTable, void * key16, void * output, byte deduplicateCells)",
+      "saved_working_signature": "void PS4_SYSV CollectSortedKey16RecordMatches(void * recordTable, CanvasWireIdLayout * key16, void * output, byte deduplicateCells)",
       "evidence": [
         "Complete210-instruction original body and pseudocode reviewed and original bytes matched.",
         "216 native hash/key/collision-chain cases verify pointer sets, counts, table/key preservation and guards.",
         "180 native ordering/dedup cases verify ascending finite float+24 order and adjacent half-unit cell filtering from float coordinates+16/+20. Includes negative boundaries,reverse/shuffled chains and separated same-cell repeats.",
         "48 connected cases execute original parent traversal,lookup andsort; selected pointer reaches downstream cleanup observer,while colliding mismatched keys are rejected.",
-        "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged."
+        "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name and opaque working pointers, not recovered source declarations.",
         "Finite acyclic<=100-record fixtures,unique finite sort keys andmodes0/1; ties,NaN,infinity,overflow,malformed chains andgameplay untested.",
-        "Coordinate/order meanings unresolved; downstream fe08 application remains an observation boundary in connected suite."
+        "Coordinate/order meanings unresolved; downstream fe08 application remains an observation boundary in connected suite.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     },
     {
@@ -15869,17 +15871,19 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV RemoveFirstKey16RecordMatchingOrder(void * recordTable, void * key16, float orderValue)",
+      "saved_working_signature": "void PS4_SYSV RemoveFirstKey16RecordMatchingOrder(void * recordTable, CanvasWireIdLayout * key16, float orderValue)",
       "evidence": [
         "Complete95-instruction original body and pseudocode reviewed and original bytes verified.",
         "192 native cases verify head/middle/tail/missing deletion,real hash collisions,signed zero,infinity andNaN. Full key/table comparison checks exact linked-list splicing,record clearing andpreserved padding.",
         "48 connected cases execute original parent traversal,key lookup,sort,fe08 producer,wrapper,full dispatcher andactual keyed deletion. Wrong key/ancestry/type/class leaves record unchanged while main wire removal continues.",
-        "Independent reopening verifies void SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged original bytes/other9602 names andsignatures."
+        "Independent reopening verifies void SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged original bytes/other9602 names andsignatures.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name and opaque working pointers,not recovered source declarations.",
         "Finite acyclic chains up to17 records andsingle-record connected table; duplicate eligible matches,malformed indices,concurrency andgameplay untested.",
-        "Connected suite disables history output andrecursive coordinate-neighbor cleanup; full user undo/redo remains unverified."
+        "Connected suite disables history output andrecursive coordinate-neighbor cleanup; full user undo/redo remains unverified.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     },
     {
@@ -15891,19 +15895,21 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV RemoveKeyedRecordOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby)",
+      "saved_working_signature": "void PS4_SYSV RemoveKeyedRecordOrNearbyRecords(void * owner, void * world, byte player, CanvasWireNodeLayout * record, uint nearby)",
       "evidence": [
         "Complete132-instruction original body and pseudocode reviewed and original bytes verified.",
         "32 recursive original-code cases remove900 records through actual fe08 application. Strict radius0.2,boundary equality/justbelow,diagonaloutside,wrong first key field,mixed buckets and128selection cap verified.",
         "48 single-record and60 multi-record parent cleanup cases execute original direct producer,wrapper,dispatcher andkeyed deletion; complete world/object comparisons preserve table counts andpadding.",
         "Independent reopening verifies descriptive name andfive-argument void SysV signature,with unchanged native bytes andother9602 names/signatures.",
         "72 connected active-player0 cases verify exact22-byte fe08 owner queue and30-byte fe06 inverse history packets,both/second/quiet routing andenabled/missing/disabled contexts withcomplete world/owner/history comparison.",
-        "16 eligible cases replay actual generated30-byte fe06 inverse packets through original range reader,wrapper,dispatcher andinsertion; key/coordinates/order restored in appended slot1,count1->2,old tombstone retained. Two new padding bytes excluded fromsemantic comparison."
+        "16 eligible cases replay actual generated30-byte fe06 inverse packets through original range reader,wrapper,dispatcher andinsertion; key/coordinates/order restored in appended slot1,count1->2,old tombstone retained. Two new padding bytes excluded fromsemantic comparison.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name andopaque working pointers,not recovered source declarations.",
         "Prepared valid finite-coordinate tables; owner absent/player255 andhistory output disabled.",
-        "Active history and16 inverse replay cases use prepared single-record context andample buffers; duplicate/full-table insertion,capacity exhaustion,malformed structures,nonfinite coordinates,concurrency andgameplay unresolved."
+        "Active history and16 inverse replay cases use prepared single-record context andample buffers; duplicate/full-table insertion,capacity exhaustion,malformed structures,nonfinite coordinates,concurrency andgameplay unresolved.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     },
     {
@@ -15915,17 +15921,19 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void * PS4_SYSV FindKey16RecordMatchingOrder(void * recordTable, void * key16, float orderValue)",
+      "saved_working_signature": "CanvasWireNodeLayout * PS4_SYSV FindKey16RecordMatchingOrder(void * recordTable, CanvasWireIdLayout * key16, float orderValue)",
       "evidence": [
         "Complete91-instruction original body andpseudocode reviewed andoriginal bytes matched.",
         "90 direct pointer/purity cases verify exact record pointer ornull,complete table/key preservation andreal hash collisions across0/1/3/17/8191/8192 slots.",
         "Signedzero matches,NaN doesnot. Same90 cases connect original insertion andverify duplicate suppression,append/full-table reuse andunchanged table on nofree slot.",
-        "Independent reopening verifies pointer-return SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged other9602 names/signatures andnative bytes."
+        "Independent reopening verifies pointer-return SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged other9602 names/signatures andnative bytes.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name andopaque pointers,not recovered original source declarations.",
         "Finite acyclic coherent collision chains; malformed links,aliasing,concurrency andgameplay untested.",
-        "Direct helper insertion suite is complemented by separate three-table capacity-pruning replay evidence; broader validity behavior remains unresolved."
+        "Direct helper insertion suite is complemented by separate three-table capacity-pruning replay evidence; broader validity behavior remains unresolved.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     },
     {
@@ -15959,19 +15967,21 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV InsertKey16RecordIfKeyAndOrderAbsent(void * recordTable, void * candidate)",
+      "saved_working_signature": "void PS4_SYSV InsertKey16RecordIfKeyAndOrderAbsent(void * recordTable, CanvasWireNodeLayout * candidate)",
       "evidence": [
         "Complete 112-instruction insertion body and pseudocode reviewed; original bytes matched.",
         "Ninety direct native cases cover real hash collisions, duplicate preservation, signed zero, NaN, append, rotating slot reuse and full-table rejection.",
         "Twelve full original fe06 replay cases each use 8192 records: all-valid/all-invalid/alternating validity combined with fresh/duplicate/signed-zero/NaN order; complete world/object/input guards compared.",
         "Both static caller branches byte-verified: 30 instructions in the event dispatcher and 147 in the game-update remapping loop. Only these local branches reviewed.",
-        "Independent reopening verifies descriptive name and opaque two-pointer void SysV signature; other 9602 names/signatures and original bytes unchanged."
+        "Independent reopening verifies descriptive name and opaque two-pointer void SysV signature; other 9602 names/signatures and original bytes unchanged.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name and opaque working pointers, not original source declarations.",
         "Prepared coherent acyclic hash/identity tables and direct Microchip parents; owner/history disabled in the new capacity cases.",
         "Full game-update decompilation exceeded 60 seconds; remapping branch statically reviewed, not natively executed.",
-        "Broader validity branches, malformed chains, aliasing, concurrency and gameplay unresolved."
+        "Broader validity branches, malformed chains, aliasing, concurrency and gameplay unresolved.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     },
     {
@@ -15983,18 +15993,20 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "bool PS4_SYSV IsKey16RecordValidForMicrochip(void * key, void * world)",
+      "saved_working_signature": "bool PS4_SYSV IsKey16RecordValidForMicrochip(CanvasWireIdLayout * key, void * world)",
       "evidence": [
         "Complete 138-instruction body and pseudocode read; original bytes matched; low-byte boolean return verified.",
         "284 native cases execute original predicate and 98-byte ancestry helper: kind mask, endpoint class pairs, direct/indirect/source-only/destination-only ancestry, sentinel fields, missing IDs, wrong-ID and wrong-generation collision traversal, high-bit generations and non-sentinel key words.",
         "Full world/object/key bytes unchanged in every case. Valid results occur with no main wire record; this predicate alone does not prove connection existence.",
-        "Independent reopening confirms descriptive name and one-byte bool return with opaque key/world pointers; other 9602 names/signatures and native bytes unchanged."
+        "Independent reopening confirms descriptive name and one-byte bool return with opaque key/world pointers; other 9602 names/signatures and native bytes unchanged.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name and opaque working pointers, not original source declarations.",
         "Finite coherent acyclic ID/parent chains and valid object pointers; malformed or cyclic graphs, aliasing, concurrency and gameplay unresolved.",
         "Endpoint class byte2 observed; exact source-level enum name unresolved.",
-        "This validates key references and ancestry, not the existence of a main wire connection."
+        "This validates key references and ancestry, not the existence of a main wire connection.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     },
     {
@@ -16052,19 +16064,21 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV SetKeyedRecordCoordinatesOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby, ulonglong positionXYBits)",
+      "saved_working_signature": "void PS4_SYSV SetKeyedRecordCoordinatesOrNearbyRecords(void * owner, void * world, byte player, CanvasWireNodeLayout * record, uint nearby, ulonglong positionXYBits)",
       "evidence": [
         "Complete160-instruction original body/pseudocode read and bytes matched. GP inputs plus packed XY low8bytesXMM0 verified.",
         "108 connected direct native cases verify30-byte fe07 packet, exact selected XY mutation, conditional owner/history output and complete unchanged key/order/hash/count/cursor/padding. 24 actual inverse history packets restore exact world through original reader/wrapper/dispatcher.",
         "56 original nearby-recursion cases verify strict0.2 radius, first-key-field grouping, prefilter128 selection limit, same-key/different-order exclusion, signedzero and exact XY changes across1432 moved records.",
         "Two local caller branches (55/62instructions) read and byte-matched: tagged payload insertion and absent/unchanged/changed XY remapping decisions.",
-        "Independent reopening verifies name and six-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
+        "Independent reopening verifies name and six-input custom SysV signature; other9602 names/signatures and original bytes unchanged.",
+        "Reflection identity established: these records are32-byte CanvasWireNode entries in world canvas_wire_nodes. Nested CanvasWireId ushort fields are prop_of_src_port and prop_of_dst_port; earlier ordinal/property labels were tentative. Seven working pointer signatures refined from this layout without register/native-byte changes."
       ],
       "caveats": [
         "Analyst descriptive name and working ABI, not original source declarations; packed XY uint64 carrier is register bits, not recovered source vector type.",
         "Prepared player0/globals/history for direct mode, owner absent/player255 for nearby mode; coherent finite tables only.",
         "Every routing flag, NaN/inf nearby coordinates/order, malformed graphs, concurrency and gameplay untested.",
-        "New caller branches statically checked only; complete enclosing functions, network origin and user-facing editor feature identity unresolved."
+        "New caller branches statically checked only; complete enclosing functions, network origin and user-facing editor feature identity unresolved.",
+        "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
       ]
     }
   ],

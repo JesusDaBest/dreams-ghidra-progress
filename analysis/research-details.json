@@ -16697,5 +16697,225 @@
       "New caller branches statically checked only; complete enclosing functions, network origin and user-facing editor feature identity unresolved."
     ],
     "new_name_credit": 1
+  },
+  "canvas_wire_node_identity_checkpoint": {
+    "layout_identity": {
+      "program_sha256": "009588c7d00b66a430bad0ec4aa731901821e3b7ce4ac637c1c23a2d2a3fa18f",
+      "identity": "CanvasWireNode",
+      "container": "CanvasWireNodes",
+      "world_field": "canvas_wire_nodes",
+      "world_offset": 28226912,
+      "array_field": "my_canvas_wire_node_array",
+      "array_offset": 4096,
+      "element_stride": 32,
+      "array_count_offset": 262144,
+      "table_count_offset": 266240,
+      "recycle_cursor_field": "my_last_check_for_invalid_index",
+      "recycle_cursor_offset": 266244,
+      "id_fields": [
+        {
+          "name": "seq_of_canvas_thing",
+          "offset": 0,
+          "width": 4
+        },
+        {
+          "name": "seq_of_src_thing",
+          "offset": 4,
+          "width": 4
+        },
+        {
+          "name": "seq_of_dst_thing",
+          "offset": 8,
+          "width": 4
+        },
+        {
+          "name": "prop_of_src_port",
+          "offset": 12,
+          "width": 2
+        },
+        {
+          "name": "prop_of_dst_port",
+          "offset": 14,
+          "width": 2
+        }
+      ],
+      "node_fields": [
+        {
+          "name": "canvas_wire_id",
+          "offset": 0,
+          "width": 16
+        },
+        {
+          "name": "pos_xy",
+          "offset": 16,
+          "width": 8
+        },
+        {
+          "name": "pos_along_wire",
+          "offset": 24,
+          "width": 4
+        },
+        {
+          "name": "next_in_hash_table",
+          "offset": 28,
+          "width": 2
+        }
+      ],
+      "native_registration_functions": {
+        "140cdf670": 152,
+        "140cdf050": 121
+      },
+      "xref_context_instruction_checks": 476,
+      "evidence": [
+        "World field name and exact table offset registered together.",
+        "Container array name, offset0x1000, element descriptor CanvasWireNode and stride0x20 registered together.",
+        "Node descriptor registers CanvasWireId at0, pos_xy at16, pos_along_wire at24 and next_in_hash_table at28.",
+        "CanvasWireId nested metadata names allfive key fields.",
+        "Original array callbacks independently read count at array+0x40000 and initialize records in32byte strides, agreeing with tested table offsets."
+      ],
+      "limits": [
+        "Reflection field/type names recovered; structure signedness and exact source C++ declarations not recovered.",
+        "Last two record padding bytes remain unnamed/unassigned by tested operations.",
+        "Static reflection binding plus prior native operations; no live editor/gameplay or livestream source match claimed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "working_layouts": {
+      "/DreamsAnalysis/CanvasWire/CanvasWireIdLayout": {
+        "length": 16,
+        "fields": [
+          {
+            "offset": 0,
+            "length": 4,
+            "name": "seq_of_canvas_thing",
+            "type": "uint"
+          },
+          {
+            "offset": 4,
+            "length": 4,
+            "name": "seq_of_src_thing",
+            "type": "uint"
+          },
+          {
+            "offset": 8,
+            "length": 4,
+            "name": "seq_of_dst_thing",
+            "type": "uint"
+          },
+          {
+            "offset": 12,
+            "length": 2,
+            "name": "prop_of_src_port",
+            "type": "ushort"
+          },
+          {
+            "offset": 14,
+            "length": 2,
+            "name": "prop_of_dst_port",
+            "type": "ushort"
+          }
+        ]
+      },
+      "/DreamsAnalysis/CanvasWire/CanvasWirePositionXYLayout": {
+        "length": 8,
+        "fields": [
+          {
+            "offset": 0,
+            "length": 4,
+            "name": "x",
+            "type": "float"
+          },
+          {
+            "offset": 4,
+            "length": 4,
+            "name": "y",
+            "type": "float"
+          }
+        ]
+      },
+      "/DreamsAnalysis/CanvasWire/CanvasWireNodeLayout": {
+        "length": 32,
+        "fields": [
+          {
+            "offset": 0,
+            "length": 16,
+            "name": "canvas_wire_id",
+            "type": "CanvasWireIdLayout"
+          },
+          {
+            "offset": 16,
+            "length": 8,
+            "name": "pos_xy",
+            "type": "CanvasWirePositionXYLayout"
+          },
+          {
+            "offset": 24,
+            "length": 4,
+            "name": "pos_along_wire",
+            "type": "float"
+          },
+          {
+            "offset": 28,
+            "length": 2,
+            "name": "next_in_hash_table",
+            "type": "ushort"
+          },
+          {
+            "offset": 30,
+            "length": 2,
+            "name": "unassigned_tail_1e",
+            "type": "undefined2"
+          }
+        ]
+      }
+    },
+    "signature_refinements": {
+      "140766e30": {
+        "before": "void PS4_SYSV CollectSortedKey16RecordMatches(void * recordTable, void * key16, void * output, byte deduplicateCells)",
+        "after": "void PS4_SYSV CollectSortedKey16RecordMatches(void * recordTable, CanvasWireIdLayout * key16, void * output, byte deduplicateCells)"
+      },
+      "1407678d0": {
+        "before": "void * PS4_SYSV FindKey16RecordMatchingOrder(void * recordTable, void * key16, float orderValue)",
+        "after": "CanvasWireNodeLayout * PS4_SYSV FindKey16RecordMatchingOrder(void * recordTable, CanvasWireIdLayout * key16, float orderValue)"
+      },
+      "140767a60": {
+        "before": "bool PS4_SYSV IsKey16RecordValidForMicrochip(void * key, void * world)",
+        "after": "bool PS4_SYSV IsKey16RecordValidForMicrochip(CanvasWireIdLayout * key, void * world)"
+      },
+      "140767ce0": {
+        "before": "void PS4_SYSV RemoveFirstKey16RecordMatchingOrder(void * recordTable, void * key16, float orderValue)",
+        "after": "void PS4_SYSV RemoveFirstKey16RecordMatchingOrder(void * recordTable, CanvasWireIdLayout * key16, float orderValue)"
+      },
+      "140767e80": {
+        "before": "void PS4_SYSV InsertKey16RecordIfKeyAndOrderAbsent(void * recordTable, void * candidate)",
+        "after": "void PS4_SYSV InsertKey16RecordIfKeyAndOrderAbsent(void * recordTable, CanvasWireNodeLayout * candidate)"
+      },
+      "140b35bd0": {
+        "before": "void PS4_SYSV SetKeyedRecordCoordinatesOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby, ulonglong positionXYBits)",
+        "after": "void PS4_SYSV SetKeyedRecordCoordinatesOrNearbyRecords(void * owner, void * world, byte player, CanvasWireNodeLayout * record, uint nearby, ulonglong positionXYBits)"
+      },
+      "140b35ec0": {
+        "before": "void PS4_SYSV RemoveKeyedRecordOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby)",
+        "after": "void PS4_SYSV RemoveKeyedRecordOrNearbyRecords(void * owner, void * world, byte player, CanvasWireNodeLayout * record, uint nearby)"
+      }
+    },
+    "mapped_functions_moved": [
+      "140766e30",
+      "1407678d0",
+      "140767a60",
+      "140767c70",
+      "140767ce0",
+      "140767e80",
+      "140b35aa0",
+      "140b35bd0",
+      "140b35ec0"
+    ],
+    "mapping_from": "shared/runtime/common-routines",
+    "mapping_to": "interface/canvas/canvaswirenode/runtime-implementation",
+    "names_unchanged": true,
+    "parameter_storage_unchanged": true,
+    "native_bytes_unchanged": true,
+    "new_name_credit": 0
   }
 }
