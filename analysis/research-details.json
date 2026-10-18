@@ -24794,5 +24794,72 @@
     ],
     "new_name_credit": 0,
     "correction": "Earlier queued-record wording corrected to cyclic sample-cache record."
+  },
+  "sprite_sample_geometry_followup": {
+    "lookup": {
+      "cases": 128,
+      "outcomes": {
+        "first_hit": 64,
+        "second_hit": 16,
+        "miss": 48
+      },
+      "scope": "Unchanged original64-byte two-slot search1413d2845..1413d2884; hit and miss destinations replaced by explicit result-return adapters.",
+      "checked": [
+        "First matching full64-bit key wins.",
+        "Second slot is used after first-key mismatch.",
+        "Different stored key in either slot is rejected.",
+        "Same-slot aliases obey actual table contents.",
+        "Entire1MiB source region remains unchanged."
+      ],
+      "limits": [
+        "Only lookup slice, not mutex/copy/zero-key fallback or full enclosing function.",
+        "Zero-key equality can match at slice level; downstream code separately treats copied zero key as fallback.",
+        "No concurrency, invalid index, collision-resistance or full game verification."
+      ],
+      "original_slice_sha256": "d43a36c02582986d805eed40b69662d64cec45bf48be23f33426e10826b31be4",
+      "project_modified": false
+    },
+    "sphere": {
+      "cases": 62,
+      "scope": "Original sphere-building slice1413d3929..1413d3a59; return replaces following test, XMM11 explicitly0.5 and R13 points to8-sample record.",
+      "checked": [
+        "All eight sample XYZ endpoints enclosed within tolerance.",
+        "Straight-axis paths including reversed/shuffled order and coincident paths match exact endpoint-bounds sphere.",
+        "Changing point radius lane to0/100*i produces identical sphere.",
+        "Only16-byte output at record+32 changes; surrounding record preserved."
+      ],
+      "limits": [
+        "Selected finite inputs only; no proof of minimal sphere for arbitrary curved paths.",
+        "No full function, sample generation, thread or game verification.",
+        "Sphere describes sampled path centerline; point radius is excluded."
+      ],
+      "original_slice_sha256": "3a15599035e55a38f51adf0369aaa76c61b6aa15468d8eaa0020a384a11b42fb",
+      "project_modified": false,
+      "fixture_correction": "Initial adapter used invalid machine encoding for loading XMM11 and faulted in adapter memory, before original slice execution. Corrected load to F3 44 0F 10 59 08; original slice unchanged. Initial exception receipt retained."
+    },
+    "segment_link": {
+      "cases": 96,
+      "outcomes": {
+        "linked": 38,
+        "unlinked": 58
+      },
+      "scope": "Original bounded linking branch1413d3a75..1413d409d; outgoing jump1413d2580 adapted to RET. Explicit caller state; preceding gate not executed.",
+      "checked": [
+        "Nearest clamped segment coordinate2.5 on straight candidate path; closer candidate wins and equal-distance ties retain first eligible candidate.",
+        "Strict sum-radii threshold excludes distance equal0.5.",
+        "Frame mismatch and candidate state2 exclusion.",
+        "Metadata bit29 selects linked state1, otherwise selected bit30 case state2.",
+        "Only current state/pointer/coordinate output fields change; candidate records unchanged."
+      ],
+      "limits": [
+        "Selected finite straight paths only; arbitrary curved paths remain unproven.",
+        "No full function, metadata gate, orientation, mutex or lifetime verification."
+      ],
+      "original_slice_sha256": "a9ff8dd60cdd538810d0b8e6946eaefb164f46a23332a0f11434ad613e1a515b",
+      "project_modified": false
+    },
+    "case_accounting": "96 linking cases include the earlier32-case domain; do not add them. Sphere tests include paired radius-lane variations. All tests are bounded native slices, not complete enclosing-function tests.",
+    "enclosing_function_review": "Partial; no new name or semantic review credit.",
+    "new_name_credit": 0
   }
 }

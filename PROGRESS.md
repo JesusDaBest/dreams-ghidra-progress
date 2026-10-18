@@ -7140,3 +7140,14 @@ Totals: **789 checked names**, **2,191 mapped functions**, **7,422 unmapped**, a
 The long-stroke branch stores a **cyclic sample cache**, correcting the earlier queued-record wording. Each of its 1,024 records contains a 64-bit key, path length, maximum scaled radius and eight 32-byte transformed samples. Sampling uses distances `i * length / 7` for `i = 0..7`. The reader checks two lookup slots and compares the full key before copying the record; a zero copied key falls back to direct measurement.
 
 **48 isolated native store-slice cases** verify the complete record bytes, both lookup-index writes and counter wraparound. Every byte in the one-MiB destination fixture matches the expected modifications. These execute the original 232-byte store slice with explicit entry state and a return substituted for the following unlock call. They do not test mutexes, sample generation/transformation, the reader or the full processor. Full-key checks reject differing stale keys; they do not establish collision resistance. No additional function-name credit is taken.
+
+
+### Sprite cache lookup and sampled-path geometry checked
+
+**128 native lookup cases** verify first-slot hits, second-slot fallback, rejection of different stored keys, and same-slot aliases. The complete source buffer remains unchanged. This executes only the original two-slot search; mutexes, record copying and the later zero-key fallback are outside the fixture.
+
+**62 native sphere cases** verify that the computed sphere encloses all eight sampled path positions. Straight-axis, reversed, shuffled and coincident paths match the expected endpoint-bounds sphere. Paired changes to the point-radius lane leave the result unchanged: this volume describes the sampled centerline. Minimality for arbitrary curved paths is not established. Only the sphere output field changes. An initial fixture run failed in the adapter due to an invalid instruction encoding; correcting that adapter allowed the unchanged original game slice to run.
+
+**96 native linking cases** verify selection among earlier same-frame stroke records: a nearer eligible path wins, equal-distance ties retain the first eligible candidate, state-2 records and mismatched frames are excluded, and distance must be strictly below the sum of the two maximum scaled radii. The test checks a segment coordinate of 2.5 on controlled straight paths, link/state outputs, and candidate-record preservation. These 96 cases include the earlier 32-case domain.
+
+These are bounded instruction-slice tests with explicit entry state and return adapters. The enclosing function, arbitrary curved-path linking, preceding metadata gate, orientation calculations, concurrency and lifetime behavior remain incompletely verified. **No new checked-name credit is taken.**
