@@ -19482,7 +19482,8 @@
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1,
-    "later_cleanup_and_missing_root": "buffered_record_cleanup_and_missing_root_checkpoint"
+    "later_cleanup_and_missing_root": "buffered_record_cleanup_and_missing_root_checkpoint",
+    "later_multikind_copy": "buffered_multikind_materialization_checkpoint"
   },
   "buffered_record_cleanup_and_missing_root_checkpoint": {
     "checks": {
@@ -19519,6 +19520,29 @@
         "new_name_credit": 0
       }
     },
+    "new_name_credit": 0
+  },
+  "buffered_multikind_materialization_checkpoint": {
+    "native_cases": 64,
+    "actual_sizes": {
+      "3": "0x130",
+      "13": "0x150",
+      "14": "0x190",
+      "15": "0x3a0"
+    },
+    "findings": [
+      "Original bounded initializer stores establish sizes130/150/190/3a0 for kinds3/13/14/15;complete consumer copies those exact byte lengths and registers each new object.",
+      "64 cases cover four kinds,arena cursors,parent tag,mode byte and high kind bit;full world/owner/pool/source/root/metadata comparisons pass.",
+      "Sound kind15 additionally pushes child44 link and parent kind13 head128 through original registration."
+    ],
+    "models": [
+      "Standard memcpy/memset and unused process-time return modeled."
+    ],
+    "limits": [
+      "One copied object,null property chain,valid prepared parent;non-size metadata controlled except parent list offset.",
+      "Full initializer startup,multiple copies/capacity,thread-specific lanes,cleanup and live game unverified."
+    ],
+    "project_modified": false,
     "new_name_credit": 0
   }
 }

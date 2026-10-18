@@ -6164,3 +6164,12 @@ Original import relocations and a local NID database identify `sceLibcMspaceMall
 **32 additional cases** cover an absent root ID or the minus-one sentinel, both banks, processed/readiness states and cleanup gates. The missing-root path sets record byte +0x5E, clears selected fields/readiness and reports bank-0 completion without modifying world objects. Unlike the found-root path, it can clean up even when the processed flag was already set. Complete world, pool, object, index-array and call-log comparisons pass.
 
 These checks model the heap calls and unused process-time return. Materialization cleanup, real allocation/free, hash collisions, full producer/caller and live-game behavior remain unverified. No new naming credit: **728 checked names** remains the total.
+
+
+### Buffered copies extended to four original object sizes
+
+**64 native cases** execute the complete buffered-record consumer for kinds 3/13/14/15, using sizes `0x130/0x150/0x190/0x3A0` written by original bounded initializer stores. Cases vary arena cursor, packed parent tag, common mode byte and high kind bit. Full world, owner, pool, source, root and metadata comparisons pass.
+
+Original registration and owner-state code execute. Sound kind 15 additionally links the copied object through child +0x44 and the prepared kind-13 parent's head +0x128. This broadens the earlier Key-only copying evidence while keeping exact source byte lengths tied to original stores.
+
+Only size initialization is original in this fixture; other relevant metadata and the valid parent-list offset are controlled. Each case copies one object with a null property chain. Standard memory imports and the unused process-time return remain modeled. Full startup, multiple copies/capacity, thread-specific lanes, cleanup and live-game behavior remain unverified. No new naming credit: **728 checked names** remains the total.
