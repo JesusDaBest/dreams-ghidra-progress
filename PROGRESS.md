@@ -5613,3 +5613,16 @@ Fresh reruns passed 60 multi-node cleanup cases, 72 generated inverse replay cas
 The saved name and six-register working signature passed independent reopening, decompilation, native-byte comparison and checks that other 9,602 names/signatures remain unchanged. The routine is mapped to shared wire-connection code rather than treating the entire operation as canvas-only.
 
 Totals: 704 checked names (627 behavior/helper and 77 metadata/type reviews), 2,113 mapped functions and 7,490 unmapped among 9,603 defined functions. No exact developer livestream source/build match is claimed.
+
+
+### Combined wire-node cleanup and active history
+
+The previous removal checkpoint tested canvas cleanup and active history separately. A new combined fixture now enters the original `ApplyWireRemovalEvent` once and executes ancestry lookup, sorted canvas-node cleanup, node-event history writing and the main wire event together.
+
+60 cases cover zero, one, three, 17 and 100 allocated nodes; exact-key matches interleaved with unrelated hash collisions; forward/reverse positions; and three history routing configurations. Exact history bytes contain each matching node's 30-byte `fe06` inverse in ascending position order, followed by the 54-byte `fdf3` wire inverse. Recording-enabled owner queues contain the corresponding 22-byte `fe08` removals before the 22-byte `fdf5` wire removal.
+
+The main wire's alternate-history flag does not govern all cleanup history. With that flag disabled, its `fdf3` is absent from the second stream, but the child node producers still send their `fe06` inverses there. The first stream contains the complete inverse sequence in that fixture. This is observed routing behavior; its higher-level intent and user-visible consequences remain unresolved.
+
+Replaying the actual complete generated inverse range through original reader/wrapper/dispatcher/insertion restores 1,098 canvas nodes across the 60 cases and restores the wire with its normalized recorded transform. Restoration appends new slots, preserving old tombstones and unrelated colliding nodes. World, owner, history, object and input bytes match the expected changes; only the unassigned final two padding bytes of new node records are excluded.
+
+This closes the separate-cleanup/history fixture gap, without proving a full live editor transaction or user undo/redo. Prepared valid ancestry, unique finite positions and existing active history contexts are used. Optional connector-property clearing, malformed structures, capacity exhaustion and concurrency remain outside this combined test. Counts remain 704 checked names among 9,603 defined functions; no new naming or completion credit is added.

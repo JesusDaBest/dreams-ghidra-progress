@@ -17367,6 +17367,50 @@
       "Direct generated inverse replay is not complete user undo/redo verification.",
       "No exact Media Molecule livestream source/build match established."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "follow_up": "wire_removal_combined_history_checkpoint now exercises canvas-node cleanup and active history together; remaining limits retained there."
+  },
+  "wire_removal_combined_history_checkpoint": {
+    "native_check": {
+      "native_cases": 60,
+      "canvas_nodes_restored": 1098,
+      "original_native_instructions_verified": {
+        "140b36750": 401,
+        "140b19cc0": 324,
+        "140b18fa0": 667,
+        "140766e30": 210,
+        "140b35ec0": 132,
+        "1407671c0": 474,
+        "140767ce0": 95,
+        "140767e80": 112,
+        "140b1a750": 949,
+        "140b1b7b0": 923
+      },
+      "dispatcher_original_bytes_verified": 267374,
+      "finding": "Single original wire-removal call cleans matching canvas nodes and captures their fe06 inverses before fdf3 wire inverse. Both/second history streams and owner queue match exact concatenated event bytes. Disabling alternate history for the main wire excludes its fdf3 from second stream, but node fe06 inverses still enter that stream. Replaying actual complete generated inverse range from first or second as appropriate restores node keys/XY/positions and normalized wire transform into appended slots, retaining tombstones and colliding mismatches.",
+      "limits": [
+        "Prepared valid shared Microchip ancestry, exact/colliding keys, finite unique positions and active existing history context; optional connector-property cleanup disabled.",
+        "Direct forward inverse-range replay is not live editor user undo/redo; actual higher-level ordering and transaction grouping remain unresolved.",
+        "New node final two padding bytes unassigned and excluded; all other world/owner/history/object/input bytes compared.",
+        "Controlled allocator/TLS/copy boundaries inherited from earlier fixtures; no malformed structures, concurrency or capacity exhaustion."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "One original ApplyWireRemovalEvent invocation executes original ancestry lookup, canvas-node match collector/sorter, node-removal producer, history router/writer and main wire-removal dispatcher in the same fixture.",
+      "Sixty cases combine node counts0/1/3/17/100, all/alternating exact-key matches with hash collisions, forward/reverse positions and three routing configurations.",
+      "Exact history bytes contain sorted fe06 node inverses before the fdf3 main-wire inverse. Recording-enabled owner queues contain matching fe08 node removals before fdf5.",
+      "Main-wire alternate-history flag0 omits its fdf3 from the second stream, while child node producers still route fe06 inverses there. This observed routing difference is not a demonstrated application defect.",
+      "Actual complete inverse bytes produced by the original code replay through original range reader, wrapper, dispatcher and node insertion:1098 total nodes restored, along with normalized main-wire transforms. Restorations append slots while retaining tombstones and unrelated colliding nodes.",
+      "Exact world/owner/history/object/input comparisons pass except the explicitly unassigned final two padding bytes of newly appended nodes. Original ten-function instruction captures and267374-byte dispatcher body match executing original bytes."
+    ],
+    "limits": [
+      "Prepared valid shared Microchip ancestry, exact/colliding keys, finite unique positions and active existing history context; optional connector-property cleanup disabled.",
+      "Direct forward inverse-range replay is not live editor user undo/redo; actual higher-level ordering and transaction grouping remain unresolved.",
+      "New node final two padding bytes unassigned and excluded; all other world/owner/history/object/input bytes compared.",
+      "Controlled allocator/TLS/copy boundaries inherited from earlier fixtures; no malformed structures, concurrency or capacity exhaustion."
+    ],
+    "new_name_credit": 0
   }
 }
