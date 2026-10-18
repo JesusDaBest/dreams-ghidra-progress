@@ -6173,3 +6173,12 @@ These checks model the heap calls and unused process-time return. Materializatio
 Original registration and owner-state code execute. Sound kind 15 additionally links the copied object through child +0x44 and the prepared kind-13 parent's head +0x128. This broadens the earlier Key-only copying evidence while keeping exact source byte lengths tied to original stores.
 
 Only size initialization is original in this fixture; other relevant metadata and the valid parent-list offset are controlled. Each case copies one object with a null property chain. Standard memory imports and the unused process-time return remain modeled. Full startup, multiple copies/capacity, thread-specific lanes, cleanup and live-game behavior remain unverified. No new naming credit: **728 checked names** remains the total.
+
+
+### Multi-object buffered copies and parent translation verified
+
+**96 native cases** execute the complete consumer with 2/3/7 Key objects per buffered record. Local parent indices translate relative to the world count captured before copying. Negative parent mappings use the record's existing root; selected nonnegative mappings refer to earlier copied objects. Both all-root and chained hierarchies are covered.
+
+Full world, owner, pool, source, root and metadata comparisons pass across arena cursors, packed parent tags, common mode byte and high kind bit. Original registration and owner-state helpers execute for every copy. Tests verify the resulting per-kind tail/next links, parent caches, arena cursor and repeated parallel-record growth.
+
+These are valid prepared Keys with null property chains, controlled metadata and cleanup disabled. Standard memory imports and unused timing return remain modeled. Capacity/overflow, mixed-kind multi-object records, thread-specific lanes, full producer/caller and live-game behavior remain unverified. No new naming credit: **728 checked names** remains the total.

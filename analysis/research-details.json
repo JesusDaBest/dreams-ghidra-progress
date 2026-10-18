@@ -19483,7 +19483,8 @@
     ],
     "new_name_credit": 1,
     "later_cleanup_and_missing_root": "buffered_record_cleanup_and_missing_root_checkpoint",
-    "later_multikind_copy": "buffered_multikind_materialization_checkpoint"
+    "later_multikind_copy": "buffered_multikind_materialization_checkpoint",
+    "later_multiobject_copy": "buffered_multiobject_materialization_checkpoint"
   },
   "buffered_record_cleanup_and_missing_root_checkpoint": {
     "checks": {
@@ -19541,6 +19542,22 @@
     "limits": [
       "One copied object,null property chain,valid prepared parent;non-size metadata controlled except parent list offset.",
       "Full initializer startup,multiple copies/capacity,thread-specific lanes,cleanup and live game unverified."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "buffered_multiobject_materialization_checkpoint": {
+    "native_cases": 96,
+    "findings": [
+      "Complete original consumer copies2/3/7 Key objects per record,translates local parent indices relative to pre-copy world count,and registers each sequentially.",
+      "96 cases cover all-root or chain hierarchies,arena cursors,source parent tags,mode byte and high kind bit;full world/owner/pool/source/root/metadata comparisons pass.",
+      "Per-kind tails and next links span all new copies;owner/world parallel lengths and arena cursor advance across repeated insertion."
+    ],
+    "models": [
+      "Standard memcpy/memset and unused process-time return modeled."
+    ],
+    "limits": [
+      "Prepared valid Key records with null properties,controlled metadata and cleanup disabled;capacity/overflow,other multi-kind records,thread-specific lanes and full game unverified."
     ],
     "project_modified": false,
     "new_name_credit": 0
