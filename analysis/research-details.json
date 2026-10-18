@@ -18002,5 +18002,27 @@
       "No exact MM source/build match."
     ],
     "new_name_credit": 1
+  },
+  "world_reorder_reference_connected_checkpoint": {
+    "native_check": {
+      "native_cases": 46,
+      "reordered_cases": 28,
+      "original_outer_instructions_verified": 1566,
+      "original_remapper_instructions_verified": 533,
+      "findings": [
+        "Original1566-instruction outer reorder calls original533-instruction remapper,original functor transfer and batch worker,and original30/559-instruction callbacks in one fixture.",
+        "Complete world/object/owner comparisons cover parent/index rewrite,parallel arrays,conditional records,kind lists,lookup tables,owner reference lists and both populated bitsets including65-object word boundary.",
+        "Original job construction dispatches wires before objects;both wire endpoints,common object references and fixed world reference follow the actual outer index permutation.",
+        "Already ordered,flat and empty worlds preserve complete prepared buffers and skip jobs."
+      ],
+      "limits": [
+        "Engine heap,TLS,free,standard memory operations and scheduler/wait remain controlled boundaries;actual thread pool and concurrency not executed.",
+        "Kind0 valid finite hierarchies and one world used as source/destination;other kinds and malformed data unverified in this connected fixture.",
+        "No whole update loop,overflow recovery,live editor or exact MM source/build match claimed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0
   }
 }

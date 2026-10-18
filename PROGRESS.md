@@ -5724,3 +5724,14 @@ Independent reopening verified the descriptive name, working owner/world/byte-mo
 This connects the previously separate callback tests to original job construction and batch iteration. It does not execute the real thread pool or heap. Integration fixtures use kind-zero objects, no owner and empty auxiliary world tables. Other callback kinds have separate tests; their combination with all context tables, actual concurrency, malformed indices, the outer reorder call and live editor behavior remain unverified.
 
 Independent reopening verified the name, working signature, complete decompilation and unchanged native bytes and all 9,604 other names/signatures. Totals: **712 checked names** (635 behavior/helper and 77 property/type reviews), **2,121 mapped** and **7,484 unmapped** among 9,605 defined functions. No whole-game completion or exact Media Molecule source/build match is claimed.
+
+
+### Original reorder and reference-remapping path connected
+
+**46 connected native cases** now run `ReorderWorldObjectsParentFirst` into the original `RemapWorldObjectReferences`, original functor transfer and batch worker, and both original per-item callbacks. The remapper is no longer an observer in this fixture. Twenty-eight cases change order; already ordered, flat and empty cases preserve complete prepared buffers and skip jobs.
+
+Complete world, owner and object-buffer comparisons verify the resulting parent/index rewrite, six parallel arrays, conditional per-object records, kind lists, persistent-ID lookup tables, owner reference lists and two populated bitsets. A 65-object case crosses bitset word boundaries. Both wire endpoints, common object references and a fixed world reference follow the actual index permutation produced by the outer function. The original jobs run wires before objects.
+
+Heap allocation/release, TLS, standard memory operations and scheduler/wait remain controlled boundaries. The real thread pool, concurrent initialization, other object kinds in this connected path, malformed/cyclic data, the full update loop and live editor correctness remain unverified. The fixture uses one world as source and destination. Prior separate kind-specific callback tests retain their narrower scope.
+
+This adds integration evidence and **zero checked names**; totals remain 712 checked names among 9,605 defined functions. The per-function evidence now distinguishes earlier observer-based tests from this connected path. No full-game completion or exact Media Molecule source/build match is claimed.
