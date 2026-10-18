@@ -6828,3 +6828,14 @@ These are bounded paths with prepared finite inputs. Tangent uses a local CRT ad
 Independent reopening verifies the saved working signature, boolean AL return, full float4 output pointer, decompilation, unchanged instructions and all 9,605 other names/signatures. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **737 checked names** (657 behavior/helper and 80 property/type), **2,143 mapped**, **7,463 unmapped**, among 9,606 defined functions.
+
+
+### Linear surface byte-offset helper reviewed and named
+
+`ComputeLinearSurfaceByteOffset` names the complete 19-instruction helper used by the color sampler and another image routine. It combines X/Y/Z coordinates with row width, height and bits per element, then converts the resulting bit offset to bytes. The partial products wrap at 32 bits and the accumulated sum wraps at 64 bits; the saved working signature preserves unsigned coordinates and status.
+
+**2,689 original-native executions** verify selected bit widths, boundary coordinates, arithmetic wrapping, the exact guarded eight-byte output, and unchanged context/arguments. A null output returns `0x80d30000` before reading the context; a non-null output writes the offset and returns zero.
+
+Independent reopening verifies the saved signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. Tests use prepared layout fields; layout initialization, malformed contexts, full sampling and live-game behavior remain unverified. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **738 checked names** (658 behavior/helper and 80 property/type), **2,144 mapped**, **7,462 unmapped**, among 9,606 defined functions.

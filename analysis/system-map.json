@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2143,
-  "unmapped_total": 7463,
+  "mapped_total": 2144,
+  "unmapped_total": 7462,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54179,6 +54179,33 @@
             "96 originalwrapper/cache-hit executions compare guarded output,completecache/table/args andsamplecallarguments.",
             "Ready path samples dimensions shiftedright6,mip5,returned slice;negative/pending/busy cache results returnfalse withdefault output.",
             "Independent reopening verifies three GP inputs,float4 outputpointer,booleanAL,decompilation,unchanged original instructions andall9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "14003fb10": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete linear surface-layout byte-offset calculation used bycolor sampling.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original native state comparisons and complete function review.",
+      "code_sha256": "6ee799d85394c04e5d53e799d2a595e1a465cbbf566a4cd4e82027efc4e22d31",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeLinearSurfaceByteOffset",
+          "support": [
+            "Complete19-instruction linear bit-address helper reviewed against original bytes.",
+            "Computes byte offset using row width,height,bits-per-element andXYZ;32-bit partial products and64-bit sum wrapping are explicit.",
+            "2689 original-native cases check coordinates,bitwidths,overflow,guarded8-byte output,context/argument preservation andnulloutput/nullcontext.",
+            "Null output returns80d30000 beforecontextread;nonnulloutputreturnszero.",
+            "Independent reopening verifies exact GP storage,uint32EAXreturn,decompilation,unchanged original instructions andall9605 other names/signatures."
           ]
         }
       ]

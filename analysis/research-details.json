@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 737,
+    "checked_and_applied_names": 738,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 737,
+    "verified_names": 738,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "681 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "682 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20270,6 +20270,37 @@
       "Color-sample helper replaced byfullvector-returning argument recorder in nativefixtures;actual surface addressing/sampling remains unverified.",
       "Matching existing cache slices only;miss/loading,full callers,async completion andlive game unverified.",
       "Analyst descriptive name andworking signature are not original C++ declarations;no exact MM source/build match."
+    ],
+    "new_name_credit": 1
+  },
+  "linear_surface_offset_name_checkpoint": {
+    "target": {
+      "name": "ComputeLinearSurfaceByteOffset",
+      "signature": "uint PS4_SYSV ComputeLinearSurfaceByteOffset(void * surfaceLayout, ulonglong * outputByteOffset, uint x, uint y, uint z)"
+    },
+    "native_check": {
+      "native_cases": 2689,
+      "original_instructions": 19,
+      "findings": [
+        "Original function computes unsigned byte offset from bit width,row width,height andXYZ coordinates;32-bit partial products and64-bit sum wrapping checked.",
+        "Null output returns80d30000 before reading context;nonnull output writes exactly8 bytes andreturnszero."
+      ],
+      "limits": [
+        "Prepared header fields;surface header initialization andfullsampling function not executed."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete19-instruction linear bit-address helper reviewed against original bytes.",
+      "Computes byte offset using row width,height,bits-per-element andXYZ;32-bit partial products and64-bit sum wrapping are explicit.",
+      "2689 original-native cases check coordinates,bitwidths,overflow,guarded8-byte output,context/argument preservation andnulloutput/nullcontext.",
+      "Null output returns80d30000 beforecontextread;nonnulloutputreturnszero.",
+      "Independent reopening verifies exact GP storage,uint32EAXreturn,decompilation,unchanged original instructions andall9605 other names/signatures."
+    ],
+    "limits": [
+      "Prepared layout fields only;header construction,malformed contexts andfullsampling remain unverified.",
+      "Working opaque header anddescriptive name are not original C++ declarations;no livegame or exact MMsource/build match claimed."
     ],
     "new_name_credit": 1
   }
