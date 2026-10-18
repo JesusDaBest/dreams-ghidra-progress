@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 760,
+    "checked_and_applied_names": 761,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 760,
+    "verified_names": 761,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "698 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "699 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22549,5 +22549,84 @@
     ],
     "new_name_credit": 1,
     "new_function_definitions": 1
+  },
+  "interactive_qr_display_checkpoint": {
+    "target": {
+      "name": "DrawInteractiveQrCode",
+      "signature": "void PS4_SYSV DrawInteractiveQrCode(UiRectangleBoundsWorking16 bounds, uint drawIdentifier, void * interactionData, uchar * text, bool interactive, void * playerContext)"
+    },
+    "checks": {
+      "qr-display-gates-native-check.json": {
+        "native_cases": 80,
+        "findings": [
+          "Original parent uses inclusive rectangle overlap against clip bounds; touching edges pass, separated rectangles and NaN reject.",
+          "Visible inputs call QR dispatcher with null/null or exact begin/end range; only ready result causes draw.",
+          "Interactive flag gates hit-test call after ready draw; temporary global byte is zero during interaction and restored afterward.",
+          "Draw receives observed identifier and constant0x20302."
+        ],
+        "models": [
+          "QR dispatcher readiness, draw sink and interaction result0 are explicit logged stubs; verified strlen uses local CRT."
+        ],
+        "limits": [
+          "Action bit0x20 path and queued payload not executed; concrete draw/interaction ABI and caller context remain under review.",
+          "Synthetic rectangles/text; no graphics or external action/network calls performed.",
+          "Full parent identity and source types not yet assigned; no new name credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-display-action-native-check.json": {
+        "native_cases": 21,
+        "findings": [
+          "Original action branch allocates48-byte object,vtable141c37e00,type6,index-1 when no interaction-player bit is set.",
+          "Copies expanded cached QR text into12-byte small-string member+0x20,including original storage-helper heap growth for lengths12..63.",
+          "Queues object exactly once through local logging stub; original source and global interaction flag preserved.",
+          "Unwritten action padding remains allocator sentinel; no claim whole object zero-initialized."
+        ],
+        "models": [
+          "Draw/readiness/interaction return0x20 and allocation/delivery stubs; action never leaves fixture. Original small-string helper uses local CRT allocation/memory imports."
+        ],
+        "limits": [
+          "Interaction-player selection bits remainzero; matching caller-context/player lookup and actual action consumer not executed.",
+          "Vtable/type6 semantics beyond this construction path remain unresolved; no external action or network request performed.",
+          "No new name credit or live-game claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-display-player-action-native-check.json": {
+        "native_cases": 24,
+        "findings": [
+          "Original caller selects first set interaction-player bit among available entries and reads its signed identifier from global records at stride0x180.",
+          "Caller validates that identifier against context records stride0x19c50 and referenced slot context stride0x43e0 before constructing the action.",
+          "Matching context record may be first,second or third; earlier wrong identifier or wrong context entries are skipped.",
+          "Action field+0xc stores selected identifier itself, not the context record ordinal. Queued text is preserved and context remains unchanged."
+        ],
+        "models": [
+          "Synthetic local contexts,player identifiers and interaction hit masks; action allocation/delivery,readiness/draw are logged stubs."
+        ],
+        "limits": [
+          "Every lookup fixture guarantees a matching record; no-match behavior has no visible loop bound and is not executed.",
+          "Real context meanings, action consumer and live-game behavior remain unverified.",
+          "No actual player/account data accessed or external action performed; no naming credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete167-instruction QR display/interaction caller reviewed againstoriginalbytes.",
+      "80 original gatecases verifyinclusiveclipping,NaNrejection,readygating,textrange andinteractionflag restoration.",
+      "21 local actionconstructioncases verifyexpandedtext copy,inline/heap storage andtype6 browseraction;24syntheticplayercases verifyfirsthitidentifier andcontextmatching.",
+      "Working16-byte rectangle andXMM0/register/stackinputABI grounded inassembly andfixtures;priorincomingstacklocal metadata preserved beforeconversion.",
+      "Independent reopening verifies savedname/types,decompilation,unchangedbytes andall9611 otherfunctionnames/signatures."
+    ],
+    "limits": [
+      "Readiness/draw/interaction/delivery/allocator boundaries are explicitfixturemodels;actualgraphics/platformbrowserandlivegameunverified.",
+      "Playerlookupfixtures guaranteematchingcontext;no-matchpathhasnoobservedloopbound andnotexecuted.",
+      "Concrete interaction/context layouts anddrawprimitive ABI remainopaque;workingtypesarenotoriginalC++declarations.",
+      "NoexactMMsource/buildmatch claimed."
+    ],
+    "new_name_credit": 1
   }
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2166,
-  "unmapped_total": 7446,
+  "mapped_total": 2167,
+  "unmapped_total": 7445,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54799,6 +54799,33 @@
           ]
         }
       ]
+    },
+    "140219710": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "qr-code",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete QR drawing/interaction caller connects rectangleclipping,QRjobreadiness andqueued browseractions.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "9d7c6943d15917ed77ef3ec00abf84979b873a3f73ed7f95c4dc4348c4e6b6a3",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DrawInteractiveQrCode",
+          "support": [
+            "Complete167-instruction QR display/interaction caller reviewed againstoriginalbytes.",
+            "80 original gatecases verifyinclusiveclipping,NaNrejection,readygating,textrange andinteractionflag restoration.",
+            "21 local actionconstructioncases verifyexpandedtext copy,inline/heap storage andtype6 browseraction;24syntheticplayercases verifyfirsthitidentifier andcontextmatching.",
+            "Working16-byte rectangle andXMM0/register/stackinputABI grounded inassembly andfixtures;priorincomingstacklocal metadata preserved beforeconversion.",
+            "Independent reopening verifies savedname/types,decompilation,unchangedbytes andall9611 otherfunctionnames/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -57073,6 +57100,17 @@
             {
               "id": "action-queue",
               "label": "Action queue",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "qr-code",
+              "label": "QR display",
               "children": [
                 {
                   "id": "runtime-implementation",

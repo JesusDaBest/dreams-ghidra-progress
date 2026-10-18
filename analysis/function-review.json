@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "698 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "699 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8697,
-    "other_names": 915,
-    "verification": "complete_inventory_matches_baseline_plus_698_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8696,
+    "other_names": 916,
+    "verification": "complete_inventory_matches_baseline_plus_699_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17668,6 +17668,30 @@
         "Consumer checks are bounded windows inside largerparent;concurrency,reentrancy andfullframe behavior unverified.",
         "Opaque virtualaction parameter isunusedbythisbody;notclaimed originalC++declaration.",
         "No exactMMsource/buildmatch."
+      ]
+    },
+    {
+      "address": "140219710",
+      "original_name": "FUN_140219710",
+      "applied_name": "DrawInteractiveQrCode",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DrawInteractiveQrCode(UiRectangleBoundsWorking16 bounds, uint drawIdentifier, void * interactionData, uchar * text, bool interactive, void * playerContext)",
+      "evidence": [
+        "Complete167-instruction QR display/interaction caller reviewed againstoriginalbytes.",
+        "80 original gatecases verifyinclusiveclipping,NaNrejection,readygating,textrange andinteractionflag restoration.",
+        "21 local actionconstructioncases verifyexpandedtext copy,inline/heap storage andtype6 browseraction;24syntheticplayercases verifyfirsthitidentifier andcontextmatching.",
+        "Working16-byte rectangle andXMM0/register/stackinputABI grounded inassembly andfixtures;priorincomingstacklocal metadata preserved beforeconversion.",
+        "Independent reopening verifies savedname/types,decompilation,unchangedbytes andall9611 otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "Readiness/draw/interaction/delivery/allocator boundaries are explicitfixturemodels;actualgraphics/platformbrowserandlivegameunverified.",
+        "Playerlookupfixtures guaranteematchingcontext;no-matchpathhasnoobservedloopbound andnotexecuted.",
+        "Concrete interaction/context layouts anddrawprimitive ABI remainopaque;workingtypesarenotoriginalC++declarations.",
+        "NoexactMMsource/buildmatch claimed."
       ]
     }
   ],

@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 714,
+    "done": 715,
     "todo": 1452,
-    "total": 2166,
-    "behavior_or_helpers_reviewed": 640,
+    "total": 2167,
+    "behavior_or_helpers_reviewed": 641,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12550,12 +12550,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 96,
+        "done": 97,
         "todo": 310,
-        "total": 406,
-        "behavior_or_helpers_reviewed": 92,
+        "total": 407,
+        "behavior_or_helpers_reviewed": 93,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 197,
+        "runtime_functions_identified": 198,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12566,6 +12566,7 @@
           "InsertTextStringSpan",
           "InsertSmallStringSpan",
           "BuildObjectDisplayName",
+          "DrawInteractiveQrCode",
           "ResolveTextReferenceObject",
           "SelectLocalizedInlineText64",
           "SelectLocalizedDynamicText",
@@ -12976,6 +12977,7 @@
           "14018fb60",
           "1401a5870",
           "1401a5af0",
+          "140219710",
           "1403d6c80",
           "1406367f0",
           "1406368e0",
@@ -14979,16 +14981,17 @@
           {
             "name": "interface/display",
             "label": "UI drawing & interaction",
-            "done": 5,
+            "done": 6,
             "todo": 101,
-            "total": 106,
-            "behavior_or_helpers_reviewed": 5,
+            "total": 107,
+            "behavior_or_helpers_reviewed": 6,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 98,
+            "runtime_functions_identified": 99,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "DrawInteractiveQrCode",
               "InsertQueuedActionByFlagAndPriority",
               "DestroyBrowserDialogTextAction",
               "DeleteBrowserDialogTextAction",
@@ -15099,6 +15102,7 @@
               "0x1415f4eb0"
             ],
             "done_addresses": [
+              "140219710",
               "1410a53c0",
               "1410a66b0",
               "1410a6700",
@@ -16446,6 +16450,53 @@
                     "todo_addresses": [
                       "140a678e0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "interface/display/qr-code",
+                "label": "QR display",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "DrawInteractiveQrCode"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140219710"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/display/qr-code/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "DrawInteractiveQrCode"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140219710"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -46312,5 +46363,5 @@
       }
     ]
   },
-  "unmapped": 7446
+  "unmapped": 7445
 }

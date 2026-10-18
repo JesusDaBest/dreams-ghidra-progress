@@ -7068,3 +7068,14 @@ Tracing its queue consumer establishes the meaning: true keeps the action pendin
 The full large parent, real platform behavior, concurrent queue changes and callback reentrancy remain unverified. No browser opened, URL followed or account data used. Independent reopening confirms the new method's definition, descriptive name and boolean working ABI, unchanged original bytes and all 9,611 prior function names/signatures.
 
 Totals: **760 checked names** (680 behavior/helper and 80 property/type), **2,166 mapped**, **7,446 unmapped**, among **9,612 defined functions**.
+
+
+### Interactive QR display reviewed and named
+
+`DrawInteractiveQrCode` connects the reviewed QR job, image and browser-action paths. It checks inclusive rectangle overlap with the current clip, updates the QR job, and draws only when ready. Optional interaction constructs a browser action carrying expanded QR text and the selected player identifier. The caller restores its temporary interaction flag afterward.
+
+The working ABI now identifies a 16-byte rectangle in XMM0, a draw identifier, opaque interaction data, text, an interaction flag and a stack-passed player context. An incoming stack slot previously labeled as a local was converted to a parameter; its prior metadata was preserved. These are evidence-based working types, not recovered original declarations.
+
+**80 clipping/readiness cases**, **21 action-construction cases** and **24 synthetic player-selection cases** support the complete 167-instruction review. Draw, interaction and delivery boundaries are modeled locally; no browser or graphics API ran. Player-context cases guarantee a match. The no-match lookup, concrete context layout, actual graphics and live-game behavior remain unverified. Independent reopening confirms the saved signature, unchanged code and all 9,611 other function names/signatures.
+
+Totals: **761 checked names** (681 behavior/helper and 80 property/type), **2,167 mapped**, **7,445 unmapped**, among **9,612 defined functions**.
