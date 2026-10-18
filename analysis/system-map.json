@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2098,
-  "unmapped_total": 7505,
+  "mapped_total": 2099,
+  "unmapped_total": 7504,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52737,6 +52737,33 @@
             "Includes empty and1/3/17-wire lists, source/destination/self matches, generation-bit mismatch and sentinel inputs in the no-selected-Machine branch. Self-connections count once per wire.",
             "Removal producer callers compare count1 before optional endpoint cleanup. Exact endpoint-state and type6-record meanings remain unresolved.",
             "Independent saved-project reopening confirms name and uint SysV(world pointer,32-bit reference) signature, with all other9602 names/signatures and native bytes unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140766e30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared keyed record collection called by Microchip ancestor cleanup during wire removal.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Collects exact16-byte-key matches,sorts by record float+24 andoptionally filters adjacent half-unit coordinate cells.",
+      "code_sha256": "4f46bf07ce69f765a4d2ffd3a157a464b92bb8549fcd4983cc4c19e856259b3d",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CollectSortedKey16RecordMatches",
+          "support": [
+            "Complete210-instruction original body and pseudocode reviewed and original bytes matched.",
+            "216 native hash/key/collision-chain cases verify pointer sets, counts, table/key preservation and guards.",
+            "180 native ordering/dedup cases verify ascending finite float+24 order and adjacent half-unit cell filtering from float coordinates+16/+20. Includes negative boundaries,reverse/shuffled chains and separated same-cell repeats.",
+            "48 connected cases execute original parent traversal,lookup andsort; selected pointer reaches downstream cleanup observer,while colliding mismatched keys are rejected.",
+            "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged."
           ]
         }
       ],

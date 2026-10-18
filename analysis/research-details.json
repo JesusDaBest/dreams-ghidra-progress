@@ -16220,5 +16220,38 @@
       "No assertion that filtering means visibility or that type6 is a keyframe source; these meanings need separate evidence."
     ],
     "new_name_credit": 1
+  },
+  "key16_record_match_collection_checkpoint": {
+    "address": "140766e30",
+    "name": "CollectSortedKey16RecordMatches",
+    "signature": "void PS4_SYSV CollectSortedKey16RecordMatches(void * recordTable, void * key16, void * output, byte deduplicateCells)",
+    "native_instructions": 210,
+    "native_check": {
+      "native_cases": 180,
+      "finding": "Original lookup sorts matched pointers by ascending float at record+24. Optional mode1 retains first record then removes adjacent equal coordinate cells after sorting; cells are floor(float32(2*x+0.5))*0.5 for x/y at16/20. Same cells separated by another cell remain. Unique finite order keys, negative rounding boundaries and shuffled/reverse chains checked; initial count100 still selects only first chain match.",
+      "limits": [
+        "Finite normal coordinates/order keys; NaN/infinity,ties,modeotherthan0/1,malformed chains and overflow untested.",
+        "No gameplay or coordinate semantic meaning claim."
+      ],
+      "original_native_instructions_verified": {
+        "140766e30": 210,
+        "1407671c0": 474
+      },
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete210-instruction original body and pseudocode reviewed and original bytes matched.",
+      "216 native hash/key/collision-chain cases verify pointer sets, counts, table/key preservation and guards.",
+      "180 native ordering/dedup cases verify ascending finite float+24 order and adjacent half-unit cell filtering from float coordinates+16/+20. Includes negative boundaries,reverse/shuffled chains and separated same-cell repeats.",
+      "48 connected cases execute original parent traversal,lookup andsort; selected pointer reaches downstream cleanup observer,while colliding mismatched keys are rejected.",
+      "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque working pointers, not recovered source declarations.",
+      "Finite acyclic<=100-record fixtures,unique finite sort keys andmodes0/1; ties,NaN,infinity,overflow,malformed chains andgameplay untested.",
+      "Coordinate/order meanings unresolved; downstream fe08 application remains an observation boundary in connected suite."
+    ],
+    "new_name_credit": 1
   }
 }

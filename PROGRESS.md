@@ -5367,3 +5367,16 @@ The lookup observation probe has now been replaced by original code. 216 direct 
 Another 48 checks connect original parent traversal, lookup and sorting to the final cleanup call. A matching record is selected and passed with recursion disabled; a hash-colliding mismatched key is rejected. Wrong ancestor type, unrelated ancestry and endpoint-class gates still skip selection. Ordinary wire removal continues with complete world/object comparisons.
 
 All 210 lookup instructions match the original executable. The final deletion producer remains an explicit observer in the connected suite, so event `fe08` application is still unresolved. These tests cover finite valid chains and parent graphs, not malformed tables, cycles, overflow or gameplay. No new checked name or completion credit was added. [Sanitized receipts](analysis/wire-replay-dispatcher-checks.json).
+
+
+### Sorted key-record collection named
+
+Saved `CollectSortedKey16RecordMatches` with a working void SysV signature for table, 16-byte key, output and a byte deduplication flag. Complete pseudocode and all 210 original instructions were reviewed and matched. Independent reopening confirms the saved name and signature; other names/signatures and original bytes are unchanged.
+
+180 new native cases verify exact output order and optional filtering. Matches sort by the ascending float at record byte offset 24. With filtering enabled, the first result is kept and adjacent results in the same half-unit cell are omitted, using the two floats at offsets 16 and 20. The cell rule is floor(float32(2*x+0.5))*0.5 on each coordinate. Same-cell records separated by a different cell remain; this is not global deduplication. Negative rounding boundaries and reverse/shuffled chains were checked with unique finite order keys.
+
+The prior 216 hash/collision cases and 48 connected parent-traversal cases remain supporting evidence. Input output-count 100 selects only the first chain match; tested values below 100 collect the fixture matches before sorting/filtering. Key/table bytes, output counts and guards are checked. The internal sorting helper's 474 original instructions are also byte-verified, but it is not separately named or credited here.
+
+Finite acyclic tables up to 100 records and modes 0/1 are covered. Tied/NaN/infinite sort keys, malformed chains, overflow, coordinate semantics, downstream deletion and gameplay remain unresolved.
+
+Totals: 687 checked names, 2,099 mapped functions and 7,504 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

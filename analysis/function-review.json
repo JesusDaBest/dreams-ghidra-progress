@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "633 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "634 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8762,
-    "other_names": 841,
-    "verification": "complete_inventory_matches_baseline_plus_633_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8761,
+    "other_names": 842,
+    "verification": "complete_inventory_matches_baseline_plus_634_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15835,6 +15835,29 @@
         "Analyst descriptive role and working types, not recovered original C++ declarations.",
         "Valid object pointers and finite record tables in active-Machine tests; malformed/null object paths, capacity overflow and gameplay untested.",
         "No assertion that filtering means visibility or that type6 is a keyframe source; these meanings need separate evidence."
+      ]
+    },
+    {
+      "address": "140766e30",
+      "original_name": "FUN_140766e30",
+      "applied_name": "CollectSortedKey16RecordMatches",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CollectSortedKey16RecordMatches(void * recordTable, void * key16, void * output, byte deduplicateCells)",
+      "evidence": [
+        "Complete210-instruction original body and pseudocode reviewed and original bytes matched.",
+        "216 native hash/key/collision-chain cases verify pointer sets, counts, table/key preservation and guards.",
+        "180 native ordering/dedup cases verify ascending finite float+24 order and adjacent half-unit cell filtering from float coordinates+16/+20. Includes negative boundaries,reverse/shuffled chains and separated same-cell repeats.",
+        "48 connected cases execute original parent traversal,lookup andsort; selected pointer reaches downstream cleanup observer,while colliding mismatched keys are rejected.",
+        "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque working pointers, not recovered source declarations.",
+        "Finite acyclic<=100-record fixtures,unique finite sort keys andmodes0/1; ties,NaN,infinity,overflow,malformed chains andgameplay untested.",
+        "Coordinate/order meanings unresolved; downstream fe08 application remains an observation boundary in connected suite."
       ]
     }
   ],

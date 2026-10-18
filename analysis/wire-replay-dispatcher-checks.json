@@ -305,5 +305,19 @@
     "original_lookup_instructions_verified": 210,
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "parent_key_order_and_dedup": {
+    "native_cases": 180,
+    "finding": "Original lookup sorts matched pointers by ascending float at record+24. Optional mode1 retains first record then removes adjacent equal coordinate cells after sorting; cells are floor(float32(2*x+0.5))*0.5 for x/y at16/20. Same cells separated by another cell remain. Unique finite order keys, negative rounding boundaries and shuffled/reverse chains checked; initial count100 still selects only first chain match.",
+    "limits": [
+      "Finite normal coordinates/order keys; NaN/infinity,ties,modeotherthan0/1,malformed chains and overflow untested.",
+      "No gameplay or coordinate semantic meaning claim."
+    ],
+    "original_native_instructions_verified": {
+      "140766e30": 210,
+      "1407671c0": 474
+    },
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
