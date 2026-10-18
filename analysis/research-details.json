@@ -23619,5 +23619,94 @@
       }
     ],
     "new_name_credit": 0
+  },
+  "chunk_paint_usage_lifecycle_partial_checkpoint": {
+    "scope": "Connected clear/write/predicate/threshold review;completepaintshader andlifecycle remainpartial.",
+    "reviews": [
+      {
+        "shader": "ChunkClearElementUsedBits",
+        "decoded_instructions": 13,
+        "program_bytes": 64,
+        "exact_encoding_roundtrip": true,
+        "clear_bound_cases": 60,
+        "flag_gate_cases": 48,
+        "findings": [
+          "ClearsDWORD0 atindex(workgroup<<6)+lane onlywhenindex<requestedWordCount andindex<descriptorcapacity. No atomics orread-modify-write operations.",
+          "CPU suppliesdescriptor14783efdc andrequestedwordsceil(commandCount/32),dispatchingceil(wordCount/64)groups forordinarynonwrappingcounts.",
+          "Clear flag is(first inputbatch offset==0)&&(flags&0xa)!=0. Laterinputbatches do not unconditionallyreclear; retries returnbelow initialflagcomputation andretain thefirst-batch flag.",
+          "Thedescriptor/count shape supports32commandused-bits perDWORD; actualbit-setting andusage consumers remain tobetraced."
+        ],
+        "limits": [
+          "No proof that allcommandcountsavoidu32round-up overflow ordescriptorcapacityalwayscoversrequestedwords.",
+          "No GPUexecution,interstagevisibility,completeusageflags lifecycle orretry sideeffect guarantee.",
+          "No newCPUname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkReplayVoxelsMarkUsedPaint",
+        "whole_shader_instructions": 8114,
+        "semantic_scope": "Only bounded usage-bit writer anddescriptorlink; mostshaderremainsunreviewed.",
+        "exact_encoding_roundtrip": true,
+        "unique_command_bit_positions": 120000,
+        "or_order_idempotence_cases": 8,
+        "findings": [
+          "CPU copiesdescriptor14783efdc intosecondcontextbyte0x30; clearstageusesthesameglobaldescriptor. Shader SMRD immediate0xcselectsthatbyteoffset.",
+          "s43 commandindexcomesfromstreamDWORD&0x00ffffff onthisloop path. WritercomputeswordIndex=commandIndex>>5 andmask=1<<(commandIndex&31),thenbuffer_atomic_or.",
+          "Atomicgatecombines ballot(v4!=0) nonzero with laneconditionv0==0; v0isreusedandisnotproven tobehardwarelocalIDhere. Predicateproducerrequiresfurtherreview.",
+          "AseparateearlieratomicORat0x704 updatespackedclassificationnibbles viasecondcontextbyte0x40; itisnot thecommandusagebitset.",
+          "Underrecordedcommanddomain0..119999,eachcommandmapsuniquelytooneof3750DWORDs,matchingceil(commandCount/32)clears. ORiscommutative/idempotent inlogicalmodel."
+        ],
+        "limits": [
+          "No fullshape/paintsemanticreview orproof ofexactused-commandpredicate.",
+          "Actualdescriptorcapacity,entrymasks,GPUatomic/coherencebehaviorandlaterconsumers remainunverified.",
+          "BitsetmodeldoesnotexecuteoriginalGPUcode; no newCPUname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkReplayVoxelsMarkUsedPaint",
+        "scope": "Primary commandloop9e8..6434 plusbackedge650c->3f4; boundedpredicate only.",
+        "wave_predicate_cases": 2048,
+        "findings": [
+          "Commandflag bits20/21 are preserved as s16/s17 masks before s8 isreused. PositiveV34 gateslaterper-laneindex checks.",
+          "Per-lanemark=(V34>0)&&(((flags&0x100000)!=0&&commandIndex>=uint32(v8))||((flags&0x200000)!=0&&commandIndex>=uint32(v14))).",
+          "Ballotnonzero iscombinedwith v0==0. Onprimaryentry-to-commandloop anditsreviewedbackedge,v0 hasnotbeenwritten sincehardwarelocalIDinput,so localID0performstheOR ifparticipating.",
+          "OtherV0writespreviouslyseen belongtosentinel/endpaths,not thislivecommandloop. This narrows theearlier V0 caveat for thisboundedpath withoutassigningeverypath.",
+          "V34 smoothingweight isformedas t*t*(3-2*t) afterclampedscaledcomparison; earlierphysicalmeaningandthresholdproducers remainpartial.",
+          "Usageisnot necessarilyanobservedattributechange: thispredicate alone doesnotcheck renderedoutputdifference orcompletevisibility."
+        ],
+        "limits": [
+          "Indexthresholdsv8/v14 producer meanings,completeclassification/paint evaluation andallshader paths remainunreviewed.",
+          "No formalwhole-shader control-flow proof orGPUtrace; localID0participation andentryconfiguration remainassumptions.",
+          "Predicate modelusesfiniteweights andfull64-laneentry; NaN,partialmasks,buffer capacity andmemoryvisibility remainunverified.",
+          "No newCPUname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkReplayVoxelsMarkUsedPaint",
+        "scope": "Bounded threshold producer b13c..b198 and connection to scratch/primary usage predicate.",
+        "sequence_cases": 1040,
+        "findings": [
+          "Other command-loop branch tests clamped smoothstep weight>=1, gated by command flags20/21. Qualifying bit20 assigns command index to v8; qualifying bit21 assigns index to v14.",
+          "Assignment records last qualifying visited command, not an unconditional numeric maximum.",
+          "Thresholds occupy per-voxel scratch planes0x100/0x200 in reviewed load/store route. Primary paint loop preserves them and compares current index>=threshold before usage marking.",
+          "This supports a full-coverage marker interpretation for two attribute-enable domains; original field names are not recovered."
+        ],
+        "limits": [
+          "Complete branch sequencing,resumable state,skip/jump behavior and initial scratch producer remain partial.",
+          "Models use finite weights and explicit input order; rounding,NaN,masked lanes and GPU execution unverified.",
+          "A full-weight marker does not by itself prove no final-image contribution from every earlier command.",
+          "No CPU name/type credit,project mutation or whole8114-instruction shader completion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "new_name_credit": 0
   }
 }

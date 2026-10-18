@@ -6748,3 +6748,14 @@ Read the complete **47-instruction root-replay initializer** and **79-instructio
 The auxiliary pair comes from separate sums for modes 1 and 2. Each surviving command contributes its blend radius rounded upward in units of roughly `0.2*scale`; replay scales those integer totals back. **65 reduction patterns and 455 ideal budget cases** check component order and the ideal arithmetic bound. Actual reciprocal rounding, ceil boundaries, counter overflow, interstage visibility and GPU behavior remain unproven.
 
 Page 30 of [Media Molecule's 2015 presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf), including its speaker notes, was visually inspected. Its explanation of accounting for later soft blends during culling is consistent with the traced backward radius accumulation and widened thresholds. This is algorithmic corroboration, not an exact source/build match or a matched coding-livestream frame. No additional checked-function credit is added.
+
+
+### Paint-command usage bits and full-weight markers
+
+Read the complete **13-instruction** `ChunkClearElementUsedBits` shader and connected its descriptor to the bounded atomic-write path in `ChunkReplayVoxelsMarkUsedPaint`. The CPU requests `ceil(commandCount/32)` DWORDs, gated to the first input batch with flag mask `0xA`. This is not an unconditional reset before every batch. **60 capacity boundaries and 48 flag cases** checked the bounded clear model. The writer selects `commandIndex>>5` and ORs one bit; all **120,000 command positions** in the reviewed input domain map uniquely to the corresponding bitset.
+
+The writer's primary command-loop gate combines a positive smoothing weight, command flag bit 20 or 21, and a per-lane index threshold. Local ID 0 issues the atomic when a participating lane passes that test; **2,048 finite wave cases** checked the logical predicate. Earlier apparent `v0` clobbers belong to other terminal paths, while the bounded live loop preserves the local-ID input.
+
+Another command-loop branch records the current command index when smoothing weight reaches at least 1 and the corresponding flag is enabled. These full-weight markers are preserved in per-voxel scratch storage and used as thresholds by the paint-usage path. **1,040 finite command sequences** checked that update rule. This supports a marker-based pruning interpretation, without proving that every marked command changes the final rendered result or that every earlier command has no contribution.
+
+The paint shader contains **8,114 decoded instructions** and has an exact byte roundtrip, but most of its shape/paint evaluation remains unreviewed. Complete pass sequencing, initial scratch ownership, resumable state, partial lane masks, GPU visibility and actual rendering remain unresolved. No additional checked-function credit is added.
