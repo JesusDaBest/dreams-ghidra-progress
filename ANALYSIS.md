@@ -7347,3 +7347,12 @@ Applied and independently reopened **AppendPackedResourceTreeWithMinimumScale** 
 The comparison uses signed 8-bit CPU flags even though later moves zero-extend the selected bytes. **65,536 logical byte-pair cases** checked that comparison against signed maximum. All **255 adjacent signed scale codes** preserve ordering under the downstream packed-scale decode. These are bounded arithmetic checks, not execution of the whole original routine.
 
 The descriptive name and comment are the only project changes. Bytes and the inferred prototype are unchanged; reopening/decompilation passed and all 9,611 other names/signatures remain unchanged. Malformed pages, cycles, allocation failure and runtime behavior remain unverified. This adds one checked CPU helper to packed CSG records, not shader completion.
+
+
+### Legacy packed CSG leaf writer named
+
+Applied and independently reopened **AppendLegacyPackedResourceRecordToLeaf** after reviewing all **209 CPU instructions** and pseudocode. It writes one delta-coded record into a 512-byte tree leaf, with 504 bytes available after the header. Ordinary records include the six packed rotation bytes directly; the two larger record layouts have separate payload branches.
+
+Capacity checks prevent the modeled append from crossing the leaf boundary. The committed payload length and previous-record state change only after the record fits. Earlier writes may remain beyond the committed payload after failure, so this is not an atomic operation and has no explicit boolean result.
+
+Only the descriptive name and comment changed. Reopening and decompilation passed; native bytes, the existing prototype and all 9,611 other names/signatures are unchanged. Logical size-boundary models cover 40,960 cases; they do not execute the original writer or prove malformed-input safety. This adds one checked CPU helper, not completion of sculpting or Dreams.

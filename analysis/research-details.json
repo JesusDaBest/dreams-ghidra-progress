@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 770,
+    "checked_and_applied_names": 771,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 770,
+    "verified_names": 771,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "708 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "709 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24017,6 +24017,23 @@
       "65536casesvalidate8-bitCMPflagmodel,notexecutionofthewholeoriginalroutine.",
       "No originalsourceparametername,malformedpage/cycle/bounds/allocationfailureorGPUbehaviorproof. Someunusedpayloadslotsmayretainpreviousdata;noeverybyteinitializedclaim.",
       "Existinginferredprototype retained;descriptiveanalystnameonly."
+    ],
+    "new_name_credit": 1
+  },
+  "packed_resource_legacy_leaf_writer_name_checkpoint": {
+    "target": {
+      "name": "AppendLegacyPackedResourceRecordToLeaf",
+      "signature": "undefined PS4_SYSV AppendLegacyPackedResourceRecordToLeaf(void)"
+    },
+    "original_owned_instructions": 209,
+    "evidence": [
+      "Complete 209-instruction CPU body and pseudocode read; owned bytes verified against original executable.",
+      "Both call sites captured; delta field flags, shape-specific payloads, capacity exits and state commit traced.",
+      "Independent reopening and decompilation passed; bytes, prototype and all 9611 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Descriptive analyst name, not recovered original symbol.",
+      "Logical size checks are not execution of native writer. Capacity failure can leave partial uncommitted payload bytes; no atomicity or malformed-input guarantee."
     ],
     "new_name_credit": 1
   }

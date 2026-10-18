@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2175,
-  "unmapped_total": 7437,
+  "mapped_total": 2176,
+  "unmapped_total": 7436,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55041,6 +55041,31 @@
             "Recursive page traversal,delta state,shape-specificpayloads,signedminimumcode andwriterappend traced.",
             "All65536logicalbytecomparisoncases and255adjacentdecodedscale-ordercases passed;notwholefunctionexecution.",
             "Independentreopening/decompilation passed;prototype/bytes andall9611othernames/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140c6c3d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "packed-csg-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Legacy packed CSG leaf serialization, traced from recursive rotation-upgrade caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Writes one shape-dependent delta record to a bounded legacy leaf and commits prior-record state.",
+      "code_sha256": "a3c17651f35498d45500ed0a53bceea1bc331897b75a1861356d98462d230835",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendLegacyPackedResourceRecordToLeaf",
+          "support": [
+            "Complete 209-instruction CPU body and pseudocode read; owned bytes verified against original executable.",
+            "Both call sites captured; delta field flags, shape-specific payloads, capacity exits and state commit traced.",
+            "Independent reopening and decompilation passed; bytes, prototype and all 9611 other names/signatures unchanged."
           ]
         }
       ]

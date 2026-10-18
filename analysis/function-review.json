@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "708 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "709 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8687,
-    "other_names": 925,
-    "verification": "complete_inventory_matches_baseline_plus_708_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8686,
+    "other_names": 926,
+    "verification": "complete_inventory_matches_baseline_plus_709_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17890,6 +17890,26 @@
         "65536casesvalidate8-bitCMPflagmodel,notexecutionofthewholeoriginalroutine.",
         "No originalsourceparametername,malformedpage/cycle/bounds/allocationfailureorGPUbehaviorproof. Someunusedpayloadslotsmayretainpreviousdata;noeverybyteinitializedclaim.",
         "Existinginferredprototype retained;descriptiveanalystnameonly."
+      ]
+    },
+    {
+      "address": "140c6c3d0",
+      "original_name": "FUN_140c6c3d0",
+      "applied_name": "AppendLegacyPackedResourceRecordToLeaf",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV AppendLegacyPackedResourceRecordToLeaf(void)",
+      "evidence": [
+        "Complete 209-instruction CPU body and pseudocode read; owned bytes verified against original executable.",
+        "Both call sites captured; delta field flags, shape-specific payloads, capacity exits and state commit traced.",
+        "Independent reopening and decompilation passed; bytes, prototype and all 9611 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not recovered original symbol.",
+        "Logical size checks are not execution of native writer. Capacity failure can leave partial uncommitted payload bytes; no atomicity or malformed-input guarantee."
       ]
     }
   ],
