@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2111,
-  "unmapped_total": 7492,
+  "mapped_total": 2112,
+  "unmapped_total": 7491,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53254,6 +53254,34 @@
             "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
             "Source descriptor Seq contains signed32 seq at offset0; source literal independently checked. Appended field-entry pointer is explicitly formed in RAX before return.",
             "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1407671c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "canvas",
+        "canvaswirenode",
+        "runtime-implementation"
+      ],
+      "component_basis": "Only external entry caller is verified canvas wire-node match collector; comparator offset matches reflected node position along wire.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete sorter body review and scoped original native tests.",
+      "code_sha256": "da32f86f46455bf6e736ce5ed7834490c3ea1c82d74bbe7973b97cecac1bd61c",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SortCanvasWireNodePointersByPosition",
+          "support": [
+            "Complete 474-instruction body and pseudocode read; original instruction bytes matched saved project and executing native fixture.",
+            "Sorts pointer range by ascending pos_along_wire float at node offset24. At most32 entries use insertion path; larger ranges use pivot partition recursion with positive budget or heap fallback with nonpositive budget.",
+            "Collector supplies pointer begin/end and count as initial partition budget; remaining two entry references are self-recursive calls.",
+            "379 native cases cover finite ties, signed zero, infinities, insertion/partition/heap thresholds and budgets. Exact sorted values, pointer multiset, full record bytes and outside-slot canaries checked. Equal-key order is not globally stable.",
+            "15 of those cases check only NaN pointer permutation/memory preservation at sizes1..32, without claiming NaN ordering.",
+            "Independent reopening verifies descriptive name, void/pointer-range/signed64-budget working signature, successful decompilation, unchanged original bytes and other9602 names/signatures."
           ]
         }
       ]

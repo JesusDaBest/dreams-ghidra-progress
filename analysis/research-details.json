@@ -17225,5 +17225,63 @@
     ],
     "new_name_credit": 3,
     "new_mapping_credit": 1
+  },
+  "canvas_wire_pointer_sort_checkpoint": {
+    "target": {
+      "name": "SortCanvasWireNodePointersByPosition",
+      "signature": "void PS4_SYSV SortCanvasWireNodePointersByPosition(CanvasWireNodeLayout * * begin, CanvasWireNodeLayout * * endExclusive, longlong partitionBudget)"
+    },
+    "native_check": {
+      "native_cases": 379,
+      "nan_permutation_only_cases": 15,
+      "unstable_tie_cases": 60,
+      "unstable_examples": [
+        {
+          "count": 33,
+          "budget": 0
+        },
+        {
+          "count": 33,
+          "budget": 0
+        },
+        {
+          "count": 33,
+          "budget": 0
+        },
+        {
+          "count": 33,
+          "budget": 0
+        },
+        {
+          "count": 33,
+          "budget": 1
+        }
+      ],
+      "original_sort_instructions_verified": 474,
+      "finding": "Sorts pointer range in place by ascending float at record+24. <=32 entries use insertion path; larger ranges use partition recursion with budget reduced to roughly three quarters, or heap fallback at nonpositive budget. All tested ordered-float profiles sort, preserve pointer multiset, complete records and outside-slot canaries. Equal keys are not globally stable.",
+      "limits": [
+        "Explicit host memmove boundary; original sort code and recursion execute.",
+        "NaN cases only validate permutation and memory preservation for <=32 entries; no meaningful NaN ordering contract or large NaN partition test.",
+        "Valid aligned pointers/ranges only; no gameplay or complete caller behavior claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete 474-instruction body and pseudocode read; original instruction bytes matched saved project and executing native fixture.",
+      "Sorts pointer range by ascending pos_along_wire float at node offset24. At most32 entries use insertion path; larger ranges use pivot partition recursion with positive budget or heap fallback with nonpositive budget.",
+      "Collector supplies pointer begin/end and count as initial partition budget; remaining two entry references are self-recursive calls.",
+      "379 native cases cover finite ties, signed zero, infinities, insertion/partition/heap thresholds and budgets. Exact sorted values, pointer multiset, full record bytes and outside-slot canaries checked. Equal-key order is not globally stable.",
+      "15 of those cases check only NaN pointer permutation/memory preservation at sizes1..32, without claiming NaN ordering.",
+      "Independent reopening verifies descriptive name, void/pointer-range/signed64-budget working signature, successful decompilation, unchanged original bytes and other9602 names/signatures."
+    ],
+    "limits": [
+      "Explicit host memmove boundary; original sort code and recursion execute.",
+      "NaN cases only validate permutation and memory preservation for <=32 entries; no meaningful NaN ordering contract or large NaN partition test.",
+      "Valid aligned pointers/ranges only; no gameplay or complete caller behavior claim.",
+      "Analyst descriptive name and working layout, not exact original source declaration.",
+      "No full UI or caller transaction verification; tie reordering is not proof of a user-visible defect."
+    ],
+    "new_name_credit": 1
   }
 }

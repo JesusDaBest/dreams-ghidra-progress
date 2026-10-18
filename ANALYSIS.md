@@ -6069,3 +6069,14 @@ Working argument types follow observed RDI/RSI/EDX storage: owner descriptor poi
 These are three metadata/type-registration reviews, not three completed runtime features. The downstream 96-case payload test does not execute these registrars. Fresh static guard initialization, constructors/destructors, allocator failure and live behavior remain untested. No exact developer-source/build match is claimed.
 
 Totals: 702 checked names, comprising 625 behavior/helper reviews and 77 property/type-registration reviews. There are 2,111 mapped functions and 7,492 still unmapped among 9,603 defined functions. The new Seq mapping is shared identifier metadata; existing PlayerId and float2 mappings are retained.
+
+
+### Canvas wire-node position sorter
+
+`SortCanvasWireNodePointersByPosition` now names the complete 474-instruction helper called by the verified wire-node match collector. It sorts a half-open pointer range by the node's reflected `pos_along_wire` float at offset 24, without changing node records. The caller supplies the pointer count as an initial partition budget. Other entry references are recursive calls.
+
+Ranges of at most 32 pointers use insertion sorting. Larger ranges use pivot partitioning while the signed budget is positive, reducing the budget to roughly three quarters for recursion; exhausted budgets select a heap fallback. 379 original-code cases cover size/budget thresholds, ascending/reverse/shuffled values, ties, signed zero and infinities. Sorted values, pointer multisets, complete records and surrounding slot canaries pass. The imported move operation is an explicit host `memmove` boundary.
+
+Equal-position entries are not globally stable: 60 tested cases changed their original tie order. This does not establish a UI defect. Fifteen small-range NaN cases verify only permutation and memory preservation; no meaningful NaN ordering or large-range NaN behavior is established. The collector's wider transaction and live editor behavior remain unverified.
+
+The descriptive name and typed pointer-range/budget signature were saved and independently reopened, with successful decompilation and original bytes plus other 9,602 names/signatures unchanged. Totals: 703 checked names (626 behavior/helper and 77 metadata/type reviews), 2,112 mapped functions and 7,491 unmapped among 9,603 defined functions.
