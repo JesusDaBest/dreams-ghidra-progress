@@ -25008,5 +25008,26 @@
     },
     "dataflow": "Processor composes/normalizes quaternion data and stores that quaternion in processed point output; vector-extrema inputs still require complete upstream-role tracing.",
     "new_name_credit": 0
+  },
+  "sprite_processor_path_projection_followup": {
+    "native": {
+      "cases": 48,
+      "scope": "Original projection slice1413d8a44..1413d8fce with explicit query register and8 stack samples; following branch adapted to RET.",
+      "checked": [
+        "Normalized nearest-segment coordinate(i+clamped_t)/8 agrees with independent XYZ projection model.",
+        "Straight/zigzag/overlapping/coincident sample paths and interior/end/beyond-end queries.",
+        "Equal-distance cases retain earlier segment under selected inputs; zero-length segments avoid division.",
+        "Source sample fixture unchanged."
+      ],
+      "limits": [
+        "No preceding mode gate, source transformation, complete processor or general nonfinite/overflow verification.",
+        "Normalized coordinate follows sample-segment index, not total arbitrary-polyline arc length."
+      ],
+      "original_slice_sha256": "ab831d123122190702fd152cd8ca391d06a6814899306bf9b80be461fe4a4481",
+      "fixture_correction": "First cut included unfinished query transform requiring unsupplied SIMD state, and model assumed divisor7. Moved boundary to after transform and supplied first sample register; original constant1416266a0 is0.125, so coordinate divisor is8. Initial assertion failure retained as fixture/model correction, not game fault.",
+      "project_modified": false
+    },
+    "distinction": "Projection coordinate(segment+t)/8; eight-sample generation distances i*length/7 are a different operation.",
+    "new_name_credit": 0
   }
 }

@@ -7200,3 +7200,12 @@ Totals: **791 checked names**, **2,193 mapped functions**, **7,421 unmapped**, a
 **96 bounded native cases** verify a processor slice that updates minima/maxima using two opposite vectors: rotate `+(2,2,2)` and `-(2,2,2)` by a unit quaternion, apply a componentwise multiplier, and add a position. The independent quaternion model agrees across eight orientations, three multiplier vectors including a negative component, two translations and preexisting/empty extrema. All four output lanes and preserved input/guard bytes are checked.
 
 This establishes the arithmetic operation, not the source shape: two transformed diagonal points alone do not establish correct bounds for an arbitrary oriented box, circle or sphere. Upstream multiplier semantics, nonunit/nonfinite behavior and the full processor remain unverified. An exploratory cut initially stopped before the final minimum store; the final fixture includes that original store and supplies a valid pointer for an intervening scalar read. No additional naming credit is taken.
+
+
+### Sprite processor path projection checked
+
+**48 bounded native cases** verify projection of a point onto the seven segments formed by eight samples. The stored coordinate is **`(segment + clamped_fraction) / 8`**. An independent XYZ nearest-segment model agrees for straight, zigzag, overlapping and coincident paths, including interior and beyond-end queries. Selected equal-distance cases retain the earlier segment, zero-length segments avoid division, and source samples remain unchanged.
+
+This differs from generating the eight samples at distances `i * path_length / 7`. The two operations have different divisors in the original executable; the downstream interpretation of the projected coordinate still needs tracing. Do not infer that it is ordinary normalized arc length or that the divisor difference is a bug.
+
+The initial fixture cut preceded completion of the query transform and omitted required SIMD state; its model also assumed division by seven. The final fixture starts after that transform, supplies the first sample register, and uses the original 0.125 constant. These were fixture/model corrections. The preceding mode gate, upstream transforms, full processor and nonfinite/overflow behavior remain unverified. No additional naming credit is taken.
