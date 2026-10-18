@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9605,
-  "mapped_total": 2119,
-  "unmapped_total": 7486,
+  "mapped_total": 2120,
+  "unmapped_total": 7485,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53471,6 +53471,35 @@
             "Complete nonoverlapping original body and control flow read; original bytes verified.",
             "108 original native cases verify selected64-byte wire record endpoint remapping,absent sentinel,signed mapping results and complete world/closure/map preservation.",
             "Independent project reopening verifies new function definition,working ABI,decompilation,unchanged native bytes and all9603 existing names/signatures."
+          ]
+        }
+      ]
+    },
+    "1409384f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "General world object-index permutation and associated cache/reference maintenance after parent-first ordering; not individual gadget behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and scoped full-body native state comparisons.",
+      "code_sha256": "d74dc634035aca4548f5891477abcdf69f07712dc141b087fe55e005f30882cb",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReorderWorldObjectsParentFirst",
+          "support": [
+            "Complete1566-instruction body and pseudocode read; original executable bytes verified.",
+            "178 full-body native cases across four fixture groups cover owner absent/present,optional parallel tables,empty/populated owner bitsets and65-object word boundary.",
+            "Complete world/object comparisons verify parent-first pointer order,inverse map,parent and cached-index rewrite,per-kind lists,persistent-ID lookup buckets/chains and final flags.",
+            "Six optional parallel arrays,conditional48/51/12-byte records,parent/kind caches and auxiliary table follow original permutation.",
+            "Complete owner comparisons verify16-byte table permutation,three paired reference lists,index cache,kind-tail pointers and two bitsets; atomic bitset operations tested single-threaded.",
+            "Already ordered,flat and empty worlds do not invoke final remap and preserve prepared world/object/owner state.",
+            "Independent reopening verifies name,working ABI,decompilation and original bytes; all9604 other names/signatures unchanged."
           ]
         }
       ]

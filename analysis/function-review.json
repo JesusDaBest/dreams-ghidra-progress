@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "655 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "656 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9605,
-    "default_fun_names": 8740,
-    "other_names": 865,
-    "verification": "complete_inventory_matches_baseline_plus_655_renames_and_54_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8739,
+    "other_names": 866,
+    "verification": "complete_inventory_matches_baseline_plus_656_renames_and_54_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16433,6 +16433,33 @@
         "Kind numbers and actual dynamic kind metadata/source types remain unresolved; controlled metadata is explicit fixture input.",
         "Atomic bit marking tested single-threaded; concurrency and malformed index/hash structures unverified.",
         "Whole object reordering,parallel-table permutation,job scheduling and live editor correctness unverified.",
+        "No exact MM source/build match."
+      ]
+    },
+    {
+      "address": "1409384f0",
+      "original_name": "FUN_1409384f0",
+      "applied_name": "ReorderWorldObjectsParentFirst",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ReorderWorldObjectsParentFirst(void * owner, void * world, byte remapExtraReferences)",
+      "evidence": [
+        "Complete1566-instruction body and pseudocode read; original executable bytes verified.",
+        "178 full-body native cases across four fixture groups cover owner absent/present,optional parallel tables,empty/populated owner bitsets and65-object word boundary.",
+        "Complete world/object comparisons verify parent-first pointer order,inverse map,parent and cached-index rewrite,per-kind lists,persistent-ID lookup buckets/chains and final flags.",
+        "Six optional parallel arrays,conditional48/51/12-byte records,parent/kind caches and auxiliary table follow original permutation.",
+        "Complete owner comparisons verify16-byte table permutation,three paired reference lists,index cache,kind-tail pointers and two bitsets; atomic bitset operations tested single-threaded.",
+        "Already ordered,flat and empty worlds do not invoke final remap and preserve prepared world/object/owner state.",
+        "Independent reopening verifies name,working ABI,decompilation and original bytes; all9604 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working owner/world/two-pointer plus byte-mode ABI,not original C++ declaration.",
+        "Controlled allocator,TLS,free and standard memory copy/fill boundaries; real heap not executed.",
+        "Final world-reference-remapping helper is an explicit observer; original job scheduling/callbacks not executed in these fixtures.",
+        "Finite valid kind0 object hierarchies; malformed/cyclic data,other source types,concurrency,allocation failure and live editor correctness unverified.",
         "No exact MM source/build match."
       ]
     }

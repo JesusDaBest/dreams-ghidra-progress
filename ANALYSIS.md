@@ -6182,3 +6182,14 @@ The saved project now defines `RemapThingReferencesJobItem` (559 instructions, 2
 The object callback is supported by the previously documented 6,568 native cases; the wire callback by 108 cases. Independent reopening verifies the nonoverlapping definitions, names, working signatures and complete decompilation, with original bytes and all 9,603 existing function names/signatures unchanged. Reversal metadata and raw evidence remain local. Kind/type names, runtime metadata registration, scheduler behavior, whole-world remapping and live-game behavior remain unresolved.
 
 Totals are **710 checked names** (633 behavior/helper and 77 property/type reviews), **2,119 mapped** and **7,486 unmapped** among **9,605 defined functions**. The two additional functions were previously missing definitions, not newly generated game code. Stale research-summary name counters were reconciled to the verified ledger. These checks do not establish whole-subsystem completion or an exact Media Molecule source/build match.
+
+
+### Parent-first world ordering helper named and tested
+
+`ReorderWorldObjectsParentFirst` now names the complete 1,566-instruction outer helper. When parent order needs changing, it permutes object pointers and parallel data, repairs parent/index references, rebuilds per-kind lists and persistent-ID lookup tables, remaps owner lists and bitsets, then invokes further world-reference remapping. Already ordered, flat and empty fixtures preserve the prepared world, owner and object buffers and skip that final call.
+
+**178 full-body native cases** span four fixture groups: empty optional tables; six populated parallel arrays and conditional 48/51/12-byte records; owner index caches, a 16-byte parallel table and three paired reference lists; and two populated owner bitsets, including a 65-object word boundary. Complete world, object and owner comparisons verify the expected permutation, inverse index map, lookup chains, per-kind lists, parent/kind caches, flags and counts.
+
+The final reference-remapping helper is an explicit observer in these fixtures; its separately tested callbacks do not establish scheduler integration. Allocation, TLS, release and standard copy/fill calls use controlled boundaries. Tests use finite valid kind-zero object hierarchies. Other types, invalid/cyclic data, concurrent initialization, allocation failure and live editor correctness remain unverified.
+
+Independent reopening verified the descriptive name, working owner/world/byte-mode signature and decompilation, with original bytes and all 9,604 other names/signatures unchanged. Totals: **711 checked names** (634 behavior/helper and 77 property/type reviews), **2,120 mapped** and **7,485 unmapped** among 9,605 defined functions. No whole-game completion or exact Media Molecule source/build match is claimed.

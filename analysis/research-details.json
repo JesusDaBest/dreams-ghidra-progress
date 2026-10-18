@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 710,
+    "checked_and_applied_names": 711,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 710,
+    "verified_names": 711,
     "function_count": 9605,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "14093af90",
       "14093b900"
     ],
-    "scope": "655 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "656 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -17861,5 +17861,103 @@
       "Whole object reordering,parallel-table permutation,job scheduling and live editor correctness unverified.",
       "No exact MM source/build match."
     ]
+  },
+  "world_parent_order_name_checkpoint": {
+    "target": {
+      "name": "ReorderWorldObjectsParentFirst",
+      "signature": "void PS4_SYSV ReorderWorldObjectsParentFirst(void * owner, void * world, byte remapExtraReferences)"
+    },
+    "native_checks": {
+      "world-parent-order-full-native-check.json": {
+        "native_cases": 44,
+        "reordered_cases": 26,
+        "original_body_instructions_verified": 1566,
+        "findings": [
+          "Complete1566-instruction original helper executes with owner null and final remap as explicit observer.",
+          "Parent-first order,exact inverse map,object parent/index rewrite,per-kind linked list,persistent-ID lookup buckets/chains and final flags/counts verified by complete world and object-buffer comparison.",
+          "Already ordered,flat and empty worlds leave all world/object bytes unchanged and do not invoke remap helper."
+        ],
+        "limits": [
+          "Allocator/TLS/free and standard memory fill/copy are controlled boundaries; actual heap not executed.",
+          "Final533-instruction reference-remapping helper is an observer;original job scheduling and callbacks not executed in this fixture.",
+          "Owner null;parallel optional tables empty,kind0 objects,finite small hierarchies only. Owner-specific lists/bitsets,other kinds and malformed structures unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "world-parent-order-parallel-native-check.json": {
+        "native_cases": 44,
+        "reordered_cases": 26,
+        "original_body_instructions_verified": 1566,
+        "findings": [
+          "Complete1566-instruction original helper executes with owner null and final remap as explicit observer.",
+          "Parent-first order,exact inverse map,object parent/index rewrite,per-kind linked list,persistent-ID lookup buckets/chains and final flags/counts verified by complete world and object-buffer comparison.",
+          "Already ordered,flat and empty worlds leave all world/object bytes unchanged and do not invoke remap helper.",
+          "Six optional parallel arrays,conditional48/51/12-byte records,per-object masks,parent cache and kind-byte cache follow original permutation with complete world comparison."
+        ],
+        "limits": [
+          "Allocator/TLS/free and standard memory fill/copy are controlled boundaries; actual heap not executed.",
+          "Final533-instruction reference-remapping helper is an observer;original job scheduling and callbacks not executed in this fixture.",
+          "Owner null;kind0 objects and finite small hierarchies only. Owner-specific lists/bitsets,other kinds and malformed structures unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "world-parent-order-owner-native-check.json": {
+        "native_cases": 44,
+        "reordered_cases": 26,
+        "original_body_instructions_verified": 1566,
+        "findings": [
+          "Complete1566-instruction original helper executes with owner present and final remap as explicit observer.",
+          "Parent-first order,exact inverse map,object parent/index rewrite,per-kind linked list,persistent-ID lookup buckets/chains and final flags/counts verified by complete world and object-buffer comparison.",
+          "Already ordered,flat and empty worlds leave all world/object bytes unchanged and do not invoke remap helper.",
+          "Six optional parallel arrays,conditional48/51/12-byte records,per-object masks,parent cache and kind-byte cache follow original permutation with complete world comparison.",
+          "Complete owner comparison verifies cache index remapping,16-byte table permutation,three paired reference lists,kind-tail pointers and empty-bitset count reset. Owner-present path also rebuilds world hash buckets/chains."
+        ],
+        "limits": [
+          "Allocator/TLS/free and standard memory fill/copy are controlled boundaries; actual heap not executed.",
+          "Final533-instruction reference-remapping helper is an observer;original job scheduling and callbacks not executed in this fixture.",
+          "Owner lists have selected valid references and absent sentinels; bitsets initially empty. Nonempty bitset remapping,other kinds and malformed structures unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "world-parent-order-owner-bitsets-native-check.json": {
+        "native_cases": 46,
+        "reordered_cases": 28,
+        "original_body_instructions_verified": 1566,
+        "findings": [
+          "Complete1566-instruction original helper executes with owner present and final remap as explicit observer.",
+          "Parent-first order,exact inverse map,object parent/index rewrite,per-kind linked list,persistent-ID lookup buckets/chains and final flags/counts verified by complete world and object-buffer comparison.",
+          "Already ordered,flat and empty worlds leave all world/object bytes unchanged and do not invoke remap helper.",
+          "Six optional parallel arrays,conditional48/51/12-byte records,per-object masks,parent cache and kind-byte cache follow original permutation with complete world comparison.",
+          "Complete owner comparison verifies cache index remapping,16-byte table permutation,three paired reference lists,kind-tail pointers and two populated-bitset permutation and count reset. Owner-present path also rebuilds world hash buckets/chains."
+        ],
+        "limits": [
+          "Allocator/TLS/free and standard memory fill/copy are controlled boundaries; actual heap not executed.",
+          "Final533-instruction reference-remapping helper is an observer;original job scheduling and callbacks not executed in this fixture.",
+          "Owner lists have selected valid references and absent sentinels;two populated bitsets include65-object word-boundary case. Other kinds,malformed structures and concurrent initialization unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete1566-instruction body and pseudocode read; original executable bytes verified.",
+      "178 full-body native cases across four fixture groups cover owner absent/present,optional parallel tables,empty/populated owner bitsets and65-object word boundary.",
+      "Complete world/object comparisons verify parent-first pointer order,inverse map,parent and cached-index rewrite,per-kind lists,persistent-ID lookup buckets/chains and final flags.",
+      "Six optional parallel arrays,conditional48/51/12-byte records,parent/kind caches and auxiliary table follow original permutation.",
+      "Complete owner comparisons verify16-byte table permutation,three paired reference lists,index cache,kind-tail pointers and two bitsets; atomic bitset operations tested single-threaded.",
+      "Already ordered,flat and empty worlds do not invoke final remap and preserve prepared world/object/owner state.",
+      "Independent reopening verifies name,working ABI,decompilation and original bytes; all9604 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working owner/world/two-pointer plus byte-mode ABI,not original C++ declaration.",
+      "Controlled allocator,TLS,free and standard memory copy/fill boundaries; real heap not executed.",
+      "Final world-reference-remapping helper is an explicit observer; original job scheduling/callbacks not executed in these fixtures.",
+      "Finite valid kind0 object hierarchies; malformed/cyclic data,other source types,concurrency,allocation failure and live editor correctness unverified.",
+      "No exact MM source/build match."
+    ],
+    "new_name_credit": 1
   }
 }
