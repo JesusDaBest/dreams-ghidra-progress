@@ -7209,3 +7209,12 @@ This establishes the arithmetic operation, not the source shape: two transformed
 This differs from generating the eight samples at distances `i * path_length / 7`. The two operations have different divisors in the original executable; the downstream interpretation of the projected coordinate still needs tracing. Do not infer that it is ordinary normalized arc length or that the divisor difference is a bug.
 
 The initial fixture cut preceded completion of the query transform and omitted required SIMD state; its model also assumed division by seven. The final fixture starts after that transform, supplies the first sample register, and uses the original 0.125 constant. These were fixture/model corrections. The preceding mode gate, upstream transforms, full processor and nonfinite/overflow behavior remain unverified. No additional naming credit is taken.
+
+
+### Candidate shader consumer of packed path coordinates traced
+
+The archived scalar Sprite emission shader contains a matching point layout: it loads byte offset 40, extracts the low 16 bits and converts them to a float with the exact float32 approximation of `1 / 65535`. Other paths normalize values from two neighboring points and interpolate the coordinates. All decoded instruction bytes were checked against the archived shader code; raw shader code remains local.
+
+A later feature branch multiplies that coordinate by seven, converts to an integer, caps the selected segment at six, and uses a 32-byte step for paired vector loads. It also extracts bits 16..26 of the same packed word to select a record in a secondary buffer. These operations are consistent with seven-segment lookup across eight samples.
+
+This remains a candidate producer/consumer connection: CPU-side descriptor upload, buffer base/stride, feature gates and the complete downstream interpolation still need tracing. There was no GPU execution. The CPU projection division by eight versus shader multiplication by seven remains an open interpretation question. No additional naming credit is taken.

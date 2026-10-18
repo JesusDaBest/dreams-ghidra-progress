@@ -25029,5 +25029,31 @@
     },
     "distinction": "Projection coordinate(segment+t)/8; eight-sample generation distances i*length/7 are a different operation.",
     "new_name_credit": 0
+  },
+  "sprite_path_coordinate_shader_consumer_followup": {
+    "shader": "SpriteEmitBrushstrokesScalarCS",
+    "archived_resource_sha256": "90825e3317cda4fc106aa9664dffed587cd774ec5daa420ff07d02d367fe33b0",
+    "original_code_sha256": "1d309f13d4dadb6a1df89835bc40b66222d2b985e74d6a917c591e17cf7775e0",
+    "all_decoded_instruction_bytes_match_archive": true,
+    "findings": [
+      "Point-buffer path loads offset40 into v22; low16 are converted to float and multiplied by float32(1/65535) into v77.",
+      "Other sample/interpolation paths normalize low16 from two point records and interpolate coordinate values.",
+      "Later feature branch multiplies v77 by7, converts to integer and caps selected segment at6; segment byte offset is index<<5, with paired16-byte loads.",
+      "Upper field bits16..26 from point offset40 select an indexed record in another buffer in this branch."
+    ],
+    "constants": {
+      "unorm16_decode": 1.5259021893143654e-05,
+      "segment_scale": 7.0,
+      "max_segment": 6,
+      "byte_step": 32
+    },
+    "limits": [
+      "Static original GCN instruction review only; no GPU execution.",
+      "CPU-side descriptor upload/base/stride connection to this processed-point buffer and secondary record buffer not fully proven.",
+      "Conditional feature gates and full downstream quaternion interpolation not fully reviewed.",
+      "CPU projection /8 versus shader coordinate*7 relationship remains unresolved; do not label as bug."
+    ],
+    "new_name_credit": 0,
+    "selected_instruction_count": 28
   }
 }
