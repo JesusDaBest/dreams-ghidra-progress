@@ -23342,5 +23342,101 @@
       }
     ],
     "new_name_credit": 0
+  },
+  "chunk_soft_blend_sweep_connected_checkpoint": {
+    "reviews": [
+      {
+        "shader": "ChunkBucketer",
+        "dispatch_table_byte_offset": 20540,
+        "dispatch_relative_base": 884,
+        "arithmetic_model_cases": {
+          "9": 1000,
+          "10": 1000,
+          "11": 1000,
+          "13": 1000
+        },
+        "findings": [
+          "Shape selector is commandflags bits2..6. Unsigned(selector-1) is capped21 before22-entry8-byte relative dispatch table; all32selector targets are executable instruction starts.",
+          "Bounded local formulas agree with previously reviewed evaluator roles:11 sphere,length(p)-R;10 torus,hypot(rho-R,z)-r;13 roundedfilleddisk,hypot(max(rho-R,0),z)-r;9 plane-like,z/L1(relevantbasisrow).",
+          "Selectors10 and13 differ atinterior radial positions; thefilleddisk clamps radialoffset atzero before the second length operation.",
+          "These branches converge at0x410c,where s23 scales thelocalresult. Selector7,12 andthecappeddefault also targetthat join after v9 wasinitializedzero."
+        ],
+        "limits": [
+          "Models use host double arithmetic and ideal reciprocal,notGPUrounding/reciprocal approximation.",
+          "Only four local arithmetic windows semantically modeled; otherprimitivebodies,modifiers,repetition,normalization andclassification remainpartial.",
+          "Matching selector roles is not originalenum/source/build recovery orwhole3620-instruction shaderunderstanding.",
+          "No GPUexecution,newnamecredit orprojectmutation."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkBucketer",
+        "scope": "Bounded classification0x4d4c..0x4e04 andshared-memory transpose0x4e08..0x4e54.",
+        "float_factor": 0.5099999904632568,
+        "classification_boundary_cases": 2016,
+        "transpose_cells": 1024,
+        "findings": [
+          "Letd beincomingprimitive/evaluator scalar; commandflagbit9 conditionally negates it. LetP=v4+float32(0x3f028f5c)*v5, with entryv1=A andv2=B. Thresholds areL=-(B+P),U=A+P.",
+          "Mode1 emits0x80000002 ford<L,0 ford>U,and1otherwise. Mode2 emits0 ford<L,2 ford>U,and1otherwise,within ordinary ordered domains withL<=U.",
+          "Modes0/3 instead compare d-max(firstcontextDWORD0x1a,commandfloat+12)>v4: true gives0,false gives1. Strict comparisons preserve equality as1.",
+          "Classification low2bits andhighflag are writtentoLDS at65*wave+lane. Under16waves of64lanes,readaddress65*(localID&15)+(localID>>4) transposes all1024(command,block) cells exactlyonce.",
+          "The output tail masks classification with3 for category; highbit is retained separately for the64-bitGDSmax metadata update. Class1 is the guarded index-emission path.",
+          "This establishes numerical routing,not original enum names orphysicalempty/solid semantics."
+        ],
+        "limits": [
+          "A/B pair meaning andentryv4/v5 units remainunresolved; symbolic thresholds deliberately avoidassigningphysicaldistance bounds.",
+          "Floating modeluseshostarithmetic,notGPUrounding/exceptionalcomparisons. Classification tests assume ordinary finite values andL<=U.",
+          "Tile modelassumes16wavesof64participating lanes; actualentryconfiguration,LDSbarrier semantics andhardwareexecution remainunverified.",
+          "Orderedoutputprotocol andallshapeevaluationremainpartial; no newCPUname/typecredit orprojectmutation."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "shader": "ChunkSoftBlendSweep",
+        "decoded_instructions": 54,
+        "program_bytes": 264,
+        "exact_encoding_roundtrip": true,
+        "finite_recurrence_cases": 715,
+        "stored_pairs_checked": 114400,
+        "padding_factor": 32.5099983215332,
+        "findings": [
+          "Guarded lane<blockCount; reverse selected-command loopj=selectedCount-1-i. Inputs are evaluatedDistance[j*blockCount+lane],selectedCommandIndex[j],andthat96-bytecommand flags/radius.",
+          "Initialize A=B=0. LetP=float32(0x42020a3d)*scale. For mode1,ifd<=A+radius+P then A+=radius. For mode2,if-d<=B+radius+P then B+=radius. Othercomponent remainsunchanged.",
+          "Store(A,B) afterprocessingj at outputrecord lane*selectedCount+j. Thus Evaluate command-major scalar matrix is converted to block-major suffix-pair matrix consumedbyBucketer.",
+          "Sweep uses V_CMP_NGT_F32 predicates,which alsoacceptunordered comparisons; the finite modeldoesnotcoverthat behavior.",
+          "Bucketer padding algebra is32*scale+float32(0.51)*scale; Sweep usesfloat32(32.51)*scale. They have the same approximate nominalfactor butdifferent constants/operation order; exactbinary32 identity is notclaimed.",
+          "Bucketer v4/v5 are initialized32*scale/scale andhave no furtherdestination writes beforeclassification. Its previously symbolic padding is therefore tied tothiscontext scale."
+        ],
+        "limits": [
+          "Complete sweep arithmetic andindexing read; exactruntimeparameter binding,descriptors,capacity,synchronization andGPUexecution remainunverified.",
+          "Finite exact-rational modeldoesnot emulateGPUrounding,mad semantics,NaN oroverflow.",
+          "Evaluate3474-instruction body andBucketer3620-instruction body remainpartial; no exactdistancebound orgeometricconservativeness guarantee.",
+          "No additionalCPUname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "function": "141290290",
+        "findings": [
+          "Builds4-byte evaluation descriptor and8-byte suffix-pair descriptor with recordcountuint32(selectedCount*batchCount).",
+          "Evaluate secondcontext+0x10 gets4-byte evaluation descriptor; selected-index descriptor is at+0x20.",
+          "Sweep context+0x10 gets sameevaluation descriptor,+0x20 gets8-bytepair descriptor,+0x30 gets96-bytecommand descriptor; counts at+0x40/+0x44 arebatchCount/selectedCount andfloat+0x48 isdecodedldexpf scale.",
+          "Bucketer secondcontext+0x10 gets same8-bytepair descriptor. Combinedshaderindexing isEvaluate[j*B+b] -> Sweep pair[b*K+j] -> Bucketer pair[b*K+lower_bound(command)].",
+          "For B<=64,K<=120000,product<=7680000 fitsunsigned32; evaluationbytes<=30720000 andpairbytes<=61440000,within64MiB. This is a conditional budgetbound,not proofthat allcallers enforce B/Kdomain."
+        ],
+        "limits": [
+          "No GPUexecution,descriptor mutation/coherence oractualallocation bounds verified.",
+          "Argument/recordproducer contracts remainpartial.",
+          "FullEvaluate/Bucketer bodies remainunderreview andfloatconservativeness unproven.",
+          "No newCPUname/typecredit orprojectmutation."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "new_name_credit": 0
   }
 }
