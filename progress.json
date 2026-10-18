@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 716,
+    "done": 717,
     "todo": 1452,
-    "total": 2168,
-    "behavior_or_helpers_reviewed": 642,
+    "total": 2169,
+    "behavior_or_helpers_reviewed": 643,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -34927,12 +34927,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 26,
+        "done": 27,
         "todo": 108,
-        "total": 134,
-        "behavior_or_helpers_reviewed": 26,
+        "total": 135,
+        "behavior_or_helpers_reviewed": 27,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 95,
+        "runtime_functions_identified": 96,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -34952,6 +34952,7 @@
           "GetOrLoadBricker2CountSurfaceVoxelsShader",
           "GetOrLoadBricker2WriteTreeBricksShader",
           "RunBricker2BuildPipeline",
+          "DispatchSoftBlendCommandIndexGather",
           "BuildVolumeSlotDescriptor",
           "ResizeBrickBlockChain",
           "GetOrLoadHasherClearShader",
@@ -35090,6 +35091,7 @@
           "14127ec60",
           "14127f000",
           "14127f740",
+          "14128ff60",
           "141295780",
           "141295a00",
           "141295f90",
@@ -35217,12 +35219,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 25,
+            "done": 26,
             "todo": 69,
-            "total": 94,
-            "behavior_or_helpers_reviewed": 25,
+            "total": 95,
+            "behavior_or_helpers_reviewed": 26,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 88,
+            "runtime_functions_identified": 89,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -35241,6 +35243,7 @@
               "GetOrLoadBricker2CountSurfaceVoxelsShader",
               "GetOrLoadBricker2WriteTreeBricksShader",
               "RunBricker2BuildPipeline",
+              "DispatchSoftBlendCommandIndexGather",
               "BuildVolumeSlotDescriptor",
               "ResizeBrickBlockChain",
               "GetOrLoadHasherClearShader",
@@ -35339,6 +35342,7 @@
               "14127ec60",
               "14127f000",
               "14127f740",
+              "14128ff60",
               "141295780",
               "141295a00",
               "141295f90",
@@ -35610,16 +35614,18 @@
               {
                 "name": "sculpting-painting/csg/chunk",
                 "label": "Chunk",
-                "done": 0,
+                "done": 1,
                 "todo": 26,
-                "total": 26,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 27,
+                "behavior_or_helpers_reviewed": 1,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 26,
+                "runtime_functions_identified": 27,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "DispatchSoftBlendCommandIndexGather"
+                ],
                 "todo_names": [
                   "0x1412838d0",
                   "0x141283c70",
@@ -35648,7 +35654,9 @@
                   "0x141288f70",
                   "0x141289310"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "14128ff60"
+                ],
                 "todo_addresses": [
                   "1412838d0",
                   "141283c70",
@@ -35682,16 +35690,18 @@
                   {
                     "name": "sculpting-painting/csg/chunk/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 0,
+                    "done": 1,
                     "todo": 26,
-                    "total": 26,
-                    "behavior_or_helpers_reviewed": 0,
+                    "total": 27,
+                    "behavior_or_helpers_reviewed": 1,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 26,
+                    "runtime_functions_identified": 27,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "DispatchSoftBlendCommandIndexGather"
+                    ],
                     "todo_names": [
                       "0x1412838d0",
                       "0x141283c70",
@@ -35720,7 +35730,9 @@
                       "0x141288f70",
                       "0x141289310"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "14128ff60"
+                    ],
                     "todo_addresses": [
                       "1412838d0",
                       "141283c70",
@@ -46371,5 +46383,5 @@
       }
     ]
   },
-  "unmapped": 7444
+  "unmapped": 7443
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "700 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "701 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8695,
-    "other_names": 917,
-    "verification": "complete_inventory_matches_baseline_plus_700_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8694,
+    "other_names": 918,
+    "verification": "complete_inventory_matches_baseline_plus_701_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17716,6 +17716,27 @@
         "Allocations and registration are fixture models; byte copies use host CRT. No original platform API or GPU executes.",
         "Unsupported kinds return true without construction. Initial backing-allocation failure is not checked before subsequent copies; malformed data, allocation failure and invalid metadata remain unverified.",
         "The recorded 536 entry references do not mean every caller contract is understood. No exact original Media Molecule declaration or source/build match."
+      ]
+    },
+    {
+      "address": "14128ff60",
+      "original_name": "FUN_14128ff60",
+      "applied_name": "DispatchSoftBlendCommandIndexGather",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV DispatchSoftBlendCommandIndexGather(void)",
+      "evidence": [
+        "Complete182-instruction CPU wrapper and original instruction bytes reviewed.",
+        "Matched gather/pre shaders fully read with exact280/28-byte executable roundtrips.",
+        "Independent reopening verifies descriptive name, retained prototype, successful decompilation, unchanged bytes and all9611other function names/signatures."
+      ],
+      "caveats": [
+        "No original source declaration recovered.",
+        "GPU execution, linked platform behavior and every caller count/capacity contract unverified.",
+        "Index gather does not construct96-byte command records."
       ]
     }
   ],
