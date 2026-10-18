@@ -7111,3 +7111,14 @@ Three connected processor fixtures distinguish the scratch-selection algorithm: 
 These cases also corrected a field assumption. Output offset 32 identifies the current metadata record in its low 11 bits; the selected candidate appears in upper bits of offset 40 in the tested cases. The initial expectation used the wrong field and failed before the mapping was corrected against original packing instructions and native output. Broader packed-bit meanings remain unresolved.
 
 General deep/malformed trees, backward/negative/nonfinite requests, zero-length segments, all caller preconditions, concurrency and GPU work remain unverified. Counts and whole-processor completion are unchanged.
+
+
+### Packed Sprite stroke resource key reviewed and named
+
+`ComputePackedSpriteStrokeResourceKey` names the complete 109-instruction helper used by two Sprite processing callers. It combines an eight-byte point-resource fingerprint with the first 40 bytes of stroke metadata to produce a 64-bit key. The final metadata flag word is excluded. This identifies the exact input contract; it does not establish uniqueness or collision resistance.
+
+**268 native cases** match an independent three-block, 48-byte mixing model. **268 trailing-byte invariance checks** confirm that changing the excluded flag word and following bytes does not change the result; metadata input buffers remain unchanged. These are paired checks on the same 268 key inputs, not 536 independent key cases. The original helper has no callees or imports.
+
+The descriptive name and metadata-pointer/32-bit resource-ID/64-bit-result working signature persisted after independent reopening. Original bytes and all other function names/signatures remained unchanged. Resource-ID table bounds, metadata readability, lifetime, concurrency and complete queued-consumer behavior remain unverified.
+
+Totals: **788 checked names**, **2,190 mapped functions**, **7,423 unmapped**, among **9,613 defined functions**. The larger Sprite processor remains incomplete.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9613,
-  "mapped_total": 2189,
-  "unmapped_total": 7424,
+  "mapped_total": 2190,
+  "unmapped_total": 7423,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55456,6 +55456,35 @@
             "Two54-case nativegroupscheckempty/singlepoint/interior/end,constantandvarying/sign-equivalent/nonunitquaternions;freshvsretainedprogressstate/cursorverifiedforincreasingrequests.",
             "Complete735ownedinstructionsand551nonblankC linesread;allownedbytesmatchedoriginal.",
             "Four-inputvoidABI matchedentryandthreedirectcallersetups;name/typesindependentlyreopened."
+          ]
+        }
+      ]
+    },
+    "1413d42f0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Two direct Sprite processing callers; complete metadata/resource-fingerprint key generator reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Computes64-bitkeyfrompointresourcefingerprintandfirst40metadata bytes.",
+      "code_sha256": "7c99d94d1e8d7112b1684e17f1f7de47c022e061f8d8e789b22b75589cbc7503",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputePackedSpriteStrokeResourceKey",
+          "support": [
+            "Readsuint32resourceIDinESI,loads8-bytefingerprintfromglobal14666e2d0table;metadata pointerinRDI.",
+            "ReadsmetadataQWORDsat0,8,16,24,32only;final44-byteflagsDWORD+40excluded.",
+            "Complete48-bytemixmatchesindependentthree-blockzero-seedmodel,returns64-bitvalueinRAX.",
+            "268nativecasesand268tail-invariancechecks;inputunchanged;nocallees/imports.",
+            "Calledby1413d2160and1413d5be0;processorlongstrokeoutputstoreskeyin272-bytequeuedrecord.",
+            "109ownedoriginalinstructionsandcompleteCread;268nativecasesplus268tailinvariancechecks.",
+            "NameandRDI/ESI/RAX8workingABIindependentlyreopened;allothernames/signaturesandbytesunchanged."
           ]
         }
       ]

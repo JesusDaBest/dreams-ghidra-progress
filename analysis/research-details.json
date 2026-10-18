@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 787,
+    "checked_and_applied_names": 788,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 787,
+    "verified_names": 788,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "724 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "725 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24725,5 +24725,29 @@
       "No newnameorwholeprocessorcompletioncredit."
     ],
     "new_name_credit": 0
+  },
+  "sprite_stroke_resource_key_checkpoint": {
+    "target": {
+      "name": "ComputePackedSpriteStrokeResourceKey",
+      "signature": "ulonglong PS4_SYSV ComputePackedSpriteStrokeResourceKey(pointer stroke_metadata, uint point_resource_id)"
+    },
+    "evidence": [
+      "Readsuint32resourceIDinESI,loads8-bytefingerprintfromglobal14666e2d0table;metadata pointerinRDI.",
+      "ReadsmetadataQWORDsat0,8,16,24,32only;final44-byteflagsDWORD+40excluded.",
+      "Complete48-bytemixmatchesindependentthree-blockzero-seedmodel,returns64-bitvalueinRAX.",
+      "268nativecasesand268tail-invariancechecks;inputunchanged;nocallees/imports.",
+      "Calledby1413d2160and1413d5be0;processorlongstrokeoutputstoreskeyin272-bytequeuedrecord.",
+      "109ownedoriginalinstructionsandcompleteCread;268nativecasesplus268tailinvariancechecks.",
+      "NameandRDI/ESI/RAX8workingABIindependentlyreopened;allothernames/signaturesandbytesunchanged."
+    ],
+    "limits": [
+      "ResourceIDtableboundsandmetadatareadabilityrequired;lifetime/concurrencyunverified.",
+      "No uniquenessorcollisionresistanceclaim;originalalgorithmfamilyname/source symbolnotrecovered.",
+      "Twoidentifiedcallerpathslinked;wholecallerandqueuedconsumerbehaviorincomplete."
+    ],
+    "native_cases": 268,
+    "trailing_byte_invariance_checks": 268,
+    "native_scope": "Complete469-byte original helper,noimports;independent48-byte/three-blockmixmodel,selectedfingerprintsand67metadata patterns.",
+    "new_name_credit": 1
   }
 }
