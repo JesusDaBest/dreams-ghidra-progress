@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2140,
-  "unmapped_total": 7466,
+  "mapped_total": 2141,
+  "unmapped_total": 7465,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54101,6 +54101,33 @@
           ]
         }
       ]
+    },
+    "141361110": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "visibility",
+        "sprite-bounds",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete Sprite view-plane test and verified renderer plane construction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original native state comparisons and complete function review.",
+      "code_sha256": "1626ac4d4f357efb96d151406d8f13bdfc02b6cd20438ce641a5c75d1535da5e",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TestSpriteBoundsAgainstViewPlanes",
+          "support": [
+            "Complete 280-instruction geometric predicate reviewed and original bytes verified.",
+            "Sprite record builder is the recorded direct caller; input transform, extent and angle are traced.",
+            "2592 identity and18432 rotated native executions match independent transform and five-plane support calculations.",
+            "Original renderer side-plane construction verified in108 bounded executions;256 connected original Sprite/geometry/cache-hit executions compare complete states.",
+            "Independent reopening verifies custom SIMD/register signature,decompilation,original instructions and all9605 other names/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -61166,6 +61193,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "sprite-bounds",
+              "label": "Sprite bounds",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "678 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "679 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8717,
-    "other_names": 889,
-    "verification": "complete_inventory_matches_baseline_plus_678_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8716,
+    "other_names": 890,
+    "verification": "complete_inventory_matches_baseline_plus_679_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17055,6 +17055,30 @@
         "Mutex/thread/signal, image layout/format and notification calls are modeled in miss fixtures; actual asynchronous loading and concurrency remain unverified.",
         "Valid prepared tables and selected image layouts only; full startup, malformed inputs and live-game execution unverified.",
         "Analyst descriptive name and working key-word parameters are not the original C++ declaration."
+      ]
+    },
+    {
+      "address": "141361110",
+      "original_name": "FUN_141361110",
+      "applied_name": "TestSpriteBoundsAgainstViewPlanes",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TestSpriteBoundsAgainstViewPlanes(void * viewContext, SpatialQueryFloat4Working16 positionScale, SpatialQueryFloat4Working16 rotation, float extent, float angle)",
+      "evidence": [
+        "Complete 280-instruction geometric predicate reviewed and original bytes verified.",
+        "Sprite record builder is the recorded direct caller; input transform, extent and angle are traced.",
+        "2592 identity and18432 rotated native executions match independent transform and five-plane support calculations.",
+        "Original renderer side-plane construction verified in108 bounded executions;256 connected original Sprite/geometry/cache-hit executions compare complete states.",
+        "Independent reopening verifies custom SIMD/register signature,decompilation,original instructions and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "tanf uses local Windows CRT ABI adapter in predicate fixtures;original libc infinity checking executes.",
+        "Finite selected transforms and plane fixtures only;nonfinite behavior reviewed statically,not dynamically tested.",
+        "Full projection initialization,exact bound-shape terminology,live game,asynchronous loading and concurrency remain unverified.",
+        "Descriptive name and working SIMD containers are not original C++ declarations;no exact MM source/build match."
       ]
     }
   ],

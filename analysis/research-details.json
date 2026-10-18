@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 734,
+    "checked_and_applied_names": 735,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 734,
+    "verified_names": 735,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "678 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "679 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20075,6 +20075,42 @@
       "Mutex/thread/signal, image layout/format and notification calls are modeled in miss fixtures; actual asynchronous loading and concurrency remain unverified.",
       "Valid prepared tables and selected image layouts only; full startup, malformed inputs and live-game execution unverified.",
       "Analyst descriptive name and working key-word parameters are not the original C++ declaration."
+    ],
+    "new_name_credit": 1
+  },
+  "sprite_view_test_name_checkpoint": {
+    "target": {
+      "name": "TestSpriteBoundsAgainstViewPlanes",
+      "signature": "bool PS4_SYSV TestSpriteBoundsAgainstViewPlanes(void * viewContext, SpatialQueryFloat4Working16 positionScale, SpatialQueryFloat4Working16 rotation, float extent, float angle)"
+    },
+    "native_check": {
+      "native_cases": 18432,
+      "accepted": 4224,
+      "original_instructions": 280,
+      "models": [
+        "tanf supplied by local Windows CRT through ABI adapter; original game tanf not executed."
+      ],
+      "findings": [
+        "Full original predicate matches independent quaternion composition, transformed position, signed-scale axis and five-plane support expression for selected rotated contexts and Sprite transforms."
+      ],
+      "limits": [
+        "Finite selected normalized rotations and axis-aligned context plane normals only;nonfinite inputs,plane construction and live-game integration unverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete 280-instruction geometric predicate reviewed and original bytes verified.",
+      "Sprite record builder is the recorded direct caller; input transform, extent and angle are traced.",
+      "2592 identity and18432 rotated native executions match independent transform and five-plane support calculations.",
+      "Original renderer side-plane construction verified in108 bounded executions;256 connected original Sprite/geometry/cache-hit executions compare complete states.",
+      "Independent reopening verifies custom SIMD/register signature,decompilation,original instructions and all9605 other names/signatures."
+    ],
+    "limits": [
+      "tanf uses local Windows CRT ABI adapter in predicate fixtures;original libc infinity checking executes.",
+      "Finite selected transforms and plane fixtures only;nonfinite behavior reviewed statically,not dynamically tested.",
+      "Full projection initialization,exact bound-shape terminology,live game,asynchronous loading and concurrency remain unverified.",
+      "Descriptive name and working SIMD containers are not original C++ declarations;no exact MM source/build match."
     ],
     "new_name_credit": 1
   }

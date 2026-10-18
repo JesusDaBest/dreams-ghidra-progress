@@ -6782,3 +6782,14 @@ Verification includes **240 miss/no-candidate executions** and **256 connected S
 Independent reopening confirms the saved register/stack working signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. The former default 32-byte stack local was preserved in private rollback evidence before its storage was described as four input key words. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **734 checked names** (654 behavior/helper and 80 property/type), **2,140 mapped**, **7,466 unmapped**, among 9,606 defined functions.
+
+
+### Sprite view-plane test reviewed and named
+
+`TestSpriteBoundsAgainstViewPlanes` names the complete 280-instruction geometric helper called by the Sprite runtime-record builder. It transforms the bounds, composes and normalizes rotation, uses absolute combined scale and tangent of the source angle, then checks a fixed view-facing plane and four view side planes. The renderer builds those four planes from projection scales and offsets and normalizes their XYZ normals.
+
+Verification comprises **2,592 identity-transform executions**, **18,432 rotated-transform executions**, **108 bounded original plane-construction executions**, and **256 connected executions** of the original Sprite builder, geometric predicate and image-cache hit helper. The connected tests replace the earlier boolean geometry stand-in. The predicate tests still supply tangent through a local Windows CRT adapter; original libc infinity checking executes. These counts describe controlled fixtures, not game completion percentages.
+
+Independent reopening verifies the saved context/SIMD working signature, boolean AL return, successful decompilation, unchanged original instructions and all 9,605 other names/signatures. Nonfinite branch behavior is recorded from assembly but is not dynamically tested. Full projection initialization, exact bound-shape terminology, live-game behavior, asynchronous loading and concurrency remain unverified. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **735 checked names** (655 behavior/helper and 80 property/type), **2,141 mapped**, **7,465 unmapped**, among 9,606 defined functions.
