@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2129,
-  "unmapped_total": 7477,
+  "mapped_total": 2130,
+  "unmapped_total": 7476,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53786,6 +53786,33 @@
             "216 native cases cover empty/one/three-object kind chains,shared/distinct parents,original initialized offsets for kinds13/14/15,high kind bits and tagged parent references.",
             "Full world,parent,child and metadata comparisons pass;Sound chain processed before Effect Field chain;existing parent heads are not cleared by helper.",
             "Independent reopening verifies name,void world-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "140938080": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "World per-kind object chains and owner tail-pointer reconstruction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete list traversal body and scoped independent native state comparisons.",
+      "code_sha256": "15166b77c4e9f79580ef43c83f46288c57baec48660204280dcac44c410d3a0f",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildWorldKindChainsAndTailPointers",
+          "support": [
+            "Complete173-instruction body and pseudocode reviewed;original bytes verified.",
+            "Main update caller windows pass owner7a4c60 as tail-pointer output and world as second argument.",
+            "Original helper initializes120 kind head pointers,appends ascending object indices using cached kind bytes,advances tails to next-link slots,and terminates all chains with minus1.",
+            "108 native cases cover0/1/7/120/128/255 objects,three old-length states and six kind distributions;full world and guarded tail-output comparisons pass. Imported standard byte fill modeled.",
+            "Independent reopening verifies saved name,two opaque-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
           ]
         }
       ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "667 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "668 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8728,
-    "other_names": 878,
-    "verification": "complete_inventory_matches_baseline_plus_667_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8727,
+    "other_names": 879,
+    "verification": "complete_inventory_matches_baseline_plus_668_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16781,6 +16781,29 @@
       "caveats": [
         "Prepared valid acyclic kind chains and parents;no invalid/cyclic references,full caller/startup,concurrency or game claim.",
         "Existing parent heads are preserved as tails;helper does not clear lists itself.",
+        "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "140938080",
+      "original_name": "FUN_140938080",
+      "applied_name": "BuildWorldKindChainsAndTailPointers",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildWorldKindChainsAndTailPointers(void * kindTailPointers, void * world)",
+      "evidence": [
+        "Complete173-instruction body and pseudocode reviewed;original bytes verified.",
+        "Main update caller windows pass owner7a4c60 as tail-pointer output and world as second argument.",
+        "Original helper initializes120 kind head pointers,appends ascending object indices using cached kind bytes,advances tails to next-link slots,and terminates all chains with minus1.",
+        "108 native cases cover0/1/7/120/128/255 objects,three old-length states and six kind distributions;full world and guarded tail-output comparisons pass. Imported standard byte fill modeled.",
+        "Independent reopening verifies saved name,two opaque-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Cached kind inputs restricted0..119;function does not mask or validate cache bytes here.",
+        "Imported standard byte-fill modeled;concurrency,malformed capacities and full caller/game unverified.",
         "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
       ]
     }

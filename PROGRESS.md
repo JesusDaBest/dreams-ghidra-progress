@@ -6026,3 +6026,14 @@ Totals: **723 checked names** (643 behavior/helper and 80 property/type), **2,12
 Each scenario runs twice and produces identical parent/child lists, covering dirty initial heads, empty/one/three-object Sound and Effect Field chains, shared/distinct kind-13/14 parents, high kind bits and tagged references. Full world, parent, child and metadata comparisons pass. The first test exposed an omission in the independent expected result: Sound head clearing applies even to child Sounds with no children. The expectation was corrected to match the original caller instruction, then all cases passed.
 
 Only the bounded entry and exit are supplied by the fixture, with an explicit return after the helper call. No helper substitution or external calls occur in this window. Full main-loop execution, malformed/cyclic references, concurrency and live-game behavior remain unverified. No new naming credit; **723 checked names** remains the total.
+
+
+### World per-kind chain builder reviewed and named
+
+`BuildWorldKindChainsAndTailPointers` names the complete 173-instruction helper that reconstructs 120 per-kind world chains in ascending object-index order. It initializes each output tail pointer to the corresponding world head, appends objects according to cached kind bytes, advances each tail to the last object's next-link slot and writes minus one through every final tail. Empty heads also become minus one. These tail pointers support later per-kind registration appends.
+
+**108 native cases** cover 0/1/7/120/128/255 objects, three old next-array lengths and six kind distributions. Full world and guarded tail-output comparisons pass. The imported standard byte-fill routine is explicitly modeled. Cached kinds are restricted to 0–119: this helper does not mask or validate them, and its 120 slots must not be confused with the seven-bit kind encoding's 128 possible values. Invalid cache bytes/capacities, concurrency and full caller/game behavior remain unverified.
+
+Independent reopening verifies the saved descriptive name, two-pointer signature, decompilation, original bytes and all 9,605 other names/signatures. Main update caller windows supply the owner tail array and world. No exact Media Molecule source/build match is claimed.
+
+Totals: **724 checked names** (644 behavior/helper and 80 property/type), **2,130 mapped**, **7,476 unmapped**, among 9,606 defined functions.

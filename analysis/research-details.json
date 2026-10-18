@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 723,
+    "checked_and_applied_names": 724,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 723,
+    "verified_names": 724,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "667 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "668 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19075,5 +19075,39 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "world_kind_chains_name_checkpoint": {
+    "target": {
+      "name": "BuildWorldKindChainsAndTailPointers",
+      "signature": "void PS4_SYSV BuildWorldKindChainsAndTailPointers(void * kindTailPointers, void * world)"
+    },
+    "native_check": {
+      "native_cases": 108,
+      "original_instructions": 173,
+      "findings": [
+        "Original helper builds120 world kind chains from cached kind bytes in ascending object-index order.",
+        "Initial tail pointers target world kind heads;each append advances tail to world next-link slot;final tails receive minus1 including empty heads.",
+        "Full world and guarded tail-buffer comparisons pass for0/1/7/120/128/255 objects,three old-length states and six kind distributions."
+      ],
+      "limits": [
+        "Cached kind inputs restricted0..119;function does not mask or validate cache bytes here.",
+        "Imported standard byte-fill modeled;concurrency,malformed capacities and full caller/game unverified."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete173-instruction body and pseudocode reviewed;original bytes verified.",
+      "Main update caller windows pass owner7a4c60 as tail-pointer output and world as second argument.",
+      "Original helper initializes120 kind head pointers,appends ascending object indices using cached kind bytes,advances tails to next-link slots,and terminates all chains with minus1.",
+      "108 native cases cover0/1/7/120/128/255 objects,three old-length states and six kind distributions;full world and guarded tail-output comparisons pass. Imported standard byte fill modeled.",
+      "Independent reopening verifies saved name,two opaque-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Cached kind inputs restricted0..119;function does not mask or validate cache bytes here.",
+      "Imported standard byte-fill modeled;concurrency,malformed capacities and full caller/game unverified.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }
