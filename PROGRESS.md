@@ -7283,3 +7283,10 @@ The archived **SpriteOcclusionCullAndAllocateToCommandLists** shader writes sele
 Original CPU assembly connects the same index-buffer descriptor to the prepass output and emission input through deferred **16-byte** descriptor copies. The queued update value `4` is an operation selector, not a four-byte write width. The occlusion program's 2,500 bytes (524 instructions), plus the small counter-clear and indirect-dispatch programs, reassemble to identical archived program bytes. This verifies encoding, not runtime behavior.
 
 Saved nonzero CPU record offsets are still unreconciled with the prepass's local record IDs. Frame and caller lifecycle constraints require further tracing. GPU execution, synchronization and complete occlusion semantics remain unverified. No additional checked-name credit is taken.
+
+
+### Sprite occlusion shader loader named; sequential offset lifecycle explained
+
+The complete CPU loader for `SpriteOcclusionCullAndAllocateToCommandLists` now has a descriptive `GetOrLoad…ComputeShader` name and a no-argument pointer-return signature. Review covered its original 926-byte region, 206 owned instructions, full decompilation, indexed caller, resource cache, archive lookup, file fallback and cleanup. Independent reopening confirmed the saved change; original bytes and all other function names/signatures remained unchanged. This adds one checked name, for **793** total.
+
+The earlier saved-offset question is explained for ordinary sequential preparation: the original routine increments the frame counter before every direct return reachable after Sprite reset, so the next sequential call resets its CPU offset. Blocking that increment in the control-flow analysis leaves no reachable return. Calls were modeled as returning; recursive/reentrant behavior, interprocedural changes and actual GPU execution remain unverified. This is a qualified lifecycle explanation, not whole-renderer completion.

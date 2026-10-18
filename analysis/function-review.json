@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "728 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "729 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9614,
-    "default_fun_names": 8667,
-    "other_names": 947,
-    "verification": "complete_inventory_matches_baseline_plus_728_renames_and_63_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8666,
+    "other_names": 948,
+    "verification": "complete_inventory_matches_baseline_plus_729_renames_and_63_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18434,6 +18434,26 @@
       ],
       "caveats": [
         "Original source name/type unknown; no real graphics allocation, allocation-failure execution or GPU coherence proof."
+      ]
+    },
+    {
+      "address": "1413dd6e0",
+      "original_name": "FUN_1413dd6e0",
+      "applied_name": "GetOrLoadSpriteOcclusionCullAndAllocateToCommandListsComputeShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetOrLoadSpriteOcclusionCullAndAllocateToCommandListsComputeShader(void)",
+      "evidence": [
+        "Complete926-byte original EH region,206 owned instructions and full captured C reviewed.",
+        "Indexed caller and immutable shader archive establish the occlusion/list-allocation resource.",
+        "Guarded resource setup, normalized path/hash archive lookup, cached handle, file fallback, cleanup and pointer/null return traced.",
+        "Descriptive name and no-argument pointer-return signature verified after independent reopening; original bytes and other9613 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Original source declaration unknown; no real GPU/platform-failure/concurrency or complete resource lifetime proof."
       ]
     }
   ],

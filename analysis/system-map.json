@@ -35602,16 +35602,14 @@
       "system": "sculpting-painting",
       "evidence": [
         {
-          "kind": "source_reference",
-          "site": "1413dd787",
-          "target": "1417309ae",
-          "anchor_sha256": "d5ccb3fffc1cfcc6294a06c266bdfc0006c38ff281c823fb9f8e29a13c59ebc1"
-        },
-        {
-          "kind": "source_reference",
-          "site": "1413dd7a9",
-          "target": "1417309ae",
-          "anchor_sha256": "d5ccb3fffc1cfcc6294a06c266bdfc0006c38ff281c823fb9f8e29a13c59ebc1"
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadSpriteOcclusionCullAndAllocateToCommandListsComputeShader",
+          "support": [
+            "Complete926-byte original EH region,206 owned instructions and full captured C reviewed.",
+            "Indexed caller and immutable shader archive establish the occlusion/list-allocation resource.",
+            "Guarded resource setup, normalized path/hash archive lookup, cached handle, file fallback, cleanup and pointer/null return traced.",
+            "Descriptive name and no-argument pointer-return signature verified after independent reopening; original bytes and other9613 names/signatures unchanged."
+          ]
         }
       ],
       "code_sha256": "76ec03e19cfb077268ccf8470b3a1f8a0cafbee015726b4cfda02ef28a9304a9",
@@ -35621,9 +35619,9 @@
         "sprite",
         "runtime-implementation"
       ],
-      "component_basis": "implementation_source",
+      "component_basis": "Original Sprite shader loader and caller dispatch; Sprite rendering support.",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "Loads/caches the occlusion culling and command-list allocation compute shader."
     },
     "1413dda80": {
       "system": "sculpting-painting",

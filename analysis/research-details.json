@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 792,
+    "checked_and_applied_names": 793,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 792,
+    "verified_names": 793,
     "function_count": 9614,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "728 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "729 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25354,6 +25354,29 @@
     "limits": [
       "Saved nonzero CPU record offsets remain unreconciled with local prepass input IDs; frame/caller lifecycle still needs tracing.",
       "No live GPU execution, synchronization proof, complete occlusion semantic review or new checked-name credit."
+    ],
+    "new_name_credit": 0
+  },
+  "sprite_occlusion_loader_checkpoint": {
+    "name": "GetOrLoadSpriteOcclusionCullAndAllocateToCommandListsComputeShader",
+    "signature": "void * PS4_SYSV GetOrLoadSpriteOcclusionCullAndAllocateToCommandListsComputeShader(void)",
+    "evidence": [
+      "Complete926-byte original EH region,206 owned instructions and full captured C reviewed.",
+      "Indexed caller and immutable shader archive establish the occlusion/list-allocation resource.",
+      "Guarded resource setup, normalized path/hash archive lookup, cached handle, file fallback, cleanup and pointer/null return traced.",
+      "Descriptive name and no-argument pointer-return signature verified after independent reopening; original bytes and other9613 names/signatures unchanged."
+    ],
+    "limits": [
+      "Original source declaration unknown; no real GPU/platform-failure/concurrency or complete resource lifetime proof."
+    ],
+    "new_name_credit": 1
+  },
+  "sprite_serial_frame_offset_followup": {
+    "finding": "Original preparation advances its frame counter before every direct return reachable after Sprite reset. The next ordinary sequential invocation therefore resets the saved CPU offset.",
+    "method": "Original instruction CFG:3470 reachable nodes; blocking counter increment leaves2875 nodes and no reachable return; no unresolved indirect jumps reached in either search.",
+    "limits": [
+      "Calls modeled as returning; reentry, interprocedural counter changes and live GPU behavior unproven.",
+      "Explains ordinary sequential lifecycle, not every runtime path."
     ],
     "new_name_credit": 0
   }
