@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 790,
+    "checked_and_applied_names": 791,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 790,
-    "function_count": 9613,
+    "verified_names": 791,
+    "function_count": 9614,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "727 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "727 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24938,5 +24938,54 @@
       "project_modified": false
     },
     "new_name_credit": 0
+  },
+  "sprite_preparation_worker_checkpoint": {
+    "target": {
+      "name": "RunSpriteResourcePreparationWorker",
+      "signature": "noreturn void PS4_SYSV RunSpriteResourcePreparationWorker(void)"
+    },
+    "evidence": [
+      "Complete1058 original bytes and223 decoded instructions reviewed;219 executable/listed instructions plus four unreachable alignment NOPs.",
+      "Continuous worker services4096-slot resource index queue and4096-slot80-byte path request queue; calls resource processor and named path-cache builder.",
+      "514 bounded dequeue/coalescing cases include512 modeled sequences and two sentinel cases; newest matching objectID/frame wins and earlier entries are superseded.",
+      "Original SELF thunks/relocations linked through local NID database to thread self/name, mutex, condition broadcast, usleep and C++ guard imports.",
+      "Idle/gated path marks pending resource IDs, sets coordination bit0x2000, optionally broadcasts condition and calls sceKernelUsleep(1000).",
+      "New nonoverlapping definition and no-input/noreturn working ABI independently reopened and decompiled; all9613 existing names/signatures and all original bytes unchanged."
+    ],
+    "limits": [
+      "No actual worker thread, concurrent producers, platform synchronization or whole-loop execution tested.",
+      "Downstream resource processor remains incomplete; queue ownership/lifetime and32-bit counter wrap unverified.",
+      "Original source symbol not recovered; working void/no-input signature reflects no incoming register reads and no return path.",
+      "First two definition attempts rolled back because strict instruction-list check included unreachable NOP padding; final gate permits only four verified NOP gaps and checks every original byte."
+    ],
+    "native": {
+      "cases": 514,
+      "superseded_records_checked": 512,
+      "scope": "Original159-byte dequeue/coalescing slice1413db241..1413db2df; completion and skipped-item destinations adapted to RET; no processor call or whole worker loop.",
+      "checked": [
+        "Newest queued matching objectID and frame selected.",
+        "Each superseded entry gets state2 and both resource rootsFFFFFFFF; selected later queue slot becomes-1.",
+        "Different object/frame and sentinel slots preserved.",
+        "Head increments once per bounded dequeue; all other bytes in448KiB fixture match model.",
+        "Ring indexing crosses4095/0; initial sentinel entry skips processing."
+      ],
+      "limits": [
+        "No concurrent producers, processing callee, initialization gate, sleep/broadcast path or32-bit counter wrap verification."
+      ],
+      "original_slice_sha256": "5265ad10ff523f210050eb086ceb80819f90b919311afc8745010601a89b8605",
+      "project_modified": false
+    },
+    "imports": {
+      "141607ee0": "scePthreadSelf",
+      "141607eb0": "scePthreadGetname",
+      "141608050": "sceKernelUsleep",
+      "141607df0": "scePthreadMutexUnlock",
+      "141607fb0": "scePthreadMutexLock",
+      "141607e10": "scePthreadGetthreadid",
+      "1416080e0": "scePthreadCondBroadcast",
+      "141608130": "__cxa_guard_acquire",
+      "141607ff0": "__cxa_guard_release"
+    },
+    "new_function_credit": 1
   }
 }

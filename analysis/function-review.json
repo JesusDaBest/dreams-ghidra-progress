@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "727 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "727 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9613,
+    "total": 9614,
     "default_fun_names": 8668,
-    "other_names": 945,
-    "verification": "complete_inventory_matches_baseline_plus_727_renames_and_62_created_functions_and_1_reviewed_existing_name"
+    "other_names": 946,
+    "verification": "complete_inventory_matches_baseline_plus_727_renames_and_63_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18388,6 +18388,32 @@
         "One finite two-point stroke and30 selected caller transforms; arbitrary geometry, nonfinite inputs and zero/negative caller scales remain unverified.",
         "General multi-bucket reclamation, replication, deep trees, original platform lock/time/thread implementations and lifetime/concurrency not verified.",
         "Working transform and input names are analyst interpretations, not recovered original source declarations; two key modifier semantic names remain unresolved."
+      ]
+    },
+    {
+      "address": "1413db1d0",
+      "original_name": null,
+      "applied_name": "RunSpriteResourcePreparationWorker",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "noreturn void PS4_SYSV RunSpriteResourcePreparationWorker(void)",
+      "evidence": [
+        "Complete1058 original bytes and223 decoded instructions reviewed;219 executable/listed instructions plus four unreachable alignment NOPs.",
+        "Continuous worker services4096-slot resource index queue and4096-slot80-byte path request queue; calls resource processor and named path-cache builder.",
+        "514 bounded dequeue/coalescing cases include512 modeled sequences and two sentinel cases; newest matching objectID/frame wins and earlier entries are superseded.",
+        "Original SELF thunks/relocations linked through local NID database to thread self/name, mutex, condition broadcast, usleep and C++ guard imports.",
+        "Idle/gated path marks pending resource IDs, sets coordination bit0x2000, optionally broadcasts condition and calls sceKernelUsleep(1000).",
+        "New nonoverlapping definition and no-input/noreturn working ABI independently reopened and decompiled; all9613 existing names/signatures and all original bytes unchanged."
+      ],
+      "caveats": [
+        "No actual worker thread, concurrent producers, platform synchronization or whole-loop execution tested.",
+        "Downstream resource processor remains incomplete; queue ownership/lifetime and32-bit counter wrap unverified.",
+        "Original source symbol not recovered; working void/no-input signature reflects no incoming register reads and no return path.",
+        "First two definition attempts rolled back because strict instruction-list check included unreachable NOP padding; final gate permits only four verified NOP gaps and checks every original byte."
       ]
     }
   ],

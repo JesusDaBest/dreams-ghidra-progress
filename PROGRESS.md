@@ -7180,3 +7180,16 @@ The 360 cases include the earlier 216-case and 12-case domains; they are not add
 Eligible entries are unlinked, their stroke records return to the free list in reverse chain order, and the last reclaimed record is reused first. If reclamation still supplies too little capacity, the call returns null while retaining the reclaimed resources on free lists. Input resources remain unchanged. Entry state does not exclude reclamation in these fixtures; this is an observed branch contract, not a concurrency or lifetime guarantee.
 
 These tests use one occupied bucket, short chains, a finite two-point build and explicit platform lock/thread/time adapters. General multi-bucket behavior, actual synchronization and broader lifetime assumptions remain unverified. No additional name credit is taken.
+
+
+### Sprite resource preparation worker defined and named
+
+`RunSpriteResourcePreparationWorker` identifies a previously undefined, nonoverlapping worker body. It services a resource-preparation index queue and an 80-byte path-cache request queue, each with 4,096 slots. It coalesces later requests matching object ID and frame, supersedes the earlier entries, and dispatches to the resource processor. The second queue looks up resource-cache data and calls the named path-cache builder.
+
+**514 bounded native cases** cover 512 modeled coalescing sequences and two initial-sentinel cases. They verify newest-match selection, superseded state/resource roots, preserved mismatches, one-step head advancement and ring indexing across 4,095/0. These do not execute the downstream processor or whole worker loop.
+
+Original import relocations, linked through a local NID database, clarify the coordination path: it marks pending resource IDs, sets bit 0x2000, optionally broadcasts a condition variable, and calls `sceKernelUsleep(1000)`. The condition call is a broadcast, correcting earlier unresolved wait/sleep wording. Actual platform synchronization was not executed.
+
+All 1,058 original bytes and 223 decoded instructions were reviewed. Ghidra lists 219 instructions and leaves four unreachable alignment NOPs undisassembled. Two strict-list definition attempts rolled back; the final check permits only those NOP gaps and verifies every original byte. The new definition and no-input/noreturn working signature persisted after independent reopening; all 9,613 existing names/signatures remained unchanged.
+
+Totals: **791 checked names**, **2,193 mapped functions**, **7,421 unmapped**, among **9,614 defined functions**. Concurrent queue ownership, 32-bit counter wrap, lifetime behavior and the complete downstream processor remain unverified.

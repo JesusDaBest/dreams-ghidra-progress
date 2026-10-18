@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9613,
-  "mapped_total": 2192,
+  "inventory_total": 9614,
+  "mapped_total": 2193,
   "unmapped_total": 7421,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -55541,6 +55541,34 @@
             "72 complete-original-function hit-path cases agree with composite-key model and verify pointer return, discriminator traversal and timestamp refresh under explicit platform adapters.",
             "Related bounded slices:128 sample-cache lookup cases,62 sphere cases,96 linking cases; these do not establish full miss/build behavior.",
             "Saved descriptive name independently reopened; original bytes and all other function names/signatures unchanged. Parameter types left unchanged."
+          ]
+        }
+      ]
+    },
+    "1413db1d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Calls Sprite resource processor and path cache builder; complete original worker loop reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Services Sprite resource preparation and path request queues, coalesces requests and coordinates pending resource marks.",
+      "code_sha256": "64b9d797fbbdb2930992f1510e5028ed739042877c955cfe3a0870eed554bb2b",
+      "code_sha256_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RunSpriteResourcePreparationWorker",
+          "support": [
+            "Complete1058 original bytes and223 decoded instructions reviewed;219 executable/listed instructions plus four unreachable alignment NOPs.",
+            "Continuous worker services4096-slot resource index queue and4096-slot80-byte path request queue; calls resource processor and named path-cache builder.",
+            "514 bounded dequeue/coalescing cases include512 modeled sequences and two sentinel cases; newest matching objectID/frame wins and earlier entries are superseded.",
+            "Original SELF thunks/relocations linked through local NID database to thread self/name, mutex, condition broadcast, usleep and C++ guard imports.",
+            "Idle/gated path marks pending resource IDs, sets coordination bit0x2000, optionally broadcasts condition and calls sceKernelUsleep(1000).",
+            "New nonoverlapping definition and no-input/noreturn working ABI independently reopened and decompiled; all9613 existing names/signatures and all original bytes unchanged."
           ]
         }
       ]
