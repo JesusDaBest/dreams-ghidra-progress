@@ -17517,5 +17517,59 @@
       "No exact MM developer-source/build match or live game verification."
     ],
     "new_name_credit": 1
+  },
+  "hierarchy_reference_remapping_checkpoint": {
+    "parent_ordering": {
+      "native_cases": 2747,
+      "reordered_cases": 2429,
+      "original_block_instructions": 35,
+      "original_block_bytes": 143,
+      "native_sha256": "646b221ec43c73dfa8a80d501f394865d42ad6a88e2bb4435c4f0a7372027160",
+      "findings": [
+        "Original bounded integer loop yields parent-before-child object-pointer order and consistent mutually inverse old/new slot mappings.",
+        "Original object records including packed parent references remain unchanged in this loop; later function stages perform remapping.",
+        "Change flag matches whether pointer order changed; mapping upper bytes and buffer guards preserved."
+      ],
+      "limits": [
+        "Only original block140938667..1409386f5 executed with an explicit return boundary. Allocation, later table permutation, reference remapping and whole helper not executed.",
+        "Finite acyclic chain/star/forest permutations of1..6 nodes plus128 seeded32-node random forests; cyclic or invalid parent indices excluded.",
+        "Parent references include valid low26-bit slots with/without high packed bits; no claim about malformed data."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "reference_fields": {
+      "native_cases": {
+        "14093ac60": 4608,
+        "1409a1fb0": 4608,
+        "14093b900": 108
+      },
+      "original_native_instructions_verified": {
+        "14093ac60": 77,
+        "1409a1fb0": 77
+      },
+      "wire_callback_bytes_verified": 114,
+      "findings": [
+        "Both complete tagged-value helpers remap the same selected fields for all256 tag bytes, preserving every other record byte.",
+        "Tags1 select+20/+24; tags2/16 select+0/+4; tags3/7/8/18/19/20/25/26/29/36/39/45 select+0. Other tags preserve entire record.",
+        "Signedlow26-bit packed indices select signed16-bit mapping entries and store sign-extended32-bit results; sentinel-1 preserved.",
+        "Original wire-job callback remaps only endpoint fields+20/+24 in selected64-byte wire record; complete prepared world,closure and mapping comparisons pass."
+      ],
+      "limits": [
+        "Prepared valid indices0/1/7/31 plus high packed bits and sentinel-1; arbitrary invalid/negative non-sentinel indices excluded.",
+        "Mappings include reversed slots,all-1,and signed16-bit extremes; those extremes test conversion only,not valid destination worlds.",
+        "Unknown tagged-value source type remains unresolved. Whole reorder,job scheduling,object callback and live game behavior not executed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0,
+    "project_modified": false,
+    "remaining": [
+      "Complete owner-dependent table remapping review in1409384f0.",
+      "Object job callback14093af90 branches read in assembly; per-kind metadata and source-type matching remain incomplete.",
+      "Whole reorder,job scheduling,malformed/cyclic hierarchies and live editor behavior unverified.",
+      "No exact MM livestream source/build match."
+    ]
   }
 }

@@ -5661,3 +5661,14 @@ Preflight, replay and the following update helper are explicit observers in this
 Kind-specific intrusive-index rebuilding, timeline rebuilding and the full rebuild branch were read but not executed in this batch. Cache-range and finalizer callees are explicit observers, with a controlled standard memory-fill boundary. Malformed hierarchies, capacity extremes and live editor behavior remain unverified.
 
 The descriptive name and working owner-pointer/two-byte-mode signature passed independent reopening and decompilation, with original native bytes and other 9,602 names/signatures unchanged. Totals: 706 checked names (629 behavior/helper and 77 property/type reviews), 2,115 mapped functions and 7,488 unmapped among 9,603 defined functions. No exact MM livestream source/build match is claimed.
+
+
+### Object ordering and reference remapping: verified portions
+
+The original parent-ordering loop in the still-unnamed helper `1409384f0` passed **2,747 native cases**: all permutations of chain, star and forest fixtures with one to six objects, plus 128 seeded forests with 32 objects. In 2,429 cases it changed the order. Every result placed parents before children and maintained consistent old-to-new and new-to-old slot maps. Object records remained unchanged in this loop; later stages must update references and parallel tables. This tests the original 143-byte loop with an explicit return boundary, not the complete 1,566-instruction helper.
+
+Two complete 77-instruction tagged-value helpers, `14093ac60` and `1409a1fb0`, each passed **4,608 native cases**, covering all 256 tag bytes, selected valid packed indices, the absent-reference sentinel, and three controlled mapping layouts. The tag selects which reference fields to rewrite; all other record bytes remain unchanged. Mapping entries are signed 16-bit values stored as sign-extended 32-bit results. The original source type of this tagged value is still unresolved.
+
+The `RemapWires` job callback at `14093b900` passed **108 native cases**. It rewrites the two endpoint reference fields of a selected 64-byte wire record, preserving the absent-reference sentinel and every other byte of the prepared world, closure and mapping. Its complete 114-byte body was compared with the original executable. The adjacent `RemapThings` callback has kind-specific branches, metadata-selected fields and persistent-object lookups; those branches have been read in assembly but are not yet behaviorally verified.
+
+These checks add evidence, **zero checked names**, and no new subsystem completion credit. Allocation, job scheduling, complete parallel-table permutation, complete object-reference remapping, malformed or cyclic hierarchies and live editor behavior remain unverified. Signed mapping extremes test conversion only, not valid destination worlds. No exact Media Molecule source/build match is claimed.
