@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/782961148decb97b27be4953629214cc14519109/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e42b1f09e8e6d3167a0ebfd1d5573d6e24562e80/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**696 of 9,603 functions named and checked.** A function is one piece of the game's code.
+**697 of 9,603 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/782961148decb97b27be4953629214cc14519109/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e42b1f09e8e6d3167a0ebfd1d5573d6e24562e80/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,7 +70,7 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
 | Rendering & lighting | 370 | 101/344 | 0/26 |
-| Editor & interface | 399 | 84/190 | 3/207 |
+| Editor & interface | 399 | 84/190 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 0/78 |
 | Shared engine & object data | 347 | 225/261 | 15/81 |
 
@@ -462,7 +462,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 399 functions identified; 85 behavior/helper reviews; 3 property/type reviews
+- **Editor & interface** - 399 functions identified; 85 behavior/helper reviews; 4 property/type reviews
   - **Text & fonts** - 129 functions identified; 75 behavior/helper reviews; 0 property/type reviews
     - **Text decoding** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
@@ -630,7 +630,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Subtitle Import Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Canvases & wires** - 28 functions identified; 10 behavior/helper reviews; 0 property/type reviews
+  - **Canvases & wires** - 28 functions identified; 10 behavior/helper reviews; 1 property/type reviews
     - **Canvas Wire Node** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
       - **Storage & edits** - 9 functions identified; 9 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -646,8 +646,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Canvas Wire Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Create Wire Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Create Wire Node Message** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
     - **Delete All Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Delete Wire Nodes Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
