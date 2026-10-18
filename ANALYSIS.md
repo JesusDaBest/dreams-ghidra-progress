@@ -7438,3 +7438,12 @@ This is partial analysis inside the larger loader. It adds no checked-name or co
 The packed-field producer and the reviewed geometry shader now supply the missing **ideal coordinate-domain constraint**. Active radial counts range from 2 through 31. The shader folds angles into 0 through half a turn divided by that count, so the resulting plane coordinates lie in the nonnegative quadrant before center subtraction and the affine transform. Within that domain, the upper-coordinate radius encloses points inside the corresponding bounding box. The earlier generic negative-coordinate counterexample is outside this ideal folded domain.
 
 Host models checked 12,000 angular-folding cases and 2,249 conditional enclosure cases. This supports the geometric rationale; it does not prove exact GPU trigonometric rounding, origin exceptions, complete source-shape bounds, padding interactions or every evaluator. The earlier unconditional-enclosure concern is narrowed, not replaced by a full runtime correctness claim. No checked-function credit is added.
+
+
+### Sculpt state to packed folding field: partial trace
+
+The packed folding field is now traced to a concrete sculpt-side state word at offset `0x540`. Its enable and count fields feed record byte 2 in both direct special-record writes and the delegated ordinary-record builder. All 256 relevant flag combinations passed the bounded packing model. This connects state, packed records, expanded commands and the previously reviewed shader folding behavior.
+
+The traced caller **updates the last existing 84-byte record**; it does not append or increase the record count. A nonempty buffer is still an unresolved caller precondition. The caller has a verified unwind boundary but no Ghidra function definition, so it was captured from original executable bytes without speculative function creation. Only the relevant packing and output paths are reviewed.
+
+The original UI setter is still missing from the chain. Official Kaleidoscope behavior is consistent with central angular folding, but that alone does not prove a source-field name. Numeric matches in unrelated event enums were excluded. No additional checked-name or completion credit is added.

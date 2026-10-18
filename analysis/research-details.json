@@ -24208,5 +24208,20 @@
       ],
       "new_name_credit": 0
     }
+  },
+  "sculpt_state_fold_record_packing_partial_checkpoint": {
+    "scope": "Bounded stateword-to-special/ordinary recordbyte2 path.",
+    "findings": [
+      "Stateword at offset0x540 supplies the relevant Boolean and count fields.",
+      "Count payload uses enablebit12 and bits13..17; direct and delegated ordinary output packing agree over256 relevant flag combinations.",
+      "The traced caller updates the last existing84-byte record in the buffer; it does not increment record count.",
+      "No direct Kaleidoscope UI setter link established. Matching numeric tag IDs in unrelated event enums were excluded."
+    ],
+    "limits": [
+      "Unwind-delimited caller is not defined as a Ghidra function; no speculative creation or complete-function credit.",
+      "Nonempty buffer is an unresolved caller precondition.",
+      "Only selected paths of the ordinary builder reviewed; matrix/shape math and whole runtime behavior unproven."
+    ],
+    "new_name_credit": 0
   }
 }
