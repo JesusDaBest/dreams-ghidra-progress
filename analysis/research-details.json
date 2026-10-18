@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 779,
+    "checked_and_applied_names": 781,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 779,
+    "verified_names": 781,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "717 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "719 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24388,6 +24388,21 @@
     "limits": [
       "Bytepointers areworkingviews,not recoveredcache/entrystructs.",
       "ReadableIDs,boundedtrees,pointerlifetime/concurrency andexactPS4math remainunproven."
+    ]
+  },
+  "sprite_emission_shader_loader_checkpoint": {
+    "names": [
+      "GetOrLoadSpriteEmitBrushstrokesVectorComputeShader",
+      "GetOrLoadSpriteEmitBrushstrokesScalarComputeShader"
+    ],
+    "original_owned_instructions": 412,
+    "new_checked_name_credit": 2,
+    "cpu_scope": "Static resource initialization, path construction, archive lookup, cache reuse and file fallback.",
+    "gpu_followup": "Original archive programs extracted and disassembly prefixes round-trip reassembled. CPU power-of-two partition constants linked through deferred user data to shader reads. Full shader semantics and kaleidoscope consumer unresolved.",
+    "limits": [
+      "CPU shader resource loaders only; no GPU program semantic completion claimed.",
+      "Import implementations, real file failures, concurrent path initialization and real GPU execution not exercised.",
+      "Archive lookup compares only first64 bits of128-bit path hash; collision policy is not established."
     ]
   }
 }

@@ -35503,6 +35503,20 @@
           "site": "1413d51f9",
           "target": "1417309ae",
           "anchor_sha256": "d5ccb3fffc1cfcc6294a06c266bdfc0006c38ff281c823fb9f8e29a13c59ebc1"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadSpriteEmitBrushstrokesVectorComputeShader",
+          "support": [
+            "All206 owned instructions and decompilation read and matched to original executable.",
+            "Guarded static resource initialization resets resource subobjects, registers destructor and releases guard.",
+            "First path construction normalizes source separators, adds ORBIS_shaders and shader filename under /app0/.",
+            "Strips /hostapp/ and /app0/ for seed-zero Murmur3X64_128 path hashing; binary searches archive entries by first64-bit hash and passes optional archive blob to shader initializer.",
+            "Cached nonzero resource handle returns static resource pointer.",
+            "With constructed path but zero handle, tries .reasm.sb first, then ordinary shader file; successful bytes initialize resource; temporary buffer freed.",
+            "Returns null if handle stays zero. Stack guard failure calls nonreturning handler.",
+            "Independent reopening and decompilation passed; native bytes, prototype and every other function name/signature unchanged."
+          ]
         }
       ],
       "code_sha256": "8a238d176b439c7e3210dba88ab18a074de3349a709a1d70fd9aa344162ae729",
@@ -35530,6 +35544,20 @@
           "site": "1413d5599",
           "target": "1417309ae",
           "anchor_sha256": "d5ccb3fffc1cfcc6294a06c266bdfc0006c38ff281c823fb9f8e29a13c59ebc1"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadSpriteEmitBrushstrokesScalarComputeShader",
+          "support": [
+            "All206 owned instructions and decompilation read and matched to original executable.",
+            "Guarded static resource initialization resets resource subobjects, registers destructor and releases guard.",
+            "First path construction normalizes source separators, adds ORBIS_shaders and shader filename under /app0/.",
+            "Strips /hostapp/ and /app0/ for seed-zero Murmur3X64_128 path hashing; binary searches archive entries by first64-bit hash and passes optional archive blob to shader initializer.",
+            "Cached nonzero resource handle returns static resource pointer.",
+            "With constructed path but zero handle, tries .reasm.sb first, then ordinary shader file; successful bytes initialize resource; temporary buffer freed.",
+            "Returns null if handle stays zero. Stack guard failure calls nonreturning handler.",
+            "Independent reopening and decompilation passed; native bytes, prototype and every other function name/signature unchanged."
+          ]
         }
       ],
       "code_sha256": "4d890757311e0ac271c7d5747cf29799850c0e673a485121a6837b8021c090d5",

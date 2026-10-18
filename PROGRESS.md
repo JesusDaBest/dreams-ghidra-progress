@@ -6995,3 +6995,10 @@ Only name and comment changed; independent reopening/decompilation passed. Bytes
 Refined **GetOrBuildPackedSpriteGeometrySummary** to accept a cache byte pointer and two unsigned 32-bit resource IDs, returning a summary-entry byte pointer. Entry registers, zero-extension, tree/fingerprint uses and shared pointer return support this working declaration; the connected fixtures use the same inputs and check the returned address. Independent reopening confirms RDI/ESI/EDX inputs and RAX return, with successful decompilation.
 
 Byte pointers avoid inventing original cache or entry structs. Original instructions and all 9,611 other names/signatures are unchanged. This adds no checked-function credit and does not establish pointer lifetime, concurrency, malformed-tree safety or exact PS4 math behavior.
+
+
+### Brushstroke emission shader loaders named
+
+Applied and independently reopened **GetOrLoadSpriteEmitBrushstrokesVectorComputeShader** and **GetOrLoadSpriteEmitBrushstrokesScalarComputeShader** after reading all **412 owned CPU instructions** and both decompilations against the original executable. Embedded shader filenames establish the variants. Reviewed behavior includes guarded static initialization, normalized shader paths, archive hash lookup, cached resource reuse, file fallback and temporary-buffer cleanup. Only names and comments changed; native bytes, inferred prototypes and other names/signatures are unchanged.
+
+The caller selects variants using a sixteen-entry power-of-two table. Its shifts and masks are stored in a parameter allocation whose pointer reaches shader user data; both shader entries read corresponding offsets. This is a partial CPU-to-shader connection, not full emission or paint completion. Archive lookup checks one 64-bit half of the path hash. Real GPU execution, concurrency, platform failures and the kaleidoscope geometry consumer remain unverified. These two functions were already mapped, so mapping coverage does not increase.
