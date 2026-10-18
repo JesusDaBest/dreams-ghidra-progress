@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "638 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "639 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8757,
-    "other_names": 846,
-    "verification": "complete_inventory_matches_baseline_plus_638_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8756,
+    "other_names": 847,
+    "verification": "complete_inventory_matches_baseline_plus_639_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15948,6 +15948,30 @@
         "Analyst descriptive name andworking opaque pointers,not original source declarations.",
         "Prepared coherent hash/identity tables,direct Microchip parent fixtures anddisabled owner/history.",
         "Broader validity predicate branches,duplicate-fulltable behavior,malformed graphs,concurrency andgameplay unresolved."
+      ]
+    },
+    {
+      "address": "140767e80",
+      "original_name": "FUN_140767e80",
+      "applied_name": "InsertKey16RecordIfKeyAndOrderAbsent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InsertKey16RecordIfKeyAndOrderAbsent(void * recordTable, void * candidate)",
+      "evidence": [
+        "Complete 112-instruction insertion body and pseudocode reviewed; original bytes matched.",
+        "Ninety direct native cases cover real hash collisions, duplicate preservation, signed zero, NaN, append, rotating slot reuse and full-table rejection.",
+        "Twelve full original fe06 replay cases each use 8192 records: all-valid/all-invalid/alternating validity combined with fresh/duplicate/signed-zero/NaN order; complete world/object/input guards compared.",
+        "Both static caller branches byte-verified: 30 instructions in the event dispatcher and 147 in the game-update remapping loop. Only these local branches reviewed.",
+        "Independent reopening verifies descriptive name and opaque two-pointer void SysV signature; other 9602 names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque working pointers, not original source declarations.",
+        "Prepared coherent acyclic hash/identity tables and direct Microchip parents; owner/history disabled in the new capacity cases.",
+        "Full game-update decompilation exceeded 60 seconds; remapping branch statically reviewed, not natively executed.",
+        "Broader validity branches, malformed chains, aliasing, concurrency and gameplay unresolved."
       ]
     }
   ],

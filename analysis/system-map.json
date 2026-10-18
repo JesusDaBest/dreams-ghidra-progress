@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2103,
-  "unmapped_total": 7500,
+  "mapped_total": 2104,
+  "unmapped_total": 7499,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52868,6 +52868,33 @@
             "Three full original fe06 replay cases each8192records execute validity pruning,insertion,reader/wrapper/dispatcher. Allvalid table doesnotinsert; allinvalid andalternating tables prune invalid records androtating cursor reuses124/125.",
             "Full world/object/input guard comparisons verify reduced hash links,cleared payloads,preserved padding andunchanged allocation count withno slot movement.",
             "Independent reopening verifies descriptive name andtwo-pointer void SysV signature; other9602 names/signatures andnative bytes unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140767e80": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Duplicate-suppressing keyed record insertion used by fe06 replay and game-update record remapping.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Appends or reuses an invalid-key slot unless exact 16-byte key and equal float order already exist; prepends hash chain.",
+      "code_sha256": "5151112c10ef36b1fe0057294e1e36e5a86a8a8206c8848d697942508432a372",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertKey16RecordIfKeyAndOrderAbsent",
+          "support": [
+            "Complete 112-instruction insertion body and pseudocode reviewed; original bytes matched.",
+            "Ninety direct native cases cover real hash collisions, duplicate preservation, signed zero, NaN, append, rotating slot reuse and full-table rejection.",
+            "Twelve full original fe06 replay cases each use 8192 records: all-valid/all-invalid/alternating validity combined with fresh/duplicate/signed-zero/NaN order; complete world/object/input guards compared.",
+            "Both static caller branches byte-verified: 30 instructions in the event dispatcher and 147 in the game-update remapping loop. Only these local branches reviewed.",
+            "Independent reopening verifies descriptive name and opaque two-pointer void SysV signature; other 9602 names/signatures and original bytes unchanged."
           ]
         }
       ],

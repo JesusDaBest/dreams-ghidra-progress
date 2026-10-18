@@ -5459,3 +5459,16 @@ The validity code resolves three persistent IDs, checks the Microchip ancestor k
 Prepared coherent tables, valid object pointers and direct parent links remain fixtures. Owner/history output is disabled. Other validity branches, duplicate-at-capacity replay, malformed graphs, concurrency and gameplay remain unverified.
 
 Totals: 691 checked names, 2,103 mapped functions and 7,500 unmapped among 9,603 currently defined. Review counts are not whole-game completion.
+
+
+### Keyed record insertion and duplicate preservation
+
+Saved `InsertKey16RecordIfKeyAndOrderAbsent` after reading and byte-verifying its complete 112-instruction body. It preserves an existing record when the complete 16-byte key and float order match. Otherwise it appends below 8,192 allocated slots, or scans a rotating cursor for an invalid-key slot at capacity. It prepends the selected slot to its hash bucket; reuse retains the slot's final two padding bytes.
+
+Ninety direct native cases verify collision chains, duplicates, signed zero, NaN, append, reuse and a full table with no available slot. Twelve connected original `fe06` replay cases each use 8,192 records and combine all-valid, all-invalid or alternating validity with fresh, duplicate, signed-zero or NaN orders. A surviving duplicate keeps its old coordinates and cursor even after other records are pruned. Full world/object comparisons and packet guards match the expected changes.
+
+Both static call sites were examined: the event dispatcher builds a candidate after capacity pruning; a game-update loop copies a record and replaces its three IDs after endpoint mapping and common-parent checks. These local branches account for 30 and 147 byte-verified instructions. The entire game-update function did not complete decompilation within 60 seconds and is not claimed as understood. The remapping branch has not been executed in this harness.
+
+Independent reopening confirms the name and working opaque two-pointer void SysV signature, with native bytes and the other 9,602 function names/signatures unchanged. Coherent table/identity fixtures and disabled owner/history limit the capacity checks; broader validity branches, malformed chains, aliasing, concurrency and gameplay remain unresolved.
+
+Totals: 692 checked names, 2,104 mapped functions and 7,499 unmapped among 9,603 currently defined. These are review and mapping counts, not whole-game completion.

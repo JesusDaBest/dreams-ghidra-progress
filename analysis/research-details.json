@@ -16430,5 +16430,68 @@
       "Broader validity predicate branches,duplicate-fulltable behavior,malformed graphs,concurrency andgameplay unresolved."
     ],
     "new_name_credit": 1
+  },
+  "key16_record_insertion_checkpoint": {
+    "address": "140767e80",
+    "name": "InsertKey16RecordIfKeyAndOrderAbsent",
+    "signature": "void PS4_SYSV InsertKey16RecordIfKeyAndOrderAbsent(void * recordTable, void * candidate)",
+    "native_instructions": 112,
+    "direct_native_check": {
+      "native_cases": 90,
+      "finder_pointer_and_purity_cases": 90,
+      "finding": "Finder pointer equals exact existing matched slot ornull,andpreserves complete table/input bytes. Original insertion andduplicate finder execute together. Existing exact key/equal order suppresses insertion andpreserves old coordinates; signed zeros match,NaN doesnot. Below8192 appends even with earlier tombstones,count increments andnew record prepends bucket. At8192 scans rotating cursor forinvalid-key slot,reuses it without count increment,andretains its final2padding bytes; nofree slot leaves table unchanged after fullscan. Full arena/candidate bytes checked.",
+      "limits": [
+        "Direct helper only; dispatcher-level full-table compaction not executed.",
+        "Finite acyclic coherent collision chain; malformed links,aliasing,concurrency andgameplay untested."
+      ],
+      "original_native_instructions_verified": {
+        "140767e80": 112,
+        "1407678d0": 91
+      },
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "capacity_native_check": {
+      "native_cases": 12,
+      "records_per_case": 8192,
+      "finding": "Twelve full original fe06 replay cases cover allvalid/allinvalid/alternating validity and fresh/duplicate/signedzero/NaN order. Pruning precedes duplicate detection; matching surviving key/order preserves old payload andcursor, while missing matches reuse available pruned slots. Signedzero matches; NaN doesnot. Full world/object/input guard comparisons; allocation count remains8192 andno slot packing.",
+      "limits": [
+        "Prepared coherent acyclic hash/identity tables anddirect Microchip parents; owner/history disabled.",
+        "Broader validity predicates,malformed tables,concurrency andgameplay untested."
+      ],
+      "original_native_instructions_verified": {
+        "140767c70": 32,
+        "140767a60": 138,
+        "140767e80": 112
+      },
+      "dispatcher_original_bytes_verified": 267374,
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "caller_branch_check": {
+      "verified_caller_branch_instructions": {
+        "1409973ad": 147,
+        "140ad7db2": 30
+      },
+      "limits": [
+        "Only local caller branches reviewed; full game update decompilation exceeded60second budget.",
+        "Remapping branch not executed natively; fe06 path executed in12 fullcapacity cases."
+      ],
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete 112-instruction insertion body and pseudocode reviewed; original bytes matched.",
+      "Ninety direct native cases cover real hash collisions, duplicate preservation, signed zero, NaN, append, rotating slot reuse and full-table rejection.",
+      "Twelve full original fe06 replay cases each use 8192 records: all-valid/all-invalid/alternating validity combined with fresh/duplicate/signed-zero/NaN order; complete world/object/input guards compared.",
+      "Both static caller branches byte-verified: 30 instructions in the event dispatcher and 147 in the game-update remapping loop. Only these local branches reviewed.",
+      "Independent reopening verifies descriptive name and opaque two-pointer void SysV signature; other 9602 names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque working pointers, not original source declarations.",
+      "Prepared coherent acyclic hash/identity tables and direct Microchip parents; owner/history disabled in the new capacity cases.",
+      "Full game-update decompilation exceeded 60 seconds; remapping branch statically reviewed, not natively executed.",
+      "Broader validity branches, malformed chains, aliasing, concurrency and gameplay unresolved."
+    ],
+    "new_name_credit": 1
   }
 }
