@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 796,
+    "checked_and_applied_names": 797,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 796,
-    "function_count": 9614,
+    "verified_names": 797,
+    "function_count": 9615,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "732 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "732 existing-function renames,64 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25448,5 +25448,39 @@
     "new_name_credit": 0,
     "project_modified": false,
     "runtime_game_verified": false
+  },
+  "sprite_buffered_point_emission_checkpoint": {
+    "name": "BatchAndEmitTransformedSpritePoints",
+    "working_signature": "void PS4_SYSV BatchAndEmitTransformedSpritePoints(pointer64 context, pointer64 points_begin, pointer64 points_end, uint control, int repeat_control, uint object_reference, float attribute_bias, undefined1[32] descriptor_transform, undefined1[32] point_transform, uchar output_flags)",
+    "input_storage": [
+      "RDI:8",
+      "RSI:8",
+      "RDX:8",
+      "ECX:4",
+      "R8D:4",
+      "R9D:4",
+      "XMM0_Da:4",
+      "Stack[0x8]:32",
+      "Stack[0x28]:32",
+      "Stack[0x48]:1"
+    ],
+    "native_suites": {
+      "batch": 16,
+      "transform": 24,
+      "rotation": 144,
+      "repetition": 72,
+      "alternate": 72,
+      "capacity": 24
+    },
+    "findings": [
+      "Batches up to 2048 source points by frame parity and matching transform/control metadata.",
+      "Transforms and packs 44-byte points; radial repetition and alternating reflected copies checked in isolated fixtures.",
+      "Emits 336-byte descriptors with encoded point handle and generated count. Point and descriptor capacity behavior checked separately."
+    ],
+    "limits": [
+      "Opaque source types/control names not recovered.",
+      "Arbitrary control values, corrupt ranges/counters, nonfinite/extreme inputs, object lookup variants, concurrency, original platform math and actual game/GPU unverified."
+    ],
+    "new_function_credit": 1
   }
 }

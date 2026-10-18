@@ -7886,3 +7886,14 @@ The second factor traces to the product of outer and nested point fields. The se
 The identified intervening imports are scalar math calls. The three internal helper calls and the eight-record indexed stack loop write ranges separate from the cached input. This narrows the alias question; it does not exclude every possible pointer alias or establish correct behavior for malformed data.
 
 This is additional understanding of one processor, with **no new checked-function credit**. Exact field names and units, the complete processor, original platform math and actual GPU/game behavior remain unverified.
+
+
+### Buffered Sprite point emission defined and typed
+
+`BatchAndEmitTransformedSpritePoints` now identifies a previously undefined helper. Its working signature includes six register arguments, a scalar input, two opaque 32-byte transform blocks and a final flag byte. Independent reopening verified the definition and signature; all existing function names/signatures and original executable bytes stayed unchanged.
+
+The helper batches source points, transforms and packs them into point buffers, and emits Sprite descriptors. Separate original-code fixtures checked 16 batching cases, 24 basic transforms, 144 rotations, 72 radial repetitions, 72 alternating/reflected-copy cases and 24 capacity cases. Platform copy/math calls used explicit local adapters. These checks cover controlled inputs, not actual rendering.
+
+The cache producer also has an early exit that skips its ready-state store. Its caller can fall back to a recent ready entry for the same object; the original fallback scan passed 22 isolated cases. Retry/invalidation behavior and complete runtime handling remain open.
+
+Checked names are now **797** across **9,615 defined functions**. This credits one descriptive helper review. Original source types, arbitrary controls, malformed/nonfinite inputs, concurrency and actual GPU/game behavior remain unverified.

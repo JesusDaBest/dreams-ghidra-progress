@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9614,
-  "mapped_total": 2197,
+  "inventory_total": 9615,
+  "mapped_total": 2198,
   "unmapped_total": 7417,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -55674,6 +55674,32 @@
       "component_basis": "Sprite bounds computation, original component property registration and source-to-GPU record trace.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Transforms cached center/radius and expands for duplication, jitter, physical and glow-light settings.",
+      "code_sha256_basis": "original_eh_region"
+    },
+    "1413dc530": {
+      "system": "sculpting-painting",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BatchAndEmitTransformedSpritePoints",
+          "support": [
+            "Original3586-byte EH span and703 owned instructions matched.",
+            "Full731-line initial decompilation read; temporary explicit SysV signature capture supplied missing inputs.",
+            "Actual producer callsite supplies six GP arguments, XMM0 scalar, two32-byte stack blocks and final byte.",
+            "Six separately scoped isolated original-helper suites cover batching, transforms, rotations, repetitions, alternate copies and capacity limits."
+          ]
+        }
+      ],
+      "code_sha256": "7019205ceead8398dcb6e60a0a606f4eabeb0d4154fb277d2184ae2b20f51676",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Sprite source point batching, frame parity storage and 336-byte emission record construction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Batches, transforms and replicates source points into encoded point buffers and emits Sprite descriptors.",
       "code_sha256_basis": "original_eh_region"
     }
   },

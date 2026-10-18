@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "732 existing-function renames,63 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "732 existing-function renames,64 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9614,
+    "total": 9615,
     "default_fun_names": 8663,
-    "other_names": 951,
-    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_63_created_functions_and_1_reviewed_existing_name"
+    "other_names": 952,
+    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_64_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18516,6 +18516,28 @@
       "caveats": [
         "Source symbol/types unknown; packed vectors remain opaque16-byte working values.",
         "Cache bound/extents producers, nonfinite/extreme values, original PS4 expf, mutable defaults and real GPU/game/concurrency behavior unverified."
+      ]
+    },
+    {
+      "address": "1413dc530",
+      "original_name": null,
+      "applied_name": "BatchAndEmitTransformedSpritePoints",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BatchAndEmitTransformedSpritePoints(pointer64 context, pointer64 points_begin, pointer64 points_end, uint control, int repeat_control, uint object_reference, float attribute_bias, undefined1[32] descriptor_transform, undefined1[32] point_transform, uchar output_flags)",
+      "evidence": [
+        "Original3586-byte EH span and703 owned instructions matched.",
+        "Full731-line initial decompilation read; temporary explicit SysV signature capture supplied missing inputs.",
+        "Actual producer callsite supplies six GP arguments, XMM0 scalar, two32-byte stack blocks and final byte.",
+        "Six separately scoped isolated original-helper suites cover batching, transforms, rotations, repetitions, alternate copies and capacity limits."
+      ],
+      "caveats": [
+        "Opaque source types/control names not recovered.",
+        "Arbitrary control values, corrupt ranges/counters, nonfinite/extreme inputs, object lookup variants, concurrency, original platform math and actual game/GPU unverified."
       ]
     }
   ],
