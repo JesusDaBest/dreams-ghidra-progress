@@ -18354,5 +18354,29 @@
       "No exact MM source/build match."
     ],
     "new_name_credit": 1
+  },
+  "angle_sensor_rotation_checkpoint": {
+    "native_check": {
+      "native_cases": 416,
+      "analytically_unique_winner_cases": 186,
+      "analytical_near_tie_cases": 230,
+      "maximum_signal_error": 3.467762491604631e-07,
+      "absolute_tolerance": 3e-05,
+      "original_libc_atan2f": true,
+      "findings": [
+        "Complete original updater and actual original libc atan2f agree with independent Hamilton-product quaternion/vector rotation and inverse-smoothstep oracle.",
+        "Reference vector uses optional reference-object rotation;pointing vector uses each source-object rotation. Unit rotations around three axes and mixed axis,plus128 seeded random unit-orientation/vector cases covered.",
+        "Stored quaternion matches analytically strongest source;near ties within numerical tolerance permit either candidate. Prior exact identity-tie fixture establishes first-tie behavior.",
+        "Complete sensor/world/owner/source comparisons pass;only scalar output+108 and selected source quaternion+110 change."
+      ],
+      "limits": [
+        "Normalized finite unit vectors/quaternions and positive nonzero falloff only;nonunit,nonfinite,zero-falloff,aliasing and malformed indices unverified.",
+        "Three threshold/falloff profiles;controlled recovered metadata and prepared two-wire interval.",
+        "No full worker/update loop,concurrent scheduling or live game behavior."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0
   }
 }

@@ -5803,3 +5803,12 @@ All three related sensor property visitors now have reviewed descriptive names. 
 The fixture uses identity or negative-identity source quaternions and an optional identity motion reference. Nontrivial rotations, nonunit vectors, nonfinite values and zero falloff remain unverified. Metadata uses recovered AngleSensor field offsets in a controlled table; full startup, the complete worker/update loop and live sensing remain untested. This is runtime behavior evidence beyond the property interface, with the stated scope; no full-sensor completion is claimed.
 
 Independent reopening verified the name, working owner/packed-reference/sensor signature and decompilation, unchanged native bytes and all 9,604 other names/signatures. Totals: **716 checked names** (636 behavior/helper and 80 property/type reviews), **2,122 mapped** and **7,483 unmapped** among 9,605 defined functions. No exact Media Molecule source/build match is claimed.
+
+
+### AngleSensor quaternion/vector convention checked
+
+**416 additional native cases** execute the original AngleSensor updater and original libc `atan2f` with nontrivial unit quaternions and vectors. The independent oracle uses Hamilton-product quaternion rotation and angular inverse smoothstep. It agrees that the reference vector rotates through the optional motion-reference object's orientation, while the pointing vector rotates through each candidate source object's orientation.
+
+The cases cover rotations about X/Y/Z and a mixed axis, plus 128 seeded random unit-orientation/vector cases and three positive-falloff threshold profiles. Maximum scalar error was approximately **3.47e-7**, against a declared absolute tolerance of 3e-5. In 186 analytically unique-winner cases, the stored quaternion identifies that source. In 230 near-tie cases the check permits either candidate within tolerance; exact first-tie behavior was established separately by the earlier identity fixture. Complete sensor/world/owner/source comparisons pass, with only the expected scalar and selected-quaternion outputs changed.
+
+This closes the earlier identity-only rotation limitation for these finite unit inputs. Nonunit vectors/quaternions, nonfinite values, zero falloff, aliasing, malformed indices, the complete update loop and live sensing remain unverified. No additional names or completion credit were added; the total remains 716 checked names.
