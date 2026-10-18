@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2139,
-  "unmapped_total": 7467,
+  "mapped_total": 2140,
+  "unmapped_total": 7466,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54074,6 +54074,33 @@
           "verification": "Original registration windows and literals rechecked against SELF;original producer kind68 dispatch calls this helper."
         }
       ]
+    },
+    "141331520": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete image-slice cache behavior and connected Sprite rendering caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original native state comparisons and complete function review.",
+      "code_sha256": "64926f0f339deedf6b92d1461b13bc27b0fc6b4b85dfb9a71d27091285b171c7",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "LookupOrRequestImageCacheSlice",
+          "support": [
+            "Complete 181-instruction image-cache helper reviewed against original bytes.",
+            "Compares four 64-bit key words; updates generation/use count on hits, returns ready index or pending sentinel.",
+            "240 miss/no-candidate executions and 256 connected Sprite/cache-hit executions compare complete states and call order.",
+            "Replacement selects oldest eligible entry below current generation, excludes protected state, clears its image slice, records pending request and signals work.",
+            "Independent reopening verifies custom register/stack storage, decompilation, unchanged original instructions and all 9605 other names/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -61390,6 +61417,17 @@
             {
               "id": "command-dispatch",
               "label": "Compute dispatch",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "image-cache",
+              "label": "Image cache",
               "children": [
                 {
                   "id": "runtime-implementation",

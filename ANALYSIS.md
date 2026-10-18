@@ -6771,3 +6771,14 @@ Original import records identify mutex lock/unlock, thread-ID lookup, infinity c
 Original registration windows and literal bytes confirm that kind 68 is `FogGadget`, with `FogShapeType` at object offset 256 bound to metadata slot 1416. The producer's kind-68 dispatch calls `BuildRegionRuntimeRecord120`; original metadata and connected native fixtures tie the same shape field to the record builder. The status map now places this reviewed runtime helper under Fog alongside its property/type code. The generic descriptive function name is retained.
 
 This is a classification correction backed by the executable, not extra naming or completion credit: **733 checked names** remains the total. It does not establish the complete fog renderer or an exact developer-source/build match.
+
+
+### Image-cache lookup and request helper reviewed
+
+`LookupOrRequestImageCacheSlice` names a complete 181-instruction helper used by the Sprite record builder and other rendering callers. It matches a four-word key, updates cache usage, and returns a ready slice index, a pending result, or a no-candidate result. On a miss it selects the oldest eligible entry below the current generation, clears the selected slice, stores the pending request and signals work. Protected entries are excluded.
+
+Verification includes **240 miss/no-candidate executions** and **256 connected Sprite/cache-hit executions**, with complete fixture state and modeled call order checked. These are fixture executions, not game completion percentages. Miss-path synchronization, image layout/format and notification calls are modeled: actual resource loading, asynchronous completion and concurrency remain unverified. The geometric predicate used by the Sprite caller is a separate unresolved geometry test, not a resource-readiness test.
+
+Independent reopening confirms the saved register/stack working signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. The former default 32-byte stack local was preserved in private rollback evidence before its storage was described as four input key words. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **734 checked names** (654 behavior/helper and 80 property/type), **2,140 mapped**, **7,466 unmapped**, among 9,606 defined functions.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "677 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "678 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8718,
-    "other_names": 888,
-    "verification": "complete_inventory_matches_baseline_plus_677_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8717,
+    "other_names": 889,
+    "verification": "complete_inventory_matches_baseline_plus_678_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17032,6 +17032,29 @@
         "Finite unit parent transforms,identity local PosOffset,selected shapes/colors and positive scales;nonidentity local offset,nonfinite/malformed inputs and full metadata startup remain unverified.",
         "Runtime insertion,full producer,concurrency and live-game behavior remain unverified.",
         "Working float4 containers and analyst descriptive name are not original C++ declarations."
+      ]
+    },
+    {
+      "address": "141331520",
+      "original_name": "FUN_141331520",
+      "applied_name": "LookupOrRequestImageCacheSlice",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV LookupOrRequestImageCacheSlice(void * cache, uint requestTag, uint fallbackTag, uint * optionalInfo, ulonglong keyWord0, ulonglong keyWord1, ulonglong keyWord2, ulonglong keyWord3)",
+      "evidence": [
+        "Complete 181-instruction image-cache helper reviewed against original bytes.",
+        "Compares four 64-bit key words; updates generation/use count on hits, returns ready index or pending sentinel.",
+        "240 miss/no-candidate executions and 256 connected Sprite/cache-hit executions compare complete states and call order.",
+        "Replacement selects oldest eligible entry below current generation, excludes protected state, clears its image slice, records pending request and signals work.",
+        "Independent reopening verifies custom register/stack storage, decompilation, unchanged original instructions and all 9605 other names/signatures."
+      ],
+      "caveats": [
+        "Mutex/thread/signal, image layout/format and notification calls are modeled in miss fixtures; actual asynchronous loading and concurrency remain unverified.",
+        "Valid prepared tables and selected image layouts only; full startup, malformed inputs and live-game execution unverified.",
+        "Analyst descriptive name and working key-word parameters are not the original C++ declaration."
       ]
     }
   ],

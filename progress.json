@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 687,
+    "done": 688,
     "todo": 1452,
-    "total": 2139,
-    "behavior_or_helpers_reviewed": 613,
+    "total": 2140,
+    "behavior_or_helpers_reviewed": 614,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -28826,12 +28826,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 102,
+        "done": 103,
         "todo": 268,
-        "total": 370,
-        "behavior_or_helpers_reviewed": 102,
+        "total": 371,
+        "behavior_or_helpers_reviewed": 103,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 344,
+        "runtime_functions_identified": 345,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -28928,6 +28928,7 @@
           "DispatchComputeIndirectWithCachedControls",
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
+          "LookupOrRequestImageCacheSlice",
           "RegisterDeferredShaderConstants",
           "FinalizeAndQueueDeferredGraphicsJob",
           "CollectDeferredResourceAccessesForJob",
@@ -29302,6 +29303,7 @@
           "141298c90",
           "14131e560",
           "14131eca0",
+          "141331520",
           "14139fbf0",
           "14139fd80",
           "1413a00c0",
@@ -33037,12 +33039,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 28,
+            "done": 29,
             "todo": 0,
-            "total": 28,
-            "behavior_or_helpers_reviewed": 28,
+            "total": 29,
+            "behavior_or_helpers_reviewed": 29,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 28,
+            "runtime_functions_identified": 29,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -33069,6 +33071,7 @@
               "AppendComputeCompletionFence",
               "DispatchComputeWithCachedControls",
               "DispatchComputeIndirectWithCachedControls",
+              "LookupOrRequestImageCacheSlice",
               "RegisterDeferredShaderConstants",
               "FinalizeAndQueueDeferredGraphicsJob",
               "CollectDeferredResourceAccessesForJob",
@@ -33100,6 +33103,7 @@
               "141297cf0",
               "141298870",
               "141298c90",
+              "141331520",
               "14139fbf0",
               "14139fd80",
               "1413a00c0",
@@ -33465,6 +33469,53 @@
                     "done_addresses": [
                       "14139fd80",
                       "1413a00c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "rendering/compute/image-cache",
+                "label": "Image cache",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "LookupOrRequestImageCacheSlice"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141331520"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/image-cache/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "LookupOrRequestImageCacheSlice"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141331520"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -45893,5 +45944,5 @@
       }
     ]
   },
-  "unmapped": 7467
+  "unmapped": 7466
 }

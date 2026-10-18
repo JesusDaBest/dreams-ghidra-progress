@@ -6246,3 +6246,14 @@ Original kind-68 initialization stores supply local-transform, alternate-shape a
 Saved working storage explicitly describes three GP arguments, two full float4 SIMD inputs, one scalar SIMD input and boolean AL return. Independent reopening verifies decompilation, unchanged original bytes and all 9,605 other names/signatures. Finite unit parent transforms, identity local offset and selected shapes/colors only; nonidentity local offset, nonfinite/malformed inputs, full startup, runtime insertion, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **733 checked names** (653 behavior/helper and 80 property/type), **2,139 mapped**, **7,467 unmapped**, among 9,606 defined functions.
+
+
+### Image-cache lookup and request helper reviewed
+
+`LookupOrRequestImageCacheSlice` names a complete 181-instruction helper used by the Sprite record builder and other rendering callers. It matches a four-word key, updates cache usage, and returns a ready slice index, a pending result, or a no-candidate result. On a miss it selects the oldest eligible entry below the current generation, clears the selected slice, stores the pending request and signals work. Protected entries are excluded.
+
+Verification includes **240 miss/no-candidate executions** and **256 connected Sprite/cache-hit executions**, with complete fixture state and modeled call order checked. These are fixture executions, not game completion percentages. Miss-path synchronization, image layout/format and notification calls are modeled: actual resource loading, asynchronous completion and concurrency remain unverified. The geometric predicate used by the Sprite caller is a separate unresolved geometry test, not a resource-readiness test.
+
+Independent reopening confirms the saved register/stack working signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. The former default 32-byte stack local was preserved in private rollback evidence before its storage was described as four input key words. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **734 checked names** (654 behavior/helper and 80 property/type), **2,140 mapped**, **7,466 unmapped**, among 9,606 defined functions.

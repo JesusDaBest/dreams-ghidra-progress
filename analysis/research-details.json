@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 733,
+    "checked_and_applied_names": 734,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 733,
+    "verified_names": 734,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "677 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "678 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20040,5 +20040,42 @@
     "literal_bytes_verified": true,
     "connection": "Original producer kind68 branch calls BuildRegionRuntimeRecord120;bounded original metadata and native fixtures connect the same field to geometry shape.",
     "new_name_credit": 0
+  },
+  "buffered_image_cache_name_checkpoint": {
+    "target": {
+      "name": "LookupOrRequestImageCacheSlice",
+      "signature": "uint PS4_SYSV LookupOrRequestImageCacheSlice(void * cache, uint requestTag, uint fallbackTag, uint * optionalInfo, ulonglong keyWord0, ulonglong keyWord1, ulonglong keyWord2, ulonglong keyWord3)"
+    },
+    "native_check": {
+      "native_cases": 240,
+      "pending_requests": 144,
+      "no_candidate_returns": 96,
+      "findings": [
+        "Original181-instruction image-cache helper selects the oldest eligible slice,keeps first on ties,excludes state2,and requires age strictly below current generation. No eligible slice sets overflow marker and returnsFFFFFFFF.",
+        "240 executions verify complete context/entries/image/global state,all four request-key words,tags,pending-state transitions,usage counters and external-call order. Replacement clears only the modeled target slice and returnsFFFFFFFE pending."
+      ],
+      "models": [
+        "Mutex/thread/signal,image-layout/format and format-notification callees use argument-recording models. Image layout returns16 bytes per slice;memset performs standard fill. No real lock,layout calculation,resource loading or async completion executed."
+      ],
+      "limits": [
+        "Prepared acyclic fixed tables,count1/3/8 and finite sequential state;concurrency retries and actual image descriptor formats remain unverified.",
+        "Sprite builder integration on cache misses and live-game behavior remain unverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete 181-instruction image-cache helper reviewed against original bytes.",
+      "Compares four 64-bit key words; updates generation/use count on hits, returns ready index or pending sentinel.",
+      "240 miss/no-candidate executions and 256 connected Sprite/cache-hit executions compare complete states and call order.",
+      "Replacement selects oldest eligible entry below current generation, excludes protected state, clears its image slice, records pending request and signals work.",
+      "Independent reopening verifies custom register/stack storage, decompilation, unchanged original instructions and all 9605 other names/signatures."
+    ],
+    "limits": [
+      "Mutex/thread/signal, image layout/format and notification calls are modeled in miss fixtures; actual asynchronous loading and concurrency remain unverified.",
+      "Valid prepared tables and selected image layouts only; full startup, malformed inputs and live-game execution unverified.",
+      "Analyst descriptive name and working key-word parameters are not the original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }
