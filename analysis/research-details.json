@@ -19388,5 +19388,58 @@
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1
+  },
+  "buffered_object_record_lifecycle_checkpoint": {
+    "checks": {
+      "buffered-existing-object-flag-clear-native-check.json": {
+        "native_cases": 32,
+        "original_instructions": 529,
+        "findings": [
+          "Complete original buffered-record consumer selected existing-object path clears header800 and decrements counter per flagged listed object.",
+          "32 cases cover both record banks,all two-object flag combinations,processed and readiness gates. Full world,pool,object and index-array comparisons pass."
+        ],
+        "models": [
+          "Unused sceKernelGetProcessTimeCounter return modeled as0;no timing or platform behavior claim."
+        ],
+        "limits": [
+          "Copy/materialization,property-buffer growth,cleanup-enabled and missing-ID paths not executed.",
+          "Containing operation source role remains unresolved;no undo/loading claim.",
+          "Single-threaded prepared valid records only;full callers and live game unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "buffered-record-preparation-native-check.json": {
+        "native_cases": 27,
+        "findings": [
+          "Original bounded producer preparation resets table-slot1c and linked-record70 only for active table entries,following record68 links;record71 and inactive entries preserved.",
+          "27 cases cover0/1/4 table slots,none/all/alternating active entries and0/1/3-node chains;full pool,table,nodes,world and owner comparisons pass."
+        ],
+        "limits": [
+          "Entry skips prologue and exit returns before subsequent producer stages;full3363-instruction routine not executed.",
+          "Valid finite linked lists only;exact record semantics and readiness71 producer unresolved."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "buffered-record-allocation-layout-native-check.json": {
+        "native_cases": 24,
+        "findings": [
+          "Original bounded producer requests32-byte alignment and36*objectCount+payloadBytes storage;record71 reflects allocation success.",
+          "Successful allocation partitions pointers at offsets0,4n,8n,12n,28n,36n;failure/zero-size clears selected pointer fields and readiness,while record70 becomes1.",
+          "24 cases cover two record slots,counts0/1/3,payload0/5 and modeled allocation success/failure;full pool and untouched allocation-buffer comparisons pass,allocator arguments captured."
+        ],
+        "models": [
+          "Allocator replaced by explicit argument-recording fixed-result model;real allocation/startup not tested."
+        ],
+        "limits": [
+          "Bounded producer window only;source-level record/array meanings and full producer/consumer flow unresolved.",
+          "Valid small counts only;overflow,capacity,concurrency and live game unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "new_name_credit": 0
   }
 }

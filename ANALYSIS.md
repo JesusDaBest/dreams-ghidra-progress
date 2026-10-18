@@ -6615,3 +6615,12 @@ The clear-block fixture redirects its exit and already-clear branch to return; t
 Independent reopening verifies the saved name, void/packed-reference/world signature, decompilation, unchanged original bytes and all 9,605 other names/signatures. Valid indices only;malformed references,full caller/dispatcher and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **727 checked names** (647 behavior/helper and 80 property/type), **2,133 mapped**, **7,473 unmapped**, among 9,606 defined functions.
+
+
+### Buffered object-record preparation, allocation and consumption
+
+Three scoped native checks trace this record lifecycle without assigning an unsupported source-level operation name. **27 cases** verify preparation: active table entries reset linked record byte `+0x70` while preserving `+0x71`. **24 cases** verify a bounded allocation stage: it requests 32-byte alignment and `36*objectCount + payloadBytes`, sets `+0x71` from allocation success and partitions the buffer at offsets 0/4n/8n/12n/28n/36n. Allocation failure or zero size clears selected pointers and readiness. The allocator is explicitly modeled, with arguments recorded; real allocation is not tested.
+
+**32 cases** execute the complete 529-instruction consumer on its selected existing-object branch, across both record banks and processed/readiness gates. It clears header 0x800 and decrements the world counter per flagged listed object. Complete world/pool/object/index-array comparisons pass. Its unused process-time-counter return is modeled; the import is linked through the original executable relocation and local NID database.
+
+These are separate fixtures, not an end-to-end lifecycle test. The producer's 3,363-instruction body was captured and decompiled, but is not fully reviewed. Materialization, cleanup, all producer writes and the higher-level record meaning remain unresolved; no undo/loading interpretation is claimed. No new naming credit: **727 checked names** remains the total.
