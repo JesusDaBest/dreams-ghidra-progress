@@ -5393,3 +5393,12 @@ Saved `RemoveFirstKey16RecordMatchingOrder` after reading and byte-verifying its
 History output, multiple selected records, recursive coordinate-neighbor cleanup, malformed structures, concurrency and gameplay remain unresolved. Full user-facing undo/redo is not established.
 
 Totals: 688 checked names, 2,100 mapped functions and 7,503 unmapped among 9,603 currently defined. Review counts are not whole-game completion.
+
+
+## Multi-record Microchip cleanup verified
+
+60 connected native cases extend the original parent-cleanup path to tables of 1, 3, 17, 64 and 100 records. All, alternating and no-match chains include genuinely hash-colliding nonmatching keys. Original lookup and sorting collect pointers, then the original `fe08` producer, wrapper, dispatcher and keyed deletion remove each selected record. Forward/reverse order values and direct/one-intermediate ancestor paths are covered.
+
+Deleting earlier matches does not invalidate the remaining collected pointers: records stay in their slots, and unlinking preserves the reduced chain of nonmatches. Complete world/object comparisons verify exact record clearing, preserved padding, bucket/predecessor links, normal wire endpoint invalidation and unchanged table allocation count. Original bodies and dispatcher bytes remain unchanged.
+
+Owner/history output and recursive coordinate-neighbor cleanup remain disabled. Malformed tables, overflow, parent cycles, concurrency and gameplay remain unverified. No new checked name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).

@@ -347,5 +347,22 @@
     "dispatcher_original_bytes_verified": 267374,
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "parent_multiple_original_deletion_chain": {
+    "native_cases": 60,
+    "finding": "Original parent traversal,key lookup,sort,fe08 producer,packet wrapper,full dispatcher andkeyed deletion handle1/3/17/64/100-record tables. All/alternating/no exact-key matches are selected and individually unlinked/cleared,while genuine hash-colliding mismatches retain their reduced chain. Forward/reverse order keys andtwo eligible ancestor paths checked. Complete world/object comparisons verify exact changes,retained padding,ordinary wire removal andunchanged allocation count.",
+    "limits": [
+      "1/3/17/64/100 records with all/alternating/no matches andforward/reverse order,finite acyclic parent fixtures,owner absent/player255 andhistory output disabled.",
+      "History output,recursive coordinate-neighbor deletion,malformed structures,concurrency andgameplay untested."
+    ],
+    "original_native_instructions_verified": {
+      "140766e30": 210,
+      "140b35ec0": 132,
+      "140767ce0": 95,
+      "140b36750": 401
+    },
+    "dispatcher_original_bytes_verified": 267374,
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
