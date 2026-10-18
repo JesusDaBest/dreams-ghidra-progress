@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 721,
+    "checked_and_applied_names": 722,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 721,
+    "verified_names": 722,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "665 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "666 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18931,5 +18931,44 @@
     "reused_type": "RigidTransformWorking32",
     "independent_reopen_verified": true,
     "new_name_credit": 0
+  },
+  "owner_state_name_checkpoint": {
+    "target": {
+      "name": "UpdateThingOwnerFlagsAndWorldBitset",
+      "signature": "void PS4_SYSV UpdateThingOwnerFlagsAndWorldBitset(void * owner, uint objectIndex, void * thing)"
+    },
+    "native_check": {
+      "native_cases": 564,
+      "active_set_cases": 13,
+      "original_instructions": 209,
+      "external_calls": 0,
+      "findings": [
+        "Complete original owner-state helper mirrors byte2e into owner per-object flag bit14;it does not write the source byte.",
+        "Other managed bits derive from kind metadata,zero-power comparison,header bits and parent cached flags;selected inherited bits are sticky ORs.",
+        "World active bit is conditionally ORed using parent activity,enabled/power/header predicates. All128 kind values with missing/negative/present metadata and focused special-kind cases tested.",
+        "Full owner/world/Thing/metadata comparisons pass at child indices63/64/127 with patterned prior flags and selected parent states."
+      ],
+      "limits": [
+        "Controlled metadata offsets and valid parent0 only;real registration/owner call chain,concurrency and malformed indices unverified.",
+        "Exact source meanings of metadatae2/e4 and commonbyte2e remain unresolved;no source-level flag names inferred.",
+        "Atomic OR tested single-threaded;clearing behavior elsewhere and live game unverified."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original registration caller forwards owner,index and Thing registers into this helper.",
+      "Complete209-instruction body and pseudocode read;original bytes verified. Mirrors byte2e into owner bit14 without writing source byte;other bits derive from kind metadata,power,header and parent caches.",
+      "564 native cases execute complete original helper with no external calls:all128 low kind values with missing/negative/present controlled metadata and selected special-kind/header/power/parent combinations.",
+      "Full owner/world/Thing/metadata comparisons pass at indices63/64/127;selected atomic world-bit sets and sticky inherited owner bits match independent model.",
+      "Independent reopening verifies name,working owner/uint-index/Thing signature,decompilation,unchanged original bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Controlled metadata offsets and valid parent0 only;real registration/owner call chain,concurrency and malformed indices unverified.",
+      "Exact source meanings of metadatae2/e4 and commonbyte2e remain unresolved;no source-level flag names inferred.",
+      "Atomic OR tested single-threaded;clearing behavior elsewhere and live game unverified.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }

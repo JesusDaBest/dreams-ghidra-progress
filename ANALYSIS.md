@@ -6446,3 +6446,14 @@ An independent transform oracle agrees within approximately **8.16e-7**, below t
 The project now saves the working signature `void ComputeObjectTransformWithPositionOffset(RigidTransformWorking32 *output, void *world, void *thing)` with explicit RDI/RSI/RDX storage under PS4_SYSV. It reuses the existing 32-byte transform type. Independent reopening verifies decompilation, unchanged original bytes and all 9,605 other function names/signatures. This improves machine-level typing without claiming recovered source classes.
 
 The exact user-facing meaning of byte +0x2E remains unproven. Cycles, invalid/missing parents, nonfinite arithmetic, concurrent hierarchy changes, complete scene conversion and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed. **721 checked names** remains unchanged; this is deeper verification and a signature improvement.
+
+
+### Owner flag and world-bitset update reviewed and named
+
+`UpdateThingOwnerFlagsAndWorldBitset` names the complete 209-instruction helper invoked by registration with owner, object index and Thing. It **copies common byte +0x2E into owner-cache bit 14; it does not set that source byte**. Other cached bits derive from kind metadata, power comparison, header flags and parent caches. Some inherited bits are sticky ORs. A separate predicate conditionally atomic-ORs the object's bit into a world bitset.
+
+**564 native cases**, with no external calls, cover all 128 low kind values under missing, negative and present controlled metadata, plus focused special-kind/header/power/parent combinations. Complete owner, world, Thing and metadata comparisons pass at indices 63, 64 and 127. Thirteen cases set the world bit under the selected predicates; the others preserve it. The exact source meanings of metadata +0xE2/+0xE4 and byte +0x2E remain unresolved, so descriptive source-level flag names are not invented.
+
+Independent reopening verifies the saved name, working owner/unsigned-index/Thing signature, complete decompilation, original bytes and all 9,605 other names/signatures. Atomic operations are tested single-threaded. Real registration with a nonnull owner, malformed indices, full startup and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **722 checked names** (642 behavior/helper and 80 property/type), **2,128 mapped**, **7,478 unmapped**, among 9,606 defined functions.
