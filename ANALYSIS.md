@@ -6817,3 +6817,14 @@ Verification includes **72 insertion-tail cases**, **288 ID-registration/inserti
 The connected cache cases cover both atlas contexts, ready/pending slices, view acceptance/rejection, positive/zero RGB and two ID classes. A view-accepted lookup can update cache usage even when zero RGB later prevents insertion. Pending image data alone does not suppress tested positive-color output.
 
 These are bounded paths with prepared finite inputs. Tangent uses a local CRT adapter and memory filling uses a standard fill model. Actual loading, asynchronous completion, the full producer, concurrency and live-game behavior remain unverified. No additional name credit is added.
+
+
+### Cached-image color wrapper reviewed and named
+
+`TryGetCachedImageColorSample` names a complete 51-instruction wrapper. It writes the default color `(0.25, 0.25, 0.25, 0)`, requests a primary image-cache slice with two key words and a zero key tail, and returns false for a negative cache result. A ready slice triggers a color calculation at packed dimensions shifted right by six, mip level five, and the returned slice index; the resulting full float4 replaces the default.
+
+**96 native executions** connect the original wrapper with the original cache-hit helper across first/last slices, ready/pending/busy states and selected dimensions. Guarded output, complete cache/table/argument state and sampling arguments are checked. The sampling callee is an argument-recording full-vector model in these tests: actual surface addressing and color sampling remain unverified. Existing cache hits only; misses, loading, full callers and live-game behavior remain unresolved.
+
+Independent reopening verifies the saved working signature, boolean AL return, full float4 output pointer, decompilation, unchanged instructions and all 9,605 other names/signatures. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **737 checked names** (657 behavior/helper and 80 property/type), **2,143 mapped**, **7,463 unmapped**, among 9,606 defined functions.

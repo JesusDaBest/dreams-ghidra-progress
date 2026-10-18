@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "680 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "681 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8715,
-    "other_names": 891,
-    "verification": "complete_inventory_matches_baseline_plus_680_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8714,
+    "other_names": 892,
+    "verification": "complete_inventory_matches_baseline_plus_681_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17103,6 +17103,29 @@
         "False return can occur after record writes for zero RGB;pending cache status alone does not suppress positive-color output.",
         "Connected geometric tangent uses local CRT adapter;actual resource loading,asynchronous completion,full producer,nonfinite/malformed inputs and live game remain unverified.",
         "Analyst descriptive name and working signature are not original C++ declarations;no exact MM source/build match."
+      ]
+    },
+    {
+      "address": "1413317f0",
+      "original_name": "FUN_1413317f0",
+      "applied_name": "TryGetCachedImageColorSample",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV TryGetCachedImageColorSample(ulonglong keyWord0, ulonglong keyWord1, SpatialQueryFloat4Working16 * outputColor)",
+      "evidence": [
+        "Complete51-instruction wrapper reviewed against original bytes.",
+        "Writes defaultfloat4(.25,.25,.25,0),requests primary imagecache with two key words,zero keytail,andFFFFFFFF tags.",
+        "96 originalwrapper/cache-hit executions compare guarded output,completecache/table/args andsamplecallarguments.",
+        "Ready path samples dimensions shiftedright6,mip5,returned slice;negative/pending/busy cache results returnfalse withdefault output.",
+        "Independent reopening verifies three GP inputs,float4 outputpointer,booleanAL,decompilation,unchanged original instructions andall9605 other names/signatures."
+      ],
+      "caveats": [
+        "Color-sample helper replaced byfullvector-returning argument recorder in nativefixtures;actual surface addressing/sampling remains unverified.",
+        "Matching existing cache slices only;miss/loading,full callers,async completion andlive game unverified.",
+        "Analyst descriptive name andworking signature are not original C++ declarations;no exact MM source/build match."
       ]
     }
   ],

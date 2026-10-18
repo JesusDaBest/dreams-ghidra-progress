@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 736,
+    "checked_and_applied_names": 737,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 736,
+    "verified_names": 737,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "680 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "681 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20237,5 +20237,40 @@
     },
     "new_name_credit": 0,
     "scope": "Bounded Sprite producer paths;full producer not claimed"
+  },
+  "cached_image_color_name_checkpoint": {
+    "target": {
+      "name": "TryGetCachedImageColorSample",
+      "signature": "bool PS4_SYSV TryGetCachedImageColorSample(ulonglong keyWord0, ulonglong keyWord1, SpatialQueryFloat4Working16 * outputColor)"
+    },
+    "native_check": {
+      "native_cases": 96,
+      "findings": [
+        "Original51-instruction wrapper executes original image-cache helper existing-hit path;pending/busy returnsfalse with(.25,.25,.25,0),ready returnsfullsamplefloat4.",
+        "Ready path passes dimensions shiftedright6,mip5 andexact slice index tosamplehelper;two keywords andzero keytail,primary cache context,andFFFFFFFF tags traced statically.",
+        "Guarded output,fullcache/table/argument state andsamplecallarguments compared."
+      ],
+      "models": [
+        "Color-samplehelper replaced byfullvector-returning argument-recorder;sampling implementation remains unverified."
+      ],
+      "limits": [
+        "Matching existing slices only;miss/loading/fullcallers andlive game unverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete51-instruction wrapper reviewed against original bytes.",
+      "Writes defaultfloat4(.25,.25,.25,0),requests primary imagecache with two key words,zero keytail,andFFFFFFFF tags.",
+      "96 originalwrapper/cache-hit executions compare guarded output,completecache/table/args andsamplecallarguments.",
+      "Ready path samples dimensions shiftedright6,mip5,returned slice;negative/pending/busy cache results returnfalse withdefault output.",
+      "Independent reopening verifies three GP inputs,float4 outputpointer,booleanAL,decompilation,unchanged original instructions andall9605 other names/signatures."
+    ],
+    "limits": [
+      "Color-sample helper replaced byfullvector-returning argument recorder in nativefixtures;actual surface addressing/sampling remains unverified.",
+      "Matching existing cache slices only;miss/loading,full callers,async completion andlive game unverified.",
+      "Analyst descriptive name andworking signature are not original C++ declarations;no exact MM source/build match."
+    ],
+    "new_name_credit": 1
   }
 }
