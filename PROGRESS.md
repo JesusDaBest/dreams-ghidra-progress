@@ -7009,3 +7009,10 @@ The caller selects variants using a sixteen-entry power-of-two table. Its shifts
 Original field registrations identify the reviewed source flags as **SpriteFlagFadeIn**, **SpriteFlagFadeOut**, **SpriteFlagLooping**, **SpriteFlagSpark** and **SpriteFlagPhysical**. A bounded path in an original-byte producer checks the Sprite type and contributes these fields to a 416-byte source record; the emission stage builds 336-byte runtime records. Looping contributes bit 5 and Spark contributes bit 1 on the reviewed path. Numeric matches with shader flag tests therefore do **not** establish mirror or kaleidoscope behavior.
 
 An original-byte reference scan found two producers absent from the earlier Ghidra reference results. The smaller producer lacks a Ghidra function definition. Its complete behavior, other flag contributors, later masks and exact buffer relocation remain under investigation. No function was created or marked reviewed from this partial trace, and no GPU execution is claimed.
+
+
+### Packed stroke CPU point replication traced
+
+A bounded CPU point-processing branch reads the final flags word of each 44-byte stroke descriptor. The low five bits encode sectors minus one; the next bit doubles the iterations into pairs. **1,584 executions of the original sector-position block** match Y-axis rotations for all sector counts from 1 through 32, using injected host sine/cosine values. **532 executions of two original paired-copy blocks** check the orientation prefix and position/scale operation. The latter algebraically reflects X and negates signed scale; intermediate float32 arithmetic overflowed in three extreme finite fixtures.
+
+These are isolated original instruction blocks with explicit fixture stop returns, not executions of the full producer or platform math library. The point branch writes a separate 192-byte record stream. Its output consumer and whether it serves editing overlays, rendered geometry or both remain unresolved. Full surrounding transforms, normalization and live rendering are unverified. Temporary decompilation definitions were rolled back, and no function or completion credit was added.
