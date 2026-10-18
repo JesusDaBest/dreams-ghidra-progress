@@ -6568,3 +6568,16 @@ The archived gather shader specifies a full **64 × 1 × 1 thread group**. The t
 AMD's **Sea Islands ISA revision 1.3, table 12.3** independently documents the class-mask mapping previously supported by a newer GCN3 reference. Checked the original encoding of all 85 mask-60 class instructions in the gather shader. The mask includes negative zero alongside negative finite values and negative infinity; it excludes positive zero and NaNs. This removes reliance on the newer manual alone, while leaving custom-hardware behavior and the scalar's physical meaning unverified. No checked-function credit is added.
 
 Primary reference: [AMD Sea Islands ISA, revision 1.3](https://docs.amd.com/api/khub/documents/YO8RUh~LIQ5Cx3M_Kq9qkg/content).
+
+
+### Shader binary resource initializer reviewed and named
+
+`InitializeShaderResourceFromBinaryBlob` names the complete 255-instruction initializer shared by shader loaders. Kinds zero, one and two extract code/header sections, allocate backing and header storage, copy them, relocate the header code address, register the resource and save its header pointer. Kind two also builds a vertex-fetch shader. A supplied debug name bypasses the metadata-derived fallback lookup. Concrete resource layout and original stage-enum declarations remain working knowledge.
+
+**Two original-native mode-zero fixtures** copy the actual archived gather shader: all 15,628 code bytes remain unchanged, including the nine disputed image-store bits. Only the two code-address words change in the 44-byte header. Allocation and registration boundaries are modeled; copying uses host CRT. The registration import independently resolves to `sceGnmRegisterResource`. Its return value is ignored here: this initializer returns the first backing-allocation result. Unsupported kinds return true without constructing anything. That return is not proof of complete success. Allocation failure, malformed input, invalid fallback metadata, other-mode execution and live GPU behavior remain unverified.
+
+A separate diagnostic isolates the gather reassembly discrepancy: adding UNORM only in a disposable local source permits assembly, and the resulting 15,476-byte executable range differs from the archive in exactly nine bit-12 positions. All other instruction bytes match. AMD's Sea Islands manual requires that bit for image stores. The original leaves it clear; actual hardware handling or later platform transformations remain unresolved. This is not a byte-exact reassembly of the original, and the diagnostic code is never installed or executed.
+
+Independent reopening verifies the saved working ABI, unchanged original instructions and all 9,611 other function names/signatures. The 536 recorded entry references are not 536 reviewed caller contracts.
+
+Totals: **762 checked names** (682 behavior/helper and 80 property/type), **2,168 mapped**, **7,444 unmapped**, among **9,612 defined functions**.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 761,
+    "checked_and_applied_names": 762,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 761,
+    "verified_names": 762,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "699 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "700 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22674,5 +22674,68 @@
     },
     "runtime_gpu_verified": false,
     "reviewed_name_count_increment": 0
+  },
+  "shader_blob_initializer_checkpoint": {
+    "target": {
+      "name": "InitializeShaderResourceFromBinaryBlob",
+      "signature": "bool PS4_SYSV InitializeShaderResourceFromBinaryBlob(uint shaderKind, void * binaryBlob, void * resource, uchar * debugName)"
+    },
+    "checks": {
+      "mode_zero": {
+        "native_cases": 2,
+        "results": [
+          {
+            "mode": 0,
+            "modeled_registration_return": "0x0",
+            "header_bytes": 44,
+            "copied_code_bytes": 15628,
+            "copied_code_sha256": "a14a59487eeea4085c3b21258a443104b500fc121c0cfadece803d1d64c6e73f",
+            "original_code_unchanged": true
+          },
+          {
+            "mode": 0,
+            "modeled_registration_return": "0x80000001",
+            "header_bytes": 44,
+            "copied_code_bytes": 15628,
+            "copied_code_sha256": "a14a59487eeea4085c3b21258a443104b500fc121c0cfadece803d1d64c6e73f",
+            "original_code_unchanged": true
+          }
+        ],
+        "original_parser_instructions": 255,
+        "original_extractor_instructions": 13,
+        "models": [
+          "Fixed successful backing/header allocations",
+          "Host CRT memcpy through ABI adapter",
+          "Logging registration boundary with two return values",
+          "Synthetic canary and descriptor metadata"
+        ],
+        "findings": [
+          "Original mode-zero CPU initializer copies the entire archived gather code unchanged in these fixtures. Header differs only in its two relocated address words.",
+          "The nine UNORM-zero store instructions remain unchanged in copied code.",
+          "Registration import return does not replace the saved allocation-success return in the observed mode-zero path."
+        ],
+        "limits": [
+          "Mode zero, successful valid allocations and non-null explicit resource name only.",
+          "Registration is modeled; no original platform call or GPU executes.",
+          "No proof about later driver transformations, asynchronous mutation, malformed inputs, allocation failure or other shader modes."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete 255-instruction body and all three supported mode branches read against original executable bytes.",
+      "Two native mode-zero fixtures copy the archived gather shader: all 15,628 code bytes remain unchanged and the 44-byte header differs only in relocated code-address words.",
+      "Registration import independently resolved from original SELF relocation and NID as sceGnmRegisterResource; its zero/error return does not replace the saved allocation-success return in the fixture.",
+      "Working bool return and four register arguments grounded in assembly, explicit-name caller and native fixtures.",
+      "Independent reopening confirms saved name/signature, successful decompilation, unchanged code and all 9,611 other function names/signatures."
+    ],
+    "limits": [
+      "Native fixtures cover mode zero, valid input, successful modeled allocations and non-null explicit debug name only. Other modes and fallback-name lookup are static review.",
+      "Allocations and registration are fixture models; byte copies use host CRT. No original platform API or GPU executes.",
+      "Unsupported kinds return true without construction. Initial backing-allocation failure is not checked before subsequent copies; malformed data, allocation failure and invalid metadata remain unverified.",
+      "The recorded 536 entry references do not mean every caller contract is understood. No exact original Media Molecule declaration or source/build match."
+    ],
+    "new_name_credit": 1
   }
 }

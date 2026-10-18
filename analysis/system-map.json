@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2167,
-  "unmapped_total": 7445,
+  "mapped_total": 2168,
+  "unmapped_total": 7444,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54823,6 +54823,33 @@
             "21 local actionconstructioncases verifyexpandedtext copy,inline/heap storage andtype6 browseraction;24syntheticplayercases verifyfirsthitidentifier andcontextmatching.",
             "Working16-byte rectangle andXMM0/register/stackinputABI grounded inassembly andfixtures;priorincomingstacklocal metadata preserved beforeconversion.",
             "Independent reopening verifies savedname/types,decompilation,unchangedbytes andall9611 otherfunctionnames/signatures."
+          ]
+        }
+      ]
+    },
+    "1413c31e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "shader-sections",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared shader binary initializer: code/header copying, address relocation, registration and optional vertex-fetch construction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "2b78c98a9a297a9edeb86b438c2eb6d84bd4f817c4f36b2fee424ad6fde85a5c",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeShaderResourceFromBinaryBlob",
+          "support": [
+            "Complete 255-instruction body and all three supported mode branches read against original executable bytes.",
+            "Two native mode-zero fixtures copy the archived gather shader: all 15,628 code bytes remain unchanged and the 44-byte header differs only in relocated code-address words.",
+            "Registration import independently resolved from original SELF relocation and NID as sceGnmRegisterResource; its zero/error return does not replace the saved allocation-success return in the fixture.",
+            "Working bool return and four register arguments grounded in assembly, explicit-name caller and native fixtures.",
+            "Independent reopening confirms saved name/signature, successful decompilation, unchanged code and all 9,611 other function names/signatures."
           ]
         }
       ]
