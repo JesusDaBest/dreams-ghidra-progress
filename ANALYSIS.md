@@ -7577,3 +7577,14 @@ The processor begins with an optional scratch prepass when its recorded short-st
 **120 native selection cases** verify frame filtering, zero/single-point omission and suppression of later bit-30 descriptors after the first actual scratch append; 106 resulting scratch records were checked. Short descriptors do not clear the first-retained condition. These fixtures force the prepass flag, use a single nonreplicated metadata leaf and jump to the original epilogue before the rest of the processor. Required read-only constant pages were added after two initial harness mapping failures; no expected geometry result was changed.
 
 The larger processing routine, downstream scratch-selection math, real allocation/eviction, concurrency, malformed resources and GPU execution remain incomplete. No additional function-name or whole-function completion credit is added.
+
+
+### Sprite cache eviction reviewed and named
+
+`EvictAgedSpriteResourceFrameCacheEntry` names the complete 201-instruction helper. It scans 2,048 slots for mode-1 entries with nonzero state and last-use timestamp plus 0.25 strictly below the current timestamp. This constant is in the executable clock units; no independent wall-clock unit proof is claimed. It removes aggregate entries and their derived per-frame entries, unlinks hash chains and updates free/mode counters.
+
+**81 single-frame native cases** check mode/state/age selection and reclaimed-space credits. **30 aggregate native cases** remove 114 entries, including dependent entries behind unrelated hash heads; frame masks span all four mask words. Valid complete child chains are a precondition. Missing children, malformed cycles, real concurrency and caller lifetime guarantees remain unverified. The descriptive name and no-input, signed 32-bit index-or-minus-one working return persisted after independent reopening. Native bytes and all other names/signatures remain unchanged.
+
+The frame-specific allocation path uses 17 banks of 65,536 entries. **1,088 native cases** cover every distinct active/target bank pair at exact-fit requests of 1, 2, 65,535 and 65,536 entries. The packed handle contains bank and offset. Processed output points occupy 44 bytes, distinct from 40-byte source points. Eviction credits reclaimed point counts to the bank counter used by compaction-capacity arithmetic. Compaction itself remains a partial static trace, not native-tested behavior.
+
+These findings add one checked name, not whole-processor completion. Totals: **785 checked names**, **2,187 mapped functions**, **7,426 unmapped**, among **9,613 defined functions**.

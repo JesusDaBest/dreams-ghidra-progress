@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "721 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "722 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9613,
-    "default_fun_names": 8674,
-    "other_names": 939,
-    "verification": "complete_inventory_matches_baseline_plus_721_renames_and_62_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8673,
+    "other_names": 940,
+    "verification": "complete_inventory_matches_baseline_plus_722_renames_and_62_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18231,6 +18231,33 @@
         "Platform mutex/thread ID imports adapted; eviction replaced by failure stub in native fixtures.",
         "Native checks use nonreplicated single metadata leaves; declared large point counts do not imply valid complete geometry.",
         "Working ABI and descriptive name are analyst annotations, not original source declarations."
+      ]
+    },
+    {
+      "address": "1413d5870",
+      "original_name": "FUN_1413d5870",
+      "applied_name": "EvictAgedSpriteResourceFrameCacheEntry",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV EvictAgedSpriteResourceFrameCacheEntry(void)",
+      "evidence": [
+        "Scans2048cacheentries usingcursor147d64f40;eligiblecandidate mode1,state!=0,andlastuse+0.25<now byVUCOMISD/JAE. Nonfiniteeffectsnotverified.",
+        "Frame0aggregatewithnonemptymask enumeratesframesascending,deriveschildkey=parentkey XOR frame*abc123abc1234567 andfindshashchainentry. Childlookupassumesexistence;no -1 guardbeforefirstdereference.",
+        "Eachdependentchildmodecleared,modecounterdecremented,hashchainunlinked andfreecountincremented;readyframe-specificchildwithhandle<=10ffffaddsitscounttobanksecondDWORD.",
+        "Afterdependencies,parentcleared/unlinked,freecountincremented,cursorupdatedandparentindexreturned. Nocandidate returns-1.",
+        "Nointernalmutexacquisition;callerlockrequirementmustbeverifiedatallcalls.",
+        "BanksecondDWORDcountsreclaimedpointentries;processorcompactionuses65536+reclaimed-appendposition ascapacity.",
+        "201originalownedinstructionsandcompleteCread;81singleframeand30cascade nativecases;independentlyreopened."
+      ],
+      "caveats": [
+        "Valid complete child hash chains required; missing children and malformed cycles unverified.",
+        "Actual cache lifetime, caller synchronization, concurrency and live game remain unverified.",
+        "Native tests execute original eviction routine; no imports are called on tested paths.",
+        "The0.25 threshold is in executable timestamp units; wall-clock units not independently proved.",
+        "Descriptive analyst name and int32 working return are not recovered original source declarations."
       ]
     }
   ],

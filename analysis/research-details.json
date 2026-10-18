@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 784,
+    "checked_and_applied_names": 785,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 784,
+    "verified_names": 785,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "721 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "722 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24550,5 +24550,30 @@
       "No newnamecredit orwholefunctioncompletioncredit."
     ],
     "new_name_credit": 0
+  },
+  "sprite_cache_eviction_checkpoint": {
+    "target": {
+      "name": "EvictAgedSpriteResourceFrameCacheEntry",
+      "signature": "int PS4_SYSV EvictAgedSpriteResourceFrameCacheEntry(void)"
+    },
+    "evidence": [
+      "Scans2048cacheentries usingcursor147d64f40;eligiblecandidate mode1,state!=0,andlastuse+0.25<now byVUCOMISD/JAE. Nonfiniteeffectsnotverified.",
+      "Frame0aggregatewithnonemptymask enumeratesframesascending,deriveschildkey=parentkey XOR frame*abc123abc1234567 andfindshashchainentry. Childlookupassumesexistence;no -1 guardbeforefirstdereference.",
+      "Eachdependentchildmodecleared,modecounterdecremented,hashchainunlinked andfreecountincremented;readyframe-specificchildwithhandle<=10ffffaddsitscounttobanksecondDWORD.",
+      "Afterdependencies,parentcleared/unlinked,freecountincremented,cursorupdatedandparentindexreturned. Nocandidate returns-1.",
+      "Nointernalmutexacquisition;callerlockrequirementmustbeverifiedatallcalls.",
+      "BanksecondDWORDcountsreclaimedpointentries;processorcompactionuses65536+reclaimed-appendposition ascapacity.",
+      "201originalownedinstructionsandcompleteCread;81singleframeand30cascade nativecases;independentlyreopened."
+    ],
+    "limits": [
+      "Valid complete child hash chains required; missing children and malformed cycles unverified.",
+      "Actual cache lifetime, caller synchronization, concurrency and live game remain unverified.",
+      "Native tests execute original eviction routine; no imports are called on tested paths.",
+      "The0.25 threshold is in executable timestamp units; wall-clock units not independently proved.",
+      "Descriptive analyst name and int32 working return are not recovered original source declarations."
+    ],
+    "native_cases": 111,
+    "new_name_credit": 1,
+    "native_scope": "81 single-frame and30 aggregate eviction cases; complete original routine; separate1088 allocation cases bypass geometry after allocation."
   }
 }

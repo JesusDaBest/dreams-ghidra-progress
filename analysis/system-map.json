@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9613,
-  "mapped_total": 2186,
-  "unmapped_total": 7427,
+  "mapped_total": 2187,
+  "unmapped_total": 7426,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55368,6 +55368,35 @@
             "Counts declared points without reading point geometry. Point-root internal-node path follows last child and counts depth.",
             "Cache has2048 slots; exhaustion delegates to1413d5870, whose failure unlocks without enqueue.",
             "268 original owned instructions matched;1024 scoped native cases; name and nine-input void ABI independently reopened."
+          ]
+        }
+      ]
+    },
+    "1413d5870": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Called by reviewed Sprite cache constructor and processing allocation loop; complete aged-entry eviction body reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Evicts aged Sprite resource frame-cache entries and dependent per-frame entries.",
+      "code_sha256": "d5101fcced365e5c3b5aae6596cc3bbe1822f4736a156a70f7fe0b3dd408e610",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EvictAgedSpriteResourceFrameCacheEntry",
+          "support": [
+            "Scans2048cacheentries usingcursor147d64f40;eligiblecandidate mode1,state!=0,andlastuse+0.25<now byVUCOMISD/JAE. Nonfiniteeffectsnotverified.",
+            "Frame0aggregatewithnonemptymask enumeratesframesascending,deriveschildkey=parentkey XOR frame*abc123abc1234567 andfindshashchainentry. Childlookupassumesexistence;no -1 guardbeforefirstdereference.",
+            "Eachdependentchildmodecleared,modecounterdecremented,hashchainunlinked andfreecountincremented;readyframe-specificchildwithhandle<=10ffffaddsitscounttobanksecondDWORD.",
+            "Afterdependencies,parentcleared/unlinked,freecountincremented,cursorupdatedandparentindexreturned. Nocandidate returns-1.",
+            "Nointernalmutexacquisition;callerlockrequirementmustbeverifiedatallcalls.",
+            "BanksecondDWORDcountsreclaimedpointentries;processorcompactionuses65536+reclaimed-appendposition ascapacity.",
+            "201originalownedinstructionsandcompleteCread;81singleframeand30cascade nativecases;independentlyreopened."
           ]
         }
       ]
