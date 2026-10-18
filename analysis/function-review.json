@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "635 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "636 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8760,
-    "other_names": 843,
-    "verification": "complete_inventory_matches_baseline_plus_635_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8759,
+    "other_names": 844,
+    "verification": "complete_inventory_matches_baseline_plus_636_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15880,6 +15880,28 @@
         "Analyst descriptive name and opaque working pointers,not recovered source declarations.",
         "Finite acyclic chains up to17 records andsingle-record connected table; duplicate eligible matches,malformed indices,concurrency andgameplay untested.",
         "Connected suite disables history output andrecursive coordinate-neighbor cleanup; full user undo/redo remains unverified."
+      ]
+    },
+    {
+      "address": "140b35ec0",
+      "original_name": "FUN_140b35ec0",
+      "applied_name": "RemoveKeyedRecordOrNearbyRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RemoveKeyedRecordOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby)",
+      "evidence": [
+        "Complete132-instruction original body and pseudocode reviewed and original bytes verified.",
+        "32 recursive original-code cases remove900 records through actual fe08 application. Strict radius0.2,boundary equality/justbelow,diagonaloutside,wrong first key field,mixed buckets and128selection cap verified.",
+        "48 single-record and60 multi-record parent cleanup cases execute original direct producer,wrapper,dispatcher andkeyed deletion; complete world/object comparisons preserve table counts andpadding.",
+        "Independent reopening verifies descriptive name andfive-argument void SysV signature,with unchanged native bytes andother9602 names/signatures."
+      ],
+      "caveats": [
+        "Analyst descriptive name andopaque working pointers,not recovered source declarations.",
+        "Prepared valid finite-coordinate tables; owner absent/player255 andhistory output disabled.",
+        "Active recording/history flags only statically traced; malformed structures,NaN/inf coordinates,concurrency andgameplay unresolved."
       ]
     }
   ],

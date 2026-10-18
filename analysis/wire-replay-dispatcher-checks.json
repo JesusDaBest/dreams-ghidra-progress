@@ -364,5 +364,19 @@
     "dispatcher_original_bytes_verified": 267374,
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "keyed_record_recursive_deletion": {
+    "native_cases": 32,
+    "records_removed": 900,
+    "radius": 0.20000000298023224,
+    "finding": "Original recursive fe08 producer selects records sharing first32-bit key field andstrict2D distance below stored0.2float,then calls itself with recursion disabled toapply actual keyed deletion. Selection stops at128; 129/140near-record fixtures retain later entries. Radius equality,just-below,diagonal-outside,other ancestor andmixed buckets verified withcomplete world/reference comparisons andpreserved allocation count/padding.",
+    "limits": [
+      "Prepared valid table,owner absent/player255 andhistory output disabled; finite coordinates andunique keys/order.",
+      "Malformed structures,NaN/inf coordinates,concurrency andgameplay untested."
+    ],
+    "original_native_instructions_verified": 132,
+    "dispatcher_original_bytes_verified": 267374,
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

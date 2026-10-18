@@ -5402,3 +5402,16 @@ Totals: 688 checked names, 2,100 mapped functions and 7,503 unmapped among 9,603
 Deleting earlier matches does not invalidate the remaining collected pointers: records stay in their slots, and unlinking preserves the reduced chain of nonmatches. Complete world/object comparisons verify exact record clearing, preserved padding, bucket/predecessor links, normal wire endpoint invalidation and unchanged table allocation count. Original bodies and dispatcher bytes remain unchanged.
 
 Owner/history output and recursive coordinate-neighbor cleanup remain disabled. Malformed tables, overflow, parent cycles, concurrency and gameplay remain unverified. No new checked name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
+
+
+### Keyed-record removal producer named; nearby branch verified
+
+Saved `RemoveKeyedRecordOrNearbyRecords` with a working five-argument SysV signature for owner, world, player byte, record pointer and nearby flag. The complete 132-instruction body and pseudocode were read and byte-matched. Independent reopening confirms the name, signature, unchanged original bytes and preservation of all other names/signatures.
+
+With nearby mode disabled, it builds event `fe08` from a 16-byte key and the record's float order value; the previously checked original application path deletes that match. With nearby mode enabled, it scans allocated records for the same first 32-bit key field and a strict 2D distance below the stored float threshold (approximately 0.2). It collects at most 128 pointers and invokes its direct branch for each.
+
+32 connected native cases remove 900 records through the original producer, wrapper, dispatcher and deletion helper. Equality with the threshold is excluded; just-below and diagonal-outside cases, other ancestor IDs and mixed hash buckets are checked. In 129- and 140-near-record fixtures, entries after the first 128 qualifying records remain. Complete world/reference comparisons verify expected deletions, reduced bucket chains, preserved padding and unchanged allocation counts. Prior direct and parent-connected suites remain separately scoped supporting evidence.
+
+Owner/history output stays disabled in these fixtures. Recording flag logic is statically traced but active history output, malformed structures, nonfinite coordinates, concurrency and gameplay remain unverified.
+
+Totals: 689 checked names, 2,101 mapped functions and 7,502 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

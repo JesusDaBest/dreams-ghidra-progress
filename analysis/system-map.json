@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2100,
-  "unmapped_total": 7503,
+  "mapped_total": 2101,
+  "unmapped_total": 7502,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52790,6 +52790,32 @@
             "192 native cases verify head/middle/tail/missing deletion,real hash collisions,signed zero,infinity andNaN. Full key/table comparison checks exact linked-list splicing,record clearing andpreserved padding.",
             "48 connected cases execute original parent traversal,key lookup,sort,fe08 producer,wrapper,full dispatcher andactual keyed deletion. Wrong key/ancestry/type/class leaves record unchanged while main wire removal continues.",
             "Independent reopening verifies void SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged original bytes/other9602 names andsignatures."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140b35ec0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Keyed-record removal producer called by Microchip ancestor cleanup andits own nearby-selection branch.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds fe08 removal event forone record orselects up to128nearby records sharingfirst key field andsubmits each.",
+      "code_sha256": "b6d30a908377918940e455423604eba1611e117ecd596d5322147bd34de4a0a7",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemoveKeyedRecordOrNearbyRecords",
+          "support": [
+            "Complete132-instruction original body and pseudocode reviewed and original bytes verified.",
+            "32 recursive original-code cases remove900 records through actual fe08 application. Strict radius0.2,boundary equality/justbelow,diagonaloutside,wrong first key field,mixed buckets and128selection cap verified.",
+            "48 single-record and60 multi-record parent cleanup cases execute original direct producer,wrapper,dispatcher andkeyed deletion; complete world/object comparisons preserve table counts andpadding.",
+            "Independent reopening verifies descriptive name andfive-argument void SysV signature,with unchanged native bytes andother9602 names/signatures."
           ]
         }
       ],

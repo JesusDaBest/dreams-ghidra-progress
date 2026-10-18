@@ -16282,5 +16282,37 @@
       "Connected suite disables history output andrecursive coordinate-neighbor cleanup; full user undo/redo remains unverified."
     ],
     "new_name_credit": 1
+  },
+  "keyed_record_removal_producer_checkpoint": {
+    "address": "140b35ec0",
+    "name": "RemoveKeyedRecordOrNearbyRecords",
+    "signature": "void PS4_SYSV RemoveKeyedRecordOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby)",
+    "native_instructions": 132,
+    "native_check": {
+      "native_cases": 32,
+      "records_removed": 900,
+      "radius": 0.20000000298023224,
+      "finding": "Original recursive fe08 producer selects records sharing first32-bit key field andstrict2D distance below stored0.2float,then calls itself with recursion disabled toapply actual keyed deletion. Selection stops at128; 129/140near-record fixtures retain later entries. Radius equality,just-below,diagonal-outside,other ancestor andmixed buckets verified withcomplete world/reference comparisons andpreserved allocation count/padding.",
+      "limits": [
+        "Prepared valid table,owner absent/player255 andhistory output disabled; finite coordinates andunique keys/order.",
+        "Malformed structures,NaN/inf coordinates,concurrency andgameplay untested."
+      ],
+      "original_native_instructions_verified": 132,
+      "dispatcher_original_bytes_verified": 267374,
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete132-instruction original body and pseudocode reviewed and original bytes verified.",
+      "32 recursive original-code cases remove900 records through actual fe08 application. Strict radius0.2,boundary equality/justbelow,diagonaloutside,wrong first key field,mixed buckets and128selection cap verified.",
+      "48 single-record and60 multi-record parent cleanup cases execute original direct producer,wrapper,dispatcher andkeyed deletion; complete world/object comparisons preserve table counts andpadding.",
+      "Independent reopening verifies descriptive name andfive-argument void SysV signature,with unchanged native bytes andother9602 names/signatures."
+    ],
+    "limits": [
+      "Analyst descriptive name andopaque working pointers,not recovered source declarations.",
+      "Prepared valid finite-coordinate tables; owner absent/player255 andhistory output disabled.",
+      "Active recording/history flags only statically traced; malformed structures,NaN/inf coordinates,concurrency andgameplay unresolved."
+    ],
+    "new_name_credit": 1
   }
 }
