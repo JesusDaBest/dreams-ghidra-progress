@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 740,
+    "checked_and_applied_names": 741,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 740,
-    "function_count": 9606,
+    "verified_names": 741,
+    "function_count": 9607,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
-      "1411a32b0"
+      "1411a32b0",
+      "141330c40"
     ],
-    "scope": "684 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "684 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20451,5 +20452,57 @@
       "Analystname andworkingfloat4container are notoriginalC++declarations;noexactMMsource/buildmatch."
     ],
     "new_name_credit": 1
+  },
+  "photo_cache_thread_name_checkpoint": {
+    "target": {
+      "name": "PhotoCacheThreadMain",
+      "signature": "undefined PS4_SYSV PhotoCacheThreadMain(void)"
+    },
+    "selection_check": {
+      "native_cases": 576,
+      "findings": [
+        "Originaltwo-tablecandidate scans choosestate1 entrieswithhigheststrictlypositivepriority atentry28;equalpriority preservesfirstencountered,primarytablebeforesecondary.",
+        "Explicitnon-FFFFFFFFrequesttags skipavailabilitychecks;otherwisebothmainandoptionalsecondary availabilitymustnotreturn1.",
+        "Counts1/3/8,stateprofiles,priorityorder/ties/zero,availabilityprofiles,explicittags andoptionalkeys covered;completecache/tables andavailabilityarguments checked."
+      ],
+      "models": [
+        "Mutex/threadid/unlock andavailabilitystatus explicitmodels."
+      ],
+      "limits": [
+        "Selectionscanonly;actualavailabilitylookup,waitloop,IO,GPUandconcurrencyunverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "processing_cycle_check": {
+      "native_cases": 128,
+      "findings": [
+        "Originalboundedworkerprocessingcycle marksstate2,loads/mainoptionalalpha,mergesalpha,uploads,setsready/generation,releasesbuffers,clearsstateanddecrementspending.",
+        "Mainfailureupdatesbusyfromloaderoutflag;secondaryfailurestilluploadsavailablemainandfinalreadywordclearsbusy.",
+        "Twoatlascontexts,first/lastentry,success/failure,outflags,optionalalpha andselecteddimensions;completecache/table/buffers andcallorder/loaderarguments checked."
+      ],
+      "models": [
+        "Mutex/threadid/unlock,loader,upload andfree areexplicitargument/eventmodels;no realIO/thread/GPUcalls."
+      ],
+      "limits": [
+        "Entryaftercandidate selection;no fullworkerloop/concurrencyclaim.",
+        "Load/uploadimplementationsandfailureflagmeaningremainunverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "evidence": [
+      "Original scePthreadCreate call passes this entry with literal PhotoCache label; original FDE defines 1495-byte boundary.",
+      "Missing function defined without overlap and independently reopened; all 328 original instructions reviewed and byte-verified.",
+      "576 bounded selection cases verify eligibility, strict priority and primary-first ties;128 processing cases verify load/alpha/upload/ready/cleanup state.",
+      "Independent reopening verifies saved name,decompilation,unchanged bytes and all 9606 other names/signatures."
+    ],
+    "limits": [
+      "Availability,synchronization,load,upload and free are explicit models in bounded tests;actual IO,GPU,wait loop and concurrency unverified.",
+      "Loader output flag meaning and load/upload implementations remain unresolved.",
+      "Existing unspecified-return/no-parameter working declaration retained;not original pthread C++ signature.No exact MM source/build match."
+    ],
+    "new_name_credit": 1,
+    "new_function_definitions": 1
   }
 }

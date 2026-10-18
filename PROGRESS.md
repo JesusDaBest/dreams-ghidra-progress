@@ -6338,3 +6338,16 @@ Linear mip images contain distinct patterns placed using independent offset sums
 Independent reopening verifies the corrected working return storage and five GP inputs, successful decompilation, unchanged original instructions and all 9,605 other names/signatures. Earlier wrapper tests used a modeled sampling helper; these newer tests exercise the sampling body itself. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **740 checked names** (660 behavior/helper and 80 property/type), **2,146 mapped**, **7,460 unmapped**, among 9,606 defined functions.
+
+
+### Photo cache worker recovered and reviewed
+
+`PhotoCacheThreadMain` names the worker whose original thread-creation call uses the literal label `PhotoCache`. Ghidra had instructions but no function definition at its entry. The executable's original unwind record supplies the matching 1,495-byte boundary; the new definition was independently reopened, and all 328 original instructions were read and byte-verified.
+
+The worker scans pending entries in two tables, chooses an eligible entry with the highest strictly positive priority, marks it processing, loads the main image and optional alpha image, merges alpha, calls the upload helper, and marks the slice ready. Cleanup clears processing state and decrements the pending count. Ties retain the first candidate, with the primary table scanned first. The request notification import is specifically `scePthreadCondBroadcast`.
+
+**576 bounded selection tests** verify eligibility, priority, ties and call arguments. **128 bounded processing-cycle tests** cover main/optional-image success and failure, alpha merging, upload ordering, ready/generation writes, buffer release and pending-count cleanup. Synchronization, availability, loading, upload and freeing are explicit test models: actual I/O, GPU work, the waiting loop and concurrency remain unverified. The loader's failure-output flag still needs interpretation.
+
+Independent reopening verifies the saved descriptive name, decompilation, unchanged native bytes and all 9,606 other names/signatures. Its existing unspecified-return/no-parameter working declaration remains; the original pthread source signature is not claimed. Defining the previously missing function increases the inventory by one; definition alone earned no semantic-review credit.
+
+Totals: **741 checked names** (661 behavior/helper and 80 property/type), **2,147 mapped**, **7,460 unmapped**, among **9,607 defined functions**. The review breakdown is 684 existing-function renames, 56 created-and-reviewed functions, and one retained-name review.

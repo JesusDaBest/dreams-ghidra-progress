@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9606,
-  "mapped_total": 2146,
+  "inventory_total": 9607,
+  "mapped_total": 2147,
   "unmapped_total": 7460,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -54260,6 +54260,32 @@
             "Fulloriginalcalledchain executes18linearcases,108six-mipcases,60blockformatcases and5unsupportedformatcases withoutcalledfunctionmodels.",
             "65752 boundedconversioncases includeall65536RGB565words and216RGB888combinations.",
             "Independent reopening verifies full16-byte XMM0workingreturn,fiveGPinputs,decompilation,unchangedbytes andall9605othernames/signatures."
+          ]
+        }
+      ]
+    },
+    "141330c40": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original PhotoCache thread label and complete pending/ready image-cache worker body.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full static body review and bounded selection/processing native fixtures.",
+      "code_sha256": "0f51daf16b39112246eb6379b2a12e7021b75bee6dd9be1e4bbfb64ced9491f3",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PhotoCacheThreadMain",
+          "support": [
+            "Original scePthreadCreate call passes this entry with literal PhotoCache label; original FDE defines 1495-byte boundary.",
+            "Missing function defined without overlap and independently reopened; all 328 original instructions reviewed and byte-verified.",
+            "576 bounded selection cases verify eligibility, strict priority and primary-first ties;128 processing cases verify load/alpha/upload/ready/cleanup state.",
+            "Independent reopening verifies saved name,decompilation,unchanged bytes and all 9606 other names/signatures."
           ]
         }
       ]
