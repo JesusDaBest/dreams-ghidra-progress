@@ -7381,3 +7381,14 @@ Only the descriptive name and comment changed. Reopening and decompilation passe
 The two already reviewed metadata-compaction and marked-record rebuild helpers now have working **uint(uint root_id)** signatures. Entry assembly consumes a 32-bit node ID in EDI. Recursive callers consume EAX, and the final interning call returns the root ID that the loader passes to the next stage. The metadata helper forwards that result through a tail call.
 
 Both changes survived independent project reopening and decompilation. Native bytes and other functions are unchanged, and prior signatures are saved locally for reversal. These are evidence-supported ABI declarations, not recovered source declarations. **No additional checked-name or completion credit is added.**
+
+
+### Legacy packed CSG rotation conversion named
+
+Applied and independently reopened **RebuildPackedResourceTreeWithConvertedRotations** after reading its complete **483-instruction CPU body**. It recursively rebuilds resource pages, decodes leaf records, converts ordinary packed rotations, writes them through the reviewed legacy leaf writer and interns the rebuilt root. Three special record selectors bypass rotation conversion.
+
+The rotation word contains three 15-bit components, a two-bit omitted-component selector and a retained high bit. The conversion reconstructs a quaternion, changes its matrix convention, converts back and repacks it. The high bit changes which quaternion components change sign. Original convention and version names remain unknown.
+
+Separate models checked 10,008 matrix cases and 20,008 codec cases. A connected model checked 12,000 finite rotation cases across all selectors and both high-bit states. These are host arithmetic transcriptions: the codec uses float32 and the matrix model uses double precision. They are not native game execution, a universal bit-exact roundtrip proof or malformed-input validation.
+
+Only the descriptive name and comment changed. Independent reopening and decompilation passed; native bytes, inferred prototype and all 9,611 other names/signatures are unchanged. Allocation/capacity failures, cycles and runtime behavior remain unverified. This adds one checked CPU helper, not completion of the sculpting system.

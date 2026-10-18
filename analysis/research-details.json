@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 773,
+    "checked_and_applied_names": 774,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 773,
+    "verified_names": 774,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "711 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "712 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24094,5 +24094,24 @@
       "Working ABI declarations, not recovered original source types.",
       "No runtime, malformed-input or whole-game proof."
     ]
+  },
+  "packed_resource_rotation_upgrade_name_checkpoint": {
+    "target": {
+      "name": "RebuildPackedResourceTreeWithConvertedRotations",
+      "signature": "undefined PS4_SYSV RebuildPackedResourceTreeWithConvertedRotations(void)"
+    },
+    "original_owned_instructions": 483,
+    "evidence": [
+      "Complete483-instruction CPU body and all paths read; owned bytes matched original executable.",
+      "Recursive tree rebuilding, retained delta state, shape bypass, quaternion decode/matrix conversion/repack, writer and interning traced.",
+      "10008 matrix cases,20008 codec cases and12000 connected finite fixtures; host models not native execution.",
+      "Independent reopening/decompilation passed; bytes, inferred prototype and all9611 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Descriptive analyst name, not recovered original symbol or source rotation convention.",
+      "Matrix model uses host double, codec float32 transcription; no universal bit-exact or malformed-rotation proof.",
+      "No cycle, allocation/capacity failure or runtime safety guarantee."
+    ],
+    "new_name_credit": 1
   }
 }
