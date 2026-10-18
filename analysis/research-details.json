@@ -23813,5 +23813,97 @@
       "Originalsymbol not recovered;existing inferred signature retained."
     ],
     "new_name_credit": 1
+  },
+  "chunk_append_voxel_partial_dataflow_checkpoint": {
+    "scope": "Partialdataflowreviewonly;4641-instructionGPUprogramnotfullyunderstood",
+    "reviews": [
+      {
+        "shader": "ChunkAppendVoxels",
+        "scope": "Entry resolution through24-byte records; remainder of4641-instruction shader partial",
+        "lane_resolution_cases": 20736,
+        "mask_patterns": 324,
+        "findings": [
+          "For nonnegative input record index, shader selects second-context descriptor byte0x20 and reads a24-byte record atindex*24.",
+          "Record+8/+12 are interpreted as64-bit lane-selection maskA;record+16/+20 as64-bit maskB at this consumer. This does not establish their meaning at earlier root-initialization stages.",
+          "Default per-lane result is-2 whenmaskBbit is1,otherwise-1. Lanes selected bymaskA override that withrecordDWORD+4 plus popcount(maskAbits strictly belowlane), using low/high MBCNT.",
+          "Selectedlanes therefore reference a contiguous compacted span inlaneorder for nonwrapping base arithmetic;nonselectedlanes retain sentinel-1/-2.",
+          "The same record layout must be traced through intervening writers before assigning global field names: earlier ReplayRoots initializes some offsets withdifferent temporaryvalues."
+        ],
+        "limits": [
+          "Entryv4>=0 branch uses readfirstlane index;uniformity andvaliddescriptorcapacity remain assumptions.",
+          "Modebits ininputkey, sentinelphysicalmeaning, later shape evaluation, outputallocation andresumption remain partiallyreviewed.",
+          "Logicalmask model is not nativeGPU execution orwhole-shader correctness."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkAppendVoxels",
+        "scope": "Sentinel completion output allocator and bounded attribute transform; not whole shader",
+        "allocation_boundary_cases": 851,
+        "selection_threshold": 1.0099999904632568,
+        "findings": [
+          "At command-stream sentinel,scalarv20 is multiplied by reciprocal scale; finite lanes withabs(normalizedScalar)<=float32(1.01) form the output-selection mask.",
+          "A localID0-selected atomic adds maskpopcount toGDS0xc04 andreturns previouscounter;MBCNT assigns compact lane indices fromthatbase.",
+          "Selection is intersected with index<firstContextDWORD0x1c(byte0x70). Only fitting lanes attempt formatted output stores. The reservation occursbeforecapacity filtering,so countercanexceedcapacity withoutthese particular out-of-range stores.",
+          "First-context descriptorsbyte0x20 and0x30 supply separate scalar andfour-component output buffers. Scalar store has anadditional descriptor-count check; four-component store relies onbuffer instruction descriptor handling beyondtheexplicit globalcapacitymask.",
+          "Earlier existing-value path squares three loaded attribute components andmultiplies fourthby6. Completion applies sqrt(max(0,component)) tothree accumulators andscales fourthby1/6; formatconversion andactualrenderedcolorsemantics remainseparate."
+        ],
+        "limits": [
+          "AssumeslocalID0participatesandonewavecoversthemask;not acompleteentryconfigurationproof.",
+          "Capacitymodel usesnonwrappingallocation arithmetic;actualuintoverflow,atomicordering,buffercoherence andGPUexecution unverified.",
+          "Doesnotproveallstorepathsareguarded,all attributesareRGB,gamma standard,orfullshaderrenderingcorrectness."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkAppendVoxels",
+        "scope": "Output24-byte record and bounded connection to entry resolver",
+        "four_lane_mask_combinations": 256,
+        "findings": [
+          "Output descriptor is first-context byte0; record stores[key,allocatedBase,maskAlo,maskAhi,maskBlo,maskBhi] atrecordindexs7. Distinct inputdescriptor second-contextbyte0x20 is used byentryreader; dataformatmatches,butbufferidentity acrosscalls isnotproven.",
+          "OutputmaskA isoriginalparticipatingmask intersectedwith scalar-threshold selection. OutputmaskB isoriginalparticipatingmask intersectedwithV_CMP_CLASS_F32(v20,60).",
+          "At0x498 s20:s21 SAVES pre-capacity-filterEXEC; itisnot thefilteredmask. ConsequentlythelatermaskA calculationdoesnot incorporateindex<capacity. Earlier allocationreceipt onlyclaimed guarded scalar/attribute stores,notcapacity-safe metadata.",
+          "LocalID0 writestheheader. ItsMBCNTprefix iszero,soitsv5 isallocationbase evenifthatlane wasnot selected forscalaroutput.",
+          "Entryreader givesmaskA priority overmaskB: selectedlanesresolveallocatedbase+prefix;otherlanesget-2or-1frommaskB.",
+          "Recordinterpretation supportsmask-based sparse scalar storage;exactsourcefieldnamesandphysicalsentinelmeaningremainunassigned."
+        ],
+        "limits": [
+          "Outputheader writes dependonentryconfiguration,localID0participation anddescriptorhandling.",
+          "Maskrecordcanreferenceallocatedindicesbeyondexplicitstorecapacity;noinvalidruntimeaccessbugclaimwithoutdownstreamerrorandcapacitycontracts.",
+          "No guaranteeinputrecordsofthisshadercomefromthisexactwriterinallpaths;initialReplayRoots fieldsremainstage-specific.",
+          "No originalGPU execution,fullshaderreview ornewnamecredit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkAppendVoxels",
+        "scope": "Lane-coordinate permutation and MM2015 conceptual corroboration",
+        "findings": [
+          "UnderlocalID0..63,x uses lanebits0and3,y usesbits1and4,z usesbits2and5. The64lanesbijectivelycover4x4x4coordinates.",
+          "Theaxislocaloffsets areaddedto4*packed10-bit keycomponents, thenoffset/scaled;physicalaxis naming followscodecoordinategrouping,not recoveredsource declarations.",
+          "ThisisMorton-style bitinterleaving atthisshaderinput stage;itdoesnotestablishfinalpoint-cloudstorageorder."
+        ],
+        "limits": [
+          "Source2015predates thisunknowncompile;algorithmsandformatsmaydiffer.",
+          "No matchedcoding-livestreamframes ortranscript.",
+          "Finalpointorder,completekeydomainandallshadersemanticsunproven."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "developer_source": {
+      "url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+      "pages": [
+        26,
+        110
+      ],
+      "page110_visually_inspected": true,
+      "match": "4x4x4 final-refinement architecture corroborated; no exact source/build or livestream match"
+    },
+    "new_name_credit": 0
   }
 }

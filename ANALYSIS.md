@@ -7307,3 +7307,14 @@ This adds one checked CPU routine to Sculpting & painting / Chunk. It does not c
 Applied and independently reopened **GetOrLoadChunkAppendVoxelsShader** after reading all **205 CPU instructions** and its pseudocode, checking original bytes and compiled shader identifiers, and tracing the caller into shader binding. It initializes and caches the resource, constructs its shader path, checks the archive index, and tries file fallback when needed. It returns the resource only when its ready pointer is nonzero.
 
 The project change is a descriptive name and explanatory comment; its inferred prototype and bytes are unchanged. Reopening/decompilation passed, with all 9,611 other names/signatures unchanged. This credits the CPU loader only: the GPU voxel-append algorithm, concurrency, full loading failure policy and runtime behavior are not established by this review.
+
+
+### Voxel append: masks, compacted outputs and developer material
+
+Continued into the **4,641-instruction ChunkAppendVoxels GPU program**. A bounded entry path resolves a 24-byte record containing a compacted base and two 64-bit masks. Selected lanes use the base plus the count of selected earlier lanes; other lanes retain `-1` or `-2` sentinels. **324 mask patterns / 20,736 lane cases** check that conditional indexing model. The output record uses the corresponding key/base/two-mask layout, with **256 small mask combinations** checking selection priority. The descriptors are distinct, so matching layouts alone do not prove every input comes from this writer.
+
+On the reviewed completion path, lanes within the normalized scalar threshold reserve a compact output span. Reservation occurs before the capacity checks that limit stores. **851 allocation boundary cases** check the logical distinction between reserved and written indices. Metadata masks also precede the store-capacity restriction; their presence is not proof every referenced value was written. This is not a runtime defect finding: downstream failure handling, counter wrapping, descriptor behavior and buffer lifetime still need review.
+
+The lane-coordinate calculation bijectively covers a **4x4x4 block with 64 lanes**, interleaving coordinate bits at this stage. Page 110 of [Media Molecule's 2015 technical presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf) was rendered and visually inspected with its notes. Its description of the final refinement block agrees with that architecture. It does not recover this executable's exact source, establish final point-cloud order, or constitute a matched coding-livestream frame.
+
+The shader's remaining shape evaluation, complete replay state, actual GPU execution and rendering behavior are still incomplete. No additional checked-function credit is added.
