@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 722,
+    "checked_and_applied_names": 723,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 722,
+    "verified_names": 723,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "666 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "667 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19025,5 +19025,39 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "parent_list_chain_name_checkpoint": {
+    "target": {
+      "name": "PrependSoundAndEffectFieldsToParentLists",
+      "signature": "void PS4_SYSV PrependSoundAndEffectFieldsToParentLists(void * world)"
+    },
+    "native_check": {
+      "native_cases": 216,
+      "original_instructions": 123,
+      "findings": [
+        "Complete original helper walks world Sound and Effect Field kind chains using world19397d0 links.",
+        "Each child prepends to its parent metadata-selected list,Sound next44 or Effect Field nextd0;Sound traversal precedes Effect Field traversal.",
+        "Empty,one and three-node chains,shared/distinct parents,original initialized offsets for parent kinds13/14/15,tagged parent references and high kind bits covered. Full world,parents,children and metadata comparisons pass."
+      ],
+      "limits": [
+        "Prepared valid acyclic kind chains and parents;no invalid/cyclic references,full caller/startup,concurrency or game claim.",
+        "Existing parent heads are preserved as tails;helper does not clear lists itself."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete123-instruction body and pseudocode reviewed;no external calls.",
+      "Two main update loop callers pass world RDI;one follows Sound list-head clearing.",
+      "216 native cases cover empty/one/three-object kind chains,shared/distinct parents,original initialized offsets for kinds13/14/15,high kind bits and tagged parent references.",
+      "Full world,parent,child and metadata comparisons pass;Sound chain processed before Effect Field chain;existing parent heads are not cleared by helper.",
+      "Independent reopening verifies name,void world-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Prepared valid acyclic kind chains and parents;no invalid/cyclic references,full caller/startup,concurrency or game claim.",
+      "Existing parent heads are preserved as tails;helper does not clear lists itself.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }

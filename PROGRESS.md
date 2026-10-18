@@ -6006,3 +6006,14 @@ Three original initializer stores establish metadata slot `0x1C6` as `0x128` for
 **144 additional native registration cases** consume these initialized list offsets for Sound and Effect Field children. Full world, parent, child and metadata comparisons pass with indices 63/64, high kind bits, tagged parent references and three old-head patterns. This replaces arbitrary positive fixture offsets with values written by the executable itself. The parent kind numbers are retained without inventing source-level class names.
 
 This is a bounded initialization-to-registration connection, not full startup or proof against later metadata overwrites. Valid prepared parents, null owner and a modeled imported byte-fill routine remain the scope. No additional naming credit; **722 names checked** remains the total.
+
+
+### Parent-list chain helper reviewed and named
+
+`PrependSoundAndEffectFieldsToParentLists` names the complete 123-instruction helper that traverses the world Sound chain, then the Effect Field chain, prepending children to their parents' metadata-selected lists. Child next fields are +0x44 and +0xD0 respectively. Existing parent heads remain as tails; the helper does not clear lists itself.
+
+Two direct callers in the main update loop pass the world pointer in RDI. One follows Sound head-clearing code. **216 native cases**, with no external calls, cover empty, one-object and three-object chains; shared/distinct parents; original initialized offsets for parent kinds 13/14/15; high kind bits and tagged parent references. Complete world, parent, child and metadata comparisons pass. Malformed/cyclic references, full caller/startup execution and live-game behavior remain unverified.
+
+Independent reopening verifies the saved descriptive name, void/world-pointer ABI, decompilation, unchanged original bytes and all 9,605 other names/signatures. No exact Media Molecule source/build match is claimed.
+
+Totals: **723 checked names** (643 behavior/helper and 80 property/type), **2,129 mapped**, **7,477 unmapped**, among 9,606 defined functions.
