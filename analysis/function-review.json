@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "719 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "720 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9613,
-    "default_fun_names": 8676,
-    "other_names": 937,
-    "verification": "complete_inventory_matches_baseline_plus_719_renames_and_62_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8675,
+    "other_names": 938,
+    "verification": "complete_inventory_matches_baseline_plus_720_renames_and_62_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18179,6 +18179,33 @@
         "No all-caller precondition proof, malformeddata, concurrency or livegame execution.",
         "Descriptive analyst name and opaque working ABI, not original source declaration.",
         "No complete source producer, rendering pass or full Sprite subsystem completion claim."
+      ]
+    },
+    {
+      "address": "1413dbac0",
+      "original_name": "FUN_1413dbac0",
+      "applied_name": "FindOrQueueSpriteResourceFrameCacheEntry",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV FindOrQueueSpriteResourceFrameCacheEntry(uint object_id, uint metadata_root_id, uint point_root_id, uchar variant, int frame_override)",
+      "evidence": [
+        "All406 owned instructions and decompilation reviewed against original executable.",
+        "Invalid metadata orpointroot FFFFFFFF returns-1. Key combinesresource fingerprints,XOR variant salt andoverride product.",
+        "Mutex-protected1024-bucket linkedlookup returnsindex onlyforentry state+4==1,refreshes timestamp;pending/nonready matchingkey returns-1.",
+        "Miss scans admitted44-byte metadata descriptors, extractsstopmotionframe bits6..12,appliespositiveoverride andclamp1..100 intofourDWORD bitset.",
+        "Singleframe miss queues mode1 withframe;zero/multiple frames queuesmode1 frame0;multiple framesalsoqueuesmode2 foreach ascendingframe withsinglebitmask andframe-saltedkey.",
+        "Miss return remains-1 regardlessqueuedconstructor results;later completion/consumer isseparate.",
+        "54 cache lookup,96 metadata singleleaf miss and3 invalidroot original-native cases record120 queueconstructor calls.",
+        "Name and five-input/int32-result working ABI independently reopened; bytes and all9612 other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Boundedvalid resourceIDs/tree required;noncanonicalmetadata andhashcollisions notresolved.",
+        "Singleleaf native misses;multileaf statictraversal traced butnotnewlyexecuted.",
+        "Mutex/threadID imports adapted;queueconstructor argumentrecorder;no downstreamallocation,worker,concurrency orGPU execution.",
+        "Descriptiveanalyst name;not recoveredsource symbol."
       ]
     }
   ],

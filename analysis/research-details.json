@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 782,
+    "checked_and_applied_names": 783,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 782,
+    "verified_names": 783,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "719 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "720 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24480,5 +24480,33 @@
       "Descriptive analyst name and opaque working ABI, not original source declaration.",
       "No complete source producer, rendering pass or full Sprite subsystem completion claim."
     ]
+  },
+  "sprite_frame_cache_request_checkpoint": {
+    "target": {
+      "name": "FindOrQueueSpriteResourceFrameCacheEntry",
+      "signature": "int PS4_SYSV FindOrQueueSpriteResourceFrameCacheEntry(uint object_id, uint metadata_root_id, uint point_root_id, uchar variant, int frame_override)"
+    },
+    "original_owned_instructions": 406,
+    "cache_lookup_cases": 54,
+    "metadata_leaf_miss_cases": 96,
+    "invalid_root_cases": 3,
+    "queue_calls_recorded": 120,
+    "evidence": [
+      "All406 owned instructions and decompilation reviewed against original executable.",
+      "Invalid metadata orpointroot FFFFFFFF returns-1. Key combinesresource fingerprints,XOR variant salt andoverride product.",
+      "Mutex-protected1024-bucket linkedlookup returnsindex onlyforentry state+4==1,refreshes timestamp;pending/nonready matchingkey returns-1.",
+      "Miss scans admitted44-byte metadata descriptors, extractsstopmotionframe bits6..12,appliespositiveoverride andclamp1..100 intofourDWORD bitset.",
+      "Singleframe miss queues mode1 withframe;zero/multiple frames queuesmode1 frame0;multiple framesalsoqueuesmode2 foreach ascendingframe withsinglebitmask andframe-saltedkey.",
+      "Miss return remains-1 regardlessqueuedconstructor results;later completion/consumer isseparate.",
+      "54 cache lookup,96 metadata singleleaf miss and3 invalidroot original-native cases record120 queueconstructor calls.",
+      "Name and five-input/int32-result working ABI independently reopened; bytes and all9612 other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Boundedvalid resourceIDs/tree required;noncanonicalmetadata andhashcollisions notresolved.",
+      "Singleleaf native misses;multileaf statictraversal traced butnotnewlyexecuted.",
+      "Mutex/threadID imports adapted;queueconstructor argumentrecorder;no downstreamallocation,worker,concurrency orGPU execution.",
+      "Descriptiveanalyst name;not recoveredsource symbol."
+    ],
+    "new_name_credit": 1
   }
 }
