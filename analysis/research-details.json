@@ -22628,5 +22628,22 @@
       "NoexactMMsource/buildmatch claimed."
     ],
     "new_name_credit": 1
+  },
+  "bricker_lane_control_checkpoint": {
+    "decoded_cfg_instructions": 2807,
+    "bounded_restore_cfg_instructions": 509,
+    "findings": [
+      "Conservative static saved-mask propagation recovers the shader-entry active-lane mask before the scalar restoration loop and metadata loop. Earlier allocation and filtering restrictions do not remain active at these entries on continuing paths.",
+      "The temporary image-store restriction occurs after the scalar restoration write and is restored before the next iteration.",
+      "Conditional on 64 entering lanes with thread IDs 0 through 63, metadata scheduling visits each of 343 cells once in six passes, with 23 lanes in the last pass. Its corner reads cover the same 512 restored scalar words."
+    ],
+    "limits": [
+      "Actual dispatch lane count, thread-ID initialization and group/wave layout remain unverified.",
+      "Static abstract interpretation and integer scheduling models do not execute the GPU or prove memory visibility or whole-shader correctness.",
+      "Decoded instruction fidelity still has the previously recorded image-store reassembly limitation.",
+      "The restored scalar physical meaning and channel semantics remain unresolved."
+    ],
+    "runtime_gpu_verified": false,
+    "reviewed_name_count_increment": 0
   }
 }

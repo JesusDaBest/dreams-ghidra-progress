@@ -7079,3 +7079,9 @@ The working ABI now identifies a 16-byte rectangle in XMM0, a draw identifier, o
 **80 clipping/readiness cases**, **21 action-construction cases** and **24 synthetic player-selection cases** support the complete 167-instruction review. Draw, interaction and delivery boundaries are modeled locally; no browser or graphics API ran. Player-context cases guarantee a match. The no-match lookup, concrete context layout, actual graphics and live-game behavior remain unverified. Independent reopening confirms the saved signature, unchanged code and all 9,611 other function names/signatures.
 
 Totals: **761 checked names** (681 behavior/helper and 80 property/type), **2,167 mapped**, **7,445 unmapped**, among **9,612 defined functions**.
+
+### Bricker2 sculpt-data lane control
+
+Traced saved active-lane masks through the 2,807-instruction decoded gather shader with a conservative control-flow analysis. On paths reaching the scalar rewrite and metadata loops, both recover the mask supplied at shader entry. A separate 509-instruction bounded check confirms the filtering-loop mask restore cannot be bypassed on paths reaching the rewrite loop; the saved mask is not overwritten in that region. The image-store lane restriction occurs after the scalar write and is restored before the next iteration.
+
+With 64 entering lanes and thread IDs 0 through 63, an independent integer scheduling model visits all 343 metadata cells exactly once in six passes (64, 64, 64, 64, 64, 23). Their corner reads cover the same 512 scalar words as the restoration lattice. The actual dispatch lane count, thread-ID initialization and wave/group layout remain unverified, so that coverage result is conditional. This does not execute the GPU, prove memory visibility, resolve the scalar's physical meaning, or remove the existing image-store reassembly limitation. No checked-function credit is added.
