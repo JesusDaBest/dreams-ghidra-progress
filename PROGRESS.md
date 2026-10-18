@@ -6963,3 +6963,10 @@ Traced a bulk sprite routine connecting 44-byte stroke metadata with 40-byte poi
 The second pass accumulates the largest distance from the chosen center to a transformed point, plus the absolute scaled point radius. Both passes reject nonfinite transformed XYZ and radius at the reviewed gates. Checks cover 4,096 cache-index pairs, 18,000 host enclosure samples and 2,048 floating-point class cases. These are host models, not live game validation. Large finite inputs can still overflow the distance arithmetic. The first-pass extrema use a point-minus-radius sample and must not be presented as a conventional radius-expanded bounding box.
 
 The stroke editing loop also connects to the previously reviewed ComputeIndexedRepeatTransform through a separate signed repetition setting. It preserves the stored kaleidoscope flags; this is not proof of the geometry consumer for those flags. Full cache-miss traversal, point selection, transform conventions, cache collisions and malformed-data behavior remain unresolved. No new checked-function credit is added.
+
+
+### Stroke metadata reader types and sprite summary consumers
+
+Refined **GetPackedStrokeMetadataByIndex** to return a byte pointer and accept a 32-bit resource ID plus signed 32-bit record index. Independent reopening verifies EDI/ESI inputs and RAX pointer return. Original bytes and all 9,611 other names/signatures are unchanged. The working byte pointer does not invent an original record struct; negative-index validation and pointer lifetime remain caller concerns. No additional checked-function credit is added.
+
+An independent sprite-cache caller transforms the cached center and scales the radius by the absolute object scale, corroborating the sphere layout. Another reads the two XYZ extrema. The point-page offset correction also matches 9,984 host fixtures with aligned 40-byte points and full 480-byte intermediate payloads; 24 bytes of unused leaf payload are skipped. This does not prove malformed-tree traversal or arbitrary partial intermediate pages. No kaleidoscope geometry consumer has been established.

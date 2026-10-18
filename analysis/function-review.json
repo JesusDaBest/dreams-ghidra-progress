@@ -18066,17 +18066,18 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV GetPackedStrokeMetadataByIndex(void)",
+      "saved_working_signature": "uchar * PS4_SYSV GetPackedStrokeMetadataByIndex(uint root_id, int record_index)",
       "evidence": [
         "All102 owned instructions and decompilation read; original unwind adds terminal failure-path UD2.",
         "All65536 headerwords verified against44-byte record count; seven original direct caller sites traced.",
         "Metadata-root callers copy44-byte descriptor or access stored transforms, confirming stroke record role.",
-        "Independent reopening/decompilation passed; bytes, inferred prototype and9611 other names/signatures unchanged."
+        "Independent reopening/decompilation passed; bytes, inferred prototype and9611 other names/signatures unchanged.",
+        "RootID EDI:4,signed index ESI:4 and direct pointer RAX:8 working ABI independently reopened anddecompiled;bytes and9611 other names/signatures unchanged."
       ],
       "caveats": [
         "Negative signed index is not rejected; nonnegative valid index is a caller precondition.",
         "Returns direct pointer; no pointer lifetime, malformed tree, all-caller bounds or geometry replication proof.",
-        "Analyst descriptive name; original struct and working ABI refinement remain pending."
+        "Analyst descriptive name; original struct remains unknown;working ABI verified separately."
       ]
     }
   ],
