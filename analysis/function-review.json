@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "712 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "713 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8683,
-    "other_names": 929,
-    "verification": "complete_inventory_matches_baseline_plus_712_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8682,
+    "other_names": 930,
+    "verification": "complete_inventory_matches_baseline_plus_713_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17990,6 +17990,26 @@
         "Descriptive analyst name, not recovered original symbol or source rotation convention.",
         "Matrix model uses host double, codec float32 transcription; no universal bit-exact or malformed-rotation proof.",
         "No cycle, allocation/capacity failure or runtime safety guarantee."
+      ]
+    },
+    {
+      "address": "140c6dab0",
+      "original_name": "FUN_140c6dab0",
+      "applied_name": "RebuildPackedResourceTreeWithRefreshedSummaries",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV RebuildPackedResourceTreeWithRefreshedSummaries(void)",
+      "evidence": [
+        "All55 owned native instructions and normal branches read; bytes matched original executable.",
+        "Recursive clone, childID replacement, category1 summary-helper gate and interning tail-call traced.",
+        "Independent reopening/decompilation passed; bytes, prototype and all9611 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Descriptive analyst name, not original symbol.",
+        "Underlying summary and hashing have separate reviews; no full runtime, malformed tree, cycle, allocation or concurrency proof."
       ]
     }
   ],

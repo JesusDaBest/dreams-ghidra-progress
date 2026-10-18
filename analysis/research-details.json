@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 774,
+    "checked_and_applied_names": 775,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 774,
+    "verified_names": 775,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "712 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "713 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24140,5 +24140,22 @@
       },
       "supersedes": "Prior statement that all versions above158 bypass the legacy chain."
     }
+  },
+  "packed_resource_summary_refresh_name_checkpoint": {
+    "target": {
+      "name": "RebuildPackedResourceTreeWithRefreshedSummaries",
+      "signature": "undefined PS4_SYSV RebuildPackedResourceTreeWithRefreshedSummaries(void)"
+    },
+    "original_owned_instructions": 55,
+    "evidence": [
+      "All55 owned native instructions and normal branches read; bytes matched original executable.",
+      "Recursive clone, childID replacement, category1 summary-helper gate and interning tail-call traced.",
+      "Independent reopening/decompilation passed; bytes, prototype and all9611 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Descriptive analyst name, not original symbol.",
+      "Underlying summary and hashing have separate reviews; no full runtime, malformed tree, cycle, allocation or concurrency proof."
+    ],
+    "new_name_credit": 1
   }
 }

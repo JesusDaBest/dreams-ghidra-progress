@@ -7406,3 +7406,10 @@ This is bounded header and call-chain analysis, with original-byte verification.
 ### Staged CSG version gates corrected
 
 The newer-version dispatch branch corrects an earlier overbroad statement: versions above 158 skip the metadata prepass, but do not necessarily skip later legacy conversions. The separate ceilings above are verified in assembly. An additional bounds/scale stage is entered through version 482; its complete arithmetic is still under review. This correction adds no checked-function credit.
+
+
+### Packed CSG tree summary refresh named
+
+Applied and independently reopened **RebuildPackedResourceTreeWithRefreshedSummaries** after reading all **55 CPU instructions** and normal control paths. It clones resource pages, recursively replaces child IDs, invokes the reviewed node-summary helper for category-1 pages and interns the resulting node. The loader uses this stage through scene-format version 1231.
+
+Only the descriptive name and comment changed. Independent reopening and decompilation passed; native bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. The summary algorithm has its own earlier review. Malformed trees, cycles, allocation failures, concurrency and runtime behavior remain unverified. This adds one checked CPU helper, not complete resource loading or sculpting.
