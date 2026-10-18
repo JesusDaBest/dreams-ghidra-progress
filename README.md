@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1c46ca882f4a6217bb486469d38e25df8bb51472/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/874dfe16fac95a1ce8795becb51c30b67b899c4f/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**714 of 9,605 functions named and checked.** A function is one piece of the game's code.
+**715 of 9,605 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1c46ca882f4a6217bb486469d38e25df8bb51472/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/874dfe16fac95a1ce8795becb51c30b67b899c4f/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 133 | 25/94 | 0/39 |
-| Gadgets & logic | 512 | 54/56 | 49/456 |
+| Gadgets & logic | 512 | 54/56 | 50/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
@@ -79,7 +79,7 @@ Every square is one actual function and has the same size. All function squares 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 512 functions identified; 58 behavior/helper reviews; 49 property/type reviews
+- **Gadgets & logic** - 512 functions identified; 58 behavior/helper reviews; 50 property/type reviews
   - **Logic & signals** - 124 functions identified; 40 behavior/helper reviews; 20 property/type reviews
     - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
@@ -398,7 +398,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Variable Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Sensors & detection** - 38 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+  - **Sensors & detection** - 38 functions identified; 0 behavior/helper reviews; 3 property/type reviews
     - **Detect Scope** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Gadget Zone Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -419,8 +419,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Inventory Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Movement Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Movement Sensor** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
     - **Raycast Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Rotation Sensor** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
