@@ -18761,7 +18761,8 @@
     "new_name_credit": 1,
     "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint",
     "later_owner_validation": "world_insertion_owner_connected_checkpoint",
-    "later_parent_list_validation": "world_parent_kind_insertion_checkpoint"
+    "later_parent_list_validation": "world_parent_kind_insertion_checkpoint",
+    "later_actual_parent_metadata_validation": "world_parent_list_actual_metadata_checkpoint"
   },
   "xyz_connected_conversion_actual_base_checkpoint": {
     "native_checks": {
@@ -19007,6 +19008,20 @@
     "limits": [
       "Prepared valid parent kind0,controlled metadata,null owner,indices63/64 only; malformed/null parents,real metadata initialization,concurrency and full game unverified.",
       "Imported standard byte-fill routine remains modeled."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "world_parent_list_actual_metadata_checkpoint": {
+    "native_cases": 144,
+    "initializer_pattern_cases": 4,
+    "findings": [
+      "Three original initializer stores write parent kind13 slot1c6=128,kind14=140,kind15=40 with adjacent slot1c8=44. Complete metadata comparisons across four patterns pass.",
+      "144 original registration cases consume these initialized offsets for Sound/Effect Field child lists,including high kind bits,parent tag4000000 and previous-head patterns. Full world,parent,child and metadata comparisons pass."
+    ],
+    "limits": [
+      "Bounded original stores with explicit return after each,not full startup or proof against later overwrites.",
+      "Valid prepared parents,null owner and modeled imported byte fill;malformed parents,concurrency and full game unverified."
     ],
     "project_modified": false,
     "new_name_credit": 0

@@ -6477,3 +6477,12 @@ No new naming credit: **722 checked names**, 2,128 mapped and 7,478 unmapped amo
 Full world, child, parent and metadata comparisons pass across indices 63/64, three previous-head patterns, the high kind bit and parent-reference tag `0x04000000`. Only the imported standard byte-fill routine is modeled. Real metadata startup, invalid/null parents, concurrency and full-game behavior remain unverified; these tests do not establish that malformed parent references are safe.
 
 No additional naming credit: **722 checked names** among 9,606 defined functions. This strengthens behavioral evidence for the existing registration name.
+
+
+### Parent list offsets bound to original initialization
+
+Three original initializer stores establish metadata slot `0x1C6` as `0x128` for parent kind 13, `0x140` for kind 14 and `0x40` for kind 15. The last store also sets adjacent slot `0x1C8` to `0x44`; that adjacent field is not interpreted here. Four patterned-metadata comparisons verify precisely those writes, executing each original store with an explicit return immediately afterward.
+
+**144 additional native registration cases** consume these initialized list offsets for Sound and Effect Field children. Full world, parent, child and metadata comparisons pass with indices 63/64, high kind bits, tagged parent references and three old-head patterns. This replaces arbitrary positive fixture offsets with values written by the executable itself. The parent kind numbers are retained without inventing source-level class names.
+
+This is a bounded initialization-to-registration connection, not full startup or proof against later metadata overwrites. Valid prepared parents, null owner and a modeled imported byte-fill routine remain the scope. No additional naming credit; **722 names checked** remains the total.
