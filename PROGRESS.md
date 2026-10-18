@@ -6775,3 +6775,10 @@ This explains the repeated-dispatch mechanism without proving termination: compl
 Applied and independently reopened **BuildSculptSlotChunksFromCommands** after reviewing its CPU body and connecting both callers, command bucketing, hierarchical replay, classified slot outputs and return paths. All **1,683 owned instruction bytes** match the original executable. The descriptive name and explanatory comment are the only project changes: the existing inferred prototype and all 9,611 other function names/signatures remain unchanged, and reopening/decompilation passed.
 
 This adds one checked CPU routine to Sculpting & painting / Chunk. It does not credit the large replay shader bodies as understood. Exact parameter types, replay termination, complete GPU rollback, coherence and rendering correctness remain unresolved. The primary paint replay header separately preserves its next command position and evaluation count across budget-limited dispatches; complete attribute restoration is still under review.
+
+
+### Chunk append shader loader named
+
+Applied and independently reopened **GetOrLoadChunkAppendVoxelsShader** after reading all **205 CPU instructions** and its pseudocode, checking original bytes and compiled shader identifiers, and tracing the caller into shader binding. It initializes and caches the resource, constructs its shader path, checks the archive index, and tries file fallback when needed. It returns the resource only when its ready pointer is nonzero.
+
+The project change is a descriptive name and explanatory comment; its inferred prototype and bytes are unchanged. Reopening/decompilation passed, with all 9,611 other names/signatures unchanged. This credits the CPU loader only: the GPU voxel-append algorithm, concurrency, full loading failure policy and runtime behavior are not established by this review.

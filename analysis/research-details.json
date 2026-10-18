@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 767,
+    "checked_and_applied_names": 768,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 767,
+    "verified_names": 768,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "705 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "706 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -23789,6 +23789,28 @@
     "limits": [
       "Original symbol andexact parameter types not recovered;existinginferredprototype retained.",
       "Large replay shader bodies remainpartiallyreviewed;no GPUcorrectness,termination orcomplete rollback guarantee."
+    ],
+    "new_name_credit": 1
+  },
+  "chunk_append_voxels_loader_name_checkpoint": {
+    "target": {
+      "name": "GetOrLoadChunkAppendVoxelsShader",
+      "signature": "undefined PS4_SYSV GetOrLoadChunkAppendVoxelsShader(void)"
+    },
+    "original_owned_instructions": 205,
+    "evidence": [
+      "Read complete205-instruction body and pseudocode; every owned instruction matches original SELF.",
+      "Guarded initialization zeros cached resource fields and sets sentinels, registers cleanup then releases guard; exact import guarantees are not inferred.",
+      "Builds slash-normalized source-derived ORBIS_shaders path, hashes prefix-stripped path withMurmur3x64_128 seed0 andbinary-searches optional16-byte archive entries bylow64bits.",
+      "First path initialization passes shader label/resource/optional archive payload to1413c3050. Later calls with nonzero resource+0x68 return cached resource directly.",
+      "When path is initialized but resource+0x68 iszero,tries formatted.reasm.sb thenbase.sb file viaReadShaderFileToAllocatedBuffer; initializes resource onreadsuccess andfrees temporarybuffer.",
+      "Returns staticresource147749910 iff qword147749978(resource+0x68) nonzero,elseNULL. Caller14128f2a0 immediately loads+0x68 andbinds shader.",
+      "Independent reopening confirms decompilation andname-only persistence;all9611other names/signatures andnativebytes unchanged."
+    ],
+    "limits": [
+      "Shader-loader behavior only;no credit for understanding voxelappend GPUalgorithm.",
+      "No execution ofgame, concurrentload/race testing, archivecollision guarantee orcomplete resourcefailure/retry policy proof.",
+      "Originalsymbol not recovered;existing inferred signature retained."
     ],
     "new_name_credit": 1
   }

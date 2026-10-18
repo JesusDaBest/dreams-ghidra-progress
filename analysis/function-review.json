@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "705 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "706 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8690,
-    "other_names": 922,
-    "verification": "complete_inventory_matches_baseline_plus_705_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8689,
+    "other_names": 923,
+    "verification": "complete_inventory_matches_baseline_plus_706_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17822,6 +17822,31 @@
       "caveats": [
         "Original symbol andexact parameter types not recovered;existinginferredprototype retained.",
         "Large replay shader bodies remainpartiallyreviewed;no GPUcorrectness,termination orcomplete rollback guarantee."
+      ]
+    },
+    {
+      "address": "141287640",
+      "original_name": "FUN_141287640",
+      "applied_name": "GetOrLoadChunkAppendVoxelsShader",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV GetOrLoadChunkAppendVoxelsShader(void)",
+      "evidence": [
+        "Read complete205-instruction body and pseudocode; every owned instruction matches original SELF.",
+        "Guarded initialization zeros cached resource fields and sets sentinels, registers cleanup then releases guard; exact import guarantees are not inferred.",
+        "Builds slash-normalized source-derived ORBIS_shaders path, hashes prefix-stripped path withMurmur3x64_128 seed0 andbinary-searches optional16-byte archive entries bylow64bits.",
+        "First path initialization passes shader label/resource/optional archive payload to1413c3050. Later calls with nonzero resource+0x68 return cached resource directly.",
+        "When path is initialized but resource+0x68 iszero,tries formatted.reasm.sb thenbase.sb file viaReadShaderFileToAllocatedBuffer; initializes resource onreadsuccess andfrees temporarybuffer.",
+        "Returns staticresource147749910 iff qword147749978(resource+0x68) nonzero,elseNULL. Caller14128f2a0 immediately loads+0x68 andbinds shader.",
+        "Independent reopening confirms decompilation andname-only persistence;all9611other names/signatures andnativebytes unchanged."
+      ],
+      "caveats": [
+        "Shader-loader behavior only;no credit for understanding voxelappend GPUalgorithm.",
+        "No execution ofgame, concurrentload/race testing, archivecollision guarantee orcomplete resourcefailure/retry policy proof.",
+        "Originalsymbol not recovered;existing inferred signature retained."
       ]
     }
   ],

@@ -28590,6 +28590,19 @@
           "site": "141287709",
           "target": "1417250a9",
           "anchor_sha256": "76cc078a20f200f3b54df62e4ac91b3fec1f5feb0af1e2a7cc43220b02138013"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrLoadChunkAppendVoxelsShader",
+          "support": [
+            "Read complete205-instruction body and pseudocode; every owned instruction matches original SELF.",
+            "Guarded initialization zeros cached resource fields and sets sentinels, registers cleanup then releases guard; exact import guarantees are not inferred.",
+            "Builds slash-normalized source-derived ORBIS_shaders path, hashes prefix-stripped path withMurmur3x64_128 seed0 andbinary-searches optional16-byte archive entries bylow64bits.",
+            "First path initialization passes shader label/resource/optional archive payload to1413c3050. Later calls with nonzero resource+0x68 return cached resource directly.",
+            "When path is initialized but resource+0x68 iszero,tries formatted.reasm.sb thenbase.sb file viaReadShaderFileToAllocatedBuffer; initializes resource onreadsuccess andfrees temporarybuffer.",
+            "Returns staticresource147749910 iff qword147749978(resource+0x68) nonzero,elseNULL. Caller14128f2a0 immediately loads+0x68 andbinds shader.",
+            "Independent reopening confirms decompilation andname-only persistence;all9611other names/signatures andnativebytes unchanged."
+          ]
         }
       ],
       "code_sha256": "3d3f99fe63d731fa2c9774e7787a521c172db32a2140f0102c23b28bb2474de2",
@@ -28601,7 +28614,7 @@
       ],
       "component_basis": "implementation_source",
       "code_role": "runtime-implementation",
-      "code_role_basis": "embedded_source_association"
+      "code_role_basis": "Reviewed CPU shader-resource loader; not the GPU append algorithm."
     },
     "1412879e0": {
       "system": "sculpting-painting",
