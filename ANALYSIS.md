@@ -6635,3 +6635,12 @@ These are separate fixtures, not an end-to-end lifecycle test. The producer's 3,
 Independent reopening verifies the saved descriptive name, owner/unsigned-bank signature, decompilation, original bytes and all 9,605 other names/signatures. Other kinds,capacity/overflow,thread-specific property lanes,cleanup-enabled and missing-ID paths,full callers and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **728 checked names** (648 behavior/helper and 80 property/type), **2,134 mapped**, **7,472 unmapped**, among 9,606 defined functions.
+
+
+### Buffered-record cleanup and missing-root paths verified
+
+Original import relocations and a local NID database identify `sceLibcMspaceMallocUsableSize` and `sceLibcMspaceFree`. **64 native cases** execute the complete consumer's selected existing-object path with cleanup gates. Argument/order-recording models verify that the buffer is queried before free, free receives the configured mspace and buffer pointer, and the record pointer is reset. Real heap operations are not executed.
+
+**32 additional cases** cover an absent root ID or the minus-one sentinel, both banks, processed/readiness states and cleanup gates. The missing-root path sets record byte +0x5E, clears selected fields/readiness and reports bank-0 completion without modifying world objects. Unlike the found-root path, it can clean up even when the processed flag was already set. Complete world, pool, object, index-array and call-log comparisons pass.
+
+These checks model the heap calls and unused process-time return. Materialization cleanup, real allocation/free, hash collisions, full producer/caller and live-game behavior remain unverified. No new naming credit: **728 checked names** remains the total.

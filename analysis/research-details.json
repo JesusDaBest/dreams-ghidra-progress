@@ -19481,6 +19481,44 @@
       "Prepared Key,valid root,thread-specific property selection and cleanup disabled;capacity/overflow,other property IDs/kinds and full caller/game unverified.",
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "later_cleanup_and_missing_root": "buffered_record_cleanup_and_missing_root_checkpoint"
+  },
+  "buffered_record_cleanup_and_missing_root_checkpoint": {
+    "checks": {
+      "buffered-record-cleanup-native-check.json": {
+        "native_cases": 64,
+        "findings": [
+          "Complete original consumer cleanup gate requires unprocessed,ready record and cleanup-enabled global on selected existing-object path.",
+          "64 cases verify usable-size query before free,original pointer argument,configured mspace/free pointer pair,and record pointer reset. Full world,pool,objects,index array and call logs compared."
+        ],
+        "models": [
+          "sceLibcMspaceMallocUsableSize and sceLibcMspaceFree replaced by argument/order-recording models;no real free or allocator behavior tested.",
+          "Unused process-time-counter return modeled."
+        ],
+        "limits": [
+          "Existing-object records with valid root IDs only;materialization cleanup and missing-ID paths pending.",
+          "Import identities linked by original JUMP_SLOT relocations and local NID database;original source names and live game remain unresolved."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "buffered-record-missing-root-native-check.json": {
+        "native_cases": 32,
+        "findings": [
+          "Complete original consumer missing-root path marks record5e,clears selected fields and readiness,and reports completion in bank0 without modifying world objects.",
+          "32 cases cover absent hash ID or sentinel minus1,both banks,prior processed state,readiness and cleanup-enabled gates. Query/free models run exactly when ready and cleanup enabled,regardless of processed flag. Full state and call-log comparisons pass."
+        ],
+        "models": [
+          "Mspace usable-size/free calls argument/order-recorded only;process-time return modeled."
+        ],
+        "limits": [
+          "Valid finite prepared record/pointer buffers only;hash collisions,real allocator,full producer/caller and live game unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "new_name_credit": 0
   }
 }
