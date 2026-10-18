@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8d91b3a595025022a27afe4d637b66205b4fef82/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c36bd020eac6d00e8611922a13300a7c66ef7c99/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**716 of 9,605 functions named and checked.** A function is one piece of the game's code.
+**717 of 9,605 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8d91b3a595025022a27afe4d637b66205b4fef82/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c36bd020eac6d00e8611922a13300a7c66ef7c99/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -65,7 +65,7 @@ Every square is one actual function and has the same size. All function squares 
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
 | Sculpting & painting | 133 | 25/94 | 0/39 |
-| Gadgets & logic | 513 | 55/57 | 50/456 |
+| Gadgets & logic | 514 | 56/58 | 50/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
@@ -74,12 +74,12 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 358 | 235/271 | 17/82 |
 
-**2,122 of 9,605 discovered functions are mapped; 7,483 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,123 of 9,605 discovered functions are mapped; 7,482 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
 
-- **Gadgets & logic** - 513 functions identified; 59 behavior/helper reviews; 50 property/type reviews
+- **Gadgets & logic** - 514 functions identified; 60 behavior/helper reviews; 50 property/type reviews
   - **Logic & signals** - 124 functions identified; 40 behavior/helper reviews; 20 property/type reviews
     - **Gate** - 8 functions identified; 5 behavior/helper reviews; 3 property/type reviews
       - **Runtime & implementation** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
@@ -398,7 +398,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Variable Modifier Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Sensors & detection** - 39 functions identified; 1 behavior/helper reviews; 3 property/type reviews
+  - **Sensors & detection** - 40 functions identified; 2 behavior/helper reviews; 3 property/type reviews
     - **Detect Scope** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Gadget Zone Type** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -412,6 +412,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Scope Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Rotation Sensor** - 3 functions identified; 1 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Trigger Zone** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Grab Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -424,8 +427,6 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
     - **Raycast Gadget** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Rotation Sensor** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 1 property/type reviews
     - **Ruler** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **VRCursor Sensor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
