@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "719 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "719 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9612,
+    "total": 9613,
     "default_fun_names": 8676,
-    "other_names": 936,
-    "verification": "complete_inventory_matches_baseline_plus_719_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "other_names": 937,
+    "verification": "complete_inventory_matches_baseline_plus_719_renames_and_62_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18154,6 +18154,31 @@
         "CPU shader resource loaders only; no GPU program semantic completion claimed.",
         "Import implementations, real file failures, concurrent path initialization and real GPU execution not exercised.",
         "Archive lookup compares only first64 bits of128-bit path hash; collision policy is not established."
+      ]
+    },
+    {
+      "address": "1413dc430",
+      "original_name": null,
+      "applied_name": "FinalizeSpriteEmissionSourceRecord",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV FinalizeSpriteEmissionSourceRecord(void * source_record)",
+      "evidence": [
+        "Complete68-instruction251-byte original body and all direct branches reviewed against unwind boundary.",
+        "1296 complete original-native cases check source rejection, frame0/matching/adjacent/other frames, three modes, scalar floor and flag changes with full guarded allocation comparisons.",
+        "Sprite source producer reaches helper after constructing416-byte source records.",
+        "New nonoverlapping definition and opaque RDI pointer/void ABI independently reopened and decompiled; all9612 existing names/signatures and native bytes unchanged."
+      ],
+      "caveats": [
+        "Finite small coefficients and selected signed frame differences only.",
+        "Requires valid nonnegative cache slot or-1 and nonempty sourcearray; record islastentry infixtures.",
+        "No all-caller precondition proof, malformeddata, concurrency or livegame execution.",
+        "Descriptive analyst name and opaque working ABI, not original source declaration.",
+        "No complete source producer, rendering pass or full Sprite subsystem completion claim."
       ]
     }
   ],

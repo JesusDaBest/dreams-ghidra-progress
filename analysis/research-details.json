@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 781,
+    "checked_and_applied_names": 782,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 781,
-    "function_count": 9612,
+    "verified_names": 782,
+    "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "719 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "719 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24458,5 +24458,27 @@
     ],
     "new_function_credit": 0,
     "live_game_verified": false
+  },
+  "sprite_source_finalizer_checkpoint": {
+    "target": {
+      "name": "FinalizeSpriteEmissionSourceRecord",
+      "signature": "void PS4_SYSV FinalizeSpriteEmissionSourceRecord(void * source_record)"
+    },
+    "original_instructions": 68,
+    "native_cases": 1296,
+    "new_function_credit": 1,
+    "evidence": [
+      "Complete68-instruction251-byte original body and all direct branches reviewed against unwind boundary.",
+      "1296 complete original-native cases check source rejection, frame0/matching/adjacent/other frames, three modes, scalar floor and flag changes with full guarded allocation comparisons.",
+      "Sprite source producer reaches helper after constructing416-byte source records.",
+      "New nonoverlapping definition and opaque RDI pointer/void ABI independently reopened and decompiled; all9612 existing names/signatures and native bytes unchanged."
+    ],
+    "limits": [
+      "Finite small coefficients and selected signed frame differences only.",
+      "Requires valid nonnegative cache slot or-1 and nonempty sourcearray; record islastentry infixtures.",
+      "No all-caller precondition proof, malformeddata, concurrency or livegame execution.",
+      "Descriptive analyst name and opaque working ABI, not original source declaration.",
+      "No complete source producer, rendering pass or full Sprite subsystem completion claim."
+    ]
   }
 }

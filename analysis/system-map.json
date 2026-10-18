@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9612,
-  "mapped_total": 2183,
+  "inventory_total": 9613,
+  "mapped_total": 2184,
   "unmapped_total": 7429,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -55285,6 +55285,32 @@
             "All65536 headerwords verified against44-byte record count; seven original direct caller sites traced.",
             "Metadata-root callers copy44-byte descriptor or access stored transforms, confirming stroke record role.",
             "Independent reopening/decompilation passed; bytes, inferred prototype and9611 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1413dc430": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Sprite emission-source producer and complete frame/fade finalizer body reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Finalizes or rejects queued Sprite emission source record.",
+      "code_sha256": "883b4eed63d23b3337dcfddbf03c720cd39b94620213379762d53eca718ca6e9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FinalizeSpriteEmissionSourceRecord",
+          "support": [
+            "Complete68-instruction251-byte original body and all direct branches reviewed against unwind boundary.",
+            "1296 complete original-native cases check source rejection, frame0/matching/adjacent/other frames, three modes, scalar floor and flag changes with full guarded allocation comparisons.",
+            "Sprite source producer reaches helper after constructing416-byte source records.",
+            "New nonoverlapping definition and opaque RDI pointer/void ABI independently reopened and decompiled; all9612 existing names/signatures and native bytes unchanged."
           ]
         }
       ]
