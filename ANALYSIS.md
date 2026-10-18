@@ -7217,3 +7217,12 @@ The oriented candidate's center is `scale * (64*gridOrigin + axisA*midA + axisB*
 The padding term `3*sum(abs(axis.xyz))` is the support radius of a coordinate-aligned cube with half-width 3 projected onto that axis. **360 exact-rational cases** checked the candidate center and axis storage against the reviewed CPU instructions, then independently checked **18,720 cube corners** for containment. This supplies a conditional geometric interpretation of the padding.
 
 The containment statement assumes an orthonormal basis and consistent coordinate origins. It does **not** prove that the actual approximate solver always meets that assumption, or that these cubes contain all geometry represented by the game records. Producer mask semantics, original floating-point behavior, signed-shift overflow and GPU execution remain unresolved. No additional checked-function credit is added.
+
+
+### Sculpt color reduction and packed output
+
+Read the complete **159-instruction** `ChunkReduceColours` shader and connected its three GDS sums to the sculpt statistics caller. Its **820-byte executable reassembles exactly**, excluding 72 trailing bytes. Each workgroup processes up to 256 formatted records in four batches. For each of three channels it squares the loaded value, multiplies by 256, adds 0.5, converts to unsigned integer and accumulates. All **257 tail-count patterns** checked by a multiset provenance model count each valid record exactly once through the two half-wave reductions. This shader does not load a fourth channel or apply per-record alpha weighting.
+
+The CPU converts those unsigned sums using a split high/low-16-bit float-bias construction; **200,704 binary32 model cases** match direct unsigned-to-float conversion. For ordinary nonzero, nonwrapping counts, it divides by `256*recordCount`, square-roots each channel, multiplies by 255, rounds and saturating-packs the result, forcing alpha to 255. This supports a **quantized root-mean-square color** interpretation. It does not establish an exact sRGB transfer function.
+
+The divisor uses a 32-bit left shift and the GDS accumulators use 32-bit addition. Count limits and overflow reachability remain unproven; for example, the shift itself yields zero at count `0x1000000`, without establishing that the game can reach that count. The formatted descriptor's component type, complete producer behavior, exceptional inputs, rounding modes, synchronization and actual GPU execution remain open. No new checked-function credit is added.

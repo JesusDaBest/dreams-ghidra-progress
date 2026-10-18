@@ -23137,5 +23137,39 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "sculpt_colour_reduction_checkpoint": {
+    "shader": "ChunkReduceColours",
+    "shader_instructions": 159,
+    "program_bytes": 820,
+    "exact_encoding_roundtrip": true,
+    "tail_count_patterns": 257,
+    "unsigned_conversion_cases": 200704,
+    "findings": [
+      "Each workgroup addresses four64-record batches at group*256+lane+[0,64,128,192], each guarded by unsigned index<count.",
+      "Reads three formatted channels and computes unsigned conversion of256*channel*channel+0.5 before integer accumulation. No fourth-channel read, per-record mask test or alpha weighting occurs in this shader.",
+      "Invalid-tail batches add zero. Five XOR butterfly stages reduce each32-lane half, and explicit lane0/32 reads combine the halves. Multiset provenance verifies each valid record counted exactly once for all counts0..256.",
+      "Lane0 adds the three channel totals using unsigned32-bit GDS atomics at0xc44,0xc48,0xc4c, corresponding to reviewed readback offsets0x44,0x48,0x4c.",
+      "CPU caller supplies the slot descriptor at slot+0x194 and count saved from initial stats+4, then dispatches ceil(count/256) groups.",
+      "Unsigned sums have modular32-bit behavior; no unconditional no-overflow guarantee is established.",
+      "Each GDS color sum at stats+0x44,+0x48,+0x4c is converted as unsigned32 via high/low16-bit float-bias construction. The model matches direct binary32 unsigned conversion in200704 cases.",
+      "Divisor is float(uint32(recordCount<<8)), with zero extension to64bits before signed64-to-float conversion; recordCount comes from the saved initial stats+4 counter also dispatched to ChunkReduceColours.",
+      "For an ordinary nonzero nonwrapping count, channel result is sqrt(float(sum of quantized256*c*c)/float(256*count)). Shader quantization adds0.5 before unsigned conversion.",
+      "CPU multiplies square roots by255, adds0.5, converts with truncation, packs through signed16 then unsigned8 saturation and forces packed alpha to255.",
+      "Thus ordinary normalized formatted inputs support a quantized root-mean-square color interpretation, with no per-record alpha weighting in this shader.",
+      "The divisor shift wraps modulo2^32: for example count0x1000000 produces zero. This arithmetic observation is not proof that such counts are reachable."
+    ],
+    "limits": [
+      "Formatted descriptor component type and its producer remain to be independently tied to this reduction input.",
+      "No exact sRGB/color-space identity or final average formula claimed yet.",
+      "CPU divisor/conversion lineage, complete caller behavior, global count bounds, original rounding and GPU synchronization remain incomplete.",
+      "No live game/GPU execution, project mutation or additional function-name credit.",
+      "Unsigned conversion model assumes ordinary round-to-nearest binary32; original MXCSR state and GPU conversion modes remain unverified.",
+      "Formatted input descriptor type, complete color producer, exact color-space identity and global count bounds remain unproven.",
+      "Zero counts, counter overflow, nonfinite/unbounded channels and exceptional pack behavior are not covered by the ordinary formula.",
+      "No live game/GPU execution, new function-name credit or Ghidra mutation."
+    ],
+    "new_name_credit": 0,
+    "runtime_gpu_verified": false
   }
 }
