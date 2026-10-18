@@ -6793,3 +6793,14 @@ On the reviewed completion path, lanes within the normalized scalar threshold re
 The lane-coordinate calculation bijectively covers a **4x4x4 block with 64 lanes**, interleaving coordinate bits at this stage. Page 110 of [Media Molecule's 2015 technical presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf) was rendered and visually inspected with its notes. Its description of the final refinement block agrees with that architecture. It does not recover this executable's exact source, establish final point-cloud order, or constitute a matched coding-livestream frame.
 
 The shader's remaining shape evaluation, complete replay state, actual GPU execution and rendering behavior are still incomplete. No additional checked-function credit is added.
+
+
+### Primitive formulas and the fourth attribute's transfer path
+
+Read four local `ChunkAppendVoxels` shape branches and checked **4,000 arithmetic cases** against sphere, torus, rounded-filled-disk and plane-like formulas. The selector roles match the previously reviewed bucketing cases, but this shader also produces auxiliary values. Those values and later modifiers are tracked separately; the arithmetic model uses ideal host operations and does not establish GPU rounding or complete shape behavior.
+
+A bounded modifier path can affect a logarithmic target blended into the fourth stored attribute. Tracing backward through `ExpandDecodedResourceRecord` shows shader flag 14 comes from source-record bit 7 only in modes 1, 2 or 3. **73 original CPU instruction anchors and 2,048 header/mode combinations** support that gate. Neither its original property name nor the fourth attribute's physical meaning has been recovered.
+
+The descriptor trace found an intervening transfer stage rather than a direct buffer alias: ordinary `SweepCleanupChunk` reads the slot attribute descriptor at slot offset `0x194`, caps the fourth component in its scaled domain, and writes the context attribute resource. Brick gathering later reads that context resource. **36 original CPU anchors and seven shader checkpoints** connect this bounded route. Later sweep processing can rewrite or filter the same resource; runtime visibility, every slot/lifetime and alternate paths remain unverified.
+
+No additional checked-function credit is added. These are partial shader and connected dataflow findings, not completion of the voxel-append algorithm or recovery of original material-field names.

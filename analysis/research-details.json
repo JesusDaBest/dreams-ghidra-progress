@@ -23905,5 +23905,82 @@
       "match": "4x4x4 final-refinement architecture corroborated; no exact source/build or livestream match"
     },
     "new_name_credit": 0
+  },
+  "chunk_primitive_auxiliary_attribute_route_checkpoint": {
+    "scope": "Bounded primitive/flag/attribute dataflow; large shader remains incomplete",
+    "reviews": [
+      {
+        "shader": "ChunkAppendVoxels",
+        "scope": "Four local primitive branches before common modifiers/composition",
+        "arithmetic_cases": 4000,
+        "findings": [
+          "Selectorflagsbits2..6 useunsigned(selector-1)capped21 for22-entry64-bit relativejump table;all32targetsareinstructionstarts.",
+          "Selector11 computeslength(p)-R;sphere-like. Selector10 computeshypot(rho-R,z)-r;torus-like. Selector13 computeshypot(max(rho-R,0),z)-r;roundedfilleddisk-like. Selector9computesz/L1(relevantbasisrow);plane-like.",
+          "These matchdistanceformulas ofpreviouslyreviewedBucketerselectors,butAppendVoxelsalso computesauxiliaryv30. Torusaux=float32(.3)*min(r,rho);filleddiskaux=max(float32(.3)*min(r,max(R,rho)),R-rho). Physicalmeaningofauxiliaryunresolved.",
+          "Sphere/planeleavev30atitszero initialization inthese boundedwindows. Commonpost-shapemodifiers at0x4c3c stillrequire review."
+        ],
+        "limits": [
+          "Modelsusehostdoubleandidealreciprocal;notGCNfloat32rounding/approximationororiginalGPUexecution.",
+          "Onlyfourbranchesmodeled;no enumsource-name,complete4641-instructionshader,allmodifiersoractualrenderingclaim."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkAppendVoxels",
+        "scope": "Selected flag14 postshape route and logarithmic fourth-output-channel dataflow",
+        "findings": [
+          "Flagbit14 gatesanauxiliarymodification path; clearbitbypasses it. Selector membership checks choose the short branch for1,5,17,18,19.",
+          "Onthatshortbranch,v29=max(incomingv30,min(abs(abs(z)-s30),incomingv29)).Commonjoinupdatesv6=max(v6,float32(.6)*v29).Otherflag14branchesarelargerandnotcompletelyreviewed.",
+          "V6initialvalue onregularprimitivepathcomesfrompackedldexp-style scale decoding;lateritismultipliedbyreciprocallocalcellscale. At0x6360..638c, V_LOG_F32(max(1,v6)) iscappedat6.",
+          "Thecappedlogarithmicvalue isa targetforv13interpolation:v13+=(target-v13)*weight. Theweightcomesfromseparateattribute-enable/smoothinglogicandisnotassumedtoequal1.",
+          "Completionexportsfourthcomponentv13/6;existing-inputrouteinitializesv13=loadedfourth*6.Thisconnectstheauxiliarymodifier toanormalizedlogarithmicstoredattribute,notjustgeometricdistance."
+        ],
+        "limits": [
+          "Originalmaterialattribute/sourcefieldname unresolved;donotcallthisroughness,density,opacityorLODwithoutproducer/consumerevidence.",
+          "No fullflag14formula,completeauxiliarybranchmeaning,NaN/reciprocalbehaviororGPUexecutionproof.",
+          "GCNlogarithminstructionrecordedbyopcode;hostlogbase/roundingnotusedasnativeproof.",
+          "No typesappliedornewCPUfunctioncredit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "scope": "Ordinary slot-to-cleanup-to-context-to-gather static descriptor route",
+        "findings": [
+          "BuildSweepBlockRanges saves pool offset=slotIndex*0x20270. Onordinarycleanup branch,descriptorbase=1477fd7d0+pooloffset+0x104;constant+0x80 copiesdescriptorbase+0x90,thereforeslot+0x194.",
+          "Cleanupconstant+0x40 copiescontext+0x1e4;SMRDloadat0x1054selectspairedoutputdescriptorsconstant+0x30/+0x40. Attributeformattedstoreusessecond.",
+          "Cleanupreadsformattedxyzwfromconstant+0x80;fourthcomponenttransformismin(6*inputFourth,controlCap)*float32(1/6),whilefirstthreearepreservedonthereviewedselectedpath.",
+          "Gatherlatercopiescontext+0x1e4 toconstant+0x160,aspreviouslyverified.Thematchedresourceisthereforeacleanupoutput,notadirectaliasoftheinputslotbuffer.",
+          "ThisreplacesearlierneedforadirectCPUaliaswithaninterveningGPUtransfer/capstage.Theappendproducerwritesper-slotfour-componentstorage;exactslotselection/lifetimeandeveryalternatepathstillrequireseparatereview."
+        ],
+        "limits": [
+          "Staticdescriptorrouteonly;doesnotproveruntimevisibility,bufferlifetime,allslotindicesormulti-pathidentity.",
+          "LaterSweepProcesscanrewrite/refilterthesamecontextresource;noassertionthatgatherseesuncappedorunchangedappendattributes.",
+          "No originalmaterialchannelname inferredandnoGPUexecution/newfunctioncredit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "function": "140c6a650",
+        "scope": "Sourceheaderbit7/mode toGPUcommandflag14 only",
+        "source_header_mode_cases": 2048,
+        "findings": [
+          "Mode=sourcebyte1&7. Modes2/3selectintermediate0x100,mode1selects0x80,andothermodes setR8B1 forattribute/flag specialhandling.",
+          "Commandflag14 isclearedbyAND0xfb3ff thenORedwith(sourcebyte0>>7)<<14 onlywhenmodein1,2,3. Otherwiseitremainsclear.",
+          "TheGPUAppendVoxelsbit14 modifierandlogarithmicfourthchannelthereforedependona mode-gated packedsourceheaderflag,ratherthanbeinganunconditionalshapeproperty.",
+          "Sourcebyte0low5bitsseparatelybecomeGPUshapeselectorbits2..6;headerbit7isnotpartofthatselector."
+        ],
+        "limits": [
+          "2048casesmodelCPUbitoperations,notwholefunctionnativeexecution.",
+          "Sourceproperty/serializationwriteranduser-facingflagname stillunresolved;donotassignLoosenessorotherUIlabelsfromformulaalone.",
+          "No newname,type,projectmutationorwhole4641-instructionshadercompletioncredit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "new_name_credit": 0
   }
 }
