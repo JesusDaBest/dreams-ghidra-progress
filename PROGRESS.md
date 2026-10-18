@@ -6919,6 +6919,17 @@ Host models checked 12,000 angular-folding cases and 2,249 conditional enclosure
 
 The packed folding field is now traced to a concrete sculpt-side state word at offset `0x540`. Its enable and count fields feed record byte 2 in both direct special-record writes and the delegated ordinary-record builder. All 256 relevant flag combinations passed the bounded packing model. This connects state, packed records, expanded commands and the previously reviewed shader folding behavior.
 
-The traced caller **updates the last existing 84-byte record**; it does not append or increase the record count. A nonempty buffer is still an unresolved caller precondition. The caller has a verified unwind boundary but no Ghidra function definition, so it was captured from original executable bytes without speculative function creation. Only the relevant packing and output paths are reviewed.
+The traced caller **updates the last existing 84-byte record**; it does not append or increase the record count. A bounded direct caller path increments the staged record count before this update and removes the staged record on the alternate path; other entries and corrupt counts remain unverified. The caller has a verified unwind boundary but no Ghidra function definition, so it was captured from original executable bytes without speculative function creation. Only the relevant packing and output paths are reviewed.
 
-The original UI setter is still missing from the chain. Official Kaleidoscope behavior is consistent with central angular folding, but that alone does not prove a source-field name. Numeric matches in unrelated event enums were excluded. No additional checked-name or completion credit is added.
+The control handlers were unresolved at this checkpoint; the follow-up below connects their original-byte jump-table entries and telemetry label. Numeric matches in unrelated event enums remain excluded. No additional checked-name or completion credit is added.
+
+
+### Sculpt kaleidoscope controls connected to the folding field
+
+Original executable bytes now identify the sculpt kaleidoscope toggle and count handlers inside the large editor dispatcher. Its relative jump table maps selectors 393–395 to toggle, increment and decrement, matching the separately reviewed tool-tag names. The toggle and decrement-disable routes also reference the game's `sculpt_kaleido` telemetry label. This is direct table and string evidence, rather than assuming equal numeric IDs in unrelated enums mean the same thing.
+
+The controls modify the source settings word at player offset `0x528`: bit 12 enables the feature and bits 13–17 hold its raw count. Increment stores `min(raw, 30) + 1`. Decrement clears the enable bit when raw is 1; otherwise it stores `max(raw, 2) - 1`. All 32 raw values were checked in a host bitwise model. Raw 31 remains an important edge case: the downstream five-bit expanded count wraps to zero; this review does not claim the UI makes that value reachable during normal enabled use.
+
+The dispatcher also maps selectors 396–398 to analogous second-field controls, matching Stroke Kaleidoscope tool tags. The second field uses enable bit 18 and count bits 19–23; its downstream geometry consumer has not yet been traced. The settings copy covers exactly 24 bytes, ending before effective state at `0x540`. The effective-state routine's early mode gate retains the first folding field only for mode value 3; later overrides and complete input-selector provenance remain unresolved.
+
+These handler ranges were absent from the saved Ghidra function body. Original-byte disassembly supplies the bounded evidence without silently treating the incomplete body as complete. No new function-name credit, whole-editor completion claim or native game validation is added.
