@@ -6419,3 +6419,14 @@ Totals: **746 checked names** (666 behavior/helper and 80 property/type), **2,15
 The larger QR encoder remains incompletely reviewed and earns no semantic credit from these round trips alone. Inline strings, empty input, capacity limits, allocation failure and live-game/GPU behavior remain unverified. Independent reopening verifies the saved name/working ABI, unchanged bytes and all 9,607 other function names/signatures.
 
 Totals: **747 checked names** (667 behavior/helper and 80 property/type), **2,153 mapped**, **7,455 unmapped**, among **9,608 defined functions**: 689 existing-function renames, 57 created-and-reviewed functions and one retained-name review.
+
+
+### Shared small-string storage reviewed and named
+
+`ResetOrResizeSmallStringStorage` names a complete 82-instruction helper with 192 recorded caller references. It manages 12-byte inline/pointer storage. **It can discard contents:** short requests clear the object; larger requests reuse sufficient capacity or replace storage. Only owned heap buffers are freed. Capacity must exceed the requested length, leaving space for the zero terminator. New allocations use the next power of two strictly greater than that length.
+
+**110 original-native cases** cover inline, owned and borrowed buffers, selected lengths, negative-one clamping and modeled allocation failure. Complete guarded storage and allocation/free arguments match an independent oracle. Allocation failure returns null with a null pointer and the observed ownership metadata. Real allocations, huge/overflow requests and concurrency remain unverified. Independent reopening verifies the saved working ABI, unchanged bytes and all 9,607 other function names/signatures. Recorded callers are not automatically counted as understood.
+
+Related QR tracing adds **32 dispatcher-state cases**: processing is generation-gated; the dispatcher submits `EncodeQRCode`, waits for the worker to clear its pending byte, then records success or failure. Actual scheduling and changed-text placeholder expansion remain under review.
+
+Totals: **748 checked names** (668 behavior/helper and 80 property/type), **2,154 mapped**, **7,454 unmapped**, among **9,608 defined functions**.

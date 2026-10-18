@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 701,
+    "done": 702,
     "todo": 1452,
-    "total": 2153,
-    "behavior_or_helpers_reviewed": 627,
+    "total": 2154,
+    "behavior_or_helpers_reviewed": 628,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -27799,12 +27799,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 267,
+        "done": 268,
         "todo": 105,
-        "total": 372,
-        "behavior_or_helpers_reviewed": 250,
+        "total": 373,
+        "behavior_or_helpers_reviewed": 251,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 285,
+        "runtime_functions_identified": 286,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27826,6 +27826,7 @@
           "ResolveAwardHashByName",
           "DecodeBase64LikeText",
           "AllocateAlignedBlockFromPool",
+          "ResetOrResizeSmallStringStorage",
           "CopyDreamRecord",
           "ReleaseDreamRecordOwnedArrays",
           "ReserveNestedByteArrayRecords96",
@@ -28202,6 +28203,7 @@
           "1401624b0",
           "140163d80",
           "1401657d0",
+          "140167e50",
           "140192380",
           "140192b30",
           "140194320",
@@ -33908,16 +33910,17 @@
           {
             "name": "shared/strings",
             "label": "Strings",
-            "done": 1,
+            "done": 2,
             "todo": 5,
-            "total": 6,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 7,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 1,
+            "runtime_functions_identified": 2,
             "property_type_functions_identified": 5,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "ResetOrResizeSmallStringStorage",
               "ReadStructuredTextMemberName"
             ],
             "todo_names": [
@@ -33928,6 +33931,7 @@
               "0x1416062d0"
             ],
             "done_addresses": [
+              "140167e50",
               "1414d6330"
             ],
             "todo_addresses": [
@@ -33942,21 +33946,25 @@
               {
                 "name": "shared/strings/smallstring",
                 "label": "Small String",
-                "done": 0,
+                "done": 1,
                 "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
+                "runtime_functions_identified": 1,
                 "property_type_functions_identified": 2,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "ResetOrResizeSmallStringStorage"
+                ],
                 "todo_names": [
                   "0x14010cf30",
                   "0x14010f920"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "140167e50"
+                ],
                 "todo_addresses": [
                   "14010cf30",
                   "14010f920"
@@ -33985,6 +33993,29 @@
                       "14010cf30",
                       "14010f920"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "shared/strings/smallstring/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ResetOrResizeSmallStringStorage"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140167e50"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -46097,5 +46128,5 @@
       }
     ]
   },
-  "unmapped": 7455
+  "unmapped": 7454
 }

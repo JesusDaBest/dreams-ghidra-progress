@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 747,
+    "checked_and_applied_names": 748,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 747,
+    "verified_names": 748,
     "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1929,7 +1929,7 @@
       "141330c40",
       "14021b300"
     ],
-    "scope": "689 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "690 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21425,5 +21425,64 @@
     ],
     "new_name_credit": 1,
     "new_function_definitions": 1
+  },
+  "small_string_storage_checkpoint": {
+    "target": {
+      "name": "ResetOrResizeSmallStringStorage",
+      "signature": "uchar * PS4_SYSV ResetOrResizeSmallStringStorage(void * storage, int requestedLength)"
+    },
+    "checks": {
+      "small-string-resize-native-check.json": {
+        "native_cases": 110,
+        "original_instructions": 82,
+        "findings": [
+          "Original helper manages12-byte small-string storage;requested lengthsbelow12 reset entireinlineobject andfree onlyownedheap storage.",
+          "Large existingcapacity reusedonlywhenrequestedlength<capacity;otherwise oldownedbuffer freedand nextpower-of-two strictlygreaterthanlength allocated.",
+          "Returnedstorage terminatedatrequestedlength;buffercontentsnotpreserved acrossreset/reallocation.",
+          "Negative signedlengthclampsto0;mode1ownedheap freed,mode2borrowedheap notfreed.",
+          "Modeled OOM returnsnullandstoresnullpointer withownershipword01000000;completeobject/buffer guardschecked."
+        ],
+        "models": [
+          "malloc/free modeledwithguardedbuffers andloggedsize/release;original82instructions otherwiseexecute."
+        ],
+        "limits": [
+          "Selected0..32 andnegative-one lengths;huge/overflow lengths,realallocation andconcurrency unverified.",
+          "No newnamecredit yet."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-dispatch-state-native-check.json": {
+        "native_cases": 32,
+        "findings": [
+          "Original145-instruction dispatcher gated by equality oflast/currentgeneration;samegenerationreturnsfalse withoutstateprocessing.",
+          "Unchangedtext,state0 submitsoriginalQRworker/context withliteralEncodeQRCode label,setsstate1 andpendingbyte1.",
+          "State1 waitswhilependingbyte remainsset;onceclear,joincallthenstate2success or3failure;completiontransitioncall itselfreturnsfalse.",
+          "State2 returnsAL1 onlyonnewgeneration;state3 returnsfalse.Whole64KiB statepage matchesindependentstateoracle."
+        ],
+        "models": [
+          "Stringcomparisonreturns0explicitly;virtualsubmit/join callbacksrecordargumentswithoutwork execution."
+        ],
+        "limits": [
+          "Nullrequestedtext/unchangedemptycachedstring only;changedtext,stringownership andactualscheduler/concurrency notverified.",
+          "No newnamecredit orlivegameexecution."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete82-instruction small-string storage helper reviewed againstoriginalbytes;192 callerreferences recorded withoutclaimingallcallersemantics.",
+      "110 originalnativecases verifyinline/owned/borrowedrepresentations,strictcapacityreuse,destructive reset/reallocation,terminator,negativeone andmodeledOOM.",
+      "Fullguardedobject/buffers andmalloc/free argumentsmatchindependentoracle.",
+      "32 QRdispatcher cases establishgeneration gating,submission,pendingcompletion andterminalstates withunchangedtext.",
+      "Independentoffline reopen verifiesworkingABI,unchangedbytes andall9607otherfunctionnames/signatures."
+    ],
+    "limits": [
+      "malloc/free areexplicitguardedfixturemodels;realallocation,huge/overflow lengths andconcurrency unverified.",
+      "QRchangedtext/tokenexpansion stillunderreview;dispatcher modelscomparison andscheduler.",
+      "Analystdescriptive name,opaque12-bytestorage andworkingABI;noexactoriginalC++/MMbuildmatch."
+    ],
+    "new_name_credit": 1
   }
 }

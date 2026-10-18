@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9608,
-  "mapped_total": 2153,
-  "unmapped_total": 7455,
+  "mapped_total": 2154,
+  "unmapped_total": 7454,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54452,6 +54452,33 @@
           ]
         }
       ]
+    },
+    "140167e50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "strings",
+        "smallstring",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete12-byte small-string storage management body and192 original caller references.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "a0230d587f8bde1570f2b5a7e28bc253adf9e5eb2ef544840892c0344aafb9d7",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ResetOrResizeSmallStringStorage",
+          "support": [
+            "Complete82-instruction small-string storage helper reviewed againstoriginalbytes;192 callerreferences recorded withoutclaimingallcallersemantics.",
+            "110 originalnativecases verifyinline/owned/borrowedrepresentations,strictcapacityreuse,destructive reset/reallocation,terminator,negativeone andmodeledOOM.",
+            "Fullguardedobject/buffers andmalloc/free argumentsmatchindependentoracle.",
+            "32 QRdispatcher cases establishgeneration gating,submission,pendingcompletion andterminalstates withunchangedtext.",
+            "Independentoffline reopen verifiesworkingABI,unchangedbytes andall9607otherfunctionnames/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -54470,6 +54497,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime implementation",
                   "children": []
                 }
               ]

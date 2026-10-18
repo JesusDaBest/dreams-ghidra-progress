@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "689 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "690 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9608,
-    "default_fun_names": 8706,
-    "other_names": 902,
-    "verification": "complete_inventory_matches_baseline_plus_689_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8705,
+    "other_names": 903,
+    "verification": "complete_inventory_matches_baseline_plus_690_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17362,6 +17362,29 @@
         "Imagewriterobservesarguments;allocation/free/new[] guardedmodels,counter0 andverifiedstandardCRTadapters. NoGPU/livegame verification.",
         "FullQRencoder semanticreview remainsincomplete;not credited asreviewed merelybecause roundtripspass.",
         "Analyst descriptive name andworkingopaquecontextABI;noexactMMsource/buildmatch."
+      ]
+    },
+    {
+      "address": "140167e50",
+      "original_name": "FUN_140167e50",
+      "applied_name": "ResetOrResizeSmallStringStorage",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar * PS4_SYSV ResetOrResizeSmallStringStorage(void * storage, int requestedLength)",
+      "evidence": [
+        "Complete82-instruction small-string storage helper reviewed againstoriginalbytes;192 callerreferences recorded withoutclaimingallcallersemantics.",
+        "110 originalnativecases verifyinline/owned/borrowedrepresentations,strictcapacityreuse,destructive reset/reallocation,terminator,negativeone andmodeledOOM.",
+        "Fullguardedobject/buffers andmalloc/free argumentsmatchindependentoracle.",
+        "32 QRdispatcher cases establishgeneration gating,submission,pendingcompletion andterminalstates withunchangedtext.",
+        "Independentoffline reopen verifiesworkingABI,unchangedbytes andall9607otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "malloc/free areexplicitguardedfixturemodels;realallocation,huge/overflow lengths andconcurrency unverified.",
+        "QRchangedtext/tokenexpansion stillunderreview;dispatcher modelscomparison andscheduler.",
+        "Analystdescriptive name,opaque12-bytestorage andworkingABI;noexactoriginalC++/MMbuildmatch."
       ]
     }
   ],
