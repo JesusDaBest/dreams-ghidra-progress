@@ -19058,6 +19058,22 @@
       "Existing parent heads are preserved as tails;helper does not clear lists itself.",
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "later_caller_validation": "parent_list_clear_connected_checkpoint"
+  },
+  "parent_list_clear_connected_checkpoint": {
+    "native_cases": 72,
+    "connected_executions": 144,
+    "findings": [
+      "Original main-loop block clears parent kind13 head128,kind14 head140 and Sound kind15 head40,then directly calls original parent-list helper.",
+      "72 prepared cases execute clear-and-prepend twice with identical results,showing repeatability across dirty old heads,empty/one/three Sound and Effect Field chains,shared/distinct parents,tags and high kind bits.",
+      "Full world,parents,children and metadata comparisons pass;no helper substitution or external calls in connected window."
+    ],
+    "limits": [
+      "Fixtures exercise kind13/14 parent clearing and Sound kind15 head40 clearing;Sound children use valid kind13/14 parents.",
+      "Entry/exit bounded main-loop window with explicit return after helper call;not full update loop,invalid references,concurrency or live game."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

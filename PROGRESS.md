@@ -6017,3 +6017,12 @@ Two direct callers in the main update loop pass the world pointer in RDI. One fo
 Independent reopening verifies the saved descriptive name, void/world-pointer ABI, decompilation, unchanged original bytes and all 9,605 other names/signatures. No exact Media Molecule source/build match is claimed.
 
 Totals: **723 checked names** (643 behavior/helper and 80 property/type), **2,129 mapped**, **7,477 unmapped**, among 9,606 defined functions.
+
+
+### Parent-list clearing connected to list construction
+
+**72 scenarios, 144 connected executions** run the original bounded main-loop clearing block and its direct call to `PrependSoundAndEffectFieldsToParentLists`. The caller clears kind-13 head `+0x128`, kind-14 head `+0x140` and every traversed Sound head `+0x40` before constructing the lists. This explains why the helper itself does not clear them.
+
+Each scenario runs twice and produces identical parent/child lists, covering dirty initial heads, empty/one/three-object Sound and Effect Field chains, shared/distinct kind-13/14 parents, high kind bits and tagged references. Full world, parent, child and metadata comparisons pass. The first test exposed an omission in the independent expected result: Sound head clearing applies even to child Sounds with no children. The expectation was corrected to match the original caller instruction, then all cases passed.
+
+Only the bounded entry and exit are supplied by the fixture, with an explicit return after the helper call. No helper substitution or external calls occur in this window. Full main-loop execution, malformed/cyclic references, concurrency and live-game behavior remain unverified. No new naming credit; **723 checked names** remains the total.
