@@ -22773,5 +22773,39 @@
     ],
     "runtime_gpu_verified": false,
     "reviewed_name_count_increment": 0
+  },
+  "sweep_cleanup_checkpoint": {
+    "shader": "SweepCleanupChunk",
+    "statically_read_instructions": 808,
+    "exact_reassembly_bytes": 4236,
+    "trilinear_diagonal_exact_rational_cases": 40,
+    "findings": [
+      "Entry selects an input list item by group index plus batch offset, reads its 24-byte record, and lets the first 27 lanes resolve neighboring coarse cells through an image index and sparse mask/popcount levels.",
+      "A lane-strided loop fills 216 scalar locations, a 6x6x6 neighborhood, from the source scalar descriptor. Missing source values use signed approximately 1.01 sentinels. Sparse-record masks and base indices determine real sample lookup.",
+      "Each lane examines eight neighboring cells. Cells with all zero or all eight negative-class corners skip the mixed-sign calculation. Class mask 60 preserves negative-zero classification.",
+      "Mixed cells evaluate the trilinear interpolant on a cell diagonal with repeated sign-guided interval refinement and a final clamped linear interpolation between bracket values. A separate exact rational basis model supports the diagonal interpolation algebra.",
+      "Three subsequent face-diagonal quadratic tests use a small relative linearity tolerance, discriminant checks and candidate roots admitted only within the unit interval. Three axis-edge sign-change tests add linear crossing candidates.",
+      "The running candidate magnitude is combined with the absolute original scalar. Its output sign bit comes from the original scalar. Exact nearest-surface metric and safety/conservativeness are not established by the static read.",
+      "Finite output masks feed subgroup population counts and GDS histogram-like accumulation, then one-lane record/range reservations. The record writes packed coordinates, compact base and masks; scalar and attribute buffers share the resulting compact index.",
+      "Attributes come from the original slot buffer. The first three loaded components are copied; the fourth is multiplied by six, capped by caller-supplied control, and scaled by approximately one sixth. This stage does not establish the ultimate channel producer.",
+      "All 808 executable instructions are read in bounded stages and all direct branch targets resolve. Exact original instruction-range reassembly remains separate from semantic certainty or GPU execution."
+    ],
+    "caller_cap_scope": "On the reviewed volume-build caller path, the cleanup control float is derived from selected iteration count minus one; counts 1..7 map to caps 0..6 before division by six.",
+    "source_lead_review": {
+      "source": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+      "page_visually_inspected": 30,
+      "source_to_binary_match": false,
+      "finding": "The slide discusses finite-support soft blending and culling; it does not establish that this logarithmic fourth channel is a blend radius."
+    },
+    "limits": [
+      "Nearest-surface metric, root completeness, tolerance/degenerate behavior and geometric guarantees.",
+      "Physical units and original names of scalar and logarithmic fourth channel.",
+      "GDS capacities/concurrency, mask population routing, GPU synchronization and hardware float/quantization behavior.",
+      "Ultimate per-slot attribute producer and source/build match to Media Molecule material.",
+      "Ideal rational arithmetic checks algebra; it does not emulate GPU float rounding, signed zeros, NaNs, reciprocal accuracy or branch behavior.",
+      "Does not yet prove the complete root selection, nearest-surface metric or scalar physical units."
+    ],
+    "runtime_gpu_verified": false,
+    "reviewed_name_count_increment": 0
   }
 }
