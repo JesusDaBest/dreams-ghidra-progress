@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 717,
+    "checked_and_applied_names": 718,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 717,
+    "verified_names": 718,
     "function_count": 9605,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "14093af90",
       "14093b900"
     ],
-    "scope": "662 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "663 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18442,5 +18442,50 @@
       "new_name_credit": 0
     },
     "new_name_credit": 0
+  },
+  "movement_sensor_update_name_checkpoint": {
+    "target": {
+      "name": "UpdateMovementSensorFromIncomingWires",
+      "signature": "void PS4_SYSV UpdateMovementSensorFromIncomingWires(void * owner, int objectReference, void * movementSensor)"
+    },
+    "native_checks": {
+      "movement-sensor-runtime-native-check.json": {
+        "native_cases": 1488,
+        "original_instructions_verified": 472,
+        "external_calls": 0,
+        "maximum_output_error": 2.8423738775984475e-06,
+        "findings": [
+          "Original kind52 updater scans incoming port1db and uses cached body linear velocity.",
+          "Reference subtraction precedes frame transform and difference; prior cache stores the relative source vector. Both maxima use strict greater.",
+          "Velocity and difference both use inverse selected frame: world gizmo or source orientation times local gizmo.",
+          "Three direction-output XYZ vectors average the corresponding forward-rotated basis vectors over matching sources, including sources lacking physics bodies.",
+          "Complete sensor/world/owner/source comparisons allow only eight scalar outputs,prior vector and three full direction-output vectors to change."
+        ],
+        "limits": [
+          "Direction-output fourth lanes are permitted writes but not semantically interpreted or independently modeled.",
+          "Finite unit frames and selected valid records only;nonfinite/nonunit frames,malformed indices and timestep units unverified.",
+          "Prepared caches/metadata;full startup,worker,concurrency and live sensing unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Original kind52 per-object update-switch branch and direct call byte matched; enum and property visitor identify MovementSensor.",
+      "Complete 472-instruction body and pseudocode read; all owned instruction bytes matched original executable.",
+      "1488 native cases execute original body with no external calls: 1296 identity-frame gate/wire/reference/cache/deadband/clamp cases and 192 nontrivial unit-frame cases.",
+      "Both velocity and cached difference are inverse-frame transformed. Prior cache stores relative source velocity, unlike RotationSensor; both maxima use strict greater.",
+      "Direction XYZ outputs average forward-rotated basis vectors over matching sources, including sources without physics bodies.",
+      "Complete sensor/world/owner/source comparisons allow only eight scalar outputs, prior vector and three direction vectors; fourth direction lanes remain uninterpreted.",
+      "Independent reopening verifies saved name, working ABI, decompilation, original bytes and all 9604 other names/signatures."
+    ],
+    "limits": [
+      "Direction-output fourth lanes are permitted writes but not semantically interpreted or independently modeled.",
+      "Finite unit frames and selected valid records only;nonfinite/nonunit frames,malformed indices and timestep units unverified.",
+      "Prepared caches/metadata;full startup,worker,concurrency and live sensing unverified.",
+      "Analyst descriptive name and working ABI,not original C++ declaration.",
+      "No exact MM source/build match."
+    ],
+    "new_name_credit": 1
   }
 }

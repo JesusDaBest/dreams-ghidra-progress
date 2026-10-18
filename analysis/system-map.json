@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9605,
-  "mapped_total": 2123,
-  "unmapped_total": 7482,
+  "mapped_total": 2124,
+  "unmapped_total": 7481,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53626,6 +53626,35 @@
           ]
         }
       ]
+    },
+    "1408d12c0": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "sensors",
+        "movementsensor",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind54 update-switch target,MovementSensor metadata/property fields and complete scoped native runtime behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and scoped full-body native state comparisons.",
+      "code_sha256": "b8f988c6a671a3839446ffa9e4f2ff0549fcfe0b4a15ac5a471d061fab6e88dd",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateMovementSensorFromIncomingWires",
+          "support": [
+            "Original kind52 per-object update-switch branch and direct call byte matched; enum and property visitor identify MovementSensor.",
+            "Complete 472-instruction body and pseudocode read; all owned instruction bytes matched original executable.",
+            "1488 native cases execute original body with no external calls: 1296 identity-frame gate/wire/reference/cache/deadband/clamp cases and 192 nontrivial unit-frame cases.",
+            "Both velocity and cached difference are inverse-frame transformed. Prior cache stores relative source velocity, unlike RotationSensor; both maxima use strict greater.",
+            "Direction XYZ outputs average forward-rotated basis vectors over matching sources, including sources without physics bodies.",
+            "Complete sensor/world/owner/source comparisons allow only eight scalar outputs, prior vector and three direction vectors; fourth direction lanes remain uninterpreted.",
+            "Independent reopening verifies saved name, working ABI, decompilation, original bytes and all 9604 other names/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -58070,6 +58099,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

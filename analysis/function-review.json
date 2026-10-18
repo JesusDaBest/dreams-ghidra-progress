@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "662 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "663 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9605,
-    "default_fun_names": 8733,
-    "other_names": 872,
-    "verification": "complete_inventory_matches_baseline_plus_662_renames_and_54_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8732,
+    "other_names": 873,
+    "verification": "complete_inventory_matches_baseline_plus_663_renames_and_54_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16620,6 +16620,33 @@
         "The initial 1296 cases use identity frames; a later 192-case fixture verifies nontrivial finite unit frames. Nonunit/nonfinite frames and malformed body indices remain unverified.",
         "Prepared physics-cache records and controlled metadata offsets matched to known property fields;full startup not executed.",
         "No timestep-unit claim,complete worker/update loop,concurrency or live sensor verification.",
+        "Analyst descriptive name and working ABI,not original C++ declaration.",
+        "No exact MM source/build match."
+      ]
+    },
+    {
+      "address": "1408d12c0",
+      "original_name": "FUN_1408d12c0",
+      "applied_name": "UpdateMovementSensorFromIncomingWires",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateMovementSensorFromIncomingWires(void * owner, int objectReference, void * movementSensor)",
+      "evidence": [
+        "Original kind52 per-object update-switch branch and direct call byte matched; enum and property visitor identify MovementSensor.",
+        "Complete 472-instruction body and pseudocode read; all owned instruction bytes matched original executable.",
+        "1488 native cases execute original body with no external calls: 1296 identity-frame gate/wire/reference/cache/deadband/clamp cases and 192 nontrivial unit-frame cases.",
+        "Both velocity and cached difference are inverse-frame transformed. Prior cache stores relative source velocity, unlike RotationSensor; both maxima use strict greater.",
+        "Direction XYZ outputs average forward-rotated basis vectors over matching sources, including sources without physics bodies.",
+        "Complete sensor/world/owner/source comparisons allow only eight scalar outputs, prior vector and three direction vectors; fourth direction lanes remain uninterpreted.",
+        "Independent reopening verifies saved name, working ABI, decompilation, original bytes and all 9604 other names/signatures."
+      ],
+      "caveats": [
+        "Direction-output fourth lanes are permitted writes but not semantically interpreted or independently modeled.",
+        "Finite unit frames and selected valid records only;nonfinite/nonunit frames,malformed indices and timestep units unverified.",
+        "Prepared caches/metadata;full startup,worker,concurrency and live sensing unverified.",
         "Analyst descriptive name and working ABI,not original C++ declaration.",
         "No exact MM source/build match."
       ]
