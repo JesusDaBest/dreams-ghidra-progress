@@ -7293,3 +7293,10 @@ The CPU pipeline selects regular or surface-only block replay on intermediate le
 The paint replay shader has command-budget exits that save a resume header and per-voxel scratch values. The CPU binds a first-dispatch/repeat flag; a repeated dispatch can reload saved state and skip records already marked complete. The command budget is copied into the first constant context and read by the shader at the matching offset. Completion increments the shared progress counter through the participating lane with local ID 0, rather than every voxel lane. **24 mask cases** checked this conditional selection. An earlier local interpretation of that mask as a resume mask was corrected after tracing its overwrite.
 
 This explains the repeated-dispatch mechanism without proving termination: complete command-pointer advancement, every branch join, valid capacities, counter wrapping, GPU visibility and all replay geometry remain under review. Batch-overflow retries restore saved readback counters and halve the input batch; this is not proof of complete GPU rollback. No function has been counted as newly understood from these partial findings.
+
+
+### Sculpt chunk build orchestration named
+
+Applied and independently reopened **BuildSculptSlotChunksFromCommands** after reviewing its CPU body and connecting both callers, command bucketing, hierarchical replay, classified slot outputs and return paths. All **1,683 owned instruction bytes** match the original executable. The descriptive name and explanatory comment are the only project changes: the existing inferred prototype and all 9,611 other function names/signatures remain unchanged, and reopening/decompilation passed.
+
+This adds one checked CPU routine to Sculpting & painting / Chunk. It does not credit the large replay shader bodies as understood. Exact parameter types, replay termination, complete GPU rollback, coherence and rendering correctness remain unresolved. The primary paint replay header separately preserves its next command position and evaluation count across budget-limited dispatches; complete attribute restoration is still under review.

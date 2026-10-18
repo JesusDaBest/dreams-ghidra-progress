@@ -375,12 +375,13 @@ def render_hierarchy(nodes, bounds, depth=0):
         if node['id'] in {'properties-types','runtime-implementation','role-unresolved'}:continue
         if level>0 and len(owned)<5:continue
         checked=sum(r['review']=='verified_name' for r in node['rows'])
-        size=15 if level==0 else 14
+        size=15 if level==0 and node['id']!='physics' else 14
         placed=None;root_placements=[]
         # Major headings belong at the start of their own section. Children
         # find room below them rather than displacing the parent into the middle.
         for wrap in range(32,8,-1):
-            lines=textwrap.wrap(f"{node['label']}  {checked}/{len(owned)}",width=wrap,break_long_words=False)
+            separator=" " if node['id']=='physics' else "  "
+            lines=textwrap.wrap(f"{node['label']}{separator}{checked}/{len(owned)}",width=wrap,break_long_words=False)
             values=lines; sizes=[size]*len(lines)
             bw=max(len(line)*fs*.58 for line,fs in zip(values,sizes))+4
             bh=sum(fs+2 for fs in sizes)

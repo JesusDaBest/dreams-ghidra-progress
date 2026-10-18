@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "704 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "705 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8691,
-    "other_names": 921,
-    "verification": "complete_inventory_matches_baseline_plus_704_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8690,
+    "other_names": 922,
+    "verification": "complete_inventory_matches_baseline_plus_705_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17802,6 +17802,26 @@
         "Half-unit first-moment versus cell-center convention andcounter overflow remain unresolved.",
         "No fullroutine native execution orrealGPUvalidation;wrapper synchronization,lifetime anddescriptor mutation incomplete.",
         "Descriptive analyst name,not original declaration;inferred prototype retained."
+      ]
+    },
+    {
+      "address": "141290290",
+      "original_name": "FUN_141290290",
+      "applied_name": "BuildSculptSlotChunksFromCommands",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV BuildSculptSlotChunksFromCommands(void)",
+      "evidence": [
+        "CPU body control-flow review and1683 original instruction byte checks.",
+        "Both known caller boundaries traced; command bucketing,hierarchical replay,classified slot outputs andstatus paths connected.",
+        "Independent project reopening confirms name-only persistence andsuccessfuldecompilation;all9611other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Original symbol andexact parameter types not recovered;existinginferredprototype retained.",
+        "Large replay shader bodies remainpartiallyreviewed;no GPUcorrectness,termination orcomplete rollback guarantee."
       ]
     }
   ],

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 766,
+    "checked_and_applied_names": 767,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 766,
+    "verified_names": 767,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "704 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "705 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -23774,5 +23774,22 @@
       "CPU user-data DWORD5 is the boolean of the repeat-pass counter: zero for the first dispatch of a segment and nonzero on subsequent dispatches. The paint shader uses s5 to load saved state and skip status2 records."
     ],
     "new_name_credit": 0
+  },
+  "sculpt_chunk_build_name_checkpoint": {
+    "target": {
+      "name": "BuildSculptSlotChunksFromCommands",
+      "signature": "undefined PS4_SYSV BuildSculptSlotChunksFromCommands(void)"
+    },
+    "original_owned_instructions": 1683,
+    "evidence": [
+      "CPU body control-flow review and1683 original instruction byte checks.",
+      "Both known caller boundaries traced; command bucketing,hierarchical replay,classified slot outputs andstatus paths connected.",
+      "Independent project reopening confirms name-only persistence andsuccessfuldecompilation;all9611other names/signatures unchanged."
+    ],
+    "limits": [
+      "Original symbol andexact parameter types not recovered;existinginferredprototype retained.",
+      "Large replay shader bodies remainpartiallyreviewed;no GPUcorrectness,termination orcomplete rollback guarantee."
+    ],
+    "new_name_credit": 1
   }
 }
