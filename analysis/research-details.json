@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 727,
+    "checked_and_applied_names": 728,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 727,
+    "verified_names": 728,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "671 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "672 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19441,5 +19441,46 @@
       }
     },
     "new_name_credit": 0
+  },
+  "buffered_thing_apply_name_checkpoint": {
+    "target": {
+      "name": "ApplyBufferedThingRecordsToWorld",
+      "signature": "void PS4_SYSV ApplyBufferedThingRecordsToWorld(void * owner, uint recordBank)"
+    },
+    "native_check": {
+      "native_cases": 80,
+      "property_ids": [
+        "0x8a",
+        "0x10a",
+        "0x231",
+        "0x2d0"
+      ],
+      "findings": [
+        "Complete original consumer deep-copies nonempty packed property chains into world property buffer,preserves source,and advances property cursor by complete chain length including terminator.",
+        "Original registration and owner helper execute;consumer derives owner flags from copied property IDs8a/10a/2d0/231 as2000000/40000000/200/c0 on selected path.",
+        "80 cases cover five single/mixed property profiles,two property cursors,tags,mode byte and high kind bit;full world/owner/pool/source/root/metadata/property buffers compared."
+      ],
+      "models": [
+        "Standard memcpy/memset and unused process-time counter return modeled;real imported memory routines not executed."
+      ],
+      "limits": [
+        "Prepared Key,valid root,thread-specific property selection and cleanup disabled;capacity/overflow,other property IDs/kinds and full caller/game unverified."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete529-instruction body and pseudocode reviewed;original bytes verified.",
+      "Two direct caller sites pass owner and selected bank;source purpose of records remains unresolved.",
+      "32 existing-object cases verify header800 clearing/counter changes across both banks and processed/readiness gates.",
+      "16 null-property and80 nonempty-property Key copy cases execute original registration and owner helper;full world/owner/pool/source/root/metadata and property-buffer comparisons pass.",
+      "Copied property chains preserve source and advance world buffer cursor;property IDs8a/10a/2d0/231 set selected owner flags. Imported memcpy/memset and unused process-time return modeled.",
+      "Independent reopening verifies name,void owner/uint-bank ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Prepared Key,valid root,thread-specific property selection and cleanup disabled;capacity/overflow,other property IDs/kinds and full caller/game unverified.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2133,
-  "unmapped_total": 7473,
+  "mapped_total": 2134,
+  "unmapped_total": 7472,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53897,6 +53897,34 @@
             "Separate64-case paired check executes mark twice then bounded original clear twice:256 executions and exact world/object comparisons.",
             "Counter resets observed in existing pool/simulation preparation routines;main update combines it with two other counters before fast-path selection. Higher-level flag meaning unresolved.",
             "Independent reopening verifies name,void packed-reference/world ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1408cba30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Applies buffered Thing records to owner world,including copy/registration and existing-object flag accounting.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete list traversal body and scoped independent native state comparisons.",
+      "code_sha256": "45b5481349d0f74627f4a120385da423d76a5f2865883869fe85d387a33db053",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyBufferedThingRecordsToWorld",
+          "support": [
+            "Complete529-instruction body and pseudocode reviewed;original bytes verified.",
+            "Two direct caller sites pass owner and selected bank;source purpose of records remains unresolved.",
+            "32 existing-object cases verify header800 clearing/counter changes across both banks and processed/readiness gates.",
+            "16 null-property and80 nonempty-property Key copy cases execute original registration and owner helper;full world/owner/pool/source/root/metadata and property-buffer comparisons pass.",
+            "Copied property chains preserve source and advance world buffer cursor;property IDs8a/10a/2d0/231 set selected owner flags. Imported memcpy/memset and unused process-time return modeled.",
+            "Independent reopening verifies name,void owner/uint-bank ABI,decompilation,unchanged bytes and all9605 other names/signatures."
           ]
         }
       ]

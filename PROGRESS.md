@@ -6144,3 +6144,14 @@ Three scoped native checks trace this record lifecycle without assigning an unsu
 **32 cases** execute the complete 529-instruction consumer on its selected existing-object branch, across both record banks and processed/readiness gates. It clears header 0x800 and decrements the world counter per flagged listed object. Complete world/pool/object/index-array comparisons pass. Its unused process-time-counter return is modeled; the import is linked through the original executable relocation and local NID database.
 
 These are separate fixtures, not an end-to-end lifecycle test. The producer's 3,363-instruction body was captured and decompiled, but is not fully reviewed. Materialization, cleanup, all producer writes and the higher-level record meaning remain unresolved; no undo/loading interpretation is claimed. No new naming credit: **727 checked names** remains the total.
+
+
+### Buffered Thing application reviewed and named
+
+`ApplyBufferedThingRecordsToWorld` names the complete 529-instruction consumer. It processes a selected buffered-record bank, finds a root object by ID, clears header 0x800 on existing listed objects or copies source Things and packed property chains into world arenas. It initializes parallel world/owner records and calls the original registration and owner-state helpers. The exact source-level purpose of these records remains unresolved; the name does not imply undo or loading semantics.
+
+**32 existing-object cases, 16 null-property Key copy cases and 80 nonempty-property copy cases** pass complete prepared-state comparisons. Property tests cover single/mixed IDs 0x8A/0x10A/0x2D0/0x231, source preservation, complete terminator-inclusive copying, nonzero property-buffer cursors and owner flags derived from property presence. Original registration and owner-state code execute together. Standard memcpy/memset and an unused process-time-counter return are explicitly modeled.
+
+Independent reopening verifies the saved descriptive name, owner/unsigned-bank signature, decompilation, original bytes and all 9,605 other names/signatures. Other kinds,capacity/overflow,thread-specific property lanes,cleanup-enabled and missing-ID paths,full callers and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **728 checked names** (648 behavior/helper and 80 property/type), **2,134 mapped**, **7,472 unmapped**, among 9,606 defined functions.

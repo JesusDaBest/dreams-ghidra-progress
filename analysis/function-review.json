@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "671 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "672 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8724,
-    "other_names": 882,
-    "verification": "complete_inventory_matches_baseline_plus_671_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8723,
+    "other_names": 883,
+    "verification": "complete_inventory_matches_baseline_plus_672_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16883,6 +16883,29 @@
         "Flag and counter source meanings unresolved;valid prepared object indices only.",
         "Atomic increment tested single-threaded;test-plus-set sequence not established thread safe.",
         "Invalid indices dereference behavior,full callers and live game unverified.",
+        "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "1408cba30",
+      "original_name": "FUN_1408cba30",
+      "applied_name": "ApplyBufferedThingRecordsToWorld",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyBufferedThingRecordsToWorld(void * owner, uint recordBank)",
+      "evidence": [
+        "Complete529-instruction body and pseudocode reviewed;original bytes verified.",
+        "Two direct caller sites pass owner and selected bank;source purpose of records remains unresolved.",
+        "32 existing-object cases verify header800 clearing/counter changes across both banks and processed/readiness gates.",
+        "16 null-property and80 nonempty-property Key copy cases execute original registration and owner helper;full world/owner/pool/source/root/metadata and property-buffer comparisons pass.",
+        "Copied property chains preserve source and advance world buffer cursor;property IDs8a/10a/2d0/231 set selected owner flags. Imported memcpy/memset and unused process-time return modeled.",
+        "Independent reopening verifies name,void owner/uint-bank ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Prepared Key,valid root,thread-specific property selection and cleanup disabled;capacity/overflow,other property IDs/kinds and full caller/game unverified.",
         "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
       ]
     }
