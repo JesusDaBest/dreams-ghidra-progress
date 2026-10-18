@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9605,
-  "mapped_total": 2121,
-  "unmapped_total": 7484,
+  "mapped_total": 2122,
+  "unmapped_total": 7483,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53570,6 +53570,34 @@
           ]
         }
       ]
+    },
+    "1408d2270": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "sensors",
+        "anglesensor",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind53 update-switch target,AngleSensor metadata/property fields and complete scoped native runtime behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and scoped full-body native state comparisons.",
+      "code_sha256": "690a38ea16f7bcdbb6c3f55bd34f5d44ca8ca47f393df393ae6837eddbcbd190",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateAngleSensorFromIncomingWires",
+          "support": [
+            "Original kind53 per-object update-switch branch and direct call byte matched;enum and property visitor identify AngleSensor.",
+            "Complete255-instruction body and fresh pseudocode read;original bytes verified.",
+            "288native cases execute original updater and original libc atan2f implementation,with original library hash and import thunk/slot binding verified.",
+            "Power gating,wire destination/port/start/invalid-source selection,angle half-threshold/falloff inverse smoothstep and strict first-tie retention match expected results in identity-orientation fixtures.",
+            "Only scalar output+108 and selected quaternion+110 change;complete sensor/world/owner/source-buffer comparisons pass.",
+            "Independent reopening verifies descriptive name,working ABI,decompilation,unchanged bytes and all9604 other names/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -58025,6 +58053,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 715,
+    "checked_and_applied_names": 716,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 715,
+    "verified_names": 716,
     "function_count": 9605,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "14093af90",
       "14093b900"
     ],
-    "scope": "660 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "661 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18311,5 +18311,48 @@
     ],
     "new_name_credit": 1,
     "reviewed_scope": "properties_or_type_registration"
+  },
+  "angle_sensor_update_name_checkpoint": {
+    "target": {
+      "name": "UpdateAngleSensorFromIncomingWires",
+      "signature": "void PS4_SYSV UpdateAngleSensorFromIncomingWires(void * owner, int objectReference, void * angleSensor)"
+    },
+    "native_checks": {
+      "angle-sensor-runtime-native-check.json": {
+        "native_cases": 288,
+        "original_instructions_verified": 255,
+        "original_libc_atan2f": true,
+        "findings": [
+          "Complete original AngleSensor updater and actual original libc atan2f execute without callback/math import models.",
+          "Power0 yields0/identity; tested nonzero powers1/2 gate without scaling output.",
+          "Only matching incoming destination and port0x1e3 considered;destination mismatch ends scan,wrong port/invalid source skipped,cached start respected.",
+          "Identity-orientation cases match angular half-threshold/falloff inverse smoothstep;strict best-weight selection retains first tie and its quaternion sign.",
+          "Output float+108 and quaternion+110 are only modified sensor bytes;world,owner and all source buffers preserved."
+        ],
+        "limits": [
+          "Identity or negative-identity source quaternions and optional identity reference only;nontrivial rotations,nonunit vectors,nonfinite input and zero falloff unverified.",
+          "Metadata uses recovered AngleSensor field offsets in controlled table;whole startup not executed.",
+          "No full worker/update loop or live sensor execution."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Original kind53 per-object update-switch branch and direct call byte matched;enum and property visitor identify AngleSensor.",
+      "Complete255-instruction body and fresh pseudocode read;original bytes verified.",
+      "288native cases execute original updater and original libc atan2f implementation,with original library hash and import thunk/slot binding verified.",
+      "Power gating,wire destination/port/start/invalid-source selection,angle half-threshold/falloff inverse smoothstep and strict first-tie retention match expected results in identity-orientation fixtures.",
+      "Only scalar output+108 and selected quaternion+110 change;complete sensor/world/owner/source-buffer comparisons pass.",
+      "Independent reopening verifies descriptive name,working ABI,decompilation,unchanged bytes and all9604 other names/signatures."
+    ],
+    "limits": [
+      "Identity or negative-identity source quaternions and optional identity reference only;nontrivial rotations,nonunit vectors,nonfinite input and zero falloff unverified.",
+      "Metadata uses recovered AngleSensor field offsets in controlled table;whole startup not executed.",
+      "No full worker/update loop or live sensor execution.",
+      "Analyst descriptive name and working owner/packed-reference/sensor ABI,not original C++ declaration.",
+      "No exact MM source/build match."
+    ],
+    "new_name_credit": 1
   }
 }
