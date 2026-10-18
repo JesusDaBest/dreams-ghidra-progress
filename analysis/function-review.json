@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "663 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "663 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9605,
+    "total": 9606,
     "default_fun_names": 8732,
-    "other_names": 873,
-    "verification": "complete_inventory_matches_baseline_plus_663_renames_and_54_created_functions_and_1_reviewed_existing_name"
+    "other_names": 874,
+    "verification": "complete_inventory_matches_baseline_plus_663_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16651,6 +16651,30 @@
         "Prepared caches/metadata;full startup,worker,concurrency and live sensing unverified.",
         "Analyst descriptive name and working ABI,not original C++ declaration.",
         "No exact MM source/build match."
+      ]
+    },
+    {
+      "address": "1411a32b0",
+      "original_name": null,
+      "applied_name": "GetThingXYZOutputStorage",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV GetThingXYZOutputStorage(void * thing)",
+      "evidence": [
+        "XYZOutput identity links original visitor literal/field+140 to original kind52 metadata slot+59c, property ID2ce.",
+        "Complete 34-instruction original body and control flow reviewed; aligned ret/NOP neighbors and three original relative-call targets support entry/boundary.",
+        "3840 native cases cover packed property precedence, metadata fallback, 128 masked kinds, high type bit and controlled positive/zero/negative offsets with complete no-write comparisons.",
+        "Independent reopening verifies new nonoverlapping definition, pointer ABI, complete decompilation, original bytes and all9605 prior function names/signatures."
+      ],
+      "caveats": [
+        "Descriptive analyst name and opaque working pointer ABI, not recovered original C++ declaration.",
+        "Property storage lookup only; does not calculate scene position. Actual runtime writer remains unresolved.",
+        "Controlled metadata for other kinds does not establish their real XYZOutput support.",
+        "Null objects, malformed/cyclic packed chains, unsupported IDs, complete callers, live behavior and exact MM source/build match unverified."
       ]
     }
   ],

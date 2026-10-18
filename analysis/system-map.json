@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9605,
-  "mapped_total": 2124,
+  "inventory_total": 9606,
+  "mapped_total": 2125,
   "unmapped_total": 7481,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -53652,6 +53652,32 @@
             "Direction XYZ outputs average forward-rotated basis vectors over matching sources, including sources without physics bodies.",
             "Complete sensor/world/owner/source comparisons allow only eight scalar outputs, prior vector and three direction vectors; fourth direction lanes remain uninterpreted.",
             "Independent reopening verifies saved name, working ABI, decompilation, original bytes and all 9604 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1411a32b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-metadata",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic Thing property-storage lookup via packed records or kind metadata, not MovementSensor calculation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete getter behavior review and native no-write cases.",
+      "code_sha256": "3ae8983ad4eb75c0f0ab0551495608c0ad2f98a9a109e1fc9c863f4a0d197e7f",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetThingXYZOutputStorage",
+          "support": [
+            "XYZOutput identity links original visitor literal/field+140 to original kind52 metadata slot+59c, property ID2ce.",
+            "Complete 34-instruction original body and control flow reviewed; aligned ret/NOP neighbors and three original relative-call targets support entry/boundary.",
+            "3840 native cases cover packed property precedence, metadata fallback, 128 masked kinds, high type bit and controlled positive/zero/negative offsets with complete no-write comparisons.",
+            "Independent reopening verifies new nonoverlapping definition, pointer ABI, complete decompilation, original bytes and all9605 prior function names/signatures."
           ]
         }
       ]

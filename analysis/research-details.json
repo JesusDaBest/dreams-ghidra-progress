@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 718,
+    "checked_and_applied_names": 719,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 718,
-    "function_count": 9605,
+    "verified_names": 719,
+    "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
-      "14093af90",
-      "14093b900"
+      "1411a32b0"
     ],
-    "scope": "663 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "663 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18562,5 +18561,27 @@
       "Verify getter/caller boundaries and create project definitions only with sufficient evidence."
     ],
     "new_name_credit": 0
+  },
+  "xyz_output_storage_getter_name_checkpoint": {
+    "target": {
+      "name": "GetThingXYZOutputStorage",
+      "signature": "void * PS4_SYSV GetThingXYZOutputStorage(void * thing)"
+    },
+    "body_bytes": 129,
+    "instructions": 34,
+    "native_cases": 3840,
+    "evidence": [
+      "XYZOutput identity links original visitor literal/field+140 to original kind52 metadata slot+59c, property ID2ce.",
+      "Complete 34-instruction original body and control flow reviewed; aligned ret/NOP neighbors and three original relative-call targets support entry/boundary.",
+      "3840 native cases cover packed property precedence, metadata fallback, 128 masked kinds, high type bit and controlled positive/zero/negative offsets with complete no-write comparisons.",
+      "Independent reopening verifies new nonoverlapping definition, pointer ABI, complete decompilation, original bytes and all9605 prior function names/signatures."
+    ],
+    "limits": [
+      "Descriptive analyst name and opaque working pointer ABI, not recovered original C++ declaration.",
+      "Property storage lookup only; does not calculate scene position. Actual runtime writer remains unresolved.",
+      "Controlled metadata for other kinds does not establish their real XYZOutput support.",
+      "Null objects, malformed/cyclic packed chains, unsupported IDs, complete callers, live behavior and exact MM source/build match unverified."
+    ],
+    "new_name_credit": 1
   }
 }

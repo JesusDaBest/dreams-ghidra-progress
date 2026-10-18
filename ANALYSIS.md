@@ -6349,3 +6349,12 @@ The XYZOutput property visitor reads MovementSensor field +0x140. The original i
 This finds the storage accessor, **not the scene-position calculation**. The runtime writer remains unidentified. Raw call encodings provide three caller leads, but selected metadata-consumer sites lack defined instructions/functions in the current Ghidra project, so canonical getter/caller definitions remain pending. No function, name or type was added to the project. Malformed/cyclic packed records, null objects, full startup and live-game behavior remain unverified. No Media Molecule source/build match is claimed.
 
 Totals remain **718 checked names**, 2,124 mapped and 7,481 unmapped functions. No completion credit was added for locating this accessor.
+
+
+### XYZOutput storage getter defined and named
+
+The project now defines `GetThingXYZOutputStorage`, a previously missing 129-byte, 34-instruction function. The original XYZOutput visitor/initializer link establishes its property ID, and three original direct-call targets plus aligned return/padding boundaries support the function definition. Its working signature accepts an opaque Thing pointer and returns an opaque payload pointer. Complete native body and reopened pseudocode review agree with the previously recorded 3,840-case storage lookup tests.
+
+Independent reopening verifies the saved definition, name, signature and complete decompilation. Original bytes and all 9,605 prior function names/signatures remain unchanged. The getter belongs under shared property helpers: it locates packed or type-specific storage, and does not calculate MovementSensor's scene position. That writer remains unresolved, as do malformed/cyclic chains, null objects, complete caller behavior and live-game verification. No exact Media Molecule source/build match is claimed.
+
+Totals: **719 checked names** (639 behavior/helper and 80 property/type), **2,125 mapped** and **7,481 unmapped** among **9,606 defined functions**. The additional function was already present in the executable; its Ghidra definition was missing. No whole-game completion claim is made.
