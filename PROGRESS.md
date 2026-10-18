@@ -5539,3 +5539,16 @@ Applied three working layout types and refined seven existing pointer signatures
 Nine already reviewed table-specific functions now belong under Editor & interface / Canvases & wires / Canvas Wire Node / Storage & edits instead of shared runtime. The generic parent-chain helper stays in shared runtime. This is evidence-based classification and type refinement, with no additional naming or completion credit.
 
 The existing insertion, coordinate-edit, inverse-history, pruning and hash-chain native checks now have a concrete canvas-wire-node interpretation. This does not establish complete editor behavior, all wire-node operations, a livestream/source build match or live-game correctness. Totals remain 696 checked names, 2,108 mapped functions and 7,495 unmapped among 9,603 currently defined.
+
+
+### Named creation message and registered 32-byte payload
+
+Saved `EnsureCreateWireNodeMessageTypeRegistered` after reading and byte-verifying its complete 80-instruction guarded reflection wrapper. Its eight registered fields are `playerid` at 0, `canvas_seq` at 4, `src_thing_seq` at 8, `dst_thing_seq` at 12, `src_port` at 16, `dst_port` at 18, `pos_along_wire` at 20 and `pos_xy` at 24. A 32-byte working `CreateWireNodeMessageLayout` is saved with these offsets.
+
+Nine native cases exercise the already-guarded registration path: a zero ready field installs the expected descriptor header/callbacks and emits the eight expected field registrations; nonzero ready fields leave everything unchanged. Five registration helpers are explicit argument observers. Fresh guard acquisition, initialization imports and underlying helper allocation/type resolution were read but not executed; this is a property/type review.
+
+The previously observed tag `0xeaf7f618` now has a named binding. Its dispatcher requires at least 32 payload bytes, copies 32 and calls a small wrapper that selects the `CreateWireNodeMessage` descriptor before forwarding to imported routine `141603370`. The update-loop branch consuming the same tag reads the matching fields before the insertion event. The 12-instruction tag branch and 26-instruction descriptor wrapper are byte-checked. The imported routine's transport role, message origin and end-to-end delivery remain unresolved.
+
+The [official microchip guide](https://docs.indreams.me/en/create/resources/edit-mode-guide/assembly/gadgets/logic-and-processing) describes adding and moving wire nodes to tidy microchip wiring. Together with the binary's `CanvasWireNode`, canvas/endpoint identity fields, XY position and position along a wire, this supports interpreting these records as canvas wire-routing control points. That is a source-backed feature interpretation, not a live editor test or an exact binary/source-version match.
+
+Independent reopening verifies the name, void/no-argument SysV signature and all message layout offsets, with original bytes and the other 9,602 names/signatures unchanged. Totals: 697 checked names, 2,108 mapped functions and 7,495 unmapped among 9,603 currently defined. This one additional review concerns type metadata; it does not increase verified behavior coverage.

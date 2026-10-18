@@ -3,11 +3,11 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 650,
-    "todo": 1458,
+    "done": 651,
+    "todo": 1457,
     "total": 2108,
     "behavior_or_helpers_reviewed": 583,
-    "properties_or_types_reviewed": 67,
+    "properties_or_types_reviewed": 68,
     "whole_feature_completion": null,
     "groups": [
       {
@@ -12420,11 +12420,11 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 88,
-        "todo": 311,
+        "done": 89,
+        "todo": 310,
         "total": 399,
         "behavior_or_helpers_reviewed": 85,
-        "properties_or_types_reviewed": 3,
+        "properties_or_types_reviewed": 4,
         "runtime_functions_identified": 190,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
@@ -12453,6 +12453,7 @@
           "AddRecordModeEnumValue",
           "RegisterEditOpFieldOffset",
           "RegisterRecordModeFieldOffset",
+          "EnsureCreateWireNodeMessageTypeRegistered",
           "RegisterNodeCustomIconFieldOffset",
           "BuildTextLayoutRecord",
           "MeasureTextLayoutDimensions",
@@ -12705,7 +12706,6 @@
           "0x140d2f6f0",
           "0x140d2f7f0",
           "0x140d2f900",
-          "0x140d2fa10",
           "0x140d2fb80",
           "0x140d2fcd0",
           "0x140d2fdd0",
@@ -12856,6 +12856,7 @@
           "140cb3d40",
           "140cdfdb0",
           "140cf47a0",
+          "140d2fa10",
           "140d71a90",
           "1412d7b40",
           "1412d8a40",
@@ -13108,7 +13109,6 @@
           "140d2f6f0",
           "140d2f7f0",
           "140d2f900",
-          "140d2fa10",
           "140d2fb80",
           "140d2fcd0",
           "140d2fdd0",
@@ -18684,11 +18684,11 @@
           {
             "name": "interface/canvas",
             "label": "Canvases & wires",
-            "done": 10,
-            "todo": 18,
+            "done": 11,
+            "todo": 17,
             "total": 28,
             "behavior_or_helpers_reviewed": 10,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 1,
             "runtime_functions_identified": 9,
             "property_type_functions_identified": 19,
             "code_role_unresolved": 0,
@@ -18703,6 +18703,7 @@
               "ApplyKeyedRecordInsertionEvent",
               "SetKeyedRecordCoordinatesOrNearbyRecords",
               "RemoveKeyedRecordOrNearbyRecords",
+              "EnsureCreateWireNodeMessageTypeRegistered",
               "RegisterNodeCustomIconFieldOffset"
             ],
             "todo_names": [
@@ -18719,7 +18720,6 @@
               "0x140cddc00",
               "0x140cdf2f0",
               "0x140cdf670",
-              "0x140d2fa10",
               "0x140d2fb80",
               "0x140d2fcd0",
               "0x140d2fed0",
@@ -18735,6 +18735,7 @@
               "140b35aa0",
               "140b35bd0",
               "140b35ec0",
+              "140d2fa10",
               "140d71a90"
             ],
             "todo_addresses": [
@@ -18751,7 +18752,6 @@
               "140cddc00",
               "140cdf2f0",
               "140cdf670",
-              "140d2fa10",
               "140d2fb80",
               "140d2fcd0",
               "140d2fed0",
@@ -19186,45 +19186,45 @@
               {
                 "name": "interface/canvas/createwirenodemessage",
                 "label": "Create Wire Node Message",
-                "done": 0,
-                "todo": 1,
+                "done": 1,
+                "todo": 0,
                 "total": 1,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 1,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 1,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140d2fa10"
+                "done_names": [
+                  "EnsureCreateWireNodeMessageTypeRegistered"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "todo_names": [],
+                "done_addresses": [
                   "140d2fa10"
                 ],
+                "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "interface/canvas/createwirenodemessage/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
+                    "done": 1,
+                    "todo": 0,
                     "total": 1,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 1,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140d2fa10"
+                    "done_names": [
+                      "EnsureCreateWireNodeMessageTypeRegistered"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "todo_names": [],
+                    "done_addresses": [
                       "140d2fa10"
                     ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "643 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "644 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8752,
-    "other_names": 851,
-    "verification": "complete_inventory_matches_baseline_plus_643_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8751,
+    "other_names": 852,
+    "verification": "complete_inventory_matches_baseline_plus_644_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16079,6 +16079,29 @@
         "Every routing flag, NaN/inf nearby coordinates/order, malformed graphs, concurrency and gameplay untested.",
         "New caller branches statically checked only; complete enclosing functions, network origin and user-facing editor feature identity unresolved.",
         "Reflection names/offsets identified; layout integer signedness and exact source C++ declarations unresolved. Final two node padding bytes have no reflected field name."
+      ]
+    },
+    {
+      "address": "140d2fa10",
+      "original_name": "FUN_140d2fa10",
+      "applied_name": "EnsureCreateWireNodeMessageTypeRegistered",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EnsureCreateWireNodeMessageTypeRegistered(void)",
+      "evidence": [
+        "Complete80-instruction guarded type-registration body and pseudocode read; original bytes matched.",
+        "Nine native already-guarded descriptor cases verify exact header bytes and eight descriptor/name/offset/helper argument observations. Ready descriptors unchanged; five registration helper implementations replaced by explicit observers.",
+        "CreateWireNodeMessage32-byte reflected member offsets match tag0xeaf7f618 update-loop payload. Twelve-instruction tag branch and26-instruction wrapper byte-matched; wrapper selects this descriptor before imported forwarding routine.",
+        "Independent reopening confirms descriptive name, void/no-argument SysV signature and32-byte working message layout; other9602 names/signatures and native bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working layout/storage carriers, not original C++ declarations.",
+        "Fresh guard acquisition/static initializer/atexit/release imports read but not executed; observed registration argument boundaries do not test underlying helper allocation/type resolution.",
+        "Metadata/type review, not behavior completion. Imported forwarding routine semantics, message origin and end-to-end delivery unresolved.",
+        "Official user guide provides wire-node feature context; no exact build, livestream source match or live editor verification."
       ]
     }
   ],

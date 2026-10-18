@@ -16917,5 +16917,141 @@
     "parameter_storage_unchanged": true,
     "native_bytes_unchanged": true,
     "new_name_credit": 0
+  },
+  "create_wire_node_message_checkpoint": {
+    "address": "140d2fa10",
+    "name": "EnsureCreateWireNodeMessageTypeRegistered",
+    "signature": "void PS4_SYSV EnsureCreateWireNodeMessageTypeRegistered(void)",
+    "native_instructions": 80,
+    "native_check": {
+      "native_cases": 9,
+      "original_native_instructions_verified": 80,
+      "registered_type": "CreateWireNodeMessage",
+      "fields": [
+        {
+          "name": "canvas_seq",
+          "offset": 4,
+          "registration_kind": 0
+        },
+        {
+          "name": "src_thing_seq",
+          "offset": 8,
+          "registration_kind": 0
+        },
+        {
+          "name": "dst_thing_seq",
+          "offset": 12,
+          "registration_kind": 0
+        },
+        {
+          "name": "src_port",
+          "offset": 16,
+          "registration_kind": 1
+        },
+        {
+          "name": "dst_port",
+          "offset": 18,
+          "registration_kind": 1
+        },
+        {
+          "name": "pos_along_wire",
+          "offset": 20,
+          "registration_kind": 2
+        },
+        {
+          "name": "pos_xy",
+          "offset": 24,
+          "registration_kind": 3
+        },
+        {
+          "name": "playerid",
+          "offset": 0,
+          "registration_kind": 4
+        }
+      ],
+      "finding": "Original80-instruction guarded metadata wrapper executes with guard already nonzero. Zero descriptor ready field installs name/flags/callbacks and registers eight expected fields at offsets0..24; nonzero ready fields return without any descriptor or registration changes. Exact descriptor bytes and every observed descriptor/name/offset/helper checked.",
+      "limits": [
+        "Five registration helpers replaced by explicit argument observers; their allocation/type-resolution implementations are not executed.",
+        "Fresh guard acquisition, static initialization import, atexit and guard release branches are read but not executed.",
+        "Metadata verification, not message transport or gameplay."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "tag_binding": {
+      "type_name": "CreateWireNodeMessage",
+      "tag": "eaf7f618",
+      "payload_bytes": 32,
+      "fields": [
+        {
+          "name": "playerid",
+          "offset": 0,
+          "width": 4
+        },
+        {
+          "name": "canvas_seq",
+          "offset": 4,
+          "width": 4
+        },
+        {
+          "name": "src_thing_seq",
+          "offset": 8,
+          "width": 4
+        },
+        {
+          "name": "dst_thing_seq",
+          "offset": 12,
+          "width": 4
+        },
+        {
+          "name": "src_port",
+          "offset": 16,
+          "width": 2
+        },
+        {
+          "name": "dst_port",
+          "offset": 18,
+          "width": 2
+        },
+        {
+          "name": "pos_along_wire",
+          "offset": 20,
+          "width": 4
+        },
+        {
+          "name": "pos_xy",
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "tag_dispatch_native_instructions": 12,
+      "descriptor_wrapper_native_instructions": 26,
+      "descriptor": "145888dd0",
+      "findings": [
+        "Tag branch requires at least32payload bytes and copies exactly32 before invoking140c82410.",
+        "Wrapper selects named CreateWireNodeMessage descriptor145888dd0 via140d2fa10 then forwards two opaque arguments and descriptor to imported141603370.",
+        "Update-loop same tag uses matching32-byte reflected payload offsets before ApplyKeyedRecordInsertionEvent."
+      ],
+      "limits": [
+        "Static branches and metadata binding; imported141603370 semantics, message origin and end-to-end delivery not verified.",
+        "Public guide/release notes describe user-facing wire nodes, not exact binary build or source matching."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "review_scope": "properties_or_type_registration",
+    "evidence": [
+      "Complete80-instruction guarded type-registration body and pseudocode read; original bytes matched.",
+      "Nine native already-guarded descriptor cases verify exact header bytes and eight descriptor/name/offset/helper argument observations. Ready descriptors unchanged; five registration helper implementations replaced by explicit observers.",
+      "CreateWireNodeMessage32-byte reflected member offsets match tag0xeaf7f618 update-loop payload. Twelve-instruction tag branch and26-instruction wrapper byte-matched; wrapper selects this descriptor before imported forwarding routine.",
+      "Independent reopening confirms descriptive name, void/no-argument SysV signature and32-byte working message layout; other9602 names/signatures and native bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working layout/storage carriers, not original C++ declarations.",
+      "Fresh guard acquisition/static initializer/atexit/release imports read but not executed; observed registration argument boundaries do not test underlying helper allocation/type resolution.",
+      "Metadata/type review, not behavior completion. Imported forwarding routine semantics, message origin and end-to-end delivery unresolved.",
+      "Official user guide provides wire-node feature context; no exact build, livestream source match or live editor verification."
+    ],
+    "new_name_credit": 1
   }
 }
