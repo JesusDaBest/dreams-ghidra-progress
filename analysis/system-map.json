@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2181,
-  "unmapped_total": 7431,
+  "mapped_total": 2182,
+  "unmapped_total": 7430,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55195,6 +55195,32 @@
             "Current shape/highbit predicate, decode, allfour matrix branches, repack, output writer and interning traced.",
             "5004 finite unit-quaternion matrix fixtures and12000 connected codec fixtures passed as host arithmetic models.",
             "Independent reopening/decompilation passed; bytes, inferred prototype and all9611 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1410608a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "support",
+        "memory-pools",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic packed resource cursor write used by indexed stroke metadata replacement.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Copies and modifies packed resource nodes, then propagates changed child handles through the cursor path.",
+      "code_sha256": "16e06dfb4f543f4b81a440b393bf8a91a3ef049956a5d23c2fbe63f54538bf37",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WritePackedResourceBytesThroughCursor",
+          "support": [
+            "Complete87 owned original instructions and decompilation read.",
+            "Cursor copy/write, category1 summary refresh, fingerprint interning, unchanged-identity stop and four-byte parent propagation traced.",
+            "Indexed44-byte stroke metadata replacement caller independently confirms write direction.",
+            "Independent reopening/decompilation passed; bytes, prototype and9611 other names/signatures unchanged."
           ]
         }
       ]

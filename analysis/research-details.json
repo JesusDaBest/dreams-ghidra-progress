@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 776,
+    "checked_and_applied_names": 777,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 776,
+    "verified_names": 777,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "714 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "715 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24223,5 +24223,24 @@
       "Only selected paths of the ordinary builder reviewed; matrix/shape math and whole runtime behavior unproven."
     ],
     "new_name_credit": 0
+  },
+  "packed_resource_cursor_byte_write_name_checkpoint": {
+    "target": {
+      "name": "WritePackedResourceBytesThroughCursor",
+      "signature": "undefined PS4_SYSV WritePackedResourceBytesThroughCursor(void)"
+    },
+    "original_owned_instructions": 87,
+    "evidence": [
+      "Complete87 owned original instructions and decompilation read.",
+      "Cursor copy/write, category1 summary refresh, fingerprint interning, unchanged-identity stop and four-byte parent propagation traced.",
+      "Indexed44-byte stroke metadata replacement caller independently confirms write direction.",
+      "Independent reopening/decompilation passed; bytes, prototype and9611 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name, not original symbol.",
+      "Existing inferred prototype retained; justified working parameter types remain pending.",
+      "No malformed cursor, caller bounds, allocation/concurrency or native game proof."
+    ],
+    "new_name_credit": 1
   }
 }

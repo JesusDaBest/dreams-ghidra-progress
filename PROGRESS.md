@@ -6933,3 +6933,10 @@ The controls modify the source settings word at player offset `0x528`: bit 12 en
 The dispatcher also maps selectors 396–398 to analogous second-field controls, matching Stroke Kaleidoscope tool tags. The second field uses enable bit 18 and count bits 19–23; its downstream geometry consumer has not yet been traced. The settings copy covers exactly 24 bytes, ending before effective state at `0x540`. The effective-state routine's early mode gate retains the first folding field only for mode value 3; later overrides and complete input-selector provenance remain unresolved.
 
 These handler ranges were absent from the saved Ghidra function body. Original-byte disassembly supplies the bounded evidence without silently treating the incomplete body as complete. No new function-name credit, whole-editor completion claim or native game validation is added.
+
+
+### Packed resource cursor byte writer named
+
+Applied and independently reopened **WritePackedResourceBytesThroughCursor** after reading all **87 original instructions** and its decompilation. It copies a resource node, replaces bytes at a payload offset, refreshes category-1 summaries and interns the candidate. If its identity changes, the cursor receives the new handle and the parent receives a four-byte child-handle replacement; unchanged identity stops propagation. It returns the cursor root.
+
+The indexed stroke metadata helper uses this operation to replace a 44-byte descriptor, confirming write direction rather than geometry reading. Only the name and explanatory comment changed. Reopening/decompilation passed; bytes, the existing inferred prototype and all 9,611 other names/signatures are unchanged. Working parameter types, caller bounds, malformed cursors, allocation/concurrency and live game behavior remain unresolved. This adds one verified shared resource helper, not completion of the stroke-rendering path.
