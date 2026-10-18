@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "723 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "724 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9613,
-    "default_fun_names": 8672,
-    "other_names": 941,
-    "verification": "complete_inventory_matches_baseline_plus_723_renames_and_62_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8671,
+    "other_names": 942,
+    "verification": "complete_inventory_matches_baseline_plus_724_renames_and_62_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18284,6 +18284,33 @@
         "Explicitpowadapterinmultileaffixtures;originalplatformmathnotexecuted.",
         "Cursorisadvanced;opaque32-byteworkingregion,notoriginalC++declaration.",
         "Descriptiveanalystname;noentireprocessorcompletionclaim."
+      ]
+    },
+    {
+      "address": "1413d44d0",
+      "original_name": "FUN_1413d44d0",
+      "applied_name": "SamplePackedSpritePointAtPathDistance",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SamplePackedSpritePointAtPathDistance(float requested_distance, pointer sample_output, pointer sampling_progress, pointer point_cursor)",
+      "evidence": [
+        "Count0 writesdefaultXYZ/radius(0,0,0,1)andidentityquaternion;count1readsfirstpointandnormalizesorientation.",
+        "Forcount>=2,startatprogressnextpointindexandcumulativeprevdistance,advanceconsecutiveXYZsegmentsuntilrequestliesininclusiveintervalwithpositiveextent.",
+        "Interior sample lerpsXYZ/radiusandnormalizedshortest-signquaternionblend;endpointquaternionsdecodedfrombinary16andnormalizedbeforeblend. Zero/infiniteblendnormfallsbackidentity;nonfiniteinputpathsnotnativevalidated.",
+        "Advancesprogressstartdistance/nextindexonlywhensteppingpastsegment;retainedprogressintendedfornondecreasingrequests. Out-of-rangeorunbracketedrequestsreturnlastpoint,notnecessarilyclampedstart.",
+        "Cursoraddressinguses40-bytepointstride,480-bytepayload,24-bytepageoverhead,126-waytreewithpowimport;deep/malformedinvariantsnotproven.",
+        "Two54-case nativegroupscheckempty/singlepoint/interior/end,constantandvarying/sign-equivalent/nonunitquaternions;freshvsretainedprogressstate/cursorverifiedforincreasingrequests.",
+        "Complete735ownedinstructionsand551nonblankC linesread;allownedbytesmatchedoriginal.",
+        "Four-inputvoidABI matchedentryandthreedirectcallersetups;name/typesindependentlyreopened."
+      ],
+      "caveats": [
+        "Singleleafnativefixtures;cross-page/deep/malformedtreeexecutionunverified.",
+        "Negative/backwards/nonfinite/degeneratesegmentbehaviorandallcallerpreconditionsunverified.",
+        "Opaqueoutput/progress/cursorworkingregions,notrecoveredoriginalstructs.",
+        "Platformisinffadapted;noactualgame,threadingorGPUproof."
       ]
     }
   ],

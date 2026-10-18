@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9613,
-  "mapped_total": 2188,
-  "unmapped_total": 7425,
+  "mapped_total": 2189,
+  "unmapped_total": 7424,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55426,6 +55426,36 @@
             "Processor1413d6f28receiveslengthinXMM0andstoresstack+bc;anothercallinselectedscratchcandidatepathcomputeslengthforcandidatecursor.",
             "242originalownedinstructionsandcompleteCread;78singleleafand36depth1multileafnativecases;powexplicitlyadapted.",
             "Nameandfloat-return/RDIopaque-pointerworkingABIindependentlyreopened;allothernames/signaturesandbytesunchanged."
+          ]
+        }
+      ]
+    },
+    "1413d44d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Three direct call sites in Sprite cache processing and dependent sampling; complete path-distance sampler reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "SamplesXYZ/radius andorientationbycumulativepathdistance usingmutableprogress/cursor.",
+      "code_sha256": "9d17013fd2233fc480cffbcb69f60b07dbeab1bbc2b20f123c9316e1133195c9",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SamplePackedSpritePointAtPathDistance",
+          "support": [
+            "Count0 writesdefaultXYZ/radius(0,0,0,1)andidentityquaternion;count1readsfirstpointandnormalizesorientation.",
+            "Forcount>=2,startatprogressnextpointindexandcumulativeprevdistance,advanceconsecutiveXYZsegmentsuntilrequestliesininclusiveintervalwithpositiveextent.",
+            "Interior sample lerpsXYZ/radiusandnormalizedshortest-signquaternionblend;endpointquaternionsdecodedfrombinary16andnormalizedbeforeblend. Zero/infiniteblendnormfallsbackidentity;nonfiniteinputpathsnotnativevalidated.",
+            "Advancesprogressstartdistance/nextindexonlywhensteppingpastsegment;retainedprogressintendedfornondecreasingrequests. Out-of-rangeorunbracketedrequestsreturnlastpoint,notnecessarilyclampedstart.",
+            "Cursoraddressinguses40-bytepointstride,480-bytepayload,24-bytepageoverhead,126-waytreewithpowimport;deep/malformedinvariantsnotproven.",
+            "Two54-case nativegroupscheckempty/singlepoint/interior/end,constantandvarying/sign-equivalent/nonunitquaternions;freshvsretainedprogressstate/cursorverifiedforincreasingrequests.",
+            "Complete735ownedinstructionsand551nonblankC linesread;allownedbytesmatchedoriginal.",
+            "Four-inputvoidABI matchedentryandthreedirectcallersetups;name/typesindependentlyreopened."
           ]
         }
       ]

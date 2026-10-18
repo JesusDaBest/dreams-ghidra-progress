@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 786,
+    "checked_and_applied_names": 787,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 786,
+    "verified_names": 787,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "723 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "724 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24657,5 +24657,51 @@
       "No additionalnameorwholeprocessorcompletioncredit."
     ],
     "new_name_credit": 0
+  },
+  "sprite_point_interpolation_checkpoint": {
+    "target": {
+      "name": "SamplePackedSpritePointAtPathDistance",
+      "signature": "void PS4_SYSV SamplePackedSpritePointAtPathDistance(float requested_distance, pointer sample_output, pointer sampling_progress, pointer point_cursor)"
+    },
+    "evidence": [
+      "Count0 writesdefaultXYZ/radius(0,0,0,1)andidentityquaternion;count1readsfirstpointandnormalizesorientation.",
+      "Forcount>=2,startatprogressnextpointindexandcumulativeprevdistance,advanceconsecutiveXYZsegmentsuntilrequestliesininclusiveintervalwithpositiveextent.",
+      "Interior sample lerpsXYZ/radiusandnormalizedshortest-signquaternionblend;endpointquaternionsdecodedfrombinary16andnormalizedbeforeblend. Zero/infiniteblendnormfallsbackidentity;nonfiniteinputpathsnotnativevalidated.",
+      "Advancesprogressstartdistance/nextindexonlywhensteppingpastsegment;retainedprogressintendedfornondecreasingrequests. Out-of-rangeorunbracketedrequestsreturnlastpoint,notnecessarilyclampedstart.",
+      "Cursoraddressinguses40-bytepointstride,480-bytepayload,24-bytepageoverhead,126-waytreewithpowimport;deep/malformedinvariantsnotproven.",
+      "Two54-case nativegroupscheckempty/singlepoint/interior/end,constantandvarying/sign-equivalent/nonunitquaternions;freshvsretainedprogressstate/cursorverifiedforincreasingrequests.",
+      "Complete735ownedinstructionsand551nonblankC linesread;allownedbytesmatchedoriginal.",
+      "Four-inputvoidABI matchedentryandthreedirectcallersetups;name/typesindependentlyreopened."
+    ],
+    "limits": [
+      "Singleleafnativefixtures;cross-page/deep/malformedtreeexecutionunverified.",
+      "Negative/backwards/nonfinite/degeneratesegmentbehaviorandallcallerpreconditionsunverified.",
+      "Opaqueoutput/progress/cursorworkingregions,notrecoveredoriginalstructs.",
+      "Platformisinffadapted;noactualgame,threadingorGPUproof."
+    ],
+    "native_cases": 108,
+    "native_scope": "Two54casegroups;singleleaf0/1/3points,constantandvaryingquaternions,freshvsretainedprogress.",
+    "new_name_credit": 1
+  },
+  "sprite_processed_point_field_followup": {
+    "native_cases": 6,
+    "output_points": 18,
+    "scope": "ThreeunevenlyspacedpointsY0/1/4;finitepositivescales,identityorientations,displacementbypass.",
+    "findings": [
+      "Outputhalves+20/+22/+24matchdecodedsharedexponenttriple(1,2,3).",
+      "Outputhalf+26matchespointRadius*metadataScale.",
+      "OutputDWORD+28low16pointcountminus1/high16pointindexinselected3-pointdomain.",
+      "OutputDWORD+40low16normalizedcumulativeXYZpathdistance*65535,truncated."
+    ],
+    "limits": [
+      "Packedhighbitsandgeneraldomainunresolved;platformmathadapted."
+    ]
+  },
+  "sprite_mm_displacement_comparison": {
+    "official_source": "https://www.mediamolecule.com/blog/article/siggraph_2015",
+    "page": 124,
+    "conclusion": "HistoricalDOFexampleusesscreenspacediscjitterbasedonCOC;recoveredCPUdisplacementispoint-orientedhashoffset. Noexactsource/buildmatch.",
+    "stream_lead": "https://www.mediamolecule.com/blog/article/this_weeks_live_stream_the_tech_behind_the_magic",
+    "stream_scope": "Officialannouncementrechecked;recordingframes/transcriptnotnewlyinspected."
   }
 }

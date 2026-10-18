@@ -7087,3 +7087,16 @@ The displacement follows point orientation before the metadata orientation, scal
 The source format is clearer: offset 16 contains four half-precision orientation components; offset 24 contains another half-precision vector whose semantic names remain unresolved; offset 32 supplies packed fields; offset 36 contains three 9-bit components sharing a 5-bit exponent, decoded through the linked `ldexpf` import. Calling those components editor colors is not independently established here. The other resolved math import is `__isinff`.
 
 Fixtures adapt mutex/thread-ID and math imports. They check ready state, cleared roots, timestamp, allocation handle, unchanged source pool and output guards. They do not establish all source-attribute validity or running-game reachability. Other metadata ordinals, interpolation and scratch-selection paths, replication, general trees, malformed inputs, concurrency and GPU behavior remain incomplete. No new name or whole-processor completion credit is added.
+
+
+### Packed Sprite path-distance sampler reviewed and named
+
+`SamplePackedSpritePointAtPathDistance` names the complete 735-instruction helper used at three direct call sites. Its 32-byte output contains XYZ/radius and a quaternion. A float distance selects a segment using cumulative XYZ length; interior samples linearly interpolate position/radius and use a shortest-sign normalized linear quaternion blend. Empty input returns a default sample; one point returns its normalized sample; an exhausted or unbracketed search returns the last point. A segment-start distance/next-point index pair and a page cursor retain traversal progress.
+
+Two groups of **54 native cases** cover empty/single/three-point paths, interior and exact-end requests, requests beyond the end, changing/sign-equivalent/nonunit orientations, and fresh versus retained progress for increasing distances. The name and four-input void working signature persisted after reopening. All other names/signatures and original bytes remained unchanged. Cross-page sampling, backward/negative/nonfinite requests, zero-length segments and all caller preconditions remain unverified. Opaque pointers preserve the distinction between working regions and original source structs.
+
+Separately, **six three-point processor cases** with uneven spacing check decoded component values and scaled radius in output half-values, point count/index in a packed word, and normalized cumulative distance in the low 16 bits of another word. The tested distance values differ from a simple index fraction. Packed high bits and wider input domains remain unresolved.
+
+Media Molecule's [2015 presentation](https://www.mediamolecule.com/blog/article/siggraph_2015), page 124, describes a screen-space depth-of-field technique. The recovered point-oriented displacement has a different input and coordinate-space contract, so the historical description does not establish a match. The [2016 particle-coding announcement](https://www.mediamolecule.com/blog/article/this_weeks_live_stream_the_tech_behind_the_magic) remains a recording lead; no new source frames or transcript were inspected.
+
+Totals: **787 checked names**, **2,189 mapped functions**, **7,424 unmapped**, among **9,613 defined functions**. The larger processor and whole Sprite subsystem remain incomplete.
