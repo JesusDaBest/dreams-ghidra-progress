@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9605,
-  "mapped_total": 2122,
-  "unmapped_total": 7483,
+  "mapped_total": 2123,
+  "unmapped_total": 7482,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53598,6 +53598,34 @@
           ]
         }
       ]
+    },
+    "1408d1b50": {
+      "system": "gadgets-logic",
+      "component_path": [
+        "gadgets-logic",
+        "sensors",
+        "rotationsensor",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original kind54 update-switch target,RotationSensor metadata/property fields and complete scoped native runtime behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and scoped full-body native state comparisons.",
+      "code_sha256": "0935a0ef58aa0eec194368f5fe4010b5e1ed83eb386debd0d0341a6abf502ba0",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateRotationSensorFromIncomingWires",
+          "support": [
+            "Original kind54 per-object update-switch branch and direct call byte matched;enum and property visitor identify RotationSensor.",
+            "Complete399-instruction body and fresh pseudocode read;original bytes verified.",
+            "1296native cases execute original body with no imports or callback models,covering selected wire layouts,power0/1/2,reference subtraction,previous state,both identity-frame modes,deadband and clamping.",
+            "Velocity maximum replaces equal magnitudes;difference maximum uses strict greater. Prior cache updates to each processed absolute source vector,so multiwire difference depends on order.",
+            "Complete sensor/world/owner/source comparisons verify only eight output floats,prior-vector cache and selected orientation change.",
+            "Independent reopening verifies name,working ABI,decompilation,unchanged bytes and all9604 other names/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -58069,6 +58097,11 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                },
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
                   "children": []
                 }
               ]

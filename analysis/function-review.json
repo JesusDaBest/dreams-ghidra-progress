@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "661 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "662 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9605,
-    "default_fun_names": 8734,
-    "other_names": 871,
-    "verification": "complete_inventory_matches_baseline_plus_661_renames_and_54_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8733,
+    "other_names": 872,
+    "verification": "complete_inventory_matches_baseline_plus_662_renames_and_54_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16594,6 +16594,32 @@
         "Metadata uses recovered AngleSensor field offsets in controlled table;whole startup not executed.",
         "No full worker/update loop or live sensor execution.",
         "Analyst descriptive name and working owner/packed-reference/sensor ABI,not original C++ declaration.",
+        "No exact MM source/build match."
+      ]
+    },
+    {
+      "address": "1408d1b50",
+      "original_name": "FUN_1408d1b50",
+      "applied_name": "UpdateRotationSensorFromIncomingWires",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateRotationSensorFromIncomingWires(void * owner, int objectReference, void * rotationSensor)",
+      "evidence": [
+        "Original kind54 per-object update-switch branch and direct call byte matched;enum and property visitor identify RotationSensor.",
+        "Complete399-instruction body and fresh pseudocode read;original bytes verified.",
+        "1296native cases execute original body with no imports or callback models,covering selected wire layouts,power0/1/2,reference subtraction,previous state,both identity-frame modes,deadband and clamping.",
+        "Velocity maximum replaces equal magnitudes;difference maximum uses strict greater. Prior cache updates to each processed absolute source vector,so multiwire difference depends on order.",
+        "Complete sensor/world/owner/source comparisons verify only eight output floats,prior-vector cache and selected orientation change.",
+        "Independent reopening verifies name,working ABI,decompilation,unchanged bytes and all9604 other names/signatures."
+      ],
+      "caveats": [
+        "Identity/negative-identity source and frame quaternions only;nontrivial local/world frames,nonfinite values and malformed body indices unverified.",
+        "Prepared physics-cache records and controlled metadata offsets matched to known property fields;full startup not executed.",
+        "No timestep-unit claim,complete worker/update loop,concurrency or live sensor verification.",
+        "Analyst descriptive name and working ABI,not original C++ declaration.",
         "No exact MM source/build match."
       ]
     }

@@ -3,22 +3,22 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 670,
+    "done": 671,
     "todo": 1452,
-    "total": 2122,
-    "behavior_or_helpers_reviewed": 596,
+    "total": 2123,
+    "behavior_or_helpers_reviewed": 597,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 109,
+        "done": 110,
         "todo": 404,
-        "total": 513,
-        "behavior_or_helpers_reviewed": 59,
+        "total": 514,
+        "behavior_or_helpers_reviewed": 60,
         "properties_or_types_reviewed": 50,
-        "runtime_functions_identified": 57,
+        "runtime_functions_identified": 58,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -63,6 +63,7 @@
           "ReadInverterOutputVariant",
           "ReadSplitterOutputVariant",
           "BuildCombinerOutputVariant",
+          "UpdateRotationSensorFromIncomingWires",
           "UpdateAngleSensorFromIncomingWires",
           "PrepareHealthModifierZoneQueriesAndImpactTargets",
           "AccumulateHealthModifierDelta",
@@ -580,6 +581,7 @@
           "1408ceb90",
           "1408cecf0",
           "1408cf9d0",
+          "1408d1b50",
           "1408d2270",
           "1408e2910",
           "1408e31c0",
@@ -10564,12 +10566,12 @@
           {
             "name": "gadgets-logic/sensors",
             "label": "Sensors & detection",
-            "done": 4,
+            "done": 5,
             "todo": 35,
-            "total": 39,
-            "behavior_or_helpers_reviewed": 1,
+            "total": 40,
+            "behavior_or_helpers_reviewed": 2,
             "properties_or_types_reviewed": 3,
-            "runtime_functions_identified": 1,
+            "runtime_functions_identified": 2,
             "property_type_functions_identified": 38,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -10577,6 +10579,7 @@
               "VisitMovementSensorProperties",
               "VisitAngleSensorProperties",
               "VisitRotationSensorProperties",
+              "UpdateRotationSensorFromIncomingWires",
               "UpdateAngleSensorFromIncomingWires"
             ],
             "todo_names": [
@@ -10620,6 +10623,7 @@
               "1404c9e40",
               "1404cb010",
               "1404cb9a0",
+              "1408d1b50",
               "1408d2270"
             ],
             "todo_addresses": [
@@ -11025,6 +11029,86 @@
                 ]
               },
               {
+                "name": "gadgets-logic/sensors/rotationsensor",
+                "label": "Rotation Sensor",
+                "done": 2,
+                "todo": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitRotationSensorProperties",
+                  "UpdateRotationSensorFromIncomingWires"
+                ],
+                "todo_names": [
+                  "0x140d56ae0"
+                ],
+                "done_addresses": [
+                  "1404cb9a0",
+                  "1408d1b50"
+                ],
+                "todo_addresses": [
+                  "140d56ae0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/sensors/rotationsensor/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitRotationSensorProperties"
+                    ],
+                    "todo_names": [
+                      "0x140d56ae0"
+                    ],
+                    "done_addresses": [
+                      "1404cb9a0"
+                    ],
+                    "todo_addresses": [
+                      "140d56ae0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/sensors/rotationsensor/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "UpdateRotationSensorFromIncomingWires"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408d1b50"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "gadgets-logic/sensors/triggerzone",
                 "label": "Trigger Zone",
                 "done": 0,
@@ -11332,61 +11416,6 @@
                     "todo_addresses": [
                       "1404d0410",
                       "140d57160"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/sensors/rotationsensor",
-                "label": "Rotation Sensor",
-                "done": 1,
-                "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitRotationSensorProperties"
-                ],
-                "todo_names": [
-                  "0x140d56ae0"
-                ],
-                "done_addresses": [
-                  "1404cb9a0"
-                ],
-                "todo_addresses": [
-                  "140d56ae0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/sensors/rotationsensor/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitRotationSensorProperties"
-                    ],
-                    "todo_names": [
-                      "0x140d56ae0"
-                    ],
-                    "done_addresses": [
-                      "1404cb9a0"
-                    ],
-                    "todo_addresses": [
-                      "140d56ae0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -45694,5 +45723,5 @@
       }
     ]
   },
-  "unmapped": 7483
+  "unmapped": 7482
 }
