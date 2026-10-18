@@ -25140,5 +25140,57 @@
     "fixture_correction": "Initial preservation assertion compared a 1360-byte slice with a 1361-byte ctypes buffer snapshot. Whole-buffer comparison fixes the test and confirms unchanged trailing guard; not a game defect.",
     "integration_status": "Actual link creation through all sample updates to GPU packing remains unverified.",
     "new_name_credit": 0
+  },
+  "sprite_iterative_sample_update_followup": {
+    "static_findings": [
+      "The linked forward update uses eight80-byte samples and preserves an eight-record snapshot before updating.",
+      "Repeated passes stop on a squared XYZ movement threshold or iteration limit; actual convergence and threshold factor meanings remain unverified.",
+      "Per-sample weights are powf(start+(end-start)*t, exponent), with eight original float32 approximations to t=i/7. The exponent blends a global base toward1 using emission-source field+0x48; field meaning and runtime configuration values remain unresolved.",
+      "Original SELF relocation plus local NID mapping independently establish the powf import. Both update branches consume this weight array."
+    ],
+    "iteration_budget_native": {
+      "cases": 168,
+      "scope": "Original mode-2 selector1413dff09..1413dff3c; outgoing continuation replaced with RET, explicit finite configuration globals and supplied stack.",
+      "checked": [
+        "Float budget truncation and low32-bit selection match independent model.",
+        "Quarter budget for state19, or state17/18 with flag1; otherwise full budget.",
+        "Eight nonnegative finite settings, seven state values, three flag values.",
+        "Original selector bytes unchanged."
+      ],
+      "limits": [
+        "Mode selection/default-one-pass path and actual loop not executed.",
+        "Only finite nonnegative representable budgets tested; negative/nonfinite/overflow values and configuration meanings unresolved."
+      ],
+      "original_slice_sha256": "edc4a14c2aa3e2c183f7698cfa38a9f58d5a755b1151faeaedcdf14ef40c41cc",
+      "new_name_credit": 0,
+      "project_modified": false,
+      "fixture_corrections": [
+        "Initial generated script contained a non-ASCII byte literal and did not execute; replaced with bytes.fromhex.",
+        "Initial wrapper read its own stack+0x230 instead of original callee stack+0x230 (wrapper+0x228 after CALL return address). Corrected readback offset; model and original selector unchanged."
+      ]
+    },
+    "vector_correction_native": {
+      "cases": 150,
+      "scope": "Original3161..31e9 vector blend and length correction; explicit register/stack/global inputs, outgoing continuation adapted to RET.",
+      "model": "v=B+w*(A-B); result=v+c*(length(A)-length(v))*v/length(v), XYZ only, input W zero.",
+      "checked": [
+        "Three A vectors, two B vectors, five blend weights0..1 and five correction factors including negative and greater-than-one.",
+        "XYZ agrees with independent Euclidean vector model; W remains zero; input block outside output preserved; original slice unchanged."
+      ],
+      "limits": [
+        "Finite nonzero blended vectors only; zero/nonfinite behavior unverified.",
+        "No upstream frame construction, sample-weight origin, orientation reconstruction or full-stroke execution."
+      ],
+      "fixture_correction": "Initial cut31dc stopped before final vector add31e6; extended through31e9. Initial output was not completed arithmetic and is not a game defect.",
+      "original_slice_sha256": "4b020986538708033fc5cea7e6b15d138218b66a11f61b634dbb50514e4a5793",
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "limits": [
+      "Independent bounded slices do not establish a complete eight-sample or full-emitter result.",
+      "Orientation reconstruction and optional directional term remain partially interpreted; no physical stiffness label or original source match claimed.",
+      "No GPU execution, live platform synchronization, complete lifetime or nonfinite-domain verification."
+    ],
+    "new_name_credit": 0
   }
 }

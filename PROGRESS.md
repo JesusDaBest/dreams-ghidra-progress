@@ -7239,3 +7239,6 @@ The 360 cases include the earlier 180 constant-transform cases. The varying worl
 
 
 Linked sprite anchor composition: 112 bounded native cases match an independent position/scale/quaternion model. Full linked-stroke-to-GPU integration remains unverified; no additional naming credit. See ANALYSIS.md.
+
+
+Sprite sample-update follow-up:168 bounded iteration-selector cases and150 bounded vector-correction cases verified; eight-sample loop and powf weight origin traced statically. Full update remains unverified; no name credit.

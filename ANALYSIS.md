@@ -7770,3 +7770,14 @@ The 360 cases include the earlier 180 constant-transform cases. The varying worl
 Earlier local/world quaternion interpolation checks use the same 45-case domain extended through both stages; those stage counts are not additive. Both use shortest-sign normalized linear interpolation, with identity fallback for a zero quaternion norm. The composition test uses positive finite scales and normalized synthetic orientations, with explicit finite-classifier and return-boundary adapters. It does not verify full-stroke deformation, actual link creation through GPU packing, zero/nonfinite scales, lifetime, synchronization or GPU execution.
 
 An initial preservation assertion compared buffers of different lengths because the test allocator appended a NUL byte. Comparing both complete buffers corrected the harness and confirmed the trailing byte remains unchanged. No game defect or additional checked-name credit is claimed.
+
+
+### Iterative sprite sample update traced
+
+The linked forward update processes **eight samples**, preserving an eight-record snapshot first. A pass can repeat until its maximum squared XYZ movement is below a squared threshold or an iteration limit is reached. Threshold factor meanings and actual convergence remain unresolved.
+
+**168 bounded native cases** verify the configurable iteration-limit selector against an independent model. It uses the full truncated setting or its unsigned quarter according to state/flag branches. This test covers finite nonnegative settings, not the mode gate or actual update loop.
+
+**150 bounded native cases** verify the later-sample vector calculation: blend two vectors with a per-sample weight, then apply a correction along the blended direction proportional to the difference between the original and blended lengths. The independent model agrees for finite nonzero vectors, including negative and greater-than-one correction factors. The initial test cut stopped before the final vector addition; extending through that original instruction corrected the harness.
+
+The eight weights come from `powf` applied along eight evenly spaced parameter values from zero to one. Original import relocation data independently confirms the `powf` binding. The exponent blends a configuration value toward one using an emission-source scalar. Runtime configuration values and that scalar's meaning remain unknown. Orientation reconstruction and the complete sample-update pipeline still require verification. No additional name credit is taken.
