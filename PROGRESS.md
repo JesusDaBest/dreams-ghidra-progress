@@ -5858,3 +5858,14 @@ The harness explicitly joins two producer windows, skipping intervening pose wor
 The [official sensor guide](https://docs.indreams.me/en/create/resources/edit-mode-guide/assembly/gadgets/sensors-and-input) corroborates the broad gadget roles. It provides no match to this binary's source, multiplier or build. Its scene-position description also leaves a concrete next lead: the reviewed MovementSensor updater does not write the separately identified XYZOutput field, so that producer remains to be traced.
 
 No additional names or completion credit: **718 checked names**, 2,124 mapped and 7,481 unmapped functions remain the totals.
+
+
+### MovementSensor scene-position storage traced
+
+The XYZOutput property visitor reads MovementSensor field +0x140. The original initializer places that offset in type 52's metadata slot +0x59C, corresponding to property ID 0x2CE. This differs from the velocity-output metadata slots. The complete 34-instruction storage getter first walks an object's packed property records for that ID; if absent, it uses the signed offset in the masked type's metadata row. Positive offsets return a field address, while zero or negative offsets return null.
+
+**3,840 native cases** execute the original getter with no external calls. They cover 128 masked type values, the additional high type bit, controlled positive/zero/negative offsets, and absent, empty, direct, prefixed or missing packed records. Complete object/property-chain/metadata comparisons show no writes. Controlled offsets for other types test the generic algorithm; they do not prove those types actually support XYZOutput.
+
+This finds the storage accessor, **not the scene-position calculation**. The runtime writer remains unidentified. Raw call encodings provide three caller leads, but selected metadata-consumer sites lack defined instructions/functions in the current Ghidra project, so canonical getter/caller definitions remain pending. No function, name or type was added to the project. Malformed/cyclic packed records, null objects, full startup and live-game behavior remain unverified. No Media Molecule source/build match is claimed.
+
+Totals remain **718 checked names**, 2,124 mapped and 7,481 unmapped functions. No completion credit was added for locating this accessor.

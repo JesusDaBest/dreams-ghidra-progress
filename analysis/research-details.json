@@ -18532,5 +18532,35 @@
       "Locate MovementSensor scene-position/XYZOutput producer separately; this reviewed updater does not write that field.",
       "Trace staged position-array producers and solver branch conditions before asserting full provenance or cadence."
     ]
+  },
+  "movement_xyz_storage_checkpoint": {
+    "native_check": {
+      "native_cases": 3840,
+      "getter": "0x1411a32b0",
+      "original_instructions": 34,
+      "external_calls": 0,
+      "field_property_id": "2ce",
+      "metadata_offset": "59c",
+      "movement_sensor_field_offset": "140",
+      "findings": [
+        "Original XYZOutput property visitor loads sensor+140 and original initializer writes140 into kind52 metadata slot2ce*2.",
+        "Complete original getter first searches object+18 packed property chain for ID2ce; returns its payload address when present. Otherwise uses signed metadata offset for low7-bit type and returns null for nonpositive offsets.",
+        "3840 controlled cases cover128 masked kinds,high type bit,positive/zero/negative offsets,absent/empty/direct/prefixed/missing overlay records;complete object/chain/metadata comparisons unchanged."
+      ],
+      "limits": [
+        "Generic getter and metadata binding only; scene-position runtime writer remains unidentified.",
+        "Controlled offset values for other kinds do not establish their real property support.",
+        "Valid selected packed records only;null objects,malformed/cyclic chains and unsupported property IDs unverified.",
+        "Selected metadata-consumer sites lack defined Ghidra instructions/functions; canonical Ghidra getter/caller definition remains pending. No project definition/name change made.",
+        "No live game,full startup or exact MM source/build match."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "remaining": [
+      "Trace the actual scene-position calculation/writer; property storage access alone does not establish it.",
+      "Verify getter/caller boundaries and create project definitions only with sufficient evidence."
+    ],
+    "new_name_credit": 0
   }
 }
