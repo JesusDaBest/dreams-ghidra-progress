@@ -6358,3 +6358,14 @@ The project now defines `GetThingXYZOutputStorage`, a previously missing 129-byt
 Independent reopening verifies the saved definition, name, signature and complete decompilation. Original bytes and all 9,605 prior function names/signatures remain unchanged. The getter belongs under shared property helpers: it locates packed or type-specific storage, and does not calculate MovementSensor's scene position. That writer remains unresolved, as do malformed/cyclic chains, null objects, complete caller behavior and live-game verification. No exact Media Molecule source/build match is claimed.
 
 Totals: **719 checked names** (639 behavior/helper and 80 property/type), **2,125 mapped** and **7,481 unmapped** among **9,606 defined functions**. The additional function was already present in the executable; its Ghidra definition was missing. No whole-game completion claim is made.
+
+
+### MovementSensor XYZOutput conversion and transform-output route
+
+A bounded conversion path recognizes wires whose source output is XYZOutput (0x2CE) and whose source object is MovementSensor (type 52). It calls the object factory with type 3, registered as `Key`, copies the relevant source transform/flags, and appends a replacement wire sourcing that new object's output 0x3E8. The replacement retains the destination/input data; the old source and destination endpoints are marked absent. Original enum-registration bytes/literals, the conversion instructions and the factory's kind-argument-to-metadata-row flow were checked.
+
+The original special output dispatcher handles Key output 0x3E8 by calling the existing `ComputeObjectTransformWithPositionOffset` helper and emitting its 32-byte transform as a tagged variant. **256 connected native cases** exercise the complete original dispatcher and helper on this route: 128 valid direct/no-offset transform outputs and 128 unsupported-port cases. Prepared position, scale and quaternion payloads pass through byte-exactly; absent base-transform metadata returns the executable's identity transform. The successful output has tag 4 and alpha 1. Complete output/world/source/metadata comparisons pass.
+
+This provides a concrete alternative to assuming the MovementSensor updater must write its retained XYZOutput field. It does **not** prove every scene follows this route or that the field is always unused. The enclosing conversion's version predicate, full factory, failure paths, real upgrade execution, parented/offset transform paths and live wire scheduling remain unverified. The actual XYZOutput field calculation remains unidentified. No exact Media Molecule source/build match is claimed.
+
+No new name credit: totals remain **719 checked names**, 2,125 mapped and 7,481 unmapped among 9,606 defined functions.

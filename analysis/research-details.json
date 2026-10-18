@@ -18583,5 +18583,38 @@
       "Null objects, malformed/cyclic packed chains, unsupported IDs, complete callers, live behavior and exact MM source/build match unverified."
     ],
     "new_name_credit": 1
+  },
+  "movement_xyz_key_conversion_checkpoint": {
+    "native_check": {
+      "native_cases": 256,
+      "successful_key_output_cases": 128,
+      "unsupported_port_cases": 128,
+      "original_dispatch_instructions": 811,
+      "original_transform_helper_instructions": 168,
+      "findings": [
+        "Original kind3 Key dispatch for port3e8 calls ComputeObjectTransformWithPositionOffset and emits its32-byte transform payload with tag4 and alpha1.",
+        "Without position-offset property, prepared direct base transforms pass through byte-exactly; absent base metadata emits original identity transform. Unsupported selected port returns false without output writes.",
+        "Complete output/world/source/metadata comparisons pass."
+      ],
+      "limits": [
+        "Valid unparented objects with absent offset property only; no optional normalization import path executed.",
+        "Does not execute scene upgrade or real wire scheduler; migration linkage is a separate static trace.",
+        "No runtime XYZOutput field calculation,full upgrade conditions,live game or exact MM source/build match claimed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "static_findings": [
+      "Bounded conversion recognizes source output port2ce and masked source type52 MovementSensor.",
+      "Conversion calls factory with kind argument3 Key, copies relevant source transform/flags, appends a wire retaining destination/input data but sourcing new object output3e8, and marks old endpoints absent.",
+      "Factory prologue transfers EDX kind to R8D; null-owner branch uses that kind to select metadata row and allocation size. Full factory not reviewed here.",
+      "Original type3 special output dispatch calls existing ComputeObjectTransformWithPositionOffset for3e8 and returns transform variant;256 connected cases verify selected direct/no-offset behavior."
+    ],
+    "limits": [
+      "Enclosing conversion routine,version predicate,all failure paths,complete factory and live upgrade not reviewed/executed.",
+      "This establishes a conversion and output route; does not prove every scene uses it or that retained XYZOutput storage is always unused.",
+      "XYZOutput field calculation remains unidentified; do not infer one must occur in MovementSensor updater."
+    ],
+    "new_name_credit": 0
   }
 }
