@@ -24878,7 +24878,7 @@
     ],
     "limits": [
       "One finite two-point stroke and30 selected caller transforms; arbitrary geometry, nonfinite inputs and zero/negative caller scales remain unverified.",
-      "Occupied-bucket reclamation, replication, deep trees, original platform lock/time/thread implementations and lifetime/concurrency not verified.",
+      "General multi-bucket reclamation, replication, deep trees, original platform lock/time/thread implementations and lifetime/concurrency not verified.",
       "Working transform and input names are analyst interpretations, not recovered original source declarations; two key modifier semantic names remain unresolved."
     ],
     "native_cases": 72,
@@ -24916,6 +24916,27 @@
       "quaternion_z",
       "quaternion_w"
     ],
+    "new_name_credit": 0
+  },
+  "sprite_path_cache_reclamation_followup": {
+    "native": {
+      "cases": 60,
+      "built_after_reclaim": 27,
+      "scope": "Complete original8585-byte function with occupied bucket, no initial free entry/record, one- or two-record old chain, original iterator and sample helpers; platform adapters explicit.",
+      "checked": [
+        "With adapted current time10.0, entries at timestamp9.0 or older are eligible;9.5 and10.0 remain untouched.",
+        "Entry states0/1/2 do not prevent age-based reclamation in this path.",
+        "Eligible entry unlinked, chained records prepended to free list; last reclaimed record reused first for successful build.",
+        "Reclaimed entry reused with new key when record capacity sufficient; otherwise null with reclaimed resources retained in free lists.",
+        "Source resource pool unchanged."
+      ],
+      "limits": [
+        "One occupied bucket and short record chains, finite timestamps and one two-point build only.",
+        "Threshold is1.0 in normalized timestamp units; no independent wall-clock unit proof.",
+        "No real concurrency, exclusion/lifetime proof or arbitrary multi-bucket reclamation verification."
+      ],
+      "project_modified": false
+    },
     "new_name_credit": 0
   }
 }

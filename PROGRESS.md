@@ -7171,3 +7171,12 @@ The complete original cache function now passes **360 controlled build/capacity 
 The seven-parameter working signature now records requested record capacity, a 64-bit cache seed, metadata and point resource IDs, two provisionally named signed key modifiers, and a 32-byte transform passed by value on the stack. The transform contains float32 translation XYZ and uniform scale, followed by quaternion XYZW. The result is an opaque entry pointer. This refines the previously retained undefined prototype. The saved signature, field layout and register/stack storage were independently reopened; other function names/signatures and original bytes remain unchanged.
 
 The 360 cases include the earlier 216-case and 12-case domains; they are not additive. These tests use one finite two-point stroke and positive caller scales. Arbitrary geometry, nonfinite inputs, zero/negative caller scale, occupied-bucket reclamation, replication, deeper trees and actual platform mutex/time behavior remain unverified. No additional name credit is taken.
+
+
+### Sprite path-cache reclamation checked
+
+**60 complete-original-function cases** exercise an occupied bucket with no initially free cache entry or stroke record. One- and two-record old chains, requested capacities of one or two, five timestamps and entry states 0/1/2 produce **27 successful rebuilds**. With adapted current time 10, timestamps 9 or older qualify for reuse; 9.5 and 10 remain untouched. The threshold is **1.0 normalized timestamp units**; wall-clock units are not independently established.
+
+Eligible entries are unlinked, their stroke records return to the free list in reverse chain order, and the last reclaimed record is reused first. If reclamation still supplies too little capacity, the call returns null while retaining the reclaimed resources on free lists. Input resources remain unchanged. Entry state does not exclude reclamation in these fixtures; this is an observed branch contract, not a concurrency or lifetime guarantee.
+
+These tests use one occupied bucket, short chains, a finite two-point build and explicit platform lock/thread/time adapters. General multi-bucket behavior, actual synchronization and broader lifetime assumptions remain unverified. No additional name credit is taken.
