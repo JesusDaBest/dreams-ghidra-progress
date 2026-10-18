@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2173,
-  "unmapped_total": 7439,
+  "mapped_total": 2174,
+  "unmapped_total": 7438,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54990,6 +54990,31 @@
             "CPU body control-flow review and1683 original instruction byte checks.",
             "Both known caller boundaries traced; command bucketing,hierarchical replay,classified slot outputs andstatus paths connected.",
             "Independent project reopening confirms name-only persistence andsuccessfuldecompilation;all9611other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140c6cb30": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "packed-csg-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Recursive packed CSG tree record conversion and verified append-helper call chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Decodes source-layout leaf records, converts header bits and appends to a caller-owned writer.",
+      "code_sha256": "677db7b3f5b86d132e90724972a12d3069b5c09d0e4ffeaee727524262f53df0",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendConvertedPackedResourceTreeRecords",
+          "support": [
+            "Read complete200-instruction CPU body andpseudocode;originalinstructionbytesverified.",
+            "Recursive treewalk,source-layoutdelta decoding,headerbitconversion andcaller-ownedwriter append traced.",
+            "Independent reopening/decompilation succeeded;prototype/bytes andall9611other names/signatures unchanged."
           ]
         }
       ]

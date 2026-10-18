@@ -6804,3 +6804,12 @@ A bounded modifier path can affect a logarithmic target blended into the fourth 
 The descriptor trace found an intervening transfer stage rather than a direct buffer alias: ordinary `SweepCleanupChunk` reads the slot attribute descriptor at slot offset `0x194`, caps the fourth component in its scaled domain, and writes the context attribute resource. Brick gathering later reads that context resource. **36 original CPU anchors and seven shader checkpoints** connect this bounded route. Later sweep processing can rewrite or filter the same resource; runtime visibility, every slot/lifetime and alternate paths remain unverified.
 
 No additional checked-function credit is added. These are partial shader and connected dataflow findings, not completion of the voxel-append algorithm or recovery of original material-field names.
+
+
+### Packed CSG header conversion named
+
+Applied and independently reopened **AppendConvertedPackedResourceTreeRecords** after reading its complete **200-instruction** CPU body and pseudocode. It recursively visits 512-byte tree pages, decodes leaf records with retained delta state, converts the packed header layout, and appends through the reviewed CSG record writer. The caller initializes and finalizes that writer separately.
+
+The conversion maps the older first-byte bit 1 into the current first-byte bit 7, which the command expander can later map into shader flag 14. Shape-specific payload routes retain their separate extents. The observed caller gate is an unsigned comparison against `0x9e`; its exact source-format version declaration remains unverified.
+
+The descriptive name and explanatory comment are the only project changes. Original bytes and the inferred prototype are unchanged; reopening/decompilation passed, with all 9,611 other names/signatures unchanged. Malformed pages, cycles, allocation failure and runtime behavior remain untested. This adds one checked CPU helper to packed CSG records, without claiming complete shader understanding or a recovered user-facing flag name.
