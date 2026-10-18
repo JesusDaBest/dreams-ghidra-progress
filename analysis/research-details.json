@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 729,
+    "checked_and_applied_names": 730,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 729,
+    "verified_names": 730,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "673 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "674 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19595,6 +19595,44 @@
     "limits": [
       "Nonzero keys,power-of-two capacities and nonfull valid tables only;allocation/resize and invalid/full-table behavior unverified.",
       "Payload semantics and higher-level record role unresolved;no concurrency or live-game claim.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
+  },
+  "buffered_intkey_resize_name_checkpoint": {
+    "target": {
+      "name": "EnsureIntKeyRecord32TableCapacity",
+      "signature": "void PS4_SYSV EnsureIntKeyRecord32TableCapacity(void * table)"
+    },
+    "native_check": {
+      "native_cases": 52,
+      "growth_cases": 24,
+      "old_array_delete_cases": 10,
+      "original_instructions": 120,
+      "findings": [
+        "Original resize helper targets at least16 slots and power-of-two capacity for twice current count;no growth leaves state unchanged.",
+        "52 cases connect original resize to original insertion,covering growth thresholds,collision chains,owned/borrowed old arrays and source-slot mutations during rehash. Full header,old/new arrays and allocation logs compared.",
+        "Array new size is32*target;old array delete occurs only when previous ownership flag and pointer are nonzero."
+      ],
+      "models": [
+        "Original imported C++ array new/delete identities linked by JUMP_SLOT and NID database;argument/order-recording models used,no real allocation/free."
+      ],
+      "limits": [
+        "Successful allocation,valid nonzero keys,power-of-two old tables and small finite sizes only;allocation failure/overflow,full tables,concurrency and live game unverified."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete120-instruction body and pseudocode reviewed;original bytes verified.",
+      "Targets minimum16/power-of-two capacity for twice current count,initializes32-byte slots and rehashes nonzero old entries using original insertion.",
+      "52 native cases compare full header,old/new arrays and allocation logs;24 growth cases and10 old-array delete cases cover thresholds,collisions and owned/borrowed arrays.",
+      "Input old slots may mutate during original rehash insertion;expected states include those changes and preserved padding.",
+      "Original imported C++ array new/delete identities linked by JUMP_SLOT and NID database;argument/order-recording models used,not real allocator execution.",
+      "Independent reopening verifies name,void table-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Successful allocation,valid nonzero keys,power-of-two old tables and small finite sizes only;allocation failure/overflow,full tables,concurrency and live game unverified.",
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1

@@ -6673,3 +6673,14 @@ These are valid prepared Keys with null property chains, controlled metadata and
 Independent reopening verifies the descriptive name, three opaque-pointer signature, decompilation, original bytes and all 9,605 other names/signatures. Nonzero keys, power-of-two capacities and nonfull valid tables only; allocation/resize,full/invalid tables,payload semantics,concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **729 checked names** (649 behavior/helper and 80 property/type), **2,135 mapped**, **7,471 unmapped**, among 9,606 defined functions.
+
+
+### Integer-key table capacity growth reviewed and named
+
+`EnsureIntKeyRecord32TableCapacity` names the complete 120-instruction helper. It computes a minimum of 16 slots and a power-of-two capacity covering twice the current count. Growth initializes a new 32-byte slot array, resets the element count and rehashes nonzero old entries through original `InsertOrAssignIntKeyRecord32`. An owned, nonnull old array is then deleted; borrowed arrays are preserved. No-growth cases leave state unchanged.
+
+**52 native cases** compare full table headers, old/new arrays and allocator-call logs, including 24 growth cases and 10 old-array deletions. Thresholds, deliberate collisions, ownership states and input-slot mutation during rehash are covered. Imported C++ array new/delete are linked by original relocations and modeled with recorded sizes, pointers and order. Real allocation/free is not executed.
+
+Independent reopening verifies the saved name, opaque table-pointer signature, decompilation, original bytes and all 9,605 other names/signatures. Successful allocation and valid small tables only;failure/overflow,full/invalid tables,concurrency,payload semantics and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **730 checked names** (650 behavior/helper and 80 property/type), **2,136 mapped**, **7,470 unmapped**, among 9,606 defined functions.
