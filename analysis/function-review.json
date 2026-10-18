@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "650 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "651 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8745,
-    "other_names": 858,
-    "verification": "complete_inventory_matches_baseline_plus_650_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8744,
+    "other_names": 859,
+    "verification": "complete_inventory_matches_baseline_plus_651_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16248,6 +16248,34 @@
         "Valid aligned pointers/ranges only; no gameplay or complete caller behavior claim.",
         "Analyst descriptive name and working layout, not exact original source declaration.",
         "No full UI or caller transaction verification; tie reordering is not proof of a user-visible defect."
+      ]
+    },
+    {
+      "address": "140b36750",
+      "original_name": "FUN_140b36750",
+      "applied_name": "ApplyWireRemovalEvent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyWireRemovalEvent(void * owner, void * world, byte playerIndex, void * wireRecord, byte clearUnusedConnectorProperty, byte includeAlternateHistory)",
+      "evidence": [
+        "Complete 401-instruction body and pseudocode read; owned original bytes matched the saved project and executing native fixtures.",
+        "Optional endpoint cleanup requires positive property41 support and filtered connection count exactly1 before passing32 zero bytes to the property updater.",
+        "Eligible class2 endpoint ancestry produces a CanvasWireId from shared Microchip ancestor, endpoint persistent sequences and ports. Matching nodes are collected/sorted and individually removed before the main wire event.",
+        "Builds22-byte fdf5 snapshot then invokes original packet wrapper/dispatcher. Conditional owner queue/history routing captures54-byte inverse fdf3 containing pre-removal transform with normalized rotation.",
+        "60 connected multi-node cleanup cases,72 generated inverse replay cases and256 optional property-selection cases rerun; byte/pointer routing and full fixture mutations checked.",
+        "Main wire endpoint pair is tombstoned while payload/count remain. Direct inverse replay appends a new slot rather than restoring the removed physical slot.",
+        "Independent reopening verifies descriptive name, six-register working signature and successful decompilation; original native bytes and other9602 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered original declaration.",
+        "Prepared valid object/parent/history fixtures and controlled allocation/TLS boundaries; no malformed-capacity, cyclic ancestry, concurrency or gameplay coverage.",
+        "Optional property updater is an explicit observer in256 selection cases; those tests do not execute its actual mutation. Support-matrix entries are controlled.",
+        "Canvas-node cleanup and active history were exercised in separate batches, not a combined whole editor transaction.",
+        "Direct generated inverse replay is not complete user undo/redo verification.",
+        "No exact Media Molecule livestream source/build match established."
       ]
     }
   ],

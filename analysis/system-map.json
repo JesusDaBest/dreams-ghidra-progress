@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2112,
-  "unmapped_total": 7491,
+  "mapped_total": 2113,
+  "unmapped_total": 7490,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53285,6 +53285,35 @@
           ]
         }
       ]
+    },
+    "140b36750": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "signals",
+        "wire-connections",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared connection-removal event path includes optional connector-property and canvas-node cleanup; not restricted to a single gadget or canvas-only operation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete event producer review and scoped original native connected tests.",
+      "code_sha256": "c63451342be839dd18d205c49da42ff26798f9806b022d2504903e8a82aeb29e",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyWireRemovalEvent",
+          "support": [
+            "Complete 401-instruction body and pseudocode read; owned original bytes matched the saved project and executing native fixtures.",
+            "Optional endpoint cleanup requires positive property41 support and filtered connection count exactly1 before passing32 zero bytes to the property updater.",
+            "Eligible class2 endpoint ancestry produces a CanvasWireId from shared Microchip ancestor, endpoint persistent sequences and ports. Matching nodes are collected/sorted and individually removed before the main wire event.",
+            "Builds22-byte fdf5 snapshot then invokes original packet wrapper/dispatcher. Conditional owner queue/history routing captures54-byte inverse fdf3 containing pre-removal transform with normalized rotation.",
+            "60 connected multi-node cleanup cases,72 generated inverse replay cases and256 optional property-selection cases rerun; byte/pointer routing and full fixture mutations checked.",
+            "Main wire endpoint pair is tombstoned while payload/count remain. Direct inverse replay appends a new slot rather than restoring the removed physical slot.",
+            "Independent reopening verifies descriptive name, six-register working signature and successful decompilation; original native bytes and other9602 names/signatures unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -54126,6 +54155,17 @@
             {
               "id": "signal-values",
               "label": "Signal values",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "wire-connections",
+              "label": "Wire connections",
               "children": [
                 {
                   "id": "runtime-implementation",

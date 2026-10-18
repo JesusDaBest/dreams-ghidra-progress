@@ -5600,3 +5600,16 @@ Ranges of at most 32 pointers use insertion sorting. Larger ranges use pivot par
 Equal-position entries are not globally stable: 60 tested cases changed their original tie order. This does not establish a UI defect. Fifteen small-range NaN cases verify only permutation and memory preservation; no meaningful NaN ordering or large-range NaN behavior is established. The collector's wider transaction and live editor behavior remain unverified.
 
 The descriptive name and typed pointer-range/budget signature were saved and independently reopened, with successful decompilation and original bytes plus other 9,602 names/signatures unchanged. Totals: 703 checked names (626 behavior/helper and 77 metadata/type reviews), 2,112 mapped functions and 7,491 unmapped among 9,603 defined functions.
+
+
+### Wire removal: connection, canvas nodes and inverse event
+
+`ApplyWireRemovalEvent` now names the complete 401-instruction event producer. It can request clearing a connector property when the endpoint supports property 41 and the filtered connection count is exactly one. For eligible class2 endpoints sharing Microchip ancestry, it builds the canvas wire key, collects/sorts matching control points and removes them before dispatching the main wire-removal event.
+
+The routine builds a 22-byte `fdf5` snapshot from endpoint sequences and the wire's stored fields. Original wrapper/dispatcher execution tombstones the endpoint pair and sets dirty flags, preserving the allocated count and remaining payload. Conditional owner/history routing records a 54-byte inverse `fdf3` with the pre-removal transform and normalized rotation. Direct replay of those actual inverse bytes appends a new wire slot; it leaves the tombstone and original removed payload intact.
+
+Fresh reruns passed 60 multi-node cleanup cases, 72 generated inverse replay cases and 256 optional property-selection cases. Multi-node tests include exact matches interleaved with hash collisions and forward/reverse position order. Optional property mutation remains an explicit observation boundary. Active history and canvas cleanup are tested separately; their combination, full editor transactions and live gameplay remain unverified. Direct inverse replay is not a complete user undo/redo proof.
+
+The saved name and six-register working signature passed independent reopening, decompilation, native-byte comparison and checks that other 9,602 names/signatures remain unchanged. The routine is mapped to shared wire-connection code rather than treating the entire operation as canvas-only.
+
+Totals: 704 checked names (627 behavior/helper and 77 metadata/type reviews), 2,113 mapped functions and 7,490 unmapped among 9,603 defined functions. No exact developer livestream source/build match is claimed.

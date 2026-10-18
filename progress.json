@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 657,
+    "done": 658,
     "todo": 1455,
-    "total": 2112,
-    "behavior_or_helpers_reviewed": 586,
+    "total": 2113,
+    "behavior_or_helpers_reviewed": 587,
     "properties_or_types_reviewed": 71,
     "whole_feature_completion": null,
     "groups": [
@@ -27479,12 +27479,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 244,
+        "done": 245,
         "todo": 105,
-        "total": 349,
-        "behavior_or_helpers_reviewed": 227,
+        "total": 350,
+        "behavior_or_helpers_reviewed": 228,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 262,
+        "runtime_functions_identified": 263,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27611,6 +27611,7 @@
           "DispatchHeaderAndDataPagesChangeEvent",
           "SubmitAddPersistentObjectIdPairCommand",
           "SubmitRemoveCurrentObjectPairCommand",
+          "ApplyWireRemovalEvent",
           "BuildSculptBoundsFlags",
           "PromoteBuildMetadataAndRefreshObjectResources",
           "FlushDescriptorOutputBlock",
@@ -27964,6 +27965,7 @@
           "140b32c60",
           "140b357d0",
           "140b358f0",
+          "140b36750",
           "140bbf520",
           "140bbf8b0",
           "140c737c0",
@@ -32622,17 +32624,18 @@
           {
             "name": "shared/signals",
             "label": "Shared signal data",
-            "done": 11,
+            "done": 12,
             "todo": 2,
-            "total": 13,
-            "behavior_or_helpers_reviewed": 9,
+            "total": 14,
+            "behavior_or_helpers_reviewed": 10,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 9,
+            "runtime_functions_identified": 10,
             "property_type_functions_identified": 4,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "AreTypedValueRecordsEqual",
+              "ApplyWireRemovalEvent",
               "RegisterWireHeaderFieldOffset",
               "RegisterWireBlendOpField",
               "ReduceTypedSignalToScalar",
@@ -32650,6 +32653,7 @@
             ],
             "done_addresses": [
               "1408ad070",
+              "140b36750",
               "140ce6330",
               "140ce6ad0",
               "1411bfe20",
@@ -32839,6 +32843,53 @@
                     "todo_addresses": [
                       "140d1b8a0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/signals/wire-connections",
+                "label": "Wire connections",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ApplyWireRemovalEvent"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140b36750"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/signals/wire-connections/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ApplyWireRemovalEvent"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140b36750"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -45450,5 +45501,5 @@
       }
     ]
   },
-  "unmapped": 7491
+  "unmapped": 7490
 }
