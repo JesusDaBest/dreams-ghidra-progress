@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9607,
-  "mapped_total": 2152,
+  "inventory_total": 9608,
+  "mapped_total": 2153,
   "unmapped_total": 7455,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -54422,6 +54422,33 @@
             "524 full BC1-compatible color outputs match independentcovariance/projection/refinement encoder;768 BC3alpha blocks match exactindependent encoding.",
             "1536 nonuniform color payload cases confirmalpha independence andfinalprojection indices;512lookupentries verified through coldinit/warmreuse andwholeglobalpage.",
             "Independent offline reopen verifies fiveGPinputs,voidreturn,unchangedbytes andall9606otherfunctionnames/signatures."
+          ]
+        }
+      ]
+    },
+    "14021b300": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete QR image writer caller uses shared imagecontext andslice2.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full static body review and bounded selection/processing native fixtures.",
+      "code_sha256": "360d8848d65811aab0be2b9ccad7385d444a5a9fccf399e7921bbdd9642b876e",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateQrCodeImageFromText",
+          "support": [
+            "Original unwind record verifies2402-byte boundary;missing definition created withoutoverlap and independentlyreopened.",
+            "Complete650-instruction caller reviewed againstoriginalbytes;numeric/alphanumeric/byte QR segment packing and256x256 black/white rasterization traced.",
+            "14 originalpacking/failure cases match independent bitstreamoracle;4 successful originalcaller+encoder cases independentlydecode exacttext fromactualrenderedpixels.",
+            "Imagewritercontext,width/height,slice2,success/clearflags,displayfraction andtemporaryreleases verified.",
+            "Independent reopening verifies savedworkingABI,unchangedbytes andall9607otherfunctionnames/signatures."
           ]
         }
       ]

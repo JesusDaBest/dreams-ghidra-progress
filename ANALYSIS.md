@@ -6933,3 +6933,14 @@ Evidence includes **54 linear writes**, **36 mip chains**, **524 exact complete 
 Limits: selected formats/layouts, dimensions and slice zero; other layouts/slices, overflow, allocation failure, concurrent lookup initialization and live-game/GPU behavior remain unverified. The mip allocation lacks a null check before writes; this is a static observation, not an executed failure test. A second reference lacks a containing Ghidra function and needs a separate caller audit. No exact original source version or Media Molecule build match is claimed.
 
 Totals: **746 checked names** (666 behavior/helper and 80 property/type), **2,152 mapped**, **7,455 unmapped**, among **9,607 defined functions**.
+
+
+### QR image update caller recovered and reviewed
+
+`UpdateQrCodeImageFromText` names a recovered 2,402-byte function whose complete 650 instructions were reviewed. The original unwind record establishes its boundary. It selects numeric, QR alphanumeric or byte mode, packs the text, calls the QR encoder, rasterizes a 256-by-256 black-and-white RGBA image, and sends it to the shared image writer at slice 2. It also updates success/completion fields and the displayed image fraction.
+
+**14 original-caller packing/failure cases** match an independent bitstream calculation. **Four successful original caller/encoder cases** recover the exact input through an independent offline QR decoder reading the caller-generated pixels. Image-writer arguments, temporary-buffer releases, context changes and guards are checked. Allocation and image-writing boundaries remain modeled in these caller tests; the time counter returns zero. No account information or network requests are involved.
+
+The larger QR encoder remains incompletely reviewed and earns no semantic credit from these round trips alone. Inline strings, empty input, capacity limits, allocation failure and live-game/GPU behavior remain unverified. Independent reopening verifies the saved name/working ABI, unchanged bytes and all 9,607 other function names/signatures.
+
+Totals: **747 checked names** (667 behavior/helper and 80 property/type), **2,153 mapped**, **7,455 unmapped**, among **9,608 defined functions**: 689 existing-function renames, 57 created-and-reviewed functions and one retained-name review.

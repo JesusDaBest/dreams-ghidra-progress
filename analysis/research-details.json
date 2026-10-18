@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 746,
+    "checked_and_applied_names": 747,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,16 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 746,
-    "function_count": 9607,
+    "verified_names": 747,
+    "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0",
-      "141330c40"
+      "141330c40",
+      "14021b300"
     ],
-    "scope": "689 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "689 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21343,5 +21344,86 @@
       "Analyst workingname/ABI;strongstb_dxt structuralleadwithverifieddifferences,notexacthistoricalsourceorMMbuildmatch."
     ],
     "new_name_credit": 1
+  },
+  "qr_image_caller_checkpoint": {
+    "target": {
+      "name": "UpdateQrCodeImageFromText",
+      "signature": "void PS4_SYSV UpdateQrCodeImageFromText(void * context)"
+    },
+    "selection_check": {
+      "native_cases": 14,
+      "findings": [
+        "Original recovered caller choosesnumeric mode1,QR45-character alphanumeric mode2,orbyte mode4.",
+        "Exact packed bits,segment mode,length andbitcount match independent oracle;numeric remainder1/2/3 andbytecopy SIMD boundaries tested.",
+        "Encoder-failure branch clears flags+4/+5 andfrees bothtemporary buffers;input/contextguards preserved."
+      ],
+      "models": [
+        "Encoder intentionally returnsfalse aftercapturing segment;memalign/free useguardedfixture buffers;timecounter returns0;verified strlen/memchr/memset useCRTadapters."
+      ],
+      "limits": [
+        "Heap-backed input strings only;emptyinput,allocationfailure,capacitylimits,successful rendering andrealcounterunverified.",
+        "No fullcaller semantic review or namingcredit."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "processing_cycle_check": {
+      "native_cases": 4,
+      "results": [
+        {
+          "input_length": 10,
+          "matrix_size": 21,
+          "module_scale": 11,
+          "display_fraction": 0.98828125
+        },
+        {
+          "input_length": 11,
+          "matrix_size": 25,
+          "module_scale": 9,
+          "display_fraction": 0.94921875
+        },
+        {
+          "input_length": 14,
+          "matrix_size": 25,
+          "module_scale": 9,
+          "display_fraction": 0.94921875
+        },
+        {
+          "input_length": 100,
+          "matrix_size": 57,
+          "module_scale": 4,
+          "display_fraction": 0.921875
+        }
+      ],
+      "findings": [
+        "Original caller plusoriginal QRencoder/matrixhelpers chooseinputmode,encode,rasterize256x256 black/whiteRGBA andsendexpected imagecontext/slice2/width/height/pixelpointer toimagewriter.",
+        "Independentoffline ZXing decoder recovers exactnumeric/alphanumeric/byte inputfromactualcaller-rasterizedpixels.",
+        "Successflag+4=1,pendingflag+5=0,displayfraction=(size+2)*floor(256/(size+2))/256,twotemporarybufferreleases andcompleteinput/context/guardsverified."
+      ],
+      "models": [
+        "Imagewriterobservesargumentsonly;new[]/memalign/free useguardedfixturestorage;counterreturns0;verifiedstandardmemory/stringimports useCRTadapters."
+      ],
+      "limits": [
+        "Selectedheap-backed ASCIIinputs only;actual imagewriter/GPU,inline strings,capacity/OOM,highversions andlivegameunverified.",
+        "Callerfullsemanticreview andencoderfullreview remainincomplete;noadditionalnamecredit."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original unwind record verifies2402-byte boundary;missing definition created withoutoverlap and independentlyreopened.",
+      "Complete650-instruction caller reviewed againstoriginalbytes;numeric/alphanumeric/byte QR segment packing and256x256 black/white rasterization traced.",
+      "14 originalpacking/failure cases match independent bitstreamoracle;4 successful originalcaller+encoder cases independentlydecode exacttext fromactualrenderedpixels.",
+      "Imagewritercontext,width/height,slice2,success/clearflags,displayfraction andtemporaryreleases verified.",
+      "Independent reopening verifies savedworkingABI,unchangedbytes andall9607otherfunctionnames/signatures."
+    ],
+    "limits": [
+      "Selectedheap-backed ASCII only;inline/empty/highcapacity/OOM unverified.",
+      "Imagewriterobservesarguments;allocation/free/new[] guardedmodels,counter0 andverifiedstandardCRTadapters. NoGPU/livegame verification.",
+      "FullQRencoder semanticreview remainsincomplete;not credited asreviewed merelybecause roundtripspass.",
+      "Analyst descriptive name andworkingopaquecontextABI;noexactMMsource/buildmatch."
+    ],
+    "new_name_credit": 1,
+    "new_function_definitions": 1
   }
 }

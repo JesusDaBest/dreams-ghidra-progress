@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "689 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "689 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9607,
+    "total": 9608,
     "default_fun_names": 8706,
-    "other_names": 901,
-    "verification": "complete_inventory_matches_baseline_plus_689_renames_and_56_created_functions_and_1_reviewed_existing_name"
+    "other_names": 902,
+    "verification": "complete_inventory_matches_baseline_plus_689_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17337,6 +17337,31 @@
         "Routinewrites CPUimagebacking memory;readypublication doesnotprove GPUcompletion;noGPU/livegame verification.",
         "Second reference at14021bc17 hasnocontainingGhidrafunction andneedsseparatecaller audit.",
         "Analyst workingname/ABI;strongstb_dxt structuralleadwithverifieddifferences,notexacthistoricalsourceorMMbuildmatch."
+      ]
+    },
+    {
+      "address": "14021b300",
+      "original_name": "FUN_14021b300",
+      "applied_name": "UpdateQrCodeImageFromText",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateQrCodeImageFromText(void * context)",
+      "created_function": true,
+      "evidence": [
+        "Original unwind record verifies2402-byte boundary;missing definition created withoutoverlap and independentlyreopened.",
+        "Complete650-instruction caller reviewed againstoriginalbytes;numeric/alphanumeric/byte QR segment packing and256x256 black/white rasterization traced.",
+        "14 originalpacking/failure cases match independent bitstreamoracle;4 successful originalcaller+encoder cases independentlydecode exacttext fromactualrenderedpixels.",
+        "Imagewritercontext,width/height,slice2,success/clearflags,displayfraction andtemporaryreleases verified.",
+        "Independent reopening verifies savedworkingABI,unchangedbytes andall9607otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "Selectedheap-backed ASCII only;inline/empty/highcapacity/OOM unverified.",
+        "Imagewriterobservesarguments;allocation/free/new[] guardedmodels,counter0 andverifiedstandardCRTadapters. NoGPU/livegame verification.",
+        "FullQRencoder semanticreview remainsincomplete;not credited asreviewed merelybecause roundtripspass.",
+        "Analyst descriptive name andworkingopaquecontextABI;noexactMMsource/buildmatch."
       ]
     }
   ],
