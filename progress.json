@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 695,
+    "done": 696,
     "todo": 1452,
-    "total": 2147,
-    "behavior_or_helpers_reviewed": 621,
+    "total": 2148,
+    "behavior_or_helpers_reviewed": 622,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -21972,12 +21972,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 109,
+        "done": 110,
         "todo": 268,
-        "total": 377,
-        "behavior_or_helpers_reviewed": 109,
+        "total": 378,
+        "behavior_or_helpers_reviewed": 110,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 351,
+        "runtime_functions_identified": 352,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -22077,6 +22077,7 @@
           "GetOrLoadOcclusionUpdateDispatchArgsShader",
           "GetOrLoadOcclusionWriteChildVoxelsShader",
           "PhotoCacheThreadMain",
+          "LoadPhotoCacheImagePixels",
           "LookupOrRequestImageCacheSlice",
           "TryGetCachedImageColorSample",
           "TestSpriteBoundsAgainstViewPlanes",
@@ -22458,6 +22459,7 @@
           "14131e560",
           "14131eca0",
           "141330c40",
+          "141331220",
           "141331520",
           "1413317f0",
           "141361110",
@@ -26197,12 +26199,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 34,
+            "done": 35,
             "todo": 0,
-            "total": 34,
-            "behavior_or_helpers_reviewed": 34,
+            "total": 35,
+            "behavior_or_helpers_reviewed": 35,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 34,
+            "runtime_functions_identified": 35,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -26232,6 +26234,7 @@
               "DispatchComputeWithCachedControls",
               "DispatchComputeIndirectWithCachedControls",
               "PhotoCacheThreadMain",
+              "LoadPhotoCacheImagePixels",
               "LookupOrRequestImageCacheSlice",
               "TryGetCachedImageColorSample",
               "RegisterDeferredShaderConstants",
@@ -26269,6 +26272,7 @@
               "141298870",
               "141298c90",
               "141330c40",
+              "141331220",
               "141331520",
               "1413317f0",
               "14139fbf0",
@@ -26441,6 +26445,69 @@
                 ]
               },
               {
+                "name": "rendering/compute/image-cache",
+                "label": "Image cache",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "PhotoCacheThreadMain",
+                  "LoadPhotoCacheImagePixels",
+                  "LookupOrRequestImageCacheSlice",
+                  "TryGetCachedImageColorSample",
+                  "ReadImageRgbSample"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "141330c40",
+                  "141331220",
+                  "141331520",
+                  "1413317f0",
+                  "1413c4060"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/image-cache/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "PhotoCacheThreadMain",
+                      "LoadPhotoCacheImagePixels",
+                      "LookupOrRequestImageCacheSlice",
+                      "TryGetCachedImageColorSample",
+                      "ReadImageRgbSample"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "141330c40",
+                      "141331220",
+                      "141331520",
+                      "1413317f0",
+                      "1413c4060"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/completion",
                 "label": "Queue completion",
                 "done": 4,
@@ -26492,65 +26559,6 @@
                       "141297bd0",
                       "141297cf0",
                       "1413c90c0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/image-cache",
-                "label": "Image cache",
-                "done": 4,
-                "todo": 0,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 4,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "PhotoCacheThreadMain",
-                  "LookupOrRequestImageCacheSlice",
-                  "TryGetCachedImageColorSample",
-                  "ReadImageRgbSample"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "141330c40",
-                  "141331520",
-                  "1413317f0",
-                  "1413c4060"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/image-cache/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 4,
-                    "todo": 0,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 4,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "PhotoCacheThreadMain",
-                      "LookupOrRequestImageCacheSlice",
-                      "TryGetCachedImageColorSample",
-                      "ReadImageRgbSample"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "141330c40",
-                      "141331520",
-                      "1413317f0",
-                      "1413c4060"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -46049,5 +46057,5 @@
       }
     ]
   },
-  "unmapped": 7460
+  "unmapped": 7459
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9607,
-  "mapped_total": 2147,
-  "unmapped_total": 7460,
+  "mapped_total": 2148,
+  "unmapped_total": 7459,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54286,6 +54286,33 @@
             "Missing function defined without overlap and independently reopened; all 328 original instructions reviewed and byte-verified.",
             "576 bounded selection cases verify eligibility, strict priority and primary-first ties;128 processing cases verify load/alpha/upload/ready/cleanup state.",
             "Independent reopening verifies saved name,decompilation,unchanged bytes and all 9606 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "141331220": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "CompletePhotoCacheimage loader andoriginalworker callerbinding.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original native state comparisons and complete function review.",
+      "code_sha256": "055202c457137e96ff67a0258e39617b30ff2318d4d4e6bc4aaa96fee00d7b43",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "LoadPhotoCacheImagePixels",
+          "support": [
+            "Complete180-instruction image loader reviewed against original bytes andPhotoCache worker callers.",
+            "ImplicitFFFFFFFFtagpathfetchesencodedresource;status3decodes,status1setsobservedoutflag,otherfailuresleaveflagzero.",
+            "Explicittagpathassemblesleafpayloads throughoriginalresourceiterator;decoderinputrange/bytes verified.",
+            "256implicit and96explicit nativecases checkstatus,codecnull,dimensionaccept/reject,special1920x1080to480x270resize,refcountrelease andcallorder.",
+            "Independent reopening verifies sevenGP/stackinputs,pointerRAXreturn,decompilation,unchangedbytes andall9606othernames/signatures."
           ]
         }
       ]

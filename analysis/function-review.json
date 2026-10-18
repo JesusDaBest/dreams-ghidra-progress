@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "684 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "685 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9607,
-    "default_fun_names": 8711,
-    "other_names": 896,
-    "verification": "complete_inventory_matches_baseline_plus_684_renames_and_56_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8710,
+    "other_names": 897,
+    "verification": "complete_inventory_matches_baseline_plus_685_renames_and_56_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17216,6 +17216,30 @@
         "Availability,synchronization,load,upload and free are explicit models in bounded tests;actual IO,GPU,wait loop and concurrency unverified.",
         "Loader output flag meaning and load/upload implementations remain unresolved.",
         "Existing unspecified-return/no-parameter working declaration retained;not original pthread C++ signature.No exact MM source/build match."
+      ]
+    },
+    {
+      "address": "141331220",
+      "original_name": "FUN_141331220",
+      "applied_name": "LoadPhotoCacheImagePixels",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV LoadPhotoCacheImagePixels(void * cache, ulonglong keyWord0, ulonglong keyWord1, uint resourceTag, uchar primaryCache, uint channels, uchar * fetchStatusOneFlag)",
+      "evidence": [
+        "Complete180-instruction image loader reviewed against original bytes andPhotoCache worker callers.",
+        "ImplicitFFFFFFFFtagpathfetchesencodedresource;status3decodes,status1setsobservedoutflag,otherfailuresleaveflagzero.",
+        "Explicittagpathassemblesleafpayloads throughoriginalresourceiterator;decoderinputrange/bytes verified.",
+        "256implicit and96explicit nativecases checkstatus,codecnull,dimensionaccept/reject,special1920x1080to480x270resize,refcountrelease andcallorder.",
+        "Independent reopening verifies sevenGP/stackinputs,pointerRAXreturn,decompilation,unchangedbytes andall9606othernames/signatures."
+      ],
+      "caveats": [
+        "Fetch,codec,resize,free andstandardmemcpy explicitmodels;actualIO/decoding/resizeunverified.",
+        "Smallvalidresourcetrees;deeptrees/scratchlimit,malformedinputs,concurrency andlivegameunverified.",
+        "Outflagdescribesobservedfetchstatus1;broadersemanticmeaningnotclaimed.",
+        "Analystname andworkingopaqueABI notoriginalC++declarations;noexactMMsource/buildmatch."
       ]
     }
   ],

@@ -6876,3 +6876,14 @@ The worker scans pending entries in two tables, chooses an eligible entry with t
 Independent reopening verifies the saved descriptive name, decompilation, unchanged native bytes and all 9,606 other names/signatures. Its existing unspecified-return/no-parameter working declaration remains; the original pthread source signature is not claimed. Defining the previously missing function increases the inventory by one; definition alone earned no semantic-review credit.
 
 Totals: **741 checked names** (661 behavior/helper and 80 property/type), **2,147 mapped**, **7,460 unmapped**, among **9,607 defined functions**. The review breakdown is 684 existing-function renames, 56 created-and-reviewed functions, and one retained-name review.
+
+
+### Photo cache image loader reviewed and named
+
+`LoadPhotoCacheImagePixels` names the complete 180-instruction loader called by the photo-cache worker. With an implicit resource tag, it obtains encoded bytes from the resource layer; with an explicit tag, it assembles leaf payloads through the original tree iterator. It calls a decoder for the requested channel count, accepts matching cache dimensions, specially resizes 1920×1080 input for a 480×270 cache, and frees/rejects other mismatched results. Referenced source buffers are released on exit.
+
+**256 implicit-resource tests** cover numeric fetch statuses, decoder failure, dimensions, the special resize branch, reference counts and call order. **96 explicit-resource tests** execute the original loader and tree iterator with small valid trees; the concatenated bytes and exact decoder input range match an independent payload join. Fetching, decoding, resizing, freeing and standard byte copying are explicit test models. Actual I/O, image decoding, deep trees, scratch-buffer limits, concurrency and live-game behavior remain unverified.
+
+The output flag is initialized to zero and set when the fetch helper returns numeric status 1. Its argument name records that observed condition rather than assigning an unproved higher-level meaning. Independent reopening verifies all seven GP/stack inputs, pointer return in RAX, decompilation, unchanged original instructions and all 9,606 other names/signatures. The conflicting default stack local was preserved privately before replacing its storage with the input parameter. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **742 checked names** (662 behavior/helper and 80 property/type), **2,148 mapped**, **7,459 unmapped**, among **9,607 defined functions**.
