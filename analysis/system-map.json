@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9607,
-  "mapped_total": 2149,
-  "unmapped_total": 7458,
+  "mapped_total": 2150,
+  "unmapped_total": 7457,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54340,6 +54340,33 @@
             "360smallnativecases verify0..4channels,inplace/separatebuffers,threepatterns andcompleteguards.",
             "Twoactual1920x1080inplacecases andtwooriginal-loaderconnectedcases verify1/4channels.",
             "Independent reopening verifies fiveGPinputs,voidreturn,decompilation,unchangedbytes andall9606othernames/signatures."
+          ]
+        }
+      ]
+    },
+    "1413b90a0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete byte-image channel conversion and original image-decoder integration.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "03d2f2d8cd956868d73d67aaa43911f8d360e89467839d62beac2d2d0b66dee8",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertOwnedImageByteChannels",
+          "support": [
+            "Complete515-instruction channel conversion body and switch branches reviewed against original executable; six decoder callsites and another codec caller identified.",
+            "All16 one-through-four byte-channel conversions checked in1056 direct cases, including scalar/SIMD width boundaries and three patterns.",
+            "600 original-decoder PNG cases check all five row filters, four eight-bit source color layouts, requested channel counts0..4 and two compression modes.",
+            "Channel change allocates a replacement and frees owned input; matching counts return original pointer. RGB gray weights77/150/29, alpha preservation and opaque255 insertion verified.",
+            "Independent offline reopening verifies saved working ABI, unchanged original instructions and all9606 other function names/signatures."
           ]
         }
       ]

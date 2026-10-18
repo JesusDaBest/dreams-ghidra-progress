@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 743,
+    "checked_and_applied_names": 744,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 743,
+    "verified_names": 744,
     "function_count": 9607,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "1411a32b0",
       "141330c40"
     ],
-    "scope": "686 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "687 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20624,6 +20624,67 @@
       "Invaliddimensions/diagnostics,channelsabove4,partialoverlap andbroaderintegeredgecasesunverified.",
       "Directresizeusesoriginalroutinewithoutcalledfunctionmodels;connectedloaderstillmodelsfetch/codec/free.",
       "ActualIO/codec,GPU/livegameunverified;workingname/ABI notoriginalC++declarations.NoexactMMsource/buildmatch."
+    ],
+    "new_name_credit": 1
+  },
+  "image_channel_conversion_checkpoint": {
+    "target": {
+      "name": "ConvertOwnedImageByteChannels",
+      "signature": "uchar * PS4_SYSV ConvertOwnedImageByteChannels(uchar * ownedPixels, int sourceChannels, int outputChannels, int width, uint height)"
+    },
+    "checks": {
+      "photo-codec-channel-conversion-native-check.json": {
+        "native_cases": 1056,
+        "original_instructions": 515,
+        "function": "1413b90a0",
+        "findings": [
+          "All sixteen source/destination byte-channel combinations match independent oracle.",
+          "Equal counts return the exact input pointer without allocation.",
+          "Different counts allocate a new result, convert rows, then free input; original body also frees input when allocation fails.",
+          "Width boundaries exercise scalar tails and SIMD loops. Gray weights77/150/29, alpha preservation and opaque-alpha insertion match."
+        ],
+        "models": [
+          "Verified malloc/free imports adapted to local CRT; no conversion instructions replaced."
+        ],
+        "limits": [
+          "Positive selected dimensions and valid one-through-four channel counts only.",
+          "Allocation failure and invalid counts/overflow not executed; static observations recorded separately.",
+          "No original source-name or exact MM source match."
+        ],
+        "project_modified": false
+      },
+      "photo-codec-png-decode-native-check.json": {
+        "native_cases": 600,
+        "decoder": "1413aadf0",
+        "findings": [
+          "Original decoder and codec helper code decode generated 8-bit grayscale, gray-alpha, RGB and RGBA PNG fixtures to exact expected pixel bytes and dimensions.",
+          "All five PNG row filters; three dimensions; stored and compressed zlib streams; requested channels zero (retain source) and one through four.",
+          "Component-count output reports source channels even when requested output channel count differs.",
+          "RGB-to-gray matches integer (77R+150G+29B)>>8; absent alpha becomes 255."
+        ],
+        "models": [
+          "Six verified allocation and memory imports adapted to local Windows CRT; local stack canary."
+        ],
+        "limits": [
+          "Noninterlaced eight-bit fixtures only.",
+          "No JPEG, indexed/transparent-key/16-bit PNG, malformed-input safety, callbacks or live game verification.",
+          "No naming credit; full 11461-instruction decoder review remains incomplete."
+        ],
+        "project_modified": false
+      }
+    },
+    "evidence": [
+      "Complete515-instruction channel conversion body and switch branches reviewed against original executable; six decoder callsites and another codec caller identified.",
+      "All16 one-through-four byte-channel conversions checked in1056 direct cases, including scalar/SIMD width boundaries and three patterns.",
+      "600 original-decoder PNG cases check all five row filters, four eight-bit source color layouts, requested channel counts0..4 and two compression modes.",
+      "Channel change allocates a replacement and frees owned input; matching counts return original pointer. RGB gray weights77/150/29, alpha preservation and opaque255 insertion verified.",
+      "Independent offline reopening verifies saved working ABI, unchanged original instructions and all9606 other function names/signatures."
+    ],
+    "limits": [
+      "No JPEG,indexed/transparent-key/16-bit PNG,interlace,callback refill,malformed-input safety or live-game verification.",
+      "Local CRT adapters replace verified allocation/memory imports; full11461-instruction decoder not yet completely reviewed or named.",
+      "Invalid conversion counts,nonpositive dimensions,overflow and allocation failure not executed; input-free-on-OOM is a static finding.",
+      "Analyst descriptive name and working ABI; no original C++ declaration or exact Media Molecule source/build match."
     ],
     "new_name_credit": 1
   }

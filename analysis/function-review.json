@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "686 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "687 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9607,
-    "default_fun_names": 8709,
-    "other_names": 898,
-    "verification": "complete_inventory_matches_baseline_plus_686_renames_and_56_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8708,
+    "other_names": 899,
+    "verification": "complete_inventory_matches_baseline_plus_687_renames_and_56_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17263,6 +17263,30 @@
         "Invaliddimensions/diagnostics,channelsabove4,partialoverlap andbroaderintegeredgecasesunverified.",
         "Directresizeusesoriginalroutinewithoutcalledfunctionmodels;connectedloaderstillmodelsfetch/codec/free.",
         "ActualIO/codec,GPU/livegameunverified;workingname/ABI notoriginalC++declarations.NoexactMMsource/buildmatch."
+      ]
+    },
+    {
+      "address": "1413b90a0",
+      "original_name": "FUN_1413b90a0",
+      "applied_name": "ConvertOwnedImageByteChannels",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar * PS4_SYSV ConvertOwnedImageByteChannels(uchar * ownedPixels, int sourceChannels, int outputChannels, int width, uint height)",
+      "evidence": [
+        "Complete515-instruction channel conversion body and switch branches reviewed against original executable; six decoder callsites and another codec caller identified.",
+        "All16 one-through-four byte-channel conversions checked in1056 direct cases, including scalar/SIMD width boundaries and three patterns.",
+        "600 original-decoder PNG cases check all five row filters, four eight-bit source color layouts, requested channel counts0..4 and two compression modes.",
+        "Channel change allocates a replacement and frees owned input; matching counts return original pointer. RGB gray weights77/150/29, alpha preservation and opaque255 insertion verified.",
+        "Independent offline reopening verifies saved working ABI, unchanged original instructions and all9606 other function names/signatures."
+      ],
+      "caveats": [
+        "No JPEG,indexed/transparent-key/16-bit PNG,interlace,callback refill,malformed-input safety or live-game verification.",
+        "Local CRT adapters replace verified allocation/memory imports; full11461-instruction decoder not yet completely reviewed or named.",
+        "Invalid conversion counts,nonpositive dimensions,overflow and allocation failure not executed; input-free-on-OOM is a static finding.",
+        "Analyst descriptive name and working ABI; no original C++ declaration or exact Media Molecule source/build match."
       ]
     }
   ],

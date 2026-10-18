@@ -6898,3 +6898,14 @@ Totals: **742 checked names** (662 behavior/helper and 80 property/type), **2,14
 Direct downsample tests replace no called functions. Connected loader tests still model fetching, decoding and freeing. Invalid dimensions and diagnostic logging, channels above four, partial overlap, broader integer edge cases, actual I/O/codec execution, GPU work and live-game behavior remain unverified. Independent reopening verifies the saved name/signature, decompilation, unchanged bytes and all 9,606 other names/signatures. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **743 checked names** (663 behavior/helper and 80 property/type), **2,149 mapped**, **7,458 unmapped**, among **9,607 defined functions**.
+
+
+### Image channel conversion reviewed and named
+
+`ConvertOwnedImageByteChannels` names the complete 515-instruction helper. It converts among grayscale, gray-alpha, RGB and RGBA byte images. **Ownership matters:** matching channel counts return the original pointer; changing counts allocates a replacement and frees the input. The allocation-failure path also frees the input, as established by static review. RGB-to-gray uses `(77R + 150G + 29B) >> 8`; missing alpha becomes 255.
+
+**1,056 direct native cases** cover all 16 conversions, scalar/SIMD width boundaries, two heights and three patterns. **600 original-decoder PNG cases** cover four eight-bit source layouts, all five row filters, source-preserving or one-through-four requested channels, three dimensions and stored/compressed streams. Output pixels and dimensions match independent calculations. The decoder reports source components even when the requested output channel count differs. Verified allocation/memory imports use local CRT adapters.
+
+The full decoder remains unnamed and incompletely reviewed. JPEG, indexed/transparent-key/16-bit PNG, interlace, callback refill, malformed-input safety, invalid conversion arguments, overflow, allocation-failure execution and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed. Independent reopening confirms the saved helper name and working ABI, unchanged code bytes and all 9,606 other function names/signatures.
+
+Totals: **744 checked names** (664 behavior/helper and 80 property/type), **2,150 mapped**, **7,457 unmapped**, among **9,607 defined functions**.
