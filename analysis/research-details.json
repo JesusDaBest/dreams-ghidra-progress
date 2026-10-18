@@ -19859,5 +19859,78 @@
       "Analyst descriptive name and working ABI,not original C++ declaration."
     ],
     "new_name_credit": 1
+  },
+  "buffered_selection_allocation_packing_connected_checkpoint": {
+    "checks": [
+      {
+        "native_cases": 144,
+        "findings": [
+          "Original selector feeds original root/nonroot table construction and per-parent group aggregation in one bounded execution.",
+          "144 cases verify group root-ID propagation,selected-object ordinals,object counts,total packed bytes,object/property subtotals and complete hash table across tree shapes,eligibility,properties,world bits and kind high bit.",
+          "Kind0 object size130 is supplied by its original initializer store."
+        ],
+        "limits": [
+          "Prepared4/7-node kind0 trees,no wires,metadata gates absent,preallocated table avoids allocation.",
+          "Allocation,packing and runtime-generation stages follow this boundary and are not executed here."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "native_cases": 288,
+        "findings": [
+          "Original selection,grouping,capacity/insertion,record allocation/layout and root-key list linking execute together.",
+          "288 cases verify complete pool/table,group aggregates,selection,allocator size/alignment logs and untouched distinct allocation buffers across modeled success/failure."
+        ],
+        "models": [
+          "Allocator records calls and returns distinct preallocated buffers or null;real allocation is not executed."
+        ],
+        "limits": [
+          "Prepared kind0 trees,no wires,absent property gates and preallocated hash table.",
+          "Root object ID set to-1 to match parent-zero group sentinel;actual root initialization convention remains to trace.",
+          "Packing,runtime generation,invalid data,overflow,concurrency and live-game behavior not verified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "native_cases": 144,
+        "findings": [
+          "Original selected kind69 path replaces parent/self group key with actual root ID before aggregation and allocation;root ID100 works through complete table lookup and linking.",
+          "144 executions verify2/4/7-node kind69 star/chain/binary trees,property bytes,kind high bit and modeled allocation success/failure."
+        ],
+        "models": [
+          "Allocator records calls and returns distinct preallocated buffers or null.",
+          "Kind69 size240 is supplied by the original initializer store. World-bit dimensions repeat behavior in this kind69 fixture."
+        ],
+        "limits": [
+          "Prepared kind69 trees,no wires,metadata gates absent,preallocated table.",
+          "This establishes another valid grouping path;it does not prove the game root-initialization convention.",
+          "Packing,runtime generation,concurrency and live game remain unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 144,
+        "findings": [
+          "Original kind69 selection,grouping,table construction,modeled allocation,list linking,per-object arrays and object/property packing execute together through producer copy-loop completion.",
+          "144 complete-state executions verify selected indices,parent IDs,cached16-byte records,byte offsets,deep-copied property pointers and record packing cursors across trees,property presence,world-cache bit and allocation success/failure.",
+          "Allocation failure clears selection/world flag0 and prevents payload writes. Kind69 size240 is supplied by its original initializer store;root ID100 remains valid."
+        ],
+        "models": [
+          "Allocator records calls and returns distinct preallocated buffers or null;memcpy uses explicit standard model."
+        ],
+        "limits": [
+          "Prepared kind69 trees,no wires and absent metadata property gates;record packing cursors initialized as in original record-reset stores.",
+          "Earlier producer reset/root prerequisites and later runtime generation remain outside execution.",
+          "Invalid data,overflow,concurrency and live-game behavior unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "new_name_credit": 0,
+    "full_producer_named": false
   }
 }

@@ -6735,3 +6735,12 @@ Independent native checks cover hierarchy propagation (54 cases), wire/boolean g
 The name and signature persist after independent reopening, with original bytes and all 9,605 other names/signatures unchanged. Valid prepared trees/references only; property source names, complete flag meanings, malformed/cyclic data, capacity, concurrency, full producer and live-game behavior remain unresolved. One additional call site is outside defined function bodies and is retained as a boundary lead. No exact Media Molecule source/build match is claimed.
 
 Totals: **732 checked names** (652 behavior/helper and 80 property/type), **2,138 mapped**, **7,468 unmapped**, among 9,606 defined functions.
+
+
+### Selection through buffered payload packing connected
+
+A 144-case bounded execution connects original selection, root/nonroot table construction and per-parent group aggregation. It verifies selected-object ordinals, counts, packed-byte totals and object/property subtotals. A 288-case followup connects allocation layout and root-key list linking with modeled successful/failed allocations. That kind-0 fixture requires a root ID of -1; it does not establish the game's root-initialization convention.
+
+A separate selected kind-69 path explicitly writes the actual root ID into parent/self group keys. Its 144 executions pass with root ID 100 and the original 240-byte size initialization, demonstrating that -1 is not a universal producer requirement. Another 144-execution check connects that path through the entire object-copy loop: selection, grouping, table insertion, allocation, linking, selected-index and parent-ID arrays, cached 16-byte records, byte offsets, object bytes and deep-copied properties. Complete buffers match. Modeled allocation failure clears selection/world flag 0 and prevents payload writes.
+
+Allocator returns and imported byte copying are modeled; the real allocator is not executed. Prepared trees, valid properties and preallocated hash tables only. Earlier producer reset/root prerequisites and later runtime generation remain outside this execution, as do invalid data, overflow, concurrency and live-game behavior. Some test dimensions repeat behavior. The producer remains unnamed; **732 checked names** remains the total.
