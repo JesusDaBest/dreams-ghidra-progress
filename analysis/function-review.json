@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "664 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "665 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8731,
-    "other_names": 875,
-    "verification": "complete_inventory_matches_baseline_plus_664_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8730,
+    "other_names": 876,
+    "verification": "complete_inventory_matches_baseline_plus_665_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16698,6 +16698,29 @@
       "caveats": [
         "Bounded factory arm exits before common finalization;allocation,IDs,registration,failure paths and full scene conversion unexecuted.",
         "No field-semantic claims for packed constants without separate property binding;no live game or exact MM source/build match.",
+        "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "140947290",
+      "original_name": "FUN_140947290",
+      "applied_name": "RegisterThingInWorldAtIndex",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV RegisterThingInWorldAtIndex(void * world, void * owner, void * thing, uint objectIndex)",
+      "evidence": [
+        "Original XYZOutput conversion calls this routine after factory creation with world,null owner,returned object and current primary object count.",
+        "Complete209-instruction body and pseudocode read;original bytes verified. Static Sound15/EffectField29 parent-list branches and optional owner list/update call reviewed with their limitations recorded.",
+        "208 native cases:192 Key/null-owner states exercise parallel-array initialization,hash chains,parent/type caches and selected player counters;16 cases connect the actual original factory-created object directly to insertion.",
+        "Full world/object comparisons preserve transform/defaults while verifying primary table/count,index and sequence chains. Imported byte-fill routine explicitly modeled.",
+        "Independent reopening verifies saved name,four-register pointer/index ABI,uint return,decompilation,original bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Key kind only;type15/29 parent list branches and nonnull owner refresh not executed.",
+        "Prepared world records;no malformed indices,full caller/conversion,real imported fill implementation,concurrency or live game claim.",
         "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
       ]
     }

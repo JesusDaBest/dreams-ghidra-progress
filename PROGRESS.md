@@ -5920,3 +5920,14 @@ Object-limit rejection leaves the world unchanged. Arena-capacity rejection happ
 Key size 0x130 and base-transform offset 0x40 are controlled metadata inputs here; optional offsets are disabled. Their actual initialization provenance remains separate. Other types, owner/template modes, parent-relative offsets, complete registration, the conversion loop and live-game behavior remain unverified. Executing selected paths does not establish that every factory branch has been understood; the factory is not newly named. No exact Media Molecule source/build match is claimed.
 
 No new name credit: **720 checked names**, 2,126 mapped and 7,480 unmapped among 9,606 defined functions remain the totals.
+
+
+### World object insertion reviewed and named
+
+`RegisterThingInWorldAtIndex` names the complete 209-instruction routine called after the conversion's object factory. It inserts the object pointer, updates primary and parallel counts, initializes new array ranges, caches parent/type information, writes the object's index and links its sequence lookup chain. Selected player-mask and physics-owner counters are updated. Static branches for Sound and EffectField maintain a parent list; the optional owner branch appends to a per-kind list and invokes an additional update helper whose behavior remains outside this review.
+
+**208 native cases** pass: 192 Key/null-owner cases exercise indices 0/1/63/64, zero/equal/larger previous array lengths, two sequence values, selected player masks and physics flags. Another 16 pass actual original factory-created arena objects directly into insertion. Complete world/object comparisons verify the resulting pointer/count, index, parent/type caches and sequence links while preserving supplied transforms and other defaults. The imported byte-fill routine uses an explicit standard byte-fill model; its real platform implementation is not executed.
+
+Independent reopening verifies the saved descriptive name, four-register working pointer/index signature, unsigned return, decompilation, original bytes and all 9,605 other function names/signatures. Other kinds' parent-list paths, nonnull owner helper behavior, malformed indices, concurrency, full scene conversion and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **721 checked names** (641 behavior/helper and 80 property/type), **2,127 mapped**, **7,479 unmapped**, among 9,606 defined functions.

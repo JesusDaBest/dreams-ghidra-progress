@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 720,
+    "checked_and_applied_names": 721,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 720,
+    "verified_names": 721,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "664 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "665 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18717,5 +18717,45 @@
       "Bind prepared Key allocation size/base-transform metadata to original initialization.",
       "Execute actual conversion loop with original creation/registration paths before claiming scene migration verified."
     ]
+  },
+  "world_insertion_name_checkpoint": {
+    "target": {
+      "name": "RegisterThingInWorldAtIndex",
+      "signature": "uint PS4_SYSV RegisterThingInWorldAtIndex(void * world, void * owner, void * thing, uint objectIndex)"
+    },
+    "native_check": {
+      "native_cases": 208,
+      "standalone_cases": 192,
+      "connected_factory_insertion_cases": 16,
+      "original_instructions": 209,
+      "import_models": [
+        "Imported byte-fill routine replaced by explicit SysV byte-fill model."
+      ],
+      "findings": [
+        "Complete original insertion routine executes selected Key/null-owner paths,updates primary pointer/count,parallel lengths and defaults,parent/type caches,index and sequence-hash chains.",
+        "Masked type cache strips high bit;selected player mask and physics-owner counters increment exactly.",
+        "Full world/object comparisons verify all expected writes for selected zero/equal/larger old array lengths and indices0,1,63,64.",
+        "16 additional cases pass the actual original factory-created arena object into original insertion,verifying parent cache,index,hash links and retained transform/defaults."
+      ],
+      "limits": [
+        "Key kind only;type15/29 parent list branches and nonnull owner refresh not executed.",
+        "Prepared world records;no malformed indices,full caller/conversion,real imported fill implementation,concurrency or live game claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original XYZOutput conversion calls this routine after factory creation with world,null owner,returned object and current primary object count.",
+      "Complete209-instruction body and pseudocode read;original bytes verified. Static Sound15/EffectField29 parent-list branches and optional owner list/update call reviewed with their limitations recorded.",
+      "208 native cases:192 Key/null-owner states exercise parallel-array initialization,hash chains,parent/type caches and selected player counters;16 cases connect the actual original factory-created object directly to insertion.",
+      "Full world/object comparisons preserve transform/defaults while verifying primary table/count,index and sequence chains. Imported byte-fill routine explicitly modeled.",
+      "Independent reopening verifies saved name,four-register pointer/index ABI,uint return,decompilation,original bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Key kind only;type15/29 parent list branches and nonnull owner refresh not executed.",
+      "Prepared world records;no malformed indices,full caller/conversion,real imported fill implementation,concurrency or live game claim.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }
