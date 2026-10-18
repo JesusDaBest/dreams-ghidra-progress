@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2132,
-  "unmapped_total": 7474,
+  "mapped_total": 2133,
+  "unmapped_total": 7473,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53869,6 +53869,34 @@
             "Equal sequence IDs or child in proposed-parent ancestry reject before kind check;mode1 bypasses kind restriction only after those checks.",
             "Original upgrade writer stores2/3/4 to commonbyte2e from parent kinds13/14/15;this input is not universally a boolean.",
             "Independent reopening verifies bool return,four-argument opaque-pointer/byte ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "140b18db0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Thing header800 flag transition and paired world-counter accounting.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete list traversal body and scoped independent native state comparisons.",
+      "code_sha256": "6082689bed5e2ddce1e38d26e5d5738a75a30590b0db7187a87c435e613735f0",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SetThingHeaderFlag800Once",
+          "support": [
+            "Complete19-instruction body and pseudocode reviewed;original bytes verified.",
+            "Resolves signedlow26 packed object reference,sets header800 and atomically increments world counter1c703c0 only on clear-to-set.",
+            "64 native cases execute helper twice each;full world/object comparisons cover indices0/1/63/64,upper tags,prior flags and counter wrap.",
+            "Separate64-case paired check executes mark twice then bounded original clear twice:256 executions and exact world/object comparisons.",
+            "Counter resets observed in existing pool/simulation preparation routines;main update combines it with two other counters before fast-path selection. Higher-level flag meaning unresolved.",
+            "Independent reopening verifies name,void packed-reference/world ABI,decompilation,unchanged bytes and all9605 other names/signatures."
           ]
         }
       ]

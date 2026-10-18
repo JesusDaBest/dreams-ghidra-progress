@@ -6124,3 +6124,14 @@ The complete 19-instruction helper sets Thing header `0x800` and atomically incr
 Counter resets occur in the existing pool-initialization and simulation-preparation routines. The main update loop combines this counter with two others before selecting a fast path. These links support the observed accounting role but do not yet establish the flag's source name or justify calling it deleted, dirty or pending initialization.
 
 The clear-block fixture redirects its exit and already-clear branch to return; the containing dispatcher is not executed. Individual counter operations are atomic, but the overall test/flag/counter sequence is not established thread-safe. Malformed indices, full callers and live-game behavior remain unverified. No new naming credit: **726 checked names** remains the total.
+
+
+### Verified header-flag setter named literally
+
+`SetThingHeaderFlag800Once` names the complete 19-instruction helper by its established behavior. It resolves a packed object reference, sets header bit 0x800 and atomically increments the associated world counter only on a clear-to-set transition. The name intentionally does not label the flag deleted, dirty or pending initialization; its source-level meaning remains unresolved.
+
+64 native cases execute the helper twice each, verifying full world/object states across tagged references, prior flag patterns and counter wrap. A separate paired check runs mark twice and bounded original clear twice per case. This covers the transition accounting without establishing concurrent safety of the combined flag test and update.
+
+Independent reopening verifies the saved name, void/packed-reference/world signature, decompilation, unchanged original bytes and all 9,605 other names/signatures. Valid indices only;malformed references,full caller/dispatcher and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **727 checked names** (647 behavior/helper and 80 property/type), **2,133 mapped**, **7,473 unmapped**, among 9,606 defined functions.
