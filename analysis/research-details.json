@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 750,
+    "checked_and_applied_names": 751,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 750,
+    "verified_names": 751,
     "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1929,7 +1929,7 @@
       "141330c40",
       "14021b300"
     ],
-    "scope": "692 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "693 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21598,6 +21598,81 @@
       "ActualTLS,OOM,concurrency andvaluescontainingrecursivecurrenttokens unverified.",
       "Noactualaccountvaluesread ornetworkbehaviorproved;not anauthentication implementation.",
       "Analystdescriptivename andworkingopaque smallstringABI;noexactoriginalsource/buildmatch."
+    ],
+    "new_name_credit": 1
+  },
+  "small_string_insert_checkpoint": {
+    "target": {
+      "name": "InsertByteRangeIntoSmallString",
+      "signature": "void PS4_SYSV InsertByteRangeIntoSmallString(void * storage, int index, uchar * begin, uchar * end)"
+    },
+    "checks": {
+      "small-string-insert-boundary-native-check.json": {
+        "native_cases": 270,
+        "original_instructions": 95,
+        "borrowed_growth_free_cases": 12,
+        "findings": [
+          "Original helper inserts supplied byte range atvalidindex,preservingprefix/suffix andwritingterminator.",
+          "Growth allocatesexact oldlength+insertlength+1 bytes,updatescapacity/ownership1 andfreespriorpointer-formstorage;in-capacity insert usesmemmove.",
+          "Emptyinsertion preservesallstorage.Wholeobjects,old/newbuffers,sourceandargumentguards matchindependentbyteoracle."
+        ],
+        "models": [
+          "malloc/free modeledandlogged;verifiedstrlen/memcpy/memmove adaptedtolocalCRT."
+        ],
+        "limits": [
+          "SelectednonaliasingASCIIranges andvalidindices;OOM,overflow,out-of-rangeindices andself-insertionunverified.",
+          "Borrowed-mode growth executes the original free call through a logging stub; this proves the call path, not that borrowed storage is a valid caller contract or safe to free.",
+          "No namingcredit yet."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-placeholder-tls-initialization-native-check.json": {
+        "native_cases": 11,
+        "findings": [
+          "Original442-instruction expansion routine plusoriginalsmall-string resize/insert helpers replacesallfiveoriginalplaceholders usingentirelysyntheticplayerfields.",
+          "OriginalTLS-null branch callsreal localcalloc(1,8196),registersonce throughmodeledTLS,andreusesstorage forsubsequentformatting;exactcursorandunusedzeroedbytesverified."
+        ],
+        "models": [
+          "Synthetic active-player slot;language/cachedlevel lookup andpthreadTLS models;three knownformatstrings modeledwithSysV64-bitlong semantics;verifiedstandardstring/memory/allocation imports useCRTadapters."
+        ],
+        "limits": [
+          "Syntheticfields andmodeledTLSslot,not actualpthreadTLS;allocationfailure,concurrency andrecursivevaluesunverified.",
+          "Previouslyreviewedfunction;additionalTLScreationpathverificationonly,no newnamecredit.",
+          "Noactualaccountvaluesread ornetworkrequests."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "qr-template-to-pixels-connected-native-check.json": {
+        "native_cases": 3,
+        "findings": [
+          "Originaldispatcher,placeholderexpansion,stringhelpers,QRimageworker,encoder andmatrixhelpers connected fromsynthetictemplate toactual256x256RGBA output.",
+          "Independentoffline decoderrecovers exactexpandedtext;stateprogression pending/completed->success->true verified across3generations.",
+          "Original imagewriter receivesexpectedglobalcontext,slice2,dimensions andpixels."
+        ],
+        "models": [
+          "Synchronous scheduler/virtualjoin;imagewriterobservesargumentsonly;fakeplayer/TLS/language/level/formats;memalign/new[] adaptedtomalloc andstandardCRTimports."
+        ],
+        "limits": [
+          "Three selectedsynthetictemplates;actualscheduler/concurrency,GPU,imagebackingwrite,allocationfailure andlivegameunverified.",
+          "No accountvaluesread ornetworkrequests;fullQRencoder review remainsincomplete."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete 95-instruction insertion helper reviewed against original bytes and five placeholder-expansion callsites.",
+      "270 original-native cases verify byte insertion, prefix/suffix preservation, terminators, capacity boundaries and exact allocation/free arguments.",
+      "Twelve modeled borrowed-buffer growth cases observe the original free call; whole object, source and old/new storage guards match an independent oracle.",
+      "Independent offline reopening verifies saved working ABI, unchanged native bytes and all 9607 other function names/signatures."
+    ],
+    "limits": [
+      "Allocation/free use logging stubs; standard string/memory imports use local CRT adapters.",
+      "Borrowed-mode growth calls free irrespective of ownership; validity of such input in real callers remains unresolved.",
+      "Allocation failure, aliasing, invalid indices, huge ranges and integer overflow remain unverified.",
+      "Analyst descriptive name and opaque storage working ABI, not an original declaration or exact Media Molecule source match."
     ],
     "new_name_credit": 1
   }

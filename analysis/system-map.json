@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9608,
-  "mapped_total": 2156,
-  "unmapped_total": 7452,
+  "mapped_total": 2157,
+  "unmapped_total": 7451,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54530,6 +54530,32 @@
             "Mixed,repeated,embedded andunknown tokens matchindependentsequentialreplacement;rawinput preserved.",
             "Originalsmallstringresize/insert codeexecutes;210directinsertioncases independentlycheckstoragegrowthandbytepreservation.",
             "Independentoffline reopening verifiesworkingtwo-pointerABI,unchangedbytes andall9607otherfunctionnames/signatures."
+          ]
+        }
+      ]
+    },
+    "14021af50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "strings",
+        "smallstring",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete small-string byte-range insertion used at five local-player placeholder expansion sites.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "52ad9fc3829afafb4055cd7ac79b2ce1904053e631108c002c4b9b91a6418685",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertByteRangeIntoSmallString",
+          "support": [
+            "Complete 95-instruction insertion helper reviewed against original bytes and five placeholder-expansion callsites.",
+            "270 original-native cases verify byte insertion, prefix/suffix preservation, terminators, capacity boundaries and exact allocation/free arguments.",
+            "Twelve modeled borrowed-buffer growth cases observe the original free call; whole object, source and old/new storage guards match an independent oracle.",
+            "Independent offline reopening verifies saved working ABI, unchanged native bytes and all 9607 other function names/signatures."
           ]
         }
       ]

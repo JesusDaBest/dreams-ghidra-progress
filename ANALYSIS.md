@@ -6975,3 +6975,14 @@ Totals: **749 checked names** (669 behavior/helper and 80 property/type), **2,15
 The full body and working ABI survived independent reopening with unchanged code bytes and all 9,607 other function names/signatures. Real TLS, allocation failure, concurrency and replacement values containing the currently searched token remain unverified. Those recursive values can retrigger the search; termination is not claimed for them.
 
 Totals: **750 checked names** (670 behavior/helper and 80 property/type), **2,156 mapped**, **7,452 unmapped**, among **9,608 defined functions**.
+
+
+### Small-string insertion reviewed and named
+
+`InsertByteRangeIntoSmallString` names the complete 95-instruction helper used at five placeholder-expansion sites. It inserts a byte range at an index, preserves the existing prefix and suffix, and appends a zero terminator. When capacity is insufficient, it allocates exactly the resulting length plus one. **270 original-native cases** verify complete guarded objects and buffers, capacity boundaries and exact allocation/free arguments.
+
+**Ownership caveat:** growth frees every old pointer-form buffer, unlike the reset/resize helper, which checks ownership. Twelve modeled borrowed-buffer cases confirm this call path, but do not establish that real callers permit borrowed input. Allocation failure, aliasing, invalid indices and overflow remain unverified. Allocation/free are logged fixture models; verified memory/string imports use local CRT adapters. Independent reopening confirms the saved working ABI, unchanged bytes and all 9,607 other function names/signatures.
+
+Related local-only QR checks now connect the original dispatcher, placeholder expansion, storage helpers and encoder through to generated pixels: three synthetic templates decode independently to the expected expanded text. Eleven first-use scratch-buffer cases verify allocation, registration and reuse through modeled TLS. These checks do not prove real thread scheduling, live-game behavior or account authentication.
+
+Totals: **751 checked names** (671 behavior/helper and 80 property/type), **2,157 mapped**, **7,451 unmapped**, among **9,608 defined functions**.
