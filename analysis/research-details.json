@@ -22930,5 +22930,20 @@
       "Exact rational algebra does not verify GPU rounding or exact Euclidean distance."
     ],
     "reviewed_name_count_increment": 0
+  },
+  "chunk_smrd_buffer_identity_correction": {
+    "scope": "Corrects buffer identity; primitive record arithmetic unaffected",
+    "cause": "S_LOAD_DWORD immediate offset is a DWORD index, not byte offset.",
+    "correct_mapping": {
+      "shader0xa5c_immediate0x10": "first context byte0x40: incoming96-byte command descriptor",
+      "shader0xc_immediate0x4": "first context byte0x10: shared24-byte root-record descriptor14783ed8c"
+    },
+    "withdrawn_claim": "The18MiB resource14783ed68 is not established as the96-byte command buffer. Its descriptor has24-byte root records, and ChunkAppendRoots writes24-byte records to it.",
+    "source": "https://github.com/shadps4-emu/shadPS4/blob/main/src/shader_recompiler/frontend/translate/scalar_memory.cpp",
+    "limits": [
+      "Command source pointer provenance still unresolved.",
+      "Earlier resource searches remain valid observations about roots, not command writers."
+    ],
+    "project_modified": false
   }
 }
