@@ -24736,14 +24736,14 @@
       "ReadsmetadataQWORDsat0,8,16,24,32only;final44-byteflagsDWORD+40excluded.",
       "Complete48-bytemixmatchesindependentthree-blockzero-seedmodel,returns64-bitvalueinRAX.",
       "268nativecasesand268tail-invariancechecks;inputunchanged;nocallees/imports.",
-      "Calledby1413d2160and1413d5be0;processorlongstrokeoutputstoreskeyin272-bytequeuedrecord.",
+      "Calledby1413d2160and1413d5be0;processor long-stroke output stores key in a272-byte cyclic sample-cache record.",
       "109ownedoriginalinstructionsandcompleteCread;268nativecasesplus268tailinvariancechecks.",
       "NameandRDI/ESI/RAX8workingABIindependentlyreopened;allothernames/signaturesandbytesunchanged."
     ],
     "limits": [
       "ResourceIDtableboundsandmetadatareadabilityrequired;lifetime/concurrencyunverified.",
       "No uniquenessorcollisionresistanceclaim;originalalgorithmfamilyname/source symbolnotrecovered.",
-      "Twoidentifiedcallerpathslinked;wholecallerandqueuedconsumerbehaviorincomplete."
+      "Twoidentifiedcallerpathslinked;whole caller and cache-consumer behavior incomplete."
     ],
     "native_cases": 268,
     "trailing_byte_invariance_checks": 268,
@@ -24771,5 +24771,28 @@
     "native_cases": 48,
     "native_scope": "Complete 1716-byte original helper; selected finite point sets and depth 0/1 trees, pow adapted for cross-page traversal.",
     "new_name_credit": 1
+  },
+  "sprite_eight_sample_cache_checkpoint": {
+    "classification": "Cyclic cache of eight transformed path samples, not a work-request queue",
+    "record_size": 272,
+    "capacity": 1024,
+    "sample_count": 8,
+    "sample_distances": "index * unscaled_path_length /7, index0..7",
+    "lookup": "Two15-bit slots from key bits0..14 and32..46, followed by full64-bit record-key comparison.",
+    "native_store_cases": 48,
+    "native_store_scope": "Original232-byte store slice1413db017..1413db0fe executed at original address; following unlock call replaced with RET. Entry state explicitly supplied by adapter.",
+    "checked": [
+      "Exact272-byte record: key, two float measurements, eight32-byte samples.",
+      "Counter low10 selection and full32-bit increment including wrap.",
+      "Both15-bit lookup slots store selected index, including equal-slot cases.",
+      "Entire1MiB destination region matches expected modifications; all other bytes unchanged."
+    ],
+    "limits": [
+      "Does not execute producer sampling/transforms, mutexes, reader, or full enclosing function.",
+      "No live game/thread/GPU verification; no concurrency or collision-resistance claim.",
+      "Sampling/transformation and cache reader only statically traced so far."
+    ],
+    "new_name_credit": 0,
+    "correction": "Earlier queued-record wording corrected to cyclic sample-cache record."
   }
 }

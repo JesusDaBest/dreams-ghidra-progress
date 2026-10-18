@@ -7644,7 +7644,7 @@ General deep/malformed trees, backward/negative/nonfinite requests, zero-length 
 
 **268 native cases** match an independent three-block, 48-byte mixing model. **268 trailing-byte invariance checks** confirm that changing the excluded flag word and following bytes does not change the result; metadata input buffers remain unchanged. These are paired checks on the same 268 key inputs, not 536 independent key cases. The original helper has no callees or imports.
 
-The descriptive name and metadata-pointer/32-bit resource-ID/64-bit-result working signature persisted after independent reopening. Original bytes and all other function names/signatures remained unchanged. Resource-ID table bounds, metadata readability, lifetime, concurrency and complete queued-consumer behavior remain unverified.
+The descriptive name and metadata-pointer/32-bit resource-ID/64-bit-result working signature persisted after independent reopening. Original bytes and all other function names/signatures remained unchanged. Resource-ID table bounds, metadata readability, lifetime, concurrency and complete cache-consumer behavior remain unverified.
 
 Totals: **788 checked names**, **2,190 mapped functions**, **7,423 unmapped**, among **9,613 defined functions**. The larger Sprite processor remains incomplete.
 
@@ -7658,3 +7658,10 @@ Totals: **788 checked names**, **2,190 mapped functions**, **7,423 unmapped**, a
 The descriptive name and float-scale/cursor/two-float-output working signature persisted after independent reopening. Original bytes and all other function names/signatures remained unchanged. Arbitrary trees, nonzero initial cursor offsets, malformed or nonfinite inputs, overflow and lifetime safety remain unverified. The original source symbol and cursor structure declaration have not been recovered.
 
 Totals: **789 checked names**, **2,191 mapped functions**, **7,422 unmapped**, among **9,613 defined functions**. The larger Sprite processor remains incomplete.
+
+
+### Eight-sample Sprite path cache traced
+
+The long-stroke branch stores a **cyclic sample cache**, correcting the earlier queued-record wording. Each of its 1,024 records contains a 64-bit key, path length, maximum scaled radius and eight 32-byte transformed samples. Sampling uses distances `i * length / 7` for `i = 0..7`. The reader checks two lookup slots and compares the full key before copying the record; a zero copied key falls back to direct measurement.
+
+**48 isolated native store-slice cases** verify the complete record bytes, both lookup-index writes and counter wraparound. Every byte in the one-MiB destination fixture matches the expected modifications. These execute the original 232-byte store slice with explicit entry state and a return substituted for the following unlock call. They do not test mutexes, sample generation/transformation, the reader or the full processor. Full-key checks reject differing stale keys; they do not establish collision resistance. No additional function-name credit is taken.
