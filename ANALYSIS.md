@@ -6555,3 +6555,12 @@ Independent reopening verifies the 24-byte structure layout, saved signature, su
 A [published transcript attributed to Alex Evans](https://gist.github.com/OswaldHurlem/4810ad510669097db872c6de305c9df0), linked from the correspondent's serialization article, describes per-type shared reading/writing, a global format revision and procedural migration code. It includes small Dreams examples involving deprecated Movable/Collidable flags and an early snapshot-related revision. This is a public correspondent's transcript, not an official source archive or a match to this executable build.
 
 A targeted heuristic scan of the cached original scene-upgrade body for the example's nearby bit-1/bit-0x10 operations found no candidates. This narrow negative result does not prove the example is absent elsewhere. The transcript provides a concrete migration-pattern lead, but does not establish the original names of the recently recovered saved-count record or its caller. Format revision numbers must not be treated as executable build identifiers. No code, field-name or completion credit was changed from this lead.
+
+
+### Sculpt owner-cache flags linked to original properties
+
+Original Sculpt boolean registrations bind `Movable` to object `+0x44` and `Collidable` to `+0x45`. The original initializer writes these two offsets into metadata slots `+0xE2` and `+0xE4`. These existing property traces resolve the Sculpt-specific meaning of inputs previously left unnamed in `UpdateThingOwnerFlagsAndWorldBitset`.
+
+**96 native cases** execute that original initializer store and complete owner helper. Owner-cache bit 13 reflects Sculpt Movable; bit 15 records positive Movable metadata. Collidable true sets bit 18, while false preserves its prior value rather than clearing it. Full world, owner, Thing and metadata comparisons pass across indices 63/64/127, both property values, prior bit-18 states, common-byte states and selected headers. The original caller registration instructions and literal bytes are also checked against the executable.
+
+Power/enabled metadata remain controlled and valid world object-table entries are supplied. Common byte +0x2E, other kinds without their own registration linkage, full initialization, concurrency and live game remain unresolved. This is direct binary property evidence, not proof of a published source/build match. No new naming credit: **725 checked names** remains the total.

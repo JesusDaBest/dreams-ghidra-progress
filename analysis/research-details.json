@@ -18973,7 +18973,8 @@
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1,
-    "later_connected_validation": "world_insertion_owner_connected_checkpoint"
+    "later_connected_validation": "world_insertion_owner_connected_checkpoint",
+    "later_sculpt_property_binding": "sculpt_owner_property_binding_checkpoint"
   },
   "world_insertion_owner_connected_checkpoint": {
     "native_check": {
@@ -19248,6 +19249,21 @@
       "Do not equate source mention of snapshots with the recently recovered world saved-count structure.",
       "No field name or signature changed based on this source lead;follow exact property/storage/version references before making a match."
     ],
+    "new_name_credit": 0
+  },
+  "sculpt_owner_property_binding_checkpoint": {
+    "native_cases": 96,
+    "findings": [
+      "Original Sculpt registration literal Movable binds44 and Collidable binds45 via existing Boolean registrar;original initializer writes metadataE2/E4 offsets44/45.",
+      "Complete original owner helper consumes those initialized offsets:bit13 reflects Sculpt Movable,bit15 indicates positive Movable metadata,and bit18 becomes set for true Collidable while false preserves prior bit18.",
+      "96 cases cover all selected flags at indices63/64/127;full world/owner/Thing/metadata comparisons pass. No external calls in owner helper."
+    ],
+    "limits": [
+      "Sculpt row binding verified;do not generalize every kind without registrations.",
+      "Power and enabled metadata remain controlled;byte2e meaning,full startup,concurrency and live game unverified.",
+      "This is binary property linkage,not proof of the published source migration/build match."
+    ],
+    "project_modified": false,
     "new_name_credit": 0
   }
 }
