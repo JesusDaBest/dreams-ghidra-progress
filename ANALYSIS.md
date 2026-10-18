@@ -6106,3 +6106,16 @@ The main wire's alternate-history flag does not govern all cleanup history. With
 Replaying the actual complete generated inverse range through original reader/wrapper/dispatcher/insertion restores 1,098 canvas nodes across the 60 cases and restores the wire with its normalized recorded transform. Restoration appends new slots, preserving old tombstones and unrelated colliding nodes. World, owner, history, object and input bytes match the expected changes; only the unassigned final two padding bytes of new node records are excluded.
 
 This closes the separate-cleanup/history fixture gap, without proving a full live editor transaction or user undo/redo. Prepared valid ancestry, unique finite positions and existing active history contexts are used. Optional connector-property clearing, malformed structures, capacity exhaustion and concurrency remain outside this combined test. Counts remain 704 checked names among 9,603 defined functions; no new naming or completion credit is added.
+
+
+### Edit-event application and owner queue boundary
+
+`ApplyEditEventWithInverseHistory` now names the complete 923-instruction wrapper between edit-event producers and the large dispatcher. It checks/prepares event-specific context, routes inverse-history capture, constructs the payload cursor, invokes the original dispatcher, performs selected post-apply inverse-context lookups, and conditionally appends the original event bytes to the owner's queue. Capture ordering depends on the event family.
+
+A 17-argument working SysV signature follows the observed register/stack layout and connected call adapters. Generic context slots remain unnamed beyond their positions; exact C++ types and some event-dependent meanings are unresolved. Independent reopening verifies the name/signature, successful decompilation, original native bytes and other 9,602 names/signatures unchanged.
+
+60 new native cases examine the owner queue using valid 22-byte `fdf5` events, players 0/1/255, recording on/off, existing failure on/off and lengths around the 4 MiB boundary. The wire mutation occurs before queue capacity handling. A fill to exactly 4 MiB is accepted. Crossing capacity sets a sticky failure byte and resets the used length to zero without overwriting queue payload. An already-set failure with enough space suppresses appending and preserves the used length. Recording-disabled and player255 paths leave the queue alone while still applying the event.
+
+These exact fixture results do not establish a game defect: wider recovery/reset behavior is still unresolved. Other event-family guards, special callbacks, malformed ranges, arithmetic wrap, concurrency and live editor behavior remain outside this batch. Prior combined wire/node history and actual inverse-replay checkpoints exercise this same original wrapper within their stated limits.
+
+Totals: 705 checked names (628 behavior/helper and 77 property/type reviews), 2,114 mapped functions and 7,489 unmapped among 9,603 defined functions. No exact MM livestream source/build match is claimed.

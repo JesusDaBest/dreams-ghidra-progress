@@ -17412,5 +17412,45 @@
       "Controlled allocator/TLS/copy boundaries inherited from earlier fixtures; no malformed structures, concurrency or capacity exhaustion."
     ],
     "new_name_credit": 0
+  },
+  "edit_event_wrapper_name_checkpoint": {
+    "target": {
+      "name": "ApplyEditEventWithInverseHistory",
+      "signature": "void PS4_SYSV ApplyEditEventWithInverseHistory(void * owner, void * world, byte * eventBegin, byte * eventEnd, uint eventCode, byte playerIndex, void * objectContext, void * wireContext, void * secondaryWireContext, void * canvasNodeContext, void * context11, void * context12, void * context13, uint sourceSequence, int destinationSequence, byte captureFirstHistory, byte captureSecondHistory)"
+    },
+    "native_check": {
+      "native_cases": 60,
+      "append_cases": 6,
+      "overflow_cases": 8,
+      "sticky_failure_cases": 6,
+      "original_wrapper_instructions_verified": 923,
+      "dispatcher_original_bytes_verified": 267374,
+      "finding": "Original wrapper applies fdf5 wire removal before owner queue capacity handling. Eligible22-byte snapshots append through exactly4MiB; crossing capacity sets sticky failure byte and resets used length0 without overwriting queue payload. Existing failure with enough capacity skips append and preserves used length. Recording-disabled/player255 skip owner queue while wire mutation still occurs.",
+      "limits": [
+        "Valid22-byte fdf5 input and prepared world/owner, players0/1/255; other event formats and inverse history flags not tested in this batch.",
+        "Only valid initial used lengths0..capacity; arithmetic wrap and malformed pointer ranges not tested.",
+        "This establishes queue handling in controlled fixtures, not data-loss severity, higher-level recovery, live gameplay or complete wrapper semantics."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete 923-instruction body and assembly read. Type-specific context checks/preparation, inverse-history routing, payload cursor construction, original dispatcher call, post-apply inverse-context resolution and conditional owner queue append identified.",
+      "Existing connected fixtures execute this wrapper during wire removal, node insertion/removal, coordinate edits and direct generated inverse replay, with their individual documented limits.",
+      "60 new queue-boundary native cases cover players0/1/255, recording enabled/disabled, initial failure0/1 and lengths at zero and around the exact4MiB boundary. Exact world/owner/object/input bytes checked.",
+      "For fdf5, mutation occurs before owner queue handling. Exact-capacity fill accepted; overflow sets failure byte and resets used length0 without payload overwrite. Existing failure with enough room skips append and retains length.",
+      "17-argument working SysV register/stack layout saved, following native uses and connected call adapters. Generic context11/12/13 meanings remain unresolved.",
+      "Independent reopening verifies descriptive name, signature and successful decompilation; original native bytes and other9602 names/signatures unchanged."
+    ],
+    "limits": [
+      "Valid22-byte fdf5 input and prepared world/owner, players0/1/255; other event formats and inverse history flags not tested in this batch.",
+      "Only valid initial used lengths0..capacity; arithmetic wrap and malformed pointer ranges not tested.",
+      "This establishes queue handling in controlled fixtures, not data-loss severity, higher-level recovery, live gameplay or complete wrapper semantics.",
+      "Analyst descriptive name and working pointer/integer carriers, not recovered C++ declarations. Context and sequence meanings can vary by event; generic slots remain explicit.",
+      "Event-specific guards/lookups, property validation, special post-apply callbacks and all event-family inverse behaviors are not exhaustively executed.",
+      "Higher-level handling/reset of the owner failure flag and the consequences of lost queue entries remain unresolved; this is not a demonstrated application defect.",
+      "No exact MM developer-source/build match or live editor verification."
+    ],
+    "new_name_credit": 1
   }
 }

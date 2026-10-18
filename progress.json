@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 658,
+    "done": 659,
     "todo": 1455,
-    "total": 2113,
-    "behavior_or_helpers_reviewed": 587,
+    "total": 2114,
+    "behavior_or_helpers_reviewed": 588,
     "properties_or_types_reviewed": 71,
     "whole_feature_completion": null,
     "groups": [
@@ -27479,12 +27479,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 245,
+        "done": 246,
         "todo": 105,
-        "total": 350,
-        "behavior_or_helpers_reviewed": 228,
+        "total": 351,
+        "behavior_or_helpers_reviewed": 229,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 263,
+        "runtime_functions_identified": 264,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27608,6 +27608,7 @@
           "FindObjectIndexByIdOrPointer",
           "SerializeTransform32WithNormalizedWriteRotation",
           "RoutePropertyEventToEnabledHistoryStreams",
+          "ApplyEditEventWithInverseHistory",
           "DispatchHeaderAndDataPagesChangeEvent",
           "SubmitAddPersistentObjectIdPairCommand",
           "SubmitRemoveCurrentObjectPairCommand",
@@ -27962,6 +27963,7 @@
           "140b18cf0",
           "140b18e10",
           "140b19cc0",
+          "140b1b7b0",
           "140b32c60",
           "140b357d0",
           "140b358f0",
@@ -28206,12 +28208,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 108,
+            "done": 109,
             "todo": 13,
-            "total": 121,
-            "behavior_or_helpers_reviewed": 108,
+            "total": 122,
+            "behavior_or_helpers_reviewed": 109,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 114,
+            "runtime_functions_identified": 115,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -28255,6 +28257,7 @@
               "GetInverseRecordedEventCode",
               "SerializeTransform32WithNormalizedWriteRotation",
               "RoutePropertyEventToEnabledHistoryStreams",
+              "ApplyEditEventWithInverseHistory",
               "DispatchHeaderAndDataPagesChangeEvent",
               "FlushDescriptorOutputBlock",
               "LoadDescriptorInputBlock",
@@ -28380,6 +28383,7 @@
               "140ad5f20",
               "140b18e10",
               "140b19cc0",
+              "140b1b7b0",
               "140b32c60",
               "140c737c0",
               "140c73ef0",
@@ -29200,6 +29204,53 @@
                       "140ce7280",
                       "140cea620"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/runtime/edit-events",
+                "label": "Edit events",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ApplyEditEventWithInverseHistory"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140b1b7b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/edit-events/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ApplyEditEventWithInverseHistory"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140b1b7b0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -45501,5 +45552,5 @@
       }
     ]
   },
-  "unmapped": 7490
+  "unmapped": 7489
 }

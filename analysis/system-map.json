@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2113,
-  "unmapped_total": 7490,
+  "mapped_total": 2114,
+  "unmapped_total": 7489,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53314,6 +53314,34 @@
           ]
         }
       ]
+    },
+    "140b1b7b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "General edit-event context validation/application and inverse-history wrapper; multiple event families, not a wire-only helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete native wrapper review and scoped connected native fixtures.",
+      "code_sha256": "ea0a2609ff4305c676ce9dda3b1df09ab466c97029a7c37b18baf75fe5b90a55",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyEditEventWithInverseHistory",
+          "support": [
+            "Complete 923-instruction body and assembly read. Type-specific context checks/preparation, inverse-history routing, payload cursor construction, original dispatcher call, post-apply inverse-context resolution and conditional owner queue append identified.",
+            "Existing connected fixtures execute this wrapper during wire removal, node insertion/removal, coordinate edits and direct generated inverse replay, with their individual documented limits.",
+            "60 new queue-boundary native cases cover players0/1/255, recording enabled/disabled, initial failure0/1 and lengths at zero and around the exact4MiB boundary. Exact world/owner/object/input bytes checked.",
+            "For fdf5, mutation occurs before owner queue handling. Exact-capacity fill accepted; overflow sets failure byte and resets used length0 without payload overwrite. Existing failure with enough room skips append and retains length.",
+            "17-argument working SysV register/stack layout saved, following native uses and connected call adapters. Generic context11/12/13 meanings remain unresolved.",
+            "Independent reopening verifies descriptive name, signature and successful decompilation; original native bytes and other9602 names/signatures unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -53593,6 +53621,17 @@
             {
               "id": "serialization",
               "label": "Saving & loading",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "edit-events",
+              "label": "Edit events",
               "children": [
                 {
                   "id": "runtime-implementation",
