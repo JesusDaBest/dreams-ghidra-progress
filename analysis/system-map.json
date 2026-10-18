@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9613,
-  "mapped_total": 2185,
-  "unmapped_total": 7428,
+  "mapped_total": 2186,
+  "unmapped_total": 7427,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55341,6 +55341,33 @@
             "Miss return remains-1 regardlessqueuedconstructor results;later completion/consumer isseparate.",
             "54 cache lookup,96 metadata singleleaf miss and3 invalidroot original-native cases record120 queueconstructor calls.",
             "Name and five-input/int32-result working ABI independently reopened; bytes and all9612 other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1413db600": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Called by reviewed Sprite frame-cache request helper; complete pending entry creation and queueing body reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Creates pending Sprite frame-cache entry and queues preparation.",
+      "code_sha256": "5d57a27c5db150bc6b9f8f918251c18f2c638957ba6ee11fafdbeccb2a77f836",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CreateAndQueueSpriteResourceFrameCacheEntry",
+          "support": [
+            "Frame-specific total caps at65536; aggregate frame0 total and maximum-per-record counts remain uncapped.",
+            "Builds176-byte pending record, links1024-bucket hash table and queues index in4096-slot ring.",
+            "Counts declared points without reading point geometry. Point-root internal-node path follows last child and counts depth.",
+            "Cache has2048 slots; exhaustion delegates to1413d5870, whose failure unlocks without enqueue.",
+            "268 original owned instructions matched;1024 scoped native cases; name and nine-input void ABI independently reopened."
           ]
         }
       ]

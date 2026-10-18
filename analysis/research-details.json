@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 783,
+    "checked_and_applied_names": 784,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 783,
+    "verified_names": 784,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "720 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "721 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -3870,7 +3870,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -24507,6 +24507,28 @@
       "Mutex/threadID imports adapted;queueconstructor argumentrecorder;no downstreamallocation,worker,concurrency orGPU execution.",
       "Descriptiveanalyst name;not recoveredsource symbol."
     ],
+    "new_name_credit": 1
+  },
+  "sprite_frame_cache_constructor_checkpoint": {
+    "target": {
+      "name": "CreateAndQueueSpriteResourceFrameCacheEntry",
+      "signature": "void PS4_SYSV CreateAndQueueSpriteResourceFrameCacheEntry(uint object_id, uint metadata_root_id, uint point_root_id, uchar variant, int frame_override, pointer frame_mask, uint frame, ulonglong key, int mode)"
+    },
+    "evidence": [
+      "Frame-specific total caps at65536; aggregate frame0 total and maximum-per-record counts remain uncapped.",
+      "Builds176-byte pending record, links1024-bucket hash table and queues index in4096-slot ring.",
+      "Counts declared points without reading point geometry. Point-root internal-node path follows last child and counts depth.",
+      "Cache has2048 slots; exhaustion delegates to1413d5870, whose failure unlocks without enqueue.",
+      "268 original owned instructions matched;1024 scoped native cases; name and nine-input void ABI independently reopened."
+    ],
+    "limits": [
+      "Replication, multileaf execution, real eviction, workers, concurrency and GPU work remain unverified.",
+      "No Ghidra rename or type applied in this review.",
+      "Platform mutex/thread ID imports adapted; eviction replaced by failure stub in native fixtures.",
+      "Native checks use nonreplicated single metadata leaves; declared large point counts do not imply valid complete geometry.",
+      "Working ABI and descriptive name are analyst annotations, not original source declarations."
+    ],
+    "native_cases": 1024,
     "new_name_credit": 1
   }
 }

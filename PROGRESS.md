@@ -7030,3 +7030,14 @@ Defined **FinalizeSpriteEmissionSourceRecord** from its complete **68-instructio
 Applied **FindOrQueueSpriteResourceFrameCacheEntry** after reviewing its complete **406-instruction defined body**, original unwind bytes and decompilation. Ready cache hits return an index and refresh last-use time. Pending matches return -1 without duplicate queueing. Misses build a stop-motion frame set from packed stroke metadata, queue an aggregate request and, when multiple frames exist, per-frame requests; the result remains -1 until a later ready hit. Frame zero maps to one, values above 100 clamp to 100, and a positive override replaces the stored frame.
 
 Original-native fixtures cover **54 cache lookups, 96 single-leaf misses and 3 invalid-root cases**, recording **120 queue calls**. Mutex/thread-ID imports use explicit single-thread adapters; the downstream constructor is an argument recorder. Multi-leaf execution, actual worker allocation/completion, hash collisions, concurrent access and GPU behavior remain unverified. Both the descriptive name and five-input/int32-result working ABI persisted after independent reopening; native bytes and all 9,612 other function names/signatures are unchanged. This adds one reviewed helper.
+
+
+### Sprite frame-cache entry creation and preparation queue
+
+`CreateAndQueueSpriteResourceFrameCacheEntry` now names the fully reviewed 268-instruction helper called by the Sprite frame-cache request path. It counts admitted metadata descriptors and declared points, filters the requested frame, creates a pending 176-byte entry, links the cache hash bucket and queues preparation. This does not establish completed geometry processing.
+
+Frame-specific total point counts cap at 65,536; the aggregate frame-zero total and maximum-per-record bookkeeping remain uncapped. The cache has 2,048 slots and a 4,096-slot work ring. Exhaustion delegates slot acquisition to a separate eviction helper.
+
+Two controlled native fixture sets total **1,024 cases**, covering small and large declared counts, frame filtering, variant aggregation, rejection gates, record fields, resource marks and queue writes. Mutex/thread-ID imports were adapted; real eviction was replaced by a failure stub. Replication, multileaf execution, actual workers, concurrency and GPU work remain unverified. Large declared counts use a deliberately small point leaf because this helper does not read point geometry.
+
+The descriptive name and nine-input void working ABI persisted after independent reopening. Native bytes and all other function names/signatures are unchanged. Totals: **784 checked names**, **2,186 mapped functions**, **7,427 unmapped**, among **9,613 defined functions**. No whole-Sprite completion credit is claimed.
