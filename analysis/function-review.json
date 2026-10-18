@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "691 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "692 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9608,
-    "default_fun_names": 8704,
-    "other_names": 904,
-    "verification": "complete_inventory_matches_baseline_plus_691_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8703,
+    "other_names": 905,
+    "verification": "complete_inventory_matches_baseline_plus_692_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17408,6 +17408,30 @@
         "Placeholderexpansion andvirtualscheduler aremodels;realworkerconcurrency,expansion andlivegame unverified.",
         "SelectedASCII lengths/priorinline storedtext;OOM,borrowedpriorstorage,allrangeedgecases unverified.",
         "Analystdescriptive name andworkingnullablebytepointer/boolean ABI;noexactoriginalC++orMMbuildmatch."
+      ]
+    },
+    {
+      "address": "14021a830",
+      "original_name": "FUN_14021a830",
+      "applied_name": "ExpandLocalPlayerTextPlaceholders",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ExpandLocalPlayerTextPlaceholders(void * rawSmallString, void * expandedSmallString)",
+      "evidence": [
+        "Complete442-instruction body reviewed againstoriginalbytes;allfiveplaceholderbindings tracedtooriginalinitializer.",
+        "880 syntheticcases coverall4 first-activeplayerslots,negative-indexfallback,missinglanguage/level,zeroUserId andTLSringwrap.",
+        "Mixed,repeated,embedded andunknown tokens matchindependentsequentialreplacement;rawinput preserved.",
+        "Originalsmallstringresize/insert codeexecutes;210directinsertioncases independentlycheckstoragegrowthandbytepreservation.",
+        "Independentoffline reopening verifiesworkingtwo-pointerABI,unchangedbytes andall9607otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "Onlysyntheticplayerfields;language/level/TLS andknownformatstrings modeled,verifiedstandardCRTimports used.",
+        "ActualTLS,OOM,concurrency andvaluescontainingrecursivecurrenttokens unverified.",
+        "Noactualaccountvaluesread ornetworkbehaviorproved;not anauthentication implementation.",
+        "Analystdescriptivename andworkingopaque smallstringABI;noexactoriginalsource/buildmatch."
       ]
     }
   ],

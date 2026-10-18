@@ -6439,3 +6439,14 @@ Totals: **748 checked names** (668 behavior/helper and 80 property/type), **2,15
 **64 native cases** cover generation gating, pending/completed states, success/failure, null requests, terminated/explicit-end text and inline/heap replacement using the original small-string helper. Complete state storage, input buffers and scheduler arguments match independent expectations. Placeholder expansion and actual virtual scheduling remain modeled. Allocation failure, borrowed prior storage, concurrency and live-game behavior remain unverified. Independent reopening verifies the working signature, unchanged code bytes and all 9,607 other names/signatures.
 
 Totals: **749 checked names** (669 behavior/helper and 80 property/type), **2,155 mapped**, **7,453 unmapped**, among **9,608 defined functions**.
+
+
+### Local-player text expansion reviewed and named
+
+`ExpandLocalPlayerTextPlaceholders` names the complete 442-instruction routine used before QR encoding and by another caller. Original initialization binds five literal tokens: `[UserId]`, `[PSNId]`, `[PSNName]`, `[Language]` and `[PlayerLevel]`. The routine copies raw text, then replaces occurrences in that order. It chooses the first active player among four slots, or the preceding record when none is active. Missing language or player-level lookups and zero user ID produce empty replacements.
+
+**880 synthetic native cases** cover slot precedence, fallback, missing lookups, zero user ID, scratch-ring wraparound, mixed/repeated tokens and unknown tokens. Original string storage and insertion helpers execute. **210 direct insertion cases** additionally verify exact growth, prefix/suffix preservation and terminators. Models supply fake player records, TLS, language/level lookups and the three known format strings; standard memory/string imports use local CRT adapters. **No real account values or network requests were used.** This routine expands text; it does not establish an authentication protocol.
+
+The full body and working ABI survived independent reopening with unchanged code bytes and all 9,607 other function names/signatures. Real TLS, allocation failure, concurrency and replacement values containing the currently searched token remain unverified. Those recursive values can retrigger the search; termination is not claimed for them.
+
+Totals: **750 checked names** (670 behavior/helper and 80 property/type), **2,156 mapped**, **7,452 unmapped**, among **9,608 defined functions**.

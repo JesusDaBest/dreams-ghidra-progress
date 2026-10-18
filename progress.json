@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 703,
+    "done": 704,
     "todo": 1452,
-    "total": 2155,
-    "behavior_or_helpers_reviewed": 629,
+    "total": 2156,
+    "behavior_or_helpers_reviewed": 630,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -27807,12 +27807,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 268,
+        "done": 269,
         "todo": 105,
-        "total": 373,
-        "behavior_or_helpers_reviewed": 251,
+        "total": 374,
+        "behavior_or_helpers_reviewed": 252,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 286,
+        "runtime_functions_identified": 287,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27841,6 +27841,7 @@
           "CopyNestedByteArrayRecords96",
           "ComposeRigidTransform",
           "TryLookupCategoryIdByName",
+          "ExpandLocalPlayerTextPlaceholders",
           "ReleaseRefCountedBlockHandle",
           "TransferSerializerByte",
           "HandleObjectLookupResponse",
@@ -28218,6 +28219,7 @@
           "1401944e0",
           "1401ac7b0",
           "1401ec760",
+          "14021a830",
           "14038bed0",
           "14039b4a0",
           "1403a3520",
@@ -33918,17 +33920,18 @@
           {
             "name": "shared/strings",
             "label": "Strings",
-            "done": 2,
+            "done": 3,
             "todo": 5,
-            "total": 7,
-            "behavior_or_helpers_reviewed": 2,
+            "total": 8,
+            "behavior_or_helpers_reviewed": 3,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 2,
+            "runtime_functions_identified": 3,
             "property_type_functions_identified": 5,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "ResetOrResizeSmallStringStorage",
+              "ExpandLocalPlayerTextPlaceholders",
               "ReadStructuredTextMemberName"
             ],
             "todo_names": [
@@ -33940,6 +33943,7 @@
             ],
             "done_addresses": [
               "140167e50",
+              "14021a830",
               "1414d6330"
             ],
             "todo_addresses": [
@@ -33954,24 +33958,26 @@
               {
                 "name": "shared/strings/smallstring",
                 "label": "Small String",
-                "done": 1,
+                "done": 2,
                 "todo": 2,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
+                "runtime_functions_identified": 2,
                 "property_type_functions_identified": 2,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
-                  "ResetOrResizeSmallStringStorage"
+                  "ResetOrResizeSmallStringStorage",
+                  "ExpandLocalPlayerTextPlaceholders"
                 ],
                 "todo_names": [
                   "0x14010cf30",
                   "0x14010f920"
                 ],
                 "done_addresses": [
-                  "140167e50"
+                  "140167e50",
+                  "14021a830"
                 ],
                 "todo_addresses": [
                   "14010cf30",
@@ -34007,21 +34013,23 @@
                   {
                     "name": "shared/strings/smallstring/runtime-implementation",
                     "label": "Runtime implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
+                    "runtime_functions_identified": 2,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
-                      "ResetOrResizeSmallStringStorage"
+                      "ResetOrResizeSmallStringStorage",
+                      "ExpandLocalPlayerTextPlaceholders"
                     ],
                     "todo_names": [],
                     "done_addresses": [
-                      "140167e50"
+                      "140167e50",
+                      "14021a830"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -46136,5 +46144,5 @@
       }
     ]
   },
-  "unmapped": 7453
+  "unmapped": 7452
 }

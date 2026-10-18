@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 749,
+    "checked_and_applied_names": 750,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 749,
+    "verified_names": 750,
     "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1929,7 +1929,7 @@
       "141330c40",
       "14021b300"
     ],
-    "scope": "691 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "692 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21539,6 +21539,65 @@
       "Placeholderexpansion andvirtualscheduler aremodels;realworkerconcurrency,expansion andlivegame unverified.",
       "SelectedASCII lengths/priorinline storedtext;OOM,borrowedpriorstorage,allrangeedgecases unverified.",
       "Analystdescriptive name andworkingnullablebytepointer/boolean ABI;noexactoriginalC++orMMbuildmatch."
+    ],
+    "new_name_credit": 1
+  },
+  "player_text_expansion_checkpoint": {
+    "target": {
+      "name": "ExpandLocalPlayerTextPlaceholders",
+      "signature": "void PS4_SYSV ExpandLocalPlayerTextPlaceholders(void * rawSmallString, void * expandedSmallString)"
+    },
+    "checks": {
+      "qr-placeholder-expansion-slots-native-check.json": {
+        "native_cases": 880,
+        "findings": [
+          "Original442-instruction expansion routine plusoriginalsmall-string resize/insert helpers replacesallfiveoriginalplaceholders usingentirelysyntheticplayerfields.",
+          "Allfourfirst-active slots andnegative-one fallback,missinglanguage/level,zeroUserId andTLSringwrap cases matchindependentreplacement;rawinputstorage unchanged."
+        ],
+        "models": [
+          "Synthetic active-player slot;language/cachedlevel lookup andpthreadTLS models;three knownformatstrings modeledwithSysV64-bitlong semantics;verifiedstandardstring/memory/allocation imports useCRTadapters."
+        ],
+        "limits": [
+          "Synthetic slots/fallback,modeled TLS andlookups only;recursive-tokenvalues,OOM andconcurrencyunverified.",
+          "Full442-instruction assembly reviewed;no newnamecredit untilsaved/reopened naming checkpoint.",
+          "Noactualaccountvaluesread ornetworkrequests."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "small-string-insert-native-check.json": {
+        "native_cases": 210,
+        "original_instructions": 95,
+        "borrowed_growth_free_cases": 0,
+        "findings": [
+          "Original helper inserts supplied byte range atvalidindex,preservingprefix/suffix andwritingterminator.",
+          "Growth allocatesexact oldlength+insertlength+1 bytes,updatescapacity/ownership1 andfreespriorpointer-formstorage;in-capacity insert usesmemmove.",
+          "Emptyinsertion preservesallstorage.Wholeobjects,old/newbuffers,sourceandargumentguards matchindependentbyteoracle."
+        ],
+        "models": [
+          "malloc/free modeledandlogged;verifiedstrlen/memcpy/memmove adaptedtolocalCRT."
+        ],
+        "limits": [
+          "SelectednonaliasingASCIIranges andvalidindices;OOM,overflow,out-of-rangeindices andself-insertionunverified.",
+          "Testedborrowed64 neverneededgrowth;growthfreewithoutownershipcheckisstaticfinding,notconfirmedvalidborrowedinputcontract.",
+          "No namingcredit yet."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete442-instruction body reviewed againstoriginalbytes;allfiveplaceholderbindings tracedtooriginalinitializer.",
+      "880 syntheticcases coverall4 first-activeplayerslots,negative-indexfallback,missinglanguage/level,zeroUserId andTLSringwrap.",
+      "Mixed,repeated,embedded andunknown tokens matchindependentsequentialreplacement;rawinput preserved.",
+      "Originalsmallstringresize/insert codeexecutes;210directinsertioncases independentlycheckstoragegrowthandbytepreservation.",
+      "Independentoffline reopening verifiesworkingtwo-pointerABI,unchangedbytes andall9607otherfunctionnames/signatures."
+    ],
+    "limits": [
+      "Onlysyntheticplayerfields;language/level/TLS andknownformatstrings modeled,verifiedstandardCRTimports used.",
+      "ActualTLS,OOM,concurrency andvaluescontainingrecursivecurrenttokens unverified.",
+      "Noactualaccountvaluesread ornetworkbehaviorproved;not anauthentication implementation.",
+      "Analystdescriptivename andworkingopaque smallstringABI;noexactoriginalsource/buildmatch."
     ],
     "new_name_credit": 1
   }
