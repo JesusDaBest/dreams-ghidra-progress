@@ -5485,3 +5485,16 @@ Valid results occur in fixtures containing no main wire records. The body perfor
 Independent reopening confirms the descriptive name, working bool return and opaque key/world pointers. Original bytes and all other 9,602 function names/signatures remain unchanged. Tests use finite coherent acyclic chains and valid object pointers; malformed or cyclic graphs, aliasing, concurrency and gameplay remain unresolved.
 
 Totals: 693 checked names, 2,105 mapped functions and 7,498 unmapped among 9,603 currently defined. These are review and mapping counts, not whole-game completion.
+
+
+### Packed-reference parent traversal and additional record users
+
+Saved `DoesParentChainReachReference` after reading and byte-verifying its complete 30-instruction, 98-byte body. Its working signature is a one-byte bool with a world pointer and two uint32 references. Either initial all-ones reference rejects. Otherwise identical references return true immediately, even before checking whether that slot exists.
+
+Traversal indexes objects using the signed low 26 bits, checks count and null pointers, reads each object's parent field, and compares the complete next reference with the target. The upper six bits are ignored for indexing but retained for equality. Therefore this helper alone does not validate generation or object lifetime.
+
+13,824 direct native cases across 16 controlled forest/count batches cover tagged references and parents, direct/indirect ancestry, unrelated roots, null intermediates, signed index boundaries and object counts 0, 1, 4 and 8. Four explicit checks confirm same-out-of-range succeeds, same-sentinel rejects, a tagged starting reference can reach an untagged parent, and a tagged target requires a complete reference match. Complete world/object snapshots remain unchanged after each batch. Cyclic chains may not terminate and were not executed.
+
+Two more local callers of the keyed-record validity predicate were traced and byte-checked (58 and 23 instructions). One filters records, remaps three IDs and passes the key/order/coordinate payload to another producer near a game-merger diagnostic. The other removes invalid records near a serialization diagnostic. These are local branch findings; full enclosing function boundaries and merge/serialization behavior remain unresolved, and neither branch was executed in this harness.
+
+Independent reopening verifies the helper's name and working ABI; original bytes and all other 9,602 function names/signatures are unchanged. Totals: 694 checked names, 2,106 mapped functions and 7,497 unmapped among 9,603 currently defined. Review and mapping counts are not whole-game completion.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "640 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "641 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8755,
-    "other_names": 848,
-    "verification": "complete_inventory_matches_baseline_plus_640_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8754,
+    "other_names": 849,
+    "verification": "complete_inventory_matches_baseline_plus_641_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15995,6 +15995,29 @@
         "Finite coherent acyclic ID/parent chains and valid object pointers; malformed or cyclic graphs, aliasing, concurrency and gameplay unresolved.",
         "Endpoint class byte2 observed; exact source-level enum name unresolved.",
         "This validates key references and ancestry, not the existence of a main wire connection."
+      ]
+    },
+    {
+      "address": "140908c30",
+      "original_name": "FUN_140908c30",
+      "applied_name": "DoesParentChainReachReference",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV DoesParentChainReachReference(void * world, uint startReference, uint targetReference)",
+      "evidence": [
+        "Complete 30-instruction/98-byte original parent-chain helper and pseudocode read; native bytes matched.",
+        "13824 direct native cases across 16 finite forest/count batches plus four explicit edge cases verify signed low26-bit indexing, complete-reference equality, tagged parents, sentinel rejection, null/out-of-range slots and counts0/1/4/8.",
+        "Complete world/object snapshots unchanged after every batch. Additional 284 key-validity cases execute this original helper.",
+        "Independent reopening verifies descriptive name, one-byte bool return and opaque world pointer/two uint32 reference inputs; other9602 names/signatures and native bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not original source declarations.",
+        "Initial non-sentinel equality succeeds before slot validation; upper6 bits ignored for indexing but retained for equality. Does not validate object generation/lifetime.",
+        "Finite acyclic parent forests only; cyclic chains may not terminate and were not executed.",
+        "Opaque world/reference source types and broader caller behavior remain unresolved."
       ]
     }
   ],

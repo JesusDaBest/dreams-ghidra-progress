@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2105,
-  "unmapped_total": 7498,
+  "mapped_total": 2106,
+  "unmapped_total": 7497,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52921,6 +52921,32 @@
             "284 native cases execute original predicate and 98-byte ancestry helper: kind mask, endpoint class pairs, direct/indirect/source-only/destination-only ancestry, sentinel fields, missing IDs, wrong-ID and wrong-generation collision traversal, high-bit generations and non-sentinel key words.",
             "Full world/object/key bytes unchanged in every case. Valid results occur with no main wire record; this predicate alone does not prove connection existence.",
             "Independent reopening confirms descriptive name and one-byte bool return with opaque key/world pointers; other 9602 names/signatures and native bytes unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140908c30": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Packed-reference parent-chain predicate called by Microchip keyed-record validation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Traverses parent references through signed low26-bit object slots and compares complete references; lifetime validation is outside this helper.",
+      "code_sha256": "0738eb632ec63744abc7a5fb45f0553006af14efea056a48cd0d91190dddc146",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DoesParentChainReachReference",
+          "support": [
+            "Complete 30-instruction/98-byte original parent-chain helper and pseudocode read; native bytes matched.",
+            "13824 direct native cases across 16 finite forest/count batches plus four explicit edge cases verify signed low26-bit indexing, complete-reference equality, tagged parents, sentinel rejection, null/out-of-range slots and counts0/1/4/8.",
+            "Complete world/object snapshots unchanged after every batch. Additional 284 key-validity cases execute this original helper.",
+            "Independent reopening verifies descriptive name, one-byte bool return and opaque world pointer/two uint32 reference inputs; other9602 names/signatures and native bytes unchanged."
           ]
         }
       ],

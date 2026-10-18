@@ -16534,5 +16534,62 @@
       "This validates key references and ancestry, not the existence of a main wire connection."
     ],
     "new_name_credit": 1
+  },
+  "parent_chain_predicate_checkpoint": {
+    "address": "140908c30",
+    "name": "DoesParentChainReachReference",
+    "signature": "bool PS4_SYSV DoesParentChainReachReference(void * world, uint startReference, uint targetReference)",
+    "native_instructions": 30,
+    "native_check": {
+      "native_cases": 13824,
+      "special_cases": {
+        "same_out_of_range": 1,
+        "same_sentinel": 0,
+        "source_generation_ignored_for_index": 1,
+        "target_generation_requires_full_match": 0
+      },
+      "outcomes": {
+        "0": 13472,
+        "1": 352
+      },
+      "purity_batches": 16,
+      "original_native_bytes_verified": 98,
+      "finding": "Low-byte boolean parent-chain predicate. Either initial all-ones reference rejects; otherwise exact initial equality succeeds even when index is out of range. Each traversal dereferences signed low26-bit object index within count, rejecting negative/out-of-range/null slots; next parent field is compared to complete target reference. Upper6 bits are ignored for indexing but retained for reference equality. Tested finite forests, tagged parents, unrelated roots,null intermediate pointers and counts0/1/4/8. Full world/object snapshots unchanged after each batch.",
+      "limits": [
+        "Finite acyclic controlled forests; cyclic parent chains may not terminate and were not executed.",
+        "No generation validation before dereferencing slot; this helper alone does not validate object lifetime.",
+        "Opaque world/uint references; original source types and generation-bit semantics beyond observed indexing/equality remain unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "additional_caller_branches": {
+      "verified_caller_branch_instructions": {
+        "1409124ef": 58,
+        "140dbf651": 23
+      },
+      "findings": [
+        "Validity-false records are removed by key/order in a branch near a serialise1.cpp diagnostic literal.",
+        "Another caller filters allocated records with the validity predicate, remaps three IDs via140913a90, then passes remapped key and float payload to140b35aa0."
+      ],
+      "limits": [
+        "Local branches only; enclosing Ghidra function boundaries and complete serialization/duplication semantics remain unresolved.",
+        "No native execution of either newly inspected caller branch."
+      ],
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete 30-instruction/98-byte original parent-chain helper and pseudocode read; native bytes matched.",
+      "13824 direct native cases across 16 finite forest/count batches plus four explicit edge cases verify signed low26-bit indexing, complete-reference equality, tagged parents, sentinel rejection, null/out-of-range slots and counts0/1/4/8.",
+      "Complete world/object snapshots unchanged after every batch. Additional 284 key-validity cases execute this original helper.",
+      "Independent reopening verifies descriptive name, one-byte bool return and opaque world pointer/two uint32 reference inputs; other9602 names/signatures and native bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not original source declarations.",
+      "Initial non-sentinel equality succeeds before slot validation; upper6 bits ignored for indexing but retained for equality. Does not validate object generation/lifetime.",
+      "Finite acyclic parent forests only; cyclic chains may not terminate and were not executed.",
+      "Opaque world/reference source types and broader caller behavior remain unresolved."
+    ],
+    "new_name_credit": 1
   }
 }
