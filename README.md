@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9f1d4503afc09898df0940dd2c06c983bebe96db/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/4ec3e29f098a2cf6d9ba460a265bac1b0a8d445f/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**792 of 9,614 functions named and checked.** A function is one piece of the game's code.
+**793 of 9,614 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/9f1d4503afc09898df0940dd2c06c983bebe96db/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/4ec3e29f098a2cf6d9ba460a265bac1b0a8d445f/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -64,7 +64,7 @@ Every square is one actual function and has the same size. All function squares 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
-| Sculpting & painting | 158 | 54/119 | 0/39 |
+| Sculpting & painting | 158 | 55/119 | 0/39 |
 | Gadgets & logic | 516 | 58/60 | 50/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
@@ -1067,7 +1067,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Sculpting & painting** - 158 functions identified; 54 behavior/helper reviews; 0 property/type reviews
+- **Sculpting & painting** - 158 functions identified; 55 behavior/helper reviews; 0 property/type reviews
   - **Sculpt geometry** - 107 functions identified; 39 behavior/helper reviews; 0 property/type reviews
     - **Sculpt bricks** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
@@ -1101,9 +1101,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Element Picker** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Paint & strokes** - 32 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-    - **Sprite** - 21 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 18 functions identified; 15 behavior/helper reviews; 0 property/type reviews
+  - **Paint & strokes** - 32 functions identified; 16 behavior/helper reviews; 0 property/type reviews
+    - **Sprite** - 21 functions identified; 16 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 18 functions identified; 16 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sprite Duplicate** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
