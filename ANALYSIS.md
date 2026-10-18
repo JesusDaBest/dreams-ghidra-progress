@@ -7805,3 +7805,12 @@ This is CPU-side buffer preparation, not GPU shader execution or memory-coherenc
 **3,888 complete repeated-loop fixtures** test iteration limits of 1, 2 and 4 with squared-movement thresholds of zero, 0.01, one and one million. Final sample poses and the original loop counter match an independent sequential recurrence. The loop exits when the threshold is strictly greater than the maximum squared XYZ movement of the seven later samples; the linked first anchor is excluded from that maximum.
 
 These cases include the earlier 972 zero-threshold fixtures and are not additive coverage. They establish the selected exit behavior, not universal convergence or stability. Runtime threshold construction, optional directional forces, nonfinite/degenerate domains, scheduling and complete emitter behavior remain open. No additional name or completion credit is taken.
+
+
+### Sprite gravity property linked to the directional update
+
+The original Sprite registrar explicitly binds **`SpriteGravity` to float field `+0xdc`**. The producer reads that field, applies additional scaling, and stores the result in emission-source field `+0x28`, which controls the directional update. The adjacent `SpriteTrailLength` float binding at `+0xe0` matches the next producer read and source-field write. This identifies gravity from original metadata, rather than guessing from world-Y arithmetic. Exact units and all multiplier meanings remain unresolved.
+
+**576 bounded complete later-sample cases** verify the nonzero directional term for both control signs and two gains. A full nonzero-gravity chain is still not numerically verified: an exploratory fixture diverges from the ideal sequential model within its first forward pass. Error grows toward later samples. Recomputing each sample from the original code's actual previous pose reduces local position error below 0.00001 and quaternion error below 0.000015 in that captured case, supporting numerical propagation as a major contributor. This does not prove bitwise equivalence or resolve the full domain. A threshold-equality probe also requires float32-aware rounding analysis.
+
+The failing fixtures and diagnostics remain local; tolerances were not widened to declare success. No game defect, complete gravity-chain verification, new function-name credit or whole-game completion is claimed.

@@ -7248,3 +7248,6 @@ Linked sprite forward pass:324 complete fixtures /2592 sample world poses match 
 
 
 Sprite forward-to-buffer packing:1944 cases /31104 transforms checked; movement-based repeat exit:3888 fixtures with original counter readback. GPU execution and complete emitter remain unverified; no name credit.
+
+
+Original SpriteGravity float binding traced to directional control;576 local cases checked. Full nonzero-gravity chain has an unresolved numerical comparison gap, documented in ANALYSIS.md. No name credit.

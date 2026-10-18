@@ -25254,5 +25254,19 @@
     "case_accounting": "3888 cases include972 zero-threshold fixtures; do not add prior972 as disjoint coverage.",
     "new_name_credit": 0,
     "project_modified": false
+  },
+  "sprite_gravity_property_identity_followup": {
+    "field": "SpriteGravity, Sprite component+0xdc, float32",
+    "basis": "Original literal/register/call sequence in Sprite registrar, float-field helper contract, original producer load and scaled output store, consumer dataflow.",
+    "neighbor": "SpriteTrailLength at+0xe0 matches adjacent producer read and source+0x2c write.",
+    "output": "Source+0x28 contains a scaled gravity control, not the raw property value.",
+    "native_directional_cases": 576,
+    "numerical_status": "Full nonzero-gravity directional chain remains unresolved: ideal sequential arithmetic diverges in one captured first-pass case. Feeding original previous poses reduces local errors below1e-5 position and1.5e-5 quaternion; propagation is supported for this case, not a complete float32-equivalence proof.",
+    "limits": [
+      "Exact units and complete multiplier semantics remain unknown.",
+      "No complete nonzero-gravity repeated-loop verification or universal convergence claim.",
+      "No additional names or whole-game completion credit."
+    ],
+    "new_name_credit": 0
   }
 }
