@@ -18064,5 +18064,54 @@
       "new_name_credit": 0
     },
     "new_name_credit": 0
+  },
+  "sensor_motion_reference_binding_checkpoint": {
+    "bindings": [
+      {
+        "kind": 52,
+        "registered_name": "MovementSensor",
+        "visitor": "1404c9e40",
+        "dispatcher": "14048b740",
+        "dispatch_branch": "14048c921",
+        "dispatch_call_site": "14048c92f",
+        "remap_field_offset": 304,
+        "field_name": "MotionReferenceThing",
+        "visitor_scope": "reference-resolution block read;full visitor not semantically reviewed"
+      },
+      {
+        "kind": 53,
+        "registered_name": "AngleSensor",
+        "visitor": "1404cb010",
+        "dispatcher": "14048b740",
+        "dispatch_branch": "14048c939",
+        "dispatch_call_site": "14048c947",
+        "remap_field_offset": 268,
+        "field_name": "MotionReferenceThing",
+        "visitor_scope": "reference-resolution block read;full visitor not semantically reviewed"
+      },
+      {
+        "kind": 54,
+        "registered_name": "RotationSensor",
+        "visitor": "1404cb9a0",
+        "dispatcher": "14048b740",
+        "dispatch_branch": "14048c951",
+        "dispatch_call_site": "14048c95f",
+        "remap_field_offset": 304,
+        "field_name": "MotionReferenceThing",
+        "visitor_scope": "reference-resolution block read;full visitor not semantically reviewed"
+      }
+    ],
+    "evidence": [
+      "Original EThingType immediate/literal registrations byte matched.",
+      "Original dispatcher jump-table entries and direct calls match selected visitors.",
+      "Fresh visitor assembly and pseudocode reference-resolution blocks read;field loads and MotionReferenceThing literals match original bytes.",
+      "Bounded initializer native outputs and remapper consumers were independently tested in preceding checkpoint."
+    ],
+    "limits": [
+      "Static source-type/field linkage plus separately verified initializer and remap fixtures;not whole property visitor execution.",
+      "Whole visitor bodies,all version/filter branches,full startup order and possible later metadata writes remain unreviewed.",
+      "No new function name,completion credit or exact MM source/build match."
+    ],
+    "new_name_credit": 0
   }
 }

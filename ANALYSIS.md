@@ -6224,3 +6224,18 @@ A bounded 283-byte interval of the original metadata initializer writes remappin
 The original per-object callback then passed **288 fallback cases** using these positive offsets, with zero/negative-offset controls, valid/absent mappings, both modes and destination lookup collision chains. This improves the earlier tests that used an arbitrary positive field offset.
 
 This is a bounded writer-to-consumer trace, not execution of full startup. Full initialization order, possible later overwrites, and the Dreams type/property names for these numeric kinds remain unresolved. No gadget labels or additional checked-name credit were inferred; the total remains 712 checked names. Raw code and fixtures remain local.
+
+
+### Sensor motion-reference fields identified
+
+The earlier numeric-kind remapping offsets now have an original registered type and property-name linkage:
+
+| Original registered type | Kind | Field name in property visitor | Offset |
+| --- | ---: | --- | ---: |
+| MovementSensor | 52 | MotionReferenceThing | 0x130 |
+| AngleSensor | 53 | MotionReferenceThing | 0x10C |
+| RotationSensor | 54 | MotionReferenceThing | 0x130 |
+
+Original `EThingType` registrations bind the three names to their values. The property dispatcher jump-table entries and direct calls select the corresponding visitors. Their reference-resolution blocks load these same offsets and use the original `MotionReferenceThing` literal when visiting the referenced object. Registration instructions, dispatch bytes, field loads and literal bytes were rechecked against the executable. This links the initializer and remapping tests to specific sensor reference fields without guessing type names from the number alone.
+
+Only those property-visitor blocks have been semantically reviewed here. Complete visitor bodies, all version/filter branches, full startup order and possible later metadata overwrites remain unresolved. The functions remain unnamed pending their full review; this adds zero checked-name credit and does not establish complete sensor behavior or an exact Media Molecule source/build match.
