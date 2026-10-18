@@ -6068,3 +6068,10 @@ Totals: **725 checked names** (645 behavior/helper and 80 property/type), **2,13
 Both original caller capture blocks pass **256 native cases** across boundary and deterministic random word profiles, with exact guarded 24-byte outputs and unchanged world buffers. These arbitrary captured values are not passed into restore, which requires valid counts and capacities. The thread-specific branch remains disabled in these capture tests.
 
 Independent reopening verifies the 24-byte structure layout, saved signature, successful typed decompilation, unchanged original instruction bytes and all other 9,605 function names/signatures. The enclosing caller has 20,076 instructions; full decompilation timed out and its broad role remains unresolved. No extra naming credit: **725 checked names** remains the total.
+
+
+### Media Molecule serialization source lead checked
+
+A [published transcript attributed to Alex Evans](https://gist.github.com/OswaldHurlem/4810ad510669097db872c6de305c9df0), linked from the correspondent's serialization article, describes per-type shared reading/writing, a global format revision and procedural migration code. It includes small Dreams examples involving deprecated Movable/Collidable flags and an early snapshot-related revision. This is a public correspondent's transcript, not an official source archive or a match to this executable build.
+
+A targeted heuristic scan of the cached original scene-upgrade body for the example's nearby bit-1/bit-0x10 operations found no candidates. This narrow negative result does not prove the example is absent elsewhere. The transcript provides a concrete migration-pattern lead, but does not establish the original names of the recently recovered saved-count record or its caller. Format revision numbers must not be treated as executable build identifiers. No code, field-name or completion credit was changed from this lead.
