@@ -6303,3 +6303,12 @@ This closes the earlier identity-only rotation limitation for these finite unit 
 The two frame modes are tested only with identity or negative-identity quaternions. Nontrivial local/world frames, nonfinite values and malformed body indices remain unverified. Physics caches and metadata are prepared inputs, not full startup or live simulation. No complete worker/update-loop, concurrency, physical-unit or live sensor claim is made.
 
 Independent reopening verifies the name, working owner/packed-reference/sensor signature, decompilation, original bytes and all 9,604 other names/signatures. Totals: **717 checked names** (637 behavior/helper and 80 property/type reviews), **2,123 mapped** and **7,482 unmapped** among 9,605 defined functions. No exact Media Molecule source/build match is claimed.
+
+
+### RotationSensor local and world frames checked
+
+**192 additional native cases** execute the original RotationSensor updater against an independent quaternion Hamilton-product oracle. World-frame mode rotates angular velocity by the inverse world-gizmo orientation. Local-frame mode uses the inverse of the source orientation multiplied by the local-gizmo orientation. In these cases the cached difference output remains in the unrotated relative-body coordinates, rather than using that velocity-output frame.
+
+The fixture covers X/Y/Z and mixed-axis rotations, 128 seeded random unit-frame combinations, both wire orders, and an optional reference body. Reference-body subtraction precedes both calculations; the prior-vector cache receives each processed source's absolute angular velocity. The selected output quaternion remains the source orientation. Complete sensor/world/owner/source comparisons pass, allowing only the expected output floats, cached vector and selected quaternion to change. Maximum output error was approximately **1.30e-6**, below the declared absolute tolerance of 2e-5.
+
+These are finite unit-frame tests with prepared caches and metadata. Nonunit/nonfinite frames, malformed indices, timestep units, complete startup/update-worker behavior, concurrency and live sensing remain unverified. No new names or completion credit were added: **717 names checked** remains the current total.

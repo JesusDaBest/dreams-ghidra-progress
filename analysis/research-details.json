@@ -18421,5 +18421,26 @@
       "No exact MM source/build match."
     ],
     "new_name_credit": 1
+  },
+  "rotation_sensor_frame_checkpoint": {
+    "native_check": {
+      "native_cases": 192,
+      "maximum_output_error": 1.2958929609396819e-06,
+      "absolute_tolerance": 2e-05,
+      "external_calls": 0,
+      "findings": [
+        "Original updater agrees with independent Hamilton-product oracle:world-frame mode uses inverse GizmoOrientationWorld rotation;local-frame mode uses inverse(source orientation times GizmoOrientationLocal).",
+        "Velocity components use that inverse frame;cached difference output remains in unrotated relative-body coordinates in tested cases.",
+        "Reference-body subtraction precedes both calculations;prior cache stores last absolute source vector. Selected output quaternion remains source orientation,not composed frame.",
+        "Two wire orders,optional reference,three axes,mixed axis and128 seeded random unit-frame cases pass complete sensor/world/owner/source checks."
+      ],
+      "limits": [
+        "Finite unit quaternions and selected valid velocity/reference vectors only;nonunit/nonfinite frames,malformed indices and timestep-unit semantics unverified.",
+        "Prepared caches/metadata and two valid wires;real startup,worker/concurrency and live sensing unverified."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0
   }
 }
