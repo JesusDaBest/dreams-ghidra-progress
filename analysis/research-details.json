@@ -25054,6 +25054,42 @@
       "CPU projection /8 versus shader coordinate*7 relationship remains unresolved; do not label as bug."
     ],
     "new_name_credit": 0,
-    "selected_instruction_count": 28
+    "selected_instruction_count": 28,
+    "binding_status_followup": "44-byte point producer-to-scalar-shader descriptor chain statically established; secondary512-byte record packing traced but transform arithmetic not numerically verified."
+  },
+  "sprite_shader_buffer_binding_followup": {
+    "scope": "Static CPU-to-shader descriptor binding",
+    "point_buffer_chain": [
+      "Processor reads processed-point base147a4fe48 and writes44-byte records.",
+      "140c59b2b..140c59b58 allocates0x39c0000 bytes via TryAllocateGraphicsResourceStorage at object147a4fe48.",
+      "140c59b61..140c59b7c initializes descriptor147a4fe6c with same loaded address, stride44, count0x150000.",
+      "1413e6e71..1413e6e79 copies descriptor to384-byte parameter block+0x5c.",
+      "Prior command-submission review traces parameter-block pointer to first two DWORDs of six-DWORD shader userdata; original anchors reverified.",
+      "Scalar shader0x3c8 loads s[20:23] from userdata pointer+0x17 DWORDs=0x5c bytes; offset40 reads use this descriptor."
+    ],
+    "secondary_buffer_chain": [
+      "140c59c33..140c59c84 allocates0x100000 bytes and initializes descriptor147cf7ecc with stride512/count2048.",
+      "1413e4360..1413e4396 selects parity buffer at147cf7ea0, stride72, data pointer+8; addresses record by index<<9.",
+      "1413e4763..1413e476a stores eight32-byte pairs into first256 output bytes; source advances80 per iteration.",
+      "1413e4486..1413e449e stores another eight32-byte pairs into second256 bytes in same loop.",
+      "1413e4940 follows source CPU generated-record chain at+0x540.",
+      "1413e6e6a..1413e6e92 copies parity-selected descriptor+44 into block+0x6c; shader loads fromDWORD0x1b=0x6c."
+    ],
+    "submission_instruction_anchors_reverified": 204,
+    "arithmetic_checks": {
+      "point_stride": 44,
+      "point_count": 1376256,
+      "point_bytes": 60555264,
+      "secondary_stride": 512,
+      "secondary_count": 2048,
+      "secondary_bytes": 1048576
+    },
+    "limits": [
+      "Static address/stride/descriptor flow, no actual GPU execution, runtime contents or memory coherency proof.",
+      "Secondary transform packing and feature paths not numerically verified;272-byte sample cache,1360-byte CPU generated record and512-byte GPU record are distinct.",
+      "Projection /8 versus shader coordinate*7 semantics unresolved."
+    ],
+    "new_name_credit": 0,
+    "project_modified": false
   }
 }

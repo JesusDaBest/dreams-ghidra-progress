@@ -7743,3 +7743,12 @@ The archived scalar Sprite emission shader contains a matching point layout: it 
 A later feature branch multiplies that coordinate by seven, converts to an integer, caps the selected segment at six, and uses a 32-byte step for paired vector loads. It also extracts bits 16..26 of the same packed word to select a record in a secondary buffer. These operations are consistent with seven-segment lookup across eight samples.
 
 This remains a candidate producer/consumer connection: CPU-side descriptor upload, buffer base/stride, feature gates and the complete downstream interpolation still need tracing. There was no GPU execution. The CPU projection division by eight versus shader multiplication by seven remains an open interpretation question. No additional naming credit is taken.
+
+
+### Processed-point shader binding established statically
+
+The CPU processor and scalar emission shader now have a traced descriptor connection. Graphics setup allocates the point buffer, initializes its descriptor from the same address used by CPU point writes with **44-byte stride**, and the emitter copies that descriptor into the parameter block at byte offset `0x5c`. The shader loads its point descriptor from that exact offset. The earlier parameter-block-to-userdata trace was rechecked against **204 original instruction anchors**. This supports the offset-40 packed-coordinate producer/consumer link at the static-code level.
+
+The secondary buffer has a separate **512-byte stride** and 2,048-entry allocation. An emitter loop packs two groups of eight 32-byte pairs into its two 256-byte halves, then follows the CPU generated-record chain. Its parity-selected descriptor goes to parameter offset `0x6c`, matching the secondary shader descriptor load.
+
+The **272-byte sample-cache entry**, **1,360-byte CPU generated record** and **512-byte GPU record** are distinct layouts. The secondary packing transforms and feature gates still require numerical verification. Static binding does not prove live GPU execution, runtime buffer contents or memory coherency; the projection `/8` versus shader `*7` interpretation remains open. No additional naming credit is taken.
