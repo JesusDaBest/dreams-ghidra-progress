@@ -6097,3 +6097,12 @@ An original upgrade stage writes 2/3/4 into +0x2E from parent kinds 13/14/15. Th
 Independent reopening verifies the descriptive name, bool return, three opaque-pointer arguments plus byte mode, decompilation, original bytes and all 9,605 other names/signatures.
 
 Totals: **726 checked names** (646 behavior/helper and 80 property/type), **2,132 mapped**, **7,474 unmapped**, among 9,606 defined functions.
+
+
+### Attachment-mode upgrade connected to original predicate
+
+**308 native cases** execute the original bounded parent-rewrite loop and original `IsThingParentAllowedForAttachmentMode`. Rejected candidate parents are climbed toward the root; the chosen parent's kind then determines the rewritten common byte `+0x2E`. The byte remains multi-valued after this stage: kinds 9/13/14/15/98 select values 6/2/3/4/5; the prepared kind-0 root selects zero.
+
+Cases cover 11 candidate parent kinds, modes 0–6, tagged parent references and high kind bits in valid three-node hierarchies. Full world, object, metadata and frame-guard comparisons pass. No replacement predicate is used. This helps explain how mode-dependent parent validation and later zero/nonzero transform traversal can consume the same byte without implying that it is universally boolean.
+
+The fixture enters after earlier transform/wire work and exits before subsequent upgrade stages. Full migration/version gating, other root layouts, malformed/cyclic hierarchies and live-game behavior remain unverified. No new naming credit: **726 checked names** remains the total.
