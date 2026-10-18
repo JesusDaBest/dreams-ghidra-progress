@@ -6411,3 +6411,16 @@ No new name credit: **720 checked names**, 2,126 mapped and 7,480 unmapped among
 Independent reopening verifies the saved descriptive name, four-register working pointer/index signature, unsigned return, decompilation, original bytes and all 9,605 other function names/signatures. Other kinds' parent-list paths, nonnull owner helper behavior, malformed indices, concurrency, full scene conversion and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **721 checked names** (641 behavior/helper and 80 property/type), **2,127 mapped**, **7,479 unmapped**, among 9,606 defined functions.
+
+
+### Connected conversion checked with corrected Key base layout
+
+The original metadata initializer establishes **Key's base transform at +0x50 and record size 0x130**. Earlier tests explicitly used a controlled +0x40 base offset; those results were not proof of the actual layout. The factory, insertion, conversion and output tests now use +0x50. A bounded ten-store initializer test also verifies the recovered metadata writes against complete mapped metadata comparisons.
+
+**56 connected native cases** execute the original XYZOutput conversion loop, original object factory, original Key initializer and original registration routine together. They create and insert **48 replacement objects**. Full world/source/metadata comparisons check IDs, parents, transforms, flags, hash chains, primary pointer/count caches, appended replacement wires and retired old endpoints. Cases include no match, one/two matches, mixed ports, invalid/tagged source references, empty wires and selected parent/glued states. Appended Key-output wires do not convert again.
+
+Revalidation with the corrected base offset also passes **192 factory cases**, **208 insertion cases** and **256 output-dispatch cases**. No new names or completion credit are added. The imported byte-fill routine is modeled; earlier/later upgrade stages exit to the harness.
+
+The initializer also sets Key's parent-relative metadata slot to +0x70 and position-offset slot to +0x110. **Those optional paths remain disabled in these fixtures.** This closes the base-offset provenance gap, not the complete Key layout or startup behavior. Occupied ID collision chains, allocation failures, optional transform paths, full scene loading/upgrading, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals remain **721 checked names**, 2,127 mapped and 7,479 unmapped among 9,606 defined functions.

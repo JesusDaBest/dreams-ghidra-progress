@@ -18615,7 +18615,8 @@
       "This establishes a conversion and output route; does not prove every scene uses it or that retained XYZOutput storage is always unused.",
       "XYZOutput field calculation remains unidentified; do not infer one must occur in MovementSensor updater."
     ],
-    "new_name_credit": 0
+    "new_name_credit": 0,
+    "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint"
   },
   "movement_xyz_conversion_gate_checkpoint": {
     "native_check": {
@@ -18716,7 +18717,8 @@
       "Review the following conversion call that handles the returned object.",
       "Bind prepared Key allocation size/base-transform metadata to original initialization.",
       "Execute actual conversion loop with original creation/registration paths before claiming scene migration verified."
-    ]
+    ],
+    "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint"
   },
   "world_insertion_name_checkpoint": {
     "target": {
@@ -18756,6 +18758,122 @@
       "Prepared world records;no malformed indices,full caller/conversion,real imported fill implementation,concurrency or live game claim.",
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint"
+  },
+  "xyz_connected_conversion_actual_base_checkpoint": {
+    "native_checks": {
+      "movement-xyz-conversion-connected-native-check.json": {
+        "native_cases": 56,
+        "created_and_inserted_objects": 48,
+        "findings": [
+          "Original bounded XYZOutput conversion loop calls original full factory,original Key initializer and original world registration,then appends replacement wires and retires old endpoints.",
+          "Selected layouts include no match,one/two matches,mixed ports,invalid source,tagged packed source and empty wire list;both Key/non-Key secondary sources and parent/glued states covered.",
+          "Complete world and source/metadata comparisons verify new arena objects,IDs,parents,transforms,flags,hash chains,pointer/count caches and exact replacement wire data. Appended Key wires are scanned but not converted again."
+        ],
+        "models": [
+          "Only imported standard byte-fill routine modeled;surrounding earlier/later upgrade stages replaced by exit to harness."
+        ],
+        "limits": [
+          "Entry starts at conversion stage after version selection;full enclosing upgrader not executed.",
+          "Prepared empty negative-ID buckets,Key metadata and sufficient capacity;occupied ID collision chains,allocation failures,owner/template modes and live upgrade unverified.",
+          "No scene-file loading,concurrent execution or exact MM source/build match claimed."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "key-layout-initializer-native-check.json": {
+        "native_cases": 4,
+        "original_initializer_instructions": 10,
+        "fields": {
+          "0x0": "0x50",
+          "0x462": "0x70",
+          "0x6b2": "0x90",
+          "0x84": "0xb0",
+          "0xb0": "0xf0",
+          "0x21c": "0xf8",
+          "0x686": "0x100",
+          "0x214": "0x110",
+          "0x7d0": "0xffff",
+          "0xb00": "0x130"
+        },
+        "findings": [
+          "Original initializer bounded ten-store window writes Key base-transform offset50 and record size130.",
+          "Also writes parent-relative slot462->70 and position-offset slot214->110;these remain disabled in current factory/conversion fixtures and are not implied verified.",
+          "Complete mapped metadata comparisons allow only these ten word writes."
+        ],
+        "limits": [
+          "Bounded initialization window only,not full startup or proof against later overwrites.",
+          "Other Key metadata slots remain controlled fixture inputs;full row initialization and optional-transform paths unverified."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "key-factory-selected-path-native-check.json": {
+        "native_cases": 192,
+        "successful_creations": 108,
+        "object_limit_failures": 48,
+        "arena_limit_failures": 36,
+        "findings": [
+          "Complete original factory entry-to-return executes selected null-owner,new-Key path with original initializer and no substituted factory instructions.",
+          "Success writes prepared arena record with type3,requested sequence/parent,derived header word at14 and supplied32-byte transform;advances arena cursor and four auxiliary count/flag fields.",
+          "Object-count rejection leaves world unchanged;arena-capacity rejection occurs after auxiliary count/flag updates but leaves arena cursor unchanged.",
+          "Factory does not advance primary object count or insert object pointer on this selected null-owner path. Complete world/args/metadata comparisons pass;following conversion call remains to be reviewed."
+        ],
+        "limits": [
+          "Original bounded initializer confirms Key size130/base-transform50;other optional offsets disabled and full row startup unverified.",
+          "Only null owner,no template,Key type and selected counts/cursors/finite inputs;parent-relative offset,type-specific other cases,owner/template modes and live game unverified.",
+          "Original full function executed on selected paths,not all factory branches semantically reviewed;no full-factory naming or scene-upgrade completion claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "world-key-insertion-native-check.json": {
+        "native_cases": 208,
+        "standalone_cases": 192,
+        "connected_factory_insertion_cases": 16,
+        "original_instructions": 209,
+        "import_models": [
+          "Imported byte-fill routine replaced by explicit SysV byte-fill model."
+        ],
+        "findings": [
+          "Complete original insertion routine executes selected Key/null-owner paths,updates primary pointer/count,parallel lengths and defaults,parent/type caches,index and sequence-hash chains.",
+          "Masked type cache strips high bit;selected player mask and physics-owner counters increment exactly.",
+          "Full world/object comparisons verify all expected writes for selected zero/equal/larger old array lengths and indices0,1,63,64.",
+          "16 additional cases pass the actual original factory-created arena object into original insertion,verifying parent cache,index,hash links and retained transform/defaults."
+        ],
+        "limits": [
+          "Key kind only;type15/29 parent list branches and nonnull owner refresh not executed.",
+          "Prepared world records;no malformed indices,full caller/conversion,real imported fill implementation,concurrency or live game claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "key-transform-signal-connected-native-check.json": {
+        "native_cases": 256,
+        "successful_key_output_cases": 128,
+        "unsupported_port_cases": 128,
+        "original_dispatch_instructions": 811,
+        "original_transform_helper_instructions": 168,
+        "findings": [
+          "Original kind3 Key dispatch for port3e8 calls ComputeObjectTransformWithPositionOffset and emits its32-byte transform payload with tag4 and alpha1.",
+          "Without position-offset property, prepared direct base transforms pass through byte-exactly; absent base metadata emits original identity transform. Unsupported selected port returns false without output writes.",
+          "Complete output/world/source/metadata comparisons pass."
+        ],
+        "limits": [
+          "Valid unparented objects with absent offset property only; no optional normalization import path executed.",
+          "Does not execute scene upgrade or real wire scheduler; migration linkage is a separate static trace.",
+          "No runtime XYZOutput field calculation,full upgrade conditions,live game or exact MM source/build match claimed."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "correction": "Earlier explicitly controlled Key base offset40 is replaced by source-backed50;size130 also verified in original initializer. Older fixtures remain historical controlled-offset results,not actual-layout proof.",
+    "remaining": [
+      "Original Key metadata slot462 is70 and slot214 is110;these optional paths remain disabled in current connected fixtures.",
+      "Full row startup/later overwrites,occupied ID collision chains,allocation failures and full scene upgrade remain unverified."
+    ],
+    "new_name_credit": 0
   }
 }
