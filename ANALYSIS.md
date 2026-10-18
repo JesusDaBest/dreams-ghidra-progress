@@ -6539,3 +6539,12 @@ The optional import is linked through the executable's original relocation and a
 Independent reopening verifies the descriptive name, opaque two-pointer ABI, decompilation, original bytes and all 9,605 other names/signatures. No exact Media Molecule source/build match is claimed.
 
 Totals: **725 checked names** (645 behavior/helper and 80 property/type), **2,131 mapped**, **7,475 unmapped**, among 9,606 defined functions.
+
+
+### Saved-count input structure recovered
+
+`RestoreWorldCountsAndRebuildObjectLinks` now accepts `WorldSavedCountsWorking24 *savedCounts` in Ghidra. This working structure contains six 32-bit fields at offsets 0/4/8/12/16/20: object count, arena cursor, selected thread-slot value, auxiliary-record count, wire count and 32-byte auxiliary-record count. Field names describe observed use; the original C++ type and some source-level meanings remain unresolved.
+
+Both original caller capture blocks pass **256 native cases** across boundary and deterministic random word profiles, with exact guarded 24-byte outputs and unchanged world buffers. These arbitrary captured values are not passed into restore, which requires valid counts and capacities. The thread-specific branch remains disabled in these capture tests.
+
+Independent reopening verifies the 24-byte structure layout, saved signature, successful typed decompilation, unchanged original instruction bytes and all other 9,605 function names/signatures. The enclosing caller has 20,076 instructions; full decompilation timed out and its broad role remains unresolved. No extra naming credit: **725 checked names** remains the total.

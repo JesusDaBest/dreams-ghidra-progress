@@ -16818,14 +16818,15 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV RestoreWorldCountsAndRebuildObjectLinks(void * savedCounts, void * world)",
+      "saved_working_signature": "void PS4_SYSV RestoreWorldCountsAndRebuildObjectLinks(WorldSavedCountsWorking24 * savedCounts, void * world)",
       "evidence": [
         "Complete274-instruction body and pseudocode reviewed;original bytes verified.",
         "Two direct caller sites pass24-byte stack records and world pointers in RDI/RSI;full larger caller decompilation timed out and its broader role is not claimed.",
         "72 baseline plus72 auxiliary-growth scenarios each run twice verify full world,object and metadata states;growth covers1/3/7 records,zero/equal/larger old lengths,preserved padding and object2c reference counts.",
         "Original kind-chain builder executes;standard byte fill modeled and stack canary pointer supplied.",
         "Original import relocation and local NID database identify optional1416084d0 as scePthreadGetspecific,not randomness;branch remains unexecuted.",
-        "Independent reopening verifies name,void two-pointer ABI,decompilation,unchanged original bytes and all9605 other names/signatures."
+        "Independent reopening verifies name,void two-pointer ABI,decompilation,unchanged original bytes and all9605 other names/signatures.",
+        "Later input-type recovery:both original caller capture blocks pass256 cases with guarded24byte output and unchanged world. Six32bit fields promoted to WorldSavedCountsWorking24;independent reopening verifies layout offsets0/4/8/12/16/20,signature,decompilation,unchanged bytes and all other names/signatures. No extra naming credit."
       ],
       "caveats": [
         "Optional thread-specific-slot branch disabled;valid prepared eight-object world and bounded auxiliary counts only.",

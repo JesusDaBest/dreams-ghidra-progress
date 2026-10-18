@@ -19165,6 +19165,74 @@
       "Malformed indices/capacities,concurrency,full callers/startup and live game unverified.",
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "later_input_type": "world_saved_count_input_type_checkpoint"
+  },
+  "world_saved_count_input_type_checkpoint": {
+    "target": {
+      "name": "RestoreWorldCountsAndRebuildObjectLinks",
+      "signature": "void PS4_SYSV RestoreWorldCountsAndRebuildObjectLinks(WorldSavedCountsWorking24 * savedCounts, void * world)"
+    },
+    "working_layout": {
+      "size": 24,
+      "fields": [
+        {
+          "offset": 0,
+          "size": 4,
+          "working_name": "objectCount",
+          "world_offset": "0x10b58c0"
+        },
+        {
+          "offset": 4,
+          "size": 4,
+          "working_name": "arenaCursor",
+          "world_offset": "0xef5700"
+        },
+        {
+          "offset": 8,
+          "size": 4,
+          "working_name": "selectedSlotValue",
+          "world_offset": "0x1075748"
+        },
+        {
+          "offset": 12,
+          "size": 4,
+          "working_name": "auxRecordCount",
+          "world_offset": "0x1a3c560"
+        },
+        {
+          "offset": 16,
+          "size": 4,
+          "working_name": "wireCount",
+          "world_offset": "0x1229890"
+        },
+        {
+          "offset": 20,
+          "size": 4,
+          "working_name": "auxRecord32Count",
+          "world_offset": "0x1b2c560"
+        }
+      ],
+      "basis": "Both original caller capture blocks and complete restore body;selectedSlotValue is selected by signedlow32 scePthreadGetspecific when enabled,otherwise slot0.",
+      "limits": [
+        "Working descriptive field names;exact source types/names not recovered.",
+        "No original source/build match."
+      ]
+    },
+    "native_capture_check": {
+      "native_cases": 256,
+      "findings": [
+        "Both original bounded caller capture blocks write the same six32bit words from world:object count,arena cursor,selected slot value,and three auxiliary/wire counts.",
+        "256 cases cover128 deterministic boundary/random word profiles across both blocks,full world unchanged and guarded24byte outputs exact."
+      ],
+      "limits": [
+        "Thread-specific selection disabled,slot0 only;explicit returns bound each original window.",
+        "Original full caller not executed;its20076instructions remain broadly unresolved.",
+        "Arbitrary capture words are not passed into restore,which requires valid counts/capacities."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0
   }
 }
