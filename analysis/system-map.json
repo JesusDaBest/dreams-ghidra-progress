@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9609,
-  "mapped_total": 2162,
+  "inventory_total": 9611,
+  "mapped_total": 2164,
   "unmapped_total": 7447,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -54690,6 +54690,58 @@
             "Four browser API bindings verified through original loader writes and exact symbol-name NID hashes.",
             "Related QR producer checks:80 clipping/readiness cases,21 local action-construction cases and24 synthetic player-selection cases.",
             "Independent reopening verifies saved working ABI,unchanged original bytes and all9608 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1410a66b0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "browser-dialog",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete queued browser-dialog action cleanup;vtable,platform API andtext ownership traced.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body review and independent local lifecycle checks.",
+      "code_sha256": "9544933657ab9a7248b4492656c52dd3e35ec0a235be00385e228b208077b847",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DestroyBrowserDialogTextAction",
+          "support": [
+            "Original vtable pair and exact original unwind boundaries establish the69-byte and61-byte cleanup handlers.",
+            "Complete original bodies reviewed;new definitions/names and void opaque-pointer ABIs independently reopened with original bytes unchanged.",
+            "20 original-native cleanup cases check ownership1 release,borrowed/mode255 retention,owned-null handling,member clearing versus object deletion andignored termination errors.",
+            "All9609 prior function names/signatures unchanged;both new bodies decompile after independent reopening."
+          ]
+        }
+      ]
+    },
+    "1410a6700": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "browser-dialog",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete queued browser-dialog action cleanup;vtable,platform API andtext ownership traced.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body review and independent local lifecycle checks.",
+      "code_sha256": "d128666d441371adc14a239067cb6abcec5f028e5ce63a26742e46105c9a10af",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DeleteBrowserDialogTextAction",
+          "support": [
+            "Original vtable pair and exact original unwind boundaries establish the69-byte and61-byte cleanup handlers.",
+            "Complete original bodies reviewed;new definitions/names and void opaque-pointer ABIs independently reopened with original bytes unchanged.",
+            "20 original-native cleanup cases check ownership1 release,borrowed/mode255 retention,owned-null handling,member clearing versus object deletion andignored termination errors.",
+            "All9609 prior function names/signatures unchanged;both new bodies decompile after independent reopening."
           ]
         }
       ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "697 existing-function renames,58 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "697 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9609,
+    "total": 9611,
     "default_fun_names": 8698,
-    "other_names": 911,
-    "verification": "complete_inventory_matches_baseline_plus_697_renames_and_58_created_functions_and_1_reviewed_existing_name"
+    "other_names": 913,
+    "verification": "complete_inventory_matches_baseline_plus_697_renames_and_60_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17573,6 +17573,52 @@
         "Selected valid synthetic text/identifiers and errors only;malformed pointers,real platform lifetime and live-game behavior unverified.",
         "Action result-enum meanings,queue scheduling/ownership and concrete source types remain unresolved.",
         "No exact original Media Molecule source/build match claimed."
+      ]
+    },
+    {
+      "address": "1410a66b0",
+      "original_name": "FUN_1410a66b0",
+      "applied_name": "DestroyBrowserDialogTextAction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DestroyBrowserDialogTextAction(void * action)",
+      "created_function": true,
+      "evidence": [
+        "Original vtable pair and exact original unwind boundaries establish the69-byte and61-byte cleanup handlers.",
+        "Complete original bodies reviewed;new definitions/names and void opaque-pointer ABIs independently reopened with original bytes unchanged.",
+        "20 original-native cleanup cases check ownership1 release,borrowed/mode255 retention,owned-null handling,member clearing versus object deletion andignored termination errors.",
+        "All9609 prior function names/signatures unchanged;both new bodies decompile after independent reopening."
+      ],
+      "caveats": [
+        "Platform termination,free and delete use local logging stubs;no actual browser API orobject release executed.",
+        "Actual API lifetime,concurrency,source type declarations andlivegamebehavior unverified.",
+        "Cleanup pair interpretation follows body/vtable behavior;noexactoriginalC++class/MMsource match."
+      ]
+    },
+    {
+      "address": "1410a6700",
+      "original_name": "FUN_1410a6700",
+      "applied_name": "DeleteBrowserDialogTextAction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DeleteBrowserDialogTextAction(void * action)",
+      "created_function": true,
+      "evidence": [
+        "Original vtable pair and exact original unwind boundaries establish the69-byte and61-byte cleanup handlers.",
+        "Complete original bodies reviewed;new definitions/names and void opaque-pointer ABIs independently reopened with original bytes unchanged.",
+        "20 original-native cleanup cases check ownership1 release,borrowed/mode255 retention,owned-null handling,member clearing versus object deletion andignored termination errors.",
+        "All9609 prior function names/signatures unchanged;both new bodies decompile after independent reopening."
+      ],
+      "caveats": [
+        "Platform termination,free and delete use local logging stubs;no actual browser API orobject release executed.",
+        "Actual API lifetime,concurrency,source type declarations andlivegamebehavior unverified.",
+        "Cleanup pair interpretation follows body/vtable behavior;noexactoriginalC++class/MMsource match."
       ]
     }
   ],

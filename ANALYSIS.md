@@ -7035,3 +7035,14 @@ Totals: **755 checked names** (675 behavior/helper and 80 property/type), **2,16
 Independent reopening confirms the definition, descriptive name and working ABI, unchanged native bytes and all 9,608 other function names/signatures. Malformed inputs, real platform lifetime, action scheduling and live-game behavior remain unverified. No real player/account information was used.
 
 Totals: **756 checked names** (676 behavior/helper and 80 property/type), **2,162 mapped**, **7,447 unmapped**, among **9,609 defined functions**. The added definition earns one review credit only after full body review and verification.
+
+
+### Browser-action cleanup pair recovered and reviewed
+
+`DestroyBrowserDialogTextAction` terminates the browser dialog, frees text only when its ownership byte equals one, and clears the 12-byte string member. `DeleteBrowserDialogTextAction` performs the same termination/ownership check, then releases the action object. It does not clear the member first. Original unwind records establish both missing boundaries; complete bodies and saved void/opaque-action working ABIs were independently reopened.
+
+**20 original-native cleanup cases** cover inline, owned, borrowed, nonstandard ownership and owned-null storage, plus ignored termination errors. Complete action and argument guards are checked. Termination/free/delete are local logging stubs; no browser API or real object release ran. Seven related status cases establish only that the polling predicate accepts values 1 or 2; source enum meanings are not claimed. The shared virtual priority method returns 100. No credit is added for those still-unnamed methods.
+
+Actual platform lifetime, concurrency, concrete source declarations and live-game behavior remain unverified. All 9,609 previously defined names/signatures and original bytes remain unchanged.
+
+Totals: **758 checked names** (678 behavior/helper and 80 property/type), **2,164 mapped**, **7,447 unmapped**, among **9,611 defined functions**.

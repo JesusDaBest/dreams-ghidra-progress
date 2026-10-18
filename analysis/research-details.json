@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 756,
+    "checked_and_applied_names": 758,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,17 +1920,19 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 756,
-    "function_count": 9609,
+    "verified_names": 758,
+    "function_count": 9611,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0",
       "141330c40",
       "14021b300",
-      "1410a6740"
+      "1410a6740",
+      "1410a66b0",
+      "1410a6700"
     ],
-    "scope": "697 existing-function renames,58 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "697 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22407,5 +22409,55 @@
     ],
     "new_name_credit": 1,
     "new_function_definitions": 1
+  },
+  "browser_cleanup_checkpoint": {
+    "targets": {
+      "1410a66b0": {
+        "name": "DestroyBrowserDialogTextAction",
+        "signature": "void PS4_SYSV DestroyBrowserDialogTextAction(void * action)",
+        "native_bytes_unchanged": true,
+        "fde_sha256": "d3464551285bc99748303cbc2136344093536fda81ed0e7eae43f824d24c79ce"
+      },
+      "1410a6700": {
+        "name": "DeleteBrowserDialogTextAction",
+        "signature": "void PS4_SYSV DeleteBrowserDialogTextAction(void * action)",
+        "native_bytes_unchanged": true,
+        "fde_sha256": "4d000ae29f0b479c9d9f4bf6ba6299e330a2bea966092c6afe76268eafe84f43"
+      }
+    },
+    "checks": {
+      "native_cases": 28,
+      "cleanup_cases": 20,
+      "status_cases": 7,
+      "priority_cases": 1,
+      "findings": [
+        "Both original cleanup variants terminate browser dialog once,reset vtable and free small-string pointer only for ownership byte1,including null pointer. Borrowed/mode255 storage not freed.",
+        "Nondeleting cleanup clears all12 string bytes;deleting variant releases action object without clearing member first.",
+        "Original status handler returns AL1 only for modeled statuses1 or2;0,3,4,uint32max and0x80000000 return AL0.",
+        "Original queue-priority virtual method returns100. Full action/argument guards checked."
+      ],
+      "models": [
+        "Terminate,UpdateStatus,free and object delete are local logging/status stubs;no browser or real object release occurs."
+      ],
+      "limits": [
+        "Synthetic fields/statuses;platform enum names,concurrent dialog state and actual lifetime not established.",
+        "No Ghidra definitions/names or new progress credit from these cases."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original vtable pair and exact original unwind boundaries establish the69-byte and61-byte cleanup handlers.",
+      "Complete original bodies reviewed;new definitions/names and void opaque-pointer ABIs independently reopened with original bytes unchanged.",
+      "20 original-native cleanup cases check ownership1 release,borrowed/mode255 retention,owned-null handling,member clearing versus object deletion andignored termination errors.",
+      "All9609 prior function names/signatures unchanged;both new bodies decompile after independent reopening."
+    ],
+    "limits": [
+      "Platform termination,free and delete use local logging stubs;no actual browser API orobject release executed.",
+      "Actual API lifetime,concurrency,source type declarations andlivegamebehavior unverified.",
+      "Cleanup pair interpretation follows body/vtable behavior;noexactoriginalC++class/MMsource match."
+    ],
+    "new_name_credit": 2,
+    "new_function_definitions": 2
   }
 }
