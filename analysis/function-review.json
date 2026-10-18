@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "716 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "717 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8679,
-    "other_names": 933,
-    "verification": "complete_inventory_matches_baseline_plus_716_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8678,
+    "other_names": 934,
+    "verification": "complete_inventory_matches_baseline_plus_717_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18078,6 +18078,29 @@
         "Negative signed index is not rejected; nonnegative valid index is a caller precondition.",
         "Returns direct pointer; no pointer lifetime, malformed tree, all-caller bounds or geometry replication proof.",
         "Analyst descriptive name; original struct remains unknown;working ABI verified separately."
+      ]
+    },
+    {
+      "address": "1413e75e0",
+      "original_name": "FUN_1413e75e0",
+      "applied_name": "GetOrBuildPackedSpriteGeometrySummary",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV GetOrBuildPackedSpriteGeometrySummary(void)",
+      "evidence": [
+        "Complete1189 owned instructions and decompilation read and matched tooriginal executable.",
+        "Cacheentry,hits,fullwriteback,44-byte metadata/40-byte pointtraversal,transforms,finitegates,extrema/midpoint,sphere andcounts traced.",
+        "Scoped original-instruction fixtures cover rotation/scales,metadata andpointleaves,nonzerooffsets,cachehits andnonfinite/overflow;overlapnotcounted asuniqueprogress.",
+        "Independent reopening/decompilation passed;bytes,inferredprototype and9611 othernames/signatures unchanged."
+      ],
+      "caveats": [
+        "Analystdescriptive name;workingABI refinement pending.",
+        "ReadableIDs,bounded validtrees andnormal source-marker helper behavior required.",
+        "Finite/pow adapters are notexactPS4math;fixtures are notlivegame.",
+        "Malformeddata,collision/concurrency/lifetime andkaleidoscopegeometry consumer unresolved;firstextrema notfullradius AABB;finiteinputsoverflow."
       ]
     }
   ],

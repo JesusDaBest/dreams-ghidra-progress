@@ -35656,6 +35656,16 @@
           "site": "1413e8c98",
           "target": "1417309ae",
           "anchor_sha256": "d5ccb3fffc1cfcc6294a06c266bdfc0006c38ff281c823fb9f8e29a13c59ebc1"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrBuildPackedSpriteGeometrySummary",
+          "support": [
+            "Complete1189 owned instructions and decompilation read and matched tooriginal executable.",
+            "Cacheentry,hits,fullwriteback,44-byte metadata/40-byte pointtraversal,transforms,finitegates,extrema/midpoint,sphere andcounts traced.",
+            "Scoped original-instruction fixtures cover rotation/scales,metadata andpointleaves,nonzerooffsets,cachehits andnonfinite/overflow;overlapnotcounted asuniqueprogress.",
+            "Independent reopening/decompilation passed;bytes,inferredprototype and9611 othernames/signatures unchanged."
+          ]
         }
       ],
       "code_sha256": "bf559fdd94d3dd862be5d3c3417a5e0158b3605699cec8a0e606dc5513900042",
@@ -35665,7 +35675,7 @@
         "sprite",
         "runtime-implementation"
       ],
-      "component_basis": "implementation_source",
+      "component_basis": "Complete sprite summary implementationreview corroborates existing embeddedsource mapping.",
       "code_role": "runtime-implementation",
       "code_role_basis": "embedded_source_association"
     },

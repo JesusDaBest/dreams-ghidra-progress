@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 732,
-    "todo": 1451,
+    "done": 733,
+    "todo": 1450,
     "total": 2183,
-    "behavior_or_helpers_reviewed": 658,
+    "behavior_or_helpers_reviewed": 659,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -34935,10 +34935,10 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 41,
-        "todo": 107,
+        "done": 42,
+        "todo": 106,
         "total": 148,
-        "behavior_or_helpers_reviewed": 41,
+        "behavior_or_helpers_reviewed": 42,
         "properties_or_types_reviewed": 0,
         "runtime_functions_identified": 109,
         "property_type_functions_identified": 39,
@@ -34985,7 +34985,8 @@
           "BuildAndReuseVolumeResourcesForSlot",
           "InitializeVolumeBuildTemporaryResources",
           "BuildSweepBlockRanges",
-          "DispatchSweepHashBlocksRange"
+          "DispatchSweepHashBlocksRange",
+          "GetOrBuildPackedSpriteGeometrySummary"
         ],
         "todo_names": [
           "0x140491730",
@@ -35093,8 +35094,7 @@
           "0x1413d54d0",
           "0x1413dd340",
           "0x1413dd6e0",
-          "0x1413dda80",
-          "0x1413e75e0"
+          "0x1413dda80"
         ],
         "done_addresses": [
           "140739e90",
@@ -35137,7 +35137,8 @@
           "1412993c0",
           "1412a19c0",
           "1412a20f0",
-          "1412a3b40"
+          "1412a3b40",
+          "1413e75e0"
         ],
         "todo_addresses": [
           "140491730",
@@ -35245,8 +35246,7 @@
           "1413d54d0",
           "1413dd340",
           "1413dd6e0",
-          "1413dda80",
-          "1413e75e0"
+          "1413dda80"
         ],
         "unresolved_addresses": [],
         "groups": [
@@ -36623,10 +36623,10 @@
           {
             "name": "sculpting-painting/paint",
             "label": "Paint & strokes",
-            "done": 2,
-            "todo": 20,
+            "done": 3,
+            "todo": 19,
             "total": 22,
-            "behavior_or_helpers_reviewed": 2,
+            "behavior_or_helpers_reviewed": 3,
             "properties_or_types_reviewed": 0,
             "runtime_functions_identified": 8,
             "property_type_functions_identified": 14,
@@ -36634,7 +36634,8 @@
             "whole_feature_completion": null,
             "done_names": [
               "BuildSpriteRuntimeRecord96",
-              "GetPackedStrokeMetadataByIndex"
+              "GetPackedStrokeMetadataByIndex",
+              "GetOrBuildPackedSpriteGeometrySummary"
             ],
             "todo_names": [
               "0x14049b020",
@@ -36655,12 +36656,12 @@
               "0x1413d54d0",
               "0x1413dd340",
               "0x1413dd6e0",
-              "0x1413dda80",
-              "0x1413e75e0"
+              "0x1413dda80"
             ],
             "done_addresses": [
               "141006bd0",
-              "141070030"
+              "141070030",
+              "1413e75e0"
             ],
             "todo_addresses": [
               "14049b020",
@@ -36681,18 +36682,17 @@
               "1413d54d0",
               "1413dd340",
               "1413dd6e0",
-              "1413dda80",
-              "1413e75e0"
+              "1413dda80"
             ],
             "unresolved_addresses": [],
             "groups": [
               {
                 "name": "sculpting-painting/paint/sprite",
                 "label": "Sprite",
-                "done": 2,
-                "todo": 9,
+                "done": 3,
+                "todo": 8,
                 "total": 11,
-                "behavior_or_helpers_reviewed": 2,
+                "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 0,
                 "runtime_functions_identified": 8,
                 "property_type_functions_identified": 3,
@@ -36700,7 +36700,8 @@
                 "whole_feature_completion": null,
                 "done_names": [
                   "BuildSpriteRuntimeRecord96",
-                  "GetPackedStrokeMetadataByIndex"
+                  "GetPackedStrokeMetadataByIndex",
+                  "GetOrBuildPackedSpriteGeometrySummary"
                 ],
                 "todo_names": [
                   "0x1404aabc0",
@@ -36710,12 +36711,12 @@
                   "0x1413d54d0",
                   "0x1413dd340",
                   "0x1413dd6e0",
-                  "0x1413dda80",
-                  "0x1413e75e0"
+                  "0x1413dda80"
                 ],
                 "done_addresses": [
                   "141006bd0",
-                  "141070030"
+                  "141070030",
+                  "1413e75e0"
                 ],
                 "todo_addresses": [
                   "1404aabc0",
@@ -36725,18 +36726,17 @@
                   "1413d54d0",
                   "1413dd340",
                   "1413dd6e0",
-                  "1413dda80",
-                  "1413e75e0"
+                  "1413dda80"
                 ],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "sculpting-painting/paint/sprite/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 6,
+                    "done": 3,
+                    "todo": 5,
                     "total": 8,
-                    "behavior_or_helpers_reviewed": 2,
+                    "behavior_or_helpers_reviewed": 3,
                     "properties_or_types_reviewed": 0,
                     "runtime_functions_identified": 8,
                     "property_type_functions_identified": 0,
@@ -36744,27 +36744,27 @@
                     "whole_feature_completion": null,
                     "done_names": [
                       "BuildSpriteRuntimeRecord96",
-                      "GetPackedStrokeMetadataByIndex"
+                      "GetPackedStrokeMetadataByIndex",
+                      "GetOrBuildPackedSpriteGeometrySummary"
                     ],
                     "todo_names": [
                       "0x1413d5130",
                       "0x1413d54d0",
                       "0x1413dd340",
                       "0x1413dd6e0",
-                      "0x1413dda80",
-                      "0x1413e75e0"
+                      "0x1413dda80"
                     ],
                     "done_addresses": [
                       "141006bd0",
-                      "141070030"
+                      "141070030",
+                      "1413e75e0"
                     ],
                     "todo_addresses": [
                       "1413d5130",
                       "1413d54d0",
                       "1413dd340",
                       "1413dd6e0",
-                      "1413dda80",
-                      "1413e75e0"
+                      "1413dda80"
                     ],
                     "unresolved_addresses": [],
                     "groups": []

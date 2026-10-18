@@ -6979,3 +6979,12 @@ Executed the original sprite-summary instructions with the original leaf iterato
 Checks cover expected center/radius, selected extrema and record counts; complete two-slot cache writes and outer guards; source pool, fingerprint and argument preservation; both cache-hit paths and primary precedence. Metadata traversal covers one to three leaves, high-bit filtering, three rotation profiles and positive/negative/zero scales. The largest observed numeric error was below 0.0000011.
 
 The finite-float import uses an explicit exponent-test adapter. Point data remains in a single leaf, so its tree lookup and power-function import are not exercised. Connected nonfinite inputs, malformed trees, concurrency, collisions, complete function review and kaleidoscope geometry remain unresolved. This is isolated instruction execution, not running Dreams; no checked-name credit is added.
+
+
+### Packed sprite geometry summary named
+
+Applied and independently reopened **GetOrBuildPackedSpriteGeometrySummary** after reviewing all **1,189 owned instructions** and decompilation. It checks two fingerprint-keyed cache slots; on a miss it traverses packed stroke descriptors and point data, applies transforms and finite-value filters, computes selected extrema, midpoint and sphere radius, counts records, and writes both summary entries. Independent callers confirm the center/radius and extrema layouts.
+
+Connected instruction fixtures now include 144 point-data cases and 80 starting-offset cases, with original tree lookup and an explicit Windows CRT power adapter; 42 exceptional-input cases establish filtering/count behavior and demonstrate finite-input overflow under fixture conditions. These scopes overlap earlier tests and do not add multiple function credits. Exact PS4 math, arbitrary malformed trees, concurrency/collisions/lifetimes, production reachability of exceptional ranges and kaleidoscope geometry remain unproven.
+
+Only name and comment changed; independent reopening/decompilation passed. Bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. One previously mapped function gains checked-name credit; subsystem sizes do not grow.
