@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "639 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "640 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8756,
-    "other_names": 847,
-    "verification": "complete_inventory_matches_baseline_plus_639_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8755,
+    "other_names": 848,
+    "verification": "complete_inventory_matches_baseline_plus_640_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15972,6 +15972,29 @@
         "Prepared coherent acyclic hash/identity tables and direct Microchip parents; owner/history disabled in the new capacity cases.",
         "Full game-update decompilation exceeded 60 seconds; remapping branch statically reviewed, not natively executed.",
         "Broader validity branches, malformed chains, aliasing, concurrency and gameplay unresolved."
+      ]
+    },
+    {
+      "address": "140767a60",
+      "original_name": "FUN_140767a60",
+      "applied_name": "IsKey16RecordValidForMicrochip",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IsKey16RecordValidForMicrochip(void * key, void * world)",
+      "evidence": [
+        "Complete 138-instruction body and pseudocode read; original bytes matched; low-byte boolean return verified.",
+        "284 native cases execute original predicate and 98-byte ancestry helper: kind mask, endpoint class pairs, direct/indirect/source-only/destination-only ancestry, sentinel fields, missing IDs, wrong-ID and wrong-generation collision traversal, high-bit generations and non-sentinel key words.",
+        "Full world/object/key bytes unchanged in every case. Valid results occur with no main wire record; this predicate alone does not prove connection existence.",
+        "Independent reopening confirms descriptive name and one-byte bool return with opaque key/world pointers; other 9602 names/signatures and native bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque working pointers, not original source declarations.",
+        "Finite coherent acyclic ID/parent chains and valid object pointers; malformed or cyclic graphs, aliasing, concurrency and gameplay unresolved.",
+        "Endpoint class byte2 observed; exact source-level enum name unresolved.",
+        "This validates key references and ancestry, not the existence of a main wire connection."
       ]
     }
   ],

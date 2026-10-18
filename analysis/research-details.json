@@ -16493,5 +16493,46 @@
       "Broader validity branches, malformed chains, aliasing, concurrency and gameplay unresolved."
     ],
     "new_name_credit": 1
+  },
+  "key16_record_validity_checkpoint": {
+    "address": "140767a60",
+    "name": "IsKey16RecordValidForMicrochip",
+    "signature": "bool PS4_SYSV IsKey16RecordValidForMicrochip(void * key, void * world)",
+    "native_instructions": 138,
+    "native_check": {
+      "native_cases": 284,
+      "groups": {
+        "kind_class_ancestry": 243,
+        "sentinel_key_fields": 5,
+        "persistent_id_resolution": 12,
+        "high_bit_id_collision_chains": 15,
+        "non_sentinel_key_words": 9
+      },
+      "original_native_instructions_verified": {
+        "140767a60": 138
+      },
+      "parent_predicate_original_bytes": 98,
+      "finding": "Returns low-byte boolean: five key fields must be non-sentinel; all three persistent IDs resolve through generation-tagged collision chains; ancestor masked kind must be13; at least one endpoint class byte must be2; at least one endpoint parent chain reaches ancestor. Direct/indirect/source-only/destination-only ancestry, kind mask, missing IDs, wrong-generation and wrong-ID chain traversal, high-bit IDs and non-sentinel key words covered. No main wire record is present in fixtures. Full world/object/record bytes unchanged.",
+      "limits": [
+        "Finite coherent acyclic ID and parent chains with valid object pointers; malformed/cyclic graphs,aliasing,concurrency and gameplay untested.",
+        "Class byte2 is observed but its precise source-level enum name is unresolved.",
+        "No main-wire lookup occurs; this predicate alone does not prove that a connection exists."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete 138-instruction body and pseudocode read; original bytes matched; low-byte boolean return verified.",
+      "284 native cases execute original predicate and 98-byte ancestry helper: kind mask, endpoint class pairs, direct/indirect/source-only/destination-only ancestry, sentinel fields, missing IDs, wrong-ID and wrong-generation collision traversal, high-bit generations and non-sentinel key words.",
+      "Full world/object/key bytes unchanged in every case. Valid results occur with no main wire record; this predicate alone does not prove connection existence.",
+      "Independent reopening confirms descriptive name and one-byte bool return with opaque key/world pointers; other 9602 names/signatures and native bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque working pointers, not original source declarations.",
+      "Finite coherent acyclic ID/parent chains and valid object pointers; malformed or cyclic graphs, aliasing, concurrency and gameplay unresolved.",
+      "Endpoint class byte2 observed; exact source-level enum name unresolved.",
+      "This validates key references and ancestry, not the existence of a main wire connection."
+    ],
+    "new_name_credit": 1
   }
 }

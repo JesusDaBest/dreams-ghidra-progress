@@ -5472,3 +5472,16 @@ Both static call sites were examined: the event dispatcher builds a candidate af
 Independent reopening confirms the name and working opaque two-pointer void SysV signature, with native bytes and the other 9,602 function names/signatures unchanged. Coherent table/identity fixtures and disabled owner/history limit the capacity checks; broader validity branches, malformed chains, aliasing, concurrency and gameplay remain unresolved.
 
 Totals: 692 checked names, 2,104 mapped functions and 7,499 unmapped among 9,603 currently defined. These are review and mapping counts, not whole-game completion.
+
+
+### Microchip keyed-record validity
+
+Saved `IsKey16RecordValidForMicrochip` after reading and byte-verifying its complete 138-instruction body. Its working return type is a one-byte boolean, matching the low-byte result consumed by callers. It rejects sentinel key fields, resolves all three persistent IDs through generation-tagged collision chains, requires the ancestor's masked kind to be Microchip, requires at least one endpoint class byte to equal 2, and requires at least one endpoint parent chain to reach that ancestor.
+
+284 native cases execute the original predicate and its original 98-byte ancestry helper. They cover the kind mask, endpoint class pairs, direct and indirect ancestry from either endpoint, no ancestry, all five sentinel fields, missing IDs, wrong-generation and wrong-ID collision-chain traversal, high-bit ID generations and non-sentinel key words. Complete world/object/key comparisons confirm the predicate does not modify these inputs.
+
+Valid results occur in fixtures containing no main wire records. The body performs no main-wire lookup: this validates references and ancestry, not whether a connection actually exists. The exact source enum name for endpoint class byte 2 remains unresolved.
+
+Independent reopening confirms the descriptive name, working bool return and opaque key/world pointers. Original bytes and all other 9,602 function names/signatures remain unchanged. Tests use finite coherent acyclic chains and valid object pointers; malformed or cyclic graphs, aliasing, concurrency and gameplay remain unresolved.
+
+Totals: 693 checked names, 2,105 mapped functions and 7,498 unmapped among 9,603 currently defined. These are review and mapping counts, not whole-game completion.
