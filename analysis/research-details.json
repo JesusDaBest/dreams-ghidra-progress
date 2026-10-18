@@ -20154,5 +20154,88 @@
       "Analyst descriptive name and working signature are not original C++ declarations;no exact MM source/build match."
     ],
     "new_name_credit": 1
+  },
+  "sprite_producer_insertion_checkpoint": {
+    "checks": {
+      "insertion-tail-native-check.json": {
+        "native_cases": 72,
+        "findings": [
+          "Original producer insertion tail stores112-byte Sprite array entries at basebffd20 with112-byte stride;four overlapping32-byte copies cover exactly112 bytes.",
+          "Appends16-byte auxiliary ID/power-positive/flags entry, increments both counts and preserves gaps."
+        ],
+        "limits": [
+          "Entry starts after builder acceptance and optional ID registration;capacity and hash registration not executed in this fixture.",
+          "112-byte producer stride does not change the separately verified96-byte builder working region.",
+          "Full producer and live game unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "registration-insertion-native-check.json": {
+        "native_cases": 288,
+        "findings": [
+          "Original accepted-Sprite registration and insertion path registers signed IDs below-1 in hash heads,next links and ID array;positive IDs and-1 skip registration but still append.",
+          "Hash bucket is low16 ID;packed head combines signedID shift and14-bit record index. ID array growth fills missing words withFFFFFFFF.",
+          "112-byte record and16-byte auxiliary entries,counts and all runtime bytes checked."
+        ],
+        "limits": [
+          "Entry starts after builder acceptance;capacity not executed;memset uses explicit standard fill model.",
+          "112-byte producer stride does not change the separately verified96-byte builder working region.",
+          "Full producer and live game unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "capacity-native-check.json": {
+        "native_cases": 6,
+        "findings": [
+          "Original capacity branch calls builder for count16382 but skips it for16383 and16384.",
+          "False builder result skips all runtime registration/insertion;true result appends at last permitted index16382."
+        ],
+        "models": [
+          "Builder replaced with call-counting boolean stub;memset standard fill model."
+        ],
+        "limits": [
+          "Capacity/control-flow fixture only;actual builder behavior verified separately.",
+          "Prepared runtime inputs;full producer and live game unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "connected-producer-native-check.json": {
+        "native_cases": 24,
+        "findings": [
+          "Original producer capacity/acceptance branch executes original Sprite builder followed by original ID registration and112-byte insertion.",
+          "Null-resource positive-color records append;zero RGB or nonpositive source extent prevent runtime append.",
+          "Count16383 skips builder;count16382 accepts final slot. Complete runtime,source andargument state checked."
+        ],
+        "models": [
+          "memset standard fill model only;null-resource path avoids view/cache calls."
+        ],
+        "limits": [
+          "Prepared finite transforms,null resource handles andtwo ID classes;full producer/live game unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "connected-producer-cache-native-check.json": {
+        "native_cases": 96,
+        "findings": [
+          "Original producer capacity branch,Sprite builder,view-plane predicate,cache-hit helper,ID registration and112-byte insertion execute together.",
+          "Both atlas contexts,ready/pending slices,view acceptance/rejection,positive/zero RGB,two ID classes andcapacity boundaries checked.",
+          "View acceptance can update cache use even when zero RGB later prevents producer append."
+        ],
+        "models": [
+          "Local Windows CRT tangent adapter andstandard memset fill only;controlled valid context/tables."
+        ],
+        "limits": [
+          "Existing cache hits only;miss/loading worker,async completion,full producer andlive game unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    },
+    "new_name_credit": 0,
+    "scope": "Bounded Sprite producer paths;full producer not claimed"
   }
 }

@@ -6281,3 +6281,14 @@ A false return does not always mean untouched output: zero RGB can return false 
 Independent reopening verifies the saved register/SIMD/stack working signature, boolean AL return, decompilation, unchanged original instructions and all 9,605 other names/signatures. The two default stack locals were preserved privately before their storage was described as input transform vectors.
 
 Totals: **736 checked names** (656 behavior/helper and 80 property/type), **2,142 mapped**, **7,464 unmapped**, among 9,606 defined functions.
+
+
+### Sprite producer insertion and connected cache behavior
+
+The original producer stores Sprite entries with a **112-byte stride**. The builder writes within its verified 96-byte working region; four overlapping 32-byte producer copies cover 112 bytes including additional scratch fields. A separate 16-byte auxiliary entry contains the object ID, positive-power flag and source flags, with gaps preserved.
+
+Verification includes **72 insertion-tail cases**, **288 ID-registration/insertion cases**, **six capacity cases** with a counting builder model, **24 connected cases** with the original builder and null resource handles, and **96 connected cases** with the original builder, view-plane predicate and cache-hit helper. All compare the specified complete runtime fixture state. Signed IDs below -1 enter the ID lookup structure; positive IDs and -1 skip that registration while accepted records still append. The last permitted insertion index is 16,382; counts 16,383 and above skip the builder.
+
+The connected cache cases cover both atlas contexts, ready/pending slices, view acceptance/rejection, positive/zero RGB and two ID classes. A view-accepted lookup can update cache usage even when zero RGB later prevents insertion. Pending image data alone does not suppress tested positive-color output.
+
+These are bounded paths with prepared finite inputs. Tangent uses a local CRT adapter and memory filling uses a standard fill model. Actual loading, asynchronous completion, the full producer, concurrency and live-game behavior remain unverified. No additional name credit is added.
