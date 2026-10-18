@@ -6173,3 +6173,12 @@ The complete original `RemapThings` per-object callback at `14093af90` has now p
 - **288 cases** verify metadata-selected reference fields for kinds 52, 53 and 54. Positive offsets select a field; zero or negative offsets preserve the object. If the direct mapping is absent, mode 1 can recover the reference by finding the old object's persistent ID in the destination world. Lookup success, failure and collision chains were checked. These metadata offsets are controlled fixture inputs, not recovered runtime registration.
 
 These are internal executable kind numbers, not established gadget names. The callback's behavior is now substantially supported, but whole-world table permutation, job scheduling, invalid/cyclic lookup data and live editor behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+
+### Object and wire remapping job callbacks defined and named
+
+The saved project now defines `RemapThingReferencesJobItem` (559 instructions, 2,271 bytes) and `RemapWireEndpointsJobItem` (30 instructions, 114 bytes) at their original job-vtable targets. Their caller's explicit `RemapThings` and `RemapWires` labels establish these roles. Both use a working closure pointer and pointer to a 32-bit item index; this does not recover the original C++ job class. The object callback's original kind jump table is recorded as an explicit analysis override.
+
+The object callback is supported by the previously documented 6,568 native cases; the wire callback by 108 cases. Independent reopening verifies the nonoverlapping definitions, names, working signatures and complete decompilation, with original bytes and all 9,603 existing function names/signatures unchanged. Reversal metadata and raw evidence remain local. Kind/type names, runtime metadata registration, scheduler behavior, whole-world remapping and live-game behavior remain unresolved.
+
+Totals are **710 checked names** (633 behavior/helper and 77 property/type reviews), **2,119 mapped** and **7,486 unmapped** among **9,605 defined functions**. The two additional functions were previously missing definitions, not newly generated game code. Stale research-summary name counters were reconciled to the verified ledger. These checks do not establish whole-subsystem completion or an exact Media Molecule source/build match.

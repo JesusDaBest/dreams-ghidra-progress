@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 662,
+    "done": 664,
     "todo": 1455,
-    "total": 2117,
-    "behavior_or_helpers_reviewed": 591,
+    "total": 2119,
+    "behavior_or_helpers_reviewed": 593,
     "properties_or_types_reviewed": 71,
     "whole_feature_completion": null,
     "groups": [
@@ -27479,12 +27479,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 249,
+        "done": 251,
         "todo": 105,
-        "total": 354,
-        "behavior_or_helpers_reviewed": 232,
+        "total": 356,
+        "behavior_or_helpers_reviewed": 234,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 267,
+        "runtime_functions_identified": 269,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27597,6 +27597,8 @@
           "AdjustWireMaxHeap",
           "NormalizeWireBlendModesByDestinationProperty",
           "RemapTaggedValueObjectIndices",
+          "RemapThingReferencesJobItem",
+          "RemapWireEndpointsJobItem",
           "ResetThingSelectedRuntimeState",
           "PrepareGameAndLinkedWireOrdering",
           "RefreshWorldDerivedState",
@@ -27955,6 +27957,8 @@
           "140936bb0",
           "140937f90",
           "14093ac60",
+          "14093af90",
+          "14093b900",
           "14093bb60",
           "140956a10",
           "140956ef0",
@@ -28214,12 +28218,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 112,
+            "done": 114,
             "todo": 13,
-            "total": 125,
-            "behavior_or_helpers_reviewed": 112,
+            "total": 127,
+            "behavior_or_helpers_reviewed": 114,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 118,
+            "runtime_functions_identified": 120,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -28258,6 +28262,8 @@
               "AdjustWireMaxHeap",
               "NormalizeWireBlendModesByDestinationProperty",
               "RemapTaggedValueObjectIndices",
+              "RemapThingReferencesJobItem",
+              "RemapWireEndpointsJobItem",
               "ResetThingSelectedRuntimeState",
               "PrepareGameAndLinkedWireOrdering",
               "RefreshWorldDerivedState",
@@ -28387,6 +28393,8 @@
               "140936bb0",
               "140937f90",
               "14093ac60",
+              "14093af90",
+              "14093b900",
               "14093bb60",
               "140956a10",
               "140956ef0",
@@ -29112,6 +29120,69 @@
                 ]
               },
               {
+                "name": "shared/runtime/world-derived-state",
+                "label": "Derived state",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RemapTaggedValueObjectIndices",
+                  "RemapThingReferencesJobItem",
+                  "RemapWireEndpointsJobItem",
+                  "RefreshWorldDerivedState",
+                  "RemapTaggedValueObjectIndices_1409a1fb0"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14093ac60",
+                  "14093af90",
+                  "14093b900",
+                  "140956ef0",
+                  "1409a1fb0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/world-derived-state/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RemapTaggedValueObjectIndices",
+                      "RemapThingReferencesJobItem",
+                      "RemapWireEndpointsJobItem",
+                      "RefreshWorldDerivedState",
+                      "RemapTaggedValueObjectIndices_1409a1fb0"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14093ac60",
+                      "14093af90",
+                      "14093b900",
+                      "140956ef0",
+                      "1409a1fb0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/runtime/egameevents",
                 "label": "Game Events",
                 "done": 0,
@@ -29216,61 +29287,6 @@
                       "140ce7280",
                       "140cea620"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/runtime/world-derived-state",
-                "label": "Derived state",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RemapTaggedValueObjectIndices",
-                  "RefreshWorldDerivedState",
-                  "RemapTaggedValueObjectIndices_1409a1fb0"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14093ac60",
-                  "140956ef0",
-                  "1409a1fb0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/runtime/world-derived-state/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RemapTaggedValueObjectIndices",
-                      "RefreshWorldDerivedState",
-                      "RemapTaggedValueObjectIndices_1409a1fb0"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14093ac60",
-                      "140956ef0",
-                      "1409a1fb0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

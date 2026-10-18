@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9603,
-  "mapped_total": 2117,
+  "inventory_total": 9605,
+  "mapped_total": 2119,
   "unmapped_total": 7486,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -53419,6 +53419,58 @@
             "4608native cases per function cover all256tag bytes,selected packed indices and sentinel-1 with three mapping layouts.",
             "Selected reference fields use signedlow26-bit indices into signed16-bit mapping entries with8-byte stride. Results sign-extend to32bits; sentinel-1 and every other record byte preserved.",
             "Independent project reopening verifies names,two-pointer SysV working signatures and decompilation. Native bytes and all9601 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "14093af90": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "World object/wire reference-remapping jobs dispatched after object-index permutation; not an individual gadget or canvas-wire-node operation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete callback review and original native tests.",
+      "code_sha256": "4516ff7aaed2b2064ab9613f7e450b8c7f10096b2e6ee18d94f011b5d658b3e4",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapThingReferencesJobItem",
+          "support": [
+            "Explicit RemapThings/RemapWires job labels and closure vtables in caller14093a340 identify callback role.",
+            "Complete nonoverlapping original body and control flow read; original bytes verified.",
+            "6568 original native cases verify kind-specific object reference remapping,persistent-ID success/failure/collisions,mode-dependent unresolved IDs,metadata fallback and owner-bitset word boundaries.",
+            "Independent project reopening verifies new function definition,working ABI,decompilation,unchanged native bytes and all9603 existing names/signatures."
+          ]
+        }
+      ]
+    },
+    "14093b900": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "World object/wire reference-remapping jobs dispatched after object-index permutation; not an individual gadget or canvas-wire-node operation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete callback review and original native tests.",
+      "code_sha256": "47518e919c877640c0eb1b9ff0011f1b4507ee1d77fbccbd2805ccd02f19b9d7",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapWireEndpointsJobItem",
+          "support": [
+            "Explicit RemapThings/RemapWires job labels and closure vtables in caller14093a340 identify callback role.",
+            "Complete nonoverlapping original body and control flow read; original bytes verified.",
+            "108 original native cases verify selected64-byte wire record endpoint remapping,absent sentinel,signed mapping results and complete world/closure/map preservation.",
+            "Independent project reopening verifies new function definition,working ABI,decompilation,unchanged native bytes and all9603 existing names/signatures."
           ]
         }
       ]

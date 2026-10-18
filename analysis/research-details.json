@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 677,
+    "checked_and_applied_names": 710,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,15 +1920,15 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 677,
-    "function_count": 9603,
+    "verified_names": 710,
+    "function_count": 9605,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
-      "140ced9c0",
-      "140ced9e0"
+      "14093af90",
+      "14093b900"
     ],
-    "scope": "624 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "655 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -17829,6 +17829,36 @@
       "Callback semantics do not establish whole reorder,job scheduling or live editor correctness.",
       "Kind numbers remain internal executable values; source gadget/type names and actual dynamic kind metadata still need tracing.",
       "No concurrent bitset initialization or malformed lookup structures tested.",
+      "No exact MM source/build match."
+    ]
+  },
+  "world_remap_job_names_checkpoint": {
+    "targets": {
+      "14093af90": {
+        "name": "RemapThingReferencesJobItem",
+        "signature": "void PS4_SYSV RemapThingReferencesJobItem(void * jobClosure, int * itemIndex)"
+      },
+      "14093b900": {
+        "name": "RemapWireEndpointsJobItem",
+        "signature": "void PS4_SYSV RemapWireEndpointsJobItem(void * jobClosure, int * itemIndex)"
+      }
+    },
+    "instruction_counts": {
+      "14093af90": 559,
+      "14093b900": 30
+    },
+    "original_body_sha256": {
+      "14093af90": "4516ff7aaed2b2064ab9613f7e450b8c7f10096b2e6ee18d94f011b5d658b3e4",
+      "14093b900": "47518e919c877640c0eb1b9ff0011f1b4507ee1d77fbccbd2805ccd02f19b9d7"
+    },
+    "object_native_cases": 6568,
+    "wire_native_cases": 108,
+    "new_name_credit": 2,
+    "limits": [
+      "Analyst descriptive callback names and working closure/index-pointer ABI,not recovered C++ declarations.",
+      "Kind numbers and actual dynamic kind metadata/source types remain unresolved; controlled metadata is explicit fixture input.",
+      "Atomic bit marking tested single-threaded; concurrency and malformed index/hash structures unverified.",
+      "Whole object reordering,parallel-table permutation,job scheduling and live editor correctness unverified.",
       "No exact MM source/build match."
     ]
   }
