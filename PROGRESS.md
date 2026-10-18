@@ -6607,3 +6607,11 @@ Matched the loader's `ChunkAppendVoxels` path to the original shader archive. It
 The reviewed positive-finite-radius quadratic path matches the soft-min algebra on page 30 of [Media Molecule's 2015 presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf). **147 exact rational cases** check the finite-support correction; **2,352 cases** check scalar composition across the observed command fields. Scalar modes 1 and 2 use min-minus-correction and max-plus-correction. Blend-style field value 2 takes a different, linear half-correction path; the other values take the quadratic path in this reviewed fragment. Original enum names are not assigned from these numbers alone.
 
 This is an **algorithm-level match**, not proof of an exact source revision, compiler build or original declaration. It also does not identify the logarithmic fourth attribute as the blend radius. Zero/negative radius, exceptional floating values, GPU rounding and complete command execution remain unverified. No checked-function credit is added.
+
+### Sculpt command decoding and attribute provenance
+
+The bounded `ChunkAppendVoxels` trace now connects 96-byte command records to primitive selection and attribute blending. The original archive contains a 22-entry relative dispatch table; all 32 possible selector values resolve to instruction boundaries. Two reviewed entries evaluate a sphere distance expression and, with an extra parameter zero, a standard box distance expression. These are mathematical descriptions, not recovered original enum names. Optional modifiers can change their results.
+
+On the normal primitive path, three packed bytes are normalized and squared before blending. The fourth packed byte supplies strength, with separate flags enabling the three-channel and logarithmic-scale updates. A **different command field supplies the soft-blend radius**; the fourth output attribute remains the previously traced normalized logarithmic scale. This distinguishes command inputs from stored output channels.
+
+CPU-side field construction, original field names, the alternate command path, most primitive bodies and live GPU behavior remain unresolved. This adds evidence about sculpting, **not a completed-function count or whole-game percentage**.

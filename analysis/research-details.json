@@ -22834,5 +22834,24 @@
     ],
     "runtime_gpu_verified": false,
     "reviewed_name_count_increment": 0
+  },
+  "chunk_command_fields_checkpoint": {
+    "shader": "ChunkAppendVoxels",
+    "record_stride_bytes": 96,
+    "dispatch_table_entries": 22,
+    "selector_values_checked": 32,
+    "bounded_findings": [
+      "Primitive selector 11 evaluates a sphere distance expression in transformed coordinates.",
+      "Primitive selector 14 reduces to a standard box distance expression with its extra parameter zero.",
+      "A packed command word supplies three byte channels that are normalized and squared before blending on the normal primitive path. Its fourth byte supplies strength, separately gated for three-channel and logarithmic-scale updates.",
+      "A separate command field supplies the shared soft-blend radius; it is distinct from the fourth output attribute."
+    ],
+    "limits": [
+      "Bounded static review only; most primitive bodies and the alternate command path remain unresolved.",
+      "Original enum names, CPU construction of these fields and GPU execution remain unverified.",
+      "Optional modifiers can alter the initial shape results. No full-shader or checked-function credit."
+    ],
+    "reviewed_name_count_increment": 0,
+    "runtime_gpu_verified": false
   }
 }
