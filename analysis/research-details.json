@@ -19329,5 +19329,27 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "thing_header800_paired_accounting_checkpoint": {
+    "native_check": {
+      "native_cases": 64,
+      "executions": 256,
+      "findings": [
+        "Original mark helper and bounded original clear block maintain the same header800/world-counter pair. Mark increments only on clear-to-set;clear decrements only on set-to-clear.",
+        "64 cases run mark twice then clear twice,covering tagged indices,prior header states and counter wrap;full world/object comparisons pass."
+      ],
+      "limits": [
+        "Clear block exit and already-clear branch redirected to fixture return;containing dispatcher not executed.",
+        "Source flag/counter meanings unresolved;single-threaded valid-object fixtures only.",
+        "Counter operations atomic individually;test-plus-flag update not established thread safe."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "consumer_trace": [
+      "Counter reset in existing InitializeGamePoolContext and PrepareThingsForSimulation routines.",
+      "Main update loop adds this counter to two other counters before fast-path selection."
+    ],
+    "new_name_credit": 0
   }
 }

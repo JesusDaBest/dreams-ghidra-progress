@@ -6595,3 +6595,12 @@ The fixture enters after earlier transform/wire work and exits before subsequent
 The same window exposes a mode-dependent player-mask rule: zero mode ORs the parent's cached mask into the object's byte `+0x22`; special modes use the object's own byte alone. Full world, child, parent and metadata comparisons plus frame guards pass across all 128 low kinds, high kind bits, indices 63/64, present/absent cache entries and two mask profiles.
 
 The fixture enters after earlier edits/helpers and exits before owner invalidation and transform work. The containing dispatcher is not fully understood or named. Only valid tagged parent-0 references are tested; malformed/missing parents, concurrency and live-game behavior remain unverified. No new naming credit: **726 checked names** remains the total.
+
+
+### Header 0x800 flag and world-counter accounting traced
+
+The complete 19-instruction helper sets Thing header `0x800` and atomically increments world counter `+0x1C703C0` only when the flag was clear. A separate original dispatcher block clears the flag and decrements that counter only when it was set. **64 cases, 256 executions** run marking twice then clearing twice, covering tagged indices, prior flags and counter wrap. Full world and object comparisons pass.
+
+Counter resets occur in the existing pool-initialization and simulation-preparation routines. The main update loop combines this counter with two others before selecting a fast path. These links support the observed accounting role but do not yet establish the flag's source name or justify calling it deleted, dirty or pending initialization.
+
+The clear-block fixture redirects its exit and already-clear branch to return; the containing dispatcher is not executed. Individual counter operations are atomic, but the overall test/flag/counter sequence is not established thread-safe. Malformed indices, full callers and live-game behavior remain unverified. No new naming credit: **726 checked names** remains the total.
