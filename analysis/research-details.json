@@ -17029,11 +17029,11 @@
       "descriptor": "145888dd0",
       "findings": [
         "Tag branch requires at least32payload bytes and copies exactly32 before invoking140c82410.",
-        "Wrapper selects named CreateWireNodeMessage descriptor145888dd0 via140d2fa10 then forwards two opaque arguments and descriptor to imported141603370.",
+        "Wrapper selects named CreateWireNodeMessage descriptor145888dd0 via140d2fa10 then forwards two opaque arguments and descriptor to internal reflection writer141603370.",
         "Update-loop same tag uses matching32-byte reflected payload offsets before ApplyKeyedRecordInsertionEvent."
       ],
       "limits": [
-        "Static branches and metadata binding; imported141603370 semantics, message origin and end-to-end delivery not verified.",
+        "Static branches and metadata binding; full reflected payload encoding, message origin and end-to-end delivery not verified.",
         "Public guide/release notes describe user-facing wire nodes, not exact binary build or source matching."
       ],
       "project_modified": false,
@@ -17043,15 +17043,69 @@
     "evidence": [
       "Complete80-instruction guarded type-registration body and pseudocode read; original bytes matched.",
       "Nine native already-guarded descriptor cases verify exact header bytes and eight descriptor/name/offset/helper argument observations. Ready descriptors unchanged; five registration helper implementations replaced by explicit observers.",
-      "CreateWireNodeMessage32-byte reflected member offsets match tag0xeaf7f618 update-loop payload. Twelve-instruction tag branch and26-instruction wrapper byte-matched; wrapper selects this descriptor before imported forwarding routine.",
+      "CreateWireNodeMessage32-byte reflected member offsets match tag0xeaf7f618 update-loop payload. Twelve-instruction tag branch and26-instruction wrapper byte-matched; wrapper selects this descriptor before the internal reflection writer.",
       "Independent reopening confirms descriptive name, void/no-argument SysV signature and32-byte working message layout; other9602 names/signatures and native bytes unchanged."
     ],
     "limits": [
       "Analyst descriptive name and working layout/storage carriers, not original C++ declarations.",
       "Fresh guard acquisition/static initializer/atexit/release imports read but not executed; observed registration argument boundaries do not test underlying helper allocation/type resolution.",
-      "Metadata/type review, not behavior completion. Imported forwarding routine semantics, message origin and end-to-end delivery unresolved.",
+      "Metadata/type review, not behavior completion. Full reflected payload encoding, message origin and end-to-end delivery unresolved.",
       "Official user guide provides wire-node feature context; no exact build, livestream source match or live editor verification."
     ],
     "new_name_credit": 1
+  },
+  "type_prefixed_reflected_writer_checkpoint": {
+    "targets": {
+      "141603370": {
+        "name": "WriteReflectedValueWithTypePrefix",
+        "signature": "byte PS4_SYSV WriteReflectedValueWithTypePrefix(void * writerContext, void * sourceValue, void * typeDescriptor)"
+      },
+      "140c82410": {
+        "name": "WriteCreateWireNodeMessage",
+        "signature": "byte PS4_SYSV WriteCreateWireNodeMessage(void * writerContext, CreateWireNodeMessageLayout * message)"
+      }
+    },
+    "native_check": {
+      "primitive_cases": 90,
+      "composite_prefix_cases": 132,
+      "create_message_wrapper_cases": 132,
+      "original_native_instructions_verified": {
+        "141603370": 82,
+        "141603710": 91,
+        "141603860": 436,
+        "140c82410": 26,
+        "141603480": 189
+      },
+      "finding": "Internal original82-instruction reflection writer, not an import. Primitive descriptor flags signed<=63 delegate to original primitive writer and preserve its unchecked short-write status0. Composite path executes original type-ID lookup, encodes uint32ID in1..5 unsigned seven-bit bytes, requires full prefix acceptance before original general writer, propagates custom callback low-byte status and restores writer current-type context. Short prefix returns1 without callback. Original26-instruction CreateWireNodeMessage wrapper selects fixed descriptor then follows same path.",
+      "limits": [
+        "Composite descriptor uses explicit custom-value callback observer: actual CreateWireNodeMessage field payload serialization is not executed.",
+        "Controlled stream, one-slot type dictionary and already-ready wrapper descriptor; fresh wrapper guard initialization and end-to-end message delivery untested.",
+        "No transport/network or live-game behavior claimed."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": {
+      "141603370": [
+        "Complete82-instruction internal reflection writer body/pseudocode read and original bytes matched; not an import thunk.",
+        "90 native primitive cases execute original primitive writer;132 composite-prefix cases execute original type-ID resolver and general writer with explicit custom-value callback observer.",
+        "Unsigned seven-bit type-ID prefix covers1..5 bytes. Full prefix required before body callback; short prefix returns1. Callback statuses0/1/7/255 propagate; current-type context restored. Primitive delegation retains unchecked short-write success.",
+        "Independent reopening verifies descriptive name and working low-byte status / three-pointer SysV signature; other names/signatures and native bytes unchanged."
+      ],
+      "140c82410": [
+        "Complete26-instruction CreateWireNodeMessage reflection-writer adapter read and original bytes matched.",
+        "132 already-ready native wrapper cases execute original generic writer/resolver/general writer, selecting fixed named message descriptor; exact prefix bytes, source/context forwarding, statuses and current-type restoration verified.",
+        "Source pointer refined to existing32-byte CreateWireNodeMessageLayout with unchanged register storage.",
+        "Independent reopening verifies descriptive name and working low-byte status / two-pointer SysV signature."
+      ]
+    },
+    "limits": [
+      "Analyst descriptive names and working ABI, not recovered source declarations.",
+      "Controlled stream, one-slot dictionary and explicit custom-value callback observer; complete reflected CreateWireNodeMessage field payload encoding not executed.",
+      "Fresh wrapper guard initialization, real output device, end-to-end message delivery and live gameplay untested.",
+      "Reflection writing identified; no network or transport role established."
+    ],
+    "corrected_assumption": "141603370 was incorrectly called an imported forwarding routine; original82-instruction body and connected native checks establish internal reflection writing.",
+    "new_name_credit": 2
   }
 }

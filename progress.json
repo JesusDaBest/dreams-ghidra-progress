@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 651,
+    "done": 653,
     "todo": 1457,
-    "total": 2108,
-    "behavior_or_helpers_reviewed": 583,
+    "total": 2110,
+    "behavior_or_helpers_reviewed": 585,
     "properties_or_types_reviewed": 68,
     "whole_feature_completion": null,
     "groups": [
@@ -12420,12 +12420,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 89,
+        "done": 90,
         "todo": 310,
-        "total": 399,
-        "behavior_or_helpers_reviewed": 85,
+        "total": 400,
+        "behavior_or_helpers_reviewed": 86,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 190,
+        "runtime_functions_identified": 191,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12450,6 +12450,7 @@
           "ApplyKeyedRecordInsertionEvent",
           "SetKeyedRecordCoordinatesOrNearbyRecords",
           "RemoveKeyedRecordOrNearbyRecords",
+          "WriteCreateWireNodeMessage",
           "AddRecordModeEnumValue",
           "RegisterEditOpFieldOffset",
           "RegisterRecordModeFieldOffset",
@@ -12853,6 +12854,7 @@
           "140b35aa0",
           "140b35bd0",
           "140b35ec0",
+          "140c82410",
           "140cb3d40",
           "140cdfdb0",
           "140cf47a0",
@@ -18684,12 +18686,12 @@
           {
             "name": "interface/canvas",
             "label": "Canvases & wires",
-            "done": 11,
+            "done": 12,
             "todo": 17,
-            "total": 28,
-            "behavior_or_helpers_reviewed": 10,
+            "total": 29,
+            "behavior_or_helpers_reviewed": 11,
             "properties_or_types_reviewed": 1,
-            "runtime_functions_identified": 9,
+            "runtime_functions_identified": 10,
             "property_type_functions_identified": 19,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -18703,6 +18705,7 @@
               "ApplyKeyedRecordInsertionEvent",
               "SetKeyedRecordCoordinatesOrNearbyRecords",
               "RemoveKeyedRecordOrNearbyRecords",
+              "WriteCreateWireNodeMessage",
               "EnsureCreateWireNodeMessageTypeRegistered",
               "RegisterNodeCustomIconFieldOffset"
             ],
@@ -18735,6 +18738,7 @@
               "140b35aa0",
               "140b35bd0",
               "140b35ec0",
+              "140c82410",
               "140d2fa10",
               "140d71a90"
             ],
@@ -18988,6 +18992,78 @@
                 ]
               },
               {
+                "name": "interface/canvas/createwirenodemessage",
+                "label": "Create Wire Node Message",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "WriteCreateWireNodeMessage",
+                  "EnsureCreateWireNodeMessageTypeRegistered"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140c82410",
+                  "140d2fa10"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/canvas/createwirenodemessage/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "EnsureCreateWireNodeMessageTypeRegistered"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140d2fa10"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "interface/canvas/createwirenodemessage/runtime-implementation",
+                    "label": "Message writing",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "WriteCreateWireNodeMessage"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140c82410"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "interface/canvas/ecanvasstate",
                 "label": "Canvas State",
                 "done": 0,
@@ -19178,53 +19254,6 @@
                     "todo_addresses": [
                       "140cdf670"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "interface/canvas/createwirenodemessage",
-                "label": "Create Wire Node Message",
-                "done": 1,
-                "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 1,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "EnsureCreateWireNodeMessageTypeRegistered"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140d2fa10"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "interface/canvas/createwirenodemessage/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 1,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "EnsureCreateWireNodeMessageTypeRegistered"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140d2fa10"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -27442,12 +27471,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 241,
+        "done": 242,
         "todo": 106,
-        "total": 347,
-        "behavior_or_helpers_reviewed": 226,
+        "total": 348,
+        "behavior_or_helpers_reviewed": 227,
         "properties_or_types_reviewed": 15,
-        "runtime_functions_identified": 261,
+        "runtime_functions_identified": 262,
         "property_type_functions_identified": 81,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27678,6 +27707,7 @@
           "ReadReflectedNameBytes",
           "ReadCompactUnsigned32",
           "ReadReflectedTypedValue",
+          "WriteReflectedValueWithTypePrefix",
           "WriteReflectedPrimitiveValue",
           "ResolveReflectedTypeId",
           "WriteReflectedValue",
@@ -28029,6 +28059,7 @@
           "1416024d0",
           "141602890",
           "141602aa0",
+          "141603370",
           "141603480",
           "141603710",
           "141603860",
@@ -28163,12 +28194,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 107,
+            "done": 108,
             "todo": 13,
-            "total": 120,
-            "behavior_or_helpers_reviewed": 107,
+            "total": 121,
+            "behavior_or_helpers_reviewed": 108,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 113,
+            "runtime_functions_identified": 114,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -28265,6 +28296,7 @@
               "ReadReflectedNameBytes",
               "ReadCompactUnsigned32",
               "ReadReflectedTypedValue",
+              "WriteReflectedValueWithTypePrefix",
               "WriteReflectedPrimitiveValue",
               "ResolveReflectedTypeId",
               "WriteReflectedValue",
@@ -28389,6 +28421,7 @@
               "1416024d0",
               "141602890",
               "141602aa0",
+              "141603370",
               "141603480",
               "141603710",
               "141603860",
@@ -28425,12 +28458,12 @@
               {
                 "name": "shared/runtime/serialization",
                 "label": "Saving & loading",
-                "done": 61,
+                "done": 62,
                 "todo": 0,
-                "total": 61,
-                "behavior_or_helpers_reviewed": 61,
+                "total": 62,
+                "behavior_or_helpers_reviewed": 62,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 61,
+                "runtime_functions_identified": 62,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -28481,6 +28514,7 @@
                   "ReadReflectedNameBytes",
                   "ReadCompactUnsigned32",
                   "ReadReflectedTypedValue",
+                  "WriteReflectedValueWithTypePrefix",
                   "WriteReflectedPrimitiveValue",
                   "ResolveReflectedTypeId",
                   "WriteReflectedValue",
@@ -28545,6 +28579,7 @@
                   "1416024d0",
                   "141602890",
                   "141602aa0",
+                  "141603370",
                   "141603480",
                   "141603710",
                   "141603860",
@@ -28567,12 +28602,12 @@
                   {
                     "name": "shared/runtime/serialization/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 61,
+                    "done": 62,
                     "todo": 0,
-                    "total": 61,
-                    "behavior_or_helpers_reviewed": 61,
+                    "total": 62,
+                    "behavior_or_helpers_reviewed": 62,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 61,
+                    "runtime_functions_identified": 62,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -28623,6 +28658,7 @@
                       "ReadReflectedNameBytes",
                       "ReadCompactUnsigned32",
                       "ReadReflectedTypedValue",
+                      "WriteReflectedValueWithTypePrefix",
                       "WriteReflectedPrimitiveValue",
                       "ResolveReflectedTypeId",
                       "WriteReflectedValue",
@@ -28687,6 +28723,7 @@
                       "1416024d0",
                       "141602890",
                       "141602aa0",
+                      "141603370",
                       "141603480",
                       "141603710",
                       "141603860",
@@ -45352,5 +45389,5 @@
       }
     ]
   },
-  "unmapped": 7495
+  "unmapped": 7493
 }
