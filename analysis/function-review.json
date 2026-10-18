@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "725 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "726 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9613,
-    "default_fun_names": 8670,
-    "other_names": 943,
-    "verification": "complete_inventory_matches_baseline_plus_725_renames_and_62_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8669,
+    "other_names": 944,
+    "verification": "complete_inventory_matches_baseline_plus_726_renames_and_62_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18337,6 +18337,30 @@
         "ResourceIDtableboundsandmetadatareadabilityrequired;lifetime/concurrencyunverified.",
         "No uniquenessorcollisionresistanceclaim;originalalgorithmfamilyname/source symbolnotrecovered.",
         "Twoidentifiedcallerpathslinked;wholecallerandqueuedconsumerbehaviorincomplete."
+      ]
+    },
+    {
+      "address": "1413d1aa0",
+      "original_name": "FUN_1413d1aa0",
+      "applied_name": "MeasurePackedSpritePathLengthAndMaxScaledRadius",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV MeasurePackedSpritePathLengthAndMaxScaledRadius(float radius_scale, pointer point_cursor, float * path_length_output, float * max_scaled_radius_output)",
+      "evidence": [
+        "Complete 438 owned instructions and 226 nonblank decompiled lines reviewed; original instruction bytes match.",
+        "Computes unscaled cumulative XYZ path length and maximum absolute scaled point radius over 40-byte packed points.",
+        "Empty count writes both outputs zero and preserves cursor; nonempty cursor ends at last point.",
+        "Both direct Sprite processing callers supply metadata scale, cursor and two float output pointers.",
+        "48 complete-helper native cases cover selected depth 0/1 trees, 0/1/3/12/13/25 points, straight/zigzag XYZ and scales 0/-2/0.5/2; source and output guards preserved.",
+        "Name and four-parameter working signature persisted after independent reopening; other names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Small finite inputs, initial index 0 and base offset 0, selected depth 0/1 trees; arbitrary depth, malformed inputs, nonfinite values, overflow and lifetime safety remain unproven.",
+        "Platform pow is adapted; no live game, thread or GPU verification.",
+        "Original source symbol and cursor struct declaration not recovered."
       ]
     }
   ],

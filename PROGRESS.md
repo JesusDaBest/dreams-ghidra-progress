@@ -7122,3 +7122,14 @@ General deep/malformed trees, backward/negative/nonfinite requests, zero-length 
 The descriptive name and metadata-pointer/32-bit resource-ID/64-bit-result working signature persisted after independent reopening. Original bytes and all other function names/signatures remained unchanged. Resource-ID table bounds, metadata readability, lifetime, concurrency and complete queued-consumer behavior remain unverified.
 
 Totals: **788 checked names**, **2,190 mapped functions**, **7,423 unmapped**, among **9,613 defined functions**. The larger Sprite processor remains incomplete.
+
+
+### Packed Sprite path length and scaled radius reviewed and named
+
+`MeasurePackedSpritePathLengthAndMaxScaledRadius` names a complete 438-instruction helper used by two Sprite processing callers. It computes cumulative XYZ path length and the maximum absolute point radius after applying the supplied scale. The path length itself is unscaled. An empty input writes zero to both outputs and leaves the cursor unchanged; a nonempty input leaves the cursor on the last point.
+
+**48 controlled native cases** cover 0, 1, 3, 12, 13 and 25 points, straight and zigzag positions, zero/negative/positive radius scales, and selected single-leaf and cross-page trees. The source pool and guards around both four-byte outputs remain unchanged. Cross-page traversal uses an explicit pow adapter; these fixtures do not verify the original platform math implementation.
+
+The descriptive name and float-scale/cursor/two-float-output working signature persisted after independent reopening. Original bytes and all other function names/signatures remained unchanged. Arbitrary trees, nonzero initial cursor offsets, malformed or nonfinite inputs, overflow and lifetime safety remain unverified. The original source symbol and cursor structure declaration have not been recovered.
+
+Totals: **789 checked names**, **2,191 mapped functions**, **7,422 unmapped**, among **9,613 defined functions**. The larger Sprite processor remains incomplete.

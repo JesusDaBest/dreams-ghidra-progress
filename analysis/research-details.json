@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 788,
+    "checked_and_applied_names": 789,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 788,
+    "verified_names": 789,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "725 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "726 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24748,6 +24748,28 @@
     "native_cases": 268,
     "trailing_byte_invariance_checks": 268,
     "native_scope": "Complete469-byte original helper,noimports;independent48-byte/three-blockmixmodel,selectedfingerprintsand67metadata patterns.",
+    "new_name_credit": 1
+  },
+  "sprite_path_length_radius_checkpoint": {
+    "target": {
+      "name": "MeasurePackedSpritePathLengthAndMaxScaledRadius",
+      "signature": "void PS4_SYSV MeasurePackedSpritePathLengthAndMaxScaledRadius(float radius_scale, pointer point_cursor, float * path_length_output, float * max_scaled_radius_output)"
+    },
+    "evidence": [
+      "Complete 438 owned instructions and 226 nonblank decompiled lines reviewed; original instruction bytes match.",
+      "Computes unscaled cumulative XYZ path length and maximum absolute scaled point radius over 40-byte packed points.",
+      "Empty count writes both outputs zero and preserves cursor; nonempty cursor ends at last point.",
+      "Both direct Sprite processing callers supply metadata scale, cursor and two float output pointers.",
+      "48 complete-helper native cases cover selected depth 0/1 trees, 0/1/3/12/13/25 points, straight/zigzag XYZ and scales 0/-2/0.5/2; source and output guards preserved.",
+      "Name and four-parameter working signature persisted after independent reopening; other names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Small finite inputs, initial index 0 and base offset 0, selected depth 0/1 trees; arbitrary depth, malformed inputs, nonfinite values, overflow and lifetime safety remain unproven.",
+      "Platform pow is adapted; no live game, thread or GPU verification.",
+      "Original source symbol and cursor struct declaration not recovered."
+    ],
+    "native_cases": 48,
+    "native_scope": "Complete 1716-byte original helper; selected finite point sets and depth 0/1 trees, pow adapted for cross-page traversal.",
     "new_name_credit": 1
   }
 }
