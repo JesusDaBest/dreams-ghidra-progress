@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8b78122c6e4e07c76159ed4d221f127df451e4b3/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/98c5f0feae704c084ecfd5177f8b51e977604c93/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**753 of 9,608 functions named and checked.** A function is one piece of the game's code.
+**754 of 9,608 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8b78122c6e4e07c76159ed4d221f127df451e4b3/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/98c5f0feae704c084ecfd5177f8b51e977604c93/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -69,12 +69,12 @@ Every square is one actual function and has the same size. All function squares 
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
-| Rendering & lighting | 386 | 117/360 | 0/26 |
+| Rendering & lighting | 387 | 118/361 | 0/26 |
 | Editor & interface | 401 | 86/192 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 375 | 252/288 | 17/82 |
 
-**2,159 of 9,608 discovered functions are mapped; 7,449 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,160 of 9,608 discovered functions are mapped; 7,448 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -754,7 +754,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Rendering & lighting** - 386 functions identified; 118 behavior/helper reviews; 0 property/type reviews
+- **Rendering & lighting** - 387 functions identified; 119 behavior/helper reviews; 0 property/type reviews
   - **Scene drawing** - 133 functions identified; 67 behavior/helper reviews; 0 property/type reviews
     - **Renderer** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
@@ -828,9 +828,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **GPU compute support** - 43 functions identified; 43 behavior/helper reviews; 0 property/type reviews
-    - **Image cache** - 13 functions identified; 13 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 13 functions identified; 13 behavior/helper reviews; 0 property/type reviews
+  - **GPU compute support** - 44 functions identified; 44 behavior/helper reviews; 0 property/type reviews
+    - **Image cache** - 14 functions identified; 14 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 14 functions identified; 14 behavior/helper reviews; 0 property/type reviews
     - **Image descriptors** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Compute dispatch** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
