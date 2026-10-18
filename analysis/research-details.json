@@ -22853,5 +22853,28 @@
     ],
     "reviewed_name_count_increment": 0,
     "runtime_gpu_verified": false
+  },
+  "chunk_primitive_geometry_checkpoint": {
+    "shader": "ChunkAppendVoxels",
+    "bounded_findings": [
+      "Optional independent absolute-value coordinate folds, or repeated angular folding, precede the normal primitive transform.",
+      "Normal primitive transform subtracts translation then multiplies by a stored3x3 matrix; matrix orthonormality is not established.",
+      "Selector10 evaluates a torus distance expression; selector9 evaluates a plane-like scalar with L1 transform-row normalization.",
+      "Selector6 has a triangular-prism zero/subzero set for positive extents; its scalar is not established as exact Euclidean distance."
+    ],
+    "diagnostics": {
+      "affine_exact_rational_cases": 240,
+      "angle_finite_nonzero_points": 10200,
+      "angle_max_circular_error_turns_double_model": 1.8942917924258396e-06,
+      "torus_and_plane_double_model_cases_each": 600,
+      "triangular_prism_positive_extent_cases": 600
+    },
+    "limits": [
+      "Bounded static review before shared optional modifiers.",
+      "Diagnostics do not emulate GPU rounding, reciprocal or trigonometric approximation.",
+      "Original enum names, CPU record construction, exceptional inputs, other primitive cases and alternate command path remain unresolved."
+    ],
+    "reviewed_name_count_increment": 0,
+    "runtime_gpu_verified": false
   }
 }

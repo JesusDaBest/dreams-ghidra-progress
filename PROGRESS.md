@@ -6615,3 +6615,11 @@ The bounded `ChunkAppendVoxels` trace now connects 96-byte command records to pr
 On the normal primitive path, three packed bytes are normalized and squared before blending. The fourth packed byte supplies strength, with separate flags enabling the three-channel and logarithmic-scale updates. A **different command field supplies the soft-blend radius**; the fourth output attribute remains the previously traced normalized logarithmic scale. This distinguishes command inputs from stored output channels.
 
 CPU-side field construction, original field names, the alternate command path, most primitive bodies and live GPU behavior remain unresolved. This adds evidence about sculpting, **not a completed-function count or whole-game percentage**.
+
+### Sculpt coordinate operations and additional primitive formulas
+
+The normal primitive path can independently fold two coordinates by absolute value, or use a repeated angular fold. It then subtracts a stored translation and applies a stored 3x3 matrix. **240 exact rational cases** check the matrix arithmetic and register dependencies; this does not prove that the matrix is a pure rotation. A double-precision diagnostic of the decoded angle polynomial covers 10,200 nonzero points, with maximum circular error below 0.000002 turns against `atan2`. GPU approximation and the origin are not covered.
+
+Two additional dispatch bodies evaluate a **torus distance expression** and a **plane-like scalar**. Another produces a **triangular-prism zero/subzero set for positive extents**. The plane normalization and prism's sloped plane use an L1 magnitude, so those scalars are not claimed to be exact Euclidean distances. Decoded-operation diagnostics check 600 cases for each of these three bodies; they do not emulate GPU rounding.
+
+These are bounded mathematical identifications before shared optional modifiers. Original enum names, CPU record construction, exceptional inputs, other primitive cases and the alternate command path remain unresolved. Checked-function totals and the graph are unchanged.
