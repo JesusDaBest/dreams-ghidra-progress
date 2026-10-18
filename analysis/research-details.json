@@ -3870,7 +3870,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -25115,6 +25115,30 @@
       "project_modified": false
     },
     "interpretation": "Working per-sample transform from local sample frame to world sample frame; verified on generated unlinked records and synthetic varying world poses.",
+    "new_name_credit": 0
+  },
+  "sprite_linked_anchor_composition_followup": {
+    "native": {
+      "cases": 112,
+      "scope": "Original linked-anchor branch from2a10 through local/world interpolation, frame composition and current-anchor writes; outgoing continuation27be adapted to RET, finite classifier explicitly adapted.",
+      "checked": [
+        "World frame composed with inverse local frame and current local anchor matches independent quaternion/affine model.",
+        "Current world position/scale at+0x50 and quaternion at+0x60 match model.",
+        "Four varying/sign-equivalent frame profiles, seven coordinates0..7, two current orientations and two current anchors/scales.",
+        "Only current first-world-pose fields change; linked target record remains unchanged."
+      ],
+      "limits": [
+        "Bounded linked branch with explicit synthetic records, not full emitter or actual link creation integrated here.",
+        "Positive finite scales and tested normalized frame inputs; nonfinite/zero-scale/lifetime behavior unverified.",
+        "No actual GPU, platform synchronization or full-stroke deformation test."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "interpretation": "Interpolated linked world frame composed with inverse interpolated linked local frame, applied to current local anchor; positive finite scales and normalized synthetic orientations tested.",
+    "prior_interpolation_cases": "45 cases extended across both local and world quaternion stages; these two stage counts are not additive.",
+    "fixture_correction": "Initial preservation assertion compared a 1360-byte slice with a 1361-byte ctypes buffer snapshot. Whole-buffer comparison fixes the test and confirms unchanged trailing guard; not a game defect.",
+    "integration_status": "Actual link creation through all sample updates to GPU packing remains unverified.",
     "new_name_credit": 0
   }
 }

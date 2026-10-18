@@ -7236,3 +7236,6 @@ The **272-byte sample-cache entry**, **1,360-byte CPU generated record** and **5
 The 512-byte output contains sixteen 32-byte transforms, grouped into two sets of eight. Both parity-selected destinations are tested. CPU source records and output guards remain unchanged, and the output count advances once. This supports interpreting the packed values as transforms between corresponding local and world sample frames.
 
 The 360 cases include the earlier 180 constant-transform cases. The varying world poses are deliberately synthetic: they do not establish that the actual linked-stroke branch produces those poses correctly. The test runs the complete cache builder followed by a bounded original packing loop with explicit entry state, a return adapter at chain advancement and platform-import adapters. The full emitter, actual GPU execution and memory coherency remain unverified. No additional naming credit is taken.
+
+
+Linked sprite anchor composition: 112 bounded native cases match an independent position/scale/quaternion model. Full linked-stroke-to-GPU integration remains unverified; no additional naming credit. See ANALYSIS.md.

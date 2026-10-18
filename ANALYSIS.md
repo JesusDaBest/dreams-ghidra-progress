@@ -7761,3 +7761,12 @@ The **272-byte sample-cache entry**, **1,360-byte CPU generated record** and **5
 The 512-byte output contains sixteen 32-byte transforms, grouped into two sets of eight. Both parity-selected destinations are tested. CPU source records and output guards remain unchanged, and the output count advances once. This supports interpreting the packed values as transforms between corresponding local and world sample frames.
 
 The 360 cases include the earlier 180 constant-transform cases. The varying world poses are deliberately synthetic: they do not establish that the actual linked-stroke branch produces those poses correctly. The test runs the complete cache builder followed by a bounded original packing loop with explicit entry state, a return adapter at chain advancement and platform-import adapters. The full emitter, actual GPU execution and memory coherency remain unverified. No additional naming credit is taken.
+
+
+### Linked sprite anchor frame composition checked
+
+**112 bounded native cases** verify how a linked stroke updates its first world anchor. The code interpolates the linked local and world frames, composes the world frame with the inverse local frame, then applies that mapping to the current local anchor. Position, uniform scale and quaternion orientation agree with an independent affine/quaternion model across four frame profiles, seven coordinates, two current orientations and two current anchors/scales. Only the expected first-world-pose fields change; the linked target and other current-record bytes remain unchanged.
+
+Earlier local/world quaternion interpolation checks use the same 45-case domain extended through both stages; those stage counts are not additive. Both use shortest-sign normalized linear interpolation, with identity fallback for a zero quaternion norm. The composition test uses positive finite scales and normalized synthetic orientations, with explicit finite-classifier and return-boundary adapters. It does not verify full-stroke deformation, actual link creation through GPU packing, zero/nonfinite scales, lifetime, synchronization or GPU execution.
+
+An initial preservation assertion compared buffers of different lengths because the test allocator appended a NUL byte. Comparing both complete buffers corrected the harness and confirmed the trailing byte remains unchanged. No game defect or additional checked-name credit is claimed.
