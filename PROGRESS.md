@@ -6461,3 +6461,21 @@ Totals: **750 checked names** (670 behavior/helper and 80 property/type), **2,15
 Related local-only QR checks now connect the original dispatcher, placeholder expansion, storage helpers and encoder through to generated pixels: three synthetic templates decode independently to the expected expanded text. Eleven first-use scratch-buffer cases verify allocation, registration and reuse through modeled TLS. These checks do not prove real thread scheduling, live-game behavior or account authentication.
 
 Totals: **751 checked names** (671 behavior/helper and 80 property/type), **2,157 mapped**, **7,451 unmapped**, among **9,608 defined functions**.
+
+
+### QR mask application reviewed and named
+
+Applies the selected QR masking predicate only to unreserved modules. All eight predicates pass 120 original-native cases across five dimensions and three reservation patterns. Applying a mask twice restores the original bytes, including unused tail bits. Encoder callsites apply and undo each trial before applying the selected final mask.
+
+The complete 139-instruction body and working ABI survived independent reopening with unchanged original bytes and all 9,607 other function names/signatures. Invalid inputs and live-game behavior remain unverified. Full encoder scoring and error-correction generation are still under review. Formula and placement agreement with the [Nayuki reference implementation](https://github.com/nayuki/QR-Code-generator/blob/master/c/qrcodegen.c) establishes QR behavior, not an exact original source match.
+
+Totals: **752 checked names** (672 behavior/helper and 80 property/type), **2,158 mapped**, **7,450 unmapped**, among **9,608 defined functions**.
+
+
+### QR format metadata reviewed and named
+
+Writes both copies of the 15-bit format word and the fixed dark module. Independent polynomial division and coordinate calculations match 640 original-native cases spanning all 40 versions, eight masks and two initial storage patterns. The fixed format selector declares high error correction; full encoder error-correction generation remains separately under review.
+
+The complete 483-instruction body and working ABI survived independent reopening with unchanged original bytes and all 9,607 other function names/signatures. Invalid inputs and live-game behavior remain unverified. Full encoder scoring and error-correction generation are still under review. Formula and placement agreement with the [Nayuki reference implementation](https://github.com/nayuki/QR-Code-generator/blob/master/c/qrcodegen.c) establishes QR behavior, not an exact original source match.
+
+Totals: **753 checked names** (673 behavior/helper and 80 property/type), **2,159 mapped**, **7,449 unmapped**, among **9,608 defined functions**.

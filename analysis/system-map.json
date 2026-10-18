@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9608,
-  "mapped_total": 2157,
-  "unmapped_total": 7451,
+  "mapped_total": 2159,
+  "unmapped_total": 7449,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54556,6 +54556,58 @@
             "270 original-native cases verify byte insertion, prefix/suffix preservation, terminators, capacity boundaries and exact allocation/free arguments.",
             "Twelve modeled borrowed-buffer growth cases observe the original free call; whole object, source and old/new storage guards match an independent oracle.",
             "Independent offline reopening verifies saved working ABI, unchanged native bytes and all 9607 other function names/signatures."
+          ]
+        }
+      ]
+    },
+    "140158ab0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed QR matrix helper called by the encoder used by the image-cache QR worker.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "9cd754e2b14277f87189003089e6251f35d3ffd1cb5bf5512b6e2852a64c4c02",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyQrMaskToUnreservedModules",
+          "support": [
+            "Complete 139-instruction body reviewed against original native bytes and encoder callsites.",
+            "Applies the selected QR masking predicate only to unreserved modules. All eight predicates pass 120 original-native cases across five dimensions and three reservation patterns. Applying a mask twice restores the original bytes, including unused tail bits. Encoder callsites apply and undo each trial before applying the selected final mask.",
+            "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
+            "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
+          ]
+        }
+      ]
+    },
+    "140158ca0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed QR matrix helper called by the encoder used by the image-cache QR worker.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "2bb9737d3781e6ff52c919fe57021c4ddc6bd82ccfd44f3d3795044217d11d25",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteHighCorrectionQrFormatBits",
+          "support": [
+            "Complete 483-instruction body reviewed against original native bytes and encoder callsites.",
+            "Writes both copies of the 15-bit format word and the fixed dark module. Independent polynomial division and coordinate calculations match 640 original-native cases spanning all 40 versions, eight masks and two initial storage patterns. The fixed format selector declares high error correction; full encoder error-correction generation remains separately under review.",
+            "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
+            "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
           ]
         }
       ]

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 751,
+    "checked_and_applied_names": 753,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 751,
+    "verified_names": 753,
     "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1929,7 +1929,7 @@
       "141330c40",
       "14021b300"
     ],
-    "scope": "693 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "695 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21673,6 +21673,89 @@
       "Borrowed-mode growth calls free irrespective of ownership; validity of such input in real callers remains unresolved.",
       "Allocation failure, aliasing, invalid indices, huge ranges and integer overflow remain unverified.",
       "Analyst descriptive name and opaque storage working ABI, not an original declaration or exact Media Molecule source match."
+    ],
+    "new_name_credit": 1
+  },
+  "qr_apply_mask_name_checkpoint": {
+    "target": {
+      "name": "ApplyQrMaskToUnreservedModules",
+      "signature": "void PS4_SYSV ApplyQrMaskToUnreservedModules(uchar * reservedModules, uchar * matrix, uint mask)"
+    },
+    "checks": {
+      "qr-apply-mask-native-check.json": {
+        "native_cases": 120,
+        "original_instructions": 139,
+        "findings": [
+          "Original helper applies all eight QR mask predicates by XOR to unreserved modules only.",
+          "Packed matrices have dimension byte followed by row-major LSB-first bits; reserved input remains unchanged.",
+          "Five dimensions (versions 1,2,7,20,40), three reserved patterns and eight masks match an independent per-module oracle.",
+          "Applying the same mask twice restores every byte, including trailing unused bits and external guards."
+        ],
+        "limits": [
+          "Separate equal-dimension matrices, valid mask indices and valid QR dimensions only; aliasing, invalid masks and mismatched dimensions remain unverified.",
+          "Function is tested offline, not in the live game; no original source attribution or new name credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete 139-instruction body reviewed against original native bytes and encoder callsites.",
+      "Applies the selected QR masking predicate only to unreserved modules. All eight predicates pass 120 original-native cases across five dimensions and three reservation patterns. Applying a mask twice restores the original bytes, including unused tail bits. Encoder callsites apply and undo each trial before applying the selected final mask.",
+      "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
+      "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
+    ],
+    "limits": [
+      "Valid mask indices and valid QR dimensions only; malformed input and live-game execution unverified.",
+      "Full encoder penalty scoring and error-correction generation remain under review.",
+      "Matching reference QR formulas does not prove original library identity, version or exact Media Molecule source/build match."
+    ],
+    "new_name_credit": 1
+  },
+  "qr_format_bits_name_checkpoint": {
+    "target": {
+      "name": "WriteHighCorrectionQrFormatBits",
+      "signature": "void PS4_SYSV WriteHighCorrectionQrFormatBits(uint mask, uchar * matrix)"
+    },
+    "checks": {
+      "qr-format-bits-native-check.json": {
+        "native_cases": 640,
+        "original_instructions": 483,
+        "format_words": {
+          "0": 5769,
+          "1": 5054,
+          "2": 7399,
+          "3": 6608,
+          "4": 1890,
+          "5": 597,
+          "6": 3340,
+          "7": 2107
+        },
+        "findings": [
+          "Original helper writes both copies of QR format metadata and the fixed dark module.",
+          "Format data fixes error-correction selector to binary 10 (high) and includes the supplied three-bit mask.",
+          "Independent polynomial long division by 0x537 and format XOR 0x5412 match all eight words.",
+          "All 40 QR versions, eight masks and two initial byte patterns match complete-buffer oracle including untouched modules, padding bits and guards."
+        ],
+        "limits": [
+          "Only mask indices 0..7 and valid packed matrix dimensions tested; invalid input remains unverified.",
+          "This helper identifies the format selector; full encoder error-correction generation and scoring require separate review.",
+          "Offline original instructions, no live-game execution or exact original source match; no new name credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete 483-instruction body reviewed against original native bytes and encoder callsites.",
+      "Writes both copies of the 15-bit format word and the fixed dark module. Independent polynomial division and coordinate calculations match 640 original-native cases spanning all 40 versions, eight masks and two initial storage patterns. The fixed format selector declares high error correction; full encoder error-correction generation remains separately under review.",
+      "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
+      "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
+    ],
+    "limits": [
+      "Valid mask indices and valid QR dimensions only; malformed input and live-game execution unverified.",
+      "Full encoder penalty scoring and error-correction generation remain under review.",
+      "Matching reference QR formulas does not prove original library identity, version or exact Media Molecule source/build match."
     ],
     "new_name_credit": 1
   }

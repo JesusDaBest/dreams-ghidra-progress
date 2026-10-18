@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "693 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "695 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9608,
-    "default_fun_names": 8702,
-    "other_names": 906,
-    "verification": "complete_inventory_matches_baseline_plus_693_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8700,
+    "other_names": 908,
+    "verification": "complete_inventory_matches_baseline_plus_695_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17455,6 +17455,50 @@
         "Borrowed-mode growth calls free irrespective of ownership; validity of such input in real callers remains unresolved.",
         "Allocation failure, aliasing, invalid indices, huge ranges and integer overflow remain unverified.",
         "Analyst descriptive name and opaque storage working ABI, not an original declaration or exact Media Molecule source match."
+      ]
+    },
+    {
+      "address": "140158ab0",
+      "original_name": "FUN_140158ab0",
+      "applied_name": "ApplyQrMaskToUnreservedModules",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyQrMaskToUnreservedModules(uchar * reservedModules, uchar * matrix, uint mask)",
+      "evidence": [
+        "Complete 139-instruction body reviewed against original native bytes and encoder callsites.",
+        "Applies the selected QR masking predicate only to unreserved modules. All eight predicates pass 120 original-native cases across five dimensions and three reservation patterns. Applying a mask twice restores the original bytes, including unused tail bits. Encoder callsites apply and undo each trial before applying the selected final mask.",
+        "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
+        "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
+      ],
+      "caveats": [
+        "Valid mask indices and valid QR dimensions only; malformed input and live-game execution unverified.",
+        "Full encoder penalty scoring and error-correction generation remain under review.",
+        "Matching reference QR formulas does not prove original library identity, version or exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "140158ca0",
+      "original_name": "FUN_140158ca0",
+      "applied_name": "WriteHighCorrectionQrFormatBits",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV WriteHighCorrectionQrFormatBits(uint mask, uchar * matrix)",
+      "evidence": [
+        "Complete 483-instruction body reviewed against original native bytes and encoder callsites.",
+        "Writes both copies of the 15-bit format word and the fixed dark module. Independent polynomial division and coordinate calculations match 640 original-native cases spanning all 40 versions, eight masks and two initial storage patterns. The fixed format selector declares high error correction; full encoder error-correction generation remains separately under review.",
+        "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
+        "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
+      ],
+      "caveats": [
+        "Valid mask indices and valid QR dimensions only; malformed input and live-game execution unverified.",
+        "Full encoder penalty scoring and error-correction generation remain under review.",
+        "Matching reference QR formulas does not prove original library identity, version or exact Media Molecule source/build match."
       ]
     }
   ],
