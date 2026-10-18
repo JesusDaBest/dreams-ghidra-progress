@@ -7245,3 +7245,6 @@ Sprite sample-update follow-up:168 bounded iteration-selector cases and150 bound
 
 
 Linked sprite forward pass:324 complete fixtures /2592 sample world poses match an independent sequential model. Repetition, optional directional term and GPU integration remain open; no name credit.
+
+
+Sprite forward-to-buffer packing:1944 cases /31104 transforms checked; movement-based repeat exit:3888 fixtures with original counter readback. GPU execution and complete emitter remain unverified; no name credit.

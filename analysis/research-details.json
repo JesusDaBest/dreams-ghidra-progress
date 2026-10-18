@@ -25219,5 +25219,40 @@
     ],
     "case_accounting": "Supporting tests overlap staged arithmetic; do not sum as disjoint whole-function coverage.",
     "new_name_credit": 0
+  },
+  "sprite_forward_pass_to_packing_followup": {
+    "forward_pass_cases": 972,
+    "packing_cases": 1944,
+    "packed_transforms_checked": 31104,
+    "scope": "Original complete linked forward pass followed by original4360..493f sixteen-transform GPU-buffer packing. Explicit eight-sample pre-update snapshot copy matches traced640-byte source copy. Both parity destinations tested; RET at pass-exit3bc0 and packing chain-advance4940, finite classifier adapter.",
+    "checked": [
+      "Updated first eight sample transforms and preserved snapshot eight transforms match independent affine/quaternion model.",
+      "Full forward-pass pose model still checked; packing preserves CPU record and destination guards; record counter increments once."
+    ],
+    "limits": [
+      "Packing is CPU buffer preparation, no GPU shader execution or coherency verification.",
+      "Positive finite nondegenerate inputs; optional directional term disabled; no repeated-pass convergence, link creation or full-emitter control flow."
+    ],
+    "case_accounting": "972 forward fixtures feed1944 packing cases /31104 transforms. Earlier isolated/staged counts overlap; do not sum as disjoint coverage.",
+    "new_name_credit": 0,
+    "project_modified": false,
+    "comparison_scope": "Forward output independently checked against sequential model; packing independently checked against affine transforms computed from actual float32 CPU input frames, retaining forward-model checks separately.",
+    "fixture_correction": "Initial packing comparison reused ideal sequential-model poses, allowing accumulated quaternion/position approximation error to amplify in inverse-frame translation beyond packing tolerance. Recomputed packing expectation from actual input float32 frames while retaining original independent forward-pass assertions. Packing formula and tolerance unchanged."
+  },
+  "sprite_movement_exit_followup": {
+    "cases": 3888,
+    "scope": "Original complete linked forward repeated loop with movement thresholds0/0.01/1/1e6 and budgets1/2/4; RET at3bf0, finite classifier adapter, optional directional term disabled. Wrapper records original pass counter after loop.",
+    "checked": [
+      "Final poses and original counter match independent sequential model and strict threshold>maximum squared XYZ movement exit.",
+      "Movement maximum excludes linked first anchor and includes seven later samples.",
+      "Only world-pose fields and explicit counter readback output change; local/target data preserved."
+    ],
+    "limits": [
+      "Selected finite positive-scale nondegenerate fixtures, not universal convergence/stability proof.",
+      "Optional directional term, threshold construction, live scheduling and full emitter remain unverified."
+    ],
+    "case_accounting": "3888 cases include972 zero-threshold fixtures; do not add prior972 as disjoint coverage.",
+    "new_name_credit": 0,
+    "project_modified": false
   }
 }

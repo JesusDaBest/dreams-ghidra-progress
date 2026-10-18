@@ -7790,3 +7790,18 @@ The eight weights come from `powf` applied along eight evenly spaced parameter v
 This connects the earlier isolated calculations. The first anchor uses interpolated linked frames; following samples construct relative vectors from saved local and updated world frames, blend/correct their direction and length, reconstruct orientation, and write the next world pose. Supporting isolated and connected tests overlap this arithmetic and are not additive whole-function coverage.
 
 The fixture stops before the pass-repeat decision. Positive finite scales and nondegenerate inputs are tested, with a constant sample weight per fixture and the optional directional term disabled. Repeated-pass convergence, varying sample weights, the directional term, link creation, full-emitter behavior and actual GPU execution remain unverified. No additional name or completion credit is taken.
+
+
+### Forward-pass output connected to CPU buffer packing
+
+**972 forward-pass fixtures** now cover constant, rising and falling sample weights; this includes the earlier 324 constant-weight fixtures. The resulting records feed the original sixteen-transform packing loop under both destination parities: **1,944 packing cases / 31,104 transforms**. The first eight transforms use updated sample frames; the second eight use the preserved pre-update snapshot. Packed translation, uniform scale and quaternion agree with an independent affine model. Packing preserves the CPU record and destination guards and increments the record counter once.
+
+Forward poses remain checked against the independent sequential model. Packing expectations are computed separately from the actual float32 input frames, so accumulated forward-model approximation is not mistaken for a packing error. An initial comparison reused ideal model poses and amplified their small orientation errors in inverse-frame translation; separating the numerical checks corrected the fixture without changing the packing formula or tolerance.
+
+This is CPU-side buffer preparation, not GPU shader execution or memory-coherency verification. The snapshot copy is explicitly supplied according to the traced 640-byte copy. Link creation, the optional directional term and full-emitter control flow remain unverified.
+
+### Repeated forward-loop movement exit checked
+
+**3,888 complete repeated-loop fixtures** test iteration limits of 1, 2 and 4 with squared-movement thresholds of zero, 0.01, one and one million. Final sample poses and the original loop counter match an independent sequential recurrence. The loop exits when the threshold is strictly greater than the maximum squared XYZ movement of the seven later samples; the linked first anchor is excluded from that maximum.
+
+These cases include the earlier 972 zero-threshold fixtures and are not additive coverage. They establish the selected exit behavior, not universal convergence or stability. Runtime threshold construction, optional directional forces, nonfinite/degenerate domains, scheduling and complete emitter behavior remain open. No additional name or completion credit is taken.
