@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "732 existing-function renames,64 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "732 existing-function renames,66 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9615,
+    "total": 9617,
     "default_fun_names": 8663,
-    "other_names": 952,
-    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_64_created_functions_and_1_reviewed_existing_name"
+    "other_names": 954,
+    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_66_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18538,6 +18538,54 @@
       "caveats": [
         "Opaque source types/control names not recovered.",
         "Arbitrary control values, corrupt ranges/counters, nonfinite/extreme inputs, object lookup variants, concurrency, original platform math and actual game/GPU unverified."
+      ]
+    },
+    {
+      "address": "140cfc3d0",
+      "original_name": null,
+      "applied_name": "CreateDefaultCsgEditMirrorFlags",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "byte * PS4_SYSV CreateDefaultCsgEditMirrorFlags(void)",
+      "evidence": [
+        "Both callbacks installed by original CSGEditMirrorFlags type registration.",
+        "Complete original19-byte constructor and11-byte cleanup matched; full captured C read.",
+        "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+        "Six isolated original-code fixtures validate one-byte size, zero initialization, canaries and null/non-null cleanup routing.",
+        "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9615 prior names/signatures and original bytes."
+      ],
+      "caveats": [
+        "Original source symbols not recovered; byte pointer is a storage-level working type.",
+        "Allocation exceptions/failure, live reflection, exact packed bit names, concurrency and real game behavior unverified.",
+        "No claim that the reflected type is identical to the separately traced emission control."
+      ]
+    },
+    {
+      "address": "140cfc3f0",
+      "original_name": null,
+      "applied_name": "DestroyCsgEditMirrorFlags",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DestroyCsgEditMirrorFlags(byte * flags)",
+      "evidence": [
+        "Both callbacks installed by original CSGEditMirrorFlags type registration.",
+        "Complete original19-byte constructor and11-byte cleanup matched; full captured C read.",
+        "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+        "Six isolated original-code fixtures validate one-byte size, zero initialization, canaries and null/non-null cleanup routing.",
+        "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9615 prior names/signatures and original bytes."
+      ],
+      "caveats": [
+        "Original source symbols not recovered; byte pointer is a storage-level working type.",
+        "Allocation exceptions/failure, live reflection, exact packed bit names, concurrency and real game behavior unverified.",
+        "No claim that the reflected type is identical to the separately traced emission control."
       ]
     }
   ],

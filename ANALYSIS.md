@@ -7897,3 +7897,12 @@ The helper batches source points, transforms and packs them into point buffers, 
 The cache producer also has an early exit that skips its ready-state store. Its caller can fall back to a recent ready entry for the same object; the original fallback scan passed 22 isolated cases. Retry/invalidation behavior and complete runtime handling remain open.
 
 Checked names are now **797** across **9,615 defined functions**. This credits one descriptive helper review. Original source types, arbitrary controls, malformed/nonfinite inputs, concurrency and actual GPU/game behavior remain unverified.
+
+
+### CSG mirror-flag lifecycle callbacks
+
+`CreateDefaultCsgEditMirrorFlags` and `DestroyCsgEditMirrorFlags` now name two previously undefined callbacks installed by the original `CSGEditMirrorFlags` registration. The constructor requests one byte, initializes it to zero and returns its pointer. Cleanup skips null and otherwise forwards the pointer to delete. Original import relocations establish the allocation/deallocation functions.
+
+Six combined isolated original-code cases checked allocation size, zero initialization, untouched trailing bytes and null/non-null cleanup routing, using allocation/deallocation recorders. Independent reopening verified both definitions and working signatures; all existing names/signatures and original bytes remained unchanged.
+
+The reflected type exposes a field named `packed`. Its precise bit meanings and connection to the separately traced rendering controls remain unresolved. These two lifecycle reviews bring the checked-name total to **799**, across **9,617 defined functions**; they do not establish completion of Dreams' mirror tools.

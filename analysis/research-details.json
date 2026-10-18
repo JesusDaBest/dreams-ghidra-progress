@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 797,
+    "checked_and_applied_names": 799,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 797,
-    "function_count": 9615,
+    "verified_names": 799,
+    "function_count": 9617,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "732 existing-function renames,64 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "732 existing-function renames,66 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25482,5 +25482,25 @@
       "Arbitrary control values, corrupt ranges/counters, nonfinite/extreme inputs, object lookup variants, concurrency, original platform math and actual game/GPU unverified."
     ],
     "new_function_credit": 1
+  },
+  "csg_mirror_lifecycle_checkpoint": {
+    "functions": {
+      "140cfc3d0": {
+        "name": "CreateDefaultCsgEditMirrorFlags",
+        "working_signature": "byte * PS4_SYSV CreateDefaultCsgEditMirrorFlags(void)"
+      },
+      "140cfc3f0": {
+        "name": "DestroyCsgEditMirrorFlags",
+        "working_signature": "void PS4_SYSV DestroyCsgEditMirrorFlags(byte * flags)"
+      }
+    },
+    "combined_native_cases": 6,
+    "finding": "Registered constructor requests one byte and zeroes it; cleanup ignores null and forwards nonnull pointers to delete.",
+    "limits": [
+      "Original source symbols not recovered; byte pointer is a storage-level working type.",
+      "Allocation exceptions/failure, live reflection, exact packed bit names, concurrency and real game behavior unverified.",
+      "No claim that the reflected type is identical to the separately traced emission control."
+    ],
+    "new_function_credit": 2
   }
 }

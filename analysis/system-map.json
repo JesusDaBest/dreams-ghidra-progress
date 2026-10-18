@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9615,
-  "mapped_total": 2198,
+  "inventory_total": 9617,
+  "mapped_total": 2200,
   "unmapped_total": 7417,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -55700,6 +55700,60 @@
       "component_basis": "Original Sprite source point batching, frame parity storage and 336-byte emission record construction.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Batches, transforms and replicates source points into encoded point buffers and emits Sprite descriptors.",
+      "code_sha256_basis": "original_eh_region"
+    },
+    "140cfc3d0": {
+      "system": "sculpting-painting",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CreateDefaultCsgEditMirrorFlags",
+          "support": [
+            "Both callbacks installed by original CSGEditMirrorFlags type registration.",
+            "Complete original19-byte constructor and11-byte cleanup matched; full captured C read.",
+            "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+            "Six isolated original-code fixtures validate one-byte size, zero initialization, canaries and null/non-null cleanup routing.",
+            "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9615 prior names/signatures and original bytes."
+          ]
+        }
+      ],
+      "code_sha256": "e84e794853172b48ff2a0ea30b3d30417d3497d67da710191666d009f6ba7347",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "csgeditmirrorflags",
+        "properties-types"
+      ],
+      "component_basis": "Original CSGEditMirrorFlags registration installs these lifecycle callbacks.",
+      "code_role": "properties-types",
+      "code_role_basis": "Lifecycle of the reflected packed mirror-flag type.",
+      "code_sha256_basis": "original_eh_region"
+    },
+    "140cfc3f0": {
+      "system": "sculpting-painting",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DestroyCsgEditMirrorFlags",
+          "support": [
+            "Both callbacks installed by original CSGEditMirrorFlags type registration.",
+            "Complete original19-byte constructor and11-byte cleanup matched; full captured C read.",
+            "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+            "Six isolated original-code fixtures validate one-byte size, zero initialization, canaries and null/non-null cleanup routing.",
+            "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9615 prior names/signatures and original bytes."
+          ]
+        }
+      ],
+      "code_sha256": "161403c9ffb6a0147dde02a966a94c6b625ac9c9f2ca15d98a88eac865e957e3",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "csgeditmirrorflags",
+        "properties-types"
+      ],
+      "component_basis": "Original CSGEditMirrorFlags registration installs these lifecycle callbacks.",
+      "code_role": "properties-types",
+      "code_role_basis": "Lifecycle of the reflected packed mirror-flag type.",
       "code_sha256_basis": "original_eh_region"
     }
   },
