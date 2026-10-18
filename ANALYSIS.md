@@ -6715,3 +6715,12 @@ No additional naming or completion credit: **730 checked names** remains the tot
 Independent reopening verifies the saved name, four-argument working signature, decompilation, unchanged bytes and all 9,605 other names/signatures. These are valid prepared tables and references: malformed/cyclic data, bounds safety, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **731 checked names** (651 behavior/helper and 80 property/type), **2,137 mapped**, **7,469 unmapped**, among 9,606 defined functions.
+
+
+### Buffered packing and runtime-state paths connected
+
+The table consumer is now checked through ID lookup and cached-state writeback (896 cases), per-kind runtime flags (288 cases), the secondary sculpt lookup (96 cases), and mixed objects in up to three linked records (108 cases). Ready records with positive counts select per-kind runtime arrays; the tested flag bit follows positive Power combined with the indexed world bit. Other flag bits are preserved. Missing IDs, the index-zero exception and per-record readiness are tracked separately. These prepared paths do not establish the full meaning of every runtime flag.
+
+Object/property packing first passed 48 bounded cases. A connected packing-plus-reference-conversion fixture then passed 504 cases with controlled sizes. A stronger 504-case followup replaces those sizes and sensor reference offsets with values from original initialization stores. Recovered sizes for kinds 5/11/15/49/52/53/54 are 528/3680/928/480/400/304/352 bytes. The three sensor reference offsets are 304/268/304 bytes. Copied object fields become IDs while original objects remain unchanged; property pointers, offset arrays and packing cursors match complete expected buffers.
+
+Imported byte copying is modeled. One vector-store fixture supplies its register from the original constant; the entire initializer is not executed. Earlier root selection/allocation, later runtime generation, malformed data, overflow, concurrency and live-game behavior remain unverified. The producer stays unnamed, and **731 checked names** remains the total. These bounded checks do not add whole-game completion credit.

@@ -19701,5 +19701,130 @@
       "Analyst descriptive name and working ABI,not original C++ declaration."
     ],
     "new_name_credit": 1
+  },
+  "buffered_connected_packing_and_runtime_checkpoint": {
+    "checks": [
+      {
+        "native_cases": 896,
+        "findings": [
+          "Original table-consumer entry executes ID lookup,metadata Power fallback,indexed world-bit comparison and cached-state writeback with null record chains.",
+          "Index-zero match and entry26 skip leave entries unchanged. Missing IDs mark entry26 while preserving stored power/world-bit bytes. Resolved nonzero direct or chained matches update cached flags on relevant state transitions."
+        ],
+        "limits": [
+          "Null record chains only;object-processing body,full producer,concurrency and live-game behavior unverified.",
+          "Prepared kind0 metadata and valid finite ID chains;not a general invalid-data guarantee."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "native_cases": 288,
+        "findings": [
+          "Original consumer lookup,dispatch,ready/count gates,per-kind runtime ID lookup and flag writeback execute together.",
+          "Kinds1,2 with both fielda8 branches,17,and68 select distinct runtime arrays and replace flag bit0 with Power>0 AND world-bit;all other flag bits remain unchanged. Kind3 is skipped.",
+          "Readiness false or zero count prevents per-object writes;cached table flags still update after dispatch."
+        ],
+        "limits": [
+          "Prepared one-object records and direct valid runtime-ID hits only.",
+          "Kind1 secondary path requiring old flag bit1 and sourcec0==1 remains untested;sourcec0 fixed0.",
+          "No full producer,live-game,concurrency or invalid-data guarantee."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 96,
+        "findings": [
+          "Original kind1 processing always updates its primary runtime flag on a successful primary lookup.",
+          "When the original primary flag has bit1 set and source fieldc0 equals1,a second runtime-ID lookup updates bit0 in another runtime array to Power>0 AND world-bit;missing secondary IDs preserve that array.",
+          "96 cases compare complete runtime,world,pool,table,record and source buffers across mode0/1/2,old flags,power/world-bit and present/missing secondary IDs."
+        ],
+        "limits": [
+          "Prepared one-object records and successful direct primary-ID lookup.",
+          "Source fieldc0 semantic name unresolved;no full producer,concurrency or live-game claim."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 108,
+        "findings": [
+          "Original consumer traverses one/two/three linked records with zero/one/two mixed objects each,using individual readiness gates and per-record counts.",
+          "108 complete-state cases cover all/none/alternating readiness,power/world-bit states,per-kind flag arrays,unhandled kind3,and the sculpt secondary lookup."
+        ],
+        "limits": [
+          "Prepared valid acyclic chains,direct runtime-ID matches and kind0 root Power metadata.",
+          "Full producer,invalid/cyclic data,concurrency and live game remain unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 48,
+        "findings": [
+          "Original producer copy stage uses per-kind size,appends object bytes at the record blob cursor,deep-copies a non-null terminated property chain immediately after the object,and rewrites the copied property pointer.",
+          "48 complete-state cases verify null/empty/single/multiple property chains,cursor0/32,output ordinal0/2,and source kind high-bit preservation. The offset array records the pre-copy cursor and the cursor advances by object plus property bytes."
+        ],
+        "models": [
+          "Imported memcpy replaced by explicit standard byte-copy model."
+        ],
+        "limits": [
+          "Bounded copy/packing stage ends before reference-normalization helper;prepared kind3 metadata and valid chains only.",
+          "Full producer,allocation failure,overflow,concurrency and live-game behavior unverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 504,
+        "findings": [
+          "Original producer object/property packing and original complete reference helper execute together through loop completion for seven handled kinds.",
+          "504 cases compare complete destination,offset array,pool,world,source and property bytes across cursors,ordinals,kind high bit,null/empty/multiple property chains and index0/index1/sentinel references. Copied references become100/200/sentinel while originals remain unchanged."
+        ],
+        "models": [
+          "Imported memcpy uses explicit standard byte-copy model.",
+          "Controlled kind-size metadata0x500 permits all inspected fields;this is not a recovered game object size."
+        ],
+        "limits": [
+          "Bounded prepared single-object packing loop;earlier root selection/allocation and later runtime generation not executed.",
+          "Valid source/property data only;no overflow,concurrency or live-game guarantee."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "native_cases": 504,
+        "recovered_kind_sizes": {
+          "5": 528,
+          "11": 3680,
+          "15": 928,
+          "49": 480,
+          "52": 400,
+          "53": 304,
+          "54": 352
+        },
+        "recovered_reference_offsets": {
+          "52": 304,
+          "53": 268,
+          "54": 304
+        },
+        "findings": [
+          "Original initializer stores feed actual per-kind sizes into original object/property packing and complete reference conversion helper.",
+          "504 connected cases pass with recovered sizes and sensor reference offsets;full destination,pool,offset array,world and source comparisons pass."
+        ],
+        "models": [
+          "Imported memcpy uses explicit standard byte-copy model.",
+          "Kind54 vector-store fixture supplies XMM1 from the original constant loaded by the initializer;the intervening full initializer is not executed."
+        ],
+        "limits": [
+          "Bounded single-object packing loop;earlier root selection/allocation and later runtime generation not executed.",
+          "Valid prepared source/property data only;no overflow,concurrency or live-game guarantee."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    ],
+    "new_name_credit": 0,
+    "full_producer_named": false
   }
 }
