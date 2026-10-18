@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 753,
+    "checked_and_applied_names": 754,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 753,
+    "verified_names": 754,
     "function_count": 9608,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1929,7 +1929,7 @@
       "141330c40",
       "14021b300"
     ],
-    "scope": "695 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "696 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21756,6 +21756,505 @@
       "Valid mask indices and valid QR dimensions only; malformed input and live-game execution unverified.",
       "Full encoder penalty scoring and error-correction generation remain under review.",
       "Matching reference QR formulas does not prove original library identity, version or exact Media Molecule source/build match."
+    ],
+    "new_name_credit": 1
+  },
+  "qr_reserved_layout_checkpoint": {
+    "target": {
+      "name": "InitializeQrReservedModuleMask",
+      "signature": "void PS4_SYSV InitializeQrReservedModuleMask(uint version, uchar * matrix)"
+    },
+    "checks": {
+      "qr-reserved-layout-native-check.json": {
+        "native_cases": 80,
+        "original_instructions": 1287,
+        "results": [
+          {
+            "version": 1,
+            "size": 21,
+            "alignment_positions": [],
+            "reserved_modules": 233
+          },
+          {
+            "version": 2,
+            "size": 25,
+            "alignment_positions": [
+              6,
+              18
+            ],
+            "reserved_modules": 266
+          },
+          {
+            "version": 3,
+            "size": 29,
+            "alignment_positions": [
+              6,
+              22
+            ],
+            "reserved_modules": 274
+          },
+          {
+            "version": 4,
+            "size": 33,
+            "alignment_positions": [
+              6,
+              26
+            ],
+            "reserved_modules": 282
+          },
+          {
+            "version": 5,
+            "size": 37,
+            "alignment_positions": [
+              6,
+              30
+            ],
+            "reserved_modules": 290
+          },
+          {
+            "version": 6,
+            "size": 41,
+            "alignment_positions": [
+              6,
+              34
+            ],
+            "reserved_modules": 298
+          },
+          {
+            "version": 7,
+            "size": 45,
+            "alignment_positions": [
+              6,
+              22,
+              38
+            ],
+            "reserved_modules": 457
+          },
+          {
+            "version": 8,
+            "size": 49,
+            "alignment_positions": [
+              6,
+              24,
+              42
+            ],
+            "reserved_modules": 465
+          },
+          {
+            "version": 9,
+            "size": 53,
+            "alignment_positions": [
+              6,
+              26,
+              46
+            ],
+            "reserved_modules": 473
+          },
+          {
+            "version": 10,
+            "size": 57,
+            "alignment_positions": [
+              6,
+              28,
+              50
+            ],
+            "reserved_modules": 481
+          },
+          {
+            "version": 11,
+            "size": 61,
+            "alignment_positions": [
+              6,
+              30,
+              54
+            ],
+            "reserved_modules": 489
+          },
+          {
+            "version": 12,
+            "size": 65,
+            "alignment_positions": [
+              6,
+              32,
+              58
+            ],
+            "reserved_modules": 497
+          },
+          {
+            "version": 13,
+            "size": 69,
+            "alignment_positions": [
+              6,
+              34,
+              62
+            ],
+            "reserved_modules": 505
+          },
+          {
+            "version": 14,
+            "size": 73,
+            "alignment_positions": [
+              6,
+              26,
+              46,
+              66
+            ],
+            "reserved_modules": 678
+          },
+          {
+            "version": 15,
+            "size": 77,
+            "alignment_positions": [
+              6,
+              26,
+              48,
+              70
+            ],
+            "reserved_modules": 686
+          },
+          {
+            "version": 16,
+            "size": 81,
+            "alignment_positions": [
+              6,
+              26,
+              50,
+              74
+            ],
+            "reserved_modules": 694
+          },
+          {
+            "version": 17,
+            "size": 85,
+            "alignment_positions": [
+              6,
+              30,
+              54,
+              78
+            ],
+            "reserved_modules": 702
+          },
+          {
+            "version": 18,
+            "size": 89,
+            "alignment_positions": [
+              6,
+              30,
+              56,
+              82
+            ],
+            "reserved_modules": 710
+          },
+          {
+            "version": 19,
+            "size": 93,
+            "alignment_positions": [
+              6,
+              30,
+              58,
+              86
+            ],
+            "reserved_modules": 718
+          },
+          {
+            "version": 20,
+            "size": 97,
+            "alignment_positions": [
+              6,
+              34,
+              62,
+              90
+            ],
+            "reserved_modules": 726
+          },
+          {
+            "version": 21,
+            "size": 101,
+            "alignment_positions": [
+              6,
+              28,
+              50,
+              72,
+              94
+            ],
+            "reserved_modules": 949
+          },
+          {
+            "version": 22,
+            "size": 105,
+            "alignment_positions": [
+              6,
+              26,
+              50,
+              74,
+              98
+            ],
+            "reserved_modules": 957
+          },
+          {
+            "version": 23,
+            "size": 109,
+            "alignment_positions": [
+              6,
+              30,
+              54,
+              78,
+              102
+            ],
+            "reserved_modules": 965
+          },
+          {
+            "version": 24,
+            "size": 113,
+            "alignment_positions": [
+              6,
+              28,
+              54,
+              80,
+              106
+            ],
+            "reserved_modules": 973
+          },
+          {
+            "version": 25,
+            "size": 117,
+            "alignment_positions": [
+              6,
+              32,
+              58,
+              84,
+              110
+            ],
+            "reserved_modules": 981
+          },
+          {
+            "version": 26,
+            "size": 121,
+            "alignment_positions": [
+              6,
+              30,
+              58,
+              86,
+              114
+            ],
+            "reserved_modules": 989
+          },
+          {
+            "version": 27,
+            "size": 125,
+            "alignment_positions": [
+              6,
+              34,
+              62,
+              90,
+              118
+            ],
+            "reserved_modules": 997
+          },
+          {
+            "version": 28,
+            "size": 129,
+            "alignment_positions": [
+              6,
+              26,
+              50,
+              74,
+              98,
+              122
+            ],
+            "reserved_modules": 1270
+          },
+          {
+            "version": 29,
+            "size": 133,
+            "alignment_positions": [
+              6,
+              30,
+              54,
+              78,
+              102,
+              126
+            ],
+            "reserved_modules": 1278
+          },
+          {
+            "version": 30,
+            "size": 137,
+            "alignment_positions": [
+              6,
+              26,
+              52,
+              78,
+              104,
+              130
+            ],
+            "reserved_modules": 1286
+          },
+          {
+            "version": 31,
+            "size": 141,
+            "alignment_positions": [
+              6,
+              30,
+              56,
+              82,
+              108,
+              134
+            ],
+            "reserved_modules": 1294
+          },
+          {
+            "version": 32,
+            "size": 145,
+            "alignment_positions": [
+              6,
+              34,
+              60,
+              86,
+              112,
+              138
+            ],
+            "reserved_modules": 1302
+          },
+          {
+            "version": 33,
+            "size": 149,
+            "alignment_positions": [
+              6,
+              30,
+              58,
+              86,
+              114,
+              142
+            ],
+            "reserved_modules": 1310
+          },
+          {
+            "version": 34,
+            "size": 153,
+            "alignment_positions": [
+              6,
+              34,
+              62,
+              90,
+              118,
+              146
+            ],
+            "reserved_modules": 1318
+          },
+          {
+            "version": 35,
+            "size": 157,
+            "alignment_positions": [
+              6,
+              30,
+              54,
+              78,
+              102,
+              126,
+              150
+            ],
+            "reserved_modules": 1641
+          },
+          {
+            "version": 36,
+            "size": 161,
+            "alignment_positions": [
+              6,
+              24,
+              50,
+              76,
+              102,
+              128,
+              154
+            ],
+            "reserved_modules": 1649
+          },
+          {
+            "version": 37,
+            "size": 165,
+            "alignment_positions": [
+              6,
+              28,
+              54,
+              80,
+              106,
+              132,
+              158
+            ],
+            "reserved_modules": 1657
+          },
+          {
+            "version": 38,
+            "size": 169,
+            "alignment_positions": [
+              6,
+              32,
+              58,
+              84,
+              110,
+              136,
+              162
+            ],
+            "reserved_modules": 1665
+          },
+          {
+            "version": 39,
+            "size": 173,
+            "alignment_positions": [
+              6,
+              26,
+              54,
+              82,
+              110,
+              138,
+              166
+            ],
+            "reserved_modules": 1673
+          },
+          {
+            "version": 40,
+            "size": 177,
+            "alignment_positions": [
+              6,
+              30,
+              58,
+              86,
+              114,
+              142,
+              170
+            ],
+            "reserved_modules": 1681
+          }
+        ],
+        "findings": [
+          "Original helper clears packed matrix, stores dimension 4*version+17 and marks reserved function modules, not final black/white image pixels.",
+          "Independent geometric oracle matches timing row/column, finder/format regions, alignment squares and version-information rectangles across versions 1..40.",
+          "Version32 uses alignment spacing26; all other tested versions match integer spacing calculation.",
+          "Two initial byte patterns produce identical full outputs, with exact zero tail padding and unchanged external guards."
+        ],
+        "limits": [
+          "Full 1287-instruction static review remains incomplete; this evidence is a whole-output behavior check for valid versions only.",
+          "Invalid versions and actual live-game execution unverified; no new name credit or original source identity claim."
+        ],
+        "models": [
+          "Verified memset import adapted to local CRT; local stack canary."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete 1287-instruction layout body reviewed against original bytes and both encoder callsites.",
+      "80 original-native cases cover all 40 valid versions and two initial byte patterns; full output and guards match an independent geometric oracle.",
+      "Verified timing lines, finder/format regions, alignment squares and version-information reservations; zero padding and full reset confirmed.",
+      "Alignment scalar/vector guards reviewed: optimized vector branch is unreachable for valid versions; version32 uses spacing26.",
+      "Independent reopening verifies saved two-parameter working ABI, unchanged original bytes and all 9607 other function names/signatures."
+    ],
+    "limits": [
+      "Valid versions only; invalid inputs, canary failure and live-game execution unverified.",
+      "Verified memset import uses local CRT adapter; original layout instructions otherwise execute.",
+      "Full encoder scoring and error-correction generation remain under review; no exact original library/MM source match."
     ],
     "new_name_credit": 1
   }

@@ -6479,3 +6479,12 @@ Writes both copies of the 15-bit format word and the fixed dark module. Independ
 The complete 483-instruction body and working ABI survived independent reopening with unchanged original bytes and all 9,607 other function names/signatures. Invalid inputs and live-game behavior remain unverified. Full encoder scoring and error-correction generation are still under review. Formula and placement agreement with the [Nayuki reference implementation](https://github.com/nayuki/QR-Code-generator/blob/master/c/qrcodegen.c) establishes QR behavior, not an exact original source match.
 
 Totals: **753 checked names** (673 behavior/helper and 80 property/type), **2,159 mapped**, **7,449 unmapped**, among **9,608 defined functions**.
+
+
+### QR reservation layout reviewed and named
+
+`InitializeQrReservedModuleMask` names the complete 1,287-instruction helper. It clears the packed matrix and marks timing lines, finder/format regions, alignment squares and, from version seven, version-information regions. These bits identify modules protected from data masking; they are not the final black/white QR image. The encoder calls it once to initialize output and again to construct the reservation mask used during mask selection.
+
+**80 original-native cases** cover all 40 valid QR versions and two initial byte patterns, matching complete output, zero padding and external guards against an independent geometric calculation. Assembly confirms the version-32 alignment-spacing special case and that the vectorized position-generation branch cannot run for valid versions. Independent reopening verifies its saved working ABI, unchanged code and all 9,607 other function names/signatures. Invalid versions, canary failure and live-game execution remain unverified. Full encoder error correction and scoring are still under review.
+
+Totals: **754 checked names** (674 behavior/helper and 80 property/type), **2,160 mapped**, **7,448 unmapped**, among **9,608 defined functions**.

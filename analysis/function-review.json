@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "695 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "696 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9608,
-    "default_fun_names": 8700,
-    "other_names": 908,
-    "verification": "complete_inventory_matches_baseline_plus_695_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8699,
+    "other_names": 909,
+    "verification": "complete_inventory_matches_baseline_plus_696_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17499,6 +17499,29 @@
         "Valid mask indices and valid QR dimensions only; malformed input and live-game execution unverified.",
         "Full encoder penalty scoring and error-correction generation remain under review.",
         "Matching reference QR formulas does not prove original library identity, version or exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "140157910",
+      "original_name": "FUN_140157910",
+      "applied_name": "InitializeQrReservedModuleMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeQrReservedModuleMask(uint version, uchar * matrix)",
+      "evidence": [
+        "Complete 1287-instruction layout body reviewed against original bytes and both encoder callsites.",
+        "80 original-native cases cover all 40 valid versions and two initial byte patterns; full output and guards match an independent geometric oracle.",
+        "Verified timing lines, finder/format regions, alignment squares and version-information reservations; zero padding and full reset confirmed.",
+        "Alignment scalar/vector guards reviewed: optimized vector branch is unreachable for valid versions; version32 uses spacing26.",
+        "Independent reopening verifies saved two-parameter working ABI, unchanged original bytes and all 9607 other function names/signatures."
+      ],
+      "caveats": [
+        "Valid versions only; invalid inputs, canary failure and live-game execution unverified.",
+        "Verified memset import uses local CRT adapter; original layout instructions otherwise execute.",
+        "Full encoder scoring and error-correction generation remain under review; no exact original library/MM source match."
       ]
     }
   ],

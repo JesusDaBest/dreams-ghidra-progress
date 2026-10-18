@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9608,
-  "mapped_total": 2159,
-  "unmapped_total": 7449,
+  "mapped_total": 2160,
+  "unmapped_total": 7448,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54608,6 +54608,33 @@
             "Writes both copies of the 15-bit format word and the fixed dark module. Independent polynomial division and coordinate calculations match 640 original-native cases spanning all 40 versions, eight masks and two initial storage patterns. The fixed format selector declares high error correction; full encoder error-correction generation remains separately under review.",
             "Whole-buffer oracle checks include input preservation, untouched modules, padding bits and external guards.",
             "Independent offline reopening verifies saved working ABI, original bytes and all 9607 other function names/signatures."
+          ]
+        }
+      ]
+    },
+    "140157910": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "QR reservation layout helper used by the encoder supplying image-cache QR pixels.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "1efd07e9efc9e82eb0b905f82dab8a5ef69c4c9b248cf43aaec4f7a9ab9fcce6",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeQrReservedModuleMask",
+          "support": [
+            "Complete 1287-instruction layout body reviewed against original bytes and both encoder callsites.",
+            "80 original-native cases cover all 40 valid versions and two initial byte patterns; full output and guards match an independent geometric oracle.",
+            "Verified timing lines, finder/format regions, alignment squares and version-information reservations; zero padding and full reset confirmed.",
+            "Alignment scalar/vector guards reviewed: optimized vector branch is unreachable for valid versions; version32 uses spacing26.",
+            "Independent reopening verifies saved two-parameter working ABI, unchanged original bytes and all 9607 other function names/signatures."
           ]
         }
       ]
