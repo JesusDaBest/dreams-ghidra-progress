@@ -7472,3 +7472,10 @@ The indexed stroke metadata helper uses this operation to replace a 44-byte desc
 Corrected the previously inferred `void()` declaration of **WritePackedResourceBytesThroughCursor** to return a 32-bit resource ID and accept a cursor pointer, signed 32-bit payload byte offset, replacement-data pointer and unsigned 32-bit byte count. Assembly establishes the signed offset extension, zero-extended length and root-ID return; independent reopening verifies argument storage in RDI/ESI/RDX/ECX and return storage in EAX.
 
 The cursor pointer remains a working view of a mixed-layout object, not a recovered original struct. Bytes and all 9,611 other names/signatures are unchanged; decompilation passes. No additional checked-function credit or native game validation is claimed.
+
+
+### Indexed packed stroke metadata reader named
+
+Applied and independently reopened **GetPackedStrokeMetadataByIndex** after reading its complete **102-instruction defined body** and original unwind bytes. It traverses resource leaves and returns a direct pointer to the requested 44-byte descriptor. All 65,536 header words match the decoded per-leaf record-count arithmetic. Seven direct original-byte callers connect the result to descriptor editing, transforms, point-data traversal and per-player command buffering.
+
+Negative signed indices are not explicitly rejected; valid nonnegative indices remain a caller precondition. Direct-pointer lifetime, malformed trees, all-caller bounds and the geometry consumer of kaleidoscope flags remain unresolved. Only the name and comment changed; reopening/decompilation passed, and bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. This adds one checked helper, not full stroke or paint completion.

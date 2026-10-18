@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2182,
-  "unmapped_total": 7430,
+  "mapped_total": 2183,
+  "unmapped_total": 7429,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55221,6 +55221,32 @@
             "Cursor copy/write, category1 summary refresh, fingerprint interning, unchanged-identity stop and four-byte parent propagation traced.",
             "Indexed44-byte stroke metadata replacement caller independently confirms write direction.",
             "Independent reopening/decompilation passed; bytes, prototype and9611 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "141070030": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Indexed44-byte stroke metadata lookup traced through stored record and editing/point-data callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Returns indexed stroke descriptor pointer from packed resource leaves.",
+      "code_sha256": "b0abe832c1cf579ccf52c0819bd8e1f52d98c60451978499b90b01a3994bc977",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetPackedStrokeMetadataByIndex",
+          "support": [
+            "All102 owned instructions and decompilation read; original unwind adds terminal failure-path UD2.",
+            "All65536 headerwords verified against44-byte record count; seven original direct caller sites traced.",
+            "Metadata-root callers copy44-byte descriptor or access stored transforms, confirming stroke record role.",
+            "Independent reopening/decompilation passed; bytes, inferred prototype and9611 other names/signatures unchanged."
           ]
         }
       ]

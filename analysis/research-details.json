@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 777,
+    "checked_and_applied_names": 778,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 777,
+    "verified_names": 778,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "715 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "716 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24266,5 +24266,24 @@
       "No caller bounds, malformed cursor, allocator/concurrency or runtime proof."
     ],
     "new_name_credit": 0
+  },
+  "packed_stroke_metadata_reader_name_checkpoint": {
+    "target": {
+      "name": "GetPackedStrokeMetadataByIndex",
+      "signature": "undefined PS4_SYSV GetPackedStrokeMetadataByIndex(void)"
+    },
+    "original_owned_instructions": 102,
+    "evidence": [
+      "All102 owned instructions and decompilation read; original unwind adds terminal failure-path UD2.",
+      "All65536 headerwords verified against44-byte record count; seven original direct caller sites traced.",
+      "Metadata-root callers copy44-byte descriptor or access stored transforms, confirming stroke record role.",
+      "Independent reopening/decompilation passed; bytes, inferred prototype and9611 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Negative signed index is not rejected; nonnegative valid index is a caller precondition.",
+      "Returns direct pointer; no pointer lifetime, malformed tree, all-caller bounds or geometry replication proof.",
+      "Analyst descriptive name; original struct and working ABI refinement remain pending."
+    ],
+    "new_name_credit": 1
   }
 }

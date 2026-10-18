@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "715 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "716 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9612,
-    "default_fun_names": 8680,
-    "other_names": 932,
-    "verification": "complete_inventory_matches_baseline_plus_715_renames_and_61_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8679,
+    "other_names": 933,
+    "verification": "complete_inventory_matches_baseline_plus_716_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18055,6 +18055,28 @@
         "Analyst descriptive name, not original symbol.",
         "No malformed cursor, caller bounds, allocation/concurrency or native game proof.",
         "Cursor pointer is a working view over a mixed-layout object, not recovered original struct."
+      ]
+    },
+    {
+      "address": "141070030",
+      "original_name": "FUN_141070030",
+      "applied_name": "GetPackedStrokeMetadataByIndex",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "undefined PS4_SYSV GetPackedStrokeMetadataByIndex(void)",
+      "evidence": [
+        "All102 owned instructions and decompilation read; original unwind adds terminal failure-path UD2.",
+        "All65536 headerwords verified against44-byte record count; seven original direct caller sites traced.",
+        "Metadata-root callers copy44-byte descriptor or access stored transforms, confirming stroke record role.",
+        "Independent reopening/decompilation passed; bytes, inferred prototype and9611 other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Negative signed index is not rejected; nonnegative valid index is a caller precondition.",
+        "Returns direct pointer; no pointer lifetime, malformed tree, all-caller bounds or geometry replication proof.",
+        "Analyst descriptive name; original struct and working ABI refinement remain pending."
       ]
     }
   ],
