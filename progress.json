@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 717,
+    "done": 718,
     "todo": 1452,
-    "total": 2169,
-    "behavior_or_helpers_reviewed": 643,
+    "total": 2170,
+    "behavior_or_helpers_reviewed": 644,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -34927,12 +34927,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 27,
+        "done": 28,
         "todo": 108,
-        "total": 135,
-        "behavior_or_helpers_reviewed": 27,
+        "total": 136,
+        "behavior_or_helpers_reviewed": 28,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 96,
+        "runtime_functions_identified": 97,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -34953,6 +34953,7 @@
           "GetOrLoadBricker2WriteTreeBricksShader",
           "RunBricker2BuildPipeline",
           "DispatchSoftBlendCommandIndexGather",
+          "BuildSculptSlotFromCommandBounds",
           "BuildVolumeSlotDescriptor",
           "ResizeBrickBlockChain",
           "GetOrLoadHasherClearShader",
@@ -35092,6 +35093,7 @@
           "14127f000",
           "14127f740",
           "14128ff60",
+          "141294680",
           "141295780",
           "141295a00",
           "141295f90",
@@ -35219,12 +35221,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 26,
+            "done": 27,
             "todo": 69,
-            "total": 95,
-            "behavior_or_helpers_reviewed": 26,
+            "total": 96,
+            "behavior_or_helpers_reviewed": 27,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 89,
+            "runtime_functions_identified": 90,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -35244,6 +35246,7 @@
               "GetOrLoadBricker2WriteTreeBricksShader",
               "RunBricker2BuildPipeline",
               "DispatchSoftBlendCommandIndexGather",
+              "BuildSculptSlotFromCommandBounds",
               "BuildVolumeSlotDescriptor",
               "ResizeBrickBlockChain",
               "GetOrLoadHasherClearShader",
@@ -35343,6 +35346,7 @@
               "14127f000",
               "14127f740",
               "14128ff60",
+              "141294680",
               "141295780",
               "141295a00",
               "141295f90",
@@ -35614,17 +35618,18 @@
               {
                 "name": "sculpting-painting/csg/chunk",
                 "label": "Chunk",
-                "done": 1,
+                "done": 2,
                 "todo": 26,
-                "total": 27,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 28,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 27,
+                "runtime_functions_identified": 28,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
-                  "DispatchSoftBlendCommandIndexGather"
+                  "DispatchSoftBlendCommandIndexGather",
+                  "BuildSculptSlotFromCommandBounds"
                 ],
                 "todo_names": [
                   "0x1412838d0",
@@ -35655,7 +35660,8 @@
                   "0x141289310"
                 ],
                 "done_addresses": [
-                  "14128ff60"
+                  "14128ff60",
+                  "141294680"
                 ],
                 "todo_addresses": [
                   "1412838d0",
@@ -35690,17 +35696,18 @@
                   {
                     "name": "sculpting-painting/csg/chunk/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 26,
-                    "total": 27,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 28,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 27,
+                    "runtime_functions_identified": 28,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
-                      "DispatchSoftBlendCommandIndexGather"
+                      "DispatchSoftBlendCommandIndexGather",
+                      "BuildSculptSlotFromCommandBounds"
                     ],
                     "todo_names": [
                       "0x1412838d0",
@@ -35731,7 +35738,8 @@
                       "0x141289310"
                     ],
                     "done_addresses": [
-                      "14128ff60"
+                      "14128ff60",
+                      "141294680"
                     ],
                     "todo_addresses": [
                       "1412838d0",
@@ -46383,5 +46391,5 @@
       }
     ]
   },
-  "unmapped": 7443
+  "unmapped": 7442
 }

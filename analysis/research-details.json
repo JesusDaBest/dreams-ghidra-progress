@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 763,
+    "checked_and_applied_names": 764,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 763,
+    "verified_names": 764,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "701 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "702 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -23039,5 +23039,22 @@
       "Earlier shape-specific bounds and blend-radius expansion are separate stages."
     ],
     "new_name_credit": 0
+  },
+  "sculpt_command_bounds_build_name_checkpoint": {
+    "target": {
+      "name": "BuildSculptSlotFromCommandBounds",
+      "signature": "undefined PS4_SYSV BuildSculptSlotFromCommandBounds(void)"
+    },
+    "evidence": [
+      "Complete825-instruction original body and static control flow reviewed.",
+      "Shape bounds,grid clipping,unique packed keys,overflow ordering,one-cell halo andCPU/GPU caller linkage reviewed.",
+      "Independent reopening confirms saved name,retained prototype,successfuldecompilation,unchanged bytes andall9611other names/signatures."
+    ],
+    "limits": [
+      "No fullroutine native execution orliveGPUexecution.",
+      "Allocationfailure,cleanupqueue concurrency/capacity,allshape andexceptionalfloat cases remain unverified.",
+      "Descriptive analyst name,not originaldeclaration."
+    ],
+    "new_name_credit": 1
   }
 }

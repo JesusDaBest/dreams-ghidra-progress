@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2169,
-  "unmapped_total": 7443,
+  "mapped_total": 2170,
+  "unmapped_total": 7442,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54875,6 +54875,31 @@
             "Complete182-instruction CPU wrapper and original instruction bytes reviewed.",
             "Matched gather/pre shaders fully read with exact280/28-byte executable roundtrips.",
             "Independent reopening verifies descriptive name, retained prototype, successful decompilation, unchanged bytes and all9611other function names/signatures."
+          ]
+        }
+      ]
+    },
+    "141294680": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "chunk",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete bounds-to-block selection anddownstream sculpt build orchestration.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds sculpt slot fromcommand bounds andselected gridblocks.",
+      "code_sha256": "5a06e205dd6b10218dfda25703594140fa3a13235e12ffc284cbec325b4bfa5c",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildSculptSlotFromCommandBounds",
+          "support": [
+            "Complete825-instruction original body and static control flow reviewed.",
+            "Shape bounds,grid clipping,unique packed keys,overflow ordering,one-cell halo andCPU/GPU caller linkage reviewed.",
+            "Independent reopening confirms saved name,retained prototype,successfuldecompilation,unchanged bytes andall9611other names/signatures."
           ]
         }
       ]
