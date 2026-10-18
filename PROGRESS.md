@@ -6106,3 +6106,12 @@ Totals: **726 checked names** (646 behavior/helper and 80 property/type), **2,13
 Cases cover 11 candidate parent kinds, modes 0–6, tagged parent references and high kind bits in valid three-node hierarchies. Full world, object, metadata and frame-guard comparisons pass. No replacement predicate is used. This helps explain how mode-dependent parent validation and later zero/nonzero transform traversal can consume the same byte without implying that it is universally boolean.
 
 The fixture enters after earlier transform/wire work and exits before subsequent upgrade stages. Full migration/version gating, other root layouts, malformed/cyclic hierarchies and live-game behavior remain unverified. No new naming credit: **726 checked names** remains the total.
+
+
+### Attachment-mode runtime writer and player-mask behavior
+
+**2,048 native cases** execute an original bounded writer outside the scene-upgrade routine. It derives common byte `+0x2E` from current parent kinds 9/13/14/15/98 as values 6/2/3/4/5, otherwise zero. It updates the cached parent low 16 bits only when the object index is within the parent-cache length.
+
+The same window exposes a mode-dependent player-mask rule: zero mode ORs the parent's cached mask into the object's byte `+0x22`; special modes use the object's own byte alone. Full world, child, parent and metadata comparisons plus frame guards pass across all 128 low kinds, high kind bits, indices 63/64, present/absent cache entries and two mask profiles.
+
+The fixture enters after earlier edits/helpers and exits before owner invalidation and transform work. The containing dispatcher is not fully understood or named. Only valid tagged parent-0 references are tested; malformed/missing parents, concurrency and live-game behavior remain unverified. No new naming credit: **726 checked names** remains the total.
