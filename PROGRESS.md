@@ -7063,3 +7063,16 @@ The larger processing routine, downstream scratch-selection math, real allocatio
 The frame-specific allocation path uses 17 banks of 65,536 entries. **1,088 native cases** cover every distinct active/target bank pair at exact-fit requests of 1, 2, 65,535 and 65,536 entries. The packed handle contains bank and offset. Processed output points occupy 44 bytes, distinct from 40-byte source points. Eviction credits reclaimed point counts to the bank counter used by compaction-capacity arithmetic. Compaction itself remains a partial static trace, not native-tested behavior.
 
 These findings add one checked name, not whole-processor completion. Totals: **785 checked names**, **2,187 mapped functions**, **7,426 unmapped**, among **9,613 defined functions**.
+
+
+### Packed Sprite point path length reviewed and named
+
+`MeasurePackedSpritePointPathLength` names the complete 242-instruction helper used at two Sprite cache processor call sites. It returns the float32 sum of distances between consecutive XYZ positions, excludes radius from that sum and advances a mutable packed-point cursor to the final point. Counts below two return zero without changing the cursor. The working signature now records the float return in low XMM0 and an opaque cursor pointer in RDI; independent reopening verifies both the name and signature.
+
+**78 single-page native cases** and **36 cross-page cases** cover zero through 36 points, changing radii, several position patterns, partial/full final pages and two/three-leaf depth-one trees. Point pages have 480 bytes of payload for twelve 40-byte points. The original `pow` import is linked through its relocation and local symbol evidence; cross-page fixtures use an explicit adapter. Deeper/malformed trees, arbitrary starting cursors, nonfinite/overflow behavior, world units and the platform math implementation remain unverified.
+
+Separately, **12 compaction cases** check two live ranges copied with 44-byte output stride, rewritten cache handles, cleared bank counters and successful allocation after compaction, including exact fit. The fixture uses a byte-copy adapter for the linked `memcpy` import and bypasses geometry after allocation. This updates the earlier static-only compaction finding within that limited scope.
+
+A 92-instruction packing slice establishes the processed 44-byte record layout: three 32-bit lanes, eight half-precision values and four packed words. Several vector and bitfield meanings remain unresolved; this is not a recovered original struct or a complete processor review.
+
+Totals: **786 checked names**, **2,188 mapped functions**, **7,425 unmapped**, among **9,613 defined functions**. Only the reviewed helper adds a checked name; the partial compaction and format findings add no whole-processor completion credit.

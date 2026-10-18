@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 785,
+    "checked_and_applied_names": 786,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 785,
+    "verified_names": 786,
     "function_count": 9613,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "722 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "723 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24575,5 +24575,46 @@
     "native_cases": 111,
     "new_name_credit": 1,
     "native_scope": "81 single-frame and30 aggregate eviction cases; complete original routine; separate1088 allocation cases bypass geometry after allocation."
+  },
+  "sprite_point_path_length_checkpoint": {
+    "target": {
+      "name": "MeasurePackedSpritePointPathLength",
+      "signature": "float PS4_SYSV MeasurePackedSpritePointPathLength(pointer point_cursor)"
+    },
+    "evidence": [
+      "Countcursor+20<2returnsvxorzeroXMM0withoutwrites.",
+      "Eachsegmentloads sourceXYandZR from40-bytepoints,subtractsXYandZR;VMOVLHPS/VMULPS/VHADDPS/VPERMILPD/VADDSS computesXYZsquare sum,omittingradiuslane;VSQRTSS andVADDSS accumulatefloat32length.",
+      "Cursorupdatesleaf+4,byteoffset+8,currentindex+16;root+0,baseoffset+12,totalcount+20 andpayloadboundaryfields+24/+28readfortraversal.",
+      "Crossleafpathrecomputes40-bytepositionswith480-bytepayload/24-bytepageoverhead,usesrootdepthand14160af80 exponenthelper;notexecutedinfixtures.",
+      "Processor1413d6f28receiveslengthinXMM0andstoresstack+bc;anothercallinselectedscratchcandidatepathcomputeslengthforcandidatecursor.",
+      "242originalownedinstructionsandcompleteCread;78singleleafand36depth1multileafnativecases;powexplicitlyadapted.",
+      "Nameandfloat-return/RDIopaque-pointerworkingABIindependentlyreopened;allothernames/signaturesandbytesunchanged."
+    ],
+    "limits": [
+      "Validcursor/treepreconditions;arbitrarydeep/malformedtrees,nonfinite/overflowandworldunitsunverified.",
+      "Explicitpowadapterinmultileaffixtures;originalplatformmathnotexecuted.",
+      "Cursorisadvanced;opaque32-byteworkingregion,notoriginalC++declaration.",
+      "Descriptiveanalystname;noentireprocessorcompletionclaim."
+    ],
+    "native_cases": 114,
+    "native_scope": "78singleleaf and36depth1multileaf original-helper cases;powadaptedonlyformultileaf.",
+    "new_name_credit": 1
+  },
+  "sprite_point_compaction_followup": {
+    "native_cases": 12,
+    "scope": "Two live point ranges copied between four bank pairs;44-byte stride and cachehandles/counters checked;allocation1/100/65528 retried after eight live records.",
+    "limits": [
+      "Explicitmemcpyadapter;originalplatformlibrarynotexecuted.",
+      "Geometrybypassedafterallocation;noactualworkers,eviction/concurrency/lifetimeproof."
+    ]
+  },
+  "sprite_processed_point_layout_followup": {
+    "size": 44,
+    "scope": "92 original packing instructions reviewed.",
+    "layout": "12 bytes of32-bit lanes;16 bytes ofeightbinary16values;fourpackedDWORDs.",
+    "limits": [
+      "Semanticlineageofseveralvectors/bitfieldsunresolved;notoriginalC++struct.",
+      "Staticpackingreviewonly;notwholeprocessorcompletion."
+    ]
   }
 }

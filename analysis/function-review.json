@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "722 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "723 existing-function renames,62 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9613,
-    "default_fun_names": 8673,
-    "other_names": 940,
-    "verification": "complete_inventory_matches_baseline_plus_722_renames_and_62_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8672,
+    "other_names": 941,
+    "verification": "complete_inventory_matches_baseline_plus_723_renames_and_62_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18258,6 +18258,32 @@
         "Native tests execute original eviction routine; no imports are called on tested paths.",
         "The0.25 threshold is in executable timestamp units; wall-clock units not independently proved.",
         "Descriptive analyst name and int32 working return are not recovered original source declarations."
+      ]
+    },
+    {
+      "address": "1413d1700",
+      "original_name": "FUN_1413d1700",
+      "applied_name": "MeasurePackedSpritePointPathLength",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float PS4_SYSV MeasurePackedSpritePointPathLength(pointer point_cursor)",
+      "evidence": [
+        "Countcursor+20<2returnsvxorzeroXMM0withoutwrites.",
+        "Eachsegmentloads sourceXYandZR from40-bytepoints,subtractsXYandZR;VMOVLHPS/VMULPS/VHADDPS/VPERMILPD/VADDSS computesXYZsquare sum,omittingradiuslane;VSQRTSS andVADDSS accumulatefloat32length.",
+        "Cursorupdatesleaf+4,byteoffset+8,currentindex+16;root+0,baseoffset+12,totalcount+20 andpayloadboundaryfields+24/+28readfortraversal.",
+        "Crossleafpathrecomputes40-bytepositionswith480-bytepayload/24-bytepageoverhead,usesrootdepthand14160af80 exponenthelper;notexecutedinfixtures.",
+        "Processor1413d6f28receiveslengthinXMM0andstoresstack+bc;anothercallinselectedscratchcandidatepathcomputeslengthforcandidatecursor.",
+        "242originalownedinstructionsandcompleteCread;78singleleafand36depth1multileafnativecases;powexplicitlyadapted.",
+        "Nameandfloat-return/RDIopaque-pointerworkingABIindependentlyreopened;allothernames/signaturesandbytesunchanged."
+      ],
+      "caveats": [
+        "Validcursor/treepreconditions;arbitrarydeep/malformedtrees,nonfinite/overflowandworldunitsunverified.",
+        "Explicitpowadapterinmultileaffixtures;originalplatformmathnotexecuted.",
+        "Cursorisadvanced;opaque32-byteworkingregion,notoriginalC++declaration.",
+        "Descriptiveanalystname;noentireprocessorcompletionclaim."
       ]
     }
   ],
