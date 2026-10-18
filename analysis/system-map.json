@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2170,
-  "unmapped_total": 7442,
+  "mapped_total": 2171,
+  "unmapped_total": 7441,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54899,6 +54899,32 @@
           "support": [
             "Complete825-instruction original body and static control flow reviewed.",
             "Shape bounds,grid clipping,unique packed keys,overflow ordering,one-cell halo andCPU/GPU caller linkage reviewed.",
+            "Independent reopening confirms saved name,retained prototype,successfuldecompilation,unchanged bytes andall9611other names/signatures."
+          ]
+        }
+      ]
+    },
+    "141296db0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "chunk",
+        "runtime-implementation"
+      ],
+      "component_basis": "Called by sculpt slot statistics path to derive approximate equivalent-box axes from accumulated inertia.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Numerical runtime helper used by sculpt chunk statistics.",
+      "code_sha256": "225c9b1016076720cbe13d375948c3aa478669c8875a3595e5fd3681fd66d6e2",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApproximateInertiaEquivalentBoxAxes",
+          "support": [
+            "Complete200-instruction body read and original instruction bytes verified.",
+            "54 diagonal and54 rotated original-instruction native fixtures support equivalent-box axes; host CRT powf adapter used.",
+            "Caller counter and packed ldexpf scale provenance reviewed; scalar scales cubically and tensor by fifth power.",
             "Independent reopening confirms saved name,retained prototype,successfuldecompilation,unchanged bytes andall9611other names/signatures."
           ]
         }

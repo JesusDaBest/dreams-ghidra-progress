@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 718,
+    "done": 719,
     "todo": 1452,
-    "total": 2170,
-    "behavior_or_helpers_reviewed": 644,
+    "total": 2171,
+    "behavior_or_helpers_reviewed": 645,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -34927,12 +34927,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 28,
+        "done": 29,
         "todo": 108,
-        "total": 136,
-        "behavior_or_helpers_reviewed": 28,
+        "total": 137,
+        "behavior_or_helpers_reviewed": 29,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 97,
+        "runtime_functions_identified": 98,
         "property_type_functions_identified": 39,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -34959,6 +34959,7 @@
           "GetOrLoadHasherClearShader",
           "InitializeGpuHashTableResources",
           "DispatchGpuHashTableClear",
+          "ApproximateInertiaEquivalentBoxAxes",
           "GetOrLoadGdsCounterReadbackShader",
           "DispatchGdsCounterReadback",
           "BuildAndReuseVolumeResourcesForSlot",
@@ -35099,6 +35100,7 @@
           "141295f90",
           "141296330",
           "141296520",
+          "141296db0",
           "141297f40",
           "141298670",
           "1412993c0",
@@ -35221,12 +35223,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 27,
+            "done": 28,
             "todo": 69,
-            "total": 96,
-            "behavior_or_helpers_reviewed": 27,
+            "total": 97,
+            "behavior_or_helpers_reviewed": 28,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 90,
+            "runtime_functions_identified": 91,
             "property_type_functions_identified": 6,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -35252,6 +35254,7 @@
               "GetOrLoadHasherClearShader",
               "InitializeGpuHashTableResources",
               "DispatchGpuHashTableClear",
+              "ApproximateInertiaEquivalentBoxAxes",
               "GetOrLoadGdsCounterReadbackShader",
               "DispatchGdsCounterReadback",
               "BuildAndReuseVolumeResourcesForSlot",
@@ -35352,6 +35355,7 @@
               "141295f90",
               "141296330",
               "141296520",
+              "141296db0",
               "141297f40",
               "141298670",
               "1412993c0",
@@ -35618,18 +35622,19 @@
               {
                 "name": "sculpting-painting/csg/chunk",
                 "label": "Chunk",
-                "done": 2,
+                "done": 3,
                 "todo": 26,
-                "total": 28,
-                "behavior_or_helpers_reviewed": 2,
+                "total": 29,
+                "behavior_or_helpers_reviewed": 3,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 28,
+                "runtime_functions_identified": 29,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
                   "DispatchSoftBlendCommandIndexGather",
-                  "BuildSculptSlotFromCommandBounds"
+                  "BuildSculptSlotFromCommandBounds",
+                  "ApproximateInertiaEquivalentBoxAxes"
                 ],
                 "todo_names": [
                   "0x1412838d0",
@@ -35661,7 +35666,8 @@
                 ],
                 "done_addresses": [
                   "14128ff60",
-                  "141294680"
+                  "141294680",
+                  "141296db0"
                 ],
                 "todo_addresses": [
                   "1412838d0",
@@ -35696,18 +35702,19 @@
                   {
                     "name": "sculpting-painting/csg/chunk/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 2,
+                    "done": 3,
                     "todo": 26,
-                    "total": 28,
-                    "behavior_or_helpers_reviewed": 2,
+                    "total": 29,
+                    "behavior_or_helpers_reviewed": 3,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 28,
+                    "runtime_functions_identified": 29,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
                       "DispatchSoftBlendCommandIndexGather",
-                      "BuildSculptSlotFromCommandBounds"
+                      "BuildSculptSlotFromCommandBounds",
+                      "ApproximateInertiaEquivalentBoxAxes"
                     ],
                     "todo_names": [
                       "0x1412838d0",
@@ -35739,7 +35746,8 @@
                     ],
                     "done_addresses": [
                       "14128ff60",
-                      "141294680"
+                      "141294680",
+                      "141296db0"
                     ],
                     "todo_addresses": [
                       "1412838d0",
@@ -46391,5 +46399,5 @@
       }
     ]
   },
-  "unmapped": 7442
+  "unmapped": 7441
 }

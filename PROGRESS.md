@@ -6663,3 +6663,12 @@ Special shape selectors 10, 11, 13 and 14 instead use the same float approximati
 Independent reopening verifies the saved name, retained prototype, successful decompilation, unchanged original instructions and all 9,611 other names/signatures. This establishes a descriptive role, not complete runtime correctness. Full native/GPU execution, allocation-failure safety, cleanup-queue concurrency/capacity, every shape variant and exceptional float behavior remain unverified.
 
 Totals: **764 checked names** (684 behavior/helper and 80 property/type), **2,170 mapped**, **7,442 unmapped**, among **9,612 defined functions**. These are code-review counts, not whole-game completion.
+
+
+### Sculpt inertia: approximate equivalent-box axes
+
+Named `141296db0` **`ApproximateInertiaEquivalentBoxAxes`** after reading its complete 200-instruction body and verifying original bytes. It takes six symmetric inertia-tensor components and a mass-like scalar, uses two fixed 128-step power iterations with deflation, constructs the third axis by cross product, and derives three scaled box axes. The name is descriptive; it does not recover an original source symbol or claim exact convergence.
+
+Original-instruction native checks covered **54 diagonal and 54 rotated cuboid tensors** using a host CRT adapter for the verified `powf` import. The largest relative tensor reconstruction error in the rotated set was approximately **0.000025%**. Fourteen separate edge diagnostics exposed larger errors for close spectra (up to about 0.34% in those selected cases) and nonfinite outputs for some invalid scalar inputs. These diagnostics are not evidence of reachable game bugs.
+
+The caller forms the scalar as `(counterA + 0.5 * counterB) * scale^3` and scales the tensor by `scale^5`, with binary32 rounding. Scale comes from the packed `ldexpf` encoding. An earlier guard checks a different counter; producer ranges and a positive, finite scalar remain unproven. The inferred prototype was retained. Independent reopening verified the saved name, unchanged bytes and all 9,611 other names/signatures. This adds one checked helper, bringing the total to **765**, rather than completing sculpt physics or the game.
