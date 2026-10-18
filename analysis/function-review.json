@@ -18372,22 +18372,21 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV GetOrBuildSpriteStrokePathCacheEntry(void)",
+      "saved_working_signature": "pointer PS4_SYSV GetOrBuildSpriteStrokePathCacheEntry(uint required_record_capacity, ulonglong cache_key_seed, uint metadata_root_id, uint point_root_id, int key_modifier_a, int key_modifier_b, SpritePathTransform32 caller_transform)",
       "evidence": [
         "All1747 owned original instructions reviewed and matched to original bytes; complete control flow read in assembly, decompiled C inspected selectively.",
         "Looks up composite key and32-bit discriminator in512 chained buckets; refreshes timestamp and returns matching entry.",
         "Miss reserves cache entry and iterates packed stroke metadata to build chained eight-sample path records, orientation-derived data, centerline spheres and conditional earlier same-frame path links.",
         "72 complete-original-function hit-path cases agree with composite-key model and verify pointer return, discriminator traversal and timestamp refresh under explicit platform adapters.",
         "Related bounded slices:128 sample-cache lookup cases,62 sphere cases,96 linking cases; these do not establish full miss/build behavior.",
-        "Saved descriptive name independently reopened; original bytes and all other function names/signatures unchanged. Parameter types left unchanged."
+        "Saved descriptive name independently reopened; original bytes and all other function names/signatures unchanged. Parameter types left unchanged.",
+        "360 complete-original-function build/capacity cases with30 caller transforms:90 builds and270 null returns; eight transformed positions and quaternions match independent quaternion rotation/scale/translation and Hamilton-product models. The360 domain includes earlier216 and12-case domains; do not add them.",
+        "Working pointer result, six register inputs and32-byte by-value transform verified after independent reopening."
       ],
       "caveats": [
-        "Full function body read in original assembly; decompiled C inspected selectively, not completely.",
-        "No full miss/build/reclamation fixture; original platform mutex/time implementations not run.",
-        "Orientation/basis arithmetic read but not independently numerically verified.",
-        "Exact six register input domain labels and32-byte stack transform structure remain provisional; do not apply inferred parameter types.",
-        "No live game, concurrency, lifetime or arbitrary malformed/nonfinite input guarantee.",
-        "Descriptive analyst name, not recovered original source symbol."
+        "One finite two-point stroke and30 selected caller transforms; arbitrary geometry, nonfinite inputs and zero/negative caller scales remain unverified.",
+        "Occupied-bucket reclamation, replication, deep trees, original platform lock/time/thread implementations and lifetime/concurrency not verified.",
+        "Working transform and input names are analyst interpretations, not recovered original source declarations; two key modifier semantic names remain unresolved."
       ]
     }
   ],

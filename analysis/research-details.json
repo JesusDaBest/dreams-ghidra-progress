@@ -24865,9 +24865,9 @@
   "sprite_stroke_path_cache_entry_checkpoint": {
     "target": {
       "name": "GetOrBuildSpriteStrokePathCacheEntry",
-      "signature": "undefined PS4_SYSV GetOrBuildSpriteStrokePathCacheEntry(void)"
+      "signature": "pointer PS4_SYSV GetOrBuildSpriteStrokePathCacheEntry(uint required_record_capacity, ulonglong cache_key_seed, uint metadata_root_id, uint point_root_id, int key_modifier_a, int key_modifier_b, SpritePathTransform32 caller_transform)"
     },
-    "prototype_status": "Existing undefined prototype retained; no parameter type claim.",
+    "prototype_status": "Refined working prototype with independently verified register/stack storage; original source declaration not recovered.",
     "evidence": [
       "All1747 owned original instructions reviewed and matched to original bytes; complete control flow read in assembly, decompiled C inspected selectively.",
       "Looks up composite key and32-bit discriminator in512 chained buckets; refreshes timestamp and returns matching entry.",
@@ -24877,15 +24877,45 @@
       "Saved descriptive name independently reopened; original bytes and all other function names/signatures unchanged. Parameter types left unchanged."
     ],
     "limits": [
-      "Full function body read in original assembly; decompiled C inspected selectively, not completely.",
-      "No full miss/build/reclamation fixture; original platform mutex/time implementations not run.",
-      "Orientation/basis arithmetic read but not independently numerically verified.",
-      "Exact six register input domain labels and32-byte stack transform structure remain provisional; do not apply inferred parameter types.",
-      "No live game, concurrency, lifetime or arbitrary malformed/nonfinite input guarantee.",
-      "Descriptive analyst name, not recovered original source symbol."
+      "One finite two-point stroke and30 selected caller transforms; arbitrary geometry, nonfinite inputs and zero/negative caller scales remain unverified.",
+      "Occupied-bucket reclamation, replication, deep trees, original platform lock/time/thread implementations and lifetime/concurrency not verified.",
+      "Working transform and input names are analyst interpretations, not recovered original source declarations; two key modifier semantic names remain unresolved."
     ],
     "native_cases": 72,
     "native_scope": "Complete original8585-byte function; existing-entry path only with explicit imported platform adapters.",
     "new_name_credit": 1
+  },
+  "sprite_path_cache_transform_build_followup": {
+    "native": {
+      "cases": 360,
+      "built": 90,
+      "returned_null": 270,
+      "scope": "Complete original8585-byte cache function, original packed metadata iterator and original point measurement/sampler; one single-leaf two-point stroke and30 translated/rotated/positive-scale caller transforms. Platform lock/thread/time and finite classifier explicitly adapted.",
+      "checked": [
+        "Entry reservation/capacity failures and complete nonempty record-chain construction.",
+        "Entry key/discriminator/timestamp/state2, bucket insertion and generated-record chain pointer.",
+        "Eight local sample positions and path length7/max radius1; all transformed positions match independent quaternion rotation/scale/translation and transformed quaternions match independent Hamilton products up to sign.",
+        "Source resource pool unchanged; successful build decrements free-record count."
+      ],
+      "limits": [
+        "One finite two-point stroke and30 selected transforms; arbitrary geometry/nonfinite/zero/negative scale not established.",
+        "No occupied-bucket reclamation, replication, deep trees, real platform locks/time or lifetime verification."
+      ],
+      "fixture_correction": "Earlier zero-payload metadata fixture expected a reusable empty cache entry but entered cleanup and returned null; not treated as game fault. Replaced with explicit nonempty stroke, actual free record and32-byte identity stack transform.",
+      "project_modified": false
+    },
+    "case_accounting": "360 includes earlier216 and12-case input domains.",
+    "working_signature": "pointer PS4_SYSV GetOrBuildSpriteStrokePathCacheEntry(uint required_record_capacity, ulonglong cache_key_seed, uint metadata_root_id, uint point_root_id, int key_modifier_a, int key_modifier_b, SpritePathTransform32 caller_transform)",
+    "working_transform_fields": [
+      "translation_x",
+      "translation_y",
+      "translation_z",
+      "uniform_scale",
+      "quaternion_x",
+      "quaternion_y",
+      "quaternion_z",
+      "quaternion_w"
+    ],
+    "new_name_credit": 0
   }
 }

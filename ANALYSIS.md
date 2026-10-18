@@ -7687,3 +7687,12 @@ These are bounded instruction-slice tests with explicit entry state and return a
 The name persisted after independent reopening, with original bytes and other function names/signatures unchanged. Its existing undefined prototype is retained: exact input domain labels and the stack transform structure remain provisional. The full miss/build/reclamation path and orientation calculations still lack complete numerical verification. Decompiled C was inspected selectively; the complete control-flow review used original assembly.
 
 Totals: **790 checked names**, **2,192 mapped functions**, **7,421 unmapped**, among **9,613 defined functions**. These remain static analysis and controlled fixture results, not whole-game completion.
+
+
+### Sprite path-cache build and caller transform verified
+
+The complete original cache function now passes **360 controlled build/capacity cases** across 30 caller transforms: **90 builds and 270 null returns**. Built records contain the expected eight local path samples. Their transformed positions match independent quaternion rotation, uniform scaling and translation; transformed quaternions match independent Hamilton products up to sign. Rotations around X and Z move the test path, avoiding a rotation test that only leaves its axis unchanged. Resource inputs remain unchanged.
+
+The seven-parameter working signature now records requested record capacity, a 64-bit cache seed, metadata and point resource IDs, two provisionally named signed key modifiers, and a 32-byte transform passed by value on the stack. The transform contains float32 translation XYZ and uniform scale, followed by quaternion XYZW. The result is an opaque entry pointer. This refines the previously retained undefined prototype. The saved signature, field layout and register/stack storage were independently reopened; other function names/signatures and original bytes remain unchanged.
+
+The 360 cases include the earlier 216-case and 12-case domains; they are not additive. These tests use one finite two-point stroke and positive caller scales. Arbitrary geometry, nonfinite inputs, zero/negative caller scale, occupied-bucket reclamation, replication, deeper trees and actual platform mutex/time behavior remain unverified. No additional name credit is taken.
