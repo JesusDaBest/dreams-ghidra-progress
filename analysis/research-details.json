@@ -18487,5 +18487,50 @@
       "No exact MM source/build match."
     ],
     "new_name_credit": 1
+  },
+  "physics_sensor_writeback_checkpoint": {
+    "native_check": {
+      "native_cases": 144,
+      "movement_sensor_cases": 144,
+      "rotation_sensor_cases": 144,
+      "original_producer_instructions": 8,
+      "original_sensor_instructions": {
+        "movement": 472,
+        "rotation": 399
+      },
+      "external_calls": 0,
+      "producer_windows": [
+        "140bc6945..140bc695f",
+        "140bc697b..140bc6994"
+      ],
+      "position_difference_multiplier": [
+        120.0,
+        120.0,
+        120.0,
+        0.0
+      ],
+      "findings": [
+        "Original bounded writeback puts (staged position A minus staged position B) times (120,120,120,0) into the same body record +70/+90 that MovementSensor reads at +70.",
+        "Second bounded window copies existing angular vector +80 to alternate +a0 without changing +80; complete RotationSensor consumes that preserved +80 vector.",
+        "Original complete sensors consume the same world/body storage; selected reference,power,prior state,deadband and clamp cases agree with independent expectations."
+      ],
+      "limits": [
+        "Two producer windows connected by explicit harness jump; intervening pose work, branch selection and enclosing solver are not executed.",
+        "Prepared positions and physics metadata; does not establish simulation cadence or physical units.",
+        "Sensor identity frames only in this connected fixture; direction fourth lanes not independently modeled.",
+        "No live game,worker/concurrency,complete physics update or MM source/build match."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0,
+    "primary_material": {
+      "url": "https://docs.indreams.me/en/create/resources/edit-mode-guide/assembly/gadgets/sensors-and-input",
+      "support": "Official user guide describes movement velocity/acceleration/scene position and rotation angular velocity; broad role corroboration only, not source/build or multiplier evidence."
+    },
+    "remaining": [
+      "Locate MovementSensor scene-position/XYZOutput producer separately; this reviewed updater does not write that field.",
+      "Trace staged position-array producers and solver branch conditions before asserting full provenance or cadence."
+    ]
   }
 }

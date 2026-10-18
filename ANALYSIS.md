@@ -6325,3 +6325,16 @@ The three WorldDirectionOutput XYZ vectors average the forward-rotated basis axe
 Complete sensor/world/owner/source comparisons allow only eight scalar outputs, the prior vector and three full direction vectors to change. Direction-vector fourth lanes are permitted writes but remain uninterpreted and are not independently modeled. Nonunit/nonfinite frames, malformed indices, physical timestep units, full startup/update-worker behavior, concurrency and live sensing remain unverified. No exact Media Molecule source/build match is claimed.
 
 Independent reopening verifies the reversible name and working owner/packed-reference/sensor signature, successful decompilation, unchanged original bytes and all 9,604 other names/signatures. Totals: **718 checked names** (638 behavior/helper and 80 property/type), **2,124 mapped**, **7,481 unmapped**, among 9,605 defined functions. This is one additional reviewed runtime function, not a whole-game completion claim.
+
+
+### Physics writeback connected to sensor inputs
+
+The native writeback constant is **(120, 120, 120, 0)**. A bounded path in the existing physics routine subtracts two staged positions, multiplies by that constant and writes the result into body fields +0x70 and +0x90. MovementSensor reads the same +0x70 storage. A second bounded window copies the existing angular vector from +0x80 to +0xA0, preserving the +0x80 input read by RotationSensor.
+
+**144 connected cases per sensor** execute eight original producer instructions and each complete original sensor body against the same world/body memory. Cases cover selected position differences, previous-vector states, optional reference subtraction, power 0/1/2, both identity-frame modes, deadband and clamping. Complete body/input comparisons check the producer's writes; complete sensor/world/owner/source comparisons check the sensor's permitted writes. No external calls are modeled or invoked.
+
+The harness explicitly joins two producer windows, skipping intervening pose work. It does not execute the branch predicates, the enclosing solver or the original scheduling between producer and consumer. This therefore establishes this bounded storage connection, not full physics provenance, simulation cadence, physical units or live-game verification. Rotation's angular input is preserved/copied here, not newly calculated. Direction-vector fourth lanes remain uninterpreted.
+
+The [official sensor guide](https://docs.indreams.me/en/create/resources/edit-mode-guide/assembly/gadgets/sensors-and-input) corroborates the broad gadget roles. It provides no match to this binary's source, multiplier or build. Its scene-position description also leaves a concrete next lead: the reviewed MovementSensor updater does not write the separately identified XYZOutput field, so that producer remains to be traced.
+
+No additional names or completion credit: **718 checked names**, 2,124 mapped and 7,481 unmapped functions remain the totals.
