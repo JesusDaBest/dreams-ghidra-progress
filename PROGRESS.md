@@ -6867,3 +6867,12 @@ The rotation word contains three 15-bit components, a two-bit omitted-component 
 Separate models checked 10,008 matrix cases and 20,008 codec cases. A connected model checked 12,000 finite rotation cases across all selectors and both high-bit states. These are host arithmetic transcriptions: the codec uses float32 and the matrix model uses double precision. They are not native game execution, a universal bit-exact roundtrip proof or malformed-input validation.
 
 Only the descriptive name and comment changed. Independent reopening and decompilation passed; native bytes, inferred prototype and all 9,611 other names/signatures are unchanged. Allocation/capacity failures, cycles and runtime behavior remain unverified. This adds one checked CPU helper, not completion of the sculpting system.
+
+
+### Scene-format version connected to CSG upgrades
+
+The legacy CSG thresholds now have traced provenance: they use the serialized **scene-format version** carried by the shared serializer context. The input context starts with sentinel 99,999. On the header-present input route, the scene serializer checks a marker, reads a version below 100,000 and stores it in the context. Native caller moves connect that context to packed resource conversion.
+
+For category-1 resources, versions through **116 (0x74)** receive rotation conversion before metadata compaction, marked-record rebuilding and header conversion. Versions **117 through 158 (0x75..0x9e)** enter the latter chain; higher versions bypass this legacy chain. These are format codes, not game release numbers.
+
+This is bounded header and call-chain analysis, with original-byte verification. Original version labels, release mapping, older headerless behavior and malformed-input handling remain unresolved. No additional reviewed-function or completion credit is added.
