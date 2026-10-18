@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c2d418f6aeb6bfe3b1cf4c7abaaeb24d0e493f07/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a0702f913c2c9064a1b28028cff141b04eb2ced9/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**767 of 9,612 functions named and checked.** A function is one piece of the game's code.
+**768 of 9,612 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/c2d418f6aeb6bfe3b1cf4c7abaaeb24d0e493f07/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a0702f913c2c9064a1b28028cff141b04eb2ced9/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -64,7 +64,7 @@ Every square is one actual function and has the same size. All function squares 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
-| Sculpting & painting | 139 | 31/100 | 0/39 |
+| Sculpting & painting | 139 | 32/100 | 0/39 |
 | Gadgets & logic | 516 | 58/60 | 50/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
@@ -1067,12 +1067,12 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Sculpting & painting** - 139 functions identified; 31 behavior/helper reviews; 0 property/type reviews
-  - **Sculpt geometry** - 99 functions identified; 30 behavior/helper reviews; 0 property/type reviews
+- **Sculpting & painting** - 139 functions identified; 32 behavior/helper reviews; 0 property/type reviews
+  - **Sculpt geometry** - 99 functions identified; 31 behavior/helper reviews; 0 property/type reviews
     - **Sculpt bricks** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
-    - **Chunk** - 31 functions identified; 5 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 31 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+    - **Chunk** - 31 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 31 functions identified; 6 behavior/helper reviews; 0 property/type reviews
     - **Sweep** - 11 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 11 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **CSG record storage** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
