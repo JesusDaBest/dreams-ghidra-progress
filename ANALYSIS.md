@@ -6517,3 +6517,12 @@ Only the bounded entry and exit are supplied by the fixture, with an explicit re
 Independent reopening verifies the saved descriptive name, two-pointer signature, decompilation, original bytes and all 9,605 other names/signatures. Main update caller windows supply the owner tail array and world. No exact Media Molecule source/build match is claimed.
 
 Totals: **724 checked names** (644 behavior/helper and 80 property/type), **2,130 mapped**, **7,476 unmapped**, among 9,606 defined functions.
+
+
+### World chains connected to parent-list construction
+
+**72 scenarios, 144 sequence executions** connect original `BuildWorldKindChainsAndTailPointers` output to the original bounded parent-head clearing block and its original `PrependSoundAndEffectFieldsToParentLists` call. World kind chains are now produced by original code rather than supplied manually.
+
+Eight-object fixtures contain kind-13/14 parents, zero/one/three Sound and Effect Field children and inactive kind-0 records. Shared/distinct parents, tagged references and high kind bits are covered. Each sequence runs twice with identical results. Full world, guarded tail-pointer output, parent, child and metadata comparisons pass.
+
+The fixture calls the original builder and bounded caller window separately; intervening main-loop instructions are not executed. The standard imported byte-fill routine remains modeled. Original bounded metadata stores provide parent offsets, but full initialization, malformed/cyclic references, concurrency and live-game behavior remain unverified. No new naming credit: **724 checked names** remains the total.

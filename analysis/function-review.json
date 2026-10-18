@@ -16776,7 +16776,8 @@
         "216 native cases cover empty/one/three-object kind chains,shared/distinct parents,original initialized offsets for kinds13/14/15,high kind bits and tagged parent references.",
         "Full world,parent,child and metadata comparisons pass;Sound chain processed before Effect Field chain;existing parent heads are not cleared by helper.",
         "Independent reopening verifies name,void world-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures.",
-        "Later72 cases execute original main-loop clearing window connected to original helper twice each:144 executions,full world/parent/child/metadata comparisons and repeatability. Caller clears kind13 head128,kind14 head140 and Sound head40 before prepending. Bounded entry/exit;full main loop unverified."
+        "Later72 cases execute original main-loop clearing window connected to original helper twice each:144 executions,full world/parent/child/metadata comparisons and repeatability. Caller clears kind13 head128,kind14 head140 and Sound head40 before prepending. Bounded entry/exit;full main loop unverified.",
+        "Later72 scenarios twice each feed original kind-chain builder outputs into original bounded clear-and-prepend caller window. Full world,tail pointers,parent,child and metadata comparisons pass. Separate fixture calls;intervening/full main-loop code unverified."
       ],
       "caveats": [
         "Prepared valid acyclic kind chains and parents;no invalid/cyclic references,full caller/startup,concurrency or game claim.",
@@ -16799,7 +16800,8 @@
         "Main update caller windows pass owner7a4c60 as tail-pointer output and world as second argument.",
         "Original helper initializes120 kind head pointers,appends ascending object indices using cached kind bytes,advances tails to next-link slots,and terminates all chains with minus1.",
         "108 native cases cover0/1/7/120/128/255 objects,three old-length states and six kind distributions;full world and guarded tail-output comparisons pass. Imported standard byte fill modeled.",
-        "Independent reopening verifies saved name,two opaque-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+        "Independent reopening verifies saved name,two opaque-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures.",
+        "Later72 scenarios twice each feed original kind-chain builder outputs into original bounded clear-and-prepend caller window. Full world,tail pointers,parent,child and metadata comparisons pass. Separate fixture calls;intervening/full main-loop code unverified."
       ],
       "caveats": [
         "Cached kind inputs restricted0..119;function does not mask or validate cache bytes here.",
