@@ -23219,5 +23219,128 @@
       "Descriptive analyst name,not original declaration;inferred prototype retained."
     ],
     "new_name_credit": 1
+  },
+  "chunk_pipeline_partial_connected_checkpoint": {
+    "scope": "Bounded partialreview of1683-instruction CPU pipeline and3620-instruction corebucketer;wholebodies notcomplete.",
+    "reviews": [
+      {
+        "function": "141290290",
+        "original_owned_instructions": 1683,
+        "scope": "Only tail classification/grid/range bookkeeping and selected capacity guards reviewed; earlier pipeline stages incomplete.",
+        "original_bytes_all_owned_verified": true,
+        "packed_key_inverse_cases": 131072,
+        "classification_field_cases": 32,
+        "findings": [
+          "Root count>0xc0000 and color-record count>0x1000000 return status2; equality is accepted by these local checks.",
+          "Classification reads the low2bits of each4-bit nibble, eight entries perDWORD. Class1 sets grid sentinel-1 without appending an entry. Class2 appends sentinel-2 with zero auxiliaryfloat. Classes0/3 append produced index and corresponding auxiliaryfloat.",
+          "Packed key components are shifted right4 then masked63. Flat grid indexing nevertheless uses(z*32+y)*32+x. Exhaustive inverse checks cover the earlier reviewed caller domain0..31 with allfour upper flag combinations; this tail alone does not enforce that domain.",
+          "Appending checks current slot count>4095 before writing. Accepted entries write coordinates plus saved origin, index, sentinel-1 and auxiliaryfloat at32-byte stride; then count increments. Other bytes in the stride are not established as initialized here.",
+          "Three(start,count)pairs are appended from successive root-count boundaries. These lists connect upstream output to the reviewed full-child1,full-child0 andvoxel passes in FinalizeSculptSlotStatistics.",
+          "Normal completion returns0; capacity-failure label returns2. A stack-canary failure takes the separate noreturn call.",
+          "Accepted exact color capacity0x1000000 coincides arithmetically with zero in the later32-bit divisor shift. Additional producer/reachability constraints remain unknown; no reachable bug is claimed."
+        ],
+        "limits": [
+          "Complete1683-instruction pipeline semantics, allretry/refinement paths, GPUdispatch implementations andproducer contracts remain unfinished.",
+          "No whole-pipeline native execution, hardwareGPUvalidation, allocation/synchronization or failure-recovery safety guarantee.",
+          "Classification is numerical behavior; original enum names and auxiliaryfloat meaning are not recovered.",
+          "Six-bit decoded coordinates can exceed31; other caller domains require proof before treating the32-stride index as an injective bounded32cubed grid.",
+          "No new function name,type,completion credit or project mutation."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "function": "141290290",
+        "scope": "Initial batch sizing, snapshot/retry and2048-item inner chunking only.",
+        "bounded_input_budget_cases": 480004,
+        "readback_snapshot_bytes": 180,
+        "findings": [
+          "Initial batch cap is min(64,floor(64MiB/(4*(uint32(R8+1))))), further capped byfloor(64MiB/(8*R9)) when R9 is nonzero. Argument roles need complete caller validation.",
+          "In the bounded0..120000 command/selected-count domain,480004 modeled combinations retain cap64 and satisfy both recording-size inequalities. This does not prove every caller meets that domain.",
+          "Batch count is min(remaining input keys,cap). Before each attempt the routine snapshots45DWORDs of shared readback into14783ed40, using overlapping AVX copies covering bytes0..179.",
+          "Selected nonfinal refinement paths with readback counter+8>0x200000 restore that readback snapshot, halve current batch count and increment retry counter14783f174 before returning to attempt setup.",
+          "Attempt counter14783f170 increments on each setup, including retries. Restore is of readback statistics only; full GPU side effects or resource state are not shown as rolled back.",
+          "Inner refinement scans are segmented into at most0x800 items, advancing the segment offset by0x800.",
+          "Named bounds caller invokes this pipeline, tests EAX and calls FinalizeSculptSlotStatistics only for status0."
+        ],
+        "limits": [
+          "No proof of termination/progress if batch count halves tozero or initial sizing produceszero; producer constraints require review.",
+          "The uint32 R8+1 operation can wrap before division for arbitrary inputs; actual permitted arguments are not established for both callers.",
+          "Refinement shader semantics, transactional rollback, descriptor/lifetime safety, allreturn paths andGPUexecution remain unfinished.",
+          "No wholefunction review/name/type credit or project mutation."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "caller": "141290290",
+        "post_arithmetic_boundary_cases": 490,
+        "findings": [
+          "Pre program computes start=uint32(s0*lane),writes start toGDS9216+4*lane and(start,0)toGDS9472+8*lane. No local lane-count guard; CPU dispatch is one group.",
+          "Post program initially masks lane<s8. Reads the corresponding32/64bitGDS entries,clears bit31 ofstart,andforms uint32(end-start).",
+          "Post writes sentinel0xffffffff through first buffer descriptor at indexend only if end<descriptor recordcapacity; restores entry active lanes andwrites(start,count) through second descriptor at indexlane.",
+          "Post then clears two GDS words usingDS_WRITE2ST64_B32,encoded offsets39/40. Effective address interpretation is not resolved in this receipt.",
+          "Both9-instruction Pre and22-instruction Post programs are statically read andencoding roundtrip verified. Trailers56/60bytes excluded.",
+          "Embedded stage labels establish conditional call order,not proof that allthirteen stages execute for everyinput."
+        ],
+        "limits": [
+          "CoreChunkBucketer semantics andsharedGDS interstage synchronization remain unresolved.",
+          "No proof that outputcount subtraction cannot wrap or that allresulting ranges are withinbuffer capacity.",
+          "Descriptor stride/inputABI andactualentrylane state require fullCPUconstant linkage.",
+          "No liveGPUexecution,newnamecredit orwholepipeline completion."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "shader": "ChunkBucketer",
+        "program_bytes": 20436,
+        "decoded_instructions_total": 3620,
+        "semantic_scope": "Entry0..0x100 and bounded output-tail observations only; complete shape/ordered emission semantics remain unread.",
+        "search_cases": 2040,
+        "max_search_steps_observed": 13,
+        "findings": [
+          "Current command index is16*workgroupInput plus(localID oflane0>>6); low6bits oflocalID select the per-wave lane.",
+          "An unsigned binary search on the scalar-buffer DWORD table finds lower_bound(commandIndex): first table entry>=commandIndex,assuming sorted table. Initial count comes from second context DWORD0x10; table descriptor from DWORD0xc, i.e.byte0x30.",
+          "After command/lane guards, if the search result iswithin table count, reads an8byte record at lane*tableCount+searchIndex through descriptor at second-context byte0x10. Otherwise that pair remainszero.",
+          "Later entry loads actual command fields at96*commandIndex through first-context descriptorbyte0x40,consistent with the separately traced96-byte command resource.",
+          "Output tail uses fourDS_ORDERED_COUNT operations, lane-class partitioning, a64-bitGDSmax update and guarded indexed DWORD writes. Full ordered-count encoding,classification origin and inter-wave correctness are not yet resolved."
+        ],
+        "limits": [
+          "Exact byte roundtrip proves encoding fidelity,not semantics ofall3620instructions orGPUexecution.",
+          "Search model assumes sorted table andvalidbound descriptors; tableproducer stillneeds connected proof.",
+          "Workgroup/localID interpretation follows register use; realhardwareentry state unobserved.",
+          "No CPU name/type credit,project mutation orcompletepipeline claim."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "scope": "Gather output descriptor andcount connected statically toBucketer lower-bound input.",
+        "shared_descriptor": "14783ef3c",
+        "readback_count_offset": "0xc",
+        "bucketer_second_context": {
+          "table_descriptor_byte_offset": 48,
+          "table_count_byte_offset": 64
+        },
+        "bounded_subset_search_cases": 20481,
+        "findings": [
+          "Gather wrapper copies descriptor14783ef3c as its output descriptor. Pipeline copies the same descriptor toBucketer secondcontext+0x30.",
+          "Pipeline reads shared readback+0xc,then stores it asBucketer secondcontext+0x40. These correspond to shader SMRD DWORD offsets0xc and0x10.",
+          "Earlier reviewed Gather writes selected command indices, appends commandCount sentinel at slotK, andwritesK atGDS0xc0c; readback starts0xc00,soBucketer search countK excludes the sentinel.",
+          "Under the reviewed ordered compaction interpretation,theK searched entries are increasing selected commandindices. Exhaustive subset models for commandcounts0..10 agree with firstselectedIndex>=command queries.",
+          "If lower_bound returnsK,the guardedpairload doesnotexecute andits pair remainszero. Sentinel capacity/storage doesnot extend the searched count."
+        ],
+        "limits": [
+          "Ordered-count protocol execution,inter-waveordering,buffer visibility andcapacity require hardware or fullerISA validation.",
+          "Pair-data producer layout andallcorebucketer shape semantics remain incomplete.",
+          "Subset modelchecks logicalcompaction/search contract,not originalGPUexecution.",
+          "No newname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    ],
+    "new_name_credit": 0
   }
 }

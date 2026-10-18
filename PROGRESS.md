@@ -6717,3 +6717,14 @@ Named `141292230` **`FinalizeSculptSlotStatistics`** after reading all **1,020 o
 The CPU full-block diagonal terms combine offset-dependent contributions of weight `64^3` with a constant matching rounded solid-cube intrinsic inertia for side 64. Its reference vector comes from accumulated first moments divided by a guarded nonzero count. A half-unit difference between first-moment and cell-center formulas remains unresolved; no exact geometric centroid or defect is claimed. Integer overflow, exceptional floats, descriptor mutation, allocation/lifetime, synchronization and real GPU behavior remain open.
 
 The descriptive name persisted after independent reopening. The inferred prototype and original bytes were retained, and all 9,611 other names/signatures were unchanged. This adds one checked runtime function, bringing the total to **766**. It does not complete the sculpt subsystem or establish recovered original source.
+
+
+### Upstream chunk pipeline: batches, classifications and bucketing
+
+The upstream 1,683-instruction CPU pipeline remains partially reviewed. Its tail classifies block results, writes grid sentinels or produced indices, records the three dispatch ranges used by `FinalizeSculptSlotStatistics`, and returns status 2 on selected capacity failures. **131,072 packed-key inverse cases** cover the previously reviewed caller domain. The tail decodes six-bit coordinates while flattening with stride 32; other caller domains still need bounds proof. Local root/color limits accept equality, so they do not resolve the earlier exact-capacity divisor question.
+
+Batch sizing respects two 64 MiB recording budgets in **480,004 bounded input combinations**. Selected refinement overflow paths restore a **180-byte readback-statistics snapshot** and halve the current batch. This establishes a statistics retry, not transactional rollback of GPU buffers or guaranteed progress after repeated halving.
+
+Mapped thirteen embedded stage labels across conditional paths. The complete bucketing setup and finish shaders contain **9 and 22 instructions**, respectively, with exact byte roundtrips. Setup initializes per-lane starts/counters; finish emits `(start,count)` records and conditionally writes an end sentinel. The core `ChunkBucketer` contains **3,620 instructions** and also reassembles exactly, but only its entry and bounded tail have been semantically inspected.
+
+The core entry's lower-bound search matched **2,040 independent sorted-search cases**. CPU bindings connect its table descriptor and count to `ChunkSoftBlendGather`: it searches the selected-command indices and excludes the final command-count sentinel. **20,481 bounded subset queries** check that logical contract. Sortedness remains conditional on the gather's ordered-count protocol; hardware ordering, pair-data producer layout, full shape evaluation, retry termination and GPU visibility remain open. No new checked-function credit is added.
