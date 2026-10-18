@@ -6970,3 +6970,12 @@ The stroke editing loop also connects to the previously reviewed ComputeIndexedR
 Refined **GetPackedStrokeMetadataByIndex** to return a byte pointer and accept a 32-bit resource ID plus signed 32-bit record index. Independent reopening verifies EDI/ESI inputs and RAX pointer return. Original bytes and all 9,611 other names/signatures are unchanged. The working byte pointer does not invent an original record struct; negative-index validation and pointer lifetime remain caller concerns. No additional checked-function credit is added.
 
 An independent sprite-cache caller transforms the cached center and scales the radius by the absolute object scale, corroborating the sphere layout. Another reads the two XYZ extrema. The point-page offset correction also matches 9,984 host fixtures with aligned 40-byte points and full 480-byte intermediate payloads; 24 bytes of unused leaf payload are skipped. This does not prove malformed-tree traversal or arbitrary partial intermediate pages. No kaleidoscope geometry consumer has been established.
+
+
+### Sprite summary connected native fixtures
+
+Executed the original sprite-summary instructions with the original leaf iterator and source-marker helper under its zero-control path. Separate fixture scopes passed: 36 initial leaf cases, 360 expanded rotation/scale cases, three cache-hit precedence cases and 189 metadata-traversal cases. Of the last group, 108 used multi-level metadata trees with up to 33 descriptors. The sets overlap and are not added together as unique progress credit.
+
+Checks cover expected center/radius, selected extrema and record counts; complete two-slot cache writes and outer guards; source pool, fingerprint and argument preservation; both cache-hit paths and primary precedence. Metadata traversal covers one to three leaves, high-bit filtering, three rotation profiles and positive/negative/zero scales. The largest observed numeric error was below 0.0000011.
+
+The finite-float import uses an explicit exponent-test adapter. Point data remains in a single leaf, so its tree lookup and power-function import are not exercised. Connected nonfinite inputs, malformed trees, concurrency, collisions, complete function review and kaleidoscope geometry remain unresolved. This is isolated instruction execution, not running Dreams; no checked-name credit is added.
