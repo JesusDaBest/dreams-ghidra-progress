@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9612,
-  "mapped_total": 2176,
-  "unmapped_total": 7436,
+  "mapped_total": 2177,
+  "unmapped_total": 7435,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55066,6 +55066,32 @@
             "Complete 209-instruction CPU body and pseudocode read; owned bytes verified against original executable.",
             "Both call sites captured; delta field flags, shape-specific payloads, capacity exits and state commit traced.",
             "Independent reopening and decompilation passed; bytes, prototype and all 9611 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140c6c6c0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "packed-csg-records",
+        "runtime-implementation"
+      ],
+      "component_basis": "Recursive packed CSG metadata compaction in the legacy conversion chain.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Rebuilds tree pages while compacting present metadata bits and retaining metadata state for traversal.",
+      "code_sha256": "a7c5387192080e791bdfdd8afc43c4791ec930445eb44b4d256c90762f41abb5",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RebuildPackedResourceTreeWithCompactedMetadata",
+          "support": [
+            "All 116 owned CPU instructions and control paths read; bytes matched original executable.",
+            "Recursive tree rebuild, retained metadata state, bit compaction formula and shape-dependent record lengths traced.",
+            "65536 logical metadata/flag combinations checked; independent reopening and decompilation passed.",
+            "Native bytes, inferred prototype and all 9611 other names/signatures unchanged."
           ]
         }
       ]

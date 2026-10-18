@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 771,
+    "checked_and_applied_names": 772,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 771,
+    "verified_names": 772,
     "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "709 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "710 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -24034,6 +24034,25 @@
     "limits": [
       "Descriptive analyst name, not recovered original symbol.",
       "Logical size checks are not execution of native writer. Capacity failure can leave partial uncommitted payload bytes; no atomicity or malformed-input guarantee."
+    ],
+    "new_name_credit": 1
+  },
+  "packed_resource_metadata_compaction_name_checkpoint": {
+    "target": {
+      "name": "RebuildPackedResourceTreeWithCompactedMetadata",
+      "signature": "undefined PS4_SYSV RebuildPackedResourceTreeWithCompactedMetadata(void)"
+    },
+    "original_owned_instructions": 116,
+    "evidence": [
+      "All 116 owned CPU instructions and control paths read; bytes matched original executable.",
+      "Recursive tree rebuild, retained metadata state, bit compaction formula and shape-dependent record lengths traced.",
+      "65536 logical metadata/flag combinations checked; independent reopening and decompilation passed.",
+      "Native bytes, inferred prototype and all 9611 other names/signatures unchanged."
+    ],
+    "limits": [
+      "Descriptive analyst name, not original source symbol.",
+      "Original metadata field and version names unknown; no malformed stream, cycle, allocation or runtime safety proof.",
+      "Logical models are not execution of the original game."
     ],
     "new_name_credit": 1
   }

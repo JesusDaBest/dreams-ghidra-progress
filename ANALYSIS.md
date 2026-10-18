@@ -7356,3 +7356,12 @@ Applied and independently reopened **AppendLegacyPackedResourceRecordToLeaf** af
 Capacity checks prevent the modeled append from crossing the leaf boundary. The committed payload length and previous-record state change only after the record fits. Earlier writes may remain beyond the committed payload after failure, so this is not an atomic operation and has no explicit boolean result.
 
 Only the descriptive name and comment changed. Reopening and decompilation passed; native bytes, the existing prototype and all 9,611 other names/signatures are unchanged. Logical size-boundary models cover 40,960 cases; they do not execute the original writer or prove malformed-input safety. This adds one checked CPU helper, not completion of sculpting or Dreams.
+
+
+### Legacy packed CSG metadata conversion named
+
+Applied and independently reopened **RebuildPackedResourceTreeWithCompactedMetadata** after reviewing all **116 CPU instructions**. It rebuilds tree pages and compacts bits in explicitly stored metadata bytes, retaining the converted metadata across records so it can locate each next record. The arithmetic removes one old bit while preserving the low two bits.
+
+The following stage decodes every record but emits only records with original flag bit 0 set. Skipped records still update inherited decoding state. The meaning of that selection flag is unknown; it is not labeled enabled, deleted or visible. Rotation conversion, metadata compaction, flag-based selection and header conversion are distinct stages in the traced legacy load path.
+
+All 65,536 metadata/flag combinations passed the bounded bit and record-size model. Reopening and decompilation passed; only the descriptive name and comment changed, with bytes, prototype and all 9,611 other names/signatures unchanged. These checks do not execute the original routine or prove malformed-input, allocation or whole-game behavior. No developer livestream source match has been established for these functions.
