@@ -5433,3 +5433,16 @@ The 72-case history suite now feeds the actual generated `fe06` packet back thro
 Complete world comparisons check all expected changes except the new record's final two padding bytes: the checked dispatcher branch does not assign them, so they are observed but excluded from semantic comparison (both were zero in these runs). Nine captured bodies, including the 112-instruction insertion helper and 949-instruction range reader, and the full dispatcher remain original-byte matched. The 72 cases overlap the prior suite; 16 are the newly verified replay extension.
 
 This connects the tested removal, inverse recording and restoration path. It does not establish full user-facing undo/redo. Duplicate insertion, table exhaustion/compaction, malformed structures, concurrency and gameplay remain unresolved. No new name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
+
+
+### Exact keyed-record finder named; insertion duplicate and slot rules checked
+
+Saved `FindKey16RecordMatchingOrder` with a pointer return, table/key pointers in RDI/RSI and float order in XMM0. Its complete 91-instruction body hashes the 16-byte key, traverses the bucket chain and returns the first exact key/equal-order match or null. Independent reopening verifies the saved name and corrected working signature; original bytes and other names/signatures are unchanged.
+
+90 native cases check exact pointers and complete table/key preservation, then execute the original insertion helper. Existing matches suppress insertion without replacing coordinates. Signed zeros compare equal; NaN does not match. Tests include real hash collisions and tables with 0, 1, 3, 17, 8,191 and 8,192 allocated slots.
+
+Below 8,192 slots, insertion appends and increments the count even when an earlier tombstone exists. At capacity, it advances a rotating cursor to a cleared key slot, reuses it without increasing the count and preserves that slot's final two padding bytes. New records prepend to their hash bucket. A full scan with no cleared slot leaves the tested table unchanged. Complete arena/candidate comparisons cover exact links, payloads, counters and padding.
+
+These are direct helper tests; dispatcher-level compaction before full-table insertion remains unverified. Malformed chains, aliasing, concurrency and gameplay remain unresolved.
+
+Totals: 690 checked names, 2,102 mapped functions and 7,501 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

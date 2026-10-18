@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "636 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "637 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8759,
-    "other_names": 844,
-    "verification": "complete_inventory_matches_baseline_plus_636_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8758,
+    "other_names": 845,
+    "verification": "complete_inventory_matches_baseline_plus_637_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -15904,6 +15904,28 @@
         "Analyst descriptive name andopaque working pointers,not recovered source declarations.",
         "Prepared valid finite-coordinate tables; owner absent/player255 andhistory output disabled.",
         "Active history and16 inverse replay cases use prepared single-record context andample buffers; duplicate/full-table insertion,capacity exhaustion,malformed structures,nonfinite coordinates,concurrency andgameplay unresolved."
+      ]
+    },
+    {
+      "address": "1407678d0",
+      "original_name": "FUN_1407678d0",
+      "applied_name": "FindKey16RecordMatchingOrder",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV FindKey16RecordMatchingOrder(void * recordTable, void * key16, float orderValue)",
+      "evidence": [
+        "Complete91-instruction original body andpseudocode reviewed andoriginal bytes matched.",
+        "90 direct pointer/purity cases verify exact record pointer ornull,complete table/key preservation andreal hash collisions across0/1/3/17/8191/8192 slots.",
+        "Signedzero matches,NaN doesnot. Same90 cases connect original insertion andverify duplicate suppression,append/full-table reuse andunchanged table on nofree slot.",
+        "Independent reopening verifies pointer-return SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged other9602 names/signatures andnative bytes."
+      ],
+      "caveats": [
+        "Analyst descriptive name andopaque pointers,not recovered original source declarations.",
+        "Finite acyclic coherent collision chains; malformed links,aliasing,concurrency andgameplay untested.",
+        "Direct helper full-table tests do not execute dispatcher compaction before insertion."
       ]
     }
   ],

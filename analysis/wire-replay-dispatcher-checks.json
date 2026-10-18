@@ -424,5 +424,20 @@
     "dispatcher_original_bytes_verified": 267374,
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "keyed_record_direct_insertion": {
+    "native_cases": 90,
+    "finder_pointer_and_purity_cases": 90,
+    "finding": "Finder pointer equals exact existing matched slot ornull,andpreserves complete table/input bytes. Original insertion andduplicate finder execute together. Existing exact key/equal order suppresses insertion andpreserves old coordinates; signed zeros match,NaN doesnot. Below8192 appends even with earlier tombstones,count increments andnew record prepends bucket. At8192 scans rotating cursor forinvalid-key slot,reuses it without count increment,andretains its final2padding bytes; nofree slot leaves table unchanged after fullscan. Full arena/candidate bytes checked.",
+    "limits": [
+      "Direct helper only; dispatcher-level full-table compaction not executed.",
+      "Finite acyclic coherent collision chain; malformed links,aliasing,concurrency andgameplay untested."
+    ],
+    "original_native_instructions_verified": {
+      "140767e80": 112,
+      "1407678d0": 91
+    },
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
