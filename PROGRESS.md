@@ -5650,3 +5650,14 @@ The bounded update block checks the owner's status field. When status is zero it
 162 native cases execute that original 60-byte block and the original 89-instruction drain. Cases vary initial status 0/1/4, failure on/off, queue lengths 0/22/4MiB, zero/one/two contexts and preflight results 0/1/2. When called, the drain clears used length on success, preflight failure or absent targets. When draining is skipped because status is already nonzero, length remains unchanged. Failure clears in all cases. Other owner bytes and queue payload remain unchanged.
 
 Preflight, replay and the following update helper are explicit observers in this test. No actual queued events are decoded here, and the surrounding update function is not fully reviewed. This establishes a concrete reset point without proving full recovery, whole editor behavior, permanent data loss or a game defect. Checked-name and mapping counts remain unchanged at 705 and 2,114.
+
+
+### Derived world state refreshed after edit processing
+
+`RefreshWorldDerivedState` now names the complete 322-instruction helper called after the queue-reset block. Its body maintains requested kind-specific intrusive indexes, cached inherited object byte flags, an auxiliary table of eight-byte entries, timeline indexes and conditional cache-range passes, then forwards the world and a mode byte to a further finalizer. Some table/flag meanings remain unresolved. This role does not establish overflow repair merely because one caller follows the reset.
+
+288 native cases verify inherited-byte request handling, optional auxiliary table copy, source/destination table counts, cache-pass selection and final modes 0/1/255. Valid parent-before-child fixtures verify that class-byte-zero objects inherit parent cached flags; other tested classes retain local flags. The root cached byte becomes zero when rebuilding is requested. Auxiliary copying updates count and entries while retaining trailing storage beyond the new count. Exact world, owner, source-world, object and input comparisons pass.
+
+Kind-specific intrusive-index rebuilding, timeline rebuilding and the full rebuild branch were read but not executed in this batch. Cache-range and finalizer callees are explicit observers, with a controlled standard memory-fill boundary. Malformed hierarchies, capacity extremes and live editor behavior remain unverified.
+
+The descriptive name and working owner-pointer/two-byte-mode signature passed independent reopening and decompilation, with original native bytes and other 9,602 names/signatures unchanged. Totals: 706 checked names (629 behavior/helper and 77 property/type reviews), 2,115 mapped functions and 7,488 unmapped among 9,603 defined functions. No exact MM livestream source/build match is claimed.

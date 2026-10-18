@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 659,
+    "done": 660,
     "todo": 1455,
-    "total": 2114,
-    "behavior_or_helpers_reviewed": 588,
+    "total": 2115,
+    "behavior_or_helpers_reviewed": 589,
     "properties_or_types_reviewed": 71,
     "whole_feature_completion": null,
     "groups": [
@@ -27479,12 +27479,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 246,
+        "done": 247,
         "todo": 105,
-        "total": 351,
-        "behavior_or_helpers_reviewed": 229,
+        "total": 352,
+        "behavior_or_helpers_reviewed": 230,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 264,
+        "runtime_functions_identified": 265,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27598,6 +27598,7 @@
           "NormalizeWireBlendModesByDestinationProperty",
           "ResetThingSelectedRuntimeState",
           "PrepareGameAndLinkedWireOrdering",
+          "RefreshWorldDerivedState",
           "SnapQuaternionToOrientationSet",
           "SnapRelativeTransformWithHysteresis",
           "RotateTransformForAuxiliaryMode",
@@ -27953,6 +27954,7 @@
           "140937f90",
           "14093bb60",
           "140956a10",
+          "140956ef0",
           "1409ff430",
           "140a00020",
           "140a01270",
@@ -28208,12 +28210,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 109,
+            "done": 110,
             "todo": 13,
-            "total": 122,
-            "behavior_or_helpers_reviewed": 109,
+            "total": 123,
+            "behavior_or_helpers_reviewed": 110,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 115,
+            "runtime_functions_identified": 116,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -28253,6 +28255,7 @@
               "NormalizeWireBlendModesByDestinationProperty",
               "ResetThingSelectedRuntimeState",
               "PrepareGameAndLinkedWireOrdering",
+              "RefreshWorldDerivedState",
               "ProcessMainThingUpdateWorker",
               "GetInverseRecordedEventCode",
               "SerializeTransform32WithNormalizedWriteRotation",
@@ -28379,6 +28382,7 @@
               "140937f90",
               "14093bb60",
               "140956a10",
+              "140956ef0",
               "140abb470",
               "140ad5f20",
               "140b18e10",
@@ -29392,6 +29396,53 @@
                     "todo_addresses": [
                       "14090e6f0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/runtime/world-derived-state",
+                "label": "Derived state",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RefreshWorldDerivedState"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140956ef0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/runtime/world-derived-state/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RefreshWorldDerivedState"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140956ef0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -45552,5 +45603,5 @@
       }
     ]
   },
-  "unmapped": 7489
+  "unmapped": 7488
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "652 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "653 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8743,
-    "other_names": 860,
-    "verification": "complete_inventory_matches_baseline_plus_652_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8742,
+    "other_names": 861,
+    "verification": "complete_inventory_matches_baseline_plus_653_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16307,6 +16307,33 @@
         "Event-specific guards/lookups, property validation, special post-apply callbacks and all event-family inverse behaviors are not exhaustively executed.",
         "Higher-level handling/reset of the owner failure flag and the consequences of lost queue entries remain unresolved; this is not a demonstrated application defect.",
         "No exact MM developer-source/build match or live editor verification."
+      ]
+    },
+    {
+      "address": "140956ef0",
+      "original_name": "FUN_140956ef0",
+      "applied_name": "RefreshWorldDerivedState",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RefreshWorldDerivedState(void * owner, byte copyAuxiliaryTable, byte finalizeMode)",
+      "evidence": [
+        "Complete 322-instruction body and fresh pseudocode read; original bytes matched saved project and executing fixture.",
+        "Request flags select kind-specific intrusive-index rebuilding, inherited-byte cache rebuilding, timeline index rebuilding and a full rebuild call; conditional cache-range passes and final world/mode forwarding follow.",
+        "288 native cases cover inherited-byte dirty flag on/off, copy flag on/off, object counts0/1/7, source auxiliary table counts0/3 and destination counts0/5, cache-pass selection and final modes0/1/255.",
+        "Exact world/owner/source-world/object/input comparisons pass. Parent-before-child fixtures verify cached flags combine inherited parent flags only for class-byte0; root cached byte becomes0. Auxiliary8-byte table copy preserves trailing entries beyond the new count.",
+        "Cache-range and finalization callees are explicit observers; kind-specific index/timeline/full rebuild branches not executed in this batch.",
+        "Independent reopening verifies descriptive name, void/owner-pointer/two-byte-mode working signature and successful decompilation; original bytes and other9602 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Intrusive kind-specific index rebuilding, timeline rebuild and full rebuild request branches disabled in this batch; statically read, not executed.",
+        "Cache-range operation and finalizer are explicit observers; memset is controlled standard boundary.",
+        "Prepared valid parent-before-child hierarchy, counts0/1/7 and finite small tables; no malformed hierarchy, live editor behavior or complete overflow recovery proof.",
+        "Analyst descriptive name and working ABI, not original C++ declaration. Auxiliary table meaning and some flags remain unresolved.",
+        "The function follows the queue failure reset at one caller, but its role does not establish complete overflow repair.",
+        "No exact MM developer-source/build match or live game verification."
       ]
     }
   ],
