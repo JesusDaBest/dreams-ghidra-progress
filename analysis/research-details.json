@@ -25315,5 +25315,29 @@
       "Original source name/type unknown; no real graphics allocation, allocation-failure execution or GPU coherence proof."
     ],
     "new_name_credit": 1
+  },
+  "sprite_wave_throb_linkage_followup": {
+    "fields": {
+      "0x104": "EffectFlow",
+      "0x108": "EffectBoil",
+      "0x10c": "EffectWave",
+      "0x110": "EffectEvaporate",
+      "0x114": "EffectThrob"
+    },
+    "basis": "Original Sprite property literals/offsets, producer component reads and packing/spills, CPU source-to336-byte record copies and archived shader parameter loads.",
+    "interpretation": "Sine-based positional candidate at shader1075c..107e0 usesEffectThrob; following cosine-based orientation branch usesEffectWave.",
+    "descriptor_binding": "Both active CPU pointer and copied descriptor derive from same parity allocation; preserved-offset indirect record-ID agreement remains unresolved.",
+    "livestream": {
+      "url": "https://www.youtube.com/watch?v=yZM_Ij9aeOA&t=769s",
+      "timestamp": "12:49",
+      "inspected": "Selected visible Visual Studio source shows position/time sine-cosine wave displacement; not entire recording or full source file.",
+      "comparison": "No exact source/function/build match to these recovered effect branches established."
+    },
+    "limits": [
+      "Static shader/dataflow review, no actual GPU execution or coherence proof.",
+      "Full branch gate, phase/time source and indirect record-ID producer still need tracing.",
+      "Original2016recording and inspected executable may differ substantially."
+    ],
+    "new_name_credit": 0
   }
 }

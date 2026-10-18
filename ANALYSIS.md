@@ -7834,3 +7834,12 @@ The complete original assembly and captured C were read, and all indexed caller 
 The Sprite record writer uses the same parity allocation as the copied shader descriptor; active-pointer selection adds a preserved record offset. Nonzero-offset shader indexing still needs tracing. A selected frame of Media Molecule's 2016 coding stream was inspected: it shows wave-displacement source. A trigonometric shader candidate is under review, but no exact source/build match is established.
 
 Totals: **792 checked names**, **2,194 mapped functions**, **7,420 unmapped**, among **9,614 defined functions**. These are review counts, not whole-game completion.
+
+
+### Wave and throb effect parameters distinguished
+
+Original Sprite registration and producer packing establish the 336-byte GPU record's effect fields: `+0x104` Flow, `+0x108` Boil, `+0x10c` Wave, `+0x110` Evaporate and `+0x114` Throb. The previously inspected sine-based positional candidate is controlled by **EffectThrob**. The following cosine-based orientation branch is controlled by **EffectWave**. Similar trigonometry alone was insufficient to identify the effects.
+
+The CPU active pointer and copied shader descriptor derive from the same parity allocation. Logical shader record selection is indirect, however: a separate buffer supplies record IDs. Preserved-offset index agreement remains unresolved, so this is not a complete runtime binding or GPU-execution proof.
+
+The official [2016 coding recording at 12:49](https://www.youtube.com/watch?v=yZM_Ij9aeOA&t=769s) was inspected in the browser. Selected readable source shows position/time sine-cosine wave displacement alongside a wave reference. No exact source/function/build match to these recovered effect branches was established. Only selected frames were reviewed, not the entire recording. No additional checked-name credit is taken.
