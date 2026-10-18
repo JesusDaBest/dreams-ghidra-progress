@@ -6468,3 +6468,12 @@ Complete world, owner, object, metadata and external-head comparisons verify tho
 The owner helper is original code, not a callback model. Only the imported standard byte-fill routine remains modeled. These are prepared Key records and controlled metadata; other per-kind parent lists, malformed tails/indices, real metadata startup, concurrency and complete scene/game behavior remain unverified. The original meaning and writer of byte +0x2E are still unresolved. No exact Media Molecule source/build match is claimed.
 
 No new naming credit: **722 checked names**, 2,128 mapped and 7,478 unmapped among 9,606 defined functions remain the totals.
+
+
+### Sound and Effect Field registration lists
+
+**144 native cases** execute the complete original registration routine for Sound (kind 15) and Effect Field (kind 29), with a prepared valid parent and null owner. A positive signed metadata offset at slot `0x1C6` selects the parent's list head. Registration copies the previous head into child `+0x44` for Sound or `+0xD0` for Effect Field, then replaces the parent head with the new object index. Zero and negative offsets leave those list fields untouched.
+
+Full world, child, parent and metadata comparisons pass across indices 63/64, three previous-head patterns, the high kind bit and parent-reference tag `0x04000000`. Only the imported standard byte-fill routine is modeled. Real metadata startup, invalid/null parents, concurrency and full-game behavior remain unverified; these tests do not establish that malformed parent references are safe.
+
+No additional naming credit: **722 checked names** among 9,606 defined functions. This strengthens behavioral evidence for the existing registration name.

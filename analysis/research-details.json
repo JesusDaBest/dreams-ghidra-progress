@@ -18760,7 +18760,8 @@
     ],
     "new_name_credit": 1,
     "later_revalidation": "xyz_connected_conversion_actual_base_checkpoint",
-    "later_owner_validation": "world_insertion_owner_connected_checkpoint"
+    "later_owner_validation": "world_insertion_owner_connected_checkpoint",
+    "later_parent_list_validation": "world_parent_kind_insertion_checkpoint"
   },
   "xyz_connected_conversion_actual_base_checkpoint": {
     "native_checks": {
@@ -18994,6 +18995,20 @@
       "project_modified": false,
       "new_name_credit": 0
     },
+    "new_name_credit": 0
+  },
+  "world_parent_kind_insertion_checkpoint": {
+    "native_cases": 144,
+    "findings": [
+      "Complete original registration pushes Sound kind15 or Effect Field kind29 onto the parent metadata-selected list.",
+      "Positive signed metadata slot1c6 selects parent head; old head copied to child44 or d0, then head becomes new index. Zero/negative offsets skip the list writes.",
+      "High kind bit and parent reference tag4000000 are masked independently. Full world,child,parent and metadata comparisons pass."
+    ],
+    "limits": [
+      "Prepared valid parent kind0,controlled metadata,null owner,indices63/64 only; malformed/null parents,real metadata initialization,concurrency and full game unverified.",
+      "Imported standard byte-fill routine remains modeled."
+    ],
+    "project_modified": false,
     "new_name_credit": 0
   }
 }
