@@ -24987,5 +24987,26 @@
       "141607ff0": "__cxa_guard_release"
     },
     "new_function_credit": 1
+  },
+  "sprite_processor_point_extrema_followup": {
+    "native": {
+      "cases": 96,
+      "scope": "Original vector-extrema slice1413d8048..1413d812f at original address; following scalar update replaced by RET. Explicit quaternion/multiplier/position and initial extrema; stack pointer slot supplied for harmless intervening scalar read.",
+      "checked": [
+        "Extrema match two opposite vectors from rotating +/- (2,2,2), then componentwise multiplier and translation.",
+        "Eight normalized quaternions, three multiplier vectors including negative component, two translations and empty/existing extrema.",
+        "All four extrema lanes checked; quaternion/multiplier/position bytes and trailing guards unchanged."
+      ],
+      "limits": [
+        "Explicit register-entry slice only, not source-role or enclosing-processor proof.",
+        "Do not interpret two transformed diagonal points as a correct bound for an arbitrary oriented box, circle or sphere.",
+        "Nonunit/nonfinite quaternion behavior and upstream meaning of multiplier remain unverified."
+      ],
+      "fixture_correction": "Initial exploratory cut ended before final minimum store; extended through original store and provided valid pointer for intervening scalar read. First probe output is not a complete extrema result.",
+      "original_slice_sha256": "9689d95e1969b4b6655589580677528fa88dadd1c0ded89943edaa55c0a2901f",
+      "project_modified": false
+    },
+    "dataflow": "Processor composes/normalizes quaternion data and stores that quaternion in processed point output; vector-extrema inputs still require complete upstream-role tracing.",
+    "new_name_credit": 0
   }
 }

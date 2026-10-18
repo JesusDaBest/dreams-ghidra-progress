@@ -7718,3 +7718,10 @@ Original import relocations, linked through a local NID database, clarify the co
 All 1,058 original bytes and 223 decoded instructions were reviewed. Ghidra lists 219 instructions and leaves four unreachable alignment NOPs undisassembled. Two strict-list definition attempts rolled back; the final check permits only those NOP gaps and verifies every original byte. The new definition and no-input/noreturn working signature persisted after independent reopening; all 9,613 existing names/signatures remained unchanged.
 
 Totals: **791 checked names**, **2,193 mapped functions**, **7,421 unmapped**, among **9,614 defined functions**. Concurrent queue ownership, 32-bit counter wrap, lifetime behavior and the complete downstream processor remain unverified.
+
+
+### Sprite processor vector-extrema operation checked
+
+**96 bounded native cases** verify a processor slice that updates minima/maxima using two opposite vectors: rotate `+(2,2,2)` and `-(2,2,2)` by a unit quaternion, apply a componentwise multiplier, and add a position. The independent quaternion model agrees across eight orientations, three multiplier vectors including a negative component, two translations and preexisting/empty extrema. All four output lanes and preserved input/guard bytes are checked.
+
+This establishes the arithmetic operation, not the source shape: two transformed diagonal points alone do not establish correct bounds for an arbitrary oriented box, circle or sphere. Upstream multiplier semantics, nonunit/nonfinite behavior and the full processor remain unverified. An exploratory cut initially stopped before the final minimum store; the final fixture includes that original store and supplies a valid pointer for an intervening scalar read. No additional naming credit is taken.
