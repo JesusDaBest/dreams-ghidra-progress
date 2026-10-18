@@ -17180,5 +17180,50 @@
       "The field layout and encoding are supported here; exact original C++ declarations and enum meanings remain unresolved. Existing unsigned storage-carrier layout labels are not proof of original signedness.",
       "No new names, project mutations, semantic feature-completion credit or subsystem-size estimates."
     ]
+  },
+  "wire_field_registrar_name_checkpoint": {
+    "targets": {
+      "140cd8810": {
+        "name": "RegisterSeqFieldOffset",
+        "signature": "void * PS4_SYSV RegisterSeqFieldOffset(void * ownerType, char * fieldName, uint fieldOffset)"
+      },
+      "140cdb310": {
+        "name": "RegisterPlayerIdFieldOffset",
+        "signature": "void PS4_SYSV RegisterPlayerIdFieldOffset(void * ownerType, char * fieldName, uint fieldOffset)"
+      },
+      "140cdf990": {
+        "name": "RegisterPackedFloat2FieldOffset",
+        "signature": "void PS4_SYSV RegisterPackedFloat2FieldOffset(void * ownerType, char * fieldName, uint fieldOffset)"
+      }
+    },
+    "evidence": {
+      "140cd8810": [
+        "Complete 146-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+        "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+        "Source descriptor Seq contains signed32 seq at offset0; source literal independently checked. Appended field-entry pointer is explicitly formed in RAX before return.",
+        "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+      ],
+      "140cdb310": [
+        "Complete 145-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+        "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+        "Source descriptor PlayerId contains signed32 id at offset0; attaches four-byte reflected field metadata.",
+        "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+      ],
+      "140cdf990": [
+        "Complete 150-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+        "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+        "Source descriptor float2_packed contains float x/y at offsets0/4; attaches eight-byte reflected field metadata.",
+        "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+      ]
+    },
+    "limits": [
+      "Analyst descriptive names and working ABI, not exact original C++ declarations.",
+      "Metadata/type-registration reviews, not runtime feature completion.",
+      "Fresh guard acquisition, static constructor/destructor, allocator failure and complete registrar execution untested.",
+      "The96 payload cases execute original downstream writers using reconstructed descriptors; they do not execute these registration helpers.",
+      "No exact MM livestream source/build match or live gameplay claimed."
+    ],
+    "new_name_credit": 3,
+    "new_mapping_credit": 1
   }
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2110,
-  "unmapped_total": 7493,
+  "mapped_total": 2111,
+  "unmapped_total": 7492,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -15933,6 +15933,16 @@
           "type_name": "PlayerId",
           "site": "140cdb492",
           "target": "14170fa1e"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterPlayerIdFieldOffset",
+          "support": [
+            "Complete 145-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+            "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+            "Source descriptor PlayerId contains signed32 id at offset0; attaches four-byte reflected field metadata.",
+            "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+          ]
         }
       ],
       "code_sha256": "9ef88184617d7a9df46a69b14dc85dcc34c8938ba723a61eb8f67091df2c8c37",
@@ -15944,7 +15954,9 @@
       ],
       "component_basis": "registered_type",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "registered_type_association",
+      "reviewed_native_sha256": "cf687590240871cad89b427dc2e40f984668e3478921bc674b4bbaf450c62a2e",
+      "reviewed_native_hash_basis": "concatenated_owned_original_instruction_bytes"
     },
     "140cdb820": {
       "system": "interface",
@@ -16153,6 +16165,16 @@
           "type_name": "float2_packed",
           "site": "140cdfb12",
           "target": "141711354"
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterPackedFloat2FieldOffset",
+          "support": [
+            "Complete 150-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+            "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+            "Source descriptor float2_packed contains float x/y at offsets0/4; attaches eight-byte reflected field metadata.",
+            "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+          ]
         }
       ],
       "code_sha256": "f6b986bcb9b69a3994fe82310d9877b872fd04943a898c82af2db5b11d956321",
@@ -16164,7 +16186,9 @@
       ],
       "component_basis": "registered_type",
       "code_role": "properties-types",
-      "code_role_basis": "registered_type_association"
+      "code_role_basis": "registered_type_association",
+      "reviewed_native_sha256": "ba9f78b4bd8fc421130facdc7a801c5160d270d113c90f0a4dd8da96d626a51b",
+      "reviewed_native_hash_basis": "concatenated_owned_original_instruction_bytes"
     },
     "140cdfdb0": {
       "system": "interface",
@@ -53208,6 +53232,31 @@
           ]
         }
       ]
+    },
+    "140cd8810": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "identifiers",
+        "seq",
+        "properties-types"
+      ],
+      "component_basis": "Named Seq reflection descriptor registration; shared identifier wrapper, not a canvas-only runtime helper.",
+      "code_role": "properties-types",
+      "code_role_basis": "Complete type/field registration body reviewed.",
+      "code_sha256": "42c540093663f1fa9c16b2b03fd9865dcdb475f0d9efd74264daabd45fd7751b",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RegisterSeqFieldOffset",
+          "support": [
+            "Complete 146-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+            "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+            "Source descriptor Seq contains signed32 seq at offset0; source literal independently checked. Appended field-entry pointer is explicitly formed in RAX before return.",
+            "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -53988,6 +54037,17 @@
             {
               "id": "photoid",
               "label": "Photo Id",
+              "children": [
+                {
+                  "id": "properties-types",
+                  "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "seq",
+              "label": "Sequence ID",
               "children": [
                 {
                   "id": "properties-types",

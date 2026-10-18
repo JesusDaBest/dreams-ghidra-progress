@@ -3,11 +3,11 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 653,
-    "todo": 1457,
-    "total": 2110,
+    "done": 656,
+    "todo": 1455,
+    "total": 2111,
     "behavior_or_helpers_reviewed": 585,
-    "properties_or_types_reviewed": 68,
+    "properties_or_types_reviewed": 71,
     "whole_feature_completion": null,
     "groups": [
       {
@@ -27471,13 +27471,13 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 242,
-        "todo": 106,
-        "total": 348,
+        "done": 244,
+        "todo": 105,
+        "total": 349,
         "behavior_or_helpers_reviewed": 227,
-        "properties_or_types_reviewed": 15,
+        "properties_or_types_reviewed": 17,
         "runtime_functions_identified": 262,
-        "property_type_functions_identified": 81,
+        "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
         "done_names": [
@@ -27611,7 +27611,9 @@
           "AppendThingTypeEnumEntry",
           "EnsureVariantTypeEnumRegistered",
           "RegisterVariantTypeEnumValues",
+          "RegisterSeqFieldOffset",
           "RegisterSigned32FieldOffset",
+          "RegisterPackedFloat2FieldOffset",
           "GetGameBodyStorage",
           "GetGameBodyCount",
           "ResizeGameBodyStorage",
@@ -27779,7 +27781,6 @@
           "0x140cde180",
           "0x140cde4e0",
           "0x140cde7a0",
-          "0x140cdf990",
           "0x140ce12a0",
           "0x140ce3ef0",
           "0x140ce5800",
@@ -27963,7 +27964,9 @@
           "140c8c220",
           "140cb7e80",
           "140cb7f30",
+          "140cd8810",
           "140cd93e0",
+          "140cdf990",
           "140ce5c10",
           "140ce5c20",
           "140ce5c30",
@@ -28131,7 +28134,6 @@
           "140cde180",
           "140cde4e0",
           "140cde7a0",
-          "140cdf990",
           "140ce12a0",
           "140ce3ef0",
           "140ce5800",
@@ -31315,11 +31317,11 @@
           {
             "name": "shared/math",
             "label": "Numbers & transforms",
-            "done": 6,
-            "todo": 12,
+            "done": 7,
+            "todo": 11,
             "total": 18,
             "behavior_or_helpers_reviewed": 6,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 1,
             "runtime_functions_identified": 6,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
@@ -31330,14 +31332,14 @@
               "CopyTransformWithNormalizedRotation",
               "ComputeObjectHierarchyTransform",
               "SnapQuaternionToOrientationSet",
-              "SnapRelativeTransformWithHysteresis"
+              "SnapRelativeTransformWithHysteresis",
+              "RegisterPackedFloat2FieldOffset"
             ],
             "todo_names": [
               "0x14010fc00",
               "0x140cda120",
               "0x140cda510",
               "0x140cde4e0",
-              "0x140cdf990",
               "0x140ce3ef0",
               "0x140ce5800",
               "0x140ce5fe0",
@@ -31352,14 +31354,14 @@
               "1407a6bb0",
               "140903590",
               "1409ff430",
-              "140a00020"
+              "140a00020",
+              "140cdf990"
             ],
             "todo_addresses": [
               "14010fc00",
               "140cda120",
               "140cda510",
               "140cde4e0",
-              "140cdf990",
               "140ce3ef0",
               "140ce5800",
               "140ce5fe0",
@@ -31640,45 +31642,45 @@
               {
                 "name": "shared/math/float2-packed",
                 "label": "float2 packed",
-                "done": 0,
-                "todo": 1,
+                "done": 1,
+                "todo": 0,
                 "total": 1,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 1,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 1,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cdf990"
+                "done_names": [
+                  "RegisterPackedFloat2FieldOffset"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "todo_names": [],
+                "done_addresses": [
                   "140cdf990"
                 ],
+                "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "shared/math/float2-packed/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
+                    "done": 1,
+                    "todo": 0,
                     "total": 1,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 1,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cdf990"
+                    "done_names": [
+                      "RegisterPackedFloat2FieldOffset"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "todo_names": [],
+                    "done_addresses": [
                       "140cdf990"
                     ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -32886,16 +32888,18 @@
           {
             "name": "shared/identifiers",
             "label": "Identifiers & assets",
-            "done": 0,
+            "done": 1,
             "todo": 8,
-            "total": 8,
+            "total": 9,
             "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 1,
             "runtime_functions_identified": 0,
-            "property_type_functions_identified": 8,
+            "property_type_functions_identified": 9,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "RegisterSeqFieldOffset"
+            ],
             "todo_names": [
               "0x140cd96a0",
               "0x140cda8a0",
@@ -32906,7 +32910,9 @@
               "0x140d1c330",
               "0x140d1c6e0"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "140cd8810"
+            ],
             "todo_addresses": [
               "140cd96a0",
               "140cda8a0",
@@ -33157,6 +33163,53 @@
                     "todo_addresses": [
                       "140d1c6e0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/identifiers/seq",
+                "label": "Sequence ID",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 1,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterSeqFieldOffset"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140cd8810"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/identifiers/seq/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 1,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterSeqFieldOffset"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140cd8810"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -36353,11 +36406,11 @@
       {
         "name": "dreamiverse",
         "label": "Dreamiverse & networking",
-        "done": 7,
-        "todo": 102,
+        "done": 8,
+        "todo": 101,
         "total": 109,
         "behavior_or_helpers_reviewed": 7,
-        "properties_or_types_reviewed": 0,
+        "properties_or_types_reviewed": 1,
         "runtime_functions_identified": 31,
         "property_type_functions_identified": 78,
         "code_role_unresolved": 0,
@@ -36368,6 +36421,7 @@
           "ParseCreatorLevelRecords",
           "SerializeCreatorLevelRecords",
           "RegisterDreamstoneTypeValues",
+          "RegisterPlayerIdFieldOffset",
           "AllocateDefaultPlayerIdx",
           "FreePlayerIdxIfNonNull"
         ],
@@ -36415,7 +36469,6 @@
           "0x140cc3200",
           "0x140cc3ad0",
           "0x140cdb020",
-          "0x140cdb310",
           "0x140cdd310",
           "0x140ce0620",
           "0x140ce0a50",
@@ -36481,6 +36534,7 @@
           "140412a70",
           "140413970",
           "140c841a0",
+          "140cdb310",
           "140ced9c0",
           "140ced9e0"
         ],
@@ -36528,7 +36582,6 @@
           "140cc3200",
           "140cc3ad0",
           "140cdb020",
-          "140cdb310",
           "140cdd310",
           "140ce0620",
           "140ce0a50",
@@ -38226,16 +38279,17 @@
           {
             "name": "dreamiverse/players",
             "label": "Player sessions",
-            "done": 2,
-            "todo": 23,
+            "done": 3,
+            "todo": 22,
             "total": 25,
             "behavior_or_helpers_reviewed": 2,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 1,
             "runtime_functions_identified": 0,
             "property_type_functions_identified": 25,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "RegisterPlayerIdFieldOffset",
               "AllocateDefaultPlayerIdx",
               "FreePlayerIdxIfNonNull"
             ],
@@ -38243,7 +38297,6 @@
               "0x140c75cc0",
               "0x140c9be30",
               "0x140cdb020",
-              "0x140cdb310",
               "0x140cdd310",
               "0x140ce93b0",
               "0x140ceb5f0",
@@ -38265,6 +38318,7 @@
               "0x140d30c80"
             ],
             "done_addresses": [
+              "140cdb310",
               "140ced9c0",
               "140ced9e0"
             ],
@@ -38272,7 +38326,6 @@
               "140c75cc0",
               "140c9be30",
               "140cdb020",
-              "140cdb310",
               "140cdd310",
               "140ce93b0",
               "140ceb5f0",
@@ -38855,45 +38908,45 @@
               {
                 "name": "dreamiverse/players/playerid",
                 "label": "Player Id",
-                "done": 0,
-                "todo": 1,
+                "done": 1,
+                "todo": 0,
                 "total": 1,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 1,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 1,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cdb310"
+                "done_names": [
+                  "RegisterPlayerIdFieldOffset"
                 ],
-                "done_addresses": [],
-                "todo_addresses": [
+                "todo_names": [],
+                "done_addresses": [
                   "140cdb310"
                 ],
+                "todo_addresses": [],
                 "unresolved_addresses": [],
                 "groups": [
                   {
                     "name": "dreamiverse/players/playerid/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 1,
+                    "done": 1,
+                    "todo": 0,
                     "total": 1,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 1,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cdb310"
+                    "done_names": [
+                      "RegisterPlayerIdFieldOffset"
                     ],
-                    "done_addresses": [],
-                    "todo_addresses": [
+                    "todo_names": [],
+                    "done_addresses": [
                       "140cdb310"
                     ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -45389,5 +45442,5 @@
       }
     ]
   },
-  "unmapped": 7493
+  "unmapped": 7492
 }

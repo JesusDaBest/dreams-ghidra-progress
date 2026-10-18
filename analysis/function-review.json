@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "646 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "649 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8749,
-    "other_names": 854,
-    "verification": "complete_inventory_matches_baseline_plus_646_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8746,
+    "other_names": 857,
+    "verification": "complete_inventory_matches_baseline_plus_649_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16150,6 +16150,78 @@
         "Controlled stream, one-slot dictionary and explicit custom-value callback observer; complete reflected CreateWireNodeMessage field payload encoding not executed.",
         "Fresh wrapper guard initialization, real output device, end-to-end message delivery and live gameplay untested.",
         "Reflection writing identified; no network or transport role established."
+      ]
+    },
+    {
+      "address": "140cd8810",
+      "original_name": "FUN_140cd8810",
+      "applied_name": "RegisterSeqFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV RegisterSeqFieldOffset(void * ownerType, char * fieldName, uint fieldOffset)",
+      "evidence": [
+        "Complete 146-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+        "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+        "Source descriptor Seq contains signed32 seq at offset0; source literal independently checked. Appended field-entry pointer is explicitly formed in RAX before return.",
+        "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not exact original C++ declarations.",
+        "Metadata/type-registration reviews, not runtime feature completion.",
+        "Fresh guard acquisition, static constructor/destructor, allocator failure and complete registrar execution untested.",
+        "The96 payload cases execute original downstream writers using reconstructed descriptors; they do not execute these registration helpers.",
+        "No exact MM livestream source/build match or live gameplay claimed."
+      ]
+    },
+    {
+      "address": "140cdb310",
+      "original_name": "FUN_140cdb310",
+      "applied_name": "RegisterPlayerIdFieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RegisterPlayerIdFieldOffset(void * ownerType, char * fieldName, uint fieldOffset)",
+      "evidence": [
+        "Complete 145-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+        "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+        "Source descriptor PlayerId contains signed32 id at offset0; attaches four-byte reflected field metadata.",
+        "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not exact original C++ declarations.",
+        "Metadata/type-registration reviews, not runtime feature completion.",
+        "Fresh guard acquisition, static constructor/destructor, allocator failure and complete registrar execution untested.",
+        "The96 payload cases execute original downstream writers using reconstructed descriptors; they do not execute these registration helpers.",
+        "No exact MM livestream source/build match or live gameplay claimed."
+      ]
+    },
+    {
+      "address": "140cdf990",
+      "original_name": "FUN_140cdf990",
+      "applied_name": "RegisterPackedFloat2FieldOffset",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RegisterPackedFloat2FieldOffset(void * ownerType, char * fieldName, uint fieldOffset)",
+      "evidence": [
+        "Complete 150-instruction function body and pseudocode read; owned bytes matched original executable and saved project.",
+        "Appends0x90-byte field entry through shared resize routine, records field name/hash/offset, ensures named shared type descriptor and attaches it with fixed field metadata.",
+        "Source descriptor float2_packed contains float x/y at offsets0/4; attaches eight-byte reflected field metadata.",
+        "Working arguments verified in RDI/RSI/EDX as owner descriptor, field-name pointer and32-bit byte offset. Independent reopening verifies names, signatures, successful decompilation and unchanged native bytes; other9600 names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive names and working ABI, not exact original C++ declarations.",
+        "Metadata/type-registration reviews, not runtime feature completion.",
+        "Fresh guard acquisition, static constructor/destructor, allocator failure and complete registrar execution untested.",
+        "The96 payload cases execute original downstream writers using reconstructed descriptors; they do not execute these registration helpers.",
+        "No exact MM livestream source/build match or live gameplay claimed."
       ]
     }
   ],

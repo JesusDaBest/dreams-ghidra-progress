@@ -1954,7 +1954,7 @@ The tested layout has2n-1 nodes of32 bytes and16-bit indices, with root2n-2. Key
 
 ### Saved Morton tree worker definitions
 
-Defined GenerateMortonBvhKeysJob, InitializeMortonBvhLeavesJob, LinkMortonBvhNodesJob and PropagateMortonBvhBoundsJob with opaque context and32-bit batch-index inputs. Backed-up trial, promotion and independent reopening confirm nonoverlapping bodies, unchanged instructions/existing functions and original archive hashes.
+Defined GenerateMortonBvhKeysJob, InitializeMortonBvhLeavesJob, LinkMortonBvhNodesJob and PropagateMortonBvhBoundsJob with opaque context and 32-bit batch-index inputs. Backed-up trial, promotion and independent reopening confirm nonoverlapping bodies, unchanged instructions/existing functions and original archive hashes.
 
 Both tree-builder calls come from a routine scheduling the original CalculateSculptBoundsAndWakeUpBodies job and collecting transformed object bounds. This connects the work to sculpt/physics processing without establishing every consumer. The worker definitions are recorded under shared spatial helpers.36 connected tree cases support their roles; normalization, concurrency and complete consumers remain unresolved. Totals:281 checked names among9,576 discovered functions;1,722 mapped and7,854 unmapped. No whole-subsystem completion claim.
 
@@ -1984,7 +1984,7 @@ The tests cover per-object bitset mask4, player-filter contribution16, category-
 
 ### Saved sculpt-bound flag helper name
 
-Applied BuildSculptBoundsFlags with opaque Game/current-state/sculpt pointers, signed body index and32-bit flag return.93 original instructions and57,600 scoped hardware cases support its role. Cold backup, isolated trial, promotion and independent reopening verify the name/signature, unchanged original instructions and archive hashes.
+Applied BuildSculptBoundsFlags with opaque Game/current-state/sculpt pointers, signed body index and 32-bit flag return.93 original instructions and57,600 scoped hardware cases support its role. Cold backup, isolated trial, promotion and independent reopening verify the name/signature, unchanged original instructions and archive hashes.
 
 Bit mechanics remain numeric where gameplay meaning is unresolved. Other player/parent filter modes, full large state allocations and parent worker wakeup behavior remain unverified. Totals:284 checked names among9,576 functions;1,725 mapped and7,851 unmapped. Current status snapshot is dated2026-10-15. No whole-subsystem completion credit.
 
@@ -6058,3 +6058,14 @@ The message registers fields in this order: `canvas_seq`, `src_thing_seq`, `dst_
 A short type prefix returns status 1 and performs no body writes. Once the prefix is accepted, truncated primitive writes still return status 0 through this field chain. This describes the controlled stream result; wider stream-error handling has not been traced, so it does not establish an application defect.
 
 The earlier callback-only test did not execute these payload fields. This follow-up closes that fixture-level gap. Actual guarded descriptor initialization, real output devices, message transport/delivery and live editor behavior remain unverified. No names or progress counts increase: 699 names remain checked among 9,603 defined functions.
+
+
+### Shared field registrars named and reopened
+
+Three complete reflection-registration helpers are now named `RegisterSeqFieldOffset`, `RegisterPlayerIdFieldOffset` and `RegisterPackedFloat2FieldOffset`. Each grows a field-entry array, stores the supplied name/hash/offset, ensures its named shared descriptor, and attaches it with fixed field metadata. `Seq` wraps signed32 `seq`; `PlayerId` wraps signed32 `id`; `float2_packed` wraps float `x`/`y`. The Seq helper explicitly returns the appended field-entry pointer. No semantic return contract is inferred for the other two.
+
+Working argument types follow observed RDI/RSI/EDX storage: owner descriptor pointer, field-name pointer and 32-bit offset. Independent reopening confirms all three names/signatures, successful decompilation, unchanged original native bytes and the other 9,600 names/signatures unchanged. Reversible before-state and evidence remain local.
+
+These are three metadata/type-registration reviews, not three completed runtime features. The downstream 96-case payload test does not execute these registrars. Fresh static guard initialization, constructors/destructors, allocator failure and live behavior remain untested. No exact developer-source/build match is claimed.
+
+Totals: 702 checked names, comprising 625 behavior/helper reviews and 77 property/type-registration reviews. There are 2,111 mapped functions and 7,492 still unmapped among 9,603 defined functions. The new Seq mapping is shared identifier metadata; existing PlayerId and float2 mappings are retained.
