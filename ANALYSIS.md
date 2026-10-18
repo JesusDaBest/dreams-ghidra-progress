@@ -6424,3 +6424,14 @@ Revalidation with the corrected base offset also passes **192 factory cases**, *
 The initializer also sets Key's parent-relative metadata slot to +0x70 and position-offset slot to +0x110. **Those optional paths remain disabled in these fixtures.** This closes the base-offset provenance gap, not the complete Key layout or startup behavior. Occupied ID collision chains, allocation failures, optional transform paths, full scene loading/upgrading, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals remain **721 checked names**, 2,127 mapped and 7,479 unmapped among 9,606 defined functions.
+
+
+### Key optional transform paths checked
+
+The original metadata writes now enable both previously disabled Key paths: parent-relative storage at +0x70 and position-offset storage at +0x110. **224 original factory cases** cover no parent or one valid parent, including 96 grid cases and 128 seeded random finite cases. The original `ComposeRigidTransform` computes the parent-relative transform while the supplied world transform remains in the +0x50 base field. An independent quaternion/translation/scale oracle agrees within **2.54e-6** maximum error.
+
+**896 original output-helper calls** then test identity, translation, rotation and combined translation/rotation/scale offsets at +0x110. Maximum output error is approximately **3.94e-7**, below the declared 5e-5 tolerance. Nonidentity offsets are explicit fixture edits after creation; their input serialization is not recovered here. The original executable import thunk and byte/hash-verified local libc `__isinff` execute; no mathematical import is modeled. Complete world, parent and argument comparisons plus output guards pass.
+
+These checks use selected positive scales and finite unit quaternions, a prepared parent record and its base-offset metadata. Only the selected Key metadata writes execute original initialization. Glued parent walks, malformed hierarchies, exceptional arithmetic, full metadata startup, the complete optional-path scene conversion and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+No new naming credit: **721 checked names**, 2,127 mapped and 7,479 unmapped among 9,606 defined functions remain the totals.
