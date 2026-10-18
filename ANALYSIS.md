@@ -6909,3 +6909,14 @@ Totals: **743 checked names** (663 behavior/helper and 80 property/type), **2,14
 The full decoder remains unnamed and incompletely reviewed. JPEG, indexed/transparent-key/16-bit PNG, interlace, callback refill, malformed-input safety, invalid conversion arguments, overflow, allocation-failure execution and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed. Independent reopening confirms the saved helper name and working ABI, unchanged code bytes and all 9,606 other function names/signatures.
 
 Totals: **744 checked names** (664 behavior/helper and 80 property/type), **2,150 mapped**, **7,457 unmapped**, among **9,607 defined functions**.
+
+
+### Compressed-image color indices reviewed and named
+
+`PackBcColorIndicesByProjection` names the complete 431-instruction helper shared by the two compressed-image paths. It projects 16 RGB pixels onto the axis between two palette endpoints, uses three signed midpoint thresholds to choose colors, and returns packed two-bit indices. Alpha bytes do not affect these color indices. **8,320 native cases** match an independent calculation, including exact threshold ties, zero-length axes, arbitrary palettes and alpha changes. This is projection classification, not a claim of globally optimal compression.
+
+Additional connected evidence: **82 loader/decoder cases**, including full-size downsampling; **54 single-mip linear image writes**; **36 mip-chain writes**; and **36 solid compressed blocks**. Independent BC1/BC3 decoding gives at most one byte of RGB error and exact constant alpha for these solid blocks. Complete destination storage and pointer ownership were checked where applicable. The original mip loop frees intermediate buffers and leaves the final mip pointer for its caller.
+
+The full decoder and image-write routine remain unnamed and incompletely reviewed. Resource fetching remains simulated; verified allocation/memory imports use local CRT adapters where needed. Nonuniform full-encoder behavior, other tiling/slices, malformed inputs, GPU synchronization and live-game behavior remain unverified. The checked linear path writes backing memory and does not itself prove GPU completion. No exact Media Molecule source/build match is claimed.
+
+Totals: **745 checked names** (665 behavior/helper and 80 property/type), **2,151 mapped**, **7,456 unmapped**, among **9,607 defined functions**.

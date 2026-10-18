@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "687 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "688 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9607,
-    "default_fun_names": 8708,
-    "other_names": 899,
-    "verification": "complete_inventory_matches_baseline_plus_687_renames_and_56_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8707,
+    "other_names": 900,
+    "verification": "complete_inventory_matches_baseline_plus_688_renames_and_56_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17287,6 +17287,31 @@
         "Local CRT adapters replace verified allocation/memory imports; full11461-instruction decoder not yet completely reviewed or named.",
         "Invalid conversion counts,nonpositive dimensions,overflow and allocation failure not executed; input-free-on-OOM is a static finding.",
         "Analyst descriptive name and working ABI; no original C++ declaration or exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "14132e080",
+      "original_name": "FUN_14132e080",
+      "applied_name": "PackBcColorIndicesByProjection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV PackBcColorIndicesByProjection(uchar * rgbaPixels16, uchar * rgbaPalette4)",
+      "evidence": [
+        "Complete431-instruction leaf helper reviewed against original executable and both compressed-image-write callsites.",
+        "Projects16 RGB pixels along palette0-minus-palette1 axis;three signed midpoint thresholds choose two-bit indices;alpha ignored.",
+        "8320 direct native cases match independent loop oracle,including threshold ties,arbitrary palettes and opposing alpha variants;no called-function models.",
+        "82 connected loader/decoder cases include actual1920x1080->480x270 resizing;54 linear single-mip writes and36 mip-chain writes verify complete backing storage.",
+        "36 original compressed-path solid-block cases independently decode as BC1/BC3-compatible with RGB error<=1 and exact constant alpha.",
+        "Independent offline reopening verifies working ABI,unchanged bytes andall9606 other function names/signatures."
+      ],
+      "caveats": [
+        "Only helper fully reviewed;2007-instruction image-write routine and11461-instruction decoder remain incompletely reviewed and unnamed.",
+        "Projection classification does not establish globally optimal compression;nonuniform full-encoder output,other tiled layouts,slices and malformed inputs remain unverified.",
+        "Connected loader still models resource fetch;allocation/memory imports use local CRT adapters where needed.",
+        "GPU synchronization,livegame and exact original C++/Media Molecule source-build match unverified."
       ]
     }
   ],

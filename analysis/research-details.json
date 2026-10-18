@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 744,
+    "checked_and_applied_names": 745,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 744,
+    "verified_names": 745,
     "function_count": 9607,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "1411a32b0",
       "141330c40"
     ],
-    "scope": "687 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "688 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20685,6 +20685,523 @@
       "Local CRT adapters replace verified allocation/memory imports; full11461-instruction decoder not yet completely reviewed or named.",
       "Invalid conversion counts,nonpositive dimensions,overflow and allocation failure not executed; input-free-on-OOM is a static finding.",
       "Analyst descriptive name and working ABI; no original C++ declaration or exact Media Molecule source/build match."
+    ],
+    "new_name_credit": 1
+  },
+  "bc_color_indices_checkpoint": {
+    "target": {
+      "name": "PackBcColorIndicesByProjection",
+      "signature": "uint PS4_SYSV PackBcColorIndicesByProjection(uchar * rgbaPixels16, uchar * rgbaPalette4)"
+    },
+    "checks": {
+      "photo-block-indices-native-check.json": {
+        "native_cases": 8320,
+        "original_instructions": 431,
+        "function": "14132e080",
+        "findings": [
+          "Projects16 RGB pixels onto palette0-minus-palette1 RGB axis;alpha bytes ignored.",
+          "Three signed midpoint thresholds choose indices1/3 below middle,2/0 above middle;strict less-than ties confirmed.",
+          "Returns32 bits with pixel0 in low2 bits through pixel15 in high2 bits;input and palette untouched.",
+          "4096 deterministic arbitrary palettes/blocks plus64 structured threshold/degenerate-axis fixtures,each with opposing alpha variants,match independent loop oracle.",
+          "Two original callsites are in compressed format35/37 image-writing paths."
+        ],
+        "models": [
+          "None;complete original431-instruction helper executes without external calls."
+        ],
+        "limits": [
+          "Valid64-byte pixels and16-byte RGBA-stride palette buffers only;null/short buffers untested.",
+          "Projection classification is not a claim of globally optimal nearest-color compression.",
+          "No GPU/livegame or exact original source-name identification."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-loader-original-png-connected-native-check.json": {
+        "native_cases": 82,
+        "findings": [
+          "Original180-instruction photo-cache loader calls original image decoder and channel-conversion helper on generated PNG data.",
+          "80 matching-size cases cover all five PNG filters,four eight-bit source layouts,one/four requested channels and two dimensions with independent byte-level output.",
+          "Two additional cases connect original loader,decoder,channel conversion and346-instruction box downsampler at1920x1080->480x270 for one/four output channels;exact pixels match independent conversion then4x4 averaging.",
+          "Original encoded read offset4, source refcount2->1 release, return pointer acceptance and cleared status flag verified; complete cache/ref/input/argument storage checked."
+        ],
+        "models": [
+          "Resource-fetch provider returns an in-memory fixture; verified allocation/memory imports use local CRT adapters."
+        ],
+        "limits": [
+          "Implicit resource path only; no actual resource IO,explicit resource tree,GPU upload,concurrency or live game execution.",
+          "Only selected noninterlaced eight-bit PNGs; full decoder semantic review remains incomplete."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-image-write-linear-native-check.json": {
+        "native_cases": 54,
+        "findings": [
+          "Original2007-instruction image write routine executes its complete uncompressed format10 single-mip path with original descriptor/layout/address helpers.",
+          "RGBA bytes copied into mapped image backing memory exactly; complete1MiB destination including guards,context,source,arguments and pointer-to-pixels unchanged except intended destination bytes.",
+          "This tested path writes backing memory; it does not itself issue a GPU submission."
+        ],
+        "models": [
+          "Only verified memcpy import adapted to local CRT; original constructor and descriptor/layout helpers execute. Local stack canary."
+        ],
+        "limits": [
+          "Kind9,format10,tile31,mipcount1,slice0,selected positive dimensions.",
+          "Compressed-format branches,mip generation,other tiling/slices,GPU synchronization and live game unverified.",
+          "Full2007-instruction body not yet completely semantically reviewed; no new name credit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "photo-cache-image-write-mips-native-check.json": {
+        "native_cases": 36,
+        "findings": [
+          "Original image-write routine writes all requested linear RGBA mip levels and replaces the owned pixel pointer with the last generated level.",
+          "Each next level is a2x2 byte average with floor(sum4/4);dimensions are rounded up to multiples of four after halving.",
+          "Complete1MiB backing storage including untouched padding matches independently packed mip levels;final owned pixels match independent averaging.",
+          "Original malloc/free callsites execute through local CRT adapters;caller frees only the final returned pixel pointer."
+        ],
+        "models": [
+          "Verified malloc/free/memcpy imports adapted to local CRT;all image-write,descriptor,layout and averaging instructions original."
+        ],
+        "limits": [
+          "Selected32/64 power-of-two dimensions,mips2..4,format10,tile31,slice0.",
+          "Rounding/clamped-edge cases below4 or odd sizes,OOM,compressed formats,GPU synchronization andlivegame remainunverified.",
+          "Full2007-instruction routine remains incompletelyreviewed;no newnamecredit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-image-write-blocks-native-check.json": {
+        "native_cases": 36,
+        "maximum_rgb_error": 1,
+        "blocks": [
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "block_hex": "0000000000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 127,
+            "block_hex": "0000000000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 255,
+            "block_hex": "0000000000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 0,
+            "block_hex": "ffffffff00000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 127,
+            "block_hex": "ffffffff00000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 255,
+            "block_hex": "ffffffff00000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              255,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "block_hex": "00f800f800000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              255,
+              0,
+              0
+            ],
+            "alpha": 127,
+            "block_hex": "00f800f800000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              255,
+              0,
+              0
+            ],
+            "alpha": 255,
+            "block_hex": "00f800f800000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              255,
+              0
+            ],
+            "alpha": 0,
+            "block_hex": "e007e00700000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              255,
+              0
+            ],
+            "alpha": 127,
+            "block_hex": "e007e00700000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              255,
+              0
+            ],
+            "alpha": 255,
+            "block_hex": "e007e00700000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              0,
+              255
+            ],
+            "alpha": 0,
+            "block_hex": "1f001f0000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              0,
+              255
+            ],
+            "alpha": 127,
+            "block_hex": "1f001f0000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              0,
+              0,
+              255
+            ],
+            "alpha": 255,
+            "block_hex": "1f001f0000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 35,
+            "rgb": [
+              127,
+              127,
+              127
+            ],
+            "alpha": 0,
+            "block_hex": "50844e73aaaaaaaa",
+            "maximum_rgb_error": 1
+          },
+          {
+            "format": 35,
+            "rgb": [
+              127,
+              127,
+              127
+            ],
+            "alpha": 127,
+            "block_hex": "50844e73aaaaaaaa",
+            "maximum_rgb_error": 1
+          },
+          {
+            "format": 35,
+            "rgb": [
+              127,
+              127,
+              127
+            ],
+            "alpha": 255,
+            "block_hex": "50844e73aaaaaaaa",
+            "maximum_rgb_error": 1
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "block_hex": "00004992244992240000000000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 127,
+            "block_hex": "7f7f4992244992240000000000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 255,
+            "block_hex": "ffff4992244992240000000000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 0,
+            "block_hex": "0000499224499224ffffffff00000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 127,
+            "block_hex": "7f7f499224499224ffffffff00000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 255,
+            "block_hex": "ffff499224499224ffffffff00000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              255,
+              0,
+              0
+            ],
+            "alpha": 0,
+            "block_hex": "000049922449922400f800f800000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              255,
+              0,
+              0
+            ],
+            "alpha": 127,
+            "block_hex": "7f7f49922449922400f800f800000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              255,
+              0,
+              0
+            ],
+            "alpha": 255,
+            "block_hex": "ffff49922449922400f800f800000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              255,
+              0
+            ],
+            "alpha": 0,
+            "block_hex": "0000499224499224e007e00700000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              255,
+              0
+            ],
+            "alpha": 127,
+            "block_hex": "7f7f499224499224e007e00700000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              255,
+              0
+            ],
+            "alpha": 255,
+            "block_hex": "ffff499224499224e007e00700000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              0,
+              255
+            ],
+            "alpha": 0,
+            "block_hex": "00004992244992241f001f0000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              0,
+              255
+            ],
+            "alpha": 127,
+            "block_hex": "7f7f4992244992241f001f0000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              0,
+              0,
+              255
+            ],
+            "alpha": 255,
+            "block_hex": "ffff4992244992241f001f0000000000",
+            "maximum_rgb_error": 0
+          },
+          {
+            "format": 37,
+            "rgb": [
+              127,
+              127,
+              127
+            ],
+            "alpha": 0,
+            "block_hex": "000049922449922450844e73aaaaaaaa",
+            "maximum_rgb_error": 1
+          },
+          {
+            "format": 37,
+            "rgb": [
+              127,
+              127,
+              127
+            ],
+            "alpha": 127,
+            "block_hex": "7f7f49922449922450844e73aaaaaaaa",
+            "maximum_rgb_error": 1
+          },
+          {
+            "format": 37,
+            "rgb": [
+              127,
+              127,
+              127
+            ],
+            "alpha": 255,
+            "block_hex": "ffff49922449922450844e73aaaaaaaa",
+            "maximum_rgb_error": 1
+          }
+        ],
+        "findings": [
+          "Original compressed-image write branches produce8-byte format35 blocks and16-byte format37 blocks compatible with independent BC1/BC3 decoding for solid4x4 fixtures.",
+          "Selected primary/black/white/gray RGB values reconstructed within quantified error;format37 constant alpha exact.",
+          "Original block-index helper and tiled descriptor/layout/address functions execute;whole destination outside one block unchanged."
+        ],
+        "models": [
+          "Local stack canary and allocated image storage only;no compressed-path called function replaced."
+        ],
+        "limits": [
+          "One4x4 solid block,kind9,tile13,mip1,slice0.",
+          "Nonuniform block index selection,arbitrary alpha,edge clamping,multiple blocks/mips,GPU/livegame unverified.",
+          "No complete uploader semantic review or naming credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete431-instruction leaf helper reviewed against original executable and both compressed-image-write callsites.",
+      "Projects16 RGB pixels along palette0-minus-palette1 axis;three signed midpoint thresholds choose two-bit indices;alpha ignored.",
+      "8320 direct native cases match independent loop oracle,including threshold ties,arbitrary palettes and opposing alpha variants;no called-function models.",
+      "82 connected loader/decoder cases include actual1920x1080->480x270 resizing;54 linear single-mip writes and36 mip-chain writes verify complete backing storage.",
+      "36 original compressed-path solid-block cases independently decode as BC1/BC3-compatible with RGB error<=1 and exact constant alpha.",
+      "Independent offline reopening verifies working ABI,unchanged bytes andall9606 other function names/signatures."
+    ],
+    "limits": [
+      "Only helper fully reviewed;2007-instruction image-write routine and11461-instruction decoder remain incompletely reviewed and unnamed.",
+      "Projection classification does not establish globally optimal compression;nonuniform full-encoder output,other tiled layouts,slices and malformed inputs remain unverified.",
+      "Connected loader still models resource fetch;allocation/memory imports use local CRT adapters where needed.",
+      "GPU synchronization,livegame and exact original C++/Media Molecule source-build match unverified."
     ],
     "new_name_credit": 1
   }
