@@ -24074,5 +24074,25 @@
       "No malformed input/cycle/capacity/allocation/runtime safety proof."
     ],
     "new_name_credit": 1
+  },
+  "packed_resource_rebuild_working_types_checkpoint": {
+    "functions": [
+      {
+        "address": "140c6c840",
+        "signature": "uint PS4_SYSV RebuildPackedResourceTreeFromBit0MarkedRecords(uint root_id)"
+      },
+      {
+        "address": "140c6c6c0",
+        "signature": "uint PS4_SYSV RebuildPackedResourceTreeWithCompactedMetadata(uint root_id)"
+      }
+    ],
+    "basis": "Native entry uses EDI root ID; recursive callers consume EAX; reviewed interner returns uint; loader passes returned EAX into next conversion stage.",
+    "verified_after_independent_reopening": true,
+    "native_bytes_unchanged": true,
+    "new_name_credit": 0,
+    "limits": [
+      "Working ABI declarations, not recovered original source types.",
+      "No runtime, malformed-input or whole-game proof."
+    ]
   }
 }

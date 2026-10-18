@@ -17921,7 +17921,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV RebuildPackedResourceTreeWithCompactedMetadata(void)",
+      "saved_working_signature": "uint PS4_SYSV RebuildPackedResourceTreeWithCompactedMetadata(uint root_id)",
       "evidence": [
         "All 116 owned CPU instructions and control paths read; bytes matched original executable.",
         "Recursive tree rebuild, retained metadata state, bit compaction formula and shape-dependent record lengths traced.",
@@ -17932,7 +17932,14 @@
         "Descriptive analyst name, not original source symbol.",
         "Original metadata field and version names unknown; no malformed stream, cycle, allocation or runtime safety proof.",
         "Logical models are not execution of the original game."
-      ]
+      ],
+      "working_signature_refinement": {
+        "basis": "Entry EDI root ID, recursive EAX consumption, final interner result and loader call chain verified in assembly.",
+        "parameter_storage": "EDI:4",
+        "return_storage": "EAX:4",
+        "independently_reopened": true,
+        "new_name_credit": 0
+      }
     },
     {
       "address": "140c6c840",
@@ -17943,7 +17950,7 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV RebuildPackedResourceTreeFromBit0MarkedRecords(void)",
+      "saved_working_signature": "uint PS4_SYSV RebuildPackedResourceTreeFromBit0MarkedRecords(uint root_id)",
       "evidence": [
         "All178 owned CPU instructions and pseudocode read; bytes verified against original executable.",
         "Recursive rebuild, source snapshot, decode-before-selection and separate output delta state traced.",
@@ -17954,7 +17961,14 @@
         "Bit0 meaning unknown; descriptive name refers only to observed flag gate.",
         "Synthetic model covers ordinary-record byte2 inheritance, not native execution or all fields.",
         "No malformed input/cycle/capacity/allocation/runtime safety proof."
-      ]
+      ],
+      "working_signature_refinement": {
+        "basis": "Entry EDI root ID, recursive EAX consumption, final interner result and loader call chain verified in assembly.",
+        "parameter_storage": "EDI:4",
+        "return_storage": "EAX:4",
+        "independently_reopened": true,
+        "new_name_credit": 0
+      }
     }
   ],
   "deferred": [

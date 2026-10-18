@@ -6849,3 +6849,10 @@ Applied and independently reopened **RebuildPackedResourceTreeFromBit0MarkedReco
 Skipped records still update inherited input fields. Kept records are re-encoded against a separate previous-output state, so simply copying marked raw records would lose changes inherited from skipped records. A bounded model of 1,728 three-record sequences checked byte-field inheritance; 162 sequences exposed that incorrect skip-decoding interpretation. The model does not execute the native routine or cover every field.
 
 Only the descriptive name and comment changed. Reopening and decompilation passed; native bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. Malformed streams, cycles, allocation/capacity failure and runtime behavior remain unverified. This adds one reviewed CPU helper to packed CSG records, not whole-game completion.
+
+
+### Legacy CSG root-return signatures corrected
+
+The two already reviewed metadata-compaction and marked-record rebuild helpers now have working **uint(uint root_id)** signatures. Entry assembly consumes a 32-bit node ID in EDI. Recursive callers consume EAX, and the final interning call returns the root ID that the loader passes to the next stage. The metadata helper forwards that result through a tail call.
+
+Both changes survived independent project reopening and decompilation. Native bytes and other functions are unchanged, and prior signatures are saved locally for reversal. These are evidence-supported ABI declarations, not recovered source declarations. **No additional checked-name or completion credit is added.**
