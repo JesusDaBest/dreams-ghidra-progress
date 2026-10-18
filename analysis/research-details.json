@@ -18024,5 +18024,45 @@
       "new_name_credit": 0
     },
     "new_name_credit": 0
+  },
+  "kind_remap_offset_initializer_checkpoint": {
+    "initializer_native": {
+      "native_cases": 4,
+      "original_interval_start": "0x140a83a9e",
+      "original_interval_end_exclusive": "0x140a83bb9",
+      "original_bytes_verified": 283,
+      "kind_offsets": {
+        "52": 304,
+        "53": 268,
+        "54": 304
+      },
+      "findings": [
+        "Original bounded initializer writes remap offsets kind52=0x130,kind53=0x10c,kind54=0x130 independently of initial metadata pattern.",
+        "Original SIMD constant load/store supplies kind54 value;kind53 comes from upper halfword of original32-bit store."
+      ],
+      "limits": [
+        "Explicit return boundary before remaining initializer;XMM1 entry value loaded from preceding original constant source14164d010.",
+        "Full initialization order,later overwrites and source type/property names remain unresolved.",
+        "No saved project mutation,whole startup or completion credit."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "consumer_native": {
+      "native_cases": 288,
+      "findings": [
+        "Kinds52/53/54 use positive signed16-bit metadata offset+3d2 to select a direct-reference field;zero/negative offsets preserve record.",
+        "Present mapping writes mapped slot. Absent mapping with mode1 resolves the old object persistent ID in the destination world and uses that slot when found. Mode0 or failed destination lookup leaves absent result.",
+        "Destination bucket chains traverse generation or full-ID mismatches before a matching object."
+      ],
+      "limits": [
+        "Positive offsets0x130/0x10c/0x130 are byte-matched bounded initializer outputs;zero/negative offsets remain control cases. Full startup,later overwrites and source gadget names unresolved.",
+        "One original object and one destination target; invalid object indices,cycles and malformed lookup chains excluded.",
+        "Owner null and common reference absent; bit marking checked separately."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0
   }
 }

@@ -5735,3 +5735,12 @@ Complete world, owner and object-buffer comparisons verify the resulting parent/
 Heap allocation/release, TLS, standard memory operations and scheduler/wait remain controlled boundaries. The real thread pool, concurrent initialization, other object kinds in this connected path, malformed/cyclic data, the full update loop and live editor correctness remain unverified. The fixture uses one world as source and destination. Prior separate kind-specific callback tests retain their narrower scope.
 
 This adds integration evidence and **zero checked names**; totals remain 712 checked names among 9,605 defined functions. The per-function evidence now distinguishes earlier observer-based tests from this connected path. No full-game completion or exact Media Molecule source/build match is claimed.
+
+
+### Remapping metadata offsets traced to initializer writes
+
+A bounded 283-byte interval of the original metadata initializer writes remapping offsets **kind 52: 0x130; kind 53: 0x10C; kind 54: 0x130**. Four native executions with different starting memory patterns confirm the values. Kind 53's value comes from the upper halfword of a 32-bit store; kind 54's value comes from an original SIMD constant load/store. The preceding constant source used to establish the entry SIMD value is explicit in the local fixture.
+
+The original per-object callback then passed **288 fallback cases** using these positive offsets, with zero/negative-offset controls, valid/absent mappings, both modes and destination lookup collision chains. This improves the earlier tests that used an arbitrary positive field offset.
+
+This is a bounded writer-to-consumer trace, not execution of full startup. Full initialization order, possible later overwrites, and the Dreams type/property names for these numeric kinds remain unresolved. No gadget labels or additional checked-name credit were inferred; the total remains 712 checked names. Raw code and fixtures remain local.
