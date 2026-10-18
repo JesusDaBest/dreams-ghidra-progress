@@ -6897,3 +6897,12 @@ Applied and independently reopened **RebuildPackedResourceTreeWithConvertedFlagg
 For a finite unit quaternion [x,y,z,w], the traced matrix conversion is equivalent up to global quaternion sign to [w,z,-y,-x]. Under Hamilton quaternion multiplication this is a half-turn about the first quaternion axis applied on the right. That is an algebraic description, not a recovered source convention name. All four matrix branches matched across 5,004 fixtures; 12,000 connected decode/transform/repack cases also passed. The matrix model uses host double arithmetic and the scalar codec uses float32 transcription. These checks do not execute the native game or prove arbitrary packed inputs.
 
 Only the name and comment changed; reopening/decompilation passed and bytes, the existing prototype and all 9,611 other names/signatures are unchanged. The caller ignores the writer result, so arbitrary-input capacity success is not established. Malformed streams, cycles, allocation and runtime behavior remain unresolved. This adds one checked CPU helper, not full sculpting completion.
+
+
+### CSG bounds and minimum-scale path: partial findings
+
+The older-format scale upgrade now has traced command admission, four-point geometry bounds, analytic absolute-basis formulas and scale selection. The scale loop rounds bounds outward onto a four-cell grid and raises the packed scale until the largest padded dimension fits within **1,024 cells**, then passes it to the reviewed minimum-scale writer. Bounded host models checked 4,000 scale-selection cases, 1,500 independent box-corner fixtures and 2,000 four-point enclosure cases. These models do not execute the native game.
+
+One gap remains explicit: an alternate radial path derives its radius from the upper X/Z coordinates. That does not enclose every arbitrary mathematical bounding box; the reachable geometry constraints must justify it. A generic counterexample is not evidence of a reachable game bug. The gate comes from expanded bits 15–19, traced to packed record byte 2 and checked over all 256 byte values. Original field names and the required geometry constraints remain unresolved.
+
+This is partial analysis inside the larger loader. It adds no checked-name or completion credit. Special-shape behavior, invalid values, integer conversion limits, scale narrowing, allocation and runtime behavior still need verification.

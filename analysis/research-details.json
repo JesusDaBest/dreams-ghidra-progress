@@ -24176,5 +24176,21 @@
       "Writer result ignored by caller; no arbitrary-input capacity, malformed stream/cycle/allocation/runtime proof."
     ],
     "new_name_credit": 1
+  },
+  "csg_bounds_minimum_scale_partial_checkpoint": {
+    "scope": "Partial loader bounds accumulation and minimum-scale arithmetic.",
+    "findings": [
+      "Commands enter bounds accumulation only when(flags&0x180)==0x80. Four-point and analytic absolute-basis paths traced separately.",
+      "Generic absolute-basis bounds checked against1500 independent box-corner fixtures; four-point enclosure checked in2000 finite cases.",
+      "The scale loop rounds outward to a four-cell grid and raises scale until the largest padded dimension fits1024 cells;4000 finite bounds cases checked.",
+      "Alternate radial bounds use upperX/Z radius and preserveY. A geometric precondition is still needed to prove enclosure for all reachable inputs.",
+      "Radial gate is expanded bits15..19, derived from packed byte2 bit1 and bits2..6; all256 source bytes checked. Mode flags20/21 are outside this mask."
+    ],
+    "limits": [
+      "Host arithmetic models, not native SIMD or game execution.",
+      "Generic AABB counterexample disproves unconditional radial enclosure, but does not establish a reachable game bug.",
+      "Special-shape constraints, source field labels, exceptional values, scale narrowing and full loader behavior remain unresolved."
+    ],
+    "new_name_credit": 0
   }
 }
