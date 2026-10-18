@@ -7251,3 +7251,6 @@ Sprite forward-to-buffer packing:1944 cases /31104 transforms checked; movement-
 
 
 Original SpriteGravity float binding traced to directional control;576 local cases checked. Full nonzero-gravity chain has an unresolved numerical comparison gap, documented in ANALYSIS.md. No name credit.
+
+
+SpriteFloppiness field-to-weight-exponent linkage verified; threshold formula passes756 bounded native cases. Five Ghidra annotations persisted after independent reopening. No new name credit; gravity-chain numeric gap remains open.

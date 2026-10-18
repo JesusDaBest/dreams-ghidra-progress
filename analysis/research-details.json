@@ -25268,5 +25268,38 @@
       "No additional names or whole-game completion credit."
     ],
     "new_name_credit": 0
+  },
+  "sprite_floppiness_threshold_followup": {
+    "floppiness": "Original SpriteFloppiness float registration at component+0x10c; original producer copies unchanged tosource+0x48; consumer uses it in exponent=base+(1-base)*floppiness for eightpowf sample weights.",
+    "threshold_native": {
+      "cases": 756,
+      "scope": "Original0cae..0d1e state-factor selection and squared-threshold construction; explicit state/flag/gain, record path length and saved caller scale; outgoing continuation adapted to RET.",
+      "model": "square((2 if state19 or state17/18 with flag1 else1)*caller_scale*path_length*0.0625*gain)",
+      "checked": [
+        "Seven state values, three flags, four scales including zero/negative, three path lengths and three gains.",
+        "Float result agrees with independent formula; source inputs unchanged; original slice unchanged."
+      ],
+      "limits": [
+        "Bounded threshold construction only; actual runtime values/units and upstream full control flow not verified.",
+        "Finite representable domain; no nonfinite/overflow/underflow proof."
+      ],
+      "original_slice_sha256": "71b9332a3209ef6861773392757853908762b77a1e5a9be79e05e9febb8c7fb0",
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "scale_provenance": "Original source+0x58 caller uniform scale reaches threshold via saved SIMD lane. Threshold scales with caller uniform scale and local generated-record path length before squaring.",
+    "annotations": {
+      "phase": "verify",
+      "annotations": 5,
+      "names_signatures_inventory_unchanged": true,
+      "target_native_bytes_unchanged": true,
+      "new_name_credit": 0,
+      "independent_reopen_verified": true
+    },
+    "limits": [
+      "Runtime property ranges, default exponent/gain values and physical units unresolved.",
+      "Nonzero-gravity full-chain numerical comparison remains unresolved; this follow-up does not close it."
+    ],
+    "new_name_credit": 0
   }
 }

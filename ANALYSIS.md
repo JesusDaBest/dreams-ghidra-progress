@@ -7814,3 +7814,12 @@ The original Sprite registrar explicitly binds **`SpriteGravity` to float field 
 **576 bounded complete later-sample cases** verify the nonzero directional term for both control signs and two gains. A full nonzero-gravity chain is still not numerically verified: an exploratory fixture diverges from the ideal sequential model within its first forward pass. Error grows toward later samples. Recomputing each sample from the original code's actual previous pose reduces local position error below 0.00001 and quaternion error below 0.000015 in that captured case, supporting numerical propagation as a major contributor. This does not prove bitwise equivalence or resolve the full domain. A threshold-equality probe also requires float32-aware rounding analysis.
 
 The failing fixtures and diagnostics remain local; tolerances were not widened to declare success. No game defect, complete gravity-chain verification, new function-name credit or whole-game completion is claimed.
+
+
+### Sprite floppiness and stopping-threshold inputs identified
+
+Original registration binds **`SpriteFloppiness` to float field `+0x10c`**. The producer copies it unchanged to emission-source field `+0x48`; the consumer uses that value to blend a configured exponent toward one before calculating eight `powf` sample weights. Property ranges and default configuration values remain unknown.
+
+The stopping threshold is the square of **state factor × caller uniform scale × local path length × 0.0625 × configuration gain**. Original source-field and SIMD-lane dataflow establish the scale input. **756 bounded native cases** verify the formula across seven states, three flag values, four scales including zero/negative, three path lengths and three gains. The state factor is one or two. Runtime gain, state meanings and physical units remain unresolved.
+
+Five evidence-supported comments were added reversibly to the backed-up Ghidra project and verified after independent reopening. Existing comments were preserved; function names/signatures and target instruction bytes remained unchanged. These annotations add no checked-name credit. The full nonzero-gravity chain numerical discrepancy remains open.
