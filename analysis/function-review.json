@@ -16921,14 +16921,15 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV InsertOrAssignIntKeyRecord32(void * result, void * table, void * record)",
+      "saved_working_signature": "void PS4_SYSV InsertOrAssignIntKeyRecord32(IntKeyInsertResultWorking24 * result, IntKeyTableWorking32 * table, IntKeyRecordWorking32 * record)",
       "evidence": [
         "Complete193-instruction body and pseudocode reviewed;original bytes verified.",
         "Robin Hood insertion/replacement in32-byte slots with nonzero int32key,payload8..26 and preserved padding;capacity/count in table header.",
         "708 native cases compare complete table/header/input/output across capacities16/32/64,positive/negative keys,collision chains,wraparound and replacements.",
         "24 input displacements and372 replacements observed;input key/payload is mutated while displaced entries are carried.",
         "Result returns table pointer,index and inserted byte through output pointer;source-level payload meaning unresolved.",
-        "Independent reopening verifies name,void three-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+        "Independent reopening verifies name,void three-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures.",
+        "Later working layout promotion:32-byte record with signed key0 and opaque payload8..26;32-byte table header entries0/capacity8/count16/ownership24;24-byte result table0/index8/inserted16. Independent reopening verifies layouts,typed signatures,decompilation,unchanged bytes and all other function names/signatures. No additional naming credit."
       ],
       "caveats": [
         "Nonzero keys,power-of-two capacities and nonfull valid tables only;allocation/resize and invalid/full-table behavior unverified.",
@@ -16945,14 +16946,15 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "void PS4_SYSV EnsureIntKeyRecord32TableCapacity(void * table)",
+      "saved_working_signature": "void PS4_SYSV EnsureIntKeyRecord32TableCapacity(IntKeyTableWorking32 * table)",
       "evidence": [
         "Complete120-instruction body and pseudocode reviewed;original bytes verified.",
         "Targets minimum16/power-of-two capacity for twice current count,initializes32-byte slots and rehashes nonzero old entries using original insertion.",
         "52 native cases compare full header,old/new arrays and allocation logs;24 growth cases and10 old-array delete cases cover thresholds,collisions and owned/borrowed arrays.",
         "Input old slots may mutate during original rehash insertion;expected states include those changes and preserved padding.",
         "Original imported C++ array new/delete identities linked by JUMP_SLOT and NID database;argument/order-recording models used,not real allocator execution.",
-        "Independent reopening verifies name,void table-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+        "Independent reopening verifies name,void table-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures.",
+        "Later working layout promotion:32-byte record with signed key0 and opaque payload8..26;32-byte table header entries0/capacity8/count16/ownership24;24-byte result table0/index8/inserted16. Independent reopening verifies layouts,typed signatures,decompilation,unchanged bytes and all other function names/signatures. No additional naming credit."
       ],
       "caveats": [
         "Successful allocation,valid nonzero keys,power-of-two old tables and small finite sizes only;allocation failure/overflow,full tables,concurrency and live game unverified.",

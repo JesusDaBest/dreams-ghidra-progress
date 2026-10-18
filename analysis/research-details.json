@@ -19636,5 +19636,33 @@
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1
+  },
+  "intkey_record_working_types_checkpoint": {
+    "targets": {
+      "1408c6860": {
+        "name": "EnsureIntKeyRecord32TableCapacity",
+        "signature": "void PS4_SYSV EnsureIntKeyRecord32TableCapacity(IntKeyTableWorking32 * table)"
+      },
+      "1408c6a10": {
+        "name": "InsertOrAssignIntKeyRecord32",
+        "signature": "void PS4_SYSV InsertOrAssignIntKeyRecord32(IntKeyInsertResultWorking24 * result, IntKeyTableWorking32 * table, IntKeyRecordWorking32 * record)"
+      }
+    },
+    "types": [
+      "IntKeyRecordWorking32",
+      "IntKeyTableWorking32",
+      "IntKeyInsertResultWorking24"
+    ],
+    "sizes": [
+      32,
+      32,
+      24
+    ],
+    "basis": "Complete original instructions and708 insertion/52 connected resize cases.",
+    "limits": [
+      "Analyst working type/field names,not original C++ declarations.",
+      "Payload semantics and unknown padding retained;real allocation,invalid/full tables,concurrency and live game unverified."
+    ],
+    "new_name_credit": 0
   }
 }

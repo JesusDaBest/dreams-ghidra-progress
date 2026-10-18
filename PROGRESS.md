@@ -6204,3 +6204,12 @@ Totals: **729 checked names** (649 behavior/helper and 80 property/type), **2,13
 Independent reopening verifies the saved name, opaque table-pointer signature, decompilation, original bytes and all 9,605 other names/signatures. Successful allocation and valid small tables only;failure/overflow,full/invalid tables,concurrency,payload semantics and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **730 checked names** (650 behavior/helper and 80 property/type), **2,136 mapped**, **7,470 unmapped**, among 9,606 defined functions.
+
+
+### Integer-key table working layouts recovered
+
+Both reviewed hash-table helpers now use working Ghidra types. `IntKeyRecordWorking32` has its signed key at offset 0 and an opaque 19-byte payload at 8–26. `IntKeyTableWorking32` exposes entries/capacity/count at 0/8/16 and ownership at 24. `IntKeyInsertResultWorking24` exposes table/index/inserted at 0/8/16. Unknown padding remains unspecified; no original C++ class or payload semantics are invented.
+
+Independent reopening verifies all three sizes and field offsets, both typed signatures, successful decompilation, unchanged original instruction bytes and all other 9,604 function names/signatures. The layouts are supported by complete body review plus 708 insertion and 52 connected resize cases. Real allocation, invalid/full tables, concurrency and live-game behavior remain unverified.
+
+This improves saved decompilation without extra naming credit: **730 checked names** remains the total.
