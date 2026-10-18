@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2099,
-  "unmapped_total": 7504,
+  "mapped_total": 2100,
+  "unmapped_total": 7503,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52764,6 +52764,32 @@
             "180 native ordering/dedup cases verify ascending finite float+24 order and adjacent half-unit cell filtering from float coordinates+16/+20. Includes negative boundaries,reverse/shuffled chains and separated same-cell repeats.",
             "48 connected cases execute original parent traversal,lookup andsort; selected pointer reaches downstream cleanup observer,while colliding mismatched keys are rejected.",
             "Independent reopening verifies descriptive name and four-argument void SysV signature; all other9602 names/signatures and original bytes unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140767ce0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared keyed-record deletion reached by fe08 during Microchip ancestor cleanup.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Unlinks first exact16-byte-key andfloat-order match,then clears record payload while preserving table allocation count.",
+      "code_sha256": "5f435dd6fdfecba0b2b7c6efd571d1fc016253bbdc0546b828390c4b038c3466",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemoveFirstKey16RecordMatchingOrder",
+          "support": [
+            "Complete95-instruction original body and pseudocode reviewed and original bytes verified.",
+            "192 native cases verify head/middle/tail/missing deletion,real hash collisions,signed zero,infinity andNaN. Full key/table comparison checks exact linked-list splicing,record clearing andpreserved padding.",
+            "48 connected cases execute original parent traversal,key lookup,sort,fe08 producer,wrapper,full dispatcher andactual keyed deletion. Wrong key/ancestry/type/class leaves record unchanged while main wire removal continues.",
+            "Independent reopening verifies void SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged original bytes/other9602 names andsignatures."
           ]
         }
       ],

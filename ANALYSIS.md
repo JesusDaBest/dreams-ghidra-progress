@@ -5860,3 +5860,16 @@ The prior 216 hash/collision cases and 48 connected parent-traversal cases remai
 Finite acyclic tables up to 100 records and modes 0/1 are covered. Tied/NaN/infinite sort keys, malformed chains, overflow, coordinate semantics, downstream deletion and gameplay remain unresolved.
 
 Totals: 687 checked names, 2,099 mapped functions and 7,504 unmapped among 9,603 currently defined. Review counts are not whole-game completion.
+
+
+### Keyed record deletion named and connected to Microchip cleanup
+
+Saved `RemoveFirstKey16RecordMatchingOrder` after reading and byte-verifying its complete 95-instruction body. The working SysV signature has table and key pointers in RDI/RSI and a float order value in the low four bytes of XMM0. Independent reopening verifies that signature, the saved name and unchanged original bytes; all other names/signatures remain unchanged.
+
+192 native cases check exact 16-byte key matching plus equality with the float at record offset 24. Deletion unlinks the first match from its bucket/predecessor chain, fills the 16-byte key with `ff`, zeros the 12-byte payload and sets next index to `ffff`. The final two padding bytes and unrelated table bytes remain unchanged. Signed zeros compare equal, infinity matches and NaN does not match. Head, middle, tail and missing targets include real same-bucket key collisions.
+
+48 connected cases remove the final deletion observer: original parent traversal, lookup, sorting, `fe08` producer, packet wrapper, full dispatcher and deletion now execute together. A shared Microchip ancestor and exact key select and clear the record; wrong key, ancestry, type or endpoint-class gates leave it intact. Main wire endpoints are still invalidated. Complete world/object comparisons show the expected mutations, and the table allocation count remains 1 in this fixture. Four captured bodies and all 267,374 dispatcher bytes match original executable bytes; this adds no whole-dispatcher completion claim.
+
+History output, multiple selected records, recursive coordinate-neighbor cleanup, malformed structures, concurrency and gameplay remain unresolved. Full user-facing undo/redo is not established.
+
+Totals: 688 checked names, 2,100 mapped functions and 7,503 unmapped among 9,603 currently defined. Review counts are not whole-game completion.

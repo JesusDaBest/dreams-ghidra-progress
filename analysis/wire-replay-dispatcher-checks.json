@@ -319,5 +319,33 @@
     },
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "key16_record_deletion": {
+    "native_cases": 192,
+    "finding": "Original deletion hashes16-byte key, walks collision chain and removes first exact key plus equal float+24 match. Splices bucket head or predecessor next index, fills key16 withff, zeros12-byte payload,sets nextffff,retains final2-byte padding andother table bytes. Signed zeros compare equal,infinity matches,NaN never matches.",
+    "limits": [
+      "Finite acyclic chains up to17 records; duplicate matching key/order records,malformed indices,concurrency andgameplay untested.",
+      "Float order arrives in XMM0; working signature must represent SysV float argument explicitly."
+    ],
+    "original_native_instructions_verified": 95,
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "parent_original_deletion_chain": {
+    "native_cases": 48,
+    "finding": "Original parent traversal,key lookup,sort,downstream fe08 producer,packet wrapper,full dispatcher and keyed deletion execute together. Eligible common Microchip ancestor andexact key select record,unlink its bucket andclear key/payload while ordinary wire endpoints invalidate. Colliding key mismatch and wrong ancestry/type/class skip record deletion. Complete world/object comparison verifies exact mutations; table allocation count remains1.",
+    "limits": [
+      "Single valid record,finite acyclic parent fixtures,owner absent/player255 andhistory output disabled.",
+      "Multiple selected records,history output,recursive coordinate-neighbor deletion,malformed structures,concurrency andgameplay untested."
+    ],
+    "original_native_instructions_verified": {
+      "140766e30": 210,
+      "140b35ec0": 132,
+      "140767ce0": 95,
+      "140b36750": 401
+    },
+    "dispatcher_original_bytes_verified": 267374,
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

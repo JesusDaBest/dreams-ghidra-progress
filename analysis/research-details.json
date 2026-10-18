@@ -16253,5 +16253,34 @@
       "Coordinate/order meanings unresolved; downstream fe08 application remains an observation boundary in connected suite."
     ],
     "new_name_credit": 1
+  },
+  "key16_record_deletion_checkpoint": {
+    "address": "140767ce0",
+    "name": "RemoveFirstKey16RecordMatchingOrder",
+    "signature": "void PS4_SYSV RemoveFirstKey16RecordMatchingOrder(void * recordTable, void * key16, float orderValue)",
+    "native_instructions": 95,
+    "native_check": {
+      "native_cases": 192,
+      "finding": "Original deletion hashes16-byte key, walks collision chain and removes first exact key plus equal float+24 match. Splices bucket head or predecessor next index, fills key16 withff, zeros12-byte payload,sets nextffff,retains final2-byte padding andother table bytes. Signed zeros compare equal,infinity matches,NaN never matches.",
+      "limits": [
+        "Finite acyclic chains up to17 records; duplicate matching key/order records,malformed indices,concurrency andgameplay untested.",
+        "Float order arrives in XMM0; working signature must represent SysV float argument explicitly."
+      ],
+      "original_native_instructions_verified": 95,
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete95-instruction original body and pseudocode reviewed and original bytes verified.",
+      "192 native cases verify head/middle/tail/missing deletion,real hash collisions,signed zero,infinity andNaN. Full key/table comparison checks exact linked-list splicing,record clearing andpreserved padding.",
+      "48 connected cases execute original parent traversal,key lookup,sort,fe08 producer,wrapper,full dispatcher andactual keyed deletion. Wrong key/ancestry/type/class leaves record unchanged while main wire removal continues.",
+      "Independent reopening verifies void SysV(table RDI,key RSI,float order XMM0 low4),saved descriptive name andunchanged original bytes/other9602 names andsignatures."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque working pointers,not recovered source declarations.",
+      "Finite acyclic chains up to17 records andsingle-record connected table; duplicate eligible matches,malformed indices,concurrency andgameplay untested.",
+      "Connected suite disables history output andrecursive coordinate-neighbor cleanup; full user undo/redo remains unverified."
+    ],
+    "new_name_credit": 1
   }
 }
