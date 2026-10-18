@@ -22807,5 +22807,32 @@
     ],
     "runtime_gpu_verified": false,
     "reviewed_name_count_increment": 0
+  },
+  "chunk_soft_blend_mm_checkpoint": {
+    "shader": "ChunkAppendVoxels",
+    "exact_encoding_roundtrip_bytes": 25932,
+    "decoded_instructions_total_not_all_read": 4641,
+    "exact_rational_correction_cases": 147,
+    "exact_rational_composition_cases": 2352,
+    "findings": [
+      "Command bits 7..8 select the scalar composition observed here: value 1 uses min(a,b)-correction; value 2 uses max(a,b)+correction; values 0 and 3 preserve the existing scalar at these two conditional assignments.",
+      "Command bits 12..13 equal to 2 skip the quadratic correction block and retain half of max(radius-abs(a-b),0). Other values execute the finite-support quadratic correction in this reviewed path.",
+      "The positive-radius min composition with quadratic correction matches the full soft-min formula on the inspected MM slide, not merely its correction term. The max variant has symmetric plus-correction composition.",
+      "The b input here already includes the earlier command sign selection. These results do not assign original union/subtract/paint enum names to all bit combinations."
+    ],
+    "source": {
+      "url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+      "page": 30,
+      "visually_inspected": true
+    },
+    "source_match_scope": "Algebraic soft-min formula on reviewed positive-finite-radius quadratic-style path, not exact source/build identity.",
+    "limits": [
+      "Rational arithmetic and decoded assignments only; no GPU rounding, exceptional values, zero/negative radius or complete command execution.",
+      "No claim that fourth stored channel equals radius.",
+      "The full shader remains incompletely read.",
+      "Only bounded output and blend windows have been semantically inspected; no full-shader completion credit."
+    ],
+    "runtime_gpu_verified": false,
+    "reviewed_name_count_increment": 0
   }
 }

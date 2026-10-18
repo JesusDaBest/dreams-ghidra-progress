@@ -7124,3 +7124,11 @@ Finite masks feed population counts, GDS accumulation and compact record/output 
 Visually inspected page 30 of Media Molecule's [2015 rendering presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf). Its finite-support soft-blending explanation does not match the traced logarithmic encoding closely enough to name this channel “blend radius.” No source/build identity is claimed.
 
 Root selection and degenerate cases, geometric guarantees, physical units, runtime masks, GDS capacities/concurrency and actual GPU behavior remain unresolved. No checked-function credit is added.
+
+### Media Molecule soft-blend formula matched in the chunk shader
+
+Matched the loader's `ChunkAppendVoxels` path to the original shader archive. Its **25,932-byte executable range reassembles exactly**, but only bounded output and blend windows have been semantically inspected; the 4,641-instruction shader is not fully understood.
+
+The reviewed positive-finite-radius quadratic path matches the soft-min algebra on page 30 of [Media Molecule's 2015 presentation](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf). **147 exact rational cases** check the finite-support correction; **2,352 cases** check scalar composition across the observed command fields. Scalar modes 1 and 2 use min-minus-correction and max-plus-correction. Blend-style field value 2 takes a different, linear half-correction path; the other values take the quadratic path in this reviewed fragment. Original enum names are not assigned from these numbers alone.
+
+This is an **algorithm-level match**, not proof of an exact source revision, compiler build or original declaration. It also does not identify the logarithmic fourth attribute as the blend radius. Zero/negative radius, exceptional floating values, GPU rounding and complete command execution remain unverified. No checked-function credit is added.
