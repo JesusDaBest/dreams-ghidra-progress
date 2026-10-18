@@ -7625,3 +7625,14 @@ Separately, **six three-point processor cases** with uneven spacing check decode
 Media Molecule's [2015 presentation](https://www.mediamolecule.com/blog/article/siggraph_2015), page 124, describes a screen-space depth-of-field technique. The recovered point-oriented displacement has a different input and coordinate-space contract, so the historical description does not establish a match. The [2016 particle-coding announcement](https://www.mediamolecule.com/blog/article/this_weeks_live_stream_the_tech_behind_the_magic) remains a recording lead; no new source frames or transcript were inspected.
 
 Totals: **787 checked names**, **2,189 mapped functions**, **7,424 unmapped**, among **9,613 defined functions**. The larger processor and whole Sprite subsystem remain incomplete.
+
+
+### Sprite sampler tree traversal and scratch selection follow-up
+
+The named sampler now has **132 depth-one cross-page cases** and **14 depth-two cases**. They check page-boundary XYZ/radius/orientation, segment progress and cursor leaf/offset/index, including exact boundaries and requests beyond the path end. Depth-one cases compare fresh and retained progress; depth-two cases use retained progress. `pow` and `__isinff` are explicit fixture adapters. This supersedes the earlier single-page-only test limitation for these selected tree shapes, without proving arbitrary trees or malformed input.
+
+Three connected processor fixtures distinguish the scratch-selection algorithm: it chooses by nearest transformed source point rather than nearest segment, retains the first equal-distance candidate, and filters raw frame bits even when a positive override admits both records into the requested frame. The nearest-point fixture deliberately places one segment through the query while another stroke has the closer point.
+
+These cases also corrected a field assumption. Output offset 32 identifies the current metadata record in its low 11 bits; the selected candidate appears in upper bits of offset 40 in the tested cases. The initial expectation used the wrong field and failed before the mapping was corrected against original packing instructions and native output. Broader packed-bit meanings remain unresolved.
+
+General deep/malformed trees, backward/negative/nonfinite requests, zero-length segments, all caller preconditions, concurrency and GPU work remain unverified. Counts and whole-processor completion are unchanged.
