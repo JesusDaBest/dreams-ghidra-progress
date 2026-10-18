@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "663 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "664 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8732,
-    "other_names": 874,
-    "verification": "complete_inventory_matches_baseline_plus_663_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8731,
+    "other_names": 875,
+    "verification": "complete_inventory_matches_baseline_plus_664_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16676,6 +16676,29 @@
         "Property storage lookup only; does not calculate scene position. Actual runtime writer remains unresolved.",
         "Controlled metadata for other kinds does not establish their real XYZOutput support.",
         "Null objects, malformed/cyclic packed chains, unsupported IDs, complete callers, live behavior and exact MM source/build match unverified."
+      ]
+    },
+    {
+      "address": "14093f360",
+      "original_name": "FUN_14093f360",
+      "applied_name": "InitializeKeyDefaults",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeKeyDefaults(void * keyObject)",
+      "evidence": [
+        "Original enum registration identifies kind3 Key; original factory switch slot3 targets zeroing arm14093c3ab and direct call14093f360.",
+        "Complete31-instruction initializer and pseudocode read; original bytes and default constants verified.",
+        "518 native cases:259 standalone patterned/random input cases plus259 connected original factory-zeroing-arm cases,full0x130-byte record and surrounding guards checked.",
+        "Standalone initializer leaves selected gaps unchanged; factory arm zeroes them first. Common factory finalization separately assigns masked type bits.",
+        "Independent reopening verifies name,working unary pointer signature,decompilation,original bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Bounded factory arm exits before common finalization;allocation,IDs,registration,failure paths and full scene conversion unexecuted.",
+        "No field-semantic claims for packed constants without separate property binding;no live game or exact MM source/build match.",
+        "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
       ]
     }
   ],

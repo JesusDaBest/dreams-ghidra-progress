@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 673,
+    "done": 674,
     "todo": 1452,
-    "total": 2125,
-    "behavior_or_helpers_reviewed": 599,
+    "total": 2126,
+    "behavior_or_helpers_reviewed": 600,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -27580,12 +27580,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 254,
+        "done": 255,
         "todo": 105,
-        "total": 359,
-        "behavior_or_helpers_reviewed": 237,
+        "total": 360,
+        "behavior_or_helpers_reviewed": 238,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 272,
+        "runtime_functions_identified": 273,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -27703,6 +27703,7 @@
           "RemapThingReferencesJobItem",
           "RemapWireEndpointsJobItem",
           "ResetThingSelectedRuntimeState",
+          "InitializeKeyDefaults",
           "PrepareGameAndLinkedWireOrdering",
           "RefreshWorldDerivedState",
           "RemapTaggedValueObjectIndices_1409a1fb0",
@@ -28066,6 +28067,7 @@
           "14093af90",
           "14093b900",
           "14093bb60",
+          "14093f360",
           "140956a10",
           "140956ef0",
           "1409a1fb0",
@@ -29604,12 +29606,12 @@
           {
             "name": "shared/objects",
             "label": "Object refs",
-            "done": 60,
+            "done": 61,
             "todo": 11,
-            "total": 71,
-            "behavior_or_helpers_reviewed": 58,
+            "total": 72,
+            "behavior_or_helpers_reviewed": 59,
             "properties_or_types_reviewed": 2,
-            "runtime_functions_identified": 58,
+            "runtime_functions_identified": 59,
             "property_type_functions_identified": 13,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -29660,6 +29662,7 @@
               "ComputeObjectAuxiliaryFrameTransform",
               "GetParentFromModelPropertyStorage",
               "RemapMergedObjectReferences",
+              "InitializeKeyDefaults",
               "RotateTransformForAuxiliaryMode",
               "ComputeAuxiliaryStateTransform",
               "FindObjectIndexByIdOrPointer",
@@ -29735,6 +29738,7 @@
               "1409019a0",
               "1409130e0",
               "140913170",
+              "14093f360",
               "140a01270",
               "140a01460",
               "140b18cf0",
@@ -30162,6 +30166,61 @@
                 ]
               },
               {
+                "name": "shared/objects/key-spatial",
+                "label": "Key spatial lookup",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "CollectAndSortKeySpatialProjections",
+                  "FindNearestKeyByName",
+                  "InitializeKeyDefaults"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1408d2b10",
+                  "1408d3ba0",
+                  "14093f360"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/objects/key-spatial/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "CollectAndSortKeySpatialProjections",
+                      "FindNearestKeyByName",
+                      "InitializeKeyDefaults"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1408d2b10",
+                      "1408d3ba0",
+                      "14093f360"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/objects/thingref",
                 "label": "Thing Ref",
                 "done": 1,
@@ -30285,57 +30344,6 @@
                       "1404901a0",
                       "140d53ef0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/objects/key-spatial",
-                "label": "Key spatial lookup",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "CollectAndSortKeySpatialProjections",
-                  "FindNearestKeyByName"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1408d2b10",
-                  "1408d3ba0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/objects/key-spatial/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "CollectAndSortKeySpatialProjections",
-                      "FindNearestKeyByName"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1408d2b10",
-                      "1408d3ba0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -45760,5 +45768,5 @@
       }
     ]
   },
-  "unmapped": 7481
+  "unmapped": 7480
 }

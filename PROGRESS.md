@@ -5898,3 +5898,12 @@ The format selector comes from the enclosing routine's second integer argument. 
 **5,580 bounded native cases** check every nonnegative format value from 0 through 0x743 with wire counts 0, 1 and 4. Original comparison/branch instructions run with explicit return markers at stage boundaries. The results match the earlier-stage, wire-stage, direct-conversion, no-wire and later-stage selections. The markers replace migration bodies: these tests verify stage selection only, not the actual scene conversion or failure behavior.
 
 This narrows the earlier unresolved version condition to a concrete numeric format gate. It does not map those numbers to named releases or verify the complete enclosing routine, factory, scene upgrade or live-game behavior. No exact Media Molecule source/build match is claimed. Totals remain **719 checked names**; no additional naming or completion credit was added.
+
+
+### Key default initializer reviewed and named
+
+`InitializeKeyDefaults` now names the complete 31-instruction routine selected by the object factory for registered type 3 (`Key`). The original factory arm clears a 0x130-byte record before calling it. The initializer writes header, sentinel, scalar and vector defaults but leaves selected gaps untouched; common factory finalization assigns the type bits afterward. Packed constants are recorded without inventing source field names.
+
+**518 native cases** cover 259 patterned/random inputs to the initializer alone and 259 connected executions of the original zeroing arm plus initializer. Complete record and surrounding guard comparisons pass. Standalone gaps preserve their prior bytes; connected-arm gaps are zero. Allocation, IDs, registration, failure handling, the rest of the factory and live scene conversion are not executed or claimed verified.
+
+Independent reopening verifies the descriptive name, unary opaque-pointer signature, complete decompilation, original bytes and all 9,605 other function names/signatures. No exact Media Molecule source/build match is claimed. Totals: **720 checked names** (640 behavior/helper and 80 property/type), **2,126 mapped**, **7,480 unmapped**, among 9,606 defined functions.

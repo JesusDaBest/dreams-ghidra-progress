@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2125,
-  "unmapped_total": 7481,
+  "mapped_total": 2126,
+  "unmapped_total": 7480,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53678,6 +53678,33 @@
             "Complete 34-instruction original body and control flow reviewed; aligned ret/NOP neighbors and three original relative-call targets support entry/boundary.",
             "3840 native cases cover packed property precedence, metadata fallback, 128 masked kinds, high type bit and controlled positive/zero/negative offsets with complete no-write comparisons.",
             "Independent reopening verifies new nonoverlapping definition, pointer ABI, complete decompilation, original bytes and all9605 prior function names/signatures."
+          ]
+        }
+      ]
+    },
+    "14093f360": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "objects",
+        "key-spatial",
+        "runtime-implementation"
+      ],
+      "component_basis": "Registered Key object default initialization selected by original object factory,not an animation-key or MovementSensor updater.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete initializer review and native object-write verification.",
+      "code_sha256": "be261705a401e03dd620d8df334c1536fdd3dd8d2e8f63b9b725a756e032844c",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeKeyDefaults",
+          "support": [
+            "Original enum registration identifies kind3 Key; original factory switch slot3 targets zeroing arm14093c3ab and direct call14093f360.",
+            "Complete31-instruction initializer and pseudocode read; original bytes and default constants verified.",
+            "518 native cases:259 standalone patterned/random input cases plus259 connected original factory-zeroing-arm cases,full0x130-byte record and surrounding guards checked.",
+            "Standalone initializer leaves selected gaps unchanged; factory arm zeroes them first. Common factory finalization separately assigns masked type bits.",
+            "Independent reopening verifies name,working unary pointer signature,decompilation,original bytes and all9605 other names/signatures."
           ]
         }
       ]

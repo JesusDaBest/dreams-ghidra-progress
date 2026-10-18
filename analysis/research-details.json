@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 719,
+    "checked_and_applied_names": 720,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 719,
+    "verified_names": 720,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "663 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "664 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18654,5 +18654,41 @@
       "remaining": "Not a complete enclosing CFG/callee/stack-alias audit; format input is not mapped to release labels."
     },
     "new_name_credit": 0
+  },
+  "key_initializer_name_checkpoint": {
+    "target": {
+      "name": "InitializeKeyDefaults",
+      "signature": "void PS4_SYSV InitializeKeyDefaults(void * keyObject)"
+    },
+    "native_check": {
+      "native_cases": 518,
+      "standalone_cases": 259,
+      "connected_factory_arm_cases": 259,
+      "original_initializer_instructions": 31,
+      "findings": [
+        "Complete original Key default initializer writes exact header/sentinel/scalar/vector defaults while leaving selected gaps untouched.",
+        "Original factory kind3 arm clears0x130 bytes then calls this initializer. Connected arm+initializer cases verify deterministic zeroed gaps with full object and surrounding guards.",
+        "Initializer itself leaves type bits zero in common header; later factory finalization assigns registered kind, so this is not complete object creation."
+      ],
+      "limits": [
+        "Bounded factory arm exits before common finalization;allocation,IDs,registration,failure paths and full scene conversion unexecuted.",
+        "No field-semantic claims for packed constants without separate property binding;no live game or exact MM source/build match."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original enum registration identifies kind3 Key; original factory switch slot3 targets zeroing arm14093c3ab and direct call14093f360.",
+      "Complete31-instruction initializer and pseudocode read; original bytes and default constants verified.",
+      "518 native cases:259 standalone patterned/random input cases plus259 connected original factory-zeroing-arm cases,full0x130-byte record and surrounding guards checked.",
+      "Standalone initializer leaves selected gaps unchanged; factory arm zeroes them first. Common factory finalization separately assigns masked type bits.",
+      "Independent reopening verifies name,working unary pointer signature,decompilation,original bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Bounded factory arm exits before common finalization;allocation,IDs,registration,failure paths and full scene conversion unexecuted.",
+      "No field-semantic claims for packed constants without separate property binding;no live game or exact MM source/build match.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }
