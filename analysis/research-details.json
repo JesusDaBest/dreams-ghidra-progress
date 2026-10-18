@@ -22962,5 +22962,82 @@
       "Index gather does not construct96-byte command records."
     ],
     "new_name_credit": 1
+  },
+  "sculpt_basis_norm_consumer_checkpoint": {
+    "ordinary_basis_factor": "Reciprocal maximum absolute row sum of stored3x3 basis, before separate cap.",
+    "lane_cases": 1000,
+    "fourth_lane_perturbation_cases": 1000,
+    "basis_store_mirror_cases": 640,
+    "special_table": [
+      {
+        "selector": 9,
+        "original_address": "0x1418156e8",
+        "bits": "0x3f800000",
+        "value": 1.0
+      },
+      {
+        "selector": 10,
+        "original_address": "0x1418156ec",
+        "bits": "0x3f13cd3a",
+        "value": 0.5773502588272095
+      },
+      {
+        "selector": 11,
+        "original_address": "0x1418156f0",
+        "bits": "0x3f13cd3a",
+        "value": 0.5773502588272095
+      },
+      {
+        "selector": 13,
+        "original_address": "0x1418156f8",
+        "bits": "0x3f13cd3a",
+        "value": 0.5773502588272095
+      },
+      {
+        "selector": 14,
+        "original_address": "0x1418156fc",
+        "bits": "0x3f13cd3a",
+        "value": 0.5773502588272095
+      }
+    ],
+    "special_norm_inequality_cases": 1200,
+    "source": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+    "source_page_visually_inspected": 29,
+    "match_scope": "Algebra consistent with max-norm basis-change discussion, not exact source/build identity.",
+    "limits": [
+      "Shape table and repetition cap remain separate branches.",
+      "Stored mirrored-row correspondence and every primitive local Lipschitz premise require additional verification.",
+      "Exact rational lane interpretation does not emulate float rounding or GPU execution.",
+      "Rational inequality is a mathematical model, not original GPU execution or finite-precision guarantee.",
+      "Arbitrary decoded transforms and normalization error have not been proven to meet the transform premise.",
+      "Shared shape modifiers and exceptional values are not covered.",
+      "Do not claim every primitive uses the same norm or recovered source declaration."
+    ],
+    "new_name_credit": 0
+  },
+  "sculpt_block_selection_checkpoint": {
+    "coordinate_cases": 39304,
+    "accepted_positions": 32768,
+    "unique_keys": 32768,
+    "findings": [
+      "Unsigned comparison rejects negative relative coordinates and any coordinate>=32; valid grid is32 cubed.",
+      "Packed key stores relative x/y/z multiplied by16 in separate10-bit lanes.",
+      "Grid sentinel-5 suppresses duplicate admission before output counter is incremented.",
+      "Counter increments before testing old count>4095. On overflow return2 occurs without writing key or marking that grid entry; no rollback inferred.",
+      "Bounds expansion factor loaded at1416254d8 is float1.7320507764816284, approximatelysqrt3, multiplied by command radius before grid rounding."
+    ],
+    "rounding_formulas": {
+      "lower": "arithmeticShiftRight(floor(lower/scale)-1,6)",
+      "upper": "arithmeticShiftRight(ceil(upper/scale)+1,6)"
+    },
+    "rounding_cases": 60,
+    "limits": [
+      "No concurrent execution or live GPU validation.",
+      "Full shape bounds, exceptional floats and caller recovery from overflow remain unresolved.",
+      "Rational diagnostic does not emulate float32 division/rounding.",
+      "NaN,infinity,conversion overflow and packed-scale underflow/overflow not covered.",
+      "Earlier shape-specific bounds and blend-radius expansion are separate stages."
+    ],
+    "new_name_credit": 0
   }
 }
