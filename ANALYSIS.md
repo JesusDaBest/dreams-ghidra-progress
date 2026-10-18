@@ -6764,3 +6764,10 @@ The producer's kind-68 path now executes original inherited-transform resolution
 A separate **384-case** check verifies the 128-record capacity gate, finite-strength rejection, the 120-byte region record and a 16-byte auxiliary record. Signed IDs below -1 enter runtime hash/next/ID-array registration; positive IDs and -1 skip that registration while accepted records still append. ID-array growth, auxiliary counts and source flags are compared. **18 reset cases** verify rebuild-marker-dependent clearing of counters, markers, five hash arrays and selected globals, starting after external calls.
 
 Original import records identify mutex lock/unlock, thread-ID lookup, infinity checking, power and C++ static-initialization guards. That identification does not test platform locking or concurrency. Runtime fixtures use a standard byte-fill model where needed; geometry, bounds, record builder and libc infinity checking remain original. Prepared valid trees and finite identity rotations only; malformed/cyclic data, other object-kind generation paths, full producer and live-game behavior remain unverified. **733 checked names** remains the total.
+
+
+### Runtime region builder bound to FogGadget
+
+Original registration windows and literal bytes confirm that kind 68 is `FogGadget`, with `FogShapeType` at object offset 256 bound to metadata slot 1416. The producer's kind-68 dispatch calls `BuildRegionRuntimeRecord120`; original metadata and connected native fixtures tie the same shape field to the record builder. The status map now places this reviewed runtime helper under Fog alongside its property/type code. The generic descriptive function name is retained.
+
+This is a classification correction backed by the executable, not extra naming or completion credit: **733 checked names** remains the total. It does not establish the complete fog renderer or an exact developer-source/build match.

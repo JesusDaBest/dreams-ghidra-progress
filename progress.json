@@ -13,12 +13,12 @@
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 111,
+        "done": 112,
         "todo": 404,
-        "total": 515,
-        "behavior_or_helpers_reviewed": 61,
+        "total": 516,
+        "behavior_or_helpers_reviewed": 62,
         "properties_or_types_reviewed": 50,
-        "runtime_functions_identified": 59,
+        "runtime_functions_identified": 60,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -130,6 +130,7 @@
           "RegisterMicrochipProperties",
           "AllocateDefaultLight",
           "RegisterLightFieldOffsets",
+          "BuildRegionRuntimeRecord120",
           "MergeTypedSignalsByMinimumMagnitude",
           "NormalizeFloatComponentsWithUniformFallback",
           "EvaluateTypedCalculatorOperation",
@@ -649,6 +650,7 @@
           "140d83fc0",
           "140d88850",
           "140d88a00",
+          "14101cba0",
           "1411c0ea0",
           "1411c2100",
           "1411c21e0",
@@ -11558,12 +11560,12 @@
           {
             "name": "gadgets-logic/presentation",
             "label": "Cameras, lights & effects",
-            "done": 11,
+            "done": 12,
             "todo": 22,
-            "total": 33,
-            "behavior_or_helpers_reviewed": 2,
+            "total": 34,
+            "behavior_or_helpers_reviewed": 3,
             "properties_or_types_reviewed": 9,
-            "runtime_functions_identified": 3,
+            "runtime_functions_identified": 4,
             "property_type_functions_identified": 30,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -11578,7 +11580,8 @@
               "RegisterPadRumbleFieldOffsets",
               "RegisterCameraShakerFieldOffsets",
               "AllocateDefaultLight",
-              "RegisterLightFieldOffsets"
+              "RegisterLightFieldOffsets",
+              "BuildRegionRuntimeRecord120"
             ],
             "todo_names": [
               "0x140491770",
@@ -11615,7 +11618,8 @@
               "140d6dbd0",
               "140d6ddf0",
               "140d88850",
-              "140d88a00"
+              "140d88a00",
+              "14101cba0"
             ],
             "todo_addresses": [
               "140491770",
@@ -11718,6 +11722,90 @@
                     "todo_names": [],
                     "done_addresses": [
                       "1409415f0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "gadgets-logic/presentation/foggadget",
+                "label": "Fog Gadget",
+                "done": 2,
+                "todo": 2,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "VisitFogProperties",
+                  "BuildRegionRuntimeRecord120"
+                ],
+                "todo_names": [
+                  "0x140d57640",
+                  "0x140d6f6a0"
+                ],
+                "done_addresses": [
+                  "1404d6660",
+                  "14101cba0"
+                ],
+                "todo_addresses": [
+                  "140d57640",
+                  "140d6f6a0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "gadgets-logic/presentation/foggadget/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "VisitFogProperties"
+                    ],
+                    "todo_names": [
+                      "0x140d57640",
+                      "0x140d6f6a0"
+                    ],
+                    "done_addresses": [
+                      "1404d6660"
+                    ],
+                    "todo_addresses": [
+                      "140d57640",
+                      "140d6f6a0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  },
+                  {
+                    "name": "gadgets-logic/presentation/foggadget/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "BuildRegionRuntimeRecord120"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14101cba0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -11993,65 +12081,6 @@
                       "140cb4800",
                       "140cb48b0",
                       "140cb4900"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "gadgets-logic/presentation/foggadget",
-                "label": "Fog Gadget",
-                "done": 1,
-                "todo": 2,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "VisitFogProperties"
-                ],
-                "todo_names": [
-                  "0x140d57640",
-                  "0x140d6f6a0"
-                ],
-                "done_addresses": [
-                  "1404d6660"
-                ],
-                "todo_addresses": [
-                  "140d57640",
-                  "140d6f6a0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "gadgets-logic/presentation/foggadget/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 2,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "VisitFogProperties"
-                    ],
-                    "todo_names": [
-                      "0x140d57640",
-                      "0x140d6f6a0"
-                    ],
-                    "done_addresses": [
-                      "1404d6660"
-                    ],
-                    "todo_addresses": [
-                      "140d57640",
-                      "140d6f6a0"
                     ],
                     "unresolved_addresses": [],
                     "groups": []
@@ -21943,12 +21972,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 268,
+        "done": 267,
         "todo": 105,
-        "total": 373,
-        "behavior_or_helpers_reviewed": 251,
+        "total": 372,
+        "behavior_or_helpers_reviewed": 250,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 286,
+        "runtime_functions_identified": 285,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -22136,7 +22165,6 @@
           "SerializeGameWireRecord",
           "GetCurrentThreadBufferWritePointer",
           "ConvertObjectPairToGluedParent",
-          "BuildRegionRuntimeRecord120",
           "EvaluateObjectBodyTransform",
           "ResolveObjectTransformForAuxiliaryContext",
           "MarkObjectPackedResourceRoots",
@@ -22513,7 +22541,6 @@
           "140de91c0",
           "140e38710",
           "140e6ad40",
-          "14101cba0",
           "141046780",
           "141046d40",
           "141060410",
@@ -22716,12 +22743,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 129,
+            "done": 128,
             "todo": 13,
-            "total": 142,
-            "behavior_or_helpers_reviewed": 129,
+            "total": 141,
+            "behavior_or_helpers_reviewed": 128,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 135,
+            "runtime_functions_identified": 134,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -22810,7 +22837,6 @@
               "SerializeWirePropertyIndexAndFlags",
               "SerializeGameWireRecord",
               "GetCurrentThreadBufferWritePointer",
-              "BuildRegionRuntimeRecord120",
               "MarkObjectPackedResourceRoots",
               "MarkContainerPackedResourceRoots",
               "ReleasePackedResourcePage",
@@ -22956,7 +22982,6 @@
               "140dde370",
               "140de91c0",
               "140e38710",
-              "14101cba0",
               "141060410",
               "141060640",
               "141060f40",
@@ -23452,12 +23477,12 @@
               {
                 "name": "shared/runtime/world-derived-state",
                 "label": "Derived state",
-                "done": 20,
+                "done": 19,
                 "todo": 0,
-                "total": 20,
-                "behavior_or_helpers_reviewed": 20,
+                "total": 19,
+                "behavior_or_helpers_reviewed": 19,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 20,
+                "runtime_functions_identified": 19,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -23480,8 +23505,7 @@
                   "RefreshWorldDerivedState",
                   "RemapTaggedValueObjectIndices_1409a1fb0",
                   "PrependSoundAndEffectFieldsToParentLists",
-                  "SetThingHeaderFlag800Once",
-                  "BuildRegionRuntimeRecord120"
+                  "SetThingHeaderFlag800Once"
                 ],
                 "todo_names": [],
                 "done_addresses": [
@@ -23503,8 +23527,7 @@
                   "140956ef0",
                   "1409a1fb0",
                   "140ac5a10",
-                  "140b18db0",
-                  "14101cba0"
+                  "140b18db0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -23512,12 +23535,12 @@
                   {
                     "name": "shared/runtime/world-derived-state/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 20,
+                    "done": 19,
                     "todo": 0,
-                    "total": 20,
-                    "behavior_or_helpers_reviewed": 20,
+                    "total": 19,
+                    "behavior_or_helpers_reviewed": 19,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 20,
+                    "runtime_functions_identified": 19,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -23540,8 +23563,7 @@
                       "RefreshWorldDerivedState",
                       "RemapTaggedValueObjectIndices_1409a1fb0",
                       "PrependSoundAndEffectFieldsToParentLists",
-                      "SetThingHeaderFlag800Once",
-                      "BuildRegionRuntimeRecord120"
+                      "SetThingHeaderFlag800Once"
                     ],
                     "todo_names": [],
                     "done_addresses": [
@@ -23563,8 +23585,7 @@
                       "140956ef0",
                       "1409a1fb0",
                       "140ac5a10",
-                      "140b18db0",
-                      "14101cba0"
+                      "140b18db0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
