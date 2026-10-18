@@ -6224,3 +6224,14 @@ This improves saved decompilation without extra naming credit: **730 checked nam
 Independent reopening verifies the saved name, four-argument working signature, decompilation, unchanged bytes and all 9,605 other names/signatures. These are valid prepared tables and references: malformed/cyclic data, bounds safety, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **731 checked names** (651 behavior/helper and 80 property/type), **2,137 mapped**, **7,469 unmapped**, among 9,606 defined functions.
+
+
+### Buffered object selection reviewed and named
+
+`BuildBufferedThingSelectionAndFlags` names the complete 324-instruction helper used before record grouping. It propagates eligible root IDs through cached parent order, counts children, and derives selection and per-object world flags from wire markers and metadata gates. The four-pointer working signature identifies world, selection output, root-ID output and child-count output.
+
+Independent native checks cover hierarchy propagation (54 cases), wire/boolean gates (336 executions), float/extra flags (128 executions), and the special kind-9-to-kind-5 wire path (256 executions). Complete expected buffers are compared. Some dimensions repeat behavior. The special wire path marks the objects referenced by two destination fields; NaN counts as nonzero in inspected float gates.
+
+The name and signature persist after independent reopening, with original bytes and all 9,605 other names/signatures unchanged. Valid prepared trees/references only; property source names, complete flag meanings, malformed/cyclic data, capacity, concurrency, full producer and live-game behavior remain unresolved. One additional call site is outside defined function bodies and is retained as a boundary lead. No exact Media Molecule source/build match is claimed.
+
+Totals: **732 checked names** (652 behavior/helper and 80 property/type), **2,138 mapped**, **7,468 unmapped**, among 9,606 defined functions.

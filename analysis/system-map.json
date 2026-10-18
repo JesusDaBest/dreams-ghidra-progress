@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2137,
-  "unmapped_total": 7469,
+  "mapped_total": 2138,
+  "unmapped_total": 7468,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54008,6 +54008,33 @@
             "768 native cases cover all handled kinds,both directions and index sources,kind high bit,sentinels,missing IDs,tagged references and representative unaffected kinds.",
             "168 followup executions verify live/fallback collision chains,world lookup precedence and absent metadata. Some non-metadata cases repeat.",
             "Independent reopening verifies name,void four-argument ABI,decompilation,original bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1408c49f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Hierarchy,wire and metadata selection flags for buffered object packing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete reference conversion body and independent native state comparisons.",
+      "code_sha256": "bbe4d13d60c99c84743cdeee04eef8adc87c9001609606faddbd6a0c41f2cf99",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildBufferedThingSelectionAndFlags",
+          "support": [
+            "Complete324-instruction selector and pseudocode reviewed;original bytes verified.",
+            "Propagates root IDs through cached parent order,counts children and derives selection/world flags from wires and metadata.",
+            "54 hierarchy,336 wire/boolean,128 float/extra-flag and256 special-wire executions compare complete states.",
+            "Kind9-to5 special wire marks objects referenced by destination48/4c;NaN counts as nonzero in inspected float gates.",
+            "Independent reopening verifies saved name,four-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
           ]
         }
       ]

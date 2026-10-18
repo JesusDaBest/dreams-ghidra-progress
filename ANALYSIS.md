@@ -6724,3 +6724,14 @@ The table consumer is now checked through ID lookup and cached-state writeback (
 Object/property packing first passed 48 bounded cases. A connected packing-plus-reference-conversion fixture then passed 504 cases with controlled sizes. A stronger 504-case followup replaces those sizes and sensor reference offsets with values from original initialization stores. Recovered sizes for kinds 5/11/15/49/52/53/54 are 528/3680/928/480/400/304/352 bytes. The three sensor reference offsets are 304/268/304 bytes. Copied object fields become IDs while original objects remain unchanged; property pointers, offset arrays and packing cursors match complete expected buffers.
 
 Imported byte copying is modeled. One vector-store fixture supplies its register from the original constant; the entire initializer is not executed. Earlier root selection/allocation, later runtime generation, malformed data, overflow, concurrency and live-game behavior remain unverified. The producer stays unnamed, and **731 checked names** remains the total. These bounded checks do not add whole-game completion credit.
+
+
+### Buffered object selection reviewed and named
+
+`BuildBufferedThingSelectionAndFlags` names the complete 324-instruction helper used before record grouping. It propagates eligible root IDs through cached parent order, counts children, and derives selection and per-object world flags from wire markers and metadata gates. The four-pointer working signature identifies world, selection output, root-ID output and child-count output.
+
+Independent native checks cover hierarchy propagation (54 cases), wire/boolean gates (336 executions), float/extra flags (128 executions), and the special kind-9-to-kind-5 wire path (256 executions). Complete expected buffers are compared. Some dimensions repeat behavior. The special wire path marks the objects referenced by two destination fields; NaN counts as nonzero in inspected float gates.
+
+The name and signature persist after independent reopening, with original bytes and all 9,605 other names/signatures unchanged. Valid prepared trees/references only; property source names, complete flag meanings, malformed/cyclic data, capacity, concurrency, full producer and live-game behavior remain unresolved. One additional call site is outside defined function bodies and is retained as a boundary lead. No exact Media Molecule source/build match is claimed.
+
+Totals: **732 checked names** (652 behavior/helper and 80 property/type), **2,138 mapped**, **7,468 unmapped**, among 9,606 defined functions.

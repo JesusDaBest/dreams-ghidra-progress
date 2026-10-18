@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 731,
+    "checked_and_applied_names": 732,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 731,
+    "verified_names": 732,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "675 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "676 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19826,5 +19826,38 @@
     ],
     "new_name_credit": 0,
     "full_producer_named": false
+  },
+  "buffered_selection_name_checkpoint": {
+    "target": {
+      "name": "BuildBufferedThingSelectionAndFlags",
+      "signature": "void PS4_SYSV BuildBufferedThingSelectionAndFlags(void * world, void * selected, void * rootIds, void * childCounts)"
+    },
+    "native_check": {
+      "native_cases": 54,
+      "findings": [
+        "Original complete324-instruction selector propagates nonroot kind0 field45 IDs along cached parents,counts each parent child,and selects leaves with a propagated ID when metadata gates are absent.",
+        "54 complete-state cases cover2/4/7-node star/chain/binary trees,field45 none/all/alternating and source kind high bit."
+      ],
+      "limits": [
+        "No wires;kind0 only,metadata gates absent,parent-before-child valid trees. Some small trees repeat.",
+        "Wire/type-specific gates and metadata properties remain unverified;no full producer or live-game claim."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "evidence": [
+      "Complete324-instruction selector and pseudocode reviewed;original bytes verified.",
+      "Propagates root IDs through cached parent order,counts children and derives selection/world flags from wires and metadata.",
+      "54 hierarchy,336 wire/boolean,128 float/extra-flag and256 special-wire executions compare complete states.",
+      "Kind9-to5 special wire marks objects referenced by destination48/4c;NaN counts as nonzero in inspected float gates.",
+      "Independent reopening verifies saved name,four-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Prepared valid parent-before-child trees and in-range references;malformed/cyclic data,capacity,concurrency,full producer and live game unverified.",
+      "Property source names and complete meaning of individual world flags remain unresolved.",
+      "Some fixture dimensions repeat behavior;execution counts are not unique behavior counts.",
+      "Analyst descriptive name and working ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }
