@@ -6581,3 +6581,11 @@ A separate diagnostic isolates the gather reassembly discrepancy: adding UNORM o
 Independent reopening verifies the saved working ABI, unchanged original instructions and all 9,611 other function names/signatures. The 536 recorded entry references are not 536 reviewed caller contracts.
 
 Totals: **762 checked names** (682 behavior/helper and 80 property/type), **2,168 mapped**, **7,444 unmapped**, among **9,612 defined functions**.
+
+### Sculpt attribute producer connected to gather
+
+Linked the original volume-context descriptor through CPU constants to `SweepProcess` writes and ordinary `Bricker2GatherVoxelsChunk` reads. The attribute descriptor uses **four unsigned normalized 8-bit components**, four bytes per record and 16,777,216 records. Four local executions of the original resource initializer with original file-backed format values confirm a **64 MiB allocation request** for this buffer. Allocation remains modeled: no GPU memory is allocated. Earlier allocation tests deliberately supplied a common synthetic format; those tests did not establish the original buffer format or size.
+
+Read all **889 executable instructions** of `SweepProcess` in staged passes and reassembled its **4,560-byte instruction range exactly**. The post-program trailer is excluded. The shader uses neighbor hash and sparse-mask lookups, then filters a 3×3×3 neighborhood using separable `[1,2,1]` weights. Finite scalar samples contribute; a complete neighborhood has weight 64. The first three channels use weighted root-mean-square filtering. The fourth byte is decoded with approximately `2^(6 * byte / 255)`, processed in that positive scale and encoded logarithmically again. An integer tap model checks the 27 weights, and 256 ideal-real byte encode/decode cases support the scale relationship. These models do not execute GPU instructions.
+
+The scalar value is stored separately from the four-component attributes. Final scalar/grid-mask logic determines a compact finite mask, and GDS counters reserve the record and output ranges. Original physical meanings, units and channel names remain unresolved. No color-space, distance-unit or live rendering claim follows from the arithmetic alone. Hardware rounding, startup thread IDs, synchronization, concurrency and the Multi variant remain unverified. No checked-function credit is added.

@@ -22737,5 +22737,41 @@
       "The recorded 536 entry references do not mean every caller contract is understood. No exact original Media Molecule declaration or source/build match."
     ],
     "new_name_credit": 1
+  },
+  "sweep_attribute_producer_checkpoint": {
+    "shader": "SweepProcess",
+    "statically_read_instructions": 889,
+    "exact_reassembly_bytes": 4560,
+    "attribute_input_storage": {
+      "components": 4,
+      "bits_per_component": 8,
+      "numeric_format": "unsigned normalized",
+      "records": 16777216,
+      "stride_bytes": 4,
+      "modeled_allocation_request_bytes": 67108864
+    },
+    "original_format_initializer_scenarios": 4,
+    "filter_model": {
+      "neighborhood_taps": 27,
+      "sum_full_neighborhood_weights": 64,
+      "all_byte_decode_encode_cases": 256,
+      "max_real_arithmetic_reencode_error": 1.285225181835159e-07
+    },
+    "findings": [
+      "Connected original context descriptor construction, CPU stage constants, SweepProcess output and the ordinary Bricker2GatherVoxelsChunk input. The scalar and four-component attributes are separate resources.",
+      "Original file-backed format globals replace the prior fixture-only synthetic format. Four initializer scenarios confirm a 64 MiB attribute allocation request and matching four-byte record stride; no GPU allocation occurs.",
+      "SweepProcess performs neighbor hash/sparse lookup and finite-scalar-gated 3x3x3 filtering with separable [1,2,1] weights. The full admitted neighborhood has total weight 64.",
+      "First three channels use weighted RMS. Fourth byte is decoded by approximately exp2(6*byte/255), filtered/clamped in that scale and reencoded by approximately log2(value)/6.",
+      "Final scalar/grid-mask logic forms a compact finite mask; GDS counters reserve a record and output indices. Complete static reading and byte-exact reassembly are separate from runtime correctness."
+    ],
+    "limits": [
+      "Original physical meanings and units of scalar and logarithmic fourth channel.",
+      "Exact custom hardware floating, conversion, NaN/signed-zero and synchronization behavior.",
+      "Initial thread/lane ABI, runtime allocation/overflow, actual resources and GDS concurrency.",
+      "Shader-input lifetime and Multi variant; no Media Molecule source/build identity established.",
+      "Integer and ideal-real models do not execute GPU instructions or establish hardware rounding/quantization."
+    ],
+    "runtime_gpu_verified": false,
+    "reviewed_name_count_increment": 0
   }
 }
