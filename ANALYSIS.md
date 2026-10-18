@@ -5904,3 +5904,12 @@ Totals: 689 checked names, 2,101 mapped functions and 7,502 unmapped among 9,603
 Both-stream, second-stream and quiet routing are checked across enabled, missing and disabled history contexts, two finite order values and coordinate combinations. Complete world, owner and history comparisons verify exact packet bytes, counters, activity flags, revision synchronization and deletion. All seven captured bodies and the full dispatcher remain byte-identical to the original executable. The function's current review caveat now reflects this active-history evidence.
 
 Existing contexts, Machine key, globals and stream buffers remain fixtures. Inverse replay of these `fe06` packets, capacity exhaustion, malformed input, concurrency and gameplay remain unresolved. No additional checked name or completion credit was added. [Sanitized receipts](analysis/wire-replay-dispatcher-checks.json).
+
+
+## Actual keyed-record inverse packets replayed
+
+The 72-case history suite now feeds the actual generated `fe06` packet back through the original range reader in all 16 eligible enabled-history cases. Original reader, wrapper, dispatcher and insertion restore the 16-byte key, two coordinates and float order value. The restored record is appended at slot 1, the allocation count increases from 1 to 2 and the cleared slot 0 remains. Owner/history bytes and input guards remain unchanged during this replay with player 255 and history output disabled.
+
+Complete world comparisons check all expected changes except the new record's final two padding bytes: the checked dispatcher branch does not assign them, so they are observed but excluded from semantic comparison (both were zero in these runs). Nine captured bodies, including the 112-instruction insertion helper and 949-instruction range reader, and the full dispatcher remain original-byte matched. The 72 cases overlap the prior suite; 16 are the newly verified replay extension.
+
+This connects the tested removal, inverse recording and restoration path. It does not establish full user-facing undo/redo. Duplicate insertion, table exhaustion/compaction, malformed structures, concurrency and gameplay remain unresolved. No new name or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
