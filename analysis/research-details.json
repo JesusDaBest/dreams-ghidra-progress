@@ -18690,5 +18690,32 @@
       "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
     ],
     "new_name_credit": 1
+  },
+  "key_factory_selected_path_checkpoint": {
+    "native_check": {
+      "native_cases": 192,
+      "successful_creations": 108,
+      "object_limit_failures": 48,
+      "arena_limit_failures": 36,
+      "findings": [
+        "Complete original factory entry-to-return executes selected null-owner,new-Key path with original initializer and no substituted factory instructions.",
+        "Success writes prepared arena record with type3,requested sequence/parent,derived header word at14 and supplied32-byte transform;advances arena cursor and four auxiliary count/flag fields.",
+        "Object-count rejection leaves world unchanged;arena-capacity rejection occurs after auxiliary count/flag updates but leaves arena cursor unchanged.",
+        "Factory does not advance primary object count or insert object pointer on this selected null-owner path. Complete world/args/metadata comparisons pass;following conversion call remains to be reviewed."
+      ],
+      "limits": [
+        "Controlled Key metadata,size130 and base-transform offset40;other optional offsets disabled. Actual initialization provenance for these offsets remains separate.",
+        "Only null owner,no template,Key type and selected counts/cursors/finite inputs;parent-relative offset,type-specific other cases,owner/template modes and live game unverified.",
+        "Original full function executed on selected paths,not all factory branches semantically reviewed;no full-factory naming or scene-upgrade completion claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "new_name_credit": 0,
+    "remaining": [
+      "Review the following conversion call that handles the returned object.",
+      "Bind prepared Key allocation size/base-transform metadata to original initialization.",
+      "Execute actual conversion loop with original creation/registration paths before claiming scene migration verified."
+    ]
   }
 }

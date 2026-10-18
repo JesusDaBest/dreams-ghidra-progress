@@ -5907,3 +5907,16 @@ This narrows the earlier unresolved version condition to a concrete numeric form
 **518 native cases** cover 259 patterned/random inputs to the initializer alone and 259 connected executions of the original zeroing arm plus initializer. Complete record and surrounding guard comparisons pass. Standalone gaps preserve their prior bytes; connected-arm gaps are zero. Allocation, IDs, registration, failure handling, the rest of the factory and live scene conversion are not executed or claimed verified.
 
 Independent reopening verifies the descriptive name, unary opaque-pointer signature, complete decompilation, original bytes and all 9,605 other function names/signatures. No exact Media Molecule source/build match is claimed. Totals: **720 checked names** (640 behavior/helper and 80 property/type), **2,126 mapped**, **7,480 unmapped**, among 9,606 defined functions.
+
+
+### Original Key factory path executed through finalization
+
+**192 native cases** execute the original object factory from entry to return on the selected null-owner, no-template, new-Key path. The original initializer and factory instructions run without substituted factory code. There are **108 successes**, **48 object-limit rejections** and **36 arena-capacity rejections**. Complete world, argument and metadata comparisons pass.
+
+Success writes the arena record's registered type, requested sequence and parent, a derived header word, and the supplied 32-byte transform. It advances the arena cursor and updates two auxiliary counts plus two flags. The primary object count and pointer table remain unchanged on this path, so creation alone does not complete world insertion. The following conversion call still needs review.
+
+Object-limit rejection leaves the world unchanged. Arena-capacity rejection happens after those auxiliary count/flag updates, while leaving the arena cursor unchanged. This is an observed path behavior, not a defect claim. Boundary cases include the last accepted object count and exact-fit/one-byte-over arena limits.
+
+Key size 0x130 and base-transform offset 0x40 are controlled metadata inputs here; optional offsets are disabled. Their actual initialization provenance remains separate. Other types, owner/template modes, parent-relative offsets, complete registration, the conversion loop and live-game behavior remain unverified. Executing selected paths does not establish that every factory branch has been understood; the factory is not newly named. No exact Media Molecule source/build match is claimed.
+
+No new name credit: **720 checked names**, 2,126 mapped and 7,480 unmapped among 9,606 defined functions remain the totals.
