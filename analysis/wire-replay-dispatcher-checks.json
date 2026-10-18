@@ -201,5 +201,26 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "sculpt_gadget_connector_cleanup_application": {
+    "native_cases": 128,
+    "finding": "Original removal producer,counter,property packet builder,sanitizer,wrapper,dispatcher,packed-property lookup and32-byte transfer execute without cleanup observer. Eligible source Sculpt GadgetConnector at180 is cleared to32zero bytes when no packed override exists; with a differing packed override, its32-byte payload clears while base field stays unchanged. Ineligible source remains byte-identical; destination property unsupported. Complete world/source/destination comparisons checked.",
+    "limits": [
+      "Prepared valid objects; packed override absent or present and initially different from base field, source kind1 matrix offset180 restored from verified initializer, destination property unsupported. Owner absent/player255; history/tracking disabled.",
+      "Source-file diagnostic context helper140a67b30 is an explicit RET boundary; allocation/removal of overrides, equal-to-base override path, parent cleanup, concurrency and gameplay unverified.",
+      "Previously established host memory-copy/move adapters supply imported byte-copy operations. Native function-body checks do not imply original platform imports execute."
+    ],
+    "original_native_instructions_verified": {
+      "140b36750": 401,
+      "140906770": 146,
+      "140b325f0": 210,
+      "140c66720": 860,
+      "140705a90": 22,
+      "140ad5f90": 62,
+      "140b1b7b0": 923
+    },
+    "dispatcher_original_bytes_verified": 267374,
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }
