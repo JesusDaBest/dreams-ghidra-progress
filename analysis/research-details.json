@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 728,
+    "checked_and_applied_names": 729,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 728,
+    "verified_names": 729,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "672 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "673 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19561,5 +19561,42 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "buffered_intkey_insertion_name_checkpoint": {
+    "target": {
+      "name": "InsertOrAssignIntKeyRecord32",
+      "signature": "void PS4_SYSV InsertOrAssignIntKeyRecord32(void * result, void * table, void * record)"
+    },
+    "native_check": {
+      "native_cases": 708,
+      "input_displacements": 24,
+      "replacements": 372,
+      "original_instructions": 193,
+      "findings": [
+        "Original32-byte integer-key table insertion uses Robin Hood displacement and replaces existing payloads without growing count.",
+        "Full table/header/input/output comparisons cover capacities16/32/64,positive/negative keys,deliberate end-bucket collisions,probe wraparound,replacements and deterministic payloads.",
+        "Input key/payload mutates on displacement;entry/input padding and output trailing bytes preserved."
+      ],
+      "limits": [
+        "Nonzero keys,power-of-two capacities and nonfull valid tables only;allocation/resize and invalid/full-table behavior unverified.",
+        "Payload semantics and higher-level record role unresolved;no concurrency or live-game claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete193-instruction body and pseudocode reviewed;original bytes verified.",
+      "Robin Hood insertion/replacement in32-byte slots with nonzero int32key,payload8..26 and preserved padding;capacity/count in table header.",
+      "708 native cases compare complete table/header/input/output across capacities16/32/64,positive/negative keys,collision chains,wraparound and replacements.",
+      "24 input displacements and372 replacements observed;input key/payload is mutated while displaced entries are carried.",
+      "Result returns table pointer,index and inserted byte through output pointer;source-level payload meaning unresolved.",
+      "Independent reopening verifies name,void three-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Nonzero keys,power-of-two capacities and nonfull valid tables only;allocation/resize and invalid/full-table behavior unverified.",
+      "Payload semantics and higher-level record role unresolved;no concurrency or live-game claim.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2134,
-  "unmapped_total": 7472,
+  "mapped_total": 2135,
+  "unmapped_total": 7471,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53925,6 +53925,34 @@
             "16 null-property and80 nonempty-property Key copy cases execute original registration and owner helper;full world/owner/pool/source/root/metadata and property-buffer comparisons pass.",
             "Copied property chains preserve source and advance world buffer cursor;property IDs8a/10a/2d0/231 set selected owner flags. Imported memcpy/memset and unused process-time return modeled.",
             "Independent reopening verifies name,void owner/uint-bank ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1408c6a10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Robin Hood integer-key record table insertion used by buffered object producer.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete list traversal body and scoped independent native state comparisons.",
+      "code_sha256": "ac1a7c2d8209fa2d08245dc55764a6c353909272aaa3c68a902cdbe0edc79d1b",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertOrAssignIntKeyRecord32",
+          "support": [
+            "Complete193-instruction body and pseudocode reviewed;original bytes verified.",
+            "Robin Hood insertion/replacement in32-byte slots with nonzero int32key,payload8..26 and preserved padding;capacity/count in table header.",
+            "708 native cases compare complete table/header/input/output across capacities16/32/64,positive/negative keys,collision chains,wraparound and replacements.",
+            "24 input displacements and372 replacements observed;input key/payload is mutated while displaced entries are carried.",
+            "Result returns table pointer,index and inserted byte through output pointer;source-level payload meaning unresolved.",
+            "Independent reopening verifies name,void three-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
           ]
         }
       ]

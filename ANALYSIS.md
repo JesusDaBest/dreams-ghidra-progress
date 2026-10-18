@@ -6662,3 +6662,14 @@ Only size initialization is original in this fixture; other relevant metadata an
 Full world, owner, pool, source, root and metadata comparisons pass across arena cursors, packed parent tags, common mode byte and high kind bit. Original registration and owner-state helpers execute for every copy. Tests verify the resulting per-kind tail/next links, parent caches, arena cursor and repeated parallel-record growth.
 
 These are valid prepared Keys with null property chains, controlled metadata and cleanup disabled. Standard memory imports and unused timing return remain modeled. Capacity/overflow, mixed-kind multi-object records, thread-specific lanes, full producer/caller and live-game behavior remain unverified. No new naming credit: **728 checked names** remains the total.
+
+
+### Buffered producer's integer-key table insertion reviewed and named
+
+`InsertOrAssignIntKeyRecord32` names the complete 193-instruction Robin Hood insertion/replacement routine used by the buffered producer. Slots are 32 bytes; a nonzero signed 32-bit key and bytes 8–26 are copied while padding remains untouched. Replacements preserve the element count. During displacement, the input record becomes the carried displaced entry, so callers must not assume it remains unchanged.
+
+**708 native cases** compare complete table, header, input and result buffers across capacities 16/32/64, positive/negative keys, deliberate collisions, probe wraparound and replacements. They include 24 input displacements and 372 replacements. The output record stores the table pointer, resulting index and inserted/replaced indicator; trailing bytes remain untouched.
+
+Independent reopening verifies the descriptive name, three opaque-pointer signature, decompilation, original bytes and all 9,605 other names/signatures. Nonzero keys, power-of-two capacities and nonfull valid tables only; allocation/resize,full/invalid tables,payload semantics,concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **729 checked names** (649 behavior/helper and 80 property/type), **2,135 mapped**, **7,471 unmapped**, among 9,606 defined functions.
