@@ -222,5 +222,48 @@
     "dispatcher_original_bytes_verified": 267374,
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "sculpt_gadget_connector_equal_override": {
+    "native_cases": 192,
+    "finding": "Original removal producer,counter,property packet builder,sanitizer,wrapper,dispatcher,packed-property lookup and32-byte transfer execute without cleanup observer. Eligible source Sculpt GadgetConnector at180 is cleared to32zero bytes when no packed override exists; with a differing packed override, its32-byte payload clears while base field stays unchanged. If old override equals old base, both update to zero; packed storage remains allocated and headers/sentinel/guards unchanged. Ineligible source remains byte-identical; destination property unsupported. Complete world/source/destination comparisons checked.",
+    "limits": [
+      "Prepared valid objects; packed override absent, different from base field, or equal to base field, source kind1 matrix offset180 restored from verified initializer, destination property unsupported. Owner absent/player255; history/tracking disabled.",
+      "Source-file diagnostic context helper140a67b30 is an explicit RET boundary; allocation/removal of overrides, parent cleanup, concurrency and gameplay unverified.",
+      "Existing host byte-copy/move adapters provide imported memory operations."
+    ],
+    "original_native_instructions_verified": {
+      "140b36750": 401,
+      "140906770": 146,
+      "140b325f0": 210,
+      "140c66720": 860,
+      "140705a90": 22,
+      "140ad5f90": 62,
+      "140b1b7b0": 923
+    },
+    "dispatcher_original_bytes_verified": 267374,
+    "project_modified": false,
+    "new_name_credit": 0
+  },
+  "sculpt_gadget_connector_members": {
+    "field": "Sculpt.GadgetConnector",
+    "descriptor_name": "Trans",
+    "registered_members": [
+      {
+        "name": "posscale",
+        "offset": 0
+      },
+      {
+        "name": "ang",
+        "offset": 16
+      }
+    ],
+    "registration_native_instructions_verified": 151,
+    "finding": "Sculpt GadgetConnector is registered through existing transform field registrar. Its Trans descriptor registers two float4 members at0 and16; names and offsets come from original native registration andliteral bytes.",
+    "limits": [
+      "Static registration linkage, not recovered source declaration or full field behavior.",
+      "No new type or name applied."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0
   }
 }

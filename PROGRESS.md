@@ -5340,3 +5340,12 @@ The final cleanup observation probe has now been replaced with original applicat
 All seven captured native bodies and the full 267,374-byte dispatcher match original executable bytes. Only the selected paths were executed; this is not whole-function completion credit. The transfer helper was already named `TransferTransformPropertyPayload`, so no additional name was added.
 
 The source-file diagnostic context helper is an explicit return boundary, and existing host byte-copy/move adapters supply imported copy operations. The fixture restores the verified Sculpt property offset, supplies valid objects, leaves the destination property unsupported, and disables owner/history tracking. Override allocation/removal, the initially-equal-to-base override path, parent cleanup, concurrency and gameplay remain unresolved. [Sanitized check results](analysis/wire-replay-dispatcher-checks.json).
+
+
+## Equal GadgetConnector overrides and registered members checked
+
+192 connected cleanup cases now cover absent, differing and initially-equal packed overrides. When the old override equals the old base GadgetConnector, the original dispatcher updates both to zero. It keeps the packed list pointer, property header, sentinel and guards unchanged. A differing override still changes only its payload; no override changes only the base field. This closes the previously untested equal-value branch without proving allocation/removal paths or gameplay.
+
+The original transform field registrar also identifies GadgetConnector's registered descriptor as `Trans`, containing float4 members `posscale` at offset 0 and `ang` at offset 16. All 151 registrar instructions and the three name literals match original bytes. These are registered names, not an assertion that original C++ declarations were recovered. Existing transform semantics and normalization paths remain separately scoped.
+
+The 192-case suite includes the earlier 128 cases, so the counts are not additive. Diagnostic-context and imported-memory adapters remain the stated boundaries. No additional function name, datatype or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
