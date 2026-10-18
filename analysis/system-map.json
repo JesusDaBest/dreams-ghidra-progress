@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9613,
-  "mapped_total": 2191,
-  "unmapped_total": 7422,
+  "mapped_total": 2192,
+  "unmapped_total": 7421,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55513,6 +55513,34 @@
             "Both direct Sprite processing callers supply metadata scale, cursor and two float output pointers.",
             "48 complete-helper native cases cover selected depth 0/1 trees, 0/1/3/12/13/25 points, straight/zigzag XYZ and scales 0/-2/0.5/2; source and output guards preserved.",
             "Name and four-parameter working signature persisted after independent reopening; other names/signatures and original bytes unchanged."
+          ]
+        }
+      ]
+    },
+    "1413d2160": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "sprite",
+        "runtime-implementation"
+      ],
+      "component_basis": "Sprite worker and emitter callers; complete original cache-builder control flow reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Gets or builds cached chained stroke path sample records.",
+      "code_sha256": "e7ff4404de3a6fe01bca4c6a6798bdc9930c9254f9bd3654f4d0b782a5cc2e9c",
+      "code_sha256_basis": "native_owned_instructions",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetOrBuildSpriteStrokePathCacheEntry",
+          "support": [
+            "All1747 owned original instructions reviewed and matched to original bytes; complete control flow read in assembly, decompiled C inspected selectively.",
+            "Looks up composite key and32-bit discriminator in512 chained buckets; refreshes timestamp and returns matching entry.",
+            "Miss reserves cache entry and iterates packed stroke metadata to build chained eight-sample path records, orientation-derived data, centerline spheres and conditional earlier same-frame path links.",
+            "72 complete-original-function hit-path cases agree with composite-key model and verify pointer return, discriminator traversal and timestamp refresh under explicit platform adapters.",
+            "Related bounded slices:128 sample-cache lookup cases,62 sphere cases,96 linking cases; these do not establish full miss/build behavior.",
+            "Saved descriptive name independently reopened; original bytes and all other function names/signatures unchanged. Parameter types left unchanged."
           ]
         }
       ]

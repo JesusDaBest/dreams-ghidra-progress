@@ -7151,3 +7151,14 @@ The long-stroke branch stores a **cyclic sample cache**, correcting the earlier 
 **96 native linking cases** verify selection among earlier same-frame stroke records: a nearer eligible path wins, equal-distance ties retain the first eligible candidate, state-2 records and mismatched frames are excluded, and distance must be strictly below the sum of the two maximum scaled radii. The test checks a segment coordinate of 2.5 on controlled straight paths, link/state outputs, and candidate-record preservation. These 96 cases include the earlier 32-case domain.
 
 These are bounded instruction-slice tests with explicit entry state and return adapters. The enclosing function, arbitrary curved-path linking, preceding metadata gate, orientation calculations, concurrency and lifetime behavior remain incompletely verified. **No new checked-name credit is taken.**
+
+
+### Sprite stroke path cache entry builder reviewed and named
+
+`GetOrBuildSpriteStrokePathCacheEntry` identifies the cache function used by Sprite worker and emitter paths. Its complete 1,747-instruction body has been reviewed in original assembly. It looks up a composite key and discriminator, refreshes and returns existing entries, or reserves an entry and builds a chain of per-stroke path records. These include eight samples, derived orientation data, centerline bounds and conditional links to earlier same-frame paths. Allocation pressure reclaims older entries and their records; exhausted paths can return null.
+
+**72 complete-original-function hit-path cases** verify the composite-key model, traversal past wrong keys or discriminators, returned pointer and timestamp refresh. Explicit adapters supply locks, thread ID and time values; the original platform implementations are not executed. States 0, 1 and 2 are all returned on an exact hit: this path does not independently check entry state. This observation does not establish that every state is safe for downstream use.
+
+The name persisted after independent reopening, with original bytes and other function names/signatures unchanged. Its existing undefined prototype is retained: exact input domain labels and the stack transform structure remain provisional. The full miss/build/reclamation path and orientation calculations still lack complete numerical verification. Decompiled C was inspected selectively; the complete control-flow review used original assembly.
+
+Totals: **790 checked names**, **2,192 mapped functions**, **7,421 unmapped**, among **9,613 defined functions**. These remain static analysis and controlled fixture results, not whole-game completion.
