@@ -5991,3 +5991,18 @@ A duplicate preserves existing coordinates but still emits inverse removal histo
 Complete world/owner/history/input comparisons pass, excluding only two append-slot padding bytes that the dispatcher does not assign. Prepared globals, Machine key, player0 and coherent finite tables remain fixtures. Full-capacity producer execution, every routing-flag branch, malformed graphs, concurrency and gameplay remain unresolved. Independent reopening verifies the descriptive name and seven-input working signature, with original bytes and other 9,602 names/signatures unchanged.
 
 Totals: 695 checked names, 2,107 mapped functions and 7,496 unmapped among 9,603 currently defined. Review and mapping counts are not whole-game completion.
+
+
+### Keyed-record coordinate edits and nearby grouping
+
+Saved `SetKeyedRecordCoordinatesOrNearbyRecords` after reading and byte-verifying its complete 160-instruction body. Direct mode builds a 30-byte `fe07` event from the selected record's key/order and an absolute XY target carried in the low eight bytes of XMM0. The working ABI keeps those packed XY bits as an opaque uint64 carrier instead of inventing an original source vector declaration.
+
+108 connected direct native cases execute the original producer, wrapper, history router/writer and dispatcher. They verify that only the selected record's XY changes: key, order, hash links, count, cursor and padding remain unchanged. Owner recording output contains the new XY; selected enabled history streams contain an inverse `fe07` with the old XY. Cases include both/second/quiet routing, enabled/missing/disabled contexts, one/three allocated records, head/tail collision positions, signed zero and two target coordinate pairs. Replaying 24 actual history packets through the original range reader restores the exact original world.
+
+Nearby mode first selects at most 128 records sharing the reference's first 32-bit key field and lying strictly within the original 0.2-unit float radius. It then skips exact-key records whose order differs, and recursively sets the same absolute XY on the remaining records. 56 native cases, including 129 and 140 allocated records, verify boundary equality, diagonal exclusion, other ancestors, mixed records and signed zero. Importantly, records later skipped by the order filter still consume the initial 128-slot selection budget. Complete world/reference/input comparisons verify the exact 1,432 record updates in this suite.
+
+Two further local caller branches were byte-checked (55 and 62 instructions). A game-update branch recognizes a tagged 32-byte payload, matches a player identity/Machine key and forwards key/order/XY to insertion. A remapping caller queries key/order, inserts absent records, skips equal coordinates and updates changed or unordered coordinate comparisons. These branches were not executed here; the complete enclosing functions, payload origin and exact user-facing feature identity remain unresolved.
+
+Independent reopening verifies the descriptive name and six-input custom SysV signature, with original bytes and other 9,602 function names/signatures unchanged. Direct tests use prepared player0/globals/history; nearby tests disable owner/history with player255. Every routing flag, nearby NaN/inf cases, malformed graphs, concurrency and gameplay remain untested.
+
+Totals: 696 checked names, 2,108 mapped functions and 7,495 unmapped among 9,603 currently defined. Review and mapping counts are not whole-game completion.

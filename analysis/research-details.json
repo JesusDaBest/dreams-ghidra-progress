@@ -16634,5 +16634,68 @@
       "Isolated duplicate inverse replay does not establish whole user-facing undo/redo correctness or a game bug; higher-level transaction coalescing unresolved."
     ],
     "new_name_credit": 1
+  },
+  "keyed_record_coordinate_event_checkpoint": {
+    "address": "140b35bd0",
+    "name": "SetKeyedRecordCoordinatesOrNearbyRecords",
+    "signature": "void PS4_SYSV SetKeyedRecordCoordinatesOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby, ulonglong positionXYBits)",
+    "native_instructions": 160,
+    "native_check": {
+      "native_cases": 108,
+      "inverse_replay_cases": 24,
+      "original_native_instructions_verified": 160,
+      "dispatcher_original_bytes_verified": 267374,
+      "finding": "Direct mode original160-instruction coordinate producer builds30-byte fe07 from selected key/order and packedXY XMM0low8. Original wrapper/history/dispatcher writes exactly selected record XY, preserving keys/order/hash/count/cursor/padding. Owner queue getsnewXY; enabled selected history getsoldXY fe07. Both/second/quiet routes, enabled/missing/disabled contexts, counts1/3 and head/tail collision slots verified. Actual inverse history packets restore exact original world through original reader/wrapper/dispatcher. Full world/owner/history/input guards compared.",
+      "limits": [
+        "Direct mode only; nearby recursive branch not executed in this suite.",
+        "Prepared player0/globals/history and coherent finite tables; malformed pointers, all routing flags, concurrency and gameplay unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "nearby_native_check": {
+      "native_cases": 56,
+      "records_moved": 1432,
+      "radius": 0.20000000298023224,
+      "original_native_instructions_verified": 160,
+      "dispatcher_original_bytes_verified": 267374,
+      "finding": "Nearby mode selects at most128 allocated records sharing first32-bit key field and strict original float2D distance below0.2 from reference. Selection occurs before filtering: exact16-byte key with unequal order skips, while different key or equal order applies absolute targetXY via original recursive direct fe07 path. Same-key/different-order records can consume the128 selection budget, leaving later eligible records untouched. Signedzero orders match. Boundary equality and diagonal-outside excluded. Complete world/reference/input snapshots verify only eligibleXY changes, preserving key/order/hash/count/cursor/padding.",
+      "limits": [
+        "Prepared finite coherent tables, owner absent/player255, history disabled; direct-mode history is covered in separate108-case suite.",
+        "NaN/inf coordinates/order, malformed structures, concurrency and gameplay untested."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "caller_branches": {
+      "verified_branch_instructions": {
+        "0x14097d165": 55,
+        "0x1411b7170": 62
+      },
+      "findings": [
+        "Game-update branch recognizes tag0xeaf7f618 with32-byte payload, matches player identity/Machine key, then forwards key/order/XY to insertion producer.",
+        "Another remapping caller queries key/order first: absent inserts; existing equal XY skips; differing or unordered coordinate comparison invokes direct coordinate event."
+      ],
+      "limits": [
+        "Local caller branches read and byte-matched only; not natively executed here.",
+        "No recovered source names or complete enclosing-function semantics. No network origin or user-facing editor feature identity established."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete160-instruction original body/pseudocode read and bytes matched. GP inputs plus packed XY low8bytesXMM0 verified.",
+      "108 connected direct native cases verify30-byte fe07 packet, exact selected XY mutation, conditional owner/history output and complete unchanged key/order/hash/count/cursor/padding. 24 actual inverse history packets restore exact world through original reader/wrapper/dispatcher.",
+      "56 original nearby-recursion cases verify strict0.2 radius, first-key-field grouping, prefilter128 selection limit, same-key/different-order exclusion, signedzero and exact XY changes across1432 moved records.",
+      "Two local caller branches (55/62instructions) read and byte-matched: tagged payload insertion and absent/unchanged/changed XY remapping decisions.",
+      "Independent reopening verifies name and six-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not original source declarations; packed XY uint64 carrier is register bits, not recovered source vector type.",
+      "Prepared player0/globals/history for direct mode, owner absent/player255 for nearby mode; coherent finite tables only.",
+      "Every routing flag, NaN/inf nearby coordinates/order, malformed graphs, concurrency and gameplay untested.",
+      "New caller branches statically checked only; complete enclosing functions, network origin and user-facing editor feature identity unresolved."
+    ],
+    "new_name_credit": 1
   }
 }

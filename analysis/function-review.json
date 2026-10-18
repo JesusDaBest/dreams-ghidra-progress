@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "642 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "643 existing-function renames,52 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9603,
-    "default_fun_names": 8753,
-    "other_names": 850,
-    "verification": "complete_inventory_matches_baseline_plus_642_renames_and_52_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8752,
+    "other_names": 851,
+    "verification": "complete_inventory_matches_baseline_plus_643_renames_and_52_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16041,6 +16041,30 @@
         "Prepared globals, Machine key, player0 and coherent finite tables; full-capacity producer, all routing flag branches, malformed graphs, concurrency and gameplay untested.",
         "Two unassigned append padding bytes excluded from expected semantic comparisons.",
         "Isolated duplicate inverse replay does not establish whole user-facing undo/redo correctness or a game bug; higher-level transaction coalescing unresolved."
+      ]
+    },
+    {
+      "address": "140b35bd0",
+      "original_name": "FUN_140b35bd0",
+      "applied_name": "SetKeyedRecordCoordinatesOrNearbyRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SetKeyedRecordCoordinatesOrNearbyRecords(void * owner, void * world, byte player, void * record, uint nearby, ulonglong positionXYBits)",
+      "evidence": [
+        "Complete160-instruction original body/pseudocode read and bytes matched. GP inputs plus packed XY low8bytesXMM0 verified.",
+        "108 connected direct native cases verify30-byte fe07 packet, exact selected XY mutation, conditional owner/history output and complete unchanged key/order/hash/count/cursor/padding. 24 actual inverse history packets restore exact world through original reader/wrapper/dispatcher.",
+        "56 original nearby-recursion cases verify strict0.2 radius, first-key-field grouping, prefilter128 selection limit, same-key/different-order exclusion, signedzero and exact XY changes across1432 moved records.",
+        "Two local caller branches (55/62instructions) read and byte-matched: tagged payload insertion and absent/unchanged/changed XY remapping decisions.",
+        "Independent reopening verifies name and six-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not original source declarations; packed XY uint64 carrier is register bits, not recovered source vector type.",
+        "Prepared player0/globals/history for direct mode, owner absent/player255 for nearby mode; coherent finite tables only.",
+        "Every routing flag, NaN/inf nearby coordinates/order, malformed graphs, concurrency and gameplay untested.",
+        "New caller branches statically checked only; complete enclosing functions, network origin and user-facing editor feature identity unresolved."
       ]
     }
   ],
