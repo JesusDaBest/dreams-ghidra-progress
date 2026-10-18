@@ -5889,3 +5889,12 @@ The original special output dispatcher handles Key output 0x3E8 by calling the e
 This provides a concrete alternative to assuming the MovementSensor updater must write its retained XYZOutput field. It does **not** prove every scene follows this route or that the field is always unused. The enclosing conversion's version predicate, full factory, failure paths, real upgrade execution, parented/offset transform paths and live wire scheduling remain unverified. The actual XYZOutput field calculation remains unidentified. No exact Media Molecule source/build match is claimed.
 
 No new name credit: totals remain **719 checked names**, 2,125 mapped and 7,481 unmapped among 9,606 defined functions.
+
+
+### XYZOutput conversion format gate checked
+
+The format selector comes from the enclosing routine's second integer argument. Original entry/snapshot/reload instructions bind that argument to the checked comparisons. On the inspected path, values **0x50F through 0x56C** select the XYZOutput-to-Key conversion directly when the wire count is nonzero. Values **above 0x56C** proceed to later migration stages. Older values select earlier stages first; their inspected loop exits can lead into this conversion, but those stages have not been executed as a complete upgrade.
+
+**5,580 bounded native cases** check every nonnegative format value from 0 through 0x743 with wire counts 0, 1 and 4. Original comparison/branch instructions run with explicit return markers at stage boundaries. The results match the earlier-stage, wire-stage, direct-conversion, no-wire and later-stage selections. The markers replace migration bodies: these tests verify stage selection only, not the actual scene conversion or failure behavior.
+
+This narrows the earlier unresolved version condition to a concrete numeric format gate. It does not map those numbers to named releases or verify the complete enclosing routine, factory, scene upgrade or live-game behavior. No exact Media Molecule source/build match is claimed. Totals remain **719 checked names**; no additional naming or completion credit was added.

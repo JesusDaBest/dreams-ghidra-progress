@@ -18611,10 +18611,48 @@
       "Original type3 special output dispatch calls existing ComputeObjectTransformWithPositionOffset for3e8 and returns transform variant;256 connected cases verify selected direct/no-offset behavior."
     ],
     "limits": [
-      "Enclosing conversion routine,version predicate,all failure paths,complete factory and live upgrade not reviewed/executed.",
+      "Format-stage selection separately verified by5580 bounded native cases;enclosing conversion,full factory,failure paths and live upgrade remain unverified.",
       "This establishes a conversion and output route; does not prove every scene uses it or that retained XYZOutput storage is always unused.",
       "XYZOutput field calculation remains unidentified; do not infer one must occur in MovementSensor updater."
     ],
+    "new_name_credit": 0
+  },
+  "movement_xyz_conversion_gate_checkpoint": {
+    "native_check": {
+      "native_cases": 5580,
+      "original_gate_instructions": 20,
+      "stages": {
+        "0": 187,
+        "1": 3606,
+        "2": 186,
+        "3": 188,
+        "4": 1413
+      },
+      "findings": [
+        "For nonnegative format argument up to743,original gate selects earlier migration stage for<=4b1;wire migration stage for4b2..50e if wires exist;direct XYZOutput conversion for50f..56c if wires exist;later stage for>56c.",
+        "The direct conversion entry checks nonzero wire count;zero wires bypass selected migration stages."
+      ],
+      "limits": [
+        "Boundary returns replace earlier migration bodies,actual conversion loop and later stages. Only stage selection is executed.",
+        "No release-version mapping,full upgrader,malformed versions or live scene upgrade claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "input_binding": {
+      "format_input": "Second SysV integer argument ESI, preserved through EBX and sole stack+a0 snapshot, then loaded toR15.",
+      "checked_sites": {
+        "140e6e013": "MOV EBX,ESI",
+        "140e6e030": "MOV qword ptr [RSP + 0xa0],RBX",
+        "140e79f57": "MOV R15,qword ptr [RSP + 0xa0]",
+        "140e7a627": "CMP R15D,0x56c",
+        "140e7a62e": "JA 0x140e7b6e6",
+        "140e7a63f": "JMP 0x140e7b6ce",
+        "140e7b6e1": "JMP 0x140e81aff"
+      },
+      "cached_capture_sha256": "88284e06d2d8d66d3784f2db348f0e91a0df55b0b30e6993bacf2886ebecea12",
+      "remaining": "Not a complete enclosing CFG/callee/stack-alias audit; format input is not mapped to release labels."
+    },
     "new_name_credit": 0
   }
 }
