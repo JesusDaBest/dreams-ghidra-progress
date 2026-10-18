@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "697 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "698 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9611,
-    "default_fun_names": 8698,
-    "other_names": 913,
-    "verification": "complete_inventory_matches_baseline_plus_697_renames_and_60_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8697,
+    "other_names": 914,
+    "verification": "complete_inventory_matches_baseline_plus_698_renames_and_60_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17619,6 +17619,30 @@
         "Platform termination,free and delete use local logging stubs;no actual browser API orobject release executed.",
         "Actual API lifetime,concurrency,source type declarations andlivegamebehavior unverified.",
         "Cleanup pair interpretation follows body/vtable behavior;noexactoriginalC++class/MMsource match."
+      ]
+    },
+    {
+      "address": "1410a53c0",
+      "original_name": "FUN_1410a53c0",
+      "applied_name": "InsertQueuedActionByFlagAndPriority",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InsertQueuedActionByFlagAndPriority(void * action)",
+      "evidence": [
+        "Complete113-instruction queue insertion body and 24 recorded caller references reviewed within stated scope.",
+        "576 original-native cases verify group/priority ordering,in-place/growth insertion,stable ties,inline/external ownership and allocation failure.",
+        "144 failed-growth and48 equal-key cases;whole64KiB queue/thread-tag pages,arrays,action objects andarguments match independent oracle.",
+        "Original loader writes and exact symbol hashes verify mutex lock/unlock and current-thread-ID imports.",
+        "Independent reopening verifies saved void/opaque-action working ABI,unchanged original code andall9610 otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "Sorted bounded valid queues andflag0/1 only;overflow,other flags,concurrency andactualallocation unverified.",
+        "Locks/threadID/allocator/free/virtualpriority are localfixturemodels;memcpy useslocalCRT.",
+        "Growth failure doesnot insert orreleaseincomingaction inthisbody;caller ownership remainsunresolved.",
+        "24 callerreferences are recorded,notallcallersemanticsunderstood;noexactoriginalMMsource/buildmatch."
       ]
     }
   ],

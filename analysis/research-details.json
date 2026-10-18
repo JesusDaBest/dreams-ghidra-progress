@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 758,
+    "checked_and_applied_names": 759,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 758,
+    "verified_names": 759,
     "function_count": 9611,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1932,7 +1932,7 @@
       "1410a66b0",
       "1410a6700"
     ],
-    "scope": "697 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "698 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22459,5 +22459,48 @@
     ],
     "new_name_credit": 2,
     "new_function_definitions": 2
+  },
+  "action_queue_insert_checkpoint": {
+    "target": {
+      "name": "InsertQueuedActionByFlagAndPriority",
+      "signature": "void PS4_SYSV InsertQueuedActionByFlagAndPriority(void * action)"
+    },
+    "checks": {
+      "action-queue-insert-native-check.json": {
+        "native_cases": 576,
+        "failed_growth_cases": 144,
+        "stable_tie_cases": 48,
+        "findings": [
+          "Original queue insertion orders flag1 before flag0,then signed ascending virtual priority;equal keys preserve prior order andinsert new action afterties.",
+          "Sparecapacity shifts pointers in place;growth allocates aligned16 storage withmax(2*capacity,count+1) pointer slots andfrees old external storage butnot inlineglobalstorage.",
+          "Modeled growth failure leaves queue pointer/count/capacity andcontents unchanged,still setsdirtybyte andunlocks.",
+          "Complete64KiB queue/thread-tag pages,old/new arrays,all action objects andarguments matchindependentoracle."
+        ],
+        "models": [
+          "Lock/unlock/thread ID,aligned allocation/free andvirtual priority are explicit localstubs;memcpy useslocalCRT."
+        ],
+        "limits": [
+          "Valid sorted queues,flags0/1 andboundedcount0/1/4/8;otherflagvalues,overflow,concurrency andactualallocation unverified.",
+          "Failuredoesnotinsert orreleaseincomingaction withinthisbody;callerownership onfailure remains unresolved.",
+          "No names/types/progress credit yet."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete113-instruction queue insertion body and 24 recorded caller references reviewed within stated scope.",
+      "576 original-native cases verify group/priority ordering,in-place/growth insertion,stable ties,inline/external ownership and allocation failure.",
+      "144 failed-growth and48 equal-key cases;whole64KiB queue/thread-tag pages,arrays,action objects andarguments match independent oracle.",
+      "Original loader writes and exact symbol hashes verify mutex lock/unlock and current-thread-ID imports.",
+      "Independent reopening verifies saved void/opaque-action working ABI,unchanged original code andall9610 otherfunctionnames/signatures."
+    ],
+    "limits": [
+      "Sorted bounded valid queues andflag0/1 only;overflow,other flags,concurrency andactualallocation unverified.",
+      "Locks/threadID/allocator/free/virtualpriority are localfixturemodels;memcpy useslocalCRT.",
+      "Growth failure doesnot insert orreleaseincomingaction inthisbody;caller ownership remainsunresolved.",
+      "24 callerreferences are recorded,notallcallersemanticsunderstood;noexactoriginalMMsource/buildmatch."
+    ],
+    "new_name_credit": 1
   }
 }

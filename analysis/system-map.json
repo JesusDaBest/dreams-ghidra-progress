@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9611,
-  "mapped_total": 2164,
-  "unmapped_total": 7447,
+  "mapped_total": 2165,
+  "unmapped_total": 7446,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54745,6 +54745,33 @@
           ]
         }
       ]
+    },
+    "1410a53c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "action-queue",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared action queue used by browser-dialog interface andotherrecordedcallers;full insertion body reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "6f928ec66eee10f9d2cbeb00fac9900cbdedc74821bcad2b22d8c99674c6c240",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InsertQueuedActionByFlagAndPriority",
+          "support": [
+            "Complete113-instruction queue insertion body and 24 recorded caller references reviewed within stated scope.",
+            "576 original-native cases verify group/priority ordering,in-place/growth insertion,stable ties,inline/external ownership and allocation failure.",
+            "144 failed-growth and48 equal-key cases;whole64KiB queue/thread-tag pages,arrays,action objects andarguments match independent oracle.",
+            "Original loader writes and exact symbol hashes verify mutex lock/unlock and current-thread-ID imports.",
+            "Independent reopening verifies saved void/opaque-action working ABI,unchanged original code andall9610 otherfunctionnames/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -57008,6 +57035,17 @@
             {
               "id": "browser-dialog",
               "label": "Browser dialogs",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "action-queue",
+              "label": "Action queue",
               "children": [
                 {
                   "id": "runtime-implementation",

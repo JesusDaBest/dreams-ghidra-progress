@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 712,
+    "done": 713,
     "todo": 1452,
-    "total": 2164,
-    "behavior_or_helpers_reviewed": 638,
+    "total": 2165,
+    "behavior_or_helpers_reviewed": 639,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12550,12 +12550,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 94,
+        "done": 95,
         "todo": 310,
-        "total": 404,
-        "behavior_or_helpers_reviewed": 90,
+        "total": 405,
+        "behavior_or_helpers_reviewed": 91,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 195,
+        "runtime_functions_identified": 196,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12587,6 +12587,7 @@
           "RegisterRecordModeFieldOffset",
           "EnsureCreateWireNodeMessageTypeRegistered",
           "RegisterNodeCustomIconFieldOffset",
+          "InsertQueuedActionByFlagAndPriority",
           "DestroyBrowserDialogTextAction",
           "DeleteBrowserDialogTextAction",
           "OpenBrowserDialogForQueuedTextAction",
@@ -12995,6 +12996,7 @@
           "140cf47a0",
           "140d2fa10",
           "140d71a90",
+          "1410a53c0",
           "1410a66b0",
           "1410a6700",
           "1410a6740",
@@ -14975,16 +14977,17 @@
           {
             "name": "interface/display",
             "label": "UI drawing & interaction",
-            "done": 3,
+            "done": 4,
             "todo": 101,
-            "total": 104,
-            "behavior_or_helpers_reviewed": 3,
+            "total": 105,
+            "behavior_or_helpers_reviewed": 4,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 96,
+            "runtime_functions_identified": 97,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "InsertQueuedActionByFlagAndPriority",
               "DestroyBrowserDialogTextAction",
               "DeleteBrowserDialogTextAction",
               "OpenBrowserDialogForQueuedTextAction"
@@ -15093,6 +15096,7 @@
               "0x1415f4eb0"
             ],
             "done_addresses": [
+              "1410a53c0",
               "1410a66b0",
               "1410a6700",
               "1410a6740"
@@ -16293,6 +16297,53 @@
                       "1415f4b10",
                       "1415f4eb0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "interface/display/action-queue",
+                "label": "Action queue",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "InsertQueuedActionByFlagAndPriority"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1410a53c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/display/action-queue/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "InsertQueuedActionByFlagAndPriority"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1410a53c0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -46253,5 +46304,5 @@
       }
     ]
   },
-  "unmapped": 7447
+  "unmapped": 7446
 }

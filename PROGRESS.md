@@ -6521,3 +6521,14 @@ Totals: **756 checked names** (676 behavior/helper and 80 property/type), **2,16
 Actual platform lifetime, concurrency, concrete source declarations and live-game behavior remain unverified. All 9,609 previously defined names/signatures and original bytes remain unchanged.
 
 Totals: **758 checked names** (678 behavior/helper and 80 property/type), **2,164 mapped**, **7,447 unmapped**, among **9,611 defined functions**.
+
+
+### Shared action queue insertion reviewed and named
+
+`InsertQueuedActionByFlagAndPriority` names the complete 113-instruction helper. It locks the queue, records the current thread identifier, and inserts an action by group flag and ascending virtual priority. For tested flags zero/one, flag-one actions precede flag-zero actions. Equal keys retain existing order; the new action follows its ties. Spare capacity shifts pointers in place. Growth allocates 16-aligned storage with `max(2 * capacity, count + 1)` pointer slots; it frees old external storage while retaining inline storage.
+
+**576 original-native cases** include 48 equal-key cases and 144 growth-allocation failures. Whole queue/thread-tag pages, guarded arrays, actions and arguments match independent calculations. On allocation failure the queue remains unchanged, but the routine still marks it dirty and unlocks. It does not release the incoming action in that path; caller ownership remains unresolved. Mutex lock/unlock and thread-ID imports were verified through original loader writes and symbol hashes.
+
+Synchronization, allocation/free and virtual priorities are explicit local test models. Concurrency, overflow, other flag values and actual allocator behavior remain unverified. The 24 recorded caller references do not imply every caller is understood. Independent reopening confirms the saved working ABI, unchanged native bytes and all 9,610 other function names/signatures.
+
+Totals: **759 checked names** (679 behavior/helper and 80 property/type), **2,165 mapped**, **7,446 unmapped**, among **9,611 defined functions**.
