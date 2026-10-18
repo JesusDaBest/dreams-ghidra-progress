@@ -23438,5 +23438,186 @@
       }
     ],
     "new_name_credit": 0
+  },
+  "chunk_ordered_replay_radius_budget_checkpoint": {
+    "reviews": [
+      {
+        "primary_sources": [
+          {
+            "url": "https://docs.amd.com/api/khub/documents/YO8RUh~LIQ5Cx3M_Kq9qkg/content",
+            "title": "AMD Sea Islands ISA Revision1.3",
+            "pages_zero_based": [
+              240,
+              242
+            ],
+            "supports": "Ordered counterwave creation order andWRITE2ST64 addressformula."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/llvm/llvm-project/main/llvm/lib/Target/AMDGPU/AMDGPUInstructionSelector.cpp",
+            "full_source_sha256": "139f4a2671297fc0d6f15e4c83e387d0c5e390b61b3a6e2738ee0ec72ca61ede",
+            "local_excerpt_sha256": "d5efce50f97b20dcf008b4e1f57aa9d07ce7d9dc6004c08b1d9b6fec64085665",
+            "supports": "LLVM ordered intrinsic immediate encoding;not evidence oforiginal compileridentity."
+          }
+        ],
+        "ordered_operations": [
+          {
+            "shader": "ChunkBucketer",
+            "pc": "0x4eb8",
+            "encoded_offset": "0x100",
+            "counter_index": 0,
+            "wave_release": true,
+            "wave_done": false,
+            "shader_type": 0,
+            "operation": "add"
+          },
+          {
+            "shader": "ChunkBucketer",
+            "pc": "0x4ed0",
+            "encoded_offset": "0x104",
+            "counter_index": 1,
+            "wave_release": true,
+            "wave_done": false,
+            "shader_type": 0,
+            "operation": "add"
+          },
+          {
+            "shader": "ChunkBucketer",
+            "pc": "0x4ee4",
+            "encoded_offset": "0x108",
+            "counter_index": 2,
+            "wave_release": true,
+            "wave_done": false,
+            "shader_type": 0,
+            "operation": "add"
+          },
+          {
+            "shader": "ChunkBucketer",
+            "pc": "0x4ef8",
+            "encoded_offset": "0x30c",
+            "counter_index": 3,
+            "wave_release": true,
+            "wave_done": true,
+            "shader_type": 0,
+            "operation": "add"
+          },
+          {
+            "shader": "ChunkSoftBlendGather",
+            "pc": "0x9c",
+            "encoded_offset": "0x300",
+            "counter_index": 0,
+            "wave_release": true,
+            "wave_done": true,
+            "shader_type": 0,
+            "operation": "add"
+          }
+        ],
+        "post_clear_base_offsets": [
+          9984,
+          10240
+        ],
+        "findings": [
+          "AMD defines DS_ORDERED_COUNT processing inwavefrontcreationorder; using ordinary arrival-order atomic operations wouldnot preserve thatspecified contract.",
+          "Immediate fields encodecounterindex=offset0>>2,release=offset1bit0,done=bit1,shaderTypebits2..3 andoperationbit4,as emitted byLLVM.",
+          "Bucketer usesfouradd operations oncounters0..3; allrelease andonlylastmarks wavedone. Gather usescounter0 withrelease+done.",
+          "WRITE2ST64 offsets39/40 multiply by4*64; combinedwithbase4*lane,thisclears0x2700+4*lane and0x2800+4*lane. This supersedes earlier unresolvedeffective-clear-address caveat."
+        ],
+        "limits": [
+          "LLVM is encoder corroboration,not proof thegamewascompiled byLLVM ormatchescurrentmainrevision.",
+          "M0 counter/base/index binding andcompletehardwareprotocol remainunresolved.",
+          "Wavecreation order is not automatically sourcecommandorder untilentry/dispatchmapping isverified.",
+          "No GPUexecution,newCPUname/typecredit orprojectmutation."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkBucketer",
+        "scope": "Conditional output protocol model,notGPUexecution.",
+        "counter_address_matches": 64,
+        "all_16bit_mask_models": 65536,
+        "class_sequence_models": 29524,
+        "findings": [
+          "M0 rawvalue is0x24000000+(localWave<<20)|((s5>>6)&0x7ff). Its high16bits plus4*counterIndex matchPre GDS start/counter addresses0x2400+4*block for block=4*localWave+counterIndex.",
+          "AfterLDStranspose each16-lane segment represents16consecutive commands foroneblock. Class1 ballot suppliesexclusive ranks andinclusive segment totals readat lanes15/31/47/63.",
+          "Class1 writes commandIndex|0xff000000 at orderedBase+exclusiveClass1Rank, subjecttodescriptorcapacity.",
+          "For class2,tail chooseslastclass2within16commands andissues64-bitmax withhighDWORD commandIndex+1 andlowDWORD orderedBase+precedingClass1Count,pluspreservedhighflag.",
+          "Post takeslowDWORD&0x7fffffff asstart andend-start ascount. Underorderedallocation,finalrange therefore contains class1commands afterthelatestclass2command; earlieremittedindicesremainallocatedbutoutsidefinalrange.",
+          "Shufflingthemodeled64-bitmax updatearrival orderdoesnotchangechosenlastclass2metadata. This isdistinctfromorderedprefixallocation,whoseorderstillmatters."
+        ],
+        "limits": [
+          "Model assumesorderedallocationsfollowlogicalcommandgroups,validcapacities,offsetsbelow2^31,andentryconfigurationof16waves/64lanes.",
+          "M0 high/low interpretation iscorroboratedbyolderLLVM intrinsicdocumentation; exactgeneration-specifichardwarebindingsstillneedverification.",
+          "Physicalmeaningofclass2andhighflag,globalcommandindexmasking,allshapeevaluationandGPUmemoryordering remainincomplete.",
+          "No liveGPUexecution,newCPUname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "shader": "ChunkReplayRoots",
+        "scope": "Complete47-instruction staticbody; outputdescriptor ABI andotherstage semantics separatelylimited.",
+        "program_bytes": 248,
+        "exact_encoding_roundtrip": true,
+        "record_mapping_cases": 280,
+        "clear_tail_cases": 130,
+        "findings": [
+          "GuardlocalID<suppliedcount. Reads64-bitmetadata atGDS0x2500+8*localID; lowDWORD bit31 selects keyflag0x40000000,whilelow31bits becomecommand-stream start.",
+          "Loads inputkey throughsecondcontext descriptorbyte0x20 atbase+localID; outputkey=(inputkey&0x3fffffff)|savedFlagBit30. Existingupperkeyflags arecleared.",
+          "Writes24bytes throughfirstcontext descriptorbyte0x10 atoutputBase+localID: key,start,localID,0xffffffff,andtwoauxiliaryfloats.",
+          "Auxiliaryfloats comefromunsigned32GDS0x2700/0x2800+4*localID,convertedtofloat thenmultipliedbyfirstcontextDWORD0x1a. ThesearethetwoGDS arrays clearedbyBucketerPost; interveningreductionproducer remainsunreviewed.",
+          "ClearsoneDWORDperitem throughsecondcontextbyte0x10 descriptor subjecttocapacity. Everyeighthitem clearsoneDWORDindexedlocalID>>3 throughsecondcontextbyte0descriptor,alsocapacityguarded.",
+          "CPU construction previouslyshowsfirstcontextDWORD0x1a asdecodedscale*float32(0.2); exactphysicalmeaningofauxiliaryvalues isnotassigned."
+        ],
+        "limits": [
+          "24-byte writefootprint doesnotbyitselfproveconcrete descriptorstride orcompleteoriginalrecordtype.",
+          "The initial+8/+12 words arelocalindex/-1,not establishedoccupancymasks atthisstage;laterrewritersmustbetraced.",
+          "Recordmapping models coverintegerflaglayout andcleartails,not originalGPUexecution,floatrounding,capacitysafety ormemoryvisibility.",
+          "SoftBlendReduceproducer andsubsequentreplay/refinement remainpartial; noCPUname/typecredit orprojectmutation."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      {
+        "shader": "ChunkSoftBlendReduce",
+        "decoded_instructions": 79,
+        "program_bytes": 412,
+        "exact_encoding_roundtrip": true,
+        "reduction_tail_patterns": 65,
+        "ideal_budget_cases": 455,
+        "findings": [
+          "Guardglobalindex<count. Reads survivingstreamDWORD,maskslow24bits tocommandindex,andloadsflagsandblendradius from96-bytecommandrecord.",
+          "Computesunsignedinteger ceil(blendRadius*reciprocalQuantum). Mode1 contributesonlytofirstsum,mode2onlytosecondsum; modes0/3 contributezero.",
+          "FiveXORstages reduceeach32-lanehalf; explicitlane0/32 readscombinehalves. Adds mode1sum toGDS0x2700+4*itemIndex andmode2sumto0x2800+4*itemIndex.",
+          "CPU passesstreamstart/countperitem andreciprocal ofdecodedscale*float32(0.2). ReplayRoots convertsGDS sumsbacktofloatandmultipliesbycorrespondingquantum beforestoringauxiliarypair.",
+          "Idealpositivefinite exactceilquantization givesradiusSum<=budget<radiusSum+termCount*quantum. This conditionalmathematicalbound isnotclaimedforalloriginalfloatinginputs.",
+          "Thepair istherefore a per-mode quantizedblendradius budget forsurvivingcommands,not establishedoccupancymasks orphysicalmass."
+        ],
+        "limits": [
+          "Originalreciprocalandmultiplyrounding canaffectceilboundaries; nonfinite/negative radii,unsignedconversionoverflow andsumwrap remainunverified.",
+          "Quantumidentity isconnectedstatically; runtimeinputranges,interstagevisibility,allocationcapacity andGPUexecution remainunobserved.",
+          "Reductionprovenancemodelcheckscoverage/componentorder,not hardwarewaitcounter oratomicsemantics.",
+          "No additionalCPUname/typecredit,projectmutation orwholepipelinecompletion."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      {
+        "source": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
+        "pdf_page_one_based": 30,
+        "local_pdf_sha256": "25f68d202b2c189ce73e27a099535ceee68b4ce98b8e0f0523fa75ce78348170",
+        "page_render_visually_inspected": true,
+        "findings": [
+          "Presentation speaker notes describe considering later soft blends when pruning because blend operations extend primitive influence.",
+          "Reviewed backward suffix-radius accumulation widens Bucketer thresholds in an algorithmically consistent way.",
+          "This corroborates algorithmic interpretation; exactsource,revision,compiler andproof ofconservative pruning are not established."
+        ],
+        "limits": [
+          "No developer livestream frames orvisible sourcecode matched bythisreview.",
+          "The2015presentation ispreproduction technicalmaterial anddoesnotidentify thisexecutable build."
+        ],
+        "new_name_credit": 0
+      }
+    ],
+    "new_name_credit": 0
   }
 }
