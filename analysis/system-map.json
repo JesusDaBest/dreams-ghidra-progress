@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9608,
-  "mapped_total": 2161,
+  "inventory_total": 9609,
+  "mapped_total": 2162,
   "unmapped_total": 7447,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -54665,6 +54665,34 @@
           ]
         }
       ]
+    },
+    "1410a6740": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "browser-dialog",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete queued platform browser-dialog action used by the QR interface;producer and imported APIs traced.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full static body review and bounded selection/processing native fixtures.",
+      "code_sha256": "b30b993b6cd9567c2794fa601ad90d7c1c8622d17aa294c639d535b2d1f352f5",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "OpenBrowserDialogForQueuedTextAction",
+          "support": [
+            "Original vtable target resolved using verified executable base; original unwind record supplies exact278-byte boundary.",
+            "All61 original instructions reviewed; missing function defined without overlap and independently reopened.",
+            "72 original-native cases verify whole328-byte platform parameter block,inline/heap text,player identifier,initialization/open result mapping and preserved inputs.",
+            "Four browser API bindings verified through original loader writes and exact symbol-name NID hashes.",
+            "Related QR producer checks:80 clipping/readiness cases,21 local action-construction cases and24 synthetic player-selection cases.",
+            "Independent reopening verifies saved working ABI,unchanged original bytes and all9608 other names/signatures."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -56921,6 +56949,17 @@
                 {
                   "id": "runtime-implementation",
                   "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "browser-dialog",
+              "label": "Browser dialogs",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime implementation",
                   "children": []
                 }
               ]

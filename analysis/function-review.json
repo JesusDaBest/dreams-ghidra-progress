@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "697 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "697 existing-function renames,58 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9608,
+    "total": 9609,
     "default_fun_names": 8698,
-    "other_names": 910,
-    "verification": "complete_inventory_matches_baseline_plus_697_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "other_names": 911,
+    "verification": "complete_inventory_matches_baseline_plus_697_renames_and_58_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17547,6 +17547,32 @@
         "Kanji/ECI,malformed modes/lengths/pointers,aliasing and live-game execution unverified.",
         "Some optimized branches outside valid fixed-table domain are statically reviewed but not dynamically exercised.",
         "No exact original library version or Media Molecule source/build match claimed."
+      ]
+    },
+    {
+      "address": "1410a6740",
+      "original_name": "FUN_1410a6740",
+      "applied_name": "OpenBrowserDialogForQueuedTextAction",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV OpenBrowserDialogForQueuedTextAction(void * action)",
+      "created_function": true,
+      "evidence": [
+        "Original vtable target resolved using verified executable base; original unwind record supplies exact278-byte boundary.",
+        "All61 original instructions reviewed; missing function defined without overlap and independently reopened.",
+        "72 original-native cases verify whole328-byte platform parameter block,inline/heap text,player identifier,initialization/open result mapping and preserved inputs.",
+        "Four browser API bindings verified through original loader writes and exact symbol-name NID hashes.",
+        "Related QR producer checks:80 clipping/readiness cases,21 local action-construction cases and24 synthetic player-selection cases.",
+        "Independent reopening verifies saved working ABI,unchanged original bytes and all9608 other names/signatures."
+      ],
+      "caveats": [
+        "Browser APIs are mocked locally; no browser opened,URL followed or network request issued.",
+        "Selected valid synthetic text/identifiers and errors only;malformed pointers,real platform lifetime and live-game behavior unverified.",
+        "Action result-enum meanings,queue scheduling/ownership and concrete source types remain unresolved.",
+        "No exact original Media Molecule source/build match claimed."
       ]
     }
   ],

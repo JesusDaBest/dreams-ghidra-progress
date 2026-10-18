@@ -6499,3 +6499,14 @@ Totals: **754 checked names** (674 behavior/helper and 80 property/type), **2,16
 Independent reopening verifies the saved name and bool-return ABI, unchanged native code and all 9,607 other function names/signatures. Kanji/ECI, malformed inputs, aliasing and live-game behavior remain unverified. No exact original library/MM source match is claimed. Completing this helper review does not establish whole-game completion.
 
 Totals: **755 checked names** (675 behavior/helper and 80 property/type), **2,161 mapped**, **7,447 unmapped**, among **9,608 defined functions**.
+
+
+### QR browser action recovered and reviewed
+
+`OpenBrowserDialogForQueuedTextAction` names a recovered 278-byte vtable handler. The original unwind record establishes its boundary; all 61 instructions were reviewed. It initializes the platform browser dialog and, on success, opens it using the action's expanded QR text and selected player identifier. Four API bindings were verified through original loader writes and symbol hashes. This places the handler under interface/browser-dialog behavior.
+
+**72 original-native cases** verify the complete 328-byte parameter block, inline/heap strings, synthetic identifiers and initialization/open error mapping. Success returns 1; the tested specific error maps to 3 and other tested errors to 2. These values have no claimed source enum names. **Platform APIs were mocked: no browser opened or URL was followed.** Related producer checks cover 80 clipping/readiness combinations, 21 action constructions and 24 synthetic player selections. Selection stores a player identifier, not the matching context-record ordinal.
+
+Independent reopening confirms the definition, descriptive name and working ABI, unchanged native bytes and all 9,608 other function names/signatures. Malformed inputs, real platform lifetime, action scheduling and live-game behavior remain unverified. No real player/account information was used.
+
+Totals: **756 checked names** (676 behavior/helper and 80 property/type), **2,162 mapped**, **7,447 unmapped**, among **9,609 defined functions**. The added definition earns one review credit only after full body review and verification.

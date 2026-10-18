@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 755,
+    "checked_and_applied_names": 756,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,16 +1920,17 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 755,
-    "function_count": 9608,
+    "verified_names": 756,
+    "function_count": 9609,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0",
       "141330c40",
-      "14021b300"
+      "14021b300",
+      "1410a6740"
     ],
-    "scope": "697 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "697 existing-function renames,58 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22347,5 +22348,64 @@
       "No exact original library version or Media Molecule source/build match claimed."
     ],
     "new_name_credit": 1
+  },
+  "qr_browser_handler_checkpoint": {
+    "target": {
+      "name": "OpenBrowserDialogForQueuedTextAction",
+      "signature": "int PS4_SYSV OpenBrowserDialogForQueuedTextAction(void * action)"
+    },
+    "selection_check": {
+      "native_cases": 72,
+      "findings": [
+        "Original browser-action handler initializes once; initialization errors suppress Open; successful initialization calls Open once.",
+        "Whole328-byte parameter block matches independent oracle: common size48, pointer-derived magic, size328, mode1, signed player identifier and inline/heap text pointer; remaining bytes zero.",
+        "Successful Open returns1; either API error0x80b80008 returns3; tested other nonzero errors return2.",
+        "Action,text and argument storage remain unchanged."
+      ],
+      "models": [
+        "Both platform browser APIs mocked locally; Open only captures parameters and returns synthetic status. No actual browser or network call."
+      ],
+      "limits": [
+        "Synthetic selected errors/IDs and text lengths; API meaning of result enums and platform parameter requirements beyond observed fields unresolved.",
+        "No function definition/name or live-game claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "processing_cycle_check": {
+      "native_cases": 24,
+      "findings": [
+        "Original caller selects first set interaction-player bit among available entries and reads its signed identifier from global records at stride0x180.",
+        "Caller validates that identifier against context records stride0x19c50 and referenced slot context stride0x43e0 before constructing the action.",
+        "Matching context record may be first,second or third; earlier wrong identifier or wrong context entries are skipped.",
+        "Action field+0xc stores selected identifier itself, not the context record ordinal. Queued text is preserved and context remains unchanged."
+      ],
+      "models": [
+        "Synthetic local contexts,player identifiers and interaction hit masks; action allocation/delivery,readiness/draw are logged stubs."
+      ],
+      "limits": [
+        "Every lookup fixture guarantees a matching record; no-match behavior has no visible loop bound and is not executed.",
+        "Real context meanings, action consumer and live-game behavior remain unverified.",
+        "No actual player/account data accessed or external action performed; no naming credit."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original vtable target resolved using verified executable base; original unwind record supplies exact278-byte boundary.",
+      "All61 original instructions reviewed; missing function defined without overlap and independently reopened.",
+      "72 original-native cases verify whole328-byte platform parameter block,inline/heap text,player identifier,initialization/open result mapping and preserved inputs.",
+      "Four browser API bindings verified through original loader writes and exact symbol-name NID hashes.",
+      "Related QR producer checks:80 clipping/readiness cases,21 local action-construction cases and24 synthetic player-selection cases.",
+      "Independent reopening verifies saved working ABI,unchanged original bytes and all9608 other names/signatures."
+    ],
+    "limits": [
+      "Browser APIs are mocked locally; no browser opened,URL followed or network request issued.",
+      "Selected valid synthetic text/identifiers and errors only;malformed pointers,real platform lifetime and live-game behavior unverified.",
+      "Action result-enum meanings,queue scheduling/ownership and concrete source types remain unresolved.",
+      "No exact original Media Molecule source/build match claimed."
+    ],
+    "new_name_credit": 1,
+    "new_function_definitions": 1
   }
 }

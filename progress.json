@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 709,
+    "done": 710,
     "todo": 1452,
-    "total": 2161,
-    "behavior_or_helpers_reviewed": 635,
+    "total": 2162,
+    "behavior_or_helpers_reviewed": 636,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12550,12 +12550,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 91,
+        "done": 92,
         "todo": 310,
-        "total": 401,
-        "behavior_or_helpers_reviewed": 87,
+        "total": 402,
+        "behavior_or_helpers_reviewed": 88,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 192,
+        "runtime_functions_identified": 193,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12587,6 +12587,7 @@
           "RegisterRecordModeFieldOffset",
           "EnsureCreateWireNodeMessageTypeRegistered",
           "RegisterNodeCustomIconFieldOffset",
+          "OpenBrowserDialogForQueuedTextAction",
           "BuildTextLayoutRecord",
           "MeasureTextLayoutDimensions",
           "TryLayoutNextTextLine",
@@ -12992,6 +12993,7 @@
           "140cf47a0",
           "140d2fa10",
           "140d71a90",
+          "1410a6740",
           "1412d7b40",
           "1412d8a40",
           "1412d8ca0",
@@ -14969,16 +14971,18 @@
           {
             "name": "interface/display",
             "label": "UI drawing & interaction",
-            "done": 0,
+            "done": 1,
             "todo": 101,
-            "total": 101,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 102,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 93,
+            "runtime_functions_identified": 94,
             "property_type_functions_identified": 8,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "OpenBrowserDialogForQueuedTextAction"
+            ],
             "todo_names": [
               "0x140a678e0",
               "0x140c86eb0",
@@ -15082,7 +15086,9 @@
               "0x1415f4b10",
               "0x1415f4eb0"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1410a6740"
+            ],
             "todo_addresses": [
               "140a678e0",
               "140c86eb0",
@@ -16224,6 +16230,53 @@
                       "1415f4b10",
                       "1415f4eb0"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "interface/display/browser-dialog",
+                "label": "Browser dialogs",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "OpenBrowserDialogForQueuedTextAction"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1410a6740"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/display/browser-dialog/runtime-implementation",
+                    "label": "Runtime implementation",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "OpenBrowserDialogForQueuedTextAction"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1410a6740"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
