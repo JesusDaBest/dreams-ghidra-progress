@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "690 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "691 existing-function renames,57 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9608,
-    "default_fun_names": 8705,
-    "other_names": 903,
-    "verification": "complete_inventory_matches_baseline_plus_690_renames_and_57_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8704,
+    "other_names": 904,
+    "verification": "complete_inventory_matches_baseline_plus_691_renames_and_57_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17385,6 +17385,29 @@
         "malloc/free areexplicitguardedfixturemodels;realallocation,huge/overflow lengths andconcurrency unverified.",
         "QRchangedtext/tokenexpansion stillunderreview;dispatcher modelscomparison andscheduler.",
         "Analystdescriptive name,opaque12-bytestorage andworkingABI;noexactoriginalC++/MMbuildmatch."
+      ]
+    },
+    {
+      "address": "14021b090",
+      "original_name": "FUN_14021b090",
+      "applied_name": "UpdateQrCodeEncodingJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV UpdateQrCodeEncodingJob(uchar * textBegin, uchar * textEndOrNull)",
+      "evidence": [
+        "Complete145-instruction QRjob dispatcher reviewed againstoriginalbytes;parentcaller140219710 identified.",
+        "32 generation/statecases and32changedtextintegrationcases checkwhole64KiB statepage againstindependentoracle.",
+        "Changedtext usesoriginalsmallstringhelper withverifiedCRTimports;nulltext,explicitend,inline/heap rawstorage andstate1join/resubmission verified.",
+        "Submission passesoriginalQRworker,globalcontext,one andEncodeQRCode label;returnALis booleannew-generation successstate.",
+        "Independentoffline reopening verifies savedABI,unchangedbytes andall9607otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "Placeholderexpansion andvirtualscheduler aremodels;realworkerconcurrency,expansion andlivegame unverified.",
+        "SelectedASCII lengths/priorinline storedtext;OOM,borrowedpriorstorage,allrangeedgecases unverified.",
+        "Analystdescriptive name andworkingnullablebytepointer/boolean ABI;noexactoriginalC++orMMbuildmatch."
       ]
     }
   ],

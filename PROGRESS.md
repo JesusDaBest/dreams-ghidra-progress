@@ -6430,3 +6430,12 @@ Totals: **747 checked names** (667 behavior/helper and 80 property/type), **2,15
 Related QR tracing adds **32 dispatcher-state cases**: processing is generation-gated; the dispatcher submits `EncodeQRCode`, waits for the worker to clear its pending byte, then records success or failure. Actual scheduling and changed-text placeholder expansion remain under review.
 
 Totals: **748 checked names** (668 behavior/helper and 80 property/type), **2,154 mapped**, **7,454 unmapped**, among **9,608 defined functions**.
+
+
+### QR encoding job dispatcher reviewed and named
+
+`UpdateQrCodeEncodingJob` names the complete 145-instruction dispatcher. It processes once per generation, compares requested and stored raw text, joins an existing job before replacing changed text, calls a separate placeholder-expansion helper, and submits `UpdateQrCodeImageFromText` with the label `EncodeQRCode`. The worker clears the pending byte; the dispatcher then joins and records success or failure. It returns true only when entering a new generation already in the success state. The call that changes a completed job into that state still returns false.
+
+**64 native cases** cover generation gating, pending/completed states, success/failure, null requests, terminated/explicit-end text and inline/heap replacement using the original small-string helper. Complete state storage, input buffers and scheduler arguments match independent expectations. Placeholder expansion and actual virtual scheduling remain modeled. Allocation failure, borrowed prior storage, concurrency and live-game behavior remain unverified. Independent reopening verifies the working signature, unchanged code bytes and all 9,607 other names/signatures.
+
+Totals: **749 checked names** (669 behavior/helper and 80 property/type), **2,155 mapped**, **7,453 unmapped**, among **9,608 defined functions**.
