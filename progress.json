@@ -3,27 +3,28 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 666,
-    "todo": 1455,
+    "done": 667,
+    "todo": 1454,
     "total": 2121,
     "behavior_or_helpers_reviewed": 595,
-    "properties_or_types_reviewed": 71,
+    "properties_or_types_reviewed": 72,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 105,
-        "todo": 407,
+        "done": 106,
+        "todo": 406,
         "total": 512,
         "behavior_or_helpers_reviewed": 58,
-        "properties_or_types_reviewed": 47,
+        "properties_or_types_reviewed": 48,
         "runtime_functions_identified": 56,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "VisitMicrochipProperties",
+          "VisitAngleSensorProperties",
           "VisitFogProperties",
           "VisitAutoGuidesGadgetProperties",
           "VisitCalculatorProperties",
@@ -171,7 +172,6 @@
           "0x1404c62c0",
           "0x1404c8270",
           "0x1404c9e40",
-          "0x1404cb010",
           "0x1404cb9a0",
           "0x1404cc8e0",
           "0x1404ccd70",
@@ -540,6 +540,7 @@
         ],
         "done_addresses": [
           "1404a7180",
+          "1404cb010",
           "1404d6660",
           "1404d7480",
           "1404d7ef0",
@@ -687,7 +688,6 @@
           "1404c62c0",
           "1404c8270",
           "1404c9e40",
-          "1404cb010",
           "1404cb9a0",
           "1404cc8e0",
           "1404ccd70",
@@ -10562,22 +10562,23 @@
           {
             "name": "gadgets-logic/sensors",
             "label": "Sensors & detection",
-            "done": 0,
-            "todo": 38,
+            "done": 1,
+            "todo": 37,
             "total": 38,
             "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 0,
+            "properties_or_types_reviewed": 1,
             "runtime_functions_identified": 0,
             "property_type_functions_identified": 38,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "VisitAngleSensorProperties"
+            ],
             "todo_names": [
               "0x140492de0",
               "0x1404c5720",
               "0x1404c5df0",
               "0x1404c9e40",
-              "0x1404cb010",
               "0x1404cb9a0",
               "0x1404cc8e0",
               "0x1404d0410",
@@ -10612,13 +10613,14 @@
               "0x140d6a2c0",
               "0x140d88020"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "1404cb010"
+            ],
             "todo_addresses": [
               "140492de0",
               "1404c5720",
               "1404c5df0",
               "1404c9e40",
-              "1404cb010",
               "1404cb9a0",
               "1404cc8e0",
               "1404d0410",
@@ -10996,23 +10998,25 @@
               {
                 "name": "gadgets-logic/sensors/anglesensor",
                 "label": "Angle Sensor",
-                "done": 0,
-                "todo": 2,
+                "done": 1,
+                "todo": 1,
                 "total": 2,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 1,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 2,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "VisitAngleSensorProperties"
+                ],
                 "todo_names": [
-                  "0x1404cb010",
                   "0x140d56a10"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "1404cb010"
+                ],
                 "todo_addresses": [
-                  "1404cb010",
                   "140d56a10"
                 ],
                 "unresolved_addresses": [],
@@ -11020,23 +11024,25 @@
                   {
                     "name": "gadgets-logic/sensors/anglesensor/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
+                    "done": 1,
+                    "todo": 1,
                     "total": 2,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 2,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "VisitAngleSensorProperties"
+                    ],
                     "todo_names": [
-                      "0x1404cb010",
                       "0x140d56a10"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "1404cb010"
+                    ],
                     "todo_addresses": [
-                      "1404cb010",
                       "140d56a10"
                     ],
                     "unresolved_addresses": [],

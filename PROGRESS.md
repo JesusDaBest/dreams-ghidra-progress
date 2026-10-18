@@ -5759,3 +5759,14 @@ The earlier numeric-kind remapping offsets now have an original registered type 
 Original `EThingType` registrations bind the three names to their values. The property dispatcher jump-table entries and direct calls select the corresponding visitors. Their reference-resolution blocks load these same offsets and use the original `MotionReferenceThing` literal when visiting the referenced object. Registration instructions, dispatch bytes, field loads and literal bytes were rechecked against the executable. This links the initializer and remapping tests to specific sensor reference fields without guessing type names from the number alone.
 
 Only those property-visitor blocks have been semantically reviewed here. Complete visitor bodies, all version/filter branches, full startup order and possible later metadata overwrites remain unresolved. The functions remain unnamed pending their full review; this adds zero checked-name credit and does not establish complete sensor behavior or an exact Media Molecule source/build match.
+
+
+### AngleSensor property interface reviewed and named
+
+`VisitAngleSensorProperties` now names the complete 567-instruction visitor selected by original `EThingType` value 53. Its body visits shared position and canvas properties, Power (+0xC0), Halfsize (+0xC8), ReferenceVector (+0xE0), PointingVector (+0xF0), AngleSensorAngle (+0x100), AngleSensorFalloff (+0x104), AngleSensorOutput (+0x108), MotionReferenceThing (+0x10C), Rotation (+0x110) and Name (+0x120).
+
+The internal serialized-version gates include ParentFromModel from 0x2D9, IsGluedGadget from 0x473, Rotation from 0x264 with a legacy placeholder in 0x262/0x263, and Name from 0x445. These numbers are not interpreted as game release versions. Property paths use exact name-or-slash boundaries. The motion-reference path checks packed index bounds and null objects; a nested path can resolve the object's persistent ID and recursively dispatch its properties.
+
+The enum registration, dispatcher target, complete body and fresh pseudocode support a descriptive property-interface name. Independent reopening verified the opaque visitor/object-pointer signature, decompilation, unchanged bytes and all 9,604 other names/signatures. Called sub-visitors, actual virtual sinks, full version/filter execution, writer mutation and runtime angle sensing remain unverified. **No complete-visitor native execution is claimed in this naming batch.**
+
+Totals: **713 checked names** (635 behavior/helper and 78 property/type reviews), 2,121 mapped and 7,484 unmapped among 9,605 defined functions. This marks one reviewed property interface, not a completed AngleSensor implementation or exact Media Molecule source/build match.
