@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2136,
-  "unmapped_total": 7470,
+  "mapped_total": 2137,
+  "unmapped_total": 7469,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53981,6 +53981,33 @@
             "Input old slots may mutate during original rehash insertion;expected states include those changes and preserved padding.",
             "Original imported C++ array new/delete identities linked by JUMP_SLOT and NID database;argument/order-recording models used,not real allocator execution.",
             "Independent reopening verifies name,void table-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1408c4f50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reference conversion between live/fallback IDs and indices used by buffered object packing.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete reference conversion body and independent native state comparisons.",
+      "code_sha256": "c80d83836e627eebd0a141eed8da61ddb7db53b12e8931fdd22173f02bbec175",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertThingReferencesBetweenIdsAndIndices",
+          "support": [
+            "Complete975-instruction reference conversion helper and pseudocode reviewed;original bytes verified.",
+            "Selected fixed per-kind fields and metadata-driven fields convert between IDs and indices. ID resolution prefers world hash then fallback pool;reverse conversion reads world object pointers or alternate32-byte records.",
+            "768 native cases cover all handled kinds,both directions and index sources,kind high bit,sentinels,missing IDs,tagged references and representative unaffected kinds.",
+            "168 followup executions verify live/fallback collision chains,world lookup precedence and absent metadata. Some non-metadata cases repeat.",
+            "Independent reopening verifies name,void four-argument ABI,decompilation,original bytes and all9605 other names/signatures."
           ]
         }
       ]

@@ -6704,3 +6704,14 @@ A later pass reads the saved power and world-bit flags. **256 native dispatch ca
 Static assembly connects the selected entry to linked records through record offset 104. Only ready records with a positive object count enter the object loop. Dispatch tests stop before that body. Missing-ID and index-zero paths, the full producer, allocation failures, concurrency and live-game behavior remain unverified. These producer-specific observations do not establish a universal table payload type.
 
 No additional naming or completion credit: **730 checked names** remains the total. The producer remains unnamed pending full review. No exact Media Molecule source/build match is claimed.
+
+
+### Per-kind object reference conversion reviewed and named
+
+`ConvertThingReferencesBetweenIdsAndIndices` names the complete 975-instruction helper called after buffered object/property packing. It converts selected object fields between IDs and indices. ID resolution searches the world first and then a fallback table. Reverse conversion reads IDs from world object pointers or alternate 32-byte records. Some kinds use fixed field offsets; three sensor kinds locate the field through metadata.
+
+**768 native cases** exercise every handled kind, both directions and index sources, kind high bits, missing IDs, tagged/sentinel references and representative unaffected kinds. **168 followup executions** check collision chains, world-over-fallback precedence and zero/negative metadata offsets; some non-metadata cases repeat. Full target/world/pool/source states are compared.
+
+Independent reopening verifies the saved name, four-argument working signature, decompilation, unchanged bytes and all 9,605 other names/signatures. These are valid prepared tables and references: malformed/cyclic data, bounds safety, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **731 checked names** (651 behavior/helper and 80 property/type), **2,137 mapped**, **7,469 unmapped**, among 9,606 defined functions.

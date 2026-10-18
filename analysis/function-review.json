@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "674 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "675 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8721,
-    "other_names": 885,
-    "verification": "complete_inventory_matches_baseline_plus_674_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8720,
+    "other_names": 886,
+    "verification": "complete_inventory_matches_baseline_plus_675_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16959,6 +16959,31 @@
       "caveats": [
         "Successful allocation,valid nonzero keys,power-of-two old tables and small finite sizes only;allocation failure/overflow,full tables,concurrency and live game unverified.",
         "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "1408c4f50",
+      "original_name": "FUN_1408c4f50",
+      "applied_name": "ConvertThingReferencesBetweenIdsAndIndices",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ConvertThingReferencesBetweenIdsAndIndices(void * world, void * alternateIndexRecords, void * thing, uchar toIds)",
+      "evidence": [
+        "Complete975-instruction reference conversion helper and pseudocode reviewed;original bytes verified.",
+        "Selected fixed per-kind fields and metadata-driven fields convert between IDs and indices. ID resolution prefers world hash then fallback pool;reverse conversion reads world object pointers or alternate32-byte records.",
+        "768 native cases cover all handled kinds,both directions and index sources,kind high bit,sentinels,missing IDs,tagged references and representative unaffected kinds.",
+        "168 followup executions verify live/fallback collision chains,world lookup precedence and absent metadata. Some non-metadata cases repeat.",
+        "Independent reopening verifies name,void four-argument ABI,decompilation,original bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Direct valid ID hash hits;collision-chain behavior and missing metadata remain to verify.",
+        "Valid in-range positive references only;reverse conversion does not establish bounds safety.",
+        "No full producer or live-game behavior claim.",
+        "Collision-chain and absent-metadata gaps in the baseline receipt are covered by the separate168-execution followup;malformed/cyclic input,bounds safety and live-game behavior remain unverified.",
+        "Analyst descriptive name and working ABI,not original C++ declaration."
       ]
     }
   ],
