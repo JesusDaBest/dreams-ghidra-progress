@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 742,
+    "checked_and_applied_names": 743,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 742,
+    "verified_names": 743,
     "function_count": 9607,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "1411a32b0",
       "141330c40"
     ],
-    "scope": "685 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "686 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20556,6 +20556,74 @@
       "Smallvalidresourcetrees;deeptrees/scratchlimit,malformedinputs,concurrency andlivegameunverified.",
       "Outflagdescribesobservedfetchstatus1;broadersemanticmeaningnotclaimed.",
       "Analystname andworkingopaqueABI notoriginalC++declarations;noexactMMsource/buildmatch."
+    ],
+    "new_name_credit": 1
+  },
+  "image_box_downsample_name_checkpoint": {
+    "target": {
+      "name": "DownsampleImageBytes4x4",
+      "signature": "void PS4_SYSV DownsampleImageBytes4x4(uchar * output, uchar * source, uint width, uint height, uint channels)"
+    },
+    "native_check": {
+      "native_cases": 360,
+      "original_instructions": 346,
+      "findings": [
+        "Originalresizehelpercomputes4x4unsignedbyteboxaverage,integerfloor(sum16/16),withquarterwidth/height.",
+        "0..4channels,divisible4sizes,inplace/separatebuffers andthreepatterns checkedbycompleteguardedbuffers againstindependentoracle."
+      ],
+      "models": [
+        "Onlylocalstackcanary;no calledfunction replaced."
+      ],
+      "limits": [
+        "Selectedsmallsizes;zero/invaliddimensions,channelsabove4,partialoverlap,actual1920x1080input andlivegameunverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "additional_checks": {
+      "photo-cache-full-size-downsample-native-check.json": {
+        "native_cases": 2,
+        "original_instructions": 346,
+        "findings": [
+          "Originaldownsamplerhandlesactual1920x1080to480x270dimensionsinplacefor1and4channels.",
+          "Completeguardedsource/outputstorage matchesindependent16-sampleflooraverage;bytesaftercompactoutputarepreserved."
+        ],
+        "models": [
+          "Onlylocalstackcanary;no calledfunction replaced."
+        ],
+        "limits": [
+          "Selecteddeterministicbytepattern;actualcodec/loaderchainandGPU/livegameunverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "photo-cache-loader-original-resize-connected-native-check.json": {
+        "native_cases": 2,
+        "findings": [
+          "OriginalPhotoCacheloadercallsoriginal346-instructionboxdownsampleratreal1920x1080dimensionsfor1and4channels.",
+          "Completeguardeddecodedbuffer matchesindependent480x270boxaverage;loaderpointerreturn,flags,refrelease andcallorderchecked."
+        ],
+        "models": [
+          "Resourcefetch,imagecodec andfree remainexplicitmodels;resizebodyisoriginal."
+        ],
+        "limits": [
+          "Implicitresourcepath,specialdimensions,deterministicbytepatternonly;actualIO/codec,concurrency andlivegameunverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    },
+    "evidence": [
+      "Complete346-instruction downsampler reviewed andmatched tooriginalbytes;PhotoCacheloader andresourcecallertraced.",
+      "Each4x4blockaveragedperchannelusingfloor(sum16/16),producingquarterwidth/height.",
+      "360smallnativecases verify0..4channels,inplace/separatebuffers,threepatterns andcompleteguards.",
+      "Twoactual1920x1080inplacecases andtwooriginal-loaderconnectedcases verify1/4channels.",
+      "Independent reopening verifies fiveGPinputs,voidreturn,decompilation,unchangedbytes andall9606othernames/signatures."
+    ],
+    "limits": [
+      "Invaliddimensions/diagnostics,channelsabove4,partialoverlap andbroaderintegeredgecasesunverified.",
+      "Directresizeusesoriginalroutinewithoutcalledfunctionmodels;connectedloaderstillmodelsfetch/codec/free.",
+      "ActualIO/codec,GPU/livegameunverified;workingname/ABI notoriginalC++declarations.NoexactMMsource/buildmatch."
     ],
     "new_name_credit": 1
   }

@@ -6362,3 +6362,14 @@ Totals: **741 checked names** (661 behavior/helper and 80 property/type), **2,14
 The output flag is initialized to zero and set when the fetch helper returns numeric status 1. Its argument name records that observed condition rather than assigning an unproved higher-level meaning. Independent reopening verifies all seven GP/stack inputs, pointer return in RAX, decompilation, unchanged original instructions and all 9,606 other names/signatures. The conflicting default stack local was preserved privately before replacing its storage with the input parameter. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **742 checked names** (662 behavior/helper and 80 property/type), **2,148 mapped**, **7,459 unmapped**, among **9,607 defined functions**.
+
+
+### Byte-image 4-by-4 downsampler reviewed and named
+
+`DownsampleImageBytes4x4` names the complete 346-instruction helper used by the photo-cache loader and another resource routine. It averages each channel over a 4-by-4 source block using integer truncation, producing quarter-width/height output. The saved working signature describes byte pointers, unsigned dimensions/channel count and a void return.
+
+**360 native cases** verify selected dimensions divisible by four, zero through four channels, in-place/separate buffers and three byte patterns. Two additional cases use actual **1920-by-1080 to 480-by-270** dimensions for one and four channels. Two connected cases run the original photo-cache loader with this original downsampler, replacing its earlier resize model. Complete guarded storage matches an independent calculation.
+
+Direct downsample tests replace no called functions. Connected loader tests still model fetching, decoding and freeing. Invalid dimensions and diagnostic logging, channels above four, partial overlap, broader integer edge cases, actual I/O/codec execution, GPU work and live-game behavior remain unverified. Independent reopening verifies the saved name/signature, decompilation, unchanged bytes and all 9,606 other names/signatures. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **743 checked names** (663 behavior/helper and 80 property/type), **2,149 mapped**, **7,458 unmapped**, among **9,607 defined functions**.
