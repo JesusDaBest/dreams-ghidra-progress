@@ -17451,6 +17451,36 @@
       "Higher-level handling/reset of the owner failure flag and the consequences of lost queue entries remain unresolved; this is not a demonstrated application defect.",
       "No exact MM developer-source/build match or live editor verification."
     ],
-    "new_name_credit": 1
+    "new_name_credit": 1,
+    "follow_up": "owner_queue_failure_reset_checkpoint establishes a bounded update-path failure reset; whole recovery remains unresolved."
+  },
+  "owner_queue_failure_reset_checkpoint": {
+    "native_check": {
+      "native_cases": 162,
+      "original_block_bytes_verified": 60,
+      "original_block_instructions_verified": 13,
+      "original_drain_instructions_verified": 89,
+      "finding": "Original bounded update block calls DrainPendingRecordedOperations only when owner status+bd7208 is0, stores a nonzero drain result there, then clears owner queue failure+7a4c44 regardless of preexisting status or drain result. Observed following helper arguments are owner,0,1. Drain clears queue length when called, including failure/no-target cases; skipped drain leaves length unchanged. All remaining owner bytes and event buffer unchanged.",
+      "limits": [
+        "Only60-byte update block and original89-instruction drain executed; preflight/replay and following helper are explicit observers.",
+        "Opaque prepared queue ranges and up to2 controlled contexts; no actual event decoding, whole update function or live game behavior.",
+        "Raw displacement scan finds direct references only; indirect/overlapping stores and full recovery semantics remain unresolved."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original executable displacement search found four direct references: constructor zero-store, update-path zero-store, wrapper one-store and wrapper comparison. Original Ghidra instruction boundaries identify each; this search is not a complete indirect-reference audit.",
+      "New reset site is in a separate update function whose full body is not reviewed here. Its bounded60-byte/13-instruction block conditionally invokes the verified pending-operation drain, stores a nonzero result, then clears the owner queue failure byte.",
+      "162 controlled native cases cover preexisting owner status0/1/4, failure0/1, queue lengths0/22/4MiB, zero/one/two contexts and preflight results0/1/2.",
+      "Original89-instruction drain executes; preflight/replay and following helper are explicit observers. Following helper receives owner,0,1 in every case.",
+      "Exact owner bytes and queue payload preserved except modeled status, used length and failure reset. Original block and drain bytes match executing instructions."
+    ],
+    "limits": [
+      "Only60-byte update block and original89-instruction drain executed; preflight/replay and following helper are explicit observers.",
+      "Opaque prepared queue ranges and up to2 controlled contexts; no actual event decoding, whole update function or live game behavior.",
+      "Raw displacement scan finds direct references only; indirect/overlapping stores and full recovery semantics remain unresolved."
+    ],
+    "new_name_credit": 0
   }
 }

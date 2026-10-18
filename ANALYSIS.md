@@ -6119,3 +6119,14 @@ A 17-argument working SysV signature follows the observed register/stack layout 
 These exact fixture results do not establish a game defect: wider recovery/reset behavior is still unresolved. Other event-family guards, special callbacks, malformed ranges, arithmetic wrap, concurrency and live editor behavior remain outside this batch. Prior combined wire/node history and actual inverse-replay checkpoints exercise this same original wrapper within their stated limits.
 
 Totals: 705 checked names (628 behavior/helper and 77 property/type reviews), 2,114 mapped functions and 7,489 unmapped among 9,603 defined functions. No exact MM livestream source/build match is claimed.
+
+
+### Owner queue failure has a later reset point
+
+The queue failure byte observed in `ApplyEditEventWithInverseHistory` is sticky across subsequent appends, but not permanent. An original executable displacement search located a later zero-store in an update-path block, as well as constructor initialization and the previously verified wrapper store/comparison. Ghidra instruction boundaries and original bytes confirm these direct references; indirect or overlapping stores are not exhaustively covered.
+
+The bounded update block checks the owner's status field. When status is zero it calls `DrainPendingRecordedOperations` and stores a nonzero return value as the owner status. It then clears the queue failure byte regardless of initial status or drain outcome, before calling another update helper with arguments `(owner, 0, 1)`.
+
+162 native cases execute that original 60-byte block and the original 89-instruction drain. Cases vary initial status 0/1/4, failure on/off, queue lengths 0/22/4MiB, zero/one/two contexts and preflight results 0/1/2. When called, the drain clears used length on success, preflight failure or absent targets. When draining is skipped because status is already nonzero, length remains unchanged. Failure clears in all cases. Other owner bytes and queue payload remain unchanged.
+
+Preflight, replay and the following update helper are explicit observers in this test. No actual queued events are decoded here, and the surrounding update function is not fully reviewed. This establishes a concrete reset point without proving full recovery, whole editor behavior, permanent data loss or a game defect. Checked-name and mapping counts remain unchanged at 705 and 2,114.
