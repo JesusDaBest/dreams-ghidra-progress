@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "659 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "660 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9605,
-    "default_fun_names": 8736,
-    "other_names": 869,
-    "verification": "complete_inventory_matches_baseline_plus_659_renames_and_54_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8735,
+    "other_names": 870,
+    "verification": "complete_inventory_matches_baseline_plus_660_renames_and_54_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16542,6 +16542,32 @@
         "No complete native visitor execution;virtual sink implementation and serialized writer mutation unverified.",
         "Working pointers do not recover original C++ classes or full source record layout.",
         "No runtime angular-sensing calculation or exact MM source/build match claimed."
+      ]
+    },
+    {
+      "address": "1404c9e40",
+      "original_name": "FUN_1404c9e40",
+      "applied_name": "VisitMovementSensorProperties",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "properties_or_type_registration",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV VisitMovementSensorProperties(void * visitor, void * movementSensor)",
+      "evidence": [
+        "Original EThingType MovementSensor52 registration and property-dispatcher target byte verified.",
+        "Complete997-instruction visitor and fresh pseudocode reviewed,including version gates,exact name-or-slash filtering and motion-reference resolution.",
+        "Velocity/acceleration outputs and XYZ components,LocalSpace,OldVelocities,gizmo orientations,XYZOutput and three world-direction vectors recorded from original field loads and literals.",
+        "MotionReferenceThing+130 matches independent initializer and remapping traces.",
+        "Independent reopening verifies name,opaque two-pointer ABI,decompilation and unchanged bytes and all9604 other names/signatures."
+      ],
+      "caveats": [
+        "Called Pos/Canvas/Name visitors and actual virtual sinks not reviewed here.",
+        "Internal serialized versions not equated with game releases.",
+        "No complete native visitor execution,writer mutation,all filters/version paths or runtime velocity/acceleration calculation verified.",
+        "No complete native visitor execution;actual virtual sink behavior and serialized writer mutation remain unverified.",
+        "Opaque working pointers do not recover original C++ classes or full source record layout.",
+        "No runtime motion calculation or exact MM source/build match claimed."
       ]
     }
   ],

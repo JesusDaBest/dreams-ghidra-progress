@@ -5781,3 +5781,14 @@ The body gates world/local gizmo orientations from internal serialized version 0
 Complete pseudocode plus original registration, dispatch and field/call/version assembly support this descriptive property-interface name. Independent reopening verified its opaque visitor/object-pointer signature, complete decompilation, unchanged bytes and all 9,604 other names/signatures. This batch does not execute the complete visitor or establish actual virtual sink behavior, writer mutation or runtime angular calculations.
 
 Totals: **714 checked names** (635 behavior/helper and 79 property/type reviews), 2,121 mapped and 7,484 unmapped among 9,605 defined functions. This is one reviewed property interface, not complete RotationSensor behavior or an exact Media Molecule source/build match.
+
+
+### MovementSensor property interface reviewed and named
+
+`VisitMovementSensorProperties` now names the complete 997-instruction visitor selected by original `EThingType` value 52. Its fields include Power (+0xC0), Halfsize (+0xC8), IsGluedGadget (+0xD0), VelocityOutput and X/Y/Z components (+0xD4 through +0xE0), AccelerationOutput and X/Y/Z components (+0xE4 through +0xF0), LocalSpace (+0xF4), OldVelocities (+0x100), world/local gizmo orientations (+0x110/+0x120), MotionReferenceThing (+0x130), XYZOutput (+0x140), Name (+0x150) and WorldDirectionOutputX/Y/Z vectors (+0x160/+0x170/+0x180), alongside shared position/canvas properties.
+
+Internal serialized-version gates include gizmo orientations from 0x1C3, motion reference from 0x1C5, ParentFromModel from 0x2D9, XYZOutput from 0x2E7, Name from 0x445, IsGluedGadget from 0x473 and world-direction vectors from 0x480. A pre-0x1C3 vector placeholder remains. These are serialization versions, not game release labels. The motion-reference block validates a packed index and can resolve a persistent ID for nested property dispatch.
+
+Complete pseudocode and original registration/dispatch, field loads, callback boundaries and version assembly support this property-interface name. Independent reopening verifies the opaque visitor/object-pointer signature, complete decompilation and unchanged bytes and all 9,604 other names/signatures. No complete native visitor execution,actual virtual sink/writer behavior or runtime velocity/acceleration calculations are established by this batch.
+
+All three related sensor property visitors now have reviewed descriptive names. Their runtime sensing implementations remain unverified. Totals: **715 checked names** (635 behavior/helper and 80 property/type reviews), 2,121 mapped and 7,484 unmapped among 9,605 defined functions. No whole-subsystem completion or exact Media Molecule source/build match is claimed.

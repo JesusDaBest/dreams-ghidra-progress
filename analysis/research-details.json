@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 714,
+    "checked_and_applied_names": 715,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 714,
+    "verified_names": 715,
     "function_count": 9605,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "14093af90",
       "14093b900"
     ],
-    "scope": "659 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "660 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -18236,6 +18236,78 @@
       "No complete native visitor execution;virtual sink implementation and serialized writer mutation unverified.",
       "Working pointers do not recover original C++ classes or full source record layout.",
       "No runtime angular-sensing calculation or exact MM source/build match claimed."
+    ],
+    "new_name_credit": 1,
+    "reviewed_scope": "properties_or_type_registration"
+  },
+  "movement_sensor_property_name_checkpoint": {
+    "target": {
+      "name": "VisitMovementSensorProperties",
+      "signature": "void PS4_SYSV VisitMovementSensorProperties(void * visitor, void * movementSensor)"
+    },
+    "static_review": {
+      "address": "1404c9e40",
+      "original_name": "FUN_1404c9e40",
+      "instructions": 997,
+      "read_scope": "Complete fresh pseudocode and native field/call/version boundaries;no hardware visitor execution.",
+      "binding": "Original EThingType MovementSensor52 registration and property dispatcher direct call verified.",
+      "properties": {
+        "Power": "0xc0",
+        "Halfsize": "0xc8",
+        "IsGluedGadget": "0xd0",
+        "VelocityOutput": "0xd4",
+        "VelocityOutputX": "0xd8",
+        "VelocityOutputY": "0xdc",
+        "VelocityOutputZ": "0xe0",
+        "AccelerationOutput": "0xe4",
+        "AccelerationOutputX": "0xe8",
+        "AccelerationOutputY": "0xec",
+        "AccelerationOutputZ": "0xf0",
+        "LocalSpace": "0xf4",
+        "OldVelocities": "0x100",
+        "GizmoOrientationWorld": "0x110",
+        "GizmoOrientationLocal": "0x120",
+        "MotionReferenceThing": "0x130",
+        "XYZOutput": "0x140",
+        "Name": "0x150",
+        "WorldDirectionOutputX": "0x160",
+        "WorldDirectionOutputY": "0x170",
+        "WorldDirectionOutputZ": "0x180"
+      },
+      "version_gates": {
+        "ParentFromModel": "version>=0x2d9",
+        "IsGluedGadget": "version>=0x473;earlier reference placeholder",
+        "legacy_vector_placeholder": "version<0x1c3",
+        "GizmoOrientationWorld_and_Local": "version>=0x1c3",
+        "MotionReferenceThing": "version>=0x1c5",
+        "XYZOutput": "version>=0x2e7",
+        "Name": "version>=0x445",
+        "WorldDirectionOutputX_Y_Z": "version>=0x480"
+      },
+      "reference_resolution": "Signedlow26-bit index;bounds/null guards;optional nested persistent-ID resolution and recursive property dispatch.",
+      "limits": [
+        "Called Pos/Canvas/Name visitors and actual virtual sinks not reviewed here.",
+        "Internal serialized versions not equated with game releases.",
+        "No complete native visitor execution,writer mutation,all filters/version paths or runtime velocity/acceleration calculation verified."
+      ],
+      "native_sha256": "87d6c443344f4ac79237c16299273864f6e9b2fb753268233c65aeb607331327",
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Original EThingType MovementSensor52 registration and property-dispatcher target byte verified.",
+      "Complete997-instruction visitor and fresh pseudocode reviewed,including version gates,exact name-or-slash filtering and motion-reference resolution.",
+      "Velocity/acceleration outputs and XYZ components,LocalSpace,OldVelocities,gizmo orientations,XYZOutput and three world-direction vectors recorded from original field loads and literals.",
+      "MotionReferenceThing+130 matches independent initializer and remapping traces.",
+      "Independent reopening verifies name,opaque two-pointer ABI,decompilation and unchanged bytes and all9604 other names/signatures."
+    ],
+    "limits": [
+      "Called Pos/Canvas/Name visitors and actual virtual sinks not reviewed here.",
+      "Internal serialized versions not equated with game releases.",
+      "No complete native visitor execution,writer mutation,all filters/version paths or runtime velocity/acceleration calculation verified.",
+      "No complete native visitor execution;actual virtual sink behavior and serialized writer mutation remain unverified.",
+      "Opaque working pointers do not recover original C++ classes or full source record layout.",
+      "No runtime motion calculation or exact MM source/build match claimed."
     ],
     "new_name_credit": 1,
     "reviewed_scope": "properties_or_type_registration"

@@ -3,27 +3,28 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 668,
-    "todo": 1453,
+    "done": 669,
+    "todo": 1452,
     "total": 2121,
     "behavior_or_helpers_reviewed": 595,
-    "properties_or_types_reviewed": 73,
+    "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
       {
         "name": "gadgets-logic",
         "label": "Gadgets & logic",
-        "done": 107,
-        "todo": 405,
+        "done": 108,
+        "todo": 404,
         "total": 512,
         "behavior_or_helpers_reviewed": 58,
-        "properties_or_types_reviewed": 49,
+        "properties_or_types_reviewed": 50,
         "runtime_functions_identified": 56,
         "property_type_functions_identified": 456,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "VisitMicrochipProperties",
+          "VisitMovementSensorProperties",
           "VisitAngleSensorProperties",
           "VisitRotationSensorProperties",
           "VisitFogProperties",
@@ -172,7 +173,6 @@
           "0x1404c5df0",
           "0x1404c62c0",
           "0x1404c8270",
-          "0x1404c9e40",
           "0x1404cc8e0",
           "0x1404ccd70",
           "0x1404cd200",
@@ -540,6 +540,7 @@
         ],
         "done_addresses": [
           "1404a7180",
+          "1404c9e40",
           "1404cb010",
           "1404cb9a0",
           "1404d6660",
@@ -688,7 +689,6 @@
           "1404c5df0",
           "1404c62c0",
           "1404c8270",
-          "1404c9e40",
           "1404cc8e0",
           "1404ccd70",
           "1404cd200",
@@ -10562,16 +10562,17 @@
           {
             "name": "gadgets-logic/sensors",
             "label": "Sensors & detection",
-            "done": 2,
-            "todo": 36,
+            "done": 3,
+            "todo": 35,
             "total": 38,
             "behavior_or_helpers_reviewed": 0,
-            "properties_or_types_reviewed": 2,
+            "properties_or_types_reviewed": 3,
             "runtime_functions_identified": 0,
             "property_type_functions_identified": 38,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "VisitMovementSensorProperties",
               "VisitAngleSensorProperties",
               "VisitRotationSensorProperties"
             ],
@@ -10579,7 +10580,6 @@
               "0x140492de0",
               "0x1404c5720",
               "0x1404c5df0",
-              "0x1404c9e40",
               "0x1404cc8e0",
               "0x1404d0410",
               "0x1404d1370",
@@ -10614,6 +10614,7 @@
               "0x140d88020"
             ],
             "done_addresses": [
+              "1404c9e40",
               "1404cb010",
               "1404cb9a0"
             ],
@@ -10621,7 +10622,6 @@
               "140492de0",
               "1404c5720",
               "1404c5df0",
-              "1404c9e40",
               "1404cc8e0",
               "1404d0410",
               "1404d1370",
@@ -11206,23 +11206,25 @@
               {
                 "name": "gadgets-logic/sensors/movementsensor",
                 "label": "Movement Sensor",
-                "done": 0,
-                "todo": 2,
+                "done": 1,
+                "todo": 1,
                 "total": 2,
                 "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
+                "properties_or_types_reviewed": 1,
                 "runtime_functions_identified": 0,
                 "property_type_functions_identified": 2,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
-                "done_names": [],
+                "done_names": [
+                  "VisitMovementSensorProperties"
+                ],
                 "todo_names": [
-                  "0x1404c9e40",
                   "0x140d56940"
                 ],
-                "done_addresses": [],
+                "done_addresses": [
+                  "1404c9e40"
+                ],
                 "todo_addresses": [
-                  "1404c9e40",
                   "140d56940"
                 ],
                 "unresolved_addresses": [],
@@ -11230,23 +11232,25 @@
                   {
                     "name": "gadgets-logic/sensors/movementsensor/properties-types",
                     "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
+                    "done": 1,
+                    "todo": 1,
                     "total": 2,
                     "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
                     "runtime_functions_identified": 0,
                     "property_type_functions_identified": 2,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
-                    "done_names": [],
+                    "done_names": [
+                      "VisitMovementSensorProperties"
+                    ],
                     "todo_names": [
-                      "0x1404c9e40",
                       "0x140d56940"
                     ],
-                    "done_addresses": [],
+                    "done_addresses": [
+                      "1404c9e40"
+                    ],
                     "todo_addresses": [
-                      "1404c9e40",
                       "140d56940"
                     ],
                     "unresolved_addresses": [],
