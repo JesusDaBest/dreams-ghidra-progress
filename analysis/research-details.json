@@ -16591,5 +16591,48 @@
       "Opaque world/reference source types and broader caller behavior remain unresolved."
     ],
     "new_name_credit": 1
+  },
+  "keyed_record_insertion_event_checkpoint": {
+    "address": "140b35aa0",
+    "name": "ApplyKeyedRecordInsertionEvent",
+    "signature": "void PS4_SYSV ApplyKeyedRecordInsertionEvent(void * owner, void * world, byte player, ulonglong keyLow, ulonglong keyHigh, float order, ulonglong positionXYBits)",
+    "native_instructions": 70,
+    "native_check": {
+      "native_cases": 216,
+      "insertions": 144,
+      "duplicates_preserved": 72,
+      "inverse_replay_cases": 48,
+      "inverse_replays_removing_preexisting_duplicate": 16,
+      "original_native_instructions_verified": {
+        "140b35aa0": 70,
+        "140b1b7b0": 923,
+        "140b19cc0": 324,
+        "140b18fa0": 667,
+        "140767e80": 112
+      },
+      "dispatcher_original_bytes_verified": 267374,
+      "finding": "Original70-instruction producer receives owner/world/player/key halves plus orderXMM0low4 and coordinatepairXMM1low8; constructs30-byte fe06. Original wrapper/history/dispatcher/insertion execute together. Owner recording queue gets30-byte insertion; enabled selected history streams get22-byte inverse fe08. Both/second/quiet routes and enabled/missing/disabled contexts checked, with counts0/1/3, actual collision chains, signedzero and two coordinatepairs. Surviving duplicates preserve existing coordinates but still produce inverse removal history using the found record order bits, including retained negativezero. Full world/owner/history and input comparisons except two unassigned append padding bytes.",
+      "inverse_finding": "48 actual history packets replay through original range reader/wrapper/dispatcher/deletion. They remove the newly inserted record in32cases and the preexisting duplicate in16cases. Allocation counts and padding remain; full world and input guards compared. This isolated inverse replay doesnot establish complete user-facing undo/redo correctness or a game bug.",
+      "limits": [
+        "Prepared globals, Machine key, player0 and finite coherent tables; no full-capacity producer case, malformed graphs, concurrency or gameplay.",
+        "Two unassigned append padding bytes excluded from expected semantic comparison.",
+        "Higher-level transaction coalescing and complete undo/redo sessions remain untested."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete70-instruction original producer body and pseudocode read; original bytes matched. Mixed GP/XMM inputs verified: order low4bytesXMM0, coordinate pair low8bytesXMM1.",
+      "216 connected native cases execute original producer, wrapper, history router/writer, dispatcher and insertion. Owner30-byte fe06 and selected enabled-history22-byte fe08 output verified across both/second/quiet routes, enabled/missing/disabled contexts, counts0/1/3, real collisions, duplicates and signed zero.",
+      "48 actual history packets replay through original range reader/wrapper/dispatcher/deletion:32 remove new records and16 remove preexisting duplicates. Full world/owner/history/input checks except two unassigned append padding bytes.",
+      "Independent reopening confirms descriptive name and seven-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not original source declarations. Packed XY uint64 carrier describes register bits, not recovered source vector type.",
+      "Prepared globals, Machine key, player0 and coherent finite tables; full-capacity producer, all routing flag branches, malformed graphs, concurrency and gameplay untested.",
+      "Two unassigned append padding bytes excluded from expected semantic comparisons.",
+      "Isolated duplicate inverse replay does not establish whole user-facing undo/redo correctness or a game bug; higher-level transaction coalescing unresolved."
+    ],
+    "new_name_credit": 1
   }
 }

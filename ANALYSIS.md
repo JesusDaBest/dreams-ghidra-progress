@@ -5978,3 +5978,16 @@ Traversal indexes objects using the signed low 26 bits, checks count and null po
 Two more local callers of the keyed-record validity predicate were traced and byte-checked (58 and 23 instructions). One filters records, remaps three IDs and passes the key/order/coordinate payload to another producer near a game-merger diagnostic. The other removes invalid records near a serialization diagnostic. These are local branch findings; full enclosing function boundaries and merge/serialization behavior remain unresolved, and neither branch was executed in this harness.
 
 Independent reopening verifies the helper's name and working ABI; original bytes and all other 9,602 function names/signatures are unchanged. Totals: 694 checked names, 2,106 mapped functions and 7,497 unmapped among 9,603 currently defined. Review and mapping counts are not whole-game completion.
+
+
+### Keyed-record insertion event producer and actual inverse replay
+
+Saved `ApplyKeyedRecordInsertionEvent` after reading and byte-verifying its complete 70-instruction body. It constructs a 30-byte `fe06` insertion event containing the 16-byte key, float order and two coordinate floats, then invokes the recording/history-aware application wrapper. Assembly and native execution establish the mixed register inputs: owner/world/player and two key halves in general registers, order in the low four bytes of XMM0, and packed XY bits in the low eight bytes of XMM1. The working uint64 XY carrier documents register bits without claiming an original source vector type.
+
+216 connected native cases execute the original producer, packet wrapper, history router/writer, dispatcher and insertion helper. They cover both/second/quiet routes, enabled/missing/disabled history contexts, allocated counts 0, 1 and 3, real collision chains, duplicate preservation, signed zero and two coordinate pairs. The owner recording queue receives the 30-byte insertion; enabled selected history streams receive a 22-byte inverse `fe08` removal.
+
+A duplicate preserves existing coordinates but still emits inverse removal history. That inverse uses the found record's order bits, including an existing negative zero when incoming positive zero compares equal. Replaying 48 actual captured history packets through the original range reader, wrapper, dispatcher and deletion helper removes newly inserted records in 32 cases and preexisting duplicates in 16. This isolates the low-level behavior; it does not prove a user-facing undo bug because higher-level transaction coalescing and full undo/redo sessions remain untested.
+
+Complete world/owner/history/input comparisons pass, excluding only two append-slot padding bytes that the dispatcher does not assign. Prepared globals, Machine key, player0 and coherent finite tables remain fixtures. Full-capacity producer execution, every routing-flag branch, malformed graphs, concurrency and gameplay remain unresolved. Independent reopening verifies the descriptive name and seven-input working signature, with original bytes and other 9,602 names/signatures unchanged.
+
+Totals: 695 checked names, 2,107 mapped functions and 7,496 unmapped among 9,603 currently defined. Review and mapping counts are not whole-game completion.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9603,
-  "mapped_total": 2106,
-  "unmapped_total": 7497,
+  "mapped_total": 2107,
+  "unmapped_total": 7496,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -52947,6 +52947,32 @@
             "13824 direct native cases across 16 finite forest/count batches plus four explicit edge cases verify signed low26-bit indexing, complete-reference equality, tagged parents, sentinel rejection, null/out-of-range slots and counts0/1/4/8.",
             "Complete world/object snapshots unchanged after every batch. Additional 284 key-validity cases execute this original helper.",
             "Independent reopening verifies descriptive name, one-byte bool return and opaque world pointer/two uint32 reference inputs; other9602 names/signatures and native bytes unchanged."
+          ]
+        }
+      ],
+      "code_sha256_basis": "native_owned_instructions"
+    },
+    "140b35aa0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Keyed record insertion event producer used by game-merger and other local callers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Builds30-byte fe06 packet from key/order/XY carriers and applies through recording/history-aware event wrapper.",
+      "code_sha256": "badcc278d4f8535ef8df24ae0c18e22ca18c37de9a3ef15f749c37c5827b8c92",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyKeyedRecordInsertionEvent",
+          "support": [
+            "Complete70-instruction original producer body and pseudocode read; original bytes matched. Mixed GP/XMM inputs verified: order low4bytesXMM0, coordinate pair low8bytesXMM1.",
+            "216 connected native cases execute original producer, wrapper, history router/writer, dispatcher and insertion. Owner30-byte fe06 and selected enabled-history22-byte fe08 output verified across both/second/quiet routes, enabled/missing/disabled contexts, counts0/1/3, real collisions, duplicates and signed zero.",
+            "48 actual history packets replay through original range reader/wrapper/dispatcher/deletion:32 remove new records and16 remove preexisting duplicates. Full world/owner/history/input checks except two unassigned append padding bytes.",
+            "Independent reopening confirms descriptive name and seven-input custom SysV signature; other9602 names/signatures and original bytes unchanged."
           ]
         }
       ],
