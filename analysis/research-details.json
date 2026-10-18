@@ -24530,5 +24530,25 @@
     ],
     "native_cases": 1024,
     "new_name_credit": 1
+  },
+  "sprite_cache_worker_and_scratch_followup": {
+    "queue_function": "1413db1d0",
+    "processing_function": "1413d5be0",
+    "evidence": [
+      "Original unwind-bounded223-instruction queue service body read; consumesindices andcoalesceslaterpendingobjectID/frame matches.",
+      "Selected index passed toprocessingcallee. Completion-tail clearsresource roots,stores summary vectors,refreshestimestamp andsetsentry state1;lookuprequiresstate1.",
+      "Allocation/eviction failure exitsetsrecord+60 sentinel andbypassesready-state write.",
+      "Initial449-instruction prepass triggered bycache shortrecord/laterbit30 bytes;copiesmetadata,bounds andordinal into72-byte scratchrecords.",
+      "60 native bounds cases coveridentity,90/180-degree Y orientations,positive/negative uniformscales andtranslations. Earlier12-case setoverlapsandisnotadded.",
+      "120 native descriptor-selection cases verifyframefiltering,shortrecord omission andlaterbit30 suppression;106 scratchrecords checked."
+    ],
+    "limits": [
+      "Queue service andcompletiontail arestatictraces,notthreadruntimeverification.",
+      "Prepass nativefixtureexitsbeforeallocation/restofprocessor;platformimportsadapted;singleleaf/nonreplicatedmetadata.",
+      "Prepass selection fixturesforcecacheflag;notallconstructorreachability established.",
+      "Fullprocessor geometry,allocation,eviction,downstreamscratchselection,concurrency,malformeddata andGPU remainincomplete.",
+      "No newnamecredit orwholefunctioncompletioncredit."
+    ],
+    "new_name_credit": 0
   }
 }

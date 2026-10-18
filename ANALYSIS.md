@@ -7566,3 +7566,14 @@ Frame-specific total point counts cap at 65,536; the aggregate frame-zero total 
 Two controlled native fixture sets total **1,024 cases**, covering small and large declared counts, frame filtering, variant aggregation, rejection gates, record fields, resource marks and queue writes. Mutex/thread-ID imports were adapted; real eviction was replaced by a failure stub. Replication, multileaf execution, actual workers, concurrency and GPU work remain unverified. Large declared counts use a deliberately small point leaf because this helper does not read point geometry.
 
 The descriptive name and nine-input void working ABI persisted after independent reopening. Native bytes and all other function names/signatures are unchanged. Totals: **784 checked names**, **2,186 mapped functions**, **7,427 unmapped**, among **9,613 defined functions**. No whole-Sprite completion credit is claimed.
+
+
+### Sprite cache worker and bounds prepass: partial behavior trace
+
+The original queue-service loop consumes preparation indices and coalesces later pending entries sharing object ID and frame. Superseded entries receive state 2 and cleared resource roots; the selected entry is passed to a larger processing routine. The processing completion tail writes summary vectors, clears resource roots, refreshes its timestamp and sets state 1, which the reviewed lookup requires before returning the entry. A separate allocation/eviction failure exit bypasses that ready-state write. These are static traces, not a running-thread test.
+
+The processor begins with an optional scratch prepass when its recorded short-stroke or later-bit-30 flag is set. It copies metadata, calculated bounds and an iteration ordinal into 72-byte scratch records. **60 native bounds cases** match rotated/scaled/translated point bounds expanded by absolute scaled radius, using three selected orientations and positive/negative scales. The earlier 12-case check overlaps those 60 cases and is not added to the total.
+
+**120 native selection cases** verify frame filtering, zero/single-point omission and suppression of later bit-30 descriptors after the first actual scratch append; 106 resulting scratch records were checked. Short descriptors do not clear the first-retained condition. These fixtures force the prepass flag, use a single nonreplicated metadata leaf and jump to the original epilogue before the rest of the processor. Required read-only constant pages were added after two initial harness mapping failures; no expected geometry result was changed.
+
+The larger processing routine, downstream scratch-selection math, real allocation/eviction, concurrency, malformed resources and GPU execution remain incomplete. No additional function-name or whole-function completion credit is added.
