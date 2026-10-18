@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9607,
-  "mapped_total": 2151,
-  "unmapped_total": 7456,
+  "mapped_total": 2152,
+  "unmapped_total": 7455,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54395,6 +54395,33 @@
             "82 connected loader/decoder cases include actual1920x1080->480x270 resizing;54 linear single-mip writes and36 mip-chain writes verify complete backing storage.",
             "36 original compressed-path solid-block cases independently decode as BC1/BC3-compatible with RGB error<=1 and exact constant alpha.",
             "Independent offline reopening verifies working ABI,unchanged bytes andall9606 other function names/signatures."
+          ]
+        }
+      ]
+    },
+    "14132ea30": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete RGBA image backing writer,BC compression,mip generation andoriginalPhotoCache worker caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original function review and native conversion checks.",
+      "code_sha256": "b6cb87361eb1d84ce3a709fbff2976b6f0b93b3bdb1e97a578b02df385ea284a",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteRgbaPixelsToImageMipChain",
+          "support": [
+            "Complete2007-instruction image writer reviewed against original bytes in six accounted sections;worker callsite traced.",
+            "54 complete linear image writes and36 mip chains match independent byte-level backing storage andfinalownedbuffer.",
+            "524 full BC1-compatible color outputs match independentcovariance/projection/refinement encoder;768 BC3alpha blocks match exactindependent encoding.",
+            "1536 nonuniform color payload cases confirmalpha independence andfinalprojection indices;512lookupentries verified through coldinit/warmreuse andwholeglobalpage.",
+            "Independent offline reopen verifies fiveGPinputs,voidreturn,unchangedbytes andall9606otherfunctionnames/signatures."
           ]
         }
       ]

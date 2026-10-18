@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "688 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "689 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9607,
-    "default_fun_names": 8707,
-    "other_names": 900,
-    "verification": "complete_inventory_matches_baseline_plus_688_renames_and_56_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8706,
+    "other_names": 901,
+    "verification": "complete_inventory_matches_baseline_plus_689_renames_and_56_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17312,6 +17312,31 @@
         "Projection classification does not establish globally optimal compression;nonuniform full-encoder output,other tiled layouts,slices and malformed inputs remain unverified.",
         "Connected loader still models resource fetch;allocation/memory imports use local CRT adapters where needed.",
         "GPU synchronization,livegame and exact original C++/Media Molecule source-build match unverified."
+      ]
+    },
+    {
+      "address": "14132ea30",
+      "original_name": "FUN_14132ea30",
+      "applied_name": "WriteRgbaPixelsToImageMipChain",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV WriteRgbaPixelsToImageMipChain(void * imageContext, uchar * * ownedPixels, uint width, uint height, uint slice)",
+      "evidence": [
+        "Complete2007-instruction image writer reviewed against original bytes in six accounted sections;worker callsite traced.",
+        "54 complete linear image writes and36 mip chains match independent byte-level backing storage andfinalownedbuffer.",
+        "524 full BC1-compatible color outputs match independentcovariance/projection/refinement encoder;768 BC3alpha blocks match exactindependent encoding.",
+        "1536 nonuniform color payload cases confirmalpha independence andfinalprojection indices;512lookupentries verified through coldinit/warmreuse andwholeglobalpage.",
+        "Independent offline reopen verifies fiveGPinputs,voidreturn,unchangedbytes andall9606otherfunctionnames/signatures."
+      ],
+      "caveats": [
+        "Valid selected dimensions/formats35/37/10,tile13/31,mip1 orselectedlinear chains,slice0;otherlayouts/slices,edgecases andoverflow unverified.",
+        "Mipallocation isnot nullchecked beforewrites;OOM pathnotexecuted.Concurrentlookupfirst-use notverified.",
+        "Routinewrites CPUimagebacking memory;readypublication doesnotprove GPUcompletion;noGPU/livegame verification.",
+        "Second reference at14021bc17 hasnocontainingGhidrafunction andneedsseparatecaller audit.",
+        "Analyst workingname/ABI;strongstb_dxt structuralleadwithverifieddifferences,notexacthistoricalsourceorMMbuildmatch."
       ]
     }
   ],

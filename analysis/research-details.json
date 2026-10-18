@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 745,
+    "checked_and_applied_names": 746,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 745,
+    "verified_names": 746,
     "function_count": 9607,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "1411a32b0",
       "141330c40"
     ],
-    "scope": "688 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "689 existing-function renames,56 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -21202,6 +21202,145 @@
       "Projection classification does not establish globally optimal compression;nonuniform full-encoder output,other tiled layouts,slices and malformed inputs remain unverified.",
       "Connected loader still models resource fetch;allocation/memory imports use local CRT adapters where needed.",
       "GPU synchronization,livegame and exact original C++/Media Molecule source-build match unverified."
+    ],
+    "new_name_credit": 1
+  },
+  "image_mip_write_checkpoint": {
+    "target": {
+      "name": "WriteRgbaPixelsToImageMipChain",
+      "signature": "void PS4_SYSV WriteRgbaPixelsToImageMipChain(void * imageContext, uchar * * ownedPixels, uint width, uint height, uint slice)"
+    },
+    "checks": {
+      "photo-cache-image-write-linear-native-check.json": {
+        "native_cases": 54,
+        "findings": [
+          "Original2007-instruction image write routine executes its complete uncompressed format10 single-mip path with original descriptor/layout/address helpers.",
+          "RGBA bytes copied into mapped image backing memory exactly; complete1MiB destination including guards,context,source,arguments and pointer-to-pixels unchanged except intended destination bytes.",
+          "This tested path writes backing memory; it does not itself issue a GPU submission."
+        ],
+        "models": [
+          "Only verified memcpy import adapted to local CRT; original constructor and descriptor/layout helpers execute. Local stack canary."
+        ],
+        "limits": [
+          "Kind9,format10,tile31,mipcount1,slice0,selected positive dimensions.",
+          "Compressed-format branches,mip generation,other tiling/slices,GPU synchronization and live game unverified.",
+          "Full2007-instruction body not yet completely semantically reviewed; no new name credit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "photo-cache-image-write-mips-native-check.json": {
+        "native_cases": 36,
+        "findings": [
+          "Original image-write routine writes all requested linear RGBA mip levels and replaces the owned pixel pointer with the last generated level.",
+          "Each next level is a2x2 byte average with floor(sum4/4);dimensions are rounded up to multiples of four after halving.",
+          "Complete1MiB backing storage including untouched padding matches independently packed mip levels;final owned pixels match independent averaging.",
+          "Original malloc/free callsites execute through local CRT adapters;caller frees only the final returned pixel pointer."
+        ],
+        "models": [
+          "Verified malloc/free/memcpy imports adapted to local CRT;all image-write,descriptor,layout and averaging instructions original."
+        ],
+        "limits": [
+          "Selected32/64 power-of-two dimensions,mips2..4,format10,tile31,slice0.",
+          "Rounding/clamped-edge cases below4 or odd sizes,OOM,compressed formats,GPU synchronization andlivegame remainunverified.",
+          "Full2007-instruction routine remains incompletelyreviewed;no newnamecredit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-bc3-alpha-native-check.json": {
+        "native_cases": 768,
+        "maximum_observed_alpha_error": 18,
+        "findings": [
+          "Original format37 branch encodes exact independently calculated8-byte BC3 alpha block on nonuniform RGBA input.",
+          "Endpoints are maximum/minimum alpha;3-bit indices follow seven-step integer classification with span-dependent rounding bias.",
+          "All256 alpha spans at low/high byte boundaries plus256 arbitrary alpha arrays;pixel order permuted and RGB independently varied.",
+          "Equal-alpha endpoints and packed48-bit index ordering verified;stored RGB565 endpoints descend or tie.",
+          "Complete destination outside16-byte block,context,source,arguments and pointer remain unchanged."
+        ],
+        "models": [
+          "Local allocated image backing andstack canary only;no compressed-path called function replaced."
+        ],
+        "limits": [
+          "Single4x4block,format37,tile13,mip1,slice0;RGB endpoint fitting andnonuniform RGB compression accuracy remainunverified.",
+          "Observed alpha error is a measurement on these fixtures,not a global quality or optimality guarantee.",
+          "No GPU/livegame or complete uploader review."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-bc-refinement-native-check.json": {
+        "native_cases": 524,
+        "mismatch_count": 0,
+        "mismatch_examples": [],
+        "findings": [
+          "Independent scalar oracle implements initialcovariance endpoint selection,projection indices,one least-squares endpoint refinement,uniform-index lookup fallback,requantization and endpoint ordering.",
+          "Full original format35 encoder output compared byte-for-byte;no stop hook inthis run."
+        ],
+        "models": [
+          "Local backing memory andstackcanary only;original compressedpath andcallees execute."
+        ],
+        "limits": [
+          "Selected single4x4blocks,format35,tile13,mip1,slice0;further review required wherever mismatches exist.",
+          "No complete2007-instruction review credit,GPU/livegame or exact historical source match."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-bc-rgb-integration-native-check.json": {
+        "native_cases": 1536,
+        "equal_endpoint_cases": 0,
+        "projection_mismatch_examples": [],
+        "findings": [
+          "256 nonuniform RGB blocks produce identical8-byte color payloads across formats35/37 and zero/opaque/arbitrary alpha variants.",
+          "Original encoder emits descending RGB565 endpoints;source/context/arguments preserved andwhole destination outsideblock unchanged.",
+          "All1536 stored color-index masks exactly match independent projection classification using final decodedRGB565 endpoints;no mismatch inthis fixture set."
+        ],
+        "models": [
+          "Only local backing memory andstack canary;compressed-path instructions and callees original."
+        ],
+        "limits": [
+          "Single4x4block,tile13,mip1,slice0;does not independently reproduce endpoint fit.",
+          "Projection against final endpoint orientation requires separate tie/endpoint-swap audit if mismatches recorded.",
+          "No global compression quality claim,GPU/livegame or full uploader review."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      },
+      "photo-cache-bc-lookup-tables-native-check.json": {
+        "table_entries_verified": 512,
+        "table_bytes_verified": 1024,
+        "original_encoder_calls": 2,
+        "findings": [
+          "Cold original encoder initializes both256-entry endpoint lookup tables exactly as exhaustive independent search predicts.",
+          "Five/six-bit table pairs minimize absolute interpolated-color error plusinteger3percent endpoint-separation penalty;strict improvement preserves first tie in nested search order.",
+          "Entire64KiB global page matches expected expansion tables,1024 lookup bytes andsingle initialized flag with no other modifications.",
+          "Second encoder invocation leaves initialized tables andglobal page unchanged andproduces identical output."
+        ],
+        "models": [
+          "Local backing memory andstackcanary only;original initialization andcompressed-path callees execute."
+        ],
+        "limits": [
+          "Onecold initialization andonewarm reuse;synchronization/concurrentfirst-use nottested.",
+          "No full uploader review or additional naming credit."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete2007-instruction image writer reviewed against original bytes in six accounted sections;worker callsite traced.",
+      "54 complete linear image writes and36 mip chains match independent byte-level backing storage andfinalownedbuffer.",
+      "524 full BC1-compatible color outputs match independentcovariance/projection/refinement encoder;768 BC3alpha blocks match exactindependent encoding.",
+      "1536 nonuniform color payload cases confirmalpha independence andfinalprojection indices;512lookupentries verified through coldinit/warmreuse andwholeglobalpage.",
+      "Independent offline reopen verifies fiveGPinputs,voidreturn,unchangedbytes andall9606otherfunctionnames/signatures."
+    ],
+    "limits": [
+      "Valid selected dimensions/formats35/37/10,tile13/31,mip1 orselectedlinear chains,slice0;otherlayouts/slices,edgecases andoverflow unverified.",
+      "Mipallocation isnot nullchecked beforewrites;OOM pathnotexecuted.Concurrentlookupfirst-use notverified.",
+      "Routinewrites CPUimagebacking memory;readypublication doesnotprove GPUcompletion;noGPU/livegame verification.",
+      "Second reference at14021bc17 hasnocontainingGhidrafunction andneedsseparatecaller audit.",
+      "Analyst workingname/ABI;strongstb_dxt structuralleadwithverifieddifferences,notexacthistoricalsourceorMMbuildmatch."
     ],
     "new_name_credit": 1
   }

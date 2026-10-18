@@ -6395,3 +6395,16 @@ Additional connected evidence: **82 loader/decoder cases**, including full-size 
 The full decoder and image-write routine remain unnamed and incompletely reviewed. Resource fetching remains simulated; verified allocation/memory imports use local CRT adapters where needed. Nonuniform full-encoder behavior, other tiling/slices, malformed inputs, GPU synchronization and live-game behavior remain unverified. The checked linear path writes backing memory and does not itself prove GPU completion. No exact Media Molecule source/build match is claimed.
 
 Totals: **745 checked names** (665 behavior/helper and 80 property/type), **2,151 mapped**, **7,456 unmapped**, among **9,607 defined functions**.
+
+
+### Image mip-chain writer reviewed and named
+
+`WriteRgbaPixelsToImageMipChain` names the complete 2,007-instruction routine called by the photo-cache worker. It copies RGBA rows for format 10 and writes BC1/BC3-compatible blocks for formats 35/37. Compressed blocks clamp source coordinates at image edges. Color encoding uses covariance-based endpoint initialization, projection indices, one endpoint-refinement pass and a uniform-index fallback. Format 37 additionally encodes alpha endpoints and indices.
+
+The mip loop averages 2-by-2 source pixels, rounds halved dimensions up to multiples of four, frees intermediate owned buffers, and leaves the final mip pointer for its caller. Unsupported formats skip image writes but still advance the mip loop. The worker marks an entry ready after this routine returns; this establishes CPU image-memory preparation, not GPU completion.
+
+Evidence includes **54 linear writes**, **36 mip chains**, **524 exact complete color-block matches**, **768 exact alpha-block matches**, **1,536 nonuniform RGB integration cases**, and **512 exhaustively checked lookup entries**. The full instruction body is accounted for against original bytes. Independent reopening verifies the saved name/working signature and all 9,606 other function names/signatures.
+
+Limits: selected formats/layouts, dimensions and slice zero; other layouts/slices, overflow, allocation failure, concurrent lookup initialization and live-game/GPU behavior remain unverified. The mip allocation lacks a null check before writes; this is a static observation, not an executed failure test. A second reference lacks a containing Ghidra function and needs a separate caller audit. No exact original source version or Media Molecule build match is claimed.
+
+Totals: **746 checked names** (666 behavior/helper and 80 property/type), **2,152 mapped**, **7,455 unmapped**, among **9,607 defined functions**.
