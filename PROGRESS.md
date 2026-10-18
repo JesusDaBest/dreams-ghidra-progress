@@ -6046,3 +6046,16 @@ Totals: **724 checked names** (644 behavior/helper and 80 property/type), **2,13
 Eight-object fixtures contain kind-13/14 parents, zero/one/three Sound and Effect Field children and inactive kind-0 records. Shared/distinct parents, tagged references and high kind bits are covered. Each sequence runs twice with identical results. Full world, guarded tail-pointer output, parent, child and metadata comparisons pass.
 
 The fixture calls the original builder and bounded caller window separately; intervening main-loop instructions are not executed. The standard imported byte-fill routine remains modeled. Original bounded metadata stores provide parent offsets, but full initialization, malformed/cyclic references, concurrency and live-game behavior remain unverified. No new naming credit: **724 checked names** remains the total.
+
+
+### World count restoration and link reconstruction reviewed and named
+
+`RestoreWorldCountsAndRebuildObjectLinks` names the complete 274-instruction routine that reads six supplied count/cursor words, restores parallel lengths, initializes growing auxiliary/wire records, rebuilds the sequence hash and per-kind chains, recounts object-to-record references and clears/repopulates parent lists. Two direct caller sites supply separate 24-byte stack records and world pointers; the larger caller's decompilation timed out, so its broader role remains unresolved.
+
+**72 baseline and 72 auxiliary-growth scenarios**, each executed twice, pass full world, object and metadata comparisons. Growth cases cover 1/3/7 records, old lengths below/equal/above the restored counts, exact field writes, preserved padding and skipped 0xFFFF object record indices. The original kind-chain builder executes; the standard byte-fill import is modeled and a stack-canary pointer is supplied by the fixture.
+
+The optional import is linked through the executable's original relocation and a local NID database to `scePthreadGetspecific`. This corrects an earlier private inference of randomness. Its signed low-32-bit result selects a 16-byte slot for one restored value; that branch remains unexecuted. Malformed references/capacities, concurrency, full caller/startup and live-game behavior remain unverified.
+
+Independent reopening verifies the descriptive name, opaque two-pointer ABI, decompilation, original bytes and all 9,605 other names/signatures. No exact Media Molecule source/build match is claimed.
+
+Totals: **725 checked names** (645 behavior/helper and 80 property/type), **2,131 mapped**, **7,475 unmapped**, among 9,606 defined functions.

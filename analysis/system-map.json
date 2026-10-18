@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2130,
-  "unmapped_total": 7476,
+  "mapped_total": 2131,
+  "unmapped_total": 7475,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53813,6 +53813,34 @@
             "Original helper initializes120 kind head pointers,appends ascending object indices using cached kind bytes,advances tails to next-link slots,and terminates all chains with minus1.",
             "108 native cases cover0/1/7/120/128/255 objects,three old-length states and six kind distributions;full world and guarded tail-output comparisons pass. Imported standard byte fill modeled.",
             "Independent reopening verifies saved name,two opaque-pointer ABI,decompilation,unchanged bytes and all9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "14090a460": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "Restores world counts and rebuilds sequence hash,kind chains,record reference counts and parent links.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete list traversal body and scoped independent native state comparisons.",
+      "code_sha256": "0dbbe832b4785504228d7974cde157d47f6b0ab86324f8043c345edd21961c00",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RestoreWorldCountsAndRebuildObjectLinks",
+          "support": [
+            "Complete274-instruction body and pseudocode reviewed;original bytes verified.",
+            "Two direct caller sites pass24-byte stack records and world pointers in RDI/RSI;full larger caller decompilation timed out and its broader role is not claimed.",
+            "72 baseline plus72 auxiliary-growth scenarios each run twice verify full world,object and metadata states;growth covers1/3/7 records,zero/equal/larger old lengths,preserved padding and object2c reference counts.",
+            "Original kind-chain builder executes;standard byte fill modeled and stack canary pointer supplied.",
+            "Original import relocation and local NID database identify optional1416084d0 as scePthreadGetspecific,not randomness;branch remains unexecuted.",
+            "Independent reopening verifies name,void two-pointer ABI,decompilation,unchanged original bytes and all9605 other names/signatures."
           ]
         }
       ]

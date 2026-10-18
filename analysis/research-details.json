@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 724,
+    "checked_and_applied_names": 725,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 724,
+    "verified_names": 725,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "668 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "669 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19127,5 +19127,44 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "world_count_restore_name_checkpoint": {
+    "target": {
+      "name": "RestoreWorldCountsAndRebuildObjectLinks",
+      "signature": "void PS4_SYSV RestoreWorldCountsAndRebuildObjectLinks(void * savedCounts, void * world)"
+    },
+    "native_check": {
+      "native_cases": 72,
+      "executions": 144,
+      "original_instructions": 274,
+      "findings": [
+        "72 auxiliary-growth scenarios run complete original restore twice each,with new counts1/3/7 and old lengths zero/equal/larger.",
+        "Independent model covers exact field writes and preserved padding in64-byte auxiliary records,64-byte wire records and32-byte auxiliary records.",
+        "Object2c indices rebuild per-record reference counts,including multiple objects per record and ffff skipped entries. Full world,object and metadata comparisons pass."
+      ],
+      "limits": [
+        "Optional thread-specific-slot branch disabled;valid prepared eight-object world and bounded auxiliary counts only.",
+        "Stack canary pointer supplied;standard byte fill modeled. Original kind-chain builder executes.",
+        "Malformed indices/capacities,concurrency,full callers/startup and live game unverified."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0,
+      "import_correction": "Original JUMP_SLOT and local NID database identify1416084d0 as scePthreadGetspecific,not random generation. No live platform call executed."
+    },
+    "evidence": [
+      "Complete274-instruction body and pseudocode reviewed;original bytes verified.",
+      "Two direct caller sites pass24-byte stack records and world pointers in RDI/RSI;full larger caller decompilation timed out and its broader role is not claimed.",
+      "72 baseline plus72 auxiliary-growth scenarios each run twice verify full world,object and metadata states;growth covers1/3/7 records,zero/equal/larger old lengths,preserved padding and object2c reference counts.",
+      "Original kind-chain builder executes;standard byte fill modeled and stack canary pointer supplied.",
+      "Original import relocation and local NID database identify optional1416084d0 as scePthreadGetspecific,not randomness;branch remains unexecuted.",
+      "Independent reopening verifies name,void two-pointer ABI,decompilation,unchanged original bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Optional thread-specific-slot branch disabled;valid prepared eight-object world and bounded auxiliary counts only.",
+      "Stack canary pointer supplied;standard byte fill modeled. Original kind-chain builder executes.",
+      "Malformed indices/capacities,concurrency,full callers/startup and live game unverified.",
+      "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+    ],
+    "new_name_credit": 1
   }
 }

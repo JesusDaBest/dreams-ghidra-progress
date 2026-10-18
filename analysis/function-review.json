@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "668 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "669 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8727,
-    "other_names": 879,
-    "verification": "complete_inventory_matches_baseline_plus_668_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8726,
+    "other_names": 880,
+    "verification": "complete_inventory_matches_baseline_plus_669_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16806,6 +16806,31 @@
       "caveats": [
         "Cached kind inputs restricted0..119;function does not mask or validate cache bytes here.",
         "Imported standard byte-fill modeled;concurrency,malformed capacities and full caller/game unverified.",
+        "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "14090a460",
+      "original_name": "FUN_14090a460",
+      "applied_name": "RestoreWorldCountsAndRebuildObjectLinks",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RestoreWorldCountsAndRebuildObjectLinks(void * savedCounts, void * world)",
+      "evidence": [
+        "Complete274-instruction body and pseudocode reviewed;original bytes verified.",
+        "Two direct caller sites pass24-byte stack records and world pointers in RDI/RSI;full larger caller decompilation timed out and its broader role is not claimed.",
+        "72 baseline plus72 auxiliary-growth scenarios each run twice verify full world,object and metadata states;growth covers1/3/7 records,zero/equal/larger old lengths,preserved padding and object2c reference counts.",
+        "Original kind-chain builder executes;standard byte fill modeled and stack canary pointer supplied.",
+        "Original import relocation and local NID database identify optional1416084d0 as scePthreadGetspecific,not randomness;branch remains unexecuted.",
+        "Independent reopening verifies name,void two-pointer ABI,decompilation,unchanged original bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Optional thread-specific-slot branch disabled;valid prepared eight-object world and bounded auxiliary counts only.",
+        "Stack canary pointer supplied;standard byte fill modeled. Original kind-chain builder executes.",
+        "Malformed indices/capacities,concurrency,full callers/startup and live game unverified.",
         "Analyst descriptive name and opaque-pointer ABI,not original C++ declaration."
       ]
     }
