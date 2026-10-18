@@ -6250,3 +6250,14 @@ The internal serialized-version gates include ParentFromModel from 0x2D9, IsGlue
 The enum registration, dispatcher target, complete body and fresh pseudocode support a descriptive property-interface name. Independent reopening verified the opaque visitor/object-pointer signature, decompilation, unchanged bytes and all 9,604 other names/signatures. Called sub-visitors, actual virtual sinks, full version/filter execution, writer mutation and runtime angle sensing remain unverified. **No complete-visitor native execution is claimed in this naming batch.**
 
 Totals: **713 checked names** (635 behavior/helper and 78 property/type reviews), 2,121 mapped and 7,484 unmapped among 9,605 defined functions. This marks one reviewed property interface, not a completed AngleSensor implementation or exact Media Molecule source/build match.
+
+
+### RotationSensor property interface reviewed and named
+
+`VisitRotationSensorProperties` now names the complete 854-instruction visitor selected by original `EThingType` value 54. It visits shared position/canvas properties, Power (+0xC0), Halfsize (+0xC8), IsGluedGadget (+0xD0), AngularVelocityOutput and X/Y/Z components (+0xD4 through +0xE0), AngularAccelerationOutput and X/Y/Z components (+0xE4 through +0xF0), LocalSpace (+0xF4), OldVelocities (+0x100), GizmoOrientationWorld (+0x110), GizmoOrientationLocal (+0x120), MotionReferenceThing (+0x130), Rotation (+0x140) and Name (+0x150).
+
+The body gates world/local gizmo orientations from internal serialized version 0x1C3 and the motion reference from 0x1C5. It retains a pre-0x1C3 vector placeholder, Rotation's 0x262/0x263 compatibility placeholder, ParentFromModel from 0x2D9, IsGluedGadget from 0x473 and Name from 0x445. These are internal serialized versions, not game release numbers. The motion-reference block checks packed indices, null objects and nested persistent-ID resolution before recursively dispatching referenced properties.
+
+Complete pseudocode plus original registration, dispatch and field/call/version assembly support this descriptive property-interface name. Independent reopening verified its opaque visitor/object-pointer signature, complete decompilation, unchanged bytes and all 9,604 other names/signatures. This batch does not execute the complete visitor or establish actual virtual sink behavior, writer mutation or runtime angular calculations.
+
+Totals: **714 checked names** (635 behavior/helper and 79 property/type reviews), 2,121 mapped and 7,484 unmapped among 9,605 defined functions. This is one reviewed property interface, not complete RotationSensor behavior or an exact Media Molecule source/build match.
