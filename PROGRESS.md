@@ -5955,3 +5955,14 @@ The original metadata writes now enable both previously disabled Key paths: pare
 These checks use selected positive scales and finite unit quaternions, a prepared parent record and its base-offset metadata. Only the selected Key metadata writes execute original initialization. Glued parent walks, malformed hierarchies, exceptional arithmetic, full metadata startup, the complete optional-path scene conversion and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 No new naming credit: **721 checked names**, 2,127 mapped and 7,479 unmapped among 9,606 defined functions remain the totals.
+
+
+### Parent-chain transform selection and output ABI verified
+
+**864 native cases** execute the original transform helper with valid acyclic chains of depth 0, 1, 2, 4 and 16. The helper follows packed parent references while common byte +0x2E is nonzero and selects the first flag-clear object's base transform. The optional position offset still comes from the **original source object**, not that ancestor. Distinct ancestor offsets make this distinction observable. Tagged parent references, missing-base controls and absent offsets are covered.
+
+An independent transform oracle agrees within approximately **8.16e-7**, below the 5e-5 tolerance. Complete world, all-node and metadata comparisons show no input writes; the 32-byte output remains inside its guards. The original libc `__isinff` executes. Key field locations come from the recovered initializer; the Group base offset and absent-field controls are prepared inputs.
+
+The project now saves the working signature `void ComputeObjectTransformWithPositionOffset(RigidTransformWorking32 *output, void *world, void *thing)` with explicit RDI/RSI/RDX storage under PS4_SYSV. It reuses the existing 32-byte transform type. Independent reopening verifies decompilation, unchanged original bytes and all 9,605 other function names/signatures. This improves machine-level typing without claiming recovered source classes.
+
+The exact user-facing meaning of byte +0x2E remains unproven. Cycles, invalid/missing parents, nonfinite arithmetic, concurrent hierarchy changes, complete scene conversion and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed. **721 checked names** remains unchanged; this is deeper verification and a signature improvement.
