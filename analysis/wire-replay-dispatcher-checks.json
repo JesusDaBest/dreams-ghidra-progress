@@ -265,5 +265,23 @@
     ],
     "project_modified": false,
     "new_name_credit": 0
+  },
+  "parent_cleanup_key_selection": {
+    "native_cases": 24,
+    "finding": "Original parent traversal invokes keyed lookup only with both endpoint class bytes2, a source-side type13 ancestor and matching ancestor on destination parent chain. Direct and one-intermediate destination chains observed; unrelated parents and wrong type/class skip lookup. Main wire removal still executes.",
+    "limits": [
+      "Lookup140766e30 is explicit observation probe returning no matches; downstream fe08 deletion and hash lookup unverified.",
+      "Finite acyclic valid parent fixtures; no malformed indices/cycles/gameplay."
+    ],
+    "project_modified": false,
+    "new_name_credit": 0,
+    "key_layout": [
+      "ancestor persistent ID:u32",
+      "source persistent ID:u32",
+      "destination persistent ID:u32",
+      "record ordinal:u16",
+      "property:u16"
+    ],
+    "ancestor_kind_registered_name": "Microchip"
   }
 }

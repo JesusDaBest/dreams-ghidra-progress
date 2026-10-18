@@ -5349,3 +5349,12 @@ The source-file diagnostic context helper is an explicit return boundary, and ex
 The original transform field registrar also identifies GadgetConnector's registered descriptor as `Trans`, containing float4 members `posscale` at offset 0 and `ang` at offset 16. All 151 registrar instructions and the three name literals match original bytes. These are registered names, not an assertion that original C++ declarations were recovered. Existing transform semantics and normalization paths remain separately scoped.
 
 The 192-case suite includes the earlier 128 cases, so the counts are not additive. Diagnostic-context and imported-memory adapters remain the stated boundaries. No additional function name, datatype or completion credit was added. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
+
+
+## Microchip ancestor cleanup key traced
+
+The previously excluded parent branch now has 24 native traversal checks. When both endpoint class bytes equal 2, the original removal producer walks the source's parent chain for a type-13 ancestor (registered as Microchip) and checks whether the destination parent chain reaches it. With a shared ancestor, it passes a 16-byte key to the lookup: ancestor persistent ID, source persistent ID and destination persistent ID (32 bits each), followed by record ordinal and property (16 bits each).
+
+Direct and one-intermediate destination parent chains produce the same expected key. Wrong ancestor type, unrelated destination ancestry or either class byte differing from 2 skip the lookup. Complete world and object comparisons confirm that the ordinary wire endpoint invalidation still occurs. The meaning of class byte 2 is not inferred from this test.
+
+The lookup is an explicit observation probe returning no matches; hash-chain matching and downstream deletion are not executed here. Static reading and original-byte checks cover the lookup's 210 instructions and the downstream producer's 132 instructions, which builds event `fe08`; neither receives semantic completion credit. Parent cycles, malformed references and gameplay remain unverified. [Sanitized evidence](analysis/wire-replay-dispatcher-checks.json).
