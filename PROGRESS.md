@@ -7274,3 +7274,12 @@ Original Sprite registration and producer packing establish the 336-byte GPU rec
 The CPU active pointer and copied shader descriptor derive from the same parity allocation. Logical shader record selection is indirect, however: a separate buffer supplies record IDs. Preserved-offset index agreement remains unresolved, so this is not a complete runtime binding or GPU-execution proof.
 
 The official [2016 coding recording at 12:49](https://www.youtube.com/watch?v=yZM_Ij9aeOA&t=769s) was inspected in the browser. Selected readable source shows position/time sine-cosine wave displacement alongside a wave reference. No exact source/function/build match to these recovered effect branches was established. Only selected frames were reviewed, not the entire recording. No additional checked-name credit is taken.
+
+
+### Sprite indirect record-ID producer traced
+
+The archived **SpriteOcclusionCullAndAllocateToCommandLists** shader writes selected input-record IDs into bucketed index lists. GPU counters reserve list positions; those positions are distinct from the record IDs stored there. The later emission shader reads the list and uses each ID to select its 336-byte record.
+
+Original CPU assembly connects the same index-buffer descriptor to the prepass output and emission input through deferred **16-byte** descriptor copies. The queued update value `4` is an operation selector, not a four-byte write width. The occlusion program's 2,500 bytes (524 instructions), plus the small counter-clear and indirect-dispatch programs, reassemble to identical archived program bytes. This verifies encoding, not runtime behavior.
+
+Saved nonzero CPU record offsets are still unreconciled with the prepass's local record IDs. Frame and caller lifecycle constraints require further tracing. GPU execution, synchronization and complete occlusion semantics remain unverified. No additional checked-name credit is taken.
