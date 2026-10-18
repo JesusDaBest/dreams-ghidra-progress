@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "676 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "677 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8719,
-    "other_names": 887,
-    "verification": "complete_inventory_matches_baseline_plus_676_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8718,
+    "other_names": 888,
+    "verification": "complete_inventory_matches_baseline_plus_677_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17008,6 +17008,29 @@
         "Property source names and complete meaning of individual world flags remain unresolved.",
         "Some fixture dimensions repeat behavior;execution counts are not unique behavior counts.",
         "Analyst descriptive name and working ABI,not original C++ declaration."
+      ]
+    },
+    {
+      "address": "14101cba0",
+      "original_name": "FUN_14101cba0",
+      "applied_name": "BuildRegionRuntimeRecord120",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV BuildRegionRuntimeRecord120(void * output, void * thing, uint mode, SpatialQueryFloat4Working16 parentPositionScale, SpatialQueryFloat4Working16 parentRotation, float attenuation)",
+      "evidence": [
+        "Complete250-instruction builder reviewed;original bytes verified.",
+        "Builds120-byte runtime record from original region geometry,bounds and source properties. Finite acceptance follows scaled effective strength;rejection preserves output.",
+        "Original kind68 metadata stores feed1944 gate/layout cases and1512 quaternion/HSV color cases with original geometry,bounds and libc isinff. Maximum numeric error4.77e-7.",
+        "Radian hue adjustment,shape tags,extents,relative centre,source extras and low-byte mode doubling verified.",
+        "Independent reopening verifies exact mixed GP/SIMD working storage,boolean AL,decompilation,original bytes and all9605 other names/signatures."
+      ],
+      "caveats": [
+        "Finite unit parent transforms,identity local PosOffset,selected shapes/colors and positive scales;nonidentity local offset,nonfinite/malformed inputs and full metadata startup remain unverified.",
+        "Runtime insertion,full producer,concurrency and live-game behavior remain unverified.",
+        "Working float4 containers and analyst descriptive name are not original C++ declarations."
       ]
     }
   ],

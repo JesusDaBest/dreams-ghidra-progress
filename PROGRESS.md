@@ -6235,3 +6235,14 @@ Independent native checks cover hierarchy propagation (54 cases), wire/boolean g
 The name and signature persist after independent reopening, with original bytes and all 9,605 other names/signatures unchanged. Valid prepared trees/references only; property source names, complete flag meanings, malformed/cyclic data, capacity, concurrency, full producer and live-game behavior remain unresolved. One additional call site is outside defined function bodies and is retained as a boundary lead. No exact Media Molecule source/build match is claimed.
 
 Totals: **732 checked names** (652 behavior/helper and 80 property/type), **2,138 mapped**, **7,468 unmapped**, among 9,606 defined functions.
+
+
+### Runtime region record builder reviewed and named
+
+`BuildRegionRuntimeRecord120` names the complete 250-instruction helper called by the producer's kind-68 path. It prepares geometry and bounds, then writes a 120-byte record containing an outer transform, scaled effective strength, color, shape/extent and relative-centre fields, source extras and a doubled low-byte mode. For tested finite inputs, nonpositive effective strength rejects without output writes. Hue adjustment uses radians.
+
+Original kind-68 initialization stores supply local-transform, alternate-shape and bounds offsets. **1,944 gate/layout cases** and **1,512 rotation/color cases** execute the builder with original geometry/bounds helpers and original libc infinity checking. Independent quaternion and HSV calculations agree within 4.77e-7. These counts are executions across specified fixtures, not completion percentages.
+
+Saved working storage explicitly describes three GP arguments, two full float4 SIMD inputs, one scalar SIMD input and boolean AL return. Independent reopening verifies decompilation, unchanged original bytes and all 9,605 other names/signatures. Finite unit parent transforms, identity local offset and selected shapes/colors only; nonidentity local offset, nonfinite/malformed inputs, full startup, runtime insertion, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **733 checked names** (653 behavior/helper and 80 property/type), **2,139 mapped**, **7,467 unmapped**, among 9,606 defined functions.

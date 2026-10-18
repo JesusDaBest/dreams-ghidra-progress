@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 732,
+    "checked_and_applied_names": 733,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 732,
+    "verified_names": 733,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "676 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "677 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -19932,5 +19932,40 @@
     ],
     "new_name_credit": 0,
     "full_producer_named": false
+  },
+  "buffered_region_record_name_checkpoint": {
+    "target": {
+      "name": "BuildRegionRuntimeRecord120",
+      "signature": "bool PS4_SYSV BuildRegionRuntimeRecord120(void * output, void * thing, uint mode, SpatialQueryFloat4Working16 parentPositionScale, SpatialQueryFloat4Working16 parentRotation, float attenuation)"
+    },
+    "native_check": {
+      "native_cases": 1944,
+      "accepted": 864,
+      "maximum_float_error": 0,
+      "strength_factor": 0.10000000149011612,
+      "findings": [
+        "Complete original250-instruction builder,original296-instruction geometry helper,185-instruction bounds reader and original libc isinff execute together.",
+        "Identity-transform cases verify120-byte output layout,shape tags,inner/outer extents,color passthrough,source fields,mode low-byte doubling and effective-strength rejection. Rejection leaves output untouched."
+      ],
+      "limits": [
+        "Prepared kind68 geometry,zero hue shift,identity rotation and selected positive scales;arbitrary rotations/centres,color conversion,nonfinite inputs and unrelated full startup remain unverified.",
+        "No producer runtime-table insertion or live-game claim."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete250-instruction builder reviewed;original bytes verified.",
+      "Builds120-byte runtime record from original region geometry,bounds and source properties. Finite acceptance follows scaled effective strength;rejection preserves output.",
+      "Original kind68 metadata stores feed1944 gate/layout cases and1512 quaternion/HSV color cases with original geometry,bounds and libc isinff. Maximum numeric error4.77e-7.",
+      "Radian hue adjustment,shape tags,extents,relative centre,source extras and low-byte mode doubling verified.",
+      "Independent reopening verifies exact mixed GP/SIMD working storage,boolean AL,decompilation,original bytes and all9605 other names/signatures."
+    ],
+    "limits": [
+      "Finite unit parent transforms,identity local PosOffset,selected shapes/colors and positive scales;nonidentity local offset,nonfinite/malformed inputs and full metadata startup remain unverified.",
+      "Runtime insertion,full producer,concurrency and live-game behavior remain unverified.",
+      "Working float4 containers and analyst descriptive name are not original C++ declarations."
+    ],
+    "new_name_credit": 1
   }
 }

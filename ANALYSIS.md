@@ -6744,3 +6744,14 @@ A 144-case bounded execution connects original selection, root/nonroot table con
 A separate selected kind-69 path explicitly writes the actual root ID into parent/self group keys. Its 144 executions pass with root ID 100 and the original 240-byte size initialization, demonstrating that -1 is not a universal producer requirement. Another 144-execution check connects that path through the entire object-copy loop: selection, grouping, table insertion, allocation, linking, selected-index and parent-ID arrays, cached 16-byte records, byte offsets, object bytes and deep-copied properties. Complete buffers match. Modeled allocation failure clears selection/world flag 0 and prevents payload writes.
 
 Allocator returns and imported byte copying are modeled; the real allocator is not executed. Prepared trees, valid properties and preallocated hash tables only. Earlier producer reset/root prerequisites and later runtime generation remain outside this execution, as do invalid data, overflow, concurrency and live-game behavior. Some test dimensions repeat behavior. The producer remains unnamed; **732 checked names** remains the total.
+
+
+### Runtime region record builder reviewed and named
+
+`BuildRegionRuntimeRecord120` names the complete 250-instruction helper called by the producer's kind-68 path. It prepares geometry and bounds, then writes a 120-byte record containing an outer transform, scaled effective strength, color, shape/extent and relative-centre fields, source extras and a doubled low-byte mode. For tested finite inputs, nonpositive effective strength rejects without output writes. Hue adjustment uses radians.
+
+Original kind-68 initialization stores supply local-transform, alternate-shape and bounds offsets. **1,944 gate/layout cases** and **1,512 rotation/color cases** execute the builder with original geometry/bounds helpers and original libc infinity checking. Independent quaternion and HSV calculations agree within 4.77e-7. These counts are executions across specified fixtures, not completion percentages.
+
+Saved working storage explicitly describes three GP arguments, two full float4 SIMD inputs, one scalar SIMD input and boolean AL return. Independent reopening verifies decompilation, unchanged original bytes and all 9,605 other names/signatures. Finite unit parent transforms, identity local offset and selected shapes/colors only; nonidentity local offset, nonfinite/malformed inputs, full startup, runtime insertion, full producer, concurrency and live-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **733 checked names** (653 behavior/helper and 80 property/type), **2,139 mapped**, **7,467 unmapped**, among 9,606 defined functions.
