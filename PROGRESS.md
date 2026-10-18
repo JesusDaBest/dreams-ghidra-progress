@@ -6708,3 +6708,12 @@ The divisor uses a 32-bit left shift and the GDS accumulators use 32-bit additio
 The successful initial allocation path constructs the descriptor consumed by `ChunkReduceColours` at the first slot's offset `0x194`, using the original packed format `0x00fac00a`. A fresh isolated run of the original descriptor constructor, format-size helper and flag setter passed **768 cases**, checking the entire descriptor, guards and preserved inputs. It produces a four-byte stride, data format 10, numeric format 0 and identity XYZW channel selection: four unsigned normalized 8-bit components under the previously reviewed ISA format tables.
 
 This links stored byte channels to normalized shader inputs before the already traced square-and-sum operation. The initial descriptor has capacity 16,777,216 records; capacity alone establishes neither a reachable reduction count nor successful allocation. Later descriptor changes, initialization of other slots, actual GPU formatted conversion and exact color-space semantics remain unverified. No new checked-function credit is added.
+
+
+### Sculpt statistics finalization named after connected review
+
+Named `141292230` **`FinalizeSculptSlotStatistics`** after reading all **1,020 owned instructions**, comparing original bytes, and tracing the connected calculations. It aggregates counts and first moments, dispatches full-child inertia at levels 1 and 0 followed by voxel inertia, reduces color, adds CPU full-block inertia, applies packed scale, derives approximate axes, obtains projected bounds, selects a box by surface-area score, and stores the slot's tensor, bounds, color and scalar statistics.
+
+The CPU full-block diagonal terms combine offset-dependent contributions of weight `64^3` with a constant matching rounded solid-cube intrinsic inertia for side 64. Its reference vector comes from accumulated first moments divided by a guarded nonzero count. A half-unit difference between first-moment and cell-center formulas remains unresolved; no exact geometric centroid or defect is claimed. Integer overflow, exceptional floats, descriptor mutation, allocation/lifetime, synchronization and real GPU behavior remain open.
+
+The descriptive name persisted after independent reopening. The inferred prototype and original bytes were retained, and all 9,611 other names/signatures were unchanged. This adds one checked runtime function, bringing the total to **766**. It does not complete the sculpt subsystem or establish recovered original source.
