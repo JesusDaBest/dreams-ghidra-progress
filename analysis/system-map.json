@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2144,
-  "unmapped_total": 7462,
+  "mapped_total": 2145,
+  "unmapped_total": 7461,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54206,6 +54206,33 @@
             "2689 original-native cases check coordinates,bitwidths,overflow,guarded8-byte output,context/argument preservation andnulloutput/nullcontext.",
             "Null output returns80d30000 beforecontextread;nonnulloutputreturnszero.",
             "Independent reopening verifies exact GP storage,uint32EAXreturn,decompilation,unchanged original instructions andall9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "14003f9e0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-descriptors",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete linear surface-addressing header construction andoriginal connected layout/offset execution.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original native state comparisons and complete function review.",
+      "code_sha256": "baf33612e37ff3cf90dc4d32bcc0957ea828061f16f9043a891ea3e732f5a1db",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeLinearSurfaceAddressing",
+          "support": [
+            "Complete79-instruction initializer reviewed against original bytes;calls original CalculateGpuSurfaceLayout.",
+            "On success fills56-byte linear addressing header withdimensions,pitches,bits andsize fields.",
+            "75 originalGPUlayout/initializer cases and225 connected offset executions verify completeheaders,coordinates,guards andinputpreservation.",
+            "27 one-bit layouts verifybyte-roundedrowdimensions andseparateGPUtotal;nullspecreturns80d30000 withoutoutputwrites.",
+            "Independent reopening verifies GP signature,uint32EAXstatus,decompilation,unchanged instructions andall9605 other names/signatures."
           ]
         }
       ]

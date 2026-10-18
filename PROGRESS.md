@@ -6314,3 +6314,14 @@ Totals: **737 checked names** (657 behavior/helper and 80 property/type), **2,14
 Independent reopening verifies the saved signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. Tests use prepared layout fields; layout initialization, malformed contexts, full sampling and live-game behavior remain unverified. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **738 checked names** (658 behavior/helper and 80 property/type), **2,144 mapped**, **7,462 unmapped**, among 9,606 defined functions.
+
+
+### Linear surface-addressing initialization reviewed and named
+
+`InitializeLinearSurfaceAddressing` names the complete 79-instruction helper used before linear image sampling. It calls the original GPU surface-layout calculation and, on success, writes a 56-byte header containing dimensions, pitches, bits per element and two size fields. Its working signature preserves the unsigned 32-bit status return.
+
+**75 layout initializations and 225 connected coordinate tests** execute the original initializer, GPU layout calculation and byte-offset helper together. Complete headers, guarded writes and input preservation match independent expectations. **27 additional one-bit layouts** verify byte-rounded row widths and pitches. The rounded-row storage size and retained GPU layout total are separate original calculations and can differ. A null specification returns `0x80d30000` without output writes.
+
+Coverage is limited to selected linear tile-mode-31 layouts, depth one, a single sample and selected bit widths. Other modes, broader invalid inputs, full image sampling and live-game execution remain unverified. Independent reopening verifies the saved signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **739 checked names** (659 behavior/helper and 80 property/type), **2,145 mapped**, **7,461 unmapped**, among 9,606 defined functions.
