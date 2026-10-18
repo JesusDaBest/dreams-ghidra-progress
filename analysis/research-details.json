@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 739,
+    "checked_and_applied_names": 740,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,14 +1920,14 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 739,
+    "verified_names": 740,
     "function_count": 9606,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
       "1411a32b0"
     ],
-    "scope": "683 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "684 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -20349,6 +20349,106 @@
     "limits": [
       "Prepared linear tilemode31,depth1,singlesample andselected bitwidths only;othermodes,invalidspecifications andfullsampler remain unverified.",
       "Working opaque header/spec anddescriptive name are not original C++ declarations;no livegame or exact MMsource/build match claimed."
+    ],
+    "new_name_credit": 1
+  },
+  "image_rgb_sample_name_checkpoint": {
+    "target": {
+      "name": "ReadImageRgbSample",
+      "signature": "SpatialQueryFloat4Working16 PS4_SYSV ReadImageRgbSample(void * imageContext, uint x, uint y, uint mipLevel, uint sliceIndex)"
+    },
+    "native_check": {
+      "native_cases": 108,
+      "maximum_numeric_error": 2.9685450542160652e-08,
+      "findings": [
+        "Fulloriginalsampler/descriptor/layout/addressing chain reads six independentlypacked linearRGB miplevels,includingcachewrappermip5.",
+        "Each level hasdistinct coordinate/colorpattern;locations atorigin,farcorner andcenter match independentmip sums andpixel offsets."
+      ],
+      "models": [
+        "Localstackcanary andallocatedimagebytes only;no calledfunction replaced."
+      ],
+      "limits": [
+        "Kind9,format10,tile31,sixmips,slice0,selected64..256dimensions;arrays,arbitrarytiledformats andlivegameunverified."
+      ],
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "additional_checks": {
+      "full-linear-color-sample-native-check.json": {
+        "native_cases": 18,
+        "maximum_numeric_error": 2.5945551263006905e-08,
+        "findings": [
+          "Complete original193-instruction sampler executes original descriptor format/decoder,linear initializer,GPUlayout,offset,mip/slice offset,address decoder andRGB conversion.",
+          "Kind9 linear format10 images at mip0/slice0 produceexpected RGBfloat4 withzero fourthlane;completeimage/context/argument preservation andguardedoutputchecked."
+        ],
+        "models": [
+          "Local stackcanary andallocated image data only;no called function replaced."
+        ],
+        "limits": [
+          "Selected smalllinearimages,mip0,slice0 only;compressed/tiledformats,mips,arrays,fullrenderers andlivegameunverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "full-block-format-color-sample-native-check.json": {
+        "native_cases": 60,
+        "maximum_numeric_error": 0,
+        "findings": [
+          "Complete originalsampler andallcalled functions executeformat35/36/37 branches oncontrolledtilemode13image descriptors.",
+          "Four-byte repeatedpair pattern confirmsRGB565wordselection by(x+y)&1 atcomputed blockaddress,withzero fourthlane.",
+          "This is wordselection/colorconversion,notfullcompressedtexeldecoding;blockindexbits/alpha interpolation are notusedbythishelper."
+        ],
+        "models": [
+          "Localstackcanary andallocatedimagebytes only;no calledfunction replaced."
+        ],
+        "limits": [
+          "Selected32/64dimensions,mip0,slice0,repeatedpatterns;arbitrarytiledaddresses/mips/arrays andlivegameunverified."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "unsupported-color-sample-native-check.json": {
+        "native_cases": 5,
+        "findings": [
+          "Completeoriginalsamplerreturnszero float4 forselected unsupportedformats1/2/4/8/14 withoutreadingimagebase0."
+        ],
+        "models": [
+          "Localstackcanary andconstructeddescriptor only;no calledfunction replaced."
+        ],
+        "limits": [
+          "Selected validunsupportedformatdescriptors;null/malformeddescriptor andallformatsnotclaimed."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      },
+      "cache-color-conversion-native-check.json": {
+        "native_cases": 65752,
+        "rgb888_cases": 216,
+        "rgb565_cases": 65536,
+        "maximum_numeric_error": 2.9685450542160652e-08,
+        "findings": [
+          "Original bounded conversion blocks produce normalized RGBfloat4 withfourthlanezero.",
+          "RGB565 all65536 words verified;endpoint selection uses lowbit parity andtwo-byte stride. RGB888 selected216 channel combinations verified."
+        ],
+        "limits": [
+          "Entry is after surface addressing;format dispatch,tiling/layout helpers,mip offset andfullsampling function not executed here.",
+          "No game runtime claim ornewnamecredit."
+        ],
+        "new_name_credit": 0,
+        "project_modified": false
+      }
+    },
+    "evidence": [
+      "Complete193-instruction helper reviewed andmatched tooriginal executable.",
+      "Format10 readsRGBbytes andnormalizesby255;formats35/36/37 selectRGB565wordbycoordinateparity atcomputedblockaddress;unsupportedformatsreturnzerofloat4.",
+      "Fulloriginalcalledchain executes18linearcases,108six-mipcases,60blockformatcases and5unsupportedformatcases withoutcalledfunctionmodels.",
+      "65752 boundedconversioncases includeall65536RGB565words and216RGB888combinations.",
+      "Independent reopening verifies full16-byte XMM0workingreturn,fiveGPinputs,decompilation,unchangedbytes andall9605othernames/signatures."
+    ],
+    "limits": [
+      "Block-formatcases userepeatedpatterns anddo notindependentlyvalidatearbitrarytiledaddresses;thishelperdoesnotfullydecodecompressedtexels.",
+      "Selectedvaliddescriptors,slice0,linearRGBmips0..5 andcontrolledblockformats only;arrays,malformedinputs,GPU/livegameunverified.",
+      "Analystname andworkingfloat4container are notoriginalC++declarations;noexactMMsource/buildmatch."
     ],
     "new_name_credit": 1
   }

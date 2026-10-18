@@ -6325,3 +6325,16 @@ Totals: **738 checked names** (658 behavior/helper and 80 property/type), **2,14
 Coverage is limited to selected linear tile-mode-31 layouts, depth one, a single sample and selected bit widths. Other modes, broader invalid inputs, full image sampling and live-game execution remain unverified. Independent reopening verifies the saved signature, decompilation, unchanged original instructions and all 9,605 other names/signatures. No original C++ declaration or exact Media Molecule source/build match is claimed.
 
 Totals: **739 checked names** (659 behavior/helper and 80 property/type), **2,145 mapped**, **7,461 unmapped**, among 9,606 defined functions.
+
+
+### Image RGB sampler reviewed and named
+
+`ReadImageRgbSample` names the complete 193-instruction helper used by the cached-color wrapper and other rendering callers. Its saved return type now describes the **full float4 in XMM0**. Format 10 reads and normalizes three bytes. Formats 35, 36 and 37 compute a block address and select one RGB565 word using coordinate parity; this is not full compressed-texel decoding. Other formats return a zero vector. Tested results have a zero fourth component.
+
+The **complete original called chain** runs without replacement functions in 18 linear-image tests, 108 tests across six mip levels (including mip 5), 60 block-format tests and five unsupported-format tests. Descriptor decoding, layout initialization, byte offsets, mip offsets, image addressing and conversion execute together. Guarded output and input/image preservation are checked. Separately, bounded conversion tests cover all 65,536 RGB565 words and 216 RGB888 combinations, with maximum numeric error below 3e-8.
+
+Linear mip images contain distinct patterns placed using independent offset sums. Block-format tests use repeated patterns: they verify word selection and conversion but do not independently prove arbitrary tiled addresses. Coverage remains selected valid descriptors, slice zero, linear RGB mip levels 0 through 5 and controlled block-format inputs. Arrays, malformed inputs, arbitrary tiled layouts, GPU and live-game behavior remain unverified.
+
+Independent reopening verifies the corrected working return storage and five GP inputs, successful decompilation, unchanged original instructions and all 9,605 other names/signatures. Earlier wrapper tests used a modeled sampling helper; these newer tests exercise the sampling body itself. No original C++ declaration or exact Media Molecule source/build match is claimed.
+
+Totals: **740 checked names** (660 behavior/helper and 80 property/type), **2,146 mapped**, **7,460 unmapped**, among 9,606 defined functions.

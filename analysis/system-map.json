@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9606,
-  "mapped_total": 2145,
-  "unmapped_total": 7461,
+  "mapped_total": 2146,
+  "unmapped_total": 7460,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -54233,6 +54233,33 @@
             "75 originalGPUlayout/initializer cases and225 connected offset executions verify completeheaders,coordinates,guards andinputpreservation.",
             "27 one-bit layouts verifybyte-roundedrowdimensions andseparateGPUtotal;nullspecreturns80d30000 withoutoutputwrites.",
             "Independent reopening verifies GP signature,uint32EAXstatus,decompilation,unchanged instructions andall9605 other names/signatures."
+          ]
+        }
+      ]
+    },
+    "1413c4060": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "image-cache",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete imageRGBsample behavior andconnectedcachecolor caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Original native state comparisons and complete function review.",
+      "code_sha256": "8735887b8165486c444b2eaddfac96cfbe1d2f49b37b82f2b3a9f3faa0576633",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReadImageRgbSample",
+          "support": [
+            "Complete193-instruction helper reviewed andmatched tooriginal executable.",
+            "Format10 readsRGBbytes andnormalizesby255;formats35/36/37 selectRGB565wordbycoordinateparity atcomputedblockaddress;unsupportedformatsreturnzerofloat4.",
+            "Fulloriginalcalledchain executes18linearcases,108six-mipcases,60blockformatcases and5unsupportedformatcases withoutcalledfunctionmodels.",
+            "65752 boundedconversioncases includeall65536RGB565words and216RGB888combinations.",
+            "Independent reopening verifies full16-byte XMM0workingreturn,fiveGPinputs,decompilation,unchangedbytes andall9605othernames/signatures."
           ]
         }
       ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "683 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "684 existing-function renames,55 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9606,
-    "default_fun_names": 8712,
-    "other_names": 894,
-    "verification": "complete_inventory_matches_baseline_plus_683_renames_and_55_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8711,
+    "other_names": 895,
+    "verification": "complete_inventory_matches_baseline_plus_684_renames_and_55_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17170,6 +17170,29 @@
       "caveats": [
         "Prepared linear tilemode31,depth1,singlesample andselected bitwidths only;othermodes,invalidspecifications andfullsampler remain unverified.",
         "Working opaque header/spec anddescriptive name are not original C++ declarations;no livegame or exact MMsource/build match claimed."
+      ]
+    },
+    {
+      "address": "1413c4060",
+      "original_name": "FUN_1413c4060",
+      "applied_name": "ReadImageRgbSample",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "SpatialQueryFloat4Working16 PS4_SYSV ReadImageRgbSample(void * imageContext, uint x, uint y, uint mipLevel, uint sliceIndex)",
+      "evidence": [
+        "Complete193-instruction helper reviewed andmatched tooriginal executable.",
+        "Format10 readsRGBbytes andnormalizesby255;formats35/36/37 selectRGB565wordbycoordinateparity atcomputedblockaddress;unsupportedformatsreturnzerofloat4.",
+        "Fulloriginalcalledchain executes18linearcases,108six-mipcases,60blockformatcases and5unsupportedformatcases withoutcalledfunctionmodels.",
+        "65752 boundedconversioncases includeall65536RGB565words and216RGB888combinations.",
+        "Independent reopening verifies full16-byte XMM0workingreturn,fiveGPinputs,decompilation,unchangedbytes andall9605othernames/signatures."
+      ],
+      "caveats": [
+        "Block-formatcases userepeatedpatterns anddo notindependentlyvalidatearbitrarytiledaddresses;thishelperdoesnotfullydecodecompressedtexels.",
+        "Selectedvaliddescriptors,slice0,linearRGBmips0..5 andcontrolledblockformats only;arrays,malformedinputs,GPU/livegameunverified.",
+        "Analystname andworkingfloat4container are notoriginalC++declarations;noexactMMsource/buildmatch."
       ]
     }
   ],
