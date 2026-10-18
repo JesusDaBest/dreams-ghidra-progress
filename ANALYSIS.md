@@ -6693,3 +6693,14 @@ Both reviewed hash-table helpers now use working Ghidra types. `IntKeyRecordWork
 Independent reopening verifies all three sizes and field offsets, both typed signatures, successful decompilation, unchanged original instruction bytes and all other 9,604 function names/signatures. The layouts are supported by complete body review plus 708 insertion and 52 connected resize cases. Real allocation, invalid/full tables, concurrency and live-game behavior remain unverified.
 
 This improves saved decompilation without extra naming credit: **730 checked names** remains the total.
+
+
+### Buffered producer root records and state-change dispatch
+
+The still-unnamed producer builds an integer-key table and links buffered records by root object ID. Bounded native tests pass for root construction (15 cases), nonroot construction (504 cases), and collision-probed record linking (144 cases). Each new record retains the previous list head as its next pointer. Complete prepared state comparisons pass within these stages.
+
+A later pass reads the saved power and world-bit flags. **256 native dispatch cases** verify that, after resolving a nonzero world index, processing begins when Power greater than zero changes, or when Power remains positive and the indexed world bit changes. Negative values, zero and NaN compare false; positive subnormal values and positive infinity compare true. Tests cover 64-bit word boundaries and all binary saved/current flag combinations.
+
+Static assembly connects the selected entry to linked records through record offset 104. Only ready records with a positive object count enter the object loop. Dispatch tests stop before that body. Missing-ID and index-zero paths, the full producer, allocation failures, concurrency and live-game behavior remain unverified. These producer-specific observations do not establish a universal table payload type.
+
+No additional naming or completion credit: **730 checked names** remains the total. The producer remains unnamed pending full review. No exact Media Molecule source/build match is claimed.
