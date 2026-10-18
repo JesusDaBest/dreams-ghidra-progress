@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 759,
+    "checked_and_applied_names": 760,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 759,
-    "function_count": 9611,
+    "verified_names": 760,
+    "function_count": 9612,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1930,9 +1930,10 @@
       "14021b300",
       "1410a6740",
       "1410a66b0",
-      "1410a6700"
+      "1410a6700",
+      "1410a6860"
     ],
-    "scope": "698 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "698 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -22502,5 +22503,51 @@
       "24 callerreferences are recorded,notallcallersemanticsunderstood;noexactoriginalMMsource/buildmatch."
     ],
     "new_name_credit": 1
+  },
+  "browser_pending_poll_checkpoint": {
+    "targets": {
+      "1410a6860": {
+        "name": "PollBrowserDialogActionPending",
+        "signature": "bool PS4_SYSV PollBrowserDialogActionPending(void * action)",
+        "native_bytes_unchanged": true,
+        "fde_sha256": "4963dff15a1fc5164654f6d0c90cc07b5028da7c206e748bb82895d965251a03"
+      }
+    },
+    "checks": {
+      "native_cases": 28,
+      "cleanup_cases": 20,
+      "status_cases": 7,
+      "priority_cases": 1,
+      "findings": [
+        "Both original cleanup variants terminate browser dialog once,reset vtable and free small-string pointer only for ownership byte1,including null pointer. Borrowed/mode255 storage not freed.",
+        "Nondeleting cleanup clears all12 string bytes;deleting variant releases action object without clearing member first.",
+        "Original status handler returns AL1 only for modeled statuses1 or2;0,3,4,uint32max and0x80000000 return AL0.",
+        "Original queue-priority virtual method returns100. Full action/argument guards checked."
+      ],
+      "models": [
+        "Terminate,UpdateStatus,free and object delete are local logging/status stubs;no browser or real object release occurs."
+      ],
+      "limits": [
+        "Synthetic fields/statuses;platform enum names,concurrent dialog state and actual lifetime not established.",
+        "No Ghidra definitions/names or new progress credit from these cases."
+      ],
+      "project_modified": false,
+      "new_name_credit": 0
+    },
+    "evidence": [
+      "Complete9-instruction/19-byte virtual polling method reviewed against original code and exact unwind record.",
+      "Seven original-native status cases verify trueonlyforvalues1or2;status API mocked locally.",
+      "Original queueconsumer assembly establishes true means keepfrontpending,false means callback/deletion/removal.144 bounded consumer cases verify startup,polling,callbacks andremoval,including32removals.",
+      "sceWebBrowserDialogUpdateStatus andcommon-dialog startup gate verified viaoriginal loaderwrites andsymbol-name hashes.",
+      "Missing definition/name/boolean workingABI independently reopened withunchanged code andall9611 priornames/signatures."
+    ],
+    "limits": [
+      "Platform status enum names unrecovered;no actual browser/platformAPI executed.",
+      "Consumer checks are bounded windows inside largerparent;concurrency,reentrancy andfullframe behavior unverified.",
+      "Opaque virtualaction parameter isunusedbythisbody;notclaimed originalC++declaration.",
+      "No exactMMsource/buildmatch."
+    ],
+    "new_name_credit": 1,
+    "new_function_definitions": 1
   }
 }

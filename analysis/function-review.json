@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "698 existing-function renames,60 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "698 existing-function renames,61 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9611,
+    "total": 9612,
     "default_fun_names": 8697,
-    "other_names": 914,
-    "verification": "complete_inventory_matches_baseline_plus_698_renames_and_60_created_functions_and_1_reviewed_existing_name"
+    "other_names": 915,
+    "verification": "complete_inventory_matches_baseline_plus_698_renames_and_61_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -17643,6 +17643,31 @@
         "Locks/threadID/allocator/free/virtualpriority are localfixturemodels;memcpy useslocalCRT.",
         "Growth failure doesnot insert orreleaseincomingaction inthisbody;caller ownership remainsunresolved.",
         "24 callerreferences are recorded,notallcallersemanticsunderstood;noexactoriginalMMsource/buildmatch."
+      ]
+    },
+    {
+      "address": "1410a6860",
+      "original_name": "FUN_1410a6860",
+      "applied_name": "PollBrowserDialogActionPending",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV PollBrowserDialogActionPending(void * action)",
+      "created_function": true,
+      "evidence": [
+        "Complete9-instruction/19-byte virtual polling method reviewed against original code and exact unwind record.",
+        "Seven original-native status cases verify trueonlyforvalues1or2;status API mocked locally.",
+        "Original queueconsumer assembly establishes true means keepfrontpending,false means callback/deletion/removal.144 bounded consumer cases verify startup,polling,callbacks andremoval,including32removals.",
+        "sceWebBrowserDialogUpdateStatus andcommon-dialog startup gate verified viaoriginal loaderwrites andsymbol-name hashes.",
+        "Missing definition/name/boolean workingABI independently reopened withunchanged code andall9611 priornames/signatures."
+      ],
+      "caveats": [
+        "Platform status enum names unrecovered;no actual browser/platformAPI executed.",
+        "Consumer checks are bounded windows inside largerparent;concurrency,reentrancy andfullframe behavior unverified.",
+        "Opaque virtualaction parameter isunusedbythisbody;notclaimed originalC++declaration.",
+        "No exactMMsource/buildmatch."
       ]
     }
   ],

@@ -7057,3 +7057,14 @@ Totals: **758 checked names** (678 behavior/helper and 80 property/type), **2,16
 Synchronization, allocation/free and virtual priorities are explicit local test models. Concurrency, overflow, other flag values and actual allocator behavior remain unverified. The 24 recorded caller references do not imply every caller is understood. Independent reopening confirms the saved working ABI, unchanged native bytes and all 9,610 other function names/signatures.
 
 Totals: **759 checked names** (679 behavior/helper and 80 property/type), **2,165 mapped**, **7,446 unmapped**, among **9,611 defined functions**.
+
+
+### Browser action pending predicate recovered and reviewed
+
+`PollBrowserDialogActionPending` names the complete 19-byte virtual method. It calls the platform status API and returns true only for values one or two. Seven original-native cases verify the predicate; platform APIs are local models. Exact platform enum names are not claimed.
+
+Tracing its queue consumer establishes the meaning: true keeps the action pending; false invokes an optional completion callback, deletes the action and removes the front pointer. **144 bounded original-consumer cases**, including 32 removals, verify startup, polling, callbacks, pointer shifts and queue/thread-tag state. Start result one marks an action started; result two reports failure and removes it; result three remains queued in the reviewed branch. Verified `sceCommonDialogIsUsed` gates new starts while a common dialog is in use.
+
+The full large parent, real platform behavior, concurrent queue changes and callback reentrancy remain unverified. No browser opened, URL followed or account data used. Independent reopening confirms the new method's definition, descriptive name and boolean working ABI, unchanged original bytes and all 9,611 prior function names/signatures.
+
+Totals: **760 checked names** (680 behavior/helper and 80 property/type), **2,166 mapped**, **7,446 unmapped**, among **9,612 defined functions**.

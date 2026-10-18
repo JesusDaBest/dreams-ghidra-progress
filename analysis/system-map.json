@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9611,
-  "mapped_total": 2165,
+  "inventory_total": 9612,
+  "mapped_total": 2166,
   "unmapped_total": 7446,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -54769,6 +54769,33 @@
             "144 failed-growth and48 equal-key cases;whole64KiB queue/thread-tag pages,arrays,action objects andarguments match independent oracle.",
             "Original loader writes and exact symbol hashes verify mutex lock/unlock and current-thread-ID imports.",
             "Independent reopening verifies saved void/opaque-action working ABI,unchanged original code andall9610 otherfunctionnames/signatures."
+          ]
+        }
+      ]
+    },
+    "1410a6860": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "browser-dialog",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete queued browser-dialog action cleanup;vtable,platform API andtext ownership traced.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body review and independent local lifecycle checks.",
+      "code_sha256": "fe81ac5bdeb843f4206e548240f38312322d8b50046b34a146baf6e63f96e9ac",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PollBrowserDialogActionPending",
+          "support": [
+            "Complete9-instruction/19-byte virtual polling method reviewed against original code and exact unwind record.",
+            "Seven original-native status cases verify trueonlyforvalues1or2;status API mocked locally.",
+            "Original queueconsumer assembly establishes true means keepfrontpending,false means callback/deletion/removal.144 bounded consumer cases verify startup,polling,callbacks andremoval,including32removals.",
+            "sceWebBrowserDialogUpdateStatus andcommon-dialog startup gate verified viaoriginal loaderwrites andsymbol-name hashes.",
+            "Missing definition/name/boolean workingABI independently reopened withunchanged code andall9611 priornames/signatures."
           ]
         }
       ]
