@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9605,
-  "mapped_total": 2120,
-  "unmapped_total": 7485,
+  "mapped_total": 2121,
+  "unmapped_total": 7484,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -53500,6 +53500,34 @@
             "Complete owner comparisons verify16-byte table permutation,three paired reference lists,index cache,kind-tail pointers and two bitsets; atomic bitset operations tested single-threaded.",
             "Already ordered,flat and empty worlds do not invoke final remap and preserve prepared world/object/owner state.",
             "Independent reopening verifies name,working ABI,decompilation and original bytes; all9604 other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "14093a340": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "world-derived-state",
+        "runtime-implementation"
+      ],
+      "component_basis": "World-context reference rewriting and object/wire remapping job construction after index permutation; not individual gadget behavior.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body review and scoped full-body native state comparisons.",
+      "code_sha256": "425bc37167a77bed3ee2f4d55d136d44335549af8c030d6c64f3453e336ff625",
+      "code_hash_basis": "concatenated_owned_original_instruction_bytes",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapWorldObjectReferences",
+          "support": [
+            "Complete533-instruction body and pseudocode read; original executable bytes verified.",
+            "80native cases execute original helper,functor transfer,batch worker and both named per-item callbacks through a synchronous controlled scheduler.",
+            "232 original batches execute across empty jobs,partial256-item batches and three batches;forward/reverse batch ordering matches expected full world/object results.",
+            "Original job construction uses explicit RemapWires before RemapThings labels; vtable image-base relocations verified against saved-project values.",
+            "Complete world/object/map/argument comparisons cover selected world reference,wire endpoints and common object references under reversed or absent mapping layouts.",
+            "Independent reopening verifies name,working ABI,decompilation,unchanged bytes and all9604 other function names/signatures."
           ]
         }
       ]

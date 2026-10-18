@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "656 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "657 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9605,
-    "default_fun_names": 8739,
-    "other_names": 866,
-    "verification": "complete_inventory_matches_baseline_plus_656_renames_and_54_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8738,
+    "other_names": 867,
+    "verification": "complete_inventory_matches_baseline_plus_657_renames_and_54_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -16460,6 +16460,33 @@
         "Controlled allocator,TLS,free and standard memory copy/fill boundaries; real heap not executed.",
         "Final world-reference-remapping helper is an explicit observer; original job scheduling/callbacks not executed in these fixtures.",
         "Finite valid kind0 object hierarchies; malformed/cyclic data,other source types,concurrency,allocation failure and live editor correctness unverified.",
+        "No exact MM source/build match."
+      ]
+    },
+    {
+      "address": "14093a340",
+      "original_name": "FUN_14093a340",
+      "applied_name": "RemapWorldObjectReferences",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RemapWorldObjectReferences(void * owner, void * sourceWorld, void * destinationWorld, void * indexMapBegin, void * indexMapEnd)",
+      "evidence": [
+        "Complete533-instruction body and pseudocode read; original executable bytes verified.",
+        "80native cases execute original helper,functor transfer,batch worker and both named per-item callbacks through a synchronous controlled scheduler.",
+        "232 original batches execute across empty jobs,partial256-item batches and three batches;forward/reverse batch ordering matches expected full world/object results.",
+        "Original job construction uses explicit RemapWires before RemapThings labels; vtable image-base relocations verified against saved-project values.",
+        "Complete world/object/map/argument comparisons cover selected world reference,wire endpoints and common object references under reversed or absent mapping layouts.",
+        "Independent reopening verifies name,working ABI,decompilation,unchanged bytes and all9604 other function names/signatures."
+      ],
+      "caveats": [
+        "Heap allocation/release and scheduler/wait are controlled models,not actual engine heap or thread pool.",
+        "Kind0 objects,owner null,other world auxiliary counts empty; other kinds/persistent fields checked separately,not combined here.",
+        "No actual concurrency,malformed indices,whole outer reorder or live editor behavior in this fixture.",
+        "Descriptive analyst name and working five-opaque-pointer ABI,not original C++ declaration.",
+        "Other callback branches have separate fixtures;this integration does not test their combination with world auxiliary tables.",
         "No exact MM source/build match."
       ]
     }

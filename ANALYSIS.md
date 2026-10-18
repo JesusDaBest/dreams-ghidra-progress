@@ -6193,3 +6193,14 @@ Totals are **710 checked names** (633 behavior/helper and 77 property/type revie
 The final reference-remapping helper is an explicit observer in these fixtures; its separately tested callbacks do not establish scheduler integration. Allocation, TLS, release and standard copy/fill calls use controlled boundaries. Tests use finite valid kind-zero object hierarchies. Other types, invalid/cyclic data, concurrent initialization, allocation failure and live editor correctness remain unverified.
 
 Independent reopening verified the descriptive name, working owner/world/byte-mode signature and decompilation, with original bytes and all 9,604 other names/signatures unchanged. Totals: **711 checked names** (634 behavior/helper and 77 property/type reviews), **2,120 mapped** and **7,485 unmapped** among 9,605 defined functions. No whole-game completion or exact Media Molecule source/build match is claimed.
+
+
+### World-reference remapping connected through original jobs
+
+`RemapWorldObjectReferences` now names the complete 533-instruction helper called after parent-first world ordering. It rewrites fixed context fields and tagged references, then constructs and dispatches `RemapWires` before `RemapThings`, using 256-item batches. Its working signature identifies owner, source world, destination world and index-map bounds; the original C++ classes remain unresolved.
+
+**80 native integration cases** execute the original helper, functor transfer, batch worker and both named per-item callbacks. A synchronous scheduler model runs batches in forward or reverse order and supplies a no-op wait. **232 original batches** cover empty jobs, partial batches and up to three batches, with selected object/wire counts of 0, 1, 3, 257 and 513. Reversed valid and absent index mappings produce exact expected world/object results; map and argument buffers remain unchanged. The two original job-vtable image-base relocations were reconstructed and checked against saved-project values.
+
+This connects the previously separate callback tests to original job construction and batch iteration. It does not execute the real thread pool or heap. Integration fixtures use kind-zero objects, no owner and empty auxiliary world tables. Other callback kinds have separate tests; their combination with all context tables, actual concurrency, malformed indices, the outer reorder call and live editor behavior remain unverified.
+
+Independent reopening verified the name, working signature, complete decompilation and unchanged native bytes and all 9,604 other names/signatures. Totals: **712 checked names** (635 behavior/helper and 77 property/type reviews), **2,121 mapped** and **7,484 unmapped** among 9,605 defined functions. No whole-game completion or exact Media Molecule source/build match is claimed.

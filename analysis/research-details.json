@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 711,
+    "checked_and_applied_names": 712,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 711,
+    "verified_names": 712,
     "function_count": 9605,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1928,7 +1928,7 @@
       "14093af90",
       "14093b900"
     ],
-    "scope": "656 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "657 existing-function renames,54 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -17956,6 +17956,49 @@
       "Controlled allocator,TLS,free and standard memory copy/fill boundaries; real heap not executed.",
       "Final world-reference-remapping helper is an explicit observer; original job scheduling/callbacks not executed in these fixtures.",
       "Finite valid kind0 object hierarchies; malformed/cyclic data,other source types,concurrency,allocation failure and live editor correctness unverified.",
+      "No exact MM source/build match."
+    ],
+    "new_name_credit": 1
+  },
+  "world_reference_remap_name_checkpoint": {
+    "target": {
+      "name": "RemapWorldObjectReferences",
+      "signature": "void PS4_SYSV RemapWorldObjectReferences(void * owner, void * sourceWorld, void * destinationWorld, void * indexMapBegin, void * indexMapEnd)"
+    },
+    "native_checks": {
+      "world-reference-remap-job-integration-native-check.json": {
+        "native_cases": 80,
+        "original_batches_executed": 232,
+        "original_helper_instructions_verified": 533,
+        "findings": [
+          "Complete original533-instruction helper dispatches explicit RemapWires before RemapThings jobs,each in256-item chunks.",
+          "Original functor transfer,original batch worker and original30/559-instruction per-item callbacks execute; synchronous model scheduler only supplies batch ordering and no-op wait.",
+          "Object/wire counts0/1/3/257/513 as applicable cover empty jobs,partial batches and three batches;forward/reverse batch order yields identical complete world/object results.",
+          "Valid reversed and absent mapping layouts update both wire endpoints,common object references and selected world reference;complete world/object,map and argument checks pass."
+        ],
+        "limits": [
+          "Heap allocation/release and scheduler/wait are controlled models,not actual engine heap or thread pool.",
+          "Kind0 objects,owner null,other world auxiliary counts empty; other kinds/persistent fields checked separately,not combined here.",
+          "No actual concurrency,malformed indices,whole outer reorder or live editor behavior in this fixture."
+        ],
+        "project_modified": false,
+        "new_name_credit": 0
+      }
+    },
+    "evidence": [
+      "Complete533-instruction body and pseudocode read; original executable bytes verified.",
+      "80native cases execute original helper,functor transfer,batch worker and both named per-item callbacks through a synchronous controlled scheduler.",
+      "232 original batches execute across empty jobs,partial256-item batches and three batches;forward/reverse batch ordering matches expected full world/object results.",
+      "Original job construction uses explicit RemapWires before RemapThings labels; vtable image-base relocations verified against saved-project values.",
+      "Complete world/object/map/argument comparisons cover selected world reference,wire endpoints and common object references under reversed or absent mapping layouts.",
+      "Independent reopening verifies name,working ABI,decompilation,unchanged bytes and all9604 other function names/signatures."
+    ],
+    "limits": [
+      "Heap allocation/release and scheduler/wait are controlled models,not actual engine heap or thread pool.",
+      "Kind0 objects,owner null,other world auxiliary counts empty; other kinds/persistent fields checked separately,not combined here.",
+      "No actual concurrency,malformed indices,whole outer reorder or live editor behavior in this fixture.",
+      "Descriptive analyst name and working five-opaque-pointer ABI,not original C++ declaration.",
+      "Other callback branches have separate fixtures;this integration does not test their combination with world auxiliary tables.",
       "No exact MM source/build match."
     ],
     "new_name_credit": 1
