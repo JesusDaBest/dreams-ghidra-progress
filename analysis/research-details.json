@@ -24371,5 +24371,23 @@
       "Malformeddata,collision/concurrency/lifetime andkaleidoscopegeometry consumer unresolved;firstextrema notfullradius AABB;finiteinputsoverflow."
     ],
     "new_name_credit": 1
+  },
+  "packed_sprite_geometry_summary_types_checkpoint": {
+    "address": "1413e75e0",
+    "after": {
+      "name": "GetOrBuildPackedSpriteGeometrySummary",
+      "signature": "uchar * PS4_SYSV GetOrBuildPackedSpriteGeometrySummary(uchar * cache, uint metadata_root_id, uint point_root_id)"
+    },
+    "parameter_storage": [
+      "RDI:8",
+      "ESI:4",
+      "EDX:4"
+    ],
+    "return_storage": "RAX:8",
+    "new_name_credit": 0,
+    "limits": [
+      "Bytepointers areworkingviews,not recoveredcache/entrystructs.",
+      "ReadableIDs,boundedtrees,pointerlifetime/concurrency andexactPS4math remainunproven."
+    ]
   }
 }

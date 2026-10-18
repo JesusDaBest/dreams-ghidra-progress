@@ -18089,15 +18089,16 @@
       "confidence": "high_for_descriptive_role",
       "reviewed_scope": "behavior_or_helper",
       "calling_convention": "PS4_SYSV",
-      "saved_working_signature": "undefined PS4_SYSV GetOrBuildPackedSpriteGeometrySummary(void)",
+      "saved_working_signature": "uchar * PS4_SYSV GetOrBuildPackedSpriteGeometrySummary(uchar * cache, uint metadata_root_id, uint point_root_id)",
       "evidence": [
         "Complete1189 owned instructions and decompilation read and matched tooriginal executable.",
         "Cacheentry,hits,fullwriteback,44-byte metadata/40-byte pointtraversal,transforms,finitegates,extrema/midpoint,sphere andcounts traced.",
         "Scoped original-instruction fixtures cover rotation/scales,metadata andpointleaves,nonzerooffsets,cachehits andnonfinite/overflow;overlapnotcounted asuniqueprogress.",
-        "Independent reopening/decompilation passed;bytes,inferredprototype and9611 othernames/signatures unchanged."
+        "Independent reopening/decompilation passed;bytes,inferredprototype and9611 othernames/signatures unchanged.",
+        "Three-inputRDI/ESI/EDX workingABI andRAX pointerreturn independently reopened/decompiled;originalbytes andallothernames/signatures unchanged."
       ],
       "caveats": [
-        "Analystdescriptive name;workingABI refinement pending.",
+        "Analystdescriptive name;workingABI separatelyverified;originalstructs remainunknown.",
         "ReadableIDs,bounded validtrees andnormal source-marker helper behavior required.",
         "Finite/pow adapters are notexactPS4math;fixtures are notlivegame.",
         "Malformeddata,collision/concurrency/lifetime andkaleidoscopegeometry consumer unresolved;firstextrema notfullradius AABB;finiteinputsoverflow."

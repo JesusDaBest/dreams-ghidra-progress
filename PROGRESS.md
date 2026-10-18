@@ -6988,3 +6988,10 @@ Applied and independently reopened **GetOrBuildPackedSpriteGeometrySummary** aft
 Connected instruction fixtures now include 144 point-data cases and 80 starting-offset cases, with original tree lookup and an explicit Windows CRT power adapter; 42 exceptional-input cases establish filtering/count behavior and demonstrate finite-input overflow under fixture conditions. These scopes overlap earlier tests and do not add multiple function credits. Exact PS4 math, arbitrary malformed trees, concurrency/collisions/lifetimes, production reachability of exceptional ranges and kaleidoscope geometry remain unproven.
 
 Only name and comment changed; independent reopening/decompilation passed. Bytes, the inferred prototype and all 9,611 other names/signatures are unchanged. One previously mapped function gains checked-name credit; subsystem sizes do not grow.
+
+
+### Sprite summary working ABI verified
+
+Refined **GetOrBuildPackedSpriteGeometrySummary** to accept a cache byte pointer and two unsigned 32-bit resource IDs, returning a summary-entry byte pointer. Entry registers, zero-extension, tree/fingerprint uses and shared pointer return support this working declaration; the connected fixtures use the same inputs and check the returned address. Independent reopening confirms RDI/ESI/EDX inputs and RAX return, with successful decompilation.
+
+Byte pointers avoid inventing original cache or entry structs. Original instructions and all 9,611 other names/signatures are unchanged. This adds no checked-function credit and does not establish pointer lifetime, concurrency, malformed-tree safety or exact PS4 math behavior.
