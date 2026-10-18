@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/7fa5dae67d4d452d62285fe3e144d6435be9c807/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1ebd46d60187b5cc1f2a094a861a206a8a6274d3/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**730 of 9,606 functions named and checked.** A function is one piece of the game's code.
+**731 of 9,606 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/7fa5dae67d4d452d62285fe3e144d6435be9c807/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/1ebd46d60187b5cc1f2a094a861a206a8a6274d3/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -72,9 +72,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 370 | 101/344 | 0/26 |
 | Editor & interface | 401 | 86/192 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
-| Shared engine & object data | 370 | 247/283 | 17/82 |
+| Shared engine & object data | 371 | 248/284 | 17/82 |
 
-**2,136 of 9,606 discovered functions are mapped; 7,470 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,137 of 9,606 discovered functions are mapped; 7,469 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -753,137 +753,14 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Rendering & lighting** - 370 functions identified; 102 behavior/helper reviews; 0 property/type reviews
-  - **Scene drawing** - 133 functions identified; 67 behavior/helper reviews; 0 property/type reviews
-    - **Renderer** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
-    - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Volume** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Model Brushstroke** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Mips** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Noisy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Photo** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Pixel Check** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Projection** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sticker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Lighting & shadows** - 95 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sun Shadow** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Spot Shadow** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Shading** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sky** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Ortho Shadow** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Object Emit Light From Glow** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Light Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Object Cast Shadows** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Cone Trace** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Spot Light** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Shading Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Image effects** - 83 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Bokeh rendering** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Occlusion** - 15 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 15 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Post** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Bokeh Bloom** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Portal Effect** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Selection Effect** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Wipe Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Grade FXGlitch Style** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Motion Blur** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Taa** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Video Imposter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Bokeh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **GPU compute support** - 28 functions identified; 28 behavior/helper reviews; 0 property/type reviews
-    - **Image descriptors** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
-    - **Compute dispatch** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
-    - **Queue completion** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-    - **Buffer descriptors** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Shader input registers** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Resource dependencies** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Resource storage** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Shader binary sections** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-  - **Graphics infrastructure** - 15 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **Toolkit** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **Display** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sync** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Frame Constants** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Frame Graph** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Gfx Context** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Camera blending** - 6 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Camera Blender / Persistent Data** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Blend contribution** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Camera Blender / Active Camera Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Camera Blender / Camera Space** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Camera Blender / Camera Status** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **VR rendering** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Vr Layers** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Vr Cursor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Visibility** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Label Visible** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 370 functions identified; 248 behavior/helper reviews; 17 property/type reviews
-  - **Game state & runtime** - 139 functions identified; 126 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 371 functions identified; 249 behavior/helper reviews; 17 property/type reviews
+  - **Game state & runtime** - 140 functions identified; 127 behavior/helper reviews; 0 property/type reviews
     - **Saving & loading** - 62 functions identified; 62 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 62 functions identified; 62 behavior/helper reviews; 0 property/type reviews
     - **Game contexts & runtime support** - 23 functions identified; 20 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 23 functions identified; 20 behavior/helper reviews; 0 property/type reviews
-    - **Derived state** - 17 functions identified; 17 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 17 functions identified; 17 behavior/helper reviews; 0 property/type reviews
+    - **Derived state** - 18 functions identified; 18 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 18 functions identified; 18 behavior/helper reviews; 0 property/type reviews
     - **Resource pages** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
     - **Gameupdater** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
@@ -1055,6 +932,129 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Rendering & lighting** - 370 functions identified; 102 behavior/helper reviews; 0 property/type reviews
+  - **Scene drawing** - 133 functions identified; 67 behavior/helper reviews; 0 property/type reviews
+    - **Renderer** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
+    - **Scene hulls** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Brushstroke** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 14 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Volume** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Model Brushstroke** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Mips** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Noisy** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Pixel Check** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Projection** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sticker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Lighting & shadows** - 95 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sun Shadow** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 22 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spot Shadow** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 20 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Shading** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 17 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sky** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 11 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Ortho Shadow** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 10 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object Emit Light From Glow** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Light Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object Cast Shadows** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Cone Trace** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Spot Light** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Shading Query** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Image effects** - 83 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh rendering** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 24 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Occlusion** - 15 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 15 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Post** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh Bloom** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Portal Effect** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Selection Effect** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wipe Style** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Grade FXGlitch Style** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Motion Blur** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Taa** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Video Imposter** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bokeh** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **GPU compute support** - 28 functions identified; 28 behavior/helper reviews; 0 property/type reviews
+    - **Image descriptors** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
+    - **Compute dispatch** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+    - **Queue completion** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+    - **Buffer descriptors** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Shader input registers** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Resource dependencies** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Resource storage** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Shader binary sections** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+  - **Graphics infrastructure** - 15 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Toolkit** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Display** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sync** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Frame Constants** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Frame Graph** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gfx Context** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Camera blending** - 6 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Persistent Data** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Blend contribution** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Active Camera Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Camera Space** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Camera Blender / Camera Status** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **VR rendering** - 6 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Vr Layers** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Vr Cursor** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Visibility** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Label Visible** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
 - **Sculpting & painting** - 133 functions identified; 25 behavior/helper reviews; 0 property/type reviews
   - **Sculpt geometry** - 94 functions identified; 25 behavior/helper reviews; 0 property/type reviews
     - **Sculpt bricks** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
