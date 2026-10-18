@@ -7227,3 +7227,12 @@ The CPU processor and scalar emission shader now have a traced descriptor connec
 The secondary buffer has a separate **512-byte stride** and 2,048-entry allocation. An emitter loop packs two groups of eight 32-byte pairs into its two 256-byte halves, then follows the CPU generated-record chain. Its parity-selected descriptor goes to parameter offset `0x6c`, matching the secondary shader descriptor load.
 
 The **272-byte sample-cache entry**, **1,360-byte CPU generated record** and **512-byte GPU record** are distinct layouts. The secondary packing transforms and feature gates still require numerical verification. Static binding does not prove live GPU execution, runtime buffer contents or memory coherency; the projection `/8` versus shader `*7` interpretation remains open. No additional naming credit is taken.
+
+
+### GPU path-transform packing numerically checked
+
+**360 packing cases** check **5,760 output transforms** from the original per-record emitter loop. Ninety successful CPU path-cache builds supply real generated records across 30 caller transforms. Constant records reproduce the caller transform in every output slot; synthetic varying world poses reproduce independent per-sample translation, uniform scale and quaternion results in both halves of the GPU record.
+
+The 512-byte output contains sixteen 32-byte transforms, grouped into two sets of eight. Both parity-selected destinations are tested. CPU source records and output guards remain unchanged, and the output count advances once. This supports interpreting the packed values as transforms between corresponding local and world sample frames.
+
+The 360 cases include the earlier 180 constant-transform cases. The varying world poses are deliberately synthetic: they do not establish that the actual linked-stroke branch produces those poses correctly. The test runs the complete cache builder followed by a bounded original packing loop with explicit entry state, a return adapter at chain advancement and platform-import adapters. The full emitter, actual GPU execution and memory coherency remain unverified. No additional naming credit is taken.

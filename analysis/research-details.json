@@ -25091,5 +25091,30 @@
     ],
     "new_name_credit": 0,
     "project_modified": false
+  },
+  "sprite_gpu_path_transform_packing_followup": {
+    "native": {
+      "cache_build_domain": 360,
+      "successful_cpu_builds": 90,
+      "packing_cases": 360,
+      "case_accounting": "360 packing cases include earlier180 constant cases; do not add them.",
+      "packed_transforms_checked": 5760,
+      "scope": "Complete original cache builder produces finite two-point unlinked records under30 transforms; original per-record emitter packing loop runs with explicit entry registers and RET at chain-advance boundary. Platform imports remain explicit adapters.",
+      "checked": [
+        "Each512-byte output contains sixteen32-byte translation/scale/quaternion transforms in two256-byte groups.",
+        "Constant generated records reproduce caller transform; synthetic varying world poses reproduce independent per-sample transforms in both halves.",
+        "Both parity-selected destination buffers exercised.",
+        "Original CPU record and destination guards preserved; output record counter increments once."
+      ],
+      "limits": [
+        "Underlying cache build is unlinked two-point path; varying world poses are synthetic, not output of actual linked-stroke branch. Full emitter remains unverified.",
+        "No GPU execution, actual platform synchronization or memory coherency verification."
+      ],
+      "original_packing_slice_sha256": "34645f4fb298ce66425b6fb961da9d823cf6d7c0e84ed535ac7266228e202a79",
+      "new_name_credit": 0,
+      "project_modified": false
+    },
+    "interpretation": "Working per-sample transform from local sample frame to world sample frame; verified on generated unlinked records and synthetic varying world poses.",
+    "new_name_credit": 0
   }
 }
