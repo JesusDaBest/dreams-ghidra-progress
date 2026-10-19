@@ -7337,3 +7337,12 @@ Checked names are now **797** across **9,615 defined functions**. This credits o
 Six combined isolated original-code cases checked allocation size, zero initialization, untouched trailing bytes and null/non-null cleanup routing, using allocation/deallocation recorders. Independent reopening verified both definitions and working signatures; all existing names/signatures and original bytes remained unchanged.
 
 The reflected type exposes a field named `packed`. Its precise bit meanings and connection to the separately traced rendering controls remain unresolved. These two lifecycle reviews bring the checked-name total to **799**, across **9,617 defined functions**; they do not establish completion of Dreams' mirror tools.
+
+
+### CSG edit storage and lifecycle
+
+`CreateDefaultCsgEdit` and `DestroyCsgEdit` now identify two original lifecycle callbacks with pointers to the analyst working type `CsgEditStorage`. The constructor allocates 84 bytes, initializes its flags to zero, signed voxel size to -128, and color, blend radius and trailing payload to zero. Cleanup skips null and otherwise deletes the object.
+
+Original registration and descriptor consumers establish the field offsets. Registered primitive names establish signed 8-bit voxel size, unsigned 32-bit color and floating-point blend radius. The three flag bytes and 72-byte trailing payload remain opaque. Independent reopening verified the storage type, both function definitions and signatures. Six isolated original-code lifecycle cases checked initialization, canaries and cleanup forwarding using explicit allocation/deallocation recorders.
+
+Checked names are now **801**, across **9,619 defined functions**. This adds two lifecycle reviews; the storage layout itself adds no function credit. Original source declarations, flag semantics, payload interpretation, allocation exceptions and actual game/concurrency behavior remain unverified.

@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9617,
-  "mapped_total": 2200,
+  "inventory_total": 9619,
+  "mapped_total": 2202,
   "unmapped_total": 7417,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -55755,6 +55755,60 @@
       "code_role": "properties-types",
       "code_role_basis": "Lifecycle of the reflected packed mirror-flag type.",
       "code_sha256_basis": "original_eh_region"
+    },
+    "140cfb7a0": {
+      "system": "sculpting-painting",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CreateDefaultCsgEdit",
+          "support": [
+            "Both callbacks installed by original CSGEdit type registration.",
+            "Complete original41-byte constructor and11-byte cleanup matched; full typed C read with verified84-byte CsgEditStorage layout.",
+            "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+            "Six isolated original-code fixtures validate 84-byte size, complete default initialization and trailing canaries and null/non-null cleanup routing.",
+            "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9617 prior names/signatures and original bytes."
+          ]
+        }
+      ],
+      "code_sha256": "97df572d5431fb4e1eeb42fa40645c00417f15a700b88f044e99b4eb86c56343",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "csgedit",
+        "properties-types"
+      ],
+      "component_basis": "Original CSGEdit registration installs these lifecycle callbacks.",
+      "code_role": "properties-types",
+      "code_role_basis": "Lifecycle and default storage initialization of the reflected CSG edit type.",
+      "code_sha256_basis": "original_eh_region"
+    },
+    "140cfb7d0": {
+      "system": "sculpting-painting",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DestroyCsgEdit",
+          "support": [
+            "Both callbacks installed by original CSGEdit type registration.",
+            "Complete original41-byte constructor and11-byte cleanup matched; full typed C read with verified84-byte CsgEditStorage layout.",
+            "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+            "Six isolated original-code fixtures validate 84-byte size, complete default initialization and trailing canaries and null/non-null cleanup routing.",
+            "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9617 prior names/signatures and original bytes."
+          ]
+        }
+      ],
+      "code_sha256": "032b8ef9c03532c1efc223c5409773c4b5cf3737c270121c93927465f44a9039",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "csgedit",
+        "properties-types"
+      ],
+      "component_basis": "Original CSGEdit registration installs these lifecycle callbacks.",
+      "code_role": "properties-types",
+      "code_role_basis": "Lifecycle and default storage initialization of the reflected CSG edit type.",
+      "code_sha256_basis": "original_eh_region"
     }
   },
   "hierarchy": [
@@ -60000,6 +60054,17 @@
                 {
                   "id": "runtime-implementation",
                   "label": "Runtime & implementation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "csgedit",
+              "label": "CSGEdit",
+              "children": [
+                {
+                  "id": "properties-types",
+                  "label": "Properties & type definitions",
                   "children": []
                 }
               ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "732 existing-function renames,66 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "732 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9617,
+    "total": 9619,
     "default_fun_names": 8663,
-    "other_names": 954,
-    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_66_created_functions_and_1_reviewed_existing_name"
+    "other_names": 956,
+    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_68_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18586,6 +18586,54 @@
         "Original source symbols not recovered; byte pointer is a storage-level working type.",
         "Allocation exceptions/failure, live reflection, exact packed bit names, concurrency and real game behavior unverified.",
         "No claim that the reflected type is identical to the separately traced emission control."
+      ]
+    },
+    {
+      "address": "140cfb7a0",
+      "original_name": null,
+      "applied_name": "CreateDefaultCsgEdit",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "CsgEditStorage * PS4_SYSV CreateDefaultCsgEdit(void)",
+      "evidence": [
+        "Both callbacks installed by original CSGEdit type registration.",
+        "Complete original41-byte constructor and11-byte cleanup matched; full typed C read with verified84-byte CsgEditStorage layout.",
+        "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+        "Six isolated original-code fixtures validate 84-byte size, complete default initialization and trailing canaries and null/non-null cleanup routing.",
+        "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9617 prior names/signatures and original bytes."
+      ],
+      "caveats": [
+        "Original source symbols not recovered; CsgEditStorage is an analyst working layout; flags and72-byte payload remain opaque.",
+        "Allocation exceptions/failure, live reflection, exact packed bit names and payload semantics, concurrency and real game behavior unverified.",
+        "No claim that CSGEdit mirror byte2 is identical to the separately traced emission control."
+      ]
+    },
+    {
+      "address": "140cfb7d0",
+      "original_name": null,
+      "applied_name": "DestroyCsgEdit",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DestroyCsgEdit(CsgEditStorage * edit)",
+      "evidence": [
+        "Both callbacks installed by original CSGEdit type registration.",
+        "Complete original41-byte constructor and11-byte cleanup matched; full typed C read with verified84-byte CsgEditStorage layout.",
+        "Original SELF imports resolve to operator new(unsigned long) and operator delete(void*).",
+        "Six isolated original-code fixtures validate 84-byte size, complete default initialization and trailing canaries and null/non-null cleanup routing.",
+        "Pointer result inRAX and cleanup inputRDI saved; independent reopening preserves all9617 prior names/signatures and original bytes."
+      ],
+      "caveats": [
+        "Original source symbols not recovered; CsgEditStorage is an analyst working layout; flags and72-byte payload remain opaque.",
+        "Allocation exceptions/failure, live reflection, exact packed bit names and payload semantics, concurrency and real game behavior unverified.",
+        "No claim that CSGEdit mirror byte2 is identical to the separately traced emission control."
       ]
     }
   ],
