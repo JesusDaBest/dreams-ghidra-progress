@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 806,
+    "checked_and_applied_names": 807,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 806,
+    "verified_names": 807,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "736 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "737 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25743,6 +25743,27 @@
       "Analyst descriptive name and opaque source pointer,not recovered source symbol/type.",
       "Source object semantics and caller presence meaning,positive source validity,aliasing and complete editor lifecycle unresolved.",
       "Local canary/inverse-factor fixtures; original platform initialization and live game not executed."
+    ]
+  },
+  "csg_shape_adjustment_checkpoint": {
+    "address": "140a049b0",
+    "name": "UpdatePackedCsgEditFromManipulatedFrame",
+    "working_signature": "void PS4_SYSV UpdatePackedCsgEditFromManipulatedFrame(CsgEditStorage * edit, SpatialQueryFloat4Working16 frame_a_position_scale, SpatialQueryFloat4Working16 frame_a_rotation, SpatialQueryFloat4Working16 frame_b_position_scale, SpatialQueryFloat4Working16 frame_b_rotation, SpatialQueryFloat4Working16 extents_or_pivot_distance, SpatialQueryFloat4Working16 projection_direction)",
+    "native_cases": 8304,
+    "findings": [
+      "Complete2005-byte EH region and399owned instructions reviewed with full typed C and original sculpt-editor caller140a2a558.",
+      "Explicit RDI edit pointer and six16-byte vector arguments separate two frames, requested dimensions/pivot-distance and projection direction.",
+      "Ordinary primitives store inverse-frame position, requested dimension magnitudes and relative packed orientation; sphere11 converts to ellipsoid2.",
+      "Tetrahedron tags12/22 preserve pivot and adjust other vertex rays to requested directional projection distance; curve7 is unchanged.",
+      "Cone branch copies formatter dimensions, halves height and restores center using decoded signed localZ.",
+      "8304 isolated original-code cases cover tetrahedron directions, ordinary and rotated frames, signed scales/dimensions and cone composition.",
+      "Independent reopening verifies only expected function name/signature changed; original code bytes and function count unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI, not recovered source names.",
+      "Exact UI gesture, full caller lifecycle, invalid indices, zero projection/scale and nonfinite or invalid quaternion domains unresolved.",
+      "Fixtures supply local infinity predicate, canary and initialized static factors; no live game or service execution.",
+      "Cone composition reference separately executes original formatter; its internal geometry is covered by earlier formatter tests."
     ]
   }
 }

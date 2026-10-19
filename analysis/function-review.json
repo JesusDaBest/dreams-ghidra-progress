@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "736 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "737 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8659,
-    "other_names": 961,
-    "verification": "complete_inventory_matches_baseline_plus_736_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8658,
+    "other_names": 962,
+    "verification": "complete_inventory_matches_baseline_plus_737_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18751,6 +18751,32 @@
         "Analyst descriptive name and opaque source pointer,not recovered source symbol/type.",
         "Source object semantics and caller presence meaning,positive source validity,aliasing and complete editor lifecycle unresolved.",
         "Local canary/inverse-factor fixtures; original platform initialization and live game not executed."
+      ]
+    },
+    {
+      "address": "140a049b0",
+      "original_name": "FUN_140a049b0",
+      "applied_name": "UpdatePackedCsgEditFromManipulatedFrame",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdatePackedCsgEditFromManipulatedFrame(CsgEditStorage * edit, SpatialQueryFloat4Working16 frame_a_position_scale, SpatialQueryFloat4Working16 frame_a_rotation, SpatialQueryFloat4Working16 frame_b_position_scale, SpatialQueryFloat4Working16 frame_b_rotation, SpatialQueryFloat4Working16 extents_or_pivot_distance, SpatialQueryFloat4Working16 projection_direction)",
+      "evidence": [
+        "Complete2005-byte EH region and399owned instructions reviewed with full typed C and original sculpt-editor caller140a2a558.",
+        "Explicit RDI edit pointer and six16-byte vector arguments separate two frames, requested dimensions/pivot-distance and projection direction.",
+        "Ordinary primitives store inverse-frame position, requested dimension magnitudes and relative packed orientation; sphere11 converts to ellipsoid2.",
+        "Tetrahedron tags12/22 preserve pivot and adjust other vertex rays to requested directional projection distance; curve7 is unchanged.",
+        "Cone branch copies formatter dimensions, halves height and restores center using decoded signed localZ.",
+        "8304 isolated original-code cases cover tetrahedron directions, ordinary and rotated frames, signed scales/dimensions and cone composition.",
+        "Independent reopening verifies only expected function name/signature changed; original code bytes and function count unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not recovered source names.",
+        "Exact UI gesture, full caller lifecycle, invalid indices, zero projection/scale and nonfinite or invalid quaternion domains unresolved.",
+        "Fixtures supply local infinity predicate, canary and initialized static factors; no live game or service execution.",
+        "Cone composition reference separately executes original formatter; its internal geometry is covered by earlier formatter tests."
       ]
     }
   ],

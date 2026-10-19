@@ -7987,3 +7987,16 @@ Independent reopening verified the name, pointer types and unchanged original by
 The original 165-byte region and full C were read, and the saved pointer/signed-integer signature survived independent reopening. Original bytes and all other function annotations stayed unchanged. The source object type, caller meaning of the presence value, aliasing and complete caller lifecycle remain unresolved.
 
 Totals are **806 checked names across 9,620 defined functions**, with **2,207 mapped and 7,413 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Sculpt edit manipulation transform
+
+`UpdatePackedCsgEditFromManipulatedFrame` now names a reviewed sculpt-editor helper. Ordinary shapes convert position and orientation between two frames, keep requested dimension magnitudes and encode reflection signs in the packed transform. A sphere record becomes an ellipsoid record while preserving upper flags. Curve records are unchanged.
+
+For tetrahedra, the selected vertex stays fixed while other pivot-to-vertex rays are adjusted to a requested directional projection distance. Cones use formatter-generated dimensions, halve the stored height and adjust the center using the decoded signed local Z axis. Their dimension magnitudes include the frame scale ratio.
+
+8,304 isolated original-code cases cover tetrahedron directions, ordinary and rotated frames, signed dimensions/scales, and cone composition. Tests use explicit local initialization and an infinity predicate; they do not execute a live game or service. The cone reference separately executes the original formatter. Full assembly, typed C and the sculpt-editor call site were read. The saved argument signature survived independent reopening, with original code bytes unchanged.
+
+The exact UI gesture, complete caller lifecycle, invalid pivot indices, zero projections/scales and nonfinite or invalid quaternion inputs remain unresolved. The name describes observed behavior rather than recovering an original source symbol.
+
+Totals are **807 checked names across 9,620 defined functions**, with **2,208 mapped and 7,412 unmapped**. These are identified-code review counts, not feature completion.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2207,
-  "unmapped_total": 7413,
+  "mapped_total": 2208,
+  "unmapped_total": 7412,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55938,6 +55938,35 @@
             "Curve/tetrahedron tags7/12/22 preserve first payloadXYZ with scale1 and identity quaternion; other tags call DecodePackedCsgEditTransform.",
             "3075 complete original wrapper+decoder cases cover all256first-byte values,sixsigned presence values,two parities andNULL source for three nonpositive values; source/output guards preserved.",
             "Independent reopening verifies RDIoutput,RSIsource and signedEDXpresence signature; original bytes and all other annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140a049b0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original sculpt editor helper updates packed edit geometry from two transform frames and manipulation inputs, with tetrahedron and cone branches.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body,typed C and caller read;8304isolated original-code cases.",
+      "code_sha256": "de7b58c1836bd162babee092c6804d15f03903a2173412fae79a1da241ebf9ec",
+      "code_hash_basis": "original_eh_region_including_trailing_ud2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdatePackedCsgEditFromManipulatedFrame",
+          "support": [
+            "Complete2005-byte EH region and399owned instructions reviewed with full typed C and original sculpt-editor caller140a2a558.",
+            "Explicit RDI edit pointer and six16-byte vector arguments separate two frames, requested dimensions/pivot-distance and projection direction.",
+            "Ordinary primitives store inverse-frame position, requested dimension magnitudes and relative packed orientation; sphere11 converts to ellipsoid2.",
+            "Tetrahedron tags12/22 preserve pivot and adjust other vertex rays to requested directional projection distance; curve7 is unchanged.",
+            "Cone branch copies formatter dimensions, halves height and restores center using decoded signed localZ.",
+            "8304 isolated original-code cases cover tetrahedron directions, ordinary and rotated frames, signed scales/dimensions and cone composition.",
+            "Independent reopening verifies only expected function name/signature changed; original code bytes and function count unchanged."
           ]
         }
       ]
