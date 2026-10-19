@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "755 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "756 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8640,
-    "other_names": 980,
-    "verification": "complete_inventory_matches_baseline_plus_755_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8639,
+    "other_names": 981,
+    "verification": "complete_inventory_matches_baseline_plus_756_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19234,6 +19234,34 @@
         "Some earlier object-path suites supply placement output;later connected suites strengthen selected paths only.",
         "Extracted snapping block cases are separate from bounded full-function paths.",
         "Additional snap flags,previous-frame histories and combined states remain unresolved."
+      ]
+    },
+    {
+      "address": "140bc8f10",
+      "original_name": "FUN_140bc8f10",
+      "applied_name": "ComputeEditorStoredOffsetPlacementTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorStoredOffsetPlacementTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, uchar suppress_mode_scale, uchar placement_option)",
+      "evidence": [
+        "Complete2958-byte/584owned-instruction body,full732-line C and all7recorded caller windows reviewed.",
+        "State17 copies cached32-byte transform.",
+        "Otherwise computes transform from corrected placement,context,selected construction quaternion,stored15e80XY offset and15e60scalar.",
+        "Scalar snap flag quantizes stored scalar and uses identity construction orientation.",
+        "Mode28 optional scale adjustment uses object eligibility,squared contribution and minimum0.1.",
+        "Direction flag aligns signed rotatedZ to editor120 unit direction,with exact opposite fallback checked in identity frame.",
+        "Fourth lowbyte suppresses mode28scale;fifth lowbyte forwards placement option.",
+        "8bounded original-code suites2048cases;name/signature independently reopened with original bytes and other function annotations unchanged."
+      ],
+      "caveats": [
+        "Concrete mode enums,stored parameter names and runtime object lifecycle unresolved.",
+        "Finite unit rotations/directions and selected nonzero scales only;nonfinite/subnormal/invalid-pointer domains unvalidated.",
+        "Additional mode masks,nonempty context lists and full snap histories/flag combinations not established.",
+        "Host math adapters do not establish exact PS4 rounding.",
+        "Transformed near-antiparallel thresholds and nonunit directions remain unvalidated."
       ]
     }
   ],

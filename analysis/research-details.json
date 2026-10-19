@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 825,
+    "checked_and_applied_names": 826,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 825,
+    "verified_names": 826,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "755 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "756 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26247,6 +26247,33 @@
       "bounded_cases": 11926,
       "bounded_function_path_cases": 10062,
       "extracted_block_cases": 1864
+    }
+  },
+  "stored_offset_placement_checkpoint": {
+    "address": "140bc8f10",
+    "name": "ComputeEditorStoredOffsetPlacementTransform",
+    "working_signature": "void PS4_SYSV ComputeEditorStoredOffsetPlacementTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, uchar suppress_mode_scale, uchar placement_option)",
+    "native_cases": 2048,
+    "findings": [
+      "Complete2958-byte/584owned-instruction body,full732-line C and all7recorded caller windows reviewed.",
+      "State17 copies cached32-byte transform.",
+      "Otherwise computes transform from corrected placement,context,selected construction quaternion,stored15e80XY offset and15e60scalar.",
+      "Scalar snap flag quantizes stored scalar and uses identity construction orientation.",
+      "Mode28 optional scale adjustment uses object eligibility,squared contribution and minimum0.1.",
+      "Direction flag aligns signed rotatedZ to editor120 unit direction,with exact opposite fallback checked in identity frame.",
+      "Fourth lowbyte suppresses mode28scale;fifth lowbyte forwards placement option.",
+      "8bounded original-code suites2048cases;name/signature independently reopened with original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Concrete mode enums,stored parameter names and runtime object lifecycle unresolved.",
+      "Finite unit rotations/directions and selected nonzero scales only;nonfinite/subnormal/invalid-pointer domains unvalidated.",
+      "Additional mode masks,nonempty context lists and full snap histories/flag combinations not established.",
+      "Host math adapters do not establish exact PS4 rounding.",
+      "Transformed near-antiparallel thresholds and nonunit directions remain unvalidated."
+    ],
+    "native_suites": {
+      "suite_count": 8,
+      "bounded_cases": 2048
     }
   }
 }

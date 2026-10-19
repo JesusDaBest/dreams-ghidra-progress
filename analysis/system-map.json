@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2226,
-  "unmapped_total": 7394,
+  "mapped_total": 2227,
+  "unmapped_total": 7393,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56485,6 +56485,36 @@
             "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
             "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
             "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bc8f10": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Builds stored-offset placement transform in reviewed editor sculpt pipeline;all7recorded caller windows reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full2958-byte/584owned-instruction body and full C reviewed;8bounded original-code suites2048cases.",
+      "code_sha256": "42ef47472606586efc54dd4eebb957c0b6533217c931a05d00b4dae98c1e71b2",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorStoredOffsetPlacementTransform",
+          "support": [
+            "Complete2958-byte/584owned-instruction body,full732-line C and all7recorded caller windows reviewed.",
+            "State17 copies cached32-byte transform.",
+            "Otherwise computes transform from corrected placement,context,selected construction quaternion,stored15e80XY offset and15e60scalar.",
+            "Scalar snap flag quantizes stored scalar and uses identity construction orientation.",
+            "Mode28 optional scale adjustment uses object eligibility,squared contribution and minimum0.1.",
+            "Direction flag aligns signed rotatedZ to editor120 unit direction,with exact opposite fallback checked in identity frame.",
+            "Fourth lowbyte suppresses mode28scale;fifth lowbyte forwards placement option.",
+            "8bounded original-code suites2048cases;name/signature independently reopened with original bytes and other function annotations unchanged."
           ]
         }
       ]
