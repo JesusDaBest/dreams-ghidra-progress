@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9627,
-  "mapped_total": 2259,
-  "unmapped_total": 7368,
+  "mapped_total": 2260,
+  "unmapped_total": 7367,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57480,6 +57480,33 @@
             "1664 complete original-function cases verify low-byte mask priority,fallback statuses,recording gates,last-entry vtable query and preserved float payload.",
             "Optional last object vtable+C0 supplies descriptor field10 before gate;chosen context id is passed to SubmitEditorEventForContextId.",
             "Independent reopen verifies descriptive name and consumed-value ABI,preserving all instructions,bytes and other names/signatures."
+          ]
+        }
+      ]
+    },
+    "140116a70": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both verified direct callers remap event ids and forward results to SubmitContextualEditorEvent.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full113-byte36instruction body,full original/typed pseudocode and both direct caller continuations;66046 original-helper cases without fixtures.",
+      "code_sha256": "5079df1c9a58b5402a8e10a8807a01b16d0477e5beb78b9a25328a79a5b77f59",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemapEditorEventIdBySelector",
+          "support": [
+            "Complete113-byte36instruction body,39 original and43 typed-preview pseudocode lines read.",
+            "Both identified direct callers consumeAX and forward result to SubmitContextualEditorEvent,establishing event-id role.",
+            "66046 complete original-helper cases,no callee/import fixtures:all65534 other16bit values preserved for tested selector,and all256 selector bytes covered for both4C/4D.",
+            "Exact mappings:4C with selectors3/42->4E,5->4F,29->50,otherwise51;4D same categories52/53/54/55.",
+            "Independent reopen verified descriptive name and ushort/uchar-to-ushort working ABI,preserving body,bytes and other names/signatures."
           ]
         }
       ]

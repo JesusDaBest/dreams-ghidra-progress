@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "781 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "782 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8614,
-    "other_names": 1013,
-    "verification": "complete_inventory_matches_baseline_plus_781_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8613,
+    "other_names": 1014,
+    "verification": "complete_inventory_matches_baseline_plus_782_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -20073,6 +20073,29 @@
         "53 remaining caller windows,table/cache initialization,actual object query implementation,lifetime and broader feature meaning unresolved.",
         "Bounded synthetic tests with explicit vtable/downstream fixtures;no actual game integration or exact Media Molecule source/build match.",
         "Upper mask bits and requirement-byte values beyond tested0..3 remain unverified natively."
+      ]
+    },
+    {
+      "address": "140116a70",
+      "original_name": "FUN_140116a70",
+      "applied_name": "RemapEditorEventIdBySelector",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ushort PS4_SYSV RemapEditorEventIdBySelector(ushort event_id, uchar selector)",
+      "evidence": [
+        "Complete113-byte36instruction body,39 original and43 typed-preview pseudocode lines read.",
+        "Both identified direct callers consumeAX and forward result to SubmitContextualEditorEvent,establishing event-id role.",
+        "66046 complete original-helper cases,no callee/import fixtures:all65534 other16bit values preserved for tested selector,and all256 selector bytes covered for both4C/4D.",
+        "Exact mappings:4C with selectors3/42->4E,5->4F,29->50,otherwise51;4D same categories52/53/54/55.",
+        "Independent reopen verified descriptive name and ushort/uchar-to-ushort working ABI,preserving body,bytes and other names/signatures."
+      ],
+      "caveats": [
+        "Selector source field meaning and full enclosing parent routine unreviewed.",
+        "Only consumed16bit event/return and byte selector modeled;original source-level types and upper bits not claimed recovered.",
+        "Indirect callers not exhaustively identified;no actual game or exact Media Molecule source/build match."
       ]
     }
   ],

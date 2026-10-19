@@ -8479,3 +8479,14 @@ Two complete original-function suites passed 1,664 cases. They cover all 256 low
 The full 327-byte region (94 instructions), 48 original and 61 typed-preview nonempty pseudocode lines, and four of 57 direct caller windows were reviewed. Independent reopening verified the descriptive name and working consumed-value signature, preserving every instruction, original byte and other function name/signature. Callers supply 64 stack bytes, but this function reads only the first pointer-sized value; the source aggregate type is not recovered. Remaining 53 caller windows, upper mask bits, table/cache initialization, object lifetime and wider feature meaning remain unresolved. No exact Media Molecule source/build match is claimed.
 
 Totals: **858 checked names across 9,627 defined functions**, **2,259 mapped and 7,368 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Remapping editor event identifiers
+
+`RemapEditorEventIdBySelector` identifies a small table-driven event-id remapper. Both identified direct callers consume its 16-bit result and forward it to contextual event submission. Events 0x4C and 0x4D split into four categories according to a byte selector; other event ids pass through. The selector source field has not yet been assigned a feature-level meaning.
+
+A complete original-function suite passed 66,046 cases without callee/import fixtures: every other 16-bit event value was checked with a sampled selector, and all 256 selector bytes were checked for both special events. This covers the entire selector domain for those two events, not every combination for other event values.
+
+The full 113-byte body (36 instructions), original and typed-preview pseudocode, both identified direct caller windows and their continuations were reviewed. Independent reopening verified the descriptive name and working 16-bit event/return plus byte-selector signature, preserving all instructions, original bytes and other names/signatures. Full parent-routine semantics, selector meaning, indirect callers and source-level types beyond consumed machine values remain unresolved. No in-game execution or exact Media Molecule source/build match is claimed.
+
+Totals: **859 checked names across 9,627 defined functions**, **2,260 mapped and 7,367 unmapped**. These are code-review counts, not whole-game completion.

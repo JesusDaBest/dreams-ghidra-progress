@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 858,
+    "checked_and_applied_names": 859,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 858,
+    "verified_names": 859,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "781 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "782 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -27064,6 +27064,30 @@
       "bounded_cases": 1664,
       "complete_function_cases": 1664,
       "native_invocations": 1664
+    }
+  },
+  "editor_value_remap_checkpoint": {
+    "address": "140116a70",
+    "name": "RemapEditorEventIdBySelector",
+    "working_signature": "ushort PS4_SYSV RemapEditorEventIdBySelector(ushort event_id, uchar selector)",
+    "native_cases": 66046,
+    "findings": [
+      "Complete113-byte36instruction body,39 original and43 typed-preview pseudocode lines read.",
+      "Both identified direct callers consumeAX and forward result to SubmitContextualEditorEvent,establishing event-id role.",
+      "66046 complete original-helper cases,no callee/import fixtures:all65534 other16bit values preserved for tested selector,and all256 selector bytes covered for both4C/4D.",
+      "Exact mappings:4C with selectors3/42->4E,5->4F,29->50,otherwise51;4D same categories52/53/54/55.",
+      "Independent reopen verified descriptive name and ushort/uchar-to-ushort working ABI,preserving body,bytes and other names/signatures."
+    ],
+    "limits": [
+      "Selector source field meaning and full enclosing parent routine unreviewed.",
+      "Only consumed16bit event/return and byte selector modeled;original source-level types and upper bits not claimed recovered.",
+      "Indirect callers not exhaustively identified;no actual game or exact Media Molecule source/build match."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 66046,
+      "complete_function_cases": 66046,
+      "native_invocations": 66046
     }
   }
 }
