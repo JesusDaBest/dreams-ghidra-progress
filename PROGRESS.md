@@ -7875,3 +7875,14 @@ A complete original-function suite passed 512 bounded cases. Global mode 3 suppr
 The full 248-byte region (68 instructions), 46 original nonempty pseudocode lines, full typed preview and four of 210 direct caller windows were reviewed. Independent reopening verified the descriptive name and working ushort/int/uchar signature. The existing 67-instruction body remains unchanged; its trailing trap was checked separately. All original bytes and other function names/signatures are preserved. Broader caller semantics, the other 206 direct windows, uninitialized padding, actual downstream integration and lifecycle remain unresolved. No exact Media Molecule source/build match is claimed.
 
 Totals: **855 checked names across 9,627 defined functions**, **2,256 mapped and 7,371 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Events with an optional object
+
+`SubmitObjectEditorEvent` identifies an entry point accepting a world pointer, optional object, event id, input key, separate descriptor identifier and a recording requirement flag. It combines the event, signed object identifier (or zero) and input key into a 64-bit key. The input key also selects an odd-numbered user/mask slot. Recording disabled suppresses submission only when the requirement flag is set; the selected event-mask bit independently suppresses it.
+
+A complete original-function suite passed 1,024 cases against an independent key model, covering optional objects, signed identifiers, upper event-id bits, randomized keys/descriptor identifiers, recording flags and masks. The descriptor and downstream arguments were checked. Tests use synthetic data and explicit mutex/thread/downstream fixtures; they do not prove live game behavior, synchronization or actual downstream integration.
+
+The full 972-byte region (244 instructions), 96 original and 110 typed-preview nonempty pseudocode lines, and four of 26 direct caller windows were reviewed. Independent reopening verified the descriptive name and six-argument working signature, preserving the existing 243-instruction body, separately checked trailing trap, original bytes and all other names/signatures. The meaning of the slot scheme, broader caller semantics, remaining 22 caller windows, padding and lifecycle remain unresolved. No exact Media Molecule source/build match is claimed.
+
+Totals: **856 checked names across 9,627 defined functions**, **2,257 mapped and 7,370 unmapped**. These are code-review counts, not whole-game completion.
