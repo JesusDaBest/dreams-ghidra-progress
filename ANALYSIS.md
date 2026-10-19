@@ -8376,3 +8376,14 @@ The helper checks active context, marks per-user activity and stops early when t
 This resolves the shared helper140774f50 prototype caveat in the earlier glow, material, effect and brushstroke checkpoints. It does not resolve the event receiver140114f50 or the separate byte-property recorder1407793b0. Tests use synthetic context/asset data and an explicit event-capture fixture. Actual event storage or transmission, persistence, live object lifecycle and in-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
 
 Totals: **849 checked names across 9,627 defined functions**, **2,250 mapped and 7,377 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recent editor-event history
+
+`AppendOrCoalesceEditorEventHistory` identifies an in-memory history buffer used by contextual editor-event submission. It keeps 16 entries of 64 bytes. Each new entry contains 28 descriptor bytes and two 16-byte summaries, with four padding bytes preserved. It checks the latest four entries for a matching descriptor. A duplicate increments a repeat byte up to 255, without replacing its summaries or advancing the append count. New entries wrap around the ring;the append count itself wraps at 32 bits.
+
+Event-id exclusions are checked after duplicate lookup. An excluded event therefore cannot create a new history entry, but can increment an existing matching entry. The complete 730-byte original body, 120 nonempty pseudocode lines and one incoming direct-call window were reviewed. An independent memory model matched 1,024 original-function cases: 256 appends,640 duplicates and128 exclusions, including count wrap, repeat saturation and duplicate distances1–5. No callee or imported-function fixtures were needed. The existing function was renamed with a three-pointer working signature and independently reopened;original bytes and all other names/signatures are unchanged.
+
+This establishes bounded in-memory history behavior. Larger exclusion lists, concurrency, initialization, history consumers and the full event-rule engine remain unresolved. No disk/network persistence, in-game verification or exact Media Molecule source/build match is claimed.
+
+Totals: **850 checked names across 9,627 defined functions**, **2,251 mapped and 7,376 unmapped**. These counts describe code review, not whole-game completion.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9627,
-  "mapped_total": 2250,
-  "unmapped_total": 7377,
+  "mapped_total": 2251,
+  "unmapped_total": 7376,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57238,6 +57238,34 @@
             "Changed requests emit supplied or mode-dependent events: mode62 adds111,69..71 use110,eligible inverted edits use113,mode41 retains supplied event. Valid selected-entry data updates editor16378.",
             "5,376 complete-function synthetic cases cover all256 modes,bank/invert/unchanged combinations,context mismatch,selected-kind/index bounds and input truncation. The event callee is an explicit capture fixture.",
             "Definition and six-input working signature independently reopened with original bytes and existing names/signatures unchanged. Four reviewed callers regenerated with all eight shared-activity call expressions carrying the six verified inputs."
+          ]
+        }
+      ]
+    },
+    "140114460": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared contextual editor-event submission calls this16-entry event-history ring helper.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete730-byte body/full120nonemptylineCread;1024 original-function cases with independent ring-memory model.",
+      "code_sha256": "c3437767ca8e69a3539a7187662d89f8c2071ca188c57d5201ff78945e35ad0f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendOrCoalesceEditorEventHistory",
+          "support": [
+            "Complete730-byte original body,120 nonempty pseudocode lines and one direct incoming-call window reviewed.",
+            "Stores28 descriptor bytes plus two16-byte summaries in64-byte entries of a16-entry history ring. Four-byte padding is preserved and the uint32 append count wraps.",
+            "Checks the latest four entries for descriptor-field equality,ignoring repeat count/padding. Duplicates increment an existing byte repeat count,saturating at255,without replacing summaries or advancing count.",
+            "Event-id exclusions are checked only after duplicate lookup. A matching recent record can still have its repeat count incremented even when that event id is excluded from new entries.",
+            "1,024 original-function cases passed against an independent memory model:256 appends,640 duplicates,128 excluded records,including count wrap and duplicate distances1..5. No callee/import fixtures.",
+            "Existing function renamed with a three-pointer working signature;independently reopened,original bytes and all other saved names/signatures unchanged."
           ]
         }
       ]

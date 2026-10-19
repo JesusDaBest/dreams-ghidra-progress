@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 803,
+    "done": 804,
     "todo": 1447,
-    "total": 2250,
-    "behavior_or_helpers_reviewed": 729,
+    "total": 2251,
+    "behavior_or_helpers_reviewed": 730,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -28287,12 +28287,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 272,
+        "done": 273,
         "todo": 105,
-        "total": 377,
-        "behavior_or_helpers_reviewed": 255,
+        "total": 378,
+        "behavior_or_helpers_reviewed": 256,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 290,
+        "runtime_functions_identified": 291,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -28300,6 +28300,7 @@
           "HashNameBytes32",
           "RegisterVariantTypeFieldOffset",
           "RegisterUnsigned32FieldOffset",
+          "AppendOrCoalesceEditorEventHistory",
           "WriteReflectedObjectRecords",
           "AreTaggedPayloadRecordsEqual",
           "TouchKeyedResourceLastUseCounter",
@@ -28681,6 +28682,7 @@
           "14010d370",
           "1401123b0",
           "140112930",
+          "140114460",
           "140116eb0",
           "1401180e0",
           "140118620",
@@ -29068,17 +29070,18 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 128,
+            "done": 129,
             "todo": 13,
-            "total": 141,
-            "behavior_or_helpers_reviewed": 128,
+            "total": 142,
+            "behavior_or_helpers_reviewed": 129,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 134,
+            "runtime_functions_identified": 135,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "HashNameBytes32",
+              "AppendOrCoalesceEditorEventHistory",
               "WriteReflectedObjectRecords",
               "TouchKeyedResourceLastUseCounter",
               "CopyKeyedResourceDescriptorOrDefault",
@@ -29224,6 +29227,7 @@
             ],
             "done_addresses": [
               "14010d370",
+              "140114460",
               "140116eb0",
               "140118620",
               "1401186d0",
@@ -30229,20 +30233,22 @@
               {
                 "name": "shared/runtime/edit-events",
                 "label": "Edit events",
-                "done": 1,
+                "done": 2,
                 "todo": 0,
-                "total": 1,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 1,
+                "runtime_functions_identified": 2,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
+                  "AppendOrCoalesceEditorEventHistory",
                   "ApplyEditEventWithInverseHistory"
                 ],
                 "todo_names": [],
                 "done_addresses": [
+                  "140114460",
                   "140b1b7b0"
                 ],
                 "todo_addresses": [],
@@ -30251,20 +30257,22 @@
                   {
                     "name": "shared/runtime/edit-events/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 0,
-                    "total": 1,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 1,
+                    "runtime_functions_identified": 2,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
+                      "AppendOrCoalesceEditorEventHistory",
                       "ApplyEditEventWithInverseHistory"
                     ],
                     "todo_names": [],
                     "done_addresses": [
+                      "140114460",
                       "140b1b7b0"
                     ],
                     "todo_addresses": [],
@@ -47297,5 +47305,5 @@
       }
     ]
   },
-  "unmapped": 7377
+  "unmapped": 7376
 }

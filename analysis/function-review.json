@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "772 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "773 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8623,
-    "other_names": 1004,
-    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8622,
+    "other_names": 1005,
+    "verification": "complete_inventory_matches_baseline_plus_773_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19856,6 +19856,31 @@
         "Synthetic context/asset data with explicit event capture,not live runtime lifecycle.",
         "Entry/context pointer validity,other bank values and real object lifecycle unresolved.",
         "Byte-property recorder1407793b0 remains a separate unresolved prototype.",
+        "Original source names/types and exact Media Molecule source/build match unknown."
+      ]
+    },
+    {
+      "address": "140114460",
+      "original_name": "FUN_140114460",
+      "applied_name": "AppendOrCoalesceEditorEventHistory",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendOrCoalesceEditorEventHistory(void * descriptor, void * summary, void * second_summary)",
+      "evidence": [
+        "Complete730-byte original body,120 nonempty pseudocode lines and one direct incoming-call window reviewed.",
+        "Stores28 descriptor bytes plus two16-byte summaries in64-byte entries of a16-entry history ring. Four-byte padding is preserved and the uint32 append count wraps.",
+        "Checks the latest four entries for descriptor-field equality,ignoring repeat count/padding. Duplicates increment an existing byte repeat count,saturating at255,without replacing summaries or advancing count.",
+        "Event-id exclusions are checked only after duplicate lookup. A matching recent record can still have its repeat count incremented even when that event id is excluded from new entries.",
+        "1,024 original-function cases passed against an independent memory model:256 appends,640 duplicates,128 excluded records,including count wrap and duplicate distances1..5. No callee/import fixtures.",
+        "Existing function renamed with a three-pointer working signature;independently reopened,original bytes and all other saved names/signatures unchanged."
+      ],
+      "caveats": [
+        "Synthetic global history/count/exclusion storage,not live game execution.",
+        "Exclusion lists of0/1 entries tested;larger lists,concurrent callers,initialization and history consumers/lifecycle unresolved.",
+        "Observed in-memory history does not establish disk or network persistence.",
         "Original source names/types and exact Media Molecule source/build match unknown."
       ]
     }

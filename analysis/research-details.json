@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 849,
+    "checked_and_applied_names": 850,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 849,
+    "verified_names": 850,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "773 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26842,5 +26842,30 @@
       "Byte-property recorder1407793b0 remains a separate unresolved prototype.",
       "Original source names/types and exact Media Molecule source/build match unknown."
     ]
+  },
+  "editor_event_history_ring_checkpoint": {
+    "address": "140114460",
+    "name": "AppendOrCoalesceEditorEventHistory",
+    "working_signature": "void PS4_SYSV AppendOrCoalesceEditorEventHistory(void * descriptor, void * summary, void * second_summary)",
+    "native_cases": 1024,
+    "findings": [
+      "Complete730-byte original body,120 nonempty pseudocode lines and one direct incoming-call window reviewed.",
+      "Stores28 descriptor bytes plus two16-byte summaries in64-byte entries of a16-entry history ring. Four-byte padding is preserved and the uint32 append count wraps.",
+      "Checks the latest four entries for descriptor-field equality,ignoring repeat count/padding. Duplicates increment an existing byte repeat count,saturating at255,without replacing summaries or advancing count.",
+      "Event-id exclusions are checked only after duplicate lookup. A matching recent record can still have its repeat count incremented even when that event id is excluded from new entries.",
+      "1,024 original-function cases passed against an independent memory model:256 appends,640 duplicates,128 excluded records,including count wrap and duplicate distances1..5. No callee/import fixtures.",
+      "Existing function renamed with a three-pointer working signature;independently reopened,original bytes and all other saved names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic global history/count/exclusion storage,not live game execution.",
+      "Exclusion lists of0/1 entries tested;larger lists,concurrent callers,initialization and history consumers/lifecycle unresolved.",
+      "Observed in-memory history does not establish disk or network persistence.",
+      "Original source names/types and exact Media Molecule source/build match unknown."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 1024,
+      "uninstrumented_function_cases": 1024
+    }
   }
 }
