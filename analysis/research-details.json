@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 898,
+    "checked_and_applied_names": 899,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 898,
-    "function_count": 9663,
+    "verified_names": 899,
+    "function_count": 9664,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1992,6 +1992,7 @@
       "1413f8da0",
       "1413f92d0",
       "1413f94b0",
+      "141422a40",
       "141432560",
       "1414336f0",
       "141433700",
@@ -2038,9 +2039,9 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "785 existing-function renames,112 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "785 existing-function renames,113 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true,
-    "new_functions_basis": "Complete current saved inventory minus the original 9,551-entry baseline; refreshed after independent combination-callback reopening."
+    "new_functions_basis": "Complete saved inventory minus original9551-entry baseline, refreshed after independent tool-and-wipe predicate reopening."
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
   "composite_reader_signature_verification": {
@@ -28364,6 +28365,24 @@
       "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
       "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
     ],
+    "whole_consumer_complete": false
+  },
+  "recipient_tool_wipe_gate_checkpoint": {
+    "entry": "141422a40",
+    "name": "IsRecipientEditorEventAllowedByToolAndWipeState",
+    "evidence": [
+      "Complete514-byte original helper and all130 instructions,86 original and103 typed pseudocode lines read; four direct call windows verified.",
+      "378 complete original-code cases passed with synthetic inputs; all fixture buffers hashed before and after each call.",
+      "Checks editor tool/object-kind conditions and global records used by the wipe-effect renderer. Original shader loader references wipe_effect.cpp and WipeEffectUpdate.cs.pssl.",
+      "Independent reopening verified the saved descriptive name, three pointer arguments in RDI/RSI/RDX, boolean result in AL, original bytes and boundary."
+    ],
+    "limits": [
+      "Concrete source classes and exact tool-mode names remain unresolved.",
+      "Original comparison handles unordered/NaN accumulation through the recipient flag; generated C loses that behavior. Assembly and native checks take precedence.",
+      "Multi-record identity scan, index truncation and invalid current-group indices were not executed in the native suite.",
+      "No whole-consumer, shader or live-game execution verified."
+    ],
+    "native_cases": 378,
     "whole_consumer_complete": false
   }
 }

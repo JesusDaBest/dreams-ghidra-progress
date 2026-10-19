@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "785 existing-function renames,112 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "785 existing-function renames,113 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9663,
+    "total": 9664,
     "default_fun_names": 8610,
-    "other_names": 1053,
-    "verification": "complete_inventory_matches_baseline_plus_785_renames_and_112_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1054,
+    "verification": "complete_inventory_matches_baseline_plus_785_renames_and_113_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21331,6 +21331,30 @@
         "No exact source function/type names recovered.",
         "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
         "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+      ]
+    },
+    {
+      "address": "141422a40",
+      "original_name": null,
+      "applied_name": "IsRecipientEditorEventAllowedByToolAndWipeState",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IsRecipientEditorEventAllowedByToolAndWipeState(void * recipient, void * editor_context, void * optional_object_record)",
+      "evidence": [
+        "Complete514-byte original helper and all130 instructions,86 original and103 typed pseudocode lines read; four direct call windows verified.",
+        "378 complete original-code cases passed with synthetic inputs; all fixture buffers hashed before and after each call.",
+        "Checks editor tool/object-kind conditions and global records used by the wipe-effect renderer. Original shader loader references wipe_effect.cpp and WipeEffectUpdate.cs.pssl.",
+        "Independent reopening verified the saved descriptive name, three pointer arguments in RDI/RSI/RDX, boolean result in AL, original bytes and boundary."
+      ],
+      "caveats": [
+        "Concrete source classes and exact tool-mode names remain unresolved.",
+        "Original comparison handles unordered/NaN accumulation through the recipient flag; generated C loses that behavior. Assembly and native checks take precedence.",
+        "Multi-record identity scan, index truncation and invalid current-group indices were not executed in the native suite.",
+        "No whole-consumer, shader or live-game execution verified."
       ]
     }
   ],

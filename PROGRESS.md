@@ -7973,3 +7973,14 @@ All original bodies and both original and corrected pseudocode were read. A focu
 The surrounding trace also recovered 27 mixing descriptors. Three face-angle tracks are converted to a quaternion and directed to the face-quaternion destination. Per-channel weights, clamp bounds, integer selection rules and mouth-shape resampling are being traced through the larger consumer. That complete routine and live-game behaviour remain unverified; only the 35 complete callbacks receive naming credit here.
 
 Totals: **898 checked names across 9,663 defined functions**, **2,299 mapped and 7,364 unmapped**. These counts describe reviewed code, not whole-game completion.
+
+
+### Recipient events and wipe-effect state
+
+One complete helper now has the verified descriptive name `IsRecipientEditorEventAllowedByToolAndWipeState`. Four inspected callers use its result to gate editor events. It checks local tool and object-kind conditions and shared records independently traced to the wipe-effect shader. Its working signature preserves three pointer arguments and a boolean result; concrete source types remain unresolved.
+
+All 130 original instructions and both original and typed pseudocode were read. A focused suite passed 378 complete original-code cases, including every object-kind byte, fallback pointer combinations, mode bypasses, signed zeros, infinities and NaNs. The original instructions expose a decompiler error: an unordered final comparison follows the recipient flag, while the generated C expresses an ordered comparison. The saved comment documents this distinction. Independent reopening verified the name, signature and unchanged original bytes.
+
+The surrounding wipe-record updater and shader-loading path were also read, but are not credited as completed functions. Multi-record lookup cases, exact mode names, the larger consumer and live-game behavior remain unfinished.
+
+Totals: **899 checked names across 9,664 defined functions**, **2,300 mapped and 7,364 unmapped**. These counts describe reviewed code, not whole-game completion.
