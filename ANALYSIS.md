@@ -8057,3 +8057,12 @@ Totals are **811 checked names across 9,620 defined functions**, with **2,212 ma
 Separately, a bounded block in the larger local-frame helper was checked in 1,864 cases, including 200 exact ties. It snaps a signed scalar to quarter subdivisions between neighboring powers of two, with halfway ties toward zero in the tested fixture. Original import thunks and loader/NID evidence identify log2f and exp2f, but tests use host UCRT implementations. Original PS4 math boundary behavior is unverified. This is a block-level research finding; the larger helper is still partially reviewed and receives no naming or completion credit.
 
 Totals are **812 checked names across 9,620 defined functions**, with **2,213 mapped and 7,407 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Curve dimension override and connected local-frame paths
+
+`IsEditorCurveDimensionOverrideActive` now names a completely reviewed predicate used by the dimension helper. It requires exact primitive byte 7, a clear selected-bank flag, and an editor state outside 2, 18 and 19. It compares the full primitive byte: 39 is false even though its low five bits equal 7. 15,360 original-function cases include every state byte, five primitive fixtures, three flag values and two mode/bank configurations. The saved boolean signature and descriptive name survived independent reopening; original bytes stayed unchanged.
+
+The larger local-frame function remains partially reviewed. Connected tests now establish its default construction path, snapping flags, state-13 relative-frame path, fallback-state routing, saved-object rigid composition, object-position blending and state-1/state-3 object selection. These separate suites contain 384, 512, 512, 1,016, 256, 320 and 150 cases respectively. They add evidence without naming or whole-function completion credit. Some object paths supply the unresolved source-frame helper through an explicit fixture; snapping tests use host math. Object roles, complete lifecycle, other paths and exceptional inputs remain unresolved.
+
+Totals are **813 checked names across 9,620 defined functions**, with **2,214 mapped and 7,406 unmapped**. These are identified-code review counts, not feature completion.

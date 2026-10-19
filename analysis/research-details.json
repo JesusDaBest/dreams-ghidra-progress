@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 812,
+    "checked_and_applied_names": 813,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 812,
+    "verified_names": 813,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "742 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "743 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25878,6 +25878,49 @@
     "limits": [
       "Host UCRT log2f/exp2f; original PS4 math boundary behavior unverified.",
       "Larger local-frame helper remains partially reviewed; no naming or completion credit."
+    ]
+  },
+  "csg_curve_dimension_predicate_checkpoint": {
+    "address": "1407a7140",
+    "name": "IsEditorCurveDimensionOverrideActive",
+    "working_signature": "bool PS4_SYSV IsEditorCurveDimensionOverrideActive(void * editor)",
+    "native_cases": 15360,
+    "findings": [
+      "Complete original leaf body,73instructions and full C reviewed.",
+      "RDI opaque editor pointer,boolean AL return;selects active editor bank using effective-mode masks.",
+      "True exactly for fullbyte primitive7,bank5bcflag0,and editor197 outside2/18/19;byte39false despite lowfivebits7.",
+      "15360complete original-function cases cover all256statebytes,five primitive fixtures,three flag values,modes0/14 andbankselectors0/1;input unchanged.",
+      "Reviewed GetEditorShapeDimensionVector caller uses predicate to gate object-dependent uniform scalar;connected3072case suite executes original predicate.",
+      "Saved descriptive name/signature independently reopened;original bytes and other annotations unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name based on reviewed dimension-helper use,not original symbol or enum labels.",
+      "Flag/state enum meanings,other effective-mode combinations/callers and object lifecycle unresolved."
+    ]
+  },
+  "csg_local_frame_path_checkpoint": {
+    "function": "140bcf350",
+    "scope": "partial_path_review_only",
+    "native_suites": {
+      "default_path": 384,
+      "snap_connected": 512,
+      "state13": 512,
+      "fallback_states": 1016,
+      "saved_object": 256,
+      "object_position_blend": 320,
+      "object_selection": 150
+    },
+    "findings": [
+      "Default path constructs local transform from dimensions,offset,scale and quaternion.",
+      "State13 returns stored frame relative to editor reference frame.",
+      "Saved-object branch applies rigid inverse(supplied)*saved*second_object transform and preserves second scale.",
+      "Another object branch first blends position against source reference.",
+      "States1/3 object-selection gates verified."
+    ],
+    "limits": [
+      "Large function not fully read,named or counted complete.",
+      "Some object paths use explicit frame-supplier fixture; actual source-frame supplier remains unresolved.",
+      "Host math used where snapping enabled; exceptional domains and object lifecycle unresolved."
     ]
   }
 }

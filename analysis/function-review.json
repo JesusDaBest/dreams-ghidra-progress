@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "742 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "743 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8653,
-    "other_names": 967,
-    "verification": "complete_inventory_matches_baseline_plus_742_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8652,
+    "other_names": 968,
+    "verification": "complete_inventory_matches_baseline_plus_743_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18905,6 +18905,29 @@
         "Analyst descriptive name,opaque editor/object types and working vector type,not recovered source symbols.",
         "Object roles,lifecycle,other callers1408b58e6/1408b5940 and actual coordinate-space meanings unresolved.",
         "Finite fixtures,modes0/14,banks0/1;nonfinite/signed-zero bit behavior and all state/mode combinations not established."
+      ]
+    },
+    {
+      "address": "1407a7140",
+      "original_name": "FUN_1407a7140",
+      "applied_name": "IsEditorCurveDimensionOverrideActive",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IsEditorCurveDimensionOverrideActive(void * editor)",
+      "evidence": [
+        "Complete original leaf body,73instructions and full C reviewed.",
+        "RDI opaque editor pointer,boolean AL return;selects active editor bank using effective-mode masks.",
+        "True exactly for fullbyte primitive7,bank5bcflag0,and editor197 outside2/18/19;byte39false despite lowfivebits7.",
+        "15360complete original-function cases cover all256statebytes,five primitive fixtures,three flag values,modes0/14 andbankselectors0/1;input unchanged.",
+        "Reviewed GetEditorShapeDimensionVector caller uses predicate to gate object-dependent uniform scalar;connected3072case suite executes original predicate.",
+        "Saved descriptive name/signature independently reopened;original bytes and other annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name based on reviewed dimension-helper use,not original symbol or enum labels.",
+        "Flag/state enum meanings,other effective-mode combinations/callers and object lifecycle unresolved."
       ]
     }
   ],
