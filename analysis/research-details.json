@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 827,
+    "checked_and_applied_names": 828,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 827,
+    "verified_names": 828,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "757 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "758 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26299,6 +26299,32 @@
     "native_suites": {
       "suite_count": 6,
       "bounded_cases": 3579
+    }
+  },
+  "curve_control_points_checkpoint": {
+    "address": "140c6fff0",
+    "name": "BuildTransformedEditorCurveControlPoints",
+    "working_signature": "void PS4_SYSV BuildTransformedEditorCurveControlPoints(void * group, void * editor, SpatialQueryFloat4Working16 * control_points_out)",
+    "native_cases": 2560,
+    "findings": [
+      "Full 947-byte EH region,244 owned instructions,312 nonempty pseudocode lines and the recorded query caller reviewed.",
+      "Working ABI:void return,opaque group RDI,editor RSI,output pointer to four float4 rows in RDX.",
+      "Calls original shape-transform provider with null optional parameters. Effective-mode mask selects bank0 or editor selector.",
+      "For primitive7,nonzero bank5bc or state2/18/19 enables four stored610..640 control-point transforms:position+scale*rotate(quaternion,point).",
+      "Otherwise all four output rows repeat frame position-scale.",
+      "Two direct suites total2048cases verify selected gates,bank selection across all256primary bytes,two fallback modes,selectors0/1,random unit rotations and signed scales.",
+      "Another512connected query cases verify original supplier and cached shape-frame provider inside the ray-bounds caller.",
+      "Input buffers and output guards preserved;finite control-vector W0 only.",
+      "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Noncached state2 and other shape-provider histories remain unvalidated here.",
+      "Other fallback values,invalid selectors,nonzero control-vector W and nonunit/nonfinite rotations unresolved.",
+      "Control-point role is inferred from primitive7 storage and curve predicate;original source identifier not recovered."
+    ],
+    "native_suites": {
+      "suite_count": 3,
+      "bounded_cases": 2560
     }
   }
 }

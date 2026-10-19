@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2228,
-  "unmapped_total": 7392,
+  "mapped_total": 2229,
+  "unmapped_total": 7391,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56545,6 +56545,37 @@
             "Inverse-transform slab test requires strict interval overlap and a positive forward intersection.",
             "Six bounded original-code suites total 3,579 cases: 3,072 geometric comparisons and 507 eligibility/selected edge cases. Connected vertex paths use original suppliers and cached shape frames.",
             "Saved descriptive name and boolean signature independently reopened; original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140c6fff0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Builds transformed editor curve control points used by reviewed shape bounds query.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full947-byte/244owned-instruction body and full C reviewed;2048direct supplier cases plus512connected query cases.",
+      "code_sha256": "197aa2fd51a558a25dfbcc7b2d386cd332b4707a2c05c7641876a36eb14a6ddd",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildTransformedEditorCurveControlPoints",
+          "support": [
+            "Full 947-byte EH region,244 owned instructions,312 nonempty pseudocode lines and the recorded query caller reviewed.",
+            "Working ABI:void return,opaque group RDI,editor RSI,output pointer to four float4 rows in RDX.",
+            "Calls original shape-transform provider with null optional parameters. Effective-mode mask selects bank0 or editor selector.",
+            "For primitive7,nonzero bank5bc or state2/18/19 enables four stored610..640 control-point transforms:position+scale*rotate(quaternion,point).",
+            "Otherwise all four output rows repeat frame position-scale.",
+            "Two direct suites total2048cases verify selected gates,bank selection across all256primary bytes,two fallback modes,selectors0/1,random unit rotations and signed scales.",
+            "Another512connected query cases verify original supplier and cached shape-frame provider inside the ray-bounds caller.",
+            "Input buffers and output guards preserved;finite control-vector W0 only.",
+            "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]

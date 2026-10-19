@@ -7627,3 +7627,12 @@ Concrete editor modes, parameter identities and object lifecycle remain unresolv
 The complete 3,740-byte region, 773 owned instructions, full pseudocode and recorded caller block were reviewed. Six isolated original-code suites total 3,579 bounded cases: 3,072 geometric comparisons plus 507 eligibility and selected boundary cases. Connected vertex paths execute the original vertex suppliers and cached shape-frame provider. The boolean signature and descriptive name survived independent reopening; original bytes and other function annotations are unchanged.
 
 Broader caller purpose, noncached editor histories, exact face-aligned rays, all-zero bounds and exceptional inputs remain unresolved. Runtime checks use synthetic fixtures and do not establish exact PS4 rounding. Totals: **827 checked names across 9,620 defined functions**, **2,228 mapped and 7,392 unmapped**. These are reviewed-code counts, not whole-game completion.
+
+
+### Transformed curve control points
+
+`BuildTransformedEditorCurveControlPoints` names the four-point supplier used by the editor shape-bounds ray query. For primitive 7, a selected flag or editor states 2, 18 and 19 enables transformation of four stored control points by the shape frame. Other cases repeat the frame position in all four output rows. Effective editor mode and bank selector determine which point records are read.
+
+The complete 947-byte region, 244 owned instructions, full pseudocode and sole recorded caller were reviewed. Two direct original-code suites total 2,048 cases, covering selected gates, all 256 primary mode bytes, two fallback modes, both valid tested banks, random rotations and signed scales. Another 512 connected query cases exercise the original supplier and cached shape-frame provider. The name and three-argument signature survived independent reopening; original bytes and other function names/signatures remain unchanged.
+
+State 2 and other noncached frame histories remain unvalidated here. Other fallback values, invalid selectors, nonzero point W components and nonfinite or nonunit rotations remain unresolved. The control-point description follows the observed primitive storage and curve predicate; it is not a recovered source name. Totals: **828 checked names across 9,620 defined functions**, **2,229 mapped and 7,391 unmapped**. These counts do not measure whole-game completion.
