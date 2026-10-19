@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "789 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "791 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9667,
-    "default_fun_names": 8606,
-    "other_names": 1061,
-    "verification": "complete_inventory_matches_baseline_plus_789_renames_and_116_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8604,
+    "other_names": 1063,
+    "verification": "complete_inventory_matches_baseline_plus_791_renames_and_116_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21520,6 +21520,52 @@
         "Synthetic ring triangles and successful allocations only; arbitrary meshes, malformed inputs, allocation failures and live-game behavior remain unverified.",
         "Substitute x87 sincos and bump allocation do not establish exact original platform math or reclamation behavior.",
         "Forced child rejection and global output reallocation were not explicitly exercised; descriptor source types and exact developer-source/build match remain unresolved."
+      ]
+    },
+    {
+      "address": "141487aa0",
+      "original_name": "FUN_141487aa0",
+      "applied_name": "CopyRecipientShapeDefinitionCollection",
+      "created_function": false,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CopyRecipientShapeDefinitionCollection(void * destination, void * source)",
+      "evidence": [
+        "Complete 324-byte body (82 instructions), 58-line typed C and all named-preview differences read; both direct caller windows traced.",
+        "27 whole original helper cases passed with local successful-allocation and byte-copy substitutes; identifiers, distinct array buffers, counts/capacities and preserved inputs checked.",
+        "Independent saved-project reopening verified name, register interface, original byte span and unchanged other function inventory."
+      ],
+      "caveats": [
+        "Fresh nonaliasing destination only; existing ownership, failed/overflowing allocations, malformed input and live-game behavior unverified.",
+        "Original source/container class unresolved."
+      ]
+    },
+    {
+      "address": "141439cf0",
+      "original_name": "FUN_141439cf0",
+      "applied_name": "RebuildRecipientShapeDefinitionsAndProjectionData",
+      "created_function": false,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV RebuildRecipientShapeDefinitionsAndProjectionData(undefined8 * shape_definitions)",
+      "evidence": [
+        "Complete 8973-byte original body (1915 instructions) and 1830 original pseudocode lines read; both direct caller windows traced.",
+        "Original static tables independently reconstruct sphere refinement from 12 vertices/20 triangles to 162 vertices/320 triangles.",
+        "52 points checked against original bounded pointer-deformation loop; separate verified tree/copy/selection helpers retain their own test scopes.",
+        "Five original 32-bit count globals explicitly typed unsigned; rollback preview and independent reopening verified data definitions and unchanged bytes.",
+        "Independent saved-project reopening verified name, register interface, original byte span and unchanged other function inventory."
+      ],
+      "caveats": [
+        "Whole constructor not executed; separate helper checks do not prove whole-constructor behavior.",
+        "Regenerated C was partially reread; global count typing corrected, but reused-stack pointer/vector inference artifacts remain. Original assembly is authoritative.",
+        "Custom records are checked for matching point/index counts, not index-content topology; custom direction initialization, malformed inputs, allocation failures and live-game behavior unresolved.",
+        "No exact developer-source/build match or recovered original source-class claim."
       ]
     }
   ],

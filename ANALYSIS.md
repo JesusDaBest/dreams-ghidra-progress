@@ -8591,3 +8591,14 @@ Totals: **905 checked names across 9,667 defined functions**, **2,306 mapped and
 Bounded original-code checks passed 6,591 classification cases, 10,985 score cases and 3,375 rejection cases. Fifteen whole original builder cases additionally checked synthetic meshes, accepted/rejected splits, depth limits and recursive trees up to seven nodes. Every emitted leaf matched independently classified triangle offsets; input data and output guards remained unchanged. These whole-routine checks substitute local allocation, copying, deallocation and x87 sine/cosine. They do not establish exact platform math or live-game behavior. Arbitrary meshes, malformed inputs, allocation failures, forced child-rejection fallback and global output reallocation remain unverified. Independent reopening confirmed the saved interface and unchanged original bytes.
 
 Totals: **906 checked names across 9,667 defined functions**, **2,307 mapped and 7,360 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient shape definitions and collection copying
+
+`RebuildRecipientShapeDefinitionsAndProjectionData` now has a descriptive name supported by its complete 1,915-instruction body, 1,830 original pseudocode lines and both direct caller windows. It constructs sphere and pointer definitions, accepts custom records with matching point/index counts, rebuilds projection data and creates 16 circular samples with triangle indices and barycentric coordinates. Original tables independently reconstruct the sphere from 12 vertices/20 triangles to 162 vertices/320 triangles. The original pointer-deformation block matched an independent formula for 52 synthetic points; this is a bounded check, not execution of the whole constructor.
+
+`CopyRecipientShapeDefinitionCollection` was fully read and passed 27 whole original-code cases using local successful-allocation and byte-copy substitutes. It copies identifiers and allocates independent point/index buffers, with capacities reset to counts. It requires a fresh nonaliasing destination; existing ownership and failure paths are unverified.
+
+Five proven count definitions now use unsigned integer types. Independent reopening verified both names, interfaces, data definitions and unchanged original bytes. Global count inference is corrected, while some reused stack slots still produce misleading pointer/vector conversions in generated C; original assembly remains authoritative. The entire regenerated constructor C was not reread. Custom shapes get count checks rather than index-content topology validation. Whole-constructor execution, custom-direction initialization, malformed input, allocation failures, exact developer-source matching and live-game behavior remain unresolved.
+
+Totals: **908 checked names across 9,667 defined functions**, **2,309 mapped and 7,358 unmapped**. These are code-review counts, not whole-game completion.

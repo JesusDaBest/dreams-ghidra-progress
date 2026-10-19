@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9667,
-  "mapped_total": 2307,
-  "unmapped_total": 7360,
+  "mapped_total": 2309,
+  "unmapped_total": 7358,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -58988,6 +58988,58 @@
             "6591 classification, 10985 split-score and 3375 rejection cases passed against bounded original code.",
             "15 whole original builder cases passed with synthetic geometry and explicit local allocator/copy/free/x87-sincos substitutes; recursive nodes and every ordered leaf list independently checked.",
             "Independent reopening verified five register inputs, AL boolean result, saved name and unchanged original bytes."
+          ]
+        }
+      ]
+    },
+    "141487aa0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Recipient shape-definition construction and collection copy; both direct caller paths copy then rebuild the shared shape/projection data.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed interface review, scoped original-code checks and independent saved-project reopening.",
+      "code_sha256": "32dbd7de988d88feff520df47f3e9a29109b385580b23ee443c8ea7ae8fb0dc9",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CopyRecipientShapeDefinitionCollection",
+          "support": [
+            "Complete 324-byte body (82 instructions), 58-line typed C and all named-preview differences read; both direct caller windows traced.",
+            "27 whole original helper cases passed with local successful-allocation and byte-copy substitutes; identifiers, distinct array buffers, counts/capacities and preserved inputs checked.",
+            "Independent saved-project reopening verified name, register interface, original byte span and unchanged other function inventory."
+          ]
+        }
+      ]
+    },
+    "141439cf0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Recipient shape-definition construction and collection copy; both direct caller paths copy then rebuild the shared shape/projection data.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed interface review, scoped original-code checks and independent saved-project reopening.",
+      "code_sha256": "99b6aeb4c25f47c9ab44554a251294b0d159b11476263cf51e15b6b49d049c50",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RebuildRecipientShapeDefinitionsAndProjectionData",
+          "support": [
+            "Complete 8973-byte original body (1915 instructions) and 1830 original pseudocode lines read; both direct caller windows traced.",
+            "Original static tables independently reconstruct sphere refinement from 12 vertices/20 triangles to 162 vertices/320 triangles.",
+            "52 points checked against original bounded pointer-deformation loop; separate verified tree/copy/selection helpers retain their own test scopes.",
+            "Five original 32-bit count globals explicitly typed unsigned; rollback preview and independent reopening verified data definitions and unchanged bytes.",
+            "Independent saved-project reopening verified name, register interface, original byte span and unchanged other function inventory."
           ]
         }
       ]

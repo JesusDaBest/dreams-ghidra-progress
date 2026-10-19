@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 906,
+    "checked_and_applied_names": 908,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 906,
+    "verified_names": 908,
     "function_count": 9667,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2042,7 +2042,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "789 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "791 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28556,5 +28556,54 @@
       "Forced child rejection and global output reallocation were not explicitly exercised; descriptor source types and exact developer-source/build match remain unresolved."
     ],
     "project_saved_and_independently_reopened": true
+  },
+  "recipient_shape_definition_checkpoint": {
+    "functions": {
+      "141487aa0": {
+        "name": "CopyRecipientShapeDefinitionCollection",
+        "signature": "void PS4_SYSV CopyRecipientShapeDefinitionCollection(void * destination, void * source)",
+        "original_sha256": "32dbd7de988d88feff520df47f3e9a29109b385580b23ee443c8ea7ae8fb0dc9",
+        "size": 324,
+        "created": false,
+        "c_sha256": "21d4dd5987df7070c781f18dc1b7ea68f57921053565da8ed9436a902741ca65",
+        "nonempty_c_lines": 67,
+        "evidence": [
+          "Complete 324-byte body (82 instructions), 58-line typed C and all named-preview differences read; both direct caller windows traced.",
+          "27 whole original helper cases passed with local successful-allocation and byte-copy substitutes; identifiers, distinct array buffers, counts/capacities and preserved inputs checked.",
+          "Independent saved-project reopening verified name, register interface, original byte span and unchanged other function inventory."
+        ],
+        "limits": [
+          "Fresh nonaliasing destination only; existing ownership, failed/overflowing allocations, malformed input and live-game behavior unverified.",
+          "Original source/container class unresolved."
+        ],
+        "test_scope": "27 whole helper cases"
+      },
+      "141439cf0": {
+        "name": "RebuildRecipientShapeDefinitionsAndProjectionData",
+        "signature": "void PS4_SYSV RebuildRecipientShapeDefinitionsAndProjectionData(undefined8 * shape_definitions)",
+        "original_sha256": "99b6aeb4c25f47c9ab44554a251294b0d159b11476263cf51e15b6b49d049c50",
+        "size": 8973,
+        "created": false,
+        "c_sha256": "b225859c032ed86cfd767dced16f8822135b96d0916fd37b408f126fd1d0e5ad",
+        "nonempty_c_lines": 1842,
+        "evidence": [
+          "Complete 8973-byte original body (1915 instructions) and 1830 original pseudocode lines read; both direct caller windows traced.",
+          "Original static tables independently reconstruct sphere refinement from 12 vertices/20 triangles to 162 vertices/320 triangles.",
+          "52 points checked against original bounded pointer-deformation loop; separate verified tree/copy/selection helpers retain their own test scopes.",
+          "Five original 32-bit count globals explicitly typed unsigned; rollback preview and independent reopening verified data definitions and unchanged bytes.",
+          "Independent saved-project reopening verified name, register interface, original byte span and unchanged other function inventory."
+        ],
+        "limits": [
+          "Whole constructor not executed; separate helper checks do not prove whole-constructor behavior.",
+          "Regenerated C was partially reread; global count typing corrected, but reused-stack pointer/vector inference artifacts remain. Original assembly is authoritative.",
+          "Custom records are checked for matching point/index counts, not index-content topology; custom direction initialization, malformed inputs, allocation failures and live-game behavior unresolved.",
+          "No exact developer-source/build match or recovered original source-class claim."
+        ],
+        "test_scope": "52 points in bounded pointer-deformation block; whole constructor unexecuted"
+      }
+    },
+    "unsigned_count_definitions": 5,
+    "whole_constructor_executed": false,
+    "original_bytes_unchanged": true
   }
 }
