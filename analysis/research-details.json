@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 813,
+    "checked_and_applied_names": 814,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 813,
+    "verified_names": 814,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "743 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "744 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25908,19 +25908,48 @@
       "fallback_states": 1016,
       "saved_object": 256,
       "object_position_blend": 320,
-      "object_selection": 150
+      "object_selection": 150,
+      "two_endpoint_dimensions": 512,
+      "two_endpoint_rotations": 512,
+      "two_endpoint_cleanup": 1152,
+      "two_endpoint_snap": 512
     },
     "findings": [
       "Default path constructs local transform from dimensions,offset,scale and quaternion.",
       "State13 returns stored frame relative to editor reference frame.",
       "Saved-object branch applies rigid inverse(supplied)*saved*second_object transform and preserves second scale.",
       "Another object branch first blends position against source reference.",
-      "States1/3 object-selection gates verified."
+      "States1/3 object-selection gates verified.",
+      "Saved-endpoint state2 measures separation in endpointA*construction orientation while returning construction orientation.",
+      "Primitive1 applies a source-scale-relative short-length cutoff;torus/cookie remap radius and height before per-lane cleanup.",
+      "State2 snapping quantizes measurement-space separation toward zero using a power-of-two step selected from stored grid values and flags.",
+      "Automatic dimension classifier and zero-lane replacement branches read in assembly;connected validation remains pending."
     ],
     "limits": [
       "Large function not fully read,named or counted complete.",
       "Some object paths use explicit frame-supplier fixture; actual source-frame supplier remains unresolved.",
-      "Host math used where snapping enabled; exceptional domains and object lifecycle unresolved."
+      "Host math used where snapping enabled; exceptional domains and object lifecycle unresolved.",
+      "Two-endpoint suites use synthetic saved endpoints and bounded primitive/flag fixtures.",
+      "Small-size threshold boundaries,remaining paths,full pseudocode and runtime object lifecycle remain unresolved."
+    ]
+  },
+  "csg_zero_dimension_count_checkpoint": {
+    "address": "140bd2b70",
+    "name": "CountEditorZeroShapeDimensions",
+    "working_signature": "int PS4_SYSV CountEditorZeroShapeDimensions(void * editor)",
+    "native_cases": 2391,
+    "findings": [
+      "Complete original146instruction body and full captured C reviewed.",
+      "RDI opaque editor pointer,int EAX return;selected bank follows effective-mode masks and editor+d00.",
+      "Full-byte primitive tags7/12/22 return0;other tags return count of zero XYZ bank5a0/5a4/5a8 lanes.",
+      "2391original-code cases cover all256primitive bytes,all8zero masks and343special-value triples;both signed zeros count,NaNs/infinities do not.",
+      "Reviewed140bcf350 caller uses count1/2/3 to choose offset and automatic dimension branches;zero-lane replacement and later source-frame conversion traced.",
+      "Saved name/signature independently reopened;original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name,not recovered original symbol or field labels.",
+      "Other mode combinations and caller lifecycles not exhaustively validated.",
+      "Parent shape-frame helper remains partially reviewed;its test cases do not constitute whole-function completion."
     ]
   }
 }

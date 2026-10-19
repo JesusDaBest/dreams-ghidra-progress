@@ -7497,3 +7497,12 @@ Totals are **812 checked names across 9,620 defined functions**, with **2,213 ma
 The larger local-frame function remains partially reviewed. Connected tests now establish its default construction path, snapping flags, state-13 relative-frame path, fallback-state routing, saved-object rigid composition, object-position blending and state-1/state-3 object selection. These separate suites contain 384, 512, 512, 1,016, 256, 320 and 150 cases respectively. They add evidence without naming or whole-function completion credit. Some object paths supply the unresolved source-frame helper through an explicit fixture; snapping tests use host math. Object roles, complete lifecycle, other paths and exceptional inputs remain unresolved.
 
 Totals are **813 checked names across 9,620 defined functions**, with **2,214 mapped and 7,406 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Automatic sculpt dimensions and two-endpoint construction
+
+`CountEditorZeroShapeDimensions` now names the reviewed helper that counts stored XYZ dimensions equal to zero, while returning zero for exact curve and tetrahedron primitive bytes. The sculpt-frame caller uses the count to select automatic dimension and offset branches. Its full pseudocode and assembly agree with 2,391 original-code cases covering every primitive byte, every zero/nonzero pattern, signed zeros, infinities and NaNs. The saved integer signature and name survived independent reopening with executable bytes unchanged. Original field names and complete caller lifecycles remain unresolved.
+
+Further partial analysis of the larger shape-frame helper separates the orientation used to measure endpoint separation from the orientation returned for the shape. Additional suites verify 512 dimension cases, 512 rotation cases, 1,152 size-cleanup and torus/cookie cases, and 512 snapping cases. Snapping truncates each separation component toward zero on a shared power-of-two step before cleanup. These tests use synthetic saved endpoints; snapping uses host math adapters. The large function remains partially reviewed and receives no whole-function completion credit.
+
+Totals are **814 checked names across 9,620 defined functions**, with **2,215 mapped and 7,405 unmapped**. These measure identified code review, not completion of Dreams or any game feature.
