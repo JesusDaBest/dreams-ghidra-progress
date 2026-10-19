@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 853,
+    "checked_and_applied_names": 854,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 853,
+    "verified_names": 854,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "776 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "777 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26941,6 +26941,32 @@
       "bounded_cases": 3072,
       "complete_function_cases": 3072,
       "native_invocations": 3072
+    }
+  },
+  "editor_event_receiver_checkpoint": {
+    "address": "140114f50",
+    "name": "SubmitContextualEditorEvent",
+    "working_signature": "void PS4_SYSV SubmitContextualEditorEvent(uint event_id, void * context, uchar user_index, uchar variant, ulonglong payload_key, uchar tool_key, uchar flag, float float_payload)",
+    "native_cases": 5180,
+    "findings": [
+      "Full5759-byte original region/1404 instructions,656 nonempty original and670 typed-preview pseudocode lines read. Existing1402-instruction body preserved;excluded NOP/trap bytes independently checked.",
+      "Filters disabled,masked and out-of-range events plus unsupported selection combinations;constructs contextual descriptors and calls ProcessEditorEventRules.",
+      "5180 complete original-receiver cases cover material descriptors,gates,property tags,automatic variants,base/asset/paired keys and alternate context for event11hex.",
+      "Independent64-bit key model verifies event/user/payload/context mixing,signed asset identifiers and pair ordering on tested paths. Material events10D..10F forward supplied keys.",
+      "Four of143 identified direct caller windows reviewed;working ABI has6 GP inputs,one stack byte and one float input.",
+      "Saved descriptive name and working signature verified after independent reopening;original bytes,body and other names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic world/context/assets;mutex lock/current-thread/unlock,vtable and downstream fixtures do not verify live synchronization or the actual downstream engine.",
+      "Remaining context/hash families,selection ownership,broader caller invariants and139 other direct-call windows unresolved.",
+      "Descriptor padding/uninitialized bytes have no assigned semantics. Native coverage is bounded,not exhaustive.",
+      "No live game/network execution or exact Media Molecule source/build match claimed."
+    ],
+    "native_suites": {
+      "suite_count": 7,
+      "bounded_cases": 5180,
+      "complete_function_cases": 5180,
+      "native_invocations": 5180
     }
   }
 }

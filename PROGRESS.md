@@ -7853,3 +7853,14 @@ The complete 480-byte body (115 instructions), full pseudocode and all three ide
 These are finite, domain-valid synthetic cases with nonzero normalization denominators and a bounded range of exponent controls. Exceptional floating-point values, other exponent settings, exact UI mode names, full caller invariants and live-game integration remain unresolved. Host math adapters do not establish PS4 math-library rounding. Ghidra import prototypes still produce some SIMD/integer pseudocode artifacts; the original assembly and native checks support this review. No exact Media Molecule source/build match is claimed.
 
 Totals: **853 checked names across 9,627 defined functions**, **2,254 mapped and 7,373 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Submitting contextual editor events
+
+`SubmitContextualEditorEvent` identifies the receiver that filters event submissions, builds a contextual descriptor and key, and calls the reviewed rule processor. It suppresses disabled recording, masked users, out-of-range event ids and unsupported selection combinations. Tested material events forward their supplied key; other tested families mix event, user, payload and context fields, sometimes adding resolved asset identifiers. Property tags and automatic variants depend on context type. One special event reads an alternate context record.
+
+Seven suites passed 5,180 complete original-receiver cases. Coverage includes descriptor fields, recording/mask/selection gates, property tags, variants, eight base-key context kinds, eight asset-key kinds, ordered paired assets and the alternate-state path. Independent unsigned 64-bit models matched key outputs. The full 5,759-byte region (1,404 instructions), 656 original and 670 typed-preview nonempty pseudocode lines were read. Four of 143 identified direct caller windows were reviewed. The working ABI has six general-register inputs, one stack byte and one float input.
+
+Independent reopening verified the descriptive name and signature. The existing 1,402-instruction body remains intact; one excluded NOP and a trailing trap were checked separately, preserving all bytes and all other function names/signatures. Tests use synthetic data and explicit mutex/thread, vtable and downstream fixtures. They do not prove live synchronization or actual downstream integration. Remaining context/hash families, selection ownership, broader caller invariants, unreviewed callers and lifecycle remain unresolved. Descriptor padding has no assigned semantics. No game/network execution or exact Media Molecule source/build match is claimed.
+
+Totals: **854 checked names across 9,627 defined functions**, **2,255 mapped and 7,372 unmapped**. These are code-review counts, not whole-game completion.

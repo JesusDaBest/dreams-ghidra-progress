@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "776 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "777 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8619,
-    "other_names": 1008,
-    "verification": "complete_inventory_matches_baseline_plus_776_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8618,
+    "other_names": 1009,
+    "verification": "complete_inventory_matches_baseline_plus_777_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19955,6 +19955,31 @@
         "Host math adapters do not prove PS4 library rounding.",
         "UI mode names,full caller invariants and live-game behavior unresolved.",
         "Math import prototypes remain unchanged in Ghidra;SIMD/integer pseudocode artifacts remain."
+      ]
+    },
+    {
+      "address": "140114f50",
+      "original_name": "FUN_140114f50",
+      "applied_name": "SubmitContextualEditorEvent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SubmitContextualEditorEvent(uint event_id, void * context, uchar user_index, uchar variant, ulonglong payload_key, uchar tool_key, uchar flag, float float_payload)",
+      "evidence": [
+        "Full5759-byte original region/1404 instructions,656 nonempty original and670 typed-preview pseudocode lines read. Existing1402-instruction body preserved;excluded NOP/trap bytes independently checked.",
+        "Filters disabled,masked and out-of-range events plus unsupported selection combinations;constructs contextual descriptors and calls ProcessEditorEventRules.",
+        "5180 complete original-receiver cases cover material descriptors,gates,property tags,automatic variants,base/asset/paired keys and alternate context for event11hex.",
+        "Independent64-bit key model verifies event/user/payload/context mixing,signed asset identifiers and pair ordering on tested paths. Material events10D..10F forward supplied keys.",
+        "Four of143 identified direct caller windows reviewed;working ABI has6 GP inputs,one stack byte and one float input.",
+        "Saved descriptive name and working signature verified after independent reopening;original bytes,body and other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Synthetic world/context/assets;mutex lock/current-thread/unlock,vtable and downstream fixtures do not verify live synchronization or the actual downstream engine.",
+        "Remaining context/hash families,selection ownership,broader caller invariants and139 other direct-call windows unresolved.",
+        "Descriptor padding/uninitialized bytes have no assigned semantics. Native coverage is bounded,not exhaustive.",
+        "No live game/network execution or exact Media Molecule source/build match claimed."
       ]
     }
   ],

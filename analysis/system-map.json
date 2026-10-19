@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9627,
-  "mapped_total": 2254,
-  "unmapped_total": 7373,
+  "mapped_total": 2255,
+  "unmapped_total": 7372,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57348,6 +57348,34 @@
             "Shared signed power curve uses exp2(-signedcontrol/32), followed by output remapping and optional previous-value smoothing with separate increasing/decreasing magnitude coefficients.",
             "3072 complete original-function synthetic cases matched an independent float32 model bit-for-bit;input buffers unchanged.",
             "Saved descriptive name and working register ABI independently reopened;original bytes,body and all other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140114f50": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Contextual editor-event receiver filters submissions,constructs descriptors/keys and calls ProcessEditorEventRules.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full5759-byte1404instruction region,656 original/670 typed pseudocode lines and4 of143 call windows;5180 receiver cases with explicit fixtures.",
+      "code_sha256": "8125d1de1b6d7204817a5add6f40032f320b719d6dc11af4460374b51240afef",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SubmitContextualEditorEvent",
+          "support": [
+            "Full5759-byte original region/1404 instructions,656 nonempty original and670 typed-preview pseudocode lines read. Existing1402-instruction body preserved;excluded NOP/trap bytes independently checked.",
+            "Filters disabled,masked and out-of-range events plus unsupported selection combinations;constructs contextual descriptors and calls ProcessEditorEventRules.",
+            "5180 complete original-receiver cases cover material descriptors,gates,property tags,automatic variants,base/asset/paired keys and alternate context for event11hex.",
+            "Independent64-bit key model verifies event/user/payload/context mixing,signed asset identifiers and pair ordering on tested paths. Material events10D..10F forward supplied keys.",
+            "Four of143 identified direct caller windows reviewed;working ABI has6 GP inputs,one stack byte and one float input.",
+            "Saved descriptive name and working signature verified after independent reopening;original bytes,body and other names/signatures unchanged."
           ]
         }
       ]
