@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 805,
+    "checked_and_applied_names": 806,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 805,
+    "verified_names": 806,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "735 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "736 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25725,6 +25725,24 @@
       "Analyst descriptive name and working storage type, not recovered source symbol/declaration.",
       "Static compression/inverse factors explicitly initialized; platform guard setup and live game not executed.",
       "Malformed packed cases establish bit behavior, not valid geometry; aliasing,nonfinite positions,broader primitive/caller lifecycles remain unresolved."
+    ]
+  },
+  "csg_embedded_edit_transform_checkpoint": {
+    "address": "140a05190",
+    "name": "GetEmbeddedCsgEditTransformOrIdentity",
+    "working_signature": "void PS4_SYSV GetEmbeddedCsgEditTransformOrIdentity(void * transform_out, void * source, int edit_presence)",
+    "native_cases": 3075,
+    "findings": [
+      "Complete165-byte EH region,43owned instructions plus trailingUD2,full C and original caller reviewed.",
+      "Signed presence<=0 returns identity without source read; positive copies84-byte record atsource+72.",
+      "Curve/tetrahedron tags7/12/22 preserve first payloadXYZ with scale1 and identity quaternion; other tags call DecodePackedCsgEditTransform.",
+      "3075 complete original wrapper+decoder cases cover all256first-byte values,sixsigned presence values,two parities andNULL source for three nonpositive values; source/output guards preserved.",
+      "Independent reopening verifies RDIoutput,RSIsource and signedEDXpresence signature; original bytes and all other annotations unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and opaque source pointer,not recovered source symbol/type.",
+      "Source object semantics and caller presence meaning,positive source validity,aliasing and complete editor lifecycle unresolved.",
+      "Local canary/inverse-factor fixtures; original platform initialization and live game not executed."
     ]
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "735 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "736 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8660,
-    "other_names": 960,
-    "verification": "complete_inventory_matches_baseline_plus_735_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8659,
+    "other_names": 961,
+    "verification": "complete_inventory_matches_baseline_plus_736_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18728,6 +18728,29 @@
         "Analyst descriptive name and working storage type, not recovered source symbol/declaration.",
         "Static compression/inverse factors explicitly initialized; platform guard setup and live game not executed.",
         "Malformed packed cases establish bit behavior, not valid geometry; aliasing,nonfinite positions,broader primitive/caller lifecycles remain unresolved."
+      ]
+    },
+    {
+      "address": "140a05190",
+      "original_name": "FUN_140a05190",
+      "applied_name": "GetEmbeddedCsgEditTransformOrIdentity",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV GetEmbeddedCsgEditTransformOrIdentity(void * transform_out, void * source, int edit_presence)",
+      "evidence": [
+        "Complete165-byte EH region,43owned instructions plus trailingUD2,full C and original caller reviewed.",
+        "Signed presence<=0 returns identity without source read; positive copies84-byte record atsource+72.",
+        "Curve/tetrahedron tags7/12/22 preserve first payloadXYZ with scale1 and identity quaternion; other tags call DecodePackedCsgEditTransform.",
+        "3075 complete original wrapper+decoder cases cover all256first-byte values,sixsigned presence values,two parities andNULL source for three nonpositive values; source/output guards preserved.",
+        "Independent reopening verifies RDIoutput,RSIsource and signedEDXpresence signature; original bytes and all other annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque source pointer,not recovered source symbol/type.",
+        "Source object semantics and caller presence meaning,positive source validity,aliasing and complete editor lifecycle unresolved.",
+        "Local canary/inverse-factor fixtures; original platform initialization and live game not executed."
       ]
     }
   ],

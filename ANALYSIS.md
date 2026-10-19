@@ -7976,3 +7976,14 @@ Other asset-baseline/settings combinations, extreme or nonfinite inputs, unteste
 Another 208 cases execute the original writer followed by the original reader. Translation and decoded signed rotation agree with an independent matrix reference across 26 finite rotations and all eight extent-sign combinations. Input records and output guards remain intact. Both helpers use explicitly initialized local static factors; platform guard setup and live editor behavior are outside these fixtures.
 
 Independent reopening verified the name, pointer types and unchanged original bytes; all other function annotations were preserved. Aliasing, nonfinite positions and broader caller lifecycles remain unresolved. Totals are **805 checked names across 9,620 defined functions**, with **2,206 mapped and 7,414 unmapped**. This is one additional reviewed helper, not whole-game completion.
+
+
+### Embedded sculpt edit reference transform
+
+`GetEmbeddedCsgEditTransformOrIdentity` now names a completely reviewed editor helper. A nonpositive signed presence value returns identity without reading the source pointer. A positive value reads an 84-byte edit embedded at source offset 72. Ordinary primitive records use `DecodePackedCsgEditTransform`; curve and tetrahedron tags instead preserve the first payload XYZ as a reference position, with scale 1 and identity rotation. This distinction avoids treating their separate geometry payloads as compressed primitive transforms.
+
+3,075 complete original wrapper/decoder cases cover every first-byte pattern, six signed presence values and both reflection parities, plus null source pointers for three nonpositive values. Output values matched the reference, source bytes remained unchanged and output guards were preserved. Tests supply local canary and initialized decoder-factor boundaries; platform initialization and live editor behavior are outside their scope.
+
+The original 165-byte region and full C were read, and the saved pointer/signed-integer signature survived independent reopening. Original bytes and all other function annotations stayed unchanged. The source object type, caller meaning of the presence value, aliasing and complete caller lifecycle remain unresolved.
+
+Totals are **806 checked names across 9,620 defined functions**, with **2,207 mapped and 7,413 unmapped**. These are identified-code review counts, not feature completion.

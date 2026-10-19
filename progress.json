@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 759,
+    "done": 760,
     "todo": 1447,
-    "total": 2206,
-    "behavior_or_helpers_reviewed": 685,
+    "total": 2207,
+    "behavior_or_helpers_reviewed": 686,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -35010,17 +35010,18 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 64,
+        "done": 65,
         "todo": 103,
-        "total": 167,
-        "behavior_or_helpers_reviewed": 64,
+        "total": 168,
+        "behavior_or_helpers_reviewed": 65,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 124,
+        "runtime_functions_identified": 125,
         "property_type_functions_identified": 43,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "ReleaseMarkedObjectCacheReferences",
+          "GetEmbeddedCsgEditTransformOrIdentity",
           "InitializePackedCSGRecordWriter",
           "AppendPackedResourceRecord",
           "TryAppendPackedResourceRecordDelta",
@@ -35192,6 +35193,7 @@
         ],
         "done_addresses": [
           "140739e90",
+          "140a05190",
           "140c67ab0",
           "140c67d90",
           "140c68080",
@@ -35366,17 +35368,18 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 46,
+            "done": 47,
             "todo": 68,
-            "total": 114,
-            "behavior_or_helpers_reviewed": 46,
+            "total": 115,
+            "behavior_or_helpers_reviewed": 47,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 104,
+            "runtime_functions_identified": 105,
             "property_type_functions_identified": 10,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "ReleaseMarkedObjectCacheReferences",
+              "GetEmbeddedCsgEditTransformOrIdentity",
               "InitializePackedCSGRecordWriter",
               "AppendPackedResourceRecord",
               "TryAppendPackedResourceRecordDelta",
@@ -35495,6 +35498,7 @@
             ],
             "done_addresses": [
               "140739e90",
+              "140a05190",
               "140c67ab0",
               "140c67d90",
               "140c68080",
@@ -36154,6 +36158,65 @@
                 ]
               },
               {
+                "name": "sculpting-painting/csg/primitive-encoding",
+                "label": "Primitive record encoding",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "GetEmbeddedCsgEditTransformOrIdentity",
+                  "DecodePackedCsgEditTransform",
+                  "AppendPackedCsgPrimitiveEdit",
+                  "UpdateLastCsgEditFromEditorShape"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140a05190",
+                  "140c68360",
+                  "140c68500",
+                  "140c712b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "sculpting-painting/csg/primitive-encoding/runtime-implementation",
+                    "label": "Runtime behavior",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "GetEmbeddedCsgEditTransformOrIdentity",
+                      "DecodePackedCsgEditTransform",
+                      "AppendPackedCsgPrimitiveEdit",
+                      "UpdateLastCsgEditFromEditorShape"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140a05190",
+                      "140c68360",
+                      "140c68500",
+                      "140c712b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "sculpting-painting/csg/csgeditmirrorflags",
                 "label": "CSGEdit Mirror Flags",
                 "done": 2,
@@ -36266,61 +36329,6 @@
                     "todo_addresses": [
                       "1412982d0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "sculpting-painting/csg/primitive-encoding",
-                "label": "Primitive record encoding",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "DecodePackedCsgEditTransform",
-                  "AppendPackedCsgPrimitiveEdit",
-                  "UpdateLastCsgEditFromEditorShape"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140c68360",
-                  "140c68500",
-                  "140c712b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "sculpting-painting/csg/primitive-encoding/runtime-implementation",
-                    "label": "Runtime behavior",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "DecodePackedCsgEditTransform",
-                      "AppendPackedCsgPrimitiveEdit",
-                      "UpdateLastCsgEditFromEditorShape"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140c68360",
-                      "140c68500",
-                      "140c712b0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -46812,5 +46820,5 @@
       }
     ]
   },
-  "unmapped": 7414
+  "unmapped": 7413
 }

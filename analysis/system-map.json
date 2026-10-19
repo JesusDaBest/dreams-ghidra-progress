@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2206,
-  "unmapped_total": 7414,
+  "mapped_total": 2207,
+  "unmapped_total": 7413,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55911,6 +55911,33 @@
             "1024 complete original-reader cases cover everyfirst-byte pattern,allselectors/parities and zero/extreme packed lanes; independent bit reference matches exactly.",
             "208 complete original-writer->original-reader cases verify finite box translation and signed-extent rotation against independent matrix reference with guards and source preservation.",
             "Independent reopen verifies outputRDI and CsgEditStorage pointerRSI signature; original bytes and allother function annotations preserved."
+          ]
+        }
+      ]
+    },
+    "140a05190": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original editor wrapper reads embedded packed CSG edit and constructs a reference transform,with separate curve/tetrahedron position handling.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and C read;3075bounded full wrapper/decoder cases.",
+      "code_sha256": "b1492f8b58e2c77676f6d16328281634d4e1fc9b03ee300f97332f419ae4ae5d",
+      "code_hash_basis": "original_eh_region_including_trailing_ud2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetEmbeddedCsgEditTransformOrIdentity",
+          "support": [
+            "Complete165-byte EH region,43owned instructions plus trailingUD2,full C and original caller reviewed.",
+            "Signed presence<=0 returns identity without source read; positive copies84-byte record atsource+72.",
+            "Curve/tetrahedron tags7/12/22 preserve first payloadXYZ with scale1 and identity quaternion; other tags call DecodePackedCsgEditTransform.",
+            "3075 complete original wrapper+decoder cases cover all256first-byte values,sixsigned presence values,two parities andNULL source for three nonpositive values; source/output guards preserved.",
+            "Independent reopening verifies RDIoutput,RSIsource and signedEDXpresence signature; original bytes and all other annotations unchanged."
           ]
         }
       ]
