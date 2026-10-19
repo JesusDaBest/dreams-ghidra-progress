@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 819,
+    "checked_and_applied_names": 820,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 819,
+    "verified_names": 820,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "749 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "750 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26099,6 +26099,29 @@
     ],
     "native_suites": {
       "connected_signed_scale_and_orientation": 512
+    }
+  },
+  "tagged_payload_equality_checkpoint": {
+    "address": "1401180e0",
+    "name": "AreTaggedPayloadRecordsEqual",
+    "working_signature": "bool PS4_SYSV AreTaggedPayloadRecordsEqual(void * left_record, void * right_record)",
+    "native_cases": 4366,
+    "findings": [
+      "Full565-byte/156instruction comparator,all50dispatch entries and both47-byte delegate bodies read.",
+      "Original switch/body repair saved and independently reopened before naming.",
+      "Explicit opaque two-pointer RDI/RSI working signature and AL boolean return.",
+      "4366original-code cases across all50tabletags:4184direct and182delegated cases.",
+      "Common metadata uses integerbit equality;tag40addsorderedfloat metadata equality andtag43usesorderedfloat payload comparison.",
+      "Reversible descriptive name independently reopened;original bytes and other names/signatures unchanged."
+    ],
+    "limits": [
+      "Concrete record/tag semantics and validruntimeconstruction/lifetime unresolved.",
+      "Out-of-table tags not validated;switch override models50observedentries.",
+      "RecoveredCfloattypingofcommonDWORD50comparison is contradicted by assembly and native evidence;assembly governs."
+    ],
+    "native_suites": {
+      "direct_dispatch_tags": 4184,
+      "delegated_dispatch_tags": 182
     }
   }
 }

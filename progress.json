@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 773,
+    "done": 774,
     "todo": 1447,
-    "total": 2220,
-    "behavior_or_helpers_reviewed": 699,
+    "total": 2221,
+    "behavior_or_helpers_reviewed": 700,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -28101,12 +28101,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 271,
+        "done": 272,
         "todo": 105,
-        "total": 376,
-        "behavior_or_helpers_reviewed": 254,
+        "total": 377,
+        "behavior_or_helpers_reviewed": 255,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 289,
+        "runtime_functions_identified": 290,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -28115,6 +28115,7 @@
           "RegisterVariantTypeFieldOffset",
           "RegisterUnsigned32FieldOffset",
           "WriteReflectedObjectRecords",
+          "AreTaggedPayloadRecordsEqual",
           "TouchKeyedResourceLastUseCounter",
           "CopyKeyedResourceDescriptorOrDefault",
           "QueryKeyedResourceMetadataWithFallback",
@@ -28495,6 +28496,7 @@
           "1401123b0",
           "140112930",
           "140116eb0",
+          "1401180e0",
           "140118620",
           "1401186d0",
           "1401187e0",
@@ -31167,16 +31169,17 @@
           {
             "name": "shared/support",
             "label": "Engine support",
-            "done": 22,
+            "done": 23,
             "todo": 5,
-            "total": 27,
-            "behavior_or_helpers_reviewed": 22,
+            "total": 28,
+            "behavior_or_helpers_reviewed": 23,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 27,
+            "runtime_functions_identified": 28,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "AreTaggedPayloadRecordsEqual",
               "HashBytesMurmur3X64_128",
               "AllocateAlignedBlockFromPool",
               "DrainRetiredVolumeAndItemResources",
@@ -31208,6 +31211,7 @@
               "0x14124f9d0"
             ],
             "done_addresses": [
+              "1401180e0",
               "14011a4e0",
               "1401657d0",
               "1407300b0",
@@ -31413,22 +31417,24 @@
               {
                 "name": "shared/support/common-routines",
                 "label": "Support implementation",
-                "done": 1,
+                "done": 2,
                 "todo": 1,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 1,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 2,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
+                "runtime_functions_identified": 3,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
                 "done_names": [
+                  "AreTaggedPayloadRecordsEqual",
                   "HashBytesMurmur3X64_128"
                 ],
                 "todo_names": [
                   "0x140a69070"
                 ],
                 "done_addresses": [
+                  "1401180e0",
                   "14011a4e0"
                 ],
                 "todo_addresses": [
@@ -31439,22 +31445,24 @@
                   {
                     "name": "shared/support/common-routines/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 1,
+                    "done": 2,
                     "todo": 1,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 1,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 2,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
+                    "runtime_functions_identified": 3,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
                     "done_names": [
+                      "AreTaggedPayloadRecordsEqual",
                       "HashBytesMurmur3X64_128"
                     ],
                     "todo_names": [
                       "0x140a69070"
                     ],
                     "done_addresses": [
+                      "1401180e0",
                       "14011a4e0"
                     ],
                     "todo_addresses": [
@@ -46924,5 +46932,5 @@
       }
     ]
   },
-  "unmapped": 7400
+  "unmapped": 7399
 }

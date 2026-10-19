@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "749 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "750 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8646,
-    "other_names": 974,
-    "verification": "complete_inventory_matches_baseline_plus_749_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8645,
+    "other_names": 975,
+    "verification": "complete_inventory_matches_baseline_plus_750_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19081,6 +19081,30 @@
         "Finite unit inputs and nonzero signed scales only; nonunit/exceptional values and full caller gates unresolved.",
         "Initial reversed composition oracle failed; operand order corrected from assembly before successful tests. Original code was not altered.",
         "Higher placement worker remains under review; this helper does not establish whole pipeline completion."
+      ]
+    },
+    {
+      "address": "1401180e0",
+      "original_name": "FUN_1401180e0",
+      "applied_name": "AreTaggedPayloadRecordsEqual",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV AreTaggedPayloadRecordsEqual(void * left_record, void * right_record)",
+      "evidence": [
+        "Full565-byte/156instruction comparator,all50dispatch entries and both47-byte delegate bodies read.",
+        "Original switch/body repair saved and independently reopened before naming.",
+        "Explicit opaque two-pointer RDI/RSI working signature and AL boolean return.",
+        "4366original-code cases across all50tabletags:4184direct and182delegated cases.",
+        "Common metadata uses integerbit equality;tag40addsorderedfloat metadata equality andtag43usesorderedfloat payload comparison.",
+        "Reversible descriptive name independently reopened;original bytes and other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Concrete record/tag semantics and validruntimeconstruction/lifetime unresolved.",
+        "Out-of-table tags not validated;switch override models50observedentries.",
+        "RecoveredCfloattypingofcommonDWORD50comparison is contradicted by assembly and native evidence;assembly governs."
       ]
     }
   ],

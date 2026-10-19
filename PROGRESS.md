@@ -7551,3 +7551,14 @@ Totals: **818 checked names across 9,620 defined functions**, **2,219 mapped and
 512 connected original-code cases cover random unit orientations and directions, both modes and every positive/negative scale combination. An initial reversed multiplication oracle failed and was corrected by checking assembly operands; original code remained unchanged. Input buffers and output guards were preserved. The saved descriptive name and corrected aggregate signature survived independent reopening. Nonunit/exceptional inputs, all caller gates and the larger placement pipeline remain unresolved.
 
 Totals: **819 checked names across 9,620 defined functions**, **2,220 mapped and 7,400 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Tagged record equality and recovered switch analysis
+
+`AreTaggedPayloadRecordsEqual` now names a shared comparison routine used by the placement worker and several other editor/runtime callers. It first checks tag and metadata fields, then compares the payload according to the tag. Its working signature uses two opaque record pointers and a boolean return; concrete record and tag meanings remain unresolved.
+
+Ghidra had omitted the indirect-switch branches. A reversible body repair and explicit override for the 50 observed table entries restored all 156 instructions in the 565-byte region and recovered the switch pseudocode. The repair and later descriptive name survived independent reopening, with executable bytes and neighboring functions unchanged.
+
+The original routine passed 4,366 bounded cases: 4,184 for direct branches and 182 for the two delegated branches. Checks include baseline records, individual byte mutations, NaNs and signed zero. The common metadata comparison is integer bit equality even though recovered C propagates a float type there; assembly and native checks establish the distinction. One delegated case adds an ordered float comparison. Out-of-table tags, valid runtime construction, lifetime and concrete type meanings remain unresolved. This helper does not complete the larger placement pipeline.
+
+Totals: **820 checked names across 9,620 defined functions**, **2,221 mapped and 7,399 unmapped**. These are reviewed-code counts, not whole-game completion.

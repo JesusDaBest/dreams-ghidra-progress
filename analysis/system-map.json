@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2220,
-  "unmapped_total": 7400,
+  "mapped_total": 2221,
+  "unmapped_total": 7399,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56315,6 +56315,34 @@
           ]
         }
       ]
+    },
+    "1401180e0": {
+      "system": "shared",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AreTaggedPayloadRecordsEqual",
+          "support": [
+            "Full565-byte/156instruction comparator,all50dispatch entries and both47-byte delegate bodies read.",
+            "Original switch/body repair saved and independently reopened before naming.",
+            "Explicit opaque two-pointer RDI/RSI working signature and AL boolean return.",
+            "4366original-code cases across all50tabletags:4184direct and182delegated cases.",
+            "Common metadata uses integerbit equality;tag40addsorderedfloat metadata equality andtag43usesorderedfloat payload comparison.",
+            "Reversible descriptive name independently reopened;original bytes and other names/signatures unchanged."
+          ]
+        }
+      ],
+      "code_sha256": "de15ef8c355acef7cc261d0aca51146d6ba5e709ea9e7c545c3f45ef54c8b6b4",
+      "component_path": [
+        "shared",
+        "support",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared tagged-record equality routine called by multiple editor and runtime paths. Concrete tag meanings remain unresolved.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "All565bytes/156instructions,50dispatchentries and two delegates reviewed;4366original-code equality checks.",
+      "code_hash_basis": "original_eh_region"
     }
   },
   "hierarchy": [
