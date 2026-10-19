@@ -8046,3 +8046,14 @@ For other states it composes two helper-produced transforms and delegates option
 Except for the direct cached paths, the tests supply explicit frame-helper fixtures. They establish the provider's own branch calculations, not the original dependencies' behavior. The actual coordinate spaces, UI meanings of parameters, complete caller lifecycle and exceptional input domains remain unresolved. No in-game verification is claimed.
 
 Totals are **811 checked names across 9,620 defined functions**, with **2,212 mapped and 7,408 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Shape dimension vectors and bounded scalar snapping
+
+`GetEditorShapeDimensionVector` now names a completely reviewed dimension helper. It reads the active editor bank, equalizes torus/cookie X/Y magnitudes while preserving signs, and returns a unit vector for tetrahedra and qualifying curve states. Other curve states use an object-dependent uniform scalar, defaulting to 1 and clamping the eligible object value to approximately 0.001. Its saved return type now describes the full 16-byte XMM0 vector.
+
+8,192 isolated cases cover shape-specific vectors and the connected original curve predicate with synthetic object graphs. Full assembly, C and the local-frame caller were read. Independent reopening verified the descriptive name/signature with original bytes unchanged. Object roles, lifecycle, other callers and exceptional float behavior remain unresolved.
+
+Separately, a bounded block in the larger local-frame helper was checked in 1,864 cases, including 200 exact ties. It snaps a signed scalar to quarter subdivisions between neighboring powers of two, with halfway ties toward zero in the tested fixture. Original import thunks and loader/NID evidence identify log2f and exp2f, but tests use host UCRT implementations. Original PS4 math boundary behavior is unverified. This is a block-level research finding; the larger helper is still partially reviewed and receives no naming or completion credit.
+
+Totals are **812 checked names across 9,620 defined functions**, with **2,213 mapped and 7,407 unmapped**. These are identified-code review counts, not feature completion.

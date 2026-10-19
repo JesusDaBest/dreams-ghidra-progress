@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "741 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "742 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8654,
-    "other_names": 966,
-    "verification": "complete_inventory_matches_baseline_plus_741_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8653,
+    "other_names": 967,
+    "verification": "complete_inventory_matches_baseline_plus_742_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18880,6 +18880,31 @@
         "Except direct cached paths,tests supply explicit frame-helper fixtures; original140bc9aa0/140bcf350 behavior not established by these suites.",
         "Actual coordinate space,parameter UI meaning,full caller lifecycle,invalid selectors,zero scales and nonunit/nonfinite quaternion domains unresolved.",
         "State4 fixture corrected a synthetic bank2 header/selector overlap; not an observed game defect."
+      ]
+    },
+    {
+      "address": "140bd2ee0",
+      "original_name": "FUN_140bd2ee0",
+      "applied_name": "GetEditorShapeDimensionVector",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "SpatialQueryFloat4Working16 PS4_SYSV GetEditorShapeDimensionVector(void * editor)",
+      "evidence": [
+        "Complete original body,158owned instructions,full C and local shape-frame caller reviewed.",
+        "RDI editor pointer;returns full16-byte dimension vector inXMM0,correcting previous eight-byte return.",
+        "Selected-bank5a0 vector supplies dimensions;torus10/cookie13 use smaller XY magnitude preserving signs and ZW.",
+        "Tetra12/22 and qualifying curve7 states return(1,1,1,0);other curve states use original predicate and object-dependent uniform scalar.",
+        "Object scalar defaults1 and eligible object field1d4 clampsminimum0.001; object pointers,type40,flag2e and editor196 gates traced.",
+        "8192isolated cases:5120 shape-vector cases with false predicate fixture and3072 connected cases executing original predicate and synthetic object graph.",
+        "Independent reopening verified name/signature and unchanged code bytes/other annotations."
+      ],
+      "caveats": [
+        "Analyst descriptive name,opaque editor/object types and working vector type,not recovered source symbols.",
+        "Object roles,lifecycle,other callers1408b58e6/1408b5940 and actual coordinate-space meanings unresolved.",
+        "Finite fixtures,modes0/14,banks0/1;nonfinite/signed-zero bit behavior and all state/mode combinations not established."
       ]
     }
   ],

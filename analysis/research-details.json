@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 811,
+    "checked_and_applied_names": 812,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 811,
+    "verified_names": 812,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "741 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "742 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25847,6 +25847,37 @@
       "Except direct cached paths,tests supply explicit frame-helper fixtures; original140bc9aa0/140bcf350 behavior not established by these suites.",
       "Actual coordinate space,parameter UI meaning,full caller lifecycle,invalid selectors,zero scales and nonunit/nonfinite quaternion domains unresolved.",
       "State4 fixture corrected a synthetic bank2 header/selector overlap; not an observed game defect."
+    ]
+  },
+  "csg_shape_dimension_vector_checkpoint": {
+    "address": "140bd2ee0",
+    "name": "GetEditorShapeDimensionVector",
+    "working_signature": "SpatialQueryFloat4Working16 PS4_SYSV GetEditorShapeDimensionVector(void * editor)",
+    "native_cases": 8192,
+    "findings": [
+      "Complete original body,158owned instructions,full C and local shape-frame caller reviewed.",
+      "RDI editor pointer;returns full16-byte dimension vector inXMM0,correcting previous eight-byte return.",
+      "Selected-bank5a0 vector supplies dimensions;torus10/cookie13 use smaller XY magnitude preserving signs and ZW.",
+      "Tetra12/22 and qualifying curve7 states return(1,1,1,0);other curve states use original predicate and object-dependent uniform scalar.",
+      "Object scalar defaults1 and eligible object field1d4 clampsminimum0.001; object pointers,type40,flag2e and editor196 gates traced.",
+      "8192isolated cases:5120 shape-vector cases with false predicate fixture and3072 connected cases executing original predicate and synthetic object graph.",
+      "Independent reopening verified name/signature and unchanged code bytes/other annotations."
+    ],
+    "limits": [
+      "Analyst descriptive name,opaque editor/object types and working vector type,not recovered source symbols.",
+      "Object roles,lifecycle,other callers1408b58e6/1408b5940 and actual coordinate-space meanings unresolved.",
+      "Finite fixtures,modes0/14,banks0/1;nonfinite/signed-zero bit behavior and all state/mode combinations not established."
+    ]
+  },
+  "csg_local_frame_scalar_snap_checkpoint": {
+    "function": "140bcf350",
+    "scope": "bounded_block_only",
+    "native_cases": 1864,
+    "ties": 200,
+    "finding": "Nearest quarter subdivision between adjacent powers of two; midpoint ties toward zero in host-math fixture.",
+    "limits": [
+      "Host UCRT log2f/exp2f; original PS4 math boundary behavior unverified.",
+      "Larger local-frame helper remains partially reviewed; no naming or completion credit."
     ]
   }
 }
