@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "772 existing-function renames,70 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "772 existing-function renames,71 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9621,
+    "total": 9622,
     "default_fun_names": 8623,
-    "other_names": 998,
-    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_70_created_functions_and_1_reviewed_existing_name"
+    "other_names": 999,
+    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_71_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19696,6 +19696,33 @@
         "Underlying source field names and original source symbol unknown;workingeditorpointeropaque.",
         "Caller bodies statically reviewed,not fully executed;no real game or input-device validation.",
         "Indirect callers not ruled out."
+      ]
+    },
+    {
+      "address": "1407796c0",
+      "original_name": null,
+      "applied_name": "ApplyEditorCombingDirection",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyEditorCombingDirection(void * world, void * propagation_state, void * edit_context, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+      "evidence": [
+        "Complete 4,923-byte region, 972 original instructions, 1,264 nonempty pseudocode lines and two incoming direct-call windows reviewed.",
+        "Sculpt Combing stores 64 directions as pairs of bytes. The caller decodes octahedral directions, blends toward the input transformed into object space, normalizes and re-encodes.",
+        "Spatial sculpt coverage counts 27 samples per cell inside an oriented edit box. Their fraction supplies the blend weight; zero coverage preserves the original word.",
+        "Sprite Combing constructs a direction basis relative to group orientation. Direct edits store an object-relative quaternion and clear Ruffle; spatial edits submit operation 3 and clear properties only on success.",
+        "Six isolated suites passed 1,536 complete-caller synthetic cases across sculpt, transformed spatial coverage, direct sprite and sprite operation-packet success/failure paths. Property/operation/record/telemetry fixtures are explicit.",
+        "Separate extracted-block checks cover all 65,536 packed decoder inputs, 4,102 encoder vectors and 4,096 decode/blend/normalize cases; these are not counted as complete-caller cases.",
+        "Definition and ten-input working signature independently reopened; original bytes and existing function inventory unchanged."
+      ],
+      "caveats": [
+        "Bounded synthetic sculpt/sprite cases with explicit property/operation/record/telemetry fixtures;not live game execution.",
+        "Spatialoperationpacket construction and result branching verified;actualengineandrecordcommitnotexecuted.",
+        "Othermodes,livecontrollerframes,negativegroupscale,degenerateparallel/zero/nonfinite inputs and lifecycle remain unresolved.",
+        "Workingcontextpointersopaque;originalsourcefunction/type namesunknown."
       ]
     }
   ],

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 843,
+    "checked_and_applied_names": 844,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 843,
-    "function_count": 9621,
+    "verified_names": 844,
+    "function_count": 9622,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,70 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,71 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26697,6 +26697,32 @@
       "Underlying source field names and original source symbol unknown;workingeditorpointeropaque.",
       "Caller bodies statically reviewed,not fully executed;no real game or input-device validation.",
       "Indirect callers not ruled out."
+    ]
+  },
+  "editor_combing_checkpoint": {
+    "address": "1407796c0",
+    "name": "ApplyEditorCombingDirection",
+    "working_signature": "void PS4_SYSV ApplyEditorCombingDirection(void * world, void * propagation_state, void * edit_context, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+    "complete_caller_native_cases": 1536,
+    "complete_caller_suites": 6,
+    "decoder_block_cases": 65536,
+    "encoder_block_cases": 4102,
+    "decode_blend_block_cases": 4096,
+    "verified_incoming_direct_calls": 2,
+    "findings": [
+      "Complete 4,923-byte region, 972 original instructions, 1,264 nonempty pseudocode lines and two incoming direct-call windows reviewed.",
+      "Sculpt Combing stores 64 directions as pairs of bytes. The caller decodes octahedral directions, blends toward the input transformed into object space, normalizes and re-encodes.",
+      "Spatial sculpt coverage counts 27 samples per cell inside an oriented edit box. Their fraction supplies the blend weight; zero coverage preserves the original word.",
+      "Sprite Combing constructs a direction basis relative to group orientation. Direct edits store an object-relative quaternion and clear Ruffle; spatial edits submit operation 3 and clear properties only on success.",
+      "Six isolated suites passed 1,536 complete-caller synthetic cases across sculpt, transformed spatial coverage, direct sprite and sprite operation-packet success/failure paths. Property/operation/record/telemetry fixtures are explicit.",
+      "Separate extracted-block checks cover all 65,536 packed decoder inputs, 4,102 encoder vectors and 4,096 decode/blend/normalize cases; these are not counted as complete-caller cases.",
+      "Definition and ten-input working signature independently reopened; original bytes and existing function inventory unchanged."
+    ],
+    "limits": [
+      "Bounded synthetic sculpt/sprite cases with explicit property/operation/record/telemetry fixtures;not live game execution.",
+      "Spatialoperationpacket construction and result branching verified;actualengineandrecordcommitnotexecuted.",
+      "Othermodes,livecontrollerframes,negativegroupscale,degenerateparallel/zero/nonfinite inputs and lifecycle remain unresolved.",
+      "Workingcontextpointersopaque;originalsourcefunction/type namesunknown."
     ]
   }
 }

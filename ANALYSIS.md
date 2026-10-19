@@ -8308,3 +8308,14 @@ The complete original body and pseudocode were read. Fourteen direct calls were 
 The function boundary, descriptive name and float-return working signature survived independent reopening. Existing function names/signatures and original instruction bytes are unchanged. Exceptional inputs, all ineligible object combinations, original field names, indirect callers and real game/device behavior remain unresolved. Caller-body review does not establish complete execution coverage.
 
 Totals: **843 checked names across 9,621 defined functions**, **2,244 mapped and 7,377 unmapped**. Defining an additional function changes the inventory; these counts do not measure whole-game completion.
+
+
+### Combing directions for sculpts and paint strokes
+
+`ApplyEditorCombingDirection` now names a previously undefined function that updates sculpt and sprite comb directions. A sculpt stores a 4×4×4 field of directions in 128 bytes. Spatial edits sample each cell at 27 points inside an oriented brush box, then use the covered fraction to blend its direction. Uncovered cells retain their original bytes. Sprite edits build a quaternion from the input direction and group orientation; the spatial branch submits an operation packet and clears follow-up properties only when that operation reports success.
+
+The complete 4,923-byte body, 972 instructions, 1,264 nonempty pseudocode lines and two incoming direct-call windows were reviewed. Six isolated complete-caller suites passed 1,536 synthetic cases: ordinary and rotated sculpts, ordinary and transformed spatial coverage, direct sprites, and sprite packet success/failure. Sculpt direction bytes matched independent models; sprite rotation bases and packet fields matched their references. The definition and ten-argument working signature survived independent reopening, preserving original bytes and all existing function names/signatures.
+
+Separate arithmetic-block checks covered all 65,536 decoder inputs, 4,102 encoder vectors and 4,096 decode/blend cases. They are recorded separately from complete-caller tests. Property writes, telemetry, spatial-operation results and record commits use explicit local fixtures. Actual operation-engine behavior, other modes, live controller frames, negative group scale, degenerate/nonfinite inputs and full lifecycle remain unresolved. No in-game verification is claimed.
+
+Totals: **844 checked names across 9,622 defined functions**, **2,245 mapped and 7,377 unmapped**. These counts describe code review, not whole-game completion.
