@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/538891d780417ea7ce345939d7f071379f351e18/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8252f7eb2a3f85a50345ea3d3d7be5c8578c8c6c/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**830 of 9,620 functions named and checked.** A function is one piece of the game's code.
+**832 of 9,620 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/538891d780417ea7ce345939d7f071379f351e18/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/8252f7eb2a3f85a50345ea3d3d7be5c8578c8c6c/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -64,7 +64,7 @@ Every square is one actual function and has the same size. All function squares 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
-| Sculpting & painting | 191 | 84/148 | 0/43 |
+| Sculpting & painting | 193 | 86/150 | 0/43 |
 | Gadgets & logic | 516 | 58/60 | 50/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
@@ -74,7 +74,7 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 377 | 254/290 | 17/82 |
 
-**2,231 of 9,620 discovered functions are mapped; 7,389 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,233 of 9,620 discovered functions are mapped; 7,387 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1069,14 +1069,14 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Sculpting & painting** - 191 functions identified; 88 behavior/helper reviews; 0 property/type reviews
-  - **Sculpt geometry** - 138 functions identified; 70 behavior/helper reviews; 0 property/type reviews
+- **Sculpting & painting** - 193 functions identified; 90 behavior/helper reviews; 0 property/type reviews
+  - **Sculpt geometry** - 140 functions identified; 72 behavior/helper reviews; 0 property/type reviews
     - **Sculpt bricks** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Chunk** - 31 functions identified; 6 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 31 functions identified; 6 behavior/helper reviews; 0 property/type reviews
-    - **Primitive geometry & records** - 27 functions identified; 27 behavior/helper reviews; 0 property/type reviews
-      - **Runtime behavior** - 27 functions identified; 27 behavior/helper reviews; 0 property/type reviews
+    - **Primitive geometry & records** - 29 functions identified; 29 behavior/helper reviews; 0 property/type reviews
+      - **Runtime behavior** - 29 functions identified; 29 behavior/helper reviews; 0 property/type reviews
     - **CSG record storage** - 13 functions identified; 13 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 13 functions identified; 13 behavior/helper reviews; 0 property/type reviews
     - **Sweep** - 11 functions identified; 2 behavior/helper reviews; 0 property/type reviews
