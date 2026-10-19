@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 904,
+    "checked_and_applied_names": 905,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 904,
+    "verified_names": 905,
     "function_count": 9667,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2042,7 +2042,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "787 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "788 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28509,6 +28509,28 @@
       "Concrete source class and exact developer-source/build match remain unresolved.",
       "One synthetic shape and three orthogonal nonzero points only; arbitrary topology, malformed counts, degenerate vectors and in-game behavior remain unverified.",
       "Identifier storage is opaque 16-byte data; the centroid is the arithmetic mean of triangle centroids, not a volume-weighted centroid."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_triangle_selection_checkpoint": {
+    "address": "14144cd20",
+    "name": "SelectRecipientTriangleByHierarchicalNormalThresholds",
+    "signature": "void PS4_SYSV SelectRecipientTriangleByHierarchicalNormalThresholds(int * triangle_index, AnimationFloat4Register direction)",
+    "original_sha256": "4ff16e0657c33e973abd57c74eea021d008e17d310b955ca3f0742618518c414",
+    "native_cases": 504,
+    "size": 489,
+    "created": false,
+    "c_sha256": "b2b663f67795e2ffe831455122fe820caf5e7aae02c4be02523dd903456c1a5f",
+    "nonempty_c_lines": 173,
+    "evidence": [
+      "Complete 489-byte original body (128 instructions), full 164-line typed pseudocode and named-preview differences read.",
+      "Two direct caller windows link the output index and vector input to recipient shape operations.",
+      "504 isolated original-code synthetic cases passed, including all 320 child paths, failed-threshold carry behavior and ties/unordered comparisons. Independent reopening verified metadata and unchanged original bytes."
+    ],
+    "limits": [
+      "Concrete original source class and exact developer-source/build match remain unresolved.",
+      "Initialized synthetic hierarchy only; malformed pointers/counts, arbitrary assets and exhaustive floating-point boundary behavior remain unverified.",
+      "Strict normal-dot thresholds can retain an earlier-level index when no child passes; this is not a general nearest-triangle search."
     ],
     "project_saved_and_independently_reopened": true
   }

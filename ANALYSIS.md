@@ -8573,3 +8573,12 @@ Totals: **903 checked names across 9,667 defined functions**, **2,304 mapped and
 The helper selects a matching shape, blends points, rebuilds normalized directions and pair distances, computes absolute signed mesh volume and the arithmetic mean of triangle centroids, then updates per-point factors. The centroid is not volume-weighted. All 56 isolated original-code cases passed with synthetic fixtures, including absent/mismatched shapes, weight clamping and NaN weight, zero/one triangle, output values and preservation of unrelated bytes. Independent reopening verified the saved interface and unchanged original bytes. Arbitrary topology, malformed counts, degenerate vectors and live-game behavior remain unverified.
 
 Totals: **904 checked names across 9,667 defined functions**, **2,305 mapped and 7,362 unmapped**. These measure code review, not whole-game completion.
+
+
+### Recipient triangle selection through mesh refinement levels
+
+`SelectRecipientTriangleByHierarchicalNormalThresholds` now has a reviewed descriptive name, an output index pointer and a full vector register input. Its complete 128-instruction body, 164-line typed pseudocode and named-preview differences were read. Two direct caller windows connect it to recipient shape construction and runtime use.
+
+Selection compares XYZ normal dot products using strict thresholds of approximately 0.79465, 0.93 and 0.98 across three mesh levels. Ties and unordered comparisons retain the earlier winner. If no child exceeds a threshold, the previous level's index is retained; this is not an exhaustive nearest-triangle search. All 504 isolated original-code cases passed, including 320 child paths, 20 threshold-failure carry cases, 160 seeded fixtures and four zero/tie/unordered cases. Independent reopening verified the saved interface and unchanged original bytes. Malformed hierarchies, arbitrary assets and live-game behavior remain unverified.
+
+Totals: **905 checked names across 9,667 defined functions**, **2,306 mapped and 7,361 unmapped**. These are review counts, not whole-game completion.
