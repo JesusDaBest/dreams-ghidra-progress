@@ -8131,3 +8131,14 @@ Ghidra had omitted the indirect-switch branches. A reversible body repair and ex
 The original routine passed 4,366 bounded cases: 4,184 for direct branches and 182 for the two delegated branches. Checks include baseline records, individual byte mutations, NaNs and signed zero. The common metadata comparison is integer bit equality even though recovered C propagates a float type there; assembly and native checks establish the distinction. One delegated case adds an ordered float comparison. Out-of-table tags, valid runtime construction, lifetime and concrete type meanings remain unresolved. This helper does not complete the larger placement pipeline.
 
 Totals: **820 checked names across 9,620 defined functions**, **2,221 mapped and 7,399 unmapped**. These are reviewed-code counts, not whole-game completion.
+
+
+### Editor placement transform
+
+`ComputeEditorPlacementTransform` now names the reviewed worker above the reference/context helpers. It combines the placement frames, optionally snaps with hysteresis, applies an orientation override or direction alignment, composes an extra frame, and applies attachment-frame position and angular constraints. The relative constraint transform is inverse(B) * input * A; the result is reconstructed as B * constrained * inverse(A). A temporary scale gain affects attachment placement and is divided out of final scale.
+
+The full 8,437-byte body and corrected pseudocode were read. Its 1,551 owned instructions and trailing original UD2 were reconciled against recorded assembly reads. Twenty-two bounded original-code suites contain 6,832 cases, covering explicit transform formulas and separately identified routing comparisons to previously validated callees. These establish axis and radial position limits, X-twist angular intervals, a rotation-vector cap, full 3D alignment in mode 2, snapping states and suppression options, record-dependent direction selection, and extra-frame suppression. A local copy protects persistent previous-transform storage during snapping.
+
+The saved descriptive name and retained working signature survived independent reopening; original bytes and other function annotations stayed unchanged. Concrete tool/record enums, the full combined gate space, general negative-scale anchor behavior, exceptional inputs and exact PS4 math rounding remain unresolved. This is a supported descriptive role, not a claim that the entire placement pipeline or Dreams is complete.
+
+Totals: **821 checked names across 9,620 defined functions**, **2,222 mapped and 7,398 unmapped**.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2221,
-  "unmapped_total": 7399,
+  "mapped_total": 2222,
+  "unmapped_total": 7398,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56343,6 +56343,35 @@
       "code_role": "runtime-implementation",
       "code_role_basis": "All565bytes/156instructions,50dispatchentries and two delegates reviewed;4366original-code equality checks.",
       "code_hash_basis": "original_eh_region"
+    },
+    "140bcb1b0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Editor placement worker composes reference/context and applies snapping,direction alignment,extra frames and attachment-frame constraints.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full8437-byte body and corrected C reviewed;22bounded native suites total6832cases.",
+      "code_sha256": "5bc3e5feeb636f40407c2ca1846af4203237a19079de03cc74cc4f56a59a12b6",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorPlacementTransform",
+          "support": [
+            "Full8437-byte region,1551owned instructions and full corrected pseudocode read;primary source-frame caller traced.",
+            "Verified nine-parameter register/stack working signature retained.",
+            "Reference/context composition,snapping,orientation override,direction selection,extra frame and attachment constraints traced.",
+            "Attachment constraints use inverse(B)*input*A then B*constrained*inverse(A),with temporary scalegain.",
+            "22bounded native suites total6832cases,including explicit formula tests and separately identified routing comparisons.",
+            "Allnine dispatch entries audited;cases establish positional/radial limits,twist/angular intervals,rotation-vector cap andmode2alignment.",
+            "Saved descriptive name independently reopened;original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [

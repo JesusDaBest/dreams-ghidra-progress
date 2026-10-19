@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 820,
+    "checked_and_applied_names": 821,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 820,
+    "verified_names": 821,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "750 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "751 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26122,6 +26122,31 @@
     "native_suites": {
       "direct_dispatch_tags": 4184,
       "delegated_dispatch_tags": 182
+    }
+  },
+  "editor_placement_transform_checkpoint": {
+    "address": "140bcb1b0",
+    "name": "ComputeEditorPlacementTransform",
+    "working_signature": "void PS4_SYSV ComputeEditorPlacementTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, PositionScaleQuaternionTransform32 * context_transform, uint option_r8, uint option_r9, uchar stack_option_8, uchar stack_option_16, float blend_factor)",
+    "native_cases": 6832,
+    "findings": [
+      "Full8437-byte region,1551owned instructions and full corrected pseudocode read;primary source-frame caller traced.",
+      "Verified nine-parameter register/stack working signature retained.",
+      "Reference/context composition,snapping,orientation override,direction selection,extra frame and attachment constraints traced.",
+      "Attachment constraints use inverse(B)*input*A then B*constrained*inverse(A),with temporary scalegain.",
+      "22bounded native suites total6832cases,including explicit formula tests and separately identified routing comparisons.",
+      "Allnine dispatch entries audited;cases establish positional/radial limits,twist/angular intervals,rotation-vector cap andmode2alignment.",
+      "Saved descriptive name independently reopened;original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Descriptive name,not recovered source symbol or full concrete editor/group types.",
+      "Concrete enums,completecombined gates and general negative-adjustment-scale anchor behavior unresolved.",
+      "Degenerate/nonfinite/tie cases and exactPS4math not exhausted.",
+      "Native fixtures use documented hostmath/localinfinity/canary adapters;counts are not feature or whole-game completion."
+    ],
+    "native_suites": {
+      "suite_count": 22,
+      "bounded_cases": 6832
     }
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "750 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "751 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8645,
-    "other_names": 975,
-    "verification": "complete_inventory_matches_baseline_plus_750_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8644,
+    "other_names": 976,
+    "verification": "complete_inventory_matches_baseline_plus_751_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19105,6 +19105,32 @@
         "Concrete record/tag semantics and validruntimeconstruction/lifetime unresolved.",
         "Out-of-table tags not validated;switch override models50observedentries.",
         "RecoveredCfloattypingofcommonDWORD50comparison is contradicted by assembly and native evidence;assembly governs."
+      ]
+    },
+    {
+      "address": "140bcb1b0",
+      "original_name": "FUN_140bcb1b0",
+      "applied_name": "ComputeEditorPlacementTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorPlacementTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, PositionScaleQuaternionTransform32 * context_transform, uint option_r8, uint option_r9, uchar stack_option_8, uchar stack_option_16, float blend_factor)",
+      "evidence": [
+        "Full8437-byte region,1551owned instructions and full corrected pseudocode read;primary source-frame caller traced.",
+        "Verified nine-parameter register/stack working signature retained.",
+        "Reference/context composition,snapping,orientation override,direction selection,extra frame and attachment constraints traced.",
+        "Attachment constraints use inverse(B)*input*A then B*constrained*inverse(A),with temporary scalegain.",
+        "22bounded native suites total6832cases,including explicit formula tests and separately identified routing comparisons.",
+        "Allnine dispatch entries audited;cases establish positional/radial limits,twist/angular intervals,rotation-vector cap andmode2alignment.",
+        "Saved descriptive name independently reopened;original bytes and other function annotations unchanged."
+      ],
+      "caveats": [
+        "Descriptive name,not recovered source symbol or full concrete editor/group types.",
+        "Concrete enums,completecombined gates and general negative-adjustment-scale anchor behavior unresolved.",
+        "Degenerate/nonfinite/tie cases and exactPS4math not exhausted.",
+        "Native fixtures use documented hostmath/localinfinity/canary adapters;counts are not feature or whole-game completion."
       ]
     }
   ],
