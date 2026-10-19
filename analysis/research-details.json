@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 910,
+    "checked_and_applied_names": 911,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 910,
-    "function_count": 9668,
+    "verified_names": 911,
+    "function_count": 9669,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2030,6 +2030,7 @@
       "1414339f0",
       "141433a60",
       "141433a70",
+      "141438dc0",
       "14143c980",
       "14147f1b0",
       "14148a980",
@@ -2043,7 +2044,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 117 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 118 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28647,6 +28648,30 @@
       "First accepted facing triangle in stored order; no nearest-hit or nonnegative line-parameter guarantee.",
       "Finite synthetic zero/one/two triangle scenes only; tolerance boundaries, NaN/Inf, malformed indices, arbitrary meshes and live-game behavior unresolved.",
       "Original source class and exact developer-source/build match not recovered; original unordered flags take precedence over generated ordered C."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_volume_correction_checkpoint": {
+    "address": "141438dc0",
+    "name": "CorrectRecipientShapeVolumeAroundMeanTriangleCenter",
+    "signature": "void PS4_SYSV CorrectRecipientShapeVolumeAroundMeanTriangleCenter(void * shape_state, int selection_index)",
+    "original_sha256": "aa0d1addeacc2e1a307c5e4498de2e34916dbc28e04557e925f7643c045f604c",
+    "native_cases": 405,
+    "size": 576,
+    "created": true,
+    "c_sha256": "6da6954295f74067d3c3b25b6be3f4a2d52a1bb6944e4e9bd58796c92e0b15ed",
+    "nonempty_c_lines": 129,
+    "evidence": [
+      "Full576-byte original body and118-line original C,111-line temporarily corrected math-typed C and all named-preview changes read.",
+      "405 whole original routine cases with original local libc powf passed against independent tetrahedron volume, mean triangle center and weighted correction model.",
+      "Registration under BODY_COLLISION linked to embedded slot5 through subobject offset and original indirect dispatch; initial strength1 and post-call decay.5.",
+      "Independent reopening verified new exact EH-bounded definition, working RDI/ESI interface, unchanged original bytes and other function inventory."
+    ],
+    "limits": [
+      "Center is unweighted mean of face centroids, not volume centroid; scale from cube root of absolute volume/reference is clamped .5..2.",
+      "Finite nondegenerate tetrahedra only; zero/negative reference, zero volume, nonfinite inputs, malformed indices, arbitrary meshes and live-game behavior unverified.",
+      "Shared saved powf prototype remains inaccurate; corrected prototype was reviewed in a rollback-only transaction. Assembly and original-code execution establish the math interface.",
+      "Original source-class and developer-source/build match not recovered; full enclosing dispatcher not reviewed."
     ],
     "project_saved_and_independently_reopened": true
   }

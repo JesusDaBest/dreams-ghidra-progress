@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 117 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 118 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9668,
+    "total": 9669,
     "default_fun_names": 8603,
-    "other_names": 1065,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_117_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1066,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_118_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21609,6 +21609,30 @@
         "First accepted facing triangle in stored order; no nearest-hit or nonnegative line-parameter guarantee.",
         "Finite synthetic zero/one/two triangle scenes only; tolerance boundaries, NaN/Inf, malformed indices, arbitrary meshes and live-game behavior unresolved.",
         "Original source class and exact developer-source/build match not recovered; original unordered flags take precedence over generated ordered C."
+      ]
+    },
+    {
+      "address": "141438dc0",
+      "original_name": null,
+      "applied_name": "CorrectRecipientShapeVolumeAroundMeanTriangleCenter",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CorrectRecipientShapeVolumeAroundMeanTriangleCenter(void * shape_state, int selection_index)",
+      "evidence": [
+        "Full576-byte original body and118-line original C,111-line temporarily corrected math-typed C and all named-preview changes read.",
+        "405 whole original routine cases with original local libc powf passed against independent tetrahedron volume, mean triangle center and weighted correction model.",
+        "Registration under BODY_COLLISION linked to embedded slot5 through subobject offset and original indirect dispatch; initial strength1 and post-call decay.5.",
+        "Independent reopening verified new exact EH-bounded definition, working RDI/ESI interface, unchanged original bytes and other function inventory."
+      ],
+      "caveats": [
+        "Center is unweighted mean of face centroids, not volume centroid; scale from cube root of absolute volume/reference is clamped .5..2.",
+        "Finite nondegenerate tetrahedra only; zero/negative reference, zero volume, nonfinite inputs, malformed indices, arbitrary meshes and live-game behavior unverified.",
+        "Shared saved powf prototype remains inaccurate; corrected prototype was reviewed in a rollback-only transaction. Assembly and original-code execution establish the math interface.",
+        "Original source-class and developer-source/build match not recovered; full enclosing dispatcher not reviewed."
       ]
     }
   ],

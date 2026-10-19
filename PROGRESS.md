@@ -8051,3 +8051,14 @@ Totals: **909 checked names across 9,667 defined functions**, **2,310 mapped and
 All 450 whole original-code finite synthetic cases passed, covering zero/one/two triangles, both stored orders, three scales, five origins and five directions. The helper accepts negative line parameters (47 checked hits), returns the first eligible stored-order hit and preserves the output on miss. It is not a nearest forward-ray query. All four output lanes and fixture preservation were checked independently. Tolerance-edge rounding, nonfinite comparisons, malformed indices, arbitrary meshes, original source classes and live-game behavior remain unverified. Independent reopening confirmed the new definition and unchanged original bytes.
 
 Totals: **910 checked names across 9,668 defined functions**, **2,311 mapped and 7,357 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient shape volume correction
+
+`CorrectRecipientShapeVolumeAroundMeanTriangleCenter` now has a verified bounded definition. The full original body, original and temporarily math-typed pseudocode, and named-preview changes were read. It computes signed triangle volume, takes the cube root of absolute volume divided by reference volume, clamps scale to 0.5–2, and applies weighted corrections around the mean triangle centroid. This center is not a volume centroid.
+
+All 405 synthetic cases passed using the original routine and original local `powf`, with translated tetrahedra at three scales, five reference factors, three strengths, three point weights, and full/partial/empty active ranges. Registration under `BODY_COLLISION` links directly to embedded callback slot5; initial strength is1 and post-call decay is0.5. Independent reopening confirmed the new definition and unchanged original bytes.
+
+The saved shared math-import prototype remains inaccurate; its corrected interface was reviewed in a rollback-only transaction. Nonfinite/degenerate inputs, malformed indices, arbitrary meshes and live-game behavior remain unverified. The full enclosing dispatcher and original developer source are not claimed as recovered.
+
+Totals: **911 checked names across9,669 defined functions**, **2,312 mapped and7,357 unmapped**. These are code-review counts, not whole-game completion.
