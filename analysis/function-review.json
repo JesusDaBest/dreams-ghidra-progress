@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "745 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "746 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8650,
-    "other_names": 970,
-    "verification": "complete_inventory_matches_baseline_plus_745_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8649,
+    "other_names": 971,
+    "verification": "complete_inventory_matches_baseline_plus_746_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18976,6 +18976,32 @@
         "Analyst descriptive name and working ABI,not recovered source declaration or field/state labels.",
         "Small-angle approximations,nonunit/exceptional inputs,exact threshold and originalPS4math rounding remain unresolved.",
         "Parent placement/worker pipelines remain under review;bounded native cases do not establish feature completion."
+      ]
+    },
+    {
+      "address": "140bce430",
+      "original_name": "FUN_140bce430",
+      "applied_name": "ComputeEditorPlacementReferenceTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorPlacementReferenceTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, uint option_rcx, uint option_r8, float blend_factor)",
+      "evidence": [
+        "Complete2092-byte/419instruction body,full corrected C and base-frame worker caller reviewed.",
+        "Retains verified workingABI:output/editor/group pointersRDI/RSI/RDX,optionsECX/R8D,incomingfloatXMM0;voidreturn.",
+        "Raw/saved/live auxiliary selection forces outputscale1;incomingfloat controls interpolation or mode-adjusted localZ offset.",
+        "Optional orientation path calls reviewed ComputeEditorAdjustedPlacementQuaternion and consumes full16-byte result.",
+        "Original eligibility predicate gates normalized ray-plane projection,accepting strict0<t<10000;anchor depends on comparisonframe identity.",
+        "Five distinct bounded original-code suites total1760cases:blend320,storedselection448,connectedprojection384,connectedorientation128,localZ480.",
+        "Saved descriptive name and working signature independently reopened;original bytes and all other function annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI,not original source declaration or concrete state/group types.",
+        "Initial blend suite uses explicitfalseprojectionpredicate;other suites use original callees,with hosttrig adapters where needed.",
+        "All tool/flag gates,full runtime lifecycle,parallel/exceptional inputs,zero-scale signs and exactPS4math rounding remain unresolved.",
+        "Higher source-frame worker and sculpt-local-frame functions remain under review;this helper does not establish whole-pipeline completion."
       ]
     }
   ],

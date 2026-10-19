@@ -8084,3 +8084,12 @@ Totals are **814 checked names across 9,620 defined functions**, with **2,215 ma
 Separately, three unnamed frame functions received explicit working register/stack signatures after tracing a missing XMM0 float through their call chain. This is a type correction with no naming credit. Bounded consumer tests establish interpolation (320 cases), raw/saved frame selection (448), and connected ray-plane projection (384). Projection accepts only forward intersections strictly below 10,000 units. The larger placement pipeline remains under review.
 
 Totals are **815 checked names across 9,620 defined functions**, with **2,216 mapped and 7,404 unmapped**. These are identified-code review counts, not whole-game or feature completion.
+
+
+### Placement reference transform
+
+`ComputeEditorPlacementReferenceTransform` now names the fully read placement helper. It selects a raw, saved or live auxiliary frame, sets output scale to one, optionally adjusts orientation, and optionally projects a ray onto an editor plane. Live placement uses the incoming interpolation factor; its mode-dependent local-Z branch also accounts for the sign of the auxiliary scale. Projection accepts only forward hits strictly below 10,000 units.
+
+Five distinct bounded original-code suites contain 1,760 cases: input blending (320), raw/saved selection (448), connected projection (384), connected orientation (128), and live local-Z offset (480). Connected orientation consumes the reviewed quaternion helper's full result and agrees with an independent rotation-vector formula. The first blend suite explicitly supplies a false projection predicate; later suites execute original callees. Trigonometric paths use host math adapters. The saved descriptive name and existing working signature survived independent reopening with executable bytes unchanged. Other flag combinations, runtime lifecycles, exceptional/parallel inputs and exact PS4 math remain unresolved.
+
+Totals are **816 checked names across 9,620 defined functions**, with **2,217 mapped and 7,403 unmapped**. Higher frame workers remain under review; these counts do not measure whole-game completion.

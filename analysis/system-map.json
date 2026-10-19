@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2216,
-  "unmapped_total": 7404,
+  "mapped_total": 2217,
+  "unmapped_total": 7403,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56195,6 +56195,35 @@
             "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
             "448original-code cases cover gates,unit axes,canonical sign pairs,equal inputs and changedbyte behavior with hostacosf/sinf/cosf adapters.",
             "Saved name/full-vector signature independently reopened;original bytes and all other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bce430": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original editor helper constructs auxiliary placement reference transform with optional orientation and plane projection.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and corrected C read;1760bounded original-code cases across five suites.",
+      "code_sha256": "5d13ce7a383e9c7c53e6804db8bb6a30b47a20d93b9d74ab9b1c21ef75de1cb2",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorPlacementReferenceTransform",
+          "support": [
+            "Complete2092-byte/419instruction body,full corrected C and base-frame worker caller reviewed.",
+            "Retains verified workingABI:output/editor/group pointersRDI/RSI/RDX,optionsECX/R8D,incomingfloatXMM0;voidreturn.",
+            "Raw/saved/live auxiliary selection forces outputscale1;incomingfloat controls interpolation or mode-adjusted localZ offset.",
+            "Optional orientation path calls reviewed ComputeEditorAdjustedPlacementQuaternion and consumes full16-byte result.",
+            "Original eligibility predicate gates normalized ray-plane projection,accepting strict0<t<10000;anchor depends on comparisonframe identity.",
+            "Five distinct bounded original-code suites total1760cases:blend320,storedselection448,connectedprojection384,connectedorientation128,localZ480.",
+            "Saved descriptive name and working signature independently reopened;original bytes and all other function annotations unchanged."
           ]
         }
       ]
