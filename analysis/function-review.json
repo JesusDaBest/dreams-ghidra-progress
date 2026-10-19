@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "764 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "765 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8631,
-    "other_names": 989,
-    "verification": "complete_inventory_matches_baseline_plus_764_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8630,
+    "other_names": 990,
+    "verification": "complete_inventory_matches_baseline_plus_765_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19471,6 +19471,32 @@
         "Synthetic isolated original-code checks only;hostatan2f/sincosf and localinfinity/canary fixtures do not establish exactPS4rounding or in-game behavior.",
         "Exact parallel/near-parallel and annulus boundary rounding,global single-object settings,zero/nonfinite scales,nonunit quaternions and invalid pointers remain unresolved.",
         "Concrete editor UI handle identity remains unresolved;name describes geometric behavior only."
+      ]
+    },
+    {
+      "address": "140bd3170",
+      "original_name": "FUN_140bd3170",
+      "applied_name": "IntersectEditorRayWithDisk",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IntersectEditorRayWithDisk(void * editor, void * group, float[2] * local_xy_out_optional, float * distance_out_optional)",
+      "evidence": [
+        "Same single-type2/pair-non-type2,first42bit3,state1976..9 eligibility as reviewed annulus. Calls original object/group offset frame builder.",
+        "Ray/plane intersection uses frame localZ normal with scale-sign correction;rayorigin/direction selection matches adjacent queries. Require nonzero denominator and strict0<t<FLT_MAX.",
+        "Inverseframe hit yields localXY; accepts sqrt(x²+y²)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
+        "Only successful disk hits optionally write two local coordinate floats and ray distance. Misses leave outputs untouched.",
+        "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
+        "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
+        "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Synthetic isolated memory and original code only;no in-game behavior or exactPS4math claim.",
+        "atan2f adapter inherited but unused by this function;orientation/directional tests use host sincosf;local infinity/canary fixtures explicit.",
+        "Exact parallel/nearparallel and boundary rounding,otherglobal single-object settings,zero/nonfinite scales,nonunitquaternions and invalidpointers unresolved.",
+        "Inclusive finite radius comparison is established by assembly;randomized tests stay away from boundary."
       ]
     }
   ],

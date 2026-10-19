@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2235,
-  "unmapped_total": 7385,
+  "mapped_total": 2236,
+  "unmapped_total": 7384,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56755,6 +56755,35 @@
             "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
             "Seven isolated original-function suites4061cases cover saved/live/single frames,orientation,directional frame,backward rays and eligibility.",
             "Orientation suite excludes100of640candidate near-parallel rays;directional suite excludes110of640; excluded cases do not count as passes.",
+            "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd3170": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Editor disk plane/ray query traced through original object/group frame;both callers reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full1619-byte/346owned-instruction body and full C reviewed;4090uninstrumented original-function cases.",
+      "code_sha256": "f4f813f9b8103c6df7154ebd405cc2fca3ad469d3accdc9d666ba75c70b07dee",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IntersectEditorRayWithDisk",
+          "support": [
+            "Same single-type2/pair-non-type2,first42bit3,state1976..9 eligibility as reviewed annulus. Calls original object/group offset frame builder.",
+            "Ray/plane intersection uses frame localZ normal with scale-sign correction;rayorigin/direction selection matches adjacent queries. Require nonzero denominator and strict0<t<FLT_MAX.",
+            "Inverseframe hit yields localXY; accepts sqrt(x²+y²)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
+            "Only successful disk hits optionally write two local coordinate floats and ray distance. Misses leave outputs untouched.",
+            "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
+            "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
             "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }

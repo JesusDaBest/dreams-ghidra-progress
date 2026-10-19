@@ -8252,3 +8252,12 @@ These checks do not establish in-game behavior, exact PS4 math rounding, all glo
 The complete 1,714-byte region, 366 owned instructions and full pseudocode were reviewed. Seven isolated original-function suites passed 4,061 synthetic cases across saved/live paired frames, default single-object placement, orientation and directional paths, backward rays and eligibility gates. Near-parallel candidates excluded from two randomized geometry suites are explicitly excluded from the case count. The descriptive name and four-argument Boolean/optional-float signature survived independent reopening; original code bytes and other function names/signatures are unchanged.
 
 Exact parallel and boundary rounding, other global single-object settings, exceptional inputs and complete lifecycle remain unresolved. Host math fixtures and synthetic buffers do not establish exact PS4 rounding or in-game behavior. Totals: **834 checked names across 9,620 defined functions**, **2,235 mapped and 7,385 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Editor disk query
+
+`IntersectEditorRayWithDisk` tests the editor ray against the disk inside the previously reviewed ring. It intersects the frame local XY plane and accepts a local radius at or below the stored float value approximately 0.7. On success, separate optional outputs receive two local coordinates and the ray distance. Misses leave both untouched. Two caller windows establish these output uses. The concrete UI handle remains unresolved.
+
+The complete 1,619-byte region, 346 owned instructions and full pseudocode were reviewed. Seven isolated original-function suites passed 4,090 synthetic cases across saved/live paired frames, default single-object placement, orientation and directional paths, backward rays and eligibility. Excluded near-parallel candidates do not count as passes. The inclusive finite radius comparison is established by assembly; randomized checks stay away from the boundary. The descriptive name and working signature, including a pointer to two output floats, survived independent reopening with original code bytes unchanged.
+
+Exact parallel and boundary rounding, other global single-object settings, exceptional inputs and complete lifecycle remain unresolved. Host math and synthetic memory fixtures do not establish exact PS4 rounding or in-game behavior. Totals: **835 checked names across 9,620 defined functions**, **2,236 mapped and 7,384 unmapped**. These are code-review counts, not whole-game completion.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 834,
+    "checked_and_applied_names": 835,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 834,
+    "verified_names": 835,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "764 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "765 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26482,6 +26482,32 @@
       "suite_count": 7,
       "bounded_cases": 4061,
       "uninstrumented_function_cases": 4061
+    }
+  },
+  "disk_query_checkpoint": {
+    "address": "140bd3170",
+    "name": "IntersectEditorRayWithDisk",
+    "working_signature": "bool PS4_SYSV IntersectEditorRayWithDisk(void * editor, void * group, float[2] * local_xy_out_optional, float * distance_out_optional)",
+    "native_cases": 4090,
+    "findings": [
+      "Same single-type2/pair-non-type2,first42bit3,state1976..9 eligibility as reviewed annulus. Calls original object/group offset frame builder.",
+      "Ray/plane intersection uses frame localZ normal with scale-sign correction;rayorigin/direction selection matches adjacent queries. Require nonzero denominator and strict0<t<FLT_MAX.",
+      "Inverseframe hit yields localXY; accepts sqrt(x²+y²)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
+      "Only successful disk hits optionally write two local coordinate floats and ray distance. Misses leave outputs untouched.",
+      "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
+      "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
+      "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic isolated memory and original code only;no in-game behavior or exactPS4math claim.",
+      "atan2f adapter inherited but unused by this function;orientation/directional tests use host sincosf;local infinity/canary fixtures explicit.",
+      "Exact parallel/nearparallel and boundary rounding,otherglobal single-object settings,zero/nonfinite scales,nonunitquaternions and invalidpointers unresolved.",
+      "Inclusive finite radius comparison is established by assembly;randomized tests stay away from boundary."
+    ],
+    "native_suites": {
+      "suite_count": 7,
+      "bounded_cases": 4090,
+      "uninstrumented_function_cases": 4090
     }
   }
 }
