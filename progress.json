@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 755,
+    "done": 756,
     "todo": 1447,
-    "total": 2202,
-    "behavior_or_helpers_reviewed": 681,
+    "total": 2203,
+    "behavior_or_helpers_reviewed": 682,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12550,12 +12550,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 97,
+        "done": 98,
         "todo": 310,
-        "total": 407,
-        "behavior_or_helpers_reviewed": 93,
+        "total": 408,
+        "behavior_or_helpers_reviewed": 94,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 198,
+        "runtime_functions_identified": 199,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12582,6 +12582,7 @@
           "ApplyKeyedRecordInsertionEvent",
           "SetKeyedRecordCoordinatesOrNearbyRecords",
           "RemoveKeyedRecordOrNearbyRecords",
+          "ClassifyEditorPlacementOrientation",
           "WriteCreateWireNodeMessage",
           "AddRecordModeEnumValue",
           "RegisterEditOpFieldOffset",
@@ -12993,6 +12994,7 @@
           "140b35aa0",
           "140b35bd0",
           "140b35ec0",
+          "140bcec60",
           "140c82410",
           "140cb3d40",
           "140cdfdb0",
@@ -16507,16 +16509,17 @@
           {
             "name": "interface/editing",
             "label": "Editing & tools",
-            "done": 3,
+            "done": 4,
             "todo": 42,
-            "total": 45,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 46,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 3,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 1,
             "property_type_functions_identified": 45,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
+              "ClassifyEditorPlacementOrientation",
               "AddRecordModeEnumValue",
               "RegisterEditOpFieldOffset",
               "RegisterRecordModeFieldOffset"
@@ -16566,6 +16569,7 @@
               "0x140d31090"
             ],
             "done_addresses": [
+              "140bcec60",
               "140cb3d40",
               "140cdfdb0",
               "140cf47a0"
@@ -17572,6 +17576,53 @@
                     "todo_addresses": [
                       "140c86b10"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "interface/editing/placement-orientation",
+                "label": "Placement orientation",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ClassifyEditorPlacementOrientation"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140bcec60"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/editing/placement-orientation/runtime-implementation",
+                    "label": "Runtime behavior",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ClassifyEditorPlacementOrientation"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140bcec60"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -46694,5 +46745,5 @@
       }
     ]
   },
-  "unmapped": 7417
+  "unmapped": 7416
 }

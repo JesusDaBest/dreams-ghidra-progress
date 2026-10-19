@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 801,
+    "checked_and_applied_names": 802,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 801,
+    "verified_names": 802,
     "function_count": 9619,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "732 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "733 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25576,5 +25576,42 @@
       "Flag bits and72-byte payload opaque; relation to rendering controls unresolved."
     ],
     "new_name_credit": 0
+  },
+  "csg_placement_orientation_checkpoint": {
+    "name": "ClassifyEditorPlacementOrientation",
+    "address": "140bcec60",
+    "native_cases": 35840,
+    "working_signature": "uint PS4_SYSV ClassifyEditorPlacementOrientation(void * editor_state)",
+    "findings": [
+      "Complete254-byte/65-instruction original leaf, decompiled C and shape-initializer caller reviewed.",
+      "Returns0,1,4; caller140bde080 skips orientation setup for0, builds context-derived orientation for1 and chooses a constant for4.",
+      "35840 isolated original-code synthetic cases cover all256 mode bytes, two handle states,10 subtype boundaries and seven gate variants, matching an independently audited branch model with no input writes.",
+      "Independent reopen verified pointerRDI input and uintEAX result; all other names/signatures and original bytes unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name, not recovered source symbol.",
+      "Exact flag/mode enum meanings, other callers, serialized CsgEdit linkage and full editor runtime behavior remain unresolved."
+    ],
+    "shape_selection_values": {
+      "ShapeBox": 1,
+      "ShapeEllipsoid": 2,
+      "ShapeCylinder": 3,
+      "ShapeCone": 4,
+      "ShapePrismRight": 5,
+      "ShapeTorus": 10,
+      "ShapeSphere": 11,
+      "ShapeTetrahedron": 22,
+      "ShapeCookie": 13,
+      "ShapeSuperEllipsoid": 8,
+      "ShapeQuadraticCurve": 7
+    },
+    "shape_prism_mapping": "unresolved",
+    "six_transform_followup": {
+      "already_named": "ComposeSixTransforms",
+      "additional_finite_cases": 82,
+      "zero_nonunit_axis_cases": 96,
+      "credit": 0,
+      "limits": "Synthetic inputs; explicit host infinity-check stand-in. Nonfinite, mixed-axis nonunit, overflow and underflow unverified."
+    }
   }
 }

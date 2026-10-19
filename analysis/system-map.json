@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9619,
-  "mapped_total": 2202,
-  "unmapped_total": 7417,
+  "mapped_total": 2203,
+  "unmapped_total": 7416,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55809,6 +55809,32 @@
       "code_role": "properties-types",
       "code_role_basis": "Lifecycle and default storage initialization of the reflected CSG edit type.",
       "code_sha256_basis": "original_eh_region"
+    },
+    "140bcec60": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "editing",
+        "placement-orientation",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original shape-initialization caller uses classifier result to choose orientation setup.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original leaf, caller behavior and synthetic original-code execution reviewed.",
+      "code_sha256": "7a358347eae939cc467b081030859e9ffcc0d2846460202d36958f09a129ab2c",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ClassifyEditorPlacementOrientation",
+          "support": [
+            "Complete254-byte/65-instruction original leaf, decompiled C and shape-initializer caller reviewed.",
+            "Returns0,1,4; caller140bde080 skips orientation setup for0, builds context-derived orientation for1 and chooses a constant for4.",
+            "35840 isolated original-code synthetic cases cover all256 mode bytes, two handle states,10 subtype boundaries and seven gate variants, matching an independently audited branch model with no input writes.",
+            "Independent reopen verified pointerRDI input and uintEAX result; all other names/signatures and original bytes unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -57772,6 +57798,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "placement-orientation",
+              "label": "Placement orientation",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime behavior",
                   "children": []
                 }
               ]

@@ -7915,3 +7915,16 @@ The reflected type exposes a field named `packed`. Its precise bit meanings and 
 Original registration and descriptor consumers establish the field offsets. Registered primitive names establish signed 8-bit voxel size, unsigned 32-bit color and floating-point blend radius. The three flag bytes and 72-byte trailing payload remain opaque. Independent reopening verified the storage type, both function definitions and signatures. Six isolated original-code lifecycle cases checked initialization, canaries and cleanup forwarding using explicit allocation/deallocation recorders.
 
 Checked names are now **801**, across **9,619 defined functions**. This adds two lifecycle reviews; the storage layout itself adds no function credit. Original source declarations, flag semantics, payload interpretation, allocation exceptions and actual game/concurrency behavior remain unverified.
+
+
+### Shape selection and placement orientation
+
+`ClassifyEditorPlacementOrientation` now names a fully reviewed 254-byte helper. In the traced shape initializer, its return value skips orientation setup (0), builds orientation from the current context (1), or selects a constant orientation (4). All mode and flag names are not yet known. The saved pointer-input/32-bit-result signature and name survived an independent project reopen; original bytes and all other function annotations stayed unchanged.
+
+35,840 isolated executions of the original helper matched an independent branch model across every mode byte, two handle states, ten subtype boundary values and seven gate variants, with unchanged input. The first model comparison exposed an incorrect fallback condition in the reference; that condition was corrected against the original branch and retained in the local audit. These are synthetic state tests, not live editor tests.
+
+The original action-label and dispatch tables also link eleven shape selections to explicit initializer inputs: Box 1, Ellipsoid 2, Cylinder 3, Cone 4, Right Prism 5, Quadratic Curve 7, Superellipsoid 8, Torus 10, Sphere 11, Cookie 13 and Tetrahedron 22. Prism's separate path remains unresolved. The initializer writes these values into editor parameter banks; their connection to the serialized CSG edit primitive byte has not yet been proved.
+
+The already reviewed `ComposeSixTransforms` helper is also used here. Additional checks cover 82 finite cases and 96 zero/nonunit single-axis quaternion cases, including signed scales. They strengthen the earlier analysis and add no second function credit. Nonfinite values, mixed-axis nonunit inputs and extreme magnitudes remain unverified.
+
+This adds one checked name: **802 across 9,619 defined functions**. Mapping now covers **2,203 functions**, with **7,416 still unmapped**. These counts describe identified code and semantic reviews, not whole-game completion.

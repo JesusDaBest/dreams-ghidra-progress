@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "732 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "733 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9619,
-    "default_fun_names": 8663,
-    "other_names": 956,
-    "verification": "complete_inventory_matches_baseline_plus_732_renames_and_68_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8662,
+    "other_names": 957,
+    "verification": "complete_inventory_matches_baseline_plus_733_renames_and_68_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18634,6 +18634,27 @@
         "Original source symbols not recovered; CsgEditStorage is an analyst working layout; flags and72-byte payload remain opaque.",
         "Allocation exceptions/failure, live reflection, exact packed bit names and payload semantics, concurrency and real game behavior unverified.",
         "No claim that CSGEdit mirror byte2 is identical to the separately traced emission control."
+      ]
+    },
+    {
+      "address": "140bcec60",
+      "original_name": "FUN_140bcec60",
+      "applied_name": "ClassifyEditorPlacementOrientation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV ClassifyEditorPlacementOrientation(void * editor_state)",
+      "evidence": [
+        "Complete254-byte/65-instruction original leaf, decompiled C and shape-initializer caller reviewed.",
+        "Returns0,1,4; caller140bde080 skips orientation setup for0, builds context-derived orientation for1 and chooses a constant for4.",
+        "35840 isolated original-code synthetic cases cover all256 mode bytes, two handle states,10 subtype boundaries and seven gate variants, matching an independently audited branch model with no input writes.",
+        "Independent reopen verified pointerRDI input and uintEAX result; all other names/signatures and original bytes unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name, not recovered source symbol.",
+        "Exact flag/mode enum meanings, other callers, serialized CsgEdit linkage and full editor runtime behavior remain unresolved."
       ]
     }
   ],
