@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 844,
+    "checked_and_applied_names": 845,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 844,
-    "function_count": 9622,
+    "verified_names": 845,
+    "function_count": 9623,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,71 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,72 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26723,6 +26723,28 @@
       "Spatialoperationpacket construction and result branching verified;actualengineandrecordcommitnotexecuted.",
       "Othermodes,livecontrollerframes,negativegroupscale,degenerateparallel/zero/nonfinite inputs and lifecycle remain unresolved.",
       "Workingcontextpointersopaque;originalsourcefunction/type namesunknown."
+    ]
+  },
+  "editor_surface_effect_checkpoint": {
+    "address": "14077b730",
+    "name": "AdjustOrPropagateEditorSurfaceEffect",
+    "working_signature": "void PS4_SYSV AdjustOrPropagateEditorSurfaceEffect(int dispatch_key, void * propagation_state, void * selection_context, void * world, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+    "complete_caller_cases": 720,
+    "native_invocations": 800,
+    "verified_incoming_direct_calls": 5,
+    "findings": [
+      "Complete 962-byte original body, 152 nonempty pseudocode lines and five incoming direct-call windows reviewed.",
+      "Dispatch selects EffectBoil, EffectFlow, EffectWave, EffectEvaporate and EffectThrob, with independently verified sculpt and sprite property offsets.",
+      "Adjustment adds signed editor strength divided by three to the source value, clamps to zero through one, and submits the target property write.",
+      "Propagation copies across sculpt/sprite kinds, sets user dirty flags and adds each property id once to the changed-property list.",
+      "640 complete-caller adjustment cases matched float32 results exactly. Another 80 propagation cases were each invoked twice to verify copying, dirty flags and list deduplication (800 native invocations total).",
+      "Definition and eleven-input working signature independently reopened; original bytes and all existing function names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic local data; property-writer capture and change-recorder fixture on adjustment path, not real persistence or game execution.",
+      "Native coverage uses mode0 for adjustment, users0..3 for propagation and operation state0. Other modes, operation-specific suppression/recording branches and lifecycle unresolved.",
+      "Working context pointers remain opaque; original source names and exact Media Molecule source/build match are unknown.",
+      "Current Ghidra prototype for downstream change-recorder does not match all native call registers; emitted callee expression is not treated as recovered source."
     ]
   }
 }

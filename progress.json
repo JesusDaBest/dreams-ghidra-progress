@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 798,
+    "done": 799,
     "todo": 1447,
-    "total": 2245,
-    "behavior_or_helpers_reviewed": 724,
+    "total": 2246,
+    "behavior_or_helpers_reviewed": 725,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -35204,18 +35204,19 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 90,
+        "done": 91,
         "todo": 103,
-        "total": 193,
-        "behavior_or_helpers_reviewed": 90,
+        "total": 194,
+        "behavior_or_helpers_reviewed": 91,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 150,
+        "runtime_functions_identified": 151,
         "property_type_functions_identified": 43,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
         "done_names": [
           "ReleaseMarkedObjectCacheReferences",
           "ApplyEditorCombingDirection",
+          "AdjustOrPropagateEditorSurfaceEffect",
           "IsEditorCurveDimensionOverrideActive",
           "AlignQuaternionAxisToDirection",
           "UpdatePackedCsgEditFromManipulatedFrame",
@@ -35413,6 +35414,7 @@
         "done_addresses": [
           "140739e90",
           "1407796c0",
+          "14077b730",
           "1407a7140",
           "1409ff990",
           "140a049b0",
@@ -37252,17 +37254,18 @@
           {
             "name": "sculpting-painting/paint",
             "label": "Paint & strokes",
-            "done": 21,
+            "done": 22,
             "todo": 16,
-            "total": 37,
-            "behavior_or_helpers_reviewed": 21,
+            "total": 38,
+            "behavior_or_helpers_reviewed": 22,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 23,
+            "runtime_functions_identified": 24,
             "property_type_functions_identified": 14,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
             "done_names": [
               "ApplyEditorCombingDirection",
+              "AdjustOrPropagateEditorSurfaceEffect",
               "ComputeEditorSpatialEditTransform",
               "ComputeSignedEditorEditStrength",
               "BuildSpriteRuntimeRecord96",
@@ -37304,6 +37307,7 @@
             ],
             "done_addresses": [
               "1407796c0",
+              "14077b730",
               "140bdc590",
               "140be0ec0",
               "141006bd0",
@@ -37506,6 +37510,65 @@
                 ]
               },
               {
+                "name": "sculpting-painting/paint/material-editing",
+                "label": "Material & surface editing",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ApplyEditorCombingDirection",
+                  "AdjustOrPropagateEditorSurfaceEffect",
+                  "ComputeEditorSpatialEditTransform",
+                  "ComputeSignedEditorEditStrength"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "1407796c0",
+                  "14077b730",
+                  "140bdc590",
+                  "140be0ec0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "sculpting-painting/paint/material-editing/runtime-implementation",
+                    "label": "Runtime behavior",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ApplyEditorCombingDirection",
+                      "AdjustOrPropagateEditorSurfaceEffect",
+                      "ComputeEditorSpatialEditTransform",
+                      "ComputeSignedEditorEditStrength"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "1407796c0",
+                      "14077b730",
+                      "140bdc590",
+                      "140be0ec0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "sculpting-painting/paint/espriteduplicate",
                 "label": "Sprite Duplicate",
                 "done": 0,
@@ -37665,61 +37728,6 @@
                       "140cb55a0",
                       "140cb5600"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "sculpting-painting/paint/material-editing",
-                "label": "Material & surface editing",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ApplyEditorCombingDirection",
-                  "ComputeEditorSpatialEditTransform",
-                  "ComputeSignedEditorEditStrength"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "1407796c0",
-                  "140bdc590",
-                  "140be0ec0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "sculpting-painting/paint/material-editing/runtime-implementation",
-                    "label": "Runtime behavior",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ApplyEditorCombingDirection",
-                      "ComputeEditorSpatialEditTransform",
-                      "ComputeSignedEditorEditStrength"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "1407796c0",
-                      "140bdc590",
-                      "140be0ec0"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

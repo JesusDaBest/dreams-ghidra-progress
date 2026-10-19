@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "772 existing-function renames,71 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "772 existing-function renames,72 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9622,
+    "total": 9623,
     "default_fun_names": 8623,
-    "other_names": 999,
-    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_71_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1000,
+    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_72_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19723,6 +19723,32 @@
         "Spatialoperationpacket construction and result branching verified;actualengineandrecordcommitnotexecuted.",
         "Othermodes,livecontrollerframes,negativegroupscale,degenerateparallel/zero/nonfinite inputs and lifecycle remain unresolved.",
         "Workingcontextpointersopaque;originalsourcefunction/type namesunknown."
+      ]
+    },
+    {
+      "address": "14077b730",
+      "original_name": null,
+      "applied_name": "AdjustOrPropagateEditorSurfaceEffect",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AdjustOrPropagateEditorSurfaceEffect(int dispatch_key, void * propagation_state, void * selection_context, void * world, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+      "evidence": [
+        "Complete 962-byte original body, 152 nonempty pseudocode lines and five incoming direct-call windows reviewed.",
+        "Dispatch selects EffectBoil, EffectFlow, EffectWave, EffectEvaporate and EffectThrob, with independently verified sculpt and sprite property offsets.",
+        "Adjustment adds signed editor strength divided by three to the source value, clamps to zero through one, and submits the target property write.",
+        "Propagation copies across sculpt/sprite kinds, sets user dirty flags and adds each property id once to the changed-property list.",
+        "640 complete-caller adjustment cases matched float32 results exactly. Another 80 propagation cases were each invoked twice to verify copying, dirty flags and list deduplication (800 native invocations total).",
+        "Definition and eleven-input working signature independently reopened; original bytes and all existing function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Synthetic local data; property-writer capture and change-recorder fixture on adjustment path, not real persistence or game execution.",
+        "Native coverage uses mode0 for adjustment, users0..3 for propagation and operation state0. Other modes, operation-specific suppression/recording branches and lifecycle unresolved.",
+        "Working context pointers remain opaque; original source names and exact Media Molecule source/build match are unknown.",
+        "Current Ghidra prototype for downstream change-recorder does not match all native call registers; emitted callee expression is not treated as recovered source."
       ]
     }
   ],

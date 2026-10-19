@@ -7750,3 +7750,14 @@ The complete 4,923-byte body, 972 instructions, 1,264 nonempty pseudocode lines 
 Separate arithmetic-block checks covered all 65,536 decoder inputs, 4,102 encoder vectors and 4,096 decode/blend cases. They are recorded separately from complete-caller tests. Property writes, telemetry, spatial-operation results and record commits use explicit local fixtures. Actual operation-engine behavior, other modes, live controller frames, negative group scale, degenerate/nonfinite inputs and full lifecycle remain unresolved. No in-game verification is claimed.
 
 Totals: **844 checked names across 9,622 defined functions**, **2,245 mapped and 7,377 unmapped**. These counts describe code review, not whole-game completion.
+
+
+### Sculpt and sprite surface-effect editing
+
+`AdjustOrPropagateEditorSurfaceEffect` now identifies the routine for Boil, Flow, Wave, Evaporate and Throb property edits. It either adds signed editor strength divided by three and clamps the value to zero through one, or propagates the source value to another object. Sculpt and sprite objects use different property offsets; copying across those kinds was checked. Propagation marks the user dirty bits and keeps each property id only once in its changed-property list.
+
+The complete 962-byte body, 152 nonempty pseudocode lines and five incoming direct-call windows were reviewed. Complete-caller tests passed 640 adjustment cases and 80 propagation cases, each propagation case invoked twice (800 total invocations). Adjustment values matched float32 references exactly; copying, dirty bits and list deduplication were checked. The new definition and eleven-input working signature survived independent reopening with original bytes and all existing names/signatures unchanged.
+
+These are isolated tests using synthetic runtime data and explicit property-writer/change-recorder fixtures, not in-game verification. Other editor modes, operation-specific recording/suppression branches, actual persistence and lifecycle remain unresolved. One downstream recorder prototype in Ghidra still differs from its native register setup; its emitted call expression is not treated as source-correct. No exact Media Molecule source/build match is claimed.
+
+Totals: **845 checked names across 9,623 defined functions**, **2,246 mapped and 7,377 unmapped**. These counts describe verified code review, not whole-game completion.
