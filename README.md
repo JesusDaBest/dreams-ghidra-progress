@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/33a410e6acfe943204ce015893f78bd4bbb88970/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/b2f95e99e96ea1b9e06b96cdcf2d9ec692a683cf/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**801 of 9,619 functions named and checked.** A function is one piece of the game's code.
+**802 of 9,619 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/33a410e6acfe943204ce015893f78bd4bbb88970/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/b2f95e99e96ea1b9e06b96cdcf2d9ec692a683cf/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,11 +70,11 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
 | Rendering & lighting | 392 | 123/366 | 0/26 |
-| Editor & interface | 407 | 92/198 | 4/207 |
+| Editor & interface | 408 | 93/199 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 376 | 253/289 | 17/82 |
 
-**2,202 of 9,619 discovered functions are mapped; 7,417 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,203 of 9,619 discovered functions are mapped; 7,416 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -466,7 +466,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 407 functions identified; 93 behavior/helper reviews; 4 property/type reviews
+- **Editor & interface** - 408 functions identified; 94 behavior/helper reviews; 4 property/type reviews
   - **Text & fonts** - 129 functions identified; 75 behavior/helper reviews; 0 property/type reviews
     - **Text decoding** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
@@ -546,7 +546,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **QR display** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Runtime implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-  - **Editing & tools** - 45 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+  - **Editing & tools** - 46 functions identified; 1 behavior/helper reviews; 3 property/type reviews
     - **Change** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Edit Op** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
@@ -585,6 +585,8 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Undo Redo** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Placement orientation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime behavior** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Request Tool Tag Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Select Things By Dream Ref Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
