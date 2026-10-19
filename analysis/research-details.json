@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 856,
+    "checked_and_applied_names": 857,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 856,
+    "verified_names": 857,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "779 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "780 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -27016,6 +27016,30 @@
       "bounded_cases": 1024,
       "complete_function_cases": 1024,
       "native_invocations": 1024
+    }
+  },
+  "editor_context_event_wrapper_checkpoint": {
+    "address": "1401165d0",
+    "name": "SubmitEditorEventForContextId",
+    "working_signature": "void PS4_SYSV SubmitEditorEventForContextId(uint event_id, void * world_optional, int context_id, uchar variant, ulonglong payload_key, uint descriptor_field10, uint descriptor_field14, ulonglong descriptor_id, uchar flag, uchar recording_control, float float_payload)",
+    "native_cases": 2556,
+    "findings": [
+      "Full834-byte209instruction region,105 original/120 typed-preview pseudocode lines and4 of40 direct caller windows read.",
+      "2556 complete original-function cases validate event/sign-mask gates,recording-control low bit,null/missing/matching contexts,first eligible duplicate match,group ownership,key mixing and forwarded fields/float/flag.",
+      "Context id and current-group pointer determine first matching editor;null world selects user0,missing match255. Key combines event/resolved user/payload.",
+      "Independent reopen verified descriptive name and mixed ABI with6 GP inputs,4 stack inputs and floatXMM0. Original bytes,existing207-instruction body and other names/signatures unchanged;NOP/trap checked separately."
+    ],
+    "limits": [
+      "Synthetic editor counts0..4 only;record4 overlaps count780D0 in naive fixture. Larger-count/index/ownership invariants unresolved.",
+      "Only4 of40 direct caller windows read;remaining36 and broader feature semantics unresolved.",
+      "Explicit mutex/thread/downstream fixtures;no live game/synchronization or actual rule-engine integration.",
+      "Uninitialized descriptor padding has no assigned semantics;no exact Media Molecule source/build match."
+    ],
+    "native_suites": {
+      "suite_count": 3,
+      "bounded_cases": 2556,
+      "complete_function_cases": 2556,
+      "native_invocations": 2556
     }
   }
 }

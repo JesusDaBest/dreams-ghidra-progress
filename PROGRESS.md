@@ -7886,3 +7886,16 @@ A complete original-function suite passed 1,024 cases against an independent key
 The full 972-byte region (244 instructions), 96 original and 110 typed-preview nonempty pseudocode lines, and four of 26 direct caller windows were reviewed. Independent reopening verified the descriptive name and six-argument working signature, preserving the existing 243-instruction body, separately checked trailing trap, original bytes and all other names/signatures. The meaning of the slot scheme, broader caller semantics, remaining 22 caller windows, padding and lifecycle remain unresolved. No exact Media Molecule source/build match is claimed.
 
 Totals: **856 checked names across 9,627 defined functions**, **2,257 mapped and 7,370 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Selecting an event context by identifier
+
+`SubmitEditorEventForContextId` identifies event submission that searches editor records by context identifier and current-group ownership. The first eligible record wins. A null world selects user 0; no matching record selects user 255 with a null editor pointer. The resolved user enters the event key. The wrapper also forwards a descriptor identifier, variant, two integer fields, float payload and flag.
+
+Three complete original-function suites passed 2,556 cases against independent selection/key models. Tests cover event bounds, the mask high bit, recording controls, missing/matching/wrong-group/duplicate records and payload forwarding. Only bit 0 of the recording control requires recording to be enabled; even nonzero control bytes do not. The remaining control-byte values were separately tested after that detail was identified.
+
+The full 834-byte region (209 instructions), 105 original and 120 typed-preview nonempty pseudocode lines, and four of 40 direct caller windows were reviewed. Independent reopening verified the descriptive name and working ABI with six general-register arguments, four stack arguments and one float input. Original bytes, the existing 207-instruction body and other names/signatures are unchanged; the excluded NOP and trailing trap were checked separately.
+
+Tests use synthetic records and explicit mutex/thread/downstream fixtures. Counts 0 through 4 were tested; a naive fifth-record fixture overlaps the count field, so larger-count/index invariants remain unresolved. The remaining 36 caller windows, wider ownership/lifecycle, descriptor padding and actual game integration are unverified. No live synchronization or exact Media Molecule source/build match is claimed.
+
+Totals: **857 checked names across 9,627 defined functions**, **2,258 mapped and 7,369 unmapped**. These are code-review counts, not whole-game completion.

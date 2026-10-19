@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "779 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "780 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8616,
-    "other_names": 1011,
-    "verification": "complete_inventory_matches_baseline_plus_779_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8615,
+    "other_names": 1012,
+    "verification": "complete_inventory_matches_baseline_plus_780_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -20027,6 +20027,29 @@
         "Meaning of supplied key/identifier and odd slot scheme requires caller review;input padding unresolved.",
         "Only4 of26 direct caller windows reviewed;remaining22 and broader feature semantics unresolved.",
         "Explicit mutex/thread and downstream fixtures;no actual game/synchronization or exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "1401165d0",
+      "original_name": "FUN_1401165d0",
+      "applied_name": "SubmitEditorEventForContextId",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SubmitEditorEventForContextId(uint event_id, void * world_optional, int context_id, uchar variant, ulonglong payload_key, uint descriptor_field10, uint descriptor_field14, ulonglong descriptor_id, uchar flag, uchar recording_control, float float_payload)",
+      "evidence": [
+        "Full834-byte209instruction region,105 original/120 typed-preview pseudocode lines and4 of40 direct caller windows read.",
+        "2556 complete original-function cases validate event/sign-mask gates,recording-control low bit,null/missing/matching contexts,first eligible duplicate match,group ownership,key mixing and forwarded fields/float/flag.",
+        "Context id and current-group pointer determine first matching editor;null world selects user0,missing match255. Key combines event/resolved user/payload.",
+        "Independent reopen verified descriptive name and mixed ABI with6 GP inputs,4 stack inputs and floatXMM0. Original bytes,existing207-instruction body and other names/signatures unchanged;NOP/trap checked separately."
+      ],
+      "caveats": [
+        "Synthetic editor counts0..4 only;record4 overlaps count780D0 in naive fixture. Larger-count/index/ownership invariants unresolved.",
+        "Only4 of40 direct caller windows read;remaining36 and broader feature semantics unresolved.",
+        "Explicit mutex/thread/downstream fixtures;no live game/synchronization or actual rule-engine integration.",
+        "Uninitialized descriptor padding has no assigned semantics;no exact Media Molecule source/build match."
       ]
     }
   ],
