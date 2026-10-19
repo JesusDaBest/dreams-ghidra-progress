@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 850,
+    "checked_and_applied_names": 851,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 850,
+    "verified_names": 851,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "773 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "774 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26866,6 +26866,29 @@
       "suite_count": 1,
       "bounded_cases": 1024,
       "uninstrumented_function_cases": 1024
+    }
+  },
+  "editor_event_rule_specificity_checkpoint": {
+    "address": "140114990",
+    "name": "ScoreEditorEventRuleSpecificity",
+    "working_signature": "int PS4_SYSV ScoreEditorEventRuleSpecificity(void * descriptor)",
+    "native_cases": 69632,
+    "findings": [
+      "Complete237-byte original body,86 nonempty pseudocode lines and one incoming direct-call window reviewed.",
+      "Enabled flag400 gates specificity scoring. Nonzero event id adds10000;tool key and low56 descriptor-id bits each add10. Other non-wildcard fields add smaller weights and six packed flag positions contribute one each.",
+      "Variant byte18 is not scored;high descriptor-id byte alone contributes nothing. Maximum score is10054.",
+      "All65536 flag words and4096 randomized field configurations matched an independent scalar model:69632 complete original-function cases,without callee/import fixtures and with input unchanged.",
+      "Existing function renamed with descriptor pointer and int32 return;independently reopened with original bytes and all other names/signatures unchanged."
+    ],
+    "limits": [
+      "Scoring is distinct from template matching;score alone does not prove whether a rule accepts an event.",
+      "Caller priority ties,rule ownership,selected-rule execution and lifecycle remain unresolved.",
+      "Synthetic descriptors,not live game execution. Original source names/types and exact Media Molecule source/build match unknown."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 69632,
+      "uninstrumented_function_cases": 69632
     }
   }
 }

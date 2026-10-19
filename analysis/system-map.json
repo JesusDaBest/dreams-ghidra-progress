@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9627,
-  "mapped_total": 2251,
-  "unmapped_total": 7376,
+  "mapped_total": 2252,
+  "unmapped_total": 7375,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57266,6 +57266,33 @@
             "Event-id exclusions are checked only after duplicate lookup. A matching recent record can still have its repeat count incremented even when that event id is excluded from new entries.",
             "1,024 original-function cases passed against an independent memory model:256 appends,640 duplicates,128 excluded records,including count wrap and duplicate distances1..5. No callee/import fixtures.",
             "Existing function renamed with a three-pointer working signature;independently reopened,original bytes and all other saved names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140114990": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared contextual editor-event submission calls this descriptor-specificity scorer after matching criteria.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete237-byte body/full86nonemptylineCread;69632 original-function cases with independent scalar scoring model.",
+      "code_sha256": "d5577d4c40d9fb484ee1fa903351507a59887e2ddd80810e7430c1b24a208b4e",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ScoreEditorEventRuleSpecificity",
+          "support": [
+            "Complete237-byte original body,86 nonempty pseudocode lines and one incoming direct-call window reviewed.",
+            "Enabled flag400 gates specificity scoring. Nonzero event id adds10000;tool key and low56 descriptor-id bits each add10. Other non-wildcard fields add smaller weights and six packed flag positions contribute one each.",
+            "Variant byte18 is not scored;high descriptor-id byte alone contributes nothing. Maximum score is10054.",
+            "All65536 flag words and4096 randomized field configurations matched an independent scalar model:69632 complete original-function cases,without callee/import fixtures and with input unchanged.",
+            "Existing function renamed with descriptor pointer and int32 return;independently reopened with original bytes and all other names/signatures unchanged."
           ]
         }
       ]

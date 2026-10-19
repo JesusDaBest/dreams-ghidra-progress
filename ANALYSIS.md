@@ -8387,3 +8387,14 @@ Event-id exclusions are checked after duplicate lookup. An excluded event theref
 This establishes bounded in-memory history behavior. Larger exclusion lists, concurrency, initialization, history consumers and the full event-rule engine remain unresolved. No disk/network persistence, in-game verification or exact Media Molecule source/build match is claimed.
 
 Totals: **850 checked names across 9,627 defined functions**, **2,251 mapped and 7,376 unmapped**. These counts describe code review, not whole-game completion.
+
+
+### Ranking matching editor-event rules
+
+`ScoreEditorEventRuleSpecificity` identifies how enabled event-rule descriptors receive a specificity score. A specified event id adds 10,000 points, dominating the smaller field weights. A tool key and the low 56 descriptor-id bits can each add 10; other non-wildcard fields and six packed flag positions contribute smaller amounts. The variant byte is not scored, and the descriptor-id high byte alone adds nothing. The maximum score is 10,054. This ranks templates after matching; it does not itself decide whether a template accepts an event.
+
+The complete 237-byte original body, 86 nonempty pseudocode lines and one direct incoming-call window were reviewed. All 65,536 flag words plus 4,096 randomized field configurations matched an independent scalar model: 69,632 complete original-function cases, without callee/import fixtures. Input descriptors were unchanged. The existing function now has a descriptive name, one opaque descriptor pointer and an int32 return. Independent reopening verified the name/signature, original bytes and all other saved names/signatures.
+
+Equal-score handling, rule ownership, selected-rule behavior and runtime lifecycle remain unresolved. Exhaustive flag coverage does not mean exhaustive combinations of all descriptor fields or full event-engine verification. No in-game execution or exact Media Molecule source/build match is claimed.
+
+Totals: **851 checked names across 9,627 defined functions**, **2,252 mapped and 7,375 unmapped**. These are code-review counts, not whole-game completion.

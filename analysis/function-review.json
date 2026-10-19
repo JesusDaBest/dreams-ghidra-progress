@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "773 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "774 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8622,
-    "other_names": 1005,
-    "verification": "complete_inventory_matches_baseline_plus_773_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8621,
+    "other_names": 1006,
+    "verification": "complete_inventory_matches_baseline_plus_774_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19882,6 +19882,29 @@
         "Exclusion lists of0/1 entries tested;larger lists,concurrent callers,initialization and history consumers/lifecycle unresolved.",
         "Observed in-memory history does not establish disk or network persistence.",
         "Original source names/types and exact Media Molecule source/build match unknown."
+      ]
+    },
+    {
+      "address": "140114990",
+      "original_name": "FUN_140114990",
+      "applied_name": "ScoreEditorEventRuleSpecificity",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV ScoreEditorEventRuleSpecificity(void * descriptor)",
+      "evidence": [
+        "Complete237-byte original body,86 nonempty pseudocode lines and one incoming direct-call window reviewed.",
+        "Enabled flag400 gates specificity scoring. Nonzero event id adds10000;tool key and low56 descriptor-id bits each add10. Other non-wildcard fields add smaller weights and six packed flag positions contribute one each.",
+        "Variant byte18 is not scored;high descriptor-id byte alone contributes nothing. Maximum score is10054.",
+        "All65536 flag words and4096 randomized field configurations matched an independent scalar model:69632 complete original-function cases,without callee/import fixtures and with input unchanged.",
+        "Existing function renamed with descriptor pointer and int32 return;independently reopened with original bytes and all other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Scoring is distinct from template matching;score alone does not prove whether a rule accepts an event.",
+        "Caller priority ties,rule ownership,selected-rule execution and lifecycle remain unresolved.",
+        "Synthetic descriptors,not live game execution. Original source names/types and exact Media Molecule source/build match unknown."
       ]
     }
   ],
