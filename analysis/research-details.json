@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 839,
+    "checked_and_applied_names": 840,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 839,
+    "verified_names": 840,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "769 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "770 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26603,5 +26603,29 @@
     ],
     "verification": "independent_offline_reopening",
     "case_accounting": "Function-scoped evidence:rotationdecode640,boundframe1280,blend1280,parent4224. Connected dependency execution is not additional unique whole-game testing."
+  },
+  "editor_color_alpha_checkpoint": {
+    "address": "140be1070",
+    "name": "ComputeEditorColorAlpha",
+    "working_signature": "float PS4_SYSV ComputeEditorColorAlpha(void * editor)",
+    "native_cases": 3072,
+    "findings": [
+      "ReturnfloatXMM0:mode-dependentvalue*.95+.05 withno generalclamp;all256modes/banks0/1 finiteinputsbitexact.",
+      "Mode27requires singlefirsttype2 or twonontype2;factor1if first2e bit5set,else clamp(first1d4/.85,0,1);ineligiblefactor0.",
+      "Mode27squaresfactorindoubleprecision,multipliesfloatbaseconverted double,androundstofloat;all1024gates/flags/pressurecasesbitexact.",
+      "Synthetic editor/objectbuffersunchanged.",
+      "Caller savesfloatXMM0 theninsertslowfloatintoRGBvectorW at140925560/14092557a/140925bd2/140927d5b. Four-lane storeconsumption traced;fullcallerbody notclaimed.",
+      "Saved descriptive name and one-argument float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "No nonfinite inputs;normalhelperhas unclampedfinite output.",
+      "Caller inserts scalar intoRGB fourthlane;fullrenderingmeaning/opacitysemanticsnotproven.",
+      "Originalhelpercode,no gameexecution."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 3072,
+      "uninstrumented_function_cases": 3072
+    }
   }
 }

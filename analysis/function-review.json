@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "769 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "770 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8626,
-    "other_names": 994,
-    "verification": "complete_inventory_matches_baseline_plus_769_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8625,
+    "other_names": 995,
+    "verification": "complete_inventory_matches_baseline_plus_770_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19597,6 +19597,30 @@
         "Finite synthetic inputs and bounded saved/live dependencies only;no in-game verification or exactPS4rounding claim.",
         "Forcedstate7when diskqueryfails can consume unwritten local coordinates;invalidstate combinations not interpreted as valid UI use.",
         "Computed fourthlane semantics,exactboundary/parallel cases,invalidpointer/counts,nonfinite/degenerate input andfull UI lifecycle unresolved."
+      ]
+    },
+    {
+      "address": "140be1070",
+      "original_name": "FUN_140be1070",
+      "applied_name": "ComputeEditorColorAlpha",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float PS4_SYSV ComputeEditorColorAlpha(void * editor)",
+      "evidence": [
+        "ReturnfloatXMM0:mode-dependentvalue*.95+.05 withno generalclamp;all256modes/banks0/1 finiteinputsbitexact.",
+        "Mode27requires singlefirsttype2 or twonontype2;factor1if first2e bit5set,else clamp(first1d4/.85,0,1);ineligiblefactor0.",
+        "Mode27squaresfactorindoubleprecision,multipliesfloatbaseconverted double,androundstofloat;all1024gates/flags/pressurecasesbitexact.",
+        "Synthetic editor/objectbuffersunchanged.",
+        "Caller savesfloatXMM0 theninsertslowfloatintoRGBvectorW at140925560/14092557a/140925bd2/140927d5b. Four-lane storeconsumption traced;fullcallerbody notclaimed.",
+        "Saved descriptive name and one-argument float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "No nonfinite inputs;normalhelperhas unclampedfinite output.",
+        "Caller inserts scalar intoRGB fourthlane;fullrenderingmeaning/opacitysemanticsnotproven.",
+        "Originalhelpercode,no gameexecution."
       ]
     }
   ],

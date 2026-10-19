@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2240,
-  "unmapped_total": 7380,
+  "mapped_total": 2241,
+  "unmapped_total": 7379,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56956,6 +56956,34 @@
             "Actualannulushitsclassification3verified512cases;classification4blendsandclassification5returnsstoredvector.",
             "Working return is16bytevectorXMM0;RGBsemanticmeaning established,computedupperlaneunspecified andstoredpathpreservesallfourlanes.",
             "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140be1070": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "menus",
+        "color-picker",
+        "runtime-implementation"
+      ],
+      "component_basis": "Two caller sites and downstream uses place the scalar into the fourth lane of computed editor RGB.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full265-byte/66owned-instruction body and full C reviewed;3072uninstrumented original-function cases.",
+      "code_sha256": "71852ba38722041317d709bea43edba15a42e11dcf7fd9728a26daa8a97fe27b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorColorAlpha",
+          "support": [
+            "ReturnfloatXMM0:mode-dependentvalue*.95+.05 withno generalclamp;all256modes/banks0/1 finiteinputsbitexact.",
+            "Mode27requires singlefirsttype2 or twonontype2;factor1if first2e bit5set,else clamp(first1d4/.85,0,1);ineligiblefactor0.",
+            "Mode27squaresfactorindoubleprecision,multipliesfloatbaseconverted double,androundstofloat;all1024gates/flags/pressurecasesbitexact.",
+            "Synthetic editor/objectbuffersunchanged.",
+            "Caller savesfloatXMM0 theninsertslowfloatintoRGBvectorW at140925560/14092557a/140925bd2/140927d5b. Four-lane storeconsumption traced;fullcallerbody notclaimed.",
+            "Saved descriptive name and one-argument float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]
