@@ -8013,3 +8013,12 @@ Totals: **904 checked names across 9,667 defined functions**, **2,305 mapped and
 Selection compares XYZ normal dot products using strict thresholds of approximately 0.79465, 0.93 and 0.98 across three mesh levels. Ties and unordered comparisons retain the earlier winner. If no child exceeds a threshold, the previous level's index is retained; this is not an exhaustive nearest-triangle search. All 504 isolated original-code cases passed, including 320 child paths, 20 threshold-failure carry cases, 160 seeded fixtures and four zero/tie/unordered cases. Independent reopening verified the saved interface and unchanged original bytes. Malformed hierarchies, arbitrary assets and live-game behavior remain unverified.
 
 Totals: **905 checked names across 9,667 defined functions**, **2,306 mapped and 7,361 unmapped**. These are review counts, not whole-game completion.
+
+
+### Recipient triangle projection tree construction
+
+`BuildRecipientTriangleProjectionTree` now has a reviewed descriptive name, five explicit register inputs and an AL boolean result. Its full 962-instruction body, 940 original pseudocode lines and 967 named-preview lines were read. It evaluates 32 candidate origin planes, duplicates crossing/near-plane triangles across sides, selects a split, and recursively emits nodes or ordered leaf lists. Leaf entries are flat triangle-index offsets, not raw triangle IDs.
+
+Bounded original-code checks passed 6,591 classification cases, 10,985 score cases and 3,375 rejection cases. Fifteen whole original builder cases additionally checked synthetic meshes, accepted/rejected splits, depth limits and recursive trees up to seven nodes. Every emitted leaf matched independently classified triangle offsets; input data and output guards remained unchanged. These whole-routine checks substitute local allocation, copying, deallocation and x87 sine/cosine. They do not establish exact platform math or live-game behavior. Arbitrary meshes, malformed inputs, allocation failures, forced child-rejection fallback and global output reallocation remain unverified. Independent reopening confirmed the saved interface and unchanged original bytes.
+
+Totals: **906 checked names across 9,667 defined functions**, **2,307 mapped and 7,360 unmapped**. These are code-review counts, not whole-game completion.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 905,
+    "checked_and_applied_names": 906,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 905,
+    "verified_names": 906,
     "function_count": 9667,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2042,7 +2042,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "788 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "789 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28531,6 +28531,29 @@
       "Concrete original source class and exact developer-source/build match remain unresolved.",
       "Initialized synthetic hierarchy only; malformed pointers/counts, arbitrary assets and exhaustive floating-point boundary behavior remain unverified.",
       "Strict normal-dot thresholds can retain an earlier-level index when no child passes; this is not a general nearest-triangle search."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_projection_tree_checkpoint": {
+    "address": "14144f970",
+    "name": "BuildRecipientTriangleProjectionTree",
+    "signature": "bool PS4_SYSV BuildRecipientTriangleProjectionTree(int node_index, void * vertex_range, void * triangle_index_range, void * triangle_subset, int remaining_depth)",
+    "original_sha256": "f062289070b4ac8a0314d103ecd092cd639dcf3007d44b81f33f1e70543b1615",
+    "native_cases": 15,
+    "size": 4718,
+    "created": false,
+    "c_sha256": "0dc8bac751014d2370e2caac0d21b18a14c979f2a891a31e1bb9a51f91f03b21",
+    "nonempty_c_lines": 967,
+    "evidence": [
+      "Complete 4718-byte body: all 962 original instructions, 940 original pseudocode lines and 967 named-preview lines read.",
+      "6591 classification, 10985 split-score and 3375 rejection cases passed against bounded original code.",
+      "15 whole original builder cases passed with synthetic geometry and explicit local allocator/copy/free/x87-sincos substitutes; recursive nodes and every ordered leaf list independently checked.",
+      "Independent reopening verified five register inputs, AL boolean result, saved name and unchanged original bytes."
+    ],
+    "limits": [
+      "Synthetic ring triangles and successful allocations only; arbitrary meshes, malformed inputs, allocation failures and live-game behavior remain unverified.",
+      "Substitute x87 sincos and bump allocation do not establish exact original platform math or reclamation behavior.",
+      "Forced child rejection and global output reallocation were not explicitly exercised; descriptor source types and exact developer-source/build match remain unresolved."
     ],
     "project_saved_and_independently_reopened": true
   }
