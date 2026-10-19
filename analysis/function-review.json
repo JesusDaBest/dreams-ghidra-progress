@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "747 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "748 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8648,
-    "other_names": 972,
-    "verification": "complete_inventory_matches_baseline_plus_747_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8647,
+    "other_names": 973,
+    "verification": "complete_inventory_matches_baseline_plus_748_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19029,6 +19029,32 @@
         "Synthetic bounded fixtures,hosttrig adapters,local infinity/canary;exactPS4math,small-angle/negative-relativeW/exceptional cases and all gate combinations unresolved.",
         "All position/rotation locks combined with snapping and full runtime object lifecycle not exhausted.",
         "Higher frame worker and outer source-frame function remain under review;this helper does not establish fullpipeline completion."
+      ]
+    },
+    {
+      "address": "1409ff990",
+      "original_name": "FUN_1409ff990",
+      "applied_name": "AlignQuaternionAxisToDirection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "SpatialQueryFloat4Working16 PS4_SYSV AlignQuaternionAxisToDirection(int select_closest_signed_axis, SpatialQueryFloat4Working16 orientation, SpatialQueryFloat4Working16 direction)",
+      "evidence": [
+        "Complete 813-byte EH region and 172 owned instructions, full pseudocode and both caller windows reviewed.",
+        "Working ABI explicitly models mode in EDI, quaternion in XMM0, direction in XMM1 and full quaternion return in XMM0.",
+        "Mode zero aligns rotated positive Y; nonzero mode chooses signed rotated coordinate axis by maximum dot product.",
+        "Direction correction premultiplies input quaternion, then normalization uses original reciprocal-square-root refinement.",
+        "512 original-code cases cover both modes with finite unit frames and directions, including an opposite-Y fallback.",
+        "78 additional identity-frame signed-axis/edge/corner cases include 60 exact ties and modes 1,2,-1; first maximum in +X,+Y,+Z,-X,-Y,-Z order wins.",
+        "Saved descriptive name and working signature independently reopened; original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working vector type, not recovered source declarations.",
+        "Finite unit inputs only; general transformed ties, nonunit/nonfinite directions and complete caller lifecycle unresolved.",
+        "Second caller reviewed only around call and returned-quaternion use; no claim of understanding its entire body.",
+        "Higher placement worker remains under review; this helper does not establish subsystem completion."
       ]
     }
   ],

@@ -7533,3 +7533,12 @@ Totals are **816 checked names across 9,620 defined functions**, with **2,217 ma
 Five primary original-code suites contain 1,904 cases: composition (192), position constraints (256), rotation constraints (512), angular snapping (432), and rotated-base coupling (512). Another 256 paired comparisons against 128 neutral baselines found no output influence from varied group-transform inputs in the tested path. The constructed scratch transform has no subsequent direct stack access; this does not prove the callee has no other effects. Host math, bounded synthetic inputs, unresolved exceptional/small-angle domains and incomplete runtime lifecycle are documented. The saved descriptive name and working signature survived independent reopening with executable bytes unchanged.
 
 Totals are **817 checked names across 9,620 defined functions**, with **2,218 mapped and 7,402 unmapped**. Higher frame workers remain under review; these are code-review counts, not whole-game completion.
+
+
+### Placement axis alignment
+
+`AlignQuaternionAxisToDirection` describes the reviewed helper that aligns an orientation to a supplied direction. One mode uses its rotated positive Y axis; the other chooses the closest signed coordinate axis. The correction is applied before the input orientation and normalized. Both caller windows support the vector inputs and full quaternion return.
+
+The original code passed 590 isolated cases: 512 finite unit-input cases and 78 symmetric-direction cases, including 60 exact ties in an identity frame. Those ties retain the first maximum in +X, +Y, +Z, -X, -Y, -Z order. An opposite-Y fixture verified the fallback rotation. General transformed ties, exceptional/nonunit inputs and the callers' full behavior remain unresolved. The descriptive name and corrected working signature were independently reopened with executable bytes unchanged.
+
+Totals: **818 checked names across 9,620 defined functions**, **2,219 mapped and 7,401 unmapped**. These counts track reviewed code, not whole-game completion.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 817,
+    "checked_and_applied_names": 818,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 817,
+    "verified_names": 818,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "747 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "748 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26050,6 +26050,31 @@
       "paired_comparisons": 256,
       "neutral_baselines": 128,
       "included_in_primary_case_total": false
+    }
+  },
+  "csg_axis_alignment_checkpoint": {
+    "address": "1409ff990",
+    "name": "AlignQuaternionAxisToDirection",
+    "working_signature": "SpatialQueryFloat4Working16 PS4_SYSV AlignQuaternionAxisToDirection(int select_closest_signed_axis, SpatialQueryFloat4Working16 orientation, SpatialQueryFloat4Working16 direction)",
+    "native_cases": 590,
+    "findings": [
+      "Complete 813-byte EH region and 172 owned instructions, full pseudocode and both caller windows reviewed.",
+      "Working ABI explicitly models mode in EDI, quaternion in XMM0, direction in XMM1 and full quaternion return in XMM0.",
+      "Mode zero aligns rotated positive Y; nonzero mode chooses signed rotated coordinate axis by maximum dot product.",
+      "Direction correction premultiplies input quaternion, then normalization uses original reciprocal-square-root refinement.",
+      "512 original-code cases cover both modes with finite unit frames and directions, including an opposite-Y fallback.",
+      "78 additional identity-frame signed-axis/edge/corner cases include 60 exact ties and modes 1,2,-1; first maximum in +X,+Y,+Z,-X,-Y,-Z order wins.",
+      "Saved descriptive name and working signature independently reopened; original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working vector type, not recovered source declarations.",
+      "Finite unit inputs only; general transformed ties, nonunit/nonfinite directions and complete caller lifecycle unresolved.",
+      "Second caller reviewed only around call and returned-quaternion use; no claim of understanding its entire body.",
+      "Higher placement worker remains under review; this helper does not establish subsystem completion."
+    ],
+    "native_suites": {
+      "random_unit_and_opposite": 512,
+      "symmetric_direction_and_ties": 78
     }
   }
 }

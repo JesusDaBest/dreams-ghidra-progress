@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2218,
-  "unmapped_total": 7402,
+  "mapped_total": 2219,
+  "unmapped_total": 7401,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56254,6 +56254,35 @@
             "1904primary original-code cases:composition192,position256,rotation512,snap432,rotatedbase512;additional256paired group-input comparisons with128baselines.",
             "Group-transform scratch output has no later direct stack access;two RAXdereferences traced to auxiliary/canary pointers. No claim about callee global side effects.",
             "Saved name and working signature independently reopened;original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "1409ff990": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Quaternion axis alignment helper used by editor placement and a second editor transform caller.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body and corrected C reviewed;590 original-code cases across random and symmetric-direction suites.",
+      "code_sha256": "031852136b4bf0b44230e04ada1c974f04a0a8101cf15eed99bb4cb6ad9f2dc9",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AlignQuaternionAxisToDirection",
+          "support": [
+            "Complete 813-byte EH region and 172 owned instructions, full pseudocode and both caller windows reviewed.",
+            "Working ABI explicitly models mode in EDI, quaternion in XMM0, direction in XMM1 and full quaternion return in XMM0.",
+            "Mode zero aligns rotated positive Y; nonzero mode chooses signed rotated coordinate axis by maximum dot product.",
+            "Direction correction premultiplies input quaternion, then normalization uses original reciprocal-square-root refinement.",
+            "512 original-code cases cover both modes with finite unit frames and directions, including an opposite-Y fallback.",
+            "78 additional identity-frame signed-axis/edge/corner cases include 60 exact ties and modes 1,2,-1; first maximum in +X,+Y,+Z,-X,-Y,-Z order wins.",
+            "Saved descriptive name and working signature independently reopened; original bytes and other function names/signatures unchanged."
           ]
         }
       ]
