@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "733 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "734 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9619,
-    "default_fun_names": 8662,
-    "other_names": 957,
-    "verification": "complete_inventory_matches_baseline_plus_733_renames_and_68_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8661,
+    "other_names": 958,
+    "verification": "complete_inventory_matches_baseline_plus_734_renames_and_68_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18655,6 +18655,29 @@
       "caveats": [
         "Analyst descriptive name, not recovered source symbol.",
         "Exact flag/mode enum meanings, other callers, serialized CsgEdit linkage and full editor runtime behavior remain unresolved."
+      ]
+    },
+    {
+      "address": "140c68500",
+      "original_name": "FUN_140c68500",
+      "applied_name": "AppendPackedCsgPrimitiveEdit",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendPackedCsgPrimitiveEdit(void * write_context, uchar primitive_tag, SpatialQueryFloat4Working16 translation, SpatialQueryFloat4Working16 rotation, SpatialQueryFloat4Working16 extents, SpatialQueryFloat4Working16 shape_parameters)",
+      "evidence": [
+        "Complete2039-byte/446-instruction original assembly, original and explicit-vector decompilation reviewed.",
+        "Appends84-byte packed primitive record to descriptor cursor when cursor differs fromend, packs header/color/blend and shape-specific geometry with compressed quaternion/reflection parity.",
+        "Original-code suites:128 header/cursor,108 box rotations,224 signed-box geometry and768 cone/sphere/torus/cookie geometry cases, using independently modeled references and exact guards.",
+        "Working ABI records descriptorRDI, tagSIL and four16-byte XMM inputs; independent reopening preserves original bytes and all other function annotations."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working ABI, not original source symbol/types.",
+        "Synthetic cases explicitly initialize local compression factor and skip platform guard setup.",
+        "Only reviewed finite domains of selected primitives tested; other adjustments, zero/nonfinite/extreme inputs and full editor lifecycle unresolved.",
+        "Helper tests cursor equality only; caller slot/capacity preconditions remain unproved."
       ]
     }
   ],

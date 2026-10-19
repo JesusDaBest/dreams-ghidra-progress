@@ -7359,3 +7359,16 @@ The original action-label and dispatch tables also link eleven shape selections 
 The already reviewed `ComposeSixTransforms` helper is also used here. Additional checks cover 82 finite cases and 96 zero/nonunit single-axis quaternion cases, including signed scales. They strengthen the earlier analysis and add no second function credit. Nonfinite values, mixed-axis nonunit inputs and extreme magnitudes remain unverified.
 
 This adds one checked name: **802 across 9,619 defined functions**. Mapping now covers **2,203 functions**, with **7,416 still unmapped**. These counts describe identified code and semantic reviews, not whole-game completion.
+
+
+### Packed sculpt primitive record encoding
+
+`AppendPackedCsgPrimitiveEdit` now names a completely read 2,039-byte helper with a verified working signature: a write descriptor, primitive tag, and four vector inputs for translation, rotation, extents and shape parameters. Its name and argument layout survived an independent project reopen. Original bytes and all other function annotations stayed unchanged.
+
+The editor conversion trace now connects the selected shape bank to the same 84-byte record array used by the earlier edit hash path. The formatter packs flags, color, blend radius and geometry. Its rotation encoding stores three 15-bit quaternion components, a two-bit omitted-component selector and a reflection-parity bit. These storage findings do not recover the original source declaration.
+
+Four separate original-code suites checked 128 header/cursor cases, 108 positive-box rotations, 224 signed-box cases and 768 cone, sphere, torus and cookie cases. Independent references confirm cone translation/height adjustments, sphere radius storage, torus/cookie radius conversion and decoded rotations in the tested domains. Input and output guards remained intact. Tests explicitly initialize the compression factor and skip platform one-time initialization.
+
+The helper only checks whether cursor equals end before writing; caller capacity invariants remain unresolved. Other primitive adjustments, curve/tetrahedron payload paths, degenerate or nonfinite rotations, extreme values and the complete editor lifecycle still need investigation. These are synthetic execution checks, not in-game verification.
+
+The checked-name total is **803 across 9,619 defined functions**. **2,204 functions are mapped; 7,415 remain unmapped.** The formatter adds one sculpt-geometry behavior review, not a claim that sculpting or Dreams is complete.
