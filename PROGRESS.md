@@ -7772,3 +7772,14 @@ The complete 1,562-byte body, 280 nonempty pseudocode lines and three direct inc
 Sculpt outer and inner glow and sprite outer glow have independent property evidence. Sprite inner glow remains unproven and was not fabricated or tested. The native checks use synthetic data and explicit writer, operation-result and record fixtures. Actual spatial operation implementation, persistence, other modes/recording states, palette precomputation and lifecycle remain unresolved. The downstream recorder prototype still differs from its native register setup. No in-game verification or exact Media Molecule source/build match is claimed.
 
 Totals: **846 checked names across 9,624 defined functions**, **2,247 mapped and 7,377 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Roughness, metalness and finish editing
+
+`AdjustOrPropagateEditorCoatMaterial` identifies ordinary and spatial material editing. Roughness and metalness form a two-component point. Positive strength moves it toward the editor target; nonpositive strength moves it toward roughness 0.6 and metalness 0. Travel is capped by absolute strength divided by three. Optional FinishAmount increases by the absolute step and clamps to zero through one. Zero strength preserves the pair but still submits writes and clamps an existing finish value.
+
+Propagation copies values using target-kind offsets and deduplicates changed-property ids. Spatial sprites submit operation type 5 with the editor target pair, signed step and spatial frame/box, forwarding record updates only after success. The complete 2,636-byte body, 456 nonempty pseudocode lines and one incoming direct-call window were reviewed. Tests passed 2,048 exact float adjustment cases, 192 propagation cases each invoked twice, and 256 spatial packet cases: 2,496 distinct cases and 2,688 invocations. The ten-input working signature and new definition survived independent reopening, with original bytes and all existing names/signatures unchanged.
+
+These are synthetic local tests with explicit writer/operation-result/record fixtures. Actual operation-engine behavior, persistence, other modes/states and lifecycle remain unresolved. Sprite-to-sculpt propagation was not executed: a source finish field can lead to an unchecked target pointer if its finish offset is absent. The local caller window does not establish a guard; wider dispatcher invariants remain unresolved. A downstream recorder prototype still differs from native register setup. No in-game verification or exact Media Molecule source/build match is claimed.
+
+Totals: **847 checked names across 9,625 defined functions**, **2,248 mapped and 7,377 unmapped**. These are code-review counts, not whole-game completion.

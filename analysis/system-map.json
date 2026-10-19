@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9624,
-  "mapped_total": 2247,
+  "inventory_total": 9625,
+  "mapped_total": 2248,
   "unmapped_total": 7377,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -57154,6 +57154,34 @@
             "Spatial sprite editing builds operation type4 with signed strength, spatial transform, inverse transform and box extents; only successful operation results forward record updates.",
             "Three isolated complete-caller suites passed 1,344 distinct synthetic cases: 768 adjustment, 320 propagation each invoked twice, and 256 spatial packet success/failure cases (1,664 native invocations).",
             "The new definition and eleven-input working signature survived independent reopening, preserving original bytes and every existing function name/signature."
+          ]
+        }
+      ]
+    },
+    "140777890": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "material-editing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete sculpt/sprite roughness, metalness and optional finish editing, propagation and spatial packet paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete2636byte/full456nonemptylineCread;2496completecaller cases,2688 invocations with explicit runtime fixtures.",
+      "code_sha256": "734fa2e3f6ef30a5a9491d596659ff151a0fc395d30cead96c1504fe8a132ef1",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AdjustOrPropagateEditorCoatMaterial",
+          "support": [
+            "Complete 2,636-byte original body, 456 nonempty pseudocode lines and one direct incoming-call window reviewed.",
+            "Ordinary roughness/metalness edits move a two-component point toward editor settings for positive strength, or toward roughness0.6/metalness0 for nonpositive strength, with travel capped by absolute strength divided by three.",
+            "Optional FinishAmount increases by absolute step and clamps to zero through one; zero strength preserves the pair but still submits writes and clamps an existing finish value.",
+            "Propagation copies via target-kind offsets and deduplicates changed property ids. Spatial sprite editing instead submits operation type5 with target pair, signed step and spatial frame/box; only success forwards record updates.",
+            "2,496 distinct complete-caller synthetic cases passed: 2,048 exact float adjustment cases, 192 propagation cases each invoked twice, and 256 spatial success/failure cases (2,688 native invocations).",
+            "Definition and ten-input working signature independently reopened; original bytes and all existing function names/signatures unchanged."
           ]
         }
       ]

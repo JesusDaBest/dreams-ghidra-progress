@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 846,
+    "checked_and_applied_names": 847,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 846,
-    "function_count": 9624,
+    "verified_names": 847,
+    "function_count": 9625,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,73 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,74 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26768,6 +26768,29 @@
       "Other editor modes and operation-specific suppression/recording, palette precomputation and lifecycle unresolved.",
       "The downstream recorder prototype still differs from native register setup; emitted call expressions are not treated as recovered source.",
       "Original source names/types and an exact Media Molecule source/build match remain unknown."
+    ]
+  },
+  "editor_coat_material_checkpoint": {
+    "address": "140777890",
+    "name": "AdjustOrPropagateEditorCoatMaterial",
+    "working_signature": "void PS4_SYSV AdjustOrPropagateEditorCoatMaterial(void * propagation_state, void * selection_context, void * world, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+    "complete_caller_cases": 2496,
+    "native_invocations": 2688,
+    "verified_incoming_direct_calls": 1,
+    "findings": [
+      "Complete 2,636-byte original body, 456 nonempty pseudocode lines and one direct incoming-call window reviewed.",
+      "Ordinary roughness/metalness edits move a two-component point toward editor settings for positive strength, or toward roughness0.6/metalness0 for nonpositive strength, with travel capped by absolute strength divided by three.",
+      "Optional FinishAmount increases by absolute step and clamps to zero through one; zero strength preserves the pair but still submits writes and clamps an existing finish value.",
+      "Propagation copies via target-kind offsets and deduplicates changed property ids. Spatial sprite editing instead submits operation type5 with target pair, signed step and spatial frame/box; only success forwards record updates.",
+      "2,496 distinct complete-caller synthetic cases passed: 2,048 exact float adjustment cases, 192 propagation cases each invoked twice, and 256 spatial success/failure cases (2,688 native invocations).",
+      "Definition and ten-input working signature independently reopened; original bytes and all existing function names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic runtime data with explicit writer/operation-result/record fixtures, not in-game execution or actual persistence.",
+      "Sprite-to-sculpt propagation was not executed: an optional source finish field can lead to an unchecked target pointer when its finish offset is absent. The local caller window does not prove a guard; wider dispatcher invariants unresolved.",
+      "Other editor modes/operation states, palette precomputation and lifecycle unresolved.",
+      "Downstream recorder prototype differs from native register setup; its emitted expression is not recovered source.",
+      "Original source names/types and exact Media Molecule source/build match remain unknown."
     ]
   }
 }
