@@ -8000,3 +8000,14 @@ For tetrahedra, the selected vertex stays fixed while other pivot-to-vertex rays
 The exact UI gesture, complete caller lifecycle, invalid pivot indices, zero projections/scales and nonfinite or invalid quaternion inputs remain unresolved. The name describes observed behavior rather than recovering an original source symbol.
 
 Totals are **807 checked names across 9,620 defined functions**, with **2,208 mapped and 7,412 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Tetrahedron manipulation direction
+
+`ComputeTetrahedronOppositeFaceUnitNormal` now names a reviewed sculpt geometry helper. Given four vertex rows and a selected vertex, it computes the unit normal of the opposite triangular face and orients it away from that vertex. The sculpt editor passes this normal to `UpdatePackedCsgEditFromManipulatedFrame` as the direction used to adjust the other vertices.
+
+The original 279-byte function, full C and connected call site were read. 2,048 isolated original-code cases cover all four selected indices, random nondegenerate tetrahedra and arbitrary fourth input lanes. The output fourth lane was zero, inputs and output guards stayed intact, and the geometric reference matched. Its saved signature now returns the full vector in XMM0, correcting the earlier eight-byte decompiler return. Independent reopening verified the annotation and unchanged original bytes.
+
+Degenerate faces, near-coplanar inputs, invalid indices, nonfinite values, the second caller and complete editor lifecycle remain unresolved. This is a descriptive name supported by observed behavior, not a recovered source symbol or an in-game verification claim.
+
+Totals are **808 checked names across 9,620 defined functions**, with **2,209 mapped and 7,411 unmapped**. These are identified-code review counts, not feature completion.

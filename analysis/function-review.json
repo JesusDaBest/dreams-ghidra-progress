@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "737 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "738 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8658,
-    "other_names": 962,
-    "verification": "complete_inventory_matches_baseline_plus_737_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8657,
+    "other_names": 963,
+    "verification": "complete_inventory_matches_baseline_plus_738_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18777,6 +18777,31 @@
         "Exact UI gesture, full caller lifecycle, invalid indices, zero projection/scale and nonfinite or invalid quaternion domains unresolved.",
         "Fixtures supply local infinity predicate, canary and initialized static factors; no live game or service execution.",
         "Cone composition reference separately executes original formatter; its internal geometry is covered by earlier formatter tests."
+      ]
+    },
+    {
+      "address": "140c71c70",
+      "original_name": "FUN_140c71c70",
+      "applied_name": "ComputeTetrahedronOppositeFaceUnitNormal",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "SpatialQueryFloat4Working16 PS4_SYSV ComputeTetrahedronOppositeFaceUnitNormal(SpatialQueryFloat4Working16 * vertices, int selected_vertex)",
+      "evidence": [
+        "Complete279-byte function and67instructions reviewed with full untyped and typed C.",
+        "RDI points to four16-byte vertex rows; ESI selects vertex0..3; full16-byte vector returns in XMM0.",
+        "Cross product of opposite-face edges is normalized and oriented away from selected vertex.",
+        "2048 isolated original-code cases cover allfour indices, random nondegenerate tetrahedra and arbitrary inputW lanes; outputW zero and input/output guards preserved.",
+        "Sculpt-editor caller140a2a4fe forwards result as projection direction to UpdatePackedCsgEditFromManipulatedFrame.",
+        "Name and corrected vector return signature independently reopened; original bytes and other function annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working types, not recovered source symbols.",
+        "Degenerate faces, near-coplanar tetrahedra, invalid indices and nonfinite inputs untested.",
+        "Second caller14094c828 and complete editor lifecycle remain unresolved.",
+        "Initial fixture omitted original executable page; page mapping repaired before successful suite. No live game or service executed."
       ]
     }
   ],

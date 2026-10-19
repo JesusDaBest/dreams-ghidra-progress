@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2208,
-  "unmapped_total": 7412,
+  "mapped_total": 2209,
+  "unmapped_total": 7411,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55967,6 +55967,34 @@
             "Cone branch copies formatter dimensions, halves height and restores center using decoded signed localZ.",
             "8304 isolated original-code cases cover tetrahedron directions, ordinary and rotated frames, signed scales/dimensions and cone composition.",
             "Independent reopening verifies only expected function name/signature changed; original code bytes and function count unchanged."
+          ]
+        }
+      ]
+    },
+    "140c71c70": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original sculpt-editor geometry helper computes selected tetrahedron opposite-face unit normal used by edit manipulation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C read;2048isolated original-code cases with original caller connection.",
+      "code_sha256": "ee489fddb521757171f22d0c3eba3ecd39607021a83813db0020d43ba95bccb1",
+      "code_hash_basis": "original_eh_region_including_trailing_ud2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeTetrahedronOppositeFaceUnitNormal",
+          "support": [
+            "Complete279-byte function and67instructions reviewed with full untyped and typed C.",
+            "RDI points to four16-byte vertex rows; ESI selects vertex0..3; full16-byte vector returns in XMM0.",
+            "Cross product of opposite-face edges is normalized and oriented away from selected vertex.",
+            "2048 isolated original-code cases cover allfour indices, random nondegenerate tetrahedra and arbitrary inputW lanes; outputW zero and input/output guards preserved.",
+            "Sculpt-editor caller140a2a4fe forwards result as projection direction to UpdatePackedCsgEditFromManipulatedFrame.",
+            "Name and corrected vector return signature independently reopened; original bytes and other function annotations unchanged."
           ]
         }
       ]

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 807,
+    "checked_and_applied_names": 808,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 807,
+    "verified_names": 808,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "737 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "738 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25764,6 +25764,26 @@
       "Exact UI gesture, full caller lifecycle, invalid indices, zero projection/scale and nonfinite or invalid quaternion domains unresolved.",
       "Fixtures supply local infinity predicate, canary and initialized static factors; no live game or service execution.",
       "Cone composition reference separately executes original formatter; its internal geometry is covered by earlier formatter tests."
+    ]
+  },
+  "csg_tetrahedron_face_normal_checkpoint": {
+    "address": "140c71c70",
+    "name": "ComputeTetrahedronOppositeFaceUnitNormal",
+    "working_signature": "SpatialQueryFloat4Working16 PS4_SYSV ComputeTetrahedronOppositeFaceUnitNormal(SpatialQueryFloat4Working16 * vertices, int selected_vertex)",
+    "native_cases": 2048,
+    "findings": [
+      "Complete279-byte function and67instructions reviewed with full untyped and typed C.",
+      "RDI points to four16-byte vertex rows; ESI selects vertex0..3; full16-byte vector returns in XMM0.",
+      "Cross product of opposite-face edges is normalized and oriented away from selected vertex.",
+      "2048 isolated original-code cases cover allfour indices, random nondegenerate tetrahedra and arbitrary inputW lanes; outputW zero and input/output guards preserved.",
+      "Sculpt-editor caller140a2a4fe forwards result as projection direction to UpdatePackedCsgEditFromManipulatedFrame.",
+      "Name and corrected vector return signature independently reopened; original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working types, not recovered source symbols.",
+      "Degenerate faces, near-coplanar tetrahedra, invalid indices and nonfinite inputs untested.",
+      "Second caller14094c828 and complete editor lifecycle remain unresolved.",
+      "Initial fixture omitted original executable page; page mapping repaired before successful suite. No live game or service executed."
     ]
   }
 }
