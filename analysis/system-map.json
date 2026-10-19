@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2211,
-  "unmapped_total": 7409,
+  "mapped_total": 2212,
+  "unmapped_total": 7408,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56053,6 +56053,35 @@
             "2048 isolated original-builder cases cover all256primary lowbytes,twofallbackmodes,two selectors and signed scales; inputs and output guards preserved.",
             "Caller14094c7b2 supplies built vertices to tetrahedron line query and selected-face normal.",
             "Name and pointer signature independently reopened; original bytes and allother function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bc87d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original editor helper selects stored shape transforms or composes helper-produced frames and adjusts manipulation parameters.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and C read;10526isolated original-provider cases across five documented fixture suites.",
+      "code_sha256": "498cb3453d47bd7b6ab70a48e493dde314ef298007957a271e5f415fa4141e96",
+      "code_hash_basis": "original_eh_region_including_trailing_ud2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorShapeTransformAndParameters",
+          "support": [
+            "Complete1845-byte region,379owned instructions plus trailingUD2,full C and connected sculpt geometry callers reviewed.",
+            "RDI output32-byte transform,RSI editor,RDX source,RCX optional16-byte parameters.",
+            "States3/18/19/20 directly copy stored transform and optional vector; source pointer may be null.",
+            "State4 tetrahedron branch preserves stored transform and adjusts projected parameter; ordinary shapes adjust position/dimensions,including torus/cookie remapping and first-nearzero cleanup.",
+            "Other251statebytes compose two helper-produced transforms and delegate optional parameters to second helper.",
+            "10526 isolated original-provider cases across cached,tetrahedron,composition,ordinary and cleanup suites; input/output guards verified.",
+            "Saved descriptive name and signature independently reopened; original bytes and other annotations unchanged."
           ]
         }
       ]

@@ -8035,3 +8035,14 @@ The original 784-byte region, full C and connected query caller were read. 2,048
 The saved descriptive name and pointer signature survived independent reopening with original bytes unchanged. The original frame provider, vertex lifecycle, other caller, arbitrary fourth vertex lanes, exceptional inputs and full editor behavior remain unresolved.
 
 Totals are **810 checked names across 9,620 defined functions**, with **2,211 mapped and 7,409 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Editor shape transform and manipulation parameters
+
+`ComputeEditorShapeTransformAndParameters` now names a reviewed helper used by the sculpt geometry path. In four editor states it copies a stored transform and optional parameter vector without reading the source object. State 4 starts from the stored transform and adjusts projected manipulation values: tetrahedra preserve the transform, while ordinary shapes shift position and adjust dimensions. Torus/cookie shapes remap dimensions, and applicable shapes clear only the first component below the original 0.02 threshold in X/Y/Z order.
+
+For other states it composes two helper-produced transforms and delegates optional parameters to the second helper. 10,526 isolated original-provider cases cover five suites: direct cached states, tetrahedron adjustment, transform composition, ordinary-shape adjustment and dimension cleanup. Full assembly and C were read. Its descriptive name and explicit output-pointer signature survived independent reopening, with original bytes unchanged.
+
+Except for the direct cached paths, the tests supply explicit frame-helper fixtures. They establish the provider's own branch calculations, not the original dependencies' behavior. The actual coordinate spaces, UI meanings of parameters, complete caller lifecycle and exceptional input domains remain unresolved. No in-game verification is claimed.
+
+Totals are **811 checked names across 9,620 defined functions**, with **2,212 mapped and 7,408 unmapped**. These are identified-code review counts, not feature completion.

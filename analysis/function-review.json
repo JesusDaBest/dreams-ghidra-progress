@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "740 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "741 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8655,
-    "other_names": 965,
-    "verification": "complete_inventory_matches_baseline_plus_740_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8654,
+    "other_names": 966,
+    "verification": "complete_inventory_matches_baseline_plus_741_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18854,6 +18854,32 @@
         "Tests replace frame supplier with explicit32-byte frame-copy boundary; original provider not validated by these tests.",
         "Frame coordinate space,provider branches,vertex lifecycle,other caller140bc7cab and complete editor behavior remain unresolved.",
         "No direct packed-record decoder claim; arbitrary vertexW,nonfinite and degenerate inputs not covered."
+      ]
+    },
+    {
+      "address": "140bc87d0",
+      "original_name": "FUN_140bc87d0",
+      "applied_name": "ComputeEditorShapeTransformAndParameters",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorShapeTransformAndParameters(SpatialQueryFloat4Working16 * transform_out, void * editor, void * source, SpatialQueryFloat4Working16 * parameters_out_optional)",
+      "evidence": [
+        "Complete1845-byte region,379owned instructions plus trailingUD2,full C and connected sculpt geometry callers reviewed.",
+        "RDI output32-byte transform,RSI editor,RDX source,RCX optional16-byte parameters.",
+        "States3/18/19/20 directly copy stored transform and optional vector; source pointer may be null.",
+        "State4 tetrahedron branch preserves stored transform and adjusts projected parameter; ordinary shapes adjust position/dimensions,including torus/cookie remapping and first-nearzero cleanup.",
+        "Other251statebytes compose two helper-produced transforms and delegate optional parameters to second helper.",
+        "10526 isolated original-provider cases across cached,tetrahedron,composition,ordinary and cleanup suites; input/output guards verified.",
+        "Saved descriptive name and signature independently reopened; original bytes and other annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive role and working pointer types,not recovered source symbols.",
+        "Except direct cached paths,tests supply explicit frame-helper fixtures; original140bc9aa0/140bcf350 behavior not established by these suites.",
+        "Actual coordinate space,parameter UI meaning,full caller lifecycle,invalid selectors,zero scales and nonunit/nonfinite quaternion domains unresolved.",
+        "State4 fixture corrected a synthetic bank2 header/selector overlap; not an observed game defect."
       ]
     }
   ],
