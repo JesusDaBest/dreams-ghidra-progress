@@ -7796,3 +7796,14 @@ The complete 2,779-byte body,454 nonempty pseudocode lines and five incoming dir
 Tests use synthetic data and explicit writer,operation-result and recorder fixtures. Actual operation engine,persistence,other modes/states,missing offsets and lifecycle remain unresolved. The spatial branch assumes a valid sprite target; its wider caller invariant is unproven. Some downstream recorder prototypes still differ from native arguments. No in-game verification or exact Media Molecule source/build match is claimed.
 
 Totals: **848 checked names across 9,626 defined functions**, **2,249 mapped and 7,377 unmapped**. These counts describe code review,not whole-game completion.
+
+
+### Shared surface-edit activity and corrected caller signatures
+
+`RecordEditorSurfaceEditActivity` now identifies the shared helper used by material, glow, surface and effect edits. Its six inputs are editor, user, propagation state, event id, tool key and unchanged flag. The former incomplete prototype dropped live native arguments. Eight call expressions in four previously reviewed routines now regenerate with the verified inputs; their saved function signatures and original bytes are unchanged.
+
+The helper checks active context, marks per-user activity and stops early when the edit is unchanged. Changed edits emit supplied or mode-dependent events and may copy a selected entry identifier back to editor state. Mode62 adds event111; modes69–71 use110; eligible inverted edits use113. Event id, user and key truncation and selected-entry bounds were checked. The complete 662-byte body, 116 nonempty pseudocode lines and sixteen incoming direct-call setups were reviewed. Two isolated complete-function suites passed 5,376 cases. The new definition and signature survived independent reopening.
+
+This resolves the shared helper140774f50 prototype caveat in the earlier glow, material, effect and brushstroke checkpoints. It does not resolve the event receiver140114f50 or the separate byte-property recorder1407793b0. Tests use synthetic context/asset data and an explicit event-capture fixture. Actual event storage or transmission, persistence, live object lifecycle and in-game behavior remain unverified. No exact Media Molecule source/build match is claimed.
+
+Totals: **849 checked names across 9,627 defined functions**, **2,250 mapped and 7,377 unmapped**. These are code-review counts, not whole-game completion.

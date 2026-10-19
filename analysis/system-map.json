@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9626,
-  "mapped_total": 2249,
+  "inventory_total": 9627,
+  "mapped_total": 2250,
   "unmapped_total": 7377,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -57210,6 +57210,34 @@
             "Propagation copies float or byte properties without clamping, marks dirty user bits and avoids duplicate property ids. Spatial sprite packets6/8/7 carry SizeBoost/Ruffle/Balloon edits; only successful Balloon operations submit property178 reset.",
             "Five isolated complete-caller suites passed4,032 distinct cases and4,864 invocations: ordinary floats1,536,Gridiness896,paired overrides384,spatial packets384,propagation832 each invoked twice.",
             "New definition and eleven-input working signature independently reopened, preserving original bytes and all existing function names/signatures."
+          ]
+        }
+      ]
+    },
+    "140774f50": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "material-editing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared editor surface-edit activity helper; sixteen direct incoming call setups and four regenerated callers reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete662byte/full116nonemptylineCread;5376complete-function cases with explicit event-callee fixture.",
+      "code_sha256": "31c9c70e9a8dbf541f304b051006339783e52c2f53d69cb9ce1bd739a30ab400",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RecordEditorSurfaceEditActivity",
+          "support": [
+            "Complete 662-byte original body, 116 nonempty pseudocode lines and sixteen direct incoming call setups reviewed.",
+            "Six GP arguments are editor,user,propagation state,event id,tool key and unchanged flag. Event id uses low16 bits; user/key use low8.",
+            "Matching active context marks per-user activity. Unchanged requests stop before event emission and changed flag; context mismatch exits without those effects.",
+            "Changed requests emit supplied or mode-dependent events: mode62 adds111,69..71 use110,eligible inverted edits use113,mode41 retains supplied event. Valid selected-entry data updates editor16378.",
+            "5,376 complete-function synthetic cases cover all256 modes,bank/invert/unchanged combinations,context mismatch,selected-kind/index bounds and input truncation. The event callee is an explicit capture fixture.",
+            "Definition and six-input working signature independently reopened with original bytes and existing names/signatures unchanged. Four reviewed callers regenerated with all eight shared-activity call expressions carrying the six verified inputs."
           ]
         }
       ]

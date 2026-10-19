@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 848,
+    "checked_and_applied_names": 849,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 848,
-    "function_count": 9626,
+    "verified_names": 849,
+    "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,75 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26744,8 +26744,9 @@
       "Synthetic local data; property-writer capture and change-recorder fixture on adjustment path, not real persistence or game execution.",
       "Native coverage uses mode0 for adjustment, users0..3 for propagation and operation state0. Other modes, operation-specific suppression/recording branches and lifecycle unresolved.",
       "Working context pointers remain opaque; original source names and exact Media Molecule source/build match are unknown.",
-      "Current Ghidra prototype for downstream change-recorder does not match all native call registers; emitted callee expression is not treated as recovered source."
-    ]
+      "Shared activity helper140774f50 now has a verified six-input ABI; actual receiver140114f50 semantics remain unresolved."
+    ],
+    "shared_activity_abi_resolved": true
   },
   "editor_coat_glow_checkpoint": {
     "address": "1407767c0",
@@ -26766,9 +26767,10 @@
       "Sprite inner-glow mapping is unproven and was not fabricated or tested.",
       "Synthetic data and explicit writer/operation/record fixtures, not in-game execution or actual persistence.",
       "Other editor modes and operation-specific suppression/recording, palette precomputation and lifecycle unresolved.",
-      "The downstream recorder prototype still differs from native register setup; emitted call expressions are not treated as recovered source.",
+      "Shared activity helper140774f50 now has a verified six-input ABI; actual receiver140114f50 semantics remain unresolved.",
       "Original source names/types and an exact Media Molecule source/build match remain unknown."
-    ]
+    ],
+    "shared_activity_abi_resolved": true
   },
   "editor_coat_material_checkpoint": {
     "address": "140777890",
@@ -26789,9 +26791,10 @@
       "Synthetic runtime data with explicit writer/operation-result/record fixtures, not in-game execution or actual persistence.",
       "Sprite-to-sculpt propagation was not executed: an optional source finish field can lead to an unchecked target pointer when its finish offset is absent. The local caller window does not prove a guard; wider dispatcher invariants unresolved.",
       "Other editor modes/operation states, palette precomputation and lifecycle unresolved.",
-      "Downstream recorder prototype differs from native register setup; its emitted expression is not recovered source.",
+      "Shared activity helper140774f50 now has a verified six-input ABI; actual receiver140114f50 semantics remain unresolved.",
       "Original source names/types and exact Media Molecule source/build match remain unknown."
-    ]
+    ],
+    "shared_activity_abi_resolved": true
   },
   "editor_brushstroke_surface_checkpoint": {
     "address": "1407788d0",
@@ -26812,8 +26815,32 @@
       "Synthetic runtime data with explicit writer/operation-result/recorder fixtures, not in-game execution or actual persistence.",
       "Bounded mode0/38/62 and seven Gridiness sign configurations; other modes/states,missing offsets and lifecycle unresolved.",
       "Spatial path assumes valid sprite target; current local checks do not establish the wider caller invariant.",
-      "Downstream recorder prototypes differ from native arguments; emitted expressions are not recovered source.",
+      "Shared activity helper140774f50 now has a verified six-input ABI; actual receiver140114f50 semantics remain unresolved. Separate byte-property recorder1407793b0 remains unresolved.",
       "No exact Media Molecule source/build match or original source types/names claimed."
+    ],
+    "shared_activity_abi_resolved": true
+  },
+  "editor_surface_activity_checkpoint": {
+    "address": "140774f50",
+    "name": "RecordEditorSurfaceEditActivity",
+    "working_signature": "void PS4_SYSV RecordEditorSurfaceEditActivity(void * editor, uchar user_index, void * propagation_state, ushort event_id, uchar tool_key, uchar unchanged)",
+    "complete_function_cases": 5376,
+    "verified_incoming_direct_calls": 16,
+    "caller_call_expressions_corrected": 8,
+    "findings": [
+      "Complete 662-byte original body, 116 nonempty pseudocode lines and sixteen direct incoming call setups reviewed.",
+      "Six GP arguments are editor,user,propagation state,event id,tool key and unchanged flag. Event id uses low16 bits; user/key use low8.",
+      "Matching active context marks per-user activity. Unchanged requests stop before event emission and changed flag; context mismatch exits without those effects.",
+      "Changed requests emit supplied or mode-dependent events: mode62 adds111,69..71 use110,eligible inverted edits use113,mode41 retains supplied event. Valid selected-entry data updates editor16378.",
+      "5,376 complete-function synthetic cases cover all256 modes,bank/invert/unchanged combinations,context mismatch,selected-kind/index bounds and input truncation. The event callee is an explicit capture fixture.",
+      "Definition and six-input working signature independently reopened with original bytes and existing names/signatures unchanged. Four reviewed callers regenerated with all eight shared-activity call expressions carrying the six verified inputs."
+    ],
+    "limits": [
+      "Actual event receiver140114f50 semantics,storage/transmission and persistence remain unresolved; no game execution claimed.",
+      "Synthetic context/asset data with explicit event capture,not live runtime lifecycle.",
+      "Entry/context pointer validity,other bank values and real object lifecycle unresolved.",
+      "Byte-property recorder1407793b0 remains a separate unresolved prototype.",
+      "Original source names/types and exact Media Molecule source/build match unknown."
     ]
   }
 }
