@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2234,
-  "unmapped_total": 7386,
+  "mapped_total": 2235,
+  "unmapped_total": 7385,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56724,6 +56724,38 @@
             "Inverse frame, XYZ-only direction normalization and nearer quadratic root. Accept only0<t<FLT_MAX; boolAL; successful optionalfloat output=t/inverseSignedRadius; misses preserve output.",
             "Caller windows demonstrate direct Boolean use and fallback after first record-dependent sphere query. Concrete UI handle identity remains unresolved.",
             "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd4670": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Editor annulus plane/ray query traced through original object/group frame;three callers reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full1714-byte/366owned-instruction body and full C reviewed;4061uninstrumented original-function cases.",
+      "code_sha256": "07adc61edec6fe074d1f7785e3464410c354a2b763542853f452c3bde3884e48",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IntersectEditorRayWithAnnulus",
+          "support": [
+            "Same pointer/type/flag/state eligibility as adjacent reviewed sphere queries; original object/group offset frame supplies center,scale,quaternion.",
+            "Plane normal derived from quaternion localZ and scale sign; ray is identical identity/nonidentity choice as adjacent queries.",
+            "Reject exact zero plane denominator; positive t strictly belowFLT_MAX only.",
+            "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX²+localY²), strict .699999988079071<radius<1.",
+            "Optional angle atan2f(localY,localX)/6.2831854820251465 plus1 ifnegative; written after positive plane crossing even when radius rejects.",
+            "Optional distance t written only on successful annulus hit.",
+            "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
+            "Seven isolated original-function suites4061cases cover saved/live/single frames,orientation,directional frame,backward rays and eligibility.",
+            "Orientation suite excludes100of640candidate near-parallel rays;directional suite excludes110of640; excluded cases do not count as passes.",
+            "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]

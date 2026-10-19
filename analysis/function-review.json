@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "763 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "764 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8632,
-    "other_names": 988,
-    "verification": "complete_inventory_matches_baseline_plus_763_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8631,
+    "other_names": 989,
+    "verification": "complete_inventory_matches_baseline_plus_764_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19443,6 +19443,34 @@
         "Six uninstrumented original-function suites2991synthetic cases, not in-game verification.",
         "Global-mode-dependent single-object settings, zero/nonfinite scales, nonunit quaternions, invalid pointers, tangencies and exceptional arithmetic not exhaustively validated.",
         "Hosttrig and localinfinity/canary import fixtures; live-pair float32 cancellation uses documented scale-aware bound; no exactPS4rounding claim."
+      ]
+    },
+    {
+      "address": "140bd4670",
+      "original_name": "FUN_140bd4670",
+      "applied_name": "IntersectEditorRayWithAnnulus",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IntersectEditorRayWithAnnulus(void * editor, void * group, float * angle_turns_out_optional, float * distance_out_optional)",
+      "evidence": [
+        "Same pointer/type/flag/state eligibility as adjacent reviewed sphere queries; original object/group offset frame supplies center,scale,quaternion.",
+        "Plane normal derived from quaternion localZ and scale sign; ray is identical identity/nonidentity choice as adjacent queries.",
+        "Reject exact zero plane denominator; positive t strictly belowFLT_MAX only.",
+        "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX²+localY²), strict .699999988079071<radius<1.",
+        "Optional angle atan2f(localY,localX)/6.2831854820251465 plus1 ifnegative; written after positive plane crossing even when radius rejects.",
+        "Optional distance t written only on successful annulus hit.",
+        "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
+        "Seven isolated original-function suites4061cases cover saved/live/single frames,orientation,directional frame,backward rays and eligibility.",
+        "Orientation suite excludes100of640candidate near-parallel rays;directional suite excludes110of640; excluded cases do not count as passes.",
+        "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Synthetic isolated original-code checks only;hostatan2f/sincosf and localinfinity/canary fixtures do not establish exactPS4rounding or in-game behavior.",
+        "Exact parallel/near-parallel and annulus boundary rounding,global single-object settings,zero/nonfinite scales,nonunit quaternions and invalid pointers remain unresolved.",
+        "Concrete editor UI handle identity remains unresolved;name describes geometric behavior only."
       ]
     }
   ],

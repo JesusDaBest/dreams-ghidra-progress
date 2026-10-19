@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 833,
+    "checked_and_applied_names": 834,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 833,
+    "verified_names": 834,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "763 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "764 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26454,6 +26454,34 @@
       "suite_count": 6,
       "bounded_cases": 2991,
       "uninstrumented_function_cases": 2991
+    }
+  },
+  "annulus_query_checkpoint": {
+    "address": "140bd4670",
+    "name": "IntersectEditorRayWithAnnulus",
+    "working_signature": "bool PS4_SYSV IntersectEditorRayWithAnnulus(void * editor, void * group, float * angle_turns_out_optional, float * distance_out_optional)",
+    "native_cases": 4061,
+    "findings": [
+      "Same pointer/type/flag/state eligibility as adjacent reviewed sphere queries; original object/group offset frame supplies center,scale,quaternion.",
+      "Plane normal derived from quaternion localZ and scale sign; ray is identical identity/nonidentity choice as adjacent queries.",
+      "Reject exact zero plane denominator; positive t strictly belowFLT_MAX only.",
+      "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX²+localY²), strict .699999988079071<radius<1.",
+      "Optional angle atan2f(localY,localX)/6.2831854820251465 plus1 ifnegative; written after positive plane crossing even when radius rejects.",
+      "Optional distance t written only on successful annulus hit.",
+      "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
+      "Seven isolated original-function suites4061cases cover saved/live/single frames,orientation,directional frame,backward rays and eligibility.",
+      "Orientation suite excludes100of640candidate near-parallel rays;directional suite excludes110of640; excluded cases do not count as passes.",
+      "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic isolated original-code checks only;hostatan2f/sincosf and localinfinity/canary fixtures do not establish exactPS4rounding or in-game behavior.",
+      "Exact parallel/near-parallel and annulus boundary rounding,global single-object settings,zero/nonfinite scales,nonunit quaternions and invalid pointers remain unresolved.",
+      "Concrete editor UI handle identity remains unresolved;name describes geometric behavior only."
+    ],
+    "native_suites": {
+      "suite_count": 7,
+      "bounded_cases": 4061,
+      "uninstrumented_function_cases": 4061
     }
   }
 }
