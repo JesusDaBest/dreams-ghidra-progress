@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 841,
+    "checked_and_applied_names": 842,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 841,
+    "verified_names": 842,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "771 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26651,6 +26651,32 @@
       "suite_count": 5,
       "bounded_cases": 5120,
       "uninstrumented_function_cases": 5120
+    }
+  },
+  "editor_spatial_edit_transform_checkpoint": {
+    "address": "140bdc590",
+    "name": "ComputeEditorSpatialEditTransform",
+    "working_signature": "void PS4_SYSV ComputeEditorSpatialEditTransform(PositionScaleQuaternionTransform32 * transform_out, void * editor, void * group, SpatialQueryFloat4Working16 * extents_out_optional)",
+    "native_cases": 3072,
+    "findings": [
+      "r=max(float0.03,editor17430). Optional output receives r*(0.5,1,0.25,0), not the final world transform scale.",
+      "Two non-type2 selections choose the direct pair path: local transform has position(0,r,0), scale1, identity quaternion. Frame selection uses the FIRST selected object (editor19c38), unlike earlier reference-frame helpers that use the second.",
+      "If first1d0 nonzero, saved frame is first1b0/1c0. Otherwise live first120/130 undergoes group-relative position correction using first190 and group4399.",
+      "Final output composes local transform with selected frame: quaternion multiplication plus normalization and position/scale composition; writes exactly32bytes plus optional16-byte auxiliary output.",
+      "Single/ineligible-pair path composes editor3e0 with fixedXtilt and rotates localYoffset, then composes with first-object saved/live frame; independently checked across1280single-selection cases.",
+      "Five distinct native suites cover saved/live/directional pairs and saved/live single type2 objects;3072cases,finite signed scales,unit quaternions,optional output present/absent,guards/input buffers preserved.",
+      "Working ABI:void,transform32*outRDI,opaqueeditorRSI,opaquegroupRDX,optionalworkingfloat4*outRCX.",
+      "Saved descriptive name and four-pointer void-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Caller-connected operation execution, exceptional/nonunit inputs and missing-first-object behavior remain unverified.",
+      "Host sincosf and an explicit local infinity-predicate fixture do not establish exact PS4 rounding.",
+      "No live game validation; downstream operation semantics, synchronization and lifecycle remain unresolved."
+    ],
+    "native_suites": {
+      "suite_count": 5,
+      "bounded_cases": 3072,
+      "uninstrumented_function_cases": 3072
     }
   }
 }

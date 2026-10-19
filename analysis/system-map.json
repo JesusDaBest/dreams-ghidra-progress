@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2242,
-  "unmapped_total": 7378,
+  "mapped_total": 2243,
+  "unmapped_total": 7377,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57013,6 +57013,36 @@
             "5120isolatedcases across5suites:1024additive,1024initialmultiplicative,1024crossedflags,1024sentinelbounded,1024defaultrecordbranch. Distinct scopes recorded.",
             "Provider1408f4e80fullbodyread;activeuser-settingsandauxiliarycontrolsbranchesstaticonly;defaultrecordinitializationusescontrolledallocation/TLS/freefixtures.",
             "Saved descriptive name and seven-input mixed-register float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bdc590": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared transform used by spatial sprite material/effect edit operations;complete caller bodies and property registrations reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete1813-byte355instruction body,fullC,3072synthetic native cases across5suites.",
+      "code_sha256": "687a5e4e75960d4456a1fdca18d4a62fe5fc9002f0731ee49096425b18b81323",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorSpatialEditTransform",
+          "support": [
+            "r=max(float0.03,editor17430). Optional output receives r*(0.5,1,0.25,0), not the final world transform scale.",
+            "Two non-type2 selections choose the direct pair path: local transform has position(0,r,0), scale1, identity quaternion. Frame selection uses the FIRST selected object (editor19c38), unlike earlier reference-frame helpers that use the second.",
+            "If first1d0 nonzero, saved frame is first1b0/1c0. Otherwise live first120/130 undergoes group-relative position correction using first190 and group4399.",
+            "Final output composes local transform with selected frame: quaternion multiplication plus normalization and position/scale composition; writes exactly32bytes plus optional16-byte auxiliary output.",
+            "Single/ineligible-pair path composes editor3e0 with fixedXtilt and rotates localYoffset, then composes with first-object saved/live frame; independently checked across1280single-selection cases.",
+            "Five distinct native suites cover saved/live/directional pairs and saved/live single type2 objects;3072cases,finite signed scales,unit quaternions,optional output present/absent,guards/input buffers preserved.",
+            "Working ABI:void,transform32*outRDI,opaqueeditorRSI,opaquegroupRDX,optionalworkingfloat4*outRCX.",
+            "Saved descriptive name and four-pointer void-return working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]

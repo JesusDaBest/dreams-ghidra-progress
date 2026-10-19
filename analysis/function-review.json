@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "771 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "772 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8624,
-    "other_names": 996,
-    "verification": "complete_inventory_matches_baseline_plus_771_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8623,
+    "other_names": 997,
+    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19646,6 +19646,32 @@
         "Syntheticoriginalcodewithhostatan2f/logf/expfandexplicitmemoryfixtures;no exactPS4rounding or in-gameclaim.",
         "Actualsettingsrecords/activeauxmerge,allocator/OS behavior,concurrency,nonunit/nonfinite inputs,overflow/underflow andfullcontrollerlifecycleunverified.",
         "Selectedcallerparameter17084/17088/1708cmeaningunresolved;name describesrotation-driven scalaradjustmentonly."
+      ]
+    },
+    {
+      "address": "140bdc590",
+      "original_name": "FUN_140bdc590",
+      "applied_name": "ComputeEditorSpatialEditTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorSpatialEditTransform(PositionScaleQuaternionTransform32 * transform_out, void * editor, void * group, SpatialQueryFloat4Working16 * extents_out_optional)",
+      "evidence": [
+        "r=max(float0.03,editor17430). Optional output receives r*(0.5,1,0.25,0), not the final world transform scale.",
+        "Two non-type2 selections choose the direct pair path: local transform has position(0,r,0), scale1, identity quaternion. Frame selection uses the FIRST selected object (editor19c38), unlike earlier reference-frame helpers that use the second.",
+        "If first1d0 nonzero, saved frame is first1b0/1c0. Otherwise live first120/130 undergoes group-relative position correction using first190 and group4399.",
+        "Final output composes local transform with selected frame: quaternion multiplication plus normalization and position/scale composition; writes exactly32bytes plus optional16-byte auxiliary output.",
+        "Single/ineligible-pair path composes editor3e0 with fixedXtilt and rotates localYoffset, then composes with first-object saved/live frame; independently checked across1280single-selection cases.",
+        "Five distinct native suites cover saved/live/directional pairs and saved/live single type2 objects;3072cases,finite signed scales,unit quaternions,optional output present/absent,guards/input buffers preserved.",
+        "Working ABI:void,transform32*outRDI,opaqueeditorRSI,opaquegroupRDX,optionalworkingfloat4*outRCX.",
+        "Saved descriptive name and four-pointer void-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Caller-connected operation execution, exceptional/nonunit inputs and missing-first-object behavior remain unverified.",
+        "Host sincosf and an explicit local infinity-predicate fixture do not establish exact PS4 rounding.",
+        "No live game validation; downstream operation semantics, synchronization and lifecycle remain unresolved."
       ]
     }
   ],
