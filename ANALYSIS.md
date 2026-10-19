@@ -8011,3 +8011,16 @@ The original 279-byte function, full C and connected call site were read. 2,048 
 Degenerate faces, near-coplanar inputs, invalid indices, nonfinite values, the second caller and complete editor lifecycle remain unresolved. This is a descriptive name supported by observed behavior, not a recovered source symbol or an in-game verification claim.
 
 Totals are **808 checked names across 9,620 defined functions**, with **2,209 mapped and 7,411 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Tetrahedron line intersection and face selection
+
+`UpdateTetrahedronLineIntersection` now names a reviewed geometry query used by the sculpt editor. It tests all four triangular faces with a small barycentric tolerance and selects the smallest signed line parameter. Negative parameters are accepted. Its face index identifies the opposite vertex, allowing the connected normal helper to produce the selected face direction.
+
+The existing distance is not an upper bound: a hit overwrites it. A miss preserves the distance and index. The return value compares the final distance against maximum float, so a caller must initialize that sentinel to interpret the return as a fresh hit. The reviewed caller does initialize it before querying. This distinction prevents incorrectly documenting the helper as a conventional forward-ray hit test.
+
+The original 1,291-byte function, full C and caller were read. 3,999 isolated original-code cases cover canonical and irregular tetrahedra, both vertex orderings, all four faces, signed hits, several initial distances, and guarded outputs. The explicit pointer/vector signature and descriptive name survived independent reopening; original bytes stayed unchanged. Tests exposed and corrected two reference assumptions: sentinel-dependent return behavior and approximately -0.001 to 1.001 barycentric acceptance.
+
+Exact edge ties, degenerate geometry, zero directions, nonfinite values and complete in-game caller behavior remain unresolved.
+
+Totals are **809 checked names across 9,620 defined functions**, with **2,210 mapped and 7,410 unmapped**. These are identified-code review counts, not feature completion.

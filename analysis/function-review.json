@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "738 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "739 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8657,
-    "other_names": 963,
-    "verification": "complete_inventory_matches_baseline_plus_738_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8656,
+    "other_names": 964,
+    "verification": "complete_inventory_matches_baseline_plus_739_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18802,6 +18802,32 @@
         "Degenerate faces, near-coplanar tetrahedra, invalid indices and nonfinite inputs untested.",
         "Second caller14094c828 and complete editor lifecycle remain unresolved.",
         "Initial fixture omitted original executable page; page mapping repaired before successful suite. No live game or service executed."
+      ]
+    },
+    {
+      "address": "1414c49a0",
+      "original_name": "FUN_1414c49a0",
+      "applied_name": "UpdateTetrahedronLineIntersection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV UpdateTetrahedronLineIntersection(SpatialQueryFloat4Working16 * vertices, float * distance_inout, int * opposite_vertex_out, SpatialQueryFloat4Working16 line_origin, SpatialQueryFloat4Working16 line_direction)",
+      "evidence": [
+        "Complete1291-byte region and261instructions reviewed with full C and explicit typed signature.",
+        "RDI four16-byte vertices,RSI float distance-inout,RDX opposite-vertex output,XMM0 origin,XMM1 direction,EAX uint0/1.",
+        "Four tolerant triangle tests select minimum signed line parameter; negative parameters accepted,existing output distance is not an upper bound.",
+        "Barycentric constants are approximately -0.001 and1.001; face output identifies opposite vertex for normal helper.",
+        "Miss leaves outputs untouched; return compares final distance against maximum float sentinel,which caller14094c810 initializes before use.",
+        "3999 isolated original-code cases cover canonical and irregular tetrahedra,both winding orientations,allfour faces,preexisting distances,negative hits and input/output guards.",
+        "Saved name and corrected signature independently reopened; original bytes and other function annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working types,not recovered source symbol.",
+        "Exact face-edge ties,degenerate or nearly coplanar geometry,zero direction and nonfinite inputs remain unresolved.",
+        "Full editor caller lifecycle and actual in-game behavior not established.",
+        "Independent oracle revised after evidence exposed sentinel return behavior and expanded barycentric tolerance; no executable bytes changed."
       ]
     }
   ],

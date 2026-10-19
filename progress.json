@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 762,
+    "done": 763,
     "todo": 1447,
-    "total": 2209,
-    "behavior_or_helpers_reviewed": 688,
+    "total": 2210,
+    "behavior_or_helpers_reviewed": 689,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -35010,12 +35010,12 @@
       {
         "name": "sculpting-painting",
         "label": "Sculpting & painting",
-        "done": 67,
+        "done": 68,
         "todo": 103,
-        "total": 170,
-        "behavior_or_helpers_reviewed": 67,
+        "total": 171,
+        "behavior_or_helpers_reviewed": 68,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 127,
+        "runtime_functions_identified": 128,
         "property_type_functions_identified": 43,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -35086,7 +35086,8 @@
           "FinalizeSpriteEmissionSourceRecord",
           "BatchAndEmitTransformedSpritePoints",
           "GetOrLoadSpriteOcclusionCullAndAllocateToCommandListsComputeShader",
-          "GetOrBuildPackedSpriteGeometrySummary"
+          "GetOrBuildPackedSpriteGeometrySummary",
+          "UpdateTetrahedronLineIntersection"
         ],
         "todo_names": [
           "0x140491730",
@@ -35260,7 +35261,8 @@
           "1413dc430",
           "1413dc530",
           "1413dd6e0",
-          "1413e75e0"
+          "1413e75e0",
+          "1414c49a0"
         ],
         "todo_addresses": [
           "140491730",
@@ -35372,12 +35374,12 @@
           {
             "name": "sculpting-painting/csg",
             "label": "Sculpt geometry",
-            "done": 49,
+            "done": 50,
             "todo": 68,
-            "total": 117,
-            "behavior_or_helpers_reviewed": 49,
+            "total": 118,
+            "behavior_or_helpers_reviewed": 50,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 107,
+            "runtime_functions_identified": 108,
             "property_type_functions_identified": 10,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -35430,7 +35432,8 @@
               "BuildAndReuseVolumeResourcesForSlot",
               "InitializeVolumeBuildTemporaryResources",
               "BuildSweepBlockRanges",
-              "DispatchSweepHashBlocksRange"
+              "DispatchSweepHashBlocksRange",
+              "UpdateTetrahedronLineIntersection"
             ],
             "todo_names": [
               "0x140cb01c0",
@@ -35551,7 +35554,8 @@
               "1412993c0",
               "1412a19c0",
               "1412a20f0",
-              "1412a3b40"
+              "1412a3b40",
+              "1414c49a0"
             ],
             "todo_addresses": [
               "140cb01c0",
@@ -36167,13 +36171,13 @@
               },
               {
                 "name": "sculpting-painting/csg/primitive-encoding",
-                "label": "Primitive record encoding",
-                "done": 6,
+                "label": "Primitive geometry & records",
+                "done": 7,
                 "todo": 0,
-                "total": 6,
-                "behavior_or_helpers_reviewed": 6,
+                "total": 7,
+                "behavior_or_helpers_reviewed": 7,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 6,
+                "runtime_functions_identified": 7,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -36183,7 +36187,8 @@
                   "DecodePackedCsgEditTransform",
                   "AppendPackedCsgPrimitiveEdit",
                   "UpdateLastCsgEditFromEditorShape",
-                  "ComputeTetrahedronOppositeFaceUnitNormal"
+                  "ComputeTetrahedronOppositeFaceUnitNormal",
+                  "UpdateTetrahedronLineIntersection"
                 ],
                 "todo_names": [],
                 "done_addresses": [
@@ -36192,7 +36197,8 @@
                   "140c68360",
                   "140c68500",
                   "140c712b0",
-                  "140c71c70"
+                  "140c71c70",
+                  "1414c49a0"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -36200,12 +36206,12 @@
                   {
                     "name": "sculpting-painting/csg/primitive-encoding/runtime-implementation",
                     "label": "Runtime behavior",
-                    "done": 6,
+                    "done": 7,
                     "todo": 0,
-                    "total": 6,
-                    "behavior_or_helpers_reviewed": 6,
+                    "total": 7,
+                    "behavior_or_helpers_reviewed": 7,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 6,
+                    "runtime_functions_identified": 7,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -36215,7 +36221,8 @@
                       "DecodePackedCsgEditTransform",
                       "AppendPackedCsgPrimitiveEdit",
                       "UpdateLastCsgEditFromEditorShape",
-                      "ComputeTetrahedronOppositeFaceUnitNormal"
+                      "ComputeTetrahedronOppositeFaceUnitNormal",
+                      "UpdateTetrahedronLineIntersection"
                     ],
                     "todo_names": [],
                     "done_addresses": [
@@ -36224,7 +36231,8 @@
                       "140c68360",
                       "140c68500",
                       "140c712b0",
-                      "140c71c70"
+                      "140c71c70",
+                      "1414c49a0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -46836,5 +46844,5 @@
       }
     ]
   },
-  "unmapped": 7411
+  "unmapped": 7410
 }

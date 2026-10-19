@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 808,
+    "checked_and_applied_names": 809,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 808,
+    "verified_names": 809,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "738 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "739 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25784,6 +25784,27 @@
       "Degenerate faces, near-coplanar tetrahedra, invalid indices and nonfinite inputs untested.",
       "Second caller14094c828 and complete editor lifecycle remain unresolved.",
       "Initial fixture omitted original executable page; page mapping repaired before successful suite. No live game or service executed."
+    ]
+  },
+  "csg_tetrahedron_query_checkpoint": {
+    "address": "1414c49a0",
+    "name": "UpdateTetrahedronLineIntersection",
+    "working_signature": "uint PS4_SYSV UpdateTetrahedronLineIntersection(SpatialQueryFloat4Working16 * vertices, float * distance_inout, int * opposite_vertex_out, SpatialQueryFloat4Working16 line_origin, SpatialQueryFloat4Working16 line_direction)",
+    "native_cases": 3999,
+    "findings": [
+      "Complete1291-byte region and261instructions reviewed with full C and explicit typed signature.",
+      "RDI four16-byte vertices,RSI float distance-inout,RDX opposite-vertex output,XMM0 origin,XMM1 direction,EAX uint0/1.",
+      "Four tolerant triangle tests select minimum signed line parameter; negative parameters accepted,existing output distance is not an upper bound.",
+      "Barycentric constants are approximately -0.001 and1.001; face output identifies opposite vertex for normal helper.",
+      "Miss leaves outputs untouched; return compares final distance against maximum float sentinel,which caller14094c810 initializes before use.",
+      "3999 isolated original-code cases cover canonical and irregular tetrahedra,both winding orientations,allfour faces,preexisting distances,negative hits and input/output guards.",
+      "Saved name and corrected signature independently reopened; original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working types,not recovered source symbol.",
+      "Exact face-edge ties,degenerate or nearly coplanar geometry,zero direction and nonfinite inputs remain unresolved.",
+      "Full editor caller lifecycle and actual in-game behavior not established.",
+      "Independent oracle revised after evidence exposed sentinel return behavior and expanded barycentric tolerance; no executable bytes changed."
     ]
   }
 }

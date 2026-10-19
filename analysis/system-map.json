@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2209,
-  "unmapped_total": 7411,
+  "mapped_total": 2210,
+  "unmapped_total": 7410,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55998,6 +55998,35 @@
           ]
         }
       ]
+    },
+    "1414c49a0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original sculpt-editor query intersects a line with tetrahedron faces and supplies opposite-vertex index for selected-face normal.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and C read;3999isolated original-code cases and caller sentinel initialization traced.",
+      "code_sha256": "9bd674fe1eed69f3668af44b889a94f6f501cc68cc2d16734c5f6287c3ce5abd",
+      "code_hash_basis": "original_eh_region_including_trailing_ud2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateTetrahedronLineIntersection",
+          "support": [
+            "Complete1291-byte region and261instructions reviewed with full C and explicit typed signature.",
+            "RDI four16-byte vertices,RSI float distance-inout,RDX opposite-vertex output,XMM0 origin,XMM1 direction,EAX uint0/1.",
+            "Four tolerant triangle tests select minimum signed line parameter; negative parameters accepted,existing output distance is not an upper bound.",
+            "Barycentric constants are approximately -0.001 and1.001; face output identifies opposite vertex for normal helper.",
+            "Miss leaves outputs untouched; return compares final distance against maximum float sentinel,which caller14094c810 initializes before use.",
+            "3999 isolated original-code cases cover canonical and irregular tetrahedra,both winding orientations,allfour faces,preexisting distances,negative hits and input/output guards.",
+            "Saved name and corrected signature independently reopened; original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -60271,7 +60300,7 @@
             },
             {
               "id": "primitive-encoding",
-              "label": "Primitive record encoding",
+              "label": "Primitive geometry & records",
               "children": [
                 {
                   "id": "runtime-implementation",
