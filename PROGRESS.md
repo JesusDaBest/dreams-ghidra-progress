@@ -7960,3 +7960,16 @@ Review covered all 969 original instructions, the full pseudocode, the correctio
 Independent reopening verified the saved function, argument, switch correction and unchanged original bytes. The inventory audit also confirmed every previously published name and refreshed the stale added-functions list. The larger recipient consumer remains under review; this batch credits only the evaluator.
 
 Totals: **863 checked names across 9,628 defined functions**, **2,264 mapped and 7,364 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Animation value combination and full vector results
+
+Thirty-five original callbacks now have verified descriptive names and working register signatures. Seven tables select five operations for integers, scalar values, two-, three- and four-component channels, and two rotation paths. Scalar and integer selectors replace, add, subtract, take the maximum, or take the minimum. Rotation selectors instead replace, multiply quaternions, or multiply by the incoming quaternion's conjugate; the last operation does not divide by its norm.
+
+The automatic vector prototypes hid arguments or returned only eight bytes. A documented working layout now preserves all four float register lanes and the full 16-byte result. Channel-specific vector names follow the caller's usage; the working layout describes observed machine registers and does not claim a recovered source type.
+
+All original bodies and both original and corrected pseudocode were read. A focused suite passed 2,355 complete original-callback cases, including integer wraparound, signed zeros, NaNs, infinities and nonunit quaternions. Independent reopening verified the 35 names, arguments, result registers, working layout and unchanged original bytes. Existing function names and signatures matched the previous inventory.
+
+The surrounding trace also recovered 27 mixing descriptors. Three face-angle tracks are converted to a quaternion and directed to the face-quaternion destination. Per-channel weights, clamp bounds, integer selection rules and mouth-shape resampling are being traced through the larger consumer. That complete routine and live-game behaviour remain unverified; only the 35 complete callbacks receive naming credit here.
+
+Totals: **898 checked names across 9,663 defined functions**, **2,299 mapped and 7,364 unmapped**. These counts describe reviewed code, not whole-game completion.

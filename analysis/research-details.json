@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 863,
+    "checked_and_applied_names": 898,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 863,
-    "function_count": 9628,
+    "verified_names": 898,
+    "function_count": 9663,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1993,6 +1993,41 @@
       "1413f92d0",
       "1413f94b0",
       "141432560",
+      "1414336f0",
+      "141433700",
+      "141433710",
+      "141433720",
+      "141433730",
+      "141433740",
+      "141433750",
+      "141433760",
+      "141433770",
+      "141433780",
+      "141433790",
+      "1414337a0",
+      "1414337b0",
+      "1414337c0",
+      "1414337d0",
+      "1414337e0",
+      "1414337f0",
+      "141433800",
+      "141433810",
+      "141433820",
+      "141433830",
+      "141433840",
+      "141433850",
+      "141433860",
+      "141433870",
+      "141433880",
+      "141433890",
+      "1414338f0",
+      "141433960",
+      "141433970",
+      "141433980",
+      "141433990",
+      "1414339f0",
+      "141433a60",
+      "141433a70",
       "1414f5a90",
       "1414f5c30",
       "1414f5cf0",
@@ -2003,9 +2038,9 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "785 existing-function renames,77 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "785 existing-function renames,112 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true,
-    "new_functions_basis": "Complete current saved inventory minus the original 9,551-entry baseline; refreshed after independent evaluator reopening."
+    "new_functions_basis": "Complete current saved inventory minus the original 9,551-entry baseline; refreshed after independent combination-callback reopening."
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
   "composite_reader_signature_verification": {
@@ -27315,5 +27350,1020 @@
       "The initializer and 11 curve functions are not credited as additional saved names in this batch.",
       "No exact Media Molecule source/build match is established."
     ]
+  },
+  "recipient_animation_combination_checkpoint": {
+    "functions": {
+      "1414336f0": {
+        "name": "SelectIncomingAnimationInt",
+        "signature": "int PS4_SYSV SelectIncomingAnimationInt(int current_value, int incoming_value)",
+        "code_sha256": "6267489afee44585439e98e113cdf5af84f10bb932fb9b863bfcb4030c6fb863",
+        "evidence": [
+          "Complete 3-byte original body (2 instructions), 4 original and 12 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "int",
+        "selector": 0
+      },
+      "141433700": {
+        "name": "AddAnimationInt",
+        "signature": "int PS4_SYSV AddAnimationInt(int current_value, int incoming_value)",
+        "code_sha256": "ecff201d9665ea2b8d36b3181e10d872eb8145a361ea29772fd3f8959f336f6c",
+        "evidence": [
+          "Complete 4-byte original body (2 instructions), 4 original and 12 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "int",
+        "selector": 1
+      },
+      "141433710": {
+        "name": "SubtractAnimationInt",
+        "signature": "int PS4_SYSV SubtractAnimationInt(int current_value, int incoming_value)",
+        "code_sha256": "3f5468f7ff841660c2d06a999c282e11944459cf37518894df58f7440bc9fc1f",
+        "evidence": [
+          "Complete 5-byte original body (3 instructions), 4 original and 12 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "int",
+        "selector": 2
+      },
+      "141433720": {
+        "name": "MaxAnimationInt",
+        "signature": "int PS4_SYSV MaxAnimationInt(int current_value, int incoming_value)",
+        "code_sha256": "962c6ec72fe1fdb818ad9c78674e782d69d0d73c5d56f59484b63cadade154d3",
+        "evidence": [
+          "Complete 8-byte original body (4 instructions), 7 original and 15 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "int",
+        "selector": 3
+      },
+      "141433730": {
+        "name": "MinAnimationInt",
+        "signature": "int PS4_SYSV MinAnimationInt(int current_value, int incoming_value)",
+        "code_sha256": "e6a15f3804eb77f775d591fe48d1dde4e58174e34d7a561747dfc40e49529cee",
+        "evidence": [
+          "Complete 8-byte original body (4 instructions), 7 original and 15 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "int",
+        "selector": 4
+      },
+      "141433740": {
+        "name": "SelectIncomingAnimationFloat",
+        "signature": "float PS4_SYSV SelectIncomingAnimationFloat(float current_value, float incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 12 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "scalar",
+        "selector": 0
+      },
+      "141433750": {
+        "name": "AddAnimationFloat",
+        "signature": "float PS4_SYSV AddAnimationFloat(float current_value, float incoming_value)",
+        "code_sha256": "8e1c2ea7afa88127d835a55728cc4889141c6dd9e01130822087212bfa814003",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 12 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "scalar",
+        "selector": 1
+      },
+      "141433760": {
+        "name": "SubtractAnimationFloat",
+        "signature": "float PS4_SYSV SubtractAnimationFloat(float current_value, float incoming_value)",
+        "code_sha256": "664d6497c7b050a7fc24de5f3f519047794fe17fa4f0d5c182d201975a160b33",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 12 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "scalar",
+        "selector": 2
+      },
+      "141433770": {
+        "name": "MaxAnimationFloat",
+        "signature": "float PS4_SYSV MaxAnimationFloat(float current_value, float incoming_value)",
+        "code_sha256": "ee44f38339c4a34a5993bfed0de804c472463af101349dd245cadb1379f4c0f9",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 21 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "scalar",
+        "selector": 3
+      },
+      "141433780": {
+        "name": "MinAnimationFloat",
+        "signature": "float PS4_SYSV MinAnimationFloat(float current_value, float incoming_value)",
+        "code_sha256": "cacaa2ba43826ea065486ad86fd5fe2b474c43d2699fc483c352239c3aad5cb5",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 21 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "scalar",
+        "selector": 4
+      },
+      "141433790": {
+        "name": "SelectIncomingAnimationVector2",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationVector2(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector2",
+        "selector": 0
+      },
+      "1414337a0": {
+        "name": "AddAnimationVector2",
+        "signature": "AnimationFloat4Register PS4_SYSV AddAnimationVector2(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "ff8a6fa3ad19576e7202dd28433625b7bcc4bc24b0b6e92ba66fafaf4a25bb94",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 5 original and 18 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector2",
+        "selector": 1
+      },
+      "1414337b0": {
+        "name": "SubtractAnimationVector2",
+        "signature": "AnimationFloat4Register PS4_SYSV SubtractAnimationVector2(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "a16615401ec863421117a648e9b188ba7035e54d161902f19dba9e967696720c",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 17 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector2",
+        "selector": 2
+      },
+      "1414337c0": {
+        "name": "MaxAnimationVector2",
+        "signature": "AnimationFloat4Register PS4_SYSV MaxAnimationVector2(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "34022a65ae2dad0e0e868d5b6a56a34f8e318d0c997e5a05b1a92c20ac4ae1a8",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 16 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector2",
+        "selector": 3
+      },
+      "1414337d0": {
+        "name": "MinAnimationVector2",
+        "signature": "AnimationFloat4Register PS4_SYSV MinAnimationVector2(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "100fc49c6ed4c893f6934c4bfb7773254b85eb27a7919e3f977d649bf5dcd1c2",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 16 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector2",
+        "selector": 4
+      },
+      "1414337e0": {
+        "name": "SelectIncomingAnimationVector3",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationVector3(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector3",
+        "selector": 0
+      },
+      "1414337f0": {
+        "name": "AddAnimationVector3",
+        "signature": "AnimationFloat4Register PS4_SYSV AddAnimationVector3(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "ff8a6fa3ad19576e7202dd28433625b7bcc4bc24b0b6e92ba66fafaf4a25bb94",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 5 original and 18 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector3",
+        "selector": 1
+      },
+      "141433800": {
+        "name": "SubtractAnimationVector3",
+        "signature": "AnimationFloat4Register PS4_SYSV SubtractAnimationVector3(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "a16615401ec863421117a648e9b188ba7035e54d161902f19dba9e967696720c",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 17 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector3",
+        "selector": 2
+      },
+      "141433810": {
+        "name": "MaxAnimationVector3",
+        "signature": "AnimationFloat4Register PS4_SYSV MaxAnimationVector3(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "34022a65ae2dad0e0e868d5b6a56a34f8e318d0c997e5a05b1a92c20ac4ae1a8",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 16 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector3",
+        "selector": 3
+      },
+      "141433820": {
+        "name": "MinAnimationVector3",
+        "signature": "AnimationFloat4Register PS4_SYSV MinAnimationVector3(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "100fc49c6ed4c893f6934c4bfb7773254b85eb27a7919e3f977d649bf5dcd1c2",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 16 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector3",
+        "selector": 4
+      },
+      "141433830": {
+        "name": "SelectIncomingAnimationVector4",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationVector4(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector4",
+        "selector": 0
+      },
+      "141433840": {
+        "name": "AddAnimationVector4",
+        "signature": "AnimationFloat4Register PS4_SYSV AddAnimationVector4(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "ff8a6fa3ad19576e7202dd28433625b7bcc4bc24b0b6e92ba66fafaf4a25bb94",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 5 original and 18 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector4",
+        "selector": 1
+      },
+      "141433850": {
+        "name": "SubtractAnimationVector4",
+        "signature": "AnimationFloat4Register PS4_SYSV SubtractAnimationVector4(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "a16615401ec863421117a648e9b188ba7035e54d161902f19dba9e967696720c",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 17 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector4",
+        "selector": 2
+      },
+      "141433860": {
+        "name": "MaxAnimationVector4",
+        "signature": "AnimationFloat4Register PS4_SYSV MaxAnimationVector4(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "34022a65ae2dad0e0e868d5b6a56a34f8e318d0c997e5a05b1a92c20ac4ae1a8",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 16 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector4",
+        "selector": 3
+      },
+      "141433870": {
+        "name": "MinAnimationVector4",
+        "signature": "AnimationFloat4Register PS4_SYSV MinAnimationVector4(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "100fc49c6ed4c893f6934c4bfb7773254b85eb27a7919e3f977d649bf5dcd1c2",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 8 original and 16 typed pseudocode lines read.",
+          "81 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 81,
+        "family": "vector4",
+        "selector": 4
+      },
+      "141433880": {
+        "name": "SelectIncomingAnimationQuaternionMode0ForEulerChannels",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationQuaternionMode0ForEulerChannels(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "euler_rotation",
+        "selector": 0
+      },
+      "141433890": {
+        "name": "MultiplyAnimationQuaternionsForEulerChannels",
+        "signature": "AnimationFloat4Register PS4_SYSV MultiplyAnimationQuaternionsForEulerChannels(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "a658874ca481da6041381087006b2421efb64815408fe9fa81cf6f978084915e",
+        "evidence": [
+          "Complete 91-byte original body (20 instructions), 54 original and 64 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "euler_rotation",
+        "selector": 1
+      },
+      "1414338f0": {
+        "name": "MultiplyAnimationQuaternionByConjugateForEulerChannels",
+        "signature": "AnimationFloat4Register PS4_SYSV MultiplyAnimationQuaternionByConjugateForEulerChannels(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "e369ddde29e7c7cfdc5f3f5a3d2ebad1c5b51d7fa88e28a2314d7a31f33db4a7",
+        "evidence": [
+          "Complete 99-byte original body (21 instructions), 61 original and 71 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "euler_rotation",
+        "selector": 2
+      },
+      "141433960": {
+        "name": "SelectIncomingAnimationQuaternionMode3ForEulerChannels",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationQuaternionMode3ForEulerChannels(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "euler_rotation",
+        "selector": 3
+      },
+      "141433970": {
+        "name": "SelectIncomingAnimationQuaternionMode4ForEulerChannels",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationQuaternionMode4ForEulerChannels(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "euler_rotation",
+        "selector": 4
+      },
+      "141433980": {
+        "name": "SelectIncomingAnimationQuaternionMode0",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationQuaternionMode0(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "quaternion",
+        "selector": 0
+      },
+      "141433990": {
+        "name": "MultiplyAnimationQuaternions",
+        "signature": "AnimationFloat4Register PS4_SYSV MultiplyAnimationQuaternions(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "a658874ca481da6041381087006b2421efb64815408fe9fa81cf6f978084915e",
+        "evidence": [
+          "Complete 91-byte original body (20 instructions), 54 original and 64 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "quaternion",
+        "selector": 1
+      },
+      "1414339f0": {
+        "name": "MultiplyAnimationQuaternionByConjugate",
+        "signature": "AnimationFloat4Register PS4_SYSV MultiplyAnimationQuaternionByConjugate(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "48911f7d72f8572504761a3c03c3dfc1dc007baa3528e243e0be7789cda004fd",
+        "evidence": [
+          "Complete 99-byte original body (21 instructions), 61 original and 71 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "quaternion",
+        "selector": 2
+      },
+      "141433a60": {
+        "name": "SelectIncomingAnimationQuaternionMode3",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationQuaternionMode3(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "quaternion",
+        "selector": 3
+      },
+      "141433a70": {
+        "name": "SelectIncomingAnimationQuaternionMode4",
+        "signature": "AnimationFloat4Register PS4_SYSV SelectIncomingAnimationQuaternionMode4(AnimationFloat4Register current_value, AnimationFloat4Register incoming_value)",
+        "code_sha256": "6b670afba7707fa6fe4a74aa9e9dee59b58a6ba428102246a5af81eac6360c06",
+        "evidence": [
+          "Complete 5-byte original body (2 instructions), 4 original and 14 typed pseudocode lines read.",
+          "49 complete original leaf cases passed with synthetic inputs; original table pointer setup independently verified.",
+          "Independent reopening verified the saved descriptive name, explicit register arguments/result, original bytes and EH boundary.",
+          "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+          "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+          "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+          "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+          "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+          "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+          "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+          "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+        ],
+        "limits": [
+          "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+          "No claim that selectors outside 0..4 or malformed definitions are safe.",
+          "No exact source function/type names recovered.",
+          "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+          "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+        ],
+        "native_cases": 49,
+        "family": "quaternion",
+        "selector": 4
+      }
+    },
+    "native_cases": 2355,
+    "working_register_layout": {
+      "path": "/Dreams/Working/AnimationFloat4Register",
+      "size": 16,
+      "fields": [
+        "x",
+        "y",
+        "z",
+        "w"
+      ],
+      "meaning": "Four float lanes of the observed128-bit register ABI; source class/type names are not claimed."
+    },
+    "mixing_descriptor_records": 27,
+    "findings": [
+      "Five scalar/integer modes: incoming value, sum, left minus right, signed-or-float maximum, signed-or-float minimum.",
+      "Vector2/3/4 callback families operate on all four float register lanes; caller usage establishes the channel dimensionality.",
+      "Both rotation families: modes 0/3/4 select incoming quaternion, mode 1 is left Hamilton product right, mode 2 is left product conjugate(right).",
+      "Mode 2 does not divide by the right quaternion norm; nonunit inputs distinguish conjugation from a general inverse.",
+      "Float maximum/minimum return second-operand bits for equal or unordered operands, including signed zero and NaN payloads.",
+      "Seven five-entry tables in the recipient consumer install these 35 exact original callback addresses; pointer sources verified directly from original LEA instructions.",
+      "Full original assembly and pseudocode read for all 35 callbacks. Working integer/scalar/vector-register signatures are required because automatic prototypes hide inputs or lose upper return lanes.",
+      "Original initializer defines 27 destination/clamp/policy records. Three face-angle channels convert to a quaternion and share the face-quaternion destination; the full consumer remains incomplete."
+    ],
+    "limits": [
+      "Tests establish leaf callback behavior only; complete mixing routine remains partially reviewed.",
+      "No claim that selectors outside 0..4 or malformed definitions are safe.",
+      "No exact source function/type names recovered.",
+      "The vector2/3 families execute 128-bit instructions; names follow their specific channel call sites, while working storage explicitly preserves all 16 bytes.",
+      "Euler half-angle conversion has static evidence and a verified sincosf import; full consumer execution, real-game operation and concurrent initialization remain unverified."
+    ],
+    "whole_consumer_complete": false
   }
 }
