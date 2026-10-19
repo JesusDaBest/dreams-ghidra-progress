@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 814,
+    "done": 816,
     "todo": 1447,
-    "total": 2261,
-    "behavior_or_helpers_reviewed": 740,
+    "total": 2263,
+    "behavior_or_helpers_reviewed": 742,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -28287,12 +28287,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 283,
+        "done": 285,
         "todo": 105,
-        "total": 388,
-        "behavior_or_helpers_reviewed": 266,
+        "total": 390,
+        "behavior_or_helpers_reviewed": 268,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 301,
+        "runtime_functions_identified": 303,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -28540,6 +28540,8 @@
           "DecodeHpackStringTo1024Buffer",
           "ReadHpackPrefixInteger",
           "QueueOrRefreshRecipientEditorEvent",
+          "AllocateRecipientRuntimeInstance",
+          "EnsureRecipientRuntimeInstance",
           "ReadStructuredTextMemberName",
           "GenerateMortonBvhKeysJob",
           "InitializeMortonBvhLeavesJob",
@@ -28932,6 +28934,8 @@
           "1413f92d0",
           "1413f94b0",
           "14142f6f0",
+          "141436e20",
+          "141437080",
           "1414d6330",
           "1414f5a90",
           "1414f5c30",
@@ -29090,12 +29094,12 @@
           {
             "name": "shared/runtime",
             "label": "Game state & runtime",
-            "done": 139,
+            "done": 141,
             "todo": 13,
-            "total": 152,
-            "behavior_or_helpers_reviewed": 139,
+            "total": 154,
+            "behavior_or_helpers_reviewed": 141,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 145,
+            "runtime_functions_identified": 147,
             "property_type_functions_identified": 7,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -29207,6 +29211,8 @@
               "CheckWirePropertyEligibility",
               "ReadShaderFileToAllocatedBuffer",
               "QueueOrRefreshRecipientEditorEvent",
+              "AllocateRecipientRuntimeInstance",
+              "EnsureRecipientRuntimeInstance",
               "ReadReflectedChunkSpans",
               "SkipReflectedChunkBytes",
               "ForwardReflectedChunkSkip",
@@ -29363,6 +29369,8 @@
               "14126d9f0",
               "1413c3150",
               "14142f6f0",
+              "141436e20",
+              "141437080",
               "1415fe600",
               "1415fe7a0",
               "1415fe7f0",
@@ -30068,12 +30076,12 @@
               {
                 "name": "shared/runtime/edit-events",
                 "label": "Edit events",
-                "done": 12,
+                "done": 14,
                 "todo": 0,
-                "total": 12,
-                "behavior_or_helpers_reviewed": 12,
+                "total": 14,
+                "behavior_or_helpers_reviewed": 14,
                 "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 12,
+                "runtime_functions_identified": 14,
                 "property_type_functions_identified": 0,
                 "code_role_unresolved": 0,
                 "whole_feature_completion": null,
@@ -30089,7 +30097,9 @@
                   "SubmitEditorEventForModeMask",
                   "RemapEditorEventIdBySelector",
                   "ApplyEditEventWithInverseHistory",
-                  "QueueOrRefreshRecipientEditorEvent"
+                  "QueueOrRefreshRecipientEditorEvent",
+                  "AllocateRecipientRuntimeInstance",
+                  "EnsureRecipientRuntimeInstance"
                 ],
                 "todo_names": [],
                 "done_addresses": [
@@ -30104,7 +30114,9 @@
                   "140116920",
                   "140116a70",
                   "140b1b7b0",
-                  "14142f6f0"
+                  "14142f6f0",
+                  "141436e20",
+                  "141437080"
                 ],
                 "todo_addresses": [],
                 "unresolved_addresses": [],
@@ -30112,12 +30124,12 @@
                   {
                     "name": "shared/runtime/edit-events/runtime-implementation",
                     "label": "Runtime & implementation",
-                    "done": 12,
+                    "done": 14,
                     "todo": 0,
-                    "total": 12,
-                    "behavior_or_helpers_reviewed": 12,
+                    "total": 14,
+                    "behavior_or_helpers_reviewed": 14,
                     "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 12,
+                    "runtime_functions_identified": 14,
                     "property_type_functions_identified": 0,
                     "code_role_unresolved": 0,
                     "whole_feature_completion": null,
@@ -30133,7 +30145,9 @@
                       "SubmitEditorEventForModeMask",
                       "RemapEditorEventIdBySelector",
                       "ApplyEditEventWithInverseHistory",
-                      "QueueOrRefreshRecipientEditorEvent"
+                      "QueueOrRefreshRecipientEditorEvent",
+                      "AllocateRecipientRuntimeInstance",
+                      "EnsureRecipientRuntimeInstance"
                     ],
                     "todo_names": [],
                     "done_addresses": [
@@ -30148,7 +30162,9 @@
                       "140116920",
                       "140116a70",
                       "140b1b7b0",
-                      "14142f6f0"
+                      "14142f6f0",
+                      "141436e20",
+                      "141437080"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -47385,5 +47401,5 @@
       }
     ]
   },
-  "unmapped": 7366
+  "unmapped": 7364
 }

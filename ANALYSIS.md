@@ -8503,3 +8503,16 @@ The full 745-byte region (158 instructions), 128 original and 142 typed-preview 
 An original-byte reference scan also found the action-buffer handoff missed by the earlier reference snapshot: a bounded block flips the head, processes old-buffer records and clears its count. This is a block-level finding, not a review of the entire large containing routine. Actual recipient type, 16-byte value source type, record lifetime, concurrency and wider combinations remain unresolved. One caller supplies packed `custom hover` text. No game execution or exact Media Molecule source/build match is claimed.
 
 Totals: **860 checked names across 9,627 defined functions**, **2,261 mapped and 7,366 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient runtime instance allocation and reuse
+
+Two more complete helpers have verified descriptive names and working signatures: `AllocateRecipientRuntimeInstance` and `EnsureRecipientRuntimeInstance`. The first reserves a slot in a 128-entry global pool, initializes its identity and definition, and appends its index to a recipient list with 64 entries. The second refreshes a matching active instance or invalidates conflicting identity matches and delegates to the allocator. Returned handles combine a slot index with a generation value.
+
+Review covered all 233 original instructions and all original and typed pseudocode in both helpers. A focused suite passed 135 allocator cases and 96 reuse-or-start cases, comparing the full pool and recipient-list bytes as well as returned handles. These tests use synthetic memory and fixed clock responses. Capacity rejection can leave slot reservations, and generation `0xFFFF` is not skipped locally; whether normal callers can reach those states remains unresolved. Concurrent behavior and live game operation are not established.
+
+Independent reopening verified both saved names and signatures, unchanged original bytes, unchanged function boundaries, and unchanged names/signatures elsewhere. Both allocator caller windows and five of 23 ensure caller windows were reviewed. Concrete definition types, the float parameter's wider meaning, and the large queue consumer's remaining behavior still need investigation. No exact Media Molecule source/build match is claimed.
+
+The queue follow-up also verified the producer/consumer fields: the caller-supplied 16-byte value is used as a string prefix, while the formatted event label is used as the instance identity. Candidate selection uses the verified `strlen`, `strncmp`, and `rand` imports. This is a bounded consumer finding, not completion of that large function.
+
+Totals: **862 checked names across 9,627 defined functions**, **2,263 mapped and 7,364 unmapped**. These are code-review counts, not whole-game completion.

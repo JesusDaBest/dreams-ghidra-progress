@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 860,
+    "checked_and_applied_names": 862,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 860,
+    "verified_names": 862,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "783 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "785 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -27113,5 +27113,77 @@
       "complete_function_cases": 2304,
       "native_invocations": 2304
     }
+  },
+  "recipient_runtime_instances_checkpoint": {
+    "functions": {
+      "141436e20": {
+        "name": "AllocateRecipientRuntimeInstance",
+        "signature": "uint PS4_SYSV AllocateRecipientRuntimeInstance(void * instance_list, void * identity16, void * definition, int initial_state, float float_parameter)",
+        "code_sha256": "9a6f0e0ddbdf785c83b8b5eb46d08634ad99827ddcb4ba0e84e4e76e7b5bc889",
+        "evidence": [
+          "Full 595-byte original body (119 instructions), 117 original and 127 typed pseudocode lines reviewed.",
+          "135 bounded original-function cases passed with complete pool/list byte comparisons and explicit clock fixtures.",
+          "Reviewed 2 of 2 identified direct caller windows.",
+          "128 global runtime slots,64 index entries per recipient and a16-bit generation form the observed instance registry.",
+          "Allocator reserves the first free generation field, initializes an identity16 and optional definition, records float parameter and state, activates nonnull definitions and appends the slot index.",
+          "Ensure reuses the first active matching identity and definition, with an optional signed-byte-negative condition; otherwise it invalidates conflicting identity matches and delegates to the allocator.",
+          "Returned handles pack generation in the high16 bits and index in the low16 bits; timestamp refresh uses previously resolved process counter/frequency imports.",
+          "Capacity rejection and generationFFFF behavior are documented as local original behavior with normal-caller validity unresolved.",
+          "Names describe the verified role; concrete subsystem asset/definition types remain opaque."
+        ],
+        "limits": [
+          "No concurrency claim; locked instructions execute only against isolated synthetic memory.",
+          "Generation/sentinel and full-capacity cases establish local behavior,not whether normal game callers permit those inputs.",
+          "Definition semantics, whole lifecycle and exact source names remain unresolved.",
+          "Only two allocator caller windows and five of 23 ensure caller windows were reviewed; full callers and indirect references remain unreviewed.",
+          "No exact Media Molecule source/build match is established."
+        ],
+        "native_cases": 135
+      },
+      "141437080": {
+        "name": "EnsureRecipientRuntimeInstance",
+        "signature": "uint PS4_SYSV EnsureRecipientRuntimeInstance(void * instance_list, void * identity16, void * definition, uchar require_negative_definition_state, int initial_state, float float_parameter)",
+        "code_sha256": "f2c230e798f3c4bd7fdda781aa3850567b313ff572856f1af871e0abce1df9cb",
+        "evidence": [
+          "Full 509-byte original body (114 instructions), 93 original and 104 typed pseudocode lines reviewed.",
+          "96 bounded original-function cases passed with complete pool/list byte comparisons and explicit clock fixtures.",
+          "Reviewed 5 of 23 identified direct caller windows.",
+          "128 global runtime slots,64 index entries per recipient and a16-bit generation form the observed instance registry.",
+          "Allocator reserves the first free generation field, initializes an identity16 and optional definition, records float parameter and state, activates nonnull definitions and appends the slot index.",
+          "Ensure reuses the first active matching identity and definition, with an optional signed-byte-negative condition; otherwise it invalidates conflicting identity matches and delegates to the allocator.",
+          "Returned handles pack generation in the high16 bits and index in the low16 bits; timestamp refresh uses previously resolved process counter/frequency imports.",
+          "Capacity rejection and generationFFFF behavior are documented as local original behavior with normal-caller validity unresolved.",
+          "Names describe the verified role; concrete subsystem asset/definition types remain opaque."
+        ],
+        "limits": [
+          "No concurrency claim; locked instructions execute only against isolated synthetic memory.",
+          "Generation/sentinel and full-capacity cases establish local behavior,not whether normal game callers permit those inputs.",
+          "Definition semantics, whole lifecycle and exact source names remain unresolved.",
+          "Only two allocator caller windows and five of 23 ensure caller windows were reviewed; full callers and indirect references remain unreviewed.",
+          "No exact Media Molecule source/build match is established."
+        ],
+        "native_cases": 96
+      }
+    },
+    "native_cases": {
+      "allocator": 135,
+      "ensure": 96
+    },
+    "case_total": 231,
+    "findings": [
+      "128 global runtime slots,64 index entries per recipient and a16-bit generation form the observed instance registry.",
+      "Allocator reserves the first free generation field, initializes an identity16 and optional definition, records float parameter and state, activates nonnull definitions and appends the slot index.",
+      "Ensure reuses the first active matching identity and definition, with an optional signed-byte-negative condition; otherwise it invalidates conflicting identity matches and delegates to the allocator.",
+      "Returned handles pack generation in the high16 bits and index in the low16 bits; timestamp refresh uses previously resolved process counter/frequency imports.",
+      "Capacity rejection and generationFFFF behavior are documented as local original behavior with normal-caller validity unresolved.",
+      "Names describe the verified role; concrete subsystem asset/definition types remain opaque."
+    ],
+    "limits": [
+      "No concurrency claim; locked instructions execute only against isolated synthetic memory.",
+      "Generation/sentinel and full-capacity cases establish local behavior,not whether normal game callers permit those inputs.",
+      "Definition semantics, whole lifecycle and exact source names remain unresolved.",
+      "Only two allocator caller windows and five of 23 ensure caller windows were reviewed; full callers and indirect references remain unreviewed.",
+      "No exact Media Molecule source/build match is established."
+    ]
   }
 }

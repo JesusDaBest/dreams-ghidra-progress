@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "783 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "785 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8612,
-    "other_names": 1015,
-    "verification": "complete_inventory_matches_baseline_plus_783_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8610,
+    "other_names": 1017,
+    "verification": "complete_inventory_matches_baseline_plus_785_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -20119,6 +20119,64 @@
         "Recipient identity and16-byte value source type remain opaque;string-like examples do not recover full type.",
         "Synthetic bounded tests;formatting/clocks use fixtures,not original platform implementations.",
         "Actual queue/lifetime/concurrency,broader event combinations and full containing callers unresolved;no in-game validation or exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "141436e20",
+      "original_name": "FUN_141436e20",
+      "applied_name": "AllocateRecipientRuntimeInstance",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV AllocateRecipientRuntimeInstance(void * instance_list, void * identity16, void * definition, int initial_state, float float_parameter)",
+      "evidence": [
+        "Full 595-byte original body (119 instructions), 117 original and 127 typed pseudocode lines reviewed.",
+        "135 bounded original-function cases passed with complete pool/list byte comparisons and explicit clock fixtures.",
+        "Reviewed 2 of 2 identified direct caller windows.",
+        "128 global runtime slots,64 index entries per recipient and a16-bit generation form the observed instance registry.",
+        "Allocator reserves the first free generation field, initializes an identity16 and optional definition, records float parameter and state, activates nonnull definitions and appends the slot index.",
+        "Ensure reuses the first active matching identity and definition, with an optional signed-byte-negative condition; otherwise it invalidates conflicting identity matches and delegates to the allocator.",
+        "Returned handles pack generation in the high16 bits and index in the low16 bits; timestamp refresh uses previously resolved process counter/frequency imports.",
+        "Capacity rejection and generationFFFF behavior are documented as local original behavior with normal-caller validity unresolved.",
+        "Names describe the verified role; concrete subsystem asset/definition types remain opaque."
+      ],
+      "caveats": [
+        "No concurrency claim; locked instructions execute only against isolated synthetic memory.",
+        "Generation/sentinel and full-capacity cases establish local behavior,not whether normal game callers permit those inputs.",
+        "Definition semantics, whole lifecycle and exact source names remain unresolved.",
+        "Only two allocator caller windows and five of 23 ensure caller windows were reviewed; full callers and indirect references remain unreviewed.",
+        "No exact Media Molecule source/build match is established."
+      ]
+    },
+    {
+      "address": "141437080",
+      "original_name": "FUN_141437080",
+      "applied_name": "EnsureRecipientRuntimeInstance",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uint PS4_SYSV EnsureRecipientRuntimeInstance(void * instance_list, void * identity16, void * definition, uchar require_negative_definition_state, int initial_state, float float_parameter)",
+      "evidence": [
+        "Full 509-byte original body (114 instructions), 93 original and 104 typed pseudocode lines reviewed.",
+        "96 bounded original-function cases passed with complete pool/list byte comparisons and explicit clock fixtures.",
+        "Reviewed 5 of 23 identified direct caller windows.",
+        "128 global runtime slots,64 index entries per recipient and a16-bit generation form the observed instance registry.",
+        "Allocator reserves the first free generation field, initializes an identity16 and optional definition, records float parameter and state, activates nonnull definitions and appends the slot index.",
+        "Ensure reuses the first active matching identity and definition, with an optional signed-byte-negative condition; otherwise it invalidates conflicting identity matches and delegates to the allocator.",
+        "Returned handles pack generation in the high16 bits and index in the low16 bits; timestamp refresh uses previously resolved process counter/frequency imports.",
+        "Capacity rejection and generationFFFF behavior are documented as local original behavior with normal-caller validity unresolved.",
+        "Names describe the verified role; concrete subsystem asset/definition types remain opaque."
+      ],
+      "caveats": [
+        "No concurrency claim; locked instructions execute only against isolated synthetic memory.",
+        "Generation/sentinel and full-capacity cases establish local behavior,not whether normal game callers permit those inputs.",
+        "Definition semantics, whole lifecycle and exact source names remain unresolved.",
+        "Only two allocator caller windows and five of 23 ensure caller windows were reviewed; full callers and indirect references remain unreviewed.",
+        "No exact Media Molecule source/build match is established."
       ]
     }
   ],
