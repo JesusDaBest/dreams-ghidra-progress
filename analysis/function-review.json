@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "785 existing-function renames,113 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "786 existing-function renames,116 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9664,
-    "default_fun_names": 8610,
-    "other_names": 1054,
-    "verification": "complete_inventory_matches_baseline_plus_785_renames_and_113_created_functions_and_1_reviewed_existing_name"
+    "total": 9667,
+    "default_fun_names": 8609,
+    "other_names": 1058,
+    "verification": "complete_inventory_matches_baseline_plus_786_renames_and_116_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -1108,7 +1108,7 @@
       "persistence_verification": "verified_after_clean_stop_and_reopening",
       "confidence": "high",
       "evidence": [
-        "All324 assembly instructions and complete cached C reviewed: eight-byte entries contain a32-bit key and value; capacity is read at table+0x20000.",
+        "All324 assembly instructions and complete cached C reviewed: eight-byte entries contain a 32-bit key and value; capacity is read at table+0x20000.",
         "Sixteen unrolled probes repeatedly hash the previous full hash, mask by capacity-1, compare keys, and return value+4 on match; an empty key or probe exhaustion returns0xffffffff. No memory writes or calls.",
         "Four direct callers are within the game-merge routine; captured caller assembly translates three endpoint values before emitting a merged relationship. Full merge semantics remain under review.",
         "All987 instruction bytes contiguous; all direct branch targets present;16 key comparisons and16 hash multiplications audited."
@@ -3944,7 +3944,7 @@
       ],
       "calling_convention": "PS4_SYSV",
       "saved_working_signature": "uchar ReadCompactUnsigned32(void * stream, uint * output)",
-      "signature_basis": "Native body dereferences stream vtable, writes a32-bit output and returns low-byte status. Single discovered schema caller tests AL. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
+      "signature_basis": "Native body dereferences stream vtable, writes a 32-bit output and returns low-byte status. Single discovered schema caller tests AL. Isolated six-signature trial and promotion decompiled the six helpers and three callers; exact register storage and fresh-reopen bytes/references verified."
     },
     {
       "address": "141607c40",
@@ -12699,7 +12699,7 @@
       "calling_convention": "PS4_SYSV",
       "saved_working_signature": "uint PS4_SYSV InitializeAuxiliaryImageDescriptorFromColorTarget(void * image_descriptor_out, void * color_target_descriptor)",
       "evidence": [
-        "Complete262 original instructions read andbyte matched; runtime caller and187 address-binding helperinstructions traced.",
+        "Complete262 original instructions read andbyte matched; runtime caller and 187 address-binding helperinstructions traced.",
         "Selector64 independentlydecodedtable cases;2240constructor slice/gatecases with1248formatroundtrips;120connectedbindingcases.",
         "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives.",
         "Follow-up replaces earlier120 bindingcases with120 valid-source-format cases matching exact table-derived masks; all enabled resolver inputs verified."
@@ -12723,7 +12723,7 @@
       "calling_convention": "PS4_SYSV",
       "saved_working_signature": "uint PS4_SYSV SelectPackedAuxiliaryImageFormat(uint sample_code, uint fragment_code)",
       "evidence": [
-        "Complete262 original instructions read andbyte matched; runtime caller and187 address-binding helperinstructions traced.",
+        "Complete262 original instructions read andbyte matched; runtime caller and 187 address-binding helperinstructions traced.",
         "Selector64 independentlydecodedtable cases;2240constructor slice/gatecases with1248formatroundtrips;120connectedbindingcases.",
         "Backed-up trial andindependent trial/main reopening verified expected signatures, unchanged bytes andarchives."
       ],
@@ -17070,7 +17070,7 @@
       "evidence": [
         "Complete 280-instruction geometric predicate reviewed and original bytes verified.",
         "Sprite record builder is the recorded direct caller; input transform, extent and angle are traced.",
-        "2592 identity and18432 rotated native executions match independent transform and five-plane support calculations.",
+        "2592 identity and 18432 rotated native executions match independent transform and five-plane support calculations.",
         "Original renderer side-plane construction verified in108 bounded executions;256 connected original Sprite/geometry/cache-hit executions compare complete states.",
         "Independent reopening verifies custom SIMD/register signature,decompilation,original instructions and all9605 other names/signatures."
       ],
@@ -18968,7 +18968,7 @@
         "Complete original936-byte/194instruction body,full310-line C and placement caller reviewed.",
         "RDI opaque editor,ESI enable int,RDX optional changedbyte;returns full16-byte quaternion inXMM0.",
         "Stored17610 quaternion retained when disabled or any210/211/17654/17653 gate is set.",
-        "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
+        "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and 180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
         "448original-code cases cover gates,unit axes,canonical sign pairs,equal inputs and changedbyte behavior with hostacosf/sinf/cosf adapters.",
         "Saved name/full-vector signature independently reopened;original bytes and all other function annotations unchanged."
       ],
@@ -19097,7 +19097,7 @@
         "Full565-byte/156instruction comparator,all50dispatch entries and both47-byte delegate bodies read.",
         "Original switch/body repair saved and independently reopened before naming.",
         "Explicit opaque two-pointer RDI/RSI working signature and AL boolean return.",
-        "4366original-code cases across all50tabletags:4184direct and182delegated cases.",
+        "4366original-code cases across all50tabletags:4184direct and 182delegated cases.",
         "Common metadata uses integerbit equality;tag40addsorderedfloat metadata equality andtag43usesorderedfloat payload comparison.",
         "Reversible descriptive name independently reopened;original bytes and other names/signatures unchanged."
       ],
@@ -19224,7 +19224,7 @@
         "Projection path selects effective offsets from zero dimensions,measures remaining lanes,restores stored lanes and computes placement-relative output.",
         "Orientation adjustment aligns selected construction axis toward nearer signed pivot direction,with distance interpolation unless snap flag bypasses it.",
         "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
-        "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
+        "30bounded suites total11926cases:10062function-path cases and 1864extracted scalar-snap block cases;fixture boundaries retained.",
         "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
       ],
       "caveats": [
@@ -21355,6 +21355,104 @@
         "Original comparison handles unordered/NaN accumulation through the recipient flag; generated C loses that behavior. Assembly and native checks take precedence.",
         "Multi-record identity scan, index truncation and invalid current-group indices were not executed in the native suite.",
         "No whole-consumer, shader or live-game execution verified."
+      ]
+    },
+    {
+      "address": "141437970",
+      "original_name": "FUN_141437970",
+      "applied_name": "ProjectRecipientPointAndStoreTriangleCoordinates",
+      "created_function": false,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "AnimationFloat4Register PS4_SYSV ProjectRecipientPointAndStoreTriangleCoordinates(void * triangle_coordinates, AnimationFloat4Register point)",
+      "evidence": [
+        "Complete 773-byte original body and full typed helper preview read; 18 focused original-code cases passed with synthetic fixtures.",
+        "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+        "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+      ],
+      "caveats": [
+        "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+        "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+        "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+        "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+        "No exact Media Molecule source/build match is established."
+      ]
+    },
+    {
+      "address": "14148a980",
+      "original_name": null,
+      "applied_name": "AppendDecorationPointGroup",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendDecorationPointGroup(void * output_context, uint group_kind, void * point_range, uint mode, AnimationFloat4Register colour)",
+      "evidence": [
+        "Complete 1149-byte original body and full typed helper preview read; 224 focused original-code cases passed with synthetic fixtures.",
+        "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+        "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+      ],
+      "caveats": [
+        "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+        "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+        "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+        "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+        "No exact Media Molecule source/build match is established."
+      ]
+    },
+    {
+      "address": "14147f1b0",
+      "original_name": null,
+      "applied_name": "UpsertTaggedRecipientOutput",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpsertTaggedRecipientOutput(void * output_context, uint kind, undefined8 identity_low, undefined8 identity_high, int priority, AnimationFloat4Register value)",
+      "evidence": [
+        "Complete 473-byte original body and full typed helper preview read; 276 focused original-code cases passed with synthetic fixtures.",
+        "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+        "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+      ],
+      "caveats": [
+        "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+        "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+        "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+        "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+        "No exact Media Molecule source/build match is established."
+      ]
+    },
+    {
+      "address": "1414231b0",
+      "original_name": null,
+      "applied_name": "UpdateEditorRecipientPoseAndAnimations",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateEditorRecipientPoseAndAnimations(void * recipient, void * input_context, undefined8 opaque_value_a, undefined8 opaque_value_b, uint update_flags)",
+      "evidence": [
+        "Complete 40487-byte body: all 7497 original instructions and 7848 original cached pseudocode lines read.",
+        "Updates editor-recipient poses and interaction state, processes event queues, manages/evaluates runtime animations and blends mouth/face/body/light/sound/decoration outputs.",
+        "Five observed register inputs remain two opaque pointers, two opaque 64-bit values and a 32-bit update flag; unknown types are retained.",
+        "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+        "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+      ],
+      "caveats": [
+        "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+        "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+        "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+        "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+        "No exact Media Molecule source/build match is established."
       ]
     }
   ],

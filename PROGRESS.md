@@ -7984,3 +7984,14 @@ All 130 original instructions and both original and typed pseudocode were read. 
 The surrounding wipe-record updater and shader-loading path were also read, but are not credited as completed functions. Multi-record lookup cases, exact mode names, the larger consumer and live-game behavior remain unfinished.
 
 Totals: **899 checked names across 9,664 defined functions**, **2,300 mapped and 7,364 unmapped**. These counts describe reviewed code, not whole-game completion.
+
+
+### Editor-recipient poses, animations and output interfaces
+
+The complete update routine now has the descriptive name `UpdateEditorRecipientPoseAndAnimations`. Its static review covered all 7,497 original instructions and 7,848 cached pseudocode lines. It updates poses and interaction transitions, processes event queues, manages and evaluates animations, blends appearance data, emits light/sound/decoration outputs and checks final transforms. Its five observed inputs retain unknown types explicitly. The entire routine has not been executed or verified in-game.
+
+Three related helpers now have reviewed names and complete working register interfaces: `AppendDecorationPointGroup`, `UpsertTaggedRecipientOutput`, and `ProjectRecipientPointAndStoreTriangleCoordinates`. The last helper returns a full four-lane vector, which the previous automatic prototype lost. Correcting these interfaces also restores missing context, kind, range, mode and vector arguments in the update routine's generated calls. Independent reopening verified the saved metadata and original byte spans. The corrected caller interfaces were inspected; the entire regenerated caller text was not reread.
+
+New original-code checks passed 276 tagged-output cases, 224 decoration-buffer cases and 18 mesh-projection cases. These use synthetic fixtures and cover specific matching, capacity, output and hit/miss behavior. Arbitrary meshes, all floating-point edge cases and every decoration numeric attribute remain unverified. Concrete original classes and an exact developer-source/build match remain unresolved.
+
+Totals: **903 checked names across 9,667 defined functions**, **2,304 mapped and 7,363 unmapped**. These are code-review counts, not whole-game completion percentages.

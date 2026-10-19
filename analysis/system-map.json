@@ -4,9 +4,9 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9664,
-  "mapped_total": 2300,
-  "unmapped_total": 7364,
+  "inventory_total": 9667,
+  "mapped_total": 2304,
+  "unmapped_total": 7363,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -40910,7 +40910,7 @@
           "kind": "complete_assembly_and_merge_callers",
           "name": "LookupU32HashTableValue",
           "support": [
-            "All324 assembly instructions and complete cached C reviewed: eight-byte entries contain a32-bit key and value; capacity is read at table+0x20000.",
+            "All324 assembly instructions and complete cached C reviewed: eight-byte entries contain a 32-bit key and value; capacity is read at table+0x20000.",
             "Sixteen unrolled probes repeatedly hash the previous full hash, mask by capacity-1, compare keys, and return value+4 on match; an empty key or probe exhaustion returns0xffffffff. No memory writes or calls.",
             "Four direct callers are within the game-merge routine; captured caller assembly translates three endpoint values before emitting a merged relationship. Full merge semantics remain under review.",
             "All987 instruction bytes contiguous; all direct branch targets present;16 key comparisons and16 hash multiplications audited."
@@ -54171,7 +54171,7 @@
           "support": [
             "Complete 280-instruction geometric predicate reviewed and original bytes verified.",
             "Sprite record builder is the recorded direct caller; input transform, extent and angle are traced.",
-            "2592 identity and18432 rotated native executions match independent transform and five-plane support calculations.",
+            "2592 identity and 18432 rotated native executions match independent transform and five-plane support calculations.",
             "Original renderer side-plane construction verified in108 bounded executions;256 connected original Sprite/geometry/cache-hit executions compare complete states.",
             "Independent reopening verifies custom SIMD/register signature,decompilation,original instructions and all9605 other names/signatures."
           ]
@@ -56192,7 +56192,7 @@
             "Complete original936-byte/194instruction body,full310-line C and placement caller reviewed.",
             "RDI opaque editor,ESI enable int,RDX optional changedbyte;returns full16-byte quaternion inXMM0.",
             "Stored17610 quaternion retained when disabled or any210/211/17654/17653 gate is set.",
-            "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
+            "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and 180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
             "448original-code cases cover gates,unit axes,canonical sign pairs,equal inputs and changedbyte behavior with hostacosf/sinf/cosf adapters.",
             "Saved name/full-vector signature independently reopened;original bytes and all other function annotations unchanged."
           ]
@@ -56326,7 +56326,7 @@
             "Full565-byte/156instruction comparator,all50dispatch entries and both47-byte delegate bodies read.",
             "Original switch/body repair saved and independently reopened before naming.",
             "Explicit opaque two-pointer RDI/RSI working signature and AL boolean return.",
-            "4366original-code cases across all50tabletags:4184direct and182delegated cases.",
+            "4366original-code cases across all50tabletags:4184direct and 182delegated cases.",
             "Common metadata uses integerbit equality;tag40addsorderedfloat metadata equality andtag43usesorderedfloat payload comparison.",
             "Reversible descriptive name independently reopened;original bytes and other names/signatures unchanged."
           ]
@@ -56483,7 +56483,7 @@
             "Projection path selects effective offsets from zero dimensions,measures remaining lanes,restores stored lanes and computes placement-relative output.",
             "Orientation adjustment aligns selected construction axis toward nearer signed pivot direction,with distance interpolation unless snap flag bypasses it.",
             "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
-            "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
+            "30bounded suites total11926cases:10062function-path cases and 1864extracted scalar-snap block cases;fixture boundaries retained.",
             "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
           ]
         }
@@ -58810,6 +58810,108 @@
             "378 complete original-code cases passed with synthetic inputs; all fixture buffers hashed before and after each call.",
             "Checks editor tool/object-kind conditions and global records used by the wipe-effect renderer. Original shader loader references wipe_effect.cpp and WipeEffectUpdate.cs.pssl.",
             "Independent reopening verified the saved descriptive name, three pointer arguments in RDI/RSI/RDX, boolean result in AL, original bytes and boundary."
+          ]
+        }
+      ]
+    },
+    "141437970": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified editor-recipient update and direct output-helper call chain. Role follows the shared editor-event runtime; concrete source class is not claimed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body and typed interface review,independent reopening and scoped original-code checks; whole game unverified.",
+      "code_sha256": "07b7f8bd76ab85d47ff89ed84e3a951d29cc246773e1f4b9df944c9cd573da49",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ProjectRecipientPointAndStoreTriangleCoordinates",
+          "support": [
+            "Complete 773-byte original body and full typed helper preview read; 18 focused original-code cases passed with synthetic fixtures.",
+            "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+            "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+          ]
+        }
+      ]
+    },
+    "14148a980": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified editor-recipient update and direct output-helper call chain. Role follows the shared editor-event runtime; concrete source class is not claimed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body and typed interface review,independent reopening and scoped original-code checks; whole game unverified.",
+      "code_sha256": "a96efc7a437aca9621271ced5f2d1e93451513b8344ab39d4753058714deccd0",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendDecorationPointGroup",
+          "support": [
+            "Complete 1149-byte original body and full typed helper preview read; 224 focused original-code cases passed with synthetic fixtures.",
+            "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+            "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+          ]
+        }
+      ]
+    },
+    "14147f1b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified editor-recipient update and direct output-helper call chain. Role follows the shared editor-event runtime; concrete source class is not claimed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body and typed interface review,independent reopening and scoped original-code checks; whole game unverified.",
+      "code_sha256": "d341d3d396885a35900c597bca2eccfe65240a955c9633e00a9b64627eccb981",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpsertTaggedRecipientOutput",
+          "support": [
+            "Complete 473-byte original body and full typed helper preview read; 276 focused original-code cases passed with synthetic fixtures.",
+            "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+            "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+          ]
+        }
+      ]
+    },
+    "1414231b0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Verified editor-recipient update and direct output-helper call chain. Role follows the shared editor-event runtime; concrete source class is not claimed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original body and typed interface review,independent reopening and scoped original-code checks; whole game unverified.",
+      "code_sha256": "ff219ed9aee05acdd30bfb97e3eaf792a09a4fc3cd1dc66b4cd1a8cb48b47142",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateEditorRecipientPoseAndAnimations",
+          "support": [
+            "Complete 40487-byte body: all 7497 original instructions and 7848 original cached pseudocode lines read.",
+            "Updates editor-recipient poses and interaction state, processes event queues, manages/evaluates runtime animations and blends mouth/face/body/light/sound/decoration outputs.",
+            "Five observed register inputs remain two opaque pointers, two opaque 64-bit values and a 32-bit update flag; unknown types are retained.",
+            "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+            "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
           ]
         }
       ]

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 899,
+    "checked_and_applied_names": 903,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 899,
-    "function_count": 9664,
+    "verified_names": 903,
+    "function_count": 9667,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1993,6 +1993,7 @@
       "1413f92d0",
       "1413f94b0",
       "141422a40",
+      "1414231b0",
       "141432560",
       "1414336f0",
       "141433700",
@@ -2029,6 +2030,8 @@
       "1414339f0",
       "141433a60",
       "141433a70",
+      "14147f1b0",
+      "14148a980",
       "1414f5a90",
       "1414f5c30",
       "1414f5cf0",
@@ -2039,9 +2042,9 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "785 existing-function renames,113 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "786 existing-function renames,116 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true,
-    "new_functions_basis": "Complete saved inventory minus original9551-entry baseline, refreshed after independent tool-and-wipe predicate reopening."
+    "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
   "composite_reader_signature_verification": {
@@ -5378,7 +5381,7 @@
     "byte_exact_roundtrip": true,
     "findings": [
       "Lane index is workgroup_id*64+local_id; lanes with index>=count terminate.",
-      "A loaded flag word gates the branch on original bit13 via32-bit left shift18 and signed-negative test.",
+      "A loaded flag word gates the branch on original bit13 via 32-bit left shift18 and signed-negative test.",
       "Enabled lanes compute a three-component value from old_value + vector_parameter.xyz*step*formatted_component.w.",
       "Disabled lanes store zero as the three-component value.",
       "The four-component input advances XYZ by step times the stored three-component value; its fourth component is preserved."
@@ -20215,7 +20218,7 @@
     "evidence": [
       "Complete 280-instruction geometric predicate reviewed and original bytes verified.",
       "Sprite record builder is the recorded direct caller; input transform, extent and angle are traced.",
-      "2592 identity and18432 rotated native executions match independent transform and five-plane support calculations.",
+      "2592 identity and 18432 rotated native executions match independent transform and five-plane support calculations.",
       "Original renderer side-plane construction verified in108 bounded executions;256 connected original Sprite/geometry/cache-hit executions compare complete states.",
       "Independent reopening verifies custom SIMD/register signature,decompilation,original instructions and all9605 other names/signatures."
     ],
@@ -26068,7 +26071,7 @@
       "Complete original936-byte/194instruction body,full310-line C and placement caller reviewed.",
       "RDI opaque editor,ESI enable int,RDX optional changedbyte;returns full16-byte quaternion inXMM0.",
       "Stored17610 quaternion retained when disabled or any210/211/17654/17653 gate is set.",
-      "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
+      "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and 180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
       "448original-code cases cover gates,unit axes,canonical sign pairs,equal inputs and changedbyte behavior with hostacosf/sinf/cosf adapters.",
       "Saved name/full-vector signature independently reopened;original bytes and all other function annotations unchanged."
     ],
@@ -26217,7 +26220,7 @@
       "Full565-byte/156instruction comparator,all50dispatch entries and both47-byte delegate bodies read.",
       "Original switch/body repair saved and independently reopened before naming.",
       "Explicit opaque two-pointer RDI/RSI working signature and AL boolean return.",
-      "4366original-code cases across all50tabletags:4184direct and182delegated cases.",
+      "4366original-code cases across all50tabletags:4184direct and 182delegated cases.",
       "Common metadata uses integerbit equality;tag40addsorderedfloat metadata equality andtag43usesorderedfloat payload comparison.",
       "Reversible descriptive name independently reopened;original bytes and other names/signatures unchanged."
     ],
@@ -26338,7 +26341,7 @@
       "Projection path selects effective offsets from zero dimensions,measures remaining lanes,restores stored lanes and computes placement-relative output.",
       "Orientation adjustment aligns selected construction axis toward nearer signed pivot direction,with distance interpolation unless snap flag bypasses it.",
       "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
-      "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
+      "30bounded suites total11926cases:10062function-path cases and 1864extracted scalar-snap block cases;fixture boundaries retained.",
       "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
     ],
     "limits": [
@@ -28384,5 +28387,107 @@
     ],
     "native_cases": 378,
     "whole_consumer_complete": false
+  },
+  "editor_recipient_update_checkpoint": {
+    "functions": {
+      "141437970": {
+        "name": "ProjectRecipientPointAndStoreTriangleCoordinates",
+        "signature": "AnimationFloat4Register PS4_SYSV ProjectRecipientPointAndStoreTriangleCoordinates(void * triangle_coordinates, AnimationFloat4Register point)",
+        "original_sha256": "07b7f8bd76ab85d47ff89ed84e3a951d29cc246773e1f4b9df944c9cd573da49",
+        "native_cases": 18,
+        "size": 773,
+        "created": false,
+        "c_sha256": "bf63ab1b04f950cf8713b0801ea552048ee8601e72ec20f51681cb58b7b8276d",
+        "nonempty_c_lines": 264,
+        "evidence": [
+          "Complete 773-byte original body and full typed helper preview read; 18 focused original-code cases passed with synthetic fixtures.",
+          "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+          "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+        ],
+        "limits": [
+          "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+          "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+          "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+          "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+          "No exact Media Molecule source/build match is established."
+        ]
+      },
+      "14148a980": {
+        "name": "AppendDecorationPointGroup",
+        "signature": "void PS4_SYSV AppendDecorationPointGroup(void * output_context, uint group_kind, void * point_range, uint mode, AnimationFloat4Register colour)",
+        "original_sha256": "a96efc7a437aca9621271ced5f2d1e93451513b8344ab39d4753058714deccd0",
+        "native_cases": 224,
+        "size": 1149,
+        "created": true,
+        "c_sha256": "69143dbe1411ba3bc81158d3e36000197cff4fca81b5cbdff08ab93501fdeb54",
+        "nonempty_c_lines": 312,
+        "evidence": [
+          "Complete 1149-byte original body and full typed helper preview read; 224 focused original-code cases passed with synthetic fixtures.",
+          "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+          "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+        ],
+        "limits": [
+          "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+          "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+          "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+          "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+          "No exact Media Molecule source/build match is established."
+        ]
+      },
+      "14147f1b0": {
+        "name": "UpsertTaggedRecipientOutput",
+        "signature": "void PS4_SYSV UpsertTaggedRecipientOutput(void * output_context, uint kind, undefined8 identity_low, undefined8 identity_high, int priority, AnimationFloat4Register value)",
+        "original_sha256": "d341d3d396885a35900c597bca2eccfe65240a955c9633e00a9b64627eccb981",
+        "native_cases": 276,
+        "size": 473,
+        "created": true,
+        "c_sha256": "e286237ff6aed598a40a43647f0a617fc36d3c4bfee067a3e8921471b92f850f",
+        "nonempty_c_lines": 127,
+        "evidence": [
+          "Complete 473-byte original body and full typed helper preview read; 276 focused original-code cases passed with synthetic fixtures.",
+          "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+          "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+        ],
+        "limits": [
+          "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+          "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+          "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+          "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+          "No exact Media Molecule source/build match is established."
+        ]
+      },
+      "1414231b0": {
+        "name": "UpdateEditorRecipientPoseAndAnimations",
+        "signature": "void PS4_SYSV UpdateEditorRecipientPoseAndAnimations(void * recipient, void * input_context, undefined8 opaque_value_a, undefined8 opaque_value_b, uint update_flags)",
+        "size": 40487,
+        "created": true,
+        "original_sha256": "ff219ed9aee05acdd30bfb97e3eaf792a09a4fc3cd1dc66b4cd1a8cb48b47142",
+        "native_cases": null,
+        "evidence": [
+          "Complete 40487-byte body: all 7497 original instructions and 7848 original cached pseudocode lines read.",
+          "Updates editor-recipient poses and interaction state, processes event queues, manages/evaluates runtime animations and blends mouth/face/body/light/sound/decoration outputs.",
+          "Five observed register inputs remain two opaque pointers, two opaque 64-bit values and a 32-bit update flag; unknown types are retained.",
+          "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
+          "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+        ],
+        "limits": [
+          "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+          "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+          "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+          "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+          "No exact Media Molecule source/build match is established."
+        ]
+      }
+    },
+    "new_helper_native_cases": 518,
+    "whole_update_body_static_reviewed": true,
+    "whole_update_native_tested": false,
+    "limits": [
+      "Names and register layouts are analyst descriptions; concrete original classes and source types remain unresolved.",
+      "The large update routine has complete static body review, but no whole-routine native or live-game validation.",
+      "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
+      "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
+      "No exact Media Molecule source/build match is established."
+    ]
   }
 }
