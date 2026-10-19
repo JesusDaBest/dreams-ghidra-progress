@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9627,
-  "mapped_total": 2260,
-  "unmapped_total": 7367,
+  "mapped_total": 2261,
+  "unmapped_total": 7366,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57507,6 +57507,33 @@
             "66046 complete original-helper cases,no callee/import fixtures:all65534 other16bit values preserved for tested selector,and all256 selector bytes covered for both4C/4D.",
             "Exact mappings:4C with selectors3/42->4E,5->4F,29->50,otherwise51;4D same categories52/53/54/55.",
             "Independent reopen verified descriptive name and ushort/uchar-to-ushort working ABI,preserving body,bytes and other names/signatures."
+          ]
+        }
+      ]
+    },
+    "14142f6f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original action-buffer dispatch calls this recipient-local editor-event queue/coalescing routine.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full745-byte158instruction region,128 original/142 typed pseudocode lines and all3 direct windows;2304 original-recipient cases with bounded fixtures.",
+      "code_sha256": "c188ee647aa7257bf30bba540997fe7cd87e76c6c90d77ea4cd1bfd0b7c633e5",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "QueueOrRefreshRecipientEditorEvent",
+          "support": [
+            "Full745-byte158instruction region,128 original/142 typed-preview pseudocode lines and all3 identified direct caller windows reviewed.",
+            "2304 complete original-recipient cases cover enable gate,duplicate/countdown refresh,capacity4,append fields/timing/text,sleeping identity cache/list invalidation and generationFFFF exception.",
+            "Invalidation tests execute original100-byte identity helper;append uses exact-argument formatting and fixed clock fixtures.",
+            "Queue-consumer block dispatches records here;another caller supplies event15 and packed custom hover value.",
+            "Independent reopen verified descriptive name and working recipient/event/value16/float ABI,unchanged bytes,155-instruction body and other names/signatures;NOPs/trap checked separately."
           ]
         }
       ]

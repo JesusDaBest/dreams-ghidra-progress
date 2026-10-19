@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "782 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "783 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8613,
-    "other_names": 1014,
-    "verification": "complete_inventory_matches_baseline_plus_782_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8612,
+    "other_names": 1015,
+    "verification": "complete_inventory_matches_baseline_plus_783_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -20096,6 +20096,29 @@
         "Selector source field meaning and full enclosing parent routine unreviewed.",
         "Only consumed16bit event/return and byte selector modeled;original source-level types and upper bits not claimed recovered.",
         "Indirect callers not exhaustively identified;no actual game or exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "14142f6f0",
+      "original_name": "FUN_14142f6f0",
+      "applied_name": "QueueOrRefreshRecipientEditorEvent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV QueueOrRefreshRecipientEditorEvent(void * recipient, ushort event_id, void * value16, float float_payload)",
+      "evidence": [
+        "Full745-byte158instruction region,128 original/142 typed-preview pseudocode lines and all3 identified direct caller windows reviewed.",
+        "2304 complete original-recipient cases cover enable gate,duplicate/countdown refresh,capacity4,append fields/timing/text,sleeping identity cache/list invalidation and generationFFFF exception.",
+        "Invalidation tests execute original100-byte identity helper;append uses exact-argument formatting and fixed clock fixtures.",
+        "Queue-consumer block dispatches records here;another caller supplies event15 and packed custom hover value.",
+        "Independent reopen verified descriptive name and working recipient/event/value16/float ABI,unchanged bytes,155-instruction body and other names/signatures;NOPs/trap checked separately."
+      ],
+      "caveats": [
+        "Recipient identity and16-byte value source type remain opaque;string-like examples do not recover full type.",
+        "Synthetic bounded tests;formatting/clocks use fixtures,not original platform implementations.",
+        "Actual queue/lifetime/concurrency,broader event combinations and full containing callers unresolved;no in-game validation or exact Media Molecule source/build match."
       ]
     }
   ],

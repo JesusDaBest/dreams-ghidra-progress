@@ -8490,3 +8490,16 @@ A complete original-function suite passed 66,046 cases without callee/import fix
 The full 113-byte body (36 instructions), original and typed-preview pseudocode, both identified direct caller windows and their continuations were reviewed. Independent reopening verified the descriptive name and working 16-bit event/return plus byte-selector signature, preserving all instructions, original bytes and other names/signatures. Full parent-routine semantics, selector meaning, indirect callers and source-level types beyond consumed machine values remain unresolved. No in-game execution or exact Media Molecule source/build match is claimed.
 
 Totals: **859 checked names across 9,627 defined functions**, **2,260 mapped and 7,367 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient-local editor-event records
+
+`QueueOrRefreshRecipientEditorEvent` identifies the recipient routine called by action-buffer dispatch. It keeps up to four local records. A matching event id and 16-byte value reset the existing countdown to 2; a new unmatched record is appended only while space remains. Append stores an event label, timestamp ratio, value and float payload. For events other than 15, a preceding path looks up an active record identified by `sleeping`, validates its generation and invalidates it. Generation 0xFFFF is excluded.
+
+Four complete original-function suites passed 2,304 cases covering the enable gate, duplicate refresh, capacity, append fields/padding, cache/list lookup, generation checks and invalidation. Invalidation executes the original identity helper. Append uses explicit formatting and clock fixtures; those verify the caller contract and record writes, not the platform library implementations or live timing.
+
+The full 745-byte region (158 instructions), 128 original and 142 typed-preview nonempty pseudocode lines, and all three identified direct caller windows were reviewed. Independent reopening verified the descriptive name and working signature. The existing 155-instruction body remains unchanged; two excluded NOPs and a trailing trap were checked separately. Original bytes and all other names/signatures are preserved.
+
+An original-byte reference scan also found the action-buffer handoff missed by the earlier reference snapshot: a bounded block flips the head, processes old-buffer records and clears its count. This is a block-level finding, not a review of the entire large containing routine. Actual recipient type, 16-byte value source type, record lifetime, concurrency and wider combinations remain unresolved. One caller supplies packed `custom hover` text. No game execution or exact Media Molecule source/build match is claimed.
+
+Totals: **860 checked names across 9,627 defined functions**, **2,261 mapped and 7,366 unmapped**. These are code-review counts, not whole-game completion.

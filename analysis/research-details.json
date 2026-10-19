@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 859,
+    "checked_and_applied_names": 860,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 859,
+    "verified_names": 860,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "782 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "783 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -27088,6 +27088,30 @@
       "bounded_cases": 66046,
       "complete_function_cases": 66046,
       "native_invocations": 66046
+    }
+  },
+  "editor_action_recipient_checkpoint": {
+    "address": "14142f6f0",
+    "name": "QueueOrRefreshRecipientEditorEvent",
+    "working_signature": "void PS4_SYSV QueueOrRefreshRecipientEditorEvent(void * recipient, ushort event_id, void * value16, float float_payload)",
+    "native_cases": 2304,
+    "findings": [
+      "Full745-byte158instruction region,128 original/142 typed-preview pseudocode lines and all3 identified direct caller windows reviewed.",
+      "2304 complete original-recipient cases cover enable gate,duplicate/countdown refresh,capacity4,append fields/timing/text,sleeping identity cache/list invalidation and generationFFFF exception.",
+      "Invalidation tests execute original100-byte identity helper;append uses exact-argument formatting and fixed clock fixtures.",
+      "Queue-consumer block dispatches records here;another caller supplies event15 and packed custom hover value.",
+      "Independent reopen verified descriptive name and working recipient/event/value16/float ABI,unchanged bytes,155-instruction body and other names/signatures;NOPs/trap checked separately."
+    ],
+    "limits": [
+      "Recipient identity and16-byte value source type remain opaque;string-like examples do not recover full type.",
+      "Synthetic bounded tests;formatting/clocks use fixtures,not original platform implementations.",
+      "Actual queue/lifetime/concurrency,broader event combinations and full containing callers unresolved;no in-game validation or exact Media Molecule source/build match."
+    ],
+    "native_suites": {
+      "suite_count": 4,
+      "bounded_cases": 2304,
+      "complete_function_cases": 2304,
+      "native_invocations": 2304
     }
   }
 }
