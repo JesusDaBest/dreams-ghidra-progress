@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a696f75d82386e4073981ba3d9365d31e3ca7209/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f7d1f9181dfa9e4c91a380583f0a4d9316219ed3/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**845 of 9,623 functions named and checked.** A function is one piece of the game's code.
+**846 of 9,624 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/a696f75d82386e4073981ba3d9365d31e3ca7209/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/f7d1f9181dfa9e4c91a380583f0a4d9316219ed3/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -64,7 +64,7 @@ Every square is one actual function and has the same size. All function squares 
 <!-- area-status:start -->
 | Part of Dreams | Functions mapped | Runtime reviewed/identified | Properties/types reviewed/identified |
 | --- | ---: | ---: | ---: |
-| Sculpting & painting | 194 | 87/151 | 0/43 |
+| Sculpting & painting | 195 | 88/152 | 0/43 |
 | Gadgets & logic | 516 | 58/60 | 50/456 |
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
@@ -74,7 +74,7 @@ Every square is one actual function and has the same size. All function squares 
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 377 | 254/290 | 17/82 |
 
-**2,246 of 9,623 discovered functions are mapped; 7,377 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,247 of 9,624 discovered functions are mapped; 7,377 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -1073,7 +1073,7 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Sculpting & painting** - 194 functions identified; 91 behavior/helper reviews; 0 property/type reviews
+- **Sculpting & painting** - 195 functions identified; 92 behavior/helper reviews; 0 property/type reviews
   - **Sculpt geometry** - 137 functions identified; 69 behavior/helper reviews; 0 property/type reviews
     - **Sculpt bricks** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
@@ -1111,12 +1111,12 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Element Picker** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Paint & strokes** - 38 functions identified; 22 behavior/helper reviews; 0 property/type reviews
+  - **Paint & strokes** - 39 functions identified; 23 behavior/helper reviews; 0 property/type reviews
     - **Sprite** - 23 functions identified; 18 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 20 functions identified; 18 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Material & surface editing** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-      - **Runtime behavior** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+    - **Material & surface editing** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
+      - **Runtime behavior** - 5 functions identified; 5 behavior/helper reviews; 0 property/type reviews
     - **Sprite Duplicate** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Sprite Duplicate Position** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
