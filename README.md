@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e654a647d8f81b08c469b2d3e5f028756862c59d/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/90afe4e72ab9e3c0cab13a3bbdddbabe277a829d/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**863 of 9,628 functions named and checked.** A function is one piece of the game's code.
+**898 of 9,663 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/e654a647d8f81b08c469b2d3e5f028756862c59d/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/90afe4e72ab9e3c0cab13a3bbdddbabe277a829d/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -72,9 +72,9 @@ Every square is one actual function and has the same size. All function squares 
 | Rendering & lighting | 392 | 123/366 | 0/26 |
 | Editor & interface | 420 | 105/211 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
-| Shared engine & object data | 391 | 268/304 | 17/82 |
+| Shared engine & object data | 426 | 303/339 | 17/82 |
 
-**2,264 of 9,628 discovered functions are mapped; 7,364 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,299 of 9,663 discovered functions are mapped; 7,364 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -466,6 +466,186 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+- **Shared engine & object data** - 426 functions identified; 304 behavior/helper reviews; 17 property/type reviews
+  - **Game state & runtime** - 190 functions identified; 177 behavior/helper reviews; 0 property/type reviews
+    - **Saving & loading** - 62 functions identified; 62 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 62 functions identified; 62 behavior/helper reviews; 0 property/type reviews
+    - **Edit events** - 50 functions identified; 50 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 50 functions identified; 50 behavior/helper reviews; 0 property/type reviews
+    - **Game contexts & runtime support** - 23 functions identified; 20 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 23 functions identified; 20 behavior/helper reviews; 0 property/type reviews
+    - **Derived state** - 19 functions identified; 19 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 19 functions identified; 19 behavior/helper reviews; 0 property/type reviews
+    - **Resource pages** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
+    - **Gameupdater** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
+    - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Game Update Thread** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Gamemerger** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Object refs** - 72 functions identified; 59 behavior/helper reviews; 2 property/type reviews
+    - **Thing** - 30 functions identified; 29 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 29 functions identified; 29 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object cache** - 25 functions identified; 25 behavior/helper reviews; 0 property/type reviews
+      - **Runtime implementation** - 25 functions identified; 25 behavior/helper reviews; 0 property/type reviews
+    - **Thing Type** - 5 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+    - **Key spatial lookup** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Thing Ref** - 3 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Group** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Graph label query** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Persistent Object Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing Pos** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Engine support** - 28 functions identified; 23 behavior/helper reviews; 0 property/type reviews
+    - **Cache lists** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
+    - **Memory pools** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+    - **Support implementation** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Game** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sillyrender** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Tweak** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Widgets** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Property helpers** - 24 functions identified; 10 behavior/helper reviews; 7 property/type reviews
+    - **Properties & type definitions** - 11 functions identified; 1 behavior/helper reviews; 7 property/type reviews
+    - **Spatial trees** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
+    - **Code role still unresolved** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sorting** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+  - **Debugging & diagnostics** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Draw Render** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Screen** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Comparison Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Camera Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Numbers & transforms** - 18 functions identified; 6 behavior/helper reviews; 1 property/type reviews
+    - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Object hierarchy transforms** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Transform snapping** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Transform composition** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+  - **Properties & variants** - 17 functions identified; 5 behavior/helper reviews; 4 property/type reviews
+    - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
+    - **Interpolation modes** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Property payloads** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Property metadata** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
+    - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Serialization & upgrades** - 17 functions identified; 10 behavior/helper reviews; 0 property/type reviews
+    - **Serialization implementation** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
+    - **Serialise** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared signal data** - 14 functions identified; 10 behavior/helper reviews; 2 property/type reviews
+    - **Signal values** - 9 functions identified; 9 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 9 functions identified; 9 behavior/helper reviews; 0 property/type reviews
+    - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 2 property/type reviews
+    - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Wire connections** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Identifiers & assets** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Timestamp** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Asset** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Base Id Seq Number Trio** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Photo Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Sequence ID** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
+    - **Version Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Strings** - 9 functions identified; 4 behavior/helper reviews; 0 property/type reviews
+    - **Small String** - 5 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Runtime implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Serialised String Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **string** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Structured text** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+    - **wchar t** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Errors & diagnostics** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Error Code / Code** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Error Code Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Error Code** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared messages** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Input Message Buffer** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Input Message Header** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Shared object routines** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+  - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Editor & interface** - 420 functions identified; 106 behavior/helper reviews; 4 property/type reviews
   - **Text & fonts** - 129 functions identified; 75 behavior/helper reviews; 0 property/type reviews
     - **Text decoding** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
@@ -893,186 +1073,6 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
     - **Sprite bounds** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-- **Shared engine & object data** - 391 functions identified; 269 behavior/helper reviews; 17 property/type reviews
-  - **Game state & runtime** - 155 functions identified; 142 behavior/helper reviews; 0 property/type reviews
-    - **Saving & loading** - 62 functions identified; 62 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 62 functions identified; 62 behavior/helper reviews; 0 property/type reviews
-    - **Game contexts & runtime support** - 23 functions identified; 20 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 23 functions identified; 20 behavior/helper reviews; 0 property/type reviews
-    - **Derived state** - 19 functions identified; 19 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 19 functions identified; 19 behavior/helper reviews; 0 property/type reviews
-    - **Edit events** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-    - **Resource pages** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-    - **Gameupdater** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 12 functions identified; 11 behavior/helper reviews; 0 property/type reviews
-    - **Game Events** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Game Base** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Game Type** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Game Update Thread** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Gamemerger** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Object refs** - 72 functions identified; 59 behavior/helper reviews; 2 property/type reviews
-    - **Thing** - 30 functions identified; 29 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 29 functions identified; 29 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Object cache** - 25 functions identified; 25 behavior/helper reviews; 0 property/type reviews
-      - **Runtime implementation** - 25 functions identified; 25 behavior/helper reviews; 0 property/type reviews
-    - **Thing Type** - 5 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-      - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-    - **Key spatial lookup** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **Thing Ref** - 3 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Group** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Graph label query** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Persistent Object Data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Thing Pos** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Thing Pos2 D** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Engine support** - 28 functions identified; 23 behavior/helper reviews; 0 property/type reviews
-    - **Cache lists** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
-    - **Memory pools** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
-    - **Support implementation** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Game** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sillyrender** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Tweak** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Widgets** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Property helpers** - 24 functions identified; 10 behavior/helper reviews; 7 property/type reviews
-    - **Properties & type definitions** - 11 functions identified; 1 behavior/helper reviews; 7 property/type reviews
-    - **Spatial trees** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
-    - **Code role still unresolved** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sorting** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-  - **Debugging & diagnostics** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Debug Draw Render** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 8 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Debug Screen** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Comparison Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Debug Camera Image** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Debug Text** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Numbers & transforms** - 18 functions identified; 6 behavior/helper reviews; 1 property/type reviews
-    - **float** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Object hierarchy transforms** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **double** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **float3x3 packed** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Transform snapping** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **float2 packed** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **float3 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **float4 packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Trans packed** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Transform composition** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-  - **Properties & variants** - 17 functions identified; 5 behavior/helper reviews; 4 property/type reviews
-    - **Variant Type** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 3 property/type reviews
-    - **Interpolation modes** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Property payloads** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **Variant** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Property metadata** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Tweak Info** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Serialization & upgrades** - 17 functions identified; 10 behavior/helper reviews; 0 property/type reviews
-    - **Serialization implementation** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 10 functions identified; 9 behavior/helper reviews; 0 property/type reviews
-    - **Serialise** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 4 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Sanitise** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Serialise Upgrade** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Serialise1** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Shared signal data** - 14 functions identified; 10 behavior/helper reviews; 2 property/type reviews
-    - **Signal values** - 9 functions identified; 9 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 9 functions identified; 9 behavior/helper reviews; 0 property/type reviews
-    - **Wire Header** - 2 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 2 property/type reviews
-    - **Packed Signal** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Wire connections** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **Wire Seq** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Identifiers & assets** - 9 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Base Id** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Timestamp** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Asset** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Base Id Seq Number Trio** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Photo Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Sequence ID** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 1 property/type reviews
-    - **Version Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Strings** - 9 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-    - **Small String** - 5 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Runtime implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Serialised String Id** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **string** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Structured text** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
-    - **wchar t** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Errors & diagnostics** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Error Code / Code** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Error Code Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Error Code** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Shared messages** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Bounded Vector char MAX PLAYER DATA BUFFER BYTES** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Input Message Buffer** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Input Message Header** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Shared object routines** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Code role still unresolved** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
 - **Sculpting & painting** - 198 functions identified; 95 behavior/helper reviews; 0 property/type reviews
   - **Sculpt geometry** - 137 functions identified; 69 behavior/helper reviews; 0 property/type reviews
     - **Sculpt bricks** - 34 functions identified; 12 behavior/helper reviews; 0 property/type reviews
