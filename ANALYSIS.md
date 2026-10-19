@@ -8169,3 +8169,12 @@ Concrete option and tag meanings, degenerate or nonfinite inputs, parallel/antip
 The complete 244-byte, 53-instruction body, full pseudocode and recorded caller were reviewed. 512 original-code cases cover 256 linear and 256 spherical cases, including 255 negative-dot cases. The corrected signature takes two quaternion vectors and one scalar factor and returns a full quaternion vector. Its name and signature survived independent reopening, with original bytes and other function annotations unchanged.
 
 Exact threshold boundaries, nonunit or nonfinite inputs, extrapolation and exact PS4 math rounding remain unvalidated. Totals: **824 checked names across 9,620 defined functions**, **2,225 mapped and 7,395 unmapped**. These are reviewed-code counts, not whole-game completion.
+
+
+### Local sculpt shape transform and dimensions
+
+`ComputeEditorLocalShapeTransformAndDimensions` now names the routine that derives a local shape frame and optional dimensions from editor state, placement and object endpoints. Reviewed paths cover stored dimensions and offsets, relative object frames, two-endpoint measurement and primitive cleanup, stored-frame conversion, and projection orientation and dimension construction.
+
+The complete 14,364-byte region, all 2,822 Ghidra-owned instructions, full pseudocode and both recorded caller windows were reviewed. Thirty bounded suites contain 10,062 function-path cases plus 1,864 extracted scalar-snapping-block cases. Some earlier object-path tests supply a placement frame; later suites connect original placement code on selected paths. Tests cover rotated frames, translated pivots, signed scales, zero-dimension combinations, the stored dimension override, distance-based orientation blending and selected combined snapping paths. The four-pointer working signature and descriptive name survived independent reopening; original bytes and other function annotations were unchanged.
+
+Concrete state and object meanings, runtime lifecycle, exceptional inputs, exact ties, additional snap flags and previous-frame histories remain unresolved. Host math adapters do not establish exact PS4 rounding. These results support a descriptive role, not complete gameplay verification. Totals: **825 checked names across 9,620 defined functions**, **2,226 mapped and 7,394 unmapped**.

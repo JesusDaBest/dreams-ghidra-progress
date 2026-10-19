@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 824,
+    "checked_and_applied_names": 825,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 824,
+    "verified_names": 825,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "754 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "755 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26215,6 +26215,38 @@
     "native_suites": {
       "suite_count": 1,
       "bounded_cases": 512
+    }
+  },
+  "local_shape_frame_checkpoint": {
+    "address": "140bcf350",
+    "name": "ComputeEditorLocalShapeTransformAndDimensions",
+    "working_signature": "void PS4_SYSV ComputeEditorLocalShapeTransformAndDimensions(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, SpatialQueryFloat4Working16 * optional_dimensions)",
+    "native_cases": 11926,
+    "findings": [
+      "Complete14364-byte EH region,2822owned instructions,full3321nonempty-line C and both recorded caller windows reviewed.",
+      "Four pointer arguments match assembly and caller use:transform output,opaque editor,opaque group,optional float4 dimensions.",
+      "Computes local shape frame and optional dimensions from editor state,object endpoints and placement context.",
+      "Default path uses stored dimensions,offset and construction rotation;state13 converts stored frame through inverse reference.",
+      "Saved-object path composes relative object frames;two-endpoint path measures oriented separation with primitive cleanup and optional dimension override.",
+      "Projection path selects effective offsets from zero dimensions,measures remaining lanes,restores stored lanes and computes placement-relative output.",
+      "Orientation adjustment aligns selected construction axis toward nearer signed pivot direction,with distance interpolation unless snap flag bypasses it.",
+      "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
+      "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
+      "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Concrete editor state enums,object identities and lifecycle remain unresolved.",
+      "Finite unit rotations and selected nonzero scale domains only;nonfinite/subnormal/invalid pointers and many exact ties unvalidated.",
+      "Bounded fixtures do not establish complete gameplay behavior or exact PS4 math rounding.",
+      "Some earlier object-path suites supply placement output;later connected suites strengthen selected paths only.",
+      "Extracted snapping block cases are separate from bounded full-function paths.",
+      "Additional snap flags,previous-frame histories and combined states remain unresolved."
+    ],
+    "native_suites": {
+      "suite_count": 30,
+      "bounded_cases": 11926,
+      "bounded_function_path_cases": 10062,
+      "extracted_block_cases": 1864
     }
   }
 }

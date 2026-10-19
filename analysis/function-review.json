@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "754 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "755 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8641,
-    "other_names": 979,
-    "verification": "complete_inventory_matches_baseline_plus_754_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8640,
+    "other_names": 980,
+    "verification": "complete_inventory_matches_baseline_plus_755_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19203,6 +19203,37 @@
         "Finite unit quaternion fixtures and selected factors0,.25,.5,.75,1 only.",
         "Exact threshold neighborhood,nonunit/nonfinite inputs and extrapolation remain unvalidated.",
         "Host scalar math adapters used; exact PS4 math rounding not established."
+      ]
+    },
+    {
+      "address": "140bcf350",
+      "original_name": "FUN_140bcf350",
+      "applied_name": "ComputeEditorLocalShapeTransformAndDimensions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorLocalShapeTransformAndDimensions(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, SpatialQueryFloat4Working16 * optional_dimensions)",
+      "evidence": [
+        "Complete14364-byte EH region,2822owned instructions,full3321nonempty-line C and both recorded caller windows reviewed.",
+        "Four pointer arguments match assembly and caller use:transform output,opaque editor,opaque group,optional float4 dimensions.",
+        "Computes local shape frame and optional dimensions from editor state,object endpoints and placement context.",
+        "Default path uses stored dimensions,offset and construction rotation;state13 converts stored frame through inverse reference.",
+        "Saved-object path composes relative object frames;two-endpoint path measures oriented separation with primitive cleanup and optional dimension override.",
+        "Projection path selects effective offsets from zero dimensions,measures remaining lanes,restores stored lanes and computes placement-relative output.",
+        "Orientation adjustment aligns selected construction axis toward nearer signed pivot direction,with distance interpolation unless snap flag bypasses it.",
+        "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
+        "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
+        "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
+      ],
+      "caveats": [
+        "Concrete editor state enums,object identities and lifecycle remain unresolved.",
+        "Finite unit rotations and selected nonzero scale domains only;nonfinite/subnormal/invalid pointers and many exact ties unvalidated.",
+        "Bounded fixtures do not establish complete gameplay behavior or exact PS4 math rounding.",
+        "Some earlier object-path suites supply placement output;later connected suites strengthen selected paths only.",
+        "Extracted snapping block cases are separate from bounded full-function paths.",
+        "Additional snap flags,previous-frame histories and combined states remain unresolved."
       ]
     }
   ],

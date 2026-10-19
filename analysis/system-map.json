@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2225,
-  "unmapped_total": 7395,
+  "mapped_total": 2226,
+  "unmapped_total": 7394,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56453,6 +56453,38 @@
             "Negative dot flips starting quaternion; near-angle branch linearly interpolates without normalization; general branch uses sine-weighted spherical interpolation.",
             "512 original-code cases cover256 linear and256 spherical cases,including255 negative-dot cases.",
             "Name and explicit three-parameter/full-vector-return signature independently reopened; original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bcf350": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Computes local shape transform and dimensions from editor sculpt state,placement and endpoint records;both recorded callers reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full14364-byte/2822owned-instruction body and full C reviewed;30bounded suites with fixture boundaries recorded.",
+      "code_sha256": "54cb3d866dce8a35f4ca6b33392a171269f6bc235c8099a2c84e34019bd61024",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorLocalShapeTransformAndDimensions",
+          "support": [
+            "Complete14364-byte EH region,2822owned instructions,full3321nonempty-line C and both recorded caller windows reviewed.",
+            "Four pointer arguments match assembly and caller use:transform output,opaque editor,opaque group,optional float4 dimensions.",
+            "Computes local shape frame and optional dimensions from editor state,object endpoints and placement context.",
+            "Default path uses stored dimensions,offset and construction rotation;state13 converts stored frame through inverse reference.",
+            "Saved-object path composes relative object frames;two-endpoint path measures oriented separation with primitive cleanup and optional dimension override.",
+            "Projection path selects effective offsets from zero dimensions,measures remaining lanes,restores stored lanes and computes placement-relative output.",
+            "Orientation adjustment aligns selected construction axis toward nearer signed pivot direction,with distance interpolation unless snap flag bypasses it.",
+            "Snapping affects construction orientation and stored scalar dimensions;connected placement/local snap path checked separately.",
+            "30bounded suites total11926cases:10062function-path cases and1864extracted scalar-snap block cases;fixture boundaries retained.",
+            "Saved descriptive name/signature independently reopened;original bytes and other function annotations unchanged."
           ]
         }
       ]
