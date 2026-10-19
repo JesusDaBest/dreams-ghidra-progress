@@ -8468,3 +8468,14 @@ The full 834-byte region (209 instructions), 105 original and 120 typed-preview 
 Tests use synthetic records and explicit mutex/thread/downstream fixtures. Counts 0 through 4 were tested; a naive fifth-record fixture overlaps the count field, so larger-count/index invariants remain unresolved. The remaining 36 caller windows, wider ownership/lifecycle, descriptor padding and actual game integration are unverified. No live synchronization or exact Media Molecule source/build match is claimed.
 
 Totals: **857 checked names across 9,627 defined functions**, **2,258 mapped and 7,369 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Selecting an event context from a mode mask
+
+`SubmitEditorEventForModeMask` identifies a caller of the reviewed context-id submission helper. A nonzero mask chooses the lowest set bit among the first five bits, or index zero when none is set. A zero mask uses global mode/status tables, falling back to context id -1. An optional virtual query on the last object in an indexed list supplies a descriptor field before the recording gate.
+
+Two complete original-function suites passed 1,664 cases. They cover all 256 low-byte masks, combinations of four fallback status flags, recording gates, empty/null-last/non-null-last lists, query return forwarding and float preservation. The query fixture intentionally overwrites the float register; the wrapper restores the original value. Query and downstream calls are explicit local fixtures, so actual object-query semantics and game integration remain unverified.
+
+The full 327-byte region (94 instructions), 48 original and 61 typed-preview nonempty pseudocode lines, and four of 57 direct caller windows were reviewed. Independent reopening verified the descriptive name and working consumed-value signature, preserving every instruction, original byte and other function name/signature. Callers supply 64 stack bytes, but this function reads only the first pointer-sized value; the source aggregate type is not recovered. Remaining 53 caller windows, upper mask bits, table/cache initialization, object lifetime and wider feature meaning remain unresolved. No exact Media Molecule source/build match is claimed.
+
+Totals: **858 checked names across 9,627 defined functions**, **2,259 mapped and 7,368 unmapped**. These are code-review counts, not whole-game completion.

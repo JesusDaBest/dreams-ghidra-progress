@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 857,
+    "checked_and_applied_names": 858,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 857,
+    "verified_names": 858,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "780 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "781 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -27040,6 +27040,30 @@
       "bounded_cases": 2556,
       "complete_function_cases": 2556,
       "native_invocations": 2556
+    }
+  },
+  "editor_mode_event_wrapper_checkpoint": {
+    "address": "140116920",
+    "name": "SubmitEditorEventForModeMask",
+    "working_signature": "void PS4_SYSV SubmitEditorEventForModeMask(ushort event_id, uint mode_mask, uchar flag, uchar require_recording_enabled, void * stack_world_value, float float_payload)",
+    "native_cases": 1664,
+    "findings": [
+      "Full327-byte94instruction region,48 original/61 typed-preview pseudocode lines and4 of57 direct caller windows reviewed.",
+      "1664 complete original-function cases verify low-byte mask priority,fallback statuses,recording gates,last-entry vtable query and preserved float payload.",
+      "Optional last object vtable+C0 supplies descriptor field10 before gate;chosen context id is passed to SubmitEditorEventForContextId.",
+      "Independent reopen verifies descriptive name and consumed-value ABI,preserving all instructions,bytes and other names/signatures."
+    ],
+    "limits": [
+      "Callers supply64 stack bytes;only first qword is consumed as world pointer. Working pointer parameter is not a recovered source aggregate type.",
+      "53 remaining caller windows,table/cache initialization,actual object query implementation,lifetime and broader feature meaning unresolved.",
+      "Bounded synthetic tests with explicit vtable/downstream fixtures;no actual game integration or exact Media Molecule source/build match.",
+      "Upper mask bits and requirement-byte values beyond tested0..3 remain unverified natively."
+    ],
+    "native_suites": {
+      "suite_count": 2,
+      "bounded_cases": 1664,
+      "complete_function_cases": 1664,
+      "native_invocations": 1664
     }
   }
 }

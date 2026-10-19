@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "780 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "781 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8615,
-    "other_names": 1012,
-    "verification": "complete_inventory_matches_baseline_plus_780_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8614,
+    "other_names": 1013,
+    "verification": "complete_inventory_matches_baseline_plus_781_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -20050,6 +20050,29 @@
         "Only4 of40 direct caller windows read;remaining36 and broader feature semantics unresolved.",
         "Explicit mutex/thread/downstream fixtures;no live game/synchronization or actual rule-engine integration.",
         "Uninitialized descriptor padding has no assigned semantics;no exact Media Molecule source/build match."
+      ]
+    },
+    {
+      "address": "140116920",
+      "original_name": "FUN_140116920",
+      "applied_name": "SubmitEditorEventForModeMask",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SubmitEditorEventForModeMask(ushort event_id, uint mode_mask, uchar flag, uchar require_recording_enabled, void * stack_world_value, float float_payload)",
+      "evidence": [
+        "Full327-byte94instruction region,48 original/61 typed-preview pseudocode lines and4 of57 direct caller windows reviewed.",
+        "1664 complete original-function cases verify low-byte mask priority,fallback statuses,recording gates,last-entry vtable query and preserved float payload.",
+        "Optional last object vtable+C0 supplies descriptor field10 before gate;chosen context id is passed to SubmitEditorEventForContextId.",
+        "Independent reopen verifies descriptive name and consumed-value ABI,preserving all instructions,bytes and other names/signatures."
+      ],
+      "caveats": [
+        "Callers supply64 stack bytes;only first qword is consumed as world pointer. Working pointer parameter is not a recovered source aggregate type.",
+        "53 remaining caller windows,table/cache initialization,actual object query implementation,lifetime and broader feature meaning unresolved.",
+        "Bounded synthetic tests with explicit vtable/downstream fixtures;no actual game integration or exact Media Molecule source/build match.",
+        "Upper mask bits and requirement-byte values beyond tested0..3 remain unverified natively."
       ]
     }
   ],
