@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9627,
-  "mapped_total": 2255,
-  "unmapped_total": 7372,
+  "mapped_total": 2256,
+  "unmapped_total": 7371,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -57376,6 +57376,32 @@
             "Independent64-bit key model verifies event/user/payload/context mixing,signed asset identifiers and pair ordering on tested paths. Material events10D..10F forward supplied keys.",
             "Four of143 identified direct caller windows reviewed;working ABI has6 GP inputs,one stack byte and one float input.",
             "Saved descriptive name and working signature verified after independent reopening;original bytes,body and other names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140114a80": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Context-free event submission builds an integer-payload descriptor and calls ProcessEditorEventRules.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full248-byte68instruction region,46 original pseudocode lines and4 of210 call windows;512 complete-wrapper cases with explicit fixtures.",
+      "code_sha256": "19318ac82674ccc8e81ac54edd0c773311c93757ee2fff210b91ed6961a2f04b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SubmitContextFreeEditorEvent",
+          "support": [
+            "Complete248-byte68instruction region,46 original pseudocode lines,full typed preview and4 of210 direct caller windows reviewed.",
+            "512 complete-function cases validate global mode3 early return,event-mask sign-bit gate,low16 event id,signed payload storage/key and variant byte.",
+            "Submits context-free descriptor to ProcessEditorEventRules with user255,property580,null context pointers and zero flag/float.",
+            "Independent reopen verified descriptive name and ushort/int/uchar working ABI,unchanged original bytes and other names/signatures;existing67-instruction body preserved with trailing UD2 separately checked."
           ]
         }
       ]

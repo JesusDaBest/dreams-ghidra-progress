@@ -7864,3 +7864,14 @@ Seven suites passed 5,180 complete original-receiver cases. Coverage includes de
 Independent reopening verified the descriptive name and signature. The existing 1,402-instruction body remains intact; one excluded NOP and a trailing trap were checked separately, preserving all bytes and all other function names/signatures. Tests use synthetic data and explicit mutex/thread, vtable and downstream fixtures. They do not prove live synchronization or actual downstream integration. Remaining context/hash families, selection ownership, broader caller invariants, unreviewed callers and lifecycle remain unresolved. Descriptor padding has no assigned semantics. No game/network execution or exact Media Molecule source/build match is claimed.
 
 Totals: **854 checked names across 9,627 defined functions**, **2,255 mapped and 7,372 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Context-free integer events
+
+`SubmitContextFreeEditorEvent` identifies a separate entry point for events without an editor context. It builds a descriptor from a 16-bit event id, signed integer payload and variant byte, then calls the reviewed rule processor. The integer becomes both a descriptor field and a sign-extended 64-bit key. Context pointers and the float input are null or zero; the user value is 255.
+
+A complete original-function suite passed 512 bounded cases. Global mode 3 suppresses submission; otherwise the event mask high bit suppresses it while lower bits do not. The wrapper reads only the low 16 event-id bits. Tests include upper event-id bits, negative/positive payloads, variants and mask/mode combinations. They use synthetic globals and explicit mutex/thread/downstream fixtures, without live synchronization or game execution.
+
+The full 248-byte region (68 instructions), 46 original nonempty pseudocode lines, full typed preview and four of 210 direct caller windows were reviewed. Independent reopening verified the descriptive name and working ushort/int/uchar signature. The existing 67-instruction body remains unchanged; its trailing trap was checked separately. All original bytes and other function names/signatures are preserved. Broader caller semantics, the other 206 direct windows, uninitialized padding, actual downstream integration and lifecycle remain unresolved. No exact Media Molecule source/build match is claimed.
+
+Totals: **855 checked names across 9,627 defined functions**, **2,256 mapped and 7,371 unmapped**. These are code-review counts, not whole-game completion.

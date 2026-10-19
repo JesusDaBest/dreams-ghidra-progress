@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "777 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "778 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8618,
-    "other_names": 1009,
-    "verification": "complete_inventory_matches_baseline_plus_777_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8617,
+    "other_names": 1010,
+    "verification": "complete_inventory_matches_baseline_plus_778_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19980,6 +19980,30 @@
         "Remaining context/hash families,selection ownership,broader caller invariants and139 other direct-call windows unresolved.",
         "Descriptor padding/uninitialized bytes have no assigned semantics. Native coverage is bounded,not exhaustive.",
         "No live game/network execution or exact Media Molecule source/build match claimed."
+      ]
+    },
+    {
+      "address": "140114a80",
+      "original_name": "FUN_140114a80",
+      "applied_name": "SubmitContextFreeEditorEvent",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SubmitContextFreeEditorEvent(ushort event_id, int integer_payload, uchar variant)",
+      "evidence": [
+        "Complete248-byte68instruction region,46 original pseudocode lines,full typed preview and4 of210 direct caller windows reviewed.",
+        "512 complete-function cases validate global mode3 early return,event-mask sign-bit gate,low16 event id,signed payload storage/key and variant byte.",
+        "Submits context-free descriptor to ProcessEditorEventRules with user255,property580,null context pointers and zero flag/float.",
+        "Independent reopen verified descriptive name and ushort/int/uchar working ABI,unchanged original bytes and other names/signatures;existing67-instruction body preserved with trailing UD2 separately checked."
+      ],
+      "caveats": [
+        "512 bounded combinations,not exhaustive32-bit inputs;caller invariants and consumer behavior unresolved.",
+        "No concurrent lifecycle or real rule processor integration.",
+        "Only4 of210 direct caller windows reviewed;full feature semantics and206 remaining windows unresolved.",
+        "Explicit mutex/thread and downstream fixtures;no live game/synchronization or exact Media Molecule build match.",
+        "Uninitialized descriptor padding has no assigned semantics."
       ]
     }
   ],

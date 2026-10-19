@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 854,
+    "checked_and_applied_names": 855,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 854,
+    "verified_names": 855,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "777 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "778 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26967,6 +26967,31 @@
       "bounded_cases": 5180,
       "complete_function_cases": 5180,
       "native_invocations": 5180
+    }
+  },
+  "editor_direct_event_wrapper_checkpoint": {
+    "address": "140114a80",
+    "name": "SubmitContextFreeEditorEvent",
+    "working_signature": "void PS4_SYSV SubmitContextFreeEditorEvent(ushort event_id, int integer_payload, uchar variant)",
+    "native_cases": 512,
+    "findings": [
+      "Complete248-byte68instruction region,46 original pseudocode lines,full typed preview and4 of210 direct caller windows reviewed.",
+      "512 complete-function cases validate global mode3 early return,event-mask sign-bit gate,low16 event id,signed payload storage/key and variant byte.",
+      "Submits context-free descriptor to ProcessEditorEventRules with user255,property580,null context pointers and zero flag/float.",
+      "Independent reopen verified descriptive name and ushort/int/uchar working ABI,unchanged original bytes and other names/signatures;existing67-instruction body preserved with trailing UD2 separately checked."
+    ],
+    "limits": [
+      "512 bounded combinations,not exhaustive32-bit inputs;caller invariants and consumer behavior unresolved.",
+      "No concurrent lifecycle or real rule processor integration.",
+      "Only4 of210 direct caller windows reviewed;full feature semantics and206 remaining windows unresolved.",
+      "Explicit mutex/thread and downstream fixtures;no live game/synchronization or exact Media Molecule build match.",
+      "Uninitialized descriptor padding has no assigned semantics."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 512,
+      "complete_function_cases": 512,
+      "native_invocations": 512
     }
   }
 }
