@@ -8330,3 +8330,14 @@ The complete 962-byte body, 152 nonempty pseudocode lines and five incoming dire
 These are isolated tests using synthetic runtime data and explicit property-writer/change-recorder fixtures, not in-game verification. Other editor modes, operation-specific recording/suppression branches, actual persistence and lifecycle remain unresolved. One downstream recorder prototype in Ghidra still differs from its native register setup; its emitted call expression is not treated as source-correct. No exact Media Molecule source/build match is claimed.
 
 Totals: **845 checked names across 9,623 defined functions**, **2,246 mapped and 7,377 unmapped**. These counts describe verified code review, not whole-game completion.
+
+
+### Coat glow editing and propagation
+
+`AdjustOrPropagateEditorCoatGlow` identifies ordinary outer/inner glow edits and the spatial sprite glow path. Ordinary edits add signed editor strength divided by three, clamp to zero through one and submit the selected property. Propagation copies the source value through the target kind offset, marks user dirty bits and avoids duplicate changed-property ids. Spatial sprite edits instead submit operation type 4 containing signed strength, spatial frame, inverse frame and brush-box extents; only successful results forward record updates.
+
+The complete 1,562-byte body, 280 nonempty pseudocode lines and three direct incoming-call windows were reviewed. Isolated complete-caller tests passed 768 adjustment cases, 320 propagation cases each invoked twice, and 256 spatial packet success/failure cases: 1,344 distinct cases and 1,664 native invocations. Ordinary float results matched exactly. The new definition and eleven-input working signature survived independent reopening, preserving original bytes and all existing names/signatures.
+
+Sculpt outer and inner glow and sprite outer glow have independent property evidence. Sprite inner glow remains unproven and was not fabricated or tested. The native checks use synthetic data and explicit writer, operation-result and record fixtures. Actual spatial operation implementation, persistence, other modes/recording states, palette precomputation and lifecycle remain unresolved. The downstream recorder prototype still differs from its native register setup. No in-game verification or exact Media Molecule source/build match is claimed.
+
+Totals: **846 checked names across 9,624 defined functions**, **2,247 mapped and 7,377 unmapped**. These are code-review counts, not whole-game completion.

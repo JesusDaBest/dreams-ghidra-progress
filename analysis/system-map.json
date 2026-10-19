@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9623,
-  "mapped_total": 2246,
+  "inventory_total": 9624,
+  "mapped_total": 2247,
   "unmapped_total": 7377,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -57126,6 +57126,34 @@
             "Propagation copies across sculpt/sprite kinds, sets user dirty flags and adds each property id once to the changed-property list.",
             "640 complete-caller adjustment cases matched float32 results exactly. Another 80 propagation cases were each invoked twice to verify copying, dirty flags and list deduplication (800 native invocations total).",
             "Definition and eleven-input working signature independently reopened; original bytes and all existing function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1407767c0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "material-editing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete sculpt/sprite coat-glow adjustment, propagation and spatial packet paths, with independent property linkage and native validation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete1562byte/full280nonemptylineCread;1344completecaller cases,1664 invocations with explicit runtime fixtures.",
+      "code_sha256": "eb6890191bf2db8367f345530ee0c560c14b75cd53ae076a7167f8381f3577b6",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AdjustOrPropagateEditorCoatGlow",
+          "support": [
+            "Complete 1,562-byte original body, 280 nonempty pseudocode lines and three incoming direct-call windows reviewed.",
+            "Ordinary editing selects sculpt CoatGlow or InnerCoatGlow; sprite CoatGlow has its own independently registered offset. It adds signed strength divided by three and clamps to zero through one.",
+            "Propagation copies through the target kind property offset, marks user dirty bits and avoids duplicate changed-property ids.",
+            "Spatial sprite editing builds operation type4 with signed strength, spatial transform, inverse transform and box extents; only successful operation results forward record updates.",
+            "Three isolated complete-caller suites passed 1,344 distinct synthetic cases: 768 adjustment, 320 propagation each invoked twice, and 256 spatial packet success/failure cases (1,664 native invocations).",
+            "The new definition and eleven-input working signature survived independent reopening, preserving original bytes and every existing function name/signature."
           ]
         }
       ]
