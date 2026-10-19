@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9619,
-  "mapped_total": 2204,
+  "inventory_total": 9620,
+  "mapped_total": 2205,
   "unmapped_total": 7415,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -55858,6 +55858,32 @@
             "Appends84-byte packed primitive record to descriptor cursor when cursor differs fromend, packs header/color/blend and shape-specific geometry with compressed quaternion/reflection parity.",
             "Original-code suites:128 header/cursor,108 box rotations,224 signed-box geometry and768 cone/sphere/torus/cookie geometry cases, using independently modeled references and exact guards.",
             "Working ABI records descriptorRDI, tagSIL and four16-byte XMM inputs; independent reopening preserves original bytes and all other function annotations."
+          ]
+        }
+      ]
+    },
+    "140c712b0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete original editor-shape conversion rewrites last counted84-byte sculpt edit and delegates generic primitives to packed formatter.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original assembly and explicit-vector C read;528bounded full-function cases.",
+      "code_sha256": "4df8fea6257ec7148904304e33dc8d1c91e91b9c2d3c73ceecd1a56beddcc14d",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateLastCsgEditFromEditorShape",
+          "support": [
+            "Complete2488-byte/571-instruction original body, original direct-call context and temporary vector-typed C read.",
+            "Active editor shape bank and variants determine packed primitive; writes last counted84-byte record, preserving count. Generic primitives delegate to AppendPackedCsgPrimitiveEdit; curve/tag7 and tetrahedron/tag22 use direct payload layouts.",
+            "528 complete original-function synthetic cases cover120tetrahedron,240generic,120curve and48variant conversions, full byte references, valid counts1..1024, two banks, selected finite scales/matrices/colors and exact input/output guards.",
+            "Independent reopening verifies new definition and13-input working ABI; all9619existing names/signatures and original bytes preserved."
           ]
         }
       ]

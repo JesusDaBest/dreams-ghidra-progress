@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 803,
+    "checked_and_applied_names": 804,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 803,
-    "function_count": 9619,
+    "verified_names": 804,
+    "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "734 existing-function renames,68 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "734 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25637,5 +25637,33 @@
       "Helper tests cursor equality only; caller slot/capacity preconditions remain unproved."
     ],
     "editor_conversion_trace": "Selected shape and variant are read from editor parameter bank, then written into the84-byte array used by the earlier edit hash trace. Variant remapping and direct curve/tetrahedron paths remain partially reviewed."
+  },
+  "csg_editor_conversion_checkpoint": {
+    "address": "140c712b0",
+    "name": "UpdateLastCsgEditFromEditorShape",
+    "working_signature": "void PS4_SYSV UpdateLastCsgEditFromEditorShape(void * source_object, void * editor_state, uchar operation_flag, void * geometry_rows, void * auxiliary_values, void * operation_override, float scale_hint, SpatialQueryFloat4Working16 placement_transform, SpatialQueryFloat4Working16 rotation, SpatialQueryFloat4Working16 extents, SpatialQueryFloat4Working16 primary_color, SpatialQueryFloat4Working16 secondary_color, SpatialQueryFloat4Working16 shape_parameters)",
+    "native_suites": {
+      "tetrahedron": 120,
+      "generic": 240,
+      "curve": 120,
+      "variant": 48
+    },
+    "findings": [
+      "Complete2488-byte/571-instruction original body, original direct-call context and temporary vector-typed C read.",
+      "Active editor shape bank and variants determine packed primitive; writes last counted84-byte record, preserving count. Generic primitives delegate to AppendPackedCsgPrimitiveEdit; curve/tag7 and tetrahedron/tag22 use direct payload layouts.",
+      "528 complete original-function synthetic cases cover120tetrahedron,240generic,120curve and48variant conversions, full byte references, valid counts1..1024, two banks, selected finite scales/matrices/colors and exact input/output guards.",
+      "Independent reopening verifies new definition and13-input working ABI; all9619existing names/signatures and original bytes preserved."
+    ],
+    "limits": [
+      "Analyst descriptive name and working opaque-pointer/vector ABI, not recovered source symbols/types.",
+      "Fixtures use objecthandle-1,explicit operation1,local canary and initialized static compression factor; platform/live game not executed.",
+      "Asset-backed metadata, other mode/header/settings/blend combinations, degenerate/nonfinite inputs and complete caller lifecycle remain unresolved.",
+      "Separate bounded guard trace covers a pre-reservation1024-record limit; it does not prove all caller control-flow/alias invariants."
+    ],
+    "reservation_guard": {
+      "cases": 1285,
+      "capacity": 1024,
+      "scope": "Original unsigned pre-write guard/index slice with adapted exits; contiguous reservation block has no internal calls/branches or external direct jump entries. Indirect entries and full pointer/alias provenance remain unresolved."
+    }
   }
 }

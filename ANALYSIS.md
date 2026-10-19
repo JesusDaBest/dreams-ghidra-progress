@@ -7941,3 +7941,16 @@ Four separate original-code suites checked 128 header/cursor cases, 108 positive
 The helper only checks whether cursor equals end before writing; caller capacity invariants remain unresolved. Other primitive adjustments, curve/tetrahedron payload paths, degenerate or nonfinite rotations, extreme values and the complete editor lifecycle still need investigation. These are synthetic execution checks, not in-game verification.
 
 The checked-name total is **803 across 9,619 defined functions**. **2,204 functions are mapped; 7,415 remain unmapped.** The formatter adds one sculpt-geometry behavior review, not a claim that sculpting or Dreams is complete.
+
+
+### Editor shape to packed sculpt edit
+
+`UpdateLastCsgEditFromEditorShape` now names a previously undefined 2,488-byte function. It selects the active editor shape bank, applies variant remapping and rewrites the last counted 84-byte edit. It preserves the count. Generic shapes use the packed primitive formatter; tetrahedron and curve records have separate payload paths. The complete assembly and typed C were reviewed, and an independent reopen verified the definition and working argument layout while preserving all existing annotations and original bytes.
+
+528 full original-function synthetic cases cover 120 tetrahedron, 240 generic, 120 curve and 48 variant conversions. Every record byte matched independent references; the count, all editor bytes outside the record and other input buffers stayed unchanged. Valid record counts include 1 and 1,024, across two banks and selected finite inputs. Curve records store fifteen float lanes, eight auxiliary bytes and a second packed color; the geometric meanings of those payload fields remain under investigation.
+
+A separate trace found the pre-reservation unsigned limit: counts 0–1,023 may reserve a slot; larger values skip it. The array interval holds exactly 1,024 records. 1,285 isolated original guard/index cases matched that boundary. The contiguous reservation block has no calls, internal branches or external direct jumps that bypass the check. This bounded result does not prove every indirect path, pointer alias or complete caller lifecycle.
+
+Fixtures supply an invalid asset handle, an explicit operation, a local stack-canary pointer and an initialized compression factor. Asset-backed voxel metadata, other mode/settings/blend combinations, degenerate/nonfinite geometry and live editor behavior remain unresolved.
+
+Totals are **804 checked names across 9,620 defined functions**, with **2,205 mapped and 7,415 unmapped**. The additional function definition changes the inventory; these counts do not measure whole-game completion.
