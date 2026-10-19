@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2210,
-  "unmapped_total": 7410,
+  "mapped_total": 2211,
+  "unmapped_total": 7409,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56024,6 +56024,35 @@
             "Miss leaves outputs untouched; return compares final distance against maximum float sentinel,which caller14094c810 initializes before use.",
             "3999 isolated original-code cases cover canonical and irregular tetrahedra,both winding orientations,allfour faces,preexisting distances,negative hits and input/output guards.",
             "Saved name and corrected signature independently reopened; original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140c703b0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original sculpt-editor helper transforms four active-bank tetrahedron vertices used by line query and selected-face normal.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and C read;2048isolated original-builder cases with explicit frame-provider fixture boundary.",
+      "code_sha256": "dfdc66a72fef90a0c8e57942bcff2832061248de8afe91fad631fb70429e9ad5",
+      "code_hash_basis": "original_eh_region_including_trailing_ud2",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildTransformedEditorTetrahedronVertices",
+          "support": [
+            "Complete784-byte region,200owned instructions plus trailingUD2 and full C reviewed.",
+            "RDI opaque source,RSI editor,RDX four16-byte output vertex rows; frame supplier140bc87d0 returns local32-byte transform.",
+            "Selects editor bank by effective-mode masks and selector byte,then transforms four rows at bank-relative5d0/5e0/5f0/600.",
+            "XYZ output equals translation+uniform_scale*rotate(quaternion,vertex).",
+            "2048 isolated original-builder cases cover all256primary lowbytes,twofallbackmodes,two selectors and signed scales; inputs and output guards preserved.",
+            "Caller14094c7b2 supplies built vertices to tetrahedron line query and selected-face normal.",
+            "Name and pointer signature independently reopened; original bytes and allother function annotations unchanged."
           ]
         }
       ]

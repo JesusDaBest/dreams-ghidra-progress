@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "739 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "740 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8656,
-    "other_names": 964,
-    "verification": "complete_inventory_matches_baseline_plus_739_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8655,
+    "other_names": 965,
+    "verification": "complete_inventory_matches_baseline_plus_740_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -18828,6 +18828,32 @@
         "Exact face-edge ties,degenerate or nearly coplanar geometry,zero direction and nonfinite inputs remain unresolved.",
         "Full editor caller lifecycle and actual in-game behavior not established.",
         "Independent oracle revised after evidence exposed sentinel return behavior and expanded barycentric tolerance; no executable bytes changed."
+      ]
+    },
+    {
+      "address": "140c703b0",
+      "original_name": "FUN_140c703b0",
+      "applied_name": "BuildTransformedEditorTetrahedronVertices",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildTransformedEditorTetrahedronVertices(void * source, void * editor, SpatialQueryFloat4Working16 * vertices_out)",
+      "evidence": [
+        "Complete784-byte region,200owned instructions plus trailingUD2 and full C reviewed.",
+        "RDI opaque source,RSI editor,RDX four16-byte output vertex rows; frame supplier140bc87d0 returns local32-byte transform.",
+        "Selects editor bank by effective-mode masks and selector byte,then transforms four rows at bank-relative5d0/5e0/5f0/600.",
+        "XYZ output equals translation+uniform_scale*rotate(quaternion,vertex).",
+        "2048 isolated original-builder cases cover all256primary lowbytes,twofallbackmodes,two selectors and signed scales; inputs and output guards preserved.",
+        "Caller14094c7b2 supplies built vertices to tetrahedron line query and selected-face normal.",
+        "Name and pointer signature independently reopened; original bytes and allother function annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and opaque source/editor types,not recovered source symbols.",
+        "Tests replace frame supplier with explicit32-byte frame-copy boundary; original provider not validated by these tests.",
+        "Frame coordinate space,provider branches,vertex lifecycle,other caller140bc7cab and complete editor behavior remain unresolved.",
+        "No direct packed-record decoder claim; arbitrary vertexW,nonfinite and degenerate inputs not covered."
       ]
     }
   ],

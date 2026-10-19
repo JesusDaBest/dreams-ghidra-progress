@@ -7455,3 +7455,14 @@ The original 1,291-byte function, full C and caller were read. 3,999 isolated or
 Exact edge ties, degenerate geometry, zero directions, nonfinite values and complete in-game caller behavior remain unresolved.
 
 Totals are **809 checked names across 9,620 defined functions**, with **2,210 mapped and 7,410 unmapped**. These are identified-code review counts, not feature completion.
+
+
+### Editor tetrahedron vertex construction
+
+`BuildTransformedEditorTetrahedronVertices` now names the reviewed helper that supplies geometry to the tetrahedron query. It selects the active editor shape bank, reads four local vertex rows, and applies rotation, uniform scale and translation to produce four output rows. It obtains the frame through a separate, still unresolved helper; it does not directly decode a packed edit record.
+
+The original 784-byte region, full C and connected query caller were read. 2,048 isolated original-builder cases cover all 256 primary mode bytes, two fallback modes, two bank selectors and signed scales. The geometric reference matched, inputs stayed unchanged and output guards were preserved. These tests replace the frame supplier with an explicit 32-byte frame-copy fixture: they establish the builder's bank selection and transform math, not the original provider's behavior or coordinate-space meaning.
+
+The saved descriptive name and pointer signature survived independent reopening with original bytes unchanged. The original frame provider, vertex lifecycle, other caller, arbitrary fourth vertex lanes, exceptional inputs and full editor behavior remain unresolved.
+
+Totals are **810 checked names across 9,620 defined functions**, with **2,211 mapped and 7,409 unmapped**. These are identified-code review counts, not feature completion.
