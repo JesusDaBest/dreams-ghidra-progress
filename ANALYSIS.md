@@ -8516,3 +8516,16 @@ Independent reopening verified both saved names and signatures, unchanged origin
 The queue follow-up also verified the producer/consumer fields: the caller-supplied 16-byte value is used as a string prefix, while the formatted event label is used as the instance identity. Candidate selection uses the verified `strlen`, `strncmp`, and `rand` imports. This is a bounded consumer finding, not completion of that large function.
 
 Totals: **862 checked names across 9,627 defined functions**, **2,263 mapped and 7,364 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient animation tracks and corrected key traversal
+
+`EvaluateRecipientRuntimeAnimationTracks` now has a saved descriptive name and a verified pointer argument. It reads packed animation keys and produces scalar, vector, quaternion, string, mouth-shape and decoration values, together with per-channel weights. The initializer identifies 40 named channels and two blank records, including eyelids, pupils, body colour, sound names and two child animation players. These are verified code-level channel identities; the original source class name is still unknown.
+
+Ghidra had incorrectly collapsed the key-size switch. The correction follows the original jump table's 13 entries and six destinations, so variable-size keys are traversed correctly in the recovered pseudocode. No game instructions were patched.
+
+Review covered all 969 original instructions, the full pseudocode, the correction diff and all three identified caller windows. The complete original evaluator passed 651 synthetic cases across all 13 value kinds. Its 11 original interpolation functions passed another 143 finite-input checks. String helpers and math imports use explicit local fixtures; this does not establish live-game behaviour or bit-exact PS4 math. Loop/endpoint edge cases and unmatched decoration groups still need validation.
+
+Independent reopening verified the saved function, argument, switch correction and unchanged original bytes. The inventory audit also confirmed every previously published name and refreshed the stale added-functions list. The larger recipient consumer remains under review; this batch credits only the evaluator.
+
+Totals: **863 checked names across 9,628 defined functions**, **2,264 mapped and 7,364 unmapped**. These are code-review counts, not whole-game completion.

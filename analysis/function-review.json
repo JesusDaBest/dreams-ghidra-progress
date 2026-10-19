@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "snapshot_date": "2026-10-17",
+  "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "785 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "785 existing-function renames,77 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9627,
+    "total": 9628,
     "default_fun_names": 8610,
-    "other_names": 1017,
-    "verification": "complete_inventory_matches_baseline_plus_785_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1018,
+    "verification": "complete_inventory_matches_baseline_plus_785_renames_and_77_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -20176,6 +20176,40 @@
         "Generation/sentinel and full-capacity cases establish local behavior,not whether normal game callers permit those inputs.",
         "Definition semantics, whole lifecycle and exact source names remain unresolved.",
         "Only two allocator caller windows and five of 23 ensure caller windows were reviewed; full callers and indirect references remain unreviewed.",
+        "No exact Media Molecule source/build match is established."
+      ]
+    },
+    {
+      "address": "141432560",
+      "original_name": null,
+      "applied_name": "EvaluateRecipientRuntimeAnimationTracks",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EvaluateRecipientRuntimeAnimationTracks(void * runtime_instance)",
+      "evidence": [
+        "Complete 4484-byte original region and all 969 instructions reviewed; 961 original, 982 corrected-preview and 996 typed pseudocode lines covered by full reads and complete diffs.",
+        "651 complete original-evaluator synthetic cases and 143 separate original interpolation-function cases passed; fixtures and remaining edge cases are recorded.",
+        "All 3 identified direct caller windows reviewed; the whole large caller is still incomplete.",
+        "Independent saved-project reopening confirms the single added function, working RDI-pointer/void-return ABI, key-width switch override, original bytes and EH boundary.",
+        "Packed keys use 9 frame bits, 2 endpoint-state bits and 4 interpolation-selector bits. Six key-size branches cover 13 value kinds; flagged keys advance 4 bytes.",
+        "Evaluates scalar/vector/quaternion values, step values, strings and child-animation key times, mouth-shape points and grouped decoration points.",
+        "Writes per-channel weights from instance weight and endpoint availability; samples instance time at 30 units per second with definition limits and loop state.",
+        "Initializer establishes 42 channel records: 40 named and 2 blank. Original names include mouth_shape, face_quat, pupil and eyelid fields, body makeup, sound_name, user_tag, decorations and two sub_anim_player channels.",
+        "All 3 identified direct call sites occur in the recipient lifecycle; complete large caller remains under review.",
+        "Ghidra collapsed the key-size switch incorrectly despite correct read-only table bytes; six original destinations restore the 13-case traversal without byte edits.",
+        "Native cases use synthetic two-key tracks, original easing functions, local string stand-ins and host math adapters. They establish bounded behavior, not live-game completion."
+      ],
+      "caveats": [
+        "Loop wrapping and flagged/missing endpoint combinations not exercised here.",
+        "Unmatched decoration groups and zero/nonzero mouth-shape pair not exercised.",
+        "NaN/infinity, malformed metadata, large counts and concurrency not tested.",
+        "Float comparisons use tolerances; host math imports are not a PS4 bit-exact claim.",
+        "Whole large consumer, concrete source class/type names, track serialization and real assets remain unresolved.",
+        "The initializer and 11 curve functions are not credited as additional saved names in this batch.",
         "No exact Media Molecule source/build match is established."
       ]
     }
