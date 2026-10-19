@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "772 existing-function renames,74 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "772 existing-function renames,75 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9625,
+    "total": 9626,
     "default_fun_names": 8623,
-    "other_names": 1002,
-    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_74_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1003,
+    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_75_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19803,6 +19803,33 @@
         "Other editor modes/operation states, palette precomputation and lifecycle unresolved.",
         "Downstream recorder prototype differs from native register setup; its emitted expression is not recovered source.",
         "Original source names/types and exact Media Molecule source/build match remain unknown."
+      ]
+    },
+    {
+      "address": "1407788d0",
+      "original_name": null,
+      "applied_name": "AdjustOrPropagateEditorBrushstrokeSurface",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AdjustOrPropagateEditorBrushstrokeSurface(int dispatch_key, void * propagation_state, void * selection_context, void * world, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+      "evidence": [
+        "Complete 2,779-byte original body, 454 nonempty pseudocode lines and five direct incoming-call windows reviewed.",
+        "Ordinary SizeBoost/Ruffle/Balloon gains are1/2/2 times signed strength divided by3, with bounds0..1/0..1/0..3. Full-caller validation corrected an earlier static interpretation of the table as step divisors.",
+        "Gridiness uses a minimum one byte step even at zero strength, separate sign selection and0..100 clamp. Paired mode62 overrides bypass the ordinary lower clamp.",
+        "Propagation copies float or byte properties without clamping, marks dirty user bits and avoids duplicate property ids. Spatial sprite packets6/8/7 carry SizeBoost/Ruffle/Balloon edits; only successful Balloon operations submit property178 reset.",
+        "Five isolated complete-caller suites passed4,032 distinct cases and4,864 invocations: ordinary floats1,536,Gridiness896,paired overrides384,spatial packets384,propagation832 each invoked twice.",
+        "New definition and eleven-input working signature independently reopened, preserving original bytes and all existing function names/signatures."
+      ],
+      "caveats": [
+        "Synthetic runtime data with explicit writer/operation-result/recorder fixtures, not in-game execution or actual persistence.",
+        "Bounded mode0/38/62 and seven Gridiness sign configurations; other modes/states,missing offsets and lifecycle unresolved.",
+        "Spatial path assumes valid sprite target; current local checks do not establish the wider caller invariant.",
+        "Downstream recorder prototypes differ from native arguments; emitted expressions are not recovered source.",
+        "No exact Media Molecule source/build match or original source types/names claimed."
       ]
     }
   ],

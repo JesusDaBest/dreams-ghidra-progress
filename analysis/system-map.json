@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9625,
-  "mapped_total": 2248,
+  "inventory_total": 9626,
+  "mapped_total": 2249,
   "unmapped_total": 7377,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -57182,6 +57182,34 @@
             "Propagation copies via target-kind offsets and deduplicates changed property ids. Spatial sprite editing instead submits operation type5 with target pair, signed step and spatial frame/box; only success forwards record updates.",
             "2,496 distinct complete-caller synthetic cases passed: 2,048 exact float adjustment cases, 192 propagation cases each invoked twice, and 256 spatial success/failure cases (2,688 native invocations).",
             "Definition and ten-input working signature independently reopened; original bytes and all existing function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1407788d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "material-editing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete sculpt/sprite SizeBoost,Ruffle,Balloon and sculpt Gridiness editing,propagation and spatial packet paths.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete2779byte/full454nonemptylineCread;4032completecaller cases,4864 invocations with explicit runtime fixtures.",
+      "code_sha256": "ea5330e4599ccd35909ffe45ace4f028dcf738606d5816029fe1a0c83efac5ce",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AdjustOrPropagateEditorBrushstrokeSurface",
+          "support": [
+            "Complete 2,779-byte original body, 454 nonempty pseudocode lines and five direct incoming-call windows reviewed.",
+            "Ordinary SizeBoost/Ruffle/Balloon gains are1/2/2 times signed strength divided by3, with bounds0..1/0..1/0..3. Full-caller validation corrected an earlier static interpretation of the table as step divisors.",
+            "Gridiness uses a minimum one byte step even at zero strength, separate sign selection and0..100 clamp. Paired mode62 overrides bypass the ordinary lower clamp.",
+            "Propagation copies float or byte properties without clamping, marks dirty user bits and avoids duplicate property ids. Spatial sprite packets6/8/7 carry SizeBoost/Ruffle/Balloon edits; only successful Balloon operations submit property178 reset.",
+            "Five isolated complete-caller suites passed4,032 distinct cases and4,864 invocations: ordinary floats1,536,Gridiness896,paired overrides384,spatial packets384,propagation832 each invoked twice.",
+            "New definition and eleven-input working signature independently reopened, preserving original bytes and all existing function names/signatures."
           ]
         }
       ]

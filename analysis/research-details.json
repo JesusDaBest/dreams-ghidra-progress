@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 847,
+    "checked_and_applied_names": 848,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 847,
-    "function_count": 9625,
+    "verified_names": 848,
+    "function_count": 9626,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,74 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,75 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26791,6 +26791,29 @@
       "Other editor modes/operation states, palette precomputation and lifecycle unresolved.",
       "Downstream recorder prototype differs from native register setup; its emitted expression is not recovered source.",
       "Original source names/types and exact Media Molecule source/build match remain unknown."
+    ]
+  },
+  "editor_brushstroke_surface_checkpoint": {
+    "address": "1407788d0",
+    "name": "AdjustOrPropagateEditorBrushstrokeSurface",
+    "working_signature": "void PS4_SYSV AdjustOrPropagateEditorBrushstrokeSurface(int dispatch_key, void * propagation_state, void * selection_context, void * world, void * group, void * editor, void * source_object, void * target_object, int selection_index, uchar user_index, uchar apply_edit)",
+    "complete_caller_cases": 4032,
+    "native_invocations": 4864,
+    "verified_incoming_direct_calls": 5,
+    "findings": [
+      "Complete 2,779-byte original body, 454 nonempty pseudocode lines and five direct incoming-call windows reviewed.",
+      "Ordinary SizeBoost/Ruffle/Balloon gains are1/2/2 times signed strength divided by3, with bounds0..1/0..1/0..3. Full-caller validation corrected an earlier static interpretation of the table as step divisors.",
+      "Gridiness uses a minimum one byte step even at zero strength, separate sign selection and0..100 clamp. Paired mode62 overrides bypass the ordinary lower clamp.",
+      "Propagation copies float or byte properties without clamping, marks dirty user bits and avoids duplicate property ids. Spatial sprite packets6/8/7 carry SizeBoost/Ruffle/Balloon edits; only successful Balloon operations submit property178 reset.",
+      "Five isolated complete-caller suites passed4,032 distinct cases and4,864 invocations: ordinary floats1,536,Gridiness896,paired overrides384,spatial packets384,propagation832 each invoked twice.",
+      "New definition and eleven-input working signature independently reopened, preserving original bytes and all existing function names/signatures."
+    ],
+    "limits": [
+      "Synthetic runtime data with explicit writer/operation-result/recorder fixtures, not in-game execution or actual persistence.",
+      "Bounded mode0/38/62 and seven Gridiness sign configurations; other modes/states,missing offsets and lifecycle unresolved.",
+      "Spatial path assumes valid sprite target; current local checks do not establish the wider caller invariant.",
+      "Downstream recorder prototypes differ from native arguments; emitted expressions are not recovered source.",
+      "No exact Media Molecule source/build match or original source types/names claimed."
     ]
   }
 }

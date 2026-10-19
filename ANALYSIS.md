@@ -8352,3 +8352,16 @@ Propagation copies values using target-kind offsets and deduplicates changed-pro
 These are synthetic local tests with explicit writer/operation-result/record fixtures. Actual operation-engine behavior, persistence, other modes/states and lifecycle remain unresolved. Sprite-to-sculpt propagation was not executed: a source finish field can lead to an unchecked target pointer if its finish offset is absent. The local caller window does not establish a guard; wider dispatcher invariants remain unresolved. A downstream recorder prototype still differs from native register setup. No in-game verification or exact Media Molecule source/build match is claimed.
 
 Totals: **847 checked names across 9,625 defined functions**, **2,248 mapped and 7,377 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Brushstroke surface controls and gridiness
+
+`AdjustOrPropagateEditorBrushstrokeSurface` identifies SizeBoost, Ruffle, Balloon and sculpt Gridiness edits. Ordinary SizeBoost adds strength/3 and clamps to0..1; Ruffle adds twice that step and clamps to0..1; Balloon adds twice that step and clamps to0..3. Complete-caller execution corrected an earlier private static interpretation: the1/3 table supplies upper bounds, not an additional step divisor. Earlier arithmetic-block tests used manually configured inputs and did not prove caller configuration.
+
+Gridiness uses a minimum byte step of one even at zero strength, selects direction separately and clamps edits to0..100. The tested paired-controller mode62 paths bypass the lower zero clamp. Propagation copies values without clamping, including Gridiness bytes above100, marks user dirty bits and deduplicates property ids. Spatial sprite edits submit packets6/8/7 for SizeBoost/Ruffle/Balloon; only successful Balloon edits reset its ordinary property.
+
+The complete 2,779-byte body,454 nonempty pseudocode lines and five incoming direct-call windows were read. Five complete-caller suites passed4,032 distinct synthetic cases and4,864 invocations:1,536 ordinary float,896 Gridiness,384 paired override,384 spatial packet,and832 propagation cases each invoked twice. The new definition and eleven-input working signature survived independent reopening, preserving original bytes and existing names/signatures.
+
+Tests use synthetic data and explicit writer,operation-result and recorder fixtures. Actual operation engine,persistence,other modes/states,missing offsets and lifecycle remain unresolved. The spatial branch assumes a valid sprite target; its wider caller invariant is unproven. Some downstream recorder prototypes still differ from native arguments. No in-game verification or exact Media Molecule source/build match is claimed.
+
+Totals: **848 checked names across 9,626 defined functions**, **2,249 mapped and 7,377 unmapped**. These counts describe code review,not whole-game completion.
