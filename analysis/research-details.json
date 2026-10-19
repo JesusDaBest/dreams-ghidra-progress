@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 814,
+    "checked_and_applied_names": 815,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 814,
+    "verified_names": 815,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "744 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "745 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25950,6 +25950,61 @@
       "Analyst descriptive name,not recovered original symbol or field labels.",
       "Other mode combinations and caller lifecycles not exhaustively validated.",
       "Parent shape-frame helper remains partially reviewed;its test cases do not constitute whole-function completion."
+    ]
+  },
+  "csg_adjusted_placement_orientation_checkpoint": {
+    "address": "140bced60",
+    "name": "ComputeEditorAdjustedPlacementQuaternion",
+    "working_signature": "SpatialQueryFloat4Working16 PS4_SYSV ComputeEditorAdjustedPlacementQuaternion(void * editor, int enable_adjustment, byte * changed)",
+    "native_cases": 448,
+    "findings": [
+      "Complete original936-byte/194instruction body,full310-line C and placement caller reviewed.",
+      "RDI opaque editor,ESI enable int,RDX optional changedbyte;returns full16-byte quaternion inXMM0.",
+      "Stored17610 quaternion retained when disabled or any210/211/17654/17653 gate is set.",
+      "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
+      "448original-code cases cover gates,unit axes,canonical sign pairs,equal inputs and changedbyte behavior with hostacosf/sinf/cosf adapters.",
+      "Saved name/full-vector signature independently reopened;original bytes and all other function annotations unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working ABI,not recovered source declaration or field/state labels.",
+      "Small-angle approximations,nonunit/exceptional inputs,exact threshold and originalPS4math rounding remain unresolved.",
+      "Parent placement/worker pipelines remain under review;bounded native cases do not establish feature completion."
+    ]
+  },
+  "csg_frame_blend_abi_checkpoint": {
+    "addresses": [
+      "140bcb1b0",
+      "140bcd2b0",
+      "140bce430"
+    ],
+    "scope": "working_abi_only",
+    "findings": [
+      "Missing incomingXMM0float traced through two forwarding calls to position interpolation.",
+      "Three explicit register/stack working signatures saved and independently reopened;original names/bytes unchanged."
+    ],
+    "native_cases": 320,
+    "limits": [
+      "Native suite validates consumer interpolation path,not entire chain.",
+      "Other options,concrete types and full lifecycles unresolved."
+    ],
+    "naming_credit": 0
+  },
+  "csg_base_placement_checkpoint": {
+    "function": "140bce430",
+    "scope": "partial_semantic_review",
+    "native_suites": {
+      "input_blend": 320,
+      "stored_selection": 448,
+      "connected_plane_projection": 384
+    },
+    "findings": [
+      "Incoming float controls live position interpolation.",
+      "Raw/saved frame selection forces output scale1.",
+      "Connected original projection eligibility and consumer accept plane hits only at strict0<distance<10000."
+    ],
+    "limits": [
+      "Orientation helper now reviewed separately;full placement pipeline still not named or counted complete.",
+      "Projection cases use saved endpoints and selected gates;exceptional/parallel rays and broader runtime behavior unresolved."
     ]
   }
 }

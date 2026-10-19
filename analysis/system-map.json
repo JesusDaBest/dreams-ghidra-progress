@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2215,
-  "unmapped_total": 7405,
+  "mapped_total": 2216,
+  "unmapped_total": 7404,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56167,6 +56167,34 @@
             "2391original-code cases cover all256primitive bytes,all8zero masks and343special-value triples;both signed zeros count,NaNs/infinities do not.",
             "Reviewed140bcf350 caller uses count1/2/3 to choose offset and automatic dimension branches;zero-lane replacement and later source-frame conversion traced.",
             "Saved name/signature independently reopened;original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bced60": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original editor helper computes optional adjusted placement quaternion from auxiliary rotation-vector differences.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and C read;448original-function cases and full-vector placement caller use reviewed.",
+      "code_sha256": "ac62d8d92b266e9e4f45ee7844a0f891ff5c75a6830b83392569925d937c557f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorAdjustedPlacementQuaternion",
+          "support": [
+            "Complete original936-byte/194instruction body,full310-line C and placement caller reviewed.",
+            "RDI opaque editor,ESI enable int,RDX optional changedbyte;returns full16-byte quaternion inXMM0.",
+            "Stored17610 quaternion retained when disabled or any210/211/17654/17653 gate is set.",
+            "For finite unit inputs,principal rotation-vector Z difference of auxiliaryB0 and180 is transformed by editor17630;above0.1 magnitude,its delta quaternion premultiplies the base.",
+            "448original-code cases cover gates,unit axes,canonical sign pairs,equal inputs and changedbyte behavior with hostacosf/sinf/cosf adapters.",
+            "Saved name/full-vector signature independently reopened;original bytes and all other function annotations unchanged."
           ]
         }
       ]

@@ -8075,3 +8075,12 @@ Totals are **813 checked names across 9,620 defined functions**, with **2,214 ma
 Further partial analysis of the larger shape-frame helper separates the orientation used to measure endpoint separation from the orientation returned for the shape. Additional suites verify 512 dimension cases, 512 rotation cases, 1,152 size-cleanup and torus/cookie cases, and 512 snapping cases. Snapping truncates each separation component toward zero on a shared power-of-two step before cleanup. These tests use synthetic saved endpoints; snapping uses host math adapters. The large function remains partially reviewed and receives no whole-function completion credit.
 
 Totals are **814 checked names across 9,620 defined functions**, with **2,215 mapped and 7,405 unmapped**. These measure identified code review, not completion of Dreams or any game feature.
+
+
+### Adjusted placement orientation and corrected frame arguments
+
+`ComputeEditorAdjustedPlacementQuaternion` now names the fully read orientation helper. It normally returns the stored placement quaternion. When enabled, it compares the Z components of two principal rotation vectors, transforms their difference through a reference orientation, and applies a correction before the base quaternion when the difference exceeds about 0.1 radians. Its optional changed flag is written only when a correction is applied. The 448-case original-code suite covers gates, random unit orientations, quaternion sign equivalence and unchanged cases using explicit host math adapters. The full 16-byte return signature and name survived independent reopening; executable bytes are unchanged. Small-angle approximation and exceptional domains remain unresolved.
+
+Separately, three unnamed frame functions received explicit working register/stack signatures after tracing a missing XMM0 float through their call chain. This is a type correction with no naming credit. Bounded consumer tests establish interpolation (320 cases), raw/saved frame selection (448), and connected ray-plane projection (384). Projection accepts only forward intersections strictly below 10,000 units. The larger placement pipeline remains under review.
+
+Totals are **815 checked names across 9,620 defined functions**, with **2,216 mapped and 7,404 unmapped**. These are identified-code review counts, not whole-game or feature completion.
