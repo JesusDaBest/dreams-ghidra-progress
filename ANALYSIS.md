@@ -8297,3 +8297,14 @@ The record-provider body was read, but active user-settings and auxiliary-contro
 The complete 1,813-byte body, 355 instructions, full pseudocode, two recorded caller windows and three complete material/effect edit callers were reviewed. Five isolated suites passed 3,072 synthetic cases across paired and single-selection saved/live paths, directional corrections, signed scales and optional outputs. The descriptive name and four-pointer working signature survived independent reopening; original bytes and other function names/signatures are unchanged.
 
 Property registration and offset-table evidence also links the surrounding callers to sculpt/sprite Boil, Flow, Wave, Evaporate and Throb, glow editing, FleckMix, roughness, metalness and finish amount. Those callers are still under review and receive no additional checked-name credit. Host trigonometry and an explicit local infinity-predicate fixture do not establish exact PS4 rounding or in-game behavior. Nonfinite/nonunit inputs, lifecycle and downstream spatial-operation interpretation remain unresolved. Totals: **842 checked names across 9,620 defined functions**, **2,243 mapped and 7,377 unmapped**. These counts do not measure whole-game completion.
+
+
+### Shared signed material-edit strength
+
+`ComputeSignedEditorEditStrength` now defines a previously missing 425-byte function. It derives a small signed strength from selected-controller data, mode and bank flags, and a mode-specific editor factor. The same result supplies color, glow, surface, effect and comb edits; one caller uses it only as a nonzero edit gate. The name describes this shared role rather than assigning it to one specific property.
+
+The complete original body and pseudocode were read. Fourteen direct calls were checked at instruction boundaries across eight complete caller bodies. Property registration and offset-table evidence connects those callers to named Dreams controls. A prior isolated suite passed 4,096 bit-exact finite cases across mode, bank, override and sign settings. This suite was not rerun or counted twice.
+
+The function boundary, descriptive name and float-return working signature survived independent reopening. Existing function names/signatures and original instruction bytes are unchanged. Exceptional inputs, all ineligible object combinations, original field names, indirect callers and real game/device behavior remain unresolved. Caller-body review does not establish complete execution coverage.
+
+Totals: **843 checked names across 9,621 defined functions**, **2,244 mapped and 7,377 unmapped**. Defining an additional function changes the inventory; these counts do not measure whole-game completion.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 842,
+    "checked_and_applied_names": 843,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 842,
-    "function_count": 9620,
+    "verified_names": 843,
+    "function_count": 9621,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "772 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "772 existing-function renames,70 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26678,5 +26678,25 @@
       "bounded_cases": 3072,
       "uninstrumented_function_cases": 3072
     }
+  },
+  "editor_edit_strength_checkpoint": {
+    "address": "140be0ec0",
+    "name": "ComputeSignedEditorEditStrength",
+    "working_signature": "float PS4_SYSV ComputeSignedEditorEditStrength(void * editor)",
+    "native_cases": 4096,
+    "complete_direct_caller_bodies_read": 8,
+    "verified_direct_call_sites": 14,
+    "findings": [
+      "Returns a signed float edit strength used for material/effect/comb edits and nonzero edit gates,verified through14directcallinstructions across8completecallerbodies.",
+      "Eligible selected-object byte36 normalizedby255,below.01zeroed;single-type2editor33overrideuses.333or.2formode40.",
+      "Mode/bank flags choose sign;output multipliesfloat1/30andmode-selectededitor17084/17088/1708c.",
+      "4096complete original-region cases match finite model bitexact;originalinputsunchanged."
+    ],
+    "limits": [
+      "Finite bounded synthetic inputs;ineligible-pointer/type combinations and exceptional floats not exhaustive.",
+      "Underlying source field names and original source symbol unknown;workingeditorpointeropaque.",
+      "Caller bodies statically reviewed,not fully executed;no real game or input-device validation.",
+      "Indirect callers not ruled out."
+    ]
   }
 }

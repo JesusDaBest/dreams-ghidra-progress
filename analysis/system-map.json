@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9620,
-  "mapped_total": 2243,
+  "inventory_total": 9621,
+  "mapped_total": 2244,
   "unmapped_total": 7377,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -57021,8 +57021,8 @@
       "system": "sculpting-painting",
       "component_path": [
         "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "paint",
+        "material-editing",
         "runtime-implementation"
       ],
       "component_basis": "Shared transform used by spatial sprite material/effect edit operations;complete caller bodies and property registrations reviewed.",
@@ -57043,6 +57043,32 @@
             "Five distinct native suites cover saved/live/directional pairs and saved/live single type2 objects;3072cases,finite signed scales,unit quaternions,optional output present/absent,guards/input buffers preserved.",
             "Working ABI:void,transform32*outRDI,opaqueeditorRSI,opaquegroupRDX,optionalworkingfloat4*outRCX.",
             "Saved descriptive name and four-pointer void-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140be0ec0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "paint",
+        "material-editing",
+        "runtime-implementation"
+      ],
+      "component_basis": "Signed edit strength shared by reviewed material/effect/comb callers;14directsitesin8completebodies.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete425byteassembly/fullCread;4096bitexact original-function cases.",
+      "code_sha256": "3999ffb593e817f0a839ee34de10a7f000603f7355eadec5bb2c300de8b18dff",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeSignedEditorEditStrength",
+          "support": [
+            "Returns a signed float edit strength used for material/effect/comb edits and nonzero edit gates,verified through14directcallinstructions across8completecallerbodies.",
+            "Eligible selected-object byte36 normalizedby255,below.01zeroed;single-type2editor33overrideuses.333or.2formode40.",
+            "Mode/bank flags choose sign;output multipliesfloat1/30andmode-selectededitor17084/17088/1708c.",
+            "4096complete original-region cases match finite model bitexact;originalinputsunchanged."
           ]
         }
       ]
@@ -61103,6 +61129,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "material-editing",
+              "label": "Material & surface editing",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime behavior",
                   "children": []
                 }
               ]

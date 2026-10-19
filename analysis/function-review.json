@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "772 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "772 existing-function renames,70 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9620,
+    "total": 9621,
     "default_fun_names": 8623,
-    "other_names": 997,
-    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "other_names": 998,
+    "verification": "complete_inventory_matches_baseline_plus_772_renames_and_70_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19672,6 +19672,30 @@
         "Caller-connected operation execution, exceptional/nonunit inputs and missing-first-object behavior remain unverified.",
         "Host sincosf and an explicit local infinity-predicate fixture do not establish exact PS4 rounding.",
         "No live game validation; downstream operation semantics, synchronization and lifecycle remain unresolved."
+      ]
+    },
+    {
+      "address": "140be0ec0",
+      "original_name": null,
+      "applied_name": "ComputeSignedEditorEditStrength",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float PS4_SYSV ComputeSignedEditorEditStrength(void * editor)",
+      "evidence": [
+        "Returns a signed float edit strength used for material/effect/comb edits and nonzero edit gates,verified through14directcallinstructions across8completecallerbodies.",
+        "Eligible selected-object byte36 normalizedby255,below.01zeroed;single-type2editor33overrideuses.333or.2formode40.",
+        "Mode/bank flags choose sign;output multipliesfloat1/30andmode-selectededitor17084/17088/1708c.",
+        "4096complete original-region cases match finite model bitexact;originalinputsunchanged."
+      ],
+      "caveats": [
+        "Finite bounded synthetic inputs;ineligible-pointer/type combinations and exceptional floats not exhaustive.",
+        "Underlying source field names and original source symbol unknown;workingeditorpointeropaque.",
+        "Caller bodies statically reviewed,not fully executed;no real game or input-device validation.",
+        "Indirect callers not ruled out."
       ]
     }
   ],
