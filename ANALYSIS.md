@@ -8602,3 +8602,12 @@ Totals: **906 checked names across 9,667 defined functions**, **2,307 mapped and
 Five proven count definitions now use unsigned integer types. Independent reopening verified both names, interfaces, data definitions and unchanged original bytes. Global count inference is corrected, while some reused stack slots still produce misleading pointer/vector conversions in generated C; original assembly remains authoritative. The entire regenerated constructor C was not reread. Custom shapes get count checks rather than index-content topology validation. Whole-constructor execution, custom-direction initialization, malformed input, allocation failures, exact developer-source matching and live-game behavior remain unresolved.
 
 Totals: **908 checked names across 9,667 defined functions**, **2,309 mapped and 7,358 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient surface position and normal update
+
+`UpdateRecipientShapeSurfacePositionsAndNormals` now has a reviewed descriptive name and explicit opaque state pointer. Its complete 315-instruction body, 442-line typed pseudocode and all named-preview differences were read, with both direct caller windows traced. It rebuilds face normals, blends point normals using a flag-selected coefficient, transforms base directions, selects triangles and barycentrically interpolates surface positions and normals over the active range. No barycentric clamp is observed.
+
+All 144 whole original-code cases passed with the original hierarchical selector and synthetic data. Cases cover both blend flags, mirror signs, three Z-axis rotations, flat/tilted meshes, two initial normals and full/partial/empty active ranges. Expected normals and affine positions were independently calculated, with other state and fixture data unchanged. The hierarchy repeats one base triangle, so these cases do not prove general selection or arbitrary topology. Degenerate/nonfinite geometry, broader orientation behavior, original source classes and live-game integration remain unresolved. Independent reopening verified the saved interface and unchanged original bytes.
+
+Totals: **909 checked names across 9,667 defined functions**, **2,310 mapped and 7,357 unmapped**. These measure code review, not whole-game completion.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 908,
+    "checked_and_applied_names": 909,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 908,
+    "verified_names": 909,
     "function_count": 9667,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2042,7 +2042,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "791 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28605,5 +28605,26 @@
     "unsigned_count_definitions": 5,
     "whole_constructor_executed": false,
     "original_bytes_unchanged": true
+  },
+  "recipient_runtime_shape_consumer_checkpoint": {
+    "address": "14143cb90",
+    "name": "UpdateRecipientShapeSurfacePositionsAndNormals",
+    "signature": "void PS4_SYSV UpdateRecipientShapeSurfacePositionsAndNormals(void * shape_state)",
+    "original_sha256": "21f08b991f7dcff4e724a58107f8a2c84a02cfd78f7096b5b9f63f35b1b69f0c",
+    "native_cases": 144,
+    "size": 1521,
+    "created": false,
+    "c_sha256": "9057e07d42323605d9e254485451ce750fa7de244a530f9f7ae6a51ccda853a3",
+    "nonempty_c_lines": 461,
+    "evidence": [
+      "Complete 1521-byte body: all 315 original instructions, 442 typed pseudocode lines and all 222 named-preview diff lines read; both direct caller windows traced.",
+      "144 whole original consumer cases with original hierarchical selector passed; face normals, flag-selected normal blending, mirrored/rotated barycentric positions and active-range preservation independently checked.",
+      "Independent saved-project reopening verified name, RDI opaque state pointer, unchanged original bytes and other function inventory."
+    ],
+    "limits": [
+      "One synthetic repeated-triangle hierarchy, flat/tilted meshes and limited orientations only; arbitrary topology, degenerate/nonfinite geometry and broad quaternion behavior remain unverified.",
+      "No original asset integration, recovered original source class, exact developer-source/build match or live-game verification."
+    ],
+    "project_saved_and_independently_reopened": true
   }
 }

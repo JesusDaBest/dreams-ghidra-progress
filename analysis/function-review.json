@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "791 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9667,
-    "default_fun_names": 8604,
-    "other_names": 1063,
-    "verification": "complete_inventory_matches_baseline_plus_791_renames_and_116_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8603,
+    "other_names": 1064,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_116_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21566,6 +21566,27 @@
         "Regenerated C was partially reread; global count typing corrected, but reused-stack pointer/vector inference artifacts remain. Original assembly is authoritative.",
         "Custom records are checked for matching point/index counts, not index-content topology; custom direction initialization, malformed inputs, allocation failures and live-game behavior unresolved.",
         "No exact developer-source/build match or recovered original source-class claim."
+      ]
+    },
+    {
+      "address": "14143cb90",
+      "original_name": "FUN_14143cb90",
+      "applied_name": "UpdateRecipientShapeSurfacePositionsAndNormals",
+      "created_function": false,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateRecipientShapeSurfacePositionsAndNormals(void * shape_state)",
+      "evidence": [
+        "Complete 1521-byte body: all 315 original instructions, 442 typed pseudocode lines and all 222 named-preview diff lines read; both direct caller windows traced.",
+        "144 whole original consumer cases with original hierarchical selector passed; face normals, flag-selected normal blending, mirrored/rotated barycentric positions and active-range preservation independently checked.",
+        "Independent saved-project reopening verified name, RDI opaque state pointer, unchanged original bytes and other function inventory."
+      ],
+      "caveats": [
+        "One synthetic repeated-triangle hierarchy, flat/tilted meshes and limited orientations only; arbitrary topology, degenerate/nonfinite geometry and broad quaternion behavior remain unverified.",
+        "No original asset integration, recovered original source class, exact developer-source/build match or live-game verification."
       ]
     }
   ],
