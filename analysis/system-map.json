@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2217,
-  "unmapped_total": 7403,
+  "mapped_total": 2218,
+  "unmapped_total": 7402,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56224,6 +56224,36 @@
             "Original eligibility predicate gates normalized ray-plane projection,accepting strict0<t<10000;anchor depends on comparisonframe identity.",
             "Five distinct bounded original-code suites total1760cases:blend320,storedselection448,connectedprojection384,connectedorientation128,localZ480.",
             "Saved descriptive name and working signature independently reopened;original bytes and all other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bcd2b0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original editor layer composes placement reference and context,then applies gated position/rotation constraints and angle snapping.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and corrected C read;1904primary original-code cases across five suites.",
+      "code_sha256": "fc7f0da4418689c9cec6153b4c1e469fa30f5392c9557d876a759bd072cb21ff",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorConstrainedPlacementTransform",
+          "support": [
+            "Complete3611-byte/708instruction body,full corrected C and worker caller reviewed.",
+            "Existing eight-parameter workingABI retained;composes placementReference*context before optional constraints.",
+            "Position locks zero selected lanes around editor420pivot in inverse17640constraint coordinates,then rotate back.",
+            "Relative rotation is totalQ*inverse(editor430baseQ);rotation vector filtered in constraint frame and reconstructed delta premultiplies base. Exactly two locks use weighted remaining-axis reduction.",
+            "Eligible angle snapping uses floor(angle/step+bias)*step and accepts only within tolerance;actual constants verified from original executable.",
+            "1904primary original-code cases:composition192,position256,rotation512,snap432,rotatedbase512;additional256paired group-input comparisons with128baselines.",
+            "Group-transform scratch output has no later direct stack access;two RAXdereferences traced to auxiliary/canary pointers. No claim about callee global side effects.",
+            "Saved name and working signature independently reopened;original bytes and other function annotations unchanged."
           ]
         }
       ]

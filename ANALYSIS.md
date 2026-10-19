@@ -8093,3 +8093,12 @@ Totals are **815 checked names across 9,620 defined functions**, with **2,216 ma
 Five distinct bounded original-code suites contain 1,760 cases: input blending (320), raw/saved selection (448), connected projection (384), connected orientation (128), and live local-Z offset (480). Connected orientation consumes the reviewed quaternion helper's full result and agrees with an independent rotation-vector formula. The first blend suite explicitly supplies a false projection predicate; later suites execute original callees. Trigonometric paths use host math adapters. The saved descriptive name and existing working signature survived independent reopening with executable bytes unchanged. Other flag combinations, runtime lifecycles, exceptional/parallel inputs and exact PS4 math remain unresolved.
 
 Totals are **816 checked names across 9,620 defined functions**, with **2,217 mapped and 7,403 unmapped**. Higher frame workers remain under review; these counts do not measure whole-game completion.
+
+
+### Constrained editor placement
+
+`ComputeEditorConstrainedPlacementTransform` now names the fully read layer above the placement-reference helper. It composes the reference and context frames, then optionally applies position and rotation constraints. Position locks operate around a pivot in a chosen reference frame. Rotation locks filter a relative rotation vector; locking exactly two axes uses a weighted reduction onto the remaining axis. The resulting correction is applied before the stored base orientation. Eligible angular snapping uses the executable's candidate calculation and tolerance, rather than unconditional nearest-angle rounding.
+
+Five primary original-code suites contain 1,904 cases: composition (192), position constraints (256), rotation constraints (512), angular snapping (432), and rotated-base coupling (512). Another 256 paired comparisons against 128 neutral baselines found no output influence from varied group-transform inputs in the tested path. The constructed scratch transform has no subsequent direct stack access; this does not prove the callee has no other effects. Host math, bounded synthetic inputs, unresolved exceptional/small-angle domains and incomplete runtime lifecycle are documented. The saved descriptive name and working signature survived independent reopening with executable bytes unchanged.
+
+Totals are **817 checked names across 9,620 defined functions**, with **2,218 mapped and 7,402 unmapped**. Higher frame workers remain under review; these are code-review counts, not whole-game completion.

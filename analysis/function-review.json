@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "746 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "747 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8649,
-    "other_names": 971,
-    "verification": "complete_inventory_matches_baseline_plus_746_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8648,
+    "other_names": 972,
+    "verification": "complete_inventory_matches_baseline_plus_747_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19002,6 +19002,33 @@
         "Initial blend suite uses explicitfalseprojectionpredicate;other suites use original callees,with hosttrig adapters where needed.",
         "All tool/flag gates,full runtime lifecycle,parallel/exceptional inputs,zero-scale signs and exactPS4math rounding remain unresolved.",
         "Higher source-frame worker and sculpt-local-frame functions remain under review;this helper does not establish whole-pipeline completion."
+      ]
+    },
+    {
+      "address": "140bcd2b0",
+      "original_name": "FUN_140bcd2b0",
+      "applied_name": "ComputeEditorConstrainedPlacementTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorConstrainedPlacementTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, PositionScaleQuaternionTransform32 * context_transform, uint option_r8, uint option_r9, uchar stack_option_8, float blend_factor)",
+      "evidence": [
+        "Complete3611-byte/708instruction body,full corrected C and worker caller reviewed.",
+        "Existing eight-parameter workingABI retained;composes placementReference*context before optional constraints.",
+        "Position locks zero selected lanes around editor420pivot in inverse17640constraint coordinates,then rotate back.",
+        "Relative rotation is totalQ*inverse(editor430baseQ);rotation vector filtered in constraint frame and reconstructed delta premultiplies base. Exactly two locks use weighted remaining-axis reduction.",
+        "Eligible angle snapping uses floor(angle/step+bias)*step and accepts only within tolerance;actual constants verified from original executable.",
+        "1904primary original-code cases:composition192,position256,rotation512,snap432,rotatedbase512;additional256paired group-input comparisons with128baselines.",
+        "Group-transform scratch output has no later direct stack access;two RAXdereferences traced to auxiliary/canary pointers. No claim about callee global side effects.",
+        "Saved name and working signature independently reopened;original bytes and other function annotations unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and workingABI,not recovered source declaration or concrete field/enum labels.",
+        "Synthetic bounded fixtures,hosttrig adapters,local infinity/canary;exactPS4math,small-angle/negative-relativeW/exceptional cases and all gate combinations unresolved.",
+        "All position/rotation locks combined with snapping and full runtime object lifecycle not exhausted.",
+        "Higher frame worker and outer source-frame function remain under review;this helper does not establish fullpipeline completion."
       ]
     }
   ],
