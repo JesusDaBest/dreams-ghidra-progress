@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "774 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "775 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8621,
-    "other_names": 1006,
-    "verification": "complete_inventory_matches_baseline_plus_774_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8620,
+    "other_names": 1007,
+    "verification": "complete_inventory_matches_baseline_plus_775_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19905,6 +19905,32 @@
         "Scoring is distinct from template matching;score alone does not prove whether a rule accepts an event.",
         "Caller priority ties,rule ownership,selected-rule execution and lifecycle remain unresolved.",
         "Synthetic descriptors,not live game execution. Original source names/types and exact Media Molecule source/build match unknown."
+      ]
+    },
+    {
+      "address": "140113470",
+      "original_name": "FUN_140113470",
+      "applied_name": "ProcessEditorEventRules",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ProcessEditorEventRules(void * world, void * descriptor, ulonglong event_key, ushort property_id, void * selected_object_optional, void * editor_optional, void * companion_editor_optional, uint user_index, uchar flag, float float_input)",
+      "evidence": [
+        "Complete4,077-byte original region (901 instructions) and605 nonempty pseudocode lines read. Existing898-instruction body preserved;two unreachable NOPs and trailing trap verified separately.",
+        "Matches descriptor fields and packed wildcard criteria,then ranks rules with ScoreEditorEventRuleSpecificity. Independent primary/secondary channels retain first highest positive-score candidate;the same winner is processed once.",
+        "Updates selected-rule timing and recent-key data,builds bounded action records and calls AppendOrCoalesceEditorEventHistory. Optional property/position/curve measurements are separate paths.",
+        "896 complete-function scenarios and1,056 invocations passed using original scorer/history helpers:randomized primary matching,explicit tie/disabled/zero-score edges,and secondary/action queue deduplication/capacity32.",
+        "Four direct incoming-call setups reviewed out of56 identified;working ABI has six GP inputs,three stack inputs and one float input.",
+        "Saved descriptive name and mixed-register working signature independently reopened;original bytes,existing body layout and all other names/signatures unchanged."
+      ],
+      "caveats": [
+        "Synthetic runtime data;process-time counter/frequency and mutex/thread-id imports use explicit fixed-return fixtures,not live synchronization or timing.",
+        "Native paths use null world/editor/object and property580;property/position/curve measurements and contextful action identities remain unresolved.",
+        "Secondary cases cover equal-score one/two-rule scenarios and queue head0 with initial count0/32;other heads and stronger-later secondary candidates remain separate.",
+        "Only four of56 identified direct call setups reviewed;indirect callers not exhaustive.",
+        "Queue consumers,lifecycle and disk/network persistence unresolved. No game execution or exact Media Molecule source/build match claimed."
       ]
     }
   ],

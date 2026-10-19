@@ -8398,3 +8398,16 @@ The complete 237-byte original body, 86 nonempty pseudocode lines and one direct
 Equal-score handling, rule ownership, selected-rule behavior and runtime lifecycle remain unresolved. Exhaustive flag coverage does not mean exhaustive combinations of all descriptor fields or full event-engine verification. No in-game execution or exact Media Molecule source/build match is claimed.
 
 Totals: **851 checked names across 9,627 defined functions**, **2,252 mapped and 7,375 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Matching and processing editor-event rules
+
+`ProcessEditorEventRules` identifies shared event processing beyond the specificity scorer. It matches descriptor fields and packed wildcard criteria, then independently selects primary and secondary rules. The first highest positive score wins; a rule selected by both channels runs once. Selected processing updates timing and recent-key data, can submit bounded action records, and records recent event history. Property, position and curve measurements are additional paths whose runtime behavior remains unverified.
+
+Three complete-function suites passed 896 scenarios and 1,056 native invocations, executing the original specificity and history helpers together. Coverage includes randomized primary criteria, explicit disabled/zero-score/tie cases, secondary equal-score selection, same/different winners, duplicate action suppression and queue capacity 32. Clock and synchronization imports use explicit local fixtures. The process-time counter/frequency and mutex/thread-id imports were independently linked through original thunk bytes and loader/NID evidence.
+
+The full 4,077-byte original region, 901 instructions and 605 nonempty pseudocode lines were read. Ghidra owns 898 instructions; two unreachable NOPs and a trailing trap were verified separately without changing its body. Four incoming setups were reviewed out of 56 identified direct calls. The descriptive name and ten-input working ABI (six GP, three stack and one float input) survived independent reopening, preserving bytes, body layout and all other names/signatures.
+
+The native scenarios use null world/editor/object pointers and a missing-property sentinel. Actual measurement helpers, contextful action identities, other queue heads, concurrent execution, queue consumers and lifecycle remain unresolved. These in-memory records do not establish disk or network persistence. No game execution or exact Media Molecule source/build match is claimed.
+
+Totals: **852 checked names across 9,627 defined functions**, **2,253 mapped and 7,374 unmapped**. These are code-review counts, not whole-game completion.

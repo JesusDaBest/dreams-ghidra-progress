@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 851,
+    "checked_and_applied_names": 852,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 851,
+    "verified_names": 852,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "774 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "775 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26889,6 +26889,33 @@
       "suite_count": 1,
       "bounded_cases": 69632,
       "uninstrumented_function_cases": 69632
+    }
+  },
+  "editor_event_rule_submission_checkpoint": {
+    "address": "140113470",
+    "name": "ProcessEditorEventRules",
+    "working_signature": "void PS4_SYSV ProcessEditorEventRules(void * world, void * descriptor, ulonglong event_key, ushort property_id, void * selected_object_optional, void * editor_optional, void * companion_editor_optional, uint user_index, uchar flag, float float_input)",
+    "native_cases": 896,
+    "findings": [
+      "Complete4,077-byte original region (901 instructions) and605 nonempty pseudocode lines read. Existing898-instruction body preserved;two unreachable NOPs and trailing trap verified separately.",
+      "Matches descriptor fields and packed wildcard criteria,then ranks rules with ScoreEditorEventRuleSpecificity. Independent primary/secondary channels retain first highest positive-score candidate;the same winner is processed once.",
+      "Updates selected-rule timing and recent-key data,builds bounded action records and calls AppendOrCoalesceEditorEventHistory. Optional property/position/curve measurements are separate paths.",
+      "896 complete-function scenarios and1,056 invocations passed using original scorer/history helpers:randomized primary matching,explicit tie/disabled/zero-score edges,and secondary/action queue deduplication/capacity32.",
+      "Four direct incoming-call setups reviewed out of56 identified;working ABI has six GP inputs,three stack inputs and one float input.",
+      "Saved descriptive name and mixed-register working signature independently reopened;original bytes,existing body layout and all other names/signatures unchanged."
+    ],
+    "limits": [
+      "Synthetic runtime data;process-time counter/frequency and mutex/thread-id imports use explicit fixed-return fixtures,not live synchronization or timing.",
+      "Native paths use null world/editor/object and property580;property/position/curve measurements and contextful action identities remain unresolved.",
+      "Secondary cases cover equal-score one/two-rule scenarios and queue head0 with initial count0/32;other heads and stronger-later secondary candidates remain separate.",
+      "Only four of56 identified direct call setups reviewed;indirect callers not exhaustive.",
+      "Queue consumers,lifecycle and disk/network persistence unresolved. No game execution or exact Media Molecule source/build match claimed."
+    ],
+    "native_suites": {
+      "suite_count": 3,
+      "bounded_cases": 896,
+      "uninstrumented_function_cases": 896,
+      "native_invocations": 1056
     }
   }
 }
