@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 909,
+    "checked_and_applied_names": 910,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 909,
-    "function_count": 9667,
+    "verified_names": 910,
+    "function_count": 9668,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2030,6 +2030,7 @@
       "1414339f0",
       "141433a60",
       "141433a70",
+      "14143c980",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2042,7 +2043,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 117 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28624,6 +28625,28 @@
     "limits": [
       "One synthetic repeated-triangle hierarchy, flat/tilted meshes and limited orientations only; arbitrary topology, degenerate/nonfinite geometry and broad quaternion behavior remain unverified.",
       "No original asset integration, recovered original source class, exact developer-source/build match or live-game verification."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_triangle_line_checkpoint": {
+    "address": "14143c980",
+    "name": "IntersectLineWithFirstFacingRecipientShapeTriangle",
+    "signature": "bool PS4_SYSV IntersectLineWithFirstFacingRecipientShapeTriangle(void * intersection, AnimationFloat4Register origin, AnimationFloat4Register direction, float scale)",
+    "original_sha256": "e5ed8151a029b572dbf29c8bae9491b9e2c86d6f098479d63d743d7d637d0221",
+    "native_cases": 450,
+    "size": 513,
+    "created": true,
+    "c_sha256": "40cdb7d0415898d7e7af248ec2849a5d0a0b9736cda8ad34c9b7abd6b29cd45b",
+    "nonempty_c_lines": 155,
+    "evidence": [
+      "Complete 513-byte original body (108 instructions), 145-line typed C and all named-preview differences read; six direct caller windows traced.",
+      "450 whole original-code finite synthetic cases passed; 47 accepted negative line parameters, stored-order hit selection, facing/parallel filtering and output preservation checked independently.",
+      "Independent reopening verified newly created exact EH-bounded function, explicit SIMD inputs, AL result and unchanged original bytes/other inventory."
+    ],
+    "limits": [
+      "First accepted facing triangle in stored order; no nearest-hit or nonnegative line-parameter guarantee.",
+      "Finite synthetic zero/one/two triangle scenes only; tolerance boundaries, NaN/Inf, malformed indices, arbitrary meshes and live-game behavior unresolved.",
+      "Original source class and exact developer-source/build match not recovered; original unordered flags take precedence over generated ordered C."
     ],
     "project_saved_and_independently_reopened": true
   }

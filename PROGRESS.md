@@ -8042,3 +8042,12 @@ Totals: **908 checked names across 9,667 defined functions**, **2,309 mapped and
 All 144 whole original-code cases passed with the original hierarchical selector and synthetic data. Cases cover both blend flags, mirror signs, three Z-axis rotations, flat/tilted meshes, two initial normals and full/partial/empty active ranges. Expected normals and affine positions were independently calculated, with other state and fixture data unchanged. The hierarchy repeats one base triangle, so these cases do not prove general selection or arbitrary topology. Degenerate/nonfinite geometry, broader orientation behavior, original source classes and live-game integration remain unresolved. Independent reopening verified the saved interface and unchanged original bytes.
 
 Totals: **909 checked names across 9,667 defined functions**, **2,310 mapped and 7,357 unmapped**. These measure code review, not whole-game completion.
+
+
+### Stored-order recipient shape line intersection
+
+`IntersectLineWithFirstFacingRecipientShapeTriangle` now has an exact bounded function definition where Ghidra previously had no function. Its entire 108-instruction body, 145-line typed pseudocode and named-preview differences were read, with six direct caller windows traced. Its inputs preserve full origin/direction vectors, scalar shape scale and output point pointer; AL reports success.
+
+All 450 whole original-code finite synthetic cases passed, covering zero/one/two triangles, both stored orders, three scales, five origins and five directions. The helper accepts negative line parameters (47 checked hits), returns the first eligible stored-order hit and preserves the output on miss. It is not a nearest forward-ray query. All four output lanes and fixture preservation were checked independently. Tolerance-edge rounding, nonfinite comparisons, malformed indices, arbitrary meshes, original source classes and live-game behavior remain unverified. Independent reopening confirmed the new definition and unchanged original bytes.
+
+Totals: **910 checked names across 9,668 defined functions**, **2,311 mapped and 7,357 unmapped**. These are code-review counts, not whole-game completion.

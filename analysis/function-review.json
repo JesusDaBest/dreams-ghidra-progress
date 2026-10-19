@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 117 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9667,
+    "total": 9668,
     "default_fun_names": 8603,
-    "other_names": 1064,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_116_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1065,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_117_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21587,6 +21587,28 @@
       "caveats": [
         "One synthetic repeated-triangle hierarchy, flat/tilted meshes and limited orientations only; arbitrary topology, degenerate/nonfinite geometry and broad quaternion behavior remain unverified.",
         "No original asset integration, recovered original source class, exact developer-source/build match or live-game verification."
+      ]
+    },
+    {
+      "address": "14143c980",
+      "original_name": null,
+      "applied_name": "IntersectLineWithFirstFacingRecipientShapeTriangle",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IntersectLineWithFirstFacingRecipientShapeTriangle(void * intersection, AnimationFloat4Register origin, AnimationFloat4Register direction, float scale)",
+      "evidence": [
+        "Complete 513-byte original body (108 instructions), 145-line typed C and all named-preview differences read; six direct caller windows traced.",
+        "450 whole original-code finite synthetic cases passed; 47 accepted negative line parameters, stored-order hit selection, facing/parallel filtering and output preservation checked independently.",
+        "Independent reopening verified newly created exact EH-bounded function, explicit SIMD inputs, AL result and unchanged original bytes/other inventory."
+      ],
+      "caveats": [
+        "First accepted facing triangle in stored order; no nearest-hit or nonnegative line-parameter guarantee.",
+        "Finite synthetic zero/one/two triangle scenes only; tolerance boundaries, NaN/Inf, malformed indices, arbitrary meshes and live-game behavior unresolved.",
+        "Original source class and exact developer-source/build match not recovered; original unordered flags take precedence over generated ordered C."
       ]
     }
   ],
