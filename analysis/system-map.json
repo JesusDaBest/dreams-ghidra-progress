@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2229,
-  "unmapped_total": 7391,
+  "mapped_total": 2230,
+  "unmapped_total": 7390,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56576,6 +56576,36 @@
             "Another512connected query cases verify original supplier and cached shape-frame provider inside the ray-bounds caller.",
             "Input buffers and output guards preserved;finite control-vector W0 only.",
             "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1414c32d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Canonicalizes signed dimensions with compensating shape transform;both recorded calls inside verified editor bounds query.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full1314-byte/269owned-instruction body and full C reviewed;three direct original-code suites1288cases.",
+      "code_sha256": "712401b04ee7cf32bc968c2c00c439a16139cd2fdc48fe85608c6eed256aff42",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "CanonicalizeSignedShapeDimensions",
+          "support": [
+            "Full 1,314-byte EH region,269 owned instructions and395 nonempty pseudocode lines reviewed;both recorded calls belong to the verified editor ray-bounds query.",
+            "Working ABI:void return,mutable transform32 pointer in RDI and mutable dimension float4 pointer in RSI.",
+            "Strictly negative XYZ dimensions toggle sign while an axis-dependent rotation and scale-sign correction compensates the transform.",
+            "Correction is composed with the input transform and its quaternion normalized;tested finite unit-input cases preserve position and corresponding transformed geometry.",
+            "Negative zero stays bit-exact and arbitrary dimension W bits are preserved.",
+            "Three isolated original-code suites total1,288cases,including all eight sign combinations,random rotations,signed/zero scales,zero dimensions and buffer guards.",
+            "Nonfinite XYZ and nonunit quaternions remain unresolved;arbitrary W was tested only for preservation.",
+            "Saved descriptive name and two-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]

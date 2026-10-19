@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "758 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "759 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8637,
-    "other_names": 983,
-    "verification": "complete_inventory_matches_baseline_plus_758_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8636,
+    "other_names": 984,
+    "verification": "complete_inventory_matches_baseline_plus_759_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19315,6 +19315,31 @@
         "Noncached state2 and other shape-provider histories remain unvalidated here.",
         "Other fallback values,invalid selectors,nonzero control-vector W and nonunit/nonfinite rotations unresolved.",
         "Control-point role is inferred from primitive7 storage and curve predicate;original source identifier not recovered."
+      ]
+    },
+    {
+      "address": "1414c32d0",
+      "original_name": "FUN_1414c32d0",
+      "applied_name": "CanonicalizeSignedShapeDimensions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV CanonicalizeSignedShapeDimensions(PositionScaleQuaternionTransform32 * transform_inout, SpatialQueryFloat4Working16 * dimensions_inout)",
+      "evidence": [
+        "Full 1,314-byte EH region,269 owned instructions and395 nonempty pseudocode lines reviewed;both recorded calls belong to the verified editor ray-bounds query.",
+        "Working ABI:void return,mutable transform32 pointer in RDI and mutable dimension float4 pointer in RSI.",
+        "Strictly negative XYZ dimensions toggle sign while an axis-dependent rotation and scale-sign correction compensates the transform.",
+        "Correction is composed with the input transform and its quaternion normalized;tested finite unit-input cases preserve position and corresponding transformed geometry.",
+        "Negative zero stays bit-exact and arbitrary dimension W bits are preserved.",
+        "Three isolated original-code suites total1,288cases,including all eight sign combinations,random rotations,signed/zero scales,zero dimensions and buffer guards.",
+        "Nonfinite XYZ and nonunit quaternions remain unresolved;arbitrary W was tested only for preservation.",
+        "Saved descriptive name and two-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Nonfinite XYZ and nonunit quaternion inputs remain unresolved.",
+        "No source-name recovery or in-game execution claimed."
       ]
     }
   ],

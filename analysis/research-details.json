@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 828,
+    "checked_and_applied_names": 829,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 828,
+    "verified_names": 829,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "758 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "759 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26325,6 +26325,30 @@
     "native_suites": {
       "suite_count": 3,
       "bounded_cases": 2560
+    }
+  },
+  "signed_shape_dimensions_checkpoint": {
+    "address": "1414c32d0",
+    "name": "CanonicalizeSignedShapeDimensions",
+    "working_signature": "void PS4_SYSV CanonicalizeSignedShapeDimensions(PositionScaleQuaternionTransform32 * transform_inout, SpatialQueryFloat4Working16 * dimensions_inout)",
+    "native_cases": 1288,
+    "findings": [
+      "Full 1,314-byte EH region,269 owned instructions and395 nonempty pseudocode lines reviewed;both recorded calls belong to the verified editor ray-bounds query.",
+      "Working ABI:void return,mutable transform32 pointer in RDI and mutable dimension float4 pointer in RSI.",
+      "Strictly negative XYZ dimensions toggle sign while an axis-dependent rotation and scale-sign correction compensates the transform.",
+      "Correction is composed with the input transform and its quaternion normalized;tested finite unit-input cases preserve position and corresponding transformed geometry.",
+      "Negative zero stays bit-exact and arbitrary dimension W bits are preserved.",
+      "Three isolated original-code suites total1,288cases,including all eight sign combinations,random rotations,signed/zero scales,zero dimensions and buffer guards.",
+      "Nonfinite XYZ and nonunit quaternions remain unresolved;arbitrary W was tested only for preservation.",
+      "Saved descriptive name and two-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Nonfinite XYZ and nonunit quaternion inputs remain unresolved.",
+      "No source-name recovery or in-game execution claimed."
+    ],
+    "native_suites": {
+      "suite_count": 3,
+      "bounded_cases": 1288
     }
   }
 }

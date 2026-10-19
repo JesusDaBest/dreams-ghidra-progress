@@ -8205,3 +8205,12 @@ Broader caller purpose, noncached editor histories, exact face-aligned rays, all
 The complete 947-byte region, 244 owned instructions, full pseudocode and sole recorded caller were reviewed. Two direct original-code suites total 2,048 cases, covering selected gates, all 256 primary mode bytes, two fallback modes, both valid tested banks, random rotations and signed scales. Another 512 connected query cases exercise the original supplier and cached shape-frame provider. The name and three-argument signature survived independent reopening; original bytes and other function names/signatures remain unchanged.
 
 State 2 and other noncached frame histories remain unvalidated here. Other fallback values, invalid selectors, nonzero point W components and nonfinite or nonunit rotations remain unresolved. The control-point description follows the observed primitive storage and curve predicate; it is not a recovered source name. Totals: **828 checked names across 9,620 defined functions**, **2,229 mapped and 7,391 unmapped**. These counts do not measure whole-game completion.
+
+
+### Signed shape dimension correction
+
+`CanonicalizeSignedShapeDimensions` names the in-place correction used before the editor ray-bounds test. It makes strictly negative XYZ dimensions positive and compensates the shape transform through rotation and signed scale, preserving corresponding geometry in the checked finite unit-rotation cases. Negative zero remains unchanged. The dimension vector's fourth lane is preserved bit for bit.
+
+The complete 1,314-byte region, 269 owned instructions, full pseudocode and both recorded call sites were reviewed. Three isolated original-code suites total 1,288 cases covering all dimension-sign combinations, random rotations, signed and zero scales, zero dimensions, arbitrary fourth-lane bits and buffer guards. Its two mutable pointer parameters use the existing transform and float4 working types. The name and signature survived independent reopening, with original code bytes and other function names/signatures unchanged.
+
+Nonfinite XYZ dimensions, nonunit rotations and exact PS4 rounding remain unresolved. Tests use synthetic buffers and a local infinity-predicate fixture. Totals: **829 checked names across 9,620 defined functions**, **2,230 mapped and 7,390 unmapped**. These counts do not measure whole-game completion.
