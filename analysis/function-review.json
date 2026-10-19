@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "760 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "762 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8635,
-    "other_names": 985,
-    "verification": "complete_inventory_matches_baseline_plus_760_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8633,
+    "other_names": 987,
+    "verification": "complete_inventory_matches_baseline_plus_762_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19369,6 +19369,56 @@
         "Full transform-chain tangent rounding remains unvalidated;72boundary cases isolate only the quadratic block.",
         "Hostpowf/trig adapters and local infinity/canary fixtures used;no in-game verification or exact PS4math-rounding claim.",
         "Descriptive name states geometric behavior;original source identifier and concrete object/list roles are not recovered."
+      ]
+    },
+    {
+      "address": "140bd37d0",
+      "original_name": "FUN_140bd37d0",
+      "applied_name": "ComputeEditorObjectOrGroupOffsetTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorObjectOrGroupOffsetTransform(PositionScaleQuaternionTransform32 * transform_out, void * editor, void * group)",
+      "evidence": [
+        "Full 2,894-byte region,571 owned instructions,626 nonempty pseudocode lines and all four recorded caller windows reviewed.",
+        "Working ABI:void return,transform32 output RDI,editor RSI,opaque group RDX.",
+        "Single/ineligible pair uses group frame with editor/global-mode offsets and mode-dependent scale;selected modes incorporate a classification-dependent scalar from cached settings.",
+        "Eligible pairs use second-object saved or live frame. Live frame uses unclamped second190 position blend;group4399 enables type-dependent forward-axis offset with scale-sign compensation.",
+        "Paired output post-composes editor6-dependent quaternion and local X offset;output scale is .15 times object scale.",
+        "Five original-function suites total2,432cases include saved/live pairs,flagged direction,signed/zero scales,single-object global-mode combinations and synthetic cached settings.",
+        "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Global-mode settings field identity,other cache users/fallbacks,nonempty owned settings lists and real lock/allocator behavior remain unresolved.",
+        "Nonunit/nonfinite rotations,zero-direction edge cases and full editor lifecycle unvalidated.",
+        "Tests use explicit synthetic globals/settings,host trig and local infinity/canary fixtures;no live personal data or in-game verification."
+      ]
+    },
+    {
+      "address": "140bd5720",
+      "original_name": "FUN_140bd5720",
+      "applied_name": "ComputeEditorSphereReferenceTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeEditorSphereReferenceTransform(PositionScaleQuaternionTransform32 * transform_out, void * editor, void * group)",
+      "evidence": [
+        "Full 1,633-byte region,336 owned instructions,420 nonempty pseudocode lines and both recorded caller windows reviewed.",
+        "Working ABI:void return,transform32 output RDI,editor RSI,opaque group RDX.",
+        "In states6..9,mode-dependent point/radius lists compute volume-weighted centroid and enclosing radius R.",
+        "Composes common object/group offset frame with fixed local offset(.4666667,-1.4333334,0) and one-third scale.",
+        "Eligible pairs add[max(0,R-1)/3,-max(0,R-1)/3,0] to the local offset. Other cases additionally divide output scale by max(1,R);base quaternion retained.",
+        "One direct512case suite plus4,096connected original-query cases verify selected radius lists,frame branches,signs and direction combinations.",
+        "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Direct frame check uses cached paired frame;additional branches are checked through connected query outputs.",
+        "Other global-mode combinations,negative/nonfinite radii,count above3,invalid selectors and nonunit rotations unresolved.",
+        "Host math and synthetic memory/setting boundaries are explicit;no exact PS4rounding or in-game verification."
       ]
     }
   ],

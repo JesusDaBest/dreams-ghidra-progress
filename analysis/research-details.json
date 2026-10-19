@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 830,
+    "checked_and_applied_names": 832,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 830,
+    "verified_names": 832,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "760 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "762 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26381,5 +26381,55 @@
       "instrumented_cases": 512,
       "extracted_block_cases": 72
     }
+  },
+  "editor_reference_frames_checkpoint": {
+    "functions": [
+      {
+        "address": "140bd37d0",
+        "name": "ComputeEditorObjectOrGroupOffsetTransform",
+        "signature": "void PS4_SYSV ComputeEditorObjectOrGroupOffsetTransform(PositionScaleQuaternionTransform32 * transform_out, void * editor, void * group)",
+        "code_sha256": "bacbc0fedfb0b2b242dfc3f676df4634e72a862195085cc1f9d86979df37fb87",
+        "cases": 2432,
+        "evidence": [
+          "Full 2,894-byte region,571 owned instructions,626 nonempty pseudocode lines and all four recorded caller windows reviewed.",
+          "Working ABI:void return,transform32 output RDI,editor RSI,opaque group RDX.",
+          "Single/ineligible pair uses group frame with editor/global-mode offsets and mode-dependent scale;selected modes incorporate a classification-dependent scalar from cached settings.",
+          "Eligible pairs use second-object saved or live frame. Live frame uses unclamped second190 position blend;group4399 enables type-dependent forward-axis offset with scale-sign compensation.",
+          "Paired output post-composes editor6-dependent quaternion and local X offset;output scale is .15 times object scale.",
+          "Five original-function suites total2,432cases include saved/live pairs,flagged direction,signed/zero scales,single-object global-mode combinations and synthetic cached settings.",
+          "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
+        ],
+        "limits": [
+          "Global-mode settings field identity,other cache users/fallbacks,nonempty owned settings lists and real lock/allocator behavior remain unresolved.",
+          "Nonunit/nonfinite rotations,zero-direction edge cases and full editor lifecycle unvalidated.",
+          "Tests use explicit synthetic globals/settings,host trig and local infinity/canary fixtures;no live personal data or in-game verification."
+        ],
+        "suite_count": 5
+      },
+      {
+        "address": "140bd5720",
+        "name": "ComputeEditorSphereReferenceTransform",
+        "signature": "void PS4_SYSV ComputeEditorSphereReferenceTransform(PositionScaleQuaternionTransform32 * transform_out, void * editor, void * group)",
+        "code_sha256": "41e27193cf17a2db7479b342b14417860f4a08a175e08e0c4da97a53d6a3b631",
+        "cases": 4608,
+        "evidence": [
+          "Full 1,633-byte region,336 owned instructions,420 nonempty pseudocode lines and both recorded caller windows reviewed.",
+          "Working ABI:void return,transform32 output RDI,editor RSI,opaque group RDX.",
+          "In states6..9,mode-dependent point/radius lists compute volume-weighted centroid and enclosing radius R.",
+          "Composes common object/group offset frame with fixed local offset(.4666667,-1.4333334,0) and one-third scale.",
+          "Eligible pairs add[max(0,R-1)/3,-max(0,R-1)/3,0] to the local offset. Other cases additionally divide output scale by max(1,R);base quaternion retained.",
+          "One direct512case suite plus4,096connected original-query cases verify selected radius lists,frame branches,signs and direction combinations.",
+          "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
+        ],
+        "limits": [
+          "Direct frame check uses cached paired frame;additional branches are checked through connected query outputs.",
+          "Other global-mode combinations,negative/nonfinite radii,count above3,invalid selectors and nonunit rotations unresolved.",
+          "Host math and synthetic memory/setting boundaries are explicit;no exact PS4rounding or in-game verification."
+        ],
+        "suite_count": 8
+      }
+    ],
+    "verification": "independent_offline_reopening",
+    "case_accounting": "2432direct base-frame cases;512direct sphere-reference cases plus4096reused connected query cases. Totals are function-scoped evidence,not unique whole-game tests."
   }
 }

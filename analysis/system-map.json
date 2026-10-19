@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2231,
-  "unmapped_total": 7389,
+  "mapped_total": 2233,
+  "unmapped_total": 7387,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56638,6 +56638,64 @@
             "Separate512case diagnostic checkpoint matches all returns and170written distances bit-for-bit to scalar float32quadratic model;original float32cancellation explains differences from double geometry oracle.",
             "Separate72extracted original-quadratic cases confirm positive-distance tangency,near-tangent sides,inside/surface rejection and signed outputs.",
             "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd37d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed object/group and sphere reference frame chain used by editor geometric queries.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
+      "code_sha256": "bacbc0fedfb0b2b242dfc3f676df4634e72a862195085cc1f9d86979df37fb87",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorObjectOrGroupOffsetTransform",
+          "support": [
+            "Full 2,894-byte region,571 owned instructions,626 nonempty pseudocode lines and all four recorded caller windows reviewed.",
+            "Working ABI:void return,transform32 output RDI,editor RSI,opaque group RDX.",
+            "Single/ineligible pair uses group frame with editor/global-mode offsets and mode-dependent scale;selected modes incorporate a classification-dependent scalar from cached settings.",
+            "Eligible pairs use second-object saved or live frame. Live frame uses unclamped second190 position blend;group4399 enables type-dependent forward-axis offset with scale-sign compensation.",
+            "Paired output post-composes editor6-dependent quaternion and local X offset;output scale is .15 times object scale.",
+            "Five original-function suites total2,432cases include saved/live pairs,flagged direction,signed/zero scales,single-object global-mode combinations and synthetic cached settings.",
+            "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd5720": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed object/group and sphere reference frame chain used by editor geometric queries.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
+      "code_sha256": "41e27193cf17a2db7479b342b14417860f4a08a175e08e0c4da97a53d6a3b631",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorSphereReferenceTransform",
+          "support": [
+            "Full 1,633-byte region,336 owned instructions,420 nonempty pseudocode lines and both recorded caller windows reviewed.",
+            "Working ABI:void return,transform32 output RDI,editor RSI,opaque group RDX.",
+            "In states6..9,mode-dependent point/radius lists compute volume-weighted centroid and enclosing radius R.",
+            "Composes common object/group offset frame with fixed local offset(.4666667,-1.4333334,0) and one-third scale.",
+            "Eligible pairs add[max(0,R-1)/3,-max(0,R-1)/3,0] to the local offset. Other cases additionally divide output scale by max(1,R);base quaternion retained.",
+            "One direct512case suite plus4,096connected original-query cases verify selected radius lists,frame branches,signs and direction combinations.",
+            "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]
