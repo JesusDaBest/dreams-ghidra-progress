@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/b55846a9da63faa3941310c50b7dbe5c9600d3dc/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/07477fe2d12909dd0e26fc8a7dfee82a32bec852/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**839 of 9,620 functions named and checked.** A function is one piece of the game's code.
+**840 of 9,620 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/b55846a9da63faa3941310c50b7dbe5c9600d3dc/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/07477fe2d12909dd0e26fc8a7dfee82a32bec852/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,11 +70,11 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
 | Rendering & lighting | 392 | 123/366 | 0/26 |
-| Editor & interface | 418 | 103/209 | 4/207 |
+| Editor & interface | 419 | 104/210 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 377 | 254/290 | 17/82 |
 
-**2,240 of 9,620 discovered functions are mapped; 7,380 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,241 of 9,620 discovered functions are mapped; 7,379 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -466,7 +466,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 5 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Speaker** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 418 functions identified; 104 behavior/helper reviews; 4 property/type reviews
+- **Editor & interface** - 419 functions identified; 105 behavior/helper reviews; 4 property/type reviews
   - **Text & fonts** - 129 functions identified; 75 behavior/helper reviews; 0 property/type reviews
     - **Text decoding** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
@@ -667,9 +667,9 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Rewire Redundant Node Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **Palette & menus** - 26 functions identified; 10 behavior/helper reviews; 0 property/type reviews
-    - **Color picker & blending** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
-      - **Runtime behavior** - 10 functions identified; 10 behavior/helper reviews; 0 property/type reviews
+  - **Palette & menus** - 27 functions identified; 11 behavior/helper reviews; 0 property/type reviews
+    - **Color picker & blending** - 11 functions identified; 11 behavior/helper reviews; 0 property/type reviews
+      - **Runtime behavior** - 11 functions identified; 11 behavior/helper reviews; 0 property/type reviews
     - **Page Stack** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Palette Menu** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
