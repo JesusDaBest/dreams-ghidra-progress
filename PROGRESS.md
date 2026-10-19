@@ -7591,3 +7591,12 @@ Concrete mode/list meanings, valid runtime construction, invalid counts/selector
 The complete 4,098-byte body, 790 owned instructions and full pseudocode were reviewed. Seven bounded original-code suites total 968 cases, covering baseline composition, stored-frame order and gates across 50 observed tags, identity and general correction frames, selected signed scales, stack-option suppression and the combined stored-frame/correction path. The seven-parameter working signature and descriptive name survived independent reopening with original bytes and other annotations unchanged.
 
 Concrete option and tag meanings, degenerate or nonfinite inputs, parallel/antiparallel vectors, exact PS4 math and the complete combined snapping state space remain unresolved. Numerical tolerances are recorded with the local evidence. Totals: **823 checked names across 9,620 defined functions**, **2,224 mapped and 7,396 unmapped**. These are reviewed-code counts, not whole-game completion.
+
+
+### Placement orientation interpolation
+
+`InterpolateQuaternionShortestHemisphere` now names the quaternion interpolation helper used by the sculpt placement orientation adjustment. It chooses equivalent quaternion signs from their dot product, uses linear interpolation for very close orientations and sine-weighted spherical interpolation otherwise. The linear branch does not normalize its result; the reviewed caller normalizes the later composed orientation.
+
+The complete 244-byte, 53-instruction body, full pseudocode and recorded caller were reviewed. 512 original-code cases cover 256 linear and 256 spherical cases, including 255 negative-dot cases. The corrected signature takes two quaternion vectors and one scalar factor and returns a full quaternion vector. Its name and signature survived independent reopening, with original bytes and other function annotations unchanged.
+
+Exact threshold boundaries, nonunit or nonfinite inputs, extrapolation and exact PS4 math rounding remain unvalidated. Totals: **824 checked names across 9,620 defined functions**, **2,225 mapped and 7,395 unmapped**. These are reviewed-code counts, not whole-game completion.

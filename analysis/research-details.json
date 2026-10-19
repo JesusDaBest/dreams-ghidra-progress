@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 823,
+    "checked_and_applied_names": 824,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 823,
+    "verified_names": 824,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "753 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "754 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26193,6 +26193,28 @@
     "native_suites": {
       "suite_count": 7,
       "bounded_cases": 968
+    }
+  },
+  "quaternion_interpolation_checkpoint": {
+    "address": "140bd2de0",
+    "name": "InterpolateQuaternionShortestHemisphere",
+    "working_signature": "SpatialQueryFloat4Working16 PS4_SYSV InterpolateQuaternionShortestHemisphere(SpatialQueryFloat4Working16 start_orientation, SpatialQueryFloat4Working16 end_orientation, float blend_factor)",
+    "native_cases": 512,
+    "findings": [
+      "Complete 244-byte,53-instruction body and full pseudocode reviewed.",
+      "Recorded caller passes identity and correction quaternions in XMM0/XMM1 and scalar factor in XMM2.",
+      "Negative dot flips starting quaternion; near-angle branch linearly interpolates without normalization; general branch uses sine-weighted spherical interpolation.",
+      "512 original-code cases cover256 linear and256 spherical cases,including255 negative-dot cases.",
+      "Name and explicit three-parameter/full-vector-return signature independently reopened; original bytes and other function annotations unchanged."
+    ],
+    "limits": [
+      "Finite unit quaternion fixtures and selected factors0,.25,.5,.75,1 only.",
+      "Exact threshold neighborhood,nonunit/nonfinite inputs and extrapolation remain unvalidated.",
+      "Host scalar math adapters used; exact PS4 math rounding not established."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 512
     }
   }
 }

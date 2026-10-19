@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2224,
-  "unmapped_total": 7396,
+  "mapped_total": 2225,
+  "unmapped_total": 7395,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56426,6 +56426,33 @@
             "Correctiondelta aligns pivot andincomingposition ininverseAcoordinates;reconstructedframe formula validated withnonidentity/signedframes.",
             "7bounded original-code suites total968cases,including combinedstoredframe/correction andstack suppression.",
             "Saved descriptive name andsignature independently reopened;original bytes andother functionannotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd2de0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Quaternion interpolation helper called by sculpt placement orientation adjustment; one recorded caller in reviewed shape-frame routine.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full244-byte/53-instruction body and full C reviewed;512bounded original-code cases.",
+      "code_sha256": "c28d05ca7d978aef55c6379ff17c4a7e5c0e333cc8c20037a5c6cc3e966a120f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InterpolateQuaternionShortestHemisphere",
+          "support": [
+            "Complete 244-byte,53-instruction body and full pseudocode reviewed.",
+            "Recorded caller passes identity and correction quaternions in XMM0/XMM1 and scalar factor in XMM2.",
+            "Negative dot flips starting quaternion; near-angle branch linearly interpolates without normalization; general branch uses sine-weighted spherical interpolation.",
+            "512 original-code cases cover256 linear and256 spherical cases,including255 negative-dot cases.",
+            "Name and explicit three-parameter/full-vector-return signature independently reopened; original bytes and other function annotations unchanged."
           ]
         }
       ]
