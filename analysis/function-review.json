@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "775 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "776 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9627,
-    "default_fun_names": 8620,
-    "other_names": 1007,
-    "verification": "complete_inventory_matches_baseline_plus_775_renames_and_76_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8619,
+    "other_names": 1008,
+    "verification": "complete_inventory_matches_baseline_plus_776_renames_and_76_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19931,6 +19931,30 @@
         "Secondary cases cover equal-score one/two-rule scenarios and queue head0 with initial count0/32;other heads and stronger-later secondary candidates remain separate.",
         "Only four of56 identified direct call setups reviewed;indirect callers not exhaustive.",
         "Queue consumers,lifecycle and disk/network persistence unresolved. No game execution or exact Media Molecule source/build match claimed."
+      ]
+    },
+    {
+      "address": "140114740",
+      "original_name": "FUN_140114740",
+      "applied_name": "ComputeEditorEventRuleMeasurement",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float PS4_SYSV ComputeEditorEventRuleMeasurement(void * configuration, void * selected_object, float * previous_value, float default_value, float property_value)",
+      "evidence": [
+        "Complete480-byte original body,115 instructions,full before/preview pseudocode and all3 direct incoming-call windows reviewed.",
+        "Ten measurement modes decode object bytes/paired axes, log-remap an object float, or normalize property input; default modes preserve the incoming measurement.",
+        "Shared signed power curve uses exp2(-signedcontrol/32), followed by output remapping and optional previous-value smoothing with separate increasing/decreasing magnitude coefficients.",
+        "3072 complete original-function synthetic cases matched an independent float32 model bit-for-bit;input buffers unchanged.",
+        "Saved descriptive name and working register ABI independently reopened;original bytes,body and all other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Finite domain-valid synthetic cases with exponent controls -64..64;exceptional values and remaining controls unresolved.",
+        "Host math adapters do not prove PS4 library rounding.",
+        "UI mode names,full caller invariants and live-game behavior unresolved.",
+        "Math import prototypes remain unchanged in Ghidra;SIMD/integer pseudocode artifacts remain."
       ]
     }
   ],

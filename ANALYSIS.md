@@ -8411,3 +8411,14 @@ The full 4,077-byte original region, 901 instructions and 605 nonempty pseudocod
 The native scenarios use null world/editor/object pointers and a missing-property sentinel. Actual measurement helpers, contextful action identities, other queue heads, concurrent execution, queue consumers and lifecycle remain unresolved. These in-memory records do not establish disk or network persistence. No game execution or exact Media Molecule source/build match is claimed.
 
 Totals: **852 checked names across 9,627 defined functions**, **2,253 mapped and 7,374 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Configurable editor-event measurements
+
+`ComputeEditorEventRuleMeasurement` identifies the helper used by three measurement channels in editor-event rule processing. Ten modes read object values or normalize an incoming property value. They include byte-axis decoding, paired-axis magnitude and a logarithmic mode with a smoothstep curve. A shared signed power curve and output range transform the measurement. An optional previous value provides separate smoothing settings for increasing and decreasing magnitude; this helper reads that value without updating it.
+
+The complete 480-byte body (115 instructions), full pseudocode and all three identified direct incoming-call windows were reviewed. A complete original-function suite passed 3,072 cases against an independent float32 model, with unchanged input buffers. Tests cover all ten modes plus two default-mode values, with and without previous values. Independently resolved logarithm/exponent imports and the power import use explicit host math adapters. The descriptive name and working ABI survived independent project reopening with original bytes, body and all other names/signatures preserved.
+
+These are finite, domain-valid synthetic cases with nonzero normalization denominators and a bounded range of exponent controls. Exceptional floating-point values, other exponent settings, exact UI mode names, full caller invariants and live-game integration remain unresolved. Host math adapters do not establish PS4 math-library rounding. Ghidra import prototypes still produce some SIMD/integer pseudocode artifacts; the original assembly and native checks support this review. No exact Media Molecule source/build match is claimed.
+
+Totals: **853 checked names across 9,627 defined functions**, **2,254 mapped and 7,373 unmapped**. These are code-review counts, not whole-game completion.

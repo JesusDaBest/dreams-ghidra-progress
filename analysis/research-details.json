@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 852,
+    "checked_and_applied_names": 853,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 852,
+    "verified_names": 853,
     "function_count": 9627,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "775 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "776 existing-function renames,76 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26916,6 +26916,31 @@
       "bounded_cases": 896,
       "uninstrumented_function_cases": 896,
       "native_invocations": 1056
+    }
+  },
+  "editor_event_measurement_checkpoint": {
+    "address": "140114740",
+    "name": "ComputeEditorEventRuleMeasurement",
+    "working_signature": "float PS4_SYSV ComputeEditorEventRuleMeasurement(void * configuration, void * selected_object, float * previous_value, float default_value, float property_value)",
+    "native_cases": 3072,
+    "findings": [
+      "Complete480-byte original body,115 instructions,full before/preview pseudocode and all3 direct incoming-call windows reviewed.",
+      "Ten measurement modes decode object bytes/paired axes, log-remap an object float, or normalize property input; default modes preserve the incoming measurement.",
+      "Shared signed power curve uses exp2(-signedcontrol/32), followed by output remapping and optional previous-value smoothing with separate increasing/decreasing magnitude coefficients.",
+      "3072 complete original-function synthetic cases matched an independent float32 model bit-for-bit;input buffers unchanged.",
+      "Saved descriptive name and working register ABI independently reopened;original bytes,body and all other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Finite domain-valid synthetic cases with exponent controls -64..64;exceptional values and remaining controls unresolved.",
+      "Host math adapters do not prove PS4 library rounding.",
+      "UI mode names,full caller invariants and live-game behavior unresolved.",
+      "Math import prototypes remain unchanged in Ghidra;SIMD/integer pseudocode artifacts remain."
+    ],
+    "native_suites": {
+      "suite_count": 1,
+      "bounded_cases": 3072,
+      "complete_function_cases": 3072,
+      "native_invocations": 3072
     }
   }
 }
