@@ -25665,5 +25665,45 @@
       "capacity": 1024,
       "scope": "Original unsigned pre-write guard/index slice with adapted exits; contiguous reservation block has no internal calls/branches or external direct jump entries. Indirect entries and full pointer/alias provenance remain unresolved."
     }
+  },
+  "csg_editor_conversion_header_numeric_followup": {
+    "native_cases": {
+      "asset-voxel-metadata": 60,
+      "header-flags": 3072,
+      "blend-quantization": 3136
+    },
+    "quantization_offset_updates": 1120,
+    "findings": [
+      "Additional60 complete-function cases validate synthetic asset-entry512-byte stride,eligibility threshold63/64 and signed-byte voxel baseline.",
+      "Additional3072 complete-function cases validate selected mirror/radial,primitive/operation/blend flag combinations across generic/curve/tetrahedron record paths.",
+      "Additional3136 complete-function cases validate finite nonzero blend computation and float32 quantization/writeback;1120cases change editor offset. Full output records, allowed editor updates and exact unchanged buffers checked."
+    ],
+    "details": {
+      "asset-voxel-metadata": [
+        "ObjectDWORD+0x170 selects asset metadata with512-byte stride.",
+        "EntryWORD+0>=64 enables sign-extended BYTE+2 as voxel baseline; smaller value retains default-24 in tested settings.",
+        "Signed baseline reaches record byte3 including-128and127; entire84-byte record matches reference.",
+        "Asset table and all other input buffers preserved; editor bytes outside record unchanged."
+      ],
+      "header-flags": [
+        "Mirror/radial byte: settingsbit5->bit0;settingsbit6->bit1 only whenbit5enabled;settingsbit12enables lowfivebits13..17 in outputbits2..6.",
+        "Operation flag occupies byte1bit7; eligible blend mode occupies bit6 in tested mode14 but is ignored in tested mode0.",
+        "Primitive high flag follows bank+0x58d for tested operation1 and is suppressed for operation5.",
+        "All84record bytes match independent references; input buffers/count/editor bytes outside record preserved."
+      ],
+      "blend-quantization": [
+        "Scale quantization extracts float32bits21..30 aftervariant factor1or0.5,subtracts508 and clamps against default baseline-24.",
+        "Stored voxel combines that level with symmetric-rounded24*editor_offset and clamps to signed byte.",
+        "Editor offset is reduced to min(old_offset,clamp((level-baseline)/24,0,1)); exact float32 editor writeback verified.",
+        "In mode14 nonzero blend is max(0,abs(scale_hint)*amount*coefficient) fortag22, ormax(0,max(auxiliary_float_pair)*amount*coefficient) fortag7; coefficient0.5whenblend_modeenabled otherwise1. Mode0 skips blend computation in tested settings.",
+        "All84record bytes, permitted editor writeback, unchanged count, every other editor byte and all argument buffers checked."
+      ]
+    },
+    "limits": [
+      "Synthetic asset eligibility/baseline and selected mode0/14 flag/blend cases are now tested; real asset systems, other combinations and complete caller lifecycle remain unresolved.",
+      "Quantization/blend suite uses defaultbaseline-24,selected finite hints and offsets; combined other asset baselines,extreme/nonfinite inputs and untested modes remain unresolved.",
+      "Host-local canary/global/static-factor fixtures remain explicit; no live editor/platform initialization verification."
+    ],
+    "new_name_credit": 0
   }
 }

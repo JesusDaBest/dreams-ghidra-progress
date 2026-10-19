@@ -7954,3 +7954,14 @@ A separate trace found the pre-reservation unsigned limit: counts 0–1,023 may 
 Fixtures supply an invalid asset handle, an explicit operation, a local stack-canary pointer and an initialized compression factor. Asset-backed voxel metadata, other mode/settings/blend combinations, degenerate/nonfinite geometry and live editor behavior remain unresolved.
 
 Totals are **804 checked names across 9,620 defined functions**, with **2,205 mapped and 7,415 unmapped**. The additional function definition changes the inventory; these counts do not measure whole-game completion.
+
+
+### Sculpt edit metadata, flags and numeric settings
+
+Further complete-function tests narrow several gaps in `UpdateLastCsgEditFromEditorShape`. Sixty synthetic asset-metadata cases confirm the 512-byte entry stride, a header threshold of 64 and the signed voxel baseline byte, including -128 and 127. The meaning of that threshold field remains unknown; no live asset system was used.
+
+Another 3,072 cases confirm selected mirror/radial and operation/primitive flag combinations across the generic, curve and tetrahedron paths. The second mirror flag is suppressed unless the first is enabled; radial count occupies five bits. These dataflow results do not establish every user-facing label or mode.
+
+3,136 additional cases cover nonzero blending and quantization in two tested editor modes. Blend uses the absolute scale hint for the tetrahedron path and the larger auxiliary float for the curve path, with the tested blend flag halving its coefficient. The scale-derived voxel level and rounded editor offset determine the stored signed byte. Conversion may reduce the editor offset: all 1,120 such writebacks matched the float32 reference exactly. Full record bytes and unchanged surrounding/input state were checked in every case.
+
+Other asset-baseline/settings combinations, extreme or nonfinite inputs, untested modes and complete caller behavior remain unresolved. These fixtures execute original code with explicit local canary/static/global boundaries. They add evidence for an already reviewed function; **804 checked names remain unchanged**, and no in-game verification is claimed.
