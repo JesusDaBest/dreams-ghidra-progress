@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "759 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "760 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8636,
-    "other_names": 984,
-    "verification": "complete_inventory_matches_baseline_plus_759_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8635,
+    "other_names": 985,
+    "verification": "complete_inventory_matches_baseline_plus_760_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19340,6 +19340,35 @@
       "caveats": [
         "Nonfinite XYZ and nonunit quaternion inputs remain unresolved.",
         "No source-name recovery or in-game execution claimed."
+      ]
+    },
+    {
+      "address": "140bd4d30",
+      "original_name": "FUN_140bd4d30",
+      "applied_name": "IntersectEditorRayWithSphereBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV IntersectEditorRayWithSphereBounds(void * editor, void * group, float * signed_distance_out_optional)",
+      "evidence": [
+        "Complete 2,537-byte region,532 owned instructions,611 nonempty pseudocode lines and all four recorded caller windows reviewed.",
+        "Working ABI:boolean in AL,editor pointer RDI,opaque group pointer RSI,optional float output RDX. Three callers omit output;one supplies a float initialized to FLT_MAX.",
+        "Eligibility requires a single type2 object or pair of non-type2 objects,first-object42 bit3,and editor state6..9.",
+        "Mode-dependent point/radius records determine volume-weighted centroid and enclosing radius,max(distance(point,centroid)+radius),clamped to at least1.",
+        "Original frame suppliers apply saved/live paired-object or single-object placement corrections. Identity editor-relative frame uses group origin toward first object;nonidentity uses first-object origin and adjusted orientation.",
+        "Transforms the ray into the spherical bound and tests the nearer quadratic root strictly above0 and belowFLT_MAX. Successful optional output multiplies root by signed bound/frame scale;failure leaves it unchanged.",
+        "Eight uninstrumented original-function suites total4,527cases across paired saved/live frames,single-object mode0,all primary mode lists,gates and combined direction adjustments.",
+        "Separate512case diagnostic checkpoint matches all returns and170written distances bit-for-bit to scalar float32quadratic model;original float32cancellation explains differences from double geometry oracle.",
+        "Separate72extracted original-quadratic cases confirm positive-distance tangency,near-tangent sides,inside/surface rejection and signed outputs.",
+        "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Other global modes and helper140ba1f20,negative/nonfinite radii,invalid selectors,nonunit/nonfinite rotations and complete editor lifecycle unresolved.",
+        "Full transform-chain tangent rounding remains unvalidated;72boundary cases isolate only the quadratic block.",
+        "Hostpowf/trig adapters and local infinity/canary fixtures used;no in-game verification or exact PS4math-rounding claim.",
+        "Descriptive name states geometric behavior;original source identifier and concrete object/list roles are not recovered."
       ]
     }
   ],

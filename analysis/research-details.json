@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 829,
+    "checked_and_applied_names": 830,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 829,
+    "verified_names": 830,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "759 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "760 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26349,6 +26349,37 @@
     "native_suites": {
       "suite_count": 3,
       "bounded_cases": 1288
+    }
+  },
+  "sphere_bounds_query_checkpoint": {
+    "address": "140bd4d30",
+    "name": "IntersectEditorRayWithSphereBounds",
+    "working_signature": "bool PS4_SYSV IntersectEditorRayWithSphereBounds(void * editor, void * group, float * signed_distance_out_optional)",
+    "native_cases": 5111,
+    "findings": [
+      "Complete 2,537-byte region,532 owned instructions,611 nonempty pseudocode lines and all four recorded caller windows reviewed.",
+      "Working ABI:boolean in AL,editor pointer RDI,opaque group pointer RSI,optional float output RDX. Three callers omit output;one supplies a float initialized to FLT_MAX.",
+      "Eligibility requires a single type2 object or pair of non-type2 objects,first-object42 bit3,and editor state6..9.",
+      "Mode-dependent point/radius records determine volume-weighted centroid and enclosing radius,max(distance(point,centroid)+radius),clamped to at least1.",
+      "Original frame suppliers apply saved/live paired-object or single-object placement corrections. Identity editor-relative frame uses group origin toward first object;nonidentity uses first-object origin and adjusted orientation.",
+      "Transforms the ray into the spherical bound and tests the nearer quadratic root strictly above0 and belowFLT_MAX. Successful optional output multiplies root by signed bound/frame scale;failure leaves it unchanged.",
+      "Eight uninstrumented original-function suites total4,527cases across paired saved/live frames,single-object mode0,all primary mode lists,gates and combined direction adjustments.",
+      "Separate512case diagnostic checkpoint matches all returns and170written distances bit-for-bit to scalar float32quadratic model;original float32cancellation explains differences from double geometry oracle.",
+      "Separate72extracted original-quadratic cases confirm positive-distance tangency,near-tangent sides,inside/surface rejection and signed outputs.",
+      "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Other global modes and helper140ba1f20,negative/nonfinite radii,invalid selectors,nonunit/nonfinite rotations and complete editor lifecycle unresolved.",
+      "Full transform-chain tangent rounding remains unvalidated;72boundary cases isolate only the quadratic block.",
+      "Hostpowf/trig adapters and local infinity/canary fixtures used;no in-game verification or exact PS4math-rounding claim.",
+      "Descriptive name states geometric behavior;original source identifier and concrete object/list roles are not recovered."
+    ],
+    "native_suites": {
+      "suite_count": 10,
+      "bounded_cases": 5111,
+      "uninstrumented_function_cases": 4527,
+      "instrumented_cases": 512,
+      "extracted_block_cases": 72
     }
   }
 }

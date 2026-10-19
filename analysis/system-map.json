@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2230,
-  "unmapped_total": 7390,
+  "mapped_total": 2231,
+  "unmapped_total": 7389,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56606,6 +56606,38 @@
             "Three isolated original-code suites total1,288cases,including all eight sign combinations,random rotations,signed/zero scales,zero dimensions and buffer guards.",
             "Nonfinite XYZ and nonunit quaternions remain unresolved;arbitrary W was tested only for preservation.",
             "Saved descriptive name and two-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd4d30": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Editor sphere-bound ray query traced through mode-dependent point/radius records and original placement frames;four callers reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full2537-byte/532owned-instruction body and full C reviewed;4527uninstrumented query cases plus512diagnostic and72extracted-block cases.",
+      "code_sha256": "8554ead743064c6194bda23ee87eb99df0b937637e9bf1182582523dc01eeecf",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IntersectEditorRayWithSphereBounds",
+          "support": [
+            "Complete 2,537-byte region,532 owned instructions,611 nonempty pseudocode lines and all four recorded caller windows reviewed.",
+            "Working ABI:boolean in AL,editor pointer RDI,opaque group pointer RSI,optional float output RDX. Three callers omit output;one supplies a float initialized to FLT_MAX.",
+            "Eligibility requires a single type2 object or pair of non-type2 objects,first-object42 bit3,and editor state6..9.",
+            "Mode-dependent point/radius records determine volume-weighted centroid and enclosing radius,max(distance(point,centroid)+radius),clamped to at least1.",
+            "Original frame suppliers apply saved/live paired-object or single-object placement corrections. Identity editor-relative frame uses group origin toward first object;nonidentity uses first-object origin and adjusted orientation.",
+            "Transforms the ray into the spherical bound and tests the nearer quadratic root strictly above0 and belowFLT_MAX. Successful optional output multiplies root by signed bound/frame scale;failure leaves it unchanged.",
+            "Eight uninstrumented original-function suites total4,527cases across paired saved/live frames,single-object mode0,all primary mode lists,gates and combined direction adjustments.",
+            "Separate512case diagnostic checkpoint matches all returns and170written distances bit-for-bit to scalar float32quadratic model;original float32cancellation explains differences from double geometry oracle.",
+            "Separate72extracted original-quadratic cases confirm positive-distance tangency,near-tangent sides,inside/surface rejection and signed outputs.",
+            "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]
