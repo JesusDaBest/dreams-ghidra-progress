@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9667,
-  "mapped_total": 2304,
-  "unmapped_total": 7363,
+  "mapped_total": 2305,
+  "unmapped_total": 7362,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56785,7 +56785,7 @@
             "Same pointer/type/flag/state eligibility as adjacent reviewed sphere queries; original object/group offset frame supplies center,scale,quaternion.",
             "Plane normal derived from quaternion localZ and scale sign; ray is identical identity/nonidentity choice as adjacent queries.",
             "Reject exact zero plane denominator; positive t strictly belowFLT_MAX only.",
-            "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX²+localY²), strict .699999988079071<radius<1.",
+            "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX\u00b2+localY\u00b2), strict .699999988079071<radius<1.",
             "Optional angle atan2f(localY,localX)/6.2831854820251465 plus1 ifnegative; written after positive plane crossing even when radius rejects.",
             "Optional distance t written only on successful annulus hit.",
             "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
@@ -56825,7 +56825,7 @@
           "support": [
             "Same single-type2/pair-non-type2,first42bit3,state1976..9 eligibility as reviewed annulus. Calls original object/group offset frame builder.",
             "Ray/plane intersection uses frame localZ normal with scale-sign correction;rayorigin/direction selection matches adjacent queries. Require nonzero denominator and strict0<t<FLT_MAX.",
-            "Inverseframe hit yields localXY; accepts sqrt(x²+y²)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
+            "Inverseframe hit yields localXY; accepts sqrt(x\u00b2+y\u00b2)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
             "Only successful disk hits optionally write two local coordinate floats and ray distance. Misses leave outputs untouched.",
             "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
             "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
@@ -56915,7 +56915,7 @@
           "name": "ComputeSpatiallyWeightedPaletteColor",
           "support": [
             "Emptylistreturns(1,0,1,0).",
-            "Weights r_i²/length(frameP+point_i)²;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
+            "Weights r_i\u00b2/length(frameP+point_i)\u00b2;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
             "Meanredbias float1e-6 breaks achromatic degeneracy. Chroma=normalize(2R-G-B,2G-R-B,2B-R-G).",
             "delta=abs(saturation(biasedMean)-weightedMeanSaturation);RGB=clamp(mean+1.5*delta*chroma*dot(chroma,normalize(mean))*sum(mean),0,1),W0.",
             "640independentidentityframecases plus640frameconditionedconnectedindexed/seededcases;categories distinct.",
@@ -56947,7 +56947,7 @@
             "Disk localXY/.6 drives clipped normalized barycentric weights;lookup-remapped hue generatesRGB triangularwave;output=whiteWeight+hueWeight*pureHueRGB,validated with originalconnectedqueries.",
             "Ring/default paths choose storedrecord1f0 whenrecord200set,otherwise blend. Record-dependent sphere always blends;fixed sphere returns storedrecord1f0. Blendflag derivesrecord1d0<=0.",
             "Outside states6..9,selectedrecord200set returns storedvector;otherwise tailcallshelper forwardingfourth integerparameter.",
-            "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes×banks0/1.",
+            "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes\u00d7banks0/1.",
             "Blendhelper and both frame/rotation dependencies fully read;bounded independent/frame-conditioned native evidence recorded separately.",
             "Connected512case original annulus->disk->baseframe->colorcaller execution matches independent hueLookup/RGBtriangle/barycentric oracle, maxRGBerror5.37e-6.",
             "Local disk coordinates /.6 map to white/black/hue triangle weights, clipped0..1 and normalized; outputRGB=whiteWeight+hueWeight*pureHueRGB.",
@@ -58912,6 +58912,31 @@
             "Five observed register inputs remain two opaque pointers, two opaque 64-bit values and a 32-bit update flag; unknown types are retained.",
             "Independent saved-project reopening verifies names, explicit register inputs/results, original byte spans and expected inventory changes.",
             "Three helper interfaces now preserve formerly omitted integer/pointer inputs and full SIMD values; fresh caller output shows complete coherent argument lists."
+          ]
+        }
+      ]
+    },
+    "1414398a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Body-shape helper called directly from the reviewed editor-recipient animation and output update; source class unresolved.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed interface review, scoped original-code checks and independent saved-project reopening.",
+      "code_sha256": "83b4adf2c56b0f2450cacb027ca13711f48e36a6ae64041398f1cbcb6cdc4844",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BlendRecipientBodyShapeAndRebuildMeshMetrics",
+          "support": [
+            "Complete 1091-byte body: 232 original instructions, 282 initial typed pseudocode lines and all named-preview differences read.",
+            "Five direct caller windows confirm the opaque state, full 128-bit identifier and scalar weight inputs.",
+            "56 isolated original-code cases passed with synthetic shape data; independent reopening verified saved name, register inputs and unchanged original bytes."
           ]
         }
       ]

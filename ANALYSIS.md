@@ -8564,3 +8564,12 @@ Three related helpers now have reviewed names and complete working register inte
 New original-code checks passed 276 tagged-output cases, 224 decoration-buffer cases and 18 mesh-projection cases. These use synthetic fixtures and cover specific matching, capacity, output and hit/miss behavior. Arbitrary meshes, all floating-point edge cases and every decoration numeric attribute remain unverified. Concrete original classes and an exact developer-source/build match remain unresolved.
 
 Totals: **903 checked names across 9,667 defined functions**, **2,304 mapped and 7,363 unmapped**. These are code-review counts, not whole-game completion percentages.
+
+
+### Recipient body-shape blending and mesh measurements
+
+`BlendRecipientBodyShapeAndRebuildMeshMetrics` now has a reviewed descriptive name and explicit register inputs. Its full 232-instruction body, initial typed pseudocode and named-preview differences were read. Five direct caller windows connect it to the editor-recipient update. The shape identifier is opaque 128-bit data; the other inputs are an opaque state pointer and scalar blend weight.
+
+The helper selects a matching shape, blends points, rebuilds normalized directions and pair distances, computes absolute signed mesh volume and the arithmetic mean of triangle centroids, then updates per-point factors. The centroid is not volume-weighted. All 56 isolated original-code cases passed with synthetic fixtures, including absent/mismatched shapes, weight clamping and NaN weight, zero/one triangle, output values and preservation of unrelated bytes. Independent reopening verified the saved interface and unchanged original bytes. Arbitrary topology, malformed counts, degenerate vectors and live-game behavior remain unverified.
+
+Totals: **904 checked names across 9,667 defined functions**, **2,305 mapped and 7,362 unmapped**. These measure code review, not whole-game completion.

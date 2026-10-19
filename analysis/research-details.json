@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 903,
+    "checked_and_applied_names": 904,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 903,
+    "verified_names": 904,
     "function_count": 9667,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2042,7 +2042,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "786 existing-function renames,116 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "787 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -3980,7 +3980,7 @@
   },
   "rendering_material_comparison_checkpoint": {
     "source_url": "https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf",
-    "source_title": "Learning from Failure â€” Alex Evans, SIGGRAPH2015",
+    "source_title": "Learning from Failure \u00e2\u20ac\u201d Alex Evans, SIGGRAPH2015",
     "pages": 145,
     "reviewed_pages": [
       21,
@@ -26575,7 +26575,7 @@
       "Same pointer/type/flag/state eligibility as adjacent reviewed sphere queries; original object/group offset frame supplies center,scale,quaternion.",
       "Plane normal derived from quaternion localZ and scale sign; ray is identical identity/nonidentity choice as adjacent queries.",
       "Reject exact zero plane denominator; positive t strictly belowFLT_MAX only.",
-      "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX²+localY²), strict .699999988079071<radius<1.",
+      "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX\u00b2+localY\u00b2), strict .699999988079071<radius<1.",
       "Optional angle atan2f(localY,localX)/6.2831854820251465 plus1 ifnegative; written after positive plane crossing even when radius rejects.",
       "Optional distance t written only on successful annulus hit.",
       "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
@@ -26602,7 +26602,7 @@
     "findings": [
       "Same single-type2/pair-non-type2,first42bit3,state1976..9 eligibility as reviewed annulus. Calls original object/group offset frame builder.",
       "Ray/plane intersection uses frame localZ normal with scale-sign correction;rayorigin/direction selection matches adjacent queries. Require nonzero denominator and strict0<t<FLT_MAX.",
-      "Inverseframe hit yields localXY; accepts sqrt(x²+y²)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
+      "Inverseframe hit yields localXY; accepts sqrt(x\u00b2+y\u00b2)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
       "Only successful disk hits optionally write two local coordinate floats and ray distance. Misses leave outputs untouched.",
       "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
       "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
@@ -26668,7 +26668,7 @@
         "cases": 1280,
         "evidence": [
           "Emptylistreturns(1,0,1,0).",
-          "Weights r_i²/length(frameP+point_i)²;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
+          "Weights r_i\u00b2/length(frameP+point_i)\u00b2;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
           "Meanredbias float1e-6 breaks achromatic degeneracy. Chroma=normalize(2R-G-B,2G-R-B,2B-R-G).",
           "delta=abs(saturation(biasedMean)-weightedMeanSaturation);RGB=clamp(mean+1.5*delta*chroma*dot(chroma,normalize(mean))*sum(mean),0,1),W0.",
           "640independentidentityframecases plus640frameconditionedconnectedindexed/seededcases;categories distinct.",
@@ -26693,7 +26693,7 @@
           "Disk localXY/.6 drives clipped normalized barycentric weights;lookup-remapped hue generatesRGB triangularwave;output=whiteWeight+hueWeight*pureHueRGB,validated with originalconnectedqueries.",
           "Ring/default paths choose storedrecord1f0 whenrecord200set,otherwise blend. Record-dependent sphere always blends;fixed sphere returns storedrecord1f0. Blendflag derivesrecord1d0<=0.",
           "Outside states6..9,selectedrecord200set returns storedvector;otherwise tailcallshelper forwardingfourth integerparameter.",
-          "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes×banks0/1.",
+          "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes\u00d7banks0/1.",
           "Blendhelper and both frame/rotation dependencies fully read;bounded independent/frame-conditioned native evidence recorded separately.",
           "Connected512case original annulus->disk->baseframe->colorcaller execution matches independent hueLookup/RGBtriangle/barycentric oracle, maxRGBerror5.37e-6.",
           "Local disk coordinates /.6 map to white/black/hue triangle weights, clipped0..1 and normalized; outputRGB=whiteWeight+hueWeight*pureHueRGB.",
@@ -28489,5 +28489,27 @@
       "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
       "No exact Media Molecule source/build match is established."
     ]
+  },
+  "recipient_body_shape_checkpoint": {
+    "address": "1414398a0",
+    "name": "BlendRecipientBodyShapeAndRebuildMeshMetrics",
+    "signature": "void PS4_SYSV BlendRecipientBodyShapeAndRebuildMeshMetrics(void * shape_state, undefined1[16] shape_identifier, float blend_weight)",
+    "original_sha256": "83b4adf2c56b0f2450cacb027ca13711f48e36a6ae64041398f1cbcb6cdc4844",
+    "native_cases": 56,
+    "size": 1091,
+    "created": false,
+    "c_sha256": "e1f02275236bd7507fdd039b9ca283a10ddaf34a1ff950911aee4d7ee805277e",
+    "nonempty_c_lines": 289,
+    "evidence": [
+      "Complete 1091-byte body: 232 original instructions, 282 initial typed pseudocode lines and all named-preview differences read.",
+      "Five direct caller windows confirm the opaque state, full 128-bit identifier and scalar weight inputs.",
+      "56 isolated original-code cases passed with synthetic shape data; independent reopening verified saved name, register inputs and unchanged original bytes."
+    ],
+    "limits": [
+      "Concrete source class and exact developer-source/build match remain unresolved.",
+      "One synthetic shape and three orthogonal nonzero points only; arbitrary topology, malformed counts, degenerate vectors and in-game behavior remain unverified.",
+      "Identifier storage is opaque 16-byte data; the centroid is the arithmetic mean of triangle centroids, not a volume-weighted centroid."
+    ],
+    "project_saved_and_independently_reopened": true
   }
 }

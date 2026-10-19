@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "786 existing-function renames,116 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "787 existing-function renames, 116 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9667,
-    "default_fun_names": 8609,
-    "other_names": 1058,
-    "verification": "complete_inventory_matches_baseline_plus_786_renames_and_116_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8608,
+    "other_names": 1059,
+    "verification": "complete_inventory_matches_baseline_plus_787_renames_and_116_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19459,7 +19459,7 @@
         "Same pointer/type/flag/state eligibility as adjacent reviewed sphere queries; original object/group offset frame supplies center,scale,quaternion.",
         "Plane normal derived from quaternion localZ and scale sign; ray is identical identity/nonidentity choice as adjacent queries.",
         "Reject exact zero plane denominator; positive t strictly belowFLT_MAX only.",
-        "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX²+localY²), strict .699999988079071<radius<1.",
+        "Convert plane hit into local coordinates via inverse quaternion and signed scale; radius=sqrt(localX\u00b2+localY\u00b2), strict .699999988079071<radius<1.",
         "Optional angle atan2f(localY,localX)/6.2831854820251465 plus1 ifnegative; written after positive plane crossing even when radius rejects.",
         "Optional distance t written only on successful annulus hit.",
         "Three callers: one angle output/no distance, one bothnull, one distance output/noangle after two sphere query failures. Concrete UI handle name unresolved.",
@@ -19486,7 +19486,7 @@
       "evidence": [
         "Same single-type2/pair-non-type2,first42bit3,state1976..9 eligibility as reviewed annulus. Calls original object/group offset frame builder.",
         "Ray/plane intersection uses frame localZ normal with scale-sign correction;rayorigin/direction selection matches adjacent queries. Require nonzero denominator and strict0<t<FLT_MAX.",
-        "Inverseframe hit yields localXY; accepts sqrt(x²+y²)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
+        "Inverseframe hit yields localXY; accepts sqrt(x\u00b2+y\u00b2)<=float(.7), inclusive comparison from VUCOMISS+SETNC for finite inputs.",
         "Only successful disk hits optionally write two local coordinate floats and ray distance. Misses leave outputs untouched.",
         "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
         "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
@@ -19555,7 +19555,7 @@
       "saved_working_signature": "SpatialQueryFloat4Working16 PS4_SYSV ComputeSpatiallyWeightedPaletteColor(void * palette_record, uchar use_seeded_orientation, int rotation_index)",
       "evidence": [
         "Emptylistreturns(1,0,1,0).",
-        "Weights r_i²/length(frameP+point_i)²;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
+        "Weights r_i\u00b2/length(frameP+point_i)\u00b2;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
         "Meanredbias float1e-6 breaks achromatic degeneracy. Chroma=normalize(2R-G-B,2G-R-B,2B-R-G).",
         "delta=abs(saturation(biasedMean)-weightedMeanSaturation);RGB=clamp(mean+1.5*delta*chroma*dot(chroma,normalize(mean))*sum(mean),0,1),W0.",
         "640independentidentityframecases plus640frameconditionedconnectedindexed/seededcases;categories distinct.",
@@ -19583,7 +19583,7 @@
         "Disk localXY/.6 drives clipped normalized barycentric weights;lookup-remapped hue generatesRGB triangularwave;output=whiteWeight+hueWeight*pureHueRGB,validated with originalconnectedqueries.",
         "Ring/default paths choose storedrecord1f0 whenrecord200set,otherwise blend. Record-dependent sphere always blends;fixed sphere returns storedrecord1f0. Blendflag derivesrecord1d0<=0.",
         "Outside states6..9,selectedrecord200set returns storedvector;otherwise tailcallshelper forwardingfourth integerparameter.",
-        "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes×banks0/1.",
+        "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes\u00d7banks0/1.",
         "Blendhelper and both frame/rotation dependencies fully read;bounded independent/frame-conditioned native evidence recorded separately.",
         "Connected512case original annulus->disk->baseframe->colorcaller execution matches independent hueLookup/RGBtriangle/barycentric oracle, maxRGBerror5.37e-6.",
         "Local disk coordinates /.6 map to white/black/hue triangle weights, clipped0..1 and normalized; outputRGB=whiteWeight+hueWeight*pureHueRGB.",
@@ -21453,6 +21453,28 @@
         "The 518 new helper cases cover 276 tagged-list cases, 224 decoration bounds/output cases and 18 synthetic mesh projection cases. They do not cover arbitrary meshes, all floating-point edge cases or every decoration numeric attribute.",
         "Regenerated caller C was checked at the corrected interfaces; the entire regenerated text was not reread. Original assembly is authoritative, including unordered comparisons.",
         "No exact Media Molecule source/build match is established."
+      ]
+    },
+    {
+      "address": "1414398a0",
+      "original_name": "FUN_1414398a0",
+      "applied_name": "BlendRecipientBodyShapeAndRebuildMeshMetrics",
+      "created_function": false,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BlendRecipientBodyShapeAndRebuildMeshMetrics(void * shape_state, undefined1[16] shape_identifier, float blend_weight)",
+      "evidence": [
+        "Complete 1091-byte body: 232 original instructions, 282 initial typed pseudocode lines and all named-preview differences read.",
+        "Five direct caller windows confirm the opaque state, full 128-bit identifier and scalar weight inputs.",
+        "56 isolated original-code cases passed with synthetic shape data; independent reopening verified saved name, register inputs and unchanged original bytes."
+      ],
+      "caveats": [
+        "Concrete source class and exact developer-source/build match remain unresolved.",
+        "One synthetic shape and three orthogonal nonzero points only; arbitrary topology, malformed counts, degenerate vectors and in-game behavior remain unverified.",
+        "Identifier storage is opaque 16-byte data; the centroid is the arithmetic mean of triangle centroids, not a volume-weighted centroid."
       ]
     }
   ],
