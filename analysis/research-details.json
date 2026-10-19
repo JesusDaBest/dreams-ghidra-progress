@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 840,
+    "checked_and_applied_names": 841,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 840,
+    "verified_names": 841,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "770 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "771 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26626,6 +26626,31 @@
       "suite_count": 1,
       "bounded_cases": 3072,
       "uninstrumented_function_cases": 3072
+    }
+  },
+  "editor_rotation_adjustment_checkpoint": {
+    "address": "140a034d0",
+    "name": "AdjustEditorScalarFromRelativeRotation",
+    "working_signature": "float PS4_SYSV AdjustEditorScalarFromRelativeRotation(SpatialQueryFloat4Working16 rotation0, SpatialQueryFloat4Working16 rotation1, float current_value, void * world, void * editor, void * group, uchar invert_direction)",
+    "native_cases": 5120,
+    "findings": [
+      "Relative quaternion=conjugate(q1)*q0;derive angle from largerXY/XZprojectionofrelative+X.",
+      "Mode8addsangle;whenpositivegroupfactorappliesdirection-specificmin/max withphysicalfloor.01/ceiling625;nonidentityeditorframezerosminimum.",
+      "Non8modesreturnexp(log(max(current,1e-5))+angle*directionSign/1.2566370964),signreversedbyflagCLnonzeroandeditor6zero.",
+      "MixedABIq0XMM0/q1XMM1/currentfloatXMM2/worldRDI/editorRSI/groupRDX/flagCL;floatreturnXMM0 established by assembly,8callerwindows andnativeexecution.",
+      "5120isolatedcases across5suites:1024additive,1024initialmultiplicative,1024crossedflags,1024sentinelbounded,1024defaultrecordbranch. Distinct scopes recorded.",
+      "Provider1408f4e80fullbodyread;activeuser-settingsandauxiliarycontrolsbranchesstaticonly;defaultrecordinitializationusescontrolledallocation/TLS/freefixtures.",
+      "Saved descriptive name and seven-input mixed-register float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Syntheticoriginalcodewithhostatan2f/logf/expfandexplicitmemoryfixtures;no exactPS4rounding or in-gameclaim.",
+      "Actualsettingsrecords/activeauxmerge,allocator/OS behavior,concurrency,nonunit/nonfinite inputs,overflow/underflow andfullcontrollerlifecycleunverified.",
+      "Selectedcallerparameter17084/17088/1708cmeaningunresolved;name describesrotation-driven scalaradjustmentonly."
+    ],
+    "native_suites": {
+      "suite_count": 5,
+      "bounded_cases": 5120,
+      "uninstrumented_function_cases": 5120
     }
   }
 }

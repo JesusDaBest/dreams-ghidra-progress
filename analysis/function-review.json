@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "770 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "771 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8625,
-    "other_names": 995,
-    "verification": "complete_inventory_matches_baseline_plus_770_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8624,
+    "other_names": 996,
+    "verification": "complete_inventory_matches_baseline_plus_771_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19621,6 +19621,31 @@
         "No nonfinite inputs;normalhelperhas unclampedfinite output.",
         "Caller inserts scalar intoRGB fourthlane;fullrenderingmeaning/opacitysemanticsnotproven.",
         "Originalhelpercode,no gameexecution."
+      ]
+    },
+    {
+      "address": "140a034d0",
+      "original_name": "FUN_140a034d0",
+      "applied_name": "AdjustEditorScalarFromRelativeRotation",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "float PS4_SYSV AdjustEditorScalarFromRelativeRotation(SpatialQueryFloat4Working16 rotation0, SpatialQueryFloat4Working16 rotation1, float current_value, void * world, void * editor, void * group, uchar invert_direction)",
+      "evidence": [
+        "Relative quaternion=conjugate(q1)*q0;derive angle from largerXY/XZprojectionofrelative+X.",
+        "Mode8addsangle;whenpositivegroupfactorappliesdirection-specificmin/max withphysicalfloor.01/ceiling625;nonidentityeditorframezerosminimum.",
+        "Non8modesreturnexp(log(max(current,1e-5))+angle*directionSign/1.2566370964),signreversedbyflagCLnonzeroandeditor6zero.",
+        "MixedABIq0XMM0/q1XMM1/currentfloatXMM2/worldRDI/editorRSI/groupRDX/flagCL;floatreturnXMM0 established by assembly,8callerwindows andnativeexecution.",
+        "5120isolatedcases across5suites:1024additive,1024initialmultiplicative,1024crossedflags,1024sentinelbounded,1024defaultrecordbranch. Distinct scopes recorded.",
+        "Provider1408f4e80fullbodyread;activeuser-settingsandauxiliarycontrolsbranchesstaticonly;defaultrecordinitializationusescontrolledallocation/TLS/freefixtures.",
+        "Saved descriptive name and seven-input mixed-register float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Syntheticoriginalcodewithhostatan2f/logf/expfandexplicitmemoryfixtures;no exactPS4rounding or in-gameclaim.",
+        "Actualsettingsrecords/activeauxmerge,allocator/OS behavior,concurrency,nonunit/nonfinite inputs,overflow/underflow andfullcontrollerlifecycleunverified.",
+        "Selectedcallerparameter17084/17088/1708cmeaningunresolved;name describesrotation-driven scalaradjustmentonly."
       ]
     }
   ],

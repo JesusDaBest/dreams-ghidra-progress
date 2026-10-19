@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-17",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 794,
+    "done": 795,
     "todo": 1447,
-    "total": 2241,
-    "behavior_or_helpers_reviewed": 720,
+    "total": 2242,
+    "behavior_or_helpers_reviewed": 721,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12550,12 +12550,12 @@
       {
         "name": "interface",
         "label": "Editor & interface",
-        "done": 109,
+        "done": 110,
         "todo": 310,
-        "total": 419,
-        "behavior_or_helpers_reviewed": 105,
+        "total": 420,
+        "behavior_or_helpers_reviewed": 106,
         "properties_or_types_reviewed": 4,
-        "runtime_functions_identified": 210,
+        "runtime_functions_identified": 211,
         "property_type_functions_identified": 207,
         "code_role_unresolved": 2,
         "whole_feature_completion": null,
@@ -12582,6 +12582,7 @@
           "ComposeIndexedPaletteRotationTransform",
           "ComputePaletteSamplingOffsetTransform",
           "ComputeSpatiallyWeightedPaletteColor",
+          "AdjustEditorScalarFromRelativeRotation",
           "ApplyKeyedRecordInsertionEvent",
           "SetKeyedRecordCoordinatesOrNearbyRecords",
           "RemoveKeyedRecordOrNearbyRecords",
@@ -13005,6 +13006,7 @@
           "1408fdf10",
           "1408fe340",
           "1408fe6e0",
+          "140a034d0",
           "140b35aa0",
           "140b35bd0",
           "140b35ec0",
@@ -18125,16 +18127,18 @@
           {
             "name": "interface/input",
             "label": "Controls & input",
-            "done": 0,
+            "done": 1,
             "todo": 32,
-            "total": 32,
-            "behavior_or_helpers_reviewed": 0,
+            "total": 33,
+            "behavior_or_helpers_reviewed": 1,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 0,
+            "runtime_functions_identified": 1,
             "property_type_functions_identified": 32,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
-            "done_names": [],
+            "done_names": [
+              "AdjustEditorScalarFromRelativeRotation"
+            ],
             "todo_names": [
               "0x140c763a0",
               "0x140c87e80",
@@ -18169,7 +18173,9 @@
               "0x140d2f400",
               "0x140d2f5d0"
             ],
-            "done_addresses": [],
+            "done_addresses": [
+              "140a034d0"
+            ],
             "todo_addresses": [
               "140c763a0",
               "140c87e80",
@@ -19013,6 +19019,53 @@
                     "todo_addresses": [
                       "140cdb820"
                     ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "interface/input/relative-rotation-adjustment",
+                "label": "Rotation adjustment",
+                "done": 1,
+                "todo": 0,
+                "total": 1,
+                "behavior_or_helpers_reviewed": 1,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 1,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AdjustEditorScalarFromRelativeRotation"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140a034d0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "interface/input/relative-rotation-adjustment/runtime-implementation",
+                    "label": "Runtime behavior",
+                    "done": 1,
+                    "todo": 0,
+                    "total": 1,
+                    "behavior_or_helpers_reviewed": 1,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 1,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AdjustEditorScalarFromRelativeRotation"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140a034d0"
+                    ],
+                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -47137,5 +47190,5 @@
       }
     ]
   },
-  "unmapped": 7379
+  "unmapped": 7378
 }

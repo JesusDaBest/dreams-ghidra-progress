@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2241,
-  "unmapped_total": 7379,
+  "mapped_total": 2242,
+  "unmapped_total": 7378,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56987,6 +56987,35 @@
           ]
         }
       ]
+    },
+    "140a034d0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "input",
+        "relative-rotation-adjustment",
+        "runtime-implementation"
+      ],
+      "component_basis": "Eight caller windows use relative controller rotations to update editor float parameters;full function and original arithmetic branches reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full960-byte/206owned-instruction body and full C reviewed;5120uninstrumented original-function cases.",
+      "code_sha256": "4e0e08610735b3b692699943b1e9bb3a81e02612539c579cd74744ba9dc59287",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AdjustEditorScalarFromRelativeRotation",
+          "support": [
+            "Relative quaternion=conjugate(q1)*q0;derive angle from largerXY/XZprojectionofrelative+X.",
+            "Mode8addsangle;whenpositivegroupfactorappliesdirection-specificmin/max withphysicalfloor.01/ceiling625;nonidentityeditorframezerosminimum.",
+            "Non8modesreturnexp(log(max(current,1e-5))+angle*directionSign/1.2566370964),signreversedbyflagCLnonzeroandeditor6zero.",
+            "MixedABIq0XMM0/q1XMM1/currentfloatXMM2/worldRDI/editorRSI/groupRDX/flagCL;floatreturnXMM0 established by assembly,8callerwindows andnativeexecution.",
+            "5120isolatedcases across5suites:1024additive,1024initialmultiplicative,1024crossedflags,1024sentinelbounded,1024defaultrecordbranch. Distinct scopes recorded.",
+            "Provider1408f4e80fullbodyread;activeuser-settingsandauxiliarycontrolsbranchesstaticonly;defaultrecordinitializationusescontrolledallocation/TLS/freefixtures.",
+            "Saved descriptive name and seven-input mixed-register float-return working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
     }
   },
   "hierarchy": [
@@ -59480,6 +59509,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "relative-rotation-adjustment",
+              "label": "Rotation adjustment",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime behavior",
                   "children": []
                 }
               ]
