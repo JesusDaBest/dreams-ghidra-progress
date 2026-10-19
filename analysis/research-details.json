@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 832,
+    "checked_and_applied_names": 833,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 832,
+    "verified_names": 833,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "762 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "763 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26431,5 +26431,29 @@
     ],
     "verification": "independent_offline_reopening",
     "case_accounting": "2432direct base-frame cases;512direct sphere-reference cases plus4096reused connected query cases. Totals are function-scoped evidence,not unique whole-game tests."
+  },
+  "fixed_offset_sphere_query_checkpoint": {
+    "address": "140bd5e30",
+    "name": "IntersectEditorRayWithFixedOffsetSphere",
+    "working_signature": "bool PS4_SYSV IntersectEditorRayWithFixedOffsetSphere(void * editor, void * group, float * signed_distance_out_optional)",
+    "native_cases": 2991,
+    "findings": [
+      "Eligibility is single first type2 without second, or two non-type2; first42bit3 and state1976..9 required.",
+      "Calls ComputeEditorObjectOrGroupOffsetTransform; fixed local offset(-.46666666865,-1.43333339691,0) transformed by base frame; signed radius=baseScale*float(1/3), independent of point/radius records.",
+      "Identity editor198c0/198d0 uses group3ac0 origin toward first120; nonidentity uses first120 origin and firstF0 orientation with type-dependent X-turn and firstE0.W sign.",
+      "Inverse frame, XYZ-only direction normalization and nearer quadratic root. Accept only0<t<FLT_MAX; boolAL; successful optionalfloat output=t/inverseSignedRadius; misses preserve output.",
+      "Caller windows demonstrate direct Boolean use and fallback after first record-dependent sphere query. Concrete UI handle identity remains unresolved.",
+      "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Six uninstrumented original-function suites2991synthetic cases, not in-game verification.",
+      "Global-mode-dependent single-object settings, zero/nonfinite scales, nonunit quaternions, invalid pointers, tangencies and exceptional arithmetic not exhaustively validated.",
+      "Hosttrig and localinfinity/canary import fixtures; live-pair float32 cancellation uses documented scale-aware bound; no exactPS4rounding claim."
+    ],
+    "native_suites": {
+      "suite_count": 6,
+      "bounded_cases": 2991,
+      "uninstrumented_function_cases": 2991
+    }
   }
 }

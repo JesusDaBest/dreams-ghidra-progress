@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2233,
-  "unmapped_total": 7387,
+  "mapped_total": 2234,
+  "unmapped_total": 7386,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56696,6 +56696,34 @@
             "Eligible pairs add[max(0,R-1)/3,-max(0,R-1)/3,0] to the local offset. Other cases additionally divide output scale by max(1,R);base quaternion retained.",
             "One direct512case suite plus4,096connected original-query cases verify selected radius lists,frame branches,signs and direction combinations.",
             "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bd5e30": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Editor fixed-offset sphere ray query traced through original object/group frame;three callers reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full2547-byte/511owned-instruction body and full C reviewed;2991uninstrumented original-function cases.",
+      "code_sha256": "173917a21832024c1338fdf0383a3ea76f8d5435359222af8665f687858ec7bb",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "IntersectEditorRayWithFixedOffsetSphere",
+          "support": [
+            "Eligibility is single first type2 without second, or two non-type2; first42bit3 and state1976..9 required.",
+            "Calls ComputeEditorObjectOrGroupOffsetTransform; fixed local offset(-.46666666865,-1.43333339691,0) transformed by base frame; signed radius=baseScale*float(1/3), independent of point/radius records.",
+            "Identity editor198c0/198d0 uses group3ac0 origin toward first120; nonidentity uses first120 origin and firstF0 orientation with type-dependent X-turn and firstE0.W sign.",
+            "Inverse frame, XYZ-only direction normalization and nearer quadratic root. Accept only0<t<FLT_MAX; boolAL; successful optionalfloat output=t/inverseSignedRadius; misses preserve output.",
+            "Caller windows demonstrate direct Boolean use and fallback after first record-dependent sphere query. Concrete UI handle identity remains unresolved.",
+            "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]
