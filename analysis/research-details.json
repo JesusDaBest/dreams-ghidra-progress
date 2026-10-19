@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 804,
+    "checked_and_applied_names": 805,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 804,
+    "verified_names": 805,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "734 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "735 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -25705,5 +25705,26 @@
       "Host-local canary/global/static-factor fixtures remain explicit; no live editor/platform initialization verification."
     ],
     "new_name_credit": 0
+  },
+  "csg_edit_transform_decoder_checkpoint": {
+    "address": "140c68360",
+    "name": "DecodePackedCsgEditTransform",
+    "working_signature": "void PS4_SYSV DecodePackedCsgEditTransform(void * transform_out, CsgEditStorage * edit)",
+    "native_suites": {
+      "decoder": 1024,
+      "writer_reader_roundtrip": 208
+    },
+    "findings": [
+      "Complete404-byte/94-instruction original body and current/typed C reviewed; callers use returned32-byte transform while editing packed records.",
+      "Decodes position,reflection scale sign and largest-component compressed quaternion; tags7/12/22 return identity transform.",
+      "1024 complete original-reader cases cover everyfirst-byte pattern,allselectors/parities and zero/extreme packed lanes; independent bit reference matches exactly.",
+      "208 complete original-writer->original-reader cases verify finite box translation and signed-extent rotation against independent matrix reference with guards and source preservation.",
+      "Independent reopen verifies outputRDI and CsgEditStorage pointerRSI signature; original bytes and allother function annotations preserved."
+    ],
+    "limits": [
+      "Analyst descriptive name and working storage type, not recovered source symbol/declaration.",
+      "Static compression/inverse factors explicitly initialized; platform guard setup and live game not executed.",
+      "Malformed packed cases establish bit behavior, not valid geometry; aliasing,nonfinite positions,broader primitive/caller lifecycles remain unresolved."
+    ]
   }
 }

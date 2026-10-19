@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2205,
-  "unmapped_total": 7415,
+  "mapped_total": 2206,
+  "unmapped_total": 7414,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -55884,6 +55884,33 @@
             "Active editor shape bank and variants determine packed primitive; writes last counted84-byte record, preserving count. Generic primitives delegate to AppendPackedCsgPrimitiveEdit; curve/tag7 and tetrahedron/tag22 use direct payload layouts.",
             "528 complete original-function synthetic cases cover120tetrahedron,240generic,120curve and48variant conversions, full byte references, valid counts1..1024, two banks, selected finite scales/matrices/colors and exact input/output guards.",
             "Independent reopening verifies new definition and13-input working ABI; all9619existing names/signatures and original bytes preserved."
+          ]
+        }
+      ]
+    },
+    "140c68360": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original packed CSG edit transform decoder used by editor record transformations.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C read;1024decoder and208writer-reader cases.",
+      "code_sha256": "4e1d4c8dd61e4d7371fb2aaf94f57891e6f4ef70bfb3de4314dccd2edb9a1d01",
+      "code_hash_basis": "contiguous_original_function_body_span",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DecodePackedCsgEditTransform",
+          "support": [
+            "Complete404-byte/94-instruction original body and current/typed C reviewed; callers use returned32-byte transform while editing packed records.",
+            "Decodes position,reflection scale sign and largest-component compressed quaternion; tags7/12/22 return identity transform.",
+            "1024 complete original-reader cases cover everyfirst-byte pattern,allselectors/parities and zero/extreme packed lanes; independent bit reference matches exactly.",
+            "208 complete original-writer->original-reader cases verify finite box translation and signed-extent rotation against independent matrix reference with guards and source preservation.",
+            "Independent reopen verifies outputRDI and CsgEditStorage pointerRSI signature; original bytes and allother function annotations preserved."
           ]
         }
       ]

@@ -7965,3 +7965,14 @@ Another 3,072 cases confirm selected mirror/radial and operation/primitive flag 
 3,136 additional cases cover nonzero blending and quantization in two tested editor modes. Blend uses the absolute scale hint for the tetrahedron path and the larger auxiliary float for the curve path, with the tested blend flag halving its coefficient. The scale-derived voxel level and rounded editor offset determine the stored signed byte. Conversion may reduce the editor offset: all 1,120 such writebacks matched the float32 reference exactly. Full record bytes and unchanged surrounding/input state were checked in every case.
 
 Other asset-baseline/settings combinations, extreme or nonfinite inputs, untested modes and complete caller behavior remain unresolved. These fixtures execute original code with explicit local canary/static/global boundaries. They add evidence for an already reviewed function; **804 checked names remain unchanged**, and no in-game verification is claimed.
+
+
+### Reading packed sculpt edit transforms
+
+`DecodePackedCsgEditTransform` now names the fully reviewed 404-byte helper that reads translation, reflection scale sign and compressed quaternion into a 32-byte working transform. Its input uses the previously established 84-byte `CsgEditStorage` layout. Curve and tetrahedron payload tags 7, 12 and 22 return identity transforms here; that does not decode their separate geometry payloads.
+
+1,024 complete original-reader cases cover all first-byte patterns, all four omitted-component selectors, reflection parity and zero/extreme packed lanes. They match an independent bit-level reference exactly. The reader clamps encoded component zero to one before unbiasing; malformed packed rotations were included to establish storage behavior, without claiming they represent valid geometry.
+
+Another 208 cases execute the original writer followed by the original reader. Translation and decoded signed rotation agree with an independent matrix reference across 26 finite rotations and all eight extent-sign combinations. Input records and output guards remain intact. Both helpers use explicitly initialized local static factors; platform guard setup and live editor behavior are outside these fixtures.
+
+Independent reopening verified the name, pointer types and unchanged original bytes; all other function annotations were preserved. Aliasing, nonfinite positions and broader caller lifecycles remain unresolved. Totals are **805 checked names across 9,620 defined functions**, with **2,206 mapped and 7,414 unmapped**. This is one additional reviewed helper, not whole-game completion.
