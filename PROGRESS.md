@@ -7573,3 +7573,12 @@ The full 8,437-byte body and corrected pseudocode were read. Its 1,551 owned ins
 The saved descriptive name and retained working signature survived independent reopening; original bytes and other function annotations stayed unchanged. Concrete tool/record enums, the full combined gate space, general negative-scale anchor behavior, exceptional inputs and exact PS4 math rounding remain unresolved. This is a supported descriptive role, not a claim that the entire placement pipeline or Dreams is complete.
 
 Totals: **821 checked names across 9,620 defined functions**, **2,222 mapped and 7,398 unmapped**.
+
+
+### Placement context initialization
+
+`InitializeEditorPlacementContextTransform` now names the fully read initializer called before the main placement worker. Its working signature takes an output transform and an opaque editor pointer. It starts with zero translation, the stored signed scale and base orientation. Selected modes append either a banked quaternion list or a separate unbanked list. Each element is applied before the accumulated rotation, and the resulting list rotation is multiplied after the base orientation.
+
+The complete 1,791-byte, 378-instruction body and 507 nonempty lines of pseudocode were reviewed. 1,024 original-code cases cover all 256 mode-byte values, bank selectors 0 and 1, list counts 0 and 3, random unit rotations and signed scales. Arbitrary incoming vector-register lanes do not affect the tested output; those lanes are cleared rather than treated as another argument. Input buffers and output guards were preserved. The descriptive name and corrected two-parameter signature survived independent reopening with original bytes and other annotations unchanged.
+
+Concrete mode/list meanings, valid runtime construction, invalid counts/selectors, nonunit or nonfinite values and exact rounding remain unresolved. The outer caller still has additional correction paths under review. Totals: **822 checked names across 9,620 defined functions**, **2,223 mapped and 7,397 unmapped**. These are code-review counts, not whole-game completion.

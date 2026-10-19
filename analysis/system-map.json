@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2222,
-  "unmapped_total": 7398,
+  "mapped_total": 2223,
+  "unmapped_total": 7397,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56369,6 +56369,34 @@
             "22bounded native suites total6832cases,including explicit formula tests and separately identified routing comparisons.",
             "Allnine dispatch entries audited;cases establish positional/radial limits,twist/angular intervals,rotation-vector cap andmode2alignment.",
             "Saved descriptive name independently reopened;original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bcaab0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Initializes editor placement context using stored scale/orientation and mode-selected quaternion lists.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full1791-byte/378instruction body and507-line C reviewed;1024original-code mode/list cases.",
+      "code_sha256": "f43661e5bef8eb0f0154469b785b87394ea525edb3f21871dd03402be61fd314",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeEditorPlacementContextTransform",
+          "support": [
+            "Full1791-byte/378instruction body and507nonempty C lines read;outer placement caller traced.",
+            "Explicit working signature models output transform32RDI andopaque editorRSI;no incoming vector argument.",
+            "1024original-code cases coverall256modebytes,selectors0/1,counts0/3 and signedscales.",
+            "Default context useszeroXYZ,stored3f0scale and3e0orientation;selected modes append banked or unbanked quaternion lists.",
+            "Each list element premultiplies accumulator;result postmultiplies base orientation.",
+            "Saved descriptive name and working signature independently reopened;original bytes and other function annotations unchanged."
           ]
         }
       ]
