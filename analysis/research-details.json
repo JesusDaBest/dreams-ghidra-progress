@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 835,
+    "checked_and_applied_names": 839,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 835,
+    "verified_names": 839,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "765 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "769 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26509,5 +26509,99 @@
       "bounded_cases": 4090,
       "uninstrumented_function_cases": 4090
     }
+  },
+  "palette_color_chain_checkpoint": {
+    "functions": [
+      {
+        "address": "1408fdf10",
+        "name": "ComposeIndexedPaletteRotationTransform",
+        "signature": "void PS4_SYSV ComposeIndexedPaletteRotationTransform(PositionScaleQuaternionTransform32 * transform_out, void * rotation_record, int rotation_index)",
+        "code_sha256": "4827a3feb7c389ec550db7a4c5825c42cd15c6f2f78af9fdb3f7daaf165e0e00",
+        "cases": 640,
+        "evidence": [
+          "Output position-scale is identity(0,0,0,1);output quaternion startsidentity and left-composes each stored quaternion,normalizing after eachstep.",
+          "Nonzero signed index prepends normalized axis-angle(index*storedangle) to each storedquaternion before accumulation;zeroindex skipsaxisangle.",
+          "Counts0..4,index0/-3/-1/1/2,unitaxes/randomunitquaternions verified;guards andinputs preserved.",
+          "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+        ],
+        "limits": [
+          "Finite unitaxis/quaternions only;invalidcounts,nonfinite/degenerate inputs unresolved.",
+          "Host sincosf and local fixture boundaries;no exactPS4rounding or gameexecution claim."
+        ],
+        "suite_count": 1
+      },
+      {
+        "address": "1408fe340",
+        "name": "ComputePaletteSamplingOffsetTransform",
+        "signature": "void PS4_SYSV ComputePaletteSamplingOffsetTransform(PositionScaleQuaternionTransform32 * transform_out, void * palette_record, uchar use_seeded_orientation, int rotation_index)",
+        "code_sha256": "1b5b729e7fd2a7fa3ef00fe28c2908276770dcffd2c0de72216397735a4ed3df",
+        "cases": 1280,
+        "evidence": [
+          "Volumeweightedcentroid usespowf(radius,3)*4pi/3;positive-radius enclosingbound.",
+          "OutputP=-centroid-radius*rotate(inverseQ,+Z);outputS1,Qidentity.",
+          "Flagzero derivesQfromindexedrotationdecoder;flagnonzero deterministicseedhash/LCGdiskrejection/spheredirection/shortestrotation.",
+          "Both original branches independently validated640cases each;counts0..4,indexedrotations0..4,seedsrandom32bit.",
+          "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+        ],
+        "limits": [
+          "Finite positive radii or emptyrecordlist only;negative/nonfinite radii and invalidcounts unresolved.",
+          "RNGexceptionalrotation fallback not explicitly targeted;seeded cases finite.",
+          "Syntheticisolatedoriginalcode,hostpowf/sincosf,localinfinity/canaryfixtures;no exactPS4rounding/in-gameverification."
+        ],
+        "suite_count": 2
+      },
+      {
+        "address": "1408fe6e0",
+        "name": "ComputeSpatiallyWeightedPaletteColor",
+        "signature": "SpatialQueryFloat4Working16 PS4_SYSV ComputeSpatiallyWeightedPaletteColor(void * palette_record, uchar use_seeded_orientation, int rotation_index)",
+        "code_sha256": "4b671947ed49023c1702bc02fe46066c749941a6c802ccf7f15a4cedbc064ecb",
+        "cases": 1280,
+        "evidence": [
+          "Emptylistreturns(1,0,1,0).",
+          "Weights r_i²/length(frameP+point_i)²;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
+          "Meanredbias float1e-6 breaks achromatic degeneracy. Chroma=normalize(2R-G-B,2G-R-B,2B-R-G).",
+          "delta=abs(saturation(biasedMean)-weightedMeanSaturation);RGB=clamp(mean+1.5*delta*chroma*dot(chroma,normalize(mean))*sum(mean),0,1),W0.",
+          "640independentidentityframecases plus640frameconditionedconnectedindexed/seededcases;categories distinct.",
+          "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+        ],
+        "limits": [
+          "All8recordedcallerwindowsreviewed;fullcallerbodiesnotallreviewed.",
+          "FinitepositiveRGB/radii or emptylist only;nonfinite/negative/invalidcounts/degenerate inputs unresolved.",
+          "Syntheticoriginalcode withhostpowf/sincosf andlocalinfinity/canaryfixtures;no exactPS4math or in-gameverification."
+        ],
+        "suite_count": 2
+      },
+      {
+        "address": "140be06a0",
+        "name": "ComputeEditorPaletteColor",
+        "signature": "SpatialQueryFloat4Working16 PS4_SYSV ComputeEditorPaletteColor(void * editor, void * group, uchar * region_out_optional, int rotation_index)",
+        "code_sha256": "4d417d7581b911ca65b5835d4631dcb1085433a3e4f81409940cf8c69dc74cdc",
+        "cases": 4224,
+        "evidence": [
+          "Prior inferred integer return contradicted allfour caller windows and vectorXMM0 paths;explicit16-byteXMM0workingreturn now saved and independently reopened.",
+          "State6..9 region priority annulus orstate8=>classification3; disk orstate7=>2; nonemptyrecordssphere=>4;fixedoffsetsphere=>5; expliciteditor130value=>1;else selectedrecord fallback.",
+          "Disk localXY/.6 drives clipped normalized barycentric weights;lookup-remapped hue generatesRGB triangularwave;output=whiteWeight+hueWeight*pureHueRGB,validated with originalconnectedqueries.",
+          "Ring/default paths choose storedrecord1f0 whenrecord200set,otherwise blend. Record-dependent sphere always blends;fixed sphere returns storedrecord1f0. Blendflag derivesrecord1d0<=0.",
+          "Outside states6..9,selectedrecord200set returns storedvector;otherwise tailcallshelper forwardingfourth integerparameter.",
+          "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes×banks0/1.",
+          "Blendhelper and both frame/rotation dependencies fully read;bounded independent/frame-conditioned native evidence recorded separately.",
+          "Connected512case original annulus->disk->baseframe->colorcaller execution matches independent hueLookup/RGBtriangle/barycentric oracle, maxRGBerror5.37e-6.",
+          "Local disk coordinates /.6 map to white/black/hue triangle weights, clipped0..1 and normalized; outputRGB=whiteWeight+hueWeight*pureHueRGB.",
+          "ReturnXMM0 allfourstoredlanes preserved on stored branch;onlyRGBinterpreted in computed disk path.",
+          "Parentnativeevidence4224cases across7distinctsuites:stored512,diskRGB512,explicit/forcedannulus1024,diskclassification512,blendfallback640,sphereclassifications512,actualannulus512.",
+          "Actualannulushitsclassification3verified512cases;classification4blendsandclassification5returnsstoredvector.",
+          "Working return is16bytevectorXMM0;RGBsemanticmeaning established,computedupperlaneunspecified andstoredpathpreservesallfourlanes.",
+          "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+        ],
+        "limits": [
+          "Finite synthetic inputs and bounded saved/live dependencies only;no in-game verification or exactPS4rounding claim.",
+          "Forcedstate7when diskqueryfails can consume unwritten local coordinates;invalidstate combinations not interpreted as valid UI use.",
+          "Computed fourthlane semantics,exactboundary/parallel cases,invalidpointer/counts,nonfinite/degenerate input andfull UI lifecycle unresolved."
+        ],
+        "suite_count": 7
+      }
+    ],
+    "verification": "independent_offline_reopening",
+    "case_accounting": "Function-scoped evidence:rotationdecode640,boundframe1280,blend1280,parent4224. Connected dependency execution is not additional unique whole-game testing."
   }
 }

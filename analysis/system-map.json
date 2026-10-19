@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2236,
-  "unmapped_total": 7384,
+  "mapped_total": 2240,
+  "unmapped_total": 7380,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56611,14 +56611,14 @@
       ]
     },
     "140bd4d30": {
-      "system": "sculpting-painting",
+      "system": "interface",
       "component_path": [
-        "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "interface",
+        "menus",
+        "color-picker",
         "runtime-implementation"
       ],
-      "component_basis": "Editor sphere-bound ray query traced through mode-dependent point/radius records and original placement frames;four callers reviewed.",
+      "component_basis": "Newly reviewed ComputeEditorPaletteColor consumes ring,disk and sphere queries to select stored/blended RGB;the two reference frames are used directly by those queries. Geometric names alone did not establish sculpt ownership.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Full2537-byte/532owned-instruction body and full C reviewed;4527uninstrumented query cases plus512diagnostic and72extracted-block cases.",
       "code_sha256": "8554ead743064c6194bda23ee87eb99df0b937637e9bf1182582523dc01eeecf",
@@ -56639,18 +56639,27 @@
             "Separate72extracted original-quadratic cases confirm positive-distance tangency,near-tangent sides,inside/surface rejection and signed outputs.",
             "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "Color-picker ownership trace",
+          "support": [
+            "ComputeEditorPaletteColor full1961-byte/445instruction body,four caller windows,and4224original-parent cases reviewed.",
+            "Disk local coordinates select white/black/hue RGB;ring and sphere branches choose stored or spatially blended colors.",
+            "Ownership reassignment adds no naming-review credit."
+          ]
         }
       ]
     },
     "140bd37d0": {
-      "system": "sculpting-painting",
+      "system": "interface",
       "component_path": [
-        "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "interface",
+        "menus",
+        "color-picker",
         "runtime-implementation"
       ],
-      "component_basis": "Reviewed object/group and sphere reference frame chain used by editor geometric queries.",
+      "component_basis": "Newly reviewed ComputeEditorPaletteColor consumes ring,disk and sphere queries to select stored/blended RGB;the two reference frames are used directly by those queries. Geometric names alone did not establish sculpt ownership.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
       "code_sha256": "bacbc0fedfb0b2b242dfc3f676df4634e72a862195085cc1f9d86979df37fb87",
@@ -56668,18 +56677,27 @@
             "Five original-function suites total2,432cases include saved/live pairs,flagged direction,signed/zero scales,single-object global-mode combinations and synthetic cached settings.",
             "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "Color-picker ownership trace",
+          "support": [
+            "ComputeEditorPaletteColor full1961-byte/445instruction body,four caller windows,and4224original-parent cases reviewed.",
+            "Disk local coordinates select white/black/hue RGB;ring and sphere branches choose stored or spatially blended colors.",
+            "Ownership reassignment adds no naming-review credit."
+          ]
         }
       ]
     },
     "140bd5720": {
-      "system": "sculpting-painting",
+      "system": "interface",
       "component_path": [
-        "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "interface",
+        "menus",
+        "color-picker",
         "runtime-implementation"
       ],
-      "component_basis": "Reviewed object/group and sphere reference frame chain used by editor geometric queries.",
+      "component_basis": "Newly reviewed ComputeEditorPaletteColor consumes ring,disk and sphere queries to select stored/blended RGB;the two reference frames are used directly by those queries. Geometric names alone did not establish sculpt ownership.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
       "code_sha256": "41e27193cf17a2db7479b342b14417860f4a08a175e08e0c4da97a53d6a3b631",
@@ -56697,18 +56715,27 @@
             "One direct512case suite plus4,096connected original-query cases verify selected radius lists,frame branches,signs and direction combinations.",
             "Saved descriptive name and three-pointer working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "Color-picker ownership trace",
+          "support": [
+            "ComputeEditorPaletteColor full1961-byte/445instruction body,four caller windows,and4224original-parent cases reviewed.",
+            "Disk local coordinates select white/black/hue RGB;ring and sphere branches choose stored or spatially blended colors.",
+            "Ownership reassignment adds no naming-review credit."
+          ]
         }
       ]
     },
     "140bd5e30": {
-      "system": "sculpting-painting",
+      "system": "interface",
       "component_path": [
-        "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "interface",
+        "menus",
+        "color-picker",
         "runtime-implementation"
       ],
-      "component_basis": "Editor fixed-offset sphere ray query traced through original object/group frame;three callers reviewed.",
+      "component_basis": "Newly reviewed ComputeEditorPaletteColor consumes ring,disk and sphere queries to select stored/blended RGB;the two reference frames are used directly by those queries. Geometric names alone did not establish sculpt ownership.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Full2547-byte/511owned-instruction body and full C reviewed;2991uninstrumented original-function cases.",
       "code_sha256": "173917a21832024c1338fdf0383a3ea76f8d5435359222af8665f687858ec7bb",
@@ -56725,18 +56752,27 @@
             "Caller windows demonstrate direct Boolean use and fallback after first record-dependent sphere query. Concrete UI handle identity remains unresolved.",
             "Saved descriptive name and three-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "Color-picker ownership trace",
+          "support": [
+            "ComputeEditorPaletteColor full1961-byte/445instruction body,four caller windows,and4224original-parent cases reviewed.",
+            "Disk local coordinates select white/black/hue RGB;ring and sphere branches choose stored or spatially blended colors.",
+            "Ownership reassignment adds no naming-review credit."
+          ]
         }
       ]
     },
     "140bd4670": {
-      "system": "sculpting-painting",
+      "system": "interface",
       "component_path": [
-        "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "interface",
+        "menus",
+        "color-picker",
         "runtime-implementation"
       ],
-      "component_basis": "Editor annulus plane/ray query traced through original object/group frame;three callers reviewed.",
+      "component_basis": "Newly reviewed ComputeEditorPaletteColor consumes ring,disk and sphere queries to select stored/blended RGB;the two reference frames are used directly by those queries. Geometric names alone did not establish sculpt ownership.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Full1714-byte/366owned-instruction body and full C reviewed;4061uninstrumented original-function cases.",
       "code_sha256": "07adc61edec6fe074d1f7785e3464410c354a2b763542853f452c3bde3884e48",
@@ -56757,18 +56793,27 @@
             "Orientation suite excludes100of640candidate near-parallel rays;directional suite excludes110of640; excluded cases do not count as passes.",
             "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
           ]
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "Color-picker ownership trace",
+          "support": [
+            "ComputeEditorPaletteColor full1961-byte/445instruction body,four caller windows,and4224original-parent cases reviewed.",
+            "Disk local coordinates select white/black/hue RGB;ring and sphere branches choose stored or spatially blended colors.",
+            "Ownership reassignment adds no naming-review credit."
+          ]
         }
       ]
     },
     "140bd3170": {
-      "system": "sculpting-painting",
+      "system": "interface",
       "component_path": [
-        "sculpting-painting",
-        "csg",
-        "primitive-encoding",
+        "interface",
+        "menus",
+        "color-picker",
         "runtime-implementation"
       ],
-      "component_basis": "Editor disk plane/ray query traced through original object/group frame;both callers reviewed.",
+      "component_basis": "Newly reviewed ComputeEditorPaletteColor consumes ring,disk and sphere queries to select stored/blended RGB;the two reference frames are used directly by those queries. Geometric names alone did not establish sculpt ownership.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Full1619-byte/346owned-instruction body and full C reviewed;4090uninstrumented original-function cases.",
       "code_sha256": "f4f813f9b8103c6df7154ebd405cc2fca3ad469d3accdc9d666ba75c70b07dee",
@@ -56785,6 +56830,132 @@
             "Two caller windows demonstrate one optionalXY/no distance and one optionaldistance/noXY after earlier sphere/ring failures. Concrete UI handle identity unresolved.",
             "Seven isolated original-function suites4090cases; orientation excludes89of640candidate nearparallel rays, directional excludes92of640; exclusions are not passes.",
             "Saved descriptive name and four-argument working signature independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        },
+        {
+          "kind": "verified_semantic_review",
+          "name": "Color-picker ownership trace",
+          "support": [
+            "ComputeEditorPaletteColor full1961-byte/445instruction body,four caller windows,and4224original-parent cases reviewed.",
+            "Disk local coordinates select white/black/hue RGB;ring and sphere branches choose stored or spatially blended colors.",
+            "Ownership reassignment adds no naming-review credit."
+          ]
+        }
+      ]
+    },
+    "1408fdf10": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "menus",
+        "color-picker",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color-picker parent,spatialRGBblend and transform dependencies established by full bodies,original connected queries and hue/white/black interpolation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
+      "code_sha256": "4827a3feb7c389ec550db7a4c5825c42cd15c6f2f78af9fdb3f7daaf165e0e00",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComposeIndexedPaletteRotationTransform",
+          "support": [
+            "Output position-scale is identity(0,0,0,1);output quaternion startsidentity and left-composes each stored quaternion,normalizing after eachstep.",
+            "Nonzero signed index prepends normalized axis-angle(index*storedangle) to each storedquaternion before accumulation;zeroindex skipsaxisangle.",
+            "Counts0..4,index0/-3/-1/1/2,unitaxes/randomunitquaternions verified;guards andinputs preserved.",
+            "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1408fe340": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "menus",
+        "color-picker",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color-picker parent,spatialRGBblend and transform dependencies established by full bodies,original connected queries and hue/white/black interpolation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
+      "code_sha256": "1b5b729e7fd2a7fa3ef00fe28c2908276770dcffd2c0de72216397735a4ed3df",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputePaletteSamplingOffsetTransform",
+          "support": [
+            "Volumeweightedcentroid usespowf(radius,3)*4pi/3;positive-radius enclosingbound.",
+            "OutputP=-centroid-radius*rotate(inverseQ,+Z);outputS1,Qidentity.",
+            "Flagzero derivesQfromindexedrotationdecoder;flagnonzero deterministicseedhash/LCGdiskrejection/spheredirection/shortestrotation.",
+            "Both original branches independently validated640cases each;counts0..4,indexedrotations0..4,seedsrandom32bit.",
+            "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "1408fe6e0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "menus",
+        "color-picker",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color-picker parent,spatialRGBblend and transform dependencies established by full bodies,original connected queries and hue/white/black interpolation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
+      "code_sha256": "4b671947ed49023c1702bc02fe46066c749941a6c802ccf7f15a4cedbc064ecb",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeSpatiallyWeightedPaletteColor",
+          "support": [
+            "Emptylistreturns(1,0,1,0).",
+            "Weights r_i²/length(frameP+point_i)²;weightedRGBmean andweightedsaturationmean where saturation=(maxRGB-minRGB)/(maxRGB+1e-7).",
+            "Meanredbias float1e-6 breaks achromatic degeneracy. Chroma=normalize(2R-G-B,2G-R-B,2B-R-G).",
+            "delta=abs(saturation(biasedMean)-weightedMeanSaturation);RGB=clamp(mean+1.5*delta*chroma*dot(chroma,normalize(mean))*sum(mean),0,1),W0.",
+            "640independentidentityframecases plus640frameconditionedconnectedindexed/seededcases;categories distinct.",
+            "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140be06a0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "menus",
+        "color-picker",
+        "runtime-implementation"
+      ],
+      "component_basis": "Color-picker parent,spatialRGBblend and transform dependencies established by full bodies,original connected queries and hue/white/black interpolation.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full function body,assembly and recorded callers reviewed;bounded original-code fixtures and limitations recorded.",
+      "code_sha256": "4d417d7581b911ca65b5835d4631dcb1085433a3e4f81409940cf8c69dc74cdc",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeEditorPaletteColor",
+          "support": [
+            "Prior inferred integer return contradicted allfour caller windows and vectorXMM0 paths;explicit16-byteXMM0workingreturn now saved and independently reopened.",
+            "State6..9 region priority annulus orstate8=>classification3; disk orstate7=>2; nonemptyrecordssphere=>4;fixedoffsetsphere=>5; expliciteditor130value=>1;else selectedrecord fallback.",
+            "Disk localXY/.6 drives clipped normalized barycentric weights;lookup-remapped hue generatesRGB triangularwave;output=whiteWeight+hueWeight*pureHueRGB,validated with originalconnectedqueries.",
+            "Ring/default paths choose storedrecord1f0 whenrecord200set,otherwise blend. Record-dependent sphere always blends;fixed sphere returns storedrecord1f0. Blendflag derivesrecord1d0<=0.",
+            "Outside states6..9,selectedrecord200set returns storedvector;otherwise tailcallshelper forwardingfourth integerparameter.",
+            "Original recordselector140bd5d90 full43instruction/C bodyread; matches selection in512cases,all256modes×banks0/1.",
+            "Blendhelper and both frame/rotation dependencies fully read;bounded independent/frame-conditioned native evidence recorded separately.",
+            "Connected512case original annulus->disk->baseframe->colorcaller execution matches independent hueLookup/RGBtriangle/barycentric oracle, maxRGBerror5.37e-6.",
+            "Local disk coordinates /.6 map to white/black/hue triangle weights, clipped0..1 and normalized; outputRGB=whiteWeight+hueWeight*pureHueRGB.",
+            "ReturnXMM0 allfourstoredlanes preserved on stored branch;onlyRGBinterpreted in computed disk path.",
+            "Parentnativeevidence4224cases across7distinctsuites:stored512,diskRGB512,explicit/forcedannulus1024,diskclassification512,blendfallback640,sphereclassifications512,actualannulus512.",
+            "Actualannulushitsclassification3verified512cases;classification4blendsandclassification5returnsstoredvector.",
+            "Working return is16bytevectorXMM0;RGBsemanticmeaning established,computedupperlaneunspecified andstoredpathpreservesallfourlanes.",
+            "Saved descriptive name and working signature and explicit return storage independently reopened;original bytes and other function names/signatures unchanged."
           ]
         }
       ]
@@ -59386,6 +59557,17 @@
                 {
                   "id": "properties-types",
                   "label": "Properties & type definitions",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "color-picker",
+              "label": "Color picker & blending",
+              "children": [
+                {
+                  "id": "runtime-implementation",
+                  "label": "Runtime behavior",
                   "children": []
                 }
               ]
