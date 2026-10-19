@@ -7542,3 +7542,12 @@ Totals are **817 checked names across 9,620 defined functions**, with **2,218 ma
 The original code passed 590 isolated cases: 512 finite unit-input cases and 78 symmetric-direction cases, including 60 exact ties in an identity frame. Those ties retain the first maximum in +X, +Y, +Z, -X, -Y, -Z order. An opposite-Y fixture verified the fallback rotation. General transformed ties, exceptional/nonunit inputs and the callers' full behavior remain unresolved. The descriptive name and corrected working signature were independently reopened with executable bytes unchanged.
 
 Totals: **818 checked names across 9,620 defined functions**, **2,219 mapped and 7,401 unmapped**. These counts track reviewed code, not whole-game completion.
+
+
+### Direction alignment of placement transforms
+
+`AlignEditorPlacementTransformToDirection` adjusts orientation while copying position and scale bit-for-bit. It composes the input orientation with an editor reference, calls the reviewed axis-alignment helper, then removes the reference orientation. Opposite scale signs reverse the supplied direction. Both caller windows confirm the 32-byte transform is passed by value on the stack.
+
+512 connected original-code cases cover random unit orientations and directions, both modes and every positive/negative scale combination. An initial reversed multiplication oracle failed and was corrected by checking assembly operands; original code remained unchanged. Input buffers and output guards were preserved. The saved descriptive name and corrected aggregate signature survived independent reopening. Nonunit/exceptional inputs, all caller gates and the larger placement pipeline remain unresolved.
+
+Totals: **819 checked names across 9,620 defined functions**, **2,220 mapped and 7,400 unmapped**. These are code-review counts, not whole-game completion.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "748 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "749 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8647,
-    "other_names": 973,
-    "verification": "complete_inventory_matches_baseline_plus_748_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8646,
+    "other_names": 974,
+    "verification": "complete_inventory_matches_baseline_plus_749_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19055,6 +19055,32 @@
         "Finite unit inputs only; general transformed ties, nonunit/nonfinite directions and complete caller lifecycle unresolved.",
         "Second caller reviewed only around call and returned-quaternion use; no claim of understanding its entire body.",
         "Higher placement worker remains under review; this helper does not establish subsystem completion."
+      ]
+    },
+    {
+      "address": "140bce0d0",
+      "original_name": "FUN_140bce0d0",
+      "applied_name": "AlignEditorPlacementTransformToDirection",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AlignEditorPlacementTransformToDirection(PositionScaleQuaternionTransform32 * output_transform, void * editor, uint axis_mode, SpatialQueryFloat4Working16 direction, PositionScaleQuaternionTransform32 input_transform)",
+      "evidence": [
+        "Complete 862-byte EH region and 183 owned instructions, full pseudocode and both direct caller windows reviewed.",
+        "Working ABI: output RDI, opaque editor RSI, low-byte mode EDX, direction XMM0 and 32-byte input transform by value at stack+8.",
+        "Composes input quaternion * editor reference quaternion, applies original axis alignment, then multiplies by conjugate reference and normalizes.",
+        "Negates direction when input scale times reference scale is negative.",
+        "512 connected original-code cases cover random unit orientations and directions, both modes and all positive/negative scale combinations.",
+        "Position/scale copied bit-for-bit; input,editor,direction and output guards preserved.",
+        "Saved descriptive name and aggregate working signature independently reopened; executable bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Analyst descriptive name and working types, not recovered source declarations.",
+        "Finite unit inputs and nonzero signed scales only; nonunit/exceptional values and full caller gates unresolved.",
+        "Initial reversed composition oracle failed; operand order corrected from assembly before successful tests. Original code was not altered.",
+        "Higher placement worker remains under review; this helper does not establish whole pipeline completion."
       ]
     }
   ],

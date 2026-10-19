@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2219,
-  "unmapped_total": 7401,
+  "mapped_total": 2220,
+  "unmapped_total": 7400,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56283,6 +56283,35 @@
             "512 original-code cases cover both modes with finite unit frames and directions, including an opposite-Y fallback.",
             "78 additional identity-frame signed-axis/edge/corner cases include 60 exact ties and modes 1,2,-1; first maximum in +X,+Y,+Z,-X,-Y,-Z order wins.",
             "Saved descriptive name and working signature independently reopened; original bytes and other function names/signatures unchanged."
+          ]
+        }
+      ]
+    },
+    "140bce0d0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Editor placement transform applies reference-relative axis alignment and signed-scale direction correction.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete body and corrected C reviewed;512 connected original-code cases with both scale signs.",
+      "code_sha256": "7609e04241b91dd629663dbe25d1648d54abbeadcef6eb53e6730c0f9fe7714a",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AlignEditorPlacementTransformToDirection",
+          "support": [
+            "Complete 862-byte EH region and 183 owned instructions, full pseudocode and both direct caller windows reviewed.",
+            "Working ABI: output RDI, opaque editor RSI, low-byte mode EDX, direction XMM0 and 32-byte input transform by value at stack+8.",
+            "Composes input quaternion * editor reference quaternion, applies original axis alignment, then multiplies by conjugate reference and normalizes.",
+            "Negates direction when input scale times reference scale is negative.",
+            "512 connected original-code cases cover random unit orientations and directions, both modes and all positive/negative scale combinations.",
+            "Position/scale copied bit-for-bit; input,editor,direction and output guards preserved.",
+            "Saved descriptive name and aggregate working signature independently reopened; executable bytes and other function names/signatures unchanged."
           ]
         }
       ]

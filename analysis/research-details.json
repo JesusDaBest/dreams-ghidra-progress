@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 818,
+    "checked_and_applied_names": 819,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 818,
+    "verified_names": 819,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "748 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "749 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26075,6 +26075,30 @@
     "native_suites": {
       "random_unit_and_opposite": 512,
       "symmetric_direction_and_ties": 78
+    }
+  },
+  "csg_placement_direction_transform_checkpoint": {
+    "address": "140bce0d0",
+    "name": "AlignEditorPlacementTransformToDirection",
+    "working_signature": "void PS4_SYSV AlignEditorPlacementTransformToDirection(PositionScaleQuaternionTransform32 * output_transform, void * editor, uint axis_mode, SpatialQueryFloat4Working16 direction, PositionScaleQuaternionTransform32 input_transform)",
+    "native_cases": 512,
+    "findings": [
+      "Complete 862-byte EH region and 183 owned instructions, full pseudocode and both direct caller windows reviewed.",
+      "Working ABI: output RDI, opaque editor RSI, low-byte mode EDX, direction XMM0 and 32-byte input transform by value at stack+8.",
+      "Composes input quaternion * editor reference quaternion, applies original axis alignment, then multiplies by conjugate reference and normalizes.",
+      "Negates direction when input scale times reference scale is negative.",
+      "512 connected original-code cases cover random unit orientations and directions, both modes and all positive/negative scale combinations.",
+      "Position/scale copied bit-for-bit; input,editor,direction and output guards preserved.",
+      "Saved descriptive name and aggregate working signature independently reopened; executable bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Analyst descriptive name and working types, not recovered source declarations.",
+      "Finite unit inputs and nonzero signed scales only; nonunit/exceptional values and full caller gates unresolved.",
+      "Initial reversed composition oracle failed; operand order corrected from assembly before successful tests. Original code was not altered.",
+      "Higher placement worker remains under review; this helper does not establish whole pipeline completion."
+    ],
+    "native_suites": {
+      "connected_signed_scale_and_orientation": 512
     }
   }
 }
