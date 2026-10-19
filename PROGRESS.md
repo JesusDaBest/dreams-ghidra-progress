@@ -7582,3 +7582,12 @@ Totals: **821 checked names across 9,620 defined functions**, **2,222 mapped and
 The complete 1,791-byte, 378-instruction body and 507 nonempty lines of pseudocode were reviewed. 1,024 original-code cases cover all 256 mode-byte values, bank selectors 0 and 1, list counts 0 and 3, random unit rotations and signed scales. Arbitrary incoming vector-register lanes do not affect the tested output; those lanes are cleared rather than treated as another argument. Input buffers and output guards were preserved. The descriptive name and corrected two-parameter signature survived independent reopening with original bytes and other annotations unchanged.
 
 Concrete mode/list meanings, valid runtime construction, invalid counts/selectors, nonunit or nonfinite values and exact rounding remain unresolved. The outer caller still has additional correction paths under review. Totals: **822 checked names across 9,620 defined functions**, **2,223 mapped and 7,397 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Corrected editor placement wrapper
+
+`ComputeCorrectedEditorPlacementTransform` now names the outer placement routine. It initializes the context, forwards options and an auxiliary blend factor into the placement worker, then optionally multiplies the result by a stored frame. Tag, payload and option gates control that extra transform. A separate gated correction compares pivot and placement vectors in a reference frame, adjusts orientation and reconstructs an attachment offset.
+
+The complete 4,098-byte body, 790 owned instructions and full pseudocode were reviewed. Seven bounded original-code suites total 968 cases, covering baseline composition, stored-frame order and gates across 50 observed tags, identity and general correction frames, selected signed scales, stack-option suppression and the combined stored-frame/correction path. The seven-parameter working signature and descriptive name survived independent reopening with original bytes and other annotations unchanged.
+
+Concrete option and tag meanings, degenerate or nonfinite inputs, parallel/antiparallel vectors, exact PS4 math and the complete combined snapping state space remain unresolved. Numerical tolerances are recorded with the local evidence. Totals: **823 checked names across 9,620 defined functions**, **2,224 mapped and 7,396 unmapped**. These are reviewed-code counts, not whole-game completion.

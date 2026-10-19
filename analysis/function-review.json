@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "752 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "753 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8643,
-    "other_names": 977,
-    "verification": "complete_inventory_matches_baseline_plus_752_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8642,
+    "other_names": 978,
+    "verification": "complete_inventory_matches_baseline_plus_753_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19155,6 +19155,31 @@
         "Concrete mode/list meanings and validruntimeconstruction unresolved.",
         "Invalidcounts/selectors,nonunit/nonfinite values and exactPS4mathrounding unvalidated.",
         "Bounded synthetic fixtures use local infinity predicate;notwholepipeline completion."
+      ]
+    },
+    {
+      "address": "140bc9aa0",
+      "original_name": "FUN_140bc9aa0",
+      "applied_name": "ComputeCorrectedEditorPlacementTransform",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ComputeCorrectedEditorPlacementTransform(PositionScaleQuaternionTransform32 * output_transform, void * editor, void * group, uint placement_option, uint secondary_option, ulonglong inner_stack_option, uchar outer_stack_option)",
+      "evidence": [
+        "Full4098-byte/790owned-instruction body andfullCread;791originalinstructionsincludingtrailingUD2reconciled.",
+        "Explicit seven-parameter workingABI matches register andstack forwarding into namedplacementworker.",
+        "Initializes context and usesauxiliary190blend factor,then optionally right-composes17580storedframe.",
+        "Tag/payload/optiongates checked across50observedrecordtags.",
+        "Correctiondelta aligns pivot andincomingposition ininverseAcoordinates;reconstructedframe formula validated withnonidentity/signedframes.",
+        "7bounded original-code suites total968cases,including combinedstoredframe/correction andstack suppression.",
+        "Saved descriptive name andsignature independently reopened;original bytes andother functionannotations unchanged."
+      ],
+      "caveats": [
+        "Concreteoption/tagsemantics remainunresolved;opaqueeditor/group types retained.",
+        "Degenerate/nonfinite/parallel/antiparallel inputs andfullcombinedsnappingstate space not validated.",
+        "Hostmath/localinfinity/canaryfixtures and documented numericalbounds;notfullpipelinecompletion."
       ]
     }
   ],

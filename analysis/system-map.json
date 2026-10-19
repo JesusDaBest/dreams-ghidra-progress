@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2223,
-  "unmapped_total": 7397,
+  "mapped_total": 2224,
+  "unmapped_total": 7396,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56397,6 +56397,35 @@
             "Default context useszeroXYZ,stored3f0scale and3e0orientation;selected modes append banked or unbanked quaternion lists.",
             "Each list element premultiplies accumulator;result postmultiplies base orientation.",
             "Saved descriptive name and working signature independently reopened;original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bc9aa0": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Outer editor placement wrapper initializes context,calls placement worker,then applies gated stored-frame and pivot corrections.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full4098-byte/790owned-instruction body and full C reviewed;7bounded original-code suites total968cases.",
+      "code_sha256": "fa85abadb98c6b7487e1c4f4402f459122724717a5cc42afbd9eca7acc272439",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ComputeCorrectedEditorPlacementTransform",
+          "support": [
+            "Full4098-byte/790owned-instruction body andfullCread;791originalinstructionsincludingtrailingUD2reconciled.",
+            "Explicit seven-parameter workingABI matches register andstack forwarding into namedplacementworker.",
+            "Initializes context and usesauxiliary190blend factor,then optionally right-composes17580storedframe.",
+            "Tag/payload/optiongates checked across50observedrecordtags.",
+            "Correctiondelta aligns pivot andincomingposition ininverseAcoordinates;reconstructedframe formula validated withnonidentity/signedframes.",
+            "7bounded original-code suites total968cases,including combinedstoredframe/correction andstack suppression.",
+            "Saved descriptive name andsignature independently reopened;original bytes andother functionannotations unchanged."
           ]
         }
       ]
