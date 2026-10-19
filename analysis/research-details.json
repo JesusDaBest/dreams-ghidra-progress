@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 826,
+    "checked_and_applied_names": 827,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 826,
+    "verified_names": 827,
     "function_count": 9620,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -1933,7 +1933,7 @@
       "1410a6700",
       "1410a6860"
     ],
-    "scope": "756 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+    "scope": "757 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
@@ -26274,6 +26274,31 @@
     "native_suites": {
       "suite_count": 8,
       "bounded_cases": 2048
+    }
+  },
+  "shape_ray_bounds_checkpoint": {
+    "address": "140bc7930",
+    "name": "DoesEditorPairRayIntersectShapeBounds",
+    "working_signature": "bool PS4_SYSV DoesEditorPairRayIntersectShapeBounds(void * editor, void * group)",
+    "native_cases": 3579,
+    "findings": [
+      "Complete 3,740-byte region, 773 owned instructions, 1,230 nonempty pseudocode lines and recorded caller block reviewed.",
+      "Working ABI: boolean result in AL, editor pointer in RDI and opaque group pointer in RSI.",
+      "Requires two eligible object records and a supported primary editor mode. Ray origin is the group transform applied to editor-relative position; direction points toward the second object.",
+      "Uses shape parameters or enclosing bounds from four tetrahedron/control-point vertices; tests bounds rather than exact shape faces.",
+      "Canonicalizes signed dimensions with a compensating transform, optionally expands sculpt dimensions by 1.5, and replaces zero dimensions with the smallest nonzero magnitude capped at FLT_MAX.",
+      "Inverse-transform slab test requires strict interval overlap and a positive forward intersection.",
+      "Six bounded original-code suites total 3,579 cases: 3,072 geometric comparisons and 507 eligibility/selected edge cases. Connected vertex paths use original suppliers and cached shape frames.",
+      "Saved descriptive name and boolean signature independently reopened; original bytes and other function names/signatures unchanged."
+    ],
+    "limits": [
+      "Caller broader UI purpose remains opaque;name describes observed geometric behavior.",
+      "Exact face-aligned rays,all-zero bounds,nonfinite/nonunit inputs and complete editor histories unresolved.",
+      "Cached frame paths used in runtime validation;noncached placement providers reviewed separately."
+    ],
+    "native_suites": {
+      "suite_count": 6,
+      "bounded_cases": 3579
     }
   }
 }

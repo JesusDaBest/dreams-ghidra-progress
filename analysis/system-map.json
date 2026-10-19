@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9620,
-  "mapped_total": 2227,
-  "unmapped_total": 7393,
+  "mapped_total": 2228,
+  "unmapped_total": 7392,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -56515,6 +56515,36 @@
             "Direction flag aligns signed rotatedZ to editor120 unit direction,with exact opposite fallback checked in identity frame.",
             "Fourth lowbyte suppresses mode28scale;fifth lowbyte forwards placement option.",
             "8bounded original-code suites2048cases;name/signature independently reopened with original bytes and other function annotations unchanged."
+          ]
+        }
+      ]
+    },
+    "140bc7930": {
+      "system": "sculpting-painting",
+      "component_path": [
+        "sculpting-painting",
+        "csg",
+        "primitive-encoding",
+        "runtime-implementation"
+      ],
+      "component_basis": "Tests editor pair ray against shape bounds;shape-parameter and vertex-builder connections reviewed.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full3740-byte/773owned-instruction body and full C reviewed;6bounded original-code suites3579cases.",
+      "code_sha256": "5422da3c9b32ee0bba61327391c811ff00e93cd10fa8c4521cb92f79de7131fc",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DoesEditorPairRayIntersectShapeBounds",
+          "support": [
+            "Complete 3,740-byte region, 773 owned instructions, 1,230 nonempty pseudocode lines and recorded caller block reviewed.",
+            "Working ABI: boolean result in AL, editor pointer in RDI and opaque group pointer in RSI.",
+            "Requires two eligible object records and a supported primary editor mode. Ray origin is the group transform applied to editor-relative position; direction points toward the second object.",
+            "Uses shape parameters or enclosing bounds from four tetrahedron/control-point vertices; tests bounds rather than exact shape faces.",
+            "Canonicalizes signed dimensions with a compensating transform, optionally expands sculpt dimensions by 1.5, and replaces zero dimensions with the smallest nonzero magnitude capped at FLT_MAX.",
+            "Inverse-transform slab test requires strict interval overlap and a positive forward intersection.",
+            "Six bounded original-code suites total 3,579 cases: 3,072 geometric comparisons and 507 eligibility/selected edge cases. Connected vertex paths use original suppliers and cached shape frames.",
+            "Saved descriptive name and boolean signature independently reopened; original bytes and other function names/signatures unchanged."
           ]
         }
       ]

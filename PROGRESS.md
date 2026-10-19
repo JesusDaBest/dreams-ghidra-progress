@@ -7618,3 +7618,12 @@ Concrete state and object meanings, runtime lifecycle, exceptional inputs, exact
 The complete 2,958-byte region, 584 owned instructions, full pseudocode and all seven recorded caller windows were reviewed. Eight original-code suites total 2,048 bounded cases covering baseline composition, bit-exact cached copying, banked rotation selection, scalar snapping, single/paired object scale gates, random directions and exact axis/zero-direction cases. The descriptive name and five-argument working signature survived independent reopening, with original bytes and other function annotations unchanged.
 
 Concrete editor modes, parameter identities and object lifecycle remain unresolved. Additional context lists, flag combinations, snap histories, exceptional values and transformed near-opposite direction thresholds remain unvalidated. Host math adapters do not establish exact PS4 rounding. Totals: **826 checked names across 9,620 defined functions**, **2,227 mapped and 7,393 unmapped**. These are reviewed-code counts, not whole-game completion.
+
+
+### Editor shape bounds ray query
+
+`DoesEditorPairRayIntersectShapeBounds` names a geometric query in the editor sculpt pipeline. It starts a ray at the editor-relative group position, aims toward the second eligible object, and tests the ray against transformed shape bounds. Tetrahedron and curve-control-point paths build enclosing boxes from four stored vertices; this is not an exact shape-surface test. Negative dimensions are corrected with compensating rotation and signed scale. Selected sculpt lists expand bounds by 1.5, and zero dimension lanes use the smallest nonzero dimension.
+
+The complete 3,740-byte region, 773 owned instructions, full pseudocode and recorded caller block were reviewed. Six isolated original-code suites total 3,579 bounded cases: 3,072 geometric comparisons plus 507 eligibility and selected boundary cases. Connected vertex paths execute the original vertex suppliers and cached shape-frame provider. The boolean signature and descriptive name survived independent reopening; original bytes and other function annotations are unchanged.
+
+Broader caller purpose, noncached editor histories, exact face-aligned rays, all-zero bounds and exceptional inputs remain unresolved. Runtime checks use synthetic fixtures and do not establish exact PS4 rounding. Totals: **827 checked names across 9,620 defined functions**, **2,228 mapped and 7,392 unmapped**. These are reviewed-code counts, not whole-game completion.

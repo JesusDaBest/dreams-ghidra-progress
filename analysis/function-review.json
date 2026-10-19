@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-17",
   "status": "applied_verified_after_reopening",
-  "review_scope": "756 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
+  "review_scope": "757 existing-function renames,69 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9620,
-    "default_fun_names": 8639,
-    "other_names": 981,
-    "verification": "complete_inventory_matches_baseline_plus_756_renames_and_69_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8638,
+    "other_names": 982,
+    "verification": "complete_inventory_matches_baseline_plus_757_renames_and_69_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -19262,6 +19262,32 @@
         "Additional mode masks,nonempty context lists and full snap histories/flag combinations not established.",
         "Host math adapters do not establish exact PS4 rounding.",
         "Transformed near-antiparallel thresholds and nonunit directions remain unvalidated."
+      ]
+    },
+    {
+      "address": "140bc7930",
+      "original_name": "FUN_140bc7930",
+      "applied_name": "DoesEditorPairRayIntersectShapeBounds",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "bool PS4_SYSV DoesEditorPairRayIntersectShapeBounds(void * editor, void * group)",
+      "evidence": [
+        "Complete 3,740-byte region, 773 owned instructions, 1,230 nonempty pseudocode lines and recorded caller block reviewed.",
+        "Working ABI: boolean result in AL, editor pointer in RDI and opaque group pointer in RSI.",
+        "Requires two eligible object records and a supported primary editor mode. Ray origin is the group transform applied to editor-relative position; direction points toward the second object.",
+        "Uses shape parameters or enclosing bounds from four tetrahedron/control-point vertices; tests bounds rather than exact shape faces.",
+        "Canonicalizes signed dimensions with a compensating transform, optionally expands sculpt dimensions by 1.5, and replaces zero dimensions with the smallest nonzero magnitude capped at FLT_MAX.",
+        "Inverse-transform slab test requires strict interval overlap and a positive forward intersection.",
+        "Six bounded original-code suites total 3,579 cases: 3,072 geometric comparisons and 507 eligibility/selected edge cases. Connected vertex paths use original suppliers and cached shape frames.",
+        "Saved descriptive name and boolean signature independently reopened; original bytes and other function names/signatures unchanged."
+      ],
+      "caveats": [
+        "Caller broader UI purpose remains opaque;name describes observed geometric behavior.",
+        "Exact face-aligned rays,all-zero bounds,nonfinite/nonunit inputs and complete editor histories unresolved.",
+        "Cached frame paths used in runtime validation;noncached placement providers reviewed separately."
       ]
     }
   ],
