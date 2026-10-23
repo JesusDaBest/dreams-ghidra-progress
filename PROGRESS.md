@@ -8164,3 +8164,16 @@ The callback moves that point toward a target whose XYZ coordinates are 20% of t
 Ghidra's existing shared finite-import prototype omits its float argument. A temporary correction exposed the length argument in pseudocode and was rolled back; assembly and original-library execution support the interface. Nonfinite runtime cases, invalid indices, full updater execution, original source class and live-game behavior remain unresolved.
 
 Totals: **917 checked names across 9,675 defined functions**, **2,318 mapped and 7,357 unmapped**. These are reviewed-code counts, not whole-game completion.
+
+
+### Recipient scalar-grid body collision
+
+`ApplyRecipientScalarGridBodyCollision` now has a saved, independently reopened definition with an opaque shape-state pointer and callback-slot index. Its complete 1,227-byte body (246 instructions), 429-line typed pseudocode and all named-preview differences were read. Exact registration associates it with BODY_COLLISION, slot 7.
+
+For each active point, the callback transforms its current position into an 8x8x8 scalar grid, skips positions outside the sampled range, and interpolates the eight cell corners. A negative field test leads to gradient-based correction scaled by callback strength, collision gain and inverse scale. Radial-plane terms adjust the correction. Current position and previous-position history receive related updates, with a further history projection along the collision normal. A per-point contact byte is written on that branch; skipped points retain their state.
+
+612 whole original-code cases passed independent models: 384 affine-field cases, 36 cases with spatially varying cell gradients, and 192 cases with quaternion rotations, positive uniform scales and radial-plane normals. Tests cover nonpositive/one/three point counts, zero gradients, penetrating and skipped contacts, signed strengths and zero/positive gains. Current/history four-lane outputs, contact flags, untouched points, scalar grids, other state, input packets and original code bytes were checked. Maximum absolute model difference across the suites was below 0.00000074.
+
+These are isolated callback tests with explicit local fixtures. Arbitrary nonunit quaternions, zero/negative scale, invalid indices, exact boundary behavior, nonfinite inputs, complete grid production, the full updater and live-game behavior remain unresolved. No complete collision-system or whole-game completion is claimed.
+
+Totals: **918 checked names across 9,676 defined functions**, **2,319 mapped and 7,357 unmapped**. These count reviewed functions, not completed game features.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 124 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 125 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9675,
+    "total": 9676,
     "default_fun_names": 8603,
-    "other_names": 1072,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_124_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1073,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_125_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21770,6 +21770,29 @@
         "Finite inputs and valid selected indices only;nonfinite runtimecases,invalid indices,full updater and livegame behavior unresolved.",
         "Saved shared finite-import prototype omits its XMM0float argument;temporary corrected prototype was reviewed then rolled back. Assembly and original-code execution establish the actual interface.",
         "Original source class and rendering-light semantics not established."
+      ]
+    },
+    {
+      "address": "1414393d0",
+      "original_name": null,
+      "applied_name": "ApplyRecipientScalarGridBodyCollision",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyRecipientScalarGridBodyCollision(void * shape_state, int selection_index)",
+      "evidence": [
+        "Complete1227-byte original body(246instructions),429-line typed pseudocode and all named-preview differences read.",
+        "612 whole original callback cases matched independent affine/trilinear scalar-field,quaternion-transform,radial-plane and history-projection models.",
+        "Corrected exact initializer registration links BODY_COLLISION to callback slot7 and ESI7 dispatch.",
+        "Independent project reopening verified saved name,opaque shape-state pointer,callback index,bounded function definition and unchanged original bytes/other function inventory."
+      ],
+      "caveats": [
+        "Finite fixtures only:unit quaternion rotations,positive uniform scales,axis-unit/zero radial planes and valid point indices.",
+        "Nonpositive counts,skipped contacts,zero gradients,signed strengths and history behavior tested;arbitrary nonunit transforms,zero/negative scale,invalid indices,exact boundaries and nonfinite behavior remain unresolved.",
+        "Grid producer,complete updater,original source class and live-game behavior not fully verified."
       ]
     }
   ],

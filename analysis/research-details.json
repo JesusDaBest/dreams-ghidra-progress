@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 917,
+    "checked_and_applied_names": 918,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 917,
-    "function_count": 9675,
+    "verified_names": 918,
+    "function_count": 9676,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2037,6 +2037,7 @@
       "141438a70",
       "141438c70",
       "141438dc0",
+      "1414393d0",
       "14143c980",
       "14147f1b0",
       "14148a980",
@@ -2050,7 +2051,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 124 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 125 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28841,6 +28842,29 @@
       "Finite inputs and valid selected indices only;nonfinite runtimecases,invalid indices,full updater and livegame behavior unresolved.",
       "Saved shared finite-import prototype omits its XMM0float argument;temporary corrected prototype was reviewed then rolled back. Assembly and original-code execution establish the actual interface.",
       "Original source class and rendering-light semantics not established."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_body_collision_checkpoint": {
+    "address": "1414393d0",
+    "name": "ApplyRecipientScalarGridBodyCollision",
+    "signature": "void PS4_SYSV ApplyRecipientScalarGridBodyCollision(void * shape_state, int selection_index)",
+    "original_sha256": "5cb5d645d7e80a573c867a074b8efa65922908223e9370eb7c1f3ca7b414438f",
+    "native_cases": 612,
+    "size": 1227,
+    "created": true,
+    "c_sha256": "5ff1f095c9062863e9b24920bc7d22ab0193ab126e2e036afda1f70377c8cb4b",
+    "nonempty_c_lines": 439,
+    "evidence": [
+      "Complete1227-byte original body(246instructions),429-line typed pseudocode and all named-preview differences read.",
+      "612 whole original callback cases matched independent affine/trilinear scalar-field,quaternion-transform,radial-plane and history-projection models.",
+      "Corrected exact initializer registration links BODY_COLLISION to callback slot7 and ESI7 dispatch.",
+      "Independent project reopening verified saved name,opaque shape-state pointer,callback index,bounded function definition and unchanged original bytes/other function inventory."
+    ],
+    "limits": [
+      "Finite fixtures only:unit quaternion rotations,positive uniform scales,axis-unit/zero radial planes and valid point indices.",
+      "Nonpositive counts,skipped contacts,zero gradients,signed strengths and history behavior tested;arbitrary nonunit transforms,zero/negative scale,invalid indices,exact boundaries and nonfinite behavior remain unresolved.",
+      "Grid producer,complete updater,original source class and live-game behavior not fully verified."
     ],
     "project_saved_and_independently_reopened": true
   }
