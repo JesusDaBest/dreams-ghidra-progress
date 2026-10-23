@@ -9367,3 +9367,21 @@ The reviewed Imp parent transfers the 16-byte field at +0x110 and, from revision
 Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. The parent callsites were traced; all incoming callers were not audited. These generic helpers each appear once under shared saving/loading. No Media Molecule source match is claimed.
 
 Totals: **991 reviewed names /9,700 defined functions**, **2,384 mapped /7,316 unmapped**. Whole-game completion remains unknown.
+
+
+### Legacy Imp block-group format and conversion
+
+Four routines were read in full: **1,906 original bytes /468 instructions** and **396 nonempty diagnostic C lines**. Names and working interfaces were independently reopened with original bytes unchanged.
+
+- **SerializeLegacyImpBlockGroup** transfers a 32-bit count, raw 16-byte blocks, one selector byte and nested marker/sequence bookkeeping. Read mode can grow the data allocation.
+- **SerializeLegacyImpBlockGroupList** transfers a group count and serializes each group through that child. Its in-memory descriptors occupy 32 bytes; read mode grows/shrinks that list and manages its inner allocations.
+- **FreeLegacyImpBlockGroupList** releases every inner group allocation and then the outer list, without clearing its fields.
+- **AppendLegacyImpBlockGroup** appends a header and source blocks to a 512-slot destination, reserving one slot for the header.
+
+Assembly corrected an inferred interface: the converter takes descriptor in RDI, destination in RSI and a raw 16-byte header in XMM0. It preserves the header's first 12 bytes and replaces its last 32 bits with the copied count, zero-extended from 16 bits. The parent selects this header by the group's selector byte and converts into its two arrays in the legacy revision<=3 branch. Original selector/header meanings remain unresolved.
+
+**168 new isolated original converter cases passed**, spanning source counts 0/1/2/3/511/512, destination counts 0/1/2/255/510/511/512, two byte patterns and two raw headers. Full destination/guard checks and unchanged source/descriptor checks passed. For valid counts, it copies at most min(source count,511-used) blocks; no positive room means no append.
+
+The other three routines are **static-only**. Their memalign, memcpy and free imports were independently resolved, but linked implementations were not executed. Allocation/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested. In particular, allocation-failure fallthrough prevents any malformed-input safety claim. No Media Molecule source match is claimed.
+
+The four helpers are counted once under Imp visuals. Totals: **995 reviewed names /9,700 defined functions**, **2,388 mapped /7,312 unmapped**. Whole-game completion remains unknown.

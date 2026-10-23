@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 991,
+    "checked_and_applied_names": 995,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 991,
+    "verified_names": 995,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "841 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "845 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30822,6 +30822,67 @@
       "96 isolated original direct-path cases passed: 16 raw 16-byte and 80 scoped paired 12-byte transfers. Both directions, unaligned raw-block offsets, scoped error/marker/sequence boundaries and complete buffer/context guards checked.",
       "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior untested. Raw transfer widths do not establish original field/type meanings.",
       "No Media Molecule source equivalence claimed."
+    ]
+  },
+  "imp_legacy_block_conversion_checkpoint": {
+    "functions": {
+      "1414489c0": {
+        "name": "SerializeLegacyImpBlockGroup",
+        "signature": "void PS4_SYSV SerializeLegacyImpBlockGroup(void * serializer_working, void * legacy_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "630bd57f973a70c85cbbf8695f58980a098d1e06486353319a7d83d63c9f840e",
+        "size": 868,
+        "instructions": 204,
+        "created": false,
+        "c_sha256": "091e05ffc64ac9f265f1dddb1bb1d0d770c5310848f2a3f27ae59c750d9b062e",
+        "nonempty_c_lines": 187
+      },
+      "141448d30": {
+        "name": "SerializeLegacyImpBlockGroupList",
+        "signature": "void PS4_SYSV SerializeLegacyImpBlockGroupList(void * serializer_working, void * legacy_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "47b59644d9694b3c1943af68361b4d140078d19f1c76a92449dfff361042320a",
+        "size": 836,
+        "instructions": 204,
+        "created": false,
+        "c_sha256": "f4b13e45691498610d07b2d505f308468c13afe3ed57c72969d9ee46b1c18655",
+        "nonempty_c_lines": 173
+      },
+      "141449080": {
+        "name": "FreeLegacyImpBlockGroupList",
+        "signature": "void PS4_SYSV FreeLegacyImpBlockGroupList(void * legacy_list_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "3758dc141ce2aa778046bcb28cbea5de841e36e5e725ba42ef9e87ffceac9ea5",
+        "size": 70,
+        "instructions": 25,
+        "created": false,
+        "c_sha256": "07b6a1d147ba566ce2752cc4448b324ef972870bbe52c4108cbc787dbdf2d769",
+        "nonempty_c_lines": 25
+      },
+      "141487a10": {
+        "name": "AppendLegacyImpBlockGroup",
+        "signature": "void PS4_SYSV AppendLegacyImpBlockGroup(void * legacy_working, void * destination_working, SpatialQueryFloat4Working16 header_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "87d20c6d66653142e74e4130df7ae7986c0f0943dce26b1dda55c678d004796b",
+        "size": 132,
+        "instructions": 35,
+        "created": false,
+        "c_sha256": "1dca3f9115b9959c42e355e14f734d60878023b5ba0a488c44285a52585e3ed9",
+        "nonempty_c_lines": 55
+      }
+    },
+    "new_checked_names": 4,
+    "new_definitions": 0,
+    "existing_renames": 4,
+    "original_bytes": 1906,
+    "original_instructions": 468,
+    "typed_c_nonempty_lines": 396,
+    "new_native_cases": 168,
+    "scope_limits": [
+      "Four complete original bodies (1906 bytes /468 instructions) and396 nonempty typed C lines read. Relevant legacy parent calls and actual SysV/XMM0 argument flow traced; not all incoming callers.",
+      "168 isolated original cases verify only the132-byte append converter: valid source/destination counts, header bit preservation,512-slot capacity including header, complete destination/guards and unchanged source/descriptor.",
+      "The group serializer, list serializer and destructor are static-only. Allocation/growth/shrink/free/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
+      "Original selector/header/class meanings remain unresolved; no Media Molecule source equivalence claimed."
     ]
   }
 }

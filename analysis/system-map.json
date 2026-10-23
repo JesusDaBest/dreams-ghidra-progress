@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2384,
-  "unmapped_total": 7316,
+  "mapped_total": 2388,
+  "unmapped_total": 7312,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61106,6 +61106,102 @@
           "support": [
             "Entire original 391-byte body (99 instructions) and all 73 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Transfers two consecutive raw 12-byte blocks (24 wire bytes total). Increments then decrements nesting scope, followed by optional 16-bit marker and sequence increment if error is zero. Both direct block transfers still occur with a preset error. No float conversion or range validation. Read direction advances over marker without comparing its value. Entire original and typed C read. Serializer RDI, bytes RSI, void. 80 isolated original direct-path cases passed with complete buffer/context guards. Relevant calls in previously reviewed SerializeImpStatePayload traced, not all incoming callers. Fallback/exhaustion/callback/alias/invalid-pointer/concurrency/live-game paths untested. Original field/class meanings unresolved; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "1414489c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Legacy revision<=3 branch of fully reviewed Imp payload codec: group/list serialization, cleanup and conversion into two fixed block arrays.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and legacy parent dataflow;168 native cases apply only to append converter141487a10, others static-only.",
+      "code_sha256": "630bd57f973a70c85cbbf8695f58980a098d1e06486353319a7d83d63c9f840e",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeLegacyImpBlockGroup",
+          "support": [
+            "Entire original 868-byte body (204 instructions) and all 176 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Wire:32-bit block count, that many16-byte raw blocks, inner marker/sequence, one selector byte at descriptor+0x18, outer marker/sequence. Descriptor:pointer/count64/capacity64/selector. Read grows capacity to max(2*old,wire count), with memalign16/copy/free, then updates count. Allocation failure falls through to transfer using existing descriptor; no malformed-input or allocation-failure safety guarantee. Scope starts+2, error paths unwind it. Static-only; no native serializer/allocation test. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "141448d30": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Legacy revision<=3 branch of fully reviewed Imp payload codec: group/list serialization, cleanup and conversion into two fixed block arrays.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and legacy parent dataflow;168 native cases apply only to append converter141487a10, others static-only.",
+      "code_sha256": "47b59644d9694b3c1943af68361b4d140078d19f1c76a92449dfff361042320a",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeLegacyImpBlockGroupList",
+          "support": [
+            "Entire original 836-byte body (204 instructions) and all 162 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Wire:32-bit group count, nested groups through SerializeLegacyImpBlockGroup, outer marker/sequence. Read resizes32-byte descriptors; growth copies/reallocates inner buffers and releases old allocations; shrink frees removed groups; added descriptors zero bytes0..24, leaving padding unclaimed. Calls independently resolved memalign/memcpy/free. Allocation/error paths read statically, not runtime validated. Static-only. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "141449080": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Legacy revision<=3 branch of fully reviewed Imp payload codec: group/list serialization, cleanup and conversion into two fixed block arrays.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and legacy parent dataflow;168 native cases apply only to append converter141487a10, others static-only.",
+      "code_sha256": "3758dc141ce2aa778046bcb28cbea5de841e36e5e725ba42ef9e87ffceac9ea5",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FreeLegacyImpBlockGroupList",
+          "support": [
+            "Entire original 70-byte body (25 instructions) and all 17 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Frees each group data pointer across descriptor count at+8 using32-byte stride, then frees outer allocation. Does not zero pointer/count/capacity or descriptor fields. Independently resolved free import. Static-only; no allocator execution. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "141487a10": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Legacy revision<=3 branch of fully reviewed Imp payload codec: group/list serialization, cleanup and conversion into two fixed block arrays.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and legacy parent dataflow;168 native cases apply only to append converter141487a10, others static-only.",
+      "code_sha256": "87d20c6d66653142e74e4130df7ae7986c0f0943dce26b1dda55c678d004796b",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendLegacyImpBlockGroup",
+          "support": [
+            "Entire original 132-byte body (35 instructions) and all 41 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. SysV RDI legacy descriptor, RSI destination, XMM0 raw16-byte header. For valid nonnegative counts, copies min(source count,511-destination count) blocks only if positive. Appends header first, preserves first12 header bytes and replaces W bits with copied count low16 zero-extended32; then copies16-byte blocks and increments destination count at+0x2000. 512 total slots including header; empty source/no remaining block space is no-op. 168 isolated original cases passed with full buffers/guards and source/descriptor unchanged. Malformed counts, aliases, invalid pointers, concurrency/live game untested. Working float4 container only; W is raw count bits, not numeric float conversion. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
           ]
         }
       ]

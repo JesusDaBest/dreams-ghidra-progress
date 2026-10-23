@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "841 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "845 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8554,
-    "other_names": 1146,
-    "verification": "complete_inventory_matches_baseline_plus_841_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8550,
+    "other_names": 1150,
+    "verification": "complete_inventory_matches_baseline_plus_845_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23527,6 +23527,90 @@
         "96 isolated original direct-path cases passed: 16 raw 16-byte and 80 scoped paired 12-byte transfers. Both directions, unaligned raw-block offsets, scoped error/marker/sequence boundaries and complete buffer/context guards checked.",
         "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior untested. Raw transfer widths do not establish original field/type meanings.",
         "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "1414489c0",
+      "original_name": "FUN_1414489c0",
+      "applied_name": "SerializeLegacyImpBlockGroup",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeLegacyImpBlockGroup(void * serializer_working, void * legacy_working)",
+      "evidence": [
+        "Entire original 868-byte body (204 instructions) and all 176 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Wire:32-bit block count, that many16-byte raw blocks, inner marker/sequence, one selector byte at descriptor+0x18, outer marker/sequence. Descriptor:pointer/count64/capacity64/selector. Read grows capacity to max(2*old,wire count), with memalign16/copy/free, then updates count. Allocation failure falls through to transfer using existing descriptor; no malformed-input or allocation-failure safety guarantee. Scope starts+2, error paths unwind it. Static-only; no native serializer/allocation test. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+      ],
+      "caveats": [
+        "Four complete original bodies (1906 bytes /468 instructions) and396 nonempty typed C lines read. Relevant legacy parent calls and actual SysV/XMM0 argument flow traced; not all incoming callers.",
+        "168 isolated original cases verify only the132-byte append converter: valid source/destination counts, header bit preservation,512-slot capacity including header, complete destination/guards and unchanged source/descriptor.",
+        "The group serializer, list serializer and destructor are static-only. Allocation/growth/shrink/free/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
+        "Original selector/header/class meanings remain unresolved; no Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141448d30",
+      "original_name": "FUN_141448d30",
+      "applied_name": "SerializeLegacyImpBlockGroupList",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeLegacyImpBlockGroupList(void * serializer_working, void * legacy_working)",
+      "evidence": [
+        "Entire original 836-byte body (204 instructions) and all 162 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Wire:32-bit group count, nested groups through SerializeLegacyImpBlockGroup, outer marker/sequence. Read resizes32-byte descriptors; growth copies/reallocates inner buffers and releases old allocations; shrink frees removed groups; added descriptors zero bytes0..24, leaving padding unclaimed. Calls independently resolved memalign/memcpy/free. Allocation/error paths read statically, not runtime validated. Static-only. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+      ],
+      "caveats": [
+        "Four complete original bodies (1906 bytes /468 instructions) and396 nonempty typed C lines read. Relevant legacy parent calls and actual SysV/XMM0 argument flow traced; not all incoming callers.",
+        "168 isolated original cases verify only the132-byte append converter: valid source/destination counts, header bit preservation,512-slot capacity including header, complete destination/guards and unchanged source/descriptor.",
+        "The group serializer, list serializer and destructor are static-only. Allocation/growth/shrink/free/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
+        "Original selector/header/class meanings remain unresolved; no Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141449080",
+      "original_name": "FUN_141449080",
+      "applied_name": "FreeLegacyImpBlockGroupList",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV FreeLegacyImpBlockGroupList(void * legacy_list_working)",
+      "evidence": [
+        "Entire original 70-byte body (25 instructions) and all 17 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Frees each group data pointer across descriptor count at+8 using32-byte stride, then frees outer allocation. Does not zero pointer/count/capacity or descriptor fields. Independently resolved free import. Static-only; no allocator execution. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+      ],
+      "caveats": [
+        "Four complete original bodies (1906 bytes /468 instructions) and396 nonempty typed C lines read. Relevant legacy parent calls and actual SysV/XMM0 argument flow traced; not all incoming callers.",
+        "168 isolated original cases verify only the132-byte append converter: valid source/destination counts, header bit preservation,512-slot capacity including header, complete destination/guards and unchanged source/descriptor.",
+        "The group serializer, list serializer and destructor are static-only. Allocation/growth/shrink/free/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
+        "Original selector/header/class meanings remain unresolved; no Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141487a10",
+      "original_name": "FUN_141487a10",
+      "applied_name": "AppendLegacyImpBlockGroup",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendLegacyImpBlockGroup(void * legacy_working, void * destination_working, SpatialQueryFloat4Working16 header_working)",
+      "evidence": [
+        "Entire original 132-byte body (35 instructions) and all 41 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. SysV RDI legacy descriptor, RSI destination, XMM0 raw16-byte header. For valid nonnegative counts, copies min(source count,511-destination count) blocks only if positive. Appends header first, preserves first12 header bytes and replaces W bits with copied count low16 zero-extended32; then copies16-byte blocks and increments destination count at+0x2000. 512 total slots including header; empty source/no remaining block space is no-op. 168 isolated original cases passed with full buffers/guards and source/descriptor unchanged. Malformed counts, aliases, invalid pointers, concurrency/live game untested. Working float4 container only; W is raw count bits, not numeric float conversion. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+      ],
+      "caveats": [
+        "Four complete original bodies (1906 bytes /468 instructions) and396 nonempty typed C lines read. Relevant legacy parent calls and actual SysV/XMM0 argument flow traced; not all incoming callers.",
+        "168 isolated original cases verify only the132-byte append converter: valid source/destination counts, header bit preservation,512-slot capacity including header, complete destination/guards and unchanged source/descriptor.",
+        "The group serializer, list serializer and destructor are static-only. Allocation/growth/shrink/free/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
+        "Original selector/header/class meanings remain unresolved; no Media Molecule source equivalence claimed."
       ]
     }
   ],
