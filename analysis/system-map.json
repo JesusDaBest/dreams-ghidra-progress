@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9695,
-  "mapped_total": 2360,
+  "inventory_total": 9696,
+  "mapped_total": 2361,
   "unmapped_total": 7335,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -60530,6 +60530,30 @@
           "support": [
             "Entire original 3932-byte body (747 instructions) and all 689 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Full 3932-byte/747-instruction original body and all689 nonempty diagnostic C lines read. Original type8 guard matched original SkyAndSun enum immediate/literal. Builds spatial visualization using incoming or ancestor cached transform, eligibility checks, positive visibility/scale scalar, normalized direction and cosf-based geometry. Appends bounded192-byte records (selectors0x12/0x46/0x5f) and invokes visualization helpers; operation-record filtering uses tag0x10/objectindex/selector0x5f. One direct caller confirms register and stack storage. Two working float4 stack inputs represent32bytes; original aggregate type unresolved. Void return. Unknown callees have imperfect inferred C interfaces; assembly authoritative. No native/live game test, exact shape semantics, full sky rendering, invalid-input safety or MM source match claimed."
+          ]
+        }
+      ]
+    },
+    "14147b210": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "Shared staging of vector values selected by object/property/subselector and active record identity; SkyAndSun plus other direct callers. Counted once as shared property support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, isolated original execution and corrected caller interface.",
+      "code_sha256": "4fa4fbe51905054779f245a8f60bb7f45e6c9d8367fe4ae42167c1b076559e7a",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "StageVectorForMatchingPropertyRecords",
+          "support": [
+            "Entire original 507-byte body (125 instructions) and all 96 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Entire507-byte/125-instruction body and96 nonempty diagnostic C lines read; four direct caller windows. Working ABI contextRDI, objectindexESI, selectorlow16EDX, signedsubselectorECX (negativewildcard), vectorXMM0, void. Iterates0x19c50 operation records, selects tag0x10/object/selector/subselector plus source-destination kinds, resolves owner/key/mode through0x270 context records, finds first matching active global record. Only state0 and finiteXYZ accepted; Wunchecked. Writesflag+198=1,counter+194=0,16-bytevector+1a0,state+190=2. First matching global record stops search even if blocked. 5184 new isolated unchanged-original cases check matching/state/XYZfiniteness and full guarded output/context/node preservation. Original record type and downstream state2 meaning unresolved; emptylists/multioperation iteration/firstblockedsecondavailable, alias/concurrency/invalidpointers untested. No live game/platform or MMsource equivalence claimed."
           ]
         }
       ]

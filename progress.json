@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 921,
+    "done": 922,
     "todo": 1439,
-    "total": 2360,
-    "behavior_or_helpers_reviewed": 847,
+    "total": 2361,
+    "behavior_or_helpers_reviewed": 848,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12581,12 +12581,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 351,
+        "done": 352,
         "todo": 105,
-        "total": 456,
-        "behavior_or_helpers_reviewed": 334,
+        "total": 457,
+        "behavior_or_helpers_reviewed": 335,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 369,
+        "runtime_functions_identified": 370,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -12899,6 +12899,7 @@
           "SelectRecipientTriangleByHierarchicalNormalThresholds",
           "WriteRotationBasisFromIntegerDegrees",
           "BuildRecipientTriangleProjectionTree",
+          "StageVectorForMatchingPropertyRecords",
           "UpsertTaggedRecipientOutput",
           "CopyRecipientShapeDefinitionCollection",
           "AppendDecorationPointGroup",
@@ -13359,6 +13360,7 @@
           "14144cd20",
           "14144cf10",
           "14144f970",
+          "14147b210",
           "14147f1b0",
           "141487aa0",
           "14148a980",
@@ -17901,12 +17903,12 @@
           {
             "name": "shared/properties",
             "label": "Properties & variants",
-            "done": 9,
+            "done": 10,
             "todo": 8,
-            "total": 17,
-            "behavior_or_helpers_reviewed": 5,
+            "total": 18,
+            "behavior_or_helpers_reviewed": 6,
             "properties_or_types_reviewed": 4,
-            "runtime_functions_identified": 5,
+            "runtime_functions_identified": 6,
             "property_type_functions_identified": 12,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -17919,7 +17921,8 @@
               "RegisterVariantFieldOffset",
               "FindThingPropertyMetadata",
               "GetThingXYZOutputStorage",
-              "ConvertTaggedValueToTwoFloat4Blocks"
+              "ConvertTaggedValueToTwoFloat4Blocks",
+              "StageVectorForMatchingPropertyRecords"
             ],
             "todo_names": [
               "0x140cb8160",
@@ -17940,7 +17943,8 @@
               "140cfda40",
               "14114db10",
               "1411a32b0",
-              "1411c0830"
+              "1411c0830",
+              "14147b210"
             ],
             "todo_addresses": [
               "140cb8160",
@@ -18018,6 +18022,65 @@
                 ]
               },
               {
+                "name": "shared/properties/property-payloads",
+                "label": "Property payloads",
+                "done": 4,
+                "todo": 0,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 4,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 4,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindPackedObjectPropertyPayload",
+                  "TransferTransformPropertyPayload",
+                  "ConvertTaggedValueToTwoFloat4Blocks",
+                  "StageVectorForMatchingPropertyRecords"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140705a90",
+                  "140ad5f90",
+                  "1411c0830",
+                  "14147b210"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/property-payloads/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 4,
+                    "todo": 0,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 4,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 4,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindPackedObjectPropertyPayload",
+                      "TransferTransformPropertyPayload",
+                      "ConvertTaggedValueToTwoFloat4Blocks",
+                      "StageVectorForMatchingPropertyRecords"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140705a90",
+                      "140ad5f90",
+                      "1411c0830",
+                      "14147b210"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "shared/properties/eblendtype",
                 "label": "Interpolation modes",
                 "done": 0,
@@ -18067,61 +18130,6 @@
                       "140cc7b60",
                       "140cc7bd0"
                     ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/properties/property-payloads",
-                "label": "Property payloads",
-                "done": 3,
-                "todo": 0,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 3,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 3,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "FindPackedObjectPropertyPayload",
-                  "TransferTransformPropertyPayload",
-                  "ConvertTaggedValueToTwoFloat4Blocks"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140705a90",
-                  "140ad5f90",
-                  "1411c0830"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/property-payloads/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 3,
-                    "todo": 0,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 3,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 3,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "FindPackedObjectPropertyPayload",
-                      "TransferTransformPropertyPayload",
-                      "ConvertTaggedValueToTwoFloat4Blocks"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140705a90",
-                      "140ad5f90",
-                      "1411c0830"
-                    ],
-                    "todo_addresses": [],
                     "unresolved_addresses": [],
                     "groups": []
                   }

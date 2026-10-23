@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 967,
+    "checked_and_applied_names": 968,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 967,
-    "function_count": 9695,
+    "verified_names": 968,
+    "function_count": 9696,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2058,6 +2058,7 @@
       "14144dad0",
       "1414792e0",
       "1414793a0",
+      "14147b210",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2070,7 +2071,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "822 existing-function renames, 144 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "822 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30200,6 +30201,34 @@
       "Static review only; no new native or live game tests. Two float4 working stack parameters describe a 32-byte transform; original aggregate type unresolved.",
       "Undefined callee14147b210 argument inference varies between C captures; exact differences checked against original assembly. Unknown child interfaces, exact drawing-selector meanings and numerical behavior remain unresolved.",
       "Visualization helper only: no full sky renderer completion, invalid-input safety or MM source equivalence claimed."
+    ]
+  },
+  "property_vector_staging_checkpoint": {
+    "functions": {
+      "14147b210": {
+        "name": "StageVectorForMatchingPropertyRecords",
+        "signature": "void PS4_SYSV StageVectorForMatchingPropertyRecords(void * operation_context, int object_index, uint property_selector, int subselector, SpatialQueryFloat4Working16 vector_value)",
+        "return_storage": "<VOID>",
+        "original_sha256": "4fa4fbe51905054779f245a8f60bb7f45e6c9d8367fe4ae42167c1b076559e7a",
+        "size": 507,
+        "instructions": 125,
+        "created": true,
+        "c_sha256": "ec3fd92efd0714ca730fe2fe4645570c7173b34cfd2073857c16a7bce6b4a05e",
+        "nonempty_c_lines": 111
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 1,
+    "existing_renames": 0,
+    "original_bytes": 507,
+    "original_instructions": 125,
+    "typed_c_nonempty_lines": 96,
+    "new_native_cases": 5184,
+    "scope_limits": [
+      "Complete 507-byte / 125-instruction original body and 96 nonempty diagnostic C lines read; four direct caller windows.",
+      "5,184 isolated unchanged-original cases check matching, three states, selector/subselector paths, finite XYZ and unchecked W, and full guarded records/context/nodes.",
+      "Original record type and downstream state2 meaning unresolved. Empty lists, multiple operation records, first blocked match followed by available match, invalid pointers, aliases and concurrency untested.",
+      "No live game/platform test or MM source equivalence claimed. SkyAndSun caller rechecked with verified vector-register interface."
     ]
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "822 existing-function renames, 144 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "822 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9695,
+    "total": 9696,
     "default_fun_names": 8573,
-    "other_names": 1122,
-    "verification": "complete_inventory_matches_baseline_plus_822_renames_and_144_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1123,
+    "verification": "complete_inventory_matches_baseline_plus_822_renames_and_145_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23017,6 +23017,28 @@
         "Static review only; no new native or live game tests. Two float4 working stack parameters describe a 32-byte transform; original aggregate type unresolved.",
         "Undefined callee14147b210 argument inference varies between C captures; exact differences checked against original assembly. Unknown child interfaces, exact drawing-selector meanings and numerical behavior remain unresolved.",
         "Visualization helper only: no full sky renderer completion, invalid-input safety or MM source equivalence claimed."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14147b210",
+      "original_name": null,
+      "applied_name": "StageVectorForMatchingPropertyRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV StageVectorForMatchingPropertyRecords(void * operation_context, int object_index, uint property_selector, int subselector, SpatialQueryFloat4Working16 vector_value)",
+      "evidence": [
+        "Entire original 507-byte body (125 instructions) and all 96 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire507-byte/125-instruction body and96 nonempty diagnostic C lines read; four direct caller windows. Working ABI contextRDI, objectindexESI, selectorlow16EDX, signedsubselectorECX (negativewildcard), vectorXMM0, void. Iterates0x19c50 operation records, selects tag0x10/object/selector/subselector plus source-destination kinds, resolves owner/key/mode through0x270 context records, finds first matching active global record. Only state0 and finiteXYZ accepted; Wunchecked. Writesflag+198=1,counter+194=0,16-bytevector+1a0,state+190=2. First matching global record stops search even if blocked. 5184 new isolated unchanged-original cases check matching/state/XYZfiniteness and full guarded output/context/node preservation. Original record type and downstream state2 meaning unresolved; emptylists/multioperation iteration/firstblockedsecondavailable, alias/concurrency/invalidpointers untested. No live game/platform or MMsource equivalence claimed."
+      ],
+      "caveats": [
+        "Complete 507-byte / 125-instruction original body and 96 nonempty diagnostic C lines read; four direct caller windows.",
+        "5,184 isolated unchanged-original cases check matching, three states, selector/subselector paths, finite XYZ and unchecked W, and full guarded records/context/nodes.",
+        "Original record type and downstream state2 meaning unresolved. Empty lists, multiple operation records, first blocked match followed by available match, invalid pointers, aliases and concurrency untested.",
+        "No live game/platform test or MM source equivalence claimed. SkyAndSun caller rechecked with verified vector-register interface."
       ],
       "created_function": true
     }

@@ -9138,3 +9138,14 @@ The routine chooses an incoming or cached ancestor transform, consults payload e
 The descriptive name and working interface passed preview, save and independent reopen with original bytes unchanged. Two working float4 stack arguments represent 32 bytes of transform storage; the original aggregate type remains unresolved. At one undefined callee, C argument inference varied between captures; only the exact reviewed variations were accepted against the original assembly. Unknown child interfaces, drawing selectors and numerical behavior remain open. No new native/live game tests or Media Molecule source match are claimed.
 
 Totals: **967 reviewed names / 9,695 defined functions**, **2,360 mapped / 7,335 unmapped**. Whole-game completion remains unknown.
+
+
+### Shared property vector staging
+
+**StageVectorForMatchingPropertyRecords** identifies a complete **507-byte / 125-instruction** helper. All **96 nonempty diagnostic C lines** and four direct-caller windows were read. It matches an object, property selector and optional subselector, resolves the active record identity, and stages a vector only when the first matching record is idle and X/Y/Z are finite. W is copied without the finite check. The helper marks the record pending; the original record type and the downstream meaning of that state remain unresolved.
+
+**5,184 isolated cases executing the unchanged original helper passed.** They cover pointer-kind eligibility, object/selector/subselector matching, three record states, six float bit patterns and six global-record matching paths. Full target records and guards, synthetic context/nodes and original code bytes were checked. Empty lists, multiple operation records, first blocked match followed by an available match, invalid pointers, aliases and concurrency remain untested.
+
+The descriptive name and working interface passed rollback preview, save and independent reopen. A fresh caller check now shows the Sky & Sun visualization passing the global context, object index, selector 0x12, wildcard subselector and vector separately, consistent with the original register setup. This resolves the earlier argument-inference ambiguity for this call; other unreviewed child interfaces remain open. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **968 reviewed names / 9,696 defined functions**, **2,361 mapped / 7,335 unmapped**. Whole-game completion remains unknown.
