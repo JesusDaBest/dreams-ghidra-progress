@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2382,
-  "unmapped_total": 7318,
+  "mapped_total": 2384,
+  "unmapped_total": 7316,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61058,6 +61058,54 @@
           "support": [
             "Entire original 358-byte body (89 instructions) and all 71 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Two consecutive rawbyte transfers withnested scope andoptionalmarker/sequence. No enumrangevalidation. Bothdirect bytes transfer evenwithpreseterror; marker/sequence suppressed onerror. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 80 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "1414494d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 96 isolated direct-path cases across the three helpers.",
+      "code_sha256": "e917ff00369d5c88c106f75df6f6717175d2267c558cafa7cf617e3c375371fd",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferSerializerBytes16",
+          "support": [
+            "Entire original 83-byte body (18 instructions) and all 25 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers exactly 16 raw bytes on the direct path, using unaligned 128-bit moves. No scope, marker or sequence updates; no numeric conversion. Direct path ignores preset error. Falls back to TransferSerializerBytes with length 16 when cursor+16 is not strictly below end or secondary context is present. Entire original and typed C read. Serializer RDI, bytes RSI, void. 16 isolated original direct-path cases passed with complete buffer/context guards. Relevant calls in previously reviewed SerializeImpStatePayload traced, not all incoming callers. Fallback/exhaustion/callback/alias/invalid-pointer/concurrency/live-game paths untested. Original field/class meanings unresolved; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "141449530": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 96 isolated direct-path cases across the three helpers.",
+      "code_sha256": "10460b2c0185b4df57c8b5a792a712789a1d50db4a0c34efdc1c5285815dbc62",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeTwoBlocks12",
+          "support": [
+            "Entire original 391-byte body (99 instructions) and all 73 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers two consecutive raw 12-byte blocks (24 wire bytes total). Increments then decrements nesting scope, followed by optional 16-bit marker and sequence increment if error is zero. Both direct block transfers still occur with a preset error. No float conversion or range validation. Read direction advances over marker without comparing its value. Entire original and typed C read. Serializer RDI, bytes RSI, void. 80 isolated original direct-path cases passed with complete buffer/context guards. Relevant calls in previously reviewed SerializeImpStatePayload traced, not all incoming callers. Fallback/exhaustion/callback/alias/invalid-pointer/concurrency/live-game paths untested. Original field/class meanings unresolved; no MM source equivalence."
           ]
         }
       ]

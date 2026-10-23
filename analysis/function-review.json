@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "839 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "841 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8556,
-    "other_names": 1144,
-    "verification": "complete_inventory_matches_baseline_plus_839_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8554,
+    "other_names": 1146,
+    "verification": "complete_inventory_matches_baseline_plus_841_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23484,6 +23484,48 @@
         "Three complete original bodies (787bytes/196instructions) and160 nonempty typed C lines read; selected routes inpreviously fullyreviewed Imp field codec traced. No exhaustive incomingcaller audit.",
         "176 isolated original direct-path cases passed:80 word-pair,16 raw-byte,80 byte-pair. Both directions, pair marker/error/counter boundaries, raw-byteunaligned values andcomplete buffer/context guards checked.",
         "Fallback/exhaustion/callback paths, aliases, invalidpointers, concurrency andlivegame untested. Rawtransfers do not establish originalenum/float/class meanings ormalformedinput safety.",
+        "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "1414494d0",
+      "original_name": "FUN_1414494d0",
+      "applied_name": "TransferSerializerBytes16",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TransferSerializerBytes16(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 83-byte body (18 instructions) and all 25 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers exactly 16 raw bytes on the direct path, using unaligned 128-bit moves. No scope, marker or sequence updates; no numeric conversion. Direct path ignores preset error. Falls back to TransferSerializerBytes with length 16 when cursor+16 is not strictly below end or secondary context is present. Entire original and typed C read. Serializer RDI, bytes RSI, void. 16 isolated original direct-path cases passed with complete buffer/context guards. Relevant calls in previously reviewed SerializeImpStatePayload traced, not all incoming callers. Fallback/exhaustion/callback/alias/invalid-pointer/concurrency/live-game paths untested. Original field/class meanings unresolved; no MM source equivalence."
+      ],
+      "caveats": [
+        "Two complete original bodies (474 bytes /117 instructions) and 98 nonempty typed C lines read; relevant parent calls traced, not all incoming callers.",
+        "96 isolated original direct-path cases passed: 16 raw 16-byte and 80 scoped paired 12-byte transfers. Both directions, unaligned raw-block offsets, scoped error/marker/sequence boundaries and complete buffer/context guards checked.",
+        "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior untested. Raw transfer widths do not establish original field/type meanings.",
+        "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141449530",
+      "original_name": "FUN_141449530",
+      "applied_name": "SerializeTwoBlocks12",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeTwoBlocks12(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 391-byte body (99 instructions) and all 73 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers two consecutive raw 12-byte blocks (24 wire bytes total). Increments then decrements nesting scope, followed by optional 16-bit marker and sequence increment if error is zero. Both direct block transfers still occur with a preset error. No float conversion or range validation. Read direction advances over marker without comparing its value. Entire original and typed C read. Serializer RDI, bytes RSI, void. 80 isolated original direct-path cases passed with complete buffer/context guards. Relevant calls in previously reviewed SerializeImpStatePayload traced, not all incoming callers. Fallback/exhaustion/callback/alias/invalid-pointer/concurrency/live-game paths untested. Original field/class meanings unresolved; no MM source equivalence."
+      ],
+      "caveats": [
+        "Two complete original bodies (474 bytes /117 instructions) and 98 nonempty typed C lines read; relevant parent calls traced, not all incoming callers.",
+        "96 isolated original direct-path cases passed: 16 raw 16-byte and 80 scoped paired 12-byte transfers. Both directions, unaligned raw-block offsets, scoped error/marker/sequence boundaries and complete buffer/context guards checked.",
+        "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior untested. Raw transfer widths do not establish original field/type meanings.",
         "No Media Molecule source equivalence claimed."
       ]
     }

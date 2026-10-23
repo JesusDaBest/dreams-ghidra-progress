@@ -8782,3 +8782,19 @@ The earlier field map's compact temporary values can now be described by their a
 These generic helpers are each counted once under shared saving/loading. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **989 reviewed names /9,700 defined functions**, **2,382 mapped /7,318 unmapped**. Whole-game completion remains unknown.
+
+
+### Fixed-width Imp serializer children
+
+Two routines were read in full: **474 original bytes /117 instructions** and **98 nonempty diagnostic C lines**. Their descriptive names and working two-pointer interfaces were independently reopened with original bytes unchanged.
+
+- **TransferSerializerBytes16** moves exactly 16 raw bytes. Its direct path uses unaligned 128-bit loads/stores and updates the cursor, without scope or sequence bookkeeping.
+- **SerializeTwoBlocks12** moves two consecutive 12-byte blocks (24 bytes total), with nested scope and optional marker/sequence updates. Existing errors suppress marker/sequence updates but do not stop the direct field transfers. On reads, the marker is skipped without comparison in this helper.
+
+**96 new isolated original direct-path cases passed:** 16 for the raw block and 80 for the scoped pair. Both directions, unaligned raw-block offsets, pair error/marker/sequence boundaries and full buffer/context guards were checked.
+
+The reviewed Imp parent transfers the 16-byte field at +0x110 and, from revision 1178 onward, three 24-byte fields at +0x124,+0x154,+0x13c. These are verified storage/wire widths; their original field meanings remain unresolved.
+
+Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. The parent callsites were traced; all incoming callers were not audited. These generic helpers each appear once under shared saving/loading. No Media Molecule source match is claimed.
+
+Totals: **991 reviewed names /9,700 defined functions**, **2,384 mapped /7,316 unmapped**. Whole-game completion remains unknown.

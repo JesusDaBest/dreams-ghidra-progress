@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 989,
+    "checked_and_applied_names": 991,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 989,
+    "verified_names": 991,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "839 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "841 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30782,6 +30782,45 @@
       "Three complete original bodies (787bytes/196instructions) and160 nonempty typed C lines read; selected routes inpreviously fullyreviewed Imp field codec traced. No exhaustive incomingcaller audit.",
       "176 isolated original direct-path cases passed:80 word-pair,16 raw-byte,80 byte-pair. Both directions, pair marker/error/counter boundaries, raw-byteunaligned values andcomplete buffer/context guards checked.",
       "Fallback/exhaustion/callback paths, aliases, invalidpointers, concurrency andlivegame untested. Rawtransfers do not establish originalenum/float/class meanings ormalformedinput safety.",
+      "No Media Molecule source equivalence claimed."
+    ]
+  },
+  "serializer_tail_value_codecs_checkpoint": {
+    "functions": {
+      "1414494d0": {
+        "name": "TransferSerializerBytes16",
+        "signature": "void PS4_SYSV TransferSerializerBytes16(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "e917ff00369d5c88c106f75df6f6717175d2267c558cafa7cf617e3c375371fd",
+        "size": 83,
+        "instructions": 18,
+        "created": false,
+        "c_sha256": "49eaee807feb9ecb231c1e085ef2b9b572ab06a0571e05062f9df1e4177f2539",
+        "nonempty_c_lines": 36
+      },
+      "141449530": {
+        "name": "SerializeTwoBlocks12",
+        "signature": "void PS4_SYSV SerializeTwoBlocks12(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "10460b2c0185b4df57c8b5a792a712789a1d50db4a0c34efdc1c5285815dbc62",
+        "size": 391,
+        "instructions": 99,
+        "created": false,
+        "c_sha256": "a1180777cc9620a9087e6e481caa54affc672dab9ab471caa884116ca9d39209",
+        "nonempty_c_lines": 85
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 474,
+    "original_instructions": 117,
+    "typed_c_nonempty_lines": 98,
+    "new_native_cases": 96,
+    "scope_limits": [
+      "Two complete original bodies (474 bytes /117 instructions) and 98 nonempty typed C lines read; relevant parent calls traced, not all incoming callers.",
+      "96 isolated original direct-path cases passed: 16 raw 16-byte and 80 scoped paired 12-byte transfers. Both directions, unaligned raw-block offsets, scoped error/marker/sequence boundaries and complete buffer/context guards checked.",
+      "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior untested. Raw transfer widths do not establish original field/type meanings.",
       "No Media Molecule source equivalence claimed."
     ]
   }
