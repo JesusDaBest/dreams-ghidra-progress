@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "836 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "839 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8559,
-    "other_names": 1141,
-    "verification": "complete_inventory_matches_baseline_plus_836_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8556,
+    "other_names": 1144,
+    "verification": "complete_inventory_matches_baseline_plus_839_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23422,6 +23422,69 @@
         "100 isolated whole-original target cases matched independent zero-tail andMurmurHash3x64 first64bit oracle. Importedmemset used controlled documented SysVbytefill boundary; actualplatformlibc not executed.",
         "Counts0/1/2/511/512 independently foreacharray,two patterns,two field8values andcomplete payload/guards checked. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested.",
         "Algorithm match doesnot recoveroriginal class/field names, exact libraryversion orMM sourcebuild."
+      ]
+    },
+    {
+      "address": "141448450",
+      "original_name": "FUN_141448450",
+      "applied_name": "SerializeWordPair32",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeWordPair32(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 359-byte body (91 instructions) and all 69 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Two consecutive raw32-bit words,8 wirebytes; no numericalcompression/conversion. Nested scope andoptionalmarker/sequence; preseterror suppresses marker/sequence butnot second directtransfer. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 80 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
+      ],
+      "caveats": [
+        "Three complete original bodies (787bytes/196instructions) and160 nonempty typed C lines read; selected routes inpreviously fullyreviewed Imp field codec traced. No exhaustive incomingcaller audit.",
+        "176 isolated original direct-path cases passed:80 word-pair,16 raw-byte,80 byte-pair. Both directions, pair marker/error/counter boundaries, raw-byteunaligned values andcomplete buffer/context guards checked.",
+        "Fallback/exhaustion/callback paths, aliases, invalidpointers, concurrency andlivegame untested. Rawtransfers do not establish originalenum/float/class meanings ormalformedinput safety.",
+        "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141449310",
+      "original_name": "FUN_141449310",
+      "applied_name": "TransferRawByteInSerializer",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TransferRawByteInSerializer(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 70-byte body (16 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. One rawbyte transfer, noclass/enumvalidation andnoscope/sequence bookkeeping. Directcursor+1<end andfallbacke8zero, else tailcall TransferSerializerBytes(...,1). Preseterrorignored on directpath. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 16 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
+      ],
+      "caveats": [
+        "Three complete original bodies (787bytes/196instructions) and160 nonempty typed C lines read; selected routes inpreviously fullyreviewed Imp field codec traced. No exhaustive incomingcaller audit.",
+        "176 isolated original direct-path cases passed:80 word-pair,16 raw-byte,80 byte-pair. Both directions, pair marker/error/counter boundaries, raw-byteunaligned values andcomplete buffer/context guards checked.",
+        "Fallback/exhaustion/callback paths, aliases, invalidpointers, concurrency andlivegame untested. Rawtransfers do not establish originalenum/float/class meanings ormalformedinput safety.",
+        "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141449360",
+      "original_name": "FUN_141449360",
+      "applied_name": "SerializeBytePair",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeBytePair(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 358-byte body (89 instructions) and all 71 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Two consecutive rawbyte transfers withnested scope andoptionalmarker/sequence. No enumrangevalidation. Bothdirect bytes transfer evenwithpreseterror; marker/sequence suppressed onerror. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 80 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
+      ],
+      "caveats": [
+        "Three complete original bodies (787bytes/196instructions) and160 nonempty typed C lines read; selected routes inpreviously fullyreviewed Imp field codec traced. No exhaustive incomingcaller audit.",
+        "176 isolated original direct-path cases passed:80 word-pair,16 raw-byte,80 byte-pair. Both directions, pair marker/error/counter boundaries, raw-byteunaligned values andcomplete buffer/context guards checked.",
+        "Fallback/exhaustion/callback paths, aliases, invalidpointers, concurrency andlivegame untested. Rawtransfers do not establish originalenum/float/class meanings ormalformedinput safety.",
+        "No Media Molecule source equivalence claimed."
       ]
     }
   ],

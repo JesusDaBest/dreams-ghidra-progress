@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 986,
+    "checked_and_applied_names": 989,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 986,
+    "verified_names": 989,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "836 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "839 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30733,6 +30733,56 @@
       "100 isolated whole-original target cases matched independent zero-tail andMurmurHash3x64 first64bit oracle. Importedmemset used controlled documented SysVbytefill boundary; actualplatformlibc not executed.",
       "Counts0/1/2/511/512 independently foreacharray,two patterns,two field8values andcomplete payload/guards checked. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested.",
       "Algorithm match doesnot recoveroriginal class/field names, exact libraryversion orMM sourcebuild."
+    ]
+  },
+  "serializer_small_value_codecs_checkpoint": {
+    "functions": {
+      "141448450": {
+        "name": "SerializeWordPair32",
+        "signature": "void PS4_SYSV SerializeWordPair32(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "9b0ea37bfc26d52af21dc1ea394bbc3c0f949a07d79a35edf0ed13fecb49f8fc",
+        "size": 359,
+        "instructions": 91,
+        "created": false,
+        "c_sha256": "32052f899263dc577e612a6e0521412dc7d9a35efe2b81ca2a49d68da515d659",
+        "nonempty_c_lines": 78
+      },
+      "141449310": {
+        "name": "TransferRawByteInSerializer",
+        "signature": "void PS4_SYSV TransferRawByteInSerializer(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "438cce0c3eb9eefcdfb3c348a463256a3cb8d8f54c2b97b2fbb2a4a27970832e",
+        "size": 70,
+        "instructions": 16,
+        "created": false,
+        "c_sha256": "da7442a8ea4122a6464d7468b847941ec5d74a2b8372170b7a76ed10eb2170df",
+        "nonempty_c_lines": 29
+      },
+      "141449360": {
+        "name": "SerializeBytePair",
+        "signature": "void PS4_SYSV SerializeBytePair(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "80f6eb32f894fed0ce19c684e11ad2aaf48bc720f7378a3c4318bd4676fa67c0",
+        "size": 358,
+        "instructions": 89,
+        "created": false,
+        "c_sha256": "be26a048feddf551af9459d6cea1ead516e5666752f6b5399b6e111713b6dfdf",
+        "nonempty_c_lines": 79
+      }
+    },
+    "new_checked_names": 3,
+    "new_definitions": 0,
+    "existing_renames": 3,
+    "original_bytes": 787,
+    "original_instructions": 196,
+    "typed_c_nonempty_lines": 160,
+    "new_native_cases": 176,
+    "scope_limits": [
+      "Three complete original bodies (787bytes/196instructions) and160 nonempty typed C lines read; selected routes inpreviously fullyreviewed Imp field codec traced. No exhaustive incomingcaller audit.",
+      "176 isolated original direct-path cases passed:80 word-pair,16 raw-byte,80 byte-pair. Both directions, pair marker/error/counter boundaries, raw-byteunaligned values andcomplete buffer/context guards checked.",
+      "Fallback/exhaustion/callback paths, aliases, invalidpointers, concurrency andlivegame untested. Rawtransfers do not establish originalenum/float/class meanings ormalformedinput safety.",
+      "No Media Molecule source equivalence claimed."
     ]
   }
 }

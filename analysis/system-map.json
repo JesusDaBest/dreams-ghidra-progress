@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2379,
-  "unmapped_total": 7321,
+  "mapped_total": 2382,
+  "unmapped_total": 7318,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60986,6 +60986,78 @@
           "support": [
             "Entire original 432-byte body (104 instructions) and all 42 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire432-byte original and42 nonempty typedC read,firstthree selecteddirectcaller windows. PayloadRDI,void. Savesfield+8,zeroesfirstqword,clearsunusedarraytails at1c0/21d0 usingcounts21c0/41d0 and16-byteunits over2000hex storageeach. Hashesall4220hex bytes withfirstqwordzero andseedbadd5eed; originalblock/finalmix sequence matches first64bits ofMurmurHash3x64_128 reference. Writeslow64 resultatpayload0 andpreservesfield8. Exactoriginal field/class names andlibraryversion unresolved. 100 isolated original cases matchedindependenttail-clear andMurmur oracle withcounts0/1/2/511/512 independentlyforeacharray,two patterns,two field8values,fullpayload andguards. Onlyimportedmemset replacedwithdocumentedSysVbytefillboundary; actualplatformlibc notexecuted. No localcount<=512 validation established. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested. NoMMsourcebuild equivalence."
+          ]
+        }
+      ]
+    },
+    "141448450": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 176 isolated direct-path cases across the three helpers.",
+      "code_sha256": "9b0ea37bfc26d52af21dc1ea394bbc3c0f949a07d79a35edf0ed13fecb49f8fc",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeWordPair32",
+          "support": [
+            "Entire original 359-byte body (91 instructions) and all 69 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Two consecutive raw32-bit words,8 wirebytes; no numericalcompression/conversion. Nested scope andoptionalmarker/sequence; preseterror suppresses marker/sequence butnot second directtransfer. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 80 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "141449310": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 176 isolated direct-path cases across the three helpers.",
+      "code_sha256": "438cce0c3eb9eefcdfb3c348a463256a3cb8d8f54c2b97b2fbb2a4a27970832e",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferRawByteInSerializer",
+          "support": [
+            "Entire original 70-byte body (16 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. One rawbyte transfer, noclass/enumvalidation andnoscope/sequence bookkeeping. Directcursor+1<end andfallbacke8zero, else tailcall TransferSerializerBytes(...,1). Preseterrorignored on directpath. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 16 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "141449360": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 176 isolated direct-path cases across the three helpers.",
+      "code_sha256": "80f6eb32f894fed0ce19c684e11ad2aaf48bc720f7378a3c4318bd4676fa67c0",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeBytePair",
+          "support": [
+            "Entire original 358-byte body (89 instructions) and all 71 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Two consecutive rawbyte transfers withnested scope andoptionalmarker/sequence. No enumrangevalidation. Bothdirect bytes transfer evenwithpreseterror; marker/sequence suppressed onerror. Entireoriginal andtypedC read. SerializerRDI,bytesRSI,void. Relevantcallsites inprevious fullyread SerializeImpStatePayload; no exhaustive incomingcalleraudit. 80 originaldirectpath cases passed, fullguardedbuffers/context. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Originalclass/field meanings unresolved; noMMsourceequivalence."
           ]
         }
       ]

@@ -9334,3 +9334,20 @@ Its mixing sequence and first64-bit result match **MurmurHash3 x64_128**, with s
 Malformed counts, aliases, invalid pointers, concurrency and live game behavior remain untested. The saved descriptive name and one-pointer working interface survived independent reopening with original bytes unchanged. Other callers were not exhaustively reviewed; original field/class names remain unresolved.
 
 Totals: **986 reviewed names /9,700 defined functions**, **2,379 mapped /7,321 unmapped**. Whole-game completion remains unknown.
+
+
+### Small raw-value serializer helpers
+
+Three routines were reviewed in full: **787 original bytes /196 instructions** and **160 nonempty diagnostic C lines**. Their descriptive names and two-pointer working interfaces survived independent reopening with original code bytes unchanged.
+
+- **SerializeWordPair32** transfers two consecutive32-bit words, with nested scope and optional marker/sequence bookkeeping. It performs no numerical compression or conversion itself.
+- **TransferRawByteInSerializer** transfers one raw byte without scope/sequence updates or enum validation, falling back to the generic byte-transfer routine when needed.
+- **SerializeBytePair** transfers two consecutive bytes with nested scope and optional marker/sequence bookkeeping, without enum-range validation.
+
+**176 new isolated original direct-path cases passed:**80 for the word pair,16 for the raw byte and80 for the byte pair. Both directions, pair error/marker/counter boundaries and unaligned single-byte values were checked against independent full-buffer/context oracles. The pair routines still transfer both direct fields when an error is already set, but suppress marker/sequence updates; the raw-byte routine ignores that error field on its direct path.
+
+The earlier field map's compact temporary values can now be described by their actual transfer widths. Their original enum, float or class meanings remain unresolved. Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and malformed-data safety remain untested. Relevant paths in the fully reviewed Imp parent were traced, without claiming an exhaustive audit of all callers.
+
+These generic helpers are each counted once under shared saving/loading. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **989 reviewed names /9,700 defined functions**, **2,382 mapped /7,318 unmapped**. Whole-game completion remains unknown.
