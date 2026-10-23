@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2da9ed6e54a7e2b6de887f184c7c95437e128a86/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d52c922d0441c63697f21ad506805addbf89ec96/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**991 of 9,700 functions named and checked.** A function is one piece of the game's code.
+**995 of 9,700 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/2da9ed6e54a7e2b6de887f184c7c95437e128a86/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/d52c922d0441c63697f21ad506805addbf89ec96/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -70,11 +70,11 @@ Every square is one actual function and has the same size. All function squares 
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
 | Rendering & lighting | 411 | 142/385 | 0/26 |
-| Editor & interface | 440 | 133/231 | 4/207 |
+| Editor & interface | 444 | 137/235 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 471 | 348/384 | 17/82 |
 
-**2,384 of 9,700 discovered functions are mapped; 7,316 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,388 of 9,700 discovered functions are mapped; 7,312 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -647,48 +647,10 @@ Every square is one actual function and has the same size. All function squares 
   - **Script data** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Script Contents** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Editor & interface** - 440 functions identified; 134 behavior/helper reviews; 4 property/type reviews
-  - **Text & fonts** - 129 functions identified; 75 behavior/helper reviews; 0 property/type reviews
-    - **Text decoding** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
-    - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Language** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Runtime implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
-    - **Font** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Font Family** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Back Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Back Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Background** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Back Tail Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Highlight Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Texture Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Set Text Gadget Comment Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Text Edit Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Set Text Gadget Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Set Text Input Focus On Script** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-    - **Set Text Lams IDMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **UI drawing & interaction** - 127 functions identified; 34 behavior/helper reviews; 0 property/type reviews
-    - **Imp visuals** - 28 functions identified; 28 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 28 functions identified; 28 behavior/helper reviews; 0 property/type reviews
+- **Editor & interface** - 444 functions identified; 138 behavior/helper reviews; 4 property/type reviews
+  - **UI drawing & interaction** - 131 functions identified; 38 behavior/helper reviews; 0 property/type reviews
+    - **Imp visuals** - 32 functions identified; 32 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 32 functions identified; 32 behavior/helper reviews; 0 property/type reviews
     - **UI primitives** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 23 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Transition** - 18 functions identified; 0 behavior/helper reviews; 0 property/type reviews
@@ -727,6 +689,44 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **QR display** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
       - **Runtime implementation** - 1 functions identified; 1 behavior/helper reviews; 0 property/type reviews
+  - **Text & fonts** - 129 functions identified; 75 behavior/helper reviews; 0 property/type reviews
+    - **Text decoding** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 72 functions identified; 72 behavior/helper reviews; 0 property/type reviews
+    - **Text drawing** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 13 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Language** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 4 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Runtime implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Font** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Font Family** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Back Align Horz** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Back Align Vert** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Background** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Back Tail Type** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Highlight Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Texture Mode** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Gadget Comment Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Text Edit Message** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Gadget Loc State Message** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Input Focus On Script** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+    - **Set Text Lams IDMessage** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
+      - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Editing & tools** - 46 functions identified; 1 behavior/helper reviews; 3 property/type reviews
     - **Change** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Properties & type definitions** - 3 functions identified; 0 behavior/helper reviews; 0 property/type reviews
