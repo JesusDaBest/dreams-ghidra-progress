@@ -8327,3 +8327,29 @@ The indexed callback consumes ESI and ignores incoming RDI. Its external tail ju
 The history updater and both wrappers were not native-tested. Record replication has no local capacity gate, and the dispersal basis has no zero-normalization fallback. These are exact observed operations, not proof that invalid states are reachable during normal play. Final GPU interpretation, live rendering and original source identity remain open. No whole-game or developer-livestream equivalence is claimed.
 
 Totals: **932 checked names across 9,689 defined functions**, with **2,333 mapped and 7,356 unmapped**. These counts describe evidence-backed function review, not completion of the whole game.
+
+
+### Imp particle draw-command consumer
+
+The particle queue now has an identified downstream consumer: **BuildAndSubmitImpParticleRangeCommands**. Its complete **8,970-byte body / 1,738 instructions**, typed decompiler output and eight direct calls were reviewed. The descriptive name and working interface were saved and independently verified after reopening.
+
+The Imp identity comes from original evidence: its shader helpers name **PrimImpVS**, **PrimImpStickVS**, **PrimImpFilledBodyVS** and Imp pixel variants, with an original `src/ui/prim_imp.cpp` source string. Conditional compute passes reference **PrimImpTAAUpdate** and **PrimDownSampleImpPhotoCS**. This establishes Imp command construction; it does not prove that the GPU output or photo saving works.
+
+| Selector | Queue modes accepted |
+| --- | --- |
+| 0 | 0 |
+| 1 | 1, 2 |
+| 2 | 3, 4 |
+| 3 | 5 |
+
+For accepted ranges, the consumer prepares aligned parameter blocks, transform/projection fields, resource references and shader choices, then calls the previously reviewed deferred-draw-job helper. It reads the queue without clearing it. Empty queues, invalid selectors and selectors with no matching ranges return before that construction.
+
+**A decompiler defect was found and corrected during this review.** Ghidra's installed `VPINSRD` definition used the lane-zero condition for all four destination lanes. This caused the generated queue pre-scan to lose 12 of the 16 descriptor modes loaded by the original instructions. A three-line correction was validated against **64 synthetic CPU instruction cases**: the installed p-code matched **0/64**, and the corrected p-code matched **64/64**. An unchanged-source rebuild reproduced the installed compiled language exactly, confirming that the candidate preserved the other installed semantics. The original files were backed up before installation.
+
+This consumer was then freshly decompiled and its scan compared with the original instructions. All 16 descriptor lanes are now retained for the four selectors. These are instruction-semantics tests, **not execution of the Dreams consumer or GPU**, and do not prove that its whole generated C is equivalent or recompilable. Historical C exports have not been bulk refreshed; the repaired instruction semantics apply to fresh captures.
+
+Ten already-reviewed functions that directly build, update, dispatch or submit this particle data are now classified under **Editor & interface → UI drawing & interaction → Imp visuals**, alongside this consumer and the existing shader helpers. This corrects their earlier broad shared-engine grouping. It adds **no extra checked-function credit**, and does not move unrelated edit-event code or claim an original source file for upstream functions.
+
+This consumer received static review only. Arena/resource validity, initialization padding, shader execution and final GPU field meanings remain unresolved. No completed native tests were rerun and no live rendering verification is claimed.
+
+Totals: **933 checked names across 9,689 defined functions**, with **2,334 mapped and 7,355 unmapped**. These are reviewed-function counts, not whole-game completion.

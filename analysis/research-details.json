@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 932,
+    "checked_and_applied_names": 933,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 932,
+    "verified_names": 933,
     "function_count": 9689,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2064,7 +2064,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "793 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "794 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29326,6 +29326,72 @@
     "limits": [
       "Names describe reviewed behavior, not recovered original source symbols or exact source classes.",
       "No whole-game, live scheduler, final renderer or exact Media Molecule source/livestream equivalence claim."
+    ]
+  },
+  "imp_particle_range_checkpoint": {
+    "function": {
+      "name": "BuildAndSubmitImpParticleRangeCommands",
+      "signature": "void PS4_SYSV BuildAndSubmitImpParticleRangeCommands(int selector)",
+      "return_storage": "<VOID>",
+      "original_sha256": "4bafc3807ff826d5303f04cbbea0ca808257df60ea9f5efeb8c09f80981650ba",
+      "size": 8970,
+      "instructions": 1738,
+      "created": false,
+      "c_sha256": "aa75d5bd402b7c8e012cb33ea9a4a6da8b54b7434c35407490eaf85af36560e4",
+      "nonempty_c_lines": 1704
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "static_body_bytes": 8970,
+    "static_body_instructions": 1738,
+    "native_tests_run": false,
+    "whole_function_equivalence_established": false,
+    "corrected_decompiler_issue": "Three incorrect VPINSRD lane predicates in installed Ghidra semantics dropped descriptor modes. Repaired, recaptured and reviewed.",
+    "tooling_validation": {
+      "native_instruction_cases": 64,
+      "installed_pcode_matches": 0,
+      "corrected_pcode_matches": 64,
+      "unchanged_source_rebuild_matches_installed_sla": true,
+      "source_lines_changed": 3,
+      "historical_exports_bulk_refreshed": false,
+      "scope": "Synthetic instruction semantics, not execution of the Dreams consumer or GPU"
+    },
+    "mapping_refinements": [
+      "141441690",
+      "141442600",
+      "141443dc0",
+      "141444110",
+      "141444950",
+      "14144d710",
+      "14144dad0",
+      "14144f500",
+      "1414792e0",
+      "1414793a0"
+    ],
+    "mapping_destination": [
+      "interface",
+      "display",
+      "prim-imp",
+      "runtime-implementation"
+    ],
+    "mapping_added_review_credit": 0,
+    "evidence": [
+      "Complete 8970-byte original function (1738 instructions), complete typed decompiler output and eight direct caller sites reviewed.",
+      "Consumes only low32 EDI selector. Unsigned range check accepts 0 through 3, selecting descriptor modes 0, 1/2, 3/4 and 5 respectively.",
+      "Reads the same 32-byte descriptor queue populated by ApplyRecipientParticleColorModifiersAndEnqueueRanges; this consumer does not clear its count.",
+      "Builds per-range parameter blocks with 0x8C8 described bytes in 0x8D0 aligned allocations, resource references, two transform pairs, projection fields and draw state, then calls CreateAndQueueDeferredDrawJob.",
+      "Direct shader-helper calls identify PrimImpVS, PrimImpStickVS and PrimImpFilledBodyVS, plus Imp pixel variants. Original helper source strings identify src/ui/prim_imp.cpp.",
+      "Conditional postpasses select PrimImpTAAUpdate and PrimDownSampleImpPhotoCS shaders; original Imp photo and bokeh labels independently support the subsystem identity.",
+      "Name and working one-register interface saved and verified after independent reopening; original instruction bytes unchanged."
+    ],
+    "limits": [
+      "Static review only. This consumer and its GPU commands were not executed in a fixture or a running game.",
+      "The installed VPINSRD semantics defect was corrected and this function recaptured; the initial scan now retains all 16 descriptor modes. This local repair does not establish whole-function equivalence or make every historical C export current.",
+      "Original instructions remain authoritative for SIMD lanes, floating-point bitcasts and implicit decompiler registers. Original source enum, signedness and exact source name remain unknown.",
+      "Allocation failures can produce null pointers later dereferenced; valid arena capacity and resource indices remain caller invariants, not established safety guarantees.",
+      "A slow resource-initialization branch preserves an uninitialized local high nibble. Full deterministic initialization is not claimed.",
+      "Shader selection proves Imp-related command construction, not shader correctness, final GPU particle layout, live rendering, or successful photo-file saving.",
+      "Upstream particle functions are classified through direct queue and dataflow evidence; the shader helper source filename is not claimed as their original source location."
     ]
   }
 }

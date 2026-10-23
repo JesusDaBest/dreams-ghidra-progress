@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9689,
-  "mapped_total": 2333,
-  "unmapped_total": 7356,
+  "mapped_total": 2334,
+  "unmapped_total": 7355,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -59381,14 +59381,14 @@
       ]
     },
     "141444950": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Both direct callers use the same recipient shape state immediately after its deformable updater; the function consumes its points and surface data.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Whole original body and typed C reviewed, two caller interfaces traced, 96 bounded sampler cases passed and saved definition independently reopened.",
       "code_sha256": "abad3dcf0c7a78fa5c42fecf65f759d94905e81a73de50eb765510694acde576",
@@ -59403,18 +59403,23 @@
             "96 isolated original-code sampler cases passed against a scalar float32 model, including repeated points and the 200-point cap; observed maximum numeric error was zero.",
             "Saved descriptive name, two-register working interface and two proven external tailcall annotations independently reopened; all original body bytes and other function inventory entries unchanged."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "141441690": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
       "code_sha256": "b6ae29eb6f1edd8931e45692b4e369feaef3200d1e4138f24ca378cc926fc0ea",
@@ -59430,18 +59435,23 @@
             "Builds 136-byte-stride records from indexed surface triangles with centroid or seeded barycentric placement, orientation, color-like values, packed fields and path association.",
             "Context+1030 is an inline weight array. Capacity stops before a triangle batch; owner consumed count increases and its reservation clears."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "141443dc0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
       "code_sha256": "300c90d07590d0c970628d87396ad5179d04460acbc3e44ecfb03cfbc8349016",
@@ -59458,18 +59468,23 @@
             "332 isolated whole-body original-code cases passed, producing 1300 records; maximum absolute float error was below 3.88e-7.",
             "Checks covered ordinary and all three fallback axes, positive/zero/negative W differences, capacity gates, untouched bytes, packing, owner wrap and ignored ESI."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "14144d710": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
       "code_sha256": "eff2dfc3b49c88f92a60ec0422bf0ac942792f30247397777e8d29cc6a24b144",
@@ -59485,6 +59500,11 @@
             "Reserves an existing 136-byte-stride pool range and returns its pointer plus a count; performs no memory allocation.",
             "114 isolated whole-helper original-code cases passed with exact pointer/count/reservation and guard comparisons. Returned pointers were never dereferenced."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
@@ -59516,14 +59536,14 @@
       ]
     },
     "141442600": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Original direct calls and job registrations connect this builder to the reviewed recipient shape-output coordinator.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Whole original body and typed C reviewed, coordinator interface traced and saved definition independently reopened; runtime verification scope recorded per function.",
       "code_sha256": "b28361df4545b1941e9b42a5b223a6208e5de85ee6259b6bbaea31c78b078fe7",
@@ -59542,18 +59562,23 @@
             "Primary third frame vector is cross(side,tangent). A later XMM8 overwrite resolves the earlier apparent lane mismatch.",
             "Separate original initializer review identifies paired one-degree sine/cosine lookup tables used by the secondary pass."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "141444110": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Original direct calls and job registrations connect this builder to the reviewed recipient shape-output coordinator.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Whole original body and typed C reviewed, coordinator interface traced and saved definition independently reopened; runtime verification scope recorded per function.",
       "code_sha256": "18580e93febfb896454da96680bce7046616f3afe9a67dbd8b240b19c5dac6f0",
@@ -59571,18 +59596,23 @@
             "Checks covered ordinary and all three fallback axes in both passes, packing, untouched bytes, owner count wrap, tail capacity and ignored ESI.",
             "Only the primary consumed count increments and its reservation clears; secondary range and counters are not used."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "14144dad0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Consumes the same recipient particle pools written by the reviewed shape-output builders; direct caller and registered callback supply the recipient owner.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
       "code_sha256": "a69f72d8840dd5e06878d1422fc33d43f65a60357f0a9b970e693c27534f9ad3",
@@ -59599,18 +59629,23 @@
             "Blends geometry, direction, color, packed bytes and scalar fields; separate timer phases approach a target, latch, then apply deterministic dispersal, first-byte fade and small rotations.",
             "Incoming XMM0 through XMM4 are full float4 inputs; low XMM5 is a state-driven amount. The composed transform pair and saved-pose displacement have selected producer evidence."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "14144f500": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Both direct callers pass the recipient owner; the function modifies the same particle records and queues their ranges for a separately traced consumer.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
       "code_sha256": "dee56aaa4145156a0a0921a5f8abfc9a20ef103e791e6dd888131f2b5f683451",
@@ -59628,18 +59663,23 @@
             "Checks covered all 16 override-flag combinations, seven mode values, canonical and selected noncanonical pass bytes, both color branches, bank selection, queue boundaries, cleanup and untouched bytes.",
             "A full queue can still permit RGB changes. Nonzero pass cleanup resets modifier keys and phases while preserving each modifier payload."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "1414792e0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Registers the recipient particle index callback or directly iterates recipient objects and invokes the reviewed particle-history updater.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
       "code_sha256": "edb43d122ed478bac4c600d6401137f259d024e190c09e35ce01560a51ac5089",
@@ -59655,18 +59695,23 @@
             "Consumes no incoming arguments; dispatches the index callback through an optional scheduler or synchronously traverses the global object array.",
             "The queued route forwards the count unchanged, while synchronous fallback requires a positive signed count."
           ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
         }
       ]
     },
     "1414793a0": {
-      "system": "shared",
+      "system": "interface",
       "component_path": [
-        "shared",
-        "runtime",
-        "edit-events",
+        "interface",
+        "display",
+        "prim-imp",
         "runtime-implementation"
       ],
-      "component_basis": "Registered by the recipient particle dispatcher and tail-calls the reviewed recipient particle-history updater using an indexed recipient object.",
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
       "code_role": "runtime-implementation",
       "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
       "code_sha256": "c492b2deade1ffee1e019759a7ac6cf837683aac2a26b43cb0daea152385f696",
@@ -59681,6 +59726,40 @@
             "Reviewed all 83 bytes / 12 instructions and the complete 15-line bounded typed output.",
             "Consumes signed ESI as an object-array index, ignores incoming RDI, prepares owner plus six SIMD arguments and tail-transfers to the particle history updater.",
             "CALL_RETURN metadata on the original external tail jump preserves the separate decompiler boundary; no original instruction bytes changed."
+          ]
+        },
+        {
+          "kind": "verified_consumer_dataflow",
+          "consumer": "1415afe40",
+          "support": "Reviewed particle record/range dataflow reaches this Imp shader consumer. No upstream source-file identity is inferred."
+        }
+      ]
+    },
+    "1415afe40": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original Imp shader/source strings and the exact range queue connect this code to Imp visuals; upstream assignments follow directly reviewed record/owner/queue dataflow.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original consumer and typed C reviewed; original Imp shader/source references and direct queue producer traced. Static evidence only.",
+      "code_sha256": "4bafc3807ff826d5303f04cbbea0ca808257df60ea9f5efeb8c09f80981650ba",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildAndSubmitImpParticleRangeCommands",
+          "support": [
+            "Complete 8970-byte original function (1738 instructions), complete typed decompiler output and eight direct caller sites reviewed.",
+            "Consumes only low32 EDI selector. Unsigned range check accepts 0 through 3, selecting descriptor modes 0, 1/2, 3/4 and 5 respectively.",
+            "Reads the same 32-byte descriptor queue populated by ApplyRecipientParticleColorModifiersAndEnqueueRanges; this consumer does not clear its count.",
+            "Builds per-range parameter blocks with 0x8C8 described bytes in 0x8D0 aligned allocations, resource references, two transform pairs, projection fields and draw state, then calls CreateAndQueueDeferredDrawJob.",
+            "Direct shader-helper calls identify PrimImpVS, PrimImpStickVS and PrimImpFilledBodyVS, plus Imp pixel variants. Original helper source strings identify src/ui/prim_imp.cpp.",
+            "Conditional postpasses select PrimImpTAAUpdate and PrimDownSampleImpPhotoCS shaders; original Imp photo and bokeh labels independently support the subsystem identity.",
+            "Name and working one-register interface saved and verified after independent reopening; original instruction bytes unchanged."
           ]
         }
       ]
@@ -61902,7 +61981,7 @@
             },
             {
               "id": "prim-imp",
-              "label": "Prim Imp",
+              "label": "Imp visuals",
               "children": [
                 {
                   "id": "runtime-implementation",
