@@ -8536,3 +8536,14 @@ Starting at the input object's parent, the helper walks signed 22-bit source ref
 **4,097 new isolated whole-original cases** cover all 128 type values, four candidate-flag combinations, the source gate, a missing immediate match, a colliding hash entry and a parent-sentinel case. Tested memory and original code remained unchanged. The initial test setup failed before invoking the original function because the synthetic allocation was too small; it was corrected and the failure retained locally. Valid acyclic chains were tested; invalid/null references, cycles and live game behavior were excluded. Completed suites were not rerun.
 
 Totals: **964 reviewed names / 9,694 defined functions**, **2,357 mapped / 7,337 unmapped**. Whole-game completion remains unknown.
+
+
+### Tagged payload IDs to context indices
+
+**ConvertTaggedPayloadObjectIdsToIndices** identifies a complete **1,819-byte / 474-instruction** converter. All **347 nonempty diagnostic C lines**, its original **49-entry tag table**, and three direct-caller windows were read. Its name and three-pointer working interface passed rollback preview, save and independent reopen with original bytes unchanged.
+
+The converter expands a compact tagged payload, retains metadata and resolves selected object IDs through the context hash chains into object-table indices. Missing or all-ones IDs produce the all-ones index sentinel. Other variants copy their fields directly. Exact semantic tag names and complete structures remain unresolved.
+
+This direction is not claimed as an exact inverse of the reviewed index-to-ID converter. Tag 44 copies source field +8 here, while the opposite direction duplicates source field +4. The observed difference is preserved. Static review establishes the descriptive role; no new native, live game or platform tests were performed, and no Media Molecule source match is claimed.
+
+Totals: **965 reviewed names / 9,694 defined functions**, **2,358 mapped / 7,336 unmapped**. Whole-game completion remains unknown.

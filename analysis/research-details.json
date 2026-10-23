@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 964,
+    "checked_and_applied_names": 965,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 964,
+    "verified_names": 965,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "820 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "821 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30115,6 +30115,34 @@
       "Valid acyclic source-parent chain only; invalid/null source and cycles excluded. Original arithmetic uses32-bit wrapping and signed22-bit reference extraction.",
       "Returns0 when sourceparent sentinel ends traversal; starts at parent, not inputobject. Exact semantic type names remain unresolved.",
       "No MM livestream/source-build match or implicit whole-caller completion."
+    ]
+  },
+  "tagged_payload_id_to_index_checkpoint": {
+    "functions": {
+      "14094e060": {
+        "name": "ConvertTaggedPayloadObjectIdsToIndices",
+        "signature": "void PS4_SYSV ConvertTaggedPayloadObjectIdsToIndices(void * destination, void * source, void * object_context)",
+        "return_storage": "<VOID>",
+        "original_sha256": "4fd556281fb79f7c311a08159c90605e3dc1aa0e49ada40c25aa32f0816a9e0d",
+        "size": 1819,
+        "instructions": 474,
+        "created": false,
+        "c_sha256": "3cb7b18d4ac6fca20eb980a52bb86fba48e76baf27612e31b644f8a7b383263b",
+        "nonempty_c_lines": 361
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 1819,
+    "original_instructions": 474,
+    "typed_c_nonempty_lines": 347,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete1819-byte/474-instruction original body and347 nonempty diagnostic C lines read; three direct caller windows. Static only; no new native tests.",
+      "Exact semantic tag names and full payload/context types remain unresolved; three opaque pointers and void working return.",
+      "Tag44 copies distinct source+8 whereas opposite converter duplicates source+4; exact inverse or roundtrip not established. Hash cycles/invalid object entries and alias safety not validated.",
+      "No MM source/livestream match or whole-caller completion claimed."
     ]
   }
 }

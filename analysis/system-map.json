@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2357,
-  "unmapped_total": 7337,
+  "mapped_total": 2358,
+  "unmapped_total": 7336,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60458,6 +60458,30 @@
           "support": [
             "Entire original 428-byte body (110 instructions) and all 80 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from full428-byte original body,80 nonempty C lines,two direct callers and4097 isolated whole-original cases. RDI source context,RSI destination context,EDX packed source index,EAX signed32 result. Starts at sourceobject parent+4; traverses signed22-bit parent references and resolves ancestor firstDWORD IDs through destination hash chains. Candidate flags0x100800 must clear, source+0x27b0c0 must zero, low7 type must be0/1/11/17/19/95/96. Returns first eligible destination ancestor index; source parent sentinel-1 ends with0. No explicit cycle guard. Invalid/null source can dereference null despite later null-source expression. Native tests synthetic valid acyclic chains only, all128 types,4flag combinations,source gate,missing immediate candidate,hash collision,zero-parent case; read-only checked ranges/original bytes preserved. No runtime game/platform/source equivalence or semantic type-name claim."
+          ]
+        }
+      ]
+    },
+    "14094e060": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Converts shared compact tagged payload object IDs into expanded context indices; used during game-context reconciliation and other callers. Exact semantic payload domain unresolved; counted once as shared context support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "4fd556281fb79f7c311a08159c90605e3dc1aa0e49ada40c25aa32f0816a9e0d",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ConvertTaggedPayloadObjectIdsToIndices",
+          "support": [
+            "Entire original 1819-byte body (474 instructions) and all 347 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from complete1819-byte/474-instruction original body,all347 nonempty diagnostic C lines,49-entry original tagtable and3directcaller windows. RDI expanded destination,RSI compact source,RDX opaque objectcontext; void workingreturn, callers consume memory notRAX. Zeroesdestination0..0x4f and copies metadata source+0x28/+0x2c/+0x2d to+0x50/+0x54/+0x55. Selected tags resolve objectIDs via context hashchains/table into32-bit indices, missing/allonesIDs yield0xffffffff; other variants copy payloadfields. Tag1 restores fixed first32bytes plus2refs/fields;tag2 outputs2indices+lowbitflag. Tag44 reads distinctsource+8, unlike oppositeconverter duplicatedsource+4: not exact inverse/roundtrip. Semantic tag names/fulltypes, alias safety, hashcycle behavior unresolved. Staticonly; no native/game/platform execution, childcompletion or MM source equivalence claimed."
           ]
         }
       ]
