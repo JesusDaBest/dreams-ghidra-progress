@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 922,
+    "checked_and_applied_names": 926,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 922,
-    "function_count": 9680,
+    "verified_names": 926,
+    "function_count": 9684,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2042,7 +2042,11 @@
       "1414393d0",
       "14143c980",
       "14143d190",
+      "141441690",
+      "141443dc0",
       "141444950",
+      "14144cf10",
+      "14144d710",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2055,7 +2059,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 129 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 133 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -28970,5 +28974,128 @@
       "Original class/source identity, mode names, runtime prefix-table initializer, indirect callers and full job behavior remain unresolved. Unordered floating-point gate behavior requires original instruction predicates, not just the decompiled comparisons. No exact Media Molecule source match or whole-game completion claim."
     ],
     "project_saved_and_independently_reopened": true
+  },
+  "recipient_particle_jobs_checkpoint": {
+    "functions": {
+      "141441690": {
+        "name": "BuildRecipientBodyParticleRecords",
+        "signature": "void PS4_SYSV BuildRecipientBodyParticleRecords(void * context)",
+        "return_storage": "<VOID>",
+        "original_sha256": "b6ae29eb6f1edd8931e45692b4e369feaef3200d1e4138f24ca378cc926fc0ea",
+        "size": 3947,
+        "instructions": 725,
+        "created": true,
+        "c_sha256": "8eae9d0fc5441ce77f89dd7c48d027eaa70eaf589fa8192433adf812bf5c698a",
+        "nonempty_c_lines": 919
+      },
+      "141443dc0": {
+        "name": "BuildRecipientAnimatedBodyParticleRecords",
+        "signature": "void PS4_SYSV BuildRecipientAnimatedBodyParticleRecords(void * context)",
+        "return_storage": "<VOID>",
+        "original_sha256": "300c90d07590d0c970628d87396ad5179d04460acbc3e44ecfb03cfbc8349016",
+        "size": 840,
+        "instructions": 167,
+        "created": true,
+        "c_sha256": "75ce45ae4d3b62e76aa6ca96e10cc1eda0763e5396bb49e40ac74c5643c0dbd6",
+        "nonempty_c_lines": 281
+      },
+      "14144d710": {
+        "name": "ReserveRecipientParticleRange",
+        "signature": "void * PS4_SYSV ReserveRecipientParticleRange(void * owner, int slot, uint * count_out)",
+        "return_storage": "RAX:8",
+        "original_sha256": "eff2dfc3b49c88f92a60ec0422bf0ac942792f30247397777e8d29cc6a24b144",
+        "size": 198,
+        "instructions": 45,
+        "created": true,
+        "c_sha256": "4a4bca50239802efae11edf7074e05a28bdadd04ef349f101bc3c95fb5685901",
+        "nonempty_c_lines": 53
+      },
+      "14144cf10": {
+        "name": "WriteRotationBasisFromIntegerDegrees",
+        "signature": "void PS4_SYSV WriteRotationBasisFromIntegerDegrees(void * matrix_out, int angle_a_degrees, int angle_b_degrees, int angle_c_degrees)",
+        "return_storage": "<VOID>",
+        "original_sha256": "691162a233b15fb022c36f792c2f6cf7ea804b8e8822354deff97389d906d1f7",
+        "size": 1310,
+        "instructions": 270,
+        "created": true,
+        "c_sha256": "5088b0561d1809f31594ff64c386f6a82f81fb2a795fef24844371ba75782320",
+        "nonempty_c_lines": 310
+      }
+    },
+    "shared_type_updates": {
+      "14160afb0": {
+        "name": "FUN_14160afb0",
+        "signature": "void PS4_SYSV FUN_14160afb0(float angle, float * sine_out, float * cosine_out)",
+        "return_storage": "<VOID>",
+        "original_sha256": "bb6763eb195535d82474fe1d2ab4e280ebe1edcc77c6f3d0ec26fe97248cc11e",
+        "size": 6,
+        "instructions": 1,
+        "created": false
+      }
+    },
+    "new_checked_names": 4,
+    "complete_original_body_bytes": 6295,
+    "complete_original_instructions": 1207,
+    "animated_body_native_cases": 332,
+    "animated_body_output_records": 1300,
+    "animated_body_max_absolute_error": 3.8743019104003906e-07,
+    "range_helper_native_cases": 114,
+    "body_builder_and_rotation_helper_native_tested": false,
+    "project_saved_and_independently_reopened": true,
+    "details": {
+      "141441690": {
+        "evidence": [
+          "Reviewed all 3947 bytes / 725 instructions and the original BodyParticlesJob registration.",
+          "Builds 136-byte-stride records from indexed surface triangles with centroid or seeded barycentric placement, orientation, color-like values, packed fields and path association.",
+          "Context+1030 is an inline weight array. Capacity stops before a triangle batch; owner consumed count increases and its reservation clears."
+        ],
+        "limits": [
+          "Static review only; this body was not executed in native fixtures.",
+          "Runtime triangle-table initialization and valid array bounds remain unresolved. Positive finite density produces one candidate per triangle; its phase controls placement.",
+          "Path association stops at the first distance increase rather than searching for the global nearest segment. Degenerate axes and nonfinite inputs are not robustly handled."
+        ]
+      },
+      "141443dc0": {
+        "evidence": [
+          "Reviewed all 840 bytes / 167 instructions and the original AnimBodyParticlesJob registration.",
+          "Builds one 136-byte-stride record for each eligible adjacent path-point pair; packs mode-dependent triples, scalar bytes and a segment tag.",
+          "332 isolated whole-body original-code cases passed, producing 1300 records; maximum absolute float error was below 3.88e-7.",
+          "Checks covered ordinary and all three fallback axes, positive/zero/negative W differences, capacity gates, untouched bytes, packing, owner wrap and ignored ESI."
+        ],
+        "limits": [
+          "Fixtures used finite coordinates and nonzero midpoints; unguarded midpoint normalization remains a limitation.",
+          "Capacity rejection preserves the reservation; other finalization paths clear it. Nonpositive W still emits a degenerate record.",
+          "The scheduler may pass unused parameters; the saved interface describes consumed inputs."
+        ]
+      },
+      "14144d710": {
+        "evidence": [
+          "Reviewed all 198 bytes / 45 instructions and the coordinator caller using slot 1.",
+          "Reserves an existing 136-byte-stride pool range and returns its pointer plus a count; performs no memory allocation.",
+          "114 isolated whole-helper original-code cases passed with exact pointer/count/reservation and guard comparisons. Returned pointers were never dereferenced."
+        ],
+        "limits": [
+          "Only slot 1 is established at a real caller; additional slots in the fixture are synthetic.",
+          "NaN passes the ordered-positive XYZ rejection gate; W is ignored. Count subtraction can underflow and reservation storage truncates to 16 bits.",
+          "Pool lifetime, slot/count invariants, underlying capacity and concurrency safety remain unverified."
+        ]
+      },
+      "14144cf10": {
+        "evidence": [
+          "Reviewed all 1310 bytes / 270 instructions and four direct call sites in body and stick jobs.",
+          "Consumes three signed integer degree angles and writes 64 bytes. Quaternion composition is N(N(qX*qY)*qZ), followed by padded rotation columns.",
+          "Original import bindings and caller registers support sincosf and the infinity predicate; shared sincosf prototype corrected without extra name credit."
+        ],
+        "limits": [
+          "Static review only; this helper was not executed in native fixtures.",
+          "Output is not a conventional homogeneous 4x4 matrix: some padding lanes retain computed values.",
+          "Angle reduction uses signed remainder after 32-bit wrapping; normalization rejects infinity but does not generally reject NaN. Exact numerical results depend on original libm and float operation order."
+        ]
+      }
+    },
+    "limits": [
+      "Analyst descriptions, not recovered original source names. No exact developer-stream match.",
+      "No whole-game, real scheduler or renderer validation; record-consumer semantics remain incomplete."
+    ]
   }
 }

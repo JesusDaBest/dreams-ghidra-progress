@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9680,
-  "mapped_total": 2323,
+  "inventory_total": 9684,
+  "mapped_total": 2327,
   "unmapped_total": 7357,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -59402,6 +59402,115 @@
             "Builds a mode-dependent cubic-Hermite path and geometric metrics, optionally trims the path against an endpoint disc, reserves particle ranges and runs or queues four original-labelled stick/body jobs.",
             "96 isolated original-code sampler cases passed against a scalar float32 model, including repeated points and the 200-point cap; observed maximum numeric error was zero.",
             "Saved descriptive name, two-register working interface and two proven external tailcall annotations independently reopened; all original body bytes and other function inventory entries unchanged."
+          ]
+        }
+      ]
+    },
+    "141441690": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
+      "code_sha256": "b6ae29eb6f1edd8931e45692b4e369feaef3200d1e4138f24ca378cc926fc0ea",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildRecipientBodyParticleRecords",
+          "support": [
+            "Complete original instruction body and typed decompiler output read; direct caller interfaces and relevant data fields traced.",
+            "Descriptive name and minimal register interface saved and independently reopened; original bytes unchanged.",
+            "Reviewed all 3947 bytes / 725 instructions and the original BodyParticlesJob registration.",
+            "Builds 136-byte-stride records from indexed surface triangles with centroid or seeded barycentric placement, orientation, color-like values, packed fields and path association.",
+            "Context+1030 is an inline weight array. Capacity stops before a triangle batch; owner consumed count increases and its reservation clears."
+          ]
+        }
+      ]
+    },
+    "141443dc0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
+      "code_sha256": "300c90d07590d0c970628d87396ad5179d04460acbc3e44ecfb03cfbc8349016",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildRecipientAnimatedBodyParticleRecords",
+          "support": [
+            "Complete original instruction body and typed decompiler output read; direct caller interfaces and relevant data fields traced.",
+            "Descriptive name and minimal register interface saved and independently reopened; original bytes unchanged.",
+            "Reviewed all 840 bytes / 167 instructions and the original AnimBodyParticlesJob registration.",
+            "Builds one 136-byte-stride record for each eligible adjacent path-point pair; packs mode-dependent triples, scalar bytes and a segment tag.",
+            "332 isolated whole-body original-code cases passed, producing 1300 records; maximum absolute float error was below 3.88e-7.",
+            "Checks covered ordinary and all three fallback axes, positive/zero/negative W differences, capacity gates, untouched bytes, packing, owner wrap and ignored ESI."
+          ]
+        }
+      ]
+    },
+    "14144d710": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
+      "code_sha256": "eff2dfc3b49c88f92a60ec0422bf0ac942792f30247397777e8d29cc6a24b144",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ReserveRecipientParticleRange",
+          "support": [
+            "Complete original instruction body and typed decompiler output read; direct caller interfaces and relevant data fields traced.",
+            "Descriptive name and minimal register interface saved and independently reopened; original bytes unchanged.",
+            "Reviewed all 198 bytes / 45 instructions and the coordinator caller using slot 1.",
+            "Reserves an existing 136-byte-stride pool range and returns its pointer plus a count; performs no memory allocation.",
+            "114 isolated whole-helper original-code cases passed with exact pointer/count/reservation and guard comparisons. Returned pointers were never dereferenced."
+          ]
+        }
+      ]
+    },
+    "14144cf10": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct calls or job registrations connect this implementation to the reviewed recipient shape-output coordinator and its particle jobs.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original body and typed C reviewed, relevant interfaces traced and saved definition independently reopened; runtime validation scope recorded per function.",
+      "code_sha256": "691162a233b15fb022c36f792c2f6cf7ea804b8e8822354deff97389d906d1f7",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "WriteRotationBasisFromIntegerDegrees",
+          "support": [
+            "Complete original instruction body and typed decompiler output read; direct caller interfaces and relevant data fields traced.",
+            "Descriptive name and minimal register interface saved and independently reopened; original bytes unchanged.",
+            "Reviewed all 1310 bytes / 270 instructions and four direct call sites in body and stick jobs.",
+            "Consumes three signed integer degree angles and writes 64 bytes. Quaternion composition is N(N(qX*qY)*qZ), followed by padded rotation columns.",
+            "Original import bindings and caller registers support sincosf and the infinity predicate; shared sincosf prototype corrected without extra name credit."
           ]
         }
       ]

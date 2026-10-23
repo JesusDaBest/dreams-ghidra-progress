@@ -8828,3 +8828,25 @@ Output availability also depends on mode, resource state and reservations. Some 
 The official [Liam coding stream](https://www.youtube.com/watch?v=IvGbhvZsTa8&t=1204s) provides a separate editor-physics lead: inspected frames at 20:04, 25:55 and 30:04 show `PhysicsTool::Update` and physical-state toggling. Those frames do not match this shape-output function and add no completion credit.
 
 Totals: **922 checked names across 9,680 defined functions**, **2,323 mapped and 7,357 unmapped**. This checkpoint adds one reviewed function. It does not establish a percentage of the entire game reconstructed.
+
+
+### Recipient particle records and range reservation
+
+Four more functions now have evidence-supported descriptive names and working interfaces, saved and verified after an independent reopening. The review covers **6,295 original bytes / 1,207 instructions**, complete typed decompiler output, relevant callers and two new isolated original-code fixture suites.
+
+| Function | Established behavior | Verification in this checkpoint |
+| --- | --- | --- |
+| `BuildRecipientBodyParticleRecords` | Builds particle records from indexed surface triangles, with centroid or seeded barycentric placement, derived orientation, color-like values and path association. | Complete static body and caller review; no native execution of this body. |
+| `BuildRecipientAnimatedBodyParticleRecords` | Builds a record for each eligible adjacent path-point pair, including geometry, packed fields and owner bookkeeping. | **332 whole-body synthetic cases / 1,300 records**; maximum absolute float error below **3.88e-7**. |
+| `ReserveRecipientParticleRange` | Reserves records in an existing pool and returns the range pointer and count. | **114 whole-helper synthetic cases**; exact pointer/count/reservation and guard comparisons. |
+| `WriteRotationBasisFromIntegerDegrees` | Converts three integer degree angles into padded rotation columns occupying 64 bytes. | Complete static body, four direct call sites and original import bindings reviewed; no native execution of this helper. |
+
+The names describe checked behavior; they are not claims of recovered original source names. The original queue labels separately identify the two body jobs. A shared `sincosf` import prototype was corrected to represent its angle and two output pointers; that correction adds no extra checked-name credit.
+
+Several details matter for a faithful reconstruction. The surface job's per-vertex weights are inline data, not an array pointer. For ordinary positive finite density it emits at most one candidate per triangle, with density phase controlling centroid versus random placement. Its path association stops at the first increasing midpoint distance rather than finding a global nearest segment. The animated job still writes a degenerate record for nonpositive W differences; capacity rejection preserves its reservation, while normal finalization clears it. Its midpoint normalization is unguarded, so the fixture's numerical claim is limited to finite coordinates with nonzero midpoints.
+
+The range helper performs **no allocation**. Its ordered-positive XYZ rejection allows NaN through; count subtraction can underflow, and the stored reservation is only 16 bits. Synthetic pointer results were compared as integers and never dereferenced. The rotation helper composes `N(N(qX*qY)*qZ)` and writes nonstandard padding, so substituting a conventional homogeneous matrix would be incorrect. These are original behaviors to preserve or explicitly handle, not evidence that arbitrary inputs are safe.
+
+Runtime triangle-table initialization, actual pool capacity and lifetime, record consumers, full stick-job behavior and real rendering remain unresolved. The two fixture suites do not validate the whole updater, scheduler or game. No exact developer-source match is claimed.
+
+Totals: **926 checked names across 9,684 defined functions**, with **2,327 mapped and 7,357 unmapped**. This checkpoint adds four reviewed functions; it does not establish a percentage of the entire game reconstructed.
