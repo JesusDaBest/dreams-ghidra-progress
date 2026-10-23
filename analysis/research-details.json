@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 953,
+    "checked_and_applied_names": 956,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 953,
+    "verified_names": 956,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "809 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "812 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29789,6 +29789,63 @@
     "new_native_cases": 0,
     "limits": [
       "Static review only; no new native fixtures, GPU/HMD/platform execution or concurrency verification.",
+      "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+      "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+      "No source-build match to MM livestream material established in this batch."
+    ],
+    "completion_slot_writers_resolved": false
+  },
+  "color_size_wave_wrapper_checkpoint": {
+    "functions": {
+      "14003a490": {
+        "name": "PackAndSetGpuWaveLimitMultipliers",
+        "signature": "int PS4_SYSV PackAndSetGpuWaveLimitMultipliers(int unit_mask, uchar final_multiplier, void * seven_multipliers)",
+        "return_storage": "EAX:4",
+        "original_sha256": "dc1f3d2fab62665f47798395c9a5a293ebbeee5c130df678b04f5bba688780f7",
+        "size": 100,
+        "instructions": 33,
+        "created": false,
+        "c_sha256": "f71086d5888db9d79bbe6a8e6467829554a5a4f7991435c451a334f963e3af8b",
+        "nonempty_c_lines": 41
+      },
+      "140035de0": {
+        "name": "GetColorTargetMainSizeAndAlignment",
+        "signature": "ulonglong PS4_SYSV GetColorTargetMainSizeAndAlignment(void * target_descriptor)",
+        "return_storage": "RAX:8",
+        "original_sha256": "ec1ea3159da9ef31e891e52a9744360832d78801053606d2dfaee4f8964b92cf",
+        "size": 151,
+        "instructions": 49,
+        "created": false,
+        "c_sha256": "d7f460b3a9daac88b3bc4036757392d3d9c5f61e1eaae9d35db78a8651e7dbc5",
+        "nonempty_c_lines": 45
+      },
+      "140035f20": {
+        "name": "GetColorTargetSecondaryAuxiliarySizeAndAlignment",
+        "signature": "ulonglong PS4_SYSV GetColorTargetSecondaryAuxiliarySizeAndAlignment(void * target_descriptor)",
+        "return_storage": "RAX:8",
+        "original_sha256": "5f9a998978da417ae0d528fc16019c05c17ab2d34460f4884ee7ab0d5e832c9c",
+        "size": 155,
+        "instructions": 48,
+        "created": false,
+        "c_sha256": "660eeddca93b9b935a16734fd16cc53516aae6c9c8715b2321593d74306384ca",
+        "nonempty_c_lines": 46
+      }
+    },
+    "new_checked_names": 3,
+    "new_definitions": 0,
+    "existing_renames": 3,
+    "original_bytes": 406,
+    "original_instructions": 130,
+    "typed_c_nonempty_lines": 100,
+    "static_only": false,
+    "new_native_cases": 768,
+    "native_target": "14003a490",
+    "static_only_targets": [
+      "140035de0",
+      "140035f20"
+    ],
+    "limits": [
+      "Only wave wrapper native-tested in768 new cases with explicit import model; two size helpers static-only this batch. No real GPU/platform or concurrency verification.",
       "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
       "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
       "No source-build match to MM livestream material established in this batch."

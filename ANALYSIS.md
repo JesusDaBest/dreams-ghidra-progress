@@ -9009,3 +9009,14 @@ The color-target factory builds its descriptor, allocates main and optional auxi
 **This batch is static review only.** No new native fixture or live hardware/platform test was run, and completed suites were not rerun. Descriptive names are evidence-supported working labels, not recovered original source names. No MM livestream source match is claimed.
 
 Totals: **953 reviewed names / 9,694 defined functions**, **2,346 mapped / 7,348 unmapped**. Two added definitions and one existing rename are mapped into the existing Rendering sections. These counts measure reviewed discovered code, not whole-game completion.
+
+
+### Color-target sizes and GPU wave-limit packing
+
+**GetColorTargetMainSizeAndAlignment** calculates layout, multiplies the layout size by the descriptor's extracted count plus one, and packs size/alignment into low/high32 bits. A layout error returns zero. **GetColorTargetSecondaryAuxiliarySizeAndAlignment** queries the second optional auxiliary allocation only when its descriptor flag is set; errors or a clear flag return zero. Oversized sizes are encoded as zero while alignment is retained. The main calculation wraps its multiplication at64bits before checking upper32; this is not a general overflow-safety guarantee. Exact secondary metadata classification and decoder/query dependencies remain unresolved.
+
+**PackAndSetGpuWaveLimitMultipliers** copies seven input bytes, appends the low byte of its second argument, calls **sceGnmSetWaveLimitMultipliers** with the original mask, and forwards its32-bit status. **768 new isolated whole-original cases** check mask boundaries, low-byte truncation, all eight copied bytes, status forwarding, input guards and unchanged original code. The platform import is a recorder model; no GPU effect is tested. An initial fixture setup failure occurred before invocation and was preserved and repaired; completed suites were not rerun.
+
+All **406 original bytes / 130 instructions** and **100 nonempty typed C lines** were read. Names and working interfaces were saved and independently reopened. The two size helpers received **static review only** in this batch. No exact MM source/livestream match or live hardware verification is claimed.
+
+Totals: **956 reviewed names / 9,694 defined functions**, **2,349 mapped / 7,345 unmapped**. Three existing definitions were named; no new definitions. These are reviewed-code counts, not whole-game completion.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "809 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "812 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8586,
-    "other_names": 1108,
-    "verification": "complete_inventory_matches_baseline_plus_809_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8583,
+    "other_names": 1111,
+    "verification": "complete_inventory_matches_baseline_plus_812_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22720,6 +22720,69 @@
       ],
       "caveats": [
         "Static review only; no new native fixtures, GPU/HMD/platform execution or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "14003a490",
+      "original_name": "FUN_14003a490",
+      "applied_name": "PackAndSetGpuWaveLimitMultipliers",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV PackAndSetGpuWaveLimitMultipliers(int unit_mask, uchar final_multiplier, void * seven_multipliers)",
+      "evidence": [
+        "Entire original 100-byte body (33 instructions) and all 30 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from entire original EH-bounded body and complete typed C; original source types/names and live hardware behavior not recovered. Consumes EDI mask unchanged, low8 SIL final multiplier and RDX pointer to seven bytes. Copies seven bytes followed by final multiplier into contiguous eight-byte stack array, calls resolved sceGnmSetWaveLimitMultipliers and forwards low32 EAX status.768 new whole-original isolated cases check mask bits, final low-byte truncation, distinct seven-byte patterns, status forwarding, input guards and unchanged original body; actual platform dependency is an explicit recorder model. No GPU effect or invalid-pointer guarantee."
+      ],
+      "caveats": [
+        "Only wave wrapper native-tested in768 new cases with explicit import model; two size helpers static-only this batch. No real GPU/platform or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "140035de0",
+      "original_name": "FUN_140035de0",
+      "applied_name": "GetColorTargetMainSizeAndAlignment",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV GetColorTargetMainSizeAndAlignment(void * target_descriptor)",
+      "evidence": [
+        "Entire original 151-byte body (49 instructions) and all 35 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from entire original EH-bounded body and complete typed C; original source types/names and live hardware behavior not recovered. Consumes descriptor RDI. Calls decoder140043dc0 with mode0 and reviewed CalculateGpuSurfaceLayout; nonzero layout status returns0. Success multiplies unsigned11-bit descriptor field at DWORD+0xc bits13..23 plus1 by64-bit layout-output+0x10 size. Multiplication is low64 wrapping original IMUL; only afterward does upper32 detection zero oversized size. Packs alignment from layout-output+0x1c into high32 and size into low32. Does not establish arbitrary-input arithmetic safety or decoder correctness. Static-only this batch; related completed native suites not rerun."
+      ],
+      "caveats": [
+        "Only wave wrapper native-tested in768 new cases with explicit import model; two size helpers static-only this batch. No real GPU/platform or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "140035f20",
+      "original_name": "FUN_140035f20",
+      "applied_name": "GetColorTargetSecondaryAuxiliarySizeAndAlignment",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV GetColorTargetSecondaryAuxiliarySizeAndAlignment(void * target_descriptor)",
+      "evidence": [
+        "Entire original 155-byte body (48 instructions) and all 35 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from entire original EH-bounded body and complete typed C; original source types/names and live hardware behavior not recovered. Consumes descriptor RDI. If byte+0x11 bit0x40 clear returns0 without querying. Otherwise zero-initializes64-bit size and32-bit alignment, calls14003e950 with output pointers, zero EDX/ECX and descriptor R8. Nonzero query status returns0; success packs alignment high32 and size low32, with size zero when upper32 nonzero. Role is second optional auxiliary allocation in reviewed color-target factory, distinct from existing auxiliary helper140035e80. Exact hardware metadata classification and query implementation remain unresolved. Static-only this batch; related completed native suites not rerun."
+      ],
+      "caveats": [
+        "Only wave wrapper native-tested in768 new cases with explicit import model; two size helpers static-only this batch. No real GPU/platform or concurrency verification.",
         "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
         "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
         "No source-build match to MM livestream material established in this batch."

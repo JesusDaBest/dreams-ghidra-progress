@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2346,
-  "unmapped_total": 7348,
+  "mapped_total": 2349,
+  "unmapped_total": 7345,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60194,6 +60194,78 @@
           "support": [
             "Entire original 1335-byte body (285 instructions) and all 192 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from the entire original EH-bounded body and complete typed C. Static review only; no live HMD/GPU, concurrency, allocator or platform execution. No original-source symbol or exact MM source-build match claimed. Consumes target RDI, width ESI, height EDX, unsigned format-table index ECX, descriptor sample-mode value R8D and tile flag bits R9D. Format table stride24 with no local bounds guard. Initializes descriptor at target+0x70; nonzero descriptor result exits. Caches dimensions, main/auxiliary size-alignment words, adjusts packed descriptor fields on first-aux-only path and enforces minimum alignment65536 when target+0xe8 nonzero. Allocates main record+8, optional auxiliary+0x30/+0x50 using reviewed allocation helper; each failed allocation exits without local unwind. Encodes allocation addresses shifted8 into descriptor, builds texture-view state+0xb8 and registers resources with kinds6/7 then5/3 using resolved sceGnmRegisterResource wrapper. Pool-owner lookup follows mode2 kind mapping, signed handle and bounded registration-slot lookup. Input format/sample enumeration meanings and actual GPU descriptor effects remain unproved; existing reviewed color-auxiliary size helper and original caller establish descriptive color-target role. Void working return; no reliable success result."
+          ]
+        }
+      ]
+    },
+    "14003a490": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "display-output",
+        "runtime-implementation"
+      ],
+      "component_basis": "Reviewed HMD callers and independently resolved GPU wave-limit import.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "dc1f3d2fab62665f47798395c9a5a293ebbeee5c130df678b04f5bba688780f7",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "PackAndSetGpuWaveLimitMultipliers",
+          "support": [
+            "Entire original 100-byte body (33 instructions) and all 30 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from entire original EH-bounded body and complete typed C; original source types/names and live hardware behavior not recovered. Consumes EDI mask unchanged, low8 SIL final multiplier and RDX pointer to seven bytes. Copies seven bytes followed by final multiplier into contiguous eight-byte stack array, calls resolved sceGnmSetWaveLimitMultipliers and forwards low32 EAX status.768 new whole-original isolated cases check mask bits, final low-byte truncation, distinct seven-byte patterns, status forwarding, input guards and unchanged original body; actual platform dependency is an explicit recorder model. No GPU effect or invalid-pointer guarantee."
+          ]
+        }
+      ]
+    },
+    "140035de0": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original color-target factory uses packed size/alignment for main and secondary auxiliary allocations.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "ec1ea3159da9ef31e891e52a9744360832d78801053606d2dfaee4f8964b92cf",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetColorTargetMainSizeAndAlignment",
+          "support": [
+            "Entire original 151-byte body (49 instructions) and all 35 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from entire original EH-bounded body and complete typed C; original source types/names and live hardware behavior not recovered. Consumes descriptor RDI. Calls decoder140043dc0 with mode0 and reviewed CalculateGpuSurfaceLayout; nonzero layout status returns0. Success multiplies unsigned11-bit descriptor field at DWORD+0xc bits13..23 plus1 by64-bit layout-output+0x10 size. Multiplication is low64 wrapping original IMUL; only afterward does upper32 detection zero oversized size. Packs alignment from layout-output+0x1c into high32 and size into low32. Does not establish arbitrary-input arithmetic safety or decoder correctness. Static-only this batch; related completed native suites not rerun."
+          ]
+        }
+      ]
+    },
+    "140035f20": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "resource-storage",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original color-target factory uses packed size/alignment for main and secondary auxiliary allocations.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "5f9a998978da417ae0d528fc16019c05c17ab2d34460f4884ee7ab0d5e832c9c",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "GetColorTargetSecondaryAuxiliarySizeAndAlignment",
+          "support": [
+            "Entire original 155-byte body (48 instructions) and all 35 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from entire original EH-bounded body and complete typed C; original source types/names and live hardware behavior not recovered. Consumes descriptor RDI. If byte+0x11 bit0x40 clear returns0 without querying. Otherwise zero-initializes64-bit size and32-bit alignment, calls14003e950 with output pointers, zero EDX/ECX and descriptor R8. Nonzero query status returns0; success packs alignment high32 and size low32, with size zero when upper32 nonzero. Role is second optional auxiliary allocation in reviewed color-target factory, distinct from existing auxiliary helper140035e80. Exact hardware metadata classification and query implementation remain unresolved. Static-only this batch; related completed native suites not rerun."
           ]
         }
       ]
