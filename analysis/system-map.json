@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2371,
-  "unmapped_total": 7329,
+  "mapped_total": 2372,
+  "unmapped_total": 7328,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60794,6 +60794,30 @@
           "support": [
             "Entire original 1645-byte body (265 instructions) and all 331 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire1645-byte/265-instruction original and331 nonempty typedC read; both direct caller windows read. DestinationRDI, encodedbeginRSI, encodedendRDX; ALboolean. Exact original aggregate/class names unresolved. Initializes4320-byte local staging storage andImp defaults/emote keys. Obtains TLS-linked scratch allocation request100000hex bytes andcalls already-reviewed DecodeLz4Block with32-bit end-minus-begin input length,1MiB output bound andmode1. Nonpositive decoder result returnsfalse withoutcopy. LZ4 format role supported by authoritative prior full556-instruction callee review; no new callee runtime credit. Constructs serializer, checks noerror andmagic5f496d70, thenreads revision. Unsigned(revision-3)<=99996 enters payloadreader141446d60: inclusive3..99999. Revisionsoutside range leave success true andcopy stageddefaults. Therefore true doesnot provepayloadfields decoded. Invalidmagic/serializererror/rejectedpayload returnsfalse withoutdestinationcopy. On success copies4220-byte stagedpayload tocaller destination andcalls141446ba0 postprocessor. Scratch/serializer cleanup paths statically followed. Childallocator/TLS/payloadcodec/postprocess bodies not implicitly reviewed; malformed-data safety andexactformat compatibility unproven. Caller14147c560 cacheskey onlyafterdecoderALtrue; reviewed LoadImpStateRecordAssetByKey cacheskey afterstatus3regardlessdecoderAL. This caller difference is static, notlivefailure/intent claim. Zero new native cases, no livegame/platform or MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "141446d60": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete bidirectional field/revision codec and original caller dataflow through reviewed Imp payload decoder. Counted once under Imp visuals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review and allthree caller windows; static only.",
+      "code_sha256": "e2efa15de56c98bc0e2ba2c62f64068eafe4538d0fde6fd3ff63380a27b68eb2",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeImpStatePayload",
+          "support": [
+            "Entire original 5864-byte body (1182 instructions) and all 946 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Entire5864-byte/1182-instruction original and946 nonempty typedC read; allthree direct caller windows. SerializerRDI,payloadRSI,void; errors communicated through serializer+10. Read/write direction atserializer+b0, current/end88/90, fallbacke8, revision14. Original C++ structures remain working opaque pointers. Per-field transfers, nested scope/marker bookkeeping, revision migrations andchildcodec calls establish bidirectional serialization, notjustreading. Many childcodecs remainunreviewed; no fullformat/invariant/safety orscope-balance guarantee. Revision milestones: prefix8bytes>=6; palettebyte->vector421; compacttemporary->direct layout1178; maximum2-element block>=1188; secondarraydirect>=1222; legacy enum clamps through1397; extra fields>=1398/1401. Exact original field/enum names unresolved. Numeric order swaps70/74 anda4/a8 andlegacyfloat-length->low16 conversion paths inspected. Historical arrays convert through temporary layouts andexistinghelper141487a10; keyblockcodec atpayload41e0. Childallocations,array bounds,negativecounts,malformedinput andall revisions not validated. Scope/error/marker earlyreturns followed statically withoutclaimingglobalbalance. Static analysis only, zero new native cases. Three caller windows include reviewed LZ4decoder andtwoothercontexts; fullothercaller bodies not reviewed. No livegame/platform or MMsourceequivalence."
           ]
         }
       ]

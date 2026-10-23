@@ -9277,3 +9277,16 @@ Both callers were traced. The larger Imp-pool caller caches its key only after a
 **Static analysis only; zero new native cases.** The child allocation/TLS, payload-codec and postprocessing routines remain incompletely investigated. Malformed-data safety, full format compatibility and original class/field names are unresolved. The saved descriptive name and working interface passed independent reopening with original code bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **978 reviewed names / 9,700 defined functions**, **2,371 mapped / 7,329 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp state field serialization and legacy conversions
+
+**SerializeImpStatePayload** describes a complete **5,864-byte / 1,182-instruction** routine. All **946 nonempty diagnostic C lines** and **all three direct-caller windows** were read. It transfers fields in either direction through the serializer, tracks errors and nested sections, and applies revision-dependent layout conversions. Its working interface is two opaque pointers with no meaningful return; errors remain in serializer state.
+
+The trace identifies milestones without inventing field names: an initial8-byte field from revision6; palette-index versus vector storage at421; replacement of compact temporary numeric layouts at1178; a block allowing at most two elements from1188; later second-array storage at1222; and additional byte/scalar fields at1398 and1401. It also swaps two out-of-order numeric pairs and migrates legacy array encodings. A bounded field/revision map is recorded in the research data; original semantic names remain unresolved.
+
+The emote-key block is transferred after revision-dependent array handling. Helper codecs, array bounds and allocations are **not implicitly understood** by reviewing this parent routine. Neither complete malformed-input safety nor correct behavior across every historical revision has been established.
+
+**Static analysis only; zero new native cases.** The descriptive name and two-pointer working interface passed rollback preview, save and independent reopening, preserving original code bytes. Complete other caller bodies and child codecs remain work to do. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **979 reviewed names / 9,700 defined functions**, **2,372 mapped / 7,328 unmapped**. Whole-game completion remains unknown.

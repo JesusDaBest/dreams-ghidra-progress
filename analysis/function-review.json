@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "828 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "829 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8567,
-    "other_names": 1133,
-    "verification": "complete_inventory_matches_baseline_plus_828_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8566,
+    "other_names": 1134,
+    "verification": "complete_inventory_matches_baseline_plus_829_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23253,6 +23253,27 @@
         "Entire1645-byte/265-instruction original and331 nonempty typed C lines read; both direct caller windows. Prior LZ4 and serializer callee review checked, no new callee credit.",
         "Static analysis only; zero new native cases. Positive decompression, correct magic and no serializer error precede revision dispatch. Out-of-range revisions can return success with staged defaults.",
         "Child allocation/TLS/payload-codec/postprocessor bodies not implicitly reviewed. Malformed-data safety, exact file-format compatibility and original class/field names unresolved.",
+        "No live game/platform or Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "141446d60",
+      "original_name": "FUN_141446d60",
+      "applied_name": "SerializeImpStatePayload",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeImpStatePayload(void * serializer_working, void * payload_working)",
+      "evidence": [
+        "Entire original 5864-byte body (1182 instructions) and all 946 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire5864-byte/1182-instruction original and946 nonempty typedC read; allthree direct caller windows. SerializerRDI,payloadRSI,void; errors communicated through serializer+10. Read/write direction atserializer+b0, current/end88/90, fallbacke8, revision14. Original C++ structures remain working opaque pointers. Per-field transfers, nested scope/marker bookkeeping, revision migrations andchildcodec calls establish bidirectional serialization, notjustreading. Many childcodecs remainunreviewed; no fullformat/invariant/safety orscope-balance guarantee. Revision milestones: prefix8bytes>=6; palettebyte->vector421; compacttemporary->direct layout1178; maximum2-element block>=1188; secondarraydirect>=1222; legacy enum clamps through1397; extra fields>=1398/1401. Exact original field/enum names unresolved. Numeric order swaps70/74 anda4/a8 andlegacyfloat-length->low16 conversion paths inspected. Historical arrays convert through temporary layouts andexistinghelper141487a10; keyblockcodec atpayload41e0. Childallocations,array bounds,negativecounts,malformedinput andall revisions not validated. Scope/error/marker earlyreturns followed statically withoutclaimingglobalbalance. Static analysis only, zero new native cases. Three caller windows include reviewed LZ4decoder andtwoothercontexts; fullothercaller bodies not reviewed. No livegame/platform or MMsourceequivalence."
+      ],
+      "caveats": [
+        "Entire5864-byte/1182-instruction original and946 nonempty typed C lines read; allthree direct caller windows. Complete other caller bodies and child codecs not implicitly reviewed.",
+        "Bidirectional serializer role, revision-dependent field migrations, selected count/error gates, order swaps and marker/scope bookkeeping verified statically. Exact original field/enum/class names unresolved.",
+        "Static only; zero new native cases. Full file-format compatibility, all revision paths, malformed-data safety, child array bounds/allocations and scope balance remain unvalidated.",
         "No live game/platform or Media Molecule source equivalence claimed."
       ]
     }
