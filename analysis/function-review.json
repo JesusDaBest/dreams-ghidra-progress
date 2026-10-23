@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "829 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "833 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8566,
-    "other_names": 1134,
-    "verification": "complete_inventory_matches_baseline_plus_829_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8562,
+    "other_names": 1138,
+    "verification": "complete_inventory_matches_baseline_plus_833_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23275,6 +23275,90 @@
         "Bidirectional serializer role, revision-dependent field migrations, selected count/error gates, order swaps and marker/scope bookkeeping verified statically. Exact original field/enum/class names unresolved.",
         "Static only; zero new native cases. Full file-format compatibility, all revision paths, malformed-data safety, child array bounds/allocations and scope balance remain unvalidated.",
         "No live game/platform or Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "1414491d0",
+      "original_name": "FUN_1414491d0",
+      "applied_name": "SerializeFixedBytes32",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeFixedBytes32(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 311-byte body (76 instructions) and all 61 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers exactly32 raw bytes oneatatime in either direction, withnested scope andoptional2-byte marker/sequence bookkeeping. Doesnot reinterpret floats; loop continues32 byte operations evenwith serializererror set. Directpath80 isolated cases passed; fallbackhelper notexecuted. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Complete four original bodies (1087bytes/266instructions) and212 nonempty typed C lines read. Relevant caller paths in the fully reviewed parent/wrapper traced; no exhaustive incoming caller audit.",
+        "96 new isolated original direct-path cases passed:80 fixed32-byte scope/marker cases and16 raw12-byte transfers, both directions and full guarded buffers. No native cases forinline text/four-emote routines.",
+        "Fallbackbuffer/callback/exhaustion paths, invalid pointers andaliases untested. Inline16-byte storage isnot a validated wire-length bound; malformed-input safety unproved.",
+        "Original class/field meanings unresolved. No live game/platform or MM source match claimed."
+      ]
+    },
+    {
+      "address": "140dda8c0",
+      "original_name": "FUN_140dda8c0",
+      "applied_name": "TransferSerializerBytes12",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TransferSerializerBytes12(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 91-byte body (22 instructions) and all 22 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers exactly12 bytes in either direction through8+4-byte rawmoves when cursor+12<end andfallbacke8zero; otherwise tailcalls TransferSerializerBytes(...,12). Fourthlane untouched. No scope/marker updates. Sixteen isolated directpath cases coverboth directions,unaligned offsets andfullguards; fallbacknotexecuted. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Complete four original bodies (1087bytes/266instructions) and212 nonempty typed C lines read. Relevant caller paths in the fully reviewed parent/wrapper traced; no exhaustive incoming caller audit.",
+        "96 new isolated original direct-path cases passed:80 fixed32-byte scope/marker cases and16 raw12-byte transfers, both directions and full guarded buffers. No native cases forinline text/four-emote routines.",
+        "Fallbackbuffer/callback/exhaustion paths, invalid pointers andaliases untested. Inline16-byte storage isnot a validated wire-length bound; malformed-input safety unproved.",
+        "Original class/field meanings unresolved. No live game/platform or MM source match claimed."
+      ]
+    },
+    {
+      "address": "1414490d0",
+      "original_name": "FUN_1414490d0",
+      "applied_name": "SerializeImpEmoteKeys",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeImpEmoteKeys(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 241-byte body (61 instructions) and all 40 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Processesfour inline16-byte storage slots through141436400, thenownscope/marker/sequence. Wireformat isfour length-prefixed textkeys, not64 fixed serializedbytes. Priorpayload/defaults tiecallers to fouremote labels. Staticonly. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Complete four original bodies (1087bytes/266instructions) and212 nonempty typed C lines read. Relevant caller paths in the fully reviewed parent/wrapper traced; no exhaustive incoming caller audit.",
+        "96 new isolated original direct-path cases passed:80 fixed32-byte scope/marker cases and16 raw12-byte transfers, both directions and full guarded buffers. No native cases forinline text/four-emote routines.",
+        "Fallbackbuffer/callback/exhaustion paths, invalid pointers andaliases untested. Inline16-byte storage isnot a validated wire-length bound; malformed-input safety unproved.",
+        "Original class/field meanings unresolved. No live game/platform or MM source match claimed."
+      ]
+    },
+    {
+      "address": "141436400",
+      "original_name": "FUN_141436400",
+      "applied_name": "SerializeInlineTextKey16",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeInlineTextKey16(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 444-byte body (107 instructions) and all 89 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Readmode zeroes16-byte storage, thenreads1-byte length andthat manybytes; writemode usesresolvedstrlen, truncateslengthtoAL andtransferscharacters. No<=16 prefixboundor explicittrailingterminator established; do notinfer malformedinputsafety. Nested scope/marker/sequence bookkeeping. Staticonly. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Complete four original bodies (1087bytes/266instructions) and212 nonempty typed C lines read. Relevant caller paths in the fully reviewed parent/wrapper traced; no exhaustive incoming caller audit.",
+        "96 new isolated original direct-path cases passed:80 fixed32-byte scope/marker cases and16 raw12-byte transfers, both directions and full guarded buffers. No native cases forinline text/four-emote routines.",
+        "Fallbackbuffer/callback/exhaustion paths, invalid pointers andaliases untested. Inline16-byte storage isnot a validated wire-length bound; malformed-input safety unproved.",
+        "Original class/field meanings unresolved. No live game/platform or MM source match claimed."
       ]
     }
   ],

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2372,
-  "unmapped_total": 7328,
+  "mapped_total": 2376,
+  "unmapped_total": 7324,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60818,6 +60818,102 @@
           "support": [
             "Entire original 5864-byte body (1182 instructions) and all 946 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire5864-byte/1182-instruction original and946 nonempty typedC read; allthree direct caller windows. SerializerRDI,payloadRSI,void; errors communicated through serializer+10. Read/write direction atserializer+b0, current/end88/90, fallbacke8, revision14. Original C++ structures remain working opaque pointers. Per-field transfers, nested scope/marker bookkeeping, revision migrations andchildcodec calls establish bidirectional serialization, notjustreading. Many childcodecs remainunreviewed; no fullformat/invariant/safety orscope-balance guarantee. Revision milestones: prefix8bytes>=6; palettebyte->vector421; compacttemporary->direct layout1178; maximum2-element block>=1188; secondarraydirect>=1222; legacy enum clamps through1397; extra fields>=1398/1401. Exact original field/enum names unresolved. Numeric order swaps70/74 anda4/a8 andlegacyfloat-length->low16 conversion paths inspected. Historical arrays convert through temporary layouts andexistinghelper141487a10; keyblockcodec atpayload41e0. Childallocations,array bounds,negativecounts,malformedinput andall revisions not validated. Scope/error/marker earlyreturns followed statically withoutclaimingglobalbalance. Static analysis only, zero new native cases. Three caller windows include reviewed LZ4decoder andtwoothercontexts; fullothercaller bodies not reviewed. No livegame/platform or MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "1414491d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic raw-byte/inline-text serializer primitive used by reviewed Imp codecs; counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and selected caller dataflow; native evidence separately scoped perfunction.",
+      "code_sha256": "b88ad9787ed2a21dc07080eda7475b5c781f7dad6f946af66b0cd5543ff1242f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeFixedBytes32",
+          "support": [
+            "Entire original 311-byte body (76 instructions) and all 61 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers exactly32 raw bytes oneatatime in either direction, withnested scope andoptional2-byte marker/sequence bookkeeping. Doesnot reinterpret floats; loop continues32 byte operations evenwith serializererror set. Directpath80 isolated cases passed; fallbackhelper notexecuted. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "140dda8c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic raw-byte/inline-text serializer primitive used by reviewed Imp codecs; counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and selected caller dataflow; native evidence separately scoped perfunction.",
+      "code_sha256": "28fb616b182e1f8866fb6fd7f96ea51a132e471007bba1105abce09ce86bf358",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferSerializerBytes12",
+          "support": [
+            "Entire original 91-byte body (22 instructions) and all 22 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers exactly12 bytes in either direction through8+4-byte rawmoves when cursor+12<end andfallbacke8zero; otherwise tailcalls TransferSerializerBytes(...,12). Fourthlane untouched. No scope/marker updates. Sixteen isolated directpath cases coverboth directions,unaligned offsets andfullguards; fallbacknotexecuted. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "1414490d0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Four emote key slots from verified Imp payload dataflow.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and selected caller dataflow; native evidence separately scoped perfunction.",
+      "code_sha256": "ab7a3b1acf2f461e6e0289b692fb272ce413397da88d46b128898f7157db38b6",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeImpEmoteKeys",
+          "support": [
+            "Entire original 241-byte body (61 instructions) and all 40 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Processesfour inline16-byte storage slots through141436400, thenownscope/marker/sequence. Wireformat isfour length-prefixed textkeys, not64 fixed serializedbytes. Priorpayload/defaults tiecallers to fouremote labels. Staticonly. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "141436400": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic raw-byte/inline-text serializer primitive used by reviewed Imp codecs; counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and selected caller dataflow; native evidence separately scoped perfunction.",
+      "code_sha256": "5a3ba37698868944a43f9c76be0319e1cd432adf424cf8b65622c68c90ae217f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeInlineTextKey16",
+          "support": [
+            "Entire original 444-byte body (107 instructions) and all 89 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Readmode zeroes16-byte storage, thenreads1-byte length andthat manybytes; writemode usesresolvedstrlen, truncateslengthtoAL andtransferscharacters. No<=16 prefixboundor explicittrailingterminator established; do notinfer malformedinputsafety. Nested scope/marker/sequence bookkeeping. Staticonly. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
           ]
         }
       ]

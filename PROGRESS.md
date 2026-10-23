@@ -8721,3 +8721,19 @@ The emote-key block is transferred after revision-dependent array handling. Help
 **Static analysis only; zero new native cases.** The descriptive name and two-pointer working interface passed rollback preview, save and independent reopening, preserving original code bytes. Complete other caller bodies and child codecs remain work to do. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **979 reviewed names / 9,700 defined functions**, **2,372 mapped / 7,328 unmapped**. Whole-game completion remains unknown.
+
+
+### Raw block and inline emote-key codecs
+
+Four helpers were reviewed in full: **1,087 original bytes /266 instructions** and **212 nonempty diagnostic C lines**. Their working interfaces and descriptive names survived independent reopening with original bytes unchanged.
+
+- **SerializeFixedBytes32** transfers exactly32 raw bytes with nested scope and optional marker/sequence bookkeeping.
+- **TransferSerializerBytes12** transfers exactly12 bytes. It leaves the fourth lane of a16-byte working value untouched; the previously traced vector fields must not be treated as four serialized floats.
+- **SerializeInlineTextKey16** uses16-byte inline storage but a **one-byte length followed by characters** on the wire. The length import was independently resolved as **strlen**. No incoming length clamp to16 or complete malformed-data safety was established.
+- **SerializeImpEmoteKeys** processes four of those inline slots for the Imp emote-key block. This is variable-length wire data, not a fixed64-byte transfer. Its saved child interface also corrects the missing arguments in the earlier diagnostic C display.
+
+**96 new isolated original cases passed:**80 direct fixed32-byte cases cover read/write direction, marker flags, error state and counter boundaries;16 raw12-byte cases cover both directions, unaligned offsets and complete buffer guards. The fallback transfer/callback/exhaustion paths were not executed. The two text/emote routines are **static-only findings**, with no native-case credit. Other incoming callers were not exhaustively reviewed.
+
+The three generic primitives are counted once under shared saving/loading, and the four-emote wrapper under Imp visuals. Original class/field names remain unresolved. No live game/platform or Media Molecule source match is claimed.
+
+Totals: **983 reviewed names /9,700 defined functions**, **2,376 mapped /7,324 unmapped**. Whole-game completion remains unknown.

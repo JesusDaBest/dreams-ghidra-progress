@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 979,
+    "checked_and_applied_names": 983,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 979,
+    "verified_names": 983,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "829 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "833 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30601,6 +30601,71 @@
         "gate": "after revision-dependent array conversions",
         "storage": "emote-key block helper; child layout not implicitly recovered"
       }
+    ]
+  },
+  "imp_inline_key_codecs_checkpoint": {
+    "functions": {
+      "1414491d0": {
+        "name": "SerializeFixedBytes32",
+        "signature": "void PS4_SYSV SerializeFixedBytes32(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "b88ad9787ed2a21dc07080eda7475b5c781f7dad6f946af66b0cd5543ff1242f",
+        "size": 311,
+        "instructions": 76,
+        "created": false,
+        "c_sha256": "2121d3d79fffc855340a57d21730e630e35279e96b8859190b257e355b8ba89b",
+        "nonempty_c_lines": 68
+      },
+      "140dda8c0": {
+        "name": "TransferSerializerBytes12",
+        "signature": "void PS4_SYSV TransferSerializerBytes12(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "28fb616b182e1f8866fb6fd7f96ea51a132e471007bba1105abce09ce86bf358",
+        "size": 91,
+        "instructions": 22,
+        "created": false,
+        "c_sha256": "3b360a1da77b23401aee6d8d7b983fb1072a9d8f6d9451fc3ef229d9597fcd14",
+        "nonempty_c_lines": 30
+      },
+      "1414490d0": {
+        "name": "SerializeImpEmoteKeys",
+        "signature": "void PS4_SYSV SerializeImpEmoteKeys(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "ab7a3b1acf2f461e6e0289b692fb272ce413397da88d46b128898f7157db38b6",
+        "size": 241,
+        "instructions": 61,
+        "created": false,
+        "c_sha256": "eb5209e0328c3c5d47557975bf0a5fdad6515ad32c79b193ec6511f2b3fbfb54",
+        "nonempty_c_lines": 47
+      },
+      "141436400": {
+        "name": "SerializeInlineTextKey16",
+        "signature": "void PS4_SYSV SerializeInlineTextKey16(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "5a3ba37698868944a43f9c76be0319e1cd432adf424cf8b65622c68c90ae217f",
+        "size": 444,
+        "instructions": 107,
+        "created": false,
+        "c_sha256": "fd080974acacc1e3e16571891fb00ff65642f0f7e71f871b020a7d93ff0c91ed",
+        "nonempty_c_lines": 97
+      }
+    },
+    "new_checked_names": 4,
+    "new_definitions": 0,
+    "existing_renames": 4,
+    "original_bytes": 1087,
+    "original_instructions": 266,
+    "typed_c_nonempty_lines": 212,
+    "new_native_cases": 96,
+    "scope_limits": [
+      "Complete four original bodies (1087bytes/266instructions) and212 nonempty typed C lines read. Relevant caller paths in the fully reviewed parent/wrapper traced; no exhaustive incoming caller audit.",
+      "96 new isolated original direct-path cases passed:80 fixed32-byte scope/marker cases and16 raw12-byte transfers, both directions and full guarded buffers. No native cases forinline text/four-emote routines.",
+      "Fallbackbuffer/callback/exhaustion paths, invalid pointers andaliases untested. Inline16-byte storage isnot a validated wire-length bound; malformed-input safety unproved.",
+      "Original class/field meanings unresolved. No live game/platform or MM source match claimed."
+    ],
+    "wire_layout_refinements": [
+      "A16-byte working value transferred by140dda8c0 consumes12 wire bytes; fourth storage lane retained.",
+      "Four16-byte emote-key storage slots use one-byte lengths andcharacters, not64 fixed wire bytes."
     ]
   }
 }
