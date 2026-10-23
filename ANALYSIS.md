@@ -8759,3 +8759,28 @@ Each queued sphere supplies a center, radius and gain. The callback derives a di
 Bounded producer windows append radius-0.8 records with a bounded gain. The updater transforms queued centers in place without changing radius or gain in that loop, then clears the count after processing. These are partial producer/updater traces; their full input provenance remains unresolved. Nonfinite values, invalid counts, exact tangent/rounding cases, arbitrary nonunit normals and live-game behavior are unverified.
 
 Totals: **919 checked names across 9,677 defined functions**, **2,320 mapped and 7,357 unmapped**. These count reviewed functions, not completed game features.
+
+
+### Recipient elastic-layer delegate and callback reference
+
+`ApplyRecipientElasticChainLayer` now has a saved, independently reopened definition. Its complete seven-byte body consists of two instructions: zero the override argument, then tail-jump to `SolveRecipientSixPointElasticChain`. The incoming callback index is discarded and the shape-state pointer is preserved. The original registration label is ELASTIC_LAYER, slot 1.
+
+A reversible tail-call annotation makes Ghidra show the correct direct call rather than expanding the solver's body into this wrapper's pseudocode. The five-line result and named-preview differences were read. Independent reopening verified the annotation, name, working signature and unchanged original bytes. This is a reviewed delegate, not another solver; it adds no native-test cases. The callee's prior 432 cases already include override zero.
+
+All nine corrected registered callback addresses now resolve to descriptive definitions in the saved inventory:
+
+| Slot | Original registration label | Reviewed descriptive function |
+| --- | --- | --- |
+| 0 | BODY_2_RESTPOS_LAYER | BlendRecipientPointsTowardReferencePositions |
+| 1 | ELASTIC_LAYER | ApplyRecipientElasticChainLayer |
+| 2 | BODY_SPRINGS | ApplyBatchedRecipientSpringConstraints |
+| 3 | BODY_SQUASH_LAYER | ApplyDirectionalRecipientBodyForcesWithPlaneCorrection |
+| 4 | BODY_FORCES_LAYER | ApplyHemisphereWeightedRecipientVolumeLayers |
+| 5 | BODY_VOLUME_LAYER | CorrectRecipientShapeVolumeAroundMeanTriangleCenter |
+| 6 | BODY_LIGHT_LAYER | ConstrainRecipientAuxiliaryPointTowardScaledCenter |
+| 7 | BODY_COLLISION | ApplyRecipientScalarGridBodyCollision |
+| 8 | IMP_2_SPHERES_COLLISION | ApplyDirectionalRecipientSphereConstraints |
+
+Registration labels are original binary data; descriptive names summarize the reviewed instructions and are not recovered source names. This closes the callback-address naming gap, not the full updater, input producers or live-game validation.
+
+Totals: **920 checked names across 9,678 defined functions**, **2,321 mapped and 7,357 unmapped**. These count reviewed functions, not completed game features.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 919,
+    "checked_and_applied_names": 920,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 919,
-    "function_count": 9677,
+    "verified_names": 920,
+    "function_count": 9678,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2031,6 +2031,7 @@
       "141433a60",
       "141433a70",
       "141437c80",
+      "141438580",
       "141438590",
       "1414386b0",
       "141438710",
@@ -2052,7 +2053,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 126 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 127 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28889,6 +28890,28 @@
       "Finite fixtures with positive radii and valid point indices;nonfinite inputs,invalid counts,exact tangent/rounding cases and arbitrary nonunit point normals unresolved.",
       "Producer and transform windows are partial traces,not complete producer/updater reviews or full original game execution.",
       "Original source class and live-game behavior remain unverified."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_elastic_wrapper_checkpoint": {
+    "address": "141438580",
+    "name": "ApplyRecipientElasticChainLayer",
+    "signature": "void PS4_SYSV ApplyRecipientElasticChainLayer(void * shape_state, int selection_index)",
+    "original_sha256": "efdb652c8667f11b6552b6140d11a735f22069c95e516f3c21fbf5d4dcfb9955",
+    "native_cases": 0,
+    "size": 7,
+    "created": true,
+    "c_sha256": "f5d4dcd94b82f5cb06823d3a091df20923c7deaa7761d4a45995a46caf08fb09",
+    "nonempty_c_lines": 15,
+    "evidence": [
+      "Complete7-byte original delegate:zero ESI then direct tailjump to reviewed six-point elastic solver;RDI state pointer preserved.",
+      "Five-line pseudocode reviewed with justified CALL_RETURN metadata;all named-preview differences read. Without annotation Ghidra incorrectly expands the callee into681lines here.",
+      "Corrected exact registration links ELASTIC_LAYER to callback slot1;incoming callback index discarded and solver response_override forced0.",
+      "Independent project reopening verified descriptive name,working callback interface,tailcall annotation,unchanged original bytes and other function inventory."
+    ],
+    "limits": [
+      "No new native cases credited;callee432priororiginal-code cases include override0,but this wrapper is not another full solver review.",
+      "Original source class,full updater and live-game behavior unresolved."
     ],
     "project_saved_and_independently_reopened": true
   }

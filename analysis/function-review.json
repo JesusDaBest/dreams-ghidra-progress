@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 126 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 127 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9677,
+    "total": 9678,
     "default_fun_names": 8603,
-    "other_names": 1074,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_126_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1075,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_127_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21816,6 +21816,28 @@
         "Finite fixtures with positive radii and valid point indices;nonfinite inputs,invalid counts,exact tangent/rounding cases and arbitrary nonunit point normals unresolved.",
         "Producer and transform windows are partial traces,not complete producer/updater reviews or full original game execution.",
         "Original source class and live-game behavior remain unverified."
+      ]
+    },
+    {
+      "address": "141438580",
+      "original_name": null,
+      "applied_name": "ApplyRecipientElasticChainLayer",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyRecipientElasticChainLayer(void * shape_state, int selection_index)",
+      "evidence": [
+        "Complete7-byte original delegate:zero ESI then direct tailjump to reviewed six-point elastic solver;RDI state pointer preserved.",
+        "Five-line pseudocode reviewed with justified CALL_RETURN metadata;all named-preview differences read. Without annotation Ghidra incorrectly expands the callee into681lines here.",
+        "Corrected exact registration links ELASTIC_LAYER to callback slot1;incoming callback index discarded and solver response_override forced0.",
+        "Independent project reopening verified descriptive name,working callback interface,tailcall annotation,unchanged original bytes and other function inventory."
+      ],
+      "caveats": [
+        "No new native cases credited;callee432priororiginal-code cases include override0,but this wrapper is not another full solver review.",
+        "Original source class,full updater and live-game behavior unresolved."
       ]
     }
   ],
