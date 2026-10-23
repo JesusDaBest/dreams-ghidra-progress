@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 977,
+    "checked_and_applied_names": 978,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 977,
+    "verified_names": 978,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "827 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "828 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30493,6 +30493,34 @@
       "Static analysis only; zero new native cases. Child serialization/decompression/platform helpers not implicitly reviewed.",
       "Status3 caches the asset key even if decoder returns false; subsequent exact cached-key match returns true. This is observed control flow, not a claim of intent or a reproduced bug.",
       "Original asset-key/class/status enum names and exact file format unresolved. No live game/platform or MM source equivalence claimed."
+    ]
+  },
+  "imp_lz4_payload_decoder_checkpoint": {
+    "functions": {
+      "141449830": {
+        "name": "DecodeLz4ImpStatePayload",
+        "signature": "uchar PS4_SYSV DecodeLz4ImpStatePayload(void * destination_working, void * encoded_begin, void * encoded_end)",
+        "return_storage": "AL:1",
+        "original_sha256": "2d099203ec222ed1f70798dccd23f700285302d2c42f841e0d280a65dfcba900",
+        "size": 1645,
+        "instructions": 265,
+        "created": false,
+        "c_sha256": "14b8d9b3b80206fc7ad07a17a77d6c21aaf4e8c1db65f6c7c2d09f433fcef9bc",
+        "nonempty_c_lines": 354
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 1645,
+    "original_instructions": 265,
+    "typed_c_nonempty_lines": 331,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Entire1645-byte/265-instruction original and331 nonempty typed C lines read; both direct caller windows. Prior LZ4 and serializer callee review checked, no new callee credit.",
+      "Static analysis only; zero new native cases. Positive decompression, correct magic and no serializer error precede revision dispatch. Out-of-range revisions can return success with staged defaults.",
+      "Child allocation/TLS/payload-codec/postprocessor bodies not implicitly reviewed. Malformed-data safety, exact file-format compatibility and original class/field names unresolved.",
+      "No live game/platform or Media Molecule source equivalence claimed."
     ]
   }
 }

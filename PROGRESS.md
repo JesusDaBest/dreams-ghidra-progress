@@ -8695,3 +8695,16 @@ The wrapper rejects invalid record indices and returns true immediately for an e
 **Static analysis only; zero new native cases.** The descriptive name and working interface passed rollback preview, save and independent reopening with original code bytes unchanged. Original key/class/status enum names remain unknown. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **977 reviewed names / 9,700 defined functions**, **2,370 mapped / 7,330 unmapped**. Whole-game completion remains unknown.
+
+
+### LZ4 Imp state payload decoding
+
+**DecodeLz4ImpStatePayload** describes a complete **1,645-byte / 265-instruction** routine. All **331 nonempty diagnostic C lines** and **both direct-caller windows** were read. It builds local defaults, requests a1MiB scratch area and invokes the already-reviewed **DecodeLz4Block** with a1MiB output bound and32-bit input length. The prior LZ4/serializer reviews support their descriptive roles; no new callee execution or review credit is taken.
+
+After positive decompression, the routine checks serializer errors and integer magic **0x5f496d70**, then reads a revision. Revisions **3 through99,999 inclusive** enter the payload reader. **Outside that range, success can remain true and the staged defaults are copied instead.** A true result therefore does not by itself prove that payload fields were decoded. On success, the routine copies a **0x4220-byte** staged payload to the destination and calls a postprocessor.
+
+Both callers were traced. The larger Imp-pool caller caches its key only after a true decoder result; **LoadImpStateRecordAssetByKey** caches its key after loader status3 regardless of the decoder result. This is verified static control flow, without a claim of intent or reproduced live failure.
+
+**Static analysis only; zero new native cases.** The child allocation/TLS, payload-codec and postprocessing routines remain incompletely investigated. Malformed-data safety, full format compatibility and original class/field names are unresolved. The saved descriptive name and working interface passed independent reopening with original code bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **978 reviewed names / 9,700 defined functions**, **2,371 mapped / 7,329 unmapped**. Whole-game completion remains unknown.
