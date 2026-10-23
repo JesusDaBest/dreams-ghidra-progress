@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9699,
-  "mapped_total": 2366,
-  "unmapped_total": 7333,
+  "mapped_total": 2367,
+  "unmapped_total": 7332,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60674,6 +60674,30 @@
           "support": [
             "Entire original 799-byte body (172 instructions) and all 283 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire799-byte/172-instruction original,283 nonempty typed C lines and10 direct caller windows read. Accepts contextRDI, operation recordRSI, component scale float4XMM0, source vector float4XMM1 and32 stackbytes split provisionally into position/uniform-scale andorientation float4. Void; original aggregate types unresolved. Accepts source kind2 with null destination, or two nonnull nodes neither kind2. Maps operation byte19c30 through context270 identity table, or uses null owner/-1 key/mode2 for out-of-range mapping. Finds first active recipient with matching owner/key/mode and null secondary pointer; idle190 must be zero. Both transform inputs require all four lanes finite; source vector checks XYZ only. Ordered FLT_MAX selects working block1e0 vs230 and stored vs derived local vector. Component reciprocal XYZ failure zeros whole reciprocal vector. Writes local1c0 and transformed1a0, counter194 zero, flag198 one, state190 two. Original SIMD stores preserve float bit patterns despite integer-cast C artifacts; selfcompare XMM6 yields allones and is not another input. No original calls. 1536 isolated original cases passed: four source/destination arrangements, valid/out-of-range mapping, two states, twelve finite/nonfinite scenarios, four sentinel paths and two component scales. Only identity quaternion/simple exact arithmetic; signed-zero equivalence, NaN payload unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive global lists, aliases, concurrency, invalid pointers and live game untested. Exact original class/selector/state meanings and MM source equivalence unresolved."
+          ]
+        }
+      ]
+    },
+    "14147bfe0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Four emote keys in payload defaults and original caller Imp asset names connect this64-record pool to Imp state. Counted once under Imp visuals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, two caller windows, allocator/import trace and original normalization-path execution.",
+      "code_sha256": "84cb885201a0d5c386f7f1580bd1a0dced08d91852ce99b8ea09c061f3ebb672",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "NormalizeImpStatePoolTo64Records",
+          "support": [
+            "Entire original 995-byte body (162 instructions) and all 169 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. No incoming arguments consumed and no meaningful return. Globals148a7ba50/58/60 are pool pointer/count/capacity, stride4270. If capacity<64, requests max(64,capacity+64) records through allocation category31; zero/null failure returns without replacing globals. Reads and preserves existing records through header-copy/initializer/payload memcpy, then releases old block through resolved mspace imports. When count<64, clears each added record header and invokes payload initializer141452240 atrecord+50. When count>=64 no added record initialization occurs. Final count is64 even for prior65, so function normalizes rather than simply ensures minimum capacity. No blanket clearing of retained record state. Payload initializer and inline migration defaults reference emote happy/sad/angry/confused, encoded by original recursive140114920 into RAX/RDX. Caller14147c560 references MM_dreamqueen/MM_impygold/MM_impysilver/101_snowflake/108_treefrog, supporting descriptive Imp-state attribution; original class/field names unresolved. Entire995-byte/162-instruction body and full typedC read; both direct caller windows and full397-byte14147c3d0 caller read. Support originals141452240(536),140166780(312),140114920(100) read. Imports14160ae20 memcpy,1416087a0 sceLibcMspaceMallocUsableSize,141608730 sceLibcMspaceFree independently resolved. 12 isolated original cases passed for capacity64, priorcounts0/1/31/63/64/65 andtwo fillpatterns; actual original initializer and emote encoder executed. Full-buffer oracle checks unchanged records/gaps/guards, default writes and final globals. Firstfixture omitted called initializer constantaddresses; correctedafter resolving actual RIPtargets, failure retained. Growth/allocation/copy/free/failure paths remain static-only. No live game/platform/MMsource equivalence."
           ]
         }
       ]

@@ -9212,3 +9212,16 @@ The numeric checks use an identity quaternion and simple exact arithmetic, allow
 The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **973 reviewed names / 9,699 defined functions**, **2,366 mapped / 7,333 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp state pool normalization
+
+**NormalizeImpStatePoolTo64Records** describes a complete **995-byte / 162-instruction** routine. All **169 nonempty diagnostic C lines**, both direct-caller windows and a complete **397-byte caller** were read. The allocation wrapper, payload initializer and recursive emote encoder were also read. Four default emote names and caller references to Imp asset names support mapping this pool under **Imp visuals**. Original class and field names remain unresolved.
+
+The routine uses **0x4270-byte records**. It grows storage if capacity is below64, preserves existing records, initializes newly added record headers and payloads, then sets the record count to **64**. It also reduces a larger count to64; it does not erase all existing state.
+
+**12 isolated original cases passed** with capacity64 and prior counts0,1,31,63,64,65 across two nonzero fill patterns. The actual original payload initializer and recursive emote encoder executed. An independent full-buffer oracle checked defaults, retained records, untouched gaps, guards and final globals. The first fixture omitted constant blocks used by the called initializer; actual RIP-relative targets were resolved, the fixture corrected and the failure retained.
+
+The **allocation, growth, migration, copy, free and failure branches are static-only findings**. They were not exercised in these cases. The saved descriptive name and no-argument working interface passed rollback preview, save and independent reopening with original code bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **974 reviewed names / 9,699 defined functions**, **2,367 mapped / 7,332 unmapped**. Whole-game completion remains unknown.

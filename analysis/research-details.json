@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 973,
+    "checked_and_applied_names": 974,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 973,
+    "verified_names": 974,
     "function_count": 9699,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2074,7 +2074,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "824 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "825 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30372,6 +30372,34 @@
       "1536 isolated original-byte cases cover identity-quaternion/simple exact transforms, stored/derived/NaN sentinel paths, two component scales, all incoming transform lane finite guards, sourceXYZ guards, idle/blocked state, four source/destination kind arrangements and valid/out-of-range identity mapping.",
       "Signed-zero equivalence allowed; NaN payload bits unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive lists, aliases, concurrency, invalid pointers and live game behavior untested.",
       "Original aggregate/class/state meanings unresolved. Direct supplied operation record and source vector; no property-selector search. No MM source equivalence claimed."
+    ]
+  },
+  "imp_state_pool_normalization_checkpoint": {
+    "functions": {
+      "14147bfe0": {
+        "name": "NormalizeImpStatePoolTo64Records",
+        "signature": "void PS4_SYSV NormalizeImpStatePoolTo64Records(void)",
+        "return_storage": "<VOID>",
+        "original_sha256": "84cb885201a0d5c386f7f1580bd1a0dced08d91852ce99b8ea09c061f3ebb672",
+        "size": 995,
+        "instructions": 162,
+        "created": false,
+        "c_sha256": "140b434e443f6db19b63fd0b433886ab276441b6a855b4fc5d6e6e1f7ab25b1c",
+        "nonempty_c_lines": 195
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 995,
+    "original_instructions": 162,
+    "typed_c_nonempty_lines": 169,
+    "new_native_cases": 12,
+    "scope_limits": [
+      "Complete995-byte/162-instruction original,169 nonempty typed C lines, both direct caller windows and397-byte caller body read. Allocation wrapper, payload initializer and recursive emote packer original bodies also read.",
+      "12 isolated original-byte cases passed with capacity64, prior counts0/1/31/63/64/65 andtwo nonzero fill patterns. Actual original initializer and emote packer executed, full pool/guards compared against independent default-store oracle.",
+      "First fixture omitted the called initializer constant blocks; resolved actual RIP targets and corrected fixture, retaining failure evidence. Growth/allocation/migration/copy/free/failure branches statically traced but unexecuted.",
+      "Exact original class/field names unresolved. Imp attribution supported by emote strings and caller Imp asset names. No live game/platform or MM source match claimed."
     ]
   }
 }

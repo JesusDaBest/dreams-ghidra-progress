@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "824 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "825 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9699,
-    "default_fun_names": 8571,
-    "other_names": 1128,
-    "verification": "complete_inventory_matches_baseline_plus_824_renames_and_148_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8570,
+    "other_names": 1129,
+    "verification": "complete_inventory_matches_baseline_plus_825_renames_and_148_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23149,6 +23149,27 @@
         "Original aggregate/class/state meanings unresolved. Direct supplied operation record and source vector; no property-selector search. No MM source equivalence claimed."
       ],
       "created_function": true
+    },
+    {
+      "address": "14147bfe0",
+      "original_name": "FUN_14147bfe0",
+      "applied_name": "NormalizeImpStatePoolTo64Records",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV NormalizeImpStatePoolTo64Records(void)",
+      "evidence": [
+        "Entire original 995-byte body (162 instructions) and all 169 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. No incoming arguments consumed and no meaningful return. Globals148a7ba50/58/60 are pool pointer/count/capacity, stride4270. If capacity<64, requests max(64,capacity+64) records through allocation category31; zero/null failure returns without replacing globals. Reads and preserves existing records through header-copy/initializer/payload memcpy, then releases old block through resolved mspace imports. When count<64, clears each added record header and invokes payload initializer141452240 atrecord+50. When count>=64 no added record initialization occurs. Final count is64 even for prior65, so function normalizes rather than simply ensures minimum capacity. No blanket clearing of retained record state. Payload initializer and inline migration defaults reference emote happy/sad/angry/confused, encoded by original recursive140114920 into RAX/RDX. Caller14147c560 references MM_dreamqueen/MM_impygold/MM_impysilver/101_snowflake/108_treefrog, supporting descriptive Imp-state attribution; original class/field names unresolved. Entire995-byte/162-instruction body and full typedC read; both direct caller windows and full397-byte14147c3d0 caller read. Support originals141452240(536),140166780(312),140114920(100) read. Imports14160ae20 memcpy,1416087a0 sceLibcMspaceMallocUsableSize,141608730 sceLibcMspaceFree independently resolved. 12 isolated original cases passed for capacity64, priorcounts0/1/31/63/64/65 andtwo fillpatterns; actual original initializer and emote encoder executed. Full-buffer oracle checks unchanged records/gaps/guards, default writes and final globals. Firstfixture omitted called initializer constantaddresses; correctedafter resolving actual RIPtargets, failure retained. Growth/allocation/copy/free/failure paths remain static-only. No live game/platform/MMsource equivalence."
+      ],
+      "caveats": [
+        "Complete995-byte/162-instruction original,169 nonempty typed C lines, both direct caller windows and397-byte caller body read. Allocation wrapper, payload initializer and recursive emote packer original bodies also read.",
+        "12 isolated original-byte cases passed with capacity64, prior counts0/1/31/63/64/65 andtwo nonzero fill patterns. Actual original initializer and emote packer executed, full pool/guards compared against independent default-store oracle.",
+        "First fixture omitted the called initializer constant blocks; resolved actual RIP targets and corrected fixture, retaining failure evidence. Growth/allocation/migration/copy/free/failure branches statically traced but unexecuted.",
+        "Exact original class/field names unresolved. Imp attribution supported by emote strings and caller Imp asset names. No live game/platform or MM source match claimed."
+      ]
     }
   ],
   "deferred": [
