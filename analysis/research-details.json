@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1003,
+    "checked_and_applied_names": 1005,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1003,
-    "function_count": 9701,
+    "verified_names": 1005,
+    "function_count": 9703,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2054,6 +2054,8 @@
       "141444110",
       "141444950",
       "141445f70",
+      "14144bb40",
+      "14144bc10",
       "14144cf10",
       "14144d710",
       "14144dad0",
@@ -2076,7 +2078,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "852 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "852 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31065,5 +31067,44 @@
     ],
     "name_count_unchanged": 1003,
     "full_game_complete": false
+  },
+  "imp_cache_lookup_remove_checkpoint": {
+    "functions": {
+      "14144bb40": {
+        "name": "FindCachedImpStateByKey",
+        "signature": "void * PS4_SYSV FindCachedImpStateByKey(ulonglong key_low_working, ulonglong key_high_working)",
+        "return_storage": "RAX:8",
+        "original_sha256": "0afefac4db99e4f0f1dadbf42234dfcb647c072cc754c90fb0f723273adc7a32",
+        "size": 204,
+        "instructions": 52,
+        "created": true,
+        "c_sha256": "05aecd989a0af42e096f815d7189a581e7cd8ad048924823c26f7176363b083e",
+        "nonempty_c_lines": 38
+      },
+      "14144bc10": {
+        "name": "RemoveCachedImpStateByKey",
+        "signature": "uchar PS4_SYSV RemoveCachedImpStateByKey(ulonglong key_low_working, ulonglong key_high_working)",
+        "return_storage": "AL:1",
+        "original_sha256": "10249272d671578af6fd0d1f695806479916cf5c3a62d4f4ab5ecffe157683c1",
+        "size": 903,
+        "instructions": 158,
+        "created": true,
+        "c_sha256": "752e7c296fdf7193e6fc2bd7d91bd508051e243bf07b9263f4453be6e3e6f65c",
+        "nonempty_c_lines": 139
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 2,
+    "existing_renames": 0,
+    "original_bytes": 1107,
+    "original_instructions": 210,
+    "typed_c_nonempty_lines": 149,
+    "new_native_cases": 216,
+    "scope_limits": [
+      "Both complete original bodies (1107 bytes /210 instructions) and149 nonempty typed C lines read. Callback descriptor references from selected141449ec0 windows traced; enclosing caller not fully reviewed.",
+      "216 isolated original lookup cases passed with controlled mutex/threadID substitutes,initializedguard,count0..8,duplicates andhalf-key mismatch queries. Exact borrowed payloadpointer andwholefixture checked.",
+      "Removal/compaction and lazyguard initialization are static-only. No real mutex/platform implementation,pointer-lifetime guarantee,invalidcounts,aliases,concurrency orlivegame validation.",
+      "No original class/source or Media Molecule equivalence claimed."
+    ]
   }
 }

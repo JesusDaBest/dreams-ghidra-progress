@@ -8893,3 +8893,19 @@ Only the imported strlen boundary was replaced with a declared local substitute;
 **Limits:** selected revision 1401 success path only, initial error zero, ample buffer, null secondary context, valid counts and bounded text. Legacy revisions, exhausted buffers/fallbacks, malformed counts/text, allocation/failure, callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested. Original field meanings and complete format compatibility remain unresolved.
 
 The front-page prose counts were stale despite the current generated graph. Its review/mapping/cache summary now comes from the same authoritative status data on every generation, preventing those separate counts from drifting again.
+
+
+### Imp cache lookup and removal
+
+Two previously undefined routines were read in full and defined with evidence-supported working interfaces: **1,107 original bytes /210 instructions** and **149 nonempty diagnostic C lines**. Their names and signatures survived independent reopening with original code unchanged.
+
+- **FindCachedImpStateByKey** finds the first exact match for two 64-bit key words in 0x4230-byte cache records, returning a borrowed pointer 16 bytes into the record or null. Each payload occupies 0x4220 bytes.
+- **RemoveCachedImpStateByKey** finds the first match, shifts later records down, decrements count and returns a byte result. Compaction copies keys and payloads; the last inactive slot is left uncleared.
+
+Both use the same mutex and lazy count initialization. The lookup releases the mutex before returning its pointer. A later removal can therefore change which payload occupies that address; actual pointer lifetime and concurrent-use correctness remain unverified. Selected original references in an unreviewed enclosing routine place these addresses in callback descriptors; no direct lookup calls were found in the indexed EH scan. No full enclosing-function review credit is claimed.
+
+**216 isolated original lookup cases passed**, with initialized count 0..8, two byte patterns, duplicate-first-key variants and first/middle/last/missing/half-key-mismatch queries. Exact pointer results and the whole synthetic global fixture were checked. Mutex lock/unlock and thread ID used declared controlled substitutes, so this proves lookup behavior rather than real synchronization.
+
+Removal/compaction, lazy guard initialization and its callback registration remain **static-only**. Mutex/thread ID/guard/memcpy imports were independently resolved, but linked platform implementations were not executed. Invalid counts, aliases, concurrency, pointer lifetime and live-game behavior remain untested. Original class identity and Media Molecule source equivalence are not claimed.
+
+Both helpers are counted once under Imp visuals. Totals: **1,005 reviewed names /9,703 defined functions**, **2,398 mapped /7,305 unmapped**. Whole-game completion remains unknown.

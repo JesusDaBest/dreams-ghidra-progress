@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "852 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "852 existing-function renames, 152 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9701,
+    "total": 9703,
     "default_fun_names": 8543,
-    "other_names": 1158,
-    "verification": "complete_inventory_matches_baseline_plus_852_renames_and_150_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1160,
+    "verification": "complete_inventory_matches_baseline_plus_852_renames_and_152_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23781,6 +23781,50 @@
         "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfer widths do not establish original vector/field/class names.",
         "No Media Molecule source equivalence claimed."
       ]
+    },
+    {
+      "address": "14144bb40",
+      "original_name": null,
+      "applied_name": "FindCachedImpStateByKey",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void * PS4_SYSV FindCachedImpStateByKey(ulonglong key_low_working, ulonglong key_high_working)",
+      "evidence": [
+        "Entire original 204-byte body (52 instructions) and all 25 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Searches initialized global cache forfirst exact128-bit key match,recordstride4230,payloadat+10;returns payloadpointer ornull. Locks148a546f8 andstores threadIDlow32 at148a54708,performs lazyguard countinitialization ifneeded,then unlocks before returning borrowed pointer.216 isolated original cases passed forinitialized count0..8,duplicates,half-key mismatches andwholefixture preservation withcontrolled mutex/thread-ID substitutes. Lazyguard initialization andreal synchronization/pointerlifetime untested. SysV RDI/RSI keywords byvalue,notpointers. Fulloriginal andtypedC read. Recorded callback descriptors from141449ec0 reference bothfunctions; enclosing registrationbody notfullyreviewed. Mutex/threadID/guard/memcpy imports independentlyresolved. Allindirectcallers,aliases,invalidcounts,concurrency andlivegame unverified. Originalclassidentity andMMsourceequivalence unclaimed."
+      ],
+      "caveats": [
+        "Both complete original bodies (1107 bytes /210 instructions) and149 nonempty typed C lines read. Callback descriptor references from selected141449ec0 windows traced; enclosing caller not fully reviewed.",
+        "216 isolated original lookup cases passed with controlled mutex/threadID substitutes,initializedguard,count0..8,duplicates andhalf-key mismatch queries. Exact borrowed payloadpointer andwholefixture checked.",
+        "Removal/compaction and lazyguard initialization are static-only. No real mutex/platform implementation,pointer-lifetime guarantee,invalidcounts,aliases,concurrency orlivegame validation.",
+        "No original class/source or Media Molecule equivalence claimed."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14144bc10",
+      "original_name": null,
+      "applied_name": "RemoveCachedImpStateByKey",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV RemoveCachedImpStateByKey(ulonglong key_low_working, ulonglong key_high_working)",
+      "evidence": [
+        "Entire original 903-byte body (158 instructions) and all 124 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Searches same128-bit cache key andremovesfirstmatch. Laterrecords shift down:key16 bytes copied,inline payloaddefaults andfour emote-keypack calls executed,then4220-byte nextpayload copied. Countdecremented once;returns AL1 onmatch,AL0 onmiss. Lastinactive slotnotcleared. Constant arithmetic inversely divides4230-byte offset tocompute remainingrecords; modularidentity (423*820e0551772d3475)==-1 mod2^64 independentlychecked. Locks/unlocks same mutex; lazyguard initialized count. Entire original andtypedC read;static-only,including compaction/memcpy/packerpaths. No native removal orallocator/synchronization execution. SysV RDI/RSI keywords byvalue,notpointers. Fulloriginal andtypedC read. Recorded callback descriptors from141449ec0 reference bothfunctions; enclosing registrationbody notfullyreviewed. Mutex/threadID/guard/memcpy imports independentlyresolved. Allindirectcallers,aliases,invalidcounts,concurrency andlivegame unverified. Originalclassidentity andMMsourceequivalence unclaimed."
+      ],
+      "caveats": [
+        "Both complete original bodies (1107 bytes /210 instructions) and149 nonempty typed C lines read. Callback descriptor references from selected141449ec0 windows traced; enclosing caller not fully reviewed.",
+        "216 isolated original lookup cases passed with controlled mutex/threadID substitutes,initializedguard,count0..8,duplicates andhalf-key mismatch queries. Exact borrowed payloadpointer andwholefixture checked.",
+        "Removal/compaction and lazyguard initialization are static-only. No real mutex/platform implementation,pointer-lifetime guarantee,invalidcounts,aliases,concurrency orlivegame validation.",
+        "No original class/source or Media Molecule equivalence claimed."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [

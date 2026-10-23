@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9701,
-  "mapped_total": 2396,
+  "inventory_total": 9703,
+  "mapped_total": 2398,
   "unmapped_total": 7305,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -61394,6 +61394,54 @@
           "support": [
             "Entire original 391-byte body (99 instructions) and all 73 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Transfers12 raw bytes atstorage0 and12 atstorage+16 into24 contiguous wire bytes. Four-byte gaps at+12 and+28 untouched; no numeric conversion. Distinct from SerializeTwoBlocks12, which uses12-byte storage stride. Nested scope andoptionalmarker/sequence. Preseterror doesnotstop both direct transfers; suppressesmarker/sequence. Reads skip markerwithoutcompare. SysV RDI serializer,RSI storage,void. Whole391-byte original andtypedC read; selected reviewed Imp parent legacy temporary paths traced, notallincomingcallers.80 isolated original direct-path cases passed:directions,marker/error,sequenceboundaries,two patterns,wholecontext/buffers/guards includinggaps. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Original vector/field identity unresolved; noMMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "14144bb40": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Cache records contain128-bit key plus4220-byte Imp payload with matching defaults/emote-key layout; callback descriptor links lookup/removal pair.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review.216 native lookup cases withcontrolled mutex/threadID imports;removal static-only.",
+      "code_sha256": "0afefac4db99e4f0f1dadbf42234dfcb647c072cc754c90fb0f723273adc7a32",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "FindCachedImpStateByKey",
+          "support": [
+            "Entire original 204-byte body (52 instructions) and all 25 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Searches initialized global cache forfirst exact128-bit key match,recordstride4230,payloadat+10;returns payloadpointer ornull. Locks148a546f8 andstores threadIDlow32 at148a54708,performs lazyguard countinitialization ifneeded,then unlocks before returning borrowed pointer.216 isolated original cases passed forinitialized count0..8,duplicates,half-key mismatches andwholefixture preservation withcontrolled mutex/thread-ID substitutes. Lazyguard initialization andreal synchronization/pointerlifetime untested. SysV RDI/RSI keywords byvalue,notpointers. Fulloriginal andtypedC read. Recorded callback descriptors from141449ec0 reference bothfunctions; enclosing registrationbody notfullyreviewed. Mutex/threadID/guard/memcpy imports independentlyresolved. Allindirectcallers,aliases,invalidcounts,concurrency andlivegame unverified. Originalclassidentity andMMsourceequivalence unclaimed."
+          ]
+        }
+      ]
+    },
+    "14144bc10": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Cache records contain128-bit key plus4220-byte Imp payload with matching defaults/emote-key layout; callback descriptor links lookup/removal pair.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review.216 native lookup cases withcontrolled mutex/threadID imports;removal static-only.",
+      "code_sha256": "10249272d671578af6fd0d1f695806479916cf5c3a62d4f4ab5ecffe157683c1",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "RemoveCachedImpStateByKey",
+          "support": [
+            "Entire original 903-byte body (158 instructions) and all 124 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Searches same128-bit cache key andremovesfirstmatch. Laterrecords shift down:key16 bytes copied,inline payloaddefaults andfour emote-keypack calls executed,then4220-byte nextpayload copied. Countdecremented once;returns AL1 onmatch,AL0 onmiss. Lastinactive slotnotcleared. Constant arithmetic inversely divides4230-byte offset tocompute remainingrecords; modularidentity (423*820e0551772d3475)==-1 mod2^64 independentlychecked. Locks/unlocks same mutex; lazyguard initialized count. Entire original andtypedC read;static-only,including compaction/memcpy/packerpaths. No native removal orallocator/synchronization execution. SysV RDI/RSI keywords byvalue,notpointers. Fulloriginal andtypedC read. Recorded callback descriptors from141449ec0 reference bothfunctions; enclosing registrationbody notfullyreviewed. Mutex/threadID/guard/memcpy imports independentlyresolved. Allindirectcallers,aliases,invalidcounts,concurrency andlivegame unverified. Originalclassidentity andMMsourceequivalence unclaimed."
           ]
         }
       ]
