@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 133 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 135 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9684,
+    "total": 9686,
     "default_fun_names": 8603,
-    "other_names": 1081,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_133_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1083,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_135_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21879,13 +21879,14 @@
         "Full 5663-byte original body (1142 instructions), complete executable typed C and two direct caller interfaces reviewed.",
         "Builds a mode-dependent cubic-Hermite path and geometric metrics, optionally trims the path against an endpoint disc, reserves particle ranges and runs or queues four original-labelled stick/body jobs.",
         "96 isolated original-code sampler cases passed against a scalar float32 model, including repeated points and the 200-point cap; observed maximum numeric error was zero.",
-        "Saved descriptive name, two-register working interface and two proven external tailcall annotations independently reopened; all original body bytes and other function inventory entries unchanged."
+        "Saved descriptive name, two-register working interface and two proven external tailcall annotations independently reopened; all original body bytes and other function inventory entries unchanged.",
+        "Separate producer RebuildRecipientShapeDefinitionsAndProjectionData supplies this coordinator: Builds 16 circle directions, selects a mesh triangle per direction and stores three compact vertex IDs plus barycentric weights for the path coordinator."
       ],
       "caveats": [
         "Only the 416-byte sampler was executed in synthetic fixtures; control construction, clipping, particle jobs and complete function were not run live.",
         "Generated-length total remains pre-clipping; it can differ from the final retained sample length. Zero-length fallback skips the stick path-length branch, while body dispatch has separate gates.",
         "Disabled, unsupported and failed reservation paths can preserve old fields. Referenced descriptor reservation words are mutated; eligible stick allocation failure or a null secondary-stick result exits before body dispatch.",
-        "Original class/source identity, mode names, runtime prefix-table initializer, indirect callers and full job behavior remain unresolved. Unordered floating-point gate behavior requires original instruction predicates, not just the decompiled comparisons. No exact Media Molecule source match or whole-game completion claim."
+        "The prefix-table producer is now traced statically, but exact runtime prefix records and weights remain unverified. Original class/source identity, mode names, indirect callers, runtime scheduler and rendering behavior remain unresolved. Unordered floating-point gates require original instruction predicates. No exact Media Molecule source match or whole-game completion claim."
       ]
     },
     {
@@ -21904,13 +21905,14 @@
         "Descriptive name and minimal register interface saved and independently reopened; original bytes unchanged.",
         "Reviewed all 3947 bytes / 725 instructions and the original BodyParticlesJob registration.",
         "Builds 136-byte-stride records from indexed surface triangles with centroid or seeded barycentric placement, orientation, color-like values, packed fields and path association.",
-        "Context+1030 is an inline weight array. Capacity stops before a triangle batch; owner consumed count increases and its reservation clears."
+        "Context+1030 is an inline weight array. Capacity stops before a triangle batch; owner consumed count increases and its reservation clears.",
+        "Separate producer RebuildRecipientShapeDefinitionsAndProjectionData supplies this builder: Normal topology construction starts at 12 vertices / 20 triangles and subdivides twice to 162 vertices / 320 triangles. Published triangle indices are remapped to compact output IDs in first-encounter order."
       ],
       "caveats": [
         "Analyst descriptions, not recovered original source names. No exact developer-stream match.",
         "No whole-game, real scheduler or renderer validation; record-consumer semantics remain incomplete.",
         "Static review only; this body was not executed in native fixtures.",
-        "Runtime triangle-table initialization and valid array bounds remain unresolved. Positive finite density produces one candidate per triangle; its phase controls placement.",
+        "Triangle-table producer and compact-index remapping are now traced statically; actual runtime values and valid array bounds remain unverified. Positive finite density produces one candidate per triangle; its phase controls placement.",
         "Path association stops at the first distance increase rather than searching for the global nearest segment. Degenerate axes and nonfinite inputs are not robustly handled."
       ]
     },
@@ -21991,6 +21993,65 @@
         "Static review only; this helper was not executed in native fixtures.",
         "Output is not a conventional homogeneous 4x4 matrix: some padding lanes retain computed values.",
         "Angle reduction uses signed remainder after 32-bit wrapping; normalization rejects infinity but does not generally reject NaN. Exact numerical results depend on original libm and float operation order."
+      ]
+    },
+    {
+      "address": "141442600",
+      "original_name": null,
+      "applied_name": "BuildRecipientStickParticleRecords",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildRecipientStickParticleRecords(void * context, int seed_component)",
+      "evidence": [
+        "Complete original instruction body and typed decompiler output read; original job label and coordinator interface traced.",
+        "Descriptive name and consumed-input register interface saved and independently reopened; original bytes unchanged.",
+        "Reviewed all 6077 bytes / 1117 instructions and the StickParticlesJob registration.",
+        "Primary output subdivides path segments; a separate secondary output emits batches of 16 records with seeded placement, color modulation and optional integer-angle rotations.",
+        "Each record occupies 136 bytes; offsets 30 through 5F remain untouched. The two ranges update separate consumed/reservation counters.",
+        "Incoming ESI contributes low32 bits to the random seed. The synchronous caller passes zero; actual queued-callback ESI meaning remains unresolved.",
+        "Primary third frame vector is cross(side,tangent). A later XMM8 overwrite resolves the earlier apparent lane mismatch.",
+        "Separate original initializer review identifies paired one-degree sine/cosine lookup tables used by the secondary pass."
+      ],
+      "caveats": [
+        "Names describe reviewed behavior; original source names, exact class identity and scheduler callback typedef remain unknown.",
+        "No whole-game, real scheduler or rendering validation. No exact developer-stream match.",
+        "Static review only; this function was not executed in native fixtures.",
+        "Secondary quaternion construction multiplies direction by an original zero vector; ordinary finite inputs produce identity, not an assumed tangent-oriented frame.",
+        "Position normalization, division denominators, path counts, valid physical capacities and reservation concurrency depend on unproven upstream invariants.",
+        "Actual table contents and downstream record-consumer behavior were not observed in a running game."
+      ]
+    },
+    {
+      "address": "141444110",
+      "original_name": null,
+      "applied_name": "BuildRecipientAnimatedStickParticleRecords",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildRecipientAnimatedStickParticleRecords(void * context)",
+      "evidence": [
+        "Complete original instruction body and typed decompiler output read; original job label and coordinator interface traced.",
+        "Descriptive name and consumed-input register interface saved and independently reopened; original bytes unchanged.",
+        "Reviewed all 2102 bytes / 433 instructions and the AnimStickParticlesJob registration.",
+        "Two passes share one output buffer: adjacent pairs for the prefix, then subdivided tail segments beginning at point n. The join segment n-1 is omitted.",
+        "119 isolated whole-original-body cases passed, comparing 597 records: 192 prefix records and 405 tail records, with maximum absolute float error below 3.06e-7.",
+        "Checks covered ordinary and all three fallback axes in both passes, packing, untouched bytes, owner count wrap, tail capacity and ignored ESI.",
+        "Only the primary consumed count increments and its reservation clears; secondary range and counters are not used."
+      ],
+      "caveats": [
+        "Names describe reviewed behavior; original source names, exact class identity and scheduler callback typedef remain unknown.",
+        "No whole-game, real scheduler or rendering validation. No exact developer-stream match.",
+        "First pass has no declared-capacity check. Tests of this behavior used ample physically valid guarded storage, never an invalid write.",
+        "The 360 table inputs used by the fixture were explicit arbitrary synthetic values; the original initializer and PS4 libm were not executed.",
+        "Finite coordinates, nonzero output-position normalization and valid point/table indices only. Negative indices, NaN/Inf and integer conversion overflow remain untested.",
+        "Skipping the join is an observed behavior, not a claim that it is a game defect."
       ]
     }
   ],

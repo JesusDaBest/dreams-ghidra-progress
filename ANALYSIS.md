@@ -8850,3 +8850,25 @@ The range helper performs **no allocation**. Its ordered-positive XYZ rejection 
 Runtime triangle-table initialization, actual pool capacity and lifetime, record consumers, full stick-job behavior and real rendering remain unresolved. The two fixture suites do not validate the whole updater, scheduler or game. No exact developer-source match is claimed.
 
 Totals: **926 checked names across 9,684 defined functions**, with **2,327 mapped and 7,357 unmapped**. This checkpoint adds four reviewed functions; it does not establish a percentage of the entire game reconstructed.
+
+
+### Stick particle builders and lookup-table origins
+
+Two more functions now have descriptive names and working register interfaces, saved and verified after reopening the project. Their review covers **8,179 original bytes / 1,550 instructions**, complete typed decompiler output and the coordinator's direct calls and job registrations.
+
+| Function | Established behavior | Verification in this checkpoint |
+| --- | --- | --- |
+| `BuildRecipientStickParticleRecords` | Subdivides path segments into a primary record range, then emits seeded batches of 16 into a separate secondary range. | Complete static body and caller review; no native execution of this function. |
+| `BuildRecipientAnimatedStickParticleRecords` | Writes prefix pairs and subdivided tail segments into one shared range, with table-driven width, geometry, packed fields and owner bookkeeping. | **119 isolated whole-body cases / 597 records**, maximum absolute float error below **3.06e-7**. |
+
+These functions do not use interchangeable interfaces or buffers. The nonanimated builder consumes an extra seed input, writes two ranges and updates their counters separately. The animated builder consumes only the context, writes one range and finalizes only its primary reservation.
+
+The animated builder's tail begins at point `n`, leaving the join segment `n-1` out of both passes. Its prefix pass writes `n-1` records without checking declared capacity. The tests used physically ample guarded storage when checking that behavior. Both passes were checked with ordinary frames and all three fallback axes, exact packing, untouched bytes and owner bookkeeping. Lookup values were **explicit synthetic inputs**; the tests did not execute the original table initializer or validate live rendering.
+
+The lookup origins are clearer now. An original startup block initializes paired **361-entry sine and cosine tables**: 360 values from one-degree `sincosf` calls, followed by explicit endpoint stores. Intermediate floating-point bits still depend on the original library. Separately, the already-reviewed shape loader builds the normal **20 -> 80 -> 320 triangle** topology and remaps triangle indices into compact output IDs in first-encounter order. Treating subdivision vertex IDs as the published table would be incorrect. It also prepares the coordinator's 16 prefix records by selecting mesh triangles for circle directions and storing vertex IDs with barycentric weights. Exact prefix records and weights remain unverified. These are static producer traces, not captures of a running game's tables.
+
+The nonanimated primary frame uses `cross(side, tangent)`; a register overwrite before its inner loop resolves an apparent mismatch. Its secondary quaternion construction uses an original all-zero multiplier and yields identity for ordinary finite inputs. A reconstruction must preserve these actual operations rather than substitute a conventional frame formula.
+
+Input bounds, zero-position normalization, physical pool capacity, scheduler behavior and record consumers still need investigation. No exact original source-name or Media Molecule livestream match is claimed. The table traces add evidence but no extra checked-function credit.
+
+Totals: **928 checked names across 9,686 defined functions**, with **2,329 mapped and 7,357 unmapped**. This is evidence-backed function review progress, not a claim that the whole game is reconstructed.

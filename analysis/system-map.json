@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9684,
-  "mapped_total": 2327,
+  "inventory_total": 9686,
+  "mapped_total": 2329,
   "unmapped_total": 7357,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -59511,6 +59511,65 @@
             "Reviewed all 1310 bytes / 270 instructions and four direct call sites in body and stick jobs.",
             "Consumes three signed integer degree angles and writes 64 bytes. Quaternion composition is N(N(qX*qY)*qZ), followed by padded rotation columns.",
             "Original import bindings and caller registers support sincosf and the infinity predicate; shared sincosf prototype corrected without extra name credit."
+          ]
+        }
+      ]
+    },
+    "141442600": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original direct calls and job registrations connect this builder to the reviewed recipient shape-output coordinator.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original body and typed C reviewed, coordinator interface traced and saved definition independently reopened; runtime verification scope recorded per function.",
+      "code_sha256": "b28361df4545b1941e9b42a5b223a6208e5de85ee6259b6bbaea31c78b078fe7",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildRecipientStickParticleRecords",
+          "support": [
+            "Complete original instruction body and typed decompiler output read; original job label and coordinator interface traced.",
+            "Descriptive name and consumed-input register interface saved and independently reopened; original bytes unchanged.",
+            "Reviewed all 6077 bytes / 1117 instructions and the StickParticlesJob registration.",
+            "Primary output subdivides path segments; a separate secondary output emits batches of 16 records with seeded placement, color modulation and optional integer-angle rotations.",
+            "Each record occupies 136 bytes; offsets 30 through 5F remain untouched. The two ranges update separate consumed/reservation counters.",
+            "Incoming ESI contributes low32 bits to the random seed. The synchronous caller passes zero; actual queued-callback ESI meaning remains unresolved.",
+            "Primary third frame vector is cross(side,tangent). A later XMM8 overwrite resolves the earlier apparent lane mismatch.",
+            "Separate original initializer review identifies paired one-degree sine/cosine lookup tables used by the secondary pass."
+          ]
+        }
+      ]
+    },
+    "141444110": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original direct calls and job registrations connect this builder to the reviewed recipient shape-output coordinator.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Whole original body and typed C reviewed, coordinator interface traced and saved definition independently reopened; runtime verification scope recorded per function.",
+      "code_sha256": "18580e93febfb896454da96680bce7046616f3afe9a67dbd8b240b19c5dac6f0",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "BuildRecipientAnimatedStickParticleRecords",
+          "support": [
+            "Complete original instruction body and typed decompiler output read; original job label and coordinator interface traced.",
+            "Descriptive name and consumed-input register interface saved and independently reopened; original bytes unchanged.",
+            "Reviewed all 2102 bytes / 433 instructions and the AnimStickParticlesJob registration.",
+            "Two passes share one output buffer: adjacent pairs for the prefix, then subdivided tail segments beginning at point n. The join segment n-1 is omitted.",
+            "119 isolated whole-original-body cases passed, comparing 597 records: 192 prefix records and 405 tail records, with maximum absolute float error below 3.06e-7.",
+            "Checks covered ordinary and all three fallback axes in both passes, packing, untouched bytes, owner count wrap, tail capacity and ignored ESI.",
+            "Only the primary consumed count increments and its reservation clears; secondary range and counters are not used."
           ]
         }
       ]

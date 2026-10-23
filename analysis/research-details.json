@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 926,
+    "checked_and_applied_names": 928,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 926,
-    "function_count": 9684,
+    "verified_names": 928,
+    "function_count": 9686,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2043,7 +2043,9 @@
       "14143c980",
       "14143d190",
       "141441690",
+      "141442600",
       "141443dc0",
+      "141444110",
       "141444950",
       "14144cf10",
       "14144d710",
@@ -2059,7 +2061,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 133 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 135 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29096,6 +29098,104 @@
     "limits": [
       "Analyst descriptions, not recovered original source names. No exact developer-stream match.",
       "No whole-game, real scheduler or renderer validation; record-consumer semantics remain incomplete."
+    ]
+  },
+  "recipient_stick_jobs_checkpoint": {
+    "functions": {
+      "141442600": {
+        "name": "BuildRecipientStickParticleRecords",
+        "signature": "void PS4_SYSV BuildRecipientStickParticleRecords(void * context, int seed_component)",
+        "return_storage": "<VOID>",
+        "original_sha256": "b28361df4545b1941e9b42a5b223a6208e5de85ee6259b6bbaea31c78b078fe7",
+        "size": 6077,
+        "instructions": 1117,
+        "created": true,
+        "c_sha256": "ad69b2dab5f0553e9162bba38f243a36822fc4c614e3cc734c8988a0f98aac0f",
+        "nonempty_c_lines": 1316
+      },
+      "141444110": {
+        "name": "BuildRecipientAnimatedStickParticleRecords",
+        "signature": "void PS4_SYSV BuildRecipientAnimatedStickParticleRecords(void * context)",
+        "return_storage": "<VOID>",
+        "original_sha256": "18580e93febfb896454da96680bce7046616f3afe9a67dbd8b240b19c5dac6f0",
+        "size": 2102,
+        "instructions": 433,
+        "created": true,
+        "c_sha256": "1f124965a57b0efca9a6bc1484b2c8847ab91fe0e65272d21f5ee8691e989ded",
+        "nonempty_c_lines": 582
+      }
+    },
+    "new_checked_names": 2,
+    "complete_original_body_bytes": 8179,
+    "complete_original_instructions": 1550,
+    "animated_stick_native_cases": 119,
+    "animated_stick_output_records": 597,
+    "animated_stick_max_absolute_error": 3.055855639644278e-07,
+    "nonanimated_stick_native_tested": false,
+    "project_saved_and_independently_reopened": true,
+    "details": {
+      "141442600": {
+        "evidence": [
+          "Reviewed all 6077 bytes / 1117 instructions and the StickParticlesJob registration.",
+          "Primary output subdivides path segments; a separate secondary output emits batches of 16 records with seeded placement, color modulation and optional integer-angle rotations.",
+          "Each record occupies 136 bytes; offsets 30 through 5F remain untouched. The two ranges update separate consumed/reservation counters.",
+          "Incoming ESI contributes low32 bits to the random seed. The synchronous caller passes zero; actual queued-callback ESI meaning remains unresolved.",
+          "Primary third frame vector is cross(side,tangent). A later XMM8 overwrite resolves the earlier apparent lane mismatch.",
+          "Separate original initializer review identifies paired one-degree sine/cosine lookup tables used by the secondary pass."
+        ],
+        "limits": [
+          "Static review only; this function was not executed in native fixtures.",
+          "Secondary quaternion construction multiplies direction by an original zero vector; ordinary finite inputs produce identity, not an assumed tangent-oriented frame.",
+          "Position normalization, division denominators, path counts, valid physical capacities and reservation concurrency depend on unproven upstream invariants.",
+          "Actual table contents and downstream record-consumer behavior were not observed in a running game."
+        ]
+      },
+      "141444110": {
+        "evidence": [
+          "Reviewed all 2102 bytes / 433 instructions and the AnimStickParticlesJob registration.",
+          "Two passes share one output buffer: adjacent pairs for the prefix, then subdivided tail segments beginning at point n. The join segment n-1 is omitted.",
+          "119 isolated whole-original-body cases passed, comparing 597 records: 192 prefix records and 405 tail records, with maximum absolute float error below 3.06e-7.",
+          "Checks covered ordinary and all three fallback axes in both passes, packing, untouched bytes, owner count wrap, tail capacity and ignored ESI.",
+          "Only the primary consumed count increments and its reservation clears; secondary range and counters are not used."
+        ],
+        "limits": [
+          "First pass has no declared-capacity check. Tests of this behavior used ample physically valid guarded storage, never an invalid write.",
+          "The 360 table inputs used by the fixture were explicit arbitrary synthetic values; the original initializer and PS4 libm were not executed.",
+          "Finite coordinates, nonzero output-position normalization and valid point/table indices only. Negative indices, NaN/Inf and integer conversion overflow remain untested.",
+          "Skipping the join is an observed behavior, not a claim that it is a game defect."
+        ]
+      }
+    },
+    "table_provenance": {
+      "sine_cosine": {
+        "initializer_entry": "140a7a550",
+        "reviewed_block": [
+          "140a8818d",
+          "140a88287"
+        ],
+        "original_block_sha256": "657bdb4b72c3213cead37bfcbbd44e9209318688f8890e165639dc8f463053ed",
+        "entries_per_table": 361,
+        "behavior": "Calls sincosf for indices 0 through 359 using float32 one-degree increments, then writes explicit index-360 endpoints.",
+        "limits": "Initialization block reviewed only; no full initializer review, runtime snapshot or native initializer execution. Intermediate bits depend on PS4 libm; the guard is set before filling."
+      },
+      "triangle_indices": {
+        "producer": "RebuildRecipientShapeDefinitionsAndProjectionData",
+        "behavior": "Normal topology construction starts at 12 vertices / 20 triangles and subdivides twice to 162 vertices / 320 triangles. Published triangle indices are remapped to compact output IDs in first-encounter order.",
+        "limits": "Conditional reconstruction from the original producer and helper behavior, not an observed live table. No whole-loader native execution."
+      },
+      "curve_prefix": {
+        "producer": "RebuildRecipientShapeDefinitionsAndProjectionData",
+        "reviewed_block": [
+          "14143bd67",
+          "14143bf21"
+        ],
+        "behavior": "Builds 16 circle directions, selects a mesh triangle per direction and stores three compact vertex IDs plus barycentric weights for the path coordinator.",
+        "limits": "Producer traced statically. Exact selected triangles and floating-point weights were not recovered or observed at runtime."
+      }
+    },
+    "limits": [
+      "Names describe reviewed behavior; original source names, exact class identity and scheduler callback typedef remain unknown.",
+      "No whole-game, real scheduler or rendering validation. No exact developer-stream match."
     ]
   }
 }
