@@ -8737,3 +8737,18 @@ Four helpers were reviewed in full: **1,087 original bytes /266 instructions** a
 The three generic primitives are counted once under shared saving/loading, and the four-emote wrapper under Imp visuals. Original class/field names remain unresolved. No live game/platform or Media Molecule source match is claimed.
 
 Totals: **983 reviewed names /9,700 defined functions**, **2,376 mapped /7,324 unmapped**. Whole-game completion remains unknown.
+
+
+### Counted Imp block arrays and legacy fixups
+
+Two routines were reviewed in full: **1,009 original bytes /231 instructions** and **213 nonempty diagnostic C lines**. Their descriptive names and two-pointer working interfaces survived independent reopening with original bytes unchanged.
+
+**SerializeCountedBlocks16** transfers a32-bit count followed by16-byte blocks in either direction. The count is stored at offset0x2000 after space for512 blocks, but this routine has **no visible count<=512 clamp**. Its scope, error and optional marker/sequence handling were traced. This observation does not establish malformed-input safety or a bug in callers.
+
+**80 isolated cases of the unchanged array routine passed**, covering counts0,1,2,511,512; both directions; markers on/off; counter0/all-ones; and two fill patterns. An independent oracle compared complete serializer state, buffers and guards. Over-capacity counts, preexisting error state, fallback/exhaustion/callback paths, aliases, invalid pointers and concurrency were not tested.
+
+**SerializeImpArrayWithLegacyFixups** handles a32-byte prefix, then the counted array, and applies revision-dependent migrations. Through revision660 it converts old floating-point packed lengths into low16-bit integer fields. Through1118 it walks group headers, substitutes the original constant for ordered zero XYZ values and masks selected flag bits. This wrapper is **static-only**; no native cases are credited to it. Exact group meanings and complete historical compatibility remain unresolved.
+
+The generic array routine is counted once under shared saving/loading, and the Imp migration wrapper under Imp visuals. Other incoming callers were not exhaustively reviewed. No live game/platform or Media Molecule source match is claimed.
+
+Totals: **985 reviewed names /9,700 defined functions**, **2,378 mapped /7,322 unmapped**. Whole-game completion remains unknown.

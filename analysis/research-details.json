@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 983,
+    "checked_and_applied_names": 985,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 983,
+    "verified_names": 985,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "833 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "835 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30666,6 +30666,45 @@
     "wire_layout_refinements": [
       "A16-byte working value transferred by140dda8c0 consumes12 wire bytes; fourth storage lane retained.",
       "Four16-byte emote-key storage slots use one-byte lengths andcharacters, not64 fixed wire bytes."
+    ]
+  },
+  "imp_array_codecs_checkpoint": {
+    "functions": {
+      "1414485c0": {
+        "name": "SerializeImpArrayWithLegacyFixups",
+        "signature": "void PS4_SYSV SerializeImpArrayWithLegacyFixups(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "e53263201204c3a003393127f31f9db6523816fa7cb387a138cfe4be9a8039f4",
+        "size": 450,
+        "instructions": 106,
+        "created": false,
+        "c_sha256": "51283bd688f68278896b59d9b154f1c29f6225ff7b1c366b2c4231e6072a2d28",
+        "nonempty_c_lines": 117
+      },
+      "141448790": {
+        "name": "SerializeCountedBlocks16",
+        "signature": "void PS4_SYSV SerializeCountedBlocks16(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "c089bdcc1a56481d71d425b57b0164e56b16e13dd3a513ec96c84715204e2a04",
+        "size": 559,
+        "instructions": 125,
+        "created": false,
+        "c_sha256": "35876921a29f109106c968d6f666524232d701c67ffd406d9141de8ab4d65bd2",
+        "nonempty_c_lines": 117
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 1009,
+    "original_instructions": 231,
+    "typed_c_nonempty_lines": 213,
+    "new_native_cases": 80,
+    "scope_limits": [
+      "Both original bodies (1009bytes/231instructions) and213 nonempty typed C lines read. Relevant routes in the fully reviewed parent andwrapper traced, no exhaustive incoming caller audit.",
+      "80 isolated original direct-path counted-array cases passed forcounts0/1/2/511/512,both directions,markers,counter boundaries andcomplete buffers/guards. Legacy-fixup wrapper static-only.",
+      "No visible count<=512 clamp inthis routine. Over-capacity/malformed count,preexisting error,exhaustion/callback/fallback/aliases/invalidpointers/concurrency untested; no safety guarantee.",
+      "Original fields/classes and complete legacy compatibility unresolved. No live game/platform/MM source equivalence."
     ]
   }
 }

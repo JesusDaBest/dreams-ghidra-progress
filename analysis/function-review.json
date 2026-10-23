@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "833 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "835 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8562,
-    "other_names": 1138,
-    "verification": "complete_inventory_matches_baseline_plus_833_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8560,
+    "other_names": 1140,
+    "verification": "complete_inventory_matches_baseline_plus_835_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23359,6 +23359,48 @@
         "96 new isolated original direct-path cases passed:80 fixed32-byte scope/marker cases and16 raw12-byte transfers, both directions and full guarded buffers. No native cases forinline text/four-emote routines.",
         "Fallbackbuffer/callback/exhaustion paths, invalid pointers andaliases untested. Inline16-byte storage isnot a validated wire-length bound; malformed-input safety unproved.",
         "Original class/field meanings unresolved. No live game/platform or MM source match claimed."
+      ]
+    },
+    {
+      "address": "1414485c0",
+      "original_name": "FUN_1414485c0",
+      "applied_name": "SerializeImpArrayWithLegacyFixups",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeImpArrayWithLegacyFixups(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 450-byte body (106 instructions) and all 107 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Processes32-byte prefix throughreviewed SerializeFixedBytes32, then counted16-byte blocks at+20. Countstored+2020. Revision<=660 convertsfloatencodedpackedlengthsto low16 integer bits. Revision<=1118 traversesgroupheadersby low16 length, replacesorderedzeroXYZ withoriginalconstant andmasksflags8fffffff. Nested scope/marker/error paths inspected; precisegroup/field meanings unresolved. Staticonly; no nativecase credit. Fulloriginal andtypedC read; serializerRDI,storageRSI,void. Callerdataflowfrompreviously fully reviewed SerializeImpStatePayload, andwrapper->core setup traced. Otherincoming callers notexhaustively reviewed. No livegame/platform/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Both original bodies (1009bytes/231instructions) and213 nonempty typed C lines read. Relevant routes in the fully reviewed parent andwrapper traced, no exhaustive incoming caller audit.",
+        "80 isolated original direct-path counted-array cases passed forcounts0/1/2/511/512,both directions,markers,counter boundaries andcomplete buffers/guards. Legacy-fixup wrapper static-only.",
+        "No visible count<=512 clamp inthis routine. Over-capacity/malformed count,preexisting error,exhaustion/callback/fallback/aliases/invalidpointers/concurrency untested; no safety guarantee.",
+        "Original fields/classes and complete legacy compatibility unresolved. No live game/platform/MM source equivalence."
+      ]
+    },
+    {
+      "address": "141448790",
+      "original_name": "FUN_141448790",
+      "applied_name": "SerializeCountedBlocks16",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeCountedBlocks16(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 559-byte body (125 instructions) and all 106 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers32-bit count then16-byte blocks in either direction; read storescountatstorage+2000. No visiblecount<=512 clamp. Scope/sequence andoptionalmarker on success; errorsabortafterelement.80 isolated directpath cases passed forcounts0/1/2/511/512,bothdirections,markers,counterboundaries,two patterns andfullbuffers/guards. No fallback/malformedcount/preexistingerror/alias/invalidpointer/concurrency validation. Fulloriginal andtypedC read; serializerRDI,storageRSI,void. Callerdataflowfrompreviously fully reviewed SerializeImpStatePayload, andwrapper->core setup traced. Otherincoming callers notexhaustively reviewed. No livegame/platform/MMsourceequivalence."
+      ],
+      "caveats": [
+        "Both original bodies (1009bytes/231instructions) and213 nonempty typed C lines read. Relevant routes in the fully reviewed parent andwrapper traced, no exhaustive incoming caller audit.",
+        "80 isolated original direct-path counted-array cases passed forcounts0/1/2/511/512,both directions,markers,counter boundaries andcomplete buffers/guards. Legacy-fixup wrapper static-only.",
+        "No visible count<=512 clamp inthis routine. Over-capacity/malformed count,preexisting error,exhaustion/callback/fallback/aliases/invalidpointers/concurrency untested; no safety guarantee.",
+        "Original fields/classes and complete legacy compatibility unresolved. No live game/platform/MM source equivalence."
       ]
     }
   ],

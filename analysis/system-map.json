@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2376,
-  "unmapped_total": 7324,
+  "mapped_total": 2378,
+  "unmapped_total": 7322,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60914,6 +60914,54 @@
           "support": [
             "Entire original 444-byte body (107 instructions) and all 89 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Readmode zeroes16-byte storage, thenreads1-byte length andthat manybytes; writemode usesresolvedstrlen, truncateslengthtoAL andtransferscharacters. No<=16 prefixboundor explicittrailingterminator established; do notinfer malformedinputsafety. Nested scope/marker/sequence bookkeeping. Staticonly. Entire originalbody andtypedC read. SerializerRDI,bytesRSI,void; working opaque pointers, originalclass/fieldnamesunresolved. No livegame/platform/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "1414485c0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "32-byte prefix pluscounted blocks andlegacy migrations inverified Imp payload dataflow.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and selected caller dataflow; native evidence separately scoped perfunction.",
+      "code_sha256": "e53263201204c3a003393127f31f9db6523816fa7cb387a138cfe4be9a8039f4",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeImpArrayWithLegacyFixups",
+          "support": [
+            "Entire original 450-byte body (106 instructions) and all 107 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Processes32-byte prefix throughreviewed SerializeFixedBytes32, then counted16-byte blocks at+20. Countstored+2020. Revision<=660 convertsfloatencodedpackedlengthsto low16 integer bits. Revision<=1118 traversesgroupheadersby low16 length, replacesorderedzeroXYZ withoriginalconstant andmasksflags8fffffff. Nested scope/marker/error paths inspected; precisegroup/field meanings unresolved. Staticonly; no nativecase credit. Fulloriginal andtypedC read; serializerRDI,storageRSI,void. Callerdataflowfrompreviously fully reviewed SerializeImpStatePayload, andwrapper->core setup traced. Otherincoming callers notexhaustively reviewed. No livegame/platform/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "141448790": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic counted16-byte-block serializer used by reviewed Imp codec; counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review and selected caller dataflow; native evidence separately scoped perfunction.",
+      "code_sha256": "c089bdcc1a56481d71d425b57b0164e56b16e13dd3a513ec96c84715204e2a04",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeCountedBlocks16",
+          "support": [
+            "Entire original 559-byte body (125 instructions) and all 106 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers32-bit count then16-byte blocks in either direction; read storescountatstorage+2000. No visiblecount<=512 clamp. Scope/sequence andoptionalmarker on success; errorsabortafterelement.80 isolated directpath cases passed forcounts0/1/2/511/512,bothdirections,markers,counterboundaries,two patterns andfullbuffers/guards. No fallback/malformedcount/preexistingerror/alias/invalidpointer/concurrency validation. Fulloriginal andtypedC read; serializerRDI,storageRSI,void. Callerdataflowfrompreviously fully reviewed SerializeImpStatePayload, andwrapper->core setup traced. Otherincoming callers notexhaustively reviewed. No livegame/platform/MMsourceequivalence."
           ]
         }
       ]
