@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "824 existing-function renames, 147 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "824 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9698,
+    "total": 9699,
     "default_fun_names": 8571,
-    "other_names": 1127,
-    "verification": "complete_inventory_matches_baseline_plus_824_renames_and_147_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1128,
+    "verification": "complete_inventory_matches_baseline_plus_824_renames_and_148_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23125,6 +23125,28 @@
         "192 isolated original-byte cases cover identity-quaternion/simple exact uniform transforms, stored/derived/NaN sentinel paths, all incoming transform lane finite guards, sourceXYZ guards, idle/blocked state and index match/mismatch.",
         "Signed-zero equivalence allowed; NaN payload bits unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive lists, aliases, concurrency, invalid pointers and live game behavior untested.",
         "Original aggregate/class/selector/state names unresolved. No component-scale argument and no MM source equivalence claimed."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14147bcc0",
+      "original_name": null,
+      "applied_name": "StageTransformedVectorForOperationRecipient",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV StageTransformedVectorForOperationRecipient(void * operation_context, void * operation_record, SpatialQueryFloat4Working16 component_scale_working, SpatialQueryFloat4Working16 source_vector_working, SpatialQueryFloat4Working16 position_scale_working, SpatialQueryFloat4Working16 orientation_working)",
+      "evidence": [
+        "Entire original 799-byte body (172 instructions) and all 283 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire799-byte/172-instruction original,283 nonempty typed C lines and10 direct caller windows read. Accepts contextRDI, operation recordRSI, component scale float4XMM0, source vector float4XMM1 and32 stackbytes split provisionally into position/uniform-scale andorientation float4. Void; original aggregate types unresolved. Accepts source kind2 with null destination, or two nonnull nodes neither kind2. Maps operation byte19c30 through context270 identity table, or uses null owner/-1 key/mode2 for out-of-range mapping. Finds first active recipient with matching owner/key/mode and null secondary pointer; idle190 must be zero. Both transform inputs require all four lanes finite; source vector checks XYZ only. Ordered FLT_MAX selects working block1e0 vs230 and stored vs derived local vector. Component reciprocal XYZ failure zeros whole reciprocal vector. Writes local1c0 and transformed1a0, counter194 zero, flag198 one, state190 two. Original SIMD stores preserve float bit patterns despite integer-cast C artifacts; selfcompare XMM6 yields allones and is not another input. No original calls. 1536 isolated original cases passed: four source/destination arrangements, valid/out-of-range mapping, two states, twelve finite/nonfinite scenarios, four sentinel paths and two component scales. Only identity quaternion/simple exact arithmetic; signed-zero equivalence, NaN payload unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive global lists, aliases, concurrency, invalid pointers and live game untested. Exact original class/selector/state meanings and MM source equivalence unresolved."
+      ],
+      "caveats": [
+        "Entire799-byte/172-instruction original,283 nonempty typed C lines and10 direct caller windows read.",
+        "1536 isolated original-byte cases cover identity-quaternion/simple exact transforms, stored/derived/NaN sentinel paths, two component scales, all incoming transform lane finite guards, sourceXYZ guards, idle/blocked state, four source/destination kind arrangements and valid/out-of-range identity mapping.",
+        "Signed-zero equivalence allowed; NaN payload bits unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive lists, aliases, concurrency, invalid pointers and live game behavior untested.",
+        "Original aggregate/class/state meanings unresolved. Direct supplied operation record and source vector; no property-selector search. No MM source equivalence claimed."
       ],
       "created_function": true
     }

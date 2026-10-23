@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 972,
+    "checked_and_applied_names": 973,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 972,
-    "function_count": 9698,
+    "verified_names": 973,
+    "function_count": 9699,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2061,6 +2061,7 @@
       "14147b210",
       "14147b410",
       "14147b7f0",
+      "14147bcc0",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2073,7 +2074,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "824 existing-function renames, 147 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "824 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30343,6 +30344,34 @@
       "192 isolated original-byte cases cover identity-quaternion/simple exact uniform transforms, stored/derived/NaN sentinel paths, all incoming transform lane finite guards, sourceXYZ guards, idle/blocked state and index match/mismatch.",
       "Signed-zero equivalence allowed; NaN payload bits unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive lists, aliases, concurrency, invalid pointers and live game behavior untested.",
       "Original aggregate/class/selector/state names unresolved. No component-scale argument and no MM source equivalence claimed."
+    ]
+  },
+  "operation_transformed_vector_checkpoint": {
+    "functions": {
+      "14147bcc0": {
+        "name": "StageTransformedVectorForOperationRecipient",
+        "signature": "void PS4_SYSV StageTransformedVectorForOperationRecipient(void * operation_context, void * operation_record, SpatialQueryFloat4Working16 component_scale_working, SpatialQueryFloat4Working16 source_vector_working, SpatialQueryFloat4Working16 position_scale_working, SpatialQueryFloat4Working16 orientation_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "e85c12f7142e16946e78479fd0a9577abc237a566ad0b6e7cf1164238bc8fcd3",
+        "size": 799,
+        "instructions": 172,
+        "created": true,
+        "c_sha256": "eba771907a73204d871fcb8a016bda2087bb68923860a6b58c9e838c04a3e085",
+        "nonempty_c_lines": 307
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 1,
+    "existing_renames": 0,
+    "original_bytes": 799,
+    "original_instructions": 172,
+    "typed_c_nonempty_lines": 283,
+    "new_native_cases": 1536,
+    "scope_limits": [
+      "Entire799-byte/172-instruction original,283 nonempty typed C lines and10 direct caller windows read.",
+      "1536 isolated original-byte cases cover identity-quaternion/simple exact transforms, stored/derived/NaN sentinel paths, two component scales, all incoming transform lane finite guards, sourceXYZ guards, idle/blocked state, four source/destination kind arrangements and valid/out-of-range identity mapping.",
+      "Signed-zero equivalence allowed; NaN payload bits unasserted. Arbitrary rotations/general floating point, nonfinite source W, exhaustive lists, aliases, concurrency, invalid pointers and live game behavior untested.",
+      "Original aggregate/class/state meanings unresolved. Direct supplied operation record and source vector; no property-selector search. No MM source equivalence claimed."
     ]
   }
 }

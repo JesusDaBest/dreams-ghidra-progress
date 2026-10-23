@@ -9199,3 +9199,16 @@ Signed-zero equivalence is allowed; NaN payload bits are not asserted. Arbitrary
 The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **972 reviewed names / 9,698 defined functions**, **2,365 mapped / 7,333 unmapped**. Whole-game completion remains unknown.
+
+
+### Transform staging for a supplied operation
+
+**StageTransformedVectorForOperationRecipient** identifies a complete **799-byte / 172-instruction** helper. All **283 nonempty diagnostic C lines** and **10 direct-caller windows** were read, including the reviewed SkyAndSun caller. The caller supplies an operation record, source vector, component scale and working transform. The helper resolves the recipient identity, chooses stored local data or derives it using inverse transforms, then stages local and transformed vectors. It does not search by a property selector.
+
+**1,536 isolated cases of the unchanged original helper passed.** Cases cover four source/destination kind arrangements, valid/out-of-range identity mapping, idle/blocked states, stored/derived/NaN sentinel selection, normal and zero-X component scales, nonfinite values in every incoming transform lane, and nonfinite source X/Y/Z. Numerical outputs and full guarded memory were checked.
+
+The numeric checks use an identity quaternion and simple exact arithmetic, allow signed-zero equivalence and do not assert NaN payload bits. Arbitrary rotations, general floating-point behavior, nonfinite source W, exhaustive list paths, aliases, concurrency and invalid pointers remain untested. Original aggregate, class and state names remain unresolved. C integer casts correspond to raw SIMD stores.
+
+The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **973 reviewed names / 9,699 defined functions**, **2,366 mapped / 7,333 unmapped**. Whole-game completion remains unknown.
