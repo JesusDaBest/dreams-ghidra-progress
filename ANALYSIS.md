@@ -9434,3 +9434,18 @@ Assembly establishes the optional callback arguments: serializer context, stored
 The reviewed Imp parent compares the count as signed: values above two set 0x1260009 and close the scope; negative values skip the element loop. This is no malformed-input safety guarantee. Fallback/exhaustion, malformed lengths, aliases, invalid pointers, concurrency and live-game behavior remain untested. All incoming callers were not audited; no Media Molecule source match is claimed.
 
 Both helpers are counted once under shared saving/loading. Totals: **1,002 reviewed names /9,701 defined functions**, **2,395 mapped /7,306 unmapped**. Whole-game completion remains unknown.
+
+
+### Paired serializer with padded storage
+
+**SerializeTwoBlocks12WithStride16** was read in full: **391 original bytes /99 instructions** and **73 nonempty diagnostic C lines**. Its name and working interface survived independent reopening with original code unchanged.
+
+It transfers 12 bytes from storage offset 0 and 12 bytes from offset 16 into 24 contiguous wire bytes. The four-byte gaps at offsets 12..15 and 28..31 stay untouched. This differs from the reviewed **SerializeTwoBlocks12**, whose storage blocks are adjacent at offsets 0 and 12. Neither helper performs numeric conversion.
+
+The routine adds nested scope and optional marker/sequence bookkeeping. Preset errors do not stop both direct transfers, but suppress marker/sequence updates. Reading skips the marker without comparison. Relevant legacy temporary callsites in the reviewed Imp parent were traced; original vector/field/class identity remains unresolved.
+
+**80 new isolated original direct-path cases passed**, covering both directions, marker/error and sequence boundaries, two byte patterns and complete context/buffer guards, including the preserved storage gaps. Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. All incoming callers were not audited; no Media Molecule source match is claimed.
+
+A read-only follow-up of the already reviewed parent now displays descriptor/destination/header arguments correctly for legacy conversion and distinguishes padded versus contiguous pair helpers. Only the affected callsites were inspected; it earns no extra parent review credit.
+
+The helper is counted once under shared saving/loading. Totals: **1,003 reviewed names /9,701 defined functions**, **2,396 mapped /7,305 unmapped**. Whole-game completion remains unknown.

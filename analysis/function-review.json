@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "851 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "852 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9701,
-    "default_fun_names": 8544,
-    "other_names": 1157,
-    "verification": "complete_inventory_matches_baseline_plus_851_renames_and_150_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8543,
+    "other_names": 1158,
+    "verification": "complete_inventory_matches_baseline_plus_852_renames_and_150_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23759,6 +23759,27 @@
         "54 whole-original error-helper cases with controlled memset boundary passed:prior errors0/5/10000, incoming codes0/1260009/10000, buffer lengths0/1/32,two patterns andfullcontext/buffer guards. Callback andthreecleanup pointers null.",
         "Non-null callbacks/deletion routes and raw count helper are static-only. Linked memset/delete implementations, malformed lengths, fallback/exhaustion, aliases, invalid pointers, concurrency and live game untested.",
         "Opaque C indirect callback display remains inaccurate; assembly arguments RDI context,RSI stored argument,EDX1 recorded. No original source/class identity or MM equivalence claimed."
+      ]
+    },
+    {
+      "address": "140e4ccd0",
+      "original_name": "FUN_140e4ccd0",
+      "applied_name": "SerializeTwoBlocks12WithStride16",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV SerializeTwoBlocks12WithStride16(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 391-byte body (99 instructions) and all 73 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers12 raw bytes atstorage0 and12 atstorage+16 into24 contiguous wire bytes. Four-byte gaps at+12 and+28 untouched; no numeric conversion. Distinct from SerializeTwoBlocks12, which uses12-byte storage stride. Nested scope andoptionalmarker/sequence. Preseterror doesnotstop both direct transfers; suppressesmarker/sequence. Reads skip markerwithoutcompare. SysV RDI serializer,RSI storage,void. Whole391-byte original andtypedC read; selected reviewed Imp parent legacy temporary paths traced, notallincomingcallers.80 isolated original direct-path cases passed:directions,marker/error,sequenceboundaries,two patterns,wholecontext/buffers/guards includinggaps. Fallback/exhaustion/callback/alias/invalidpointer/concurrency/livegame untested. Original vector/field identity unresolved; noMMsourceequivalence."
+      ],
+      "caveats": [
+        "Complete391-byte original body (99 instructions) and73 nonempty typed C lines read. Relevant legacy parent temporary callsites traced, not all incoming callers.",
+        "80 isolated original direct-path cases passed:both directions,marker/error andsequence boundaries,two byte patterns,fullbuffers/context/guards includingfour-byte storage gaps.",
+        "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfer widths do not establish original vector/field/class names.",
+        "No Media Molecule source equivalence claimed."
       ]
     }
   ],

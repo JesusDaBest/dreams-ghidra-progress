@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 1002,
+    "checked_and_applied_names": 1003,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 1002,
+    "verified_names": 1003,
     "function_count": 9701,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2076,7 +2076,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "851 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "852 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -31013,5 +31013,39 @@
       "Non-null callbacks/deletion routes and raw count helper are static-only. Linked memset/delete implementations, malformed lengths, fallback/exhaustion, aliases, invalid pointers, concurrency and live game untested.",
       "Opaque C indirect callback display remains inaccurate; assembly arguments RDI context,RSI stored argument,EDX1 recorded. No original source/class identity or MM equivalence claimed."
     ]
+  },
+  "serializer_padded_pair_checkpoint": {
+    "functions": {
+      "140e4ccd0": {
+        "name": "SerializeTwoBlocks12WithStride16",
+        "signature": "void PS4_SYSV SerializeTwoBlocks12WithStride16(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "52fe363231313716961cecbffe7aaf80f149050a97f88889e648aaec65c78c6e",
+        "size": 391,
+        "instructions": 99,
+        "created": false,
+        "c_sha256": "cc85852556fe828b9290bd9d0a24253db3bc768c31a726907209e5a9612f2bfa",
+        "nonempty_c_lines": 86
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 391,
+    "original_instructions": 99,
+    "typed_c_nonempty_lines": 73,
+    "new_native_cases": 80,
+    "scope_limits": [
+      "Complete391-byte original body (99 instructions) and73 nonempty typed C lines read. Relevant legacy parent temporary callsites traced, not all incoming callers.",
+      "80 isolated original direct-path cases passed:both directions,marker/error andsequence boundaries,two byte patterns,fullbuffers/context/guards includingfour-byte storage gaps.",
+      "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfer widths do not establish original vector/field/class names.",
+      "No Media Molecule source equivalence claimed."
+    ],
+    "parent_callsite_followup": {
+      "corrected_legacy_converter_argument_order": true,
+      "padded_and_contiguous_helpers_distinguished": true,
+      "new_parent_review_credit": 0,
+      "scope": "Selected affected callsites inspected after saved child signatures; original parent bytes unchanged."
+    }
   }
 }
