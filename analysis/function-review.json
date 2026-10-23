@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "821 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "822 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8574,
-    "other_names": 1120,
-    "verification": "complete_inventory_matches_baseline_plus_821_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8573,
+    "other_names": 1121,
+    "verification": "complete_inventory_matches_baseline_plus_822_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22975,6 +22975,27 @@
         "Exact semantic tag names and full payload/context types remain unresolved; three opaque pointers and void working return.",
         "Tag44 copies distinct source+8 whereas opposite converter duplicates source+4; exact inverse or roundtrip not established. Hash cycles/invalid object entries and alias safety not validated.",
         "No MM source/livestream match or whole-caller completion claimed."
+      ]
+    },
+    {
+      "address": "140c26460",
+      "original_name": "FUN_140c26460",
+      "applied_name": "ExtractPackedHandleFromTaggedPayload",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "ulonglong PS4_SYSV ExtractPackedHandleFromTaggedPayload(void * record, void * object_context)",
+      "evidence": [
+        "Entire original 150-byte body (46 instructions) and all 49 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from full150-byte/46-instruction originalbody,alltypedC and24577 new isolated whole-original cases. Twoopaque inputsRDIrecord/RSIcontext,RAXu64result. Tag5 returns payload64bits unchanged. Tag18 withnon-sentinel low32index andnonzero byte+0x53 resolves signed22-bit index through contexttable, obtainsobjectfirstDWORD ID and packs kindbyte into32..39, upper24bitszero. Tag48 usesDWORD+0x10 andkind6. Allother/failedpaths return0x00000000ffffffff, not64-bit-1. Selectedcallers shift32/mask0xff00000000 and comparekind5, corroborating handle-like role; exact kindnames unresolved. Testsall256tags,8payloadvectors,3kindbytes,4validpackedindices plus sentinel/unusednullcontext; exactRAX andrecord/codepreservation. Invalidnon-sentinel/nullobject entries excluded; alias/runtime/platform/sourceequivalence notclaimed. Completedtestsnotrerun."
+      ],
+      "caveats": [
+        "Complete 150-byte / 46-instruction original body and 49 nonempty typed C lines read. Selected direct callers corroborate ID/kind use.",
+        "24,577 isolated original-byte cases passed with synthetic memory; exact 64-bit return and record/code preservation checked.",
+        "Exact handle-kind names and full structures remain unresolved. Invalid non-sentinel indices, null object entries and alias safety not validated.",
+        "No live game/platform/network execution or MM source equivalence claimed."
       ]
     }
   ],

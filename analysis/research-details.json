@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 965,
+    "checked_and_applied_names": 966,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 965,
+    "verified_names": 966,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "821 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "822 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30143,6 +30143,34 @@
       "Exact semantic tag names and full payload/context types remain unresolved; three opaque pointers and void working return.",
       "Tag44 copies distinct source+8 whereas opposite converter duplicates source+4; exact inverse or roundtrip not established. Hash cycles/invalid object entries and alias safety not validated.",
       "No MM source/livestream match or whole-caller completion claimed."
+    ]
+  },
+  "payload_handle_extraction_checkpoint": {
+    "functions": {
+      "140c26460": {
+        "name": "ExtractPackedHandleFromTaggedPayload",
+        "signature": "ulonglong PS4_SYSV ExtractPackedHandleFromTaggedPayload(void * record, void * object_context)",
+        "return_storage": "RAX:8",
+        "original_sha256": "d5d53340e693cd6ff2bef8f6fed9de40ba10ae8e4bc4547bb9c0d28eccfa6dd0",
+        "size": 150,
+        "instructions": 46,
+        "created": false,
+        "c_sha256": "d3c5e2120c0c485163863a730a4488ed6114d62a01a615aed0aa262faba42c81",
+        "nonempty_c_lines": 63
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 150,
+    "original_instructions": 46,
+    "typed_c_nonempty_lines": 49,
+    "new_native_cases": 24577,
+    "scope_limits": [
+      "Complete 150-byte / 46-instruction original body and 49 nonempty typed C lines read. Selected direct callers corroborate ID/kind use.",
+      "24,577 isolated original-byte cases passed with synthetic memory; exact 64-bit return and record/code preservation checked.",
+      "Exact handle-kind names and full structures remain unresolved. Invalid non-sentinel indices, null object entries and alias safety not validated.",
+      "No live game/platform/network execution or MM source equivalence claimed."
     ]
   }
 }

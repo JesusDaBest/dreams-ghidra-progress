@@ -9116,3 +9116,14 @@ The converter expands a compact tagged payload, retains metadata and resolves se
 This direction is not claimed as an exact inverse of the reviewed index-to-ID converter. Tag 44 copies source field +8 here, while the opposite direction duplicates source field +4. The observed difference is preserved. Static review establishes the descriptive role; no new native, live game or platform tests were performed, and no Media Molecule source match is claimed.
 
 Totals: **965 reviewed names / 9,694 defined functions**, **2,358 mapped / 7,336 unmapped**. Whole-game completion remains unknown.
+
+
+### Packed handles from tagged payloads
+
+**ExtractPackedHandleFromTaggedPayload** identifies a complete **150-byte / 46-instruction** helper. All **49 nonempty diagnostic C lines** and selected caller uses were read. The two opaque input pointers and 64-bit return passed rollback preview, save and independent reopen with original bytes unchanged.
+
+Tag 5 preserves the existing 64-bit payload. Tag 18 resolves a signed 22-bit object index through the context table, then packs the object ID and record kind byte. Tag 48 packs an ID with kind 6. Other or rejected paths return 0x00000000ffffffff. Callers use the low ID and upper kind byte; exact semantic kind names remain unresolved.
+
+**24,577 isolated cases of the unchanged original helper passed**, covering all 256 tags, payload bit patterns, kind bytes and valid packed indices, plus a sentinel path with an unused null context. These checks validate the complete return value and preserve record/code bytes. Invalid non-sentinel indices, null object entries and live game/platform behavior were not tested. No Media Molecule source equivalence is claimed.
+
+Totals: **966 reviewed names / 9,694 defined functions**, **2,359 mapped / 7,335 unmapped**. Whole-game completion remains unknown.
