@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 921,
+    "checked_and_applied_names": 922,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 921,
-    "function_count": 9679,
+    "verified_names": 922,
+    "function_count": 9680,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2042,6 +2042,7 @@
       "1414393d0",
       "14143c980",
       "14143d190",
+      "141444950",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2054,9 +2055,9 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 128 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 129 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
-    "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
+    "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
   "newly_applied_names_scope": "Historical ReporterTelemetry batch; current saved-name summary is current_saved_name_verification.",
   "composite_reader_signature_verification": {
@@ -28937,6 +28938,36 @@
       "Original class/source identity, scalar0 and multiplier property meanings, runtime global provenance and indirect callers remain unresolved.",
       "NaN behavior varies across normalization sites; the quaternion interpolation-angle parameter is not a proven ten-degree full rotation limit.",
       "No exact Media Molecule livestream/source match or whole-game completion claim."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_shape_output_checkpoint": {
+    "address": "141444950",
+    "name": "BuildRecipientShapePathAndDispatchParticleJobs",
+    "signature": "void PS4_SYSV BuildRecipientShapePathAndDispatchParticleJobs(void * shape_state, void * settings)",
+    "original_sha256": "abad3dcf0c7a78fa5c42fecf65f759d94905e81a73de50eb765510694acde576",
+    "size": 5663,
+    "instructions": 1142,
+    "created": true,
+    "c_sha256": "9d0f7d42dd64f0a12dd055ea3776f8dc00df627d119ea5c0ef77ec464b306724",
+    "nonempty_c_lines": 1395,
+    "tail_call_flow_overrides": [
+      "0x141445dde",
+      "0x141445e96"
+    ],
+    "native_sampler_cases": 96,
+    "native_sampler_max_absolute_error": 0.0,
+    "evidence": [
+      "Full 5663-byte original body (1142 instructions), complete executable typed C and two direct caller interfaces reviewed.",
+      "Builds a mode-dependent cubic-Hermite path and geometric metrics, optionally trims the path against an endpoint disc, reserves particle ranges and runs or queues four original-labelled stick/body jobs.",
+      "96 isolated original-code sampler cases passed against a scalar float32 model, including repeated points and the 200-point cap; observed maximum numeric error was zero.",
+      "Saved descriptive name, two-register working interface and two proven external tailcall annotations independently reopened; all original body bytes and other function inventory entries unchanged."
+    ],
+    "limits": [
+      "Only the 416-byte sampler was executed in synthetic fixtures; control construction, clipping, particle jobs and complete function were not run live.",
+      "Generated-length total remains pre-clipping; it can differ from the final retained sample length. Zero-length fallback skips the stick path-length branch, while body dispatch has separate gates.",
+      "Disabled, unsupported and failed reservation paths can preserve old fields. Referenced descriptor reservation words are mutated; eligible stick allocation failure or a null secondary-stick result exits before body dispatch.",
+      "Original class/source identity, mode names, runtime prefix-table initializer, indirect callers and full job behavior remain unresolved. Unordered floating-point gate behavior requires original instruction predicates, not just the decompiled comparisons. No exact Media Molecule source match or whole-game completion claim."
     ],
     "project_saved_and_independently_reopened": true
   }

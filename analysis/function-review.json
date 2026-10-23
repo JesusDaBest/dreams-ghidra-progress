@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "snapshot_date": "2026-10-19",
+  "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 128 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 129 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9679,
+    "total": 9680,
     "default_fun_names": 8603,
-    "other_names": 1076,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_128_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1077,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_129_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21862,6 +21862,30 @@
         "Original class/source identity, scalar0 and multiplier property meanings, runtime global provenance and indirect callers remain unresolved.",
         "NaN behavior varies across normalization sites; the quaternion interpolation-angle parameter is not a proven ten-degree full rotation limit.",
         "No exact Media Molecule livestream/source match or whole-game completion claim."
+      ]
+    },
+    {
+      "address": "141444950",
+      "original_name": null,
+      "applied_name": "BuildRecipientShapePathAndDispatchParticleJobs",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildRecipientShapePathAndDispatchParticleJobs(void * shape_state, void * settings)",
+      "evidence": [
+        "Full 5663-byte original body (1142 instructions), complete executable typed C and two direct caller interfaces reviewed.",
+        "Builds a mode-dependent cubic-Hermite path and geometric metrics, optionally trims the path against an endpoint disc, reserves particle ranges and runs or queues four original-labelled stick/body jobs.",
+        "96 isolated original-code sampler cases passed against a scalar float32 model, including repeated points and the 200-point cap; observed maximum numeric error was zero.",
+        "Saved descriptive name, two-register working interface and two proven external tailcall annotations independently reopened; all original body bytes and other function inventory entries unchanged."
+      ],
+      "caveats": [
+        "Only the 416-byte sampler was executed in synthetic fixtures; control construction, clipping, particle jobs and complete function were not run live.",
+        "Generated-length total remains pre-clipping; it can differ from the final retained sample length. Zero-length fallback skips the stick path-length branch, while body dispatch has separate gates.",
+        "Disabled, unsupported and failed reservation paths can preserve old fields. Referenced descriptor reservation words are mutated; eligible stick allocation failure or a null secondary-stick result exits before body dispatch.",
+        "Original class/source identity, mode names, runtime prefix-table initializer, indirect callers and full job behavior remain unresolved. Unordered floating-point gate behavior requires original instruction predicates, not just the decompiled comparisons. No exact Media Molecule source match or whole-game completion claim."
       ]
     }
   ],
