@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9696,
-  "mapped_total": 2363,
+  "inventory_total": 9697,
+  "mapped_total": 2364,
   "unmapped_total": 7333,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -60602,6 +60602,30 @@
           "support": [
             "Entire original 283-byte body (69 instructions) and all 80 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire283-byte/69-instruction original and80 nonempty typedC lines,five directcaller windows read. RDIcontext,RSIoperationrecord,XMM0vector;void. Validates source/destination kinds thenmaps operationbyte19c30 throughcontext270 table toowner/key/mode. Out-of-range usesnullowner/-1key/mode2. Findsfirstmatching activeglobalrecipient withnullsecondarypointer; onlyidle0 andfiniteXYZ accepted,Wunchecked. Writesflag198=1,counter194=0,vector1a0,state190=2. 864 new isolated unchanged-original cases passed withfullguard/context/nodepreservation. Originaltypes/state labels unresolved; emptyglobal,firstblockedsecondavailable,alias/concurrency/invalidpointers untested. No livegame/platform or MMsource equivalence claimed."
+          ]
+        }
+      ]
+    },
+    "14147b410": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "Transforms and stages local/world working vectors selected by object/property and active recipient identity. Counted once as shared property support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, isolated original execution and corrected caller interface.",
+      "code_sha256": "fa52af7c2836ac0416404d6cf9f49eb5a1ede8144a89d8491b0ba62575a9a7cd",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "StageTransformedVectorForPropertyRecipients",
+          "support": [
+            "Entire original 978-byte body (221 instructions) and all 338 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Entire978-byte/221-instruction original and338 nonempty typedC lines,four directcaller windows read. ContextRDI,indexESI,selectorlow16EDX,component scale float4XMM0,two workingfloat4 stackinputs atentry+8/+24 (position/scale andorientation);void. Tag0x10/index/selector andfirstactive recipient identity matching, idle190zero. Inputtransform finiteguard all4lanes; sourcevectorXYZonly. FLT_MAX sentinel selectsstoredlocalvector or derivedinverse-transform path. Component reciprocals fall backtozero ifanyXYZnonfinite. Storeslocalvector1c0,transformedvector1a0,counter194zero,flag198one,state190two. 384 isolated originalcases coveridentity/simpleexact transforms,sentinel/NaNbranches,inputfiniteguards andzerocomponent fallback. Initialoracle wronglyexpectedNaNW; correctedfromoriginal output andfailure retained. Originaltypes,arbitrary rotations/numericbehavior,sourceWnonfinite,aliases/concurrency/invalidpointers unvalidated. Cintegercasts areartifacts ofSIMDbitstores. No livegame/platform/MMsource match."
           ]
         }
       ]

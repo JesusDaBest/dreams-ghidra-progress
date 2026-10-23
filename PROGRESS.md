@@ -8604,3 +8604,16 @@ Totals: **969 reviewed names / 9,696 defined functions**, **2,362 mapped / 7,334
 The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. Original type and state names remain unresolved. Empty global lists, first blocked match followed by an available match, aliases, concurrency and invalid pointers remain untested. No live game/platform test, whole consumer execution or Media Molecule source match is claimed.
 
 Totals: **970 reviewed names / 9,696 defined functions**, **2,363 mapped / 7,333 unmapped**. Whole-game completion remains unknown.
+
+
+### Transformed property vectors
+
+**StageTransformedVectorForPropertyRecipients** identifies a complete **978-byte / 221-instruction** helper. All **338 nonempty diagnostic C lines** and four direct-caller windows were read. It selects matching property recipients, uses a **FLT_MAX** sentinel to choose stored or derived local vector data, applies transforms and stages both local and transformed working vectors. Its working stack/register layout is verified; the original aggregate type remains unresolved.
+
+**384 isolated cases of the unchanged original helper passed.** The cases cover simple exact transforms with an identity quaternion, FLT_MAX and NaN sentinel selection, normal/zero-component scale paths, blocked state and index mismatch, nonfinite values in every incoming transform lane, and nonfinite source X/Y/Z. Numerical outputs and full guarded memory were checked. The initial oracle wrongly expected NaN in W on one sentinel path; original execution showed finite W. The oracle was corrected and the failure retained.
+
+These checks allow signed-zero equivalence and do not assert NaN payload bits. Arbitrary rotations, general floating-point correctness, nonfinite source W, aliases, concurrency, invalid pointers and exhaustive list behavior remain untested. The C display's integer casts are not numeric conversions: the original uses raw SIMD stores.
+
+The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. Exact original class, selector and state names remain unresolved. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **971 reviewed names / 9,697 defined functions**, **2,364 mapped / 7,333 unmapped**. Whole-game completion remains unknown.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 970,
+    "checked_and_applied_names": 971,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 970,
-    "function_count": 9696,
+    "verified_names": 971,
+    "function_count": 9697,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2059,6 +2059,7 @@
       "1414792e0",
       "1414793a0",
       "14147b210",
+      "14147b410",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2071,7 +2072,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "824 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "824 existing-function renames, 146 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30285,6 +30286,34 @@
       "864 isolated unchanged-original cases passed, including valid and out-of-range operation mappings. Full target records/guards and synthetic context/nodes checked.",
       "Original record/state names unresolved. Empty global lists, first blocked match followed by an available match, aliases, concurrency and invalid pointers untested.",
       "No live game/platform test, whole consumer execution or MM source equivalence claimed."
+    ]
+  },
+  "transformed_property_vector_checkpoint": {
+    "functions": {
+      "14147b410": {
+        "name": "StageTransformedVectorForPropertyRecipients",
+        "signature": "void PS4_SYSV StageTransformedVectorForPropertyRecipients(void * operation_context, int object_index, uint property_selector, SpatialQueryFloat4Working16 component_scale_working, SpatialQueryFloat4Working16 position_scale_working, SpatialQueryFloat4Working16 orientation_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "fa52af7c2836ac0416404d6cf9f49eb5a1ede8144a89d8491b0ba62575a9a7cd",
+        "size": 978,
+        "instructions": 221,
+        "created": true,
+        "c_sha256": "1bd2b05e03f31cfa2de0ad03cdcbed504700a9000b72f9e47fd3aa3b5cb89b34",
+        "nonempty_c_lines": 355
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 1,
+    "existing_renames": 0,
+    "original_bytes": 978,
+    "original_instructions": 221,
+    "typed_c_nonempty_lines": 338,
+    "new_native_cases": 384,
+    "scope_limits": [
+      "Complete 978-byte / 221-instruction original body and 338 nonempty typed C lines read; four direct-caller windows.",
+      "384 isolated original-byte cases cover simple identity-quaternion transforms, FLT_MAX/NaN sentinel paths, zero-component reciprocal fallback and finite-input guards. An initial NaN-W oracle error was corrected; failure retained.",
+      "Signed-zero equivalence allowed; NaN payload bits not checked. Arbitrary rotations/general floating point, nonfinite source W, aliases, concurrency, invalid pointers and exhaustive list paths untested.",
+      "Working transform storage is not a recovered original C++ aggregate. Exact record/state/selector names unresolved. No live game/platform or MM source equivalence claimed."
     ]
   }
 }
