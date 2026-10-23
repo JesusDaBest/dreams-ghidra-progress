@@ -9321,3 +9321,16 @@ Two routines were reviewed in full: **1,009 original bytes /231 instructions** a
 The generic array routine is counted once under shared saving/loading, and the Imp migration wrapper under Imp visuals. Other incoming callers were not exhaustively reviewed. No live game/platform or Media Molecule source match is claimed.
 
 Totals: **985 reviewed names /9,700 defined functions**, **2,378 mapped /7,322 unmapped**. Whole-game completion remains unknown.
+
+
+### Clearing unused Imp blocks and hashing payloads
+
+**ClearUnusedImpBlocksAndHashPayload** describes a complete **432-byte /104-instruction** routine. All **42 nonempty diagnostic C lines** and **three selected direct-caller windows** were read. It clears the unused tails of the two16-byte-block arrays, zeroes the first payload word and hashes all **0x4220 bytes**, storing a64-bit result at offset0 while preserving the value at+8.
+
+Its mixing sequence and first64-bit result match **MurmurHash3 x64_128**, with seed **0xbadd5eed**, compared with [Austin Appleby's reference implementation](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp). This algorithm match does not identify the original library version or Media Molecule source build.
+
+**100 isolated cases of the unchanged original target passed** against an independent tail-clearing and hash oracle. The two array counts independently covered0,1,2,511,512, with two byte patterns and two values at+8. Complete payloads and guards were checked. Only the imported **memset** boundary was replaced with a documented SysV byte-fill stub; the actual platform libc was not executed.
+
+Malformed counts, aliases, invalid pointers, concurrency and live game behavior remain untested. The saved descriptive name and one-pointer working interface survived independent reopening with original bytes unchanged. Other callers were not exhaustively reviewed; original field/class names remain unresolved.
+
+Totals: **986 reviewed names /9,700 defined functions**, **2,379 mapped /7,321 unmapped**. Whole-game completion remains unknown.

@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9700,
-  "mapped_total": 2378,
-  "unmapped_total": 7322,
+  "mapped_total": 2379,
+  "unmapped_total": 7321,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60962,6 +60962,30 @@
           "support": [
             "Entire original 559-byte body (125 instructions) and all 106 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Transfers32-bit count then16-byte blocks in either direction; read storescountatstorage+2000. No visiblecount<=512 clamp. Scope/sequence andoptionalmarker on success; errorsabortafterelement.80 isolated directpath cases passed forcounts0/1/2/511/512,bothdirections,markers,counterboundaries,two patterns andfullbuffers/guards. No fallback/malformedcount/preexistingerror/alias/invalidpointer/concurrency validation. Fulloriginal andtypedC read; serializerRDI,storageRSI,void. Callerdataflowfrompreviously fully reviewed SerializeImpStatePayload, andwrapper->core setup traced. Otherincoming callers notexhaustively reviewed. No livegame/platform/MMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "141446ba0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Unused-block clearing andwholepayload hash dataflow afterverified Imp payload decoding.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and100 whole-target cases withcontrolledmemset boundary.",
+      "code_sha256": "b6f40ff2a66786e75cef7ac121a29e25c5e0531ba3ac5f0f859ea19243093fc2",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ClearUnusedImpBlocksAndHashPayload",
+          "support": [
+            "Entire original 432-byte body (104 instructions) and all 42 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Entire432-byte original and42 nonempty typedC read,firstthree selecteddirectcaller windows. PayloadRDI,void. Savesfield+8,zeroesfirstqword,clearsunusedarraytails at1c0/21d0 usingcounts21c0/41d0 and16-byteunits over2000hex storageeach. Hashesall4220hex bytes withfirstqwordzero andseedbadd5eed; originalblock/finalmix sequence matches first64bits ofMurmurHash3x64_128 reference. Writeslow64 resultatpayload0 andpreservesfield8. Exactoriginal field/class names andlibraryversion unresolved. 100 isolated original cases matchedindependenttail-clear andMurmur oracle withcounts0/1/2/511/512 independentlyforeacharray,two patterns,two field8values,fullpayload andguards. Onlyimportedmemset replacedwithdocumentedSysVbytefillboundary; actualplatformlibc notexecuted. No localcount<=512 validation established. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested. NoMMsourcebuild equivalence."
           ]
         }
       ]

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "835 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "836 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9700,
-    "default_fun_names": 8560,
-    "other_names": 1140,
-    "verification": "complete_inventory_matches_baseline_plus_835_renames_and_149_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8559,
+    "other_names": 1141,
+    "verification": "complete_inventory_matches_baseline_plus_836_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23401,6 +23401,27 @@
         "80 isolated original direct-path counted-array cases passed forcounts0/1/2/511/512,both directions,markers,counter boundaries andcomplete buffers/guards. Legacy-fixup wrapper static-only.",
         "No visible count<=512 clamp inthis routine. Over-capacity/malformed count,preexisting error,exhaustion/callback/fallback/aliases/invalidpointers/concurrency untested; no safety guarantee.",
         "Original fields/classes and complete legacy compatibility unresolved. No live game/platform/MM source equivalence."
+      ]
+    },
+    {
+      "address": "141446ba0",
+      "original_name": "FUN_141446ba0",
+      "applied_name": "ClearUnusedImpBlocksAndHashPayload",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ClearUnusedImpBlocksAndHashPayload(void * payload_working)",
+      "evidence": [
+        "Entire original 432-byte body (104 instructions) and all 42 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire432-byte original and42 nonempty typedC read,firstthree selecteddirectcaller windows. PayloadRDI,void. Savesfield+8,zeroesfirstqword,clearsunusedarraytails at1c0/21d0 usingcounts21c0/41d0 and16-byteunits over2000hex storageeach. Hashesall4220hex bytes withfirstqwordzero andseedbadd5eed; originalblock/finalmix sequence matches first64bits ofMurmurHash3x64_128 reference. Writeslow64 resultatpayload0 andpreservesfield8. Exactoriginal field/class names andlibraryversion unresolved. 100 isolated original cases matchedindependenttail-clear andMurmur oracle withcounts0/1/2/511/512 independentlyforeacharray,two patterns,two field8values,fullpayload andguards. Onlyimportedmemset replacedwithdocumentedSysVbytefillboundary; actualplatformlibc notexecuted. No localcount<=512 validation established. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested. NoMMsourcebuild equivalence."
+      ],
+      "caveats": [
+        "Entire432-byte/104-instruction original and42 nonempty typed C lines read; firstthree selected direct caller windows. Other incoming callers not exhaustively reviewed.",
+        "100 isolated whole-original target cases matched independent zero-tail andMurmurHash3x64 first64bit oracle. Importedmemset used controlled documented SysVbytefill boundary; actualplatformlibc not executed.",
+        "Counts0/1/2/511/512 independently foreacharray,two patterns,two field8values andcomplete payload/guards checked. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested.",
+        "Algorithm match doesnot recoveroriginal class/field names, exact libraryversion orMM sourcebuild."
       ]
     }
   ],

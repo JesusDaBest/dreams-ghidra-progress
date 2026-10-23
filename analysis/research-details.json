@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 985,
+    "checked_and_applied_names": 986,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 985,
+    "verified_names": 986,
     "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2075,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "835 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "836 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30705,6 +30705,34 @@
       "80 isolated original direct-path counted-array cases passed forcounts0/1/2/511/512,both directions,markers,counter boundaries andcomplete buffers/guards. Legacy-fixup wrapper static-only.",
       "No visible count<=512 clamp inthis routine. Over-capacity/malformed count,preexisting error,exhaustion/callback/fallback/aliases/invalidpointers/concurrency untested; no safety guarantee.",
       "Original fields/classes and complete legacy compatibility unresolved. No live game/platform/MM source equivalence."
+    ]
+  },
+  "imp_payload_hash_checkpoint": {
+    "functions": {
+      "141446ba0": {
+        "name": "ClearUnusedImpBlocksAndHashPayload",
+        "signature": "void PS4_SYSV ClearUnusedImpBlocksAndHashPayload(void * payload_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "b6f40ff2a66786e75cef7ac121a29e25c5e0531ba3ac5f0f859ea19243093fc2",
+        "size": 432,
+        "instructions": 104,
+        "created": false,
+        "c_sha256": "0783ef58f8cc1b942b1c7b365382311a1b954f39b0c6c7c74e6d38a25509f3eb",
+        "nonempty_c_lines": 56
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 432,
+    "original_instructions": 104,
+    "typed_c_nonempty_lines": 42,
+    "new_native_cases": 100,
+    "scope_limits": [
+      "Entire432-byte/104-instruction original and42 nonempty typed C lines read; firstthree selected direct caller windows. Other incoming callers not exhaustively reviewed.",
+      "100 isolated whole-original target cases matched independent zero-tail andMurmurHash3x64 first64bit oracle. Importedmemset used controlled documented SysVbytefill boundary; actualplatformlibc not executed.",
+      "Counts0/1/2/511/512 independently foreacharray,two patterns,two field8values andcomplete payload/guards checked. Malformedcounts/aliases/invalidpointers/concurrency/livegame untested.",
+      "Algorithm match doesnot recoveroriginal class/field names, exact libraryversion orMM sourcebuild."
     ]
   }
 }
