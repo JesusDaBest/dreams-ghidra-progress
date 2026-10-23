@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2355,
-  "unmapped_total": 7339,
+  "mapped_total": 2356,
+  "unmapped_total": 7338,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60410,6 +60410,30 @@
           "support": [
             "Entire original 1265-byte body (333 instructions) and all 310 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from complete1265-byte/333-instruction original body, all310 nonempty typed C lines, original49-entry tag table and two direct caller windows. RDI destination, RSI source, RDX opaque object context; void working return. Clears destination0..0x2d; copies source+0x50 DWORD to+0x28 and source+0x54/+0x55 tag/byte to+0x2c/+0x2d. Switch tags1..49 translates selected packed object references to firstDWORD IDs through context pointer table+0x10958c0/count+0x10b58c0; null/out-of-range references become0xffffffff. Other variants copy payload fields. Packed references use signed22-bit indices here, unlike nearby26-bit remapping helper; do not conflate layouts. Tag44 duplicates source+4 to destination+4/+8 exactly as original. Exact semantic tags/types unresolved; no renderer-only attribution, alias safety, source equivalence or runtime/native test claimed. Second caller context compares object firstDWORD during lookup; caller itself not fully reviewed."
+          ]
+        }
+      ]
+    },
+    "1409a98d0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "common-routines",
+        "runtime-implementation"
+      ],
+      "component_basis": "Acquires and initializes pooled game context, populates from update pass or snapshot, reconciles runtime state and references, then prepares simulation. Shared game-context support, counted once.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "6666bb0ab98a0aea52f0cf71cc7831e06b2904d3345d4db41d73a5cba198a306",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AcquireAndReconcileGameContext",
+          "support": [
+            "Entire original 20739-byte body (4211 instructions) and all 3555 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from complete20739-byte/4211-instruction original body, all3555 nonempty diagnostic C lines and directcaller1409bb007. Acquires/initializes pooled context via outputRDX; caller reads pointer slot aftercall. RDI base snapshot, RSI runtime-state context, lowbyteECXmode (observed0/1), R8 opaque parameter block read+0x596. Opaque pointer working inputs and void return; epilogue RAX stackcookie not semantic result. Mode0 update-pass path or nonzero bulkcopy0x1c8d680/relocation; reconciles0x43e0/0x19c50/0x270/0xce0/0x40-stride records, references by objectIDs, selected type-specific state, parent flags and four pointer+ID slots, then prepares simulation. Exact structures/mode meaning/typeIDs/slot semantics unresolved. Original signed22-bit packing and32-bit wrapping govern, some invalid/type-mismatch paths can null-dereference; no broad safety guarantee. Corrected saved instruction overlap at1409ae87c to original MOV878/CMP87d in full EH body. No native/platform/context execution, child-callee completeness or MM source match claimed."
           ]
         }
       ]

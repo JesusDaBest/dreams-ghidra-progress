@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 962,
+    "checked_and_applied_names": 963,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 962,
+    "verified_names": 963,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "818 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "819 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30059,6 +30059,34 @@
       "Semantic payload tag names and full source/context types unresolved; three opaque pointer inputs and void working return.",
       "This function uses signed22-bit references, distinct from nearby26-bit remapping helpers. Original32-bit wrapping arithmetic governs.",
       "No MM livestream/source-build match or whole-caller review established."
+    ]
+  },
+  "game_context_reconciliation_checkpoint": {
+    "functions": {
+      "1409a98d0": {
+        "name": "AcquireAndReconcileGameContext",
+        "signature": "void PS4_SYSV AcquireAndReconcileGameContext(void * base_context, void * state_context, void * context_output, int mode, void * parameters)",
+        "return_storage": "<VOID>",
+        "original_sha256": "6666bb0ab98a0aea52f0cf71cc7831e06b2904d3345d4db41d73a5cba198a306",
+        "size": 20739,
+        "instructions": 4211,
+        "created": false,
+        "c_sha256": "64003418ef3a7dd1098b53acdc08b35f07912a2ee612142b23363708d7f5989c",
+        "nonempty_c_lines": 3577
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 20739,
+    "original_instructions": 4211,
+    "typed_c_nonempty_lines": 3555,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete20739-byte original body and3555 nonempty diagnostic C lines read; directcaller window checked. Static review only, no whole-context runtime/native tests.",
+      "Context structures, mode meaning, four-slot meanings and numeric type IDs remain unresolved. Working inputs are opaque pointers plus32-bit mode; only its lowbyte consumed.",
+      "Exact original instruction boundary repaired at1409ae878..881; bytes unchanged. Some invalid/type-mismatch paths can dereference null; no broad input-safety guarantee.",
+      "No MM source/livestream match or implicit child-callee completion claimed."
     ]
   }
 }

@@ -8512,3 +8512,16 @@ The converter clears a compact destination payload, retains tag/metadata fields 
 Two direct callers were found, including frame output. Exact semantic tag names and full source/context types remain unresolved, so this helper is counted once under shared game-context support. Static review does not establish alias safety, whole-caller correctness, platform behavior or original source equivalence. No new native tests were run.
 
 Totals: **962 reviewed names / 9,694 defined functions**, **2,355 mapped / 7,339 unmapped**. Whole-game completion remains unknown.
+
+
+### Game-context acquisition and reconciliation
+
+**AcquireAndReconcileGameContext** identifies a complete **20,739-byte / 4,211-instruction** routine. All **3,555 nonempty diagnostic C lines** were read alongside the original instructions. Its five-input working interface, descriptive name and instruction-boundary repair passed rollback preview, save and independent reopen with original bytes unchanged.
+
+The routine acquires and initializes a pooled game context. Depending on its mode, it runs an update pass or copies a base snapshot and relocates internal pointers. It reconciles record arrays, remaps references through object IDs, preserves selected runtime state, rebuilds object masks and prepares the result for simulation. The caller receives the acquired context through an output pointer slot. Exact structure definitions, mode meanings, numeric object types and four matched slots remain unresolved.
+
+The original instruction stream establishes two instructions where the saved listing had an overlapping instruction. The repair corrects analysis metadata; no game bytes were changed. Import resolution also identifies packed-component reconstruction through ldexpf and an RTC network-tick request with local-tick fallback. No platform calls were executed.
+
+This is static semantic review with a checked direct-caller window, not a whole-context execution test. Child callees are not implicitly complete, input safety is not established, and no original Media Molecule source match is claimed.
+
+Totals: **963 reviewed names / 9,694 defined functions**, **2,356 mapped / 7,338 unmapped**. Whole-game completion remains unknown.

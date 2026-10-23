@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "818 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "819 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8577,
-    "other_names": 1117,
-    "verification": "complete_inventory_matches_baseline_plus_818_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8576,
+    "other_names": 1118,
+    "verification": "complete_inventory_matches_baseline_plus_819_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22912,6 +22912,27 @@
         "Semantic payload tag names and full source/context types unresolved; three opaque pointer inputs and void working return.",
         "This function uses signed22-bit references, distinct from nearby26-bit remapping helpers. Original32-bit wrapping arithmetic governs.",
         "No MM livestream/source-build match or whole-caller review established."
+      ]
+    },
+    {
+      "address": "1409a98d0",
+      "original_name": "FUN_1409a98d0",
+      "applied_name": "AcquireAndReconcileGameContext",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AcquireAndReconcileGameContext(void * base_context, void * state_context, void * context_output, int mode, void * parameters)",
+      "evidence": [
+        "Entire original 20739-byte body (4211 instructions) and all 3555 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from complete20739-byte/4211-instruction original body, all3555 nonempty diagnostic C lines and directcaller1409bb007. Acquires/initializes pooled context via outputRDX; caller reads pointer slot aftercall. RDI base snapshot, RSI runtime-state context, lowbyteECXmode (observed0/1), R8 opaque parameter block read+0x596. Opaque pointer working inputs and void return; epilogue RAX stackcookie not semantic result. Mode0 update-pass path or nonzero bulkcopy0x1c8d680/relocation; reconciles0x43e0/0x19c50/0x270/0xce0/0x40-stride records, references by objectIDs, selected type-specific state, parent flags and four pointer+ID slots, then prepares simulation. Exact structures/mode meaning/typeIDs/slot semantics unresolved. Original signed22-bit packing and32-bit wrapping govern, some invalid/type-mismatch paths can null-dereference; no broad safety guarantee. Corrected saved instruction overlap at1409ae87c to original MOV878/CMP87d in full EH body. No native/platform/context execution, child-callee completeness or MM source match claimed."
+      ],
+      "caveats": [
+        "Complete20739-byte original body and3555 nonempty diagnostic C lines read; directcaller window checked. Static review only, no whole-context runtime/native tests.",
+        "Context structures, mode meaning, four-slot meanings and numeric type IDs remain unresolved. Working inputs are opaque pointers plus32-bit mode; only its lowbyte consumed.",
+        "Exact original instruction boundary repaired at1409ae878..881; bytes unchanged. Some invalid/type-mismatch paths can dereference null; no broad input-safety guarantee.",
+        "No MM source/livestream match or implicit child-callee completion claimed."
       ]
     }
   ],
