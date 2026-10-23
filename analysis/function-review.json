@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 120 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 121 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9671,
+    "total": 9672,
     "default_fun_names": 8603,
-    "other_names": 1068,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_120_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1069,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_121_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21679,6 +21679,29 @@
         "Finite bounded fixtures only; angular threshold-edge rounding,nonfinite inputs,invalid counts,arbitrary nonunit planes and live-game behavior unverified.",
         "Plane vector and companion stored-vector source property meanings not fully traced; mathematical descriptive name only.",
         "Full enclosing registration/dispatcher functions and exact original developer source/class not recovered by this review."
+      ]
+    },
+    {
+      "address": "1414386b0",
+      "original_name": null,
+      "applied_name": "BlendRecipientPointsTowardReferencePositions",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BlendRecipientPointsTowardReferencePositions(void * shape_state, int selection_index)",
+      "evidence": [
+        "Full83-byte original body,24-line typed pseudocode and named-preview differences read.",
+        "20 whole original leaf finite cases verify all4lane reference interpolation/extrapolation,negative/zero/positive counts and unchanged history/reference/other state.",
+        "BODY_2_RESTPOS_LAYER registration links embedded slot0 to ESI0 dispatch.",
+        "Independent saved-project reopening verified bounded new definition,working interface and unchanged original bytes/other inventory."
+      ],
+      "caveats": [
+        "Strength is not clamped; checked negative and above-one strengths extrapolate.",
+        "Finite bounded fixtures and slot0; invalid positive counts,other slot bounds,nonfinite values and live-game behavior unverified.",
+        "Original developer source/class not recovered."
       ]
     }
   ],

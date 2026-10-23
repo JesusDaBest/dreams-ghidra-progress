@@ -8093,3 +8093,14 @@ The routine scales the opposite force direction by a capped force magnitude and 
 Original plane/companion-vector property meanings,angular threshold-edge rounding,nonfinite or malformed inputs,general nonunit planes and live-game behavior remain unverified. The descriptive name records established mathematics without claiming original source recovery.
 
 Totals: **913 checked names across 9,671 defined functions**, **2,314 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
+
+
+### Recipient reference-position relaxation and point history
+
+`BlendRecipientPointsTowardReferencePositions` now has a verified bounded definition. Its complete83-byte body,24-line typed pseudocode and named-preview changes were read. Registered as `BODY_2_RESTPOS_LAYER` in embedded callback slot0,it moves every current point toward the stored reference by the callback strength. Strength is not clamped:negative or above-one values extrapolate. Reference points and previous-position history remain unchanged. All20 whole original-code finite cases passed,and an independent project reopen verified persistence and unchanged executable bytes.
+
+The force callback plane vector is now traced to the normalized blended reference-point direction written by the previously reviewed shape-blending helper. The companion point vector is previous-position history in the inspected reset,snapshot and integration paths. Another32 scoped original integration-block cases independently verified that history receives the old current point and current advances by0.99 times current-minus-history inXYZ;W uses multiplier1. Thus the force callback initial plane correction shifts both positions equally,preserving their difference,whereas reference relaxation changes only current position.
+
+The integration checks cover a bounded block,not the entire updater or live-game timing. Alternate lifecycle paths,invalid ranges,nonfinite values and exact original developer source remain unresolved.
+
+Totals: **914 checked names across 9,672 defined functions**, **2,315 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
