@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "802 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "803 existing-function renames,138 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9689,
-    "default_fun_names": 8593,
-    "other_names": 1096,
-    "verification": "complete_inventory_matches_baseline_plus_802_renames_and_138_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8592,
+    "other_names": 1097,
+    "verification": "complete_inventory_matches_baseline_plus_803_renames_and_138_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22425,6 +22425,33 @@
         "No native execution or game/GPU verification; original source symbols and full resource types unrecovered.",
         "The resource wrapper and generated C retain unresolved type/intrinsic/overlapping-global details; literal C equivalence is not claimed.",
         "No guarantee that a loading attempt succeeds; dependencies and resource validity remain separate evidence."
+      ]
+    },
+    {
+      "address": "1413c3050",
+      "original_name": "FUN_1413c3050",
+      "applied_name": "InitializeShaderResourceFromEmbeddedBlobOrFiles",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeShaderResourceFromEmbeddedBlobOrFiles(void * shader_name, int shader_stage, void * resource, void * embedded_blob)",
+      "evidence": [
+        "Complete251-byte original function (71 instructions), all33 nonempty lines of typed C and eight already-reviewed Imp accessor callers examined.",
+        "Four consumed inputs: filename in RDI, low32 stage in ESI, resource output wrapper in RDX, optional embedded blob in RCX. Reviewed accessors ignore the return; working signature is void.",
+        "Embedded input tail-dispatches directly to the reviewed binary initializer without formatting, reading files or freeing the borrowed blob.",
+        "Without an embedded blob, formats filename+.reasm.sb, tries the override then ordinary file, initializes after a successful read and frees the temporary buffer.",
+        "549 instruction-aligned direct call sites found across the executable. This is shared shader-resource code, not exclusive to Imp; indirect callers are not exhaustive.",
+        "60 new executions of the unchanged original wrapper validate four source outcomes, five signed stage patterns and three filename lengths with explicit dependency models.",
+        "Saved descriptive name and four-register working interface independently verified after reopening; original executable bytes unchanged."
+      ],
+      "caveats": [
+        "Native fixture models formatting, file-reader outcomes, resource initialization and free. It does not execute those dependencies, load real files or run GPU code.",
+        "Modeled read failures set output pointer to null; this fixture alone does not prove every real dependency failure path.",
+        "Input filenames are assumed valid and bounded; the original sprintf targets a1024-byte stack buffer without an observed length guard.",
+        "No unified meaningful return is established: the embedded path tail-calls the bool initializer and the file path tail-calls free. No bool success contract is promised.",
+        "Pointer types are coarse working types; source symbols, exact stage enum and whole-game/shader correctness remain unrecovered."
       ]
     }
   ],

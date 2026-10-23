@@ -8946,3 +8946,14 @@ The names identify **CPU resource-loading behavior**. The shader programs themse
 The graph's Imp visuals subsection now has naming reviews for **19 of its 19 currently identified functions**. That denominator covers only functions mapped to this subsection so far; it does **not** mean the Imp system or its shaders are fully reverse engineered. **7,355 functions remain unmapped across Dreams.**
 
 Totals: **941 reviewed names across 9,689 defined functions**, with **2,334 mapped functions**. These counts do not establish a whole-game completion percentage.
+
+
+### Shared shader-source dispatch
+
+**InitializeShaderResourceFromEmbeddedBlobOrFiles** now identifies the common source-selection wrapper used by the Imp accessors and many other shader loaders. Its complete **251 bytes /71 instructions** and **33 nonempty lines of typed C** were reviewed. The name and four-register working interface were saved and independently checked after reopening.
+
+A non-null embedded blob goes directly to the common binary initializer. Otherwise the wrapper tries `filename.reasm.sb`, then `filename`, initializes after a successful read and frees the temporary read buffer. **549 direct call sites** were found and aligned to original instructions; the eight previously reviewed Imp accessor bodies supplied the fully reviewed caller context. Indirect callers are not exhaustive.
+
+**60 new isolated native cases** exercised embedded, override-file, ordinary-file and missing-file outcomes, five stage bit patterns and three filename lengths. The original wrapper instructions stayed unchanged. Formatting, file-reader outcomes, initialization and free were explicit models; the fixtures did not run the real initializer, filesystem loading or GPU. Read-failure models returned null buffers. Filename bounds and real dependency failure behavior remain separate requirements; the original formatting uses a1024-byte local buffer without an observed length guard. The wrapper has no established unified success return contract.
+
+This adds one CPU helper review under shared shader support. Totals: **942 reviewed names /9,689 defined functions**, **2,335 mapped /7,354 unmapped**. These counts do not establish complete shader or whole-game behavior. No completed native suite was rerun.

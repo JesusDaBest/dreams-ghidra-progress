@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 895,
+    "done": 896,
     "todo": 1439,
-    "total": 2334,
-    "behavior_or_helpers_reviewed": 821,
+    "total": 2335,
+    "behavior_or_helpers_reviewed": 822,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -29977,12 +29977,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 124,
+        "done": 125,
         "todo": 268,
-        "total": 392,
-        "behavior_or_helpers_reviewed": 124,
+        "total": 393,
+        "behavior_or_helpers_reviewed": 125,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 366,
+        "runtime_functions_identified": 367,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -30103,6 +30103,7 @@
           "CreateAndQueueDeferredDrawJob",
           "ConvertOwnedImageByteChannels",
           "TryAllocateGraphicsResourceStorage",
+          "InitializeShaderResourceFromEmbeddedBlobOrFiles",
           "InitializeShaderResourceFromBinaryBlob",
           "InitializeGpuImageResource",
           "ReadImageRgbSample",
@@ -30499,6 +30500,7 @@
           "1413a0150",
           "1413b90a0",
           "1413c2ee0",
+          "1413c3050",
           "1413c31e0",
           "1413c3620",
           "1413c4060",
@@ -34232,12 +34234,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU compute support",
-            "done": 49,
+            "done": 50,
             "todo": 0,
-            "total": 49,
-            "behavior_or_helpers_reviewed": 49,
+            "total": 50,
+            "behavior_or_helpers_reviewed": 50,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 49,
+            "runtime_functions_identified": 50,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -34286,6 +34288,7 @@
               "CollectDeferredResourceAccessesForJob",
               "ConvertOwnedImageByteChannels",
               "TryAllocateGraphicsResourceStorage",
+              "InitializeShaderResourceFromEmbeddedBlobOrFiles",
               "InitializeShaderResourceFromBinaryBlob",
               "InitializeGpuImageResource",
               "ReadImageRgbSample",
@@ -34338,6 +34341,7 @@
               "1413a00c0",
               "1413b90a0",
               "1413c2ee0",
+              "1413c3050",
               "1413c31e0",
               "1413c3620",
               "1413c4060",
@@ -34676,6 +34680,61 @@
                 ]
               },
               {
+                "name": "rendering/compute/shader-sections",
+                "label": "Shader binary sections",
+                "done": 3,
+                "todo": 0,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 3,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 3,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "ExtractShaderBinarySections",
+                  "InitializeShaderResourceFromEmbeddedBlobOrFiles",
+                  "InitializeShaderResourceFromBinaryBlob"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140011fb0",
+                  "1413c3050",
+                  "1413c31e0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/shader-sections/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 3,
+                    "todo": 0,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 3,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 3,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "ExtractShaderBinarySections",
+                      "InitializeShaderResourceFromEmbeddedBlobOrFiles",
+                      "InitializeShaderResourceFromBinaryBlob"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140011fb0",
+                      "1413c3050",
+                      "1413c31e0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/buffer-descriptors",
                 "label": "Buffer descriptors",
                 "done": 2,
@@ -34872,57 +34931,6 @@
                     "done_addresses": [
                       "14139f160",
                       "1413c2ee0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/shader-sections",
-                "label": "Shader binary sections",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "ExtractShaderBinarySections",
-                  "InitializeShaderResourceFromBinaryBlob"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140011fb0",
-                  "1413c31e0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/shader-sections/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "ExtractShaderBinarySections",
-                      "InitializeShaderResourceFromBinaryBlob"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140011fb0",
-                      "1413c31e0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -47969,5 +47977,5 @@
       }
     ]
   },
-  "unmapped": 7355
+  "unmapped": 7354
 }

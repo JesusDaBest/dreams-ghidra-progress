@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 941,
+    "checked_and_applied_names": 942,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 941,
+    "verified_names": 942,
     "function_count": 9689,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2064,7 +2064,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "802 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "803 existing-function renames,138 created functions and1 retained existing-name review independently verified;4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29494,5 +29494,47 @@
     "gpu_or_game_verified": false,
     "scope": "CPU shader-resource accessors only. Shader binary programs and broader Imp behavior remain unverified.",
     "mapped_counts": "All 19 currently identified functions in this Imp visuals subsection have a naming review; this is not completion of the Imp system."
+  },
+  "shader_source_dispatch_checkpoint": {
+    "function": {
+      "name": "InitializeShaderResourceFromEmbeddedBlobOrFiles",
+      "signature": "void PS4_SYSV InitializeShaderResourceFromEmbeddedBlobOrFiles(void * shader_name, int shader_stage, void * resource, void * embedded_blob)",
+      "return_storage": "<VOID>",
+      "original_sha256": "3e6108de9a585487fadc75ec23117d1d272b5b67ce0193c62064febcf15b9934",
+      "size": 251,
+      "instructions": 71,
+      "created": false,
+      "c_sha256": "faca67d3e378a2db8b173db3ff6db5fa7b652637cbd981b7e7bce0af28de89a8",
+      "nonempty_c_lines": 54
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "static_body_bytes": 251,
+    "static_body_instructions": 71,
+    "native_cases": 60,
+    "modeled_imports": [
+      "sprintf: only the observed %s.reasm.sb format",
+      "ReadShaderFileToAllocatedBuffer: deterministic success/failure and borrowed local fixture pointers",
+      "InitializeShaderResourceFromBinaryBlob: records arguments without executing platform/GPU code",
+      "free: records cleanup without deallocation"
+    ],
+    "native_scope": "Full original251-byte source-dispatch wrapper; synthetic disjoint child buffers. No original initializer, file reader, actual filesystem loading or GPU execution.",
+    "direct_call_sites": 549,
+    "evidence": [
+      "Complete251-byte original function (71 instructions), all33 nonempty lines of typed C and eight already-reviewed Imp accessor callers examined.",
+      "Four consumed inputs: filename in RDI, low32 stage in ESI, resource output wrapper in RDX, optional embedded blob in RCX. Reviewed accessors ignore the return; working signature is void.",
+      "Embedded input tail-dispatches directly to the reviewed binary initializer without formatting, reading files or freeing the borrowed blob.",
+      "Without an embedded blob, formats filename+.reasm.sb, tries the override then ordinary file, initializes after a successful read and frees the temporary buffer.",
+      "549 instruction-aligned direct call sites found across the executable. This is shared shader-resource code, not exclusive to Imp; indirect callers are not exhaustive.",
+      "60 new executions of the unchanged original wrapper validate four source outcomes, five signed stage patterns and three filename lengths with explicit dependency models.",
+      "Saved descriptive name and four-register working interface independently verified after reopening; original executable bytes unchanged."
+    ],
+    "limits": [
+      "Native fixture models formatting, file-reader outcomes, resource initialization and free. It does not execute those dependencies, load real files or run GPU code.",
+      "Modeled read failures set output pointer to null; this fixture alone does not prove every real dependency failure path.",
+      "Input filenames are assumed valid and bounded; the original sprintf targets a1024-byte stack buffer without an observed length guard.",
+      "No unified meaningful return is established: the embedded path tail-calls the bool initializer and the file path tail-calls free. No bool success contract is promised.",
+      "Pointer types are coarse working types; source symbols, exact stage enum and whole-game/shader correctness remain unrecovered."
+    ]
   }
 }
