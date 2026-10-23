@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "812 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "814 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8583,
-    "other_names": 1111,
-    "verification": "complete_inventory_matches_baseline_plus_812_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8581,
+    "other_names": 1113,
+    "verification": "complete_inventory_matches_baseline_plus_814_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22783,6 +22783,48 @@
       ],
       "caveats": [
         "Only wave wrapper native-tested in768 new cases with explicit import model; two size helpers static-only this batch. No real GPU/platform or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "140043dc0",
+      "original_name": "FUN_140043dc0",
+      "applied_name": "DecodeColorTargetSurfaceLayoutInput",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV DecodeColorTargetSurfaceLayoutInput(void * layout_input, void * target_descriptor, int slice_index)",
+      "evidence": [
+        "Entire original 459-byte body (124 instructions) and all 67 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from full original EH-bounded body and complete typed C; original types/symbols and real GPU effects not recovered. Consumes output RDI, descriptor RSI and unsigned low32 EDX slice index. Null descriptor or slice above extracted11-bit maximum returns0x80d30000 without output writes. Fills packed-mode, format-derived bits/fragment, dimensions, sample count, pitch-like and slice fields; division assumes nonzero fragment count. Calls flag/tile helper then configuration helper; mode1 conditionally patches bit13 using original descriptor+0x10/+0x18 predicates, even if configuration helper returned error. On successful helpers calculates layout in zeroed56-byte scratch then calls final adjustment helper. Returns status from first failed stage or final adjustment; output can be partially written on error. Static-only whole-body review, actual decoder dependencies and zero-fragment/invalid pointers unverified."
+      ],
+      "caveats": [
+        "Only auxiliary query native-tested in1168 new cases with explicit helper models; descriptor decoder static-only this batch. No real GPU/platform or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "14003e950",
+      "original_name": "FUN_14003e950",
+      "applied_name": "QueryColorTargetSecondaryAuxiliaryStorage",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "int PS4_SYSV QueryColorTargetSecondaryAuxiliaryStorage(void * size_output, void * alignment_output, void * width_output, void * height_output, void * target_descriptor)",
+      "evidence": [
+        "Entire original 501-byte body (121 instructions) and all 99 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from full original EH-bounded body and complete typed C; original types/symbols and real GPU effects not recovered. Consumes optional64-bit size output RDI, optional32-bit alignment/width/height outputs RSI/RDX/RCX and descriptor R8. Null descriptor returns0x80d30000 without output writes. Non-null builds zero-initialized48-byte layout input from descriptor bit fields and selected auxiliary format; sets depth/sample defaults1, flags0x40 with bit13 for mode1, and format-derived fields. Zeroes56-byte layout output then calls CalculateGpuSurfaceLayout. Independently of returned status, writes requested outputs: low64 wrapping (11-bit count+1)*layout size, alignment, width and height. Returns layout status unchanged in low32.1168 new isolated whole-original cases validate all16 optional-output masks, null descriptor, two count bounds/mode paths, sizes spanning32bits, independent status and no/partial/full modeled layout writes, exact input fields and guarded output/descriptor preservation. Format/mode/layout helpers are explicit models; no hardware or query-dependency correctness claimed. Exact GPU metadata classification remains unresolved."
+      ],
+      "caveats": [
+        "Only auxiliary query native-tested in1168 new cases with explicit helper models; descriptor decoder static-only this batch. No real GPU/platform or concurrency verification.",
         "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
         "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
         "No source-build match to MM livestream material established in this batch."

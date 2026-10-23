@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 956,
+    "checked_and_applied_names": 958,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 956,
+    "verified_names": 958,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "812 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "814 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29846,6 +29846,51 @@
     ],
     "limits": [
       "Only wave wrapper native-tested in768 new cases with explicit import model; two size helpers static-only this batch. No real GPU/platform or concurrency verification.",
+      "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+      "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+      "No source-build match to MM livestream material established in this batch."
+    ],
+    "completion_slot_writers_resolved": false
+  },
+  "color_layout_decoder_query_checkpoint": {
+    "functions": {
+      "140043dc0": {
+        "name": "DecodeColorTargetSurfaceLayoutInput",
+        "signature": "int PS4_SYSV DecodeColorTargetSurfaceLayoutInput(void * layout_input, void * target_descriptor, int slice_index)",
+        "return_storage": "EAX:4",
+        "original_sha256": "9501b758087c60c5137bfb97ceb9fe8d9eee738bc6b82f897a1f54fa4407b262",
+        "size": 459,
+        "instructions": 124,
+        "created": false,
+        "c_sha256": "43d697fd45fb88f8729c43fc75b8b0ccc4078b1e3e870b254d97e958eb37ffe8",
+        "nonempty_c_lines": 81
+      },
+      "14003e950": {
+        "name": "QueryColorTargetSecondaryAuxiliaryStorage",
+        "signature": "int PS4_SYSV QueryColorTargetSecondaryAuxiliaryStorage(void * size_output, void * alignment_output, void * width_output, void * height_output, void * target_descriptor)",
+        "return_storage": "EAX:4",
+        "original_sha256": "d2ba1819598b2b63da5e1bece420a502f0f3a6ec1813674c5fff7cf706bd3147",
+        "size": 501,
+        "instructions": 121,
+        "created": false,
+        "c_sha256": "ad54263307f52d62d727117d42d7c3417454de7a5725ea11c7b7f87a8423c687",
+        "nonempty_c_lines": 117
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 0,
+    "existing_renames": 2,
+    "original_bytes": 960,
+    "original_instructions": 245,
+    "typed_c_nonempty_lines": 166,
+    "static_only": false,
+    "new_native_cases": 1168,
+    "native_target": "14003e950",
+    "static_only_targets": [
+      "140043dc0"
+    ],
+    "limits": [
+      "Only auxiliary query native-tested in1168 new cases with explicit helper models; descriptor decoder static-only this batch. No real GPU/platform or concurrency verification.",
       "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
       "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
       "No source-build match to MM livestream material established in this batch."

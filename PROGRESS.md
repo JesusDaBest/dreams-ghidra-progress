@@ -8451,3 +8451,14 @@ Totals: **953 reviewed names / 9,694 defined functions**, **2,346 mapped / 7,348
 All **406 original bytes / 130 instructions** and **100 nonempty typed C lines** were read. Names and working interfaces were saved and independently reopened. The two size helpers received **static review only** in this batch. No exact MM source/livestream match or live hardware verification is claimed.
 
 Totals: **956 reviewed names / 9,694 defined functions**, **2,349 mapped / 7,345 unmapped**. Three existing definitions were named; no new definitions. These are reviewed-code counts, not whole-game completion.
+
+
+### Color-target layout decoding and auxiliary output behavior
+
+**DecodeColorTargetSurfaceLayoutInput** converts a descriptor and slice index into the layout input. It rejects a null descriptor or an out-of-range unsigned slice before writing output. Later failures can leave partially filled output. The mode-specific flag adjustment happens even if its preceding configuration helper returns an error. Format-derived division assumes a nonzero fragment count; the dependency implementations and invalid inputs are not validated by this review.
+
+**QueryColorTargetSecondaryAuxiliaryStorage** builds a separate layout input for the secondary auxiliary allocation, calls the layout calculator, and returns its status. **It writes every requested output even when that status indicates an error.** Outputs derive from the zero-initialized layout result and any partial writes made by the calculator. Size is a low64-bit wrapping product of the per-slice size and extracted count plus one. The caller must inspect status; output writes alone do not establish success. Exact hardware metadata classification remains unresolved.
+
+The complete **960 original bytes / 245 instructions** and **166 nonempty typed C lines** were read, saved and independently reopened. The query passed **1,168 new isolated whole-original cases**: all16 optional-output combinations, null descriptor, count boundaries, two mode paths, sizes spanning32bits, and layout errors with no, partial or full output writes. Format, mode and layout dependencies are explicit models. The decoder received **static review only**; no real GPU/platform execution, exact MM source match or dependency correctness is claimed. Completed suites were not rerun.
+
+Totals: **958 reviewed names / 9,694 defined functions**, **2,351 mapped / 7,343 unmapped**. Two existing functions were named under Rendering resource storage. These remain scoped code reviews, not whole-game completion.
