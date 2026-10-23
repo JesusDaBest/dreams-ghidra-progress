@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "822 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "823 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9696,
-    "default_fun_names": 8573,
-    "other_names": 1123,
-    "verification": "complete_inventory_matches_baseline_plus_822_renames_and_145_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8572,
+    "other_names": 1124,
+    "verification": "complete_inventory_matches_baseline_plus_823_renames_and_145_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23041,6 +23041,27 @@
         "No live game/platform test or MM source equivalence claimed. SkyAndSun caller rechecked with verified vector-register interface."
       ],
       "created_function": true
+    },
+    {
+      "address": "14147b020",
+      "original_name": "FUN_14147b020",
+      "applied_name": "StageVectorForIndexedPropertyRecords",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV StageVectorForIndexedPropertyRecords(void * operation_context, int object_index, uint property_selector, SpatialQueryFloat4Working16 vector_value)",
+      "evidence": [
+        "Entire original 496-byte body (115 instructions) and all 92 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from complete496-byte/115-instruction body andalltypedC; selected direct caller windows. ContextRDI,indexESI,selectorlow16EDX,fullvectorXMM0;void. Selects tag0x12/index/selector records, thenowner/key/mode identity. No incoming subselector. Firstmatching active recipient mustbestate0 andXYZfinite; Wunchecked. Writesflag198=1,counter194=0,vector1a0,state190=2. Reloadscontextcount aftersuccess. 1728 new isolated unchanged-original cases passed after fixing missing originalRIP constantfixture (failedattempt retained). Originaltypes/selector/state names unresolved; emptylists,multioperationrecords,firstblockedsecondavailable,aliases/concurrency/invalidpointers untested. No livegame/platform or MMsource match claimed."
+      ],
+      "caveats": [
+        "Complete 496-byte / 115-instruction body and 92 nonempty diagnostic C lines read; selected direct caller windows.",
+        "1,728 isolated unchanged-original cases passed after correcting a missing constant in the test fixture; the failed attempt is retained locally.",
+        "Exact original property types, selector names and state labels unresolved. Empty lists, multiple operation records, first blocked match followed by available match, invalid pointers, aliases and concurrency untested.",
+        "No live game/platform test or MM source equivalence claimed. The shared staged fields connect to an already reviewed recipient pose update; no duplicate credit."
+      ]
     }
   ],
   "deferred": [

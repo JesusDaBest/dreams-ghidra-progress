@@ -8580,3 +8580,16 @@ Totals: **967 reviewed names / 9,695 defined functions**, **2,360 mapped / 7,335
 The descriptive name and working interface passed rollback preview, save and independent reopen. A fresh caller check now shows the Sky & Sun visualization passing the global context, object index, selector 0x12, wildcard subselector and vector separately, consistent with the original register setup. This resolves the earlier argument-inference ambiguity for this call; other unreviewed child interfaces remain open. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **968 reviewed names / 9,696 defined functions**, **2,361 mapped / 7,335 unmapped**. Whole-game completion remains unknown.
+
+
+### Indexed-property vector staging and recipient consumption
+
+**StageVectorForIndexedPropertyRecords** identifies a complete **496-byte / 115-instruction** helper. All **92 nonempty diagnostic C lines** and selected direct-caller windows were read. It selects tag-0x12 records by index and selector, then matches an active recipient's owner/key/mode. Unlike the earlier tag-0x10 path, it consumes no optional subselector. An idle matching recipient accepts finite X/Y/Z and stores the complete vector, including unchecked W, before marking its staged state.
+
+**1,728 isolated cases of the unchanged original helper passed.** The first test fixture omitted this helper's separate constant address; that setup was corrected and the failure retained. Matching, three states, float bit patterns, guarded outputs and context preservation were checked. Empty lists, multiple operation records, first blocked match followed by an available match, aliases, invalid pointers and concurrency remain untested.
+
+The shared staged fields connect to the already verified **UpdateEditorRecipientPoseAndAnimations** routine. Its original instructions distinguish a state-1 motion-limiting path from the state-2 staging path, use the vector in coordinate calculations, copy the staged block and clear its pending fields. This adds a producer-to-consumer connection without new credit for that existing routine. Exact original state labels and full numerical behavior remain unresolved.
+
+The new helper's name and working register interface survived independent Ghidra reopening with original bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **969 reviewed names / 9,696 defined functions**, **2,362 mapped / 7,334 unmapped**. Whole-game completion remains unknown.

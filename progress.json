@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 922,
+    "done": 923,
     "todo": 1439,
-    "total": 2361,
-    "behavior_or_helpers_reviewed": 848,
+    "total": 2362,
+    "behavior_or_helpers_reviewed": 849,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -12581,12 +12581,12 @@
       {
         "name": "shared",
         "label": "Shared engine & object data",
-        "done": 352,
+        "done": 353,
         "todo": 105,
-        "total": 457,
-        "behavior_or_helpers_reviewed": 335,
+        "total": 458,
+        "behavior_or_helpers_reviewed": 336,
         "properties_or_types_reviewed": 17,
-        "runtime_functions_identified": 370,
+        "runtime_functions_identified": 371,
         "property_type_functions_identified": 82,
         "code_role_unresolved": 5,
         "whole_feature_completion": null,
@@ -12899,6 +12899,7 @@
           "SelectRecipientTriangleByHierarchicalNormalThresholds",
           "WriteRotationBasisFromIntegerDegrees",
           "BuildRecipientTriangleProjectionTree",
+          "StageVectorForIndexedPropertyRecords",
           "StageVectorForMatchingPropertyRecords",
           "UpsertTaggedRecipientOutput",
           "CopyRecipientShapeDefinitionCollection",
@@ -13360,6 +13361,7 @@
           "14144cd20",
           "14144cf10",
           "14144f970",
+          "14147b020",
           "14147b210",
           "14147f1b0",
           "141487aa0",
@@ -16994,6 +16996,410 @@
             ]
           },
           {
+            "name": "shared/properties",
+            "label": "Properties & variants",
+            "done": 11,
+            "todo": 8,
+            "total": 19,
+            "behavior_or_helpers_reviewed": 7,
+            "properties_or_types_reviewed": 4,
+            "runtime_functions_identified": 7,
+            "property_type_functions_identified": 12,
+            "code_role_unresolved": 0,
+            "whole_feature_completion": null,
+            "done_names": [
+              "RegisterVariantTypeFieldOffset",
+              "FindPackedObjectPropertyPayload",
+              "TransferTransformPropertyPayload",
+              "EnsureVariantTypeEnumRegistered",
+              "RegisterVariantTypeEnumValues",
+              "RegisterVariantFieldOffset",
+              "FindThingPropertyMetadata",
+              "GetThingXYZOutputStorage",
+              "ConvertTaggedValueToTwoFloat4Blocks",
+              "StageVectorForIndexedPropertyRecords",
+              "StageVectorForMatchingPropertyRecords"
+            ],
+            "todo_names": [
+              "0x140cb8160",
+              "0x140cc7ab0",
+              "0x140cc7b60",
+              "0x140cc7bd0",
+              "0x140cfd6f0",
+              "0x140cfdd20",
+              "0x140cfe020",
+              "0x140d1aa00"
+            ],
+            "done_addresses": [
+              "1401123b0",
+              "140705a90",
+              "140ad5f90",
+              "140cb7e80",
+              "140cb7f30",
+              "140cfda40",
+              "14114db10",
+              "1411a32b0",
+              "1411c0830",
+              "14147b020",
+              "14147b210"
+            ],
+            "todo_addresses": [
+              "140cb8160",
+              "140cc7ab0",
+              "140cc7b60",
+              "140cc7bd0",
+              "140cfd6f0",
+              "140cfdd20",
+              "140cfe020",
+              "140d1aa00"
+            ],
+            "unresolved_addresses": [],
+            "groups": [
+              {
+                "name": "shared/properties/property-payloads",
+                "label": "Property payloads",
+                "done": 5,
+                "todo": 0,
+                "total": 5,
+                "behavior_or_helpers_reviewed": 5,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 5,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindPackedObjectPropertyPayload",
+                  "TransferTransformPropertyPayload",
+                  "ConvertTaggedValueToTwoFloat4Blocks",
+                  "StageVectorForIndexedPropertyRecords",
+                  "StageVectorForMatchingPropertyRecords"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140705a90",
+                  "140ad5f90",
+                  "1411c0830",
+                  "14147b020",
+                  "14147b210"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/property-payloads/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 5,
+                    "todo": 0,
+                    "total": 5,
+                    "behavior_or_helpers_reviewed": 5,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 5,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindPackedObjectPropertyPayload",
+                      "TransferTransformPropertyPayload",
+                      "ConvertTaggedValueToTwoFloat4Blocks",
+                      "StageVectorForIndexedPropertyRecords",
+                      "StageVectorForMatchingPropertyRecords"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140705a90",
+                      "140ad5f90",
+                      "1411c0830",
+                      "14147b020",
+                      "14147b210"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/evarianttype",
+                "label": "Variant Type",
+                "done": 3,
+                "todo": 1,
+                "total": 4,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 3,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 4,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterVariantTypeFieldOffset",
+                  "EnsureVariantTypeEnumRegistered",
+                  "RegisterVariantTypeEnumValues"
+                ],
+                "todo_names": [
+                  "0x140cb8160"
+                ],
+                "done_addresses": [
+                  "1401123b0",
+                  "140cb7e80",
+                  "140cb7f30"
+                ],
+                "todo_addresses": [
+                  "140cb8160"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/evarianttype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 3,
+                    "todo": 1,
+                    "total": 4,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 3,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 4,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterVariantTypeFieldOffset",
+                      "EnsureVariantTypeEnumRegistered",
+                      "RegisterVariantTypeEnumValues"
+                    ],
+                    "todo_names": [
+                      "0x140cb8160"
+                    ],
+                    "done_addresses": [
+                      "1401123b0",
+                      "140cb7e80",
+                      "140cb7f30"
+                    ],
+                    "todo_addresses": [
+                      "140cb8160"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/eblendtype",
+                "label": "Interpolation modes",
+                "done": 0,
+                "todo": 3,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cc7ab0",
+                  "0x140cc7b60",
+                  "0x140cc7bd0"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cc7ab0",
+                  "140cc7b60",
+                  "140cc7bd0"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/eblendtype/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 3,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cc7ab0",
+                      "0x140cc7b60",
+                      "0x140cc7bd0"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cc7ab0",
+                      "140cc7b60",
+                      "140cc7bd0"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/variant",
+                "label": "Variant",
+                "done": 1,
+                "todo": 2,
+                "total": 3,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 1,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 3,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "RegisterVariantFieldOffset"
+                ],
+                "todo_names": [
+                  "0x140cfe020",
+                  "0x140d1aa00"
+                ],
+                "done_addresses": [
+                  "140cfda40"
+                ],
+                "todo_addresses": [
+                  "140cfe020",
+                  "140d1aa00"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/variant/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 1,
+                    "todo": 2,
+                    "total": 3,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 1,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 3,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "RegisterVariantFieldOffset"
+                    ],
+                    "todo_names": [
+                      "0x140cfe020",
+                      "0x140d1aa00"
+                    ],
+                    "done_addresses": [
+                      "140cfda40"
+                    ],
+                    "todo_addresses": [
+                      "140cfe020",
+                      "140d1aa00"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/property-metadata",
+                "label": "Property metadata",
+                "done": 2,
+                "todo": 0,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 2,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 2,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "FindThingPropertyMetadata",
+                  "GetThingXYZOutputStorage"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "14114db10",
+                  "1411a32b0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/property-metadata/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 2,
+                    "todo": 0,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 2,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 2,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "FindThingPropertyMetadata",
+                      "GetThingXYZOutputStorage"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "14114db10",
+                      "1411a32b0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
+                "name": "shared/properties/tweakinfo",
+                "label": "Tweak Info",
+                "done": 0,
+                "todo": 2,
+                "total": 2,
+                "behavior_or_helpers_reviewed": 0,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 0,
+                "property_type_functions_identified": 2,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [],
+                "todo_names": [
+                  "0x140cfd6f0",
+                  "0x140cfdd20"
+                ],
+                "done_addresses": [],
+                "todo_addresses": [
+                  "140cfd6f0",
+                  "140cfdd20"
+                ],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "shared/properties/tweakinfo/properties-types",
+                    "label": "Properties & type definitions",
+                    "done": 0,
+                    "todo": 2,
+                    "total": 2,
+                    "behavior_or_helpers_reviewed": 0,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 0,
+                    "property_type_functions_identified": 2,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [],
+                    "todo_names": [
+                      "0x140cfd6f0",
+                      "0x140cfdd20"
+                    ],
+                    "done_addresses": [],
+                    "todo_addresses": [
+                      "140cfd6f0",
+                      "140cfdd20"
+                    ],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "name": "shared/diagnostics",
             "label": "Debugging & diagnostics",
             "done": 0,
@@ -17893,404 +18299,6 @@
                       "1407511c0"
                     ],
                     "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "shared/properties",
-            "label": "Properties & variants",
-            "done": 10,
-            "todo": 8,
-            "total": 18,
-            "behavior_or_helpers_reviewed": 6,
-            "properties_or_types_reviewed": 4,
-            "runtime_functions_identified": 6,
-            "property_type_functions_identified": 12,
-            "code_role_unresolved": 0,
-            "whole_feature_completion": null,
-            "done_names": [
-              "RegisterVariantTypeFieldOffset",
-              "FindPackedObjectPropertyPayload",
-              "TransferTransformPropertyPayload",
-              "EnsureVariantTypeEnumRegistered",
-              "RegisterVariantTypeEnumValues",
-              "RegisterVariantFieldOffset",
-              "FindThingPropertyMetadata",
-              "GetThingXYZOutputStorage",
-              "ConvertTaggedValueToTwoFloat4Blocks",
-              "StageVectorForMatchingPropertyRecords"
-            ],
-            "todo_names": [
-              "0x140cb8160",
-              "0x140cc7ab0",
-              "0x140cc7b60",
-              "0x140cc7bd0",
-              "0x140cfd6f0",
-              "0x140cfdd20",
-              "0x140cfe020",
-              "0x140d1aa00"
-            ],
-            "done_addresses": [
-              "1401123b0",
-              "140705a90",
-              "140ad5f90",
-              "140cb7e80",
-              "140cb7f30",
-              "140cfda40",
-              "14114db10",
-              "1411a32b0",
-              "1411c0830",
-              "14147b210"
-            ],
-            "todo_addresses": [
-              "140cb8160",
-              "140cc7ab0",
-              "140cc7b60",
-              "140cc7bd0",
-              "140cfd6f0",
-              "140cfdd20",
-              "140cfe020",
-              "140d1aa00"
-            ],
-            "unresolved_addresses": [],
-            "groups": [
-              {
-                "name": "shared/properties/evarianttype",
-                "label": "Variant Type",
-                "done": 3,
-                "todo": 1,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 3,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 4,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RegisterVariantTypeFieldOffset",
-                  "EnsureVariantTypeEnumRegistered",
-                  "RegisterVariantTypeEnumValues"
-                ],
-                "todo_names": [
-                  "0x140cb8160"
-                ],
-                "done_addresses": [
-                  "1401123b0",
-                  "140cb7e80",
-                  "140cb7f30"
-                ],
-                "todo_addresses": [
-                  "140cb8160"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/evarianttype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 3,
-                    "todo": 1,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 3,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 4,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterVariantTypeFieldOffset",
-                      "EnsureVariantTypeEnumRegistered",
-                      "RegisterVariantTypeEnumValues"
-                    ],
-                    "todo_names": [
-                      "0x140cb8160"
-                    ],
-                    "done_addresses": [
-                      "1401123b0",
-                      "140cb7e80",
-                      "140cb7f30"
-                    ],
-                    "todo_addresses": [
-                      "140cb8160"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/properties/property-payloads",
-                "label": "Property payloads",
-                "done": 4,
-                "todo": 0,
-                "total": 4,
-                "behavior_or_helpers_reviewed": 4,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 4,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "FindPackedObjectPropertyPayload",
-                  "TransferTransformPropertyPayload",
-                  "ConvertTaggedValueToTwoFloat4Blocks",
-                  "StageVectorForMatchingPropertyRecords"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "140705a90",
-                  "140ad5f90",
-                  "1411c0830",
-                  "14147b210"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/property-payloads/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 4,
-                    "todo": 0,
-                    "total": 4,
-                    "behavior_or_helpers_reviewed": 4,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 4,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "FindPackedObjectPropertyPayload",
-                      "TransferTransformPropertyPayload",
-                      "ConvertTaggedValueToTwoFloat4Blocks",
-                      "StageVectorForMatchingPropertyRecords"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "140705a90",
-                      "140ad5f90",
-                      "1411c0830",
-                      "14147b210"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/properties/eblendtype",
-                "label": "Interpolation modes",
-                "done": 0,
-                "todo": 3,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cc7ab0",
-                  "0x140cc7b60",
-                  "0x140cc7bd0"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cc7ab0",
-                  "140cc7b60",
-                  "140cc7bd0"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/eblendtype/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 3,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cc7ab0",
-                      "0x140cc7b60",
-                      "0x140cc7bd0"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cc7ab0",
-                      "140cc7b60",
-                      "140cc7bd0"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/properties/variant",
-                "label": "Variant",
-                "done": 1,
-                "todo": 2,
-                "total": 3,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 1,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 3,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "RegisterVariantFieldOffset"
-                ],
-                "todo_names": [
-                  "0x140cfe020",
-                  "0x140d1aa00"
-                ],
-                "done_addresses": [
-                  "140cfda40"
-                ],
-                "todo_addresses": [
-                  "140cfe020",
-                  "140d1aa00"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/variant/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 1,
-                    "todo": 2,
-                    "total": 3,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 1,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 3,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "RegisterVariantFieldOffset"
-                    ],
-                    "todo_names": [
-                      "0x140cfe020",
-                      "0x140d1aa00"
-                    ],
-                    "done_addresses": [
-                      "140cfda40"
-                    ],
-                    "todo_addresses": [
-                      "140cfe020",
-                      "140d1aa00"
-                    ],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/properties/property-metadata",
-                "label": "Property metadata",
-                "done": 2,
-                "todo": 0,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 2,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 2,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "FindThingPropertyMetadata",
-                  "GetThingXYZOutputStorage"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14114db10",
-                  "1411a32b0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/property-metadata/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 2,
-                    "todo": 0,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 2,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 2,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "FindThingPropertyMetadata",
-                      "GetThingXYZOutputStorage"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14114db10",
-                      "1411a32b0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "shared/properties/tweakinfo",
-                "label": "Tweak Info",
-                "done": 0,
-                "todo": 2,
-                "total": 2,
-                "behavior_or_helpers_reviewed": 0,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 0,
-                "property_type_functions_identified": 2,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [],
-                "todo_names": [
-                  "0x140cfd6f0",
-                  "0x140cfdd20"
-                ],
-                "done_addresses": [],
-                "todo_addresses": [
-                  "140cfd6f0",
-                  "140cfdd20"
-                ],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "shared/properties/tweakinfo/properties-types",
-                    "label": "Properties & type definitions",
-                    "done": 0,
-                    "todo": 2,
-                    "total": 2,
-                    "behavior_or_helpers_reviewed": 0,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 0,
-                    "property_type_functions_identified": 2,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [],
-                    "todo_names": [
-                      "0x140cfd6f0",
-                      "0x140cfdd20"
-                    ],
-                    "done_addresses": [],
-                    "todo_addresses": [
-                      "140cfd6f0",
-                      "140cfdd20"
-                    ],
                     "unresolved_addresses": [],
                     "groups": []
                   }
@@ -48251,5 +48259,5 @@
       }
     ]
   },
-  "unmapped": 7335
+  "unmapped": 7334
 }

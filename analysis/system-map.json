@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9696,
-  "mapped_total": 2361,
-  "unmapped_total": 7335,
+  "mapped_total": 2362,
+  "unmapped_total": 7334,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60554,6 +60554,30 @@
           "support": [
             "Entire original 507-byte body (125 instructions) and all 96 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Entire507-byte/125-instruction body and96 nonempty diagnostic C lines read; four direct caller windows. Working ABI contextRDI, objectindexESI, selectorlow16EDX, signedsubselectorECX (negativewildcard), vectorXMM0, void. Iterates0x19c50 operation records, selects tag0x10/object/selector/subselector plus source-destination kinds, resolves owner/key/mode through0x270 context records, finds first matching active global record. Only state0 and finiteXYZ accepted; Wunchecked. Writesflag+198=1,counter+194=0,16-bytevector+1a0,state+190=2. First matching global record stops search even if blocked. 5184 new isolated unchanged-original cases check matching/state/XYZfiniteness and full guarded output/context/node preservation. Original record type and downstream state2 meaning unresolved; emptylists/multioperation iteration/firstblockedsecondavailable, alias/concurrency/invalidpointers untested. No live game/platform or MMsource equivalence claimed."
+          ]
+        }
+      ]
+    },
+    "14147b020": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "properties",
+        "property-payloads",
+        "runtime-implementation"
+      ],
+      "component_basis": "Stages a vector for tag0x12 index/selector property records via shared active recipient identity; no incoming subselector. Counted once as shared property support.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body, typed C, selected caller review and isolated original-byte checks.",
+      "code_sha256": "7bf7804ca0f429329fb689bcad98ca81e13fbfdf4071a53e7aa0a89ab7f7b74c",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "StageVectorForIndexedPropertyRecords",
+          "support": [
+            "Entire original 496-byte body (115 instructions) and all 92 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from complete496-byte/115-instruction body andalltypedC; selected direct caller windows. ContextRDI,indexESI,selectorlow16EDX,fullvectorXMM0;void. Selects tag0x12/index/selector records, thenowner/key/mode identity. No incoming subselector. Firstmatching active recipient mustbestate0 andXYZfinite; Wunchecked. Writesflag198=1,counter194=0,vector1a0,state190=2. Reloadscontextcount aftersuccess. 1728 new isolated unchanged-original cases passed after fixing missing originalRIP constantfixture (failedattempt retained). Originaltypes/selector/state names unresolved; emptylists,multioperationrecords,firstblockedsecondavailable,aliases/concurrency/invalidpointers untested. No livegame/platform or MMsource match claimed."
           ]
         }
       ]
