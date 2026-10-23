@@ -8057,7 +8057,7 @@ Totals: **910 checked names across 9,668 defined functions**, **2,311 mapped and
 
 `CorrectRecipientShapeVolumeAroundMeanTriangleCenter` now has a verified bounded definition. The full original body, original and temporarily math-typed pseudocode, and named-preview changes were read. It computes signed triangle volume, takes the cube root of absolute volume divided by reference volume, clamps scale to 0.5–2, and applies weighted corrections around the mean triangle centroid. This center is not a volume centroid.
 
-All 405 synthetic cases passed using the original routine and original local `powf`, with translated tetrahedra at three scales, five reference factors, three strengths, three point weights, and full/partial/empty active ranges. Registration under `BODY_COLLISION` links directly to embedded callback slot5; initial strength is1 and post-call decay is0.5. Independent reopening confirmed the new definition and unchanged original bytes.
+All 405 synthetic cases passed using the original routine and original local `powf`, with translated tetrahedra at three scales, five reference factors, three strengths, three point weights, and full/partial/empty active ranges. Registration under `BODY_VOLUME_LAYER` links directly to embedded callback slot5; initial strength is1 and post-call decay is0.5. Independent reopening confirmed the new definition and unchanged original bytes.
 
 The saved shared math-import prototype remains inaccurate; its corrected interface was reviewed in a rollback-only transaction. Nonfinite/degenerate inputs, malformed indices, arbitrary meshes and live-game behavior remain unverified. The full enclosing dispatcher and original developer source are not claimed as recovered.
 
@@ -8068,7 +8068,7 @@ Totals: **911 checked names across9,669 defined functions**, **2,312 mapped and7
 
 `ApplyHemisphereWeightedRecipientVolumeLayers` now has a verified bounded function definition. Its complete original body,138-line typed pseudocode and named-preview changes were read. For each ordered layer, it scales the layer vector by callback strength and displaces each point according to how strongly their normalized XYZ directions oppose one another. Each later layer sees the updated point. W is excluded from length/dot reductions but participates in displacement.
 
-All360 original leaf synthetic cases passed an independent sequential model, covering zero/one/two layers, zero/one/three points, five signed strengths, four first-layer vectors and both stored orders. Other state, input packet and original code were preserved. Registration as `BODY_VOLUME_LAYER` links embedded callback slot4 to dispatcher index4. Independent reopening confirmed the saved definition and interface.
+All360 original leaf synthetic cases passed an independent sequential model, covering zero/one/two layers, zero/one/three points, five signed strengths, four first-layer vectors and both stored orders. Other state, input packet and original code were preserved. Registration as `BODY_FORCES_LAYER` links embedded callback slot4 to dispatcher index4. Independent reopening confirmed the saved definition and interface.
 
 These bounded finite checks do not establish threshold-edge rounding, nonfinite or malformed inputs, arbitrary shapes or live-game behavior. The full enclosing dispatcher and original developer source/class remain outside this review.
 
@@ -8086,7 +8086,7 @@ This is bounded branch validation, not a review or execution of the entire produ
 
 ### Directional recipient body forces and plane correction
 
-`ApplyDirectionalRecipientBodyForcesWithPlaneCorrection` now has a verified bounded definition. The complete507-byte body,190-line typed pseudocode and named-preview changes were read. `BODY_FORCES_LAYER` registration links embedded slot3 to dispatcher index3.
+`ApplyDirectionalRecipientBodyForcesWithPlaneCorrection` now has a verified bounded definition. The complete507-byte body,190-line typed pseudocode and named-preview changes were read. `BODY_SQUASH_LAYER` registration links embedded slot3 to dispatcher index3.
 
 The routine scales the opposite force direction by a capped force magnitude and callback strength,then weights displacement by point direction. It removes negative distance along a stored plane vector and applies the same initial correction to a companion stored vector. A second correction constrains the proposed displacement against that plane. All162 whole original-code finite synthetic cases passed an independent model,checking enable/count gates,zero/small/saturated forces,signed strengths,three plane vectors,full point/companion-vector writes and preservation of other state. Independent reopening confirmed the definition and unchanged original bytes.
 
@@ -8104,3 +8104,8 @@ The force callback plane vector is now traced to the normalized blended referenc
 The integration checks cover a bounded block,not the entire updater or live-game timing. Alternate lifecycle paths,invalid ranges,nonfinite values and exact original developer source remain unresolved.
 
 Totals: **914 checked names across 9,672 defined functions**, **2,315 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
+
+
+### Registration-label correction
+
+An audit of the exact initializer stores corrected three earlier record-label associations:slot3 is `BODY_SQUASH_LAYER`,slot4 is `BODY_FORCES_LAYER`,and slot5 is `BODY_VOLUME_LAYER`. The earlier notes associated each with the following record string load. The tested mathematics,descriptive function names,slot indices and review counts are unchanged. `BODY_COLLISION` belongs to a separate slot7 callback and is not the reviewed volume-correction helper.
