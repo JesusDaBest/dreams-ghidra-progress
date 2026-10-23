@@ -9251,3 +9251,16 @@ It searches all existing records for the first exact key/kind match, refreshes i
 An empty pool delegates to the already reviewed pool normalizer; this integrated route was **not executed** in these cases. Exhaustive pool sizes, kind-zero queries, invalid pointers, aliases, concurrency and live game behavior remain untested. The saved descriptive name and working interface survived independent reopening with original bytes unchanged. No Media Molecule source match is claimed.
 
 Totals: **976 reviewed names / 9,699 defined functions**, **2,369 mapped / 7,330 unmapped**. Whole-game completion remains unknown.
+
+
+### Loading an asset into an Imp state record
+
+**LoadImpStateRecordAssetByKey** describes a complete **243-byte / 71-instruction** wrapper. All **46 nonempty diagnostic C lines** and **three selected caller windows** were read, out ofnine direct sites. The original323-byte loader wrapper,78-byte release routine and1645-byte decoder were also read; their child callees are not implicitly reviewed.
+
+The wrapper rejects invalid record indices and returns true immediately for an exact cached128-bit asset key. Otherwise it asks the loader for the asset. On status3, it derives the byte range from the returned resource, invokes the decoder for the record payload, and returns the decoder result. It releases its temporary resource reference afterward.
+
+**The key is cached after status3 even when decoding returns false.** A later call with that same key takes the immediate true path. This is verified static control flow; no intent, live-game failure or bug claim is made. The decoder conditionally copies a4220-byte temporary payload on its own success and checks the integer magic0x5f496d70, but the full file format and child compression/serialization routines remain unresolved.
+
+**Static analysis only; zero new native cases.** The descriptive name and working interface passed rollback preview, save and independent reopening with original code bytes unchanged. Original key/class/status enum names remain unknown. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **977 reviewed names / 9,700 defined functions**, **2,370 mapped / 7,330 unmapped**. Whole-game completion remains unknown.

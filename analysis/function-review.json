@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "827 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "827 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9699,
+    "total": 9700,
     "default_fun_names": 8568,
-    "other_names": 1131,
-    "verification": "complete_inventory_matches_baseline_plus_827_renames_and_148_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1132,
+    "verification": "complete_inventory_matches_baseline_plus_827_renames_and_149_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23212,6 +23212,28 @@
         "Empty-pool normalization delegate, exhaustive sizes, kind0 queries, invalid pointers, aliases, concurrency and live game behavior untested.",
         "Direct stamp writers located: initialization to1 and increment in the previously reviewed BuildAndSubmitRenderFrame. Complete lifecycle, indirect writers and original class/field names unresolved. No MM source equivalence claimed."
       ]
+    },
+    {
+      "address": "14147cde0",
+      "original_name": null,
+      "applied_name": "LoadImpStateRecordAssetByKey",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "uchar PS4_SYSV LoadImpStateRecordAssetByKey(ulonglong asset_key_low_working, ulonglong asset_key_high_working, int record_index)",
+      "evidence": [
+        "Entire original 243-byte body (71 instructions) and all 46 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire243-byte/71-instruction original and46 nonempty typed C lines read. Working128-bit asset keyRDI/RSI, signed record indexEDX; ALbyte result. Three selected caller windows amongnine direct sites confirm acquired record index and ALuse; complete caller bodies not reviewed. Rejects negative/out-of-range index. Exact cached asset key match atrecord20/28 returns1 without loading or decoding. Otherwise calls140a68f20 with outputref,mode1,key andzerooptions. Status3 obtains byte range from resource offsets8/c/18 andcalls141449830 onrecord+50. After status3 decoder return, stores requested asset key20/28 regardless returned result; returns decoderAL. Therefore faileddecode can leave keycached andnextsamekeycall returns1. No intent/bug claim or live runtime proof. Nonzero temporary resource is atomically decremented anddestroyed via1400cd730 when count reacheszero. Full323-byte loaderwrapper,78-byte releasebody and1645-byte decoder original bodies read, but their child callees not implicitly reviewed. Decoder checks integer magic5f496d70 andconditionally copies4220-byte temporary payload on own success. Compression/serialization helpers and exact asset format remain unreviewed. Static analysis only, zero new native cases. No livegame/platform or MM source equivalence. Original class/asset-key type names andloaderstatus enum names unresolved."
+      ],
+      "caveats": [
+        "Entire243-byte/71-instruction original and46 nonempty typed C lines read; three selected caller windows amongnine direct sites. Full323-byte loaderwrapper,78-byte release routine and1645-byte decoder original bodies also read.",
+        "Static analysis only; zero new native cases. Child serialization/decompression/platform helpers not implicitly reviewed.",
+        "Status3 caches the asset key even if decoder returns false; subsequent exact cached-key match returns true. This is observed control flow, not a claim of intent or a reproduced bug.",
+        "Original asset-key/class/status enum names and exact file format unresolved. No live game/platform or MM source equivalence claimed."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [

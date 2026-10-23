@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 976,
+    "checked_and_applied_names": 977,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 976,
-    "function_count": 9699,
+    "verified_names": 977,
+    "function_count": 9700,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2062,6 +2062,7 @@
       "14147b410",
       "14147b7f0",
       "14147bcc0",
+      "14147cde0",
       "14147f1b0",
       "14148a980",
       "1414f5a90",
@@ -2074,7 +2075,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "827 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "827 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30465,5 +30466,33 @@
       },
       "scope": "Two25-instruction writer windows read; complete initialization owner not reviewed. EH instruction-relative scan does not cover indirect writes; no one-increment-per-displayed-frame guarantee."
     }
+  },
+  "imp_record_asset_loading_checkpoint": {
+    "functions": {
+      "14147cde0": {
+        "name": "LoadImpStateRecordAssetByKey",
+        "signature": "uchar PS4_SYSV LoadImpStateRecordAssetByKey(ulonglong asset_key_low_working, ulonglong asset_key_high_working, int record_index)",
+        "return_storage": "AL:1",
+        "original_sha256": "76690161cfde987e035c4d2a4d74b532cf20e19ef2245a07c6de5a87aca59060",
+        "size": 243,
+        "instructions": 71,
+        "created": true,
+        "c_sha256": "6a5bea57421984cf01585e78ea6b9137c214f02f079f673685aa85c94ed624e4",
+        "nonempty_c_lines": 66
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 1,
+    "existing_renames": 0,
+    "original_bytes": 243,
+    "original_instructions": 71,
+    "typed_c_nonempty_lines": 46,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Entire243-byte/71-instruction original and46 nonempty typed C lines read; three selected caller windows amongnine direct sites. Full323-byte loaderwrapper,78-byte release routine and1645-byte decoder original bodies also read.",
+      "Static analysis only; zero new native cases. Child serialization/decompression/platform helpers not implicitly reviewed.",
+      "Status3 caches the asset key even if decoder returns false; subsequent exact cached-key match returns true. This is observed control flow, not a claim of intent or a reproduced bug.",
+      "Original asset-key/class/status enum names and exact file format unresolved. No live game/platform or MM source equivalence claimed."
+    ]
   }
 }

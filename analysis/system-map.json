@@ -4,8 +4,8 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9699,
-  "mapped_total": 2369,
+  "inventory_total": 9700,
+  "mapped_total": 2370,
   "unmapped_total": 7330,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
@@ -60746,6 +60746,30 @@
           "support": [
             "Entire original 397-byte body (109 instructions) and all 89 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. Consumes128-bit working key inRDI/RSI and32-bit record kind inEDX, returns signed index inEAX or-1. Entire397-byte original andcomplete typedC read, five selected caller windows among44 direct call/jump sites; complete caller bodies not read. First scans all existing records for exact key-low/key-high andkind match; refreshes usage stamp+40 andreturns first matching index. Only if absent, claims first kind0 free slot. Otherwise selects first smallest unsigned stamp with stamp<ffffffff and wrap32(stamp+1)<current stamp. No eligible record returns-1. Global1478a687c producer not traced, so not asserted tobe frame/time. Recycling clears key/header ranges10..43, byte45 and first payloadqword50; doesnot reset entirepayload. Then writes suppliedkind/key/currentstamp. Claimingfree slot onlywrites suppliedkind/key/stamp. Emptycount delegates NormalizeImpStatePoolTo64Records then retriesclaim; integrateddelegate not executed innew suite. 540 isolated unchanged-original cases passed: ten layouts,nine unsigned stamps including highbit/wrap boundaries,three nonzero kinds,two fillpatterns. Exact returns, fullpool/guards,globals,args andoriginalbytes checked. Routes162hit/108free/138recycle/132unavailable. Emptydelegate/exhaustivepool sizes/kind0query/invalidpointers/aliases/concurrency/livegame untested. NoMMsourceequivalence."
+          ]
+        }
+      ]
+    },
+    "14147cde0": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Direct asset-key cache and payload load dataflow into the verified Imp state pool. Counted once under Imp visuals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, three selected caller windows and full original loader/release/decoder support bodies; static only.",
+      "code_sha256": "76690161cfde987e035c4d2a4d74b532cf20e19ef2245a07c6de5a87aca59060",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "LoadImpStateRecordAssetByKey",
+          "support": [
+            "Entire original 243-byte body (71 instructions) and all 46 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Entire243-byte/71-instruction original and46 nonempty typed C lines read. Working128-bit asset keyRDI/RSI, signed record indexEDX; ALbyte result. Three selected caller windows amongnine direct sites confirm acquired record index and ALuse; complete caller bodies not reviewed. Rejects negative/out-of-range index. Exact cached asset key match atrecord20/28 returns1 without loading or decoding. Otherwise calls140a68f20 with outputref,mode1,key andzerooptions. Status3 obtains byte range from resource offsets8/c/18 andcalls141449830 onrecord+50. After status3 decoder return, stores requested asset key20/28 regardless returned result; returns decoderAL. Therefore faileddecode can leave keycached andnextsamekeycall returns1. No intent/bug claim or live runtime proof. Nonzero temporary resource is atomically decremented anddestroyed via1400cd730 when count reacheszero. Full323-byte loaderwrapper,78-byte releasebody and1645-byte decoder original bodies read, but their child callees not implicitly reviewed. Decoder checks integer magic5f496d70 andconditionally copies4220-byte temporary payload on own success. Compression/serialization helpers and exact asset format remain unreviewed. Static analysis only, zero new native cases. No livegame/platform or MM source equivalence. Original class/asset-key type names andloaderstatus enum names unresolved."
           ]
         }
       ]
