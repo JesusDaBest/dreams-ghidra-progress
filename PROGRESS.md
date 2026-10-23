@@ -8062,3 +8062,14 @@ All 405 synthetic cases passed using the original routine and original local `po
 The saved shared math-import prototype remains inaccurate; its corrected interface was reviewed in a rollback-only transaction. Nonfinite/degenerate inputs, malformed indices, arbitrary meshes and live-game behavior remain unverified. The full enclosing dispatcher and original developer source are not claimed as recovered.
 
 Totals: **911 checked names across9,669 defined functions**, **2,312 mapped and7,357 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Recipient volume-layer displacement
+
+`ApplyHemisphereWeightedRecipientVolumeLayers` now has a verified bounded function definition. Its complete original body,138-line typed pseudocode and named-preview changes were read. For each ordered layer, it scales the layer vector by callback strength and displaces each point according to how strongly their normalized XYZ directions oppose one another. Each later layer sees the updated point. W is excluded from length/dot reductions but participates in displacement.
+
+All360 original leaf synthetic cases passed an independent sequential model, covering zero/one/two layers, zero/one/three points, five signed strengths, four first-layer vectors and both stored orders. Other state, input packet and original code were preserved. Registration as `BODY_VOLUME_LAYER` links embedded callback slot4 to dispatcher index4. Independent reopening confirmed the saved definition and interface.
+
+These bounded finite checks do not establish threshold-edge rounding, nonfinite or malformed inputs, arbitrary shapes or live-game behavior. The full enclosing dispatcher and original developer source/class remain outside this review.
+
+Totals: **912 checked names across 9,670 defined functions**, **2,313 mapped and 7,357 unmapped**. These are code-review counts, not whole-game completion.

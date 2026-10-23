@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 911,
+    "checked_and_applied_names": 912,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 911,
-    "function_count": 9669,
+    "verified_names": 912,
+    "function_count": 9670,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2030,6 +2030,7 @@
       "1414339f0",
       "141433a60",
       "141433a70",
+      "141438c70",
       "141438dc0",
       "14143c980",
       "14147f1b0",
@@ -2044,7 +2045,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 118 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 119 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28672,6 +28673,29 @@
       "Finite nondegenerate tetrahedra only; zero/negative reference, zero volume, nonfinite inputs, malformed indices, arbitrary meshes and live-game behavior unverified.",
       "Shared saved powf prototype remains inaccurate; corrected prototype was reviewed in a rollback-only transaction. Assembly and original-code execution establish the math interface.",
       "Original source-class and developer-source/build match not recovered; full enclosing dispatcher not reviewed."
+    ],
+    "project_saved_and_independently_reopened": true
+  },
+  "recipient_volume_layer_checkpoint": {
+    "address": "141438c70",
+    "name": "ApplyHemisphereWeightedRecipientVolumeLayers",
+    "signature": "void PS4_SYSV ApplyHemisphereWeightedRecipientVolumeLayers(void * shape_state, int selection_index)",
+    "original_sha256": "38f0e42f891a2a695f81817141f6902cc99c32addded6f449a9cdb738feb5a55",
+    "native_cases": 360,
+    "size": 334,
+    "created": true,
+    "c_sha256": "af4b1f8fa3bd2e3a16c30a6c5cdaae711cae69d884c096daf1dbbad44d3441f9",
+    "nonempty_c_lines": 146,
+    "evidence": [
+      "Complete334-byte original body,138-line typed C and named-preview differences read.",
+      "360 original leaf cases match independent sequential hemisphere-weighted vector displacement across ordered layers, point counts, signed strengths and all four output lanes.",
+      "BODY_VOLUME_LAYER registration links embedded callback slot4 and ESI4 dispatch.",
+      "Independent reopening verified exact EH-bounded function, working interface and unchanged original bytes/other function inventory."
+    ],
+    "limits": [
+      "Finite bounded fixtures only; threshold-edge rounding, nonfinite inputs, invalid counts, arbitrary shapes and live-game behavior unverified.",
+      "XYZ squared normalization threshold2^-46; refined RSQRT compared numerically rather than bitwise. W is excluded from normalization length/dot reduction but remains in output displacement.",
+      "Full enclosing registration/dispatcher functions and exact original developer source/class not recovered by this review."
     ],
     "project_saved_and_independently_reopened": true
   }

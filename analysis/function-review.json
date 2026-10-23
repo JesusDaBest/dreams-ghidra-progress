@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-19",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 118 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "792 existing-function renames, 119 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9669,
+    "total": 9670,
     "default_fun_names": 8603,
-    "other_names": 1066,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_118_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1067,
+    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_119_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -21633,6 +21633,29 @@
         "Finite nondegenerate tetrahedra only; zero/negative reference, zero volume, nonfinite inputs, malformed indices, arbitrary meshes and live-game behavior unverified.",
         "Shared saved powf prototype remains inaccurate; corrected prototype was reviewed in a rollback-only transaction. Assembly and original-code execution establish the math interface.",
         "Original source-class and developer-source/build match not recovered; full enclosing dispatcher not reviewed."
+      ]
+    },
+    {
+      "address": "141438c70",
+      "original_name": null,
+      "applied_name": "ApplyHemisphereWeightedRecipientVolumeLayers",
+      "created_function": true,
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyHemisphereWeightedRecipientVolumeLayers(void * shape_state, int selection_index)",
+      "evidence": [
+        "Complete334-byte original body,138-line typed C and named-preview differences read.",
+        "360 original leaf cases match independent sequential hemisphere-weighted vector displacement across ordered layers, point counts, signed strengths and all four output lanes.",
+        "BODY_VOLUME_LAYER registration links embedded callback slot4 and ESI4 dispatch.",
+        "Independent reopening verified exact EH-bounded function, working interface and unchanged original bytes/other function inventory."
+      ],
+      "caveats": [
+        "Finite bounded fixtures only; threshold-edge rounding, nonfinite inputs, invalid counts, arbitrary shapes and live-game behavior unverified.",
+        "XYZ squared normalization threshold2^-46; refined RSQRT compared numerically rather than bitwise. W is excluded from normalization length/dot reduction but remains in output displacement.",
+        "Full enclosing registration/dispatcher functions and exact original developer source/class not recovered by this review."
       ]
     }
   ],
