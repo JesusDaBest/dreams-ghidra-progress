@@ -3,10 +3,10 @@
   "snapshot_date": "2026-10-23",
   "meaning": "Done = function role and descriptive name checked. Totals include only functions with evidenced system assignments; full system sizes are unknown.",
   "systems": {
-    "done": 912,
+    "done": 913,
     "todo": 1439,
-    "total": 2351,
-    "behavior_or_helpers_reviewed": 838,
+    "total": 2352,
+    "behavior_or_helpers_reviewed": 839,
     "properties_or_types_reviewed": 74,
     "whole_feature_completion": null,
     "groups": [
@@ -29985,12 +29985,12 @@
       {
         "name": "rendering",
         "label": "Rendering & lighting",
-        "done": 140,
+        "done": 141,
         "todo": 268,
-        "total": 408,
-        "behavior_or_helpers_reviewed": 140,
+        "total": 409,
+        "behavior_or_helpers_reviewed": 141,
         "properties_or_types_reviewed": 0,
-        "runtime_functions_identified": 382,
+        "runtime_functions_identified": 383,
         "property_type_functions_identified": 26,
         "code_role_unresolved": 0,
         "whole_feature_completion": null,
@@ -30032,6 +30032,7 @@
           "AppendMsaaAndViewportScissorEnable",
           "AppendMsaaSampleCountAndDistance",
           "AppendSampleLocationsAndCentroidPriority",
+          "AppendPrepareFlipLabelPacket",
           "ResetBlendControl",
           "SetBlendControlEnabled",
           "SetColorBlendFactorsAndOperation",
@@ -30444,6 +30445,7 @@
           "1400265b0",
           "140026620",
           "1400266a0",
+          "140027950",
           "140033e60",
           "140033e70",
           "140033e80",
@@ -34272,12 +34274,12 @@
           {
             "name": "rendering/compute",
             "label": "GPU resources & dispatch",
-            "done": 65,
+            "done": 66,
             "todo": 0,
-            "total": 65,
-            "behavior_or_helpers_reviewed": 65,
+            "total": 66,
+            "behavior_or_helpers_reviewed": 66,
             "properties_or_types_reviewed": 0,
-            "runtime_functions_identified": 65,
+            "runtime_functions_identified": 66,
             "property_type_functions_identified": 0,
             "code_role_unresolved": 0,
             "whole_feature_completion": null,
@@ -34288,6 +34290,7 @@
               "GetPackedFormatChannelSelector",
               "AppendIndirectArgumentBufferBase",
               "AppendGnmDispatchIndirect",
+              "AppendPrepareFlipLabelPacket",
               "GetColorTargetMainSizeAndAlignment",
               "GetColorTargetSecondaryAuxiliarySizeAndAlignment",
               "InitializeImageDescriptorFromSpecification",
@@ -34356,6 +34359,7 @@
               "14001f1d0",
               "1400230e0",
               "140023b70",
+              "140027950",
               "140035de0",
               "140035f20",
               "140037e60",
@@ -34764,6 +34768,73 @@
                 ]
               },
               {
+                "name": "rendering/compute/completion",
+                "label": "Queue completion",
+                "done": 6,
+                "todo": 0,
+                "total": 6,
+                "behavior_or_helpers_reviewed": 6,
+                "properties_or_types_reviewed": 0,
+                "runtime_functions_identified": 6,
+                "property_type_functions_identified": 0,
+                "code_role_unresolved": 0,
+                "whole_feature_completion": null,
+                "done_names": [
+                  "AppendPrepareFlipLabelPacket",
+                  "AppendReleaseMemoryPacket",
+                  "SubmitComputeQueueAndWaitForFence",
+                  "AppendComputeCompletionFence",
+                  "WaitForCompletionAndDrainDeferredReleases",
+                  "ScheduleRequiredQueueSequenceWaits"
+                ],
+                "todo_names": [],
+                "done_addresses": [
+                  "140027950",
+                  "14003ba80",
+                  "141297bd0",
+                  "141297cf0",
+                  "1413c3ef0",
+                  "1413c90c0"
+                ],
+                "todo_addresses": [],
+                "unresolved_addresses": [],
+                "groups": [
+                  {
+                    "name": "rendering/compute/completion/runtime-implementation",
+                    "label": "Runtime & implementation",
+                    "done": 6,
+                    "todo": 0,
+                    "total": 6,
+                    "behavior_or_helpers_reviewed": 6,
+                    "properties_or_types_reviewed": 0,
+                    "runtime_functions_identified": 6,
+                    "property_type_functions_identified": 0,
+                    "code_role_unresolved": 0,
+                    "whole_feature_completion": null,
+                    "done_names": [
+                      "AppendPrepareFlipLabelPacket",
+                      "AppendReleaseMemoryPacket",
+                      "SubmitComputeQueueAndWaitForFence",
+                      "AppendComputeCompletionFence",
+                      "WaitForCompletionAndDrainDeferredReleases",
+                      "ScheduleRequiredQueueSequenceWaits"
+                    ],
+                    "todo_names": [],
+                    "done_addresses": [
+                      "140027950",
+                      "14003ba80",
+                      "141297bd0",
+                      "141297cf0",
+                      "1413c3ef0",
+                      "1413c90c0"
+                    ],
+                    "todo_addresses": [],
+                    "unresolved_addresses": [],
+                    "groups": []
+                  }
+                ]
+              },
+              {
                 "name": "rendering/compute/shader-sections",
                 "label": "Shader binary sections",
                 "done": 6,
@@ -34823,69 +34894,6 @@
                       "14016afc0",
                       "1413c3050",
                       "1413c31e0"
-                    ],
-                    "todo_addresses": [],
-                    "unresolved_addresses": [],
-                    "groups": []
-                  }
-                ]
-              },
-              {
-                "name": "rendering/compute/completion",
-                "label": "Queue completion",
-                "done": 5,
-                "todo": 0,
-                "total": 5,
-                "behavior_or_helpers_reviewed": 5,
-                "properties_or_types_reviewed": 0,
-                "runtime_functions_identified": 5,
-                "property_type_functions_identified": 0,
-                "code_role_unresolved": 0,
-                "whole_feature_completion": null,
-                "done_names": [
-                  "AppendReleaseMemoryPacket",
-                  "SubmitComputeQueueAndWaitForFence",
-                  "AppendComputeCompletionFence",
-                  "WaitForCompletionAndDrainDeferredReleases",
-                  "ScheduleRequiredQueueSequenceWaits"
-                ],
-                "todo_names": [],
-                "done_addresses": [
-                  "14003ba80",
-                  "141297bd0",
-                  "141297cf0",
-                  "1413c3ef0",
-                  "1413c90c0"
-                ],
-                "todo_addresses": [],
-                "unresolved_addresses": [],
-                "groups": [
-                  {
-                    "name": "rendering/compute/completion/runtime-implementation",
-                    "label": "Runtime & implementation",
-                    "done": 5,
-                    "todo": 0,
-                    "total": 5,
-                    "behavior_or_helpers_reviewed": 5,
-                    "properties_or_types_reviewed": 0,
-                    "runtime_functions_identified": 5,
-                    "property_type_functions_identified": 0,
-                    "code_role_unresolved": 0,
-                    "whole_feature_completion": null,
-                    "done_names": [
-                      "AppendReleaseMemoryPacket",
-                      "SubmitComputeQueueAndWaitForFence",
-                      "AppendComputeCompletionFence",
-                      "WaitForCompletionAndDrainDeferredReleases",
-                      "ScheduleRequiredQueueSequenceWaits"
-                    ],
-                    "todo_names": [],
-                    "done_addresses": [
-                      "14003ba80",
-                      "141297bd0",
-                      "141297cf0",
-                      "1413c3ef0",
-                      "1413c90c0"
                     ],
                     "todo_addresses": [],
                     "unresolved_addresses": [],
@@ -48148,5 +48156,5 @@
       }
     ]
   },
-  "unmapped": 7343
+  "unmapped": 7342
 }

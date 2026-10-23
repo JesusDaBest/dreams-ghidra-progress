@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "814 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "815 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8581,
-    "other_names": 1113,
-    "verification": "complete_inventory_matches_baseline_plus_814_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8580,
+    "other_names": 1114,
+    "verification": "complete_inventory_matches_baseline_plus_815_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22825,6 +22825,27 @@
       ],
       "caveats": [
         "Only auxiliary query native-tested in1168 new cases with explicit helper models; descriptor decoder static-only this batch. No real GPU/platform or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "140027950",
+      "original_name": "FUN_140027950",
+      "applied_name": "AppendPrepareFlipLabelPacket",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendPrepareFlipLabelPacket(void * command_buffer, void * completion_address, int completion_value)",
+      "evidence": [
+        "Entire original 112-byte body (36 instructions) and all 21 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from entire112-byte original body,21 nonempty typed C lines, original caller and240 new isolated cases. RDI command buffer,RSI encoded64-bit label address,EDX low32 label value; void working return. Available DWORD count is low32((end-cursor)>>2); below64 invokes callback with actual contextRDI,64ESI,userRDX. Callback lowAL0 exits without packet writes; success reloads cursor. Writes20 bytes: header0xc03e1000,tag0x68750778,label address64 and label value32; advances cursor256 bytes. Remaining236 reserved bytes untouched. Current shadPS4 identifies matching tag as PrepareFlipLabel and submission patcher turns it into label write; source-version equivalence and real driver/GPU effects not proved.240 whole-original cases model growth only, cover63/64 boundary, failures/redirection, exact writes/guards and preserved padding. Original caller passes second completion buffer plus currentbank*32 and currentframe low32 in normal-output branch. No address alignment/capacity validation beyond recorded threshold; callback validity and actual allocation unproved."
+      ],
+      "caveats": [
+        "Packet writer tested in240 new whole-original cases with explicit command-buffer growth model; large initializer/frame-parent windows only, no parent review credit. No real GPU/platform or concurrency verification.",
         "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
         "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
         "No source-build match to MM livestream material established in this batch."

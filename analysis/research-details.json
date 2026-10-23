@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 958,
+    "checked_and_applied_names": 959,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 958,
+    "verified_names": 959,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "814 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "815 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29896,5 +29896,65 @@
       "No source-build match to MM livestream material established in this batch."
     ],
     "completion_slot_writers_resolved": false
+  },
+  "deferred_completion_packet_checkpoint": {
+    "functions": {
+      "140027950": {
+        "name": "AppendPrepareFlipLabelPacket",
+        "signature": "void PS4_SYSV AppendPrepareFlipLabelPacket(void * command_buffer, void * completion_address, int completion_value)",
+        "return_storage": "<VOID>",
+        "original_sha256": "08544590d3e7b75d1cad5cf0c0a6d73c4baba34ab97778cb8e4690c8cb6d200f",
+        "size": 112,
+        "instructions": 36,
+        "created": false,
+        "c_sha256": "4432d73bc53b597875e0971b38c25bd70a382a31c286fe7b90dd1c7cd43eb11d",
+        "nonempty_c_lines": 38
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 112,
+    "original_instructions": 36,
+    "typed_c_nonempty_lines": 21,
+    "new_native_cases": 240,
+    "scope_limits": [
+      "Packet writer tested in240 new whole-original cases with explicit command-buffer growth model; large initializer/frame-parent windows only, no parent review credit. No real GPU/platform or concurrency verification.",
+      "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+      "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+      "No source-build match to MM livestream material established in this batch."
+    ],
+    "producer_trace": {
+      "all_original_body_and_typed_c_read": true,
+      "native_cases": 240,
+      "primary_cross_checks": {
+        "commands": {
+          "url": "https://raw.githubusercontent.com/shadps4-emu/shadPS4/main/src/video_core/amdgpu/pm4_cmds.h",
+          "sha256": "510647c73429e7d271016d0657de519541ed769b9c6a6bcc0b420266bec4f5ec"
+        },
+        "submission": {
+          "url": "https://raw.githubusercontent.com/shadps4-emu/shadPS4/main/src/core/libraries/gnmdriver/gnmdriver.cpp",
+          "sha256": "9c3da5c818b382cd88a864dc7e0f6d65f7295187c277a689bf853f6eff0e7cef"
+        }
+      },
+      "pointer_reference_scan": {
+        "eh_regions": 20887,
+        "decoded_instructions": 4703552,
+        "incomplete_regions": 0,
+        "hits": 32
+      },
+      "parent_scope": "Only recorded windows of192239-byte initializer and28461-byte frame parent read; no parent name/whole-body review credit.",
+      "producer_findings": [
+        "First completion address currentbank*32 goes to original event packet builder140026e30, data currentframe zeroextended32; full builder read but stack arguments/interface not yet captured or promoted.",
+        "Normal-output second completion address/currentframe go to matching PrepareFlipLabel reservation, followed by independently resolved SubmitAndFlipForWorkload import.",
+        "HMD path invokes reprojection submission, submits command buffers then directly stores64-bit currentframe to second marker at140c64958; this CPU store is not evidence of actual GPU completion.",
+        "Wait consumer compares otherbank markers with zeroextended(previousframe), then drains its release entries."
+      ],
+      "limits": [
+        "RIP-relative indexed EH scan is not exhaustive for register-derived/data/non-EH references.",
+        "No platform/GPU concurrency or whole frame routine tested.",
+        "Current emulator source corroborates packet meaning, not exact original SDK implementation."
+      ]
+    }
   }
 }

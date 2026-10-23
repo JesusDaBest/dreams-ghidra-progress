@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2351,
-  "unmapped_total": 7343,
+  "mapped_total": 2352,
+  "unmapped_total": 7342,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60314,6 +60314,30 @@
           "support": [
             "Entire original 501-byte body (121 instructions) and all 99 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from full original EH-bounded body and complete typed C; original types/symbols and real GPU effects not recovered. Consumes optional64-bit size output RDI, optional32-bit alignment/width/height outputs RSI/RDX/RCX and descriptor R8. Null descriptor returns0x80d30000 without output writes. Non-null builds zero-initialized48-byte layout input from descriptor bit fields and selected auxiliary format; sets depth/sample defaults1, flags0x40 with bit13 for mode1, and format-derived fields. Zeroes56-byte layout output then calls CalculateGpuSurfaceLayout. Independently of returned status, writes requested outputs: low64 wrapping (11-bit count+1)*layout size, alignment, width and height. Returns layout status unchanged in low32.1168 new isolated whole-original cases validate all16 optional-output masks, null descriptor, two count bounds/mode paths, sizes spanning32bits, independent status and no/partial/full modeled layout writes, exact input fields and guarded output/descriptor preservation. Format/mode/layout helpers are explicit models; no hardware or query-dependency correctness claimed. Exact GPU metadata classification remains unresolved."
+          ]
+        }
+      ]
+    },
+    "140027950": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original frame caller passes second completion-bank address/current stamp into flip-label reservation; original wait consumer checks the same buffers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "08544590d3e7b75d1cad5cf0c0a6d73c4baba34ab97778cb8e4690c8cb6d200f",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendPrepareFlipLabelPacket",
+          "support": [
+            "Entire original 112-byte body (36 instructions) and all 21 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from entire112-byte original body,21 nonempty typed C lines, original caller and240 new isolated cases. RDI command buffer,RSI encoded64-bit label address,EDX low32 label value; void working return. Available DWORD count is low32((end-cursor)>>2); below64 invokes callback with actual contextRDI,64ESI,userRDX. Callback lowAL0 exits without packet writes; success reloads cursor. Writes20 bytes: header0xc03e1000,tag0x68750778,label address64 and label value32; advances cursor256 bytes. Remaining236 reserved bytes untouched. Current shadPS4 identifies matching tag as PrepareFlipLabel and submission patcher turns it into label write; source-version equivalence and real driver/GPU effects not proved.240 whole-original cases model growth only, cover63/64 boundary, failures/redirection, exact writes/guards and preserved padding. Original caller passes second completion buffer plus currentbank*32 and currentframe low32 in normal-output branch. No address alignment/capacity validation beyond recorded threshold; callback validity and actual allocation unproved."
           ]
         }
       ]

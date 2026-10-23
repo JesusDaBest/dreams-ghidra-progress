@@ -9031,3 +9031,16 @@ Totals: **956 reviewed names / 9,694 defined functions**, **2,349 mapped / 7,345
 The complete **960 original bytes / 245 instructions** and **166 nonempty typed C lines** were read, saved and independently reopened. The query passed **1,168 new isolated whole-original cases**: all16 optional-output combinations, null descriptor, count boundaries, two mode paths, sizes spanning32bits, and layout errors with no, partial or full output writes. Format, mode and layout dependencies are explicit models. The decoder received **static review only**; no real GPU/platform execution, exact MM source match or dependency correctness is claimed. Completed suites were not rerun.
 
 Totals: **958 reviewed names / 9,694 defined functions**, **2,351 mapped / 7,343 unmapped**. Two existing functions were named under Rendering resource storage. These remain scoped code reviews, not whole-game completion.
+
+
+### Deferred-release completion producers
+
+The two banked completion buffers are allocated and zeroed during initialization. A scan of **20,887 original EH regions / 4,703,552 decoded instructions** found32 references in their surrounding global range, with no decoder stops. This covers indexed RIP-relative references, not every possible indirect reference. Only relevant windows of the large initializer/frame parent were read; neither receives a full-body review or new name.
+
+The frame path sends the first current-bank marker address and zero-extended frame stamp to an end-of-pipe event packet builder. The second marker differs by output mode: normal output appends a prepare-flip label reservation before the independently resolved submit-and-flip import; HMD output submits command buffers then directly stores the current frame to that marker on the CPU. **That CPU store is not proof of GPU completion.** The reviewed drain consumer waits on the other bank's previous-frame values before releasing queued records. Actual platform ordering and completion guarantees remain unverified.
+
+**AppendPrepareFlipLabelPacket** is now fully reviewed, named and independently reopened. Its entire **112-byte original body /21 nonempty C lines** reserves256 bytes but writes only20: header, prepare-flip label tag,64-bit address and32-bit value. The remaining236 bytes are untouched. Below64 available DWORDs it calls the growth hook with a64-DWORD request; failed growth writes nothing. **240 new whole-original cases** check the63/64 threshold, redirected/failed growth, exact bytes/cursor changes and preserved guards/padding. Growth is modeled; no driver/GPU execution or actual label write was tested. The pseudocode omits some indirect callback arguments; original registers and native observations establish them.
+
+The tag and header match [shadPS4's PrepareFlipLabel definition](https://github.com/shadps4-emu/shadPS4/blob/main/src/video_core/amdgpu/pm4_cmds.h). Its [submission patcher](https://github.com/shadps4-emu/shadPS4/blob/main/src/core/libraries/gnmdriver/gnmdriver.cpp) converts that reservation into a label write. This is a current emulator cross-check, not proof of the exact original SDK implementation or an MM source match.
+
+Totals: **959 reviewed names /9,694 defined functions**, **2,352 mapped /7,342 unmapped**. One existing packet writer is named under Rendering queue completion. Whole-game completion remains unknown.
