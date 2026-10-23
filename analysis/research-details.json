@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 995,
+    "checked_and_applied_names": 997,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 995,
-    "function_count": 9700,
+    "verified_names": 997,
+    "function_count": 9701,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2053,6 +2053,7 @@
       "141443dc0",
       "141444110",
       "141444950",
+      "141445f70",
       "14144cf10",
       "14144d710",
       "14144dad0",
@@ -2075,7 +2076,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "845 existing-function renames, 149 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "846 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30883,6 +30884,45 @@
       "168 isolated original cases verify only the132-byte append converter: valid source/destination counts, header bit preservation,512-slot capacity including header, complete destination/guards and unchanged source/descriptor.",
       "The group serializer, list serializer and destructor are static-only. Allocation/growth/shrink/free/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
       "Original selector/header/class meanings remain unresolved; no Media Molecule source equivalence claimed."
+    ]
+  },
+  "imp_legacy_field_header_checkpoint": {
+    "functions": {
+      "1414496c0": {
+        "name": "SerializeLegacyImpBytePair",
+        "signature": "void PS4_SYSV SerializeLegacyImpBytePair(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "680c67760e1fe2d609987e920e90c7b7f28a3d92fbc93cd1332cd15c73e125fc",
+        "size": 358,
+        "instructions": 89,
+        "created": false,
+        "c_sha256": "323d7f4c07135951a81cc0613c1ed07485de3aecc0e70f393f04298c90da4b0b",
+        "nonempty_c_lines": 78
+      },
+      "141445f70": {
+        "name": "InitializeImpGlobalsAndLegacyHeaders",
+        "signature": "void PS4_SYSV InitializeImpGlobalsAndLegacyHeaders(void)",
+        "return_storage": "<VOID>",
+        "original_sha256": "f23c2165b429befb0986db620d511854c222f6a69d752f030e6573315ea612a4",
+        "size": 978,
+        "instructions": 155,
+        "created": true,
+        "c_sha256": "8bcf43291d2be9567e78450df7c9fb15860cb2e7da583f1a0ac98d7ee07e9a43",
+        "nonempty_c_lines": 111
+      }
+    },
+    "new_checked_names": 2,
+    "new_definitions": 1,
+    "existing_renames": 1,
+    "original_bytes": 1336,
+    "original_instructions": 244,
+    "typed_c_nonempty_lines": 170,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Both complete original bodies (1336 bytes /244 instructions) and170 nonempty typed C lines read. Relevant parent serializer and header-table writer/consumer dataflow traced, not all incoming callers.",
+      "Static-only:zero new native cases. Allocation/failure, cleanup callbacks, fallback/exhaustion paths, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
+      "Thirteen table entries reconstructed from original file-backed constants and initializer stores. Integer/255 triplets are consistent with color data, but palette semantics and original names remain provisional.",
+      "No Media Molecule source equivalence claimed."
     ]
   }
 }

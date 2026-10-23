@@ -4,9 +4,9 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9700,
-  "mapped_total": 2388,
-  "unmapped_total": 7312,
+  "inventory_total": 9701,
+  "mapped_total": 2390,
+  "unmapped_total": 7311,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61202,6 +61202,54 @@
           "support": [
             "Entire original 132-byte body (35 instructions) and all 41 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. SysV RDI legacy descriptor, RSI destination, XMM0 raw16-byte header. For valid nonnegative counts, copies min(source count,511-destination count) blocks only if positive. Appends header first, preserves first12 header bytes and replaces W bits with copied count low16 zero-extended32; then copies16-byte blocks and increments destination count at+0x2000. 512 total slots including header; empty source/no remaining block space is no-op. 168 isolated original cases passed with full buffers/guards and source/descriptor unchanged. Malformed counts, aliases, invalid pointers, concurrency/live game untested. Working float4 container only; W is raw count bits, not numeric float conversion. Full original and typed C read. Imp parent legacy revision<=3 branch traced, including header lookup by selector and both destination arrays. All incoming callers not audited. Original class/selector/header semantics unresolved; no MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "1414496c0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Two raw-byte scoped serializer used by reviewed Imp payload; generic transfer primitive counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original and typed C review, original constants and selected parent dataflow. Static-only, no new native cases.",
+      "code_sha256": "680c67760e1fe2d609987e920e90c7b7f28a3d92fbc93cd1332cd15c73e125fc",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "SerializeLegacyImpBytePair",
+          "support": [
+            "Entire original 358-byte body (89 instructions) and all 71 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Two consecutive raw bytes with nested scope and optional marker/sequence updates. Preset error does not stop direct transfers but suppresses marker/sequence. Read direction skips marker without comparing. Parent uses temporary pair for revision<=1177; byte meanings remain unresolved. RDI serializer, RSI byte storage. Static-only, no new native execution. No malformed-input/alias/concurrency/live-game safety or MM source-equivalence claim."
+          ]
+        }
+      ]
+    },
+    "141445f70": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Imp globals initializer and header-table stores consumed by reviewed legacy Imp conversion.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original and typed C review, original constants and selected parent dataflow. Static-only, no new native cases.",
+      "code_sha256": "f23c2165b429befb0986db620d511854c222f6a69d752f030e6573315ea612a4",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeImpGlobalsAndLegacyHeaders",
+          "support": [
+            "Entire original 978-byte body (155 instructions) and all 99 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. No-argument initializer writes numeric globals, four allocated fixed resource-key strings, thirteen16-byte header table entries148a53ab0..148a53b70 and registers cleanup callbacks. Header constants copied from14167db80..14167dc4f; first3 lanes are unit-range values quantized in1/255 steps, last lane zero. Legacy parent selects these entries by group byte and converter replaces W with block count bits. Color/palette interpretation is provisional; original enum/field meanings unproven. Allocation and callback imports independently resolved; allocations/failure/cleanup not executed. Full initializer original and typed C read; not all startup callers or callback bodies. Static-only. No malformed-input/alias/concurrency/live-game safety or MM source-equivalence claim."
           ]
         }
       ]

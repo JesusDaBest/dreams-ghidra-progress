@@ -8816,3 +8816,19 @@ Assembly corrected an inferred interface: the converter takes descriptor in RDI,
 The other three routines are **static-only**. Their memalign, memcpy and free imports were independently resolved, but linked implementations were not executed. Allocation/failure paths, malformed counts, fallback/callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested. In particular, allocation-failure fallthrough prevents any malformed-input safety claim. No Media Molecule source match is claimed.
 
 The four helpers are counted once under Imp visuals. Totals: **995 reviewed names /9,700 defined functions**, **2,388 mapped /7,312 unmapped**. Whole-game completion remains unknown.
+
+
+### Legacy Imp fields and header initialization
+
+Two routines were read in full: **1,336 original bytes /244 instructions** and **170 nonempty diagnostic C lines**. One new initializer definition and one existing-function rename, with working interfaces, survived independent reopening with original bytes unchanged.
+
+- **SerializeLegacyImpBytePair** transfers two raw bytes with scoped marker/sequence bookkeeping. The parent uses a temporary pair for revision 1177 and earlier. Existing errors do not stop the direct byte transfers, but suppress marker/sequence updates. Original byte meanings remain unresolved.
+- **InitializeImpGlobalsAndLegacyHeaders** initializes adjacent numeric globals, four allocated resource-key strings, thirteen 16-byte header entries and cleanup callback registrations. Its malloc and __cxa_atexit imports were independently resolved.
+
+The header table has no file-backed bytes. Original initializer stores reconstruct it from 13 file-backed constants. Every entry has three values matching the float32 encoding of integer/255 and a zero fourth lane. That is consistent with a color palette, but the original palette/selector semantics remain provisional. The reviewed legacy converter preserves those first 12 bytes and replaces the last 32 bits with a raw block count.
+
+An original-byte RIP-reference scan covered 20,887 indexed EH regions /4,703,552 instructions with no decoder stops. It found the initializer writes and parent consumers; indirect/register-derived references and code outside the index remain outside that scan. No extra semantic-review credit comes from the scan.
+
+**Static analysis only; zero new native cases.** Allocation/failure, cleanup callbacks, fallback/exhaustion paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. All startup callers/callback bodies and all incoming serializer callers were not audited. No Media Molecule source match is claimed.
+
+The initializer is counted once under Imp visuals and the generic byte-pair helper once under shared saving/loading. Totals: **997 reviewed names /9,701 defined functions**, **2,390 mapped /7,311 unmapped**. Whole-game completion remains unknown.
