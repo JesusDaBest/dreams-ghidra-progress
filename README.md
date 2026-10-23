@@ -47,13 +47,13 @@ These findings describe reverse-engineering progress beyond function names. “T
 
 ## Status
 
-![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/5d29e853fa8c1c1eaf229a6c0dec2b3645b9b2ab/assets/status-badges.svg)
+![Analysis status](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/af8f8f41ee03d0525d6a12358c1ae2db49f5bdb2/assets/status-badges.svg)
 
 <!-- status-summary:start -->
-**942 of 9,689 functions named and checked.** A function is one piece of the game's code.
+**946 of 9,692 functions named and checked.** A function is one piece of the game's code.
 <!-- status-summary:end -->
 
-![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/5d29e853fa8c1c1eaf229a6c0dec2b3645b9b2ab/assets/status.svg)
+![Dreams function review by verified system assignment](https://raw.githubusercontent.com/JesusDaBest/dreams-ghidra-progress/af8f8f41ee03d0525d6a12358c1ae2db49f5bdb2/assets/status.svg)
 
 **Inside each section, counts mean checked names / identified functions.** Green means the function body was reviewed and its descriptive name is supported by static code evidence. Amber means reviewed but still unclear; gray means not reviewed. **No in-game verification is claimed. These are naming-review counts, not feature-completion percentages.** The table below separately records whether each reviewed function handles behavior, shared helpers, or property/type registration.
 
@@ -69,12 +69,12 @@ Every square is one actual function and has the same size. All function squares 
 | Physics & collision | 71 | 20/39 | 0/32 |
 | Sound & music | 72 | 10/10 | 0/62 |
 | Animation & puppets | 95 | 49/49 | 2/46 |
-| Rendering & lighting | 393 | 124/367 | 0/26 |
+| Rendering & lighting | 397 | 128/371 | 0/26 |
 | Editor & interface | 431 | 124/222 | 4/207 |
 | Dreamiverse & networking | 109 | 3/31 | 1/78 |
 | Shared engine & object data | 450 | 327/363 | 17/82 |
 
-**2,335 of 9,689 discovered functions are mapped; 7,354 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
+**2,339 of 9,692 discovered functions are mapped; 7,353 still need a system assignment.** Section area counts mapped functions. Each table column counts reviews matching that mapped code role. Property/type reviews do not count as behavior reviews. Whole-system coverage and completion remain unknown.
 
 <details>
 <summary>Explore the systems and their components</summary>
@@ -946,7 +946,7 @@ Every square is one actual function and has the same size. All function squares 
       - **Properties & type definitions** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
   - **Shared interface routines** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Code role still unresolved** - 2 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-- **Rendering & lighting** - 393 functions identified; 125 behavior/helper reviews; 0 property/type reviews
+- **Rendering & lighting** - 397 functions identified; 129 behavior/helper reviews; 0 property/type reviews
   - **Scene drawing** - 133 functions identified; 67 behavior/helper reviews; 0 property/type reviews
     - **Renderer** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 70 functions identified; 67 behavior/helper reviews; 0 property/type reviews
@@ -1020,24 +1020,24 @@ Every square is one actual function and has the same size. All function squares 
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
     - **Wipe Effect** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 1 functions identified; 0 behavior/helper reviews; 0 property/type reviews
-  - **GPU compute support** - 50 functions identified; 50 behavior/helper reviews; 0 property/type reviews
+  - **GPU resources & dispatch** - 54 functions identified; 54 behavior/helper reviews; 0 property/type reviews
     - **Image cache** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 15 functions identified; 15 behavior/helper reviews; 0 property/type reviews
     - **Image descriptors** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 12 functions identified; 12 behavior/helper reviews; 0 property/type reviews
     - **Compute dispatch** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 8 functions identified; 8 behavior/helper reviews; 0 property/type reviews
+    - **Shader binary sections** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
+      - **Runtime & implementation** - 6 functions identified; 6 behavior/helper reviews; 0 property/type reviews
     - **Queue completion** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 4 functions identified; 4 behavior/helper reviews; 0 property/type reviews
-    - **Shader binary sections** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
+    - **Resource storage** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 3 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Buffer descriptors** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Shader input registers** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
     - **Resource dependencies** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-      - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
-    - **Resource storage** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
       - **Runtime & implementation** - 2 functions identified; 2 behavior/helper reviews; 0 property/type reviews
   - **Graphics infrastructure** - 15 functions identified; 3 behavior/helper reviews; 0 property/type reviews
     - **Toolkit** - 7 functions identified; 3 behavior/helper reviews; 0 property/type reviews
