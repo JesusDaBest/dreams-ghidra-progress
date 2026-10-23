@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "792 existing-function renames, 135 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "793 existing-function renames, 138 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9686,
-    "default_fun_names": 8603,
-    "other_names": 1083,
-    "verification": "complete_inventory_matches_baseline_plus_792_renames_and_135_created_functions_and_1_reviewed_existing_name"
+    "total": 9689,
+    "default_fun_names": 8602,
+    "other_names": 1087,
+    "verification": "complete_inventory_matches_baseline_plus_793_renames_and_138_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22053,6 +22053,116 @@
         "Finite coordinates, nonzero output-position normalization and valid point/table indices only. Negative indices, NaN/Inf and integer conversion overflow remain untested.",
         "Skipping the join is an observed behavior, not a claim that it is a game defect."
       ]
+    },
+    {
+      "address": "14144dad0",
+      "original_name": null,
+      "applied_name": "UpdateRecipientParticleHistoryAndTransitions",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateRecipientParticleHistoryAndTransitions(void * owner, SpatialQueryFloat4Working16 frame0, SpatialQueryFloat4Working16 frame1, SpatialQueryFloat4Working16 frame2, SpatialQueryFloat4Working16 frame3, SpatialQueryFloat4Working16 displacement, float scalar)",
+      "evidence": [
+        "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+        "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+        "Reviewed all 6690 bytes / 1329 instructions, covering ten particle-pool slots and all control-flow paths.",
+        "Reconciles current and alternate counts, duplicates records when needed and fills the previously unwritten 48-byte history region using identity matches or a scaled relative transform.",
+        "Blends geometry, direction, color, packed bytes and scalar fields; separate timer phases approach a target, latch, then apply deterministic dispersal, first-byte fade and small rotations.",
+        "Incoming XMM0 through XMM4 are full float4 inputs; low XMM5 is a state-driven amount. The composed transform pair and saved-pose displacement have selected producer evidence."
+      ],
+      "caveats": [
+        "Names describe reviewed behavior, not recovered original source symbols or exact source classes.",
+        "No whole-game, live scheduler, final renderer or exact Media Molecule source/livestream equivalence claim.",
+        "Static review only; no native execution of this function in this checkpoint.",
+        "The reference transform pair in XMM2/XMM3 is not established as a previous-frame transform. Pose difference is not proven velocity; the scalar is not timestep.",
+        "Record replication has no local capacity check, and dispersal cross normalization has no zero fallback. Valid storage and finite input invariants remain unproved.",
+        "The original timer threshold uses float bits 0x3D4CCCCD; original scalar floating-point instructions remain authoritative.",
+        "Packed-byte output behavior is traced, but final GPU material/alpha interpretation remains unresolved."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "14144f500",
+      "original_name": "FUN_14144f500",
+      "applied_name": "ApplyRecipientParticleColorModifiersAndEnqueueRanges",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV ApplyRecipientParticleColorModifiersAndEnqueueRanges(void * owner, void * context, void * object, int mode, uchar pass_flag, float scalar)",
+      "evidence": [
+        "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+        "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+        "Reviewed all 1130 bytes / 249 instructions, complete typed C, both direct caller windows and bounded descriptor-consumer evidence.",
+        "Selects slot modes from overrides and the pass byte, applies identity/slot-selected sine-based RGB modifiers, and appends 32-byte descriptors to a queue limited to 200 entries.",
+        "317 isolated whole-original-body cases passed: 810 queued descriptors, final RGB states covering 243 modeled color-update events and 540 checked sinf calls, with zero observed error against the explicit model.",
+        "Checks covered all 16 override-flag combinations, seven mode values, canonical and selected noncanonical pass bytes, both color branches, bank selection, queue boundaries, cleanup and untouched bytes.",
+        "A full queue can still permit RGB changes. Nonzero pass cleanup resets modifier keys and phases while preserving each modifier payload."
+      ],
+      "caveats": [
+        "Names describe reviewed behavior, not recovered original source symbols or exact source classes.",
+        "No whole-game, live scheduler, final renderer or exact Media Molecule source/livestream equivalence claim.",
+        "The sinf import was explicitly modeled with host math.sin rounded to float32; neither original PS4 libm execution nor bit-exact PS4 equivalence is claimed.",
+        "Fixtures used finite phases/colors, bounded counts and valid disjoint buffers, with at most two active modifier entries per case; all eight iteration slots were reviewed statically.",
+        "The original XOR uses the full R8B byte. A decompiler conversion to a boolean does not preserve every noncanonical pass value.",
+        "The decompiled numeric-looking phase cast also requires the original floating-point load semantics.",
+        "Mode names, scalar purpose, phase semantics, invalid inputs, concurrency and complete downstream GPU interpretation remain unresolved."
+      ]
+    },
+    {
+      "address": "1414792e0",
+      "original_name": null,
+      "applied_name": "DispatchRecipientParticleUpdates",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV DispatchRecipientParticleUpdates(void)",
+      "evidence": [
+        "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+        "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+        "Reviewed all 181 bytes / 45 instructions, complete typed output and the callback registration carrying the original UpdateParticles label.",
+        "Consumes no incoming arguments; dispatches the index callback through an optional scheduler or synchronously traverses the global object array.",
+        "The queued route forwards the count unchanged, while synchronous fallback requires a positive signed count."
+      ],
+      "caveats": [
+        "Names describe reviewed behavior, not recovered original source symbols or exact source classes.",
+        "No whole-game, live scheduler, final renderer or exact Media Molecule source/livestream equivalence claim.",
+        "Static review only; no actual scheduler, queue execution, threading or object-lifetime validation.",
+        "The optional scheduler vtable method at offset 8 remains unnamed. Typed C omits some indirect-call arguments; original register setup is authoritative.",
+        "Indirect entry completeness and the real meaning of nonpositive counts on the queued route remain unproved."
+      ],
+      "created_function": true
+    },
+    {
+      "address": "1414793a0",
+      "original_name": null,
+      "applied_name": "UpdateRecipientParticlesByIndexJob",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV UpdateRecipientParticlesByIndexJob(int item_index)",
+      "evidence": [
+        "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+        "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+        "Reviewed all 83 bytes / 12 instructions and the complete 15-line bounded typed output.",
+        "Consumes signed ESI as an object-array index, ignores incoming RDI, prepares owner plus six SIMD arguments and tail-transfers to the particle history updater.",
+        "CALL_RETURN metadata on the original external tail jump preserves the separate decompiler boundary; no original instruction bytes changed."
+      ],
+      "caveats": [
+        "Names describe reviewed behavior, not recovered original source symbols or exact source classes.",
+        "No whole-game, live scheduler, final renderer or exact Media Molecule source/livestream equivalence claim.",
+        "Static review only; no scheduler or native callback execution.",
+        "There is no local index or object-pointer check. Scheduler callback typedef, valid index range and object lifetime remain unproved.",
+        "ESI is proven to be an item index for this wrapper only; this does not establish the meaning of ESI in other particle jobs."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [

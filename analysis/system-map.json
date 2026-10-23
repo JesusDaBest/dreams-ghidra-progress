@@ -4,9 +4,9 @@
   "snapshot_id": "ps4-sysv-v1-selective-9486",
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
-  "inventory_total": 9686,
-  "mapped_total": 2329,
-  "unmapped_total": 7357,
+  "inventory_total": 9689,
+  "mapped_total": 2333,
+  "unmapped_total": 7356,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -59570,6 +59570,117 @@
             "119 isolated whole-original-body cases passed, comparing 597 records: 192 prefix records and 405 tail records, with maximum absolute float error below 3.06e-7.",
             "Checks covered ordinary and all three fallback axes in both passes, packing, untouched bytes, owner count wrap, tail capacity and ignored ESI.",
             "Only the primary consumed count increments and its reservation clears; secondary range and counters are not used."
+          ]
+        }
+      ]
+    },
+    "14144dad0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Consumes the same recipient particle pools written by the reviewed shape-output builders; direct caller and registered callback supply the recipient owner.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
+      "code_sha256": "a69f72d8840dd5e06878d1422fc33d43f65a60357f0a9b970e693c27534f9ad3",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateRecipientParticleHistoryAndTransitions",
+          "support": [
+            "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+            "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+            "Reviewed all 6690 bytes / 1329 instructions, covering ten particle-pool slots and all control-flow paths.",
+            "Reconciles current and alternate counts, duplicates records when needed and fills the previously unwritten 48-byte history region using identity matches or a scaled relative transform.",
+            "Blends geometry, direction, color, packed bytes and scalar fields; separate timer phases approach a target, latch, then apply deterministic dispersal, first-byte fade and small rotations.",
+            "Incoming XMM0 through XMM4 are full float4 inputs; low XMM5 is a state-driven amount. The composed transform pair and saved-pose displacement have selected producer evidence."
+          ]
+        }
+      ]
+    },
+    "14144f500": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Both direct callers pass the recipient owner; the function modifies the same particle records and queues their ranges for a separately traced consumer.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
+      "code_sha256": "dee56aaa4145156a0a0921a5f8abfc9a20ef103e791e6dd888131f2b5f683451",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "ApplyRecipientParticleColorModifiersAndEnqueueRanges",
+          "support": [
+            "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+            "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+            "Reviewed all 1130 bytes / 249 instructions, complete typed C, both direct caller windows and bounded descriptor-consumer evidence.",
+            "Selects slot modes from overrides and the pass byte, applies identity/slot-selected sine-based RGB modifiers, and appends 32-byte descriptors to a queue limited to 200 entries.",
+            "317 isolated whole-original-body cases passed: 810 queued descriptors, final RGB states covering 243 modeled color-update events and 540 checked sinf calls, with zero observed error against the explicit model.",
+            "Checks covered all 16 override-flag combinations, seven mode values, canonical and selected noncanonical pass bytes, both color branches, bank selection, queue boundaries, cleanup and untouched bytes.",
+            "A full queue can still permit RGB changes. Nonzero pass cleanup resets modifier keys and phases while preserving each modifier payload."
+          ]
+        }
+      ]
+    },
+    "1414792e0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Registers the recipient particle index callback or directly iterates recipient objects and invokes the reviewed particle-history updater.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
+      "code_sha256": "edb43d122ed478bac4c600d6401137f259d024e190c09e35ce01560a51ac5089",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "DispatchRecipientParticleUpdates",
+          "support": [
+            "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+            "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+            "Reviewed all 181 bytes / 45 instructions, complete typed output and the callback registration carrying the original UpdateParticles label.",
+            "Consumes no incoming arguments; dispatches the index callback through an optional scheduler or synchronously traverses the global object array.",
+            "The queued route forwards the count unchanged, while synchronous fallback requires a positive signed count."
+          ]
+        }
+      ]
+    },
+    "1414793a0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "edit-events",
+        "runtime-implementation"
+      ],
+      "component_basis": "Registered by the recipient particle dispatcher and tail-calls the reviewed recipient particle-history updater using an indexed recipient object.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C reviewed, interfaces traced and saved definition independently reopened; per-function evidence separates native fixtures from static review.",
+      "code_sha256": "c492b2deade1ffee1e019759a7ac6cf837683aac2a26b43cb0daea152385f696",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "UpdateRecipientParticlesByIndexJob",
+          "support": [
+            "Complete original instruction body and complete typed decompiler output reviewed; relevant caller or callback interfaces traced.",
+            "Descriptive name, working consumed-register interface and exact function boundary saved and verified after independent reopening; original bytes unchanged.",
+            "Reviewed all 83 bytes / 12 instructions and the complete 15-line bounded typed output.",
+            "Consumes signed ESI as an object-array index, ignores incoming RDI, prepares owner plus six SIMD arguments and tail-transfers to the particle history updater.",
+            "CALL_RETURN metadata on the original external tail jump preserves the separate decompiler boundary; no original instruction bytes changed."
           ]
         }
       ]

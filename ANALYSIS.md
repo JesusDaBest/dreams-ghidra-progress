@@ -8872,3 +8872,27 @@ The nonanimated primary frame uses `cross(side, tangent)`; a register overwrite 
 Input bounds, zero-position normalization, physical pool capacity, scheduler behavior and record consumers still need investigation. No exact original source-name or Media Molecule livestream match is claimed. The table traces add evidence but no extra checked-function credit.
 
 Totals: **928 checked names across 9,686 defined functions**, with **2,329 mapped and 7,357 unmapped**. This is evidence-backed function review progress, not a claim that the whole game is reconstructed.
+
+
+### Recipient particle history, transitions and range submission
+
+Four more functions now have descriptive names and working register interfaces, saved and verified after reopening. This checkpoint adds **three definitions and reviews one existing function**, covering **8,084 original bytes / 1,635 instructions** and complete typed decompiler output.
+
+| Function | Established behavior | Verification in this checkpoint |
+| --- | --- | --- |
+| `UpdateRecipientParticleHistoryAndTransitions` | Reconciles particle counts, fills the 48-byte history region, blends record fields, and applies timed movement, fade and rotation transitions. | Complete static body and selected caller/field-producer review. |
+| `ApplyRecipientParticleColorModifiersAndEnqueueRanges` | Selects ranges, applies identity-selected RGB modifiers, queues descriptors and clears modifier state on the appropriate pass. | **317 isolated whole-body cases**, checking **810 descriptors and final colors covering 243 modeled update events**. |
+| `UpdateRecipientParticlesByIndexJob` | Reads an object by signed item index, prepares its transform inputs and tail-calls the history updater. | Complete static wrapper and callback-registration review. |
+| `DispatchRecipientParticleUpdates` | Queues the indexed operation or directly updates the object array. | Complete static dispatcher review. |
+
+The history updater explains the 48 bytes left untouched by the particle builders. It copies a selected prior record's transform when the low 13 identity bits match; otherwise it derives a transformed history record. Changing counts can duplicate current records or bring alternate-pool records forward. Ordinary interpolation and timed approach/dispersal are separate paths. Four packed bytes are blended together in one path; other paths fade just the first byte. The exact downstream material or alpha meaning of those bytes is still unresolved.
+
+The transform inputs are better grounded without assuming their timing. One pair is composed from recipient pose and component transforms. The other pair has neutral/reference usage, but its dynamic producer has not established a previous-frame meaning. The displacement comes from a saved pose difference and is not proven velocity. The extra scalar is driven by recipient state and is not delta time.
+
+The range-submission tests covered all 16 override combinations, seven mode values, ordinary and selected noncanonical pass bytes, both color branches, bank selection, queue limits and cleanup. They checked **540 sinf calls**, explicitly substituting host `math.sin` rounded to float32. The observed error against that model was zero; this does **not** verify the original PS4 math library. Tests used finite valid buffers and at most two active modifiers per case; all eight modifier slots were reviewed statically. A full descriptor queue can still allow RGB changes before submission is skipped.
+
+The indexed callback consumes ESI and ignores incoming RDI. Its external tail jump is recorded as tail-call metadata so the decompiler keeps the functions separate; instruction bytes are unchanged. The dispatcher can forward a nonpositive count to the scheduler, whereas its synchronous fallback rejects it. Actual scheduler execution, callback lifetime and concurrency remain unverified. This callback's ESI meaning does not establish the meaning of ESI in other particle jobs.
+
+The history updater and both wrappers were not native-tested. Record replication has no local capacity gate, and the dispersal basis has no zero-normalization fallback. These are exact observed operations, not proof that invalid states are reachable during normal play. Final GPU interpretation, live rendering and original source identity remain open. No whole-game or developer-livestream equivalence is claimed.
+
+Totals: **932 checked names across 9,689 defined functions**, with **2,333 mapped and 7,356 unmapped**. These counts describe evidence-backed function review, not completion of the whole game.
