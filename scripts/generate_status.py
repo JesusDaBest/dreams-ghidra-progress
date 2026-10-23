@@ -644,7 +644,18 @@ def main(argv=None):
     expected_readme = readme
     summary = (f'**{status["metrics"]["review"]["verified_names"]:,} of {status["inventory_total"]:,} '
                'functions named and checked.** A function is one piece of the game\'s code.')
-    for marker, replacement in (('status-summary', summary), ('area-status', render_area_table(status, mapping))):
+    review = status['metrics']['review']
+    cache = status['metrics']['decompilation']
+    mapped_checked = sum(row['review'] == 'verified_name' and row['address'] in mapping['assignments'] for row in rows)
+    latest_counts = (
+        f'- **{review["verified_names"]:,} of {status["inventory_total"]:,} functions named and checked.** '
+        f'Another {review["deferred"]:,} remain unclear after review. These counts measure function review, not whole-game completion.\n'
+        f'- **{mapping["mapped_total"]:,} functions mapped to parts of Dreams; {mapping["unmapped_total"]:,} still unmapped.** '
+        f'Of the mapped functions, {mapped_checked:,} have checked names.\n'
+        f'- **{cache["complete"]:,} functions have cached computer-generated code; {cache["failed"]:,} extraction failures remain.** '
+        'Generated output is preparation for research, not proof that behavior is understood.'
+    )
+    for marker, replacement in (('status-summary', summary), ('area-status', render_area_table(status, mapping)), ('latest-counts', latest_counts)):
         pattern = rf'(<!-- {marker}:start -->).*?(<!-- {marker}:end -->)'
         expected_readme, count = re.subn(pattern, lambda m: m[1] + '\n' + replacement + '\n' + m[2],
                                         expected_readme, flags=re.S)

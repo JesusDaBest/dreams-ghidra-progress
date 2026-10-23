@@ -9449,3 +9449,16 @@ The routine adds nested scope and optional marker/sequence bookkeeping. Preset e
 A read-only follow-up of the already reviewed parent now displays descriptor/destination/header arguments correctly for legacy conversion and distinguishes padded versus contiguous pair helpers. Only the affected callsites were inspected; it earns no extra parent review credit.
 
 The helper is counted once under shared saving/loading. Totals: **1,003 reviewed names /9,701 defined functions**, **2,396 mapped /7,305 unmapped**. Whole-game completion remains unknown.
+
+
+### Whole-parent Imp serialization, revision 1401
+
+**288 new integration cases passed** through the complete original **SerializeImpStatePayload** body (5,864 bytes) and 15 original child bodies. This adds behavioral evidence to already reviewed functions; it adds **zero names or mapping credit**.
+
+An independent ordered field/array/text wire model checked the complete 0x4220-byte payload, serializer context and stream, including untouched bytes and surrounding guards. Cases covered read/write directions, marker disabled/enabled, sequence 0/0xffffffff, both arrays independently containing 0/1/512 blocks, two byte patterns and ordered/reversed scalar pairs. All 26 expected scope closures occurred and initial depth was restored. Wire lengths ranged from 410 to 16,846 bytes for these fixtures.
+
+Only the imported strlen boundary was replaced with a declared local substitute; all parent and child code bytes stayed unchanged. Four bounded text fixtures had lengths 0/1/15/4. No linked platform library or live game was executed. This is stronger than a round trip: each direction was checked against independently assembled expected bytes and full state.
+
+**Limits:** selected revision 1401 success path only, initial error zero, ample buffer, null secondary context, valid counts and bounded text. Legacy revisions, exhausted buffers/fallbacks, malformed counts/text, allocation/failure, callbacks, aliases, invalid pointers, concurrency and live-game behavior remain untested. Original field meanings and complete format compatibility remain unresolved.
+
+The front-page prose counts were stale despite the current generated graph. Its review/mapping/cache summary now comes from the same authoritative status data on every generation, preventing those separate counts from drifting again.

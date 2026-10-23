@@ -1436,7 +1436,7 @@ Every square is one actual function and has the same size. All function squares 
 </details>
 <!-- area-status:end -->
 
-<sub>The current inventory has cached output for 9,515 functions; 38 extraction failures remain. This is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
+<sub>Cached decompiler output is preparation for research, not verified or rebuilt game code. See the [progress log](PROGRESS.md).</sub>
 
 ## What we know so far
 
@@ -1448,13 +1448,15 @@ Checked names cover reviewed functions across the systems listed above, includin
 
 ## Latest progress
 
-- **272 of 9,570 functions named and checked.** Another 4 have been reviewed but remain unclear. These counts measure function review, not whole-game completion.
-- **1,703 functions mapped to parts of Dreams; 7,867 still unmapped.** Of the mapped functions, 219 have checked names.
-- **9,532 functions have cached computer-generated code; 38 extraction failures remain.** Generated code is preparation for research, not proof that its behavior is understood.
-- **Splitter and Combiner output behavior is now mapped and named.** Selected component paths passed 7,424 native cases. Rotation and special-type paths remain incomplete; game execution and audited-byte coverage are unchanged.
-- **The trace now distinguishes a version-record payload from the alternate scene stream.** Native code links the payload to save/publish preparation and identifies matching input/output streams for the 99999 format branch. Complete format details and a working save/load round trip remain unverified.
+<!-- latest-counts:start -->
+- **1,003 of 9,701 functions named and checked.** Another 4 remain unclear after review. These counts measure function review, not whole-game completion.
+- **2,396 functions mapped to parts of Dreams; 7,305 still unmapped.** Of the mapped functions, 957 have checked names.
+- **9,663 functions have cached computer-generated code; 38 extraction failures remain.** Generated output is preparation for research, not proof that behavior is understood.
+<!-- latest-counts:end -->
 
-Recording work still needs the other merge branches, complete mode transitions, outer scene-save framing, and runtime validation. The [progress log](PROGRESS.md) holds the technical evidence, earlier snapshots, and limitations.
+- **The complete Imp serializer passed 288 isolated integration cases for revision 1401.** Original parent and child code were checked against an independent wire model in both directions, including array counts up to 512, marker handling, counter wrap and scalar ordering. A declared local substitute handled only the imported string-length boundary. No additional names were credited for this validation.
+
+Legacy formats, fallback/error paths and live-game validation remain incomplete. See the [progress log](PROGRESS.md) for tested boundaries and the [full findings](ANALYSIS.md) for earlier work.
 
 ## Repository scope
 
