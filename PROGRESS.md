@@ -8073,3 +8073,12 @@ All360 original leaf synthetic cases passed an independent sequential model, cov
 These bounded finite checks do not establish threshold-edge rounding, nonfinite or malformed inputs, arbitrary shapes or live-game behavior. The full enclosing dispatcher and original developer source/class remain outside this review.
 
 Totals: **912 checked names across 9,670 defined functions**, **2,313 mapped and 7,357 unmapped**. These are code-review counts, not whole-game completion.
+
+
+### Squashiness supplies recipient volume layers
+
+The producer input is now linked to the original `squashiness` channel through both its descriptor index and concrete destination offset. This replaces the earlier provisional name match with a traced dataflow. The producer appends pairs of opposing vectors for the already reviewed volume-layer callback.
+
+Two scoped original-code checks passed:40 finite positive-branch cases and144 finite negative-branch cases. Positive input writes opposingY vectors scaled by0.1 times the input clamped to1. The negative branch uses rotated/mirrored position geometry, normalizes a cross product and writes an opposing pair scaled by0.05 times the negated input clamped to1. The final shuffle duplicatesZ intoW; an initial model that assumedWzero failed and was corrected against the original assembly before the completed checks passed.
+
+This is bounded branch validation, not a review or execution of the entire producer. Upstream quaternion contracts and gates remain partially traced; no capacity guard for appending beyond the32-vector storage has been established. Nonfinite or malformed inputs, threshold-edge rounding and live-game behavior remain unverified. No new function-name credit is added.
