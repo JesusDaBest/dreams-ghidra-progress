@@ -9401,3 +9401,20 @@ An original-byte RIP-reference scan covered 20,887 indexed EH regions /4,703,552
 **Static analysis only; zero new native cases.** Allocation/failure, cleanup callbacks, fallback/exhaustion paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. All startup callers/callback bodies and all incoming serializer callers were not audited. No Media Molecule source match is claimed.
 
 The initializer is counted once under Imp visuals and the generic byte-pair helper once under shared saving/loading. Totals: **997 reviewed names /9,701 defined functions**, **2,390 mapped /7,311 unmapped**. Whole-game completion remains unknown.
+
+
+### Scalar transfer and serializer scope closure
+
+Three routines were read in full: **328 original bytes /82 instructions** and **75 nonempty diagnostic C lines**. Their descriptive names and working interfaces survived independent reopening with original bytes unchanged.
+
+- **TransferRawByteValue** moves one raw byte.
+- **TransferRawWord32Value** moves four raw bytes without numeric conversion. Neither direct scalar path updates scope or sequence; both ignore preset errors on that direct path.
+- **EndSerializerScope** always decrements the 32-bit nesting counter. Its second argument is an 8-bit flag by value, not a storage pointer. Only when that flag is nonzero and the error field is zero does it advance the sequence and optionally transfer a 16-bit marker. Reading skips that marker without comparing it.
+
+**752 new isolated original direct-path cases passed:** 16 for each scalar and 720 for scope closure. Checks cover both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wraparound and depth underflow, with full synthetic buffer/context guards. Zero depth wraps to 0xffffffff; the routine has no underflow guard.
+
+The reviewed Imp parent closes its maximum-two-element scope on both normal and count-error routes. The scalar transfer widths are established, but original float/int/enum field identity requires caller evidence.
+
+Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Selected parent calls were traced; all incoming callers were not audited. No Media Molecule source match is claimed. The three generic helpers each appear once under shared saving/loading.
+
+Totals: **1,000 reviewed names /9,701 defined functions**, **2,393 mapped /7,308 unmapped**. Whole-game completion remains unknown.

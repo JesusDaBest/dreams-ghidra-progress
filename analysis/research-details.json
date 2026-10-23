@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 997,
+    "checked_and_applied_names": 1000,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 997,
+    "verified_names": 1000,
     "function_count": 9701,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2076,7 +2076,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "846 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "849 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30922,6 +30922,56 @@
       "Both complete original bodies (1336 bytes /244 instructions) and170 nonempty typed C lines read. Relevant parent serializer and header-table writer/consumer dataflow traced, not all incoming callers.",
       "Static-only:zero new native cases. Allocation/failure, cleanup callbacks, fallback/exhaustion paths, aliases, invalid pointers, concurrency and live-game behavior remain untested.",
       "Thirteen table entries reconstructed from original file-backed constants and initializer stores. Integer/255 triplets are consistent with color data, but palette semantics and original names remain provisional.",
+      "No Media Molecule source equivalence claimed."
+    ]
+  },
+  "serializer_scalar_scope_checkpoint": {
+    "functions": {
+      "140dc2200": {
+        "name": "TransferRawByteValue",
+        "signature": "void PS4_SYSV TransferRawByteValue(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "bb48733a15fac3f1668f154c2397f768cce93cd107e630e2777939d1f7be563a",
+        "size": 70,
+        "instructions": 16,
+        "created": false,
+        "c_sha256": "e1665511953cce8dd829997ce9e0051c09b77647db9f782a3c95cf3cbc84d792",
+        "nonempty_c_lines": 28
+      },
+      "140dc2250": {
+        "name": "EndSerializerScope",
+        "signature": "void PS4_SYSV EndSerializerScope(void * serializer_working, uchar emit_boundary_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "2801e28b1d6a42e590b6ce42890fe2b7e8f84fb38d9f3a99f75964050b0d1bba",
+        "size": 183,
+        "instructions": 48,
+        "created": false,
+        "c_sha256": "8e3b6924543d23cbf3d7149277389edf98ecc6b65c3888fb96a18546bc252038",
+        "nonempty_c_lines": 47
+      },
+      "140dc28f0": {
+        "name": "TransferRawWord32Value",
+        "signature": "void PS4_SYSV TransferRawWord32Value(void * serializer_working, void * bytes_working)",
+        "return_storage": "<VOID>",
+        "original_sha256": "07b633e8b661a41377db6db6ae2617a8735b067a06d94e6dd8579af8b66d71d6",
+        "size": 75,
+        "instructions": 18,
+        "created": false,
+        "c_sha256": "372898bd94b337145c134988f595c7aae672858d6760319d28f55207ba98ddf8",
+        "nonempty_c_lines": 30
+      }
+    },
+    "new_checked_names": 3,
+    "new_definitions": 0,
+    "existing_renames": 3,
+    "original_bytes": 328,
+    "original_instructions": 82,
+    "typed_c_nonempty_lines": 75,
+    "new_native_cases": 752,
+    "scope_limits": [
+      "Three complete original bodies (328 bytes /82 instructions) and75 nonempty typed C lines read. Selected fully reviewed Imp parent callsites traced, not all incoming callers.",
+      "752 isolated original direct-path cases passed:16 raw-byte,16 raw-word32,720 scope-end. Both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wrap and depth underflow checked with full synthetic buffers/context/guards.",
+      "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfers do not establish original scalar field types.",
       "No Media Molecule source equivalence claimed."
     ]
   }

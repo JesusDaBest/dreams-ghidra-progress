@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9701,
-  "mapped_total": 2390,
-  "unmapped_total": 7311,
+  "mapped_total": 2393,
+  "unmapped_total": 7308,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -61250,6 +61250,78 @@
           "support": [
             "Entire original 978-byte body (155 instructions) and all 99 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. No-argument initializer writes numeric globals, four allocated fixed resource-key strings, thirteen16-byte header table entries148a53ab0..148a53b70 and registers cleanup callbacks. Header constants copied from14167db80..14167dc4f; first3 lanes are unit-range values quantized in1/255 steps, last lane zero. Legacy parent selects these entries by group byte and converter replaces W with block count bits. Color/palette interpretation is provisional; original enum/field meanings unproven. Allocation and callback imports independently resolved; allocations/failure/cleanup not executed. Full initializer original and typed C read; not all startup callers or callback bodies. Static-only. No malformed-input/alias/concurrency/live-game safety or MM source-equivalence claim."
+          ]
+        }
+      ]
+    },
+    "140dc2200": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 752 isolated direct-path cases across the three helpers.",
+      "code_sha256": "bb48733a15fac3f1668f154c2397f768cce93cd107e630e2777939d1f7be563a",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferRawByteValue",
+          "support": [
+            "Entire original 70-byte body (16 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers one raw byte without scope or sequence updates. Direct path ignores preset error, reads/writes by direction and advances cursor one. Fallback TransferSerializerBytes length1.16 isolated original direct cases passed, including unaligned offsets and preset error. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "140dc2250": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 752 isolated direct-path cases across the three helpers.",
+      "code_sha256": "2801e28b1d6a42e590b6ce42890fe2b7e8f84fb38d9f3a99f75964050b0d1bba",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "EndSerializerScope",
+          "support": [
+            "Entire original 183-byte body (48 instructions) and all 35 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Always decrements depth DWORD+fc modulo32 bits, including zero underflow. Only if low8-bit RSI flag is nonzero and error WORD+10 is zero:optional marker16 ((sequence|8000)^ae), then increments sequence DWORD+100 modulo32. Read direction advances past marker without comparing.720 isolated original direct cases cover direction/marker/error, flag0/1/255, five sequence values and depth0/1/ffffffff. Parent closes a maximum-two-element scope both normal and count-error routes. Flag is byte by value, not pointer; no scalar field transferred. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
+          ]
+        }
+      ]
+    },
+    "140dc28f0": {
+      "system": "shared",
+      "component_path": [
+        "shared",
+        "runtime",
+        "serialization",
+        "runtime-implementation"
+      ],
+      "component_basis": "Generic small raw-word/byte serializer primitives used by reviewed Imp codec; each address counted once under saving/loading.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Full original/C review, selected caller dataflow and 752 isolated direct-path cases across the three helpers.",
+      "code_sha256": "07b633e8b661a41377db6db6ae2617a8735b067a06d94e6dd8579af8b66d71d6",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "TransferRawWord32Value",
+          "support": [
+            "Entire original 75-byte body (18 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. Transfers one raw32-bit word without numeric conversion, scope or sequence updates. Direct path ignores preset error, reads/writes by direction and advances cursor four. Fallback TransferSerializerBytes length4.16 isolated original direct cases passed, including unaligned offsets and preset error. Parent uses it for multiple scalar fields; float/int/enum meaning belongs to callers, not this helper. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
           ]
         }
       ]

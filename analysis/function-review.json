@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "846 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "849 existing-function renames, 150 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9701,
-    "default_fun_names": 8549,
-    "other_names": 1152,
-    "verification": "complete_inventory_matches_baseline_plus_846_renames_and_150_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8546,
+    "other_names": 1155,
+    "verification": "complete_inventory_matches_baseline_plus_849_renames_and_150_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23655,6 +23655,69 @@
         "No Media Molecule source equivalence claimed."
       ],
       "created_function": true
+    },
+    {
+      "address": "140dc2200",
+      "original_name": "FUN_140dc2200",
+      "applied_name": "TransferRawByteValue",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TransferRawByteValue(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 70-byte body (16 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers one raw byte without scope or sequence updates. Direct path ignores preset error, reads/writes by direction and advances cursor one. Fallback TransferSerializerBytes length1.16 isolated original direct cases passed, including unaligned offsets and preset error. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
+      ],
+      "caveats": [
+        "Three complete original bodies (328 bytes /82 instructions) and75 nonempty typed C lines read. Selected fully reviewed Imp parent callsites traced, not all incoming callers.",
+        "752 isolated original direct-path cases passed:16 raw-byte,16 raw-word32,720 scope-end. Both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wrap and depth underflow checked with full synthetic buffers/context/guards.",
+        "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfers do not establish original scalar field types.",
+        "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "140dc2250",
+      "original_name": "FUN_140dc2250",
+      "applied_name": "EndSerializerScope",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV EndSerializerScope(void * serializer_working, uchar emit_boundary_working)",
+      "evidence": [
+        "Entire original 183-byte body (48 instructions) and all 35 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Always decrements depth DWORD+fc modulo32 bits, including zero underflow. Only if low8-bit RSI flag is nonzero and error WORD+10 is zero:optional marker16 ((sequence|8000)^ae), then increments sequence DWORD+100 modulo32. Read direction advances past marker without comparing.720 isolated original direct cases cover direction/marker/error, flag0/1/255, five sequence values and depth0/1/ffffffff. Parent closes a maximum-two-element scope both normal and count-error routes. Flag is byte by value, not pointer; no scalar field transferred. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
+      ],
+      "caveats": [
+        "Three complete original bodies (328 bytes /82 instructions) and75 nonempty typed C lines read. Selected fully reviewed Imp parent callsites traced, not all incoming callers.",
+        "752 isolated original direct-path cases passed:16 raw-byte,16 raw-word32,720 scope-end. Both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wrap and depth underflow checked with full synthetic buffers/context/guards.",
+        "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfers do not establish original scalar field types.",
+        "No Media Molecule source equivalence claimed."
+      ]
+    },
+    {
+      "address": "140dc28f0",
+      "original_name": "FUN_140dc28f0",
+      "applied_name": "TransferRawWord32Value",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV TransferRawWord32Value(void * serializer_working, void * bytes_working)",
+      "evidence": [
+        "Entire original 75-byte body (18 instructions) and all 20 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Transfers one raw32-bit word without numeric conversion, scope or sequence updates. Direct path ignores preset error, reads/writes by direction and advances cursor four. Fallback TransferSerializerBytes length4.16 isolated original direct cases passed, including unaligned offsets and preset error. Parent uses it for multiple scalar fields; float/int/enum meaning belongs to callers, not this helper. Full original and typed C read; selected fully reviewed Imp parent callsites traced, not all incoming callers. Complete synthetic context/buffers/guards checked. Fallback/exhaustion/callbacks, aliases, invalid pointers, concurrency/live game untested. No MM source equivalence."
+      ],
+      "caveats": [
+        "Three complete original bodies (328 bytes /82 instructions) and75 nonempty typed C lines read. Selected fully reviewed Imp parent callsites traced, not all incoming callers.",
+        "752 isolated original direct-path cases passed:16 raw-byte,16 raw-word32,720 scope-end. Both directions, unaligned scalar offsets, preset errors, marker/emit flags, sequence wrap and depth underflow checked with full synthetic buffers/context/guards.",
+        "Fallback/exhaustion/callback paths, aliases, invalid pointers, concurrency and live-game behavior remain untested. Raw transfers do not establish original scalar field types.",
+        "No Media Molecule source equivalence claimed."
+      ]
     }
   ],
   "deferred": [
