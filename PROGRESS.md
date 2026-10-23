@@ -8593,3 +8593,14 @@ The shared staged fields connect to the already verified **UpdateEditorRecipient
 The new helper's name and working register interface survived independent Ghidra reopening with original bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **969 reviewed names / 9,696 defined functions**, **2,362 mapped / 7,334 unmapped**. Whole-game completion remains unknown.
+
+
+### Vector staging for a supplied operation recipient
+
+**StageVectorForOperationRecipient** identifies a complete **283-byte / 69-instruction** helper. All **80 nonempty diagnostic C lines** and five direct-caller windows were read. It takes one supplied operation record, checks its source/destination pointer kinds, and resolves its recipient owner/key/mode through the context mapping. It then stages the vector into the first matching active, idle recipient. X/Y/Z must be finite; W is copied without that check.
+
+**864 isolated cases of the unchanged original helper passed.** They cover source/destination kind arrangements, three states, six float bit patterns, six global-record matching paths and valid/out-of-range mappings. The fallback mapping uses a null owner, all-ones key and mode 2. Full record guards, synthetic context/nodes and original code bytes were checked.
+
+The descriptive name and working interface passed rollback preview, save and independent reopen with original bytes unchanged. Original type and state names remain unresolved. Empty global lists, first blocked match followed by an available match, aliases, concurrency and invalid pointers remain untested. No live game/platform test, whole consumer execution or Media Molecule source match is claimed.
+
+Totals: **970 reviewed names / 9,696 defined functions**, **2,363 mapped / 7,333 unmapped**. Whole-game completion remains unknown.

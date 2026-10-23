@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 969,
+    "checked_and_applied_names": 970,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 969,
+    "verified_names": 970,
     "function_count": 9696,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2071,7 +2071,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "823 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "824 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30257,6 +30257,34 @@
       "1,728 isolated unchanged-original cases passed after correcting a missing constant in the test fixture; the failed attempt is retained locally.",
       "Exact original property types, selector names and state labels unresolved. Empty lists, multiple operation records, first blocked match followed by available match, invalid pointers, aliases and concurrency untested.",
       "No live game/platform test or MM source equivalence claimed. The shared staged fields connect to an already reviewed recipient pose update; no duplicate credit."
+    ]
+  },
+  "operation_recipient_vector_checkpoint": {
+    "functions": {
+      "14147bba0": {
+        "name": "StageVectorForOperationRecipient",
+        "signature": "void PS4_SYSV StageVectorForOperationRecipient(void * operation_context, void * operation_record, SpatialQueryFloat4Working16 vector_value)",
+        "return_storage": "<VOID>",
+        "original_sha256": "15ec05ef254d566ba2a2e37834a9d99aeebc43c9688ef4379a969fa850c78070",
+        "size": 283,
+        "instructions": 69,
+        "created": false,
+        "c_sha256": "d14ac8541c26a4bc0cebe81ecd6ed8f14de8659c1ac83b08bb1979c1d511373a",
+        "nonempty_c_lines": 92
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 283,
+    "original_instructions": 69,
+    "typed_c_nonempty_lines": 80,
+    "new_native_cases": 864,
+    "scope_limits": [
+      "Complete 283-byte / 69-instruction original body, 80 nonempty diagnostic C lines and five direct-caller windows read.",
+      "864 isolated unchanged-original cases passed, including valid and out-of-range operation mappings. Full target records/guards and synthetic context/nodes checked.",
+      "Original record/state names unresolved. Empty global lists, first blocked match followed by an available match, aliases, concurrency and invalid pointers untested.",
+      "No live game/platform test, whole consumer execution or MM source equivalence claimed."
     ]
   }
 }

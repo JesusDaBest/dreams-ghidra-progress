@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "823 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "824 existing-function renames, 145 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9696,
-    "default_fun_names": 8572,
-    "other_names": 1124,
-    "verification": "complete_inventory_matches_baseline_plus_823_renames_and_145_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8571,
+    "other_names": 1125,
+    "verification": "complete_inventory_matches_baseline_plus_824_renames_and_145_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23061,6 +23061,27 @@
         "1,728 isolated unchanged-original cases passed after correcting a missing constant in the test fixture; the failed attempt is retained locally.",
         "Exact original property types, selector names and state labels unresolved. Empty lists, multiple operation records, first blocked match followed by available match, invalid pointers, aliases and concurrency untested.",
         "No live game/platform test or MM source equivalence claimed. The shared staged fields connect to an already reviewed recipient pose update; no duplicate credit."
+      ]
+    },
+    {
+      "address": "14147bba0",
+      "original_name": "FUN_14147bba0",
+      "applied_name": "StageVectorForOperationRecipient",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV StageVectorForOperationRecipient(void * operation_context, void * operation_record, SpatialQueryFloat4Working16 vector_value)",
+      "evidence": [
+        "Entire original 283-byte body (69 instructions) and all 80 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Entire283-byte/69-instruction original and80 nonempty typedC lines,five directcaller windows read. RDIcontext,RSIoperationrecord,XMM0vector;void. Validates source/destination kinds thenmaps operationbyte19c30 throughcontext270 table toowner/key/mode. Out-of-range usesnullowner/-1key/mode2. Findsfirstmatching activeglobalrecipient withnullsecondarypointer; onlyidle0 andfiniteXYZ accepted,Wunchecked. Writesflag198=1,counter194=0,vector1a0,state190=2. 864 new isolated unchanged-original cases passed withfullguard/context/nodepreservation. Originaltypes/state labels unresolved; emptyglobal,firstblockedsecondavailable,alias/concurrency/invalidpointers untested. No livegame/platform or MMsource equivalence claimed."
+      ],
+      "caveats": [
+        "Complete 283-byte / 69-instruction original body, 80 nonempty diagnostic C lines and five direct-caller windows read.",
+        "864 isolated unchanged-original cases passed, including valid and out-of-range operation mappings. Full target records/guards and synthetic context/nodes checked.",
+        "Original record/state names unresolved. Empty global lists, first blocked match followed by an available match, aliases, concurrency and invalid pointers untested.",
+        "No live game/platform test, whole consumer execution or MM source equivalence claimed."
       ]
     }
   ],
