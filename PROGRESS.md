@@ -8109,3 +8109,14 @@ Totals: **914 checked names across 9,672 defined functions**, **2,315 mapped and
 ### Registration-label correction
 
 An audit of the exact initializer stores corrected three earlier record-label associations:slot3 is `BODY_SQUASH_LAYER`,slot4 is `BODY_FORCES_LAYER`,and slot5 is `BODY_VOLUME_LAYER`. The earlier notes associated each with the following record string load. The tested mathematics,descriptive function names,slot indices and review counts are unchanged. `BODY_COLLISION` belongs to a separate slot7 callback and is not the reviewed volume-correction helper.
+
+
+### Six-point recipient elastic solver
+
+`SolveRecipientSixPointElasticChain` now has a verified bounded definition. The entire2293-byte body(474instructions),684-line typed pseudocode and named-preview differences were read. Registered `ELASTIC_LAYER` reaches it through a wrapper that sets response override0; the shape updater also calls it directly with override1. The original code checks the override at both full integer and low-byte widths; the working interface preserves that difference.
+
+The solver places selected points toward mode-dependent targets,then performs four chain-distance and radial-plane correction passes. Initial negative-plane corrections also shift previous-position history. All432 whole original-code finite synthetic cases matched an independent six-point model,covering four bodymodes,overrides0/1/256,three targets,three forces,two response scalars and two radial planes. Every selected output point,anchor history,saved target and copied output vector was checked; other state and original code remained unchanged. Independent reopening confirmed the definition and working interface.
+
+Checks use six distinct valid indices. Aliased or malformed indices,nonfinite values,threshold-edge rounding,arbitrary geometry and live-game behavior remain unverified. This does not establish the complete updater or original developer class/source.
+
+Totals: **915 checked names across 9,673 defined functions**, **2,316 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.

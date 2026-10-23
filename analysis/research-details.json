@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 914,
+    "checked_and_applied_names": 915,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 914,
-    "function_count": 9672,
+    "verified_names": 915,
+    "function_count": 9673,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -2030,6 +2030,7 @@
       "1414339f0",
       "141433a60",
       "141433a70",
+      "141437c80",
       "1414386b0",
       "141438a70",
       "141438c70",
@@ -2047,7 +2048,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "792 existing-function renames, 121 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "792 existing-function renames, 122 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus original9551-entry baseline; includes three new definitions in this batch."
   },
@@ -28772,5 +28773,27 @@
     },
     "unchanged": "Original-code behavior checks, descriptive names, slot indices and review counts.",
     "scope": "Original initializer stores and embedded record layout rechecked; no original source recovery claim."
+  },
+  "recipient_elastic_solver_checkpoint": {
+    "address": "141437c80",
+    "name": "SolveRecipientSixPointElasticChain",
+    "signature": "void PS4_SYSV SolveRecipientSixPointElasticChain(void * shape_state, int response_override)",
+    "original_sha256": "baca3d238b436da5a4177c7069058bc052fe87a8c94abfc1c30a7126e841217d",
+    "native_cases": 432,
+    "size": 2293,
+    "created": true,
+    "c_sha256": "7689c9138dcc2eba372838d2b258e8e8b7f0239a8b4bf353edc5ad39c7e507ae",
+    "nonempty_c_lines": 695,
+    "evidence": [
+      "Complete2293-byte original body(474instructions),684-line typed pseudocode and named-preview differences read.",
+      "432 whole original solver finite cases matched an independent six-point placement,four-pass chain and radial-plane model across all four observed bodymodes,overrides0/1/256,targets,forces,response scalars and planes.",
+      "ELASTIC_LAYER wrapper tailjumps withESI0; updater also calls directly withESI1. FullESI and lowSIL checks differ and are preserved by working integer interface.",
+      "Independent saved-project reopening verified exact bounded definition,interface and unchanged original bytes/other function inventory."
+    ],
+    "limits": [
+      "Finite six distinct valid indices only; aliasing,malformed indices,nonfinite inputs,threshold-edge rounding,arbitrary geometry and live-game behavior unverified.",
+      "Refined RSQRT compared numerically,not bitwise. Full enclosing updater and exact original developer source/class not recovered."
+    ],
+    "project_saved_and_independently_reopened": true
   }
 }
