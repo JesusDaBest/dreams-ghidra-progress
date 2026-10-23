@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "825 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "826 existing-function renames, 148 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9699,
-    "default_fun_names": 8570,
-    "other_names": 1129,
-    "verification": "complete_inventory_matches_baseline_plus_825_renames_and_148_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8569,
+    "other_names": 1130,
+    "verification": "complete_inventory_matches_baseline_plus_826_renames_and_148_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -23169,6 +23169,27 @@
         "12 isolated original-byte cases passed with capacity64, prior counts0/1/31/63/64/65 andtwo nonzero fill patterns. Actual original initializer and emote packer executed, full pool/guards compared against independent default-store oracle.",
         "First fixture omitted the called initializer constant blocks; resolved actual RIP targets and corrected fixture, retaining failure evidence. Growth/allocation/migration/copy/free/failure branches statically traced but unexecuted.",
         "Exact original class/field names unresolved. Imp attribution supported by emote strings and caller Imp asset names. No live game/platform or MM source match claimed."
+      ]
+    },
+    {
+      "address": "141452240",
+      "original_name": "FUN_141452240",
+      "applied_name": "InitializeImpStatePayloadDefaults",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV InitializeImpStatePayloadDefaults(void * state_working)",
+      "evidence": [
+        "Entire original 536-byte body (86 instructions) and all 83 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. One working pointer inRDI;void. Full536-byte original and typedC read. Initializes selected fields through offset421f within4220-byte payload; preserves padding and large array contents while resetting count fields21c0/41d0. Not a blanket memset. Writes scalar/vector defaults and resets fields, then constructs four16-byte keys at41e0/41f0/4200/4210 using original recursive140114920 and literal emote happy/sad/angry/confused. Key results useRAX/RDX. Actual original field/class names unresolved. All9 direct caller windows read: two embedded initializations, history entries atstride4230, temporary payloads, global state, normalized4270-byte pool record+50 and fresh default copy. Full caller bodies other than previously reviewed995-byte pool normalizer not reviewed. Original initializer and packer previously executed by12 pool normalization cases, with complete independent payload-store oracle and untouched-gap/guard checks. Evidence reused, suite not rerun and zero new native cases credited. Initial omittedconstant fixture failure retained in prior evidence. No live game/platform or MM source equivalence."
+      ],
+      "caveats": [
+        "Complete536-byte/86-instruction original and83 nonempty typed C lines read; all9 direct caller windows. Complete caller bodies except prior pool normalizer not reviewed.",
+        "Reuses12 prior isolated pool normalization cases in which the actual original initializer and recursive emote packer executed against a full default-store/gap/guard oracle. Zero new cases and no rerun.",
+        "Only selected fields and counts reset; this is not a blanket4220-byte clear. Exact original field/class names remain unresolved.",
+        "No live game/platform or Media Molecule source equivalence claimed."
       ]
     }
   ],

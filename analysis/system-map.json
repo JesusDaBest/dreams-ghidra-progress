@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9699,
-  "mapped_total": 2367,
-  "unmapped_total": 7332,
+  "mapped_total": 2368,
+  "unmapped_total": 7331,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60698,6 +60698,30 @@
           "support": [
             "Entire original 995-byte body (162 instructions) and all 169 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name. No incoming arguments consumed and no meaningful return. Globals148a7ba50/58/60 are pool pointer/count/capacity, stride4270. If capacity<64, requests max(64,capacity+64) records through allocation category31; zero/null failure returns without replacing globals. Reads and preserves existing records through header-copy/initializer/payload memcpy, then releases old block through resolved mspace imports. When count<64, clears each added record header and invokes payload initializer141452240 atrecord+50. When count>=64 no added record initialization occurs. Final count is64 even for prior65, so function normalizes rather than simply ensures minimum capacity. No blanket clearing of retained record state. Payload initializer and inline migration defaults reference emote happy/sad/angry/confused, encoded by original recursive140114920 into RAX/RDX. Caller14147c560 references MM_dreamqueen/MM_impygold/MM_impysilver/101_snowflake/108_treefrog, supporting descriptive Imp-state attribution; original class/field names unresolved. Entire995-byte/162-instruction body and full typedC read; both direct caller windows and full397-byte14147c3d0 caller read. Support originals141452240(536),140166780(312),140114920(100) read. Imports14160ae20 memcpy,1416087a0 sceLibcMspaceMallocUsableSize,141608730 sceLibcMspaceFree independently resolved. 12 isolated original cases passed for capacity64, priorcounts0/1/31/63/64/65 andtwo fillpatterns; actual original initializer and emote encoder executed. Full-buffer oracle checks unchanged records/gaps/guards, default writes and final globals. Firstfixture omitted called initializer constantaddresses; correctedafter resolving actual RIPtargets, failure retained. Growth/allocation/copy/free/failure paths remain static-only. No live game/platform/MMsource equivalence."
+          ]
+        }
+      ]
+    },
+    "141452240": {
+      "system": "interface",
+      "component_path": [
+        "interface",
+        "display",
+        "prim-imp",
+        "runtime-implementation"
+      ],
+      "component_basis": "Complete default-store and emote-key dataflow, plus caller links to the verified Imp pool. Counted once under Imp visuals.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original/C review, nine caller windows and reused original execution in prior pool evidence.",
+      "code_sha256": "185b7e2577513ce7e09671d1e61574a53f140ad28de07dc7d8fbdc5baa3210d8",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "InitializeImpStatePayloadDefaults",
+          "support": [
+            "Entire original 536-byte body (86 instructions) and all 83 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name. One working pointer inRDI;void. Full536-byte original and typedC read. Initializes selected fields through offset421f within4220-byte payload; preserves padding and large array contents while resetting count fields21c0/41d0. Not a blanket memset. Writes scalar/vector defaults and resets fields, then constructs four16-byte keys at41e0/41f0/4200/4210 using original recursive140114920 and literal emote happy/sad/angry/confused. Key results useRAX/RDX. Actual original field/class names unresolved. All9 direct caller windows read: two embedded initializations, history entries atstride4230, temporary payloads, global state, normalized4270-byte pool record+50 and fresh default copy. Full caller bodies other than previously reviewed995-byte pool normalizer not reviewed. Original initializer and packer previously executed by12 pool normalization cases, with complete independent payload-store oracle and untouched-gap/guard checks. Evidence reused, suite not rerun and zero new native cases credited. Initial omittedconstant fixture failure retained in prior evidence. No live game/platform or MM source equivalence."
           ]
         }
       ]

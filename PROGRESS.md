@@ -8656,3 +8656,16 @@ The routine uses **0x4270-byte records**. It grows storage if capacity is below6
 The **allocation, growth, migration, copy, free and failure branches are static-only findings**. They were not exercised in these cases. The saved descriptive name and no-argument working interface passed rollback preview, save and independent reopening with original code bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
 
 Totals: **974 reviewed names / 9,699 defined functions**, **2,367 mapped / 7,332 unmapped**. Whole-game completion remains unknown.
+
+
+### Imp state payload defaults
+
+**InitializeImpStatePayloadDefaults** describes a complete **536-byte / 86-instruction** initializer. All **83 nonempty diagnostic C lines** and **nine direct-caller windows** were read. It consumes one working pointer, writes selected scalar/vector defaults, resets two count fields, and packs the four names **emote happy**, **emote sad**, **emote angry** and **emote confused** into16-byte keys at the end of a **0x4220-byte payload**. It preserves padding and large array contents; it does not clear the entire payload.
+
+The callers use it for embedded state, history entries, temporary defaults, global state and the reviewed Imp pool. Only selected caller windows were read, except the already reviewed pool normalizer. Exact original class and field names remain unresolved.
+
+The earlier **12 isolated pool cases** executed this unchanged original initializer and the recursive key packer. Their independent full-buffer oracle checked default values, retained gaps and guards. Those receipts are reused: **zero new native cases**, no rerun and no duplicate case credit.
+
+The saved descriptive name and one-pointer working interface passed rollback preview, save and independent reopening with original code bytes unchanged. No live game/platform test or Media Molecule source match is claimed.
+
+Totals: **975 reviewed names / 9,699 defined functions**, **2,368 mapped / 7,331 unmapped**. Whole-game completion remains unknown.
