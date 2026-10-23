@@ -9127,3 +9127,14 @@ Tag 5 preserves the existing 64-bit payload. Tag 18 resolves a signed 22-bit obj
 **24,577 isolated cases of the unchanged original helper passed**, covering all 256 tags, payload bit patterns, kind bytes and valid packed indices, plus a sentinel path with an unused null context. These checks validate the complete return value and preserve record/code bytes. Invalid non-sentinel indices, null object entries and live game/platform behavior were not tested. No Media Molecule source equivalence is claimed.
 
 Totals: **966 reviewed names / 9,694 defined functions**, **2,359 mapped / 7,335 unmapped**. Whole-game completion remains unknown.
+
+
+### Sky & Sun gadget visualization
+
+**BuildSkyAndSunVisualization** identifies a complete **3,932-byte / 747-instruction** routine. All **689 nonempty diagnostic C lines** and its direct caller were read. The original type-8 guard matches the independently rechecked **SkyAndSun** enum registration and literal.
+
+The routine chooses an incoming or cached ancestor transform, consults payload eligibility, computes direction/orientation and cosine-based geometry, appends bounded drawing records and calls spatial visualization helpers. It also filters operation records referencing this object. The function is counted once under the Sky & Sun gadget; this does not establish completion of Dreams' sky renderer.
+
+The descriptive name and working interface passed preview, save and independent reopen with original bytes unchanged. Two working float4 stack arguments represent 32 bytes of transform storage; the original aggregate type remains unresolved. At one undefined callee, C argument inference varied between captures; only the exact reviewed variations were accepted against the original assembly. Unknown child interfaces, drawing selectors and numerical behavior remain open. No new native/live game tests or Media Molecule source match are claimed.
+
+Totals: **967 reviewed names / 9,695 defined functions**, **2,360 mapped / 7,335 unmapped**. Whole-game completion remains unknown.

@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 966,
+    "checked_and_applied_names": 967,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,8 +1920,8 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 966,
-    "function_count": 9694,
+    "verified_names": 967,
+    "function_count": 9695,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
     "new_functions": [
@@ -1967,6 +1967,7 @@
       "140d83e60",
       "140d83fb0",
       "140d88850",
+      "14100d480",
       "14109f7b0",
       "14109faf0",
       "14109fdd0",
@@ -2069,7 +2070,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "822 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "822 existing-function renames, 144 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -30171,6 +30172,34 @@
       "24,577 isolated original-byte cases passed with synthetic memory; exact 64-bit return and record/code preservation checked.",
       "Exact handle-kind names and full structures remain unresolved. Invalid non-sentinel indices, null object entries and alias safety not validated.",
       "No live game/platform/network execution or MM source equivalence claimed."
+    ]
+  },
+  "sky_sun_visualization_checkpoint": {
+    "functions": {
+      "14100d480": {
+        "name": "BuildSkyAndSunVisualization",
+        "signature": "void PS4_SYSV BuildSkyAndSunVisualization(void * status_output, void * object_context, void * render_context, void * operation_record, int object_index, uchar skip, SpatialQueryFloat4Working16 position_working, SpatialQueryFloat4Working16 orientation_working, uint draw_option, void * cached_transforms)",
+        "return_storage": "<VOID>",
+        "original_sha256": "079fc66b39ef0dd35a3c19639fba9b087fc1d64ccf39b320161b162d74f2a66e",
+        "size": 3932,
+        "instructions": 747,
+        "created": true,
+        "c_sha256": "a9779b80e0d5685fb86c8a9ee5805729596ae508368cb7647c6b41d5397c49cb",
+        "nonempty_c_lines": 702
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 1,
+    "existing_renames": 0,
+    "original_bytes": 3932,
+    "original_instructions": 747,
+    "typed_c_nonempty_lines": 689,
+    "new_native_cases": 0,
+    "scope_limits": [
+      "Complete 3932-byte / 747-instruction original body and 689 nonempty diagnostic C lines read; one direct caller. Original SkyAndSun enum immediate/literal independently rechecked.",
+      "Static review only; no new native or live game tests. Two float4 working stack parameters describe a 32-byte transform; original aggregate type unresolved.",
+      "Undefined callee14147b210 argument inference varies between C captures; exact differences checked against original assembly. Unknown child interfaces, exact drawing-selector meanings and numerical behavior remain unresolved.",
+      "Visualization helper only: no full sky renderer completion, invalid-input safety or MM source equivalence claimed."
     ]
   }
 }

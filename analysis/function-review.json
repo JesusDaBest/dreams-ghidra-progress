@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "822 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "822 existing-function renames, 144 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -10,10 +10,10 @@
     "other_names": 156
   },
   "current_inventory": {
-    "total": 9694,
+    "total": 9695,
     "default_fun_names": 8573,
-    "other_names": 1121,
-    "verification": "complete_inventory_matches_baseline_plus_822_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "other_names": 1122,
+    "verification": "complete_inventory_matches_baseline_plus_822_renames_and_144_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22997,6 +22997,28 @@
         "Exact handle-kind names and full structures remain unresolved. Invalid non-sentinel indices, null object entries and alias safety not validated.",
         "No live game/platform/network execution or MM source equivalence claimed."
       ]
+    },
+    {
+      "address": "14100d480",
+      "original_name": null,
+      "applied_name": "BuildSkyAndSunVisualization",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV BuildSkyAndSunVisualization(void * status_output, void * object_context, void * render_context, void * operation_record, int object_index, uchar skip, SpatialQueryFloat4Working16 position_working, SpatialQueryFloat4Working16 orientation_working, uint draw_option, void * cached_transforms)",
+      "evidence": [
+        "Entire original 3932-byte body (747 instructions) and all 689 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name. Full 3932-byte/747-instruction original body and all689 nonempty diagnostic C lines read. Original type8 guard matched original SkyAndSun enum immediate/literal. Builds spatial visualization using incoming or ancestor cached transform, eligibility checks, positive visibility/scale scalar, normalized direction and cosf-based geometry. Appends bounded192-byte records (selectors0x12/0x46/0x5f) and invokes visualization helpers; operation-record filtering uses tag0x10/objectindex/selector0x5f. One direct caller confirms register and stack storage. Two working float4 stack inputs represent32bytes; original aggregate type unresolved. Void return. Unknown callees have imperfect inferred C interfaces; assembly authoritative. No native/live game test, exact shape semantics, full sky rendering, invalid-input safety or MM source match claimed."
+      ],
+      "caveats": [
+        "Complete 3932-byte / 747-instruction original body and 689 nonempty diagnostic C lines read; one direct caller. Original SkyAndSun enum immediate/literal independently rechecked.",
+        "Static review only; no new native or live game tests. Two float4 working stack parameters describe a 32-byte transform; original aggregate type unresolved.",
+        "Undefined callee14147b210 argument inference varies between C captures; exact differences checked against original assembly. Unknown child interfaces, exact drawing-selector meanings and numerical behavior remain unresolved.",
+        "Visualization helper only: no full sky renderer completion, invalid-input safety or MM source equivalence claimed."
+      ],
+      "created_function": true
     }
   ],
   "deferred": [
