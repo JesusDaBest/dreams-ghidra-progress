@@ -8700,3 +8700,14 @@ The callback processes four pair records at a time. Each record has two signed16
 Within-batch pairs were distinct in these checks. Aliasing write order,zero-length springs,malformed counts,invalid indices,nonfinite values,rounding boundaries and live-game behavior remain unverified. The observed loop subtracts4 untilzero;the producer contract still needs tracing.
 
 Totals: **916 checked names across 9,674 defined functions**, **2,317 mapped and 7,357 unmapped**. These are code-review counts,not whole-game completion.
+
+
+### Recipient spring construction and normalization
+
+The spring builder enumerates triangle edges and suppresses duplicates through a three-probe bit filter. It stores endpoint indices and reference lengths, incrementing the count once per accepted edge; no padding to a multiple of four was observed. Six isolated original-builder cases matched an independent filter model, including lists of three, five and thirty springs. Two further cases using the reconstructed default subdivided topology and reversed triangle order each produced 480 springs. The loader's edge walk, shared midpoint indexing and stored child-triangle pattern agree with that reconstruction. This is not whole-loader execution or exact reproduction of its floating-point normalization.
+
+The runtime slot-copy path takes its spring count and records from a freshly initialized temporary recipient object. The source addresses are precisely the temporary object's spring member offsets. An earlier private interpretation as imported or saved state was withdrawn; this path does not establish arbitrary imported spring lists.
+
+Before constraint solving, a separate update loop prepares each pair's coefficient as approximately the reciprocal of the sum of its two endpoint inverse weights. Thirty isolated original-code cases passed against an independent reciprocal-sum model, covering zero, one, three, four, twelve and 480 records with positive finite weights. Maximum relative error was below 0.000006%. Only coefficient fields changed; endpoints, reference lengths, point weights and surrounding state remained unchanged. This coefficient normalizes the correction split; it is not evidence of a separately configured spring stiffness.
+
+The preparation loop handles individual records, whereas the reviewed solver consumes four records per batch. The default reconstructed topology supplies a compatible count, but this does not prove every possible runtime count is valid. Whole-initializer execution, within-batch endpoint alias ordering, invalid indices, zero or nonfinite weight sums and live-game behavior remain unresolved. These findings add no function naming or completion credit.
