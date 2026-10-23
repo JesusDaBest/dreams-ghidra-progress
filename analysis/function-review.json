@@ -2,7 +2,7 @@
   "schema_version": 2,
   "snapshot_date": "2026-10-23",
   "status": "applied_verified_after_reopening",
-  "review_scope": "815 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+  "review_scope": "816 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
   "abi_caveat": "Initial Calculator/Fog naming evidence predates the selective PS4_SYSV correction. Later shared-property and field-registration reviews use that corrected model plus assembly, literal type names, and matching field offsets. Naming evidence and signature reviews are tracked separately; individually documented signature corrections do not establish complete types or behavior. Separately, the newly defined main-update worker has two parameters matched to native input registers; its return type and concrete context structure remain unresolved.",
   "baseline_inventory": {
     "total": 9551,
@@ -11,9 +11,9 @@
   },
   "current_inventory": {
     "total": 9694,
-    "default_fun_names": 8580,
-    "other_names": 1114,
-    "verification": "complete_inventory_matches_baseline_plus_815_renames_and_143_created_functions_and_1_reviewed_existing_name"
+    "default_fun_names": 8579,
+    "other_names": 1115,
+    "verification": "complete_inventory_matches_baseline_plus_816_renames_and_143_created_functions_and_1_reviewed_existing_name"
   },
   "input_integrity": "Supplied original archive and imported input copy hashes unchanged after the saved-project restart.",
   "applied": [
@@ -22846,6 +22846,27 @@
       ],
       "caveats": [
         "Packet writer tested in240 new whole-original cases with explicit command-buffer growth model; large initializer/frame-parent windows only, no parent review credit. No real GPU/platform or concurrency verification.",
+        "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+        "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+        "No source-build match to MM livestream material established in this batch."
+      ]
+    },
+    {
+      "address": "140026e30",
+      "original_name": "FUN_140026e30",
+      "applied_name": "AppendEndOfPipeEventPacket",
+      "status": "applied_read_back_verified",
+      "persistence_verification": "verified_after_independent_offline_reopening",
+      "confidence": "high_for_descriptive_role",
+      "reviewed_scope": "behavior_or_helper",
+      "calling_convention": "PS4_SYSV",
+      "saved_working_signature": "void PS4_SYSV AppendEndOfPipeEventPacket(void * command_buffer, uint event_bits, uint flag_bits, void * destination, uint data_selector, ulonglong data_value, uint cache_bits, uint interrupt_bits)",
+      "evidence": [
+        "Entire original 227-byte body (70 instructions) and all 33 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+        "Analyst descriptive name from complete227-byte original body, all typed C and1224 new isolated whole-original cases. Eight consumed inputs: commandRDI,eventESI,flagsEDX,destinationRCX,selectorR8D,dataR9 and low32 stack entry+8/cache and+16/interrupt fields. Void working return. If low32((end-cursor)>>2)<6, calls growth(context,6,user); lowAL0 exits untouched, success reloads cursor and preserved dataR9. Writes sixDWORDs header0xc0044700 plus masked event/cache/interrupt/flag fields,address and64-bit data; advances cursor24bytes. Address retains low40bits, selector1 aligns4 else8. Selector shifted29 without explicit range guard. Two stack fields are masked6bits/2bits. Growth/native cases validate all consumed ABI locations, exact original caller inputs, field boundaries and deterministic vectors, exact packets/cursor/guards and unchanged code; actual GPU/platform/interrupt/ordering not executed. Original frame caller passes event20,flags0,currentbank first-marker address,selector2,current frame zeroextended32,stack0x38/0. Header/opcode0x47 matches inspected emulator EventWriteEop layout; exact original SDK and hardware effects unproved. Generated indirect growth call omits args; original registers/native observations govern."
+      ],
+      "caveats": [
+        "Packet writer tested in1224 new whole-original cases with explicit command-buffer growth model; all8 inputs covered. Large frame parent remains partly read and receives no review credit. No real GPU/platform or concurrency verification.",
         "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
         "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
         "No source-build match to MM livestream material established in this batch."

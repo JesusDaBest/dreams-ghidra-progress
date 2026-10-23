@@ -9044,3 +9044,16 @@ The frame path sends the first current-bank marker address and zero-extended fra
 The tag and header match [shadPS4's PrepareFlipLabel definition](https://github.com/shadps4-emu/shadPS4/blob/main/src/video_core/amdgpu/pm4_cmds.h). Its [submission patcher](https://github.com/shadps4-emu/shadPS4/blob/main/src/core/libraries/gnmdriver/gnmdriver.cpp) converts that reservation into a label write. This is a current emulator cross-check, not proof of the exact original SDK implementation or an MM source match.
 
 Totals: **959 reviewed names /9,694 defined functions**, **2,352 mapped /7,342 unmapped**. One existing packet writer is named under Rendering queue completion. Whole-game completion remains unknown.
+
+
+### End-of-pipe marker packet encoding
+
+**AppendEndOfPipeEventPacket** now identifies the complete **227-byte /70-instruction** builder used by the first banked completion marker. All **33 nonempty typed C lines** were read. Its working interface records six register arguments and two32-bit stack arguments. The frame caller supplies the current bank's marker address, selector2 and the current frame stamp zero-extended from32bits. This identifies the encoded request; actual GPU completion remains unverified.
+
+The builder emits six DWORDs and advances the command cursor24 bytes. It keeps only40 address bits, aligns to4 bytes for selector1 and8 bytes otherwise, masks the event/cache/interrupt inputs and shifts the selector without an explicit range check. With fewer than six available DWORDs it calls the growth hook for six; failure leaves the packet untouched and success reloads the destination cursor. Generated C omits some indirect growth arguments; original register setup and native observations are authoritative.
+
+**1,224 new isolated whole-original cases** cover all eight consumed ABI locations, exact frame-caller inputs, field boundaries, deterministic varied vectors, the5/6-DWORD threshold, failed/redirected growth, exact packet bytes and preserved guards. Only buffer growth is modeled. No actual GPU event, interrupt, platform call or asynchronous ordering was executed, and completed suites were not rerun.
+
+The opcode and data fields match the inspected [shadPS4 end-of-pipe packet definition](https://github.com/shadps4-emu/shadPS4/blob/main/src/video_core/amdgpu/pm4_cmds.h). This corroborates the descriptive role; it does not establish exact original SDK/source equivalence or an MM livestream match. The large frame routine remains only partly read and receives no naming/review credit.
+
+Totals: **960 reviewed names /9,694 defined functions**, **2,353 mapped /7,341 unmapped**. One existing builder is named under Rendering queue completion. Whole-game completion remains unknown.

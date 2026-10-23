@@ -5,8 +5,8 @@
   "reference_evidence_sha256": "7f33c072ca34740c26e9dcc5c98e3d9a7efc4f60f0f352aa7add3f40970d351b",
   "dispatch_evidence_sha256": "9e3051debfd45c2aa5f04523be376589c5547e466132b46d15e595ff54f862a9",
   "inventory_total": 9694,
-  "mapped_total": 2352,
-  "unmapped_total": 7342,
+  "mapped_total": 2353,
+  "unmapped_total": 7341,
   "systems": {
     "sculpting-painting": "Sculpting & painting",
     "gadgets-logic": "Gadgets & logic",
@@ -60338,6 +60338,30 @@
           "support": [
             "Entire original 112-byte body (36 instructions) and all 21 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
             "Analyst descriptive name from entire112-byte original body,21 nonempty typed C lines, original caller and240 new isolated cases. RDI command buffer,RSI encoded64-bit label address,EDX low32 label value; void working return. Available DWORD count is low32((end-cursor)>>2); below64 invokes callback with actual contextRDI,64ESI,userRDX. Callback lowAL0 exits without packet writes; success reloads cursor. Writes20 bytes: header0xc03e1000,tag0x68750778,label address64 and label value32; advances cursor256 bytes. Remaining236 reserved bytes untouched. Current shadPS4 identifies matching tag as PrepareFlipLabel and submission patcher turns it into label write; source-version equivalence and real driver/GPU effects not proved.240 whole-original cases model growth only, cover63/64 boundary, failures/redirection, exact writes/guards and preserved padding. Original caller passes second completion buffer plus currentbank*32 and currentframe low32 in normal-output branch. No address alignment/capacity validation beyond recorded threshold; callback validity and actual allocation unproved."
+          ]
+        }
+      ]
+    },
+    "140026e30": {
+      "system": "rendering",
+      "component_path": [
+        "rendering",
+        "compute",
+        "completion",
+        "runtime-implementation"
+      ],
+      "component_basis": "Original frame caller passes first completion-bank address/current stamp into this end-of-pipe packet; original wait consumer checks the same banked buffers.",
+      "code_role": "runtime-implementation",
+      "code_role_basis": "Complete original body and typed C static review.",
+      "code_sha256": "45453b4a1fd3ac1b0a81b7531a52254d60c5980dd8c8b2df4cdfee225a0fb8b1",
+      "code_hash_basis": "original_eh_region",
+      "evidence": [
+        {
+          "kind": "verified_semantic_review",
+          "name": "AppendEndOfPipeEventPacket",
+          "support": [
+            "Entire original 227-byte body (70 instructions) and all 33 nonempty typed C lines read. Saved name/interface independently reopened and original bytes verified unchanged.",
+            "Analyst descriptive name from complete227-byte original body, all typed C and1224 new isolated whole-original cases. Eight consumed inputs: commandRDI,eventESI,flagsEDX,destinationRCX,selectorR8D,dataR9 and low32 stack entry+8/cache and+16/interrupt fields. Void working return. If low32((end-cursor)>>2)<6, calls growth(context,6,user); lowAL0 exits untouched, success reloads cursor and preserved dataR9. Writes sixDWORDs header0xc0044700 plus masked event/cache/interrupt/flag fields,address and64-bit data; advances cursor24bytes. Address retains low40bits, selector1 aligns4 else8. Selector shifted29 without explicit range guard. Two stack fields are masked6bits/2bits. Growth/native cases validate all consumed ABI locations, exact original caller inputs, field boundaries and deterministic vectors, exact packets/cursor/guards and unchanged code; actual GPU/platform/interrupt/ordering not executed. Original frame caller passes event20,flags0,currentbank first-marker address,selector2,current frame zeroextended32,stack0x38/0. Header/opcode0x47 matches inspected emulator EventWriteEop layout; exact original SDK and hardware effects unproved. Generated indirect growth call omits args; original registers/native observations govern."
           ]
         }
       ]

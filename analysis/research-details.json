@@ -1831,7 +1831,7 @@
     "production_cache_changed": false
   },
   "semantic_review": {
-    "checked_and_applied_names": 959,
+    "checked_and_applied_names": 960,
     "deferred": 4,
     "additional_unapplied_proposals": 0
   },
@@ -1920,7 +1920,7 @@
     "semantic_review_credit_added": 0
   },
   "current_saved_name_verification": {
-    "verified_names": 959,
+    "verified_names": 960,
     "function_count": 9694,
     "full_inventory_matches_baseline_plus_journaled_renames": true,
     "original_and_input_archive_hashes_unchanged": true,
@@ -2069,7 +2069,7 @@
       "141604dd0",
       "141604e30"
     ],
-    "scope": "815 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
+    "scope": "816 existing-function renames, 143 created functions and 1 retained existing-name review independently verified; 4 reviews deferred.",
     "verified_after_clean_reopen": true,
     "new_functions_basis": "Complete independently reopened inventory minus the original 9551-entry baseline."
   },
@@ -29954,6 +29954,54 @@
         "RIP-relative indexed EH scan is not exhaustive for register-derived/data/non-EH references.",
         "No platform/GPU concurrency or whole frame routine tested.",
         "Current emulator source corroborates packet meaning, not exact original SDK implementation."
+      ]
+    }
+  },
+  "eop_completion_packet_checkpoint": {
+    "functions": {
+      "140026e30": {
+        "name": "AppendEndOfPipeEventPacket",
+        "signature": "void PS4_SYSV AppendEndOfPipeEventPacket(void * command_buffer, uint event_bits, uint flag_bits, void * destination, uint data_selector, ulonglong data_value, uint cache_bits, uint interrupt_bits)",
+        "return_storage": "<VOID>",
+        "original_sha256": "45453b4a1fd3ac1b0a81b7531a52254d60c5980dd8c8b2df4cdfee225a0fb8b1",
+        "size": 227,
+        "instructions": 70,
+        "created": false,
+        "c_sha256": "bb3b8e5253d5e16d1bc400012ef7e6e15ab0bd9ea7476678bb61237e5d88e539",
+        "nonempty_c_lines": 52
+      }
+    },
+    "new_checked_names": 1,
+    "new_definitions": 0,
+    "existing_renames": 1,
+    "original_bytes": 227,
+    "original_instructions": 70,
+    "typed_c_nonempty_lines": 33,
+    "new_native_cases": 1224,
+    "scope_limits": [
+      "Packet writer tested in1224 new whole-original cases with explicit command-buffer growth model; all8 inputs covered. Large frame parent remains partly read and receives no review credit. No real GPU/platform or concurrency verification.",
+      "Descriptive names and consumed-register working interfaces; original source symbols, exact types and hardware correctness remain unproved.",
+      "Platform import names are resolved from original SELF relocation/NIDs and the local emulator symbol database; generated C may omit import arguments.",
+      "No source-build match to MM livestream material established in this batch."
+    ],
+    "producer_trace": {
+      "entire_original_body_and_typed_c_read": true,
+      "typed_c_lines": 33,
+      "instruction_count": 70,
+      "native_cases": 1224,
+      "stack_parameters": {
+        "entry+8": "low32 cache_bits",
+        "entry+16": "low32 interrupt_bits"
+      },
+      "caller_window": "140c63010..140c63041 read in previous producer trace; first-marker bank*32,current frame low32 zeroextended64",
+      "source_cross_check": {
+        "url": "https://github.com/shadps4-emu/shadPS4/blob/main/src/video_core/amdgpu/pm4_cmds.h",
+        "scope": "Inspected PM4 EventWriteEop structure and data selection fields, not exact SDK source or GPU execution."
+      },
+      "limits": [
+        "Large parent not fully reviewed.",
+        "No GPU/runtime/interrupt or arbitrary invalid-context guarantee.",
+        "Data-selector values beyond known enum not rejected by local writer."
       ]
     }
   }
